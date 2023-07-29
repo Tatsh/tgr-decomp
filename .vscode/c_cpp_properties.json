@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "cStandard": "gnu23",
+      "compilerPath": "/usr/bin/gcc",
+      "configurationProvider": "ms-vscode.cmake-tools",
+      "cppStandard": "gnu++23",
+      "defines": [],
+      "forcedInclude": [
+        "${workspaceFolder}/types.h",
+        "/usr/include/wine-staging-8.13/wine/windows/excpt.h",
+        "/usr/include/wine-staging-8.13/wine/windows/windows.h",
+        "/usr/include/wine-staging-8.13/wine/windows/rpc.h",
+        "/usr/include/wine-staging-8.13/wine/windows/objbase.h",
+        "/usr/include/wine-staging-8.13/wine/windows/d3d.h",
+        "/usr/include/wine-staging-8.13/wine/windows/dinput.h",
+        "/usr/include/wine-staging-8.13/wine/msvcrt/stdio.h"
+      ],
+      "includePath": [
+        "${workspaceFolder}/split/**",
+        "/usr/include/wine-staging-8.13/wine/windows",
+        "/usr/include/wine-staging-8.13/wine/msvcrt"
+      ],
+      "name": "Linux"
+    }
+  ],
+  "version": 4
+}
