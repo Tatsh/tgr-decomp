@@ -1,11 +1,10 @@
 #!/usr/bin/env python
-from os import makedirs
-import re
 from pathlib import Path
 from shutil import rmtree
+from typing import Any, Iterator, List
+import re
 import sys
 import subprocess as sp
-from typing import Any, Iterator, List
 
 SPLIT_PATH = Path('./split')
 
