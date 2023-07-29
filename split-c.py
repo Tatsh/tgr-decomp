@@ -4,7 +4,6 @@ from shutil import rmtree
 from typing import Any, Iterator, List
 import re
 import sys
-import subprocess as sp
 
 SPLIT_PATH = Path('./split')
 
@@ -21,7 +20,6 @@ if __name__ == '__main__':
     except FileNotFoundError:
         pass
     SPLIT_PATH.mkdir(parents=True, exist_ok=True)
-    sp.run(('dos2unix', sys.argv[1]), check=True)
     with open(sys.argv[1]) as f:
         content = f.read()
     grouped = re.split(r'^(//----- \([0-9A-F]+\) -+)$',
