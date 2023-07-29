@@ -1,0 +1,80 @@
+//----- (100791D0) --------------------------------------------------------
+int sub_100791D0()
+{
+  int result; // eax
+  IDirectInputDevice2AVtbl *v1; // edx
+  int v2[5]; // [esp+14h] [ebp-14h] BYREF
+
+  result = g_ReadJoystick;
+  if ( g_ReadJoystick )
+  {
+    if ( ++dword_118ABE00 == 1 )
+    {
+      if ( dword_10B4E1E0
+        && !g_DirectInputDeviceA->lpVtbl->EnumDevices(
+              g_DirectInputDeviceA,
+              4,
+              (LPDIENUMDEVICESCALLBACKA)sub_100790E0,
+              (LPVOID)5,
+              257)
+        && g_DirectInputDevice2A )
+      {
+        v1 = g_DirectInputDevice2A->lpVtbl;
+        dword_118ABDBC = 1;
+        v2[0] = 20;
+        v2[1] = 16;
+        v2[2] = 0;
+        v2[3] = 0;
+        v2[4] = 0;
+        if ( v1->SetProperty(g_DirectInputDevice2A, (const GUID *const)9, (LPCDIPROPHEADER)v2) < 0 )
+          OutputDebugStringA(aErrorFailedToC);
+        sub_100773D0();
+        sub_10079390(1000, 8000);
+      }
+      else
+      {
+        g_DirectInputDeviceA->lpVtbl->EnumDevices(
+          g_DirectInputDeviceA,
+          4,
+          (LPDIENUMDEVICESCALLBACKA)sub_100790E0,
+          (LPVOID)6,
+          1);
+        sub_100773D0();
+        dword_118ABDBC = 0;
+      }
+      if ( !g_DirectInputDevice2A )
+        return 0;
+      if ( sub_10078C30((int *)g_DirectInputDevice2A, 4, 0, 1, -128, 128) < 0 )
+        goto LABEL_15;
+      if ( sub_10078C80((int *)g_DirectInputDevice2A, 5, 0, 1, 0) < 0 )
+        goto LABEL_17;
+      if ( sub_10078C30((int *)g_DirectInputDevice2A, 4, 4, 1, -128, 128) < 0 )
+      {
+LABEL_15:
+        OutputDebugStringA(aErrorIdirectin);
+        g_DirectInputDevice2A->lpVtbl->Unacquire(g_DirectInputDevice2A);
+        g_DirectInputDevice2A->lpVtbl->Release(g_DirectInputDevice2A);
+        g_DirectInputDevice2A = 0;
+        return 0;
+      }
+      if ( sub_10078C80((int *)g_DirectInputDevice2A, 5, 4, 1, 0) >= 0 )
+      {
+        result = g_ReadJoystick;
+      }
+      else
+      {
+LABEL_17:
+        OutputDebugStringA(aErrorIdirectin_0);
+        g_DirectInputDevice2A->lpVtbl->Unacquire(g_DirectInputDevice2A);
+        g_DirectInputDevice2A->lpVtbl->Release(g_DirectInputDevice2A);
+        g_DirectInputDevice2A = 0;
+        result = 0;
+      }
+    }
+  }
+  return result;
+}
+// 10B4E1D0: using guessed type int g_ReadJoystick;
+// 10B4E1E0: using guessed type int dword_10B4E1E0;
+// 118ABDBC: using guessed type int dword_118ABDBC;
+// 118ABE00: using guessed type int dword_118ABE00;
