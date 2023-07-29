@@ -1,5 +1,5 @@
 //----- (100073C0) --------------------------------------------------------
-double __cdecl sub_100073C0(char a1)
+double __cdecl mult_1_8(char a1)
 {
   return (double)a1 * 0.125;
 }

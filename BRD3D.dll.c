@@ -1670,6 +1670,8 @@ int __cdecl sub_1007F3C0(int a1, int a2);
 // void __cdecl __noreturn _amsg_exit(int a1);
 // int __cdecl _flsbuf(int Ch, FILE *File);
 // int __cdecl _output(FILE *File, int, int); idb
+// int __cdecl write_char(int, FILE *File, int); idb
+// int __cdecl write_multi_char(int, int, FILE *File, int); idb
 // int _mtinit(void); weak
 // int _mtterm(void); weak
 // int _getptd(void); weak
@@ -1753,7 +1755,8 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // int __cdecl __getlocaleinfo(UINT CodePage, LCID Locale, LCTYPE LCType, int); idb
 // char *__cdecl _itoa(int Value, char *Buffer, int Radix);
 // int __cdecl _strcmpi(const char *String1, const char *String2);
-// _DWORD __cdecl __multtenpow12(_DWORD, _DWORD, _DWORD); weak
+// _DWORD __cdecl __ld12mul(_DWORD, _DWORD); weak
+// void __cdecl __multtenpow12(_WORD *a1, int a2, int a3);
 // void __stdcall RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);
 // LSTATUS __stdcall RegCloseKey(HKEY hKey);
 // LSTATUS __stdcall RegQueryValueExA(HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData);
@@ -10702,19 +10705,19 @@ double __cdecl sub_10007340(int a1)
 }
 
 //----- (10007380) --------------------------------------------------------
-double __cdecl sub_10007380(__int16 a1)
+double __cdecl mult_1_128(__int16 a1)
 {
   return (double)a1 * 0.0078125;
 }
 
 //----- (100073A0) --------------------------------------------------------
-double __cdecl sub_100073A0(__int16 a1)
+double __cdecl mult_1_256(__int16 a1)
 {
   return (double)a1 * 0.00390625;
 }
 
 //----- (100073C0) --------------------------------------------------------
-double __cdecl sub_100073C0(char a1)
+double __cdecl mult_1_8(char a1)
 {
   return (double)a1 * 0.125;
 }
