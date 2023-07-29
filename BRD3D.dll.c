@@ -104,7 +104,7 @@ BOOL np_sub_10005BE0();
 int __cdecl sub_10005CF0(int a1);
 int sub_10005D30();
 int sub_10005D40();
-double sub_10005D90(void); // weak
+int sub_10005D90();
 int __cdecl sub_10005DE0(int a1, _BYTE *a2, _BYTE *a3, _BYTE *a4);
 int __cdecl sub_10005E40(int a1);
 char *__cdecl sub_10005E70(int a1);
@@ -559,10 +559,10 @@ char (*sub_1002C3C0())[8];
 char (*sub_1002C410())[8];
 int __cdecl sub_1002C430(int); // weak
 int sub_1002C4A0();
-double sub_1002C4D0(void); // weak
+unsigned int sub_1002C4D0();
 // int __usercall sub_1002C500@<eax>(double a1@<st0>);
 int __cdecl sub_1002F130(int a1);
-double __cdecl sub_1002F230(_DWORD); // weak
+int __cdecl sub_1002F230(int a1);
 int sub_1002F2A0();
 int sub_1002F320();
 int sub_1002F460();
@@ -1266,7 +1266,7 @@ char *__cdecl sub_10067940(int a1);
 void **__cdecl sub_10067960(int a1);
 char *sub_10067980();
 void **sub_100679A0();
-double __thiscall sub_100679C0(_DWORD); // weak
+char *__thiscall sub_100679C0(_DWORD *this);
 double __cdecl sub_10067AE0(int a1, int a2, float a3, int a4);
 __int64 __cdecl sub_10067BC0(float *a1, float *a2, float *a3, float *a4, _DWORD *a5, int a6);
 int __cdecl sub_10067D40(int a1);
@@ -1496,7 +1496,7 @@ HANDLE sub_10074F20();
 BOOL sub_10074F40();
 BOOL __cdecl sub_10074F70(int a1, int a2);
 BOOL sub_10074FC0();
-double getTicks(void); // weak
+DWORD getTicks();
 int sub_100750F0();
 unsigned int sub_10075100();
 int sub_10075150();
@@ -10650,7 +10650,7 @@ double __cdecl sub_10007250(char a1)
 }
 
 //----- (10007280) --------------------------------------------------------
-double __cdecl sub_10007280(__int16 a1)
+double __cdecl mult_neg_1_32_32_32(__int16 a1)
 {
   return (double)a1 * -0.000030517578;
 }
@@ -41722,7 +41722,6 @@ int __cdecl sub_1002F230(int a1)
   }
   return result;
 }
-// 10072580: using guessed type _DWORD __cdecl sub_10072580(_DWORD);
 // 100B36F8: using guessed type int dword_100B36F8;
 // 100B36FC: using guessed type int dword_100B36FC;
 // 10ACD4F8: using guessed type int dword_10ACD4F8;
