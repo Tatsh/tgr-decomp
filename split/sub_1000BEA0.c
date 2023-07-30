@@ -8,7 +8,7 @@ void __cdecl sub_1000BEA0(int a1, int *a2)
   if ( (unsigned int)*a2 > 0x21 )
   {
     if ( v2 == 263 )
-      sub_10003580(a1, a2[3], a2[4], a2[2]);
+      np_sub_10003580(a1, a2[3], a2[4], a2[2]);
   }
   else if ( *a2 != 33 )
   {

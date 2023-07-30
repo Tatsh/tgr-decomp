@@ -17,7 +17,7 @@ void __stdcall __noreturn sub_10071680(LPVOID lpThreadParameter)
       sub_10071870();
       sub_10071B80();
       sub_10071C10();
-      sub_10072170(&dwBytes);
+      sub_10072170(&unk);
       dword_11826B48 += 1000;
     }
   }

@@ -28,7 +28,7 @@ LABEL_7:
   }
 LABEL_8:
   dword_100AC658 = v0;
-  if ( dwBytes )
+  if ( unk )
   {
     _itoa(v0, Buffer, 10);
     v1 = getCaptionString(0xB9u);

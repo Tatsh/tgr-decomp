@@ -10,7 +10,7 @@ int sub_10045A00()
   v1 = _getdrive();
   sub_1007F3C0(Path, 260);
   v2 = 3;
-  while ( _chdrive(v2) || GetDriveTypeA(0) != 5 || _chdir(::Path) || !sub_1003E100(v2) )
+  while ( _chdrive(v2) || GetDriveTypeA(0) != 5 || _chdir(kBackslash) || !sub_1003E100(v2) )
   {
     if ( ++v2 > 26 )
       goto LABEL_9;

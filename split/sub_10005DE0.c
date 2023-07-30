@@ -3,7 +3,7 @@ int __cdecl sub_10005DE0(int a1, _BYTE *a2, _BYTE *a3, _BYTE *a4)
 {
   int v4; // edi
 
-  WaitForSingleObject(*(&dword_10221328 + 606 * a1), 0xFFFFFFFF);
+  WaitForSingleObject(*(&dword_10221328 + 606 * a1), INFINITE);
   v4 = dword_10221358[606 * a1];
   *a2 = byte_1022135C[2424 * a1];
   *a3 = byte_1022135D[2424 * a1];

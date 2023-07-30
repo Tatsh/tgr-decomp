@@ -28,7 +28,7 @@ int __cdecl sub_10004C60(void *a1)
   sub_100048D0((int)v6);
   sub_10073D60(v6, dword_10094294 | 0x40);
   sub_100061A0((int)v6, (float *)a1);
-  v3 = sub_10004DD0(&dwBytes, (int)v6);
+  v3 = sub_10004DD0(&unk, (int)v6);
   v7 = -1;
   if ( v3 == -1 )
   {

@@ -15,8 +15,8 @@ int __cdecl sub_1003CB10(int a1, int a2, int a3, int a4)
     v5 += 3;
   }
   while ( (int)v5 < (int)flt_10AA25A0 );
-  if ( dwBytes )
-    v4 = (*(int (__stdcall **)(SIZE_T, int, int, int, int))(*(_DWORD *)dwBytes + 48))(dwBytes, a1, a2, a3, a4);
+  if ( unk )
+    v4 = (*(int (__stdcall **)(SIZE_T, int, int, int, int))(*(_DWORD *)unk + 48))(unk, a1, a2, a3, a4);
   sub_1003CA70();
   v6 = sub_100586D0(*(_DWORD *)(dword_10A9D008 + 8));
   sub_1003D950(dword_10A9D008, v6);

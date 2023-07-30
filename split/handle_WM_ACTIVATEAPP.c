@@ -22,7 +22,7 @@ LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam)
         && (v3 = (void *)dword_100BD3E0, dword_10ACEE50 < dword_100BD3E0) )
       {
         atomic_sub_10004BE0();
-        sub_10004FC0();
+        np_sub_10004FC0();
       }
       else
       {

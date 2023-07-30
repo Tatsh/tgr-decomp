@@ -21,7 +21,7 @@ void __cdecl sub_1000BAF0(SIZE_T *a1, int a2, int a3, int a4)
       if ( a1[3] )
         sub_100360F0((int)a1, a2, a3, (void *)a4);
       else
-        sub_10003580((int)a1, a2, a3, a4);
+        np_sub_10003580((int)a1, a2, a3, a4);
     }
   }
   else

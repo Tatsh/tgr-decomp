@@ -63,7 +63,7 @@ LABEL_18:
   }
 LABEL_19:
   g_chosenCar = dword_100AC420[v2];
-  if ( dwBytes )
+  if ( unk )
   {
     if ( v2 > 15 )
       v2 -= 16;

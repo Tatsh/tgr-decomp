@@ -38,8 +38,8 @@ LABEL_3:
     if ( !(dword_10094298 % 4) )
       goto LABEL_3;
     v2 = sub_10004E50(a1, flt_10220CF0);
-    sub_100053F0();
-    sub_10004FC0();
+    np_sub_100053F0();
+    np_sub_10004FC0();
     result = v2;
   }
   else

@@ -33,7 +33,7 @@ void __cdecl readSettings(char *Str)
   char v30[7]; // [esp+25h] [ebp-EFh] BYREF
   char v31[232]; // [esp+2Ch] [ebp-E8h] BYREF
 
-  strcpy(bossRallyIniPath, (const char *)Data);
+  strcpy(bossRallyIniPath, g_InstallPath);
   strcat(bossRallyIniPath, aBossrallyIni);
   if ( CHK_FileExists(bossRallyIniPath) )
   {
@@ -66,16 +66,16 @@ void __cdecl readSettings(char *Str)
         switch ( g_ReadJoystick )
         {
           case 1:
-            dword_10B4E1D4 = (int)&unk_10B4DFD8;
+            dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
             break;
           case 2:
-            dword_10B4E1D4 = (int)&unk_10B4E080;
+            dword_10B4E1D4 = (WORD *)&unk_10B4E080;
             break;
           case 3:
-            dword_10B4E1D4 = (int)&unk_10B4E128;
+            dword_10B4E1D4 = (WORD *)&unk_10B4E128;
             break;
           default:
-            dword_10B4E1D4 = (int)g_Config;
+            dword_10B4E1D4 = g_Config;
             break;
         }
       }
@@ -196,16 +196,16 @@ void __cdecl readSettings(char *Str)
       switch ( g_ReadJoystick )
       {
         case 1:
-          dword_10B4E1D4 = (int)&unk_10B4DFD8;
+          dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
           break;
         case 2:
-          dword_10B4E1D4 = (int)&unk_10B4E080;
+          dword_10B4E1D4 = (WORD *)&unk_10B4E080;
           break;
         case 3:
-          dword_10B4E1D4 = (int)&unk_10B4E128;
+          dword_10B4E1D4 = (WORD *)&unk_10B4E128;
           break;
         default:
-          dword_10B4E1D4 = (int)g_Config;
+          dword_10B4E1D4 = g_Config;
           break;
       }
     }
@@ -260,5 +260,4 @@ void __cdecl readSettings(char *Str)
 // 104C5168: using guessed type int g_D3Dclearzbuffer;
 // 10575420: using guessed type int g_D3dalwayssquar;
 // 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
 // 118ABDC4: using guessed type int g_Runbenchmark;

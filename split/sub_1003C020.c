@@ -13,20 +13,20 @@ HANDLE sub_1003C020()
   result = (HANDLE)sub_1003D480(&v1, &v2);
   if ( !v1 )
     goto LABEL_13;
-  result = (HANDLE)sub_1003C520((LPVOID *)&dwBytes);
+  result = (HANDLE)sub_1003C520((LPVOID *)&unk);
   ++dword_10A9D004;
   if ( (int)result < 0 )
     goto LABEL_13;
-  if ( !dwBytes )
+  if ( !unk )
     goto LABEL_13;
-  result = (HANDLE)(*(int (__stdcall **)(SIZE_T, int, _DWORD))(*(_DWORD *)dwBytes + 152))(dwBytes, v1, 0);
+  result = (HANDLE)(*(int (__stdcall **)(SIZE_T, int, _DWORD))(*(_DWORD *)unk + 152))(unk, v1, 0);
   if ( (int)result < 0 )
     goto LABEL_13;
   if ( dword_10AA287C != 2 && dword_10AA287C != 3 )
   {
     if ( dword_10AA29D4 )
     {
-      result = (HANDLE)sub_1003CC70(dwBytes);
+      result = (HANDLE)sub_1003CC70(unk);
       if ( (int)result < 0 )
         goto LABEL_13;
     }

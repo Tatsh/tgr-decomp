@@ -19,7 +19,7 @@ int sub_1003C550()
     (*(void (__stdcall **)(_DWORD))(**(_DWORD **)dword_10A9D008 + 8))(*(_DWORD *)dword_10A9D008);
     *(_DWORD *)dword_10A9D008 = 0;
   }
-  dwBytes = 0;
+  unk = 0;
   --dword_10A9D004;
   return 0;
 }

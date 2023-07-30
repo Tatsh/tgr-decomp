@@ -8,7 +8,7 @@ int __cdecl RallyMain(int a1, int a2, char *Str)
     readInstallDirectory();
     loadBrstringDll();
     readSettings(Str);
-    strcpy(g_bossRallyCfgPath, (const char *)Data);
+    strcpy(g_bossRallyCfgPath, g_InstallPath);
     strcat(g_bossRallyCfgPath, aBossrallyCfg);
     bossRallyCfgSomething(g_Config, g_bossRallyCfgPath);
     if ( sub_100796B0() )

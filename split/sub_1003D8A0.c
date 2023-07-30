@@ -9,21 +9,17 @@ int __cdecl sub_1003D8A0(int a1, int a2)
   HGLOBAL v7; // eax
   SIZE_T dwBytes; // [esp+20h] [ebp-4h] BYREF
 
-  v2 = *(_DWORD *)::dwBytes;
+  v2 = *(_DWORD *)unk;
   v3 = 0;
   dwBytes = 0;
-  v4 = (*(int (__stdcall **)(SIZE_T, _DWORD, _DWORD, SIZE_T *))(v2 + 72))(::dwBytes, 0, 0, &dwBytes);
+  v4 = (*(int (__stdcall **)(SIZE_T, _DWORD, _DWORD, SIZE_T *))(v2 + 72))(unk, 0, 0, &dwBytes);
   if ( v4 == -2005467106 )
   {
     v5 = GlobalAlloc(0x42u, dwBytes);
     v3 = GlobalLock(v5);
     if ( v3 )
     {
-      v4 = (*(int (__stdcall **)(SIZE_T, _DWORD, const void *, SIZE_T *))(*(_DWORD *)::dwBytes + 72))(
-             ::dwBytes,
-             0,
-             v3,
-             &dwBytes);
+      v4 = (*(int (__stdcall **)(SIZE_T, _DWORD, const void *, SIZE_T *))(*(_DWORD *)unk + 72))(unk, 0, v3, &dwBytes);
       if ( v4 >= 0 )
         v4 = (*(int (__stdcall **)(int, int (__stdcall *)(int, int, LPCSTR, int), const void *, SIZE_T, int))(*(_DWORD *)a2 + 20))(
                a2,

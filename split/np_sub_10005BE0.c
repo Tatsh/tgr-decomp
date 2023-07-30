@@ -6,51 +6,51 @@ BOOL np_sub_10005BE0()
 
   if ( g_NetworkPlay > 1 )
     sub_10072270();
-  v0 = sub_1000C510((HANDLE *)&dwBytes) == 0;
-  if ( hMutex_8 )
+  v0 = sub_1000C510((HANDLE *)&unk) == 0;
+  if ( g_hMutex_8 )
   {
-    CloseHandle(hMutex_8);
-    hMutex_8 = 0;
+    CloseHandle(g_hMutex_8);
+    g_hMutex_8 = 0;
   }
-  if ( hMutex_7 )
+  if ( g_hMutex_7 )
   {
-    CloseHandle(hMutex_7);
-    hMutex_7 = 0;
+    CloseHandle(g_hMutex_7);
+    g_hMutex_7 = 0;
   }
-  if ( hMutex_5 )
+  if ( g_hMutex_5 )
   {
-    CloseHandle(hMutex_5);
-    hMutex_5 = 0;
+    CloseHandle(g_hMutex_5);
+    g_hMutex_5 = 0;
   }
-  if ( hMutex_6 )
+  if ( g_hMutex_6 )
   {
-    CloseHandle(hMutex_6);
-    hMutex_6 = 0;
+    CloseHandle(g_hMutex_6);
+    g_hMutex_6 = 0;
   }
-  if ( hMutex_4 )
+  if ( g_hMutex_4 )
   {
-    CloseHandle(hMutex_4);
-    hMutex_4 = 0;
+    CloseHandle(g_hMutex_4);
+    g_hMutex_4 = 0;
   }
   if ( hMutex_3 )
   {
     CloseHandle(hMutex_3);
     hMutex_3 = 0;
   }
-  if ( hMutex_1 )
+  if ( g_hMutex_1 )
   {
-    CloseHandle(hMutex_1);
-    hMutex_1 = 0;
+    CloseHandle(g_hMutex_1);
+    g_hMutex_1 = 0;
   }
-  if ( hMutex_2 )
+  if ( g_hMutex_2 )
   {
-    CloseHandle(hMutex_2);
-    hMutex_2 = 0;
+    CloseHandle(g_hMutex_2);
+    g_hMutex_2 = 0;
   }
-  if ( hMutex_0 )
+  if ( g_hMutex_0 )
   {
-    CloseHandle(hMutex_0);
-    hMutex_0 = 0;
+    CloseHandle(g_hMutex_0);
+    g_hMutex_0 = 0;
   }
   if ( hMutex )
   {

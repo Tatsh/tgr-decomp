@@ -63,9 +63,9 @@ int __cdecl sub_10043810(LPCVOID pMem)
     {
       v4 = 0;
       pMem = 0;
-      if ( dwBytes )
+      if ( unk )
       {
-        sub_1003D0B0(dwBytes, (LPDWORD)&pMem);
+        sub_1003D0B0(unk, (LPDWORD)&pMem);
         v4 = pMem;
       }
       if ( v4 )

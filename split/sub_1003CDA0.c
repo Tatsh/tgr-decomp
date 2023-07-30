@@ -10,16 +10,16 @@ int sub_1003CDA0()
   LPCVOID pMem; // [esp+Ch] [ebp-4h] BYREF
 
   pMem = 0;
-  if ( !dwBytes )
+  if ( !unk )
     return -2005467006;
-  v1 = sub_1003D0B0(dwBytes, (LPDWORD)&pMem);
+  v1 = sub_1003D0B0(unk, (LPDWORD)&pMem);
   if ( v1 >= 0
     && (*((_DWORD *)pMem + 16) = g_chosenTrack,
         *((_DWORD *)pMem + 17) = g_ChosenWeather,
         *((_DWORD *)pMem + 18) = dword_10AA2A18,
         *((_DWORD *)pMem + 19) = dword_100AC658,
         sub_10044540(),
-        v1 = (*(int (__stdcall **)(SIZE_T, LPCVOID, _DWORD))(*(_DWORD *)dwBytes + 124))(dwBytes, pMem, 0),
+        v1 = (*(int (__stdcall **)(SIZE_T, LPCVOID, _DWORD))(*(_DWORD *)unk + 124))(unk, pMem, 0),
         v1 >= 0) )
   {
     v4 = GlobalHandle(pMem);

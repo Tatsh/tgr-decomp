@@ -15,10 +15,10 @@ int sub_1003CE80()
   char v11[80]; // [esp+Ch] [ebp-50h] BYREF
 
   pMem = 0;
-  if ( !dwBytes )
+  if ( !unk )
     return -2005467006;
   memset(v11, 0, sizeof(v11));
-  v1 = sub_1003D0B0(dwBytes, (LPDWORD)&pMem);
+  v1 = sub_1003D0B0(unk, (LPDWORD)&pMem);
   if ( v1 >= 0 )
   {
     dword_100AC648 = *((_DWORD *)pMem + 16);

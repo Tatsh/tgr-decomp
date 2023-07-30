@@ -12,15 +12,15 @@ int __thiscall sub_100441A0(void *this)
   {
     v1 = 0;
     v3 = 0;
-    if ( dwBytes )
+    if ( unk )
     {
-      sub_1003D0B0(dwBytes, (LPDWORD)&v3);
+      sub_1003D0B0(unk, (LPDWORD)&v3);
       v1 = v3;
     }
     if ( v1 )
     {
       *(_DWORD *)(v1 + 4) &= 0xFFFFFFDF;
-      (*(void (__stdcall **)(SIZE_T, int, _DWORD))(*(_DWORD *)dwBytes + 124))(dwBytes, v3, 0);
+      (*(void (__stdcall **)(SIZE_T, int, _DWORD))(*(_DWORD *)unk + 124))(unk, v3, 0);
     }
   }
   sub_10043BF0();

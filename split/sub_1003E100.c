@@ -7,7 +7,7 @@ BOOL __cdecl sub_1003E100(int Drive)
   sprintf(Buffer, "%C:\\", Drive + 64);
   return !_chdrive(Drive)
       && GetDriveTypeA(0) == 5
-      && !_chdir(Path)
+      && !_chdir(kBackslash)
       && GetVolumeInformationA(Buffer, VolumeNameBuffer, 260u, 0, 0, 0, 0, 0)
       && !strcmp(VolumeNameBuffer, WindowName);
 }

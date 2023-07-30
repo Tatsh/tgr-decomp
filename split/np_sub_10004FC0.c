@@ -1,12 +1,12 @@
 //----- (10004FC0) --------------------------------------------------------
-int sub_10004FC0()
+int np_sub_10004FC0()
 {
   int v0; // eax
   int v1; // esi
   int result; // eax
   char v3; // al
 
-  WaitForSingleObject(hMutex_5, 0xFFFFFFFF);
+  WaitForSingleObject(g_hMutex_5, INFINITE);
   v0 = dword_1022AAF4;
   if ( dword_1022AAF4 )
   {
@@ -20,7 +20,7 @@ int sub_10004FC0()
     }
   }
   v1 = v0;
-  result = ReleaseMutex(hMutex_5);
+  result = ReleaseMutex(g_hMutex_5);
   if ( v1 )
   {
     result = g_NetworkPlay;
@@ -37,7 +37,7 @@ int sub_10004FC0()
           {
             v3 = atomic_sub_10004A10(dword_10094294);
             result = sub_10004760(
-                       &dwBytes,
+                       &unk,
                        dword_10094294,
                        g_chosenCar,
                        byte_10AD0854[0],

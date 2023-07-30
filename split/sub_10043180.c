@@ -17,7 +17,7 @@ int sub_10043180()
   }
   v0 = dword_100AC4C0[dword_10AA2A00];
   g_ChosenWeather = v0;
-  if ( dwBytes )
+  if ( unk )
   {
     v3 = getCaptionString(dword_100AC3B0[v0]);
     v1 = getCaptionString(0xBAu);

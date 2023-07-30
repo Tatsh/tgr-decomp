@@ -23,13 +23,13 @@ int sub_1003BD80()
   }
   while ( (int)v0 < (int)&unk_10A9CECC );
   v1 = GetModuleHandleA(0);
-  if ( sub_1000C5D0((int)v1, &dwBytes) < 0 )
+  if ( sub_1000C5D0((int)v1, &unk) < 0 )
     return 0;
-  v3 = SetupDirectPlayPlayer((unk1 *)&dwBytes);
+  v3 = SetupDirectPlayPlayer((unk1 *)&unk);
   if ( v3 == -2005466066 )
   {
-    dwBytes = 0;
-    v4 = sub_1003C520((LPVOID *)&dwBytes);
+    unk = 0;
+    v4 = sub_1003C520((LPVOID *)&unk);
     errno = v4;
     if ( v4 < 0 )
     {
@@ -60,19 +60,19 @@ int sub_1003BD80()
     }
     dword_10A9D000 = 1;
   }
-  dword_10A9D008 = (int)&dwBytes;
+  dword_10A9D008 = (int)&unk;
   if ( dword_10A9D000 )
   {
     dword_10AA2898 = 0;
-    if ( dword_10AA29D4 && sub_1003CC70(dwBytes) < 0 )
+    if ( dword_10AA29D4 && sub_1003CC70(unk) < 0 )
       return 0;
     uIDEvent = SetTimer(g_HWND, 1u, 0x3E8u, 0);
     dword_10A9CFFC = 1;
   }
   else
   {
-    (*(void (__stdcall **)(SIZE_T, int *, int (__stdcall *)(IID *, int, SIZE_T, int, int, int), HWND, _DWORD))(*(_DWORD *)dwBytes + 140))(
-      dwBytes,
+    (*(void (__stdcall **)(SIZE_T, int *, int (__stdcall *)(IID *, int, SIZE_T, int, int, int), HWND, _DWORD))(*(_DWORD *)unk + 140))(
+      unk,
       &dword_1008F538,
       sub_1003C430,
       g_HWND,

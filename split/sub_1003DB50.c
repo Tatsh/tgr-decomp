@@ -11,7 +11,7 @@ int __cdecl sub_1003DB50(_DWORD *a1, int a2, int a3)
   v5[0] = 1610612744;
   v5[2] = a3;
   if ( v3 )
-    sub_10003580((int)a1, (int)v5, 12, a1[2]);
+    np_sub_10003580((int)a1, (int)v5, 12, a1[2]);
   return sub_1000C4D0(*a1, a1[2], 0, 1, v5, 12);
 }
 // 1000C4D0: using guessed type _DWORD __cdecl sub_1000C4D0(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);

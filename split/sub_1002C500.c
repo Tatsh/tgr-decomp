@@ -1630,7 +1630,7 @@ LABEL_562:
           case 0:
             if ( g_NetworkPlay && g_usingGameMode4 )
             {
-              sub_10004C20();
+              atomic_sub_10004C20();
             }
             else
             {
@@ -1760,7 +1760,7 @@ LABEL_450:
       {
         if ( g_NetworkPlay && g_usingGameMode4 )
         {
-          sub_10004C20();
+          atomic_sub_10004C20();
         }
         else
         {
@@ -2132,7 +2132,7 @@ LABEL_533:
 // 106909E8: using guessed type int dword_106909E8;
 // 106909EC: using guessed type int dword_106909EC;
 // 106909F0: using guessed type int dword_106909F0;
-// 106909F4: using guessed type int dword_106909F4;
+// 106909F4: using guessed type int g_needToPlayIntro2;
 // 106909F8: using guessed type int dword_106909F8;
 // 106909FC: using guessed type int dword_106909FC;
 // 106C1638: using guessed type int dword_106C1638;

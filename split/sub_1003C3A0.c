@@ -7,7 +7,7 @@ int __stdcall sub_1003C3A0(int a1, int a2, int a3, LPCVOID pMem)
   if ( a2 == 275 )
   {
     if ( dword_10AA29D4 )
-      sub_1003CC70(dwBytes);
+      sub_1003CC70(unk);
     if ( !dword_10AA2884 )
       sub_1003CE80();
     return 0;

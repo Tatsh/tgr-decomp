@@ -1,5 +1,5 @@
 //----- (10004A90) --------------------------------------------------------
-BOOL sub_10004A90()
+BOOL np_sub_10004A90()
 {
   BOOL v0; // ebp
   DWORD v1; // esi
@@ -9,7 +9,7 @@ BOOL sub_10004A90()
   do
   {
     v0 = sub_10004590(
-           (int)&dwBytes,
+           (int)&unk,
            dword_10094294,
            byte_10AD0854[0],
            byte_10AD0855[0],
@@ -22,7 +22,7 @@ BOOL sub_10004A90()
       dword_10094294 = 0;
       sub_100049C0();
       sub_10004590(
-        (int)&dwBytes,
+        (int)&unk,
         dword_10094294,
         byte_10AD0854[0],
         byte_10AD0855[0],
@@ -30,7 +30,7 @@ BOOL sub_10004A90()
         (int)dplay4aShortName,
         16);
       sub_10004760(
-        &dwBytes,
+        &unk,
         dword_10094294,
         g_chosenCar,
         byte_10AD0854[0],

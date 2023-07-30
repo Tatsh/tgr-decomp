@@ -1,7 +1,7 @@
 //----- (10065D50) --------------------------------------------------------
-int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
+int __cdecl MakeEnemyCarColorPanels_0(size_t size)
 {
-  size_t v1; // ebp
+  size_t size_1; // ebp
   _DWORD *v2; // edi
   int v3; // ebx
   int v4; // edx
@@ -25,14 +25,14 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
   __int16 v22; // [esp+14h] [ebp-8h]
   int v23; // [esp+18h] [ebp-4h]
 
-  v1 = Size;
-  v2 = &dword_10ACDEA8[2778 * dword_100B4050 + 2778 * *(_DWORD *)(Size + 116)];
+  size_1 = size;
+  v2 = &dword_10ACDEA8[2778 * dword_100B4050 + 2778 * *(_DWORD *)(size + 116)];
   v21 = v2;
-  sub_10061460(*(unsigned __int8 *)(Size + 92), *(unsigned __int8 *)(Size + 93), *(unsigned __int8 *)(Size + 94));
-  v3 = *(unsigned __int8 *)(v1 + 93) >> 3;
-  v4 = *(unsigned __int8 *)(v1 + 92) >> 3;
+  sub_10061460(*(unsigned __int8 *)(size + 92), *(unsigned __int8 *)(size + 93), *(unsigned __int8 *)(size + 94));
+  v3 = *(unsigned __int8 *)(size_1 + 93) >> 3;
+  v4 = *(unsigned __int8 *)(size_1 + 92) >> 3;
   v22 = v3;
-  v23 = *(unsigned __int8 *)(v1 + 94) >> 3;
+  v23 = *(unsigned __int8 *)(size_1 + 94) >> 3;
   for ( i = 0; i < 12; ++i )
   {
     v6 = *(_DWORD *)(v2[2673] + 32788) + 36 * *(unsigned __int8 *)(i + v2[2673] + 33040);
@@ -50,13 +50,13 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
     }
   }
   v10 = *(_DWORD *)(v2[2673] + 124);
-  *(_DWORD *)(v1 + 124) = v10 + 4;
+  *(_DWORD *)(size_1 + 124) = v10 + 4;
   v11 = 0;
-  for ( *(_DWORD *)(v1 + 120) = CHK_AllocateMemory(4 * (v10 + 4), aMakeenemycarco); v11 < v10; v2 = v21 )
+  for ( *(_DWORD *)(size_1 + 120) = CHK_AllocateMemory(4 * (v10 + 4), aMakeenemycarco); v11 < v10; v2 = v21 )
   {
-    v23 = dword_118AA0BC(*(_DWORD *)(v2[2673] + 4 * v11 + 4), &Size);
-    *(_DWORD *)(*(_DWORD *)(v1 + 120) + 4 * v11) = CHK_AllocateMemory(Size, aMakeenemycarco_0);
-    qmemcpy(*(void **)(*(_DWORD *)(v1 + 120) + 4 * v11++), (const void *)v23, Size);
+    v23 = dword_118AA0BC(*(_DWORD *)(v2[2673] + 4 * v11 + 4), &size);
+    *(_DWORD *)(*(_DWORD *)(size_1 + 120) + 4 * v11) = CHK_AllocateMemory(size, aMakeenemycarco_0);
+    qmemcpy(*(void **)(*(_DWORD *)(size_1 + 120) + 4 * v11++), (const void *)v23, size);
   }
   result = v2[2673];
   v13 = *(_WORD **)(*(_DWORD *)(result + 32788) + 36 * *(unsigned __int8 *)(result + 33051) + 4);
@@ -84,9 +84,9 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
       v13[7] = 16786;
       v13[11] = 27565;
       v13[6] = 12742;
-      v23 = dword_118AA0BC(*(_DWORD *)(v2[2673] + 132), &Size);
-      *(_DWORD *)(*(_DWORD *)(v1 + 120) + 4 * v10) = CHK_AllocateMemory(Size, aMakeenemycarco_1);
-      qmemcpy(*(void **)(*(_DWORD *)(v1 + 120) + 4 * v10), (const void *)v23, Size);
+      v23 = dword_118AA0BC(*(_DWORD *)(v2[2673] + 132), &size);
+      *(_DWORD *)(*(_DWORD *)(size_1 + 120) + 4 * v10) = CHK_AllocateMemory(size, aMakeenemycarco_1);
+      qmemcpy(*(void **)(*(_DWORD *)(size_1 + 120) + 4 * v10), (const void *)v23, size);
       v2 = v21;
     }
     if ( *(_DWORD *)(v2[2673] + 136) )
@@ -97,10 +97,10 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
       v13[6] = 12742;
       v13[9] = 1273;
       v13[8] = 1273;
-      dword_118AA0BC(*(_DWORD *)(v2[2673] + 136), &Size);
+      dword_118AA0BC(*(_DWORD *)(v2[2673] + 136), &size);
       v16 = 4 * v10 + 4;
-      *(_DWORD *)(*(_DWORD *)(v1 + 120) + v16) = CHK_AllocateMemory(Size, aMakeenemycarco_2);
-      qmemcpy(*(void **)(*(_DWORD *)(v1 + 120) + v16), (const void *)v23, Size);
+      *(_DWORD *)(*(_DWORD *)(size_1 + 120) + v16) = CHK_AllocateMemory(size, aMakeenemycarco_2);
+      qmemcpy(*(void **)(*(_DWORD *)(size_1 + 120) + v16), (const void *)v23, size);
       v2 = v21;
     }
     if ( *(_DWORD *)(v2[2673] + 140) )
@@ -113,10 +113,10 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
       v13[8] = v18;
       v13[11] = 14567;
       v13[6] = -257;
-      dword_118AA0BC(*(_DWORD *)(v2[2673] + 140), &Size);
+      dword_118AA0BC(*(_DWORD *)(v2[2673] + 140), &size);
       v19 = 4 * v10 + 8;
-      *(_DWORD *)(*(_DWORD *)(v1 + 120) + v19) = CHK_AllocateMemory(Size, aMakeenemycarco_3);
-      qmemcpy(*(void **)(*(_DWORD *)(v1 + 120) + v19), (const void *)v23, Size);
+      *(_DWORD *)(*(_DWORD *)(size_1 + 120) + v19) = CHK_AllocateMemory(size, aMakeenemycarco_3);
+      qmemcpy(*(void **)(*(_DWORD *)(size_1 + 120) + v19), (const void *)v23, size);
       v2 = v21;
     }
     result = v2[2673];
@@ -128,11 +128,11 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t Size)
       v13[6] = -257;
       v13[9] = 1273;
       v13[8] = 1273;
-      dword_118AA0BC(*(_DWORD *)(v2[2673] + 144), &Size);
+      dword_118AA0BC(*(_DWORD *)(v2[2673] + 144), &size);
       v20 = 4 * v10 + 12;
-      *(_DWORD *)(*(_DWORD *)(v1 + 120) + v20) = CHK_AllocateMemory(Size, aMakeenemycarco_4);
-      result = *(_DWORD *)(v1 + 120);
-      qmemcpy(*(void **)(result + v20), (const void *)v23, Size);
+      *(_DWORD *)(*(_DWORD *)(size_1 + 120) + v20) = CHK_AllocateMemory(size, aMakeenemycarco_4);
+      result = *(_DWORD *)(size_1 + 120);
+      qmemcpy(*(void **)(result + v20), (const void *)v23, size);
     }
   }
   return result;

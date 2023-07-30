@@ -30,7 +30,7 @@ int __cdecl sub_10072170(_DWORD *a1)
       {
         v5 = sub_10073F40(dword_11826BD0);
         v2 = sub_10073F50(dword_11826BD0);
-        sub_10003580((int)a1, v2, v5, 1);
+        np_sub_10003580((int)a1, v2, v5, 1);
       }
     }
     ReleaseMutex(*(&dword_11786828 + 603 * v1++));

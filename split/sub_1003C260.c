@@ -8,7 +8,7 @@ int sub_1003C260()
   CHAR Buffer[800]; // [esp+1Ch] [ebp-720h] BYREF
   char v5[1024]; // [esp+33Ch] [ebp-400h] BYREF
 
-  if ( !dwBytes )
+  if ( !unk )
     return 0;
   if ( dword_10AA29D8 && *(_WORD *)(dword_10AA29D4 + 123236) )
   {
@@ -20,13 +20,13 @@ int sub_1003C260()
       memset(Buffer, 0, sizeof(Buffer));
       pcbBuffer = 200;
       GetUserNameA(Buffer, &pcbBuffer);
-      v1 = sub_1003C740(dwBytes, (int)v3, (int)Buffer, dword_10A9D008);
+      v1 = sub_1003C740(unk, (int)v3, (int)Buffer, dword_10A9D008);
       if ( v1 == -2005465056 )
       {
         result = sub_10042AF0();
         if ( !result )
           return result;
-        v1 = sub_1003C740(dwBytes, (int)v3, (int)Buffer, dword_10A9D008);
+        v1 = sub_1003C740(unk, (int)v3, (int)Buffer, dword_10A9D008);
       }
       if ( v1 < 0 )
       {

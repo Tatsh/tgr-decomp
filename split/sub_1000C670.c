@@ -7,7 +7,7 @@ int sub_1000C670()
   LPCVOID pMem; // [esp+0h] [ebp-4h] BYREF
 
   pMem = 0;
-  if ( sub_1003D0B0(dwBytes, (int)&pMem) < 0 )
+  if ( sub_1003D0B0(unk, (int)&pMem) < 0 )
     return 0xFFFF;
   v1 = *((_DWORD *)pMem + 11);
   v2 = GlobalHandle(pMem);

@@ -18,7 +18,7 @@ int sub_10044600()
   }
   sub_10044540();
 LABEL_8:
-  if ( dwBytes )
+  if ( unk )
   {
     v2 = getCaptionString(dword_100AC3C8[dword_10AA2A18]);
     v0 = getCaptionString(0xBDu);

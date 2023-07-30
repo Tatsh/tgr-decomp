@@ -16,7 +16,7 @@ int sub_10043A00()
   LPCVOID pMem; // [esp+0h] [ebp-4h] BYREF
 
   pMem = 0;
-  sub_1003D0B0(dwBytes, (LPDWORD)&pMem);
+  sub_1003D0B0(unk, (LPDWORD)&pMem);
   if ( pMem )
   {
     if ( *((_DWORD *)pMem + 11) <= 1u )
@@ -50,7 +50,7 @@ LABEL_10:
         sub_1003D9F0((int *)dword_10A9D008);
         dword_10AA288C = 1;
         *((_DWORD *)pMem + 1) |= 0x20u;
-        (*(void (__stdcall **)(SIZE_T, LPCVOID, _DWORD))(*(_DWORD *)dwBytes + 124))(dwBytes, pMem, 0);
+        (*(void (__stdcall **)(SIZE_T, LPCVOID, _DWORD))(*(_DWORD *)unk + 124))(unk, pMem, 0);
       }
       else
       {

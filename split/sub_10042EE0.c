@@ -72,7 +72,7 @@ int sub_10042EE0()
 LABEL_19:
   v5 = dword_100AC4D8[v2];
   g_chosenTrack = v5;
-  if ( dwBytes )
+  if ( unk )
   {
     v8 = getCaptionString(dword_100AC308[v5]);
     v6 = getCaptionString(0xB8u);

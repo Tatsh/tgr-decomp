@@ -1,5 +1,5 @@
 //----- (10003580) --------------------------------------------------------
-void __cdecl sub_10003580(int a1, int a2, int a3, int a4)
+void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4)
 {
   int v4; // esi
   char v5; // bl
@@ -7,7 +7,7 @@ void __cdecl sub_10003580(int a1, int a2, int a3, int a4)
   int v7; // ebx
   int v8; // esi
   unsigned int v9; // edi
-  void (__stdcall *v10)(HANDLE, DWORD); // esi
+  DWORD (__stdcall *waitForSingleObjectRef)(HANDLE, DWORD); // esi
   int v11; // ebp
   float *v12; // esi
   int *v13; // edx
@@ -85,9 +85,9 @@ void __cdecl sub_10003580(int a1, int a2, int a3, int a4)
 
   sub_10073B60(v80, a2, a3);
   v84 = 0;
-  WaitForSingleObject(hMutex_7, 0xFFFFFFFF);
+  WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);
   v4 = dword_10220DD0;
-  ReleaseMutex(hMutex_7);
+  ReleaseMutex(g_hMutex_7);
   if ( v4 )
   {
     Concurrency::details::StructuredWorkStealingQueue<Concurrency::details::_UnrealizedChore,Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v80);
@@ -126,16 +126,16 @@ void __cdecl sub_10003580(int a1, int a2, int a3, int a4)
             }
             if ( v9 == 4 )
               dword_1022AEFC = sub_10073C10(v80);
-            v10 = (void (__stdcall *)(HANDLE, DWORD))WaitForSingleObject;
+            waitForSingleObjectRef = WaitForSingleObject;
             v11 = 606 * v7;
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), 0xFFFFFFFF);
+            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
             if ( v7 == dword_10094294 )
               goto LABEL_17;
             if ( dword_10221354[606 * v7] != v68 && v9 == 2 )
             {
-              WaitForSingleObject(hMutex_1, 0xFFFFFFFF);
+              WaitForSingleObject(g_hMutex_1, INFINITE);
               dword_10220D90[++dword_10220DD4] = v7;
-              ReleaseMutex(hMutex_1);
+              ReleaseMutex(g_hMutex_1);
               dword_10221330[606 * v7] = 0;
               v12 = &flt_10221380[v11];
               memset(&dword_10221334[v11], 0, 0x20u);
@@ -152,7 +152,7 @@ void __cdecl sub_10003580(int a1, int a2, int a3, int a4)
               }
               while ( v75 );
               v9 = v68 & 0x3F;
-              v10 = (void (__stdcall *)(HANDLE, DWORD))WaitForSingleObject;
+              waitForSingleObjectRef = WaitForSingleObject;
               dword_10221880[606 * v7] = 0;
               dword_10221884[606 * v7] = 0;
               dword_10221888[606 * v7] = -1;
@@ -166,17 +166,17 @@ void __cdecl sub_10003580(int a1, int a2, int a3, int a4)
 LABEL_17:
               if ( v9 == 3 )
               {
-                v10(hMutex_4, 0xFFFFFFFF);
+                waitForSingleObjectRef(g_hMutex_4, INFINITE);
                 dword_1022AAA8 = 0;
-                ReleaseMutex(hMutex_4);
+                ReleaseMutex(g_hMutex_4);
               }
               if ( v7 == dword_10094294 )
               {
                 if ( (v68 & 0x80u) != 0 )
                 {
-                  v10(hMutex_5, 0xFFFFFFFF);
+                  waitForSingleObjectRef(g_hMutex_5, INFINITE);
                   dword_1022AAF4 = 0;
-                  ReleaseMutex(hMutex_5);
+                  ReleaseMutex(g_hMutex_5);
                   dword_1022AF20 = 1;
                 }
                 if ( (v68 & 0x40) != 0 )
@@ -185,18 +185,18 @@ LABEL_17:
                     dword_1022AF20 = 0;
                   if ( dword_106909B4 )
                     dword_106909D8 = 1;
-                  v10(hMutex_6, 0xFFFFFFFF);
+                  waitForSingleObjectRef(g_hMutex_6, INFINITE);
                   dword_10221314 = 0;
-                  ReleaseMutex(hMutex_6);
+                  ReleaseMutex(g_hMutex_6);
                 }
                 if ( v7 == dword_10094294 && v9 == 4 )
                 {
-                  WaitForSingleObject(hMutex_8, 0xFFFFFFFF);
+                  WaitForSingleObject(g_hMutex_8, INFINITE);
                   v14 = sub_10003460() + 90;
                   dword_1022AF00 = 3 * (dword_1022AEFC / 0x64u) + dword_1022AEFC % 0x64u / 0x21;
                   if ( dword_1022AF00 > v14 )
                     dword_1022AF00 = v14;
-                  ReleaseMutex(hMutex_8);
+                  ReleaseMutex(g_hMutex_8);
                 }
               }
             }
@@ -215,7 +215,7 @@ LABEL_17:
           case 32:
             if ( a4 != 1 )
               goto LABEL_122;
-            WaitForSingleObject(hMutex_0, 0xFFFFFFFF);
+            WaitForSingleObject(g_hMutex_0, INFINITE);
             v15 = dword_102212D0;
             do
             {
@@ -225,11 +225,11 @@ LABEL_17:
               *(v15 - 2) = v16 & 0xF;
             }
             while ( (int)v15 < (int)&dword_10221310 );
-            ReleaseMutex(hMutex_0);
+            ReleaseMutex(g_hMutex_0);
             goto LABEL_73;
           case 64:
             v17 = 606 * v7;
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), 0xFFFFFFFF);
+            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
             if ( (dword_10221354[606 * v7] & 0x3Fu) < 2 )
             {
               sub_10006EC0((int)v83, v80);
@@ -320,7 +320,7 @@ LABEL_82:
                 goto LABEL_111;
               case 0x60000005:
                 v48 = sub_10073F50(v80);
-                WaitForSingleObject(hMutex, 0xFFFFFFFF);
+                WaitForSingleObject(hMutex, INFINITE);
                 switch ( *(_DWORD *)(v48 + 4) )
                 {
                   case 4:
@@ -363,8 +363,8 @@ LABEL_88:
                 }
                 if ( (atomic_sub_10004A10(v55) & 0x3F) == 0 )
                   goto LABEL_122;
-                WaitForSingleObject(hMutex_2, 0xFFFFFFFF);
-                v65 = hMutex_2;
+                WaitForSingleObject(g_hMutex_2, INFINITE);
+                v65 = g_hMutex_2;
                 dword_10221288[++dword_10221318] = v55;
                 ReleaseMutex(v65);
                 atomic_sub_10004A50(v53, 0);
@@ -413,7 +413,7 @@ LABEL_111:
             break;
           case 128:
             v23 = 606 * v7;
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), 0xFFFFFFFF);
+            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
             if ( (dword_10221354[606 * v7] & 0x3Fu) < 2 )
             {
               sub_100073E0(v82, v82, v80);
@@ -494,7 +494,7 @@ LABEL_111:
             v73 = getTicks();
             v38 = sub_10073C10(v80);
             v39 = (unsigned __int16)sub_10073BE0(v80);
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), 0xFFFFFFFF);
+            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
             dword_10221C98[606 * v7] = v38;
             dword_10221C9C[606 * v7] = v39;
             ReleaseMutex(*(&dword_10221328 + 606 * v7));
