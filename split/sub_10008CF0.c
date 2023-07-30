@@ -19,10 +19,6 @@ void __cdecl __noreturn sub_10008CF0(int a1)
     Sleep(1u);
   cleanUpAndExitWithCode(1);
 }
-// 10016990: using guessed type int sub_10016990(void);
-// 10019260: using guessed type int sub_10019260(void);
-// 10019270: using guessed type int sub_10019270(void);
-// 100192F0: using guessed type _DWORD __cdecl sub_100192F0(_DWORD);
 // 100A81C0: using guessed type int g_Width;
 // 106C0680: using guessed type int dword_106C0680;
 // 10B501D0: using guessed type int (__cdecl *dword_10B501D0)(_DWORD);

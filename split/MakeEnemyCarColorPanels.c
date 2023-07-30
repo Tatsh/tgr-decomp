@@ -22,7 +22,7 @@ size_t MakeEnemyCarColorPanels()
         dword_10B4E1D4 = (int)&unk_10B4E128;
         break;
       default:
-        dword_10B4E1D4 = (int)&g_Config;
+        dword_10B4E1D4 = (int)g_Config;
         break;
     }
   }

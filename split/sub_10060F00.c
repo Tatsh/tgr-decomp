@@ -1,50 +1,50 @@
 //----- (10060F00) --------------------------------------------------------
-_BYTE *__cdecl sub_10060F00(_BYTE *a1, int a2, int a3, _BYTE *a4, int a5)
+_BYTE *__cdecl sub_10060F00(_BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes)
 {
   _BYTE *result; // eax
-  int v6; // edi
-  char *v7; // ecx
-  int v8; // esi
-  char v9; // dl
-  char *v10; // ecx
-  char v11; // bl
-  _BYTE *v12; // eax
-  _BYTE *v13; // [esp+Ch] [ebp+8h]
-  char v14; // [esp+14h] [ebp+10h]
+  char *calc; // edi
+  char *calc_1; // ecx
+  LONG bmWidth_1; // esi
+  char calc_2; // dl
+  char *calc_3; // ecx
+  char calc_4; // bl
+  char *calc_5; // eax
+  LONG bmBitsa; // [esp+Ch] [ebp+8h]
+  char calc_1_1; // [esp+14h] [ebp+10h]
 
-  result = a4;
-  v6 = a5 * (_DWORD)(a4 - 1) + a2;
-  if ( a4 )
+  result = (_BYTE *)bmHeight;
+  calc = &bmBits[bmWidthBytes * (bmHeight - 1)];
+  if ( bmHeight )
   {
-    v13 = a4;
-    result = a1;
+    bmBitsa = bmHeight;
+    result = mem;
     do
     {
-      v7 = (char *)v6;
-      if ( a3 )
+      calc_1 = calc;
+      if ( bmWidth )
       {
-        v8 = a3;
+        bmWidth_1 = bmWidth;
         do
         {
-          v9 = *v7;
-          v14 = v7[1];
-          v10 = v7 + 2;
-          v11 = *v10;
-          v7 = v10 + 1;
-          *result = v11;
-          v12 = result + 1;
-          *v12++ = v14;
-          *v12++ = v9;
-          *v12 = -1;
-          result = v12 + 1;
-          --v8;
+          calc_2 = *calc_1;
+          calc_1_1 = calc_1[1];
+          calc_3 = calc_1 + 2;
+          calc_4 = *calc_3;
+          calc_1 = calc_3 + 1;
+          *result = calc_4;
+          calc_5 = result + 1;
+          *calc_5++ = calc_1_1;
+          *calc_5++ = calc_2;
+          *calc_5 = -1;
+          result = calc_5 + 1;
+          --bmWidth_1;
         }
-        while ( v8 );
+        while ( bmWidth_1 );
       }
-      v6 -= a5;
-      --v13;
+      calc -= bmWidthBytes;
+      --bmBitsa;
     }
-    while ( v13 );
+    while ( bmBitsa );
   }
   return result;
 }

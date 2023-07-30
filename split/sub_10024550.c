@@ -2,7 +2,7 @@
 int __cdecl sub_10024550(int a1)
 {
   int result; // eax
-  IDirect3DDevice2Vtbl *v2; // ecx
+  IDirect3DDevice2Vtbl *d3dDevice2LPVtbl; // ecx
   _DWORD *v3; // eax
   int v4; // eax
   int *v5; // ecx
@@ -20,7 +20,7 @@ int __cdecl sub_10024550(int a1)
     goto LABEL_6;
   for ( ; result == -2005532222; result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2) )
   {
-    while ( sub_1000B2C0((LONG)g_gsu0) == -2005532222 )
+    while ( sub_1000B2C0(g_gsu0) == -2005532222 )
       ;
   }
   if ( !result )
@@ -41,9 +41,9 @@ LABEL_6:
     dword_1027739C = 1;
     dword_10277370 = -1;
     sub_10024850();
-    v2 = g_D3DDevice2->lpVtbl;
+    d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
     dword_104C5178 = 8193;
-    v2->SetRenderState(g_D3DDevice2, 29, 0);
+    d3dDevice2LPVtbl->SetRenderState(g_D3DDevice2, 29, 0);
     g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 7, 1);
     g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 1, 0);
     g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 26, 1);
@@ -102,7 +102,7 @@ LABEL_6:
       goto LABEL_18;
     for ( ; result == -2005532222; result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2) )
     {
-      while ( sub_1000B2C0((LONG)g_gsu0) == -2005532222 )
+      while ( sub_1000B2C0(g_gsu0) == -2005532222 )
         ;
     }
     if ( !result )

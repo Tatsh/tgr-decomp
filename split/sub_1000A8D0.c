@@ -2,7 +2,7 @@
 HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this)
 {
   LPDIRECTDRAWSURFACE ddSurface; // edx
-  IDirectDrawSurfaceVtbl *v3; // eax
+  IDirectDrawSurfaceVtbl *ddSurfaceVtbl; // eax
   HRESULT hr; // eax
   HDC dc; // ebp
   unsigned int sizePalette; // eax
@@ -24,16 +24,16 @@ HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this)
   if ( !ddSurface )
     return -2005522669;
   memset(&surfaceDesc, 0, sizeof(surfaceDesc));
-  v3 = ddSurface->lpVtbl;
+  ddSurfaceVtbl = ddSurface->lpVtbl;
   surfaceDesc.dwSize = 108;
-  hr = v3->GetSurfaceDesc(ddSurface, &surfaceDesc);
+  hr = ddSurfaceVtbl->GetSurfaceDesc(ddSurface, &surfaceDesc);
   if ( hr >= 0 )
   {
-    hr = (HRESULT)sub_1001A950(&surfaceDesc.ddpfPixelFormat);
+    hr = sub_1001A950(&surfaceDesc.ddpfPixelFormat);
     if ( hr )
     {
       dc = GetDC(0);
-      sizePalette = GetDeviceCaps(dc, 104);     // SIZEPALETTE
+      sizePalette = GetDeviceCaps(dc, SIZEPALETTE);
       this->sizePalette = sizePalette;
       if ( sizePalette )
       {
@@ -53,19 +53,19 @@ HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this)
         qmemcpy(this->lPaletteEntry, this->tPaletteEntry, 4 * this->sizePalette);
       }
       ReleaseDC(0, dc);
-      if ( (surfaceDesc.ddpfPixelFormat.dwFlags & 0x800) != 0 )
+      if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED1) != 0 )
       {
         v9 = 256;
-        for ( i = 0; i < 2; this->lPaletteEntry[i - 1].peFlags = 1 )
+        for ( i = 0; i < 2; this->lPaletteEntry[i - 1].peFlags = PC_POLYGON )
           ++i;
       }
-      else if ( (surfaceDesc.ddpfPixelFormat.dwFlags & 0x1000) != 0 )
+      else if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED2) != 0 )
       {
-        for ( j = 0; j < 4; this->lPaletteEntry[j - 1].peFlags = 1 )
+        for ( j = 0; j < 4; this->lPaletteEntry[j - 1].peFlags = PC_POLYGON )
           ++j;
         v9 = 512;
       }
-      else if ( (surfaceDesc.ddpfPixelFormat.dwFlags & 8) != 0 )
+      else if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED4) != 0 )
       {
         this->lPaletteEntry->peFlags = 64;
         v12 = 1;
@@ -77,16 +77,16 @@ HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this)
       }
       else
       {
-        if ( (surfaceDesc.ddpfPixelFormat.dwFlags & 0x20) == 0 )
+        if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED8) == 0 )
         {
           palette = -2005522671;
 LABEL_34:
           resetPalette(this);
           return palette;
         }
-        for ( k = 0; k < 10; this->lPaletteEntry[k + 245].peFlags = 64 )
-          this->lPaletteEntry[k++].peFlags = 64;
-        for ( l = 10; l < 246; this->lPaletteEntry[l - 1].peFlags = 1 )
+        for ( k = 0; k < 10; this->lPaletteEntry[k + 245].peFlags = PC_WIDESTYLED )
+          this->lPaletteEntry[k++].peFlags = PC_WIDESTYLED;
+        for ( l = 10; l < 246; this->lPaletteEntry[l - 1].peFlags = PC_POLYGON )
           ++l;
         v9 = 4;
       }

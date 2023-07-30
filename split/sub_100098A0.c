@@ -1,10 +1,10 @@
 //----- (100098A0) --------------------------------------------------------
-char *__cdecl sub_100098A0(_WORD *a1, unsigned __int8 *a2, int a3, int a4)
+char *__cdecl sub_100098A0(_WORD *out_a1, unsigned __int8 *out_a2, int a3, int a4)
 {
-  DDPIXELFORMAT *v4; // edi
-  int v5; // ebx
-  int v6; // eax
-  unsigned __int8 v8; // dl
+  DDPIXELFORMAT *pixelFormat; // edi
+  int b_bitCount; // ebx
+  int alpha_bitCount; // eax
+  unsigned __int8 out_a2_i1; // dl
   unsigned __int8 *v9; // ebp
   unsigned __int8 v10; // dl
   int v11; // edx
@@ -18,65 +18,65 @@ char *__cdecl sub_100098A0(_WORD *a1, unsigned __int8 *a2, int a3, int a4)
   _WORD *v19; // ecx
   unsigned __int8 v21; // [esp+8h] [ebp-18h]
   unsigned int v22; // [esp+Ch] [ebp-14h]
-  int v23; // [esp+10h] [ebp-10h]
-  int v24; // [esp+14h] [ebp-Ch]
+  int r_bitCount; // [esp+10h] [ebp-10h]
+  int g_bitCount; // [esp+14h] [ebp-Ch]
   DWORD v25; // [esp+18h] [ebp-8h]
-  char *v26; // [esp+1Ch] [ebp-4h]
-  unsigned __int8 v27; // [esp+28h] [ebp+8h]
+  char *out_a1_1; // [esp+1Ch] [ebp-4h]
+  unsigned __int8 out_a2a; // [esp+28h] [ebp+8h]
   unsigned __int8 v28; // [esp+2Ch] [ebp+Ch]
   unsigned __int8 a1a; // [esp+30h] [ebp+10h]
 
-  v26 = (char *)a1;
-  v4 = GetDDPixelFormatPtr(a4);
-  v25 = v4->dwRGBBitCount >> 3;
-  v23 = sub_10009880(v4->dwRBitMask) - 8;
-  v24 = sub_10009880(v4->dwGBitMask) - 8;
-  v5 = sub_10009880(v4->dwBBitMask) - 8;
-  v6 = sub_10009880(v4->dwRGBAlphaBitMask) - 8;
+  out_a1_1 = (char *)out_a1;
+  pixelFormat = GetDDPixelFormatPtr(a4);
+  v25 = pixelFormat->dwRGBBitCount >> 3;
+  r_bitCount = CountBits(pixelFormat->dwRBitMask) - 8;
+  g_bitCount = CountBits(pixelFormat->dwGBitMask) - 8;
+  b_bitCount = CountBits(pixelFormat->dwBBitMask) - 8;
+  alpha_bitCount = CountBits(pixelFormat->dwRGBAlphaBitMask) - 8;
   if ( a3 > 0 )
   {
     v22 = (unsigned int)(a3 + 3) >> 2;
     while ( 1 )
     {
-      v8 = a2[1];
-      a1a = *a2;
-      v9 = a2 + 2;
-      v28 = v8;
+      out_a2_i1 = out_a2[1];
+      a1a = *out_a2;
+      v9 = out_a2 + 2;
+      v28 = out_a2_i1;
       v10 = v9[1];
-      v27 = *v9;
-      a2 = v9 + 2;
+      out_a2a = *v9;
+      out_a2 = v9 + 2;
       v21 = v10;
-      v11 = v23 < 0 ? a1a >> -(char)v23 : a1a << v23;
-      v12 = v4->dwRBitMask & v11;
-      v13 = v24 < 0 ? v28 >> -(char)v24 : v28 << v24;
-      v14 = v4->dwGBitMask & v13 | v12;
-      v15 = v5 < 0 ? v27 >> -(char)v5 : v27 << v5;
-      v16 = v4->dwBBitMask & v15 | v14;
-      v17 = v6 < 0 ? v21 >> -(char)v6 : v21 << v6;
-      v18 = v4->dwRGBAlphaBitMask & v17 | v16;
+      v11 = r_bitCount < 0 ? a1a >> -(char)r_bitCount : a1a << r_bitCount;
+      v12 = pixelFormat->dwRBitMask & v11;
+      v13 = g_bitCount < 0 ? v28 >> -(char)g_bitCount : v28 << g_bitCount;
+      v14 = pixelFormat->dwGBitMask & v13 | v12;
+      v15 = b_bitCount < 0 ? out_a2a >> -(char)b_bitCount : out_a2a << b_bitCount;
+      v16 = pixelFormat->dwBBitMask & v15 | v14;
+      v17 = alpha_bitCount < 0 ? v21 >> -(char)alpha_bitCount : v21 << alpha_bitCount;
+      v18 = pixelFormat->dwRGBAlphaBitMask & v17 | v16;
       if ( v25 == 1 )
         break;
       if ( v25 == 2 )
       {
-        *a1 = v18;
-        v19 = a1 + 1;
+        *out_a1 = v18;
+        v19 = out_a1 + 1;
         goto LABEL_21;
       }
       if ( v25 == 4 )
       {
-        *(_DWORD *)a1 = v18;
-        v19 = a1 + 2;
+        *(_DWORD *)out_a1 = v18;
+        v19 = out_a1 + 2;
         goto LABEL_21;
       }
 LABEL_22:
       if ( !--v22 )
-        return (char *)((char *)a1 - v26);
+        return (char *)((char *)out_a1 - out_a1_1);
     }
-    *(_BYTE *)a1 = v18;
-    v19 = (_WORD *)((char *)a1 + 1);
+    *(_BYTE *)out_a1 = v18;
+    v19 = (_WORD *)((char *)out_a1 + 1);
 LABEL_21:
-    a1 = v19;
+    out_a1 = v19;
     goto LABEL_22;
   }
-  return (char *)((char *)a1 - v26);
+  return (char *)((char *)out_a1 - out_a1_1);
 }

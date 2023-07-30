@@ -1,5 +1,5 @@
 //----- (1001AD90) --------------------------------------------------------
-BOOL __thiscall sub_1001AD90(IID *iid[3])
+BOOL __thiscall sub_1001AD90(_DWORD *this)
 {
-  return iid[9] != 0;
+  return this[9] != 0;
 }

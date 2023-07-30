@@ -1,5 +1,5 @@
 //----- (10030210) --------------------------------------------------------
-void __cdecl getDirectXVersion(_DWORD *dxVersion, _DWORD *out_b)
+void __cdecl GetDirectXVersion(_DWORD *dxVersion, _DWORD *out_b)
 {
   DWORD result; // eax
   HMODULE dinputDllHmod; // eax

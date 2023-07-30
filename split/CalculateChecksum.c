@@ -1,5 +1,5 @@
 //----- (10001000) --------------------------------------------------------
-unsigned int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned int elementSize)
+int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned int elementSize)
 {
   unsigned __int8 *buf0; // esi
   unsigned int sum2; // ecx

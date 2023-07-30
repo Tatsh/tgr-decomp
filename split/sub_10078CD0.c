@@ -8,7 +8,7 @@ int sub_10078CD0()
 
   if ( ++mouseCreated == 1 )
   {
-    if ( DirectInputCreateA(hInst, 0x500u, &g_DirectInputDeviceA, 0) < 0 )
+    if ( DirectInputCreateA(hInst, 0x500u, &g_DirectInputA, 0) < 0 )
     {
       caption = getCaptionString(0x126u);
       text = getCaptionString(0x127u);

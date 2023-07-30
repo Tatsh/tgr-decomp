@@ -41,7 +41,7 @@ int __cdecl sub_1000C350(int a1)
         v7 = GlobalHandle(v2);
         GlobalFree(v7);
       }
-      v8 = GlobalAlloc(0x42u, dwBytes);
+      v8 = GlobalAlloc(GHND, dwBytes);
       v2 = GlobalLock(v8);
       if ( !v2 )
         v5 = -2147024882;

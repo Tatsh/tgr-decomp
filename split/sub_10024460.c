@@ -38,7 +38,6 @@ _DWORD *sub_10024460()
   dword_104C5184 = 0;
   return result;
 }
-// 100243E0: using guessed type int sub_100243E0();
 // 10024550: using guessed type int __cdecl sub_10024550(int);
 // 100A79DC: using guessed type int dword_100A79DC;
 // 104C01A4: using guessed type int dword_104C01A4;

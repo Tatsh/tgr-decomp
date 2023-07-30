@@ -128,7 +128,7 @@ LABEL_9:
     while ( v15 != 1 );
   }
   qsort(dword_10364000, v5, 4u, CompareFunction);
-  sub_10060780(v4, byte_1038B4C0, dword_106C7CAC, -1);
+  sub_10060780(v4, byte_1038B4C0, g_TrackInstances, -1);
   v16 = 0;
   dword_103643A4 = 0;
   dword_10363FEC = -1;

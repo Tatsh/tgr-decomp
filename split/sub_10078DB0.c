@@ -7,20 +7,20 @@ int sub_10078DB0()
 
   if ( !--mouseCreated )
   {
-    dida = g_DirectInputDeviceA;
-    if ( g_DirectInputDeviceA )
+    dida = g_DirectInputA;
+    if ( g_DirectInputA )
     {
       v1 = dword_10AA2E80;
       if ( dword_10AA2E80 )
       {
         sub_100602B0(dword_10AA2E80);
         operator delete(v1);
-        dida = g_DirectInputDeviceA;
+        dida = g_DirectInputA;
       }
       didaVtbl = dida->lpVtbl;
       dword_10AA2E80 = 0;
       didaVtbl->Release(dida);
-      g_DirectInputDeviceA = 0;
+      g_DirectInputA = 0;
     }
   }
   return 1;

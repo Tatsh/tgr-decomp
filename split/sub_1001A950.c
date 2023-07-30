@@ -1,29 +1,29 @@
 //----- (1001A950) --------------------------------------------------------
-DDPIXELFORMAT *__cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat)
+HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat)
 {
-  DDPIXELFORMAT *result; // eax
-  DWORD v2; // eax
+  HRESULT hr; // eax
+  DWORD dwFlags; // eax
 
-  result = pixelFormat;
+  hr = (HRESULT)pixelFormat;
   if ( pixelFormat )
   {
-    v2 = pixelFormat->dwFlags;
-    if ( (v2 & 0x800) != 0 )
+    dwFlags = pixelFormat->dwFlags;
+    if ( (dwFlags & DDPF_PALETTEINDEXED1) != 0 )
     {
-      result = (DDPIXELFORMAT *)1;
+      hr = 1;
     }
-    else if ( (v2 & 0x1000) != 0 )
+    else if ( (dwFlags & DDPF_PALETTEINDEXED2) != 0 )
     {
-      result = (DDPIXELFORMAT *)1;
+      hr = 1;
     }
-    else if ( (v2 & 8) != 0 )
+    else if ( (dwFlags & DDPF_PALETTEINDEXED4) != 0 )
     {
-      result = (DDPIXELFORMAT *)1;
+      hr = 1;
     }
     else
     {
-      result = (DDPIXELFORMAT *)(((unsigned __int8)pixelFormat->dwFlags >> 5) & 1);
+      hr = ((unsigned __int8)pixelFormat->dwFlags >> 5) & 1;
     }
   }
-  return result;
+  return hr;
 }

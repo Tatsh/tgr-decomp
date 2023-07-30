@@ -11,7 +11,7 @@ void __cdecl sub_1006A9C0(int a1, int a2, int a3, int a4, int a5)
     dword_10690A28();
   }
   sub_1006A990(a1);
-  sub_1001BB00(a2, a3, (IID *)a4, a5);
+  sub_1001BB00(a2, a3, a4, a5);
   off_100B8C94();
   dword_10B501C8();
   sub_1002B950();

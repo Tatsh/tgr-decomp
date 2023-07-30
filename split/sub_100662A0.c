@@ -83,7 +83,7 @@ int __thiscall sub_100662A0(size_t Size)
   }
   result = dword_100B4050;
   if ( *(_DWORD *)(Size + 100) >= dword_100B4050 )
-    return sub_10065D50(Size);
+    return MakeEnemyCarColorPanels_0(Size);
   *(_DWORD *)(Size + 120) = 0;
   *(_DWORD *)(Size + 124) = 0;
   return result;

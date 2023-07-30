@@ -11,13 +11,13 @@ int __thiscall DICreateMouseDevice(unk0 *this, HWND hWnd)
   const CHAR *v9; // eax
 
   diDeviceA = &this->lpDIDeviceA;
-  hr = g_DirectInputDeviceA->lpVtbl->CreateDevice(g_DirectInputDeviceA, &CLSID_GUID_SysMouse, &this->lpDIDeviceA, 0);
+  hr = g_DirectInputA->lpVtbl->CreateDevice(g_DirectInputA, &CLSID_GUID_SysMouse, &this->lpDIDeviceA, 0);
   if ( hr >= 0 )
   {
     hr_2 = (*diDeviceA)->lpVtbl->SetDataFormat(*diDeviceA, &g_diMouseDataFormat);
     if ( hr_2 >= 0 )
     {
-      hr_1 = (*diDeviceA)->lpVtbl->SetCooperativeLevel(*diDeviceA, hWnd, 5);
+      hr_1 = (*diDeviceA)->lpVtbl->SetCooperativeLevel(*diDeviceA, hWnd, DISCL_FOREGROUND|DISCL_EXCLUSIVE);
       if ( hr_1 >= 0 )
       {
         result = 1;

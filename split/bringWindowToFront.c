@@ -1,23 +1,23 @@
 //----- (10007B10) --------------------------------------------------------
-int bringWindowToFront()
+int BringWindowToFront()
 {
-  HWND v0; // esi
+  HWND hwnd_1; // esi
   HWND v1; // eax
   DWORD v2; // ebx
-  HWND v3; // esi
+  HWND hwnd; // esi
 
-  v0 = FindWindowA(ClassName, WindowName);
-  if ( !v0 )
+  hwnd_1 = FindWindowA(ClassName, WindowName);
+  if ( !hwnd_1 )
     return 1;
   v1 = GetForegroundWindow();
   v2 = GetWindowThreadProcessId(v1, 0);
-  if ( GetWindowThreadProcessId(v0, 0) != v2 || IsIconic(v0) )
+  if ( GetWindowThreadProcessId(hwnd_1, 0) != v2 || IsIconic(hwnd_1) )
   {
-    v3 = GetLastActivePopup(v0);
-    if ( IsIconic(v3) )
-      ShowWindow(v3, 9);
-    BringWindowToTop(v3);
-    SetForegroundWindow(v3);
+    hwnd = GetLastActivePopup(hwnd_1);
+    if ( IsIconic(hwnd) )
+      ShowWindow(hwnd, SW_RESTORE);
+    BringWindowToTop(hwnd);
+    SetForegroundWindow(hwnd);
   }
   OutputDebugStringA(OutputString);
   return 0;

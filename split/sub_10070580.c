@@ -1,10 +1,10 @@
 //----- (10070580) --------------------------------------------------------
-int __cdecl sub_10070580(int a1)
+int __cdecl sub_10070580(int trackIndex)
 {
   int result; // eax
 
-  result = a1;
-  switch ( a1 )
+  result = trackIndex;
+  switch ( trackIndex )
   {
     case 0:
     case 1:

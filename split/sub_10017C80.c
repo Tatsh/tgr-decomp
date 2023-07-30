@@ -13,7 +13,7 @@ char *__cdecl sub_10017C80(int a1, float a2)
   {
     byte_104AFF20 = 43;
     v4 = v2;
-    sub_100020D0(byte_104AFF21, v4);
+    CreateMinuteSecondsString(byte_104AFF21, v4);
   }
   return &byte_104AFF20;
 }

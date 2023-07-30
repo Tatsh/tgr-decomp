@@ -13,11 +13,7 @@ int sub_100770F0()
     dword_118ABD7C = 0;
     dword_118ABAB8 = 1;
     sub_100770C0();
-    if ( g_DirectInputDeviceA->lpVtbl->CreateDevice(
-           g_DirectInputDeviceA,
-           &CLSID_GUID_SysKeyboard,
-           &g_lpDirectInputDeviceA,
-           0) < 0 )
+    if ( g_DirectInputA->lpVtbl->CreateDevice(g_DirectInputA, &CLSID_GUID_SysKeyboard, &g_lpDirectInputDeviceA, 0) < 0 )
       return 0;
     if ( g_lpDirectInputDeviceA->lpVtbl->SetDataFormat(g_lpDirectInputDeviceA, &g_lpcDiDataFormat) < 0 )
       return 0;

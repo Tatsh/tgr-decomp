@@ -38,5 +38,4 @@ int ReleaseDirectSound()
   }
   return 1;
 }
-// 100734F0: using guessed type int sub_100734F0(void);
 // 118290FC: using guessed type int dword_118290FC;

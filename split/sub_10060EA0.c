@@ -1,18 +1,18 @@
 //----- (10060EA0) --------------------------------------------------------
-_BYTE *__cdecl sub_10060EA0(int a1)
+_BYTE *__cdecl sub_10060EA0(PBITMAP pBitmap)
 {
-  _BYTE *v2; // edi
+  _BYTE *mem; // edi
 
-  if ( *(_WORD *)(a1 + 18) != 24 )
+  if ( pBitmap->bmBitsPixel != 24 )
     return 0;
-  v2 = malloc(4 * *(_DWORD *)(a1 + 4) * *(_DWORD *)(a1 + 8));
-  if ( v2 )
+  mem = malloc(4 * pBitmap->bmWidth * pBitmap->bmHeight);
+  if ( mem )
   {
-    sub_10060F00(v2, *(_DWORD *)(a1 + 20), *(_DWORD *)(a1 + 4), *(_BYTE **)(a1 + 8), *(_DWORD *)(a1 + 12));
-    dword_10AA3464 = *(_DWORD *)(a1 + 4);
-    dword_10AA3468 = *(_DWORD *)(a1 + 8);
+    sub_10060F00(mem, (char *)pBitmap->bmBits, pBitmap->bmWidth, pBitmap->bmHeight, pBitmap->bmWidthBytes);
+    g_bmWidth = pBitmap->bmWidth;
+    g_bmHeight = pBitmap->bmHeight;
   }
-  return v2;
+  return mem;
 }
-// 10AA3464: using guessed type int dword_10AA3464;
-// 10AA3468: using guessed type int dword_10AA3468;
+// 10AA3464: using guessed type int g_bmWidth;
+// 10AA3468: using guessed type int g_bmHeight;

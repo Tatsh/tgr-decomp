@@ -22,8 +22,8 @@ int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex)
   strcpy(carFilepath, aCars);
   strcat(carFilepath, carNames[carIndex]);
   strcat(carFilepath, aRca);
-  ReadFilenameToBuffer(outBuffer, carFilepath, 0xFFFFFFFF);
-  if ( strncmp(outBuffer, aRcar, 4u) )
+  ReadFilenameToBuffer(outBuffer, carFilepath, -1);
+  if ( strncmp(outBuffer, Str2, 4u) )
   {
     sprintf(Buffer, "not a car file: %s", Buffer);
     sub_10008CF0((int)Buffer);

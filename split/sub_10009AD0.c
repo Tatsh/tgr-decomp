@@ -3,9 +3,9 @@ unsigned __int8 *__cdecl sub_10009AD0(char *filename, int expectedChecksum, char
 {
   CHK_File *fp; // ebx
   size_t elementSize; // esi
-  unsigned int cksum; // eax
+  int cksum; // eax
   int flag_; // edi
-  unsigned int seed; // eax
+  int seed; // eax
   int *v9; // edx
   int buf; // [esp+Ch] [ebp-4h] BYREF
 

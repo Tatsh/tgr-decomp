@@ -84,9 +84,13 @@ void __thiscall sub_10066E90(char *this)
     v6 = v5 % v2;
     v7 = (v5 % v2 + 1) % v2;
     v51 = v7;
-    v49 = COERCE_FLOAT(sub_1002B920(v41));
+    LODWORD(v49) = sub_1002B920(v41);
     v45 = (double)SLODWORD(v49) * 0.0099999998;
-    if ( sub_1003BA70((char *)&unk_106C7CE8 + 20 * v6, (char *)&unk_106C7CE0 + 20 * v6, this + 12, this) )
+    if ( sub_1003BA70(
+           (float *)&unk_106C7CE8 + 5 * v6,
+           (float *)&unk_106C7CE0 + 5 * v6,
+           (float *)this + 3,
+           (float *)this) )
     {
       debugPrint((void *)(*((_DWORD *)this + 19) - 1));
       if ( !v6 )
@@ -109,7 +113,11 @@ void __thiscall sub_10066E90(char *this)
       --*((_DWORD *)this + 19);
       goto LABEL_111;
     }
-    if ( !sub_1003BA70((char *)&unk_106C7CE8 + 20 * v7, (char *)&unk_106C7CE0 + 20 * v7, this + 12, this) )
+    if ( !sub_1003BA70(
+            (float *)&unk_106C7CE8 + 5 * v7,
+            (float *)&unk_106C7CE0 + 5 * v7,
+            (float *)this + 3,
+            (float *)this) )
       goto LABEL_111;
     debugPrint((void *)(*((_DWORD *)this + 19) + 1));
     v11 = (void *)*((_DWORD *)this + 18);
@@ -223,7 +231,7 @@ LABEL_52:
               if ( *(float *)(v29 + 4076) != 0.0 && dword_100B36FC > 1 )
               {
                 sprintf((char *const)(v29 + 4108), aRy);
-                sub_100020D0((char *)(v29 + 4111), v48);
+                CreateMinuteSecondsString((char *)(v29 + 4111), v48);
                 if ( *(_DWORD *)(v29 + 4088) )
                 {
                   if ( v48 > 120.0 )
@@ -413,8 +421,6 @@ LABEL_102:
 // 100671DD: variable 'v13' is possibly undefined
 // 1006773A: variable 'v31' is possibly undefined
 // 100677E7: variable 'v37' is possibly undefined
-// 1003BA70: using guessed type _DWORD __cdecl sub_1003BA70(_DWORD, _DWORD, _DWORD, _DWORD);
-// 10067D80: using guessed type int sub_10067D80(void);
 // 100AA010: using guessed type int g_GameMode;
 // 100B36FC: using guessed type int dword_100B36FC;
 // 100B380C: using guessed type int g_chosenTrack;

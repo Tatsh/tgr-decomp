@@ -3,7 +3,7 @@ void *sub_10073AC0()
 {
   void *result; // eax
 
-  result = (void *)dword_118AA0B0(&unk_118AA8F8, &unk_118AA0D8, 32, 128, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0);
+  result = (void *)dword_118AA0B0(&lutBuffer_0, &lutBuffer, 32, 128, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0);
   off_100A6498 = result;
   return result;
 }
