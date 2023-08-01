@@ -1,12 +1,12 @@
 //----- (10009ED0) --------------------------------------------------------
-BOOL __thiscall sub_10009ED0(unk2 *this, char *a2, LONG rectRight, LONG rectBottom)
+BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBottom)
 {
-  unk2 *unk2; // ebp
-  LPDIRECTDRAWSURFACE ddSurface; // eax
+  #511 *unk2; // ebp
+  int *ddSurface; // eax
   BOOL result; // eax
-  IDirectDrawSurfaceVtbl *ddSurfaceVtbl; // ecx
-  IDirectDrawSurface *ddSurface_1; // eax
-  IDirectDrawSurfaceVtbl *ddSurfaceVtbl_1; // ecx
+  int ddSurfaceVtbl; // ecx
+  int *ddSurface_1; // eax
+  int ddSurfaceVtbl_1; // ecx
   LONG v10; // edi
   DWORD dwRGBBitCountShiftedRight3; // esi
   LPVOID lpSurface; // ebp
@@ -23,22 +23,29 @@ BOOL __thiscall sub_10009ED0(unk2 *this, char *a2, LONG rectRight, LONG rectBott
   DDSURFACEDESC ddSurfaceDesc; // [esp+30h] [ebp-6Ch] BYREF
 
   unk2 = this;
-  ddSurface = this->ddSurface;
-  if ( !this->ddSurface )
+  ddSurface = *(int **)this;
+  if ( !*(_DWORD *)this )
     return 0;
-  ddSurfaceVtbl = ddSurface->lpVtbl;
+  ddSurfaceVtbl = *ddSurface;
   ddSurfaceDesc.dwSize = 108;
-  ddSurfaceVtbl->GetSurfaceDesc(ddSurface, &ddSurfaceDesc);
-  ddSurface_1 = unk2->ddSurface;
-  ddSurfaceVtbl_1 = unk2->ddSurface->lpVtbl;
+  (*(void (__stdcall **)(int *, DDSURFACEDESC *))(ddSurfaceVtbl + 88))(ddSurface, &ddSurfaceDesc);
+  ddSurface_1 = *(int **)unk2;
+  ddSurfaceVtbl_1 = **(_DWORD **)unk2;
   rect.left = 0;
   rect.top = 0;
   v10 = rectBottom;
   dwRGBBitCountShiftedRight3 = ddSurfaceDesc.ddpfPixelFormat.dwRGBBitCount >> 3;
   rect.right = rectRight;
   rect.bottom = rectBottom;
-  if ( ddSurfaceVtbl_1->Lock(ddSurface_1, &rect, &ddSurfaceDesc, 33, 0) )
+  if ( (*(int (__stdcall **)(int *, RECT *, DDSURFACEDESC *, int, _DWORD))(ddSurfaceVtbl_1 + 100))(
+         ddSurface_1,
+         &rect,
+         &ddSurfaceDesc,
+         33,
+         0) )
+  {
     return 0;
+  }
   lpSurface = ddSurfaceDesc.lpSurface;
   if ( dwRGBBitCountShiftedRight3 == 1 )
   {
@@ -111,7 +118,7 @@ BOOL __thiscall sub_10009ED0(unk2 *this, char *a2, LONG rectRight, LONG rectBott
     }
     while ( v10 );
   }
-  if ( this->ddSurface->lpVtbl->Unlock(this->ddSurface, ddSurfaceDesc.lpSurface) )
+  if ( (*(int (__stdcall **)(_DWORD, LPVOID))(**(_DWORD **)this + 128))(*(_DWORD *)this, ddSurfaceDesc.lpSurface) )
     result = 0;
   else
     result = sub_1000A020(this);

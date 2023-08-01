@@ -1,9 +1,9 @@
 //----- (1000A190) --------------------------------------------------------
-gameSpecificUnk0 *__thiscall initGameSpecificUnk0(gameSpecificUnk0 *this)
+unk0 *__thiscall initUnk(unk0 *this)
 {
   int v1; // eax
 
-  memset(this, 0, 0x8Cu);
+  memset(this, 0, sizeof(unk0));
   v1 = this->unkMeth1;
   this->field_10 = 140;
   LOBYTE(v1) = v1 | 4;

@@ -1,5 +1,5 @@
 //----- (100602E0) --------------------------------------------------------
-int __thiscall DICreateMouseDevice(unk0 *this, HWND hWnd)
+int __thiscall DICreateMouseDevice(__unk0 *this, HWND hWnd)
 {
   LPDIRECTINPUTDEVICEA *diDeviceA; // esi
   HRESULT hr; // edi

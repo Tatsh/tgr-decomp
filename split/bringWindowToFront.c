@@ -2,16 +2,16 @@
 int BringWindowToFront()
 {
   HWND hwnd_1; // esi
-  HWND v1; // eax
-  DWORD v2; // ebx
+  HWND fgHwnd; // eax
+  DWORD pid; // ebx
   HWND hwnd; // esi
 
-  hwnd_1 = FindWindowA(ClassName, WindowName);
+  hwnd_1 = FindWindowA(kClassName, kWindowName);
   if ( !hwnd_1 )
     return 1;
-  v1 = GetForegroundWindow();
-  v2 = GetWindowThreadProcessId(v1, 0);
-  if ( GetWindowThreadProcessId(hwnd_1, 0) != v2 || IsIconic(hwnd_1) )
+  fgHwnd = GetForegroundWindow();
+  pid = GetWindowThreadProcessId(fgHwnd, 0);
+  if ( GetWindowThreadProcessId(hwnd_1, 0) != pid || IsIconic(hwnd_1) )
   {
     hwnd = GetLastActivePopup(hwnd_1);
     if ( IsIconic(hwnd) )
@@ -19,6 +19,6 @@ int BringWindowToFront()
     BringWindowToTop(hwnd);
     SetForegroundWindow(hwnd);
   }
-  OutputDebugStringA(OutputString);
+  OutputDebugStringA(kDebugStrCheckPreviousApp);
   return 0;
 }

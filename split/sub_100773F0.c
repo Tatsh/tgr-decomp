@@ -70,7 +70,7 @@ int __cdecl sub_100773F0(int *a1, int *a2)
   if ( dword_118ABDDC < 0x7FFF )
     ++dword_118ABDDC;
   v2 = 0;
-  dword_118AB8B4 = dword_118ABAD8;
+  MEMORY[0x118AB8B4] = dword_118ABAD8;
   v3 = g_lpDirectInputDeviceA->lpVtbl;
   dword_118ABAD8 = ((_BYTE)dword_118ABAD8 - 1) & 1;
   v4 = v3->GetDeviceState(g_lpDirectInputDeviceA, 256, &byte_118AB8B8[256 * dword_118ABAD8]);
@@ -203,24 +203,24 @@ LABEL_41:
   if ( !sub_100786E0(15) )
   {
 LABEL_47:
-    v23 = dword_118AB8B4;
+    v23 = MEMORY[0x118AB8B4];
     v24 = dword_118ABAD8;
-    if ( byte_118AB8F7[256 * dword_118AB8B4] >= 0 && byte_118AB8F7[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB8F7[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB8F7[256 * dword_118ABAD8] < 0 )
       dword_100BD3E8 = dword_100BD3E8 == 0;
-    if ( byte_118AB8F8[256 * dword_118AB8B4] >= 0 && byte_118AB8F8[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB8F8[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB8F8[256 * dword_118ABAD8] < 0 )
       dword_100BD3EC = dword_100BD3EC == 0;
-    if ( byte_118AB8F9[256 * dword_118AB8B4] >= 0 && byte_118AB8F9[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB8F9[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB8F9[256 * dword_118ABAD8] < 0 )
       dword_100BD3F0 = dword_100BD3F0 == 0;
-    if ( byte_118AB8FA[256 * dword_118AB8B4] >= 0 && byte_118AB8FA[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB8FA[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB8FA[256 * dword_118ABAD8] < 0 )
       dword_100BD3F4 = dword_100BD3F4 == 0;
-    if ( byte_118AB8FB[256 * dword_118AB8B4] >= 0 && byte_118AB8FB[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB8FB[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB8FB[256 * dword_118ABAD8] < 0 )
       dword_100BD3F8 = dword_100BD3F8 == 0;
-    if ( byte_118AB8FC[256 * dword_118AB8B4] >= 0 && byte_118AB8FC[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB8FC[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB8FC[256 * dword_118ABAD8] < 0 )
       dword_100BD3FC = dword_100BD3FC == 0;
-    if ( byte_118AB90F[256 * dword_118AB8B4] >= 0 && byte_118AB90F[256 * dword_118ABAD8] < 0 )
+    if ( byte_118AB90F[256 * MEMORY[0x118AB8B4]] >= 0 && byte_118AB90F[256 * dword_118ABAD8] < 0 )
     {
       pm_sub_10002930();
-      v23 = dword_118AB8B4;
+      v23 = MEMORY[0x118AB8B4];
       v24 = dword_118ABAD8;
     }
     if ( byte_118AB910[256 * v23] >= 0 && byte_118AB910[256 * v24] < 0 )

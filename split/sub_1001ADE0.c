@@ -1,5 +1,5 @@
 //----- (1001ADE0) --------------------------------------------------------
-int __thiscall sub_1001ADE0(#478 *this, GUID *a2, char *Source, char *a4, D3DDEVICEDESC *a5, D3DDEVICEDESC *a6)
+int __thiscall sub_1001ADE0(#478 *this, GUID *a2, char *Source, char *a4, #469 *a5, #469 *a6)
 {
   char *v8; // ebp
   size_t v9; // kr04_4

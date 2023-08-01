@@ -4,13 +4,13 @@ int sub_1002F8F0()
   int result; // eax
   _DWORD *v1; // ecx
   DWORD ticks; // eax
-  unk0 *v3; // eax
+  __unk0 *v3; // eax
 
   switch ( dword_10690A14 )
   {
     case 0:
       sub_10038EC0();
-      sub_10073320(0);
+      pm_sub_10073320(0);
       sub_1005FDB0();
       dword_10690A14 = 4;
       return 1;
@@ -38,7 +38,7 @@ int sub_1002F8F0()
       }
       if ( !dword_10AA2904 && dword_100AC300 )
       {
-        sub_10073320(0);
+        pm_sub_10073320(0);
         sub_1005D440();
         ticks = getTicks();
         v1 = dword_10AA2904;

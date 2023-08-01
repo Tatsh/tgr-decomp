@@ -59,8 +59,8 @@ int __cdecl sub_1001E5D0(int a1, int a2, int a3)
       {
         g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
           g_D3DDevice2,
-          4,
-          3,
+          D3DPT_TRIANGLELIST,
+          D3DVT_TLVERTEX,
           &g_vertices,
           g_vertexCount,
           &g_indexedPrimitiveIndices,

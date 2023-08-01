@@ -1,5 +1,5 @@
 //----- (10008BE0) --------------------------------------------------------
-FILE *__stdcall sub_10008BE0(char *FileName)
+FILE *__stdcall fopenWriteBinary(char *FileName)
 {
   FILE *result; // eax
   int *v2; // eax

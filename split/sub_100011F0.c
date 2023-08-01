@@ -1,7 +1,7 @@
 //----- (100011F0) --------------------------------------------------------
 void __thiscall sub_100011F0(float *this, float a2, int a3)
 {
-  float *v3; // ebx
+  float *this_offset_A38; // ebx
   __int16 v4; // ax
   int v5; // esi
   float *v6; // edi
@@ -23,7 +23,7 @@ void __thiscall sub_100011F0(float *this, float a2, int a3)
   float v23; // [esp+14h] [ebp-54h]
   int v24; // [esp+18h] [ebp-50h]
   int v25; // [esp+18h] [ebp-50h]
-  float *v26; // [esp+1Ch] [ebp-4Ch]
+  float *this_offset_A38_1; // [esp+1Ch] [ebp-4Ch]
   int v27; // [esp+20h] [ebp-48h]
   int v28; // [esp+24h] [ebp-44h]
   int v29; // [esp+28h] [ebp-40h]
@@ -44,10 +44,10 @@ void __thiscall sub_100011F0(float *this, float a2, int a3)
   int v44; // [esp+70h] [ebp+8h]
   int v45; // [esp+70h] [ebp+8h]
 
-  v3 = this + 2616;
+  this_offset_A38 = this + 0xA38;
   dword_100C129C = 0;
-  v26 = this + 2616;
-  v4 = sub_1006F720(this[2616], this[2617]);
+  this_offset_A38_1 = this + 0xA38;
+  v4 = sub_1006F720(this[0xA38], this[0xA39]);
   v5 = v4;
   v30[0] = v4;
   v6 = (float *)(LODWORD(a2) + 48);
@@ -56,7 +56,7 @@ void __thiscall sub_100011F0(float *this, float a2, int a3)
   v8 = (v5 != v7) + 1;
   v30[1] = v7;
   v29 = v8;
-  sub_1003AEE0((float *)v34, (float *)(LODWORD(a2) + 48), v3);
+  sub_1003AEE0((float *)v34, (float *)(LODWORD(a2) + 48), this_offset_A38);
   v24 = 0;
   v9 = sub_1003B170((float *)v34);
   if ( v9 == 0.0 )
@@ -75,13 +75,13 @@ void __thiscall sub_100011F0(float *this, float a2, int a3)
         v13 = sub_1003AC90((float *)v34, (float *)v11);
         if ( v13 < 0.0 )
         {
-          sub_1003AEE0(v38, *((float **)v11 + 4), v26);
+          sub_1003AEE0(v38, *((float **)v11 + 4), this_offset_A38_1);
           v39 = v13;
           v14 = sub_1003AC90(v38, (float *)v11) / v39;
           v40 = v14;
           if ( v14 > 0.0 && v40 < (double)v22 )
           {
-            sub_1003AFE0((int)&v31, (int)v26, (int)v34, v40);
+            sub_1003AFE0((int)&v31, (int)this_offset_A38_1, (int)v34, v40);
             if ( sub_1003B940((float *)&v31, *((float **)v11 + 4), *((float **)v11 + 5), *((float **)v11 + 6), (int)v11) )
             {
               v22 = v14;
@@ -99,7 +99,7 @@ void __thiscall sub_100011F0(float *this, float a2, int a3)
     while ( v27 );
     v8 = v29;
     v6 = (float *)v28;
-    v3 = v26;
+    this_offset_A38 = this_offset_A38_1;
   }
   if ( v24 )
   {
@@ -146,19 +146,19 @@ void __thiscall sub_100011F0(float *this, float a2, int a3)
       }
       while ( v44 );
       v6 = (float *)v28;
-      v3 = v26;
+      this_offset_A38 = this_offset_A38_1;
     }
     if ( v25 )
     {
-      *(float *)&v45 = sub_1003B0E0(v6, v3);
+      *(float *)&v45 = sub_1003B0E0(v6, this_offset_A38);
       sub_1003AFE0((int)v6, (int)&v35, v25, 0.30000001);
-      sub_1003AEE0((float *)v30, v6, v3);
+      sub_1003AEE0((float *)v30, v6, this_offset_A38);
       v43 = sub_1003B170((float *)v30);
       if ( *(float *)&v45 < (double)v43 && v43 != 0.0 )
       {
         v21 = *(float *)&v45 / v43;
         sub_1003AD10((int)v30, v21);
-        sub_1003AF40(v6, v3, (float *)v30);
+        sub_1003AF40(v6, this_offset_A38, (float *)v30);
       }
       dword_100C129C = 1;
     }

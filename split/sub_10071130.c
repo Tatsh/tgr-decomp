@@ -28,7 +28,7 @@ char __cdecl sub_10071130(int a1, FILE *Stream)
       v4 = (size_t)Stream;
       break;
   }
-  v5 = fopen(v3, readBinaryMode);
+  v5 = fopen(v3, kFileModeReadBinary);
   v6 = v5;
   if ( !v5 )
     return (_BYTE)Stream != 0;
@@ -51,10 +51,10 @@ LABEL_17:
       return 0;
     }
     qmemcpy(v9, Str1, sizeof(v9));
-    (*(&dword_10ACED34 + 2778 * dword_10690A18))->handlingType = v9[0];
-    (*(&dword_10ACED34 + 2778 * dword_10690A18))->transmissionType = v9[1];
-    (*(&dword_10ACED34 + 2778 * dword_10690A18))->ultraCarHeader = v9[2];
-    (*(&dword_10ACED34 + 2778 * dword_10690A18))->suspensionType = v9[3];
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 62) = v9[0];
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 63) = v9[1];
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 64) = v9[2];
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 65) = v9[3];
     v8 = *(&dword_10ACED34 + 2778 * dword_10690A18);
     v8[66] = v9[4];
     debugPrint(v8);

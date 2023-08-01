@@ -2,7 +2,7 @@
 int sub_1002F320()
 {
   int v0; // esi
-  struct_dword_10ACED34 **v1; // edi
+  #505 **v1; // edi
   __int64 v2; // rax
   const void *v3; // esi
   int *v4; // ebp
@@ -19,10 +19,10 @@ int sub_1002F320()
         v1 = &dword_10ACED34;
         do
         {
-          *(_WORD *)&(*v1)->gap0[8 * (unsigned __int8)(*v1)->gap0[4] + 30 + 2 * (unsigned __int8)(*v1)->gap0[5]] = byte_100AA210[dword_106805C8[v0]];
-          (*v1)->gap0[4 * (unsigned __int8)(*v1)->gap0[4] + 6 + (unsigned __int8)(*v1)->gap0[5]] = dword_106805C8[v0];
-          *(_DWORD *)&(*v1)->gap0[16 * (unsigned __int8)(*v1)->gap0[4] + 80 + 4 * (unsigned __int8)(*v1)->gap0[5]] = dword_10680728[v0];
-          debugPrint((void *)((unsigned __int8)(*v1)->gap0[5] + 4 * (unsigned __int8)(*v1)->gap0[4]));
+          *((_WORD *)*v1 + 4 * *((unsigned __int8 *)*v1 + 4) + *((unsigned __int8 *)*v1 + 5) + 15) = byte_100AA210[dword_106805C8[v0]];
+          *((_BYTE *)*v1 + 4 * *((unsigned __int8 *)*v1 + 4) + *((unsigned __int8 *)*v1 + 5) + 6) = dword_106805C8[v0];
+          *((_DWORD *)*v1 + 4 * *((unsigned __int8 *)*v1 + 4) + *((unsigned __int8 *)*v1 + 5) + 20) = dword_10680728[v0];
+          debugPrint((void *)(*((unsigned __int8 *)*v1 + 5) + 4 * *((unsigned __int8 *)*v1 + 4)));
           ++v0;
           v1 += 2778;
         }

@@ -1,7 +1,7 @@
 //----- (1001BAD0) --------------------------------------------------------
 int sub_1001BAD0()
 {
-  gameSpecificUnk0 *v0; // esi
+  unk0 *v0; // esi
   int result; // eax
 
   v0 = g_gsu0;

@@ -10,7 +10,7 @@ int sub_100795D0()
   v0 = g_ReadJoystick;
   v1 = dword_10B4E1E0;
   g_ReadJoystick = 2;
-  dword_10B4E1D4 = (int)&unk_10B4E080;
+  dword_10B4E1D4 = (WORD *)&unk_10B4E080;
   dword_10B4E1E0 = 1;
   sub_100791D0();
   result = sub_10079550();
@@ -22,25 +22,23 @@ int sub_100795D0()
     if ( v4 )
     {
       if ( v4 == 1 )
-        dword_10B4E1D4 = (int)&unk_10B4E128;
+        dword_10B4E1D4 = (WORD *)&unk_10B4E128;
       else
-        dword_10B4E1D4 = (int)&g_Config;
+        dword_10B4E1D4 = g_Config;
       dword_10B4E1E0 = v1;
     }
     else
     {
-      dword_10B4E1D4 = (int)&unk_10B4E080;
+      dword_10B4E1D4 = (WORD *)&unk_10B4E080;
       dword_10B4E1E0 = v1;
     }
   }
   else
   {
     dword_10B4E1E0 = v1;
-    dword_10B4E1D4 = (int)&unk_10B4DFD8;
+    dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
   }
   return result;
 }
-// 10079550: using guessed type int sub_10079550(void);
 // 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
 // 10B4E1E0: using guessed type int dword_10B4E1E0;

@@ -1,7 +1,7 @@
 //----- (10079C40) --------------------------------------------------------
 int sub_10079C40()
 {
-  gameSpecificUnk0 *v0; // esi
+  unk0 *v0; // esi
 
   if ( g_HWND && IsWindow(g_HWND) )
   {

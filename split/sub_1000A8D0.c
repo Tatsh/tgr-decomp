@@ -1,5 +1,5 @@
 //----- (1000A8D0) --------------------------------------------------------
-HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this)
+HRESULT __thiscall sub_1000A8D0(unk0 *this)
 {
   LPDIRECTDRAWSURFACE ddSurface; // edx
   IDirectDrawSurfaceVtbl *ddSurfaceVtbl; // eax
@@ -38,7 +38,7 @@ HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this)
       if ( sizePalette )
       {
         if ( sizePalette > 0x100 )
-          this->sizePalette = 256;
+          this->sizePalette = 0x100;
         tPaletteEntry = (tagPALETTEENTRY *)operator new(4 * this->sizePalette);
         this->tPaletteEntry = tPaletteEntry;
         if ( !tPaletteEntry

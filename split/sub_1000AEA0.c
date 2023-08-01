@@ -1,21 +1,21 @@
 //----- (1000AEA0) --------------------------------------------------------
-int __thiscall sub_1000AEA0(gameSpecificUnk0 *this)
+int __thiscall sub_1000AEA0(unk0 *this)
 {
-  _DWORD *v2; // edi
+  unk0_member2 *v2; // edi
 
-  v2 = this->unkMeth0;
+  v2 = this->unknown;
   this->field_1C |= 0x10u;
   if ( v2 )
   {
-    sub_1000A170(v2);
+    SafeReleaseDirect3DMaterial2(v2);
     operator delete(v2);
-    this->unkMeth0 = 0;
+    this->unknown = 0;
   }
-  if ( this->lpD3DViewport )
+  if ( this->lpDirect3DViewport2 )
   {
-    this->lpD3DDevice2->lpVtbl->DeleteViewport(this->lpD3DDevice2, this->lpD3DViewport);
-    this->lpD3DViewport->lpVtbl->Release(this->lpD3DViewport);
-    this->lpD3DViewport = 0;
+    this->lpD3DDevice2->lpVtbl->DeleteViewport(this->lpD3DDevice2, this->lpDirect3DViewport2);
+    this->lpDirect3DViewport2->lpVtbl->Release(this->lpDirect3DViewport2);
+    this->lpDirect3DViewport2 = 0;
   }
   return 0;
 }

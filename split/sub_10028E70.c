@@ -63,7 +63,7 @@ LABEL_17:
   }
   else
   {
-    result = sub_10028860((struct_a1 *)((char *)dword_1057543C + 696 * a1 + 4));
+    result = sub_10028860((#506 *)((char *)dword_1057543C + 696 * a1 + 4));
     *a2 = dword_105553F8;
   }
   return result;

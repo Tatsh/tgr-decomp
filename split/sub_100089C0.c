@@ -3,7 +3,7 @@ int __stdcall sub_100089C0(char *FileName)
 {
   int result; // eax
 
-  dword_1027735C = sub_10008BE0(FileName);
+  dword_1027735C = fopenWriteBinary(FileName);
   fseek(dword_1027735C, 16, 0);
   result = 0;
   memset(&unk_1022B358, 0, 0x4C000u);

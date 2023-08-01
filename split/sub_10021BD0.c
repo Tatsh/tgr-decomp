@@ -21,8 +21,8 @@ int *__cdecl sub_10021BD0(int *a1)
   {
     g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
       g_D3DDevice2,
-      4,
-      3,
+      D3DPT_TRIANGLELIST,
+      D3DVT_TLVERTEX,
       &g_vertices,
       g_vertexCount,
       &g_indexedPrimitiveIndices,

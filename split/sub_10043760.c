@@ -6,7 +6,7 @@ int __cdecl sub_10043760(int a1)
   if ( !g_GameMode )
     dword_100BD3E0 = 3;
   sub_1003E310();
-  sub_1006A4A0((#483 *)&g_Config, g_bossRallyCfgPath);
+  WriteConfigFile((#483 *)&g_Config, g_bossRallyCfgPath);
   sub_10041B50();
   return 0;
 }

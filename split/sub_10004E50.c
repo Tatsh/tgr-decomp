@@ -1,7 +1,7 @@
 //----- (10004E50) --------------------------------------------------------
 int __cdecl sub_10004E50(void *a1, float *a2)
 {
-  HANDLE *v2; // ebx
+  int *v2; // ebx
   int v3; // eax
   int v4; // eax
   int result; // eax
@@ -10,18 +10,18 @@ int __cdecl sub_10004E50(void *a1, float *a2)
   int v8; // [esp+234h] [ebp-4h]
 
   Handles[0] = hMutex_3;
-  v2 = &dword_10221328 + 606 * dword_10094294;
-  Handles[1] = *v2;
-  WaitForMultipleObjects(2u, Handles, 1, 0xFFFFFFFF);
+  v2 = &dword_10221328[606 * dword_10094294];
+  Handles[1] = (HANDLE)*v2;
+  WaitForMultipleObjects(2u, Handles, 1, INFINITE);
   dword_10221310 = sub_10003460();
-  v3 = (int)v2[343] + 1;
-  v2[343] = (HANDLE)v3;
+  v3 = v2[343] + 1;
+  v2[343] = v3;
   if ( v3 >= 8 )
     v2[343] = 0;
-  v2[(_DWORD)v2[343] + 3] = (HANDLE)dword_10221310;
-  v2[(_DWORD)v2[343] + 14] = (HANDLE)128;
-  qmemcpy(&v2[40 * (_DWORD)v2[343] + 22], a1, 0xA0u);
-  ReleaseMutex(*v2);
+  v2[v2[343] + 3] = dword_10221310;
+  v2[v2[343] + 14] = 128;
+  qmemcpy(&v2[40 * v2[343] + 22], a1, 0xA0u);
+  ReleaseMutex((HANDLE)*v2);
   ReleaseMutex(hMutex_3);
   sub_10073B40(v7);
   v8 = 0;
@@ -44,3 +44,4 @@ int __cdecl sub_10004E50(void *a1, float *a2)
 }
 // 10094294: using guessed type int dword_10094294;
 // 10221310: using guessed type int dword_10221310;
+// 10221328: using guessed type int dword_10221328[];

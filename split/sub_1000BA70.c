@@ -48,4 +48,4 @@ LABEL_3:
 // 10277B20: using guessed type int dword_10277B20;
 // 103643B4: using guessed type int dword_103643B4;
 // 1039B6C0: using guessed type int dword_1039B6C0;
-// 106C7CAC: using guessed type int dword_106C7CAC;
+// 106C7CAC: using guessed type int g_TrackInstances;

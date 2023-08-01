@@ -1,5 +1,5 @@
 //----- (10005FE0) --------------------------------------------------------
-int __cdecl sub_10005FE0(int a1)
+int __cdecl np_sub_10005FE0(int a1)
 {
   int v1; // esi
   const char *v2; // edi
@@ -32,5 +32,4 @@ int __cdecl sub_10005FE0(int a1)
   while ( (int)v2 < (int)&unk_1022B018 );
   return result;
 }
-// 10005CF0: using guessed type _DWORD __cdecl sub_10005CF0(_DWORD);
 // 10221318: using guessed type int dword_10221318;

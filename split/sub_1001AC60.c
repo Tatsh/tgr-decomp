@@ -1,5 +1,5 @@
 //----- (1001AC60) --------------------------------------------------------
-int __thiscall sub_1001AC60(unk0 *this)
+int __thiscall sub_1001AC60(__unk0 *this)
 {
   if ( this->field_46 != 108 )
     return 0;

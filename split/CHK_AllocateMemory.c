@@ -1,19 +1,19 @@
 //----- (10003390) --------------------------------------------------------
-void *__cdecl CHK_AllocateMemory(size_t Size, const char *debugName)
+void *__cdecl CHK_AllocateMemory(size_t size, const char *debugName)
 {
-  void *result; // eax
-  CHAR OutputString[1024]; // [esp+0h] [ebp-400h] BYREF
+  void *ptr; // eax
+  CHAR debugMessage[1024]; // [esp+0h] [ebp-400h] BYREF
 
-  result = (void *)Size;
-  if ( Size )
+  ptr = (void *)size;
+  if ( size )
   {
-    result = malloc(Size);
-    if ( !result )
+    ptr = malloc(size);
+    if ( !ptr )
     {
-      sprintf(OutputString, "CHK_AllocateMemory(): Out of memory: couldn't allocate %s\n", debugName);
-      OutputDebugStringA(OutputString);
+      sprintf(debugMessage, "CHK_AllocateMemory(): Out of memory: couldn't allocate %s\n", debugName);
+      OutputDebugStringA(debugMessage);
       exit(1);
     }
   }
-  return result;
+  return ptr;
 }

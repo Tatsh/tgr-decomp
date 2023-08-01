@@ -30,12 +30,12 @@ FILE *sub_10041BD0()
       sub_1003E260(7);
     qmemcpy(&dword_10AA26F0, dword_10ACED34, 0x14Cu);
     dword_10AA28E0 = 1;
-    v11 = *(_DWORD *)dword_10ACED34->gap0;
-    dword_10AA28A0 = *(_DWORD *)dword_10ACED34->gap0;
-    v1 = (unsigned __int8)dword_10ACED34->gap0[5];
+    v11 = *(_DWORD *)dword_10ACED34;
+    dword_10AA28A0 = *(_DWORD *)dword_10ACED34;
+    v1 = *((unsigned __int8 *)dword_10ACED34 + 5);
     dword_10AA28AC = v1;
     dword_10AA28A4 = v1;
-    LOBYTE(dword_10AA28B8) = dword_10ACED34->gap0[4];
+    LOBYTE(dword_10AA28B8) = *((_BYTE *)dword_10ACED34 + 4);
     dword_10AA2A08 = dword_10AD0978;
     dword_100AC64C = dword_10AD097C;
     dword_100AC650 = dword_10AD0980;

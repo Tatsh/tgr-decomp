@@ -1,5 +1,5 @@
 //----- (1001ACF0) --------------------------------------------------------
-BOOL __thiscall sub_1001ACF0(unk0 *this, int iid)
+BOOL __thiscall sub_1001ACF0(__unk0 *this, int iid)
 {
   int v3; // eax
   int v4; // edi

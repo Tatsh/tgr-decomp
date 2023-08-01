@@ -1,11 +1,11 @@
 //----- (10079A90) --------------------------------------------------------
-int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam, int a3, int a14, HWND *a15, gameSpecificUnk0 *a16)
+int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam, int a3, int a14, HWND *a15, unk0 *a16)
 {
-  gameSpecificUnk0 *gsu0_1; // edi
+  unk0 *gsu0_1; // edi
   int result; // eax
   HINSTANCE hInst; // ebx
   HWND wnd1; // esi
-  gameSpecificUnk0 *gsu0; // eax
+  unk0 *gsu0; // eax
   HWND wnd; // eax
   HWND wnd0; // esi
   int v23; // ebx
@@ -19,9 +19,9 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWind
   wnd1 = hWndParent;
   if ( !hWndParent )
     wnd1 = GetDesktopWindow();
-  gsu0 = (gameSpecificUnk0 *)operator new(0x8Cu);
+  gsu0 = (unk0 *)operator new(0x8Cu);
   if ( gsu0 )
-    gsu0_1 = initGameSpecificUnk0(gsu0);
+    gsu0_1 = initUnk(gsu0);
   if ( !gsu0_1 )
     return -2147024882;
   wnd = CreateWindowExA(
@@ -44,7 +44,7 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWind
     UpdateWindow(wnd0);
     if ( g_Playmusic == PLAYMUSIC_EAR )
       setupEAR(wnd0);
-    v23 = sub_1000A1E0(gsu0_1, wnd0, a3, 0, 0, 0, 0, 0, 1);
+    v23 = meth_1000A1E0(gsu0_1, wnd0, a3, 0, 0, 0, 0, 0, 1);
     if ( v23 >= 0 )
     {
       if ( a15 )

@@ -9,7 +9,7 @@ int __cdecl sub_1000C510(HANDLE *a1)
   if ( dword_10277B54 )
   {
     SetEvent(hEvent);
-    WaitForSingleObject(dword_10277B54, 0xFFFFFFFF);
+    WaitForSingleObject(dword_10277B54, INFINITE);
     CloseHandle(dword_10277B54);
     dword_10277B54 = 0;
   }

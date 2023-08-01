@@ -1,5 +1,5 @@
 //----- (10009860) --------------------------------------------------------
-int __cdecl sub_10009860(unsigned int a1)
+int __cdecl PopCount(unsigned int a1)
 {
   unsigned int v1; // ecx
   int result; // eax

@@ -1,10 +1,10 @@
 //----- (1007A450) --------------------------------------------------------
 int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam)
 {
-  LONG v3; // eax
+  unk0 *v3; // eax
   int result; // eax
 
-  v3 = GetWindowLongA(hWnd, -21);
+  v3 = (unk0 *)GetWindowLongA(hWnd, -21);
   if ( wParam )
   {
     if ( wParam == 1 )

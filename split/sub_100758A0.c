@@ -7,7 +7,7 @@ void __thiscall sub_100758A0(_DWORD *this)
 
   if ( dword_106C7CB8 )
   {
-    if ( this[1002] >= dword_100BD3E0 || this[991] || sub_1003AC90(this + 997, this) >= 0.0 )
+    if ( this[1002] >= dword_100BD3E0 || this[991] || sub_1003AC90((float *)this + 997, (float *)this) >= 0.0 )
     {
       this[2670] = 0;
     }
@@ -34,4 +34,3 @@ void __thiscall sub_100758A0(_DWORD *this)
     }
   }
 }
-// 1003AC90: using guessed type double __cdecl sub_1003AC90(_DWORD, _DWORD);

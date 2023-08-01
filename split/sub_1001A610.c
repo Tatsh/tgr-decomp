@@ -5,7 +5,7 @@ int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4)
   HDC v5; // esi
   int v6; // ebx
   int v7; // ebx
-  unk0 *v8; // esi
+  __unk0 *v8; // esi
   IID **__attribute__((__org_arrdim(0,3))) v9; // eax
   int v11; // [esp+10h] [ebp-Ch]
   int v12; // [esp+14h] [ebp-8h]

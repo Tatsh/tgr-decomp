@@ -1,76 +1,76 @@
 //----- (1000AFB0) --------------------------------------------------------
-int __thiscall sub_1000AFB0(_DWORD *this)
+HRESULT __thiscall sub_1000AFB0(unk0 *this)
 {
-  int v2; // ebx
-  unsigned int v3; // ebp
-  double v4; // st7
-  int *v5; // eax
-  int v6; // ecx
-  int result; // eax
-  void *v8; // ebx
-  _DWORD *v9; // eax
-  _DWORD *v10; // eax
-  int v11; // ebx
-  _DWORD *v12; // esi
-  int v13; // eax
-  int v14[11]; // [esp+18h] [ebp-38h] BYREF
+  signed int viewportWidth; // ebx
+  DWORD viewportHeight; // ebp
+  double dvClipY; // st7
+  IDirect3DViewport2 *d3dViewport2Instance; // eax
+  IDirect3DViewport2Vtbl *d3dViewport2Vtbl; // ecx
+  HRESULT hr; // eax
+  unk0_member2 *v8; // ebx
+  unk0_member2 *v9; // eax
+  unk0_member2 *v10; // eax
+  IDirect3DViewport2 *d3dViewport2_1; // ebx
+  unk0_member2 *v12; // esi
+  LPDIRECT3DMATERIAL2 direct3DMaterial2; // eax
+  D3DVIEWPORT2 d3dViewport2_2; // [esp+18h] [ebp-38h] BYREF
   int v15; // [esp+4Ch] [ebp-4h]
 
-  if ( !this[24] || !this[25] )
+  if ( !this->lpD3DDevice2 || !this->lpDirect3DViewport2 )
     return -2005522669;
-  v2 = abs32(this[32] - this[30]);
-  v3 = abs32(this[33] - this[31]);
-  if ( v2 )
-    v4 = (double)v3 / (double)v2;
+  viewportWidth = abs32(this->field_80 - this->field_1);
+  viewportHeight = abs32(this->field_84 - this->field_7C);
+  if ( viewportWidth )
+    dvClipY = (double)viewportHeight / (double)viewportWidth;
   else
-    v4 = 1.0;
-  memset(v14, 0, sizeof(v14));
-  *(float *)&v14[6] = v4;
-  v5 = (int *)this[25];
-  *(float *)&v14[8] = v4 + v4;
-  v6 = *v5;
-  v14[0] = 44;
-  v14[1] = 0;
-  v14[2] = 0;
-  v14[3] = v2;
-  v14[4] = v3;
-  v14[5] = -1082130432;
-  v14[7] = 0x40000000;
-  v14[9] = 0;
-  v14[10] = 1065353216;
-  result = (*(int (__stdcall **)(int *, int *))(v6 + 68))(v5, v14);
-  if ( result >= 0 )
+    dvClipY = 1.0;
+  memset(&d3dViewport2_2, 0, sizeof(d3dViewport2_2));
+  d3dViewport2_2.dvClipY = dvClipY;
+  d3dViewport2Instance = this->lpDirect3DViewport2;
+  d3dViewport2_2.dvClipHeight = dvClipY + dvClipY;
+  d3dViewport2Vtbl = d3dViewport2Instance->lpVtbl;
+  d3dViewport2_2.dwSize = 44;
+  d3dViewport2_2.dwX = 0;
+  d3dViewport2_2.dwY = 0;
+  d3dViewport2_2.dwWidth = viewportWidth;
+  d3dViewport2_2.dwHeight = viewportHeight;
+  d3dViewport2_2.dvClipX = -1.0;
+  d3dViewport2_2.dvClipWidth = 2.0;
+  d3dViewport2_2.dvMinZ = 0.0;
+  d3dViewport2_2.dvMaxZ = 1.0;
+  hr = d3dViewport2Vtbl->SetViewport2(d3dViewport2Instance, &d3dViewport2_2);
+  if ( hr >= 0 )
   {
-    result = (*(int (__stdcall **)(_DWORD, _DWORD))(*(_DWORD *)this[24] + 52))(this[24], this[25]);
-    if ( result >= 0 )
+    hr = this->lpD3DDevice2->lpVtbl->SetCurrentViewport(this->lpD3DDevice2, this->lpDirect3DViewport2);
+    if ( hr >= 0 )
     {
-      v8 = (void *)this[2];
+      v8 = this->unknown;
       if ( v8 )
       {
-        sub_1000A170((_DWORD *)this[2]);
+        SafeReleaseDirect3DMaterial2(this->unknown);
         operator delete(v8);
       }
-      v9 = (_DWORD *)operator new(0x5Cu);
+      v9 = (unk0_member2 *)operator new(0x5Cu);
       v15 = 0;
       if ( v9 )
-        v10 = sub_1000A100(v9, (int *)this[16], this[24]);
+        v10 = sub_1000A100(v9, this->d3d2, this->lpD3DDevice2);
       else
         v10 = 0;
-      this[2] = v10;
-      v10[1] = 0;
-      v10[2] = 0;
-      v10[3] = 0;
-      v10[22] = 1;
-      v11 = this[25];
-      v12 = (_DWORD *)this[2];
+      this->unknown = v10;
+      v10->d3dMaterial.diffuse.r = 0.0;
+      v10->d3dMaterial.diffuse.g = 0.0;
+      v10->d3dMaterial.diffuse.b = 0.0;
+      v10->field_58 = 1;
+      d3dViewport2_1 = this->lpDirect3DViewport2;
+      v12 = this->unknown;
       v15 = -1;
-      v13 = v12[21];
-      v12[19] = 1;
-      v12[22] = 0;
-      (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)v13 + 12))(v13, v12);
-      (*(void (__stdcall **)(int, _DWORD))(*(_DWORD *)v11 + 32))(v11, v12[20]);
-      result = 0;
+      direct3DMaterial2 = v12->lpDirect3DMaterial2;
+      v12->d3dMaterial.dwRampSize = 1;
+      v12->field_58 = 0;
+      direct3DMaterial2->lpVtbl->SetMaterial(direct3DMaterial2, &v12->d3dMaterial);
+      d3dViewport2_1->lpVtbl->SetBackground(d3dViewport2_1, v12->lpD3DMaterialHandle);
+      hr = 0;
     }
   }
-  return result;
+  return hr;
 }

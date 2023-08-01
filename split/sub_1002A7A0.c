@@ -11,7 +11,7 @@ void sub_1002A7A0()
   sub_10074F40();
   for ( i = 1; i <= dword_10575424; ++i )
   {
-    sub_1000A0B0(*((_DWORD **)Block + i));
+    sub_1000A0B0(*((#511 **)Block + i));
     operator delete(*((void **)Block + i));
   }
   free(Block);

@@ -7,7 +7,7 @@ int __cdecl sub_100466C0(int a1)
   dword_10AA2984 = 0;
   dword_10AA2904 = (void *)dword_10AA2918;
   sub_1003E310();
-  sub_1006A4A0((#483 *)g_Config, g_bossRallyCfgPath);
+  WriteConfigFile((#483 *)g_Config, g_bossRallyCfgPath);
   return 0;
 }
 // 10AA2918: using guessed type int dword_10AA2918;

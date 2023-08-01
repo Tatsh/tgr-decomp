@@ -3,7 +3,7 @@ LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam)
 {
   void *v3; // ecx
   void *v4; // ecx
-  _DWORD *v5; // esi
+  unk0 *v5; // esi
   int v6; // eax
   int v7; // eax
 
@@ -33,23 +33,23 @@ LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam)
   }
   if ( sub_1006A980() == 1 )
   {
-    v5 = (_DWORD *)GetWindowLongA(hWnd, -21);
+    v5 = (unk0 *)GetWindowLongA(hWnd, -21);
     if ( dword_10680598 )
     {
       if ( v5 )
       {
-        v6 = v5[5];
+        v6 = v5->unkMeth1;
         LOBYTE(v6) = v6 | 8;
-        v5[5] = v6;
-        sub_1000B2C0((LONG)v5);
+        v5->unkMeth1 = v6;
+        sub_1000B2C0(v5);
         sub_1000B150(v5);
       }
     }
     else if ( v5 )
     {
-      v7 = v5[5];
+      v7 = v5->unkMeth1;
       LOBYTE(v7) = v7 & 0xF7;
-      v5[5] = v7;
+      v5->unkMeth1 = v7;
       InvalidateRect(hWnd, 0, 0);
     }
   }

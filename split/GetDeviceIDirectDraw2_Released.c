@@ -5,8 +5,8 @@ IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev)
   IDirectDraw2 *dd; // [esp+28h] [ebp-4h] BYREF
 
   if ( !dev
-    || dev->lpVtbl->GetRenderTarget(dev, (IDirectDrawSurface *)&dev)
-    || dev->lpVtbl->QueryInterface(dev, &CLSID_IDirectDrawSurface2, (IUnknown *)&drawSurface) )
+    || dev->lpVtbl->GetRenderTarget(dev, (LPDIRECTDRAWSURFACE *)&dev)
+    || dev->lpVtbl->QueryInterface(dev, &CLSID_IDirectDrawSurface2, (LPVOID *)&drawSurface) )
   {
     return 0;
   }

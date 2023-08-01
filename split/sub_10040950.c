@@ -1,7 +1,7 @@
 //----- (10040950) --------------------------------------------------------
 int __cdecl sub_10040950(int a1)
 {
-  if ( dword_118ABDBC )
+  if ( MEMORY[0x118ABDBC] )
     *(_WORD *)(a1 + 123404) = byte_100AC630[dword_10AA2A1C];
   else
     *(_WORD *)(a1 + 123404) = byte_100AC631;

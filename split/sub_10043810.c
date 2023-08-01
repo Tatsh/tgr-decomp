@@ -90,7 +90,7 @@ LABEL_17:
     if ( dword_10AA288C )
     {
       sub_1003E310();
-      sub_1006A4A0((#483 *)g_Config, g_bossRallyCfgPath);
+      WriteConfigFile((#483 *)g_Config, g_bossRallyCfgPath);
       v1[2746][26] = 0;
       (*(void (__thiscall **)(_DWORD *, _DWORD))(*v1[2746] + 24))(v1[2746], 0);
       dword_10AA285C = 0;

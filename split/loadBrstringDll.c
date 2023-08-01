@@ -10,7 +10,7 @@ HMODULE loadBrstringDll()
   UINT v5; // edi
   _DWORD *v6; // esi
   int v7; // eax
-  DWORD *v8; // [esp-8h] [ebp-14h]
+  void *v8; // [esp-4h] [ebp-10h]
 
   memset(&unk_11829374, 0, 0x4B8u);
   result = (HMODULE)g_brstring;
@@ -54,6 +54,6 @@ HMODULE loadBrstringDll()
   }
   return result;
 }
-// 1007402F: positive sp value 8 has been found
+// 1007402E: positive sp value 4 has been found
 // 10073F8E: variable 'v8' is possibly undefined
 // 11829830: using guessed type int dword_11829830;

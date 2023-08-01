@@ -6,7 +6,7 @@ float *__thiscall sub_10001890(_DWORD *this, float a2)
   int v7[3]; // [esp+Ch] [ebp-Ch] BYREF
   float v8; // [esp+1Ch] [ebp+4h]
 
-  sub_1003AEE0((float *)v7, (float *)this + 2616, (float *)(LODWORD(a2) + 48));
+  sub_1003AEE0((float *)v7, (float *)this + 0xA38, (float *)(LODWORD(a2) + 0x30));
   v4 = sub_1003B170((float *)v7);
   if ( v4 == 0.0 )
   {
@@ -22,7 +22,7 @@ float *__thiscall sub_10001890(_DWORD *this, float a2)
     v8 = v4;
     sub_1003AD40(SLODWORD(a2), (int)v7, v8);
   }
-  if ( this[991] )
+  if ( this[0x3DF] )
   {
     v5 = (float *)(LODWORD(a2) + 16);
     sub_1003AC30((float *)(LODWORD(a2) + 16), (float *)this + 8, (float *)LODWORD(a2));

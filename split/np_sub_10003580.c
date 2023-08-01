@@ -128,7 +128,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4)
               dword_1022AEFC = sub_10073C10(v80);
             waitForSingleObjectRef = WaitForSingleObject;
             v11 = 606 * v7;
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
+            WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
             if ( v7 == dword_10094294 )
               goto LABEL_17;
             if ( dword_10221354[606 * v7] != v68 && v9 == 2 )
@@ -210,7 +210,7 @@ LABEL_17:
             if ( v79 )
               strcpy(&byte_10221898[v11 * 4], Buffer);
             sub_10004760((_DWORD *)a1, v7, v69, v74, v76, v78, v71, (int)Buffer, v68, 16);
-            ReleaseMutex(*(&dword_10221328 + 606 * v7));
+            ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
             goto LABEL_73;
           case 32:
             if ( a4 != 1 )
@@ -229,11 +229,11 @@ LABEL_17:
             goto LABEL_73;
           case 64:
             v17 = 606 * v7;
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
+            WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
             if ( (dword_10221354[606 * v7] & 0x3Fu) < 2 )
             {
               sub_10006EC0((int)v83, v80);
-              ReleaseMutex(*(&dword_10221328 + 606 * v7));
+              ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
             }
             else
             {
@@ -259,7 +259,7 @@ LABEL_17:
               dword_10221360[dword_10221884[v17] + v17] = 64;
               sub_10006EC0((int)&flt_10221380[40 * dword_10221884[v17] + v17], v80);
               dword_10221C9C[v17] = 33 * (2 * (dword_10221310 - v67) % 3) + 100 * (2 * (dword_10221310 - v67) / 3);
-              ReleaseMutex(*(HANDLE *)((char *)&dword_10221328 + v17 * 4));
+              ReleaseMutex((HANDLE)dword_10221328[v17]);
             }
             goto LABEL_73;
           case 96:
@@ -413,11 +413,11 @@ LABEL_111:
             break;
           case 128:
             v23 = 606 * v7;
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
+            WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
             if ( (dword_10221354[606 * v7] & 0x3Fu) < 2 )
             {
               sub_100073E0(v82, v82, v80);
-              ReleaseMutex(*(&dword_10221328 + 606 * v7));
+              ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
             }
             else
             {
@@ -485,7 +485,7 @@ LABEL_111:
                 (int)v37);
               sub_100073E0(&flt_10221380[40 * dword_10221884[v23] + v23], v37, v80);
               dword_10221C9C[v23] = 33 * (2 * (dword_10221310 - v67) % 3) + 100 * (2 * (dword_10221310 - v67) / 3);
-              ReleaseMutex(*(HANDLE *)((char *)&dword_10221328 + v23 * 4));
+              ReleaseMutex((HANDLE)dword_10221328[v23]);
             }
             goto LABEL_73;
           case 192:
@@ -494,10 +494,10 @@ LABEL_111:
             v73 = getTicks();
             v38 = sub_10073C10(v80);
             v39 = (unsigned __int16)sub_10073BE0(v80);
-            WaitForSingleObject(*(&dword_10221328 + 606 * v7), INFINITE);
+            WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
             dword_10221C98[606 * v7] = v38;
             dword_10221C9C[606 * v7] = v39;
-            ReleaseMutex(*(&dword_10221328 + 606 * v7));
+            ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
             if ( v7 == dword_10094294 )
             {
               sub_10004910((_DWORD *)a1, v67);
@@ -572,6 +572,7 @@ LABEL_122:
 // 10221314: using guessed type int dword_10221314;
 // 10221318: using guessed type int dword_10221318;
 // 10221320: using guessed type int g_bcar;
+// 10221328: using guessed type int dword_10221328[];
 // 1022132C: using guessed type int dword_1022132C[];
 // 10221330: using guessed type int dword_10221330[];
 // 10221354: using guessed type int dword_10221354[];

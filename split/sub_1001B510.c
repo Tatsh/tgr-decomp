@@ -1,8 +1,8 @@
 //----- (1001B510) --------------------------------------------------------
-int __thiscall sub_1001B510(#468 *this, IDirect3D2 *a2)
+int __thiscall sub_1001B510(#468 *this, #462 *a2)
 {
   int result; // eax
-  IDirect3D2Vtbl *v4; // ecx
+  #461 *v4; // ecx
   int v5; // eax
   int v6; // [esp+Ch] [ebp-Ch] BYREF
   int v7; // [esp+10h] [ebp-8h]
@@ -12,11 +12,14 @@ int __thiscall sub_1001B510(#468 *this, IDirect3D2 *a2)
     return 0;
   if ( !a2 )
     return -2005522670;
-  v4 = a2->lpVtbl;
+  v4 = *(#461 **)a2;
   v6 = 1;
   v8 = this;
   v7 = 0;
-  result = v4->EnumDevices(a2, d3d2enumDevicesCallback, &v6);
+  result = (*((int (__stdcall **)(#462 *, int (__stdcall *)(GUID *, LPSTR, LPSTR, #469 *, #469 *, LPVOID), int *))v4 + 3))(
+             a2,
+             d3d2enumDevicesCallback,
+             &v6);
   if ( result >= 0 )
   {
     if ( v6 && v7 && *((_DWORD *)this + 200) == v7 )

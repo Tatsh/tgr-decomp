@@ -20,7 +20,7 @@ int sub_100791D0()
         && g_DirectInputDevice2A )
       {
         diDevice2AVtbl = g_DirectInputDevice2A->lpVtbl;
-        dword_118ABDBC = 1;
+        diEffect.dwStartDelay = 1;
         v2[0] = 20;
         v2[1] = 16;
         v2[2] = 0;
@@ -40,15 +40,15 @@ int sub_100791D0()
           (LPVOID)6,
           1);
         sub_100773D0();
-        dword_118ABDBC = 0;
+        diEffect.dwStartDelay = 0;
       }
       if ( !g_DirectInputDevice2A )
         return 0;
-      if ( sub_10078C30(g_DirectInputDevice2A, 4, 0, 1, -128, 128) < 0 )
+      if ( sub_10078C30(g_DirectInputDevice2A, (GUID *)4, 0, 1, -128, 128) < 0 )
         goto LABEL_15;
       if ( sub_10078C80((int *)g_DirectInputDevice2A, 5, 0, 1, 0) < 0 )
         goto LABEL_17;
-      if ( sub_10078C30(g_DirectInputDevice2A, 4, 4, 1, -128, 128) < 0 )
+      if ( sub_10078C30(g_DirectInputDevice2A, (GUID *)4, 4, 1, -128, 128) < 0 )
       {
 LABEL_15:
         OutputDebugStringA(aErrorIdirectin);
@@ -76,5 +76,4 @@ LABEL_17:
 }
 // 10B4E1D0: using guessed type int g_ReadJoystick;
 // 10B4E1E0: using guessed type int dword_10B4E1E0;
-// 118ABDBC: using guessed type int dword_118ABDBC;
 // 118ABE00: using guessed type int dword_118ABE00;

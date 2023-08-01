@@ -1,9 +1,9 @@
 //----- (1007A4E0) --------------------------------------------------------
 LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam)
 {
-  LONG v3; // eax
+  unk0 *v3; // eax
 
-  v3 = GetWindowLongA(hWnd, -21);
+  v3 = (unk0 *)GetWindowLongA(hWnd, -21);
   if ( wParam <= 0xF010 )
   {
     if ( wParam != 61456 )

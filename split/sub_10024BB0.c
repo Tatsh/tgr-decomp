@@ -12,7 +12,7 @@ int sub_10024BB0()
     v2 = 0;
     do
     {
-      sub_1000A020(*((unk2 **)Block + *(_DWORD *)((char *)dword_1057543C + v2)));
+      sub_1000A020(*((#511 **)Block + *(_DWORD *)((char *)dword_1057543C + v2)));
       result = dword_105553F0;
       ++v1;
       v2 += 696;

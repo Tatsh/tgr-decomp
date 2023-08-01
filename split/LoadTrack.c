@@ -3,13 +3,13 @@ int __cdecl LoadTrack(int trackIndex)
 {
   CHK_File *cFile; // esi
   signed int filesize; // edi
-  int v3; // eax
+  int trackInstances; // eax
   int v4; // edi
   int v5; // esi
   double v6; // st7
   double v7; // st7
   int v8; // ecx
-  DWORD *_; // [esp+0h] [ebp-418h]
+  void *_; // [esp+0h] [ebp-418h]
   int v11; // [esp+14h] [ebp-404h] BYREF
   char *trackFilepath; // [esp+18h] [ebp-400h] BYREF
   int v13; // [esp+1Ch] [ebp-3FCh]
@@ -40,7 +40,7 @@ int __cdecl LoadTrack(int trackIndex)
   dword_106C56EC = (int)&unk_106C8E78 - g_TrackHeaderSize;
   dword_10690BEC = (int)&unk_106C8E78 + g_TrackHeader;
   sub_10037E10(&g_TrackHeader);
-  v3 = g_TrackInstances;
+  trackInstances = g_TrackInstances;
   v4 = 0;
   dword_100AA89C = -1;
   dword_100AA8A0 = -1;
@@ -67,15 +67,15 @@ int __cdecl LoadTrack(int trackIndex)
         }
         *(float *)(v8 + v5 + 64) = v7;
       }
-      v3 = g_TrackInstances;
+      trackInstances = g_TrackInstances;
       ++v4;
       v5 += 84;
     }
     while ( v4 < g_TrackInstances );
   }
-  if ( v3 > 2048 )
+  if ( trackInstances > 2048 )
   {
-    printf("ERROR: instances (%d) > MAX_INSTANCES (%d)\n", v3, 2048);
+    printf("ERROR: instances (%d) > MAX_INSTANCES (%d)\n", trackInstances, 2048);
     exit(1);
   }
   if ( g_TrackHeaderSize != 560 )
@@ -97,5 +97,5 @@ int __cdecl LoadTrack(int trackIndex)
 // 106C7C48: using guessed type int g_TrackHeader;
 // 106C7C4C: using guessed type int g_TrackHeaderSize;
 // 106C7CA8: using guessed type int dword_106C7CA8;
-// 106C7CAC: using guessed type int dword_106C7CAC;
+// 106C7CAC: using guessed type int g_TrackInstances;
 // 10A9977C: using guessed type int dword_10A9977C;

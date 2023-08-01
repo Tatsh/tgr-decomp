@@ -11,10 +11,10 @@ float *__thiscall sub_100015D0(#479 *this, float a2, float a3)
   int v11[3]; // [esp+14h] [ebp-Ch] BYREF
   int v12; // [esp+24h] [ebp+4h]
 
-  if ( *((_DWORD *)this + 991) )
+  if ( *((_DWORD *)this + 0x3DF) )
   {
-    v4 = LODWORD(a2) + 48;
-    sub_1003AFE0(LODWORD(a2) + 48, (int)this + 48, (int)this + 32, 2.4000001);
+    v4 = LODWORD(a2) + 0x30;
+    sub_1003AFE0(LODWORD(a2) + 0x30, (int)this + 0x30, (int)this + 0x20, 2.4000001);
     v12 = -1053818880;
     if ( dword_100AA8B4 != 1 )
       v12 = -1046583706;
@@ -24,7 +24,7 @@ float *__thiscall sub_100015D0(#479 *this, float a2, float a3)
   {
     v6 = (float *)(LODWORD(a2) + 48);
     *(float *)(LODWORD(a2) + 56) = *(float *)(LODWORD(a2) + 56) - 2.4000001;
-    sub_1003AEE0((float *)v11, (float *)(LODWORD(a2) + 48), (float *)this + 12);
+    sub_1003AEE0((float *)v11, (float *)(LODWORD(a2) + 48), (float *)this + 0xC);
     v7 = sub_1003B170((float *)v11);
     if ( v7 != 0.0 )
     {
@@ -54,7 +54,7 @@ float *__thiscall sub_100015D0(#479 *this, float a2, float a3)
       sub_1003AD10((int)v6, v10);
     }
     sub_1003AFA0((int)v6, (int)v6, (int)v11, a3);
-    result = sub_1003AF70(v6, (float *)this + 12);
+    result = sub_1003AF70(v6, (float *)this + 0xC);
     *(float *)(LODWORD(a2) + 56) = *(float *)(LODWORD(a2) + 56) - -2.4000001;
   }
   return result;

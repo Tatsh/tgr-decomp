@@ -1,8 +1,8 @@
 //----- (10073C90) --------------------------------------------------------
-int __thiscall sub_10073C90(int *this, int a2)
+unsigned int __thiscall sub_10073C90(int *this, int a2)
 {
   int v3; // ecx
-  int result; // eax
+  unsigned int result; // eax
   int v5; // edx
   char v6; // di
   int v7; // ebx

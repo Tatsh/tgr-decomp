@@ -5,10 +5,10 @@ int sub_1002F460()
   int v1; // ecx
   int result; // eax
 
-  v0 = (unsigned __int8)byte_100B3820[24 * (unsigned __int8)dword_10ACED34->gap0[4]
-                                    + 2 * (unsigned __int8)dword_10ACED34->gap0[5]];
+  v0 = (unsigned __int8)byte_100B3820[24 * *((unsigned __int8 *)dword_10ACED34 + 4)
+                                    + 2 * *((unsigned __int8 *)dword_10ACED34 + 5)];
   g_chosenTrack = v0;
-  if ( (dword_10ACED34->gap0[0] & 1) != 0 )
+  if ( (*(_BYTE *)dword_10ACED34 & 1) != 0 )
   {
     if ( v0 >= 6 )
       v1 = v0 - 6;
@@ -16,7 +16,7 @@ int sub_1002F460()
       v1 = v0 + 6;
     g_chosenTrack = v1;
   }
-  result = (unsigned __int8)dword_10ACED34->gap0[5] + 12 * (unsigned __int8)dword_10ACED34->gap0[4];
+  result = *((unsigned __int8 *)dword_10ACED34 + 5) + 12 * *((unsigned __int8 *)dword_10ACED34 + 4);
   dword_104BBE08 = (unsigned __int8)byte_100B3821[2 * result];
   return result;
 }

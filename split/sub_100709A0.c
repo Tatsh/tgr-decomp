@@ -12,7 +12,7 @@ char sub_100709A0()
   unsigned int Buffer; // [esp+4h] [ebp-4h] BYREF
 
   v0 = CalculateChecksum(0, 0, 0);
-  Buffer = CalculateChecksum(v0, dword_10ACED34->gap0, 0x200u);
+  Buffer = CalculateChecksum(v0, (unsigned __int8 *)dword_10ACED34, 0x200u);
   v1 = fopen(aCRallyseasonDatFilepath_ptr, aWb);
   v2 = v1;
   if ( !v1 )

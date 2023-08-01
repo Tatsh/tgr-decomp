@@ -1,5 +1,5 @@
 //----- (1000A820) --------------------------------------------------------
-HRESULT __thiscall sub_1000A820(gameSpecificUnk0 *this)
+HRESULT __thiscall meth_1000A820(unk0 *this)
 {
   IDirectDraw2 *dd2; // edx
   IDirectDraw2Vtbl *dd2Vtbl; // eax

@@ -1,7 +1,7 @@
 //----- (10001000) --------------------------------------------------------
 int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned int elementSize)
 {
-  unsigned __int8 *buf0; // esi
+  unsigned __int8 *buf_1; // esi
   unsigned int sum2; // ecx
   unsigned int sum1; // edi
   unsigned int i; // ebx
@@ -39,7 +39,7 @@ int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned 
   int v39; // ecx
   int v40; // edi
 
-  buf0 = buf;
+  buf_1 = buf;
   sum2 = (unsigned __int16)seed;
   sum1 = HIWORD(seed);
   if ( !buf )
@@ -56,39 +56,39 @@ int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned 
       do
       {
         chunkSize -= 0x10;
-        v10 = *buf0;
-        buf0 += 0x10;
+        v10 = *buf_1;
+        buf_1 += 0x10;
         v11 = v10 + sum2;
         v12 = v11 + sum1;
-        v13 = *(buf0 - 15) + v11;
+        v13 = *(buf_1 - 15) + v11;
         v14 = v13 + v12;
-        v15 = *(buf0 - 14) + v13;
+        v15 = *(buf_1 - 14) + v13;
         v16 = v15 + v14;
-        v17 = *(buf0 - 13) + v15;
+        v17 = *(buf_1 - 13) + v15;
         v18 = v17 + v16;
-        v19 = *(buf0 - 12) + v17;
+        v19 = *(buf_1 - 12) + v17;
         v20 = v19 + v18;
-        v21 = *(buf0 - 11) + v19;
+        v21 = *(buf_1 - 11) + v19;
         v22 = v21 + v20;
-        v23 = *(buf0 - 10) + v21;
+        v23 = *(buf_1 - 10) + v21;
         v24 = v23 + v22;
-        v25 = *(buf0 - 9) + v23;
+        v25 = *(buf_1 - 9) + v23;
         v26 = v25 + v24;
-        v27 = *(buf0 - 8) + v25;
+        v27 = *(buf_1 - 8) + v25;
         v28 = v27 + v26;
-        v29 = *(buf0 - 7) + v27;
+        v29 = *(buf_1 - 7) + v27;
         v30 = v29 + v28;
-        v31 = *(buf0 - 6) + v29;
+        v31 = *(buf_1 - 6) + v29;
         v32 = v31 + v30;
-        v33 = *(buf0 - 5) + v31;
+        v33 = *(buf_1 - 5) + v31;
         v34 = v33 + v32;
-        v35 = *(buf0 - 4) + v33;
+        v35 = *(buf_1 - 4) + v33;
         v36 = v35 + v34;
-        v37 = *(buf0 - 3) + v35;
+        v37 = *(buf_1 - 3) + v35;
         v38 = v37 + v36;
-        v39 = *(buf0 - 2) + v37;
+        v39 = *(buf_1 - 2) + v37;
         v40 = v39 + v38;
-        sum2 = *(buf0 - 1) + v39;
+        sum2 = *(buf_1 - 1) + v39;
         sum1 = sum2 + v40;
         --v9;
       }
@@ -96,7 +96,7 @@ int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned 
     }
     for ( ; chunkSize; --chunkSize )
     {
-      sum2 += *buf0++;
+      sum2 += *buf_1++;
       sum1 += sum2;
     }
     sum2 %= 0xFFF1u;

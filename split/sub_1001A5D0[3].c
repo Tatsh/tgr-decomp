@@ -1,5 +1,5 @@
 //----- (1001A5D0) --------------------------------------------------------
-IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, unk0 *a3)
+IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, __unk0 *a3)
 {
   IID **__attribute__((__org_arrdim(0,3))) result; // eax
 

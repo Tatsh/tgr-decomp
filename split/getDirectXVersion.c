@@ -4,14 +4,14 @@ void __cdecl GetDirectXVersion(_DWORD *dxVersion, _DWORD *out_b)
   DWORD result; // eax
   HMODULE dinputDllHmod; // eax
   HMODULE dinputDllHmod_2; // esi
-  FARPROC DirectInputCreateA; // ebx
+  HRESULT (__stdcall *DirectInputCreateA)(HINSTANCE, DWORD, LPDIRECTINPUTA *, LPUNKNOWN); // ebx
   HMODULE drawDllHmod; // eax
   HMODULE drawDllHmod_2; // esi
   HRESULT (__stdcall *DirectDrawCreatePA)(GUID *, LPDIRECTDRAW *, IUnknown *); // eax
   IDirectDrawVtbl *ddrawVtbl; // ecx
   HMODULE dinputDllHmod_3; // eax
   HMODULE dinputDllHmod_4; // ebp
-  FARPROC DirectInputCreatePA; // edi
+  HRESULT (__stdcall *DirectInputCreatePA)(HINSTANCE, DWORD, LPDIRECTINPUTA *, LPUNKNOWN); // edi
   IDirectDraw *ppvDDraw; // eax
   IDirectDrawVtbl *ddrawVtbl_2; // ecx
   IDirectDrawSurfaceVtbl *ppvDDrawSurfaceVtbl; // ecx
@@ -55,7 +55,9 @@ void __cdecl GetDirectXVersion(_DWORD *dxVersion, _DWORD *out_b)
       dinputDllHmod_2 = dinputDllHmod;
       if ( dinputDllHmod )
       {
-        DirectInputCreateA = GetProcAddress(dinputDllHmod, aDirectinputcre);
+        DirectInputCreateA = (HRESULT (__stdcall *)(HINSTANCE, DWORD, LPDIRECTINPUTA *, LPUNKNOWN))GetProcAddress(
+                                                                                                     dinputDllHmod,
+                                                                                                     aDirectinputcre);
         FreeLibrary(dinputDllHmod_2);
         if ( DirectInputCreateA )
           *dxVersion = 768;
@@ -95,7 +97,7 @@ void __cdecl GetDirectXVersion(_DWORD *dxVersion, _DWORD *out_b)
           dinputDllHmod_4 = dinputDllHmod_3;
           if ( dinputDllHmod_3 )
           {
-            DirectInputCreatePA = GetProcAddress(dinputDllHmod_3, aDirectinputcre);
+            DirectInputCreatePA = (HRESULT (__stdcall *)(HINSTANCE, DWORD, LPDIRECTINPUTA *, LPUNKNOWN))GetProcAddress(dinputDllHmod_3, aDirectinputcre);
             FreeLibrary(dinputDllHmod_4);
             if ( DirectInputCreatePA )
             {

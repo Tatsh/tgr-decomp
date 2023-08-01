@@ -1,5 +1,5 @@
 //----- (10069C90) --------------------------------------------------------
-int __thiscall sub_10069C90(_DWORD *this)
+int __thiscall meth_10069C90(_DWORD *this)
 {
   int result; // eax
 

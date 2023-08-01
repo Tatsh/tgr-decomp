@@ -37,7 +37,7 @@ int sub_100798F0()
          (int)&dword_10B4E6F8,
          1,
          &wnd,
-         (gameSpecificUnk0 *)&g_gsu0) < 0 )
+         (unk0 *)&g_gsu0) < 0 )
     return 0;
   g_HWND = wnd;
   v1 = operator new(4u);

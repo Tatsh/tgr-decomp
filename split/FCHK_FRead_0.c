@@ -1,22 +1,22 @@
 //----- (100030E0) --------------------------------------------------------
-size_t __cdecl FCHK_FRead_0(void *Buffer, size_t ElementSize, size_t ElementCount, CHK_File *fp)
+size_t __cdecl FCHK_FRead_0(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp)
 {
   size_t result; // eax
-  CHAR OutputString[1024]; // [esp+Ch] [ebp-400h] BYREF
+  CHAR debugMessage[1024]; // [esp+Ch] [ebp-400h] BYREF
 
-  if ( ElementSize * ElementCount )
+  if ( elementSize * elementCount )
   {
-    result = freadLock(Buffer, ElementSize, ElementCount, fp->pfil);
+    result = freadLock(buffer, elementSize, elementCount, fp->pfil);
     if ( !result )
       return result;
-    if ( result != ElementCount )
+    if ( result != elementCount )
     {
       sprintf(
-        OutputString,
+        debugMessage,
         "FCHK_FRead(): trying to read %d bytes, but got only %d bytes.\n",
-        ElementSize * ElementCount,
-        ElementSize * result);
-      OutputDebugStringA(OutputString);
+        elementSize * elementCount,
+        elementSize * result);
+      OutputDebugStringA(debugMessage);
       exit(1);
     }
   }

@@ -1,5 +1,5 @@
 //----- (10006EC0) --------------------------------------------------------
-int __cdecl sub_10006EC0(int a1, int *a2)
+unsigned int __cdecl sub_10006EC0(int a1, int *a2)
 {
   char v2; // al
   __int16 v3; // cx
@@ -9,8 +9,8 @@ int __cdecl sub_10006EC0(int a1, int *a2)
   __int16 v7; // cx
   char v8; // al
   __int16 v9; // dx
-  int v10; // eax
-  int v11; // eax
+  unsigned int v10; // eax
+  unsigned int v11; // eax
   __int16 v12; // ax
   __int16 v13; // ax
   __int16 v14; // ax
@@ -34,7 +34,7 @@ int __cdecl sub_10006EC0(int a1, int *a2)
   double v32; // st7
   double v33; // st7
   double v34; // st7
-  int result; // eax
+  unsigned int result; // eax
 
   v2 = sub_10073C90(a2, 8);
   LOBYTE(v3) = 0;
@@ -82,10 +82,10 @@ int __cdecl sub_10006EC0(int a1, int *a2)
     v22 = v22 - 360.0;
   *(float *)(a1 + 72) = v22;
   *(float *)(a1 + 68) = v22;
-  *(float *)(a1 + 76) = (float)(unsigned int)sub_10073C90(a2, 1);
-  *(float *)(a1 + 80) = (float)(unsigned int)sub_10073C90(a2, 1);
-  *(float *)(a1 + 84) = (float)(unsigned int)sub_10073C90(a2, 1);
-  *(float *)(a1 + 88) = (float)(unsigned int)sub_10073C90(a2, 1);
+  *(float *)(a1 + 76) = (float)sub_10073C90(a2, 1);
+  *(float *)(a1 + 80) = (float)sub_10073C90(a2, 1);
+  *(float *)(a1 + 84) = (float)sub_10073C90(a2, 1);
+  *(float *)(a1 + 88) = (float)sub_10073C90(a2, 1);
   if ( sub_10073C90(a2, 1) )
     v23 = 128.0;
   else

@@ -1,5 +1,5 @@
 //----- (10038CB0) --------------------------------------------------------
-HRESULT __cdecl SetupDirectPlayPlayer(unk1 *u1)
+HRESULT __cdecl SetupDirectPlayPlayer(#503 *u1)
 {
   DPLCONNECTION *dplConnection; // ebx
   HRESULT hr; // ebp
@@ -51,16 +51,16 @@ LABEL_5:
          (IDirectPlay4AVtbl *)dplay4a,
          &idPlayer,
          dplConnection->lpPlayerName,
-         u1->hEvent,
+         (HANDLE)*((_DWORD *)u1 + 1),
          0,
          0,
          createPlayerFlags != 0 ? DPENUMPLAYERS_SERVERPLAYER : 0);
   if ( hr < 0 )
     goto LABEL_5;
   idPlayer_copy = idPlayer;
-  u1->lpDPlay4a = dplay4a;
-  u1->idPlayer = idPlayer_copy;
-  u1->createSession = (dplConnection->dwFlags & DPLCONNECTION_CREATESESSION) != 0;
+  *(_DWORD *)u1 = dplay4a;
+  *((_DWORD *)u1 + 2) = idPlayer_copy;
+  *((_DWORD *)u1 + 3) = (dplConnection->dwFlags & DPLCONNECTION_CREATESESSION) != 0;
   strcpy(dplay4aShortName, dplConnection->lpPlayerName->lpszShortName);
   user3 = (const char *)dplConnection->lpSessionDesc->dwUser3;
   if ( user3 )

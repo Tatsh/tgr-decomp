@@ -3,18 +3,18 @@ int sub_1002F4C0()
 {
   int result; // eax
   int v1; // ebp
-  struct_dword_10ACED34 **v2; // esi
+  #505 **v2; // esi
   int v3; // edx
   int v4; // edi
   unsigned __int16 *v5; // ecx
   unsigned __int16 v6; // bx
-  struct_dword_10ACED34 *v7; // eax
+  #505 *v7; // eax
   int v8; // ecx
   _BYTE *v9; // edx
   __int16 v10; // cx
-  struct_dword_10ACED34 *v11; // eax
+  #505 *v11; // eax
   int v12; // ecx
-  struct_dword_10ACED34 *v13; // eax
+  #505 *v13; // eax
   char v14; // cl
   int v15; // edx
 
@@ -33,7 +33,7 @@ int sub_1002F4C0()
         {
           v3 = 0;
           v4 = 4;
-          v5 = (unsigned __int16 *)&(*v2)->gap0[8 * (unsigned __int8)(*v2)->gap0[4] + 30];
+          v5 = (unsigned __int16 *)((char *)*v2 + 8 * *((unsigned __int8 *)*v2 + 4) + 30);
           do
           {
             v6 = *v5++;
@@ -41,25 +41,25 @@ int sub_1002F4C0()
             --v4;
           }
           while ( v4 );
-          if ( (unsigned __int8)++(*v2)->gap0[5] == dword_100B3814[6 * (unsigned __int8)(*v2)->gap0[4]] )
+          if ( (unsigned __int8)++*((_BYTE *)*v2 + 5) == dword_100B3814[6 * *((unsigned __int8 *)*v2 + 4)] )
           {
-            (*v2)->gap0[5] = 0;
-            if ( v3 >= dword_100B3818[6 * (unsigned __int8)(*v2)->gap0[4]] )
+            *((_BYTE *)*v2 + 5) = 0;
+            if ( v3 >= dword_100B3818[6 * *((unsigned __int8 *)*v2 + 4)] )
             {
-              (*v2)->wordF0 |= word_100B381E[12 * (unsigned __int8)(*v2)->gap0[4]++];
+              *((_WORD *)*v2 + 120) |= word_100B381E[12 * (unsigned __int8)(*((_BYTE *)*v2 + 4))++];
               v7 = *v2;
-              if ( (*v2)->gap0[4] == 6 )
+              if ( *((_BYTE *)*v2 + 4) == 6 )
                 break;
             }
           }
 LABEL_31:
           v13 = *v2;
-          v14 = byte_100B3820[24 * (unsigned __int8)(*v2)->gap0[4] + 2 * (unsigned __int8)(*v2)->gap0[5]];
-          v15 = -((*(_DWORD *)(*v2)->gap0 & 1) != 0);
+          v14 = byte_100B3820[24 * *((unsigned __int8 *)*v2 + 4) + 2 * *((unsigned __int8 *)*v2 + 5)];
+          v15 = -((*(_DWORD *)*v2 & 1) != 0);
           v2 += 2778;
-          v13->wordF2 |= 1 << ((v15 & 6) + v14);
-          (*(v2 - 2778))->wordF4 |= 1 << byte_100B3821[24 * (unsigned __int8)(*(v2 - 2778))->gap0[4]
-                                                     + 2 * (unsigned __int8)(*(v2 - 2778))->gap0[5]];
+          *((_WORD *)v13 + 121) |= 1 << ((v15 & 6) + v14);
+          *((_WORD *)*(v2 - 2778) + 122) |= 1 << byte_100B3821[24 * *((unsigned __int8 *)*(v2 - 2778) + 4)
+                                                             + 2 * *((unsigned __int8 *)*(v2 - 2778) + 5)];
           result = dword_100B4050;
           if ( ++v1 >= dword_100B4050 )
             return result;
@@ -67,7 +67,7 @@ LABEL_31:
         v8 = 0;
         if ( dword_100B388C > 0 )
         {
-          v9 = &v7->gap0[26];
+          v9 = (char *)v7 + 26;
           while ( !*v9 )
           {
             ++v8;
@@ -78,14 +78,14 @@ LABEL_31:
           goto LABEL_20;
         }
 LABEL_14:
-        v10 = v7->wordF2;
-        if ( (v7->gap0[0] & 1) != 0 )
+        v10 = *((_WORD *)v7 + 121);
+        if ( (*(_BYTE *)v7 & 1) != 0 )
         {
           if ( (v10 & 0x200) == 0 )
           {
             HIBYTE(v10) |= 2u;
 LABEL_19:
-            v7->wordF2 = v10;
+            *((_WORD *)v7 + 121) = v10;
             goto LABEL_20;
           }
         }
@@ -96,31 +96,31 @@ LABEL_19:
         }
 LABEL_20:
         v11 = *v2;
-        v12 = *(_DWORD *)(*v2)->gap0;
+        v12 = *(_DWORD *)*v2;
         if ( v12 )
         {
           switch ( v12 )
           {
             case 1:
-              HIBYTE(v11->wordF0) |= 0x22u;
+              *((_BYTE *)v11 + 241) |= 0x22u;
               break;
             case 2:
-              HIBYTE(v11->wordF0) |= 8u;
+              *((_BYTE *)v11 + 241) |= 8u;
               break;
             case 3:
-              HIBYTE(v11->wordF0) |= 0x50u;
+              *((_BYTE *)v11 + 241) |= 0x50u;
               break;
             case 4:
-              HIBYTE(v11->wordF0) |= 0x80u;
+              *((_BYTE *)v11 + 241) |= 0x80u;
               break;
           }
         }
         else
         {
-          HIBYTE(v11->wordF0) |= 4u;
+          *((_BYTE *)v11 + 241) |= 4u;
         }
-        (*v2)->gap0[4] = 0;
-        ++*(_DWORD *)(*v2)->gap0;
+        *((_BYTE *)*v2 + 4) = 0;
+        ++*(_DWORD *)*v2;
         goto LABEL_31;
       }
     }

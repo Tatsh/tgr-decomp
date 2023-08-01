@@ -5,12 +5,12 @@ int __cdecl RallyMain(int a1, int a2, char *Str)
   if ( CoInitialize(0) >= 0 )
   {
     setupMemoryStatus();
-    readInstallDirectory();
+    ReadInstallDirectory();
     loadBrstringDll();
-    readSettings(Str);
+    ReadSettings(Str);
     strcpy(g_bossRallyCfgPath, g_InstallPath);
     strcat(g_bossRallyCfgPath, aBossrallyCfg);
-    bossRallyCfgSomething(g_Config, g_bossRallyCfgPath);
+    ReadBossRallyCfg(g_Config, g_bossRallyCfgPath);
     if ( sub_100796B0() )
     {
       sub_1000C6D0();

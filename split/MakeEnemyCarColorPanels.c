@@ -13,16 +13,16 @@ size_t MakeEnemyCarColorPanels()
     switch ( g_ReadJoystick )
     {
       case 1:
-        dword_10B4E1D4 = (int)&unk_10B4DFD8;
+        dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
         break;
       case 2:
-        dword_10B4E1D4 = (int)&unk_10B4E080;
+        dword_10B4E1D4 = (WORD *)&unk_10B4E080;
         break;
       case 3:
-        dword_10B4E1D4 = (int)&unk_10B4E128;
+        dword_10B4E1D4 = (WORD *)&unk_10B4E128;
         break;
       default:
-        dword_10B4E1D4 = (int)g_Config;
+        dword_10B4E1D4 = g_Config;
         break;
     }
   }
@@ -47,7 +47,7 @@ size_t MakeEnemyCarColorPanels()
     }
     while ( v2 < dword_100B36FC );
   }
-  sub_10073320(1);
+  pm_sub_10073320(1);
   strftime(0, SizeInBytes, Format, Tm);
   result = dword_100B36FC;
   if ( dword_100B36FC > 1 )
@@ -59,4 +59,3 @@ size_t MakeEnemyCarColorPanels()
 // 100B36FC: using guessed type int dword_100B36FC;
 // 10AD0850: using guessed type int dword_10AD0850[];
 // 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;

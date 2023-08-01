@@ -50,7 +50,7 @@ int sub_10072E60()
     }
     if ( dword_11828D34[v2] != dword_118AC734[v2] )
       sub_100727C0(v0, dword_118AC734[v2]);
-    if ( dword_118AC72C[v2] | dword_118AC728[v2] && !sub_10072FE0(v0) )
+    if ( dword_118AC72C[v2] | dword_118AC728[v2] && !pm_sub_10072FE0(v0) )
     {
       dword_118AC728[v2] = 0;
       dword_11828D28[v2] = 0;

@@ -1,12 +1,12 @@
 //----- (10009BD0) --------------------------------------------------------
-HRESULT __cdecl enumTextureFormatsSomething(IDirect3DDevice2 *dev)
+HRESULT __cdecl enumTextureFormatsSomething(#486 *dev)
 {
   int *contextStart; // esi
-  HRESULT (__stdcall *enumTextureFormats)(IDirect3DDevice2 *, LPD3DENUMTEXTUREFORMATSCALLBACK, void *); // ebp
+  void (__stdcall *enumTextureFormats)(#486 *, int (__stdcall *)(DDSURFACEDESC *, void *), int *); // ebp
   HRESULT result; // eax
 
   contextStart = &d3dEnumTextureFormatsContextStart;
-  enumTextureFormats = dev->lpVtbl->EnumTextureFormats;
+  enumTextureFormats = *(void (__stdcall **)(#486 *, int (__stdcall *)(DDSURFACEDESC *, void *), int *))(*(_DWORD *)dev + 36);
   do
   {
     memset(contextStart + 1, 0, 32u);
@@ -18,7 +18,10 @@ HRESULT __cdecl enumTextureFormatsSomething(IDirect3DDevice2 *dev)
     if ( !result )
     {
       *(_WORD *)contextStart = 32;
-      result = enumTextureFormats(dev, d3dEnumTextureFormatsCallback, contextStart - 1);
+      result = ((int (__stdcall *)(#486 *, int (__stdcall *)(DDSURFACEDESC *, void *), int *))enumTextureFormats)(
+                 dev,
+                 d3dEnumTextureFormatsCallback,
+                 contextStart - 1);
     }
     contextStart += 10;
   }

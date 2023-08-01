@@ -1,5 +1,5 @@
 //----- (1000A480) --------------------------------------------------------
-int __thiscall sub_1000A480(gameSpecificUnk0 *this)
+int __thiscall meth_1000A480(unk0 *this)
 {
   gameSpecificUnk1 *v2; // eax
   int result; // eax
@@ -23,7 +23,7 @@ int __thiscall sub_1000A480(gameSpecificUnk0 *this)
   if ( v6 < 0 )
   {
     MessageBoxA(this->hwnd, Text, Caption, 0x10u);
-    releaseD3D2_DDraw2_DDraw(this);
+    ReleaseD3D2_DDraw2_DDraw(this);
     return v6;
   }
   v5 = this->ddraw2->lpVtbl->QueryInterface(this->ddraw2, &IID_IDirect3D2, (LPVOID *)&this->d3d2);
@@ -38,7 +38,7 @@ int __thiscall sub_1000A480(gameSpecificUnk0 *this)
   else
   {
 LABEL_8:
-    releaseD3D2_DDraw2_DDraw(this);
+    ReleaseD3D2_DDraw2_DDraw(this);
     result = v5;
   }
   return result;

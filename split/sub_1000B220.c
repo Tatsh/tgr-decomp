@@ -1,28 +1,28 @@
 //----- (1000B220) --------------------------------------------------------
-int __thiscall sub_1000B220(int this, int a2)
+HRESULT __thiscall sub_1000B220(unk0 *this, int a2)
 {
   int v3; // eax
-  int result; // eax
+  HRESULT result; // eax
   int v5; // eax
 
   if ( a2 )
   {
-    v3 = *(_DWORD *)(this + 36) + 1;
-    *(_DWORD *)(this + 36) = v3;
+    v3 = this->field_24 + 1;
+    this->field_24 = v3;
     if ( v3 == 1 )
     {
-      result = sub_1000B170((#465 *)this);
+      result = sub_1000B170(this);
       if ( result < 0 )
         return result;
     }
     return 0;
   }
-  v5 = *(_DWORD *)(this + 36);
+  v5 = this->field_24;
   if ( !v5 )
     return -2005522671;
-  if ( v5 != 1 || (result = sub_1000B1F0((_DWORD *)this), result >= 0) )
+  if ( v5 != 1 || (result = sub_1000B1F0(this), result >= 0) )
   {
-    --*(_DWORD *)(this + 36);
+    --this->field_24;
     return 0;
   }
   return result;

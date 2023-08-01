@@ -9,18 +9,18 @@ int sub_10078ED0()
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
     {
-      result = dword_118ABDBC;
-      if ( dword_118ABDBC )
+      result = MEMORY[0x118ABDBC];
+      if ( MEMORY[0x118ABDBC] )
       {
         result = dword_106909E0;
         if ( !dword_106909E0 )
         {
-          dword_118ABD90 = dword_100BD438;
-          result = dword_118ABDFC;
-          if ( dword_118ABDFC )
-            result = (*(int (__stdcall **)(int, int *, int))(*(_DWORD *)dword_118ABDFC + 24))(
-                       dword_118ABDFC,
-                       &dword_118ABD88,
+          MEMORY[0x118ABD90] = dword_100BD438;
+          result = g_DirectInputEffect;
+          if ( g_DirectInputEffect )
+            result = (*(int (__stdcall **)(int, int *, int))(*(_DWORD *)g_DirectInputEffect + 24))(
+                       g_DirectInputEffect,
+                       &diEffect,
                        536870977);
         }
       }

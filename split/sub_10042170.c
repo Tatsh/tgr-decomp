@@ -35,12 +35,12 @@ int __cdecl sub_10042170(int a1, int *a2)
     sub_1003E260(7);
   qmemcpy(&dword_10AA26F0, dword_10ACED34, 0x14Cu);
   dword_10AA28E0 = 1;
-  v15 = *(_DWORD *)dword_10ACED34->gap0;
+  v15 = *(_DWORD *)dword_10ACED34;
   dword_10AA28A0 = v15;
-  v4 = (unsigned __int8)dword_10ACED34->gap0[5];
+  v4 = *((unsigned __int8 *)dword_10ACED34 + 5);
   dword_10AA28AC = v4;
   dword_10AA28A4 = v4;
-  LOBYTE(dword_10AA28B8) = dword_10ACED34->gap0[4];
+  LOBYTE(dword_10AA28B8) = *((_BYTE *)dword_10ACED34 + 4);
   dword_10AA2A08 = dword_10AD0978;
   dword_100AC64C = dword_10AD097C;
   dword_100AC650 = dword_10AD0980;

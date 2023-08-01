@@ -1,5 +1,5 @@
 //----- (1000A390) --------------------------------------------------------
-HRESULT __thiscall sub_1000A390(gameSpecificUnk0 *this)
+HRESULT __thiscall sub_1000A390(unk0 *this)
 {
   HRESULT result; // eax
   gameSpecificUnk1 *gsu1; // ecx
@@ -7,13 +7,13 @@ HRESULT __thiscall sub_1000A390(gameSpecificUnk0 *this)
   IID *v5; // ecx
   int v6; // ebx
   gameSpecificUnk1 *v7; // esi
-  unk0 *v8; // ecx
+  __unk0 *v8; // ecx
   IID *refclsid; // ecx
   int v10; // [esp+10h] [ebp-18h] BYREF
   int v11; // [esp+14h] [ebp-14h] BYREF
   int v12; // [esp+18h] [ebp-10h] BYREF
   int v13; // [esp+1Ch] [ebp-Ch] BYREF
-  unk0 *v14; // [esp+20h] [ebp-8h] BYREF
+  __unk0 *v14; // [esp+20h] [ebp-8h] BYREF
   IID *v15; // [esp+24h] [ebp-4h] BYREF
 
   if ( (g_hasCalledDDrawEnum & 1) != 0 || (result = sub_1001B970(), result >= 0) )

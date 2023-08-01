@@ -8,6 +8,8 @@
 #include <math.h>
 #include <defs.h>
 
+#include <stdarg.h>
+
 
 //-------------------------------------------------------------------------
 // Function declarations
@@ -61,15 +63,15 @@ int __cdecl sub_10002DE0(float, float); // idb
 int __cdecl sub_10002E90(int a1, int a2);
 __int16 __cdecl sub_10002EF0(unsigned __int16 *a1);
 __int16 __cdecl sub_10002F40(unsigned __int16 *a1);
-DWORD __stdcall CHK_GetFileSize(CHK_File *hFile, LPDWORD lpFileSizeHigh);
+DWORD __stdcall CHK_GetFileSize(CHK_File *cFile, void *_unused);
 CHK_File *__cdecl CHK_FReadOpen(const char *filename);
-size_t __cdecl FCHK_FRead_0(void *Buffer, size_t ElementSize, size_t ElementCount, CHK_File *fp); // idb
-void *__cdecl CHK_FReadReportError(void *Buffer, size_t ElementSize, size_t ElementCount, CHK_File *fp); // idb
+size_t __cdecl FCHK_FRead_0(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp); // idb
+void *__cdecl CHK_FReadReportError(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp); // idb
 _BYTE *__cdecl readBytes(_BYTE *a1, int maxBytes, FILE **pfp); // idb
-void __cdecl CHK_FClose(CHK_File *Block); // idb
-intptr_t __cdecl CHK_FileExists(char *FileName);
-void *__cdecl CHK_AllocateMemory(size_t Size, const char *debugName);
-void *__cdecl CHK_ReAllocateMemory_0(void *Block, size_t Size, char *a3); // idb
+void __cdecl CHK_FClose(CHK_File *cFile); // idb
+bool __cdecl CHK_FileExists(char *filename);
+void *__cdecl CHK_AllocateMemory(size_t size, const char *debugName);
+void *__cdecl CHK_ReAllocateMemory_0(void *ptr, size_t size, char *debugName); // idb
 unsigned int sub_10003460();
 int __cdecl sub_100034A0(int a1, int a2, int a3, unsigned int a4);
 BOOL __cdecl sub_10003530(const char *a1);
@@ -110,8 +112,8 @@ int __cdecl sub_10005E40(int a1);
 char *__cdecl sub_10005E70(int a1);
 BOOL __cdecl np_sub_10005EE0(int a1, const char *a2);
 int __cdecl sub_10005F40(int a1);
-int __cdecl sub_10005F90(int a1);
-int __cdecl sub_10005FE0(int a1);
+int __cdecl sub_10005F90(int offsetX606); // idb
+int __cdecl np_sub_10005FE0(int a1);
 BOOL atomic_sub_10006090();
 BOOL sub_100060C0();
 BOOL sub_100060F0();
@@ -129,7 +131,7 @@ int __cdecl sub_100067B0(float); // idb
 int __cdecl sub_100067F0(float); // idb
 int __cdecl sub_10006830(int a1, float *a2, float *a3);
 char __cdecl sub_10006BD0(int a1, float *a2);
-int __cdecl sub_10006EC0(int a1, int *a2);
+unsigned int __cdecl sub_10006EC0(int a1, int *a2);
 double __cdecl sub_10007250(char a1);
 double __cdecl mult_neg_1_32_32_32(__int16 a1);
 double __cdecl sub_100072A0(unsigned __int8 a1);
@@ -140,90 +142,90 @@ double __cdecl sub_10007340(int a1);
 double __cdecl mult_1_128(__int16 a1);
 double __cdecl mult_1_256(__int16 a1);
 double __cdecl mult_1_8(char a1);
-int __cdecl sub_100073E0(float *a1, float *a2, int *a3);
+unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3);
 int __cdecl sub_10007730(int a1, int a2);
 int __cdecl sub_100079E0(int, float, int, int); // idb
 int BringWindowToFront();
 void setupMemoryStatus();
-void __cdecl readSettings(char *Str);
-void *__thiscall sub_100085C0(void *Block, char a2);
+void __cdecl ReadSettings(char *Str);
+void *__thiscall sub_100085C0(void *this, char a2); // idb
 void __thiscall sub_100085E0(_DWORD *this);
 char __stdcall CleanupName(const char *a1, char *buff); // idb
-int __thiscall sub_10008670(_DWORD *this, int a2);
-int __thiscall sub_10008750(void *this, const char *ArgList);
-int __thiscall sub_10008780(_DWORD *this, unsigned int ArgList);
-size_t __thiscall sub_100087B0(int this, unsigned int ArgList, int a3);
-int __thiscall sub_10008810(_DWORD *this, unsigned int ArgList);
-int __thiscall sub_10008850(_DWORD *this, unsigned int ArgList, int a3);
-int __thiscall sub_10008890(int *this, int a2);
-int __thiscall sub_100088B0(int *this, int a2, int a3);
-size_t __thiscall sub_100088D0(int this);
-int __thiscall sub_10008970(int this);
+int __thiscall sub_10008670(unk1 *this, int a2); // idb
+int __thiscall GetNumForNameWrapper(unk1 *this, const char *ArgList); // idb
+int __thiscall GetPodLength(unk1 *this, unsigned int argList); // idb
+size_t __thiscall ReadPod(unk1 *this, unsigned int argList, void *buffer); // idb
+int __thiscall LoadPod(unk1 *this, unsigned int ArgList); // idb
+int __thiscall LoadPod_0(unk1 *this, unsigned int argList, int a3); // idb
+int __thiscall sub_10008890(unk1 *this, int a2); // idb
+int __thiscall meth_100088B0(int *this, int a2, int a3);
+size_t __thiscall sub_100088D0(_DWORD *this); // idb
+int __thiscall meth_10008970(_DWORD *this); // idb
 int __stdcall sub_100089C0(char *FileName); // idb
-int __thiscall sub_10008A00(char *this, const char *a2, int a3, int a4, char a5, char a6);
-int __thiscall sub_10008AA0(char *this);
+size_t __thiscall meth_10008A00(_DWORD *this, const char *a2, int a3, int a4, char a5, char a6);
+int __thiscall sub_10008AA0(_DWORD *this); // idb
 void __thiscall sub_10008B40(char *this, const char *a2);
 // Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this);
 void __thiscall debugPrint(void *); // idb
 unsigned int __stdcall basename(const char *path, char *out); // idb
-FILE *__stdcall sub_10008BE0(char *FileName);
-FILE *__stdcall sub_10008C20(char *FileName);
-size_t __stdcall sub_10008C60(FILE *Stream, void *Buffer, size_t ElementCount);
+FILE *__stdcall fopenWriteBinary(char *FileName);
+FILE *__stdcall fopenReadBinary(char *FileName);
+size_t __stdcall sub_10008C60(FILE *fp, void *buffer, size_t elementCount); // idb
 size_t __stdcall sub_10008C90(FILE *Stream, void *Buffer, size_t ElementCount);
 void __noreturn writeToRandomBufferAndExit(char *format, ...); // idb
 void __cdecl __noreturn sub_10008CF0(int a1);
 HRESULT __cdecl setup_g_DevCaps(IDirect3DDevice2 *dev2); // idb
 int sub_10008DF0();
 int sub_10008E00();
-int __stdcall sub_10008E30(gameSpecificUnk0 *game, const char *filename, int flag); // idb
+int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag); // idb
 int __stdcall d3dEnumTextureFormatsCallback(DDSURFACEDESC *a1, void *context); // idb
 int __cdecl sub_10009640(int a1);
 char *__cdecl sub_10009660(_WORD *arg0, unsigned __int8 *a2, int a3, int a1, int *a5);
 DDPIXELFORMAT *__cdecl GetDDPixelFormatPtr(int a1);
-int __cdecl sub_10009860(unsigned int a1);
+int __cdecl PopCount(unsigned int a1);
 int __cdecl CountBits(unsigned int bitMask); // idb
 char *__cdecl sub_100098A0(_WORD *out_a1, unsigned __int8 *out_a2, int a3, int a4); // idb
 // char __usercall sub_10009A50@<al>(unsigned int checksumOrZero@<eax>, _BYTE *a2, _WORD *a3, int size); idb
 unsigned __int8 *__cdecl sub_10009AD0(char *filename, int expectedChecksum, char **outFilename, int *outBuff); // idb
-HRESULT __cdecl enumTextureFormatsSomething(IDirect3DDevice2 *dev);
-IDirectDraw2 *__thiscall sub_10009C40(unk2 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue);
-IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev);
-IDirectDraw2 *__thiscall sub_10009EA0(DWORD *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6);
-BOOL __thiscall sub_10009ED0(unk2 *this, char *a2, LONG rectRight, LONG rectBottom); // idb
-BOOL __thiscall sub_1000A020(unk2 *this); // idb
-int __thiscall sub_1000A0B0(unk3 *this);
-_DWORD *__thiscall sub_1000A100(_DWORD *this, int *a2, int a3);
-int __thiscall sub_1000A170(_DWORD *this);
-gameSpecificUnk0 *__thiscall initGameSpecificUnk0(gameSpecificUnk0 *this);
-int __thiscall sub_1000A1C0(_DWORD *this);
-HRESULT __thiscall sub_1000A1E0(gameSpecificUnk0 *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9); // idb
-HRESULT __thiscall sub_1000A2C0(gameSpecificUnk0 *lParam);
-int __thiscall sub_1000A350(gameSpecificUnk0 *this); // idb
-HRESULT __thiscall sub_1000A390(gameSpecificUnk0 *this); // idb
-int __thiscall sub_1000A480(gameSpecificUnk0 *this); // idb
-int __thiscall releaseD3D2_DDraw2_DDraw(gameSpecificUnk0 *this); // idb
-int __thiscall setCooperativeLevel(gameSpecificUnk0 *this); // idb
-int __thiscall sub_1000A5D0(gameSpecificUnk0 *this); // idb
-int __thiscall RestoreDisplayMode(gameSpecificUnk0 *this); // idb
-HRESULT __thiscall sub_1000A820(gameSpecificUnk0 *this);
-int __thiscall ReleaseDDraw2Surface(gameSpecificUnk0 *this); // idb
-HRESULT __thiscall sub_1000A8D0(gameSpecificUnk0 *this);
-int __thiscall resetPalette(gameSpecificUnk0 *this); // idb
-int __thiscall sub_1000AB70(gameSpecificUnk0 *this); // idb
-int __thiscall ReleaseDDrawSurface(gameSpecificUnk0 *this); // idb
-int __thiscall sub_1000ADF0(gameSpecificUnk0 *this); // idb
-int __thiscall sub_1000AEA0(gameSpecificUnk0 *this); // idb
-HRESULT __thiscall flipSurfaces(gameSpecificUnk0 *this); // idb
-int __thiscall sub_1000AFB0(_DWORD *this);
-int __thiscall sub_1000B150(_DWORD *this);
-int __thiscall sub_1000B170(#465 *this); // idb
-int __thiscall sub_1000B1F0(_DWORD *this);
-int __thiscall sub_1000B220(int this, int a2);
+HRESULT __cdecl enumTextureFormatsSomething(#486 *dev);
+IDirectDraw2 *__thiscall sub_10009C40(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue);
+IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev); // idb
+IDirectDraw2 *__thiscall sub_10009EA0(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6);
+BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBottom); // idb
+BOOL __thiscall sub_1000A020(#511 *this); // idb
+int __thiscall sub_1000A0B0(#511 *this);
+unk0_member2 *__thiscall sub_1000A100(unk0_member2 *this, IDirect3D2 *d3d2, IDirect3DDevice2 *d3dDevice2); // idb
+IDirect3DMaterial2 *__thiscall SafeReleaseDirect3DMaterial2(unk0_member2 *this);
+unk0 *__thiscall initUnk(unk0 *this);
+int __thiscall sub_1000A1C0(unk0 *this); // idb
+HRESULT __thiscall meth_1000A1E0(unk0 *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9); // idb
+HRESULT __thiscall sub_1000A2C0(unk0 *this); // idb
+int __thiscall sub_1000A350(unk0 *this); // idb
+HRESULT __thiscall sub_1000A390(unk0 *this); // idb
+int __thiscall meth_1000A480(unk0 *this); // idb
+int __thiscall ReleaseD3D2_DDraw2_DDraw(unk0 *this); // idb
+int __thiscall SetCooperativeLevel(unk0 *this); // idb
+int __thiscall meth_1000A5D0(unk0 *this); // idb
+int __thiscall RestoreDisplayMode(unk0 *this); // idb
+HRESULT __thiscall meth_1000A820(unk0 *this);
+int __thiscall ReleaseDDraw2Surface(unk0 *this); // idb
+HRESULT __thiscall sub_1000A8D0(unk0 *this);
+int __thiscall resetPalette(unk0 *this); // idb
+HRESULT __thiscall meth_1000AB70(unk0 *this);
+int __thiscall ReleaseDDrawSurface(unk0 *this); // idb
+HRESULT __thiscall sub_1000ADF0(unk0 *this);
+int __thiscall sub_1000AEA0(unk0 *this); // idb
+HRESULT __thiscall flipSurfaces(unk0 *this); // idb
+HRESULT __thiscall sub_1000AFB0(unk0 *this);
+HRESULT __thiscall sub_1000B150(unk0 *this);
+HRESULT __thiscall sub_1000B170(unk0 *this);
+HRESULT __thiscall sub_1000B1F0(unk0 *this);
+HRESULT __thiscall sub_1000B220(unk0 *this, int a2); // idb
 int __thiscall sub_1000B280(int this, _DWORD *a2);
-int __thiscall sub_1000B2C0(gameSpecificUnk0 *gsu0); // idb
-int __thiscall sub_1000B350(_BYTE *this, _DWORD *a2);
-HRESULT __thiscall sub_1000B390(LPARAM lParam, int a2, int a3, int a4);
-HRESULT __thiscall sub_1000B4D0(gameSpecificUnk0 *this, int a2, int a3, int a4, int a5); // idb
+int __thiscall sub_1000B2C0(unk0 *this); // idb
+int __thiscall sub_1000B350(unk0 *this, _DWORD *a2); // idb
+HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4); // idb
+HRESULT __thiscall meth_1000B4D0(unk0 *this, int a2, int a3, int a4, int a5); // idb
 HANDLE __cdecl sub_1000B680(int a1, LPCSTR filepath, int cx_, int cy, int a5); // idb
 int __cdecl sub_1000B790(int, LPCSTR name); // idb
 int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc); // idb
@@ -232,8 +234,8 @@ int __cdecl sub_1000BA40(int, COLORREF color); // idb
 void sub_1000BA70();
 void __cdecl sub_1000BAF0(SIZE_T *a1, int a2, int a3, int a4);
 void __cdecl sub_1000BEA0(int a1, int *a2);
-int __cdecl sub_1000C000(int a1, int *a2, int a3, int a4, int a5);
-void __cdecl sub_1000C170(int a1, _DWORD *a2, int a3, int a4, int a5);
+void __cdecl sub_1000C000(int a1, int *a2);
+void __cdecl sub_1000C170(int a1, _DWORD *a2);
 int __cdecl sub_1000C350(int a1);
 void __stdcall __noreturn StartAddress(LPVOID lpThreadParameter);
 int sub_1000C4A0();
@@ -269,7 +271,7 @@ _DWORD *__cdecl sub_10013A40(int a1);
 __int16 __cdecl sub_10013D90(int a1, int a2, int a3, unsigned __int8 a4, unsigned __int8 a5);
 _DWORD *__cdecl sub_100140E0(int a1);
 _DWORD *__cdecl sub_10014450(int a1, int a2);
-int j_nullsub_2();
+void j_nullsub_2();
 _DWORD *sub_100147B0();
 _DWORD *sub_10014930();
 int __cdecl sub_10014A30(int a1);
@@ -314,8 +316,8 @@ int sub_10019B50();
 int *__cdecl sub_1001A4B0(int a1);
 int __cdecl sub_1001A4D0(int a1, int a2, int a3, int a4);
 gameSpecificUnk1 *__cdecl sub_1001A550(gameSpecificUnk1 *a1); // idb
-unk0 *__cdecl sub_1001A570(_DWORD *a1, int a2, int a3, int a4, unk0 *a5, IID *a6);
-IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, unk0 *a3);
+__unk0 *__cdecl sub_1001A570(_DWORD *a1, int a2, int a3, int a4, __unk0 *a5, IID *a6);
+IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, __unk0 *a3);
 int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4);
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8);
 HRESULT __cdecl sub_1001A790(int a1, int a2, int a3, int a4, int a5, int a6, int a7, gameSpecificUnk1 **a8, int **a9, int ***a10); // idb
@@ -325,34 +327,35 @@ HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat);
 BOOL __stdcall ddrawEnumerateCallback(GUID *, LPSTR, LPSTR, LPVOID); // idb
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2);
 int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2);
-int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, D3DDEVICEDESC *desc, D3DDEVICEDESC *a5, LPVOID userArg); // idb
-int __thiscall sub_1001AC60(unk0 *this); // idb
-int __thiscall sub_1001AC80(unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5); // idb
-BOOL __thiscall sub_1001ACF0(unk0 *this, int iid);
-BOOL __thiscall sub_1001AD50(unk0 *this, int width, int height, int bitDepth); // idb
+int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, #469 *desc, #469 *a5, LPVOID userArg); // idb
+int __thiscall sub_1001AC60(__unk0 *this); // idb
+int __thiscall sub_1001AC80(__unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5); // idb
+BOOL __thiscall sub_1001ACF0(__unk0 *this, int iid);
+BOOL __thiscall sub_1001AD50(__unk0 *this, int width, int height, int bitDepth); // idb
 BOOL __thiscall sub_1001AD90(_DWORD *this);
 bool __thiscall sub_1001ADA0(_BYTE *this, const void *a2);
-int __thiscall sub_1001ADE0(#478 *this, GUID *a2, char *Source, char *a4, D3DDEVICEDESC *a5, D3DDEVICEDESC *a6); // idb
+int __thiscall sub_1001ADE0(#478 *this, GUID *a2, char *Source, char *a4, #469 *a5, #469 *a6); // idb
 void __thiscall sub_1001AEE0(int this);
-HRESULT __thiscall sub_1001AF20(GUID *guid, IDirect3DDevice2 *dev); // idb
+HRESULT __thiscall sub_1001AF20(int a1, IDirect3DDevice2 *dev); // idb
 int __thiscall sub_1001AFB0(int *this);
 int __thiscall sub_1001B030(_DWORD *this, int a2);
 HRESULT __thiscall sub_1001B090(#468 *this, GUID *lpGUID, char *Source, char *a4); // idb
 char __thiscall sub_1001B280(void **this);
 int __thiscall sub_1001B2D0(gameSpecificUnk1 *this, const void *a2); // idb
-HRESULT __thiscall sub_1001B320(_DWORD *this, IDirectDraw *a2);
+HRESULT __thiscall sub_1001B320(_DWORD *this, IDirectDraw *ddraw); // idb
 int __thiscall sub_1001B3B0(int *this);
 int __thiscall sub_1001B430(_DWORD *this, int a2);
-unk0 *__thiscall sub_1001B490(_DWORD *this, int a2, int a3, int a4, int a5, unk0 **a6, unk0 *a7);
-int __thiscall sub_1001B510(#468 *this, IDirect3D2 *a2); // idb
+__unk0 *__thiscall sub_1001B490(_DWORD *this, int a2, int a3, int a4, int a5, __unk0 **a6, __unk0 *a7);
+int __thiscall sub_1001B510(#468 *this, #462 *a2); // idb
 int __thiscall sub_1001B5A0(int *this);
 int __thiscall sub_1001B630(#478 *this, int a2); // idb
 int __thiscall sub_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4);
-int __thiscall sub_1001B7C0(unk0 *this, const void *a2, _DWORD a3, int a4, int a5);
-unk0 *__thiscall sub_1001B880(unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8);
+int __thiscall sub_1001B7C0(__unk0 *this, const void *a2, _DWORD a3, int a4, int a5);
+__unk0 *__thiscall sub_1001B880(__unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8);
 GUID *__thiscall getDirectDrawLPGUID(gameSpecificUnk1 *this);
 HRESULT sub_1001B970();
 HRESULT ddrawEnum();
+// int __thiscall unknown_libname_2(_DWORD); weak
 int __cdecl sub_1001BA10(#468 *a1); // idb
 gameSpecificUnk1 *__cdecl sub_1001BA70(const void *a1, gameSpecificUnk1 **a2, gameSpecificUnk1 *a3); // idb
 int sub_1001BAD0(); // weak
@@ -368,6 +371,7 @@ int sub_1001BC20();
 int sub_1001BC30();
 int sub_1001BC50();
 int sub_1001BC60();
+void j_nullsub_2_0();
 int __cdecl sub_1001BC90(unsigned int a1);
 _DWORD *__cdecl sub_1001BD70(_DWORD *a1);
 _DWORD *__cdecl sub_1001BE10(_DWORD *a1);
@@ -474,7 +478,7 @@ int __cdecl TIDFromTexture(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
 int __cdecl sub_10028630(int a1);
 int *__cdecl sub_10028720(int *a1, int *a2, int a3, int a4);
-unsigned __int8 *__cdecl sub_10028860(struct_a1 *a1); // idb
+unsigned __int8 *__cdecl sub_10028860(#506 *a1); // idb
 int __cdecl sub_10028A10(int a1, int *a2);
 int __cdecl sub_10028B20(int, float, int); // idb
 int __cdecl sub_10028BF0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14);
@@ -681,7 +685,7 @@ int __cdecl sub_10038410(int a1);
 void __cdecl sub_10038450(int a1, int a2);
 int __cdecl ParseTrackHeader(int outBuffer, CHK_File *fp);
 int __cdecl sub_10038B20(_BYTE *a1);
-HRESULT __cdecl SetupDirectPlayPlayer(unk1 *u1); // idb
+HRESULT __cdecl SetupDirectPlayPlayer(#503 *u1); // idb
 int sub_10038E80();
 // _DWORD *unknown_libname_7();
 // void __cdecl unknown_libname_8(); idb
@@ -793,7 +797,7 @@ BOOL __cdecl sub_1003E100(int Drive);
 int sub_1003E1D0();
 int sub_1003E220();
 void __cdecl sub_1003E260(int a1);
-unk0 *sub_1003E2C0();
+__unk0 *sub_1003E2C0();
 int sub_1003E310();
 int sub_1003E3A0();
 int sub_1003E510();
@@ -1199,7 +1203,7 @@ int __stdcall sub_10060210(int a1);
 int sub_10060260();
 _DWORD *__thiscall sub_10060280(_DWORD *this);
 int __thiscall sub_100602B0(_DWORD *this);
-int __thiscall DICreateMouseDevice(unk0 *this, HWND hWnd); // idb
+int __thiscall DICreateMouseDevice(__unk0 *this, HWND hWnd); // idb
 int __thiscall sub_100603A0(int *this, int a2);
 int __thiscall sub_10060750(_DWORD *this, int a2);
 // __int16 __usercall sub_10060780@<ax>(int a1@<ebx>, char *a2, unsigned int a3, char a4);
@@ -1238,8 +1242,9 @@ void __thiscall sub_10061720(int this);
 // float *__usercall sub_10061C60@<eax>(int a1@<ecx>, double a2@<st0>);
 void __thiscall sub_10061F70(int this);
 void __thiscall sub_10062C50(int this);
+void j_nullsub_2_1();
 void **sub_100633E0();
-int __thiscall sub_10063420(_DWORD *this);
+unsigned int __thiscall sub_10063420(_DWORD *this);
 int __thiscall sub_100634F0(int this);
 void __thiscall sub_10063660(int this);
 void __cdecl sub_10063FE0(int a1);
@@ -1247,19 +1252,19 @@ int __thiscall sub_10063FF0(float *this, int a2, int a3, int a4);
 void __thiscall sub_10064350(int this);
 void __thiscall sub_10064700(int this);
 void __cdecl sub_10065620(int a1);
-int __thiscall sub_10065630(int this);
-int __thiscall sub_10065710(int this);
-int __thiscall sub_10065740(int); // idb
+int __thiscall sub_10065630(_DWORD *this); // idb
+int __thiscall sub_10065710(_DWORD *this); // idb
+int __thiscall sub_10065740(_DWORD *this); // idb
 __int16 __cdecl sub_10065B20(int a1, float a2);
 void __cdecl sub_10065C80(int a1, int a2, float a3, float a4);
 int __cdecl MakeEnemyCarColorPanels_0(size_t size); // idb
 int __cdecl sub_100661B0(int a1, int a2);
 int __thiscall sub_100662A0(size_t Size); // idb
-void __thiscall sub_100664C0(int this);
+void __thiscall sub_100664C0(_DWORD *this); // idb
 void sub_10066510();
 int __cdecl sub_10066620(const void *, const void *); // idb
-int *__thiscall sub_10066650(int this);
-void __thiscall sub_10066E90(char *this);
+int *__thiscall sub_10066650(_DWORD *this); // idb
+void __thiscall sub_10066E90(_DWORD *this); // idb
 char *__cdecl sub_10067880(const void **a1, char *a2, int a3);
 void **__cdecl sub_10067900(void **a1, char *a2);
 char *__cdecl sub_10067940(int a1);
@@ -1282,10 +1287,10 @@ size_t __cdecl sub_10068260(int a1, int a2);
 size_t MakeEnemyCarColorPanels();
 void __thiscall sub_100683C0(_DWORD *this);
 int sub_100683D0();
-int __thiscall sub_10068400(int this);
-void __thiscall sub_10068EF0(int this);
+int __thiscall sub_10068400(_DWORD *this); // idb
+void __thiscall sub_10068EF0(_DWORD *this); // idb
 // int __usercall sub_10069330@<eax>(int a1@<ecx>, double a2@<st0>);
-int __thiscall sub_10069370(int this);
+int __thiscall sub_10069370(_DWORD *this); // idb
 char *sub_10069490();
 char *sub_100694E0();
 char *sub_10069530();
@@ -1301,15 +1306,15 @@ int sub_10069A50();
 void *sub_10069A60();
 // void __cdecl unknown_libname_10(); idb
 void *__thiscall sub_10069A90(void *this);
-int __thiscall sub_10069AA0(int this, int a2);
-int __thiscall sub_10069B10(char *this, int a2, int a3, __int16 a4, char a5);
+int __thiscall sub_10069AA0(_DWORD *this, int a2); // idb
+int __thiscall sub_10069B10(_DWORD *this, int a2, int a3, __int16 a4, char a5); // idb
 int __thiscall sub_10069BC0(_WORD *this, int a2, int a3);
 char __thiscall sub_10069C30(_WORD *this, int a2, int a3);
-int __thiscall sub_10069C90(_DWORD *this);
+int __thiscall meth_10069C90(_DWORD *this);
 _DWORD *__thiscall sub_10069DE0(_DWORD *this, _DWORD *a2);
-int __thiscall bossRallyCfgSomething(_WORD *configBuffer, const char *cfgFilename); // idb
-FILE *__thiscall sub_1006A4A0(#483 *this, char *FileName); // idb
-unsigned int readInstallDirectory();
+int __thiscall ReadBossRallyCfg(_WORD *this, const char *cfgFilename); // idb
+FILE *__thiscall WriteConfigFile(_DWORD *this, char *FileName); // idb
+unsigned int ReadInstallDirectory();
 int sub_1006A980();
 int __cdecl sub_1006A990(int a1);
 void __cdecl sub_1006A9C0(int a1, int a2, int a3, int a4, int a5);
@@ -1426,12 +1431,12 @@ int __cdecl sub_10072C20(int a1);
 HMMIO __cdecl sub_10072CA0(LPSTR pszFileName);
 int sub_10072E00();
 int sub_10072E60();
-BOOL __cdecl sub_10072FE0(int a1);
+BOOL __cdecl pm_sub_10072FE0(int a1);
 BOOL __cdecl sub_10073020(int a1);
 int *sub_10073060();
 int __cdecl sub_10073080(int a1, int a2);
 int __cdecl sub_100730A0(int a1);
-int __cdecl sub_10073320(int a1);
+int __cdecl pm_sub_10073320(int a1);
 int sub_100734F0();
 int ReleaseDirectSound();
 int sub_100737E0();
@@ -1451,7 +1456,7 @@ char __thiscall sub_10073BC0(_DWORD *this);
 int __thiscall sub_10073BE0(_DWORD *this);
 int __thiscall sub_10073C10(_DWORD *this);
 int __thiscall sub_10073C40(_DWORD *this);
-int __thiscall sub_10073C90(int *this, int a2);
+unsigned int __thiscall sub_10073C90(int *this, int a2);
 int __thiscall sub_10073D20(_DWORD *this);
 BOOL __thiscall sub_10073D40(_DWORD *this);
 int __thiscall sub_10073D60(_DWORD *this, char a2);
@@ -1484,7 +1489,7 @@ int *__cdecl sub_10074A50(_DWORD *a1, int *a2);
 _DWORD *__cdecl sub_10074A90(_DWORD *a1, int *a2);
 float *__cdecl sub_10074AC0(int a1, int a2, int a3);
 float *__cdecl sub_10074B20(int a1, int a2, float *a3);
-int __cdecl sub_10074B70(float *a1, int a2, int a3);
+float *__cdecl sub_10074B70(float *a1, int a2, int a3);
 float *__cdecl sub_10074C10(float *a1, float *a2, float *a3);
 int __cdecl sub_10074DC0(int a1);
 int sub_10074DD0();
@@ -1504,6 +1509,7 @@ DWORD __thiscall sub_10075190(LARGE_INTEGER *this);
 int __cdecl sub_10075260(__int16 a1, int a2, int a3, int a4, int a5);
 int __cdecl sub_100752D0(__int16 a1, int a2, int a3, int a4);
 // size_t __cdecl strftime(char *Buffer, size_t SizeInBytes, const char *Format, const struct tm *Tm);
+void j_nullsub_2_2();
 void nullsub_2();
 int __thiscall sub_10075340(_DWORD *this);
 int __thiscall sub_10075360(int this);
@@ -1533,7 +1539,7 @@ MMRESULT __cdecl sub_10076FA0(LPSTR pszFileName, int a2, int a3, int a4, HMMIO h
 void __cdecl sub_10077090(unsigned int a1);
 int sub_100770C0();
 int sub_100770F0();
-int __cdecl sub_100771B0(void *a1);
+HRESULT __cdecl sub_100771B0(void *a1);
 int __cdecl sub_10077200(_DWORD *a1);
 int sub_10077310();
 BOOL sub_100773D0();
@@ -1558,19 +1564,19 @@ HRESULT __cdecl sub_10079390(int a1, int a2);
 int sub_10079550();
 int sub_100795D0();
 int sub_10079670();
-// int unknown_libname_11(void); weak
+// int unknown_libname_11();
 // void __cdecl unknown_libname_12(); idb
 HINSTANCE sub_100796B0();
 BOOL sub_10079720();
 HINSTANCE sub_10079740();
 int __cdecl RallyMain(int, int, char *Str); // idb
 int sub_100798F0();
-int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam, int a3, int a14, HWND *a15, gameSpecificUnk0 *a16); // idb
+int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam, int a3, int a14, HWND *a15, unk0 *a16); // idb
 int sub_10079C40();
 LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 LRESULT __cdecl handle_WM_ACTIVATE_justReturn(HWND hWnd, WPARAM wParam, LPARAM lParam);
 LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam);
-int __cdecl sub_1007A190(HWND hWnd); // idb
+int __cdecl DestroyWindowWrapper(HWND hWnd); // idb
 LRESULT __cdecl handle_WM_COMMAND_justReturn(HWND hWnd, WPARAM wParam, LPARAM lParam);
 int returnZero();
 void __noreturn sub_1007A1D0();
@@ -1585,7 +1591,7 @@ LRESULT __cdecl handle_WM_SETCURSOR(HWND hWnd, WPARAM wParam, LPARAM lParam);
 int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam); // idb
 LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam);
 LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lParam);
-int __cdecl sub_1007A6A0(HWND hWnd, LONG dwNewLong); // idb
+int __cdecl sub_1007A6A0(HWND hWnd, intptr_t dwNewLong); // idb
 int __cdecl resetWindowLong_USERDATA(HWND hWnd); // idb
 int __cdecl sub_1007A710(const void *, const void *); // idb
 gameSpecificUnk1 *__cdecl sub_1007A7D0(const void *a1);
@@ -1593,7 +1599,7 @@ int sub_1007A840();
 int sub_1007A940();
 int sub_1007AC00();
 BOOL __cdecl sub_1007AC20(int a1, int a2, int a3, int a4);
-// int __stdcall DirectPlayLobbyCreateA(int a1, int a2, int a3, int a4, int a5);
+// HRESULT __stdcall DirectPlayLobbyCreateA(LPGUID, LPDIRECTPLAYLOBBYA *, IUnknown *, LPVOID, DWORD);
 // int __stdcall DirectInputCreateA(HINSTANCE hInst, DWORD version, IDirectInputA **a3, IUnknown *a4);
 // HRESULT __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter);
 // HRESULT __stdcall DirectDrawEnumerateA(LPDDENUMCALLBACKA lpCallback, LPVOID lpContext);
@@ -1611,7 +1617,7 @@ BOOL __cdecl sub_1007AC20(int a1, int a2, int a3, int a4);
 // FILE *__cdecl _fsopen(const char *FileName, const char *Mode, int ShFlag);
 // FILE *__cdecl fopen(const char *FileName, const char *Mode);
 // int __cdecl getc(FILE *Stream);
-size_t __cdecl freadLock(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+size_t __cdecl freadLock(void *buffer, size_t elementSize, size_t elementCount, FILE *fp); // idb
 // size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
 // int __cdecl ungetc(int Character, FILE *Stream);
 size_t __cdecl fwriteLock(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
@@ -1621,7 +1627,15 @@ size_t __cdecl fwriteLock(void *Buffer, size_t ElementSize, size_t ElementCount,
 // int __cdecl _nh_malloc(size_t Size, int); idb
 // _DWORD __cdecl _heap_alloc(_DWORD); weak
 // void *__cdecl realloc(void *Block, size_t Size);
+// char __endstdio();
 // int __cdecl sub_1007D6F0(int a1, int a2);
+// void __stdcall _UnwindNestedFrames(PVOID TargetFrame, PEXCEPTION_RECORD ExceptionRecord); idb
+// void *__cdecl _CallCatchBlock2(struct EHRegistrationNode *, const struct _s_FuncInfo *, void *, int, unsigned int); idb
+// int __cdecl CatchGuardHandler(PEXCEPTION_RECORD ExceptionRecord, PVOID TargetFrame, struct _CONTEXT *context); idb
+// int __cdecl _CallSETranslator(struct EHExceptionRecord *, struct EHRegistrationNode *, void *, void *, const struct _s_FuncInfo *, int, struct EHRegistrationNode *); idb
+// int __cdecl TranslatorGuardHandler(PEXCEPTION_RECORD ExceptionRecord, PVOID TargetFrame, struct _CONTEXT *a3);
+// const struct _s_TryBlockMapEntry *__cdecl _GetRangeOfTrysToCheck(const struct _s_FuncInfo *, int, int, unsigned int *, unsigned int *); idb
+// int __cdecl _abnormal_termination();
 // double __cdecl floor(double X);
 // char *__cdecl strchr(const char *Str, int Val);
 // char *__cdecl strstr(const char *Str, const char *SubStr);
@@ -1684,6 +1698,7 @@ int __cdecl sub_1007F3C0(int a1, int a2);
 // void __cdecl _unlock_file(FILE *Stream);
 // _DWORD __cdecl _unlock_file2(_DWORD, _DWORD); weak
 // int __cdecl _lseek_lk(int FileHandle, LONG lDistanceToMove, DWORD dwMoveMethod); idb
+// int __cdecl _flushall();
 // int _ioinit(void); weak
 // int _ioterm(void); weak
 // _DWORD *_getstream();
@@ -1694,12 +1709,23 @@ int __cdecl sub_1007F3C0(int a1, int a2);
 // int _heap_term(void); weak
 // _DWORD __cdecl __sbh_find_block(_DWORD, _DWORD, _DWORD); weak
 // int __cdecl _callnewh(size_t Size);
+// int __cdecl _fcloseall();
+// int __cdecl __InternalCxxFrameHandler(PEXCEPTION_RECORD ExceptionRecord, struct EHRegistrationNode *, struct _CONTEXT *, void *, struct _s_FuncInfo *, int, PVOID TargetFrame, char); idb
+// void __cdecl FindHandler(PEXCEPTION_RECORD ExceptionRecord, struct EHRegistrationNode *, struct _CONTEXT *, void *, const struct _s_FuncInfo *, char, int, PVOID TargetFrame); idb
+// void __cdecl FindHandlerForForeignException(PEXCEPTION_RECORD ExceptionRecord, struct EHRegistrationNode *, struct _CONTEXT *, void *, const struct _s_FuncInfo *, int, int, PVOID TargetFrame); idb
+// void __cdecl CatchIt(PEXCEPTION_RECORD ExceptionRecord, struct EHRegistrationNode *, struct _CONTEXT *, void *, const struct _s_FuncInfo *, const struct _s_HandlerType *, const struct _s_CatchableType *, const struct _s_TryBlockMapEntry *, int, PVOID TargetFrame); idb
+// void *__cdecl CallCatchBlock(struct EHExceptionRecord *, struct EHRegistrationNode *, struct _CONTEXT *, const struct _s_FuncInfo *, void *, int, unsigned int); idb
+// BOOL __cdecl ExFilterRethrow(struct _EXCEPTION_POINTERS *a1);
 // void __cdecl BuildCatchObject(struct EHExceptionRecord *, struct EHRegistrationNode *, const struct _s_HandlerType *, const struct _s_CatchableType *); idb
+// void __cdecl _DestructExceptionObject(struct EHExceptionRecord *, char); idb
 // char *__cdecl AdjustPointer(void *a1, const struct PMD *a2);
 // void __cdecl __noreturn terminate(); idb
 void __noreturn sub_10083B50();
+// ULONG_PTR __cdecl _raise_exc(ULONG_PTR Arguments, int a2, char a3, int a4, int a5, int a6);
 // BOOL __cdecl _handle_exc(char a1, double *a2, __int16 a3);
 // int __cdecl _decomp(double, int); idb
+// int _statfp(void); weak
+// int _clrfp(void); weak
 // int __fastcall _ctrlfp(__int16 a1);
 // _DWORD __cdecl _set_statfp(_DWORD); weak
 // int __cdecl _isctype(int C, int Type);
@@ -1708,14 +1734,14 @@ void __noreturn sub_10083B50();
 // void chsifnegret();
 // double _twoToTOS(); weak
 // double __cdecl _load_CW(_DWORD); weak
-// double _convertTOStoQNaN(void); weak
+// double __usercall _convertTOStoQNaN@<st0>(int a1@<eax>, double result@<st0>);
 // int __fastcall _fload_withFB(_DWORD, _DWORD); weak
 // _DWORD _check_range_exit(); weak
 // double __cdecl _startTwoArgErrorHandling(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // double __cdecl _startOneArgErrorHandling(__int16, _DWORD, _DWORD, _DWORD); weak
 // size_t __cdecl _msize(void *Block);
 // int __cdecl __loctotime_t(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
-// int __usercall fFYTOX@<eax>(char a1@<ch>, int a2@<ebp>, long double a3@<st1>, long double a4@<st0>);
+// void __usercall fFYTOX(char a1@<ch>, int a2@<ebp>, long double a3@<st1>, long double a4@<st0>);
 // void zerotoxdone();
 // void expbigret();
 // int _ffexpm1(void); weak
@@ -1725,13 +1751,17 @@ void __noreturn sub_10083B50();
 // int __cdecl _powhlp(double, double X, int); idb
 // int _setenvp(void); weak
 // int _setargv(void); weak
+// int __cdecl _setmbcp(int CodePage);
 // UINT __cdecl getSystemCP(UINT a1);
+// int __cdecl CPtoLCID(int a1);
+// int setSBCS(void); weak
 // int __initmbctable(void); weak
 // CHAR *__crtGetEnvironmentStringsA();
 int __cdecl sub_10086B80(int a1);
 // BOOL __stdcall DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved);
 // int _FF_MSGBANNER(void); weak
 // int *__cdecl _NMSG_WRITE(int a1);
+// _DWORD *__cdecl _CopyMan(int a1, _DWORD *a2);
 // _DWORD __cdecl _ld12cvt(_DWORD, _DWORD, _DWORD); weak
 int __cdecl sub_10087540(int a1, int a2);
 int __cdecl ld12cvt_(int a1, int a2);
@@ -1751,8 +1781,12 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // unsigned int __usercall unknown_libname_29@<eax>(char a1@<dl>, __int128 a2, int a3, int a4, __int128 a5);
 // int __usercall __spoils<ecx,st0> unknown_libname_30@<eax>(unsigned __int64 a1@<st0>);
 // _DWORD __cdecl __crtMessageBoxA(_DWORD, _DWORD, _DWORD); weak
+// _DWORD __cdecl __add_12(_DWORD, _DWORD); weak
+// _DWORD __cdecl __shl_12(_DWORD); weak
+// _DWORD __cdecl __shr_12(_DWORD); weak
 // _DWORD __cdecl __mtold12(_DWORD, _DWORD, _DWORD); weak
 // int __cdecl __strgtold12(int a1, char **a2, char *a3, int a4, int a5, int a6, int a7);
+// int __cdecl _I10_OUTPUT(unsigned int a1, __int64 a2, int a3, char a4, int a5);
 // int __cdecl __getlocaleinfo(UINT CodePage, LCID Locale, LCTYPE LCType, int); idb
 // char *__cdecl _itoa(int Value, char *Buffer, int Radix);
 // int __cdecl _strcmpi(const char *String1, const char *String2);
@@ -1765,8 +1799,8 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // LSTATUS __stdcall RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult);
 // HRESULT __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter);
 // HRESULT __stdcall DirectDrawEnumerateA(LPDDENUMCALLBACKA lpCallback, LPVOID lpContext);
-// int __stdcall DirectInputCreateA(_DWORD, _DWORD, _DWORD, _DWORD); weak
-// int __stdcall DirectPlayLobbyCreateA(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
+// HRESULT __stdcall DirectInputCreateA(HINSTANCE hinst, DWORD dwVersion, LPDIRECTINPUTA *ppDI, LPUNKNOWN punkOuter);
+// HRESULT __stdcall DirectPlayLobbyCreateA(LPGUID, LPDIRECTPLAYLOBBYA *, IUnknown *, LPVOID, DWORD);
 // BOOL __stdcall DeleteDC(HDC hdc);
 // HGDIOBJ __stdcall SelectObject(HDC hdc, HGDIOBJ h);
 // HDC __stdcall CreateCompatibleDC(HDC hdc);
@@ -1809,9 +1843,11 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // BOOL __stdcall FreeEnvironmentStringsA(LPCH penv);
 // UINT __stdcall GetOEMCP();
 // UINT __stdcall GetACP();
+// BOOL __stdcall GetCPInfo(UINT CodePage, LPCPINFO lpCPInfo);
 // DWORD __stdcall GetModuleFileNameA(HMODULE hModule, LPSTR lpFilename, DWORD nSize);
 // SIZE_T __stdcall HeapSize(HANDLE hHeap, DWORD dwFlags, LPCVOID lpMem);
 // int __stdcall WideCharToMultiByte(UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPBOOL lpUsedDefaultChar);
+// void __stdcall RaiseException(DWORD dwExceptionCode, DWORD dwExceptionFlags, DWORD nNumberOfArguments, const ULONG_PTR *lpArguments);
 // BOOL __stdcall WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);
 // HANDLE __stdcall GetStdHandle(DWORD nStdHandle);
 // DWORD __stdcall GetVersion();
@@ -1827,6 +1863,7 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // void __stdcall OutputDebugStringA(LPCSTR lpOutputString);
 // DWORD __stdcall GetLastError();
 // void __stdcall RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);
+// MMRESULT __stdcall acmMetrics(HACMOBJ hao, UINT uMetric, LPVOID pMetric);
 // int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
 // int wsprintfA(LPSTR, LPCSTR, ...);
 // BOOL __stdcall PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
@@ -1900,6 +1937,7 @@ int (__thiscall *off_1008F700)(void *Block, char) = &sub_10048850; // weak
 int (__thiscall *off_1008F728)(void *Block, char) = &sub_1005B0A0; // weak
 int (__thiscall *off_1008F758)(void *Block, char) = &sub_1005B8D0; // weak
 int (__thiscall *off_1008F788)(void *Block, char) = &sub_1005CBF0; // weak
+_UNKNOWN unk_1008FA64; // weak
 GUID CLSID_IDirectDraw2 = { 3014063072u, 11075u, 4559u, { 162u, 222u, 0u, 170u, 0u, 185u, 51u, 86u } }; // idb
 GUID CLSID_IDirectDrawSurface2 = { 1468029061u, 28396u, 4559u, { 148u, 65u, 168u, 35u, 3u, 193u, 14u, 39u } }; // idb
 GUID CLSID_IDirectDrawSurface3 = { 3657715200u, 27058u, 4560u, { 161u, 213u, 0u, 170u, 0u, 184u, 223u, 187u } }; // idb
@@ -1929,9 +1967,9 @@ GUID CLSID_IDirectSound = { 664468099u, 18817u, 4558u, { 165u, 33u, 0u, 32u, 175
 int g_Playmusic = 2; // weak
 _DWORD dword_100940A8 = 100; // idb
 char aCdaudio[8] = "cdaudio"; // weak
-char g_errorLogFile[] = "c:\\RallyError.txt"; // idb
-char writeableMode[] = "w"; // idb
-char readBinaryMode[] = "rb"; // idb
+char kFilepathErrorLog[] = "c:\\RallyError.txt"; // idb
+char kFileModeWrite[] = "w"; // idb
+char kFileModeReadBinary[] = "rb"; // idb
 char aChkFreadopenSz[] = "CHK_FReadOpen():szName"; // idb
 char aChkFreadopenPf[] = "CHK_FReadOpen():pfil"; // idb
 int dword_10094294 = -1; // weak
@@ -1944,9 +1982,9 @@ int g_HandlingType = 1; // weak
 int g_TransmissionType = 1; // weak
 int g_SuspensionType = 1; // weak
 void *g_UltraCarHeader = (void *)2; // idb
-CHAR OutputString[] = "CheckPrevious App - Another instance of this app is already running.\n"; // idb
-CHAR ClassName[] = "BossRally"; // idb
-CHAR WindowName[] = "Boss Rally"; // idb
+CHAR kDebugStrCheckPreviousApp[] = "CheckPrevious App - Another instance of this app is already running.\n"; // idb
+CHAR kClassName[] = "BossRally"; // idb
+CHAR kWindowName[] = "Boss Rally"; // idb
 char aBsuspension[] = "bsuspension="; // idb
 char aBtire[] = "btire="; // idb
 char aBcar[] = "bcar="; // idb
@@ -1978,11 +2016,15 @@ char aChosencar[] = "chosenCar="; // idb
 char aChosentrack[] = "chosenTrack="; // idb
 char SubStr[] = "NetworkPlay="; // idb
 char aBossrallyIni[14] = "BossRally.ini"; // weak
-char aCleanupnameNam[] = "CleanupName: Name is greater than 64 bytes. Memory Corrupted!"; // idb
+char kErrorMessageCleanupNameNameTooLong[] = "CleanupName: Name is greater than 64 bytes. Memory Corrupted!"; // idb
 char aPod[] = "POD"; // idb
 char aAddNameIsTooLo[] = "Add: Name is too long to be a pod name."; // idb
 char aWb[] = "wb"; // idb
 char aFileReadFailur[] = "File read failure"; // idb
+_UNKNOWN unk_100946C8; // weak
+_UNKNOWN unk_1009B4C8; // weak
+_UNKNOWN unk_100A22D0; // weak
+_UNKNOWN unk_100A4170; // weak
 char byte_100A5FEF[129] =
 {
   '\0',
@@ -2121,6 +2163,7 @@ int dword_100A6150[] = { 0 }; // weak
 int dword_100A61C0[] = { 0 }; // weak
 int dword_100A6230 = 2; // weak
 int d3dEnumTextureFormatsContextStart = 0;
+_UNKNOWN unk_100A6238; // weak
 int g_D3dwaitcanflip = 1; // weak
 int g_D3dwaitflipdon = 1; // weak
 CHAR Text[] = "This game requires DirectX 6."; // idb
@@ -2577,6 +2620,10 @@ CHAR g_DINPUT_DLL[] = "DINPUT.DLL"; // idb
 int g_D3dalphacompar = 1; // weak
 int dword_100AA728 = -2143612928; // weak
 int dword_100AA72C = -2143518720; // weak
+_UNKNOWN unk_100AA770; // weak
+_UNKNOWN unk_100AA838; // weak
+_UNKNOWN unk_100AA860; // weak
+_UNKNOWN unk_100AA868; // weak
 int dword_100AA87C = 1; // weak
 int dword_100AA880 = 1; // weak
 int dword_100AA884 = 1; // weak
@@ -3877,7 +3924,9 @@ int dword_100B5E34[415] =
   1087735936
 }; // idb
 int dword_100B64B0[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
+_UNKNOWN unk_100B64EC; // weak
 int dword_100B64F8[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
+_UNKNOWN unk_100B6534; // weak
 int dword_100B6540[432] =
 {
   0,
@@ -4314,10 +4363,12 @@ int dword_100B6540[432] =
   1087735936
 }; // idb
 int dword_100B6C00[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
+_UNKNOWN unk_100B6C3C; // weak
 int dword_100B6C48[18] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360 }; // idb
 char aRWav[6] = "r.wav"; // weak
 char aHWav[6] = "h.wav"; // weak
 char aWav[5] = ".wav"; // weak
+_UNKNOWN unk_100B6CA8; // weak
 CHAR filename[] = "BRString.dll"; // idb
 char g_TrackDir[] = { '\0' }; // weak
 char aTracks[8] = "tracks/"; // weak
@@ -4363,6 +4414,8 @@ char *carNames[16] =
 }; // weak
 char *g_SfxDir = "mn"; // weak
 char aSfx[5] = "sfx/"; // weak
+_UNKNOWN unk_100B8938; // weak
+_UNKNOWN unk_100B89A0; // weak
 char *off_100B89C8[12] =
 {
   "Fear and Loathing",
@@ -4381,6 +4434,10 @@ char *off_100B89C8[12] =
 char aFancyCar[10] = "Fancy Car"; // weak
 int dword_100B8C90 = 1; // weak
 int (*off_100B8C94)(void) = &sub_1002A640; // weak
+_UNKNOWN unk_100B8CA0; // weak
+_UNKNOWN unk_100B94A8; // weak
+_UNKNOWN unk_100B9CB0; // weak
+_UNKNOWN unk_100BAAC8; // weak
 int dword_100BBAC8[3] = { 33, 33, 34 }; // idb
 int needToCheckSupportHRPC = 1; // weak
 char byte_100BBAD8 = '¿'; // weak
@@ -4419,7 +4476,7 @@ int dword_100BD400[9] = { 803, 618, 475, 366, 281, 216, 166, 128, 1 }; // idb
 int dword_100BD424 = 10000; // weak
 int dword_100BD428 = 2000; // weak
 int dword_100BD42C = 10000; // weak
-int dword_100BD430 = -1; // weak
+LONG diEffectRglDirection_0 = -1;
 int dword_100BD438 = 125000; // weak
 CHAR aErrorFailedToC_0[] = "Error: Failed to create device.\n"; // idb
 CHAR aErrorFailedToS_0[] = "Error: Failed to set game device data format.\n"; // idb
@@ -4436,6 +4493,7 @@ CHAR aUnableToInitia[] = "Unable to initialize Direct3D accelerated video card."
 FILE Stream = { NULL, 0, NULL, 2, 2, 0, 0, NULL }; // idb
 int (*off_100BFC00)(void) = &terminate; // weak
 int dword_100C0378[6] = { 1024, -1023, 53, 11, 64, 1023 }; // idb
+_UNKNOWN unk_100C0390; // weak
 int dword_100C0C44 = 1; // weak
 int dword_100C0CD8 = -1; // weak
 int dword_100C0CDC = 0; // weak
@@ -4583,6 +4641,8 @@ int dword_10220B38; // weak
 char byte_10220B3C; // weak
 __int16 word_10220B40; // weak
 int dword_10220B44; // weak
+_UNKNOWN unk_10220B48; // weak
+_UNKNOWN unk_10220B7C; // weak
 int playParmsPlayTo; // weak
 int dword_10220C3C; // weak
 MCIDEVICEID mciId; // idb
@@ -4663,7 +4723,7 @@ int dword_10221318; // weak
 HANDLE g_hMutex_7; // idb
 int g_bcar; // weak
 HANDLE g_hMutex_4; // idb
-HANDLE dword_10221328; // idb
+int dword_10221328[]; // weak
 int dword_1022132C[]; // weak
 int dword_10221330[]; // weak
 int dword_10221334[8]; // idb
@@ -4686,6 +4746,7 @@ int dword_10221C9C[9091]; // idb
 int dword_1022AAA8; // weak
 int dword_1022AAB0[]; // weak
 int dword_1022AAB4[15]; // idb
+_UNKNOWN unk_1022AAF0; // weak
 int dword_1022AAF4; // weak
 char byte_1022AAF8[1024]; // idb
 int dword_1022AEF8; // weak
@@ -4708,13 +4769,15 @@ int dword_1022AF38; // weak
 int dword_1022AF3C; // weak
 int dword_1022AF40; // weak
 char bossRallyIniPath[208]; // idb
+_UNKNOWN unk_1022B018; // weak
 int g_dwTotalPhys; // weak
 int g_chosenCar; // weak
 int g_ChosenWeather; // weak
+_UNKNOWN unk_1022B358; // weak
 int dword_10277358; // weak
 FILE *dword_1027735C; // idb
-LPDIRECT3DDEVICE2 g_D3DDevice2;
-gameSpecificUnk0 *g_gsu0;
+IDirect3DDevice2 *g_D3DDevice2;
+unk0 *g_gsu0;
 int dword_10277370; // weak
 int renderState_0; // weak
 int renderState; // weak
@@ -4739,8 +4802,8 @@ int dword_10277418; // weak
 int dword_1027741C; // weak
 int dword_10277420; // weak
 IDirect3D2 *g_pD3D2;
-D3DDEVICEDESC g_HWCaps;
-D3DDEVICEDESC g_HELCaps;
+_D3DDeviceDesc g_HWCaps;
+_D3DDeviceDesc g_HELCaps;
 DWORD stru_10277680; // idb
 int dword_10277B1C; // weak
 int dword_10277B20; // weak
@@ -4757,6 +4820,8 @@ int dword_10277B68[16]; // idb
 int dword_10277BA8; // weak
 float flt_10277BAC; // weak
 float flt_10277BB0; // weak
+_UNKNOWN unk_10277BB8; // weak
+_UNKNOWN unk_10277BC0; // weak
 char byte_10277BC8[]; // weak
 char byte_10277BC9[]; // weak
 char byte_10277BCA[366]; // idb
@@ -4944,6 +5009,8 @@ float flt_104B255C; // weak
 float flt_104B2560; // weak
 float flt_104B2564; // weak
 int dword_104B2568; // weak
+_UNKNOWN unk_104B3DE8; // weak
+_UNKNOWN unk_104B7DE8; // weak
 float flt_104BBDE8; // weak
 float flt_104BBDF4; // weak
 float flt_104BBDF8; // weak
@@ -4967,12 +5034,14 @@ char byte_104BBE42; // weak
 int dword_104BBE48; // weak
 float flt_104BBEB8; // weak
 float flt_104BBEC0[4]; // idb
+_UNKNOWN unk_104BBED0; // weak
 char byte_104BBF00; // weak
 float flt_104BBF04; // weak
 float flt_104BBF08; // weak
 int dword_104BC190; // weak
 char byte_104BC194; // weak
 float flt_104BC198; // weak
+_UNKNOWN g_vertices; // weak
 int dword_104C01A0; // weak
 int dword_104C01A4; // weak
 int dword_104C01A8[3]; // idb
@@ -5006,6 +5075,7 @@ int dword_104C16DC[]; // weak
 int dword_104C16E0[]; // weak
 int dword_104C16E4[]; // weak
 int dword_104C170C[]; // weak
+_UNKNOWN unk_104C1710; // weak
 float flt_104C1720[]; // weak
 float flt_104C1724[]; // weak
 int dword_104C172C[]; // weak
@@ -5056,6 +5126,7 @@ char byte_104D51B0; // weak
 int dword_104D51B4; // weak
 int dword_104D51B8; // weak
 int dword_104D51BC; // weak
+_UNKNOWN unk_104D51D0; // weak
 char byte_105551D0; // weak
 char byte_105551D4; // weak
 int dword_105551D8[]; // weak
@@ -5222,6 +5293,7 @@ int dword_10680940; // weak
 unsigned int C; // idb
 int dword_10680948; // weak
 _UNKNOWN unk_10680950; // weak
+_UNKNOWN unk_10690950; // weak
 int dword_106909B0; // weak
 int dword_106909B4; // weak
 int dword_106909B8; // weak
@@ -5257,6 +5329,7 @@ char byte_10690FF8[]; // weak
 char byte_10690FF9; // weak
 char byte_10690FFA; // weak
 char byte_10690FFB; // weak
+_UNKNOWN unk_10691018; // weak
 char byte_106C0200; // weak
 int dword_106C0208; // weak
 int dword_106C020C; // weak
@@ -5482,11 +5555,17 @@ int dword_106C7CD0; // weak
 int dword_106C7CD4; // weak
 int dword_106C7CD8; // weak
 int dword_106C7CDC; // weak
+_UNKNOWN unk_106C7CE0; // weak
+_UNKNOWN unk_106C7CE8; // weak
 void *dword_106C7DA8; // idb
 _UNKNOWN unk_106C7DAC; // weak
 int dword_106C7E6C; // weak
+_UNKNOWN unk_106C7E78; // weak
+_UNKNOWN unk_106C7E7C; // weak
 int dword_106C7E80[]; // weak
 int dword_106C7E84[1021]; // idb
+_UNKNOWN unk_106C8E78; // weak
+_UNKNOWN g_TrackBuffer; // weak
 int dword_10A99778; // weak
 int dword_10A9977C; // weak
 _DWORD dword_10A99780[266]; // idb
@@ -5535,6 +5614,7 @@ char byte_10A9D078[264]; // idb
 int dword_10A9D5C0[]; // weak
 char byte_10A9D618[36]; // idb
 int dword_10A9DBD0; // weak
+_UNKNOWN unk_10A9DBD8; // weak
 char byte_10A9DBDC; // weak
 char byte_10A9DD28[1064]; // idb
 int dword_10A9E150[32]; // idb
@@ -5688,8 +5768,11 @@ char byte_10AA2518[32]; // idb
 int dword_10AA2538[]; // weak
 int dword_10AA253C[]; // weak
 int dword_10AA2540[17]; // idb
+_UNKNOWN unk_10AA2584; // weak
 int dword_10AA2598; // weak
+_UNKNOWN unk_10AA259C; // weak
 float flt_10AA25A0[12]; // idb
+_UNKNOWN unk_10AA25D0; // weak
 char byte_10AA25D4; // weak
 int dword_10AA25D8; // weak
 int dword_10AA25DC; // weak
@@ -5898,6 +5981,7 @@ int dword_10ACD490; // weak
 _UNKNOWN unk_10ACD498; // weak
 int dword_10ACD4EC; // weak
 int dword_10ACD4F8; // weak
+_UNKNOWN unk_10ACD4FC; // weak
 char byte_10ACD500[2456]; // idb
 int dword_10ACDE98; // weak
 int dword_10ACDE9C; // weak
@@ -5910,7 +5994,7 @@ int dword_10ACE014; // weak
 char byte_10ACE215; // weak
 int dword_10ACED0C; // weak
 int dword_10ACED30; // weak
-struct_dword_10ACED34 *dword_10ACED34;
+#505 *dword_10ACED34;
 int dword_10ACED38; // weak
 int dword_10ACED3C[]; // weak
 int dword_10ACED40; // weak
@@ -5928,6 +6012,7 @@ int dword_10ACEEA8; // weak
 int dword_10ACEEAC; // weak
 int dword_10ACEEB0; // weak
 char byte_10ACEEB4[24]; // idb
+_UNKNOWN unk_10ACEECC; // weak
 int dword_10AD05DC[]; // weak
 int dword_10AD05E0[]; // weak
 _UNKNOWN unk_10AD05E4; // weak
@@ -5960,14 +6045,19 @@ int dword_10AD18A4; // weak
 int dword_10AD18A8; // weak
 int dword_10AD18AC; // weak
 float flt_10AD1A04; // weak
+_UNKNOWN unk_10AD1A08; // weak
 int dword_10AD33C4; // weak
 int dword_10AD33D0; // weak
+_UNKNOWN unk_10AD34F8; // weak
 int dword_10AF9528; // weak
 float flt_10AF953C[18]; // idb
 float flt_10AF959C[23]; // idb
+_UNKNOWN unk_10AF9658; // weak
 int dword_10AF96B8; // weak
 int dword_10AF96BC; // weak
 int dword_10AF96C0; // weak
+_UNKNOWN unk_10AF96C8; // weak
+_UNKNOWN unk_10AF96D4; // weak
 int dword_10AF9728[]; // weak
 float flt_10AF9740[15]; // idb
 float flt_10AF9794[18]; // idb
@@ -6008,10 +6098,16 @@ int dword_10AF9BAC; // weak
 int dword_10AF9BB0; // weak
 int dword_10AF9BB4; // weak
 int dword_10AF9BB8; // weak
+_UNKNOWN unk_10AF9BC0; // weak
 _UNKNOWN unk_10AFBEE8; // weak
+_UNKNOWN unk_10AFDBC0; // weak
 int dword_10B01C40; // weak
 int dword_10B01C44; // weak
 int dword_10B01C48; // weak
+_UNKNOWN unk_10B01C50; // weak
+_UNKNOWN unk_10B01ED0; // weak
+_UNKNOWN unk_10B02190; // weak
+_UNKNOWN unk_10B022D0; // weak
 void *dword_10B02434; // idb
 int dword_10B4DF28; // weak
 _WORD g_Config[84]; // idb
@@ -6067,7 +6163,9 @@ int dword_10B502EC; // weak
 int dword_11750308; // weak
 int dword_11750310[]; // weak
 int dword_11750314; // weak
+_UNKNOWN unk_11750318; // weak
 int dword_11750330; // weak
+_UNKNOWN unk_11750338; // weak
 int dword_11754E38; // weak
 int dword_11754E3C; // idb
 int dword_11754E40; // weak
@@ -6149,8 +6247,9 @@ int dword_11828D34[85]; // idb
 double dbl_11828E88[]; // weak
 int dword_11828F00; // weak
 int dword_11828F08[15]; // idb
+_UNKNOWN unk_11828F44; // weak
 LPCVOID dword_11828F48; // idb
-struct_pMem *pMem;
+#514 *pMem;
 IDirectSoundBuffer *g_dSoundBuffer;
 int dword_118290F4; // weak
 IDirectSound *g_DSound;
@@ -6169,6 +6268,8 @@ int dword_11829318; // weak
 int dword_1182931C; // weak
 int dword_11829324; // weak
 int dword_11829328; // weak
+_UNKNOWN unk_11829330; // weak
+_UNKNOWN unk_11829331; // weak
 int dword_11829370[]; // weak
 _UNKNOWN unk_11829374; // weak
 void *g_brstring; // idb
@@ -6208,6 +6309,10 @@ int (__cdecl *dword_118AA0C4)(_DWORD); // weak
 int (__cdecl *dword_118AA0C8)(_DWORD, _DWORD); // weak
 int (__cdecl *dword_118AA0CC)(_DWORD, _DWORD); // weak
 int (*dword_118AA0D0)(void); // weak
+_UNKNOWN lutBuffer; // weak
+_UNKNOWN ciBuffer_0; // weak
+_UNKNOWN lutBuffer_0; // weak
+_UNKNOWN ciBuffer; // weak
 int dword_118AB118; // weak
 LARGE_INTEGER Frequency; // idb
 int supportsHRPerformanceCounter; // weak
@@ -6216,20 +6321,8 @@ int performanceSomething; // weak
 int dword_118AB134; // weak
 int dword_118AB144; // weak
 int dword_118AB470; // weak
-int dword_118AB880; // weak
-int dword_118AB884; // weak
-int dword_118AB888; // weak
-int dword_118AB88C; // weak
-int dword_118AB890; // weak
-int dword_118AB894; // weak
-int dword_118AB898; // weak
-int dword_118AB89C; // weak
-int dword_118AB8A0; // weak
-int dword_118AB8A4; // weak
-int dword_118AB8A8; // weak
-int dword_118AB8AC; // weak
-int dword_118AB8B0; // weak
-int dword_118AB8B4; // weak
+_UNKNOWN unk_118AB478; // weak
+DIEFFECT diEffect_0;
 char byte_118AB8B8[]; // weak
 char byte_118AB8F7[]; // weak
 char byte_118AB8F8[]; // weak
@@ -6240,7 +6333,7 @@ char byte_118AB8FC[]; // weak
 char byte_118AB90F[]; // weak
 char byte_118AB910[424]; // idb
 int dword_118ABAB8; // weak
-int dword_118ABAC0; // weak
+int diEffectTypeSpecificParams_0; // weak
 int dword_118ABAC4; // weak
 int dword_118ABAC8; // weak
 int dword_118ABACC; // weak
@@ -6252,7 +6345,7 @@ int dword_118ABAE4[]; // weak
 int dword_118ABAE8[]; // weak
 char byte_118ABB10[496]; // idb
 int dword_118ABD00; // weak
-int dword_118ABD08; // weak
+int diEffectTypeSpecificParams; // weak
 int dword_118ABD0C; // weak
 int dword_118ABD10; // weak
 int dword_118ABD14; // weak
@@ -6279,20 +6372,7 @@ int dword_118ABD74; // weak
 int dword_118ABD78; // weak
 int dword_118ABD7C; // weak
 int dword_118ABD80; // weak
-int dword_118ABD88; // weak
-int dword_118ABD8C; // weak
-int dword_118ABD90; // weak
-int dword_118ABD94; // weak
-int dword_118ABD98; // weak
-int dword_118ABD9C; // weak
-int dword_118ABDA0; // weak
-int dword_118ABDA4; // weak
-int dword_118ABDA8; // weak
-int dword_118ABDAC; // weak
-int dword_118ABDB0; // weak
-int dword_118ABDB4; // weak
-int dword_118ABDB8; // weak
-int dword_118ABDBC; // weak
+DIEFFECT diEffect;
 int dword_118ABDC0; // weak
 int g_Runbenchmark; // weak
 int dword_118ABDC8; // weak
@@ -6303,9 +6383,10 @@ int dword_118ABDD8; // weak
 int dword_118ABDDC; // weak
 __int64 qword_118ABDE0; // weak
 int mouseCreated; // weak
-int dword_118ABDEC; // weak
+IDirectInputEffect *g_DirectInputEffect_0;
+LONG diEffectRglDirection;
 int dword_118ABDF8; // weak
-int dword_118ABDFC; // weak
+IDirectInputEffect *g_DirectInputEffect;
 int dword_118ABE00; // weak
 int dword_118ABE08; // weak
 HINSTANCE hInst; // idb

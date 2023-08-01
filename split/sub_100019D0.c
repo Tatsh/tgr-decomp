@@ -45,13 +45,13 @@ int __thiscall sub_100019D0(#479 *this)
   float v46; // [esp+18h] [ebp-10h]
   int v47[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v2 = *((_DWORD *)this + 2541);
-  v3 = *((_DWORD *)this + 2542);
-  v47[0] = *((_DWORD *)this + 2540);
+  v2 = *((_DWORD *)this + 0x9ED);
+  v3 = *((_DWORD *)this + 04756);
+  v47[0] = *((_DWORD *)this + 0x9EC);
   v47[1] = v2;
   v47[2] = v3;
-  v46 = sub_1003B170((float *)this + 129);
-  v4 = sub_1003B170((float *)this + 122);
+  v46 = sub_1003B170((float *)this + 0x81);
+  v4 = sub_1003B170((float *)this + 0x7A);
   v43 = v4 * 0.30000001;
   if ( v6 | v7 )
     v8 = 0.0;

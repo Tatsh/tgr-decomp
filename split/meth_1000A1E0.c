@@ -1,5 +1,5 @@
 //----- (1000A1E0) --------------------------------------------------------
-HRESULT __thiscall sub_1000A1E0(gameSpecificUnk0 *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+HRESULT __thiscall meth_1000A1E0(unk0 *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v10; // eax
   HRESULT result; // eax
@@ -27,14 +27,14 @@ HRESULT __thiscall sub_1000A1E0(gameSpecificUnk0 *this, HWND hWnd, int a3, int a
              (int ***)&this->refclsid);
   if ( result >= 0 )
   {
-    result = sub_1000A480(this);
+    result = meth_1000A480(this);
     if ( result >= 0 )
     {
-      v12 = setCooperativeLevel(this);
+      v12 = SetCooperativeLevel(this);
       if ( v12 >= 0
-        && (v12 = sub_1000A5D0(this), v12 >= 0)
-        && (v12 = sub_1000A820(this), v12 >= 0)
-        && (v12 = sub_1000AB70(this), v12 >= 0) )
+        && (v12 = meth_1000A5D0(this), v12 >= 0)
+        && (v12 = meth_1000A820(this), v12 >= 0)
+        && (v12 = meth_1000AB70(this), v12 >= 0) )
       {
         SendMessageA(this->hwnd, 0xBD0u, 0, (LPARAM)this);
         result = 0;

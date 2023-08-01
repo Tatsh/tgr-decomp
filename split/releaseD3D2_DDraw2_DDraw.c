@@ -1,28 +1,28 @@
 //----- (1000A540) --------------------------------------------------------
-int __thiscall releaseD3D2_DDraw2_DDraw(gameSpecificUnk0 *this)
+int __thiscall ReleaseD3D2_DDraw2_DDraw(unk0 *this)
 {
-  IDirect3D2 *v2; // eax
-  IDirectDraw2 *v3; // eax
-  LPDIRECTDRAW v4; // eax
+  IDirect3D2 *d3d2; // eax
+  IDirectDraw2 *ddraw2; // eax
+  LPDIRECTDRAW ddraw; // eax
 
-  v2 = this->d3d2;
+  d3d2 = this->d3d2;
   this->field_1C &= 0xFFFFFFFE;
-  if ( v2 )
+  if ( d3d2 )
   {
-    v2->lpVtbl->Release(v2);
+    d3d2->lpVtbl->Release(d3d2);
     this->d3d2 = 0;
     g_pD3D2 = 0;
   }
-  v3 = this->ddraw2;
-  if ( v3 )
+  ddraw2 = this->ddraw2;
+  if ( ddraw2 )
   {
-    v3->lpVtbl->Release(this->ddraw2);
+    ddraw2->lpVtbl->Release(this->ddraw2);
     this->ddraw2 = 0;
   }
-  v4 = this->lpDDraw;
-  if ( v4 )
+  ddraw = this->lpDDraw;
+  if ( ddraw )
   {
-    v4->lpVtbl->Release(this->lpDDraw);
+    ddraw->lpVtbl->Release(this->lpDDraw);
     this->lpDDraw = 0;
   }
   return 0;

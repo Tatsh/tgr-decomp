@@ -23,9 +23,9 @@ void sub_10069840()
   sub_1002B280(0);
   if ( g_GameMode == 1 || g_GameMode == 6 )
   {
-    dword_10ACED34->wordF2 = -1;
-    dword_10ACED34->wordF0 = -1;
-    dword_10ACED34->wordF4 = -1;
+    *((_WORD *)dword_10ACED34 + 121) = -1;
+    *((_WORD *)dword_10ACED34 + 120) = -1;
+    *((_WORD *)dword_10ACED34 + 122) = -1;
   }
   sub_100697E0(1);
   sub_10034C66((int)debugPrint);
@@ -58,11 +58,11 @@ LABEL_11:
     goto LABEL_11;
 LABEL_12:
   dword_104BBE08 = g_ChosenWeather;
-  dword_10ACED34->handlingType = g_HandlingType;
-  dword_10ACED34->transmissionType = g_TransmissionType;
-  dword_10ACED34->suspensionType = g_SuspensionType;
+  *((_DWORD *)dword_10ACED34 + 62) = g_HandlingType;
+  *((_DWORD *)dword_10ACED34 + 63) = g_TransmissionType;
+  *((_DWORD *)dword_10ACED34 + 65) = g_SuspensionType;
   v3 = g_UltraCarHeader;
-  dword_10ACED34->ultraCarHeader = g_UltraCarHeader;
+  *((_DWORD *)dword_10ACED34 + 64) = g_UltraCarHeader;
   debugPrint(v3);
   debugPrint(ultraCarHeader);
   debugPrint(vehicle);

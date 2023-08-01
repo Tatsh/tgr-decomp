@@ -127,8 +127,8 @@ int *__cdecl sub_1001D420(int a1, int a2, int a3)
         {
           g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
             g_D3DDevice2,
-            4,
-            3,
+            D3DPT_TRIANGLELIST,
+            D3DVT_TLVERTEX,
             &g_vertices,
             v20,
             &g_indexedPrimitiveIndices,
@@ -180,8 +180,8 @@ int *__cdecl sub_1001D420(int a1, int a2, int a3)
           {
             g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
               g_D3DDevice2,
-              4,
-              3,
+              D3DPT_TRIANGLELIST,
+              D3DVT_TLVERTEX,
               &g_vertices,
               v32,
               &g_indexedPrimitiveIndices,

@@ -5,7 +5,7 @@ unsigned int *__cdecl sub_1001CDA0(unsigned int *a1)
   unsigned int v2; // edx
   signed int maxX; // edx
   unsigned int v4; // edi
-  IDirect3DDevice2Vtbl *d3dDevice2LPVtbl; // ecx
+  #489 *d3dDevice2LPVtbl; // ecx
   D3DCLIPSTATUS v7; // [esp+8h] [ebp-20h] BYREF
 
   v7.dwFlags = 2;
@@ -23,9 +23,9 @@ unsigned int *__cdecl sub_1001CDA0(unsigned int *a1)
   v7.maxx = (float)maxX;
   dword_104C5170 = g_Height - v4;
   v7.miny = (float)(g_Height - dword_104C01A0);
-  d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
+  d3dDevice2LPVtbl = (#489 *)g_D3DDevice2->lpVtbl;
   v7.maxy = (float)(int)(g_Height - (g_Height - v4));
-  d3dDevice2LPVtbl->SetClipStatus(g_D3DDevice2, &v7);
+  (*((void (__stdcall **)(IDirect3DDevice2 *, D3DCLIPSTATUS *))d3dDevice2LPVtbl + 31))(g_D3DDevice2, &v7);
   return a1 + 2;
 }
 // 100A81C4: using guessed type int g_Height;

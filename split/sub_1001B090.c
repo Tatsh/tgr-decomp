@@ -17,7 +17,7 @@ HRESULT __thiscall sub_1001B090(#468 *this, GUID *lpGUID, char *Source, char *a4
   int v19; // eax
   IDirectDraw2 *ppvDDraw2_a; // [esp+Ch] [ebp-28h]
   IDirectDraw *ppvDDraw2_b; // [esp+14h] [ebp-20h]
-  IDirect3D2 *d3d2_a; // [esp+14h] [ebp-20h]
+  #462 *d3d2_a; // [esp+14h] [ebp-20h]
   IDirect3D2 *ppvD3D2; // [esp+28h] [ebp-Ch] BYREF
   IDirectDraw2 *ppvDDraw2; // [esp+2Ch] [ebp-8h] BYREF
   LPDIRECTDRAW lpDD; // [esp+30h] [ebp-4h] BYREF
@@ -88,7 +88,7 @@ HRESULT __thiscall sub_1001B090(#468 *this, GUID *lpGUID, char *Source, char *a4
             if ( v15 >= 0 )
             {
               v18 = *(_DWORD *)this & 0xFFFFFFEF;
-              d3d2_a = ppvD3D2;
+              d3d2_a = (#462 *)ppvD3D2;
               *((_DWORD *)this + 200) = 0;
               *(_DWORD *)this = v18;
               v15 = sub_1001B510(this, d3d2_a);

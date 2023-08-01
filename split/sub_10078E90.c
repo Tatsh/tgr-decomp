@@ -9,8 +9,8 @@ int sub_10078E90()
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
     {
-      result = dword_118ABDBC;
-      if ( dword_118ABDBC )
+      result = MEMORY[0x118ABDBC];
+      if ( MEMORY[0x118ABDBC] )
       {
         result = dword_106909E0;
         if ( !dword_106909E0 )

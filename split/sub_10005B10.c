@@ -1,12 +1,12 @@
 //----- (10005B10) --------------------------------------------------------
 int sub_10005B10()
 {
-  HANDLE *mutex; // esi
+  int *mutex; // esi
 
-  mutex = &dword_10221328;
+  mutex = dword_10221328;
   do
   {
-    *mutex = CreateMutexA(0, 0, 0);
+    *mutex = (int)CreateMutexA(0, 0, 0);
     mutex += 606;
   }
   while ( (int)mutex < (int)&dword_1022AAA8 );
@@ -28,4 +28,5 @@ int sub_10005B10()
 }
 // 10220DD8: using guessed type int dword_10220DD8;
 // 10221310: using guessed type int dword_10221310;
+// 10221328: using guessed type int dword_10221328[];
 // 1022AAA8: using guessed type int dword_1022AAA8;

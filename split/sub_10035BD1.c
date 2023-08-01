@@ -2,7 +2,7 @@
 int sub_10035BD1()
 {
   if ( dword_106C56D0 != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C )
-    sub_1006A4A0((#483 *)&g_Config, g_bossRallyCfgPath);
+    WriteConfigFile((#483 *)&g_Config, g_bossRallyCfgPath);
   sub_100734F0();
   sub_10079550();
   if ( g_NetworkPlay )

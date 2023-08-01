@@ -1,13 +1,13 @@
 //----- (10063420) --------------------------------------------------------
-int __thiscall sub_10063420(_DWORD *this)
+unsigned int __thiscall sub_10063420(_DWORD *this)
 {
   unsigned int v1; // edx
-  int result; // eax
+  unsigned int result; // eax
   int v3; // edi
   int i; // eax
   __int16 v5; // [esp+10h] [ebp-4h]
 
-  v1 = (unsigned __int8)dword_10ACED34->gap0[4];
+  v1 = *((unsigned __int8 *)dword_10ACED34 + 4);
   result = v1;
   if ( v1 > 3 )
     result = 3;

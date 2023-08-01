@@ -3,7 +3,7 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
 {
   HWND v3; // esi
   LONG v4; // eax
-  _BYTE *v5; // ebp
+  unk0 *v5; // ebp
   unsigned int v6; // esi
   unsigned int v7; // edi
   int v8; // ebp
@@ -18,8 +18,8 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
   struct tagRECT Rect; // [esp+20h] [ebp-10h] BYREF
 
   v3 = hWnd;
-  v4 = GetWindowLongA(hWnd, -21);
-  v5 = (_BYTE *)v4;
+  v4 = GetWindowLongA(hWnd, GWL_USERDATA);
+  v5 = (unk0 *)v4;
   if ( v4 && (*(_BYTE *)(v4 + 28) & 2) != 0 && !dword_118AC230 && lParam )
   {
     if ( IsIconic(hWnd) )

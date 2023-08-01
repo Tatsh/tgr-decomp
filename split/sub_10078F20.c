@@ -14,8 +14,8 @@ int __cdecl sub_10078F20(int a1, int a2, int a3)
   result = dword_10B4E1E0;
   if ( !dword_10B4E1E0 )
     return result;
-  result = dword_118ABDBC;
-  if ( !dword_118ABDBC )
+  result = MEMORY[0x118ABDBC];
+  if ( !MEMORY[0x118ABDBC] )
     return result;
   result = dword_106909E0;
   if ( dword_106909E0 )
@@ -28,17 +28,17 @@ int __cdecl sub_10078F20(int a1, int a2, int a3)
   {
     if ( !dword_118ABDF8 )
     {
-      result = dword_118ABDEC;
-      if ( dword_118ABDEC )
-        result = (*(int (__stdcall **)(int))(*(_DWORD *)dword_118ABDEC + 32))(dword_118ABDEC);
+      result = g_DirectInputEffect_0;
+      if ( g_DirectInputEffect_0 )
+        result = (*(int (__stdcall **)(int))(*(_DWORD *)g_DirectInputEffect_0 + 32))(g_DirectInputEffect_0);
       dword_118ABDF8 = 1;
     }
     return result;
   }
   if ( dword_118ABDF8 )
   {
-    if ( dword_118ABDEC )
-      (*(void (__stdcall **)(int, int, _DWORD))(*(_DWORD *)dword_118ABDEC + 28))(dword_118ABDEC, 1, 0);
+    if ( g_DirectInputEffect_0 )
+      (*(void (__stdcall **)(int, int, _DWORD))(*(_DWORD *)g_DirectInputEffect_0 + 28))(g_DirectInputEffect_0, 1, 0);
     sub_10078E50();
     v5 = dword_100BD42C;
     v4 = dword_100BD424;

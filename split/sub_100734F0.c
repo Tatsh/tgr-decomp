@@ -7,8 +7,8 @@ int sub_100734F0()
 
   if ( g_Playsfx && g_DSound && dword_118290FC )
   {
-    sub_10072BF0(&dword_11828F48);
-    sub_10072C20(&dword_11828F48);
+    sub_10072BF0((int)&dword_11828F48);
+    sub_10072C20((int)&dword_11828F48);
     v0 = dword_11828F00;
     if ( dword_11828F00 > 0 )
     {
@@ -26,8 +26,6 @@ int sub_100734F0()
   }
   return 1;
 }
-// 10072BF0: using guessed type _DWORD __cdecl sub_10072BF0(_DWORD);
-// 10072C20: using guessed type _DWORD __cdecl sub_10072C20(_DWORD);
 // 100B5DE8: using guessed type int g_Playsfx;
 // 11828F00: using guessed type int dword_11828F00;
 // 118290FC: using guessed type int dword_118290FC;

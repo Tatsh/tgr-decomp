@@ -1,5 +1,5 @@
 //----- (1001AB90) --------------------------------------------------------
-int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, D3DDEVICEDESC *desc, D3DDEVICEDESC *a5, LPVOID userArg)
+int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, #469 *desc, #469 *a5, LPVOID userArg)
 {
   int *v6; // ebx
   #478 *v7; // ebp

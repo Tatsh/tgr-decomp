@@ -17,7 +17,7 @@ int __cdecl sub_1002A430(int a1, int a2)
   int v15; // [esp+4h] [ebp-2B8h]
   int v16; // [esp+8h] [ebp-2B4h]
   unsigned int v17; // [esp+Ch] [ebp-2B0h]
-  struct_a1 v18; // [esp+10h] [ebp-2ACh] BYREF
+  int v18[171]; // [esp+10h] [ebp-2ACh] BYREF
 
   result = a2;
   if ( a2 > 0 )
@@ -58,18 +58,18 @@ int __cdecl sub_1002A430(int a1, int a2)
               while ( 1 )
               {
                 v11 = *v4;
-                qmemcpy(&v18, (char *)dword_1057543C + v10 + 4, sizeof(v18));
-                v18.punsigned___int84C = (unsigned __int8 *)(dword_10690BEC + *(_DWORD *)(v11 + v9));
+                qmemcpy(v18, (char *)dword_1057543C + v10 + 4, sizeof(v18));
+                v18[19] = dword_10690BEC + *(_DWORD *)(v11 + v9);
                 v12 = *(_DWORD *)(v11 + v9 + 4);
                 if ( v12 > 0 )
                 {
-                  v18.dword50 = dword_10690BEC + v12;
+                  v18[20] = dword_10690BEC + v12;
                   qmemcpy(off_100A7DF0, (const void *)(dword_10690BEC + v12), 0x200u);
                 }
                 dword_10575444 = 0;
                 dword_10575440 = 0;
-                v13 = sub_10028860(&v18);
-                *(_DWORD *)(v9 + *v4) = v17 | TIDFromTexture(&v18, (int)v13);
+                v13 = sub_10028860((#506 *)v18);
+                *(_DWORD *)(v9 + *v4) = v17 | TIDFromTexture(v18, (int)v13);
                 v9 += 12;
                 if ( ++v14 >= *(unsigned __int16 *)(*v4 + 2) )
                   break;

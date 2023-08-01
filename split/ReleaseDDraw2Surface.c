@@ -1,5 +1,5 @@
 //----- (1000A8A0) --------------------------------------------------------
-int __thiscall ReleaseDDraw2Surface(gameSpecificUnk0 *this)
+int __thiscall ReleaseDDraw2Surface(unk0 *this)
 {
   LPDIRECTDRAWSURFACE v2; // eax
 

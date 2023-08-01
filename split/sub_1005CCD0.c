@@ -10,7 +10,7 @@ int __stdcall sub_1005CCD0(__int16 a1)
   _itoa(a1, Buffer, 10);
   strcat(FileName, Buffer);
   strcat(FileName, aBrf);
-  v1 = fopen(FileName, readBinaryMode);
+  v1 = fopen(FileName, kFileModeReadBinary);
   if ( v1 )
   {
     memset(String, 0, sizeof(String));

@@ -1,12 +1,12 @@
 //----- (10002F90) --------------------------------------------------------
-DWORD __stdcall CHK_GetFileSize(CHK_File *hFile, LPDWORD lpFileSizeHigh)
+DWORD __stdcall CHK_GetFileSize(CHK_File *cFile, void *_unused)
 {
-  int pos; // edi
+  int originalPos; // edi
   int size; // ebx
 
-  pos = ftell(hFile->pfil);
-  fseek(hFile->pfil, 0, SEEK_END);
-  size = ftell(hFile->pfil);
-  fseek(hFile->pfil, pos, SEEK_SET);
+  originalPos = ftell(cFile->pfil);
+  fseek(cFile->pfil, 0, SEEK_END);
+  size = ftell(cFile->pfil);
+  fseek(cFile->pfil, originalPos, SEEK_SET);
   return size;
 }

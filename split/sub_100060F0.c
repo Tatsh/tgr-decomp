@@ -4,7 +4,7 @@ BOOL sub_100060F0()
   WaitForSingleObject(hMutex, 0xFFFFFFFF);
   if ( dword_1022AEF8 >= 0 )
   {
-    sub_10072AF0(dword_1022AEF8, 2097184);
+    sub_10072AF0(dword_1022AEF8, 0x200020u);
     dword_1022AEF8 = -1;
   }
   if ( dword_1022AF08 )
@@ -15,7 +15,6 @@ BOOL sub_100060F0()
   }
   return ReleaseMutex(hMutex);
 }
-// 10072AF0: using guessed type _DWORD __cdecl sub_10072AF0(_DWORD, _DWORD);
 // 10220E80: using guessed type char byte_10220E80;
 // 1022AEF8: using guessed type int dword_1022AEF8;
 // 1022AF08: using guessed type int dword_1022AF08;

@@ -1,14 +1,14 @@
 //----- (1006A8A0) --------------------------------------------------------
-unsigned int readInstallDirectory()
+unsigned int ReadInstallDirectory()
 {
   LSTATUS ls; // esi
   unsigned int ret; // eax
   HKEY pHKResult; // [esp+8h] [ebp-8h] BYREF
-  DWORD cbData; // [esp+Ch] [ebp-4h] BYREF
+  DWORD bufSize; // [esp+Ch] [ebp-4h] BYREF
 
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SOFTWARE\\SouthPeak Interactive\\Boss Rally", 0, KEY_READ, &pHKResult)
-    || (cbData = 260,
-        ls = RegQueryValueExA(pHKResult, "Directory", 0, 0, (LPBYTE)g_InstallPath, &cbData),
+    || (bufSize = 0x104,
+        ls = RegQueryValueExA(pHKResult, "Directory", 0, 0, (LPBYTE)g_InstallPath, &bufSize),
         RegCloseKey(pHKResult),
         ls) )
   {

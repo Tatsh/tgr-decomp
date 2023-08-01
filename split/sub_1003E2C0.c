@@ -1,10 +1,10 @@
 //----- (1003E2C0) --------------------------------------------------------
-unk0 *sub_1003E2C0()
+__unk0 *sub_1003E2C0()
 {
   int v0; // ebx
   int v1; // esi
   int v2; // edi
-  unk0 *result; // eax
+  __unk0 *result; // eax
 
   v0 = dword_10B4E6F0;
   v1 = dword_10B4E6E8;

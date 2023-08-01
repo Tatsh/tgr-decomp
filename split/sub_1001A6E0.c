@@ -1,15 +1,15 @@
 //----- (1001A6E0) --------------------------------------------------------
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8)
 {
-  unk0 *v8; // edi
+  __unk0 *v8; // edi
   _DWORD *v9; // ebx
   int v10; // esi
   int v11; // edx
   int v12; // ecx
   int v13; // eax
-  unk0 *v14; // eax
+  __unk0 *v14; // eax
 
-  v8 = (unk0 *)a1;
+  v8 = (__unk0 *)a1;
   if ( !a1 )
     return 0;
   if ( !a7 )
@@ -34,7 +34,7 @@ int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD 
   v14 = sub_1001B880(v8, v11, v12, v13, a6, v10, &a8, 0);
   if ( !v14 )
   {
-    v14 = (unk0 *)a8;
+    v14 = (__unk0 *)a8;
     if ( !a8 )
       return 0;
   }

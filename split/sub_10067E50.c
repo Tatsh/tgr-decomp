@@ -4,7 +4,7 @@ void __cdecl sub_10067E50(int a1, int a2, int a3, float a4, int *a5, int a6)
   double v6; // st7
   int v7; // eax
 
-  v6 = sub_1003B0E0(a5, a6 + 48);
+  v6 = sub_1003B0E0((float *)a5, (float *)(a6 + 48));
   if ( v6 < *(float *)&dword_10AF9B94 )
   {
     dword_10AF9B58 = *a5;
@@ -19,7 +19,6 @@ void __cdecl sub_10067E50(int a1, int a2, int a3, float a4, int *a5, int a6)
     dword_10AF9B9C = a3;
   }
 }
-// 1003B0E0: using guessed type double __cdecl sub_1003B0E0(_DWORD, _DWORD);
 // 10AF9B58: using guessed type int dword_10AF9B58;
 // 10AF9B5C: using guessed type int dword_10AF9B5C;
 // 10AF9B60: using guessed type int dword_10AF9B60;

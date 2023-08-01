@@ -32,4 +32,3 @@ int __cdecl sub_10074E40(int a1, int a2, int a3)
   }
   return result;
 }
-// 10074ED0: using guessed type _DWORD __cdecl sub_10074ED0(_DWORD, _DWORD, _DWORD);

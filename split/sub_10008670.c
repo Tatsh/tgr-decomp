@@ -1,5 +1,5 @@
 //----- (10008670) --------------------------------------------------------
-int __thiscall sub_10008670(_DWORD *this, int a2)
+int __thiscall sub_10008670(unk1 *this, int a2)
 {
   int v3; // ecx
   unsigned int v4; // esi
@@ -7,9 +7,9 @@ int __thiscall sub_10008670(_DWORD *this, int a2)
   _DWORD *i; // ecx
   int v7[16]; // [esp+10h] [ebp-40h] BYREF
 
-  (*(void (__thiscall **)(_DWORD *, int, int *))(*this + 4))(this, a2, v7);
-  v3 = this[6];
-  v4 = this[4];
+  this->vtbl->field_4(this, a2, v7);
+  v3 = this->field_18;
+  v4 = this->cNumPods;
   result = 0;
   if ( !v4 )
     return -1;

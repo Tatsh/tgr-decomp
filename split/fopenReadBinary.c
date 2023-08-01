@@ -1,11 +1,11 @@
 //----- (10008C20) --------------------------------------------------------
-FILE *__stdcall sub_10008C20(char *FileName)
+FILE *__stdcall fopenReadBinary(char *FileName)
 {
   FILE *result; // eax
   int *v2; // eax
   char *v3; // eax
 
-  result = fopen(FileName, readBinaryMode);
+  result = fopen(FileName, kFileModeReadBinary);
   if ( !result )
   {
     v2 = _errno();

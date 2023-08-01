@@ -9,15 +9,15 @@ int sub_10079550()
     result = dword_118ABE00;
     if ( !dword_118ABE00 )
     {
-      if ( dword_118ABDFC )
+      if ( g_DirectInputEffect )
       {
-        (*(void (__stdcall **)(int))(*(_DWORD *)dword_118ABDFC + 8))(dword_118ABDFC);
-        dword_118ABDFC = 0;
+        g_DirectInputEffect->lpVtbl->Release(g_DirectInputEffect);
+        g_DirectInputEffect = 0;
       }
-      if ( dword_118ABDEC )
+      if ( g_DirectInputEffect_0 )
       {
-        (*(void (__stdcall **)(int))(*(_DWORD *)dword_118ABDEC + 8))(dword_118ABDEC);
-        dword_118ABDEC = 0;
+        g_DirectInputEffect_0->lpVtbl->Release(g_DirectInputEffect_0);
+        g_DirectInputEffect_0 = 0;
       }
       result = (int)g_DirectInputDevice2A;
       if ( g_DirectInputDevice2A )
@@ -34,6 +34,4 @@ int sub_10079550()
   }
   return result;
 }
-// 118ABDEC: using guessed type int dword_118ABDEC;
-// 118ABDFC: using guessed type int dword_118ABDFC;
 // 118ABE00: using guessed type int dword_118ABE00;

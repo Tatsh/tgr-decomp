@@ -1,8 +1,8 @@
 //----- (1001B880) --------------------------------------------------------
-unk0 *__thiscall sub_1001B880(unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8)
+__unk0 *__thiscall sub_1001B880(__unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8)
 {
-  unk0 *u0; // esi
-  unk0 *v10; // edi
+  __unk0 *u0; // esi
+  __unk0 *v10; // edi
 
   if ( !a6 )
   {
@@ -13,16 +13,16 @@ unk0 *__thiscall sub_1001B880(unk0 *this, int width, int height, int bitDepth, i
     }
     return 0;
   }
-  u0 = (unk0 *)a8;
+  u0 = (__unk0 *)a8;
   if ( !a8 )
-    u0 = (unk0 *)this[6].field_41;
+    u0 = (__unk0 *)this[6].field_41;
   if ( a7 && sub_1001ACF0(u0, (IID **)a6) )
     *a7 = u0;
   if ( u0 )
   {
     while ( 1 )
     {
-      v10 = (unk0 *)u0->field_8;
+      v10 = (__unk0 *)u0->field_8;
       if ( sub_1001AD50(u0, width, height, bitDepth) )
       {
         if ( sub_1001ACF0(u0, (IID **)a6) )

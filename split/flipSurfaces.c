@@ -1,32 +1,32 @@
 //----- (1000AF00) --------------------------------------------------------
-HRESULT __thiscall flipSurfaces(gameSpecificUnk0 *this)
+HRESULT __thiscall flipSurfaces(unk0 *this)
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // edi
-  IDirect3DViewport2 *v4; // ebx
-  int dw; // eax
+  unk0_member2 *v2; // eax
+  unk0_member2 *v3; // edi
+  IDirect3DViewport2 *d3dViewport2; // ebx
+  LPDIRECT3DMATERIAL2 direct3DMaterial2; // eax
   HRESULT hr; // edi
-  D3DRECT v8; // [esp+10h] [ebp-10h] BYREF
+  D3DRECT rect; // [esp+10h] [ebp-10h] BYREF
 
-  v8.x2 = g_Width;
-  v8.y2 = g_Height;
-  v2 = this->unkMeth0;
-  v8.x1 = 0;
-  v8.y1 = 0;
-  v2[1] = 0;
-  v2[2] = 0;
-  v2[3] = 0;
-  v2[22] = 1;
-  v3 = this->unkMeth0;
-  v4 = this->lpD3DViewport;
-  dw = v3[21];
-  v3[22] = 0;
-  v3[19] = 1;
-  (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)dw + 12))(dw, v3);
-  v4->lpVtbl->SetBackground(v4, v3[20]);
-  this->lpD3DViewport->lpVtbl->Clear(this->lpD3DViewport, 1, &v8, 3);
-  hr = this->lpDDrawSurface2->lpVtbl->Flip(this->lpDDrawSurface2, this->lpDDrawSurface1, 1);// DDFLIP_WAIT
-  while ( this->lpDDrawSurface2->lpVtbl->GetFlipStatus(this->lpDDrawSurface2, 2) )// DDGFS_ISFLIPDONE
+  rect.x2 = g_Width;
+  rect.y2 = g_Height;
+  v2 = this->unknown;
+  rect.x1 = 0;
+  rect.y1 = 0;
+  v2->d3dMaterial.diffuse.r = 0.0;
+  v2->d3dMaterial.diffuse.g = 0.0;
+  v2->d3dMaterial.diffuse.b = 0.0;
+  v2->field_58 = 1;
+  v3 = this->unknown;
+  d3dViewport2 = this->lpDirect3DViewport2;
+  direct3DMaterial2 = v3->lpDirect3DMaterial2;
+  v3->field_58 = 0;
+  v3->d3dMaterial.dwRampSize = 1;
+  direct3DMaterial2->lpVtbl->SetMaterial(direct3DMaterial2, &v3->d3dMaterial);
+  d3dViewport2->lpVtbl->SetBackground(d3dViewport2, v3->lpD3DMaterialHandle);
+  this->lpDirect3DViewport2->lpVtbl->Clear(this->lpDirect3DViewport2, 1, &rect, D3DCLEAR_ZBUFFER|D3DCLEAR_TARGET);
+  hr = this->lpDDrawSurface2->lpVtbl->Flip(this->lpDDrawSurface2, this->lpDDrawSurface1, DDFLIP_WAIT);
+  while ( this->lpDDrawSurface2->lpVtbl->GetFlipStatus(this->lpDDrawSurface2, DDGFS_ISFLIPDONE) )
     ;
   return hr;
 }

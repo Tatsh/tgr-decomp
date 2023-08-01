@@ -9,14 +9,14 @@ int __cdecl sub_10078E10(int a1)
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
     {
-      result = dword_118ABDBC;
-      if ( dword_118ABDBC )
+      result = MEMORY[0x118ABDBC];
+      if ( MEMORY[0x118ABDBC] )
       {
         result = dword_106909E0;
         if ( !dword_106909E0 )
         {
           result = a1;
-          dword_100BD430 = a1;
+          diEffectRglDirection_0 = a1;
         }
       }
     }

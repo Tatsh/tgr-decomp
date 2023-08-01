@@ -11,12 +11,12 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
   char v11; // al
   unsigned __int16 v12; // cx
   int v13; // ebp
-  IDirect3DDevice2Vtbl *v14; // edx
-  IDirect3DDevice2Vtbl *v15; // edx
+  #489 *v14; // edx
+  #489 *v15; // edx
   int result; // eax
   float *v17; // eax
-  _DWORD *v18; // esi
-  IDirect3DViewport2 *v19; // edi
+  unk0_member2 *v18; // esi
+  #490 *v19; // edi
   unsigned __int8 v20; // [esp+D4h] [ebp-A0h]
   float v21; // [esp+D4h] [ebp-A0h]
   float v22; // [esp+D4h] [ebp-A0h]
@@ -129,8 +129,8 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
       {
         g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
           g_D3DDevice2,
-          4,
-          3,
+          D3DPT_TRIANGLELIST,
+          D3DVT_TLVERTEX,
           &g_vertices,
           g_vertexCount,
           &g_indexedPrimitiveIndices,
@@ -141,67 +141,67 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
       }
       if ( (v8 & 1) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 14, renderState_0);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZWRITEENABLE, renderState_0);
         LOWORD(v8) = dword_10277370;
         dword_102773F8 = renderState_0;
       }
       if ( (v8 & 2) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 15, renderState);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ALPHATESTENABLE, renderState);
         dword_102773FC = renderState;
         LOWORD(v8) = dword_10277370;
       }
       if ( (v8 & 4) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 19, dword_10277380);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SRCBLEND, dword_10277380);
         dword_10277400 = dword_10277380;
         LOWORD(v8) = dword_10277370;
       }
       if ( (v8 & 8) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 20, dword_10277384);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_DESTBLEND, dword_10277384);
         dword_10277404 = dword_10277384;
         LOWORD(v8) = dword_10277370;
       }
       if ( (v8 & 0x10) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 22, dword_10277388);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_CULLMODE, dword_10277388);
         dword_10277408 = dword_10277388;
         LOWORD(v8) = dword_10277370;
       }
       if ( (v8 & 0x20) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 23, dword_1027738C);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZFUNC, dword_1027738C);
         dword_1027740C = dword_1027738C;
         LOWORD(v8) = dword_10277370;
       }
       if ( (v8 & 0x40) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 24, dword_10277390);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ALPHAREF, dword_10277390);
         dword_10277410 = dword_10277390;
         LOWORD(v8) = dword_10277370;
       }
       if ( (v8 & 0x80u) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 25, dword_10277394);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ALPHAFUNC, dword_10277394);
         dword_10277414 = dword_10277394;
         BYTE1(v8) = BYTE1(dword_10277370);
       }
       if ( (v8 & 0x100) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 44, dword_10277398);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_FOGSTART|D3DRS_FILLMODE, dword_10277398);
         dword_10277418 = dword_10277398;
         BYTE1(v8) = BYTE1(dword_10277370);
       }
       if ( (v8 & 0x200) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 45, dword_1027739C);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_FOGEND|D3DRS_FILLMODE, dword_1027739C);
         dword_1027741C = dword_1027739C;
         BYTE1(v8) = BYTE1(dword_10277370);
       }
       if ( (v8 & 0x400) != 0 )
       {
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 27, dword_102773A0);
+        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ALPHABLENDENABLE, dword_102773A0);
         dword_10277420 = dword_102773A0;
       }
       dword_10277370 = 0;
@@ -209,8 +209,8 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     HIBYTE(v12) = v29;
     LOBYTE(v12) = v30;
     v13 = v20 | ((v25 | (v12 << 8)) << 8);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 1, 0);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 22, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)1, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_CULLMODE, 1);
     v33[2] = 0;
     v33[6] = 0;
     v33[7] = 0;
@@ -242,15 +242,9 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     v33[5] = -16776961;
     v33[6] = 0;
     v33[7] = 1065353216;
-    v14 = g_D3DDevice2->lpVtbl;
+    v14 = (#489 *)g_D3DDevice2->lpVtbl;
     qmemcpy(v40, v33, sizeof(v40));
-    ((void (__stdcall *)(LPDIRECT3DDEVICE2, int, int, char *, int, int))v14->DrawPrimitive)(
-      g_D3DDevice2,
-      4,
-      3,
-      v38,
-      3,
-      9);
+    (*((void (__stdcall **)(IDirect3DDevice2 *, int, int, char *, int, int))v14 + 29))(g_D3DDevice2, 4, 3, v38, 3, 9);
     *(float *)v33 = v22;
     v33[2] = 0;
     v33[3] = 1065353216;
@@ -275,21 +269,15 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     v33[3] = 1065353216;
     v23 = (float)(g_Height - a2);
     v35 = v23;
-    v15 = g_D3DDevice2->lpVtbl;
+    v15 = (#489 *)g_D3DDevice2->lpVtbl;
     *(float *)&v33[1] = v23;
     v33[4] = v13;
     v33[5] = -16776961;
     v33[6] = 1065353216;
     v33[7] = 1065353216;
     qmemcpy(v40, v33, sizeof(v40));
-    ((void (__stdcall *)(LPDIRECT3DDEVICE2, int, int, char *, int, int))v15->DrawPrimitive)(
-      g_D3DDevice2,
-      4,
-      3,
-      v38,
-      3,
-      9);
-    result = g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 22, dword_10277408);
+    (*((void (__stdcall **)(IDirect3DDevice2 *, int, int, char *, int, int))v15 + 29))(g_D3DDevice2, 4, 3, v38, 3, 9);
+    result = g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_CULLMODE, dword_10277408);
   }
   else
   {
@@ -297,8 +285,8 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     {
       g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
         g_D3DDevice2,
-        4,
-        3,
+        D3DPT_TRIANGLELIST,
+        D3DVT_TLVERTEX,
         &g_vertices,
         g_vertexCount,
         &g_indexedPrimitiveIndices,
@@ -311,24 +299,20 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     v37 = g_Height - a2;
     v34 = v4;
     v36 = v5;
-    v17 = (float *)g_gsu0->unkMeth0;
+    v17 = (float *)&g_gsu0->unknown->d3dMaterial.dwSize;
     v17[1] = v32 * 0.0039215689;
     *((_DWORD *)v17 + 22) = 1;
     v28 = (float)v25;
     v17[2] = v28 * 0.0039215689;
     v24 = (float)v20;
     v17[3] = v24 * 0.0039215689;
-    v18 = g_gsu0->unkMeth0;
-    v19 = g_gsu0->lpD3DViewport;
-    v18[19] = 1;
-    v18[22] = 1;
+    v18 = g_gsu0->unknown;
+    v19 = (#490 *)g_gsu0->lpDirect3DViewport2;
+    v18->d3dMaterial.dwRampSize = 1;
+    v18->field_58 = 1;
     sub_1001C620(v18);
-    v19->lpVtbl->SetBackground(v19, v18[20]);
-    result = ((int (__stdcall *)(IDirect3DViewport2 *, int, int *, int))g_gsu0->lpD3DViewport->lpVtbl->Clear)(
-               g_gsu0->lpD3DViewport,
-               1,
-               &v34,
-               3);
+    (*(void (__stdcall **)(#490 *, D3DMATERIALHANDLE))(*(_DWORD *)v19 + 32))(v19, v18->lpD3DMaterialHandle);
+    result = g_gsu0->lpDirect3DViewport2->lpVtbl->Clear(g_gsu0->lpDirect3DViewport2, 1, (LPD3DRECT)&v34, 3);
   }
   return result;
 }

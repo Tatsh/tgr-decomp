@@ -1,5 +1,5 @@
 //----- (10066E90) --------------------------------------------------------
-void __thiscall sub_10066E90(char *this)
+void __thiscall sub_10066E90(_DWORD *this)
 {
   int v2; // ecx
   int v3; // ebx
@@ -12,7 +12,7 @@ void __thiscall sub_10066E90(char *this)
   int v10; // edx
   void *v11; // ecx
   int v12; // edx
-  struct_dword_10ACED34 *v13; // ecx
+  #505 *v13; // ecx
   int v14; // edx
   LPCSTR v15; // eax
   double v16; // st7
@@ -30,7 +30,7 @@ void __thiscall sub_10066E90(char *this)
   double v28; // st6
   int v29; // ebx
   __int16 v30; // cx
-  struct_dword_10ACED34 *v31; // ecx
+  #505 *v31; // ecx
   int v32; // eax
   int v33; // eax
   LPCSTR v34; // eax
@@ -56,28 +56,28 @@ void __thiscall sub_10066E90(char *this)
   v2 = (int)dword_106C7DA8;
   if ( dword_106C7DA8 )
   {
-    v3 = *((_DWORD *)this + 24);
+    v3 = this[24];
     v52 = v3;
     if ( v3 )
     {
-      *(_DWORD *)this = *(_DWORD *)(v3 + 48);
-      *((_DWORD *)this + 1) = *(_DWORD *)(v3 + 52);
-      *((_DWORD *)this + 2) = *(_DWORD *)(v3 + 56);
-      *((_DWORD *)this + 3) = *(_DWORD *)(v3 + 3968);
-      *((_DWORD *)this + 4) = *(_DWORD *)(v3 + 3972);
-      *((_DWORD *)this + 5) = *(_DWORD *)(v3 + 3976);
-      *((_DWORD *)this + 18) = *(_DWORD *)(v3 + 4000);
-      *((_DWORD *)this + 19) = *(_DWORD *)(v3 + 4004);
-      *((_DWORD *)this + 16) = *(_DWORD *)(v3 + 4008);
-      *((_DWORD *)this + 17) = *(_DWORD *)(v3 + 4012);
-      *((_DWORD *)this + 12) = *(_DWORD *)(v3 + 4016);
-      *((_DWORD *)this + 13) = *(_DWORD *)(v3 + 4068);
-      *((_DWORD *)this + 20) = *(_DWORD *)(v3 + 4084);
+      *this = *(_DWORD *)(v3 + 48);
+      this[1] = *(_DWORD *)(v3 + 52);
+      this[2] = *(_DWORD *)(v3 + 56);
+      this[3] = *(_DWORD *)(v3 + 3968);
+      this[4] = *(_DWORD *)(v3 + 3972);
+      this[5] = *(_DWORD *)(v3 + 3976);
+      this[18] = *(_DWORD *)(v3 + 4000);
+      this[19] = *(_DWORD *)(v3 + 4004);
+      this[16] = *(_DWORD *)(v3 + 4008);
+      this[17] = *(_DWORD *)(v3 + 4012);
+      this[12] = *(_DWORD *)(v3 + 4016);
+      this[13] = *(_DWORD *)(v3 + 4068);
+      this[20] = *(_DWORD *)(v3 + 4084);
       v2 = (int)dword_106C7DA8;
     }
-    v4 = *((_DWORD *)this + 19);
+    v4 = this[19];
     if ( v4 >= 0 )
-      v5 = *((_DWORD *)this + 19);
+      v5 = this[19];
     else
       v5 = v2 - (-1 - v4) % v2 - 1;
     v41 = *((float *)this + 12) * 100.0;
@@ -92,25 +92,25 @@ void __thiscall sub_10066E90(char *this)
            (float *)this + 3,
            (float *)this) )
     {
-      debugPrint((void *)(*((_DWORD *)this + 19) - 1));
+      debugPrint((void *)(this[19] - 1));
       if ( !v6 )
-        --*((_DWORD *)this + 17);
+        --this[17];
       debugPrint(dword_106C7DA8);
-      if ( v6 == *((_DWORD *)this + 18) % (int)dword_106C7DA8 )
+      if ( v6 == this[18] % (int)dword_106C7DA8 )
       {
-        v8 = *((_DWORD *)this + 19);
+        v8 = this[19];
         if ( v8 < 0 )
         {
           v9 = (char *)dword_106C7DA8 + v8;
-          v10 = *((_DWORD *)this + 17) + 1;
-          *((_DWORD *)this + 19) = (char *)dword_106C7DA8 + v8;
-          *((_DWORD *)this + 17) = v10;
+          v10 = this[17] + 1;
+          this[19] = (char *)dword_106C7DA8 + v8;
+          this[17] = v10;
           if ( dword_106C7CB8 )
             *((float *)this + 20) = *(float *)(dword_106C7CB8 + 100) + *((float *)this + 20);
           debugPrint(v9);
         }
       }
-      --*((_DWORD *)this + 19);
+      --this[19];
       goto LABEL_111;
     }
     if ( !sub_1003BA70(
@@ -119,38 +119,38 @@ void __thiscall sub_10066E90(char *this)
             (float *)this + 3,
             (float *)this) )
       goto LABEL_111;
-    debugPrint((void *)(*((_DWORD *)this + 19) + 1));
-    v11 = (void *)*((_DWORD *)this + 18);
-    v12 = *((_DWORD *)this + 19) + 1;
-    *((_DWORD *)this + 19) = v12;
+    debugPrint((void *)(this[19] + 1));
+    v11 = (void *)this[18];
+    v12 = this[19] + 1;
+    this[19] = v12;
     if ( v12 > (int)v11 )
     {
-      *((_DWORD *)this + 18) = v12;
+      this[18] = v12;
       debugPrint(v11);
       if ( v7 )
         goto LABEL_52;
-      v13 = (struct_dword_10ACED34 *)*((_DWORD *)this + 16);
+      v13 = (#505 *)this[16];
       if ( (int)v13 >= dword_100BD3E0 )
       {
 LABEL_41:
-        if ( *((_DWORD *)this + 16) == dword_100BD3E0 )
+        if ( this[16] == dword_100BD3E0 )
         {
-          *((_DWORD *)this + 26) |= 2u;
+          this[26] |= 2u;
           if ( v3 )
           {
             v23 = *(float *)(v3 + 4076);
             *(_DWORD *)(v3 + 10672) = 1063675494;
             *(float *)(v3 + 4076) = v23 - *((float *)this + 12);
-            *((_DWORD *)this + 12) = 0;
+            this[12] = 0;
             *(_DWORD *)(v3 + 4088) = dword_118AB470;
             *(_DWORD *)(v3 + 4092) = g_GameMode == 6 ? String2 : getCaptionString(dword_100B3960[dword_118AB470]);
             *(_DWORD *)(v3 + 4096) = 1084227584;
-            if ( *((_DWORD *)this + 25) < dword_100B4050
+            if ( this[25] < dword_100B4050
               && dword_100BD3E0 == 3
-              && (*(float *)&dword_10ACED34[1].gap0[4 * g_chosenTrack + 4] == 0.0
-               || *(float *)(v3 + 4076) < (double)*(float *)&dword_10ACED34[1].gap0[4 * g_chosenTrack + 4]) )
+              && (*((float *)dword_10ACED34 + g_chosenTrack + 67) == 0.0
+               || *(float *)(v3 + 4076) < (double)*((float *)dword_10ACED34 + g_chosenTrack + 67)) )
             {
-              *(_DWORD *)&dword_10ACED34[1].gap0[4 * g_chosenTrack + 4] = *(_DWORD *)(v3 + 4076);
+              *((_DWORD *)dword_10ACED34 + g_chosenTrack + 67) = *(_DWORD *)(v3 + 4076);
               *(_DWORD *)(v3 + 4096) = 1069547520;
               *(_DWORD *)(v3 + 4100) = getCaptionString(0x121u);
               *(_DWORD *)(v3 + 4104) = 1080033280;
@@ -160,7 +160,7 @@ LABEL_41:
           goto LABEL_111;
         }
 LABEL_52:
-        if ( (g_GameMode == 1 || g_GameMode == 6 || g_GameMode == 2) && *((_DWORD *)this + 25) < dword_100B4050 )
+        if ( (g_GameMode == 1 || g_GameMode == 6 || g_GameMode == 2) && this[25] < dword_100B4050 )
         {
           if ( !dword_106909E0 )
             sub_10067D80();
@@ -195,7 +195,7 @@ LABEL_52:
           }
           if ( v24 < 0.0 )
             v24 = -v24;
-          v28 = *(float *)(*((_DWORD *)this + 24) + 4144) * 0.44642857;
+          v28 = *(float *)(this[24] + 4144) * 0.44642857;
           if ( v28 == 0.0 )
           {
             v48 = 1000.0;
@@ -242,7 +242,7 @@ LABEL_52:
                 *(_DWORD *)(v29 + 4100) = v29 + 4108;
                 *(_DWORD *)(v29 + 4104) = 1063675494;
               }
-              *(_DWORD *)(v29 + 4000) = *((_DWORD *)this + 18);
+              *(_DWORD *)(v29 + 4000) = this[18];
               ++v50;
               v46 += 32;
             }
@@ -255,20 +255,20 @@ LABEL_52:
       v47 = 0;
       if ( *((float *)this + 13) == 0.0 || v45 < (double)*((float *)this + 13) )
       {
-        v14 = *((_DWORD *)this + 25);
+        v14 = this[25];
         *((float *)this + 13) = v45;
         if ( v14 < dword_100B4050 )
         {
-          *(_DWORD *)(*((_DWORD *)this + 24) + 4072) = v13;
+          *(_DWORD *)(this[24] + 4072) = v13;
           v13 = dword_10ACED34;
-          if ( *(float *)&dword_10ACED34->gap0[4 * g_chosenTrack + 176] == 0.0
-            || *((float *)this + 13) < (double)*(float *)&dword_10ACED34->gap0[4 * g_chosenTrack + 176] )
+          if ( *((float *)dword_10ACED34 + g_chosenTrack + 44) == 0.0
+            || *((float *)this + 13) < (double)*((float *)dword_10ACED34 + g_chosenTrack + 44) )
           {
-            *(_DWORD *)&dword_10ACED34->gap0[4 * g_chosenTrack + 176] = *((_DWORD *)this + 13);
+            *((_DWORD *)dword_10ACED34 + g_chosenTrack + 44) = this[13];
             v15 = getCaptionString(0x109u);
             goto LABEL_28;
           }
-          if ( *((_DWORD *)this + 16) )
+          if ( this[16] )
           {
             v15 = getCaptionString(0x10Au);
 LABEL_28:
@@ -281,26 +281,26 @@ LABEL_28:
 LABEL_29:
       if ( v3 )
       {
-        debugPrint(*((void **)this + 16));
-        *(float *)(v3 + 4 * *((_DWORD *)this + 16) + 4020) = v45;
+        debugPrint((void *)this[16]);
+        *(float *)(v3 + 4 * this[16] + 4020) = v45;
       }
       v16 = *((float *)this + 12) - v45;
-      v17 = *((_DWORD *)this + 16) + 1;
-      *((_DWORD *)this + 16) = v17;
-      *((_DWORD *)this + 17) = v17;
+      v17 = this[16] + 1;
+      this[16] = v17;
+      this[17] = v17;
       *((float *)this + 12) = v16;
       if ( g_GameMode == 3 )
       {
         if ( v17 == 1 )
         {
           debugPrint(v13);
-          v18 = *((_DWORD *)this + 18);
-          v19 = *((_DWORD *)this + 17) - 1;
-          v20 = *((_DWORD *)this + 19);
-          --*((_DWORD *)this + 16);
-          *((_DWORD *)this + 17) = v19;
-          *((_DWORD *)this + 18) = v18 - (_DWORD)dword_106C7DA8;
-          *((_DWORD *)this + 19) = v20 - (_DWORD)dword_106C7DA8;
+          v18 = this[18];
+          v19 = this[17] - 1;
+          v20 = this[19];
+          --this[16];
+          this[17] = v19;
+          this[18] = v18 - (_DWORD)dword_106C7DA8;
+          this[19] = v20 - (_DWORD)dword_106C7DA8;
           if ( dword_106C7CB8 )
             *((float *)this + 20) = *((float *)this + 20) - *(float *)(dword_106C7CB8 + 100);
         }
@@ -308,7 +308,7 @@ LABEL_29:
       else if ( v3 )
       {
         debugPrint(v13);
-        v21 = *((_DWORD *)this + 16);
+        v21 = this[16];
         if ( v21 == dword_100BD3E0 - 1 )
         {
           strcpy((char *)(v3 + 4108), getCaptionString(0x10Bu));
@@ -335,33 +335,33 @@ LABEL_29:
 LABEL_111:
       if ( v3 )
       {
-        *(_DWORD *)(v3 + 4000) = *((_DWORD *)this + 18);
-        *(_DWORD *)(v3 + 4004) = *((_DWORD *)this + 19);
-        *(_DWORD *)(v3 + 4008) = *((_DWORD *)this + 16);
-        *(_DWORD *)(v3 + 4012) = *((_DWORD *)this + 17);
-        *(_DWORD *)(v3 + 4016) = *((_DWORD *)this + 12);
-        *(_DWORD *)(v3 + 4068) = *((_DWORD *)this + 13);
-        *(_DWORD *)(v3 + 4084) = *((_DWORD *)this + 20);
+        *(_DWORD *)(v3 + 4000) = this[18];
+        *(_DWORD *)(v3 + 4004) = this[19];
+        *(_DWORD *)(v3 + 4008) = this[16];
+        *(_DWORD *)(v3 + 4012) = this[17];
+        *(_DWORD *)(v3 + 4016) = this[12];
+        *(_DWORD *)(v3 + 4068) = this[13];
+        *(_DWORD *)(v3 + 4084) = this[20];
       }
       return;
     }
-    v31 = (struct_dword_10ACED34 *)*((_DWORD *)this + 16);
-    v32 = *((_DWORD *)this + 17) + 1;
-    *((_DWORD *)this + 17) = v32;
+    v31 = (#505 *)this[16];
+    v32 = this[17] + 1;
+    this[17] = v32;
     if ( v32 <= (int)v31 )
     {
 LABEL_107:
-      debugPrint(*((void **)this + 16));
-      if ( g_GameMode == 3 && *((_DWORD *)this + 16) == 1 )
+      debugPrint((void *)this[16]);
+      if ( g_GameMode == 3 && this[16] == 1 )
       {
         debugPrint(v37);
-        v38 = *((_DWORD *)this + 18);
-        v39 = *((_DWORD *)this + 17) - 1;
-        v40 = *((_DWORD *)this + 19);
-        --*((_DWORD *)this + 16);
-        *((_DWORD *)this + 17) = v39;
-        *((_DWORD *)this + 18) = v38 - (_DWORD)dword_106C7DA8;
-        *((_DWORD *)this + 19) = v40 - (_DWORD)dword_106C7DA8;
+        v38 = this[18];
+        v39 = this[17] - 1;
+        v40 = this[19];
+        --this[16];
+        this[17] = v39;
+        this[18] = v38 - (_DWORD)dword_106C7DA8;
+        this[19] = v40 - (_DWORD)dword_106C7DA8;
         if ( dword_106C7CB8 )
           *((float *)this + 20) = *((float *)this + 20) - *(float *)(dword_106C7CB8 + 100);
       }
@@ -369,20 +369,20 @@ LABEL_107:
     }
     if ( *((float *)this + 13) == 0.0 || v45 < (double)*((float *)this + 13) )
     {
-      v33 = *((_DWORD *)this + 25);
+      v33 = this[25];
       *((float *)this + 13) = v45;
       if ( v33 < dword_100B4050 )
       {
-        *(_DWORD *)(*((_DWORD *)this + 24) + 4072) = v31;
+        *(_DWORD *)(this[24] + 4072) = v31;
         v31 = dword_10ACED34;
-        if ( *(float *)&dword_10ACED34->gap0[4 * g_chosenTrack + 176] == 0.0
-          || *((float *)this + 13) < (double)*(float *)&dword_10ACED34->gap0[4 * g_chosenTrack + 176] )
+        if ( *((float *)dword_10ACED34 + g_chosenTrack + 44) == 0.0
+          || *((float *)this + 13) < (double)*((float *)dword_10ACED34 + g_chosenTrack + 44) )
         {
-          *(float *)&dword_10ACED34->gap0[4 * g_chosenTrack + 176] = v45;
+          *((float *)dword_10ACED34 + g_chosenTrack + 44) = v45;
           v34 = getCaptionString(0x109u);
           goto LABEL_101;
         }
-        if ( *((_DWORD *)this + 16) )
+        if ( this[16] )
         {
           v34 = getCaptionString(0x10Au);
 LABEL_101:
@@ -395,16 +395,16 @@ LABEL_102:
     if ( v3 )
     {
       debugPrint(v31);
-      v31 = (struct_dword_10ACED34 *)*((_DWORD *)this + 16);
+      v31 = (#505 *)this[16];
       *(float *)(v3 + 4 * (_DWORD)v31 + 4020) = v45;
     }
     v35 = *((float *)this + 12) - v45;
-    *((_DWORD *)this + 16) = *((_DWORD *)this + 17);
+    this[16] = this[17];
     *((float *)this + 12) = v35;
     if ( v3 )
     {
       debugPrint(v31);
-      v44 = *((_DWORD *)this + 16) + 1;
+      v44 = this[16] + 1;
       v36 = getCaptionString(0x10Cu);
       sprintf((char *const)(v3 + 4108), v36, v44);
       *(_DWORD *)(v3 + 4092) = v3 + 4108;

@@ -13,7 +13,7 @@ void *__cdecl sub_10028CA0(int a1)
     v2 = 696 * a1;
     g_D3DDevice2->lpVtbl->SetRenderState(
       g_D3DDevice2,
-      1,
+      (D3DRENDERSTATETYPE)1,
       *(_DWORD *)(*((_DWORD *)Block + *((_DWORD *)dword_1057543C + 174 * a1)) + 12));
     result = dword_1057543C;
     if ( *((_DWORD *)dword_1057543C + 174 * a1 + 10) == 1 )

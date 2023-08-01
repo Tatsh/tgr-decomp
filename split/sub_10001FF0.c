@@ -15,7 +15,7 @@ int __thiscall sub_10001FF0(#482 *this)
   if ( dword_106909E0 )
     sub_1003B020((int)this + 10160, (int)this, 10.0);
   sub_1003AF10((float *)this + 2540, (float *)this);
-  *((_DWORD *)this + 2574) = *v3;
+  *((_DWORD *)this + 0xA0E) = *v3;
   *((_DWORD *)this + 2575) = *((_DWORD *)this + 2541);
   *((_DWORD *)this + 2576) = *((_DWORD *)this + 2542);
   *((_DWORD *)this + 2619) = *v3;

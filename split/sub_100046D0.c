@@ -8,26 +8,22 @@ int __cdecl sub_100046D0(_DWORD *a1, int a2)
   int v6; // [esp-4h] [ebp-Ch]
 
   if ( dword_10AA2894 )
-    return sub_10073F40(a2);
+    return sub_10073F40((_DWORD *)a2);
   if ( a1[3] )
   {
-    v5 = sub_10073F40(a2);
-    v3 = sub_10073F50(a2);
-    sub_100360F0(a1, v3, v5, 1, 1);
-    result = sub_10073F40(a2);
+    v5 = sub_10073F40((_DWORD *)a2);
+    v3 = sub_10073F50((_DWORD *)a2);
+    sub_100360F0((int)a1, v3, v5, (void *)1);
+    result = sub_10073F40((_DWORD *)a2);
   }
   else
   {
-    v6 = sub_10073F40(a2);
-    v4 = sub_10073F50(a2);
+    v6 = sub_10073F40((_DWORD *)a2);
+    v4 = sub_10073F50((_DWORD *)a2);
     if ( !sub_1000C4D0(*a1, a1[2], 1, 0, v4, v6) )
-      return sub_10073F40(a2);
+      return sub_10073F40((_DWORD *)a2);
     result = -1;
   }
   return result;
 }
-// 1000C4D0: using guessed type _DWORD __cdecl sub_1000C4D0(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
-// 100360F0: using guessed type _DWORD __cdecl sub_100360F0(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
-// 10073F40: using guessed type int __thiscall sub_10073F40(_DWORD);
-// 10073F50: using guessed type int __thiscall sub_10073F50(_DWORD);
 // 10AA2894: using guessed type int dword_10AA2894;

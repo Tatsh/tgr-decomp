@@ -1,5 +1,5 @@
 //----- (10072FE0) --------------------------------------------------------
-BOOL __cdecl sub_10072FE0(int a1)
+BOOL __cdecl pm_sub_10072FE0(int a1)
 {
   if ( !g_Playsfx || !g_DSound || !dword_118290FC )
     return 1;

@@ -21,7 +21,7 @@ bool __cdecl sub_10070AF0(char *FileName, int a2)
   char *Buffer; // [esp+Ch] [ebp-8h] BYREF
   int v21; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = fopen(FileName, readBinaryMode);
+  v2 = fopen(FileName, kFileModeReadBinary);
   v3 = v2;
   if ( !v2 )
     goto LABEL_20;
@@ -98,8 +98,8 @@ LABEL_9:
     a2 = v14 - 204;
     *(float *)&dword_10AA28C8 = (double)(int)(v14 - 204) * 0.033333335;
   }
-  dword_10ACED34->wordF2 |= 1 << dword_10680738;
-  dword_10ACED34->wordF0 |= 1 << SBYTE1(dword_10680738);
+  *((_WORD *)dword_10ACED34 + 121) |= 1 << dword_10680738;
+  *((_WORD *)dword_10ACED34 + 120) |= 1 << SBYTE1(dword_10680738);
   fseek(v3, 0, 2);
   v15 = ftell(v3);
   fseek(v3, v15 - 152, 0);

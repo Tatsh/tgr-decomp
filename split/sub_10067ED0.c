@@ -13,8 +13,8 @@ int sub_10067ED0()
   result = dword_100B36FC;
   if ( dword_100B36FC )
   {
-    result = dword_10ACEDA8;
-    if ( (*(_BYTE *)(dword_10ACEDA8 + 104) & 1) == 0 )
+    result = dword_10ACEDA8[0];
+    if ( (*(_BYTE *)(dword_10ACEDA8[0] + 104) & 1) == 0 )
     {
       result = -1;
       if ( dword_10AA3470 != -1 )
@@ -104,7 +104,7 @@ int sub_10067ED0()
 // 106C1638: using guessed type int dword_106C1638;
 // 106C1690: using guessed type int dword_106C1690;
 // 10AA3470: using guessed type int dword_10AA3470;
-// 10ACEDA8: using guessed type int dword_10ACEDA8;
+// 10ACEDA8: using guessed type int dword_10ACEDA8[];
 // 10ACEE20: using guessed type int dword_10ACEE20[];
 // 10AF9B58: using guessed type int dword_10AF9B58;
 // 10AF9B5C: using guessed type int dword_10AF9B5C;

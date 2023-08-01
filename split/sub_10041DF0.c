@@ -27,11 +27,11 @@ int __cdecl sub_10041DF0(int a1, int a2)
       strcpy(aCRallyseasonDatFilepath_ptr, v5);
       strcpy((char *)(*(_DWORD *)(dword_10AA2908 + 192) + 260 * Value + 4), (const char *)(a1 + 1080 * Value + 53));
       strcpy(byte_10AD0990, (const char *)(a1 + 1080 * Value + 53));
-      if ( !dword_10ACED34->gap0[4] && !dword_10ACED34->gap0[5] )
+      if ( !*((_BYTE *)dword_10ACED34 + 4) && !*((_BYTE *)dword_10ACED34 + 5) )
       {
-        memset(&dword_10ACED34->gap0[6], 0, 0x18u);
-        memset(&dword_10ACED34->gap0[30], 0, 0x30u);
-        memset(&dword_10ACED34->gap0[80], 0, 0x60u);
+        memset((char *)dword_10ACED34 + 6, 0, 0x18u);
+        memset((char *)dword_10ACED34 + 30, 0, 0x30u);
+        memset((char *)dword_10ACED34 + 80, 0, 0x60u);
       }
       sub_100709A0();
       dword_10AA28E4 = 1;

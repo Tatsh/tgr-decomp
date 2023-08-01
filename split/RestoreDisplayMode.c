@@ -1,5 +1,5 @@
 //----- (1000A800) --------------------------------------------------------
-int __thiscall RestoreDisplayMode(gameSpecificUnk0 *this)
+int __thiscall RestoreDisplayMode(unk0 *this)
 {
   IDirectDraw2 *ddraw2; // ecx
 

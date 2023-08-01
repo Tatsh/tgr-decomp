@@ -24,14 +24,14 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
       }
       return 0;
     }
-    if ( Msg == 537 )
+    if ( Msg == WM_DEVICECHANGE )
     {
-      if ( wParam == 0x8000 )
+      if ( wParam == DBT_DEVICEARRIVAL )
       {
         pm_sub_10002260();
         pm_sub_100027C0(1);
       }
-      if ( wParam == 32769 || wParam == 32771 || wParam == 32772 )
+      if ( wParam == DBT_DEVICEQUERYREMOVE || wParam == DBT_DEVICEREMOVEPENDING || wParam == DBT_DEVICEREMOVECOMPLETE )
       {
         pm_sub_10002C30();
         pm_sub_10002440();
@@ -39,9 +39,9 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
       return 1;
     }
   }
-  if ( Msg <= 0x10 )
+  if ( Msg <= WM_CLOSE )
   {
-    if ( Msg != 16 )                            // != WM_CLOSE
+    if ( Msg != WM_CLOSE )                      // != WM_CLOSE
     {
       switch ( Msg )
       {
@@ -60,51 +60,51 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
           return DefWindowProcA(hWnd, Msg, wParam, lParam);
       }
     }
-    return sub_1007A190(hWnd);
+    return DestroyWindowWrapper(hWnd);
   }
-  if ( Msg <= 0x1C )                            // <= WM_ACTIVATEAPP
+  if ( Msg <= WM_ACTIVATEAPP )                  // <= WM_ACTIVATEAPP
   {
-    if ( Msg == 28 )                            // // WM_ACTIVATEAPP
+    if ( Msg == WM_ACTIVATEAPP )                // // WM_ACTIVATEAPP
       return handle_WM_ACTIVATEAPP(hWnd, wParam, lParam);
-    if ( Msg == 20 )                            // WM_ERASEBKGND
+    if ( Msg == WM_ERASEBKGND )                 // WM_ERASEBKGND
       return handle_WM_ERASEBKGND(hWnd, wParam, lParam);
     return DefWindowProcA(hWnd, Msg, wParam, lParam);
   }
-  if ( Msg <= 0x24 )                            // <= WM_GETMINMAXINFO
+  if ( Msg <= WM_GETMINMAXINFO )                // <= WM_GETMINMAXINFO
   {
-    if ( Msg == 36 )                            // WM_GETMINMAXINFO
+    if ( Msg == WM_GETMINMAXINFO )              // WM_GETMINMAXINFO
       return handle_WM_GETMINMAXINFO(hWnd, wParam, lParam);
-    if ( Msg == 32 )                            // WM_SETCURSOR
+    if ( Msg == WM_SETCURSOR )                  // WM_SETCURSOR
       return handle_WM_SETCURSOR(hWnd, wParam, lParam);
     return DefWindowProcA(hWnd, Msg, wParam, lParam);
   }
-  if ( Msg <= 0x7E )                            // <= WM_DISPLAYCHANGE
+  if ( Msg <= WM_DISPLAYCHANGE )                // <= WM_DISPLAYCHANGE
   {
-    if ( Msg == 126 )                           // WM_DISPLAYCHANGE
+    if ( Msg == WM_DISPLAYCHANGE )              // WM_DISPLAYCHANGE
       return handle_WM_DISPLAYCHANGE_returnZero(hWnd);
-    if ( Msg == 70 )                            // WM_WINDOWPOSCHANGING
+    if ( Msg == WM_WINDOWPOSCHANGING )          // WM_WINDOWPOSCHANGING
       return handle_WM_WINDOWPOSCHANGING(hWnd, wParam, lParam);
     return DefWindowProcA(hWnd, Msg, wParam, lParam);
   }
-  if ( Msg <= 0x111 )                           // <= WM_COMMAND
+  if ( Msg <= WM_COMMAND )                      // <= WM_COMMAND
   {
-    if ( Msg == 273 )                           // WM_COMMAND
+    if ( Msg == WM_COMMAND )                    // WM_COMMAND
       return handle_WM_COMMAND_justReturn(hWnd, wParam, lParam);
-    if ( Msg == 133 )                           // WM_NCPAINT
+    if ( Msg == WM_NCPAINT )                    // WM_NCPAINT
       return handle_WM_NCPAINT(hWnd, wParam, lParam);
     return DefWindowProcA(hWnd, Msg, wParam, lParam);
   }
-  if ( Msg <= 0x211 )                           // <= WM_ENTERMENULOOP
+  if ( Msg <= WM_ENTERMENULOOP )                // <= WM_ENTERMENULOOP
   {
-    if ( Msg == 529 )                           // WM_ENTERMENULOOP
+    if ( Msg == WM_ENTERMENULOOP )              // WM_ENTERMENULOOP
       return handle_WM_ENTERMENULOOP(hWnd, wParam, lParam);
-    if ( Msg == 274 )                           // WM_SYSCOMMAND
+    if ( Msg == WM_SYSCOMMAND )                 // WM_SYSCOMMAND
       return handle_WM_SYSCOMMAND(hWnd, wParam, lParam);
     return DefWindowProcA(hWnd, Msg, wParam, lParam);
   }
   if ( Msg <= 0x3B9 )
   {
-    if ( Msg == 953 )
+    if ( Msg == 0x3B9 )
     {
       if ( g_Playmusic == 1 )
       {
@@ -116,7 +116,7 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
         return 0;
       }
     }
-    else if ( Msg == 530 )                      // WM_EXITMENULOOP
+    else if ( Msg == WM_EXITMENULOOP )          // WM_EXITMENULOOP
     {
       return handle_WM_EXITMENULOOP(hWnd, wParam, lParam);
     }
@@ -146,15 +146,15 @@ exit0:
       case 0xBD0u:
         return sub_1007A6A0(hWnd, lParam);
       case 0x7E8u:                              // UM_GETUSERSELA
-        v5 = GetWindowLongA(hWnd, -21);
+        v5 = GetWindowLongA(hWnd, GWL_USERDATA);
         if ( !v5 )
           return 0;
         result = (*(_BYTE *)(v5 + 28) & 0x1F) == 31;
         break;
       case 0x7E9u:                              // UM_GETUSERSELA
-        return GetWindowLongA(hWnd, -21);
+        return GetWindowLongA(hWnd, GWL_USERDATA);
       case 0x7EAu:                              // UM_GETUSERSELW
-        result = GetWindowLongA(hWnd, -21);
+        result = GetWindowLongA(hWnd, GWL_USERDATA);
         if ( result )
           result = *(_DWORD *)(result + 88);
         break;

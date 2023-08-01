@@ -1,7 +1,7 @@
 //----- (100771B0) --------------------------------------------------------
-int __cdecl sub_100771B0(void *a1)
+HRESULT __cdecl sub_100771B0(void *a1)
 {
-  int result; // eax
+  HRESULT result; // eax
 
   if ( !g_lpDirectInputDeviceA )
     return 1;

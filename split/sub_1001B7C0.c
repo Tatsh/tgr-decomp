@@ -1,5 +1,5 @@
 //----- (1001B7C0) --------------------------------------------------------
-int __thiscall sub_1001B7C0(unk0 *this, const void *a2, unk0 *a3, int a4, int a5)
+int __thiscall sub_1001B7C0(__unk0 *this, const void *a2, __unk0 *a3, int a4, int a5)
 {
   int v6; // esi
   int v7; // ebx

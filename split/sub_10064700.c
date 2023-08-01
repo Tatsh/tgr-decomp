@@ -566,8 +566,8 @@ LABEL_109:
     {
       sub_1003AD10(
         v1 + 488,
-        dword_100B38A0[8 * (unsigned __int8)dword_10ACED34->gap0[4]
-                     + 2 * (unsigned __int8)dword_10ACED34->gap0[5]
+        dword_100B38A0[8 * *((unsigned __int8 *)dword_10ACED34 + 4)
+                     + 2 * *((unsigned __int8 *)dword_10ACED34 + 5)
                      + *(_DWORD *)(*(_DWORD *)(v1 + 3840) + 116)]);
     }
   }

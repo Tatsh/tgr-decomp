@@ -28,4 +28,3 @@ int __thiscall sub_10075960(int this)
   }
   return result;
 }
-// 10075360: using guessed type int __thiscall sub_10075360(_DWORD);

@@ -9,7 +9,7 @@ int sub_100770F0()
     dword_118ABAD8 = v0;
     memset(byte_118AB8B8, 0, 0x200u);
     memset(dword_118ABAE0, 0, 0x220u);
-    dword_118AB8B4 = 0;
+    MEMORY[0x118AB8B4] = 0;
     dword_118ABD7C = 0;
     dword_118ABAB8 = 1;
     sub_100770C0();

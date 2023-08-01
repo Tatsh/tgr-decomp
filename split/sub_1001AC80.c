@@ -1,5 +1,5 @@
 //----- (1001AC80) --------------------------------------------------------
-int __thiscall sub_1001AC80(unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5)
+int __thiscall sub_1001AC80(__unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5)
 {
   int v6; // eax
 

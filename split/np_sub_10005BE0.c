@@ -57,7 +57,7 @@ BOOL np_sub_10005BE0()
     CloseHandle(hMutex);
     hMutex = 0;
   }
-  v1 = &dword_10221328;
+  v1 = (HANDLE *)dword_10221328;
   do
   {
     if ( *v1 )
@@ -70,5 +70,6 @@ BOOL np_sub_10005BE0()
   while ( (int)v1 < (int)&dword_1022AAA8 );
   return v0;
 }
+// 10221328: using guessed type int dword_10221328[];
 // 1022AAA8: using guessed type int dword_1022AAA8;
 // 1022AF18: using guessed type int g_NetworkPlay;

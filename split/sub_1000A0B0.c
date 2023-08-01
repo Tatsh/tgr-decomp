@@ -1,20 +1,20 @@
 //----- (1000A0B0) --------------------------------------------------------
-int __thiscall sub_1000A0B0(unk3 *this)
+int __thiscall sub_1000A0B0(#511 *this)
 {
   int v2; // eax
-  int result; // eax
+  IUnknown *result; // eax
 
-  if ( this->field_a )
-    (*(void (__stdcall **)(unk4 *))(this->field_a->field_b + 8))(this->field_a);
-  v2 = this->field_b;
-  this->field_a = 0;
+  if ( *(_DWORD *)this )
+    (*(void (__stdcall **)(_DWORD))(**(_DWORD **)this + 8))(*(_DWORD *)this);
+  v2 = *((_DWORD *)this + 1);
+  *(_DWORD *)this = 0;
   if ( v2 )
     (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2);
-  result = this->field_8;
-  this->field_b = 0;
+  result = (IUnknown *)*((_DWORD *)this + 2);
+  *((_DWORD *)this + 1) = 0;
   if ( result )
-    result = (*(int (__stdcall **)(int))(*(_DWORD *)result + 8))(result);
-  this->field_8 = 0;
-  this->field_C = 0;
-  return result;
+    result = (IUnknown *)result->lpVtbl->Release(result);
+  *((_DWORD *)this + 2) = 0;
+  *((_DWORD *)this + 3) = 0;
+  return (int)result;
 }

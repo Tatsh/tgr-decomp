@@ -1,5 +1,5 @@
 //----- (10066650) --------------------------------------------------------
-int *__thiscall sub_10066650(int this)
+int *__thiscall sub_10066650(_DWORD *this)
 {
   int v2; // ecx
   float *v3; // esi
@@ -49,7 +49,7 @@ int *__thiscall sub_10066650(int this)
   float *v47; // [esp+2Ch] [ebp-C8h]
   int *v48; // [esp+30h] [ebp-C4h]
   int v49; // [esp+34h] [ebp-C0h]
-  int v50; // [esp+38h] [ebp-BCh]
+  _DWORD *v50; // [esp+38h] [ebp-BCh]
   float v51[3]; // [esp+3Ch] [ebp-B8h] BYREF
   float v52[3]; // [esp+48h] [ebp-ACh] BYREF
   float v53; // [esp+54h] [ebp-A0h] BYREF
@@ -69,7 +69,7 @@ int *__thiscall sub_10066650(int this)
       v5 = *((_DWORD *)v4 - 1);
       if ( v5 )
       {
-        if ( v5 == this || *(_DWORD *)(v5 + 320) >= dword_100B4050 )
+        if ( (_DWORD *)v5 == this || *(_DWORD *)(v5 + 320) >= dword_100B4050 )
         {
           if ( g_GameMode
             || *(_DWORD *)(v5 + 320) < dword_100B4050
@@ -77,20 +77,20 @@ int *__thiscall sub_10066650(int this)
             || *(_BYTE *)(v5 + 10671) != 2
             || *(float *)(v5 + 10672) != 0.0 )
           {
-            v6 = *(float *)(this + 4084);
-            v46 = *(_DWORD *)(v5 + 4012) - *(_DWORD *)(this + 4012);
+            v6 = *((float *)this + 1021);
+            v46 = *(_DWORD *)(v5 + 4012) - this[1003];
             v7 = (double)v46 * v43 + v6 - *(float *)(v5 + 4084);
             v40 = v7;
             if ( v7 <= v43 * 0.5 )
             {
               if ( v43 * -0.5 > v40 )
                 v40 = v43 + v40;
-              v8 = sub_1003B0E0((float *)(this + 48), (float *)(v5 + 48));
+              v8 = sub_1003B0E0((float *)this + 12, (float *)(v5 + 48));
             }
             else
             {
               v40 = v40 - v43;
-              v8 = sub_1003B0E0((float *)(this + 48), (float *)(v5 + 48));
+              v8 = sub_1003B0E0((float *)this + 12, (float *)(v5 + 48));
             }
             goto LABEL_28;
           }
@@ -105,8 +105,8 @@ int *__thiscall sub_10066650(int this)
       {
         if ( g_GameMode || *(_DWORD *)v4 < dword_100B4050 || ((_BYTE)v4[1] & 2) == 0 )
         {
-          v9 = *(float *)(this + 4084);
-          v46 = *((_DWORD *)v4 - 8) - *(_DWORD *)(this + 4012);
+          v9 = *((float *)this + 1021);
+          v46 = *((_DWORD *)v4 - 8) - this[1003];
           v10 = (double)v46 * v43 + v9 - *(v4 - 5);
           v40 = v10;
           if ( v10 > v43 * 0.5 )
@@ -120,7 +120,7 @@ int *__thiscall sub_10066650(int this)
 LABEL_26:
             v40 = v11;
           }
-          v8 = sub_1003B0E0((float *)(this + 48), v4 - 25);
+          v8 = sub_1003B0E0((float *)this + 12, v4 - 25);
 LABEL_28:
           *v3 = v8 + v40 * v40;
           goto LABEL_29;
@@ -139,7 +139,7 @@ LABEL_29:
   }
   if ( v2 > 1 )
   {
-    v13 = *(_DWORD *)(this + 320);
+    v13 = this[80];
     v14 = 8 * v13;
     v15 = *(&v53 + 2 * v13);
     *(float *)((char *)&v53 + v14) = v53;
@@ -236,7 +236,7 @@ LABEL_47:
       v25 = &v54;
       v48 = &v54;
       result = &v46 + v18;
-      v47 = (float *)(v50 + 3760);
+      v47 = (float *)(v50 + 940);
       do
       {
         if ( v45 >= dword_100B36F8 )
@@ -270,7 +270,7 @@ LABEL_47:
           *(_DWORD *)(v27 + 10672) = 1065353216;
           *(_DWORD *)(v27 + 3960) = 1;
           sub_10062C50(v27);
-          sub_10065630(v27);
+          sub_10065630((_DWORD *)v27);
           *(_DWORD *)(v27 + 3968) = *((_DWORD *)v26 + 3);
           *(_DWORD *)(v27 + 3972) = *((_DWORD *)v26 + 4);
           *(_DWORD *)(v27 + 3976) = *((_DWORD *)v26 + 5);

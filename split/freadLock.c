@@ -1,10 +1,10 @@
 //----- (1007CF10) --------------------------------------------------------
-size_t __cdecl freadLock(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream)
+size_t __cdecl freadLock(void *buffer, size_t elementSize, size_t elementCount, FILE *fp)
 {
   size_t v4; // edi
 
-  _lock_file(Stream);
-  v4 = fread(Buffer, ElementSize, ElementCount, Stream);
-  _unlock_file(Stream);
+  _lock_file(fp);
+  v4 = fread(buffer, elementSize, elementCount, fp);
+  _unlock_file(fp);
   return v4;
 }

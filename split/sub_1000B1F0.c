@@ -1,20 +1,11 @@
 //----- (1000B1F0) --------------------------------------------------------
-int __thiscall sub_1000B1F0(_DWORD *this)
+HRESULT __thiscall sub_1000B1F0(unk0 *this)
 {
-  int v1; // eax
-  int result; // eax
+  LPDIRECTDRAWPALETTE v1; // eax
+  HRESULT result; // eax
 
-  v1 = this[18];
-  if ( !v1
-    || (result = (*(int (__stdcall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v1 + 24))(
-                   v1,
-                   0,
-                   0,
-                   this[19],
-                   this[21]),
-        result >= 0) )
-  {
+  v1 = this->lpDirectDrawPalette;
+  if ( !v1 || (result = v1->lpVtbl->SetEntries(v1, 0, 0, this->sizePalette, this->lPaletteEntry), result >= 0) )
     result = 0;
-  }
   return result;
 }

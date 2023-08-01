@@ -32,7 +32,7 @@ char __cdecl sub_100786E0(int a1)
       if ( (*(_WORD *)v2 & 0xFF00) != 0 )
         goto LABEL_68;
       v4 = *v2;
-      if ( (byte_118AB8B8[256 * dword_118AB8B4 + v4] & 0x80) == 0 )
+      if ( (byte_118AB8B8[256 * MEMORY[0x118AB8B4] + v4] & 0x80) == 0 )
       {
         v5 = byte_118AB8B8[256 * dword_118ABAD8 + v4] >= 0;
         goto LABEL_14;
@@ -138,7 +138,7 @@ LABEL_68:
   {
     v8 = dword_118ABAD8;
     v9 = v2[2];
-    if ( (byte_118AB8B8[256 * dword_118AB8B4 + v9] & 0x80) == 0
+    if ( (byte_118AB8B8[256 * MEMORY[0x118AB8B4] + v9] & 0x80) == 0
       && (byte_118AB8B8[256 * dword_118ABAD8 + v9] & 0x80) != 0 )
     {
       result |= 1u;
@@ -147,7 +147,7 @@ LABEL_68:
   if ( !v2[5] )
   {
     v10 = v2[4];
-    if ( (byte_118AB8B8[256 * dword_118AB8B4 + v10] & 0x80) == 0 && (byte_118AB8B8[256 * v8 + v10] & 0x80) != 0 )
+    if ( (byte_118AB8B8[256 * MEMORY[0x118AB8B4] + v10] & 0x80) == 0 && (byte_118AB8B8[256 * v8 + v10] & 0x80) != 0 )
       result |= 1u;
   }
   return result;

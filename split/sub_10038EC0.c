@@ -8,7 +8,7 @@ int sub_10038EC0()
   int dsBufferDesc[5]; // [esp+14h] [ebp-14h] BYREF
 
   sub_10008B40((char *)dword_10A99780, aBossrallyPod);
-  sub_100088D0((int)dword_10A99780);
+  sub_100088D0(dword_10A99780);
   sub_1006AA20(1);
   sub_10061400();
   sub_10078CD0();
@@ -30,16 +30,16 @@ int sub_10038EC0()
       return 0;
     v1 = GlobalAlloc(0x40u, pMetric);
     result = (int)GlobalLock(v1);
-    pMem = (struct_pMem *)result;
+    pMem = (#514 *)result;
     if ( result )
     {
       *(_WORD *)result = 1;
-      pMem->channels = 2;
-      pMem->sampleRate = 22050;
-      pMem->dword8 = 88200;
-      pMem->wordC = 4;
-      pMem->bitDepth = 16;
-      pMem->word10 = 0;
+      *((_WORD *)pMem + 1) = 2;
+      *((_DWORD *)pMem + 1) = 22050;
+      *((_DWORD *)pMem + 2) = 88200;
+      *((_WORD *)pMem + 6) = 4;
+      *((_WORD *)pMem + 7) = 16;
+      *((_WORD *)pMem + 8) = 0;
       hr = CoCreateInstance(&CLSID_CLSID_DirectSound, 0, 1u, &CLSID_IDirectSound, (LPVOID *)&g_DSound);
       if ( hr < 0 || !g_DSound )
         return hr >= 0;

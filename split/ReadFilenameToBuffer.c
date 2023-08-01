@@ -1,12 +1,14 @@
 //----- (100378B0) --------------------------------------------------------
 void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCount)
 {
+  int v3; // eax
   CHK_File *cFile; // esi
   intptr_t unk; // eax
-  DWORD *v5; // [esp+0h] [ebp-204h]
+  void *v6; // [esp+0h] [ebp-204h]
   char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
-  if ( !CHK_FileExists(filename) )
+  LOBYTE(v3) = CHK_FileExists(filename);
+  if ( !v3 )
   {
     sprintf(Buffer, "File %s missing", filename);
     sub_10008CF0((int)Buffer);
@@ -14,8 +16,9 @@ void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCo
   cFile = CHK_FReadOpen(filename);
   unk = elementCount;
   if ( elementCount < 0 )
-    unk = CHK_GetFileSize(cFile, v5);
+    unk = CHK_GetFileSize(cFile, v6);
   CHK_FReadReportError((void *)elementCount, 1u, unk, cFile);
   CHK_FClose(cFile);
 }
-// 10037902: variable 'v5' is possibly undefined
+// 100378C9: variable 'v3' is possibly undefined
+// 10037902: variable 'v6' is possibly undefined

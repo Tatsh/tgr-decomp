@@ -1,5 +1,5 @@
 //----- (10074B70) --------------------------------------------------------
-int __cdecl sub_10074B70(float *a1, int a2, int a3)
+float *__cdecl sub_10074B70(float *a1, int a2, int a3)
 {
   float *v3; // ebx
   int v4; // edi
@@ -40,6 +40,5 @@ int __cdecl sub_10074B70(float *a1, int a2, int a3)
   v12[0] = -a1[12];
   v12[1] = -a1[13];
   v12[2] = -a1[14];
-  return sub_10074770(a2 + 48, a2, v12);
+  return sub_10074770((float *)(a2 + 48), a2, v12);
 }
-// 10074770: using guessed type _DWORD __cdecl sub_10074770(_DWORD, _DWORD, _DWORD);

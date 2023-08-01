@@ -12,7 +12,7 @@ int __thiscall sub_100489A0(char *this)
   if ( !*((_DWORD *)this + 26) )
   {
     sub_1003E310();
-    sub_1006A4A0((#483 *)&g_Config, g_bossRallyCfgPath);
+    WriteConfigFile((#483 *)&g_Config, g_bossRallyCfgPath);
     v2 = *(_DWORD *)this;
     *((_WORD *)this + 9) = 0;
     (*(void (__thiscall **)(char *, _DWORD))(v2 + 24))(this, 0);
@@ -53,7 +53,7 @@ int __thiscall sub_100489A0(char *this)
   if ( !*((_DWORD *)this + 26) )
   {
     sub_1003E310();
-    sub_1006A4A0((#483 *)&g_Config, g_bossRallyCfgPath);
+    WriteConfigFile((#483 *)&g_Config, g_bossRallyCfgPath);
     *((_WORD *)this + 9) = 0;
     (*(void (__thiscall **)(char *, _DWORD))(v9 + 24))(this, 0);
     return 0;

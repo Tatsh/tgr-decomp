@@ -28,8 +28,7 @@ char *__cdecl sub_10067880(const void **a1, char *a2, int a3)
   if ( (int)result > a3 )
   {
     sprintf(Buffer, "VAR SAVE OVERFLOW (%d avail, %d used)", a3, result);
-    sub_10035BBA(Buffer);
+    sub_10035BBA((int)Buffer);
   }
   return result;
 }
-// 10035BBA: using guessed type void __cdecl __noreturn sub_10035BBA(_DWORD);

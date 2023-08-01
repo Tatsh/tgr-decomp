@@ -1,57 +1,57 @@
 //----- (1000C170) --------------------------------------------------------
-void __cdecl sub_1000C170(int a1, _DWORD *a2, int a3, int a4, int a5)
+void __cdecl sub_1000C170(int a1, _DWORD *a2)
 {
-  CHAR *v5; // esi
-  const CHAR *v6; // edi
-  int v7; // ebp
-  int v8; // eax
-  HGLOBAL v9; // eax
-  CHAR *v10; // eax
-  int v11; // ecx
-  int *v12; // eax
+  CHAR *v2; // esi
+  const CHAR *v3; // edi
+  int v4; // ebp
+  int v5; // eax
+  HGLOBAL v6; // eax
+  CHAR *v7; // eax
+  int v8; // ecx
+  int *v9; // eax
+  int v10; // eax
+  const CHAR *v11; // edi
+  int v12; // ebx
   int v13; // eax
-  const CHAR *v14; // edi
-  int v15; // ebx
-  int v16; // eax
+  HGLOBAL v14; // eax
+  CHAR *v15; // eax
+  HGLOBAL v16; // eax
   HGLOBAL v17; // eax
-  CHAR *v18; // eax
-  HGLOBAL v19; // eax
-  HGLOBAL v20; // eax
   CHAR OutputString[260]; // [esp+10h] [ebp-104h] BYREF
 
   if ( *(_DWORD *)(a1 + 12) )
-    sub_1000C000(a1, a2, a3, a4, a5);
+    sub_1000C000(a1, a2);
   else
     sub_1000BEA0(a1, a2);
   if ( !dword_100AC300 )
     return;
-  v5 = 0;
+  v2 = 0;
   if ( *a2 == 3 )
   {
-    v14 = (const CHAR *)a2[8];
-    if ( !v14 )
-      v14 = aUnknown;
-    v15 = lstrlenA(aSJoinedTheGame);
-    v16 = lstrlenA(v14);
-    v17 = GlobalAlloc(0x42u, v15 + v16 + 1);
-    v18 = (CHAR *)GlobalLock(v17);
-    v5 = v18;
-    if ( v18 )
+    v11 = (const CHAR *)a2[8];
+    if ( !v11 )
+      v11 = aUnknown;
+    v12 = lstrlenA(aSJoinedTheGame);
+    v13 = lstrlenA(v11);
+    v14 = GlobalAlloc(0x42u, v12 + v13 + 1);
+    v15 = (CHAR *)GlobalLock(v14);
+    v2 = v15;
+    if ( v15 )
     {
-      wsprintfA(v18, "%s joined the game.\r\n", v14);
+      wsprintfA(v15, "%s joined the game.\r\n", v11);
 LABEL_21:
-      if ( v5 )
+      if ( v2 )
       {
         if ( g_HWND )
         {
-          PostMessageA(g_HWND, 0x501u, 0, (LPARAM)v5);
+          PostMessageA(g_HWND, 0x501u, 0, (LPARAM)v2);
         }
         else
         {
-          v19 = GlobalHandle(v5);
-          GlobalUnlock(v19);
-          v20 = GlobalHandle(v5);
-          GlobalFree(v20);
+          v16 = GlobalHandle(v2);
+          GlobalUnlock(v16);
+          v17 = GlobalHandle(v2);
+          GlobalFree(v17);
         }
       }
       return;
@@ -65,29 +65,29 @@ LABEL_21:
         sub_1003CE80();
       goto LABEL_21;
     }
-    v6 = (const CHAR *)a2[9];
-    if ( !v6 )
-      v6 = aUnknown;
-    v7 = lstrlenA(String);
-    v8 = lstrlenA(v6);
-    v9 = GlobalAlloc(0x42u, v7 + v8 + 1);
-    v10 = (CHAR *)GlobalLock(v9);
-    v5 = v10;
-    if ( v10 )
+    v3 = (const CHAR *)a2[9];
+    if ( !v3 )
+      v3 = aUnknown;
+    v4 = lstrlenA(String);
+    v5 = lstrlenA(v3);
+    v6 = GlobalAlloc(0x42u, v4 + v5 + 1);
+    v7 = (CHAR *)GlobalLock(v6);
+    v2 = v7;
+    if ( v7 )
     {
-      wsprintfA(v10, "%s left the game.\r\n", v6);
-      v11 = 0;
-      v12 = dword_10AA2538;
-      while ( *v12 != a2[2] )
+      wsprintfA(v7, "%s left the game.\r\n", v3);
+      v8 = 0;
+      v9 = dword_10AA2538;
+      while ( *v9 != a2[2] )
       {
-        v12 += 3;
-        ++v11;
-        if ( (int)v12 >= (int)&dword_10AA2598 )
+        v9 += 3;
+        ++v8;
+        if ( (int)v9 >= (int)&dword_10AA2598 )
           goto LABEL_21;
       }
-      v13 = 3 * v11;
-      dword_10AA2538[v13] = -1;
-      dword_10AA253C[v13] = 0;
+      v10 = 3 * v8;
+      dword_10AA2538[v10] = -1;
+      dword_10AA253C[v10] = 0;
       sprintf(OutputString, "Destroy Player message received, ID: %d\n", a2[2]);
       OutputDebugStringA(OutputString);
       goto LABEL_21;

@@ -24,7 +24,7 @@ char __cdecl sub_10070610(int a1, FILE *Stream)
   v2 = a1;
   if ( a1 )
   {
-    v12 = fopen(aCRallyseasonDatFilepath_ptr, readBinaryMode);
+    v12 = fopen(aCRallyseasonDatFilepath_ptr, kFileModeReadBinary);
     v3 = v12;
     if ( !v12 )
       return (_BYTE)Stream != 0;
@@ -88,12 +88,12 @@ LABEL_3:
     qmemcpy(dword_10ACED34, Str1, 0x14Cu);
     v21 = v11;
     qmemcpy((void *)dword_10AD189C, Str1, 0x14Cu);
-    (*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)))->handlingType = v8;
-    (*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)))->transmissionType = v9;
-    (*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)))->ultraCarHeader = v19;
-    (*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)))->suspensionType = v20;
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 62) = v8;
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 63) = v9;
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 64) = v19;
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 65) = v20;
     v2 = a1;
-    *(_DWORD *)(*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)))[1].gap0 = v21;
+    *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 66) = v21;
   }
   if ( v2 )
     fclose(v3);

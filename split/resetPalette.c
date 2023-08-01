@@ -1,12 +1,12 @@
 //----- (1000AB20) --------------------------------------------------------
-int __thiscall resetPalette(gameSpecificUnk0 *this)
+int __thiscall resetPalette(unk0 *this)
 {
-  LPDIRECTDRAWPALETTE v2; // eax
+  LPDIRECTDRAWPALETTE ddrawPalette; // eax
 
-  v2 = this->lpDirectDrawPalette;
-  if ( v2 )
+  ddrawPalette = this->lpDirectDrawPalette;
+  if ( ddrawPalette )
   {
-    v2->lpVtbl->Release(v2);
+    ddrawPalette->lpVtbl->Release(ddrawPalette);
     this->lpDirectDrawPalette = 0;
   }
   if ( this->lPaletteEntry )

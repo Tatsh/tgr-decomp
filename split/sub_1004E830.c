@@ -135,14 +135,14 @@ int __cdecl sub_1004E830(int a1)
     a1,
     v3[206],
     v3[207],
-    dword_118ABDBC != 0 ? 1056769 : 1056785,
+    MEMORY[0x118ABDBC] != 0 ? 1056769 : 1056785,
     2,
     5,
     1,
     -1);
   v11[3] = sub_10047360;
   v11[2] = sub_10043590;
-  if ( dword_118ABDBC )
+  if ( MEMORY[0x118ABDBC] )
   {
     *((_WORD *)v11 + 61702) = 3;
     v61 = 1;

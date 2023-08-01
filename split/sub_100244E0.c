@@ -13,7 +13,7 @@ HRESULT sub_100244E0()
           rects.x2 = g_Width,
           rects.y1 = 0,
           rects.y2 = g_Height,
-          (hr = g_gsu0->lpD3DViewport->lpVtbl->Clear(g_gsu0->lpD3DViewport, 1, &rects, 3)) == 0) )
+          (hr = g_gsu0->lpDirect3DViewport2->lpVtbl->Clear(g_gsu0->lpDirect3DViewport2, 1, &rects, 3)) == 0) )
     {
       *(&stru_10277680 + 8) = 1;
     }

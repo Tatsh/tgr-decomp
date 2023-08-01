@@ -1,5 +1,5 @@
 //----- (10065740) --------------------------------------------------------
-int __thiscall sub_10065740(int this)
+int __thiscall sub_10065740(_DWORD *this)
 {
   int v2; // eax
   long double v3; // st4
@@ -21,20 +21,20 @@ int __thiscall sub_10065740(int this)
   float v19; // [esp+20h] [ebp-8h]
   float v20; // [esp+24h] [ebp-4h]
 
-  sub_10076B20((_DWORD *)this);
+  sub_10076B20(this);
   if ( g_GameMode == 2 || g_GameMode == 4 || g_GameMode == 3 && dword_100B4050 == 1 || !g_GameMode )
   {
-    sub_10076A40((_DWORD *)this, *(_DWORD *)(this + 320));
+    sub_10076A40(this, this[80]);
     v14 = 0.0;
     v15 = 0.5;
   }
   else
   {
-    sub_10076A40((_DWORD *)this, *(_DWORD *)(this + 320));
+    sub_10076A40(this, this[80]);
     if ( g_NetworkPlay )
-      v2 = *(_DWORD *)(this + 324);
+      v2 = this[81];
     else
-      v2 = *(_DWORD *)(this + 320);
+      v2 = this[80];
     v14 = (float)(v2 >> 1);
     v15 = (float)((v2 & 1) == 0);
   }
@@ -51,78 +51,78 @@ int __thiscall sub_10065740(int this)
   *(float *)&v10 = flt_106C7C8C - v3 * 3.0 - v18 * v17 * 8.0;
   *(float *)&v9 = flt_106C7C88 - v4 * 3.0 - v20 * v17 * 8.0;
   sub_10076420((float *)this, v9, v10, v13);
-  *(float *)(this + 4084) = (v14 - -0.5) * -8.0;
+  *((float *)this + 1021) = (v14 - -0.5) * -8.0;
   sub_100764C0((float *)this, dword_106C7C94);
-  *(_DWORD *)(this + 3968) = *(_DWORD *)(this + 48);
-  *(_DWORD *)(this + 3972) = *(_DWORD *)(this + 52);
-  *(_DWORD *)(this + 3976) = *(_DWORD *)(this + 56);
-  *(_DWORD *)(this + 3932) = *(_DWORD *)(this + 48);
-  *(_DWORD *)(this + 3936) = *(_DWORD *)(this + 52);
-  *(_DWORD *)(this + 3940) = *(_DWORD *)(this + 56);
+  this[992] = this[12];
+  this[993] = this[13];
+  this[994] = this[14];
+  this[983] = this[12];
+  this[984] = this[13];
+  this[985] = this[14];
   sub_10001FF0((#482 *)this);
-  *(_DWORD *)(this + 3744) = 0;
-  *(_DWORD *)(this + 3748) = 0;
-  *(_DWORD *)(this + 3752) = 0;
-  *(_DWORD *)(this + 3756) = -180;
-  sub_100767A0((_DWORD *)this, 0, 0, 0);
+  this[936] = 0;
+  this[937] = 0;
+  this[938] = 0;
+  this[939] = -180;
+  sub_100767A0(this, 0, 0, 0);
   if ( dword_106C7CB8 )
   {
-    *(_DWORD *)(this + 4016) = 0;
-    *(_DWORD *)(this + 4076) = 0;
-    *(_DWORD *)(this + 4068) = 0;
+    this[1004] = 0;
+    this[1019] = 0;
+    this[1017] = 0;
     v5 = dword_104BBE08 - 1;
     if ( (__int16)(dword_104BBE08 - 1) > 2 || v5 < 0 )
       v5 = 0;
-    *(_DWORD *)(this + 4080) = (&stringOffsets[g_chosenTrack][21 * *(_DWORD *)(this + 3684)])[7 * v5 + 17];
-    *(_DWORD *)(this + 3980) = dword_106C7CB8;
-    *(_DWORD *)(this + 3984) = 0;
-    sub_1003ADA0((float *)(this + 3988), (float *)(dword_106C7CB8 + 76), (float *)(dword_106C7CB8 + 116));
+    this[1020] = (&stringOffsets[g_chosenTrack][21 * this[921]])[7 * v5 + 17];
+    this[995] = dword_106C7CB8;
+    this[996] = 0;
+    sub_1003ADA0((float *)this + 997, (float *)(dword_106C7CB8 + 76), (float *)(dword_106C7CB8 + 116));
   }
   else
   {
-    *(_DWORD *)(this + 3988) = 1065353216;
-    *(_DWORD *)(this + 3992) = 0;
-    *(_DWORD *)(this + 3996) = 0;
+    this[997] = 1065353216;
+    this[998] = 0;
+    this[999] = 0;
   }
-  v6 = *(_DWORD *)(this + 320);
+  v6 = this[80];
   v7 = dword_100B36F8 - v6;
-  *(_DWORD *)(this + 4008) = 0;
-  *(_DWORD *)(this + 4072) = 0;
-  *(_DWORD *)(this + 4088) = v7 - 1;
-  *(_DWORD *)(this + 4000) = 0;
+  this[1002] = 0;
+  this[1018] = 0;
+  this[1022] = v7 - 1;
+  this[1000] = 0;
   if ( v6 < dword_100B4050 || g_GameMode == 1 || g_GameMode == 2 || g_GameMode == 4 || g_GameMode == 6 )
   {
-    *(_DWORD *)(this + 4012) = -1;
-    *(_DWORD *)(this + 4004) = -1;
+    this[1003] = -1;
+    this[1001] = -1;
   }
   else
   {
-    *(_DWORD *)(this + 4012) = 0;
-    *(_DWORD *)(this + 4004) = 0;
+    this[1003] = 0;
+    this[1001] = 0;
   }
-  *(_DWORD *)(this + 10572) = 0;
-  *(_DWORD *)(this + 10640) = 0;
-  *(_DWORD *)(this + 10008) = 0;
-  *(_DWORD *)(this + 4148) = 0;
-  *(_DWORD *)(this + 4144) = 0;
-  *(_DWORD *)(this + 4152) = 0;
-  *(_DWORD *)(this + 4156) = 0;
-  *(_DWORD *)(this + 4160) = 0;
-  *(_DWORD *)(this + 4164) = 0;
-  *(_DWORD *)(this + 4168) = 0;
-  *(_DWORD *)(this + 4172) = 0;
-  *(_DWORD *)(this + 4176) = 0;
-  *(_DWORD *)(this + 4180) = 0;
-  *(_DWORD *)(this + 4184) = 0;
-  *(_DWORD *)(this + 4128) = 0;
-  *(_DWORD *)(this + 3844) = 0;
+  this[2643] = 0;
+  this[2660] = 0;
+  this[2502] = 0;
+  this[1037] = 0;
+  this[1036] = 0;
+  this[1038] = 0;
+  this[1039] = 0;
+  this[1040] = 0;
+  this[1041] = 0;
+  this[1042] = 0;
+  this[1043] = 0;
+  this[1044] = 0;
+  this[1045] = 0;
+  this[1046] = 0;
+  this[1032] = 0;
+  this[961] = 0;
   sub_10065630(this);
   result = sub_10065710(this);
-  *(_DWORD *)(this + 3960) = 0;
-  *(_DWORD *)(this + 3944) = 0;
-  *(_DWORD *)(this + 3948) = 0;
-  *(_DWORD *)(this + 3952) = 0;
-  *(_DWORD *)(this + 3956) = 1065353216;
+  this[990] = 0;
+  this[986] = 0;
+  this[987] = 0;
+  this[988] = 0;
+  this[989] = 1065353216;
   return result;
 }
 // 100AA010: using guessed type int g_GameMode;

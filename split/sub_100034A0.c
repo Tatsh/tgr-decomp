@@ -33,8 +33,6 @@ int __cdecl sub_100034A0(int a1, int a2, int a3, unsigned int a4)
     dword_1022AF38 = 0;
   return result;
 }
-// 100750F0: using guessed type int sub_100750F0(void);
-// 10075100: using guessed type int sub_10075100(void);
 // 10220DD8: using guessed type int dword_10220DD8;
 // 1022AAB0: using guessed type int dword_1022AAB0[];
 // 1022AF38: using guessed type int dword_1022AF38;

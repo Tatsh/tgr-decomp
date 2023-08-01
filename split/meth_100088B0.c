@@ -1,5 +1,5 @@
 //----- (100088B0) --------------------------------------------------------
-int __thiscall sub_100088B0(int *this, int a2, int a3)
+int __thiscall meth_100088B0(int *this, int a2, int a3)
 {
   int v4; // edi
   int v5; // eax

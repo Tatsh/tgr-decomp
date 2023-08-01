@@ -20,7 +20,7 @@ int __cdecl sub_1000C5D0(int a1, LPVOID lpParameter)
     hEvent = CreateEventA(0, 0, 0, 0);
     if ( hEvent )
     {
-      dword_10277B54 = CreateThread(0, 0, StartAddress, lpParameter, 0, &ThreadId);
+      dword_10277B54 = CreateThread(0, 0, (LPTHREAD_START_ROUTINE)StartAddress, lpParameter, 0, &ThreadId);
       if ( dword_10277B54 )
         return 0;
     }

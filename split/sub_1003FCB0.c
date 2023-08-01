@@ -4,7 +4,7 @@ int __cdecl sub_1003FCB0(int a1)
   const char *v1; // eax
   int v2; // edx
 
-  if ( dword_118ABDBC )
+  if ( MEMORY[0x118ABDBC] )
     v1 = getCaptionString(dword_100AC400[dword_10AA2A1C]);
   else
     v1 = getCaptionString(0x74u);

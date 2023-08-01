@@ -1,11 +1,11 @@
 //----- (1000AD70) --------------------------------------------------------
-int __thiscall ReleaseDDrawSurface(gameSpecificUnk0 *this)
+int __thiscall ReleaseDDrawSurface(unk0 *this)
 {
-  LPDIRECT3DDEVICE2 dev; // eax
+  IDirect3DDevice2 *dev; // eax
   LPDIRECTDRAWSURFACE lpDDSurface_1; // eax
   LPDIRECTDRAWSURFACE lpDDSurface; // eax
 
-  if ( this[1].field_30 )
+  if ( this->field_0 )
     returnZeroWrapper();
   sub_1000AEA0(this);
   dev = this->lpD3DDevice2;

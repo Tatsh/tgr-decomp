@@ -1,19 +1,19 @@
 //----- (1000A5D0) --------------------------------------------------------
-int __thiscall sub_1000A5D0(gameSpecificUnk0 *this)
+int __thiscall meth_1000A5D0(unk0 *this)
 {
   DWORD flags; // edi
-  unk0 *u0; // ecx
+  __unk0 *u0; // ecx
   int hr; // edi
   int v5; // eax
-  gameSpecificUnk0 *v6; // ecx
+  int v6; // ecx
   int v7; // eax
   int result; // eax
   IID *iid; // edx
-  unk0 *v10; // eax
+  __unk0 *v10; // eax
   gameSpecificUnk1 *v11; // ecx
-  unk0 *u0_1; // eax
+  __unk0 *u0_1; // eax
   int v13; // eax
-  gameSpecificUnk0 *v14; // ecx
+  int v14; // ecx
   int v15; // edx
   int v16; // eax
   gameSpecificUnk1 *v17; // [esp+8h] [ebp-38h]
@@ -54,16 +54,16 @@ int __thiscall sub_1000A5D0(gameSpecificUnk0 *this)
     else
     {
       v13 = width;
-      v14 = (gameSpecificUnk0 *)height;
+      v14 = height;
       v15 = bitDepth;
       this->field_1 = 0;
       this->field_7C = 0;
-      this->field_0 = v13;
-      this[1].field_27 = v14;
+      this->field_80 = v13;
+      this->field_84 = v14;
       g_Width = v13;
       g_Width1 = v13;
-      g_Height = (int)v14;
-      g_Height1 = (int)v14;
+      g_Height = v14;
+      g_Height1 = v14;
       g_BitDepth = v15;
       v16 = this->field_1C;
       LOBYTE(v16) = v16 | 2;
@@ -74,15 +74,15 @@ int __thiscall sub_1000A5D0(gameSpecificUnk0 *this)
   else
   {
     v5 = width;
-    v6 = (gameSpecificUnk0 *)height;
+    v6 = height;
     this->field_1 = 0;
     this->field_7C = 0;
-    this->field_0 = v5;
-    this[1].field_27 = v6;
+    this->field_80 = v5;
+    this->field_84 = v6;
     g_Width = v5;
     g_Width1 = v5;
-    g_Height = (int)v6;
-    g_Height1 = (int)v6;
+    g_Height = v6;
+    g_Height1 = v6;
     g_BitDepth = bitDepth;
     v7 = this->field_1C;
     LOBYTE(v7) = v7 | 2;

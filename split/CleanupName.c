@@ -6,7 +6,7 @@ char __stdcall CleanupName(const char *a1, char *buff)
 
   basename(a1, buff);
   if ( strlen(buff) > 0x40 )
-    writeToRandomBufferAndExit(aCleanupnameNam);
+    writeToRandomBufferAndExit(kErrorMessageCleanupNameNameTooLong);
   for ( i = 0; i < 0x40; ++i )                  // uppercase every letter
   {
     result = buff[i];

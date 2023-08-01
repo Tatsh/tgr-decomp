@@ -16,7 +16,7 @@ void __cdecl sub_1000BEA0(int a1, int *a2)
     if ( v3 )
     {
       if ( v3 == 2 && !dword_100AC300 )
-        sub_10005FE0(a2[2]);
+        np_sub_10005FE0(a2[2]);
     }
   }
 }

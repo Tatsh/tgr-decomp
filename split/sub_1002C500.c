@@ -41,8 +41,8 @@ int __usercall sub_1002C500@<eax>(double a1@<st0>)
   int v38; // ecx
   void *v39; // eax
   int v40; // ecx
-  struct_dword_10ACED34 **v41; // eax
-  struct_dword_10ACED34 *v42; // edx
+  #505 **v41; // eax
+  #505 *v42; // edx
   int v43; // edx
   int *v44; // eax
   int v45; // edx
@@ -97,11 +97,11 @@ int __usercall sub_1002C500@<eax>(double a1@<st0>)
   _DWORD *v94; // edi
   int v95; // eax
   int v96; // esi
-  char *v97; // edi
+  _DWORD *v97; // edi
   int v98; // esi
   char *v99; // edi
   int v100; // esi
-  char *v101; // edi
+  _DWORD *v101; // edi
   int v102; // edi
   _DWORD *v103; // esi
   void *v104; // ecx
@@ -574,10 +574,10 @@ LABEL_32:
   }
   do
   {
-    v41[4] = (struct_dword_10ACED34 *)(*v41)->transmissionType;
-    v41[2] = (struct_dword_10ACED34 *)(*v41)->suspensionType;
-    v41[1] = (struct_dword_10ACED34 *)(*v41)->ultraCarHeader;
-    v41[3] = (struct_dword_10ACED34 *)(*v41)->handlingType;
+    v41[4] = (#505 *)*((_DWORD *)*v41 + 63);
+    v41[2] = (#505 *)*((_DWORD *)*v41 + 65);
+    v41[1] = (#505 *)*((_DWORD *)*v41 + 64);
+    v41[3] = (#505 *)*((_DWORD *)*v41 + 62);
     if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
     {
       v42 = v41[1741];
@@ -587,11 +587,11 @@ LABEL_32:
       v42 = v41[1741];
       if ( g_ReadJoystick != 3 )
       {
-        v42->gap0[37] = 2;
+        *((_BYTE *)v42 + 37) = 2;
         goto LABEL_101;
       }
     }
-    v42->gap0[37] = 5;
+    *((_BYTE *)v42 + 37) = 5;
 LABEL_101:
     ++v40;
     v41 += 2778;
@@ -657,7 +657,7 @@ LABEL_108:
 LABEL_119:
         if ( !*(v48 - 32) )
           sub_10076A70((unsigned __int8 *)v48 - 3848, v47, (int)v48[1704]);
-        sub_10065740((int)(v48 - 962));
+        sub_10065740(v48 - 962);
         v46 = dword_100B36FC;
         v48[29] = 0;
         v48[61] = 0;
@@ -677,7 +677,7 @@ LABEL_122:
     {
       memset(&unk_100C12A0, 0, 0x15F88u);
       sub_10076A40(dword_10ACDEA8, 0);
-      sub_10065740((int)dword_10ACDEA8);
+      sub_10065740(dword_10ACDEA8);
       sub_100019D0((#479 *)dword_10ACDEA8);
       flt_10AD061C = flt_10AD061C - -1.0;
     }
@@ -1145,13 +1145,13 @@ LABEL_272:
   v96 = 0;
   if ( dword_100B36F8 > 0 )
   {
-    v97 = (char *)&unk_10ACD498;
+    v97 = &unk_10ACD498;
     do
     {
-      sub_10068EF0((int)v97);
+      sub_10068EF0(v97);
       v95 = dword_100B36F8;
       ++v96;
-      v97 += 128;
+      v97 += 32;
     }
     while ( v96 < dword_100B36F8 );
   }
@@ -1174,12 +1174,12 @@ LABEL_272:
   v100 = 0;
   if ( v95 > 0 )
   {
-    v101 = (char *)&unk_10ACD498;
+    v101 = &unk_10ACD498;
     do
     {
-      sub_10069370((int)v101);
+      sub_10069370(v101);
       ++v100;
-      v101 += 128;
+      v101 += 32;
     }
     while ( v100 < dword_100B36F8 );
   }
@@ -1191,7 +1191,7 @@ LABEL_272:
       v103 = dword_10ACDEA8;
       do
       {
-        sub_10066650((int)v103);
+        sub_10066650(v103);
         ++v102;
         v103 += 2778;
       }
@@ -1371,7 +1371,7 @@ LABEL_338:
     v119 = dword_10ACDEA8;
     do
     {
-      sub_10068400((int)v119);
+      sub_10068400(v119);
       ++v118;
       v119 += 2778;
     }
@@ -1864,7 +1864,7 @@ LABEL_469:
     dword_106C3364 = 0;
     if ( g_GameMode == 5 )
     {
-      if ( dword_10ACED34->gap0[4] )
+      if ( *((_BYTE *)dword_10ACED34 + 4) )
       {
         g_GameMode = 0;
         sub_1002F460();
@@ -1890,7 +1890,7 @@ LABEL_527:
       if ( (g_GameMode != 4 || dword_106805B8 != 1 && (dword_106805B8 || dword_10680938)) && dword_106909F0 == 2 )
       {
         if ( dword_106C56D0 != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C )
-          sub_1006A4A0((#483 *)g_Config, g_bossRallyCfgPath);
+          WriteConfigFile(g_Config, g_bossRallyCfgPath);
         cleanUpAndExitWithCode(0);
       }
     }

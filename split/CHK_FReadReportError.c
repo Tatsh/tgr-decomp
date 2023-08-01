@@ -1,13 +1,13 @@
 //----- (10003170) --------------------------------------------------------
-void *__cdecl CHK_FReadReportError(void *Buffer, size_t ElementSize, size_t ElementCount, CHK_File *fp)
+void *__cdecl CHK_FReadReportError(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp)
 {
-  CHAR OutputString[1024]; // [esp+Ch] [ebp-400h] BYREF
+  CHAR debugMessage[1024]; // [esp+Ch] [ebp-400h] BYREF
 
-  if ( !FCHK_FRead_0(Buffer, ElementSize, ElementCount, fp) )
+  if ( !FCHK_FRead_0(buffer, elementSize, elementCount, fp) )
   {
-    sprintf(OutputString, "CHK_FRead(): trying to read %u bytes, but got EOF.\n", ElementSize * ElementCount);
-    OutputDebugStringA(OutputString);
+    sprintf(debugMessage, "CHK_FRead(): trying to read %u bytes, but got EOF.\n", elementSize * elementCount);
+    OutputDebugStringA(debugMessage);
     exit(1);
   }
-  return Buffer;
+  return buffer;
 }

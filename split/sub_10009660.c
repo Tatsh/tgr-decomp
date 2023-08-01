@@ -32,7 +32,7 @@ char *__cdecl sub_10009660(_WORD *arg0, unsigned __int8 *a2, int a3, int a1, int
   v24 = CountBits(v6->dwGBitMask) - 8;
   v7 = CountBits(v6->dwBBitMask) - 8;
   v25 = CountBits(v6->dwRGBAlphaBitMask) - 8;
-  *a5 = 1 << sub_10009860(v6->dwGBitMask);
+  *a5 = 1 << PopCount(v6->dwGBitMask);
   if ( a3 > 0 )
   {
     v22 = (unsigned int)(a3 + 3) >> 2;

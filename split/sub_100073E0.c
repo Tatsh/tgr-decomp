@@ -1,5 +1,5 @@
 //----- (100073E0) --------------------------------------------------------
-int __cdecl sub_100073E0(float *a1, float *a2, int *a3)
+unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3)
 {
   char v3; // al
   __int16 v4; // cx
@@ -33,7 +33,7 @@ int __cdecl sub_100073E0(float *a1, float *a2, int *a3)
   double v32; // st7
   double v33; // st7
   double v34; // st7
-  int result; // eax
+  unsigned int result; // eax
 
   v3 = sub_10073C90(a3, 8);
   LOBYTE(v4) = 0;

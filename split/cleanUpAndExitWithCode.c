@@ -28,7 +28,7 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code)
   if ( dword_10690A28 )
     dword_10690A28();
   sub_10061620();
-  sub_10008970((int)dword_10A99780);
+  meth_10008970(dword_10A99780);
   sub_1002AEA0();
   sub_10074050();
   CoUninitialize();

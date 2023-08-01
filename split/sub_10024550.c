@@ -2,7 +2,7 @@
 int __cdecl sub_10024550(int a1)
 {
   int result; // eax
-  IDirect3DDevice2Vtbl *d3dDevice2LPVtbl; // ecx
+  #489 *d3dDevice2LPVtbl; // ecx
   _DWORD *v3; // eax
   int v4; // eax
   int *v5; // ecx
@@ -41,20 +41,20 @@ LABEL_6:
     dword_1027739C = 1;
     dword_10277370 = -1;
     sub_10024850();
-    d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
+    d3dDevice2LPVtbl = (#489 *)g_D3DDevice2->lpVtbl;
     dword_104C5178 = 8193;
-    d3dDevice2LPVtbl->SetRenderState(g_D3DDevice2, 29, 0);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 7, 1);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 1, 0);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 26, 1);
+    (*((void (__stdcall **)(IDirect3DDevice2 *, int, _DWORD))d3dDevice2LPVtbl + 23))(g_D3DDevice2, 29, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZENABLE, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)1, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_DITHERENABLE, 1);
     if ( !g_D3dalphacompar )
-      g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 41, 1);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 9, 2);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 5, 0);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 6, 0);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 4, 1);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 18, 2);
-    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, 17, 2);
+      g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE|0x20, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE, 2);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)5, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)6, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)4, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)18, 2);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)17, 2);
     g_indexedPrimitiveIndexCount = 0;
     g_vertexCount = 0;
     dword_104C5190 = 0;
@@ -73,8 +73,8 @@ LABEL_6:
     {
       g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(
         g_D3DDevice2,
-        4,
-        3,
+        D3DPT_TRIANGLELIST,
+        D3DVT_TLVERTEX,
         &g_vertices,
         g_vertexCount,
         &g_indexedPrimitiveIndices,

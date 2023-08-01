@@ -1,5 +1,5 @@
 //----- (10068EF0) --------------------------------------------------------
-void __thiscall sub_10068EF0(int this)
+void __thiscall sub_10068EF0(_DWORD *this)
 {
   int v2; // eax
   int v3; // eax
@@ -24,13 +24,13 @@ void __thiscall sub_10068EF0(int this)
   float v22; // [esp+0h] [ebp-18h]
   float v23; // [esp+14h] [ebp-4h]
 
-  if ( !g_NetworkPlay || *(_DWORD *)(this + 96) )
+  if ( !g_NetworkPlay || this[24] )
   {
-    v2 = *(_DWORD *)(this + 96);
+    v2 = this[24];
     if ( v2 && *(void (__cdecl **)(int))(v2 + 3848) == sub_10065620 && g_GameMode != 5 )
     {
       **(_DWORD **)(v2 + 10688) &= 0xF000000u;
-      *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 96) + 10688) + 32) = 0;
+      *(_DWORD *)(*(_DWORD *)(this[24] + 10688) + 32) = 0;
     }
     if ( dword_106909B4 )
     {
@@ -50,28 +50,28 @@ void __thiscall sub_10068EF0(int this)
     }
     else
     {
-      v3 = *(_DWORD *)(this + 104);
+      v3 = this[26];
       if ( (v3 & 1) != 0 )
       {
-        v4 = *(_DWORD *)(this + 96);
+        v4 = this[24];
         if ( v4 )
         {
           **(_DWORD **)(v4 + 10688) |= 0x40000u;
-          *(_DWORD *)(*(_DWORD *)(this + 96) + 3696) = 0;
-          v5 = *(_DWORD **)(this + 96);
+          *(_DWORD *)(this[24] + 3696) = 0;
+          v5 = (_DWORD *)this[24];
           v5[992] = v5[12];
           v5[993] = v5[13];
           v5[994] = v5[14];
-          v6 = *(void (__cdecl **)(_DWORD))(*(_DWORD *)(this + 96) + 3848);
+          v6 = *(void (__cdecl **)(_DWORD))(this[24] + 3848);
           if ( v6 )
-            v6(*(_DWORD *)(this + 96));
-          *(_DWORD *)(*(_DWORD *)(this + 96) + 3696) = 0;
+            v6(this[24]);
+          *(_DWORD *)(this[24] + 3696) = 0;
         }
       }
       else
       {
         v7 = (v3 & 2) == 0;
-        v8 = *(_DWORD *)(this + 96);
+        v8 = this[24];
         if ( v7 )
         {
           if ( v8 )
@@ -79,92 +79,90 @@ void __thiscall sub_10068EF0(int this)
             if ( *(_BYTE *)(v8 + 10671) == 2 )
             {
               *(float *)(v8 + 10672) = *(float *)(v8 + 10672) - *(float *)&dword_106C2CFC * -1.6;
-              if ( g_GameMode == 2 && *(_DWORD *)(this + 100) )
+              if ( g_GameMode == 2 && this[25] )
               {
-                v13 = *(_DWORD *)(this + 96);
+                v13 = this[24];
                 if ( *(float *)(v13 + 10672) > 0.375 )
                   *(_DWORD *)(v13 + 10672) = 1052770304;
               }
               else
               {
-                v14 = *(_DWORD *)(this + 96);
+                v14 = this[24];
                 if ( *(float *)(v14 + 10672) >= 1.0 )
                 {
                   *(_DWORD *)(v14 + 10672) = 1065353216;
-                  *(_BYTE *)(*(_DWORD *)(this + 96) + 10671) = 0;
+                  *(_BYTE *)(this[24] + 10671) = 0;
                 }
               }
             }
-            v15 = *(_DWORD **)(this + 96);
+            v15 = (_DWORD *)this[24];
             v15[992] = v15[12];
             v15[993] = v15[13];
             v15[994] = v15[14];
-            v16 = *(void (__cdecl **)(_DWORD))(*(_DWORD *)(this + 96) + 3848);
+            v16 = *(void (__cdecl **)(_DWORD))(this[24] + 3848);
             if ( v16 )
-              v16(*(_DWORD *)(this + 96));
-            *(float *)(*(_DWORD *)(this + 96) + 4148) = *(float *)(*(_DWORD *)(this + 96) + 4144)
-                                                      * *(float *)&dword_106C2CFC
-                                                      + *(float *)(*(_DWORD *)(this + 96) + 4148);
+              v16(this[24]);
+            *(float *)(this[24] + 4148) = *(float *)(this[24] + 4144) * *(float *)&dword_106C2CFC
+                                        + *(float *)(this[24] + 4148);
           }
           else
           {
-            *(_DWORD *)(this + 12) = *(_DWORD *)this;
-            *(_DWORD *)(this + 16) = *(_DWORD *)(this + 4);
-            *(_DWORD *)(this + 20) = *(_DWORD *)(this + 8);
-            v17 = *(_DWORD *)(this + 44);
-            v18 = *(_DWORD *)(this + 40);
-            v19 = 2778 * (*(_DWORD *)(this + 116) + dword_100B4050);
-            v23 = ((double)(*(_DWORD *)(this + 68) + 1) * *(float *)(dword_106C7CB8 + 100)
-                 - *(float *)(this + 80)
+            this[3] = *this;
+            this[4] = this[1];
+            this[5] = this[2];
+            v17 = this[11];
+            v18 = this[10];
+            v19 = 2778 * (this[29] + dword_100B4050);
+            v23 = ((double)(this[17] + 1) * *(float *)(dword_106C7CB8 + 100)
+                 - *((float *)this + 20)
                  - *(float *)(v18 + 40 * v17 + 140))
                 / (*(float *)(v18 + 40 * v17 + 100) - *(float *)(v18 + 40 * v17 + 140));
             if ( dword_10ACEDA8[v19] )
             {
               v21 = sub_1003B170((float *)((char *)&unk_10ACEECC + v19 * 4)) * *(float *)&dword_106C2CFC;
-              sub_10065C80(*(_DWORD *)(this + 40), *(_DWORD *)(this + 44), v23, v21);
-              v20 = sub_1003B170((float *)&unk_10ACEECC + 2778 * *(_DWORD *)(this + 116) + 2778 * dword_100B4050)
+              sub_10065C80(this[10], this[11], v23, v21);
+              v20 = sub_1003B170((float *)&unk_10ACEECC + 2778 * this[29] + 2778 * dword_100B4050)
                   * *(float *)&dword_106C2CFC
-                  + *(float *)(this + 80);
+                  + *((float *)this + 20);
             }
             else
             {
               sub_10065C80(v18, v17, v23, 2.22);
-              v20 = *(float *)(this + 80) - -2.22;
+              v20 = *((float *)this + 20) - -2.22;
             }
-            *(float *)(this + 80) = v20;
-            *(_DWORD *)(this + 40) = dword_10AF988C;
-            *(_DWORD *)(this + 44) = dword_10ACD490;
-            *(_DWORD *)this = dword_10AF9B38;
-            *(_DWORD *)(this + 4) = dword_10AF9B3C;
-            *(_DWORD *)(this + 8) = dword_10AF9B40;
-            sub_1003AEE0((float *)(this + 24), (float *)this, (float *)(this + 12));
+            *((float *)this + 20) = v20;
+            this[10] = dword_10AF988C;
+            this[11] = dword_10ACD490;
+            *this = dword_10AF9B38;
+            this[1] = dword_10AF9B3C;
+            this[2] = dword_10AF9B40;
+            sub_1003AEE0((float *)this + 6, (float *)this, (float *)this + 3);
             v22 = 1.0 / *(float *)&dword_106C2CFC;
-            sub_1003AD10(this + 24, v22);
-            sub_10066E90((char *)this);
+            sub_1003AD10((int)(this + 6), v22);
+            sub_10066E90(this);
           }
         }
         else if ( v8 )
         {
-          if ( g_GameMode || *(_DWORD *)(this + 100) < dword_100B4050 )
+          if ( g_GameMode || this[25] < dword_100B4050 )
           {
             **(_DWORD **)(v8 + 10688) = 786432;
-            *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(this + 96) + 10688) + 36) = -127;
-            *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 96) + 10688) + 32) = -1082130432;
+            *(_BYTE *)(*(_DWORD *)(this[24] + 10688) + 36) = -127;
+            *(_DWORD *)(*(_DWORD *)(this[24] + 10688) + 32) = -1082130432;
           }
-          if ( !g_GameMode && *(_DWORD *)(this + 100) >= dword_100B4050 )
+          if ( !g_GameMode && this[25] >= dword_100B4050 )
           {
-            *(_BYTE *)(*(_DWORD *)(this + 96) + 10671) = 2;
-            *(float *)(*(_DWORD *)(this + 96) + 10672) = *(float *)(*(_DWORD *)(this + 96) + 10672)
-                                                       - *(float *)&dword_106C2CFC;
-            v9 = *(_DWORD *)(this + 96);
+            *(_BYTE *)(this[24] + 10671) = 2;
+            *(float *)(this[24] + 10672) = *(float *)(this[24] + 10672) - *(float *)&dword_106C2CFC;
+            v9 = this[24];
             if ( *(float *)(v9 + 10672) < 0.0 )
               *(_DWORD *)(v9 + 10672) = 0;
           }
-          v10 = *(_DWORD **)(this + 96);
+          v10 = (_DWORD *)this[24];
           v10[992] = v10[12];
           v10[993] = v10[13];
           v10[994] = v10[14];
-          v11 = *(_DWORD *)(this + 96);
+          v11 = this[24];
           v12 = *(void (__cdecl **)(int))(v11 + 3848);
           if ( v12 )
             v12(v11);

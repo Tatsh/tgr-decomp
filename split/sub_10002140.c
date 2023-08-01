@@ -2,9 +2,9 @@
 int sub_10002140()
 {
   int v0; // eax
-  struct_dword_10ACED34 *v1; // ebp
+  #505 *v1; // ebp
   char *v2; // eax
-  struct_dword_10ACED34 **v3; // edx
+  #505 **v3; // edx
   void *v4; // edi
   const void *v5; // esi
   int v6; // ecx
@@ -15,10 +15,10 @@ int sub_10002140()
   if ( !g_GameMode )
   {
     v1 = dword_10ACED34;
-    LOBYTE(v0) = dword_10ACED34->gap0[4];
+    LOBYTE(v0) = *((_BYTE *)dword_10ACED34 + 4);
     dword_10220B24 = v0;
-    dword_10220B28 = (unsigned __int8)dword_10ACED34->gap0[5];
-    dword_10220B2C = *(_DWORD *)dword_10ACED34->gap0;
+    dword_10220B28 = *((unsigned __int8 *)dword_10ACED34 + 5);
+    dword_10220B2C = *(_DWORD *)dword_10ACED34;
     dword_10220B30 = g_chosenTrack;
     dword_10220B34 = dword_104BBE08;
     v2 = &byte_10220B3C;
@@ -29,7 +29,7 @@ int sub_10002140()
       v4 = v2 + 12;
       v2 += 64;
       v5 = v3 + 74;
-      v6 = (unsigned __int8)(*v3)->gap0[4 * dword_10220B24 + 6 + dword_10220B28];
+      v6 = *((unsigned __int8 *)*v3 + 4 * dword_10220B24 + dword_10220B28 + 6);
       v3 += 2778;
       *((_DWORD *)v2 - 16) = v6;
       *((_DWORD *)v2 - 15) = byte_100AA210[v6];

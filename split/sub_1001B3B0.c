@@ -3,7 +3,7 @@ int __thiscall sub_1001B3B0(int *this)
 {
   _DWORD *v2; // eax
   int v3; // ecx
-  _DWORD *v4; // esi
+  int v4; // esi
   int v5; // eax
 
   v2 = (_DWORD *)this[198];
@@ -12,13 +12,13 @@ int __thiscall sub_1001B3B0(int *this)
     do
     {
       v3 = v2[27];
-      v4 = (_DWORD *)v2[28];
+      v4 = v2[28];
       if ( v3 )
         *(_DWORD *)(v3 + 112) = v4;
       else
-        this[198] = (int)v4;
+        this[198] = v4;
       if ( v4 )
-        v4[27] = v3;
+        *(_DWORD *)(v4 + 108) = v3;
       else
         this[199] = v3;
       v2[28] = 0;
@@ -29,7 +29,7 @@ int __thiscall sub_1001B3B0(int *this)
         v2[28] = 0;
         operator delete(v2);
       }
-      v2 = v4;
+      v2 = (_DWORD *)v4;
     }
     while ( v4 );
   }
