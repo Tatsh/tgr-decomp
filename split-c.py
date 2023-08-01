@@ -27,13 +27,14 @@ if __name__ == '__main__':
                        flags=re.MULTILINE)
     with (SPLIT_PATH / 'decls.c').open('w+') as f:
         f.write(f'{grouped[0]}\n')
-    for header, lines in ((_, y.strip()) for _, y in chunks(grouped[1:], 2)):
-        func_name = re.sub(
-            r'@<[a-z]+>', '',
-            lines.splitlines()[0].split('(')[0].split(' ')[-1].replace(
-                '*', ''))
+    for header, lines_str in ((_, y.strip())
+                              for _, y in chunks(grouped[1:], 2)):
+        lines = lines_str.splitlines()
+        which = lines[1] if 'may be wrong' in lines[0] else lines[0]
+        func_name = re.sub(r'@<[a-z]+>', '',
+                           which.split('(')[0].split(' ')[-1].replace('*', ''))
         if not func_name:
             continue
         with (SPLIT_PATH / f'{func_name}.c').open('w+') as f:
             f.write(f'{header}\n')
-            f.write(f'{lines}\n')
+            f.write(f'{lines_str}\n')
