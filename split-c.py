@@ -35,6 +35,14 @@ if __name__ == '__main__':
                            which.split('(')[0].split(' ')[-1].replace('*', ''))
         if not func_name:
             continue
-        with (SPLIT_PATH / f'{func_name}.c').open('w+') as f:
+        prefix = func_name.split(
+            '_')[0].lower() if '_' in func_name else func_name[0:2].lower()
+        if prefix == 'meth':
+            prefix = func_name[0:10]
+        elif prefix == 'sub':
+            prefix = func_name[0:9]
+        out_dir = SPLIT_PATH / prefix
+        out_dir.mkdir(parents=True, exist_ok=True)
+        with (out_dir / f'{func_name}.c').open('w+') as f:
             f.write(f'{header}\n')
             f.write(f'{lines_str}\n')
