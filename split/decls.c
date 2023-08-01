@@ -4,12 +4,11 @@
    Detected compiler: Visual C++
 */
 
-#include <windows.h>
-#include <math.h>
 #include <defs.h>
+#include <math.h>
+#include <windows.h>
 
 #include <stdarg.h>
-
 
 //-------------------------------------------------------------------------
 // Function declarations
@@ -23,12 +22,12 @@ int __thiscall sub_10001160(int *this);
 int returnZeroWrapper();
 int sub_10001190();
 void __thiscall sub_100011F0(float *this, float a2, int a3);
-float *__thiscall sub_100015D0(#479 *this, float a2, float a3);
-int __thiscall sub_10001760(#480 *this); // idb
+float *__thiscall sub_100015D0(#479 * this, float a2, float a3);
+int __thiscall sub_10001760(#480 * this); // idb
 float *__thiscall sub_10001890(_DWORD *this, float a2);
-float *__thiscall sub_10001970(#481 *this);
-int __thiscall sub_100019D0(#479 *this); // idb
-int __thiscall sub_10001FF0(#482 *this); // idb
+float *__thiscall sub_10001970(#481 * this);
+int __thiscall sub_100019D0(#479 * this); // idb
+int __thiscall sub_10001FF0(#482 * this); // idb
 long double __cdecl cos_(float a1);
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds); // idb
 int sub_10002140();
@@ -39,8 +38,8 @@ int pm_sub_10002440();
 int getWPARAM();
 BOOL pm_sub_10002510();
 MCIERROR __cdecl mciPlayOrClose(DWORD_PTR callback, unsigned __int8 positionToPlayFrom); // idb
-int __cdecl pm_sub_100025C0(HWND hWnd); // idb
-int __cdecl pm_sub_100025F0(HWND hWnd); // idb
+int __cdecl pm_sub_100025C0(HWND hWnd);                                                  // idb
+int __cdecl pm_sub_100025F0(HWND hWnd);                                                  // idb
 int __cdecl pm_sub_10002660(HWND a1);
 int __cdecl pm_sub_100027C0(int a1);
 int __cdecl pm_sub_100027F0(int a1);
@@ -65,10 +64,16 @@ __int16 __cdecl sub_10002EF0(unsigned __int16 *a1);
 __int16 __cdecl sub_10002F40(unsigned __int16 *a1);
 DWORD __stdcall CHK_GetFileSize(CHK_File *cFile, void *_unused);
 CHK_File *__cdecl CHK_FReadOpen(const char *filename);
-size_t __cdecl FCHK_FRead_0(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp); // idb
-void *__cdecl CHK_FReadReportError(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp); // idb
+size_t __cdecl FCHK_FRead_0(void *buffer,
+                            size_t elementSize,
+                            size_t elementCount,
+                            CHK_File *fp); // idb
+void *__cdecl CHK_FReadReportError(void *buffer,
+                                   size_t elementSize,
+                                   size_t elementCount,
+                                   CHK_File *fp);              // idb
 _BYTE *__cdecl readBytes(_BYTE *a1, int maxBytes, FILE **pfp); // idb
-void __cdecl CHK_FClose(CHK_File *cFile); // idb
+void __cdecl CHK_FClose(CHK_File *cFile);                      // idb
 bool __cdecl CHK_FileExists(char *filename);
 void *__cdecl CHK_AllocateMemory(size_t size, const char *debugName);
 void *__cdecl CHK_ReAllocateMemory_0(void *ptr, size_t size, char *debugName); // idb
@@ -78,7 +83,8 @@ BOOL __cdecl sub_10003530(const char *a1);
 void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4);
 int __cdecl sub_10004590(int a1, char a2, char a3, char a4, char a5, int a6, char a7);
 int __cdecl sub_100046D0(_DWORD *a1, int a2);
-int __cdecl sub_10004760(_DWORD *a1, char a2, char a3, char a4, char a5, char a6, int a7, int a8, char a9, char a10);
+int __cdecl sub_10004760(
+    _DWORD *a1, char a2, char a3, char a4, char a5, char a6, int a7, int a8, char a9, char a10);
 BOOL __cdecl sub_100048D0(int a1);
 int __cdecl sub_10004910(_DWORD *a1, int a2);
 int sub_100049C0();
@@ -150,23 +156,23 @@ void setupMemoryStatus();
 void __cdecl ReadSettings(char *Str);
 void *__thiscall sub_100085C0(void *this, char a2); // idb
 void __thiscall sub_100085E0(_DWORD *this);
-char __stdcall CleanupName(const char *a1, char *buff); // idb
-int __thiscall sub_10008670(unk1 *this, int a2); // idb
-int __thiscall GetNumForNameWrapper(unk1 *this, const char *ArgList); // idb
-int __thiscall GetPodLength(unk1 *this, unsigned int argList); // idb
+char __stdcall CleanupName(const char *a1, char *buff);                    // idb
+int __thiscall sub_10008670(unk1 *this, int a2);                           // idb
+int __thiscall GetNumForNameWrapper(unk1 *this, const char *ArgList);      // idb
+int __thiscall GetPodLength(unk1 *this, unsigned int argList);             // idb
 size_t __thiscall ReadPod(unk1 *this, unsigned int argList, void *buffer); // idb
-int __thiscall LoadPod(unk1 *this, unsigned int ArgList); // idb
-int __thiscall LoadPod_0(unk1 *this, unsigned int argList, int a3); // idb
-int __thiscall sub_10008890(unk1 *this, int a2); // idb
+int __thiscall LoadPod(unk1 *this, unsigned int ArgList);                  // idb
+int __thiscall LoadPod_0(unk1 *this, unsigned int argList, int a3);        // idb
+int __thiscall sub_10008890(unk1 *this, int a2);                           // idb
 int __thiscall meth_100088B0(int *this, int a2, int a3);
 size_t __thiscall sub_100088D0(_DWORD *this); // idb
-int __thiscall meth_10008970(_DWORD *this); // idb
-int __stdcall sub_100089C0(char *FileName); // idb
+int __thiscall meth_10008970(_DWORD *this);   // idb
+int __stdcall sub_100089C0(char *FileName);   // idb
 size_t __thiscall meth_10008A00(_DWORD *this, const char *a2, int a3, int a4, char a5, char a6);
 int __thiscall sub_10008AA0(_DWORD *this); // idb
 void __thiscall sub_10008B40(char *this, const char *a2);
 // Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this);
-void __thiscall debugPrint(void *); // idb
+void __thiscall debugPrint(void *);                           // idb
 unsigned int __stdcall basename(const char *path, char *out); // idb
 FILE *__stdcall fopenWriteBinary(char *FileName);
 FILE *__stdcall fopenReadBinary(char *FileName);
@@ -177,36 +183,49 @@ void __cdecl __noreturn sub_10008CF0(int a1);
 HRESULT __cdecl setup_g_DevCaps(IDirect3DDevice2 *dev2); // idb
 int sub_10008DF0();
 int sub_10008E00();
-int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag); // idb
+int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag);        // idb
 int __stdcall d3dEnumTextureFormatsCallback(DDSURFACEDESC *a1, void *context); // idb
 int __cdecl sub_10009640(int a1);
 char *__cdecl sub_10009660(_WORD *arg0, unsigned __int8 *a2, int a3, int a1, int *a5);
 DDPIXELFORMAT *__cdecl GetDDPixelFormatPtr(int a1);
 int __cdecl PopCount(unsigned int a1);
-int __cdecl CountBits(unsigned int bitMask); // idb
+int __cdecl CountBits(unsigned int bitMask);                                        // idb
 char *__cdecl sub_100098A0(_WORD *out_a1, unsigned __int8 *out_a2, int a3, int a4); // idb
 // char __usercall sub_10009A50@<al>(unsigned int checksumOrZero@<eax>, _BYTE *a2, _WORD *a3, int size); idb
-unsigned __int8 *__cdecl sub_10009AD0(char *filename, int expectedChecksum, char **outFilename, int *outBuff); // idb
-HRESULT __cdecl enumTextureFormatsSomething(#486 *dev);
-IDirectDraw2 *__thiscall sub_10009C40(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue);
+unsigned __int8 *__cdecl sub_10009AD0(char *filename,
+                                      int expectedChecksum,
+                                      char **outFilename,
+                                      int *outBuff); // idb
+HRESULT __cdecl enumTextureFormatsSomething(#486 * dev);
+IDirectDraw2 *__thiscall sub_10009C40(#511 * this,
+                                      IDirect3DDevice2 *dev,
+                                      unsigned __int8 *a3,
+                                      DWORD dwWidth,
+                                      DWORD dwHeight,
+                                      int a6,
+                                      DWORD dwColorKeyValue);
 IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev); // idb
-IDirectDraw2 *__thiscall sub_10009EA0(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6);
-BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBottom); // idb
-BOOL __thiscall sub_1000A020(#511 *this); // idb
-int __thiscall sub_1000A0B0(#511 *this);
-unk0_member2 *__thiscall sub_1000A100(unk0_member2 *this, IDirect3D2 *d3d2, IDirect3DDevice2 *d3dDevice2); // idb
+IDirectDraw2 *__thiscall sub_10009EA0(
+    #511 * this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6);
+BOOL __thiscall sub_10009ED0(#511 * this, char *a2, LONG rectRight, LONG rectBottom); // idb
+BOOL __thiscall sub_1000A020(#511 * this);                                            // idb
+int __thiscall sub_1000A0B0(#511 * this);
+unk0_member2 *__thiscall sub_1000A100(unk0_member2 *this,
+                                      IDirect3D2 *d3d2,
+                                      IDirect3DDevice2 *d3dDevice2); // idb
 IDirect3DMaterial2 *__thiscall SafeReleaseDirect3DMaterial2(unk0_member2 *this);
 unk0 *__thiscall initUnk(unk0 *this);
 int __thiscall sub_1000A1C0(unk0 *this); // idb
-HRESULT __thiscall meth_1000A1E0(unk0 *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9); // idb
-HRESULT __thiscall sub_1000A2C0(unk0 *this); // idb
-int __thiscall sub_1000A350(unk0 *this); // idb
-HRESULT __thiscall sub_1000A390(unk0 *this); // idb
-int __thiscall meth_1000A480(unk0 *this); // idb
-int __thiscall ReleaseD3D2_DDraw2_DDraw(unk0 *this); // idb
-int __thiscall SetCooperativeLevel(unk0 *this); // idb
-int __thiscall meth_1000A5D0(unk0 *this); // idb
-int __thiscall RestoreDisplayMode(unk0 *this); // idb
+HRESULT __thiscall meth_1000A1E0(
+    unk0 *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9); // idb
+HRESULT __thiscall sub_1000A2C0(unk0 *this);                                        // idb
+int __thiscall sub_1000A350(unk0 *this);                                            // idb
+HRESULT __thiscall sub_1000A390(unk0 *this);                                        // idb
+int __thiscall meth_1000A480(unk0 *this);                                           // idb
+int __thiscall ReleaseD3D2_DDraw2_DDraw(unk0 *this);                                // idb
+int __thiscall SetCooperativeLevel(unk0 *this);                                     // idb
+int __thiscall meth_1000A5D0(unk0 *this);                                           // idb
+int __thiscall RestoreDisplayMode(unk0 *this);                                      // idb
 HRESULT __thiscall meth_1000A820(unk0 *this);
 int __thiscall ReleaseDDraw2Surface(unk0 *this); // idb
 HRESULT __thiscall sub_1000A8D0(unk0 *this);
@@ -214,7 +233,7 @@ int __thiscall resetPalette(unk0 *this); // idb
 HRESULT __thiscall meth_1000AB70(unk0 *this);
 int __thiscall ReleaseDDrawSurface(unk0 *this); // idb
 HRESULT __thiscall sub_1000ADF0(unk0 *this);
-int __thiscall sub_1000AEA0(unk0 *this); // idb
+int __thiscall sub_1000AEA0(unk0 *this);     // idb
 HRESULT __thiscall flipSurfaces(unk0 *this); // idb
 HRESULT __thiscall sub_1000AFB0(unk0 *this);
 HRESULT __thiscall sub_1000B150(unk0 *this);
@@ -222,15 +241,15 @@ HRESULT __thiscall sub_1000B170(unk0 *this);
 HRESULT __thiscall sub_1000B1F0(unk0 *this);
 HRESULT __thiscall sub_1000B220(unk0 *this, int a2); // idb
 int __thiscall sub_1000B280(int this, _DWORD *a2);
-int __thiscall sub_1000B2C0(unk0 *this); // idb
-int __thiscall sub_1000B350(unk0 *this, _DWORD *a2); // idb
-HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4); // idb
-HRESULT __thiscall meth_1000B4D0(unk0 *this, int a2, int a3, int a4, int a5); // idb
-HANDLE __cdecl sub_1000B680(int a1, LPCSTR filepath, int cx_, int cy, int a5); // idb
-int __cdecl sub_1000B790(int, LPCSTR name); // idb
+int __thiscall sub_1000B2C0(unk0 *this);                                                   // idb
+int __thiscall sub_1000B350(unk0 *this, _DWORD *a2);                                       // idb
+HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4);                     // idb
+HRESULT __thiscall meth_1000B4D0(unk0 *this, int a2, int a3, int a4, int a5);              // idb
+HANDLE __cdecl sub_1000B680(int a1, LPCSTR filepath, int cx_, int cy, int a5);             // idb
+int __cdecl sub_1000B790(int, LPCSTR name);                                                // idb
 int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc); // idb
-int __cdecl sub_1000B940(_DWORD *a1, COLORREF color); // idb
-int __cdecl sub_1000BA40(int, COLORREF color); // idb
+int __cdecl sub_1000B940(_DWORD *a1, COLORREF color);                                      // idb
+int __cdecl sub_1000BA40(int, COLORREF color);                                             // idb
 void sub_1000BA70();
 void __cdecl sub_1000BAF0(SIZE_T *a1, int a2, int a3, int a4);
 void __cdecl sub_1000BEA0(int a1, int *a2);
@@ -247,7 +266,7 @@ int sub_1000C6D0();
 int __cdecl sub_1000C6E0(int a1);
 int __cdecl sub_1000CA90(int a1);
 int __cdecl sub_1000CBE0(float, int); // idb
-int __cdecl sub_1000E950(float); // idb
+int __cdecl sub_1000E950(float);      // idb
 __int16 __fastcall sub_1000EF80(int a1, int a2, float *a3, int a4);
 int *sub_1000F460();
 void __cdecl sub_1000F480(int a1, int a2, int a3, _WORD *a4, _WORD *a5);
@@ -259,7 +278,7 @@ double __cdecl sub_10010960(int a1);
 double __cdecl sub_10010970(int a1);
 double __cdecl sub_10010980(int a1);
 double __cdecl sub_10010990(int a1);
-int *__cdecl sub_100109A0(int a1, double (__cdecl *a2)(_DWORD *));
+int *__cdecl sub_100109A0(int a1, double(__cdecl *a2)(_DWORD *));
 int __cdecl sub_10010B00(int, int, float); // idb
 void __cdecl sub_10010BF0(int a1, int a2, int a3, int a4, int a5, float a6, float a7, int a8);
 float *__cdecl sub_10010D10(float *a1);
@@ -320,45 +339,64 @@ __unk0 *__cdecl sub_1001A570(_DWORD *a1, int a2, int a3, int a4, __unk0 *a5, IID
 IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, __unk0 *a3);
 int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4);
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8);
-HRESULT __cdecl sub_1001A790(int a1, int a2, int a3, int a4, int a5, int a6, int a7, gameSpecificUnk1 **a8, int **a9, int ***a10); // idb
+HRESULT __cdecl sub_1001A790(int a1,
+                             int a2,
+                             int a3,
+                             int a4,
+                             int a5,
+                             int a6,
+                             int a7,
+                             gameSpecificUnk1 **a8,
+                             int **a9,
+                             int ***a10); // idb
 int __cdecl sub_1001A870(unsigned int a1);
 int __cdecl sub_1001A8C0(int a1);
 HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat);
 BOOL __stdcall ddrawEnumerateCallback(GUID *, LPSTR, LPSTR, LPVOID); // idb
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2);
 int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2);
-int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, #469 *desc, #469 *a5, LPVOID userArg); // idb
-int __thiscall sub_1001AC60(__unk0 *this); // idb
+int __stdcall d3d2enumDevicesCallback(GUID *a1,
+                                      LPSTR lpDeviceDescription,
+                                      LPSTR deviceName,
+                                      #469 * desc,
+                                      #469 * a5,
+                                      LPVOID userArg);                                     // idb
+int __thiscall sub_1001AC60(__unk0 *this);                                                 // idb
 int __thiscall sub_1001AC80(__unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5); // idb
 BOOL __thiscall sub_1001ACF0(__unk0 *this, int iid);
 BOOL __thiscall sub_1001AD50(__unk0 *this, int width, int height, int bitDepth); // idb
 BOOL __thiscall sub_1001AD90(_DWORD *this);
 bool __thiscall sub_1001ADA0(_BYTE *this, const void *a2);
-int __thiscall sub_1001ADE0(#478 *this, GUID *a2, char *Source, char *a4, #469 *a5, #469 *a6); // idb
+int __thiscall sub_1001ADE0(
+    #478 * this, GUID *a2, char *Source, char *a4, #469 * a5, #469 * a6); // idb
 void __thiscall sub_1001AEE0(int this);
 HRESULT __thiscall sub_1001AF20(int a1, IDirect3DDevice2 *dev); // idb
 int __thiscall sub_1001AFB0(int *this);
 int __thiscall sub_1001B030(_DWORD *this, int a2);
-HRESULT __thiscall sub_1001B090(#468 *this, GUID *lpGUID, char *Source, char *a4); // idb
+HRESULT __thiscall sub_1001B090(#468 * this, GUID *lpGUID, char *Source, char *a4); // idb
 char __thiscall sub_1001B280(void **this);
 int __thiscall sub_1001B2D0(gameSpecificUnk1 *this, const void *a2); // idb
-HRESULT __thiscall sub_1001B320(_DWORD *this, IDirectDraw *ddraw); // idb
+HRESULT __thiscall sub_1001B320(_DWORD *this, IDirectDraw *ddraw);   // idb
 int __thiscall sub_1001B3B0(int *this);
 int __thiscall sub_1001B430(_DWORD *this, int a2);
-__unk0 *__thiscall sub_1001B490(_DWORD *this, int a2, int a3, int a4, int a5, __unk0 **a6, __unk0 *a7);
-int __thiscall sub_1001B510(#468 *this, #462 *a2); // idb
+__unk0 *__thiscall sub_1001B490(
+    _DWORD *this, int a2, int a3, int a4, int a5, __unk0 **a6, __unk0 *a7);
+int __thiscall sub_1001B510(#468 * this, #462 * a2); // idb
 int __thiscall sub_1001B5A0(int *this);
-int __thiscall sub_1001B630(#478 *this, int a2); // idb
+int __thiscall sub_1001B630(#478 * this, int a2); // idb
 int __thiscall sub_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4);
 int __thiscall sub_1001B7C0(__unk0 *this, const void *a2, _DWORD a3, int a4, int a5);
-__unk0 *__thiscall sub_1001B880(__unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8);
+__unk0 *__thiscall sub_1001B880(
+    __unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8);
 GUID *__thiscall getDirectDrawLPGUID(gameSpecificUnk1 *this);
 HRESULT sub_1001B970();
 HRESULT ddrawEnum();
 // int __thiscall unknown_libname_2(_DWORD); weak
-int __cdecl sub_1001BA10(#468 *a1); // idb
-gameSpecificUnk1 *__cdecl sub_1001BA70(const void *a1, gameSpecificUnk1 **a2, gameSpecificUnk1 *a3); // idb
-int sub_1001BAD0(); // weak
+int __cdecl sub_1001BA10(#468 * a1); // idb
+gameSpecificUnk1 *__cdecl sub_1001BA70(const void *a1,
+                                       gameSpecificUnk1 **a2,
+                                       gameSpecificUnk1 *a3); // idb
+int sub_1001BAD0();                                           // weak
 int sub_1001BAE0();
 int __cdecl sub_1001BB00(int a1, int a2, int a3, int a4); // idb
 int sub_1001BB80();
@@ -382,7 +420,7 @@ int sub_1001C640();
 int __cdecl sub_1001C690(unsigned int a1);
 _DWORD *__cdecl sub_1001C7A0(_DWORD *a1);
 int *__cdecl sub_1001C7F0(int *a1);
-int (__cdecl *__cdecl sub_1001C820(int a1, int a2))(int);
+int(__cdecl *__cdecl sub_1001C820(int a1, int a2))(int);
 int __cdecl sub_1001CA10(float *a1);
 int __cdecl sub_1001CA90(float *a1);
 int __cdecl sub_1001CB40(int a1);
@@ -468,20 +506,68 @@ char __cdecl sub_100254F0(int a1, int a2, int a3, int a4, int a5, float a6, floa
 // int __cdecl _RTC_NumErrors();
 int __cdecl sub_10025800(int a1, int a2);
 char *__cdecl sub_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
-char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, _DWORD *a11, char a12, int a13, unsigned __int8 a14, unsigned __int8 a15, unsigned __int8 a16, char a17, unsigned __int8 a18, unsigned __int8 a19, unsigned __int8 a20, char a21, int a22);
+char __cdecl sub_10025AB0(_DWORD *a1,
+                          int a2,
+                          int a3,
+                          int a4,
+                          int a5,
+                          int a6,
+                          int a7,
+                          int a8,
+                          int a9,
+                          int a10,
+                          _DWORD *a11,
+                          char a12,
+                          int a13,
+                          unsigned __int8 a14,
+                          unsigned __int8 a15,
+                          unsigned __int8 a16,
+                          char a17,
+                          unsigned __int8 a18,
+                          unsigned __int8 a19,
+                          unsigned __int8 a20,
+                          char a21,
+                          int a22);
 unsigned int __cdecl sub_10027B10(unsigned __int16 a1);
 int __cdecl sub_10027B90(int a1, int a2, int a3);
 int __cdecl sub_10027C00(int a1);
-int __cdecl sub_10027C60(unsigned __int8 *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15);
+int __cdecl sub_10027C60(unsigned __int8 *a1,
+                         int a2,
+                         int a3,
+                         int a4,
+                         int a5,
+                         int a6,
+                         int a7,
+                         int a8,
+                         int a9,
+                         int a10,
+                         int a11,
+                         int a12,
+                         int a13,
+                         int a14,
+                         int a15);
 int __cdecl sub_10028200(_DWORD *a1, int a2, int a3);
 int __cdecl TIDFromTexture(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
 int __cdecl sub_10028630(int a1);
 int *__cdecl sub_10028720(int *a1, int *a2, int a3, int a4);
-unsigned __int8 *__cdecl sub_10028860(#506 *a1); // idb
+unsigned __int8 *__cdecl sub_10028860(#506 * a1); // idb
 int __cdecl sub_10028A10(int a1, int *a2);
 int __cdecl sub_10028B20(int, float, int); // idb
-int __cdecl sub_10028BF0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14);
+int __cdecl sub_10028BF0(int a1,
+                         int a2,
+                         int a3,
+                         int a4,
+                         int a5,
+                         int a6,
+                         int a7,
+                         int a8,
+                         int a9,
+                         int a10,
+                         int a11,
+                         int a12,
+                         int a13,
+                         int a14);
 int __cdecl sub_10028C70(int a1);
 void *__cdecl sub_10028CA0(int a1);
 BOOL __cdecl sub_10028E00(LONG a1, char *a2);
@@ -513,7 +599,7 @@ HANDLE sub_1002A640();
 int sub_1002A740();
 void sub_1002A7A0();
 HMODULE __cdecl loadEARDLL(int useEarpdsDll); // idb
-int __cdecl setupEAR(HWND hWnd); // idb
+int __cdecl setupEAR(HWND hWnd);              // idb
 int sub_1002AEA0();
 int sub_1002AEC0();
 int sub_1002AED0();
@@ -573,7 +659,23 @@ int sub_1002F460();
 int sub_1002F4C0();
 void sub_1002F690();
 int sub_1002F8F0();
-int __cdecl sub_1002F900(unsigned int *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17);
+int __cdecl sub_1002F900(unsigned int *a1,
+                         int a2,
+                         int a3,
+                         int a4,
+                         int a5,
+                         int a6,
+                         int a7,
+                         int a8,
+                         int a9,
+                         int a10,
+                         int a11,
+                         int a12,
+                         int a13,
+                         int a14,
+                         int a15,
+                         int a16,
+                         int a17);
 int __cdecl sub_1002FAC0(int a1);
 int __cdecl sub_1002FAF0(int a1);
 _DWORD *__cdecl sub_1002FB20(unsigned int a1, int a2);
@@ -586,12 +688,33 @@ double *__cdecl sub_10030670(double *a1, double *a2, double *a3);
 float *__cdecl sub_100306C0(float *a1, float *a2, float *a3);
 _DWORD *__cdecl sub_100307A0(int a1, _DWORD *a2);
 _DWORD *__cdecl sub_100307D0(_DWORD *a1);
-struct_a1_1 *__cdecl guFrustumF(struct_a1_1 *a1, float a2, float a3, float a4, float a5, float a6, float a7);
+struct_a1_1 *__cdecl guFrustumF(
+    struct_a1_1 *a1, float a2, float a3, float a4, float a5, float a6, float a7);
 int __cdecl sub_10030930(int a1, int a2, float a3, float a4, float a5, float a6);
 int __cdecl sub_100309A0(int, float, float, float, float, float, float, float, float, float); // idb
-__int64 __cdecl sub_10030B50(int a1, int a2, int a3, float a4, float a5, float a6, float a7, float a8, float a9, float a10, float a11, float a12, float a13, float a14, float a15, float a16, float a17, float a18, int a19, int a20);
+__int64 __cdecl sub_10030B50(int a1,
+                             int a2,
+                             int a3,
+                             float a4,
+                             float a5,
+                             float a6,
+                             float a7,
+                             float a8,
+                             float a9,
+                             float a10,
+                             float a11,
+                             float a12,
+                             float a13,
+                             float a14,
+                             float a15,
+                             float a16,
+                             float a17,
+                             float a18,
+                             int a19,
+                             int a20);
 int __cdecl sub_10030DE0(double); // idb
-int __cdecl sub_10030E20(int, int, float, float, float, float, float, float, float, float, float); // idb
+int __cdecl sub_10030E20(
+    int, int, float, float, float, float, float, float, float, float, float); // idb
 float *__cdecl sub_10030EE0(int a1, float a2, float a3, float a4, float a5);
 int __cdecl sub_100310F0(int, float, int, int); // idb
 _DWORD *__cdecl sub_10031140(_DWORD *a1, int a2, int a3, int a4);
@@ -666,11 +789,11 @@ int __cdecl sub_10036BD0(int a1, int a2);
 __int16 __cdecl sub_10036C00(int a1);
 int __cdecl sub_10037030(int a1);
 int __cdecl sub_10037070(int a1);
-int __cdecl sub_100370D0(char *a1); // idb
+int __cdecl sub_100370D0(char *a1);                               // idb
 int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex); // idb
 void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCount);
 int __cdecl sub_10037930(int a1, _DWORD *a2, _DWORD *a3);
-int __cdecl ParseHNDFile(char *hndFilepath); // idb
+int __cdecl ParseHNDFile(char *hndFilepath);       // idb
 int __cdecl ParseHNDFileFromIndex(int trackIndex); // idb
 int __cdecl LoadTrack(int trackIndex);
 int __cdecl sub_10037E10(_DWORD *a1);
@@ -685,13 +808,13 @@ int __cdecl sub_10038410(int a1);
 void __cdecl sub_10038450(int a1, int a2);
 int __cdecl ParseTrackHeader(int outBuffer, CHK_File *fp);
 int __cdecl sub_10038B20(_BYTE *a1);
-HRESULT __cdecl SetupDirectPlayPlayer(#503 *u1); // idb
+HRESULT __cdecl SetupDirectPlayPlayer(#503 * u1); // idb
 int sub_10038E80();
 // _DWORD *unknown_libname_7();
 // void __cdecl unknown_libname_8(); idb
 int sub_10038EC0();
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code); // idb
-int sub_10039000(); // weak
+int sub_10039000();                                       // weak
 void __thiscall sub_10039020(int this);
 int __thiscall sub_10039200(int this);
 int sub_100397C0();
@@ -710,9 +833,9 @@ float *__cdecl sub_1003AC30(float *a1, float *a2, float *a3);
 double __cdecl sub_1003AC90(float *a1, float *a2);
 float *__cdecl sub_1003ACC0(float *a1, float *a2);
 int __cdecl sub_1003ACE0(int, int, float); // idb
-int __cdecl sub_1003AD10(int, float); // idb
+int __cdecl sub_1003AD10(int, float);      // idb
 int __cdecl sub_1003AD40(int, int, float); // idb
-int __cdecl sub_1003AD70(int, float); // idb
+int __cdecl sub_1003AD70(int, float);      // idb
 float *__cdecl sub_1003ADA0(float *a1, float *a2, float *a3);
 void __cdecl sub_1003AE50(float *a1);
 float *__cdecl sub_1003AEE0(float *a1, float *a2, float *a3);
@@ -721,7 +844,7 @@ float *__cdecl sub_1003AF40(float *a1, float *a2, float *a3);
 float *__cdecl sub_1003AF70(float *a1, float *a2);
 int __cdecl sub_1003AFA0(int, int, int, float); // idb
 int __cdecl sub_1003AFE0(int, int, int, float); // idb
-int __cdecl sub_1003B020(int, int, float); // idb
+int __cdecl sub_1003B020(int, int, float);      // idb
 float *__cdecl sub_1003B050(float *a1, float *a2, float *a3);
 _DWORD *__cdecl sub_1003B090(_DWORD *a1);
 double __cdecl sub_1003B0A0(float *a1, float *a2);
@@ -749,7 +872,7 @@ int sub_1003C150();
 int sub_1003C1E0();
 int sub_1003C230();
 int sub_1003C260();
-int __stdcall sub_1003C3A0(int, int, int, LPCVOID pMem); // idb
+int __stdcall sub_1003C3A0(int, int, int, LPCVOID pMem);                              // idb
 int __stdcall sub_1003C430(IID *iid, int a2, SIZE_T dwBytes, int a4, int a5, int a6); // idb
 HRESULT __cdecl sub_1003C520(LPVOID *a1);
 int sub_1003C550();
@@ -771,7 +894,7 @@ int sub_1003D070();
 int __cdecl sub_1003D0B0(SIZE_T dwBytes, LPDWORD a2); // idb
 unsigned int __cdecl sub_1003D130(_DWORD *a1);
 int __cdecl sub_1003D180(SIZE_T dwBytes, int, int); // idb
-int __cdecl sub_1003D210(HWND hWnd, int, int); // idb
+int __cdecl sub_1003D210(HWND hWnd, int, int);      // idb
 SIZE_T __cdecl sub_1003D3A0(SIZE_T dwBytes, int a2, LPCSTR lpString, int a4, int a5);
 int __cdecl sub_1003D480(_DWORD *a1, SIZE_T *a2);
 int __cdecl sub_1003D7B0(_DWORD *a1);
@@ -804,8 +927,8 @@ int sub_1003E510();
 int __cdecl sub_1003E680();
 int __cdecl sub_1003E7A0(int a1);
 int __cdecl sub_1003E840(int a1);
-int sub_1003E8B0(); // weak
-int sub_1003E8C0(); // weak
+int sub_1003E8B0();            // weak
+int sub_1003E8C0();            // weak
 int __cdecl sub_1003E8D0(int); // weak
 int __cdecl sub_1003E920(int); // weak
 int __cdecl sub_1003E950(int a1);
@@ -939,7 +1062,7 @@ int sub_10043650();
 int sub_100436B0();
 void __cdecl __noreturn sub_10043710(int a1);
 int __cdecl sub_10043760(int); // weak
-int sub_100437B0(); // weak
+int sub_100437B0();            // weak
 int __cdecl sub_100437D0(int a1);
 int __cdecl sub_10043810(LPCVOID pMem); // idb
 int sub_10043A00();
@@ -1085,7 +1208,8 @@ double __thiscall sub_10047CE0(float *this, int a2);
 int __thiscall sub_10047D10(_DWORD *this);
 int __thiscall sub_10047D30(_DWORD *this);
 __int16 __thiscall sub_10047EB0(int this, const char *a2, int a3, char a4, _DWORD *a5);
-__int16 __thiscall sub_10047FB0(int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, __int16 a9);
+__int16 __thiscall sub_10047FB0(
+    int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, __int16 a9);
 int __thiscall sub_10048010(_BYTE *this);
 int __thiscall sub_10048060(void *this);
 int __thiscall sub_100480A0(int this);
@@ -1219,7 +1343,8 @@ char sub_10060DE0();
 int __cdecl sub_10060E00(int a1);
 int sub_10060E90(void); // weak
 _BYTE *__cdecl sub_10060EA0(PBITMAP pBitmap);
-_BYTE *__cdecl sub_10060F00(_BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes);
+_BYTE *__cdecl sub_10060F00(
+    _BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes);
 int __cdecl sub_10060F70(int a1, int a2, int a3);
 int *__cdecl sub_10060FB0(int a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, int *a6);
 int sub_10061000();
@@ -1259,12 +1384,12 @@ __int16 __cdecl sub_10065B20(int a1, float a2);
 void __cdecl sub_10065C80(int a1, int a2, float a3, float a4);
 int __cdecl MakeEnemyCarColorPanels_0(size_t size); // idb
 int __cdecl sub_100661B0(int a1, int a2);
-int __thiscall sub_100662A0(size_t Size); // idb
+int __thiscall sub_100662A0(size_t Size);   // idb
 void __thiscall sub_100664C0(_DWORD *this); // idb
 void sub_10066510();
 int __cdecl sub_10066620(const void *, const void *); // idb
-int *__thiscall sub_10066650(_DWORD *this); // idb
-void __thiscall sub_10066E90(_DWORD *this); // idb
+int *__thiscall sub_10066650(_DWORD *this);           // idb
+void __thiscall sub_10066E90(_DWORD *this);           // idb
 char *__cdecl sub_10067880(const void **a1, char *a2, int a3);
 void **__cdecl sub_10067900(void **a1, char *a2);
 char *__cdecl sub_10067940(int a1);
@@ -1287,7 +1412,7 @@ size_t __cdecl sub_10068260(int a1, int a2);
 size_t MakeEnemyCarColorPanels();
 void __thiscall sub_100683C0(_DWORD *this);
 int sub_100683D0();
-int __thiscall sub_10068400(_DWORD *this); // idb
+int __thiscall sub_10068400(_DWORD *this);  // idb
 void __thiscall sub_10068EF0(_DWORD *this); // idb
 // int __usercall sub_10069330@<eax>(int a1@<ecx>, double a2@<st0>);
 int __thiscall sub_10069370(_DWORD *this); // idb
@@ -1306,14 +1431,14 @@ int sub_10069A50();
 void *sub_10069A60();
 // void __cdecl unknown_libname_10(); idb
 void *__thiscall sub_10069A90(void *this);
-int __thiscall sub_10069AA0(_DWORD *this, int a2); // idb
+int __thiscall sub_10069AA0(_DWORD *this, int a2);                              // idb
 int __thiscall sub_10069B10(_DWORD *this, int a2, int a3, __int16 a4, char a5); // idb
 int __thiscall sub_10069BC0(_WORD *this, int a2, int a3);
 char __thiscall sub_10069C30(_WORD *this, int a2, int a3);
 int __thiscall meth_10069C90(_DWORD *this);
 _DWORD *__thiscall sub_10069DE0(_DWORD *this, _DWORD *a2);
 int __thiscall ReadBossRallyCfg(_WORD *this, const char *cfgFilename); // idb
-FILE *__thiscall WriteConfigFile(_DWORD *this, char *FileName); // idb
+FILE *__thiscall WriteConfigFile(_DWORD *this, char *FileName);        // idb
 unsigned int ReadInstallDirectory();
 int sub_1006A980();
 int __cdecl sub_1006A990(int a1);
@@ -1394,7 +1519,8 @@ BOOL __cdecl sub_10071B60(const void *a1, const void *a2);
 BOOL sub_10071B80();
 int __cdecl sub_10071BF0(_DWORD *a1);
 int sub_10071C10();
-int __cdecl sub_10071F40(_DWORD *a1, char a2, char a3, char a4, char a5, char a6, char a7, int a8, int a9);
+int __cdecl sub_10071F40(
+    _DWORD *a1, char a2, char a3, char a4, char a5, char a6, char a7, int a8, int a9);
 int __cdecl sub_10072030(_DWORD *a1, char a2, int a3, __int16 a4);
 int __cdecl sub_10072080(_DWORD *a1, char a2);
 int __cdecl sub_10072110(_DWORD *a1, char a2);
@@ -1548,7 +1674,8 @@ char __cdecl sub_10078420(int a1);
 char __cdecl sub_100786E0(int a1);
 LPDIRECTINPUTDEVICEA sub_10078BC0();
 __int64 sub_10078C10();
-int __cdecl sub_10078C30(IDirectInputDevice2A *diDevice2A, GUID *guid, int dwObj, int dwHow, int a5, int a6);
+int __cdecl sub_10078C30(
+    IDirectInputDevice2A *diDevice2A, GUID *guid, int dwObj, int dwHow, int a5, int a6);
 int __cdecl sub_10078C80(int *a1, int a2, int a3, int a4, int a5);
 int sub_10078CD0();
 int sub_10078DB0();
@@ -1571,7 +1698,22 @@ BOOL sub_10079720();
 HINSTANCE sub_10079740();
 int __cdecl RallyMain(int, int, char *Str); // idb
 int sub_100798F0();
-int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam, int a3, int a14, HWND *a15, unk0 *a16); // idb
+int __cdecl RallyCreateWindow(DWORD dwExStyle,
+                              LPCSTR lpClassName,
+                              LPCSTR lpWindowName,
+                              DWORD dwStyle,
+                              int X,
+                              int Y,
+                              int nWidth,
+                              int nHeight,
+                              HWND hWndParent,
+                              HMENU hMenu,
+                              HINSTANCE hInstance,
+                              LPVOID lpParam,
+                              int a3,
+                              int a14,
+                              HWND *a15,
+                              unk0 *a16); // idb
 int sub_10079C40();
 LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 LRESULT __cdecl handle_WM_ACTIVATE_justReturn(HWND hWnd, WPARAM wParam, LPARAM lParam);
@@ -1592,8 +1734,8 @@ int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam); // idb
 LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam);
 LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lParam);
 int __cdecl sub_1007A6A0(HWND hWnd, intptr_t dwNewLong); // idb
-int __cdecl resetWindowLong_USERDATA(HWND hWnd); // idb
-int __cdecl sub_1007A710(const void *, const void *); // idb
+int __cdecl resetWindowLong_USERDATA(HWND hWnd);         // idb
+int __cdecl sub_1007A710(const void *, const void *);    // idb
 gameSpecificUnk1 *__cdecl sub_1007A7D0(const void *a1);
 int sub_1007A840();
 int sub_1007A940();
@@ -1654,8 +1796,8 @@ size_t __cdecl fwriteLock(void *Buffer, size_t ElementSize, size_t ElementCount,
 // _DWORD __cdecl shortsort(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // _DWORD __cdecl swap(_DWORD, _DWORD, _DWORD); weak
 // int sscanf(const char *const Buffer, const char *const Format, ...);
-_DWORD __cdecl sub_1007E54D(_DWORD); // weak
-_DWORD __cdecl sub_1007E5FD(_DWORD); // weak
+_DWORD __cdecl sub_1007E54D(_DWORD);         // weak
+_DWORD __cdecl sub_1007E5FD(_DWORD);         // weak
 _DWORD __cdecl sub_1007E6AD(_DWORD, _DWORD); // weak
 // double __cdecl asin(double X);
 // _DWORD __cdecl sub_1007E76D(_DWORD, _DWORD); weak
@@ -1926,2861 +2068,1175 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 //-------------------------------------------------------------------------
 // Data declarations
 
-DIDATAFORMAT g_diMouseDataFormat = { 24u, 16u, 2u, 16u, 7u, &off_1007ACB0 };
-DIDATAFORMAT g_lpcDiDataFormat = { 24u, 16u, 2u, 256u, 256u, &off_1007AD40 };
-DIDATAFORMAT g_diDataFormat = { 24u, 16u, 1u, 272u, 164u, &off_1007BD60 };
-int (__thiscall *off_1008F150)(void *Block, char) = &sub_100085C0; // weak
-int dword_1008F538 = -1363573792; // weak
-int (__thiscall *off_1008F6B8)(void *Block, char) = &sub_100478A0; // weak
-int (__thiscall *off_1008F6F8)(void *Block, char) = &sub_100484C0; // weak
-int (__thiscall *off_1008F700)(void *Block, char) = &sub_10048850; // weak
-int (__thiscall *off_1008F728)(void *Block, char) = &sub_1005B0A0; // weak
-int (__thiscall *off_1008F758)(void *Block, char) = &sub_1005B8D0; // weak
-int (__thiscall *off_1008F788)(void *Block, char) = &sub_1005CBF0; // weak
-_UNKNOWN unk_1008FA64; // weak
-GUID CLSID_IDirectDraw2 = { 3014063072u, 11075u, 4559u, { 162u, 222u, 0u, 170u, 0u, 185u, 51u, 86u } }; // idb
-GUID CLSID_IDirectDrawSurface2 = { 1468029061u, 28396u, 4559u, { 148u, 65u, 168u, 35u, 3u, 193u, 14u, 39u } }; // idb
-GUID CLSID_IDirectDrawSurface3 = { 3657715200u, 27058u, 4560u, { 161u, 213u, 0u, 170u, 0u, 184u, 223u, 187u } }; // idb
-GUID CLSID_IDirectDrawSurface4 = { 187401776u, 44341u, 4560u, { 142u, 166u, 0u, 96u, 151u, 151u, 234u, 91u } }; // idb
-GUID IID_IDirect3D2 = { 1789796033u, 26154u, 4560u, { 136u, 157u, 0u, 170u, 0u, 187u, 183u, 106u } }; // idb
-GUID CLSID_IDirect3DRGBDevice = { 2758171744u, 9843u, 4559u, { 163u, 26u, 0u, 170u, 0u, 185u, 51u, 86u } }; // idb
-GUID CLSID_IDirect3DMMXDevice = { 2283358625u, 55027u, 4560u, { 137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u } }; // idb
-GUID CLSID_IDirect3DTexture2 = { 2468877570u, 36088u, 4560u, { 137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u } }; // idb
-GUID CLSID_IDirectInputDevice2A = { 1497687682u, 51502u, 4559u, { 191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u } }; // idb
-GUID CLSID_GUID_SysMouse = { 1864182624u, 54688u, 4559u, { 191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u } }; // idb
-GUID CLSID_GUID_SysKeyboard = { 1864182625u, 54688u, 4559u, { 191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u } }; // idb
-GUID CLSID_GUID_Square = { 324279330u, 36403u, 4560u, { 154u, 208u, 0u, 160u, 201u, 160u, 110u, 53u } }; // idb
-GUID CLSID_GUID_Spring = { 324279335u, 36403u, 4560u, { 154u, 208u, 0u, 160u, 201u, 160u, 110u, 53u } }; // idb
-const IID IID_IDirectPlay3A = { 322895425u, 13020u, 4560u, { 156u, 251u, 0u, 160u, 201u, 10u, 67u, 203u } }; // idb
-IID IID_IDirectPlay4A = { 179422513u, 18245u, 4561u, { 167u, 161u, 0u, 0u, 248u, 3u, 171u, 252u } }; // weak
-const IID CLSID_DirectPlay = { 3521867040u, 35107u, 4560u, { 157u, 151u, 0u, 160u, 201u, 10u, 67u, 203u } }; // idb
-IID IID_IDirectPlay2 = { 1750844416u, 40236u, 4559u, { 169u, 205u, 0u, 170u, 0u, 104u, 134u, 227u } }; // weak
-IID IID_IDirectPlay2A = { 921263840u, 34167u, 4559u, { 150u, 12u, 0u, 128u, 199u, 83u, 78u, 130u } }; // weak
-IID DPSPGUID_SERIAL = { 253585504u, 35033u, 4559u, { 156u, 78u, 0u, 160u, 201u, 5u, 66u, 94u } }; // weak
-IID DPSPGUID_MODEM = { 1156228960u, 52072u, 4559u, { 156u, 78u, 0u, 160u, 201u, 5u, 66u, 94u } }; // weak
-IID IID_IDirectPlayLobby2A = { 464826240u, 41731u, 4560u, { 156u, 79u, 0u, 160u, 201u, 5u, 66u, 94u } }; // weak
-const IID IID_IDirectPlayLobby3A = { 766977169u, 25900u, 4561u, { 167u, 168u, 0u, 0u, 248u, 3u, 171u, 252u } }; // idb
-const IID CLSID_DirectPlayLobby = { 803797008u, 45733u, 4560u, { 167u, 135u, 0u, 0u, 248u, 3u, 171u, 252u } }; // idb
-int dword_100909E0 = -153304576; // weak
-GUID CLSID_CLSID_DirectSound = { 1205131590u, 25320u, 4559u, { 147u, 188u, 68u, 69u, 83u, 84u, 0u, 0u } }; // idb
-GUID CLSID_IDirectSound = { 664468099u, 18817u, 4558u, { 165u, 33u, 0u, 32u, 175u, 11u, 229u, 96u } }; // idb
-int g_Playmusic = 2; // weak
-_DWORD dword_100940A8 = 100; // idb
-char aCdaudio[8] = "cdaudio"; // weak
-char kFilepathErrorLog[] = "c:\\RallyError.txt"; // idb
-char kFileModeWrite[] = "w"; // idb
-char kFileModeReadBinary[] = "rb"; // idb
-char aChkFreadopenSz[] = "CHK_FReadOpen():szName"; // idb
-char aChkFreadopenPf[] = "CHK_FReadOpen():pfil"; // idb
-int dword_10094294 = -1; // weak
-int dword_10094298 = -1; // weak
-CHAR aReturnedToRace[] = " returned to race lobby."; // idb
-CHAR aLeftTheRace[] = " left the race."; // idb
-char aBootedYouFromT[27] = " booted you from the game."; // weak
-char asc_10094334[3] = ": "; // weak
-int g_HandlingType = 1; // weak
-int g_TransmissionType = 1; // weak
-int g_SuspensionType = 1; // weak
-void *g_UltraCarHeader = (void *)2; // idb
-CHAR kDebugStrCheckPreviousApp[] = "CheckPrevious App - Another instance of this app is already running.\n"; // idb
-CHAR kClassName[] = "BossRally"; // idb
-CHAR kWindowName[] = "Boss Rally"; // idb
-char aBsuspension[] = "bsuspension="; // idb
-char aBtire[] = "btire="; // idb
-char aBcar[] = "bcar="; // idb
-char aCplayers[] = "cPlayers="; // idb
-char aSzplayername[] = "szPlayerName="; // idb
-char aD3dinvsrcalpha[] = "D3DInvSrcAlpha="; // idb
-char aD3dwaitflipdon[] = "D3DWaitFlipDone="; // idb
-char aD3dwaitcanflip[] = "D3DWaitCanFlip="; // idb
-char aD3dclearzbuffe[] = "D3DClearZBuffer="; // idb
-char aD3dalwayssquar[] = "D3DAlwaysSquareTextures="; // idb
-char aD3dalphacompar[] = "D3DAlphaCompare="; // idb
-char aPlaysfx[] = "PlaySFX="; // idb
-char aPlaymusic[] = "PlayMusic="; // idb
-char aRunbenchmark[] = "RunBenchmark="; // idb
-char aD3ddrawcarshad[] = "D3DDrawCarShadow="; // idb
-char aSpeedsensitive[] = "SpeedSensitive="; // idb
-char aInterpolate[] = "Interpolate="; // idb
-char aSfxdir[] = "SFXDir="; // idb
-char aCardir[] = "CarDir="; // idb
-char aTrackdir[] = "TrackDir="; // idb
-char aTransmissionty[] = "TransmissionType="; // idb
-char aTiretype[] = "TireType="; // idb
-char aSuspensiontype[] = "SuspensionType="; // idb
-char aHandlingtype[] = "HandlingType="; // idb
-char aReadjoystick[] = "ReadJoystick="; // idb
-char aGamemode[] = "gameMode="; // idb
-char aChosenweather[] = "chosenWeather="; // idb
-char aChosencar[] = "chosenCar="; // idb
-char aChosentrack[] = "chosenTrack="; // idb
-char SubStr[] = "NetworkPlay="; // idb
-char aBossrallyIni[14] = "BossRally.ini"; // weak
-char kErrorMessageCleanupNameNameTooLong[] = "CleanupName: Name is greater than 64 bytes. Memory Corrupted!"; // idb
-char aPod[] = "POD"; // idb
-char aAddNameIsTooLo[] = "Add: Name is too long to be a pod name."; // idb
-char aWb[] = "wb"; // idb
-char aFileReadFailur[] = "File read failure"; // idb
-_UNKNOWN unk_100946C8; // weak
-_UNKNOWN unk_1009B4C8; // weak
-_UNKNOWN unk_100A22D0; // weak
-_UNKNOWN unk_100A4170; // weak
-char byte_100A5FEF[129] =
-{
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\r',
-  '\x16',
-  '\x0E',
-  '\x0F',
-  '\v',
-  '\x10',
-  '\x15',
-  '\v',
-  '\v',
-  '\x18',
-  '\x12',
-  '\n',
-  '\x11',
-  '\v',
-  '\x17',
-  '\t',
-  '\0',
-  '\x01',
-  '\x02',
-  '\x03',
-  '\x04',
-  '\x05',
-  '\x06',
-  '\a',
-  '\b',
-  '\x14',
-  '\x13',
-  '\v',
-  '\x19',
-  '\v',
-  '\f',
-  '\x1A',
-  '\x1C',
-  '\x1D',
-  '\x1E',
-  '\x1F',
-  ' ',
-  '!',
-  '\"',
-  '#',
-  '$',
-  '%',
-  '&',
-  '\'',
-  '(',
-  ')',
-  '*',
-  '+',
-  ',',
-  '-',
-  '.',
-  '/',
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '\v',
-  '\v',
-  '\v',
-  '\v',
-  '\v',
-  '\v',
-  '\x1C',
-  '\x1D',
-  '\x1E',
-  '\x1F',
-  ' ',
-  '!',
-  '\"',
-  '#',
-  '$',
-  '%',
-  '&',
-  '\'',
-  '(',
-  ')',
-  '*',
-  '+',
-  ',',
-  '-',
-  '.',
-  '/',
-  '0',
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '\v',
-  '\v',
-  '\v',
-  '\v',
-  '\v',
-  '\v'
-}; // idb
-int dword_100A6070[] = { 0 }; // weak
-int dword_100A60E0[] = { 0 }; // weak
-int dword_100A6150[] = { 0 }; // weak
-int dword_100A61C0[] = { 0 }; // weak
-int dword_100A6230 = 2; // weak
+DIDATAFORMAT g_diMouseDataFormat = {24u, 16u, 2u, 16u, 7u, &off_1007ACB0};
+DIDATAFORMAT g_lpcDiDataFormat = {24u, 16u, 2u, 256u, 256u, &off_1007AD40};
+DIDATAFORMAT g_diDataFormat = {24u, 16u, 1u, 272u, 164u, &off_1007BD60};
+int(__thiscall *off_1008F150)(void *Block, char) = &sub_100085C0; // weak
+int dword_1008F538 = -1363573792;                                 // weak
+int(__thiscall *off_1008F6B8)(void *Block, char) = &sub_100478A0; // weak
+int(__thiscall *off_1008F6F8)(void *Block, char) = &sub_100484C0; // weak
+int(__thiscall *off_1008F700)(void *Block, char) = &sub_10048850; // weak
+int(__thiscall *off_1008F728)(void *Block, char) = &sub_1005B0A0; // weak
+int(__thiscall *off_1008F758)(void *Block, char) = &sub_1005B8D0; // weak
+int(__thiscall *off_1008F788)(void *Block, char) = &sub_1005CBF0; // weak
+_UNKNOWN unk_1008FA64;                                            // weak
+GUID CLSID_IDirectDraw2 = {
+    3014063072u, 11075u, 4559u, {162u, 222u, 0u, 170u, 0u, 185u, 51u, 86u}}; // idb
+GUID CLSID_IDirectDrawSurface2 = {
+    1468029061u, 28396u, 4559u, {148u, 65u, 168u, 35u, 3u, 193u, 14u, 39u}}; // idb
+GUID CLSID_IDirectDrawSurface3 = {
+    3657715200u, 27058u, 4560u, {161u, 213u, 0u, 170u, 0u, 184u, 223u, 187u}}; // idb
+GUID CLSID_IDirectDrawSurface4 = {
+    187401776u, 44341u, 4560u, {142u, 166u, 0u, 96u, 151u, 151u, 234u, 91u}}; // idb
+GUID IID_IDirect3D2 = {
+    1789796033u, 26154u, 4560u, {136u, 157u, 0u, 170u, 0u, 187u, 183u, 106u}}; // idb
+GUID CLSID_IDirect3DRGBDevice = {
+    2758171744u, 9843u, 4559u, {163u, 26u, 0u, 170u, 0u, 185u, 51u, 86u}}; // idb
+GUID CLSID_IDirect3DMMXDevice = {
+    2283358625u, 55027u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
+GUID CLSID_IDirect3DTexture2 = {
+    2468877570u, 36088u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
+GUID CLSID_IDirectInputDevice2A = {
+    1497687682u, 51502u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_GUID_SysMouse = {
+    1864182624u, 54688u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_GUID_SysKeyboard = {
+    1864182625u, 54688u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_GUID_Square = {
+    324279330u, 36403u, 4560u, {154u, 208u, 0u, 160u, 201u, 160u, 110u, 53u}}; // idb
+GUID CLSID_GUID_Spring = {
+    324279335u, 36403u, 4560u, {154u, 208u, 0u, 160u, 201u, 160u, 110u, 53u}}; // idb
+const IID IID_IDirectPlay3A = {
+    322895425u, 13020u, 4560u, {156u, 251u, 0u, 160u, 201u, 10u, 67u, 203u}}; // idb
+IID IID_IDirectPlay4A = {
+    179422513u, 18245u, 4561u, {167u, 161u, 0u, 0u, 248u, 3u, 171u, 252u}}; // weak
+const IID CLSID_DirectPlay = {
+    3521867040u, 35107u, 4560u, {157u, 151u, 0u, 160u, 201u, 10u, 67u, 203u}}; // idb
+IID IID_IDirectPlay2 = {
+    1750844416u, 40236u, 4559u, {169u, 205u, 0u, 170u, 0u, 104u, 134u, 227u}}; // weak
+IID IID_IDirectPlay2A = {
+    921263840u, 34167u, 4559u, {150u, 12u, 0u, 128u, 199u, 83u, 78u, 130u}}; // weak
+IID DPSPGUID_SERIAL = {
+    253585504u, 35033u, 4559u, {156u, 78u, 0u, 160u, 201u, 5u, 66u, 94u}}; // weak
+IID DPSPGUID_MODEM = {
+    1156228960u, 52072u, 4559u, {156u, 78u, 0u, 160u, 201u, 5u, 66u, 94u}}; // weak
+IID IID_IDirectPlayLobby2A = {
+    464826240u, 41731u, 4560u, {156u, 79u, 0u, 160u, 201u, 5u, 66u, 94u}}; // weak
+const IID IID_IDirectPlayLobby3A = {
+    766977169u, 25900u, 4561u, {167u, 168u, 0u, 0u, 248u, 3u, 171u, 252u}}; // idb
+const IID CLSID_DirectPlayLobby = {
+    803797008u, 45733u, 4560u, {167u, 135u, 0u, 0u, 248u, 3u, 171u, 252u}}; // idb
+int dword_100909E0 = -153304576;                                            // weak
+GUID CLSID_CLSID_DirectSound = {
+    1205131590u, 25320u, 4559u, {147u, 188u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_IDirectSound = {
+    664468099u, 18817u, 4558u, {165u, 33u, 0u, 32u, 175u, 11u, 229u, 96u}}; // idb
+int g_Playmusic = 2;                                                        // weak
+_DWORD dword_100940A8 = 100;                                                // idb
+char aCdaudio[8] = "cdaudio";                                               // weak
+char kFilepathErrorLog[] = "c:\\RallyError.txt";                            // idb
+char kFileModeWrite[] = "w";                                                // idb
+char kFileModeReadBinary[] = "rb";                                          // idb
+char aChkFreadopenSz[] = "CHK_FReadOpen():szName";                          // idb
+char aChkFreadopenPf[] = "CHK_FReadOpen():pfil";                            // idb
+int dword_10094294 = -1;                                                    // weak
+int dword_10094298 = -1;                                                    // weak
+CHAR aReturnedToRace[] = " returned to race lobby.";                        // idb
+CHAR aLeftTheRace[] = " left the race.";                                    // idb
+char aBootedYouFromT[27] = " booted you from the game.";                    // weak
+char asc_10094334[3] = ": ";                                                // weak
+int g_HandlingType = 1;                                                     // weak
+int g_TransmissionType = 1;                                                 // weak
+int g_SuspensionType = 1;                                                   // weak
+void *g_UltraCarHeader = (void *)2;                                         // idb
+CHAR kDebugStrCheckPreviousApp[] =
+    "CheckPrevious App - Another instance of this app is already running.\n"; // idb
+CHAR kClassName[] = "BossRally";                                              // idb
+CHAR kWindowName[] = "Boss Rally";                                            // idb
+char aBsuspension[] = "bsuspension=";                                         // idb
+char aBtire[] = "btire=";                                                     // idb
+char aBcar[] = "bcar=";                                                       // idb
+char aCplayers[] = "cPlayers=";                                               // idb
+char aSzplayername[] = "szPlayerName=";                                       // idb
+char aD3dinvsrcalpha[] = "D3DInvSrcAlpha=";                                   // idb
+char aD3dwaitflipdon[] = "D3DWaitFlipDone=";                                  // idb
+char aD3dwaitcanflip[] = "D3DWaitCanFlip=";                                   // idb
+char aD3dclearzbuffe[] = "D3DClearZBuffer=";                                  // idb
+char aD3dalwayssquar[] = "D3DAlwaysSquareTextures=";                          // idb
+char aD3dalphacompar[] = "D3DAlphaCompare=";                                  // idb
+char aPlaysfx[] = "PlaySFX=";                                                 // idb
+char aPlaymusic[] = "PlayMusic=";                                             // idb
+char aRunbenchmark[] = "RunBenchmark=";                                       // idb
+char aD3ddrawcarshad[] = "D3DDrawCarShadow=";                                 // idb
+char aSpeedsensitive[] = "SpeedSensitive=";                                   // idb
+char aInterpolate[] = "Interpolate=";                                         // idb
+char aSfxdir[] = "SFXDir=";                                                   // idb
+char aCardir[] = "CarDir=";                                                   // idb
+char aTrackdir[] = "TrackDir=";                                               // idb
+char aTransmissionty[] = "TransmissionType=";                                 // idb
+char aTiretype[] = "TireType=";                                               // idb
+char aSuspensiontype[] = "SuspensionType=";                                   // idb
+char aHandlingtype[] = "HandlingType=";                                       // idb
+char aReadjoystick[] = "ReadJoystick=";                                       // idb
+char aGamemode[] = "gameMode=";                                               // idb
+char aChosenweather[] = "chosenWeather=";                                     // idb
+char aChosencar[] = "chosenCar=";                                             // idb
+char aChosentrack[] = "chosenTrack=";                                         // idb
+char SubStr[] = "NetworkPlay=";                                               // idb
+char aBossrallyIni[14] = "BossRally.ini";                                     // weak
+char kErrorMessageCleanupNameNameTooLong[] =
+    "CleanupName: Name is greater than 64 bytes. Memory Corrupted!"; // idb
+char aPod[] = "POD";                                                 // idb
+char aAddNameIsTooLo[] = "Add: Name is too long to be a pod name.";  // idb
+char aWb[] = "wb";                                                   // idb
+char aFileReadFailur[] = "File read failure";                        // idb
+_UNKNOWN unk_100946C8;                                               // weak
+_UNKNOWN unk_1009B4C8;                                               // weak
+_UNKNOWN unk_100A22D0;                                               // weak
+_UNKNOWN unk_100A4170;                                               // weak
+char byte_100A5FEF[129] = {
+    '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\r',   '\x16', '\x0E',
+    '\x0F', '\v',   '\x10', '\x15', '\v',   '\v',   '\x18', '\x12', '\n',   '\x11', '\v',   '\x17',
+    '\t',   '\0',   '\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\a',   '\b',   '\x14', '\x13',
+    '\v',   '\x19', '\v',   '\f',   '\x1A', '\x1C', '\x1D', '\x1E', '\x1F', ' ',    '!',    '\"',
+    '#',    '$',    '%',    '&',    '\'',   '(',    ')',    '*',    '+',    ',',    '-',    '.',
+    '/',    '0',    '1',    '2',    '3',    '4',    '5',    '\v',   '\v',   '\v',   '\v',   '\v',
+    '\v',   '\x1C', '\x1D', '\x1E', '\x1F', ' ',    '!',    '\"',   '#',    '$',    '%',    '&',
+    '\'',   '(',    ')',    '*',    '+',    ',',    '-',    '.',    '/',    '0',    '1',    '2',
+    '3',    '4',    '5',    '\v',   '\v',   '\v',   '\v',   '\v',   '\v'}; // idb
+int dword_100A6070[] = {0};                                                // weak
+int dword_100A60E0[] = {0};                                                // weak
+int dword_100A6150[] = {0};                                                // weak
+int dword_100A61C0[] = {0};                                                // weak
+int dword_100A6230 = 2;                                                    // weak
 int d3dEnumTextureFormatsContextStart = 0;
-_UNKNOWN unk_100A6238; // weak
-int g_D3dwaitcanflip = 1; // weak
-int g_D3dwaitflipdon = 1; // weak
-CHAR Text[] = "This game requires DirectX 6."; // idb
-CHAR Caption[] = "Boss Rally Error"; // idb
-CHAR aDdcopybitmapFa[] = "ddcopybitmap failed\n"; // idb
-CHAR aHandleIsNull[] = "handle is null\n"; // idb
-CHAR aCreatecompatib[] = "createcompatible dc failed\n"; // idb
-int dword_100A6380 = 1; // weak
+_UNKNOWN unk_100A6238;                                    // weak
+int g_D3dwaitcanflip = 1;                                 // weak
+int g_D3dwaitflipdon = 1;                                 // weak
+CHAR Text[] = "This game requires DirectX 6.";            // idb
+CHAR Caption[] = "Boss Rally Error";                      // idb
+CHAR aDdcopybitmapFa[] = "ddcopybitmap failed\n";         // idb
+CHAR aHandleIsNull[] = "handle is null\n";                // idb
+CHAR aCreatecompatib[] = "createcompatible dc failed\n";  // idb
+int dword_100A6380 = 1;                                   // weak
 char aAppmsgBootplay[] = "APPMSG_BOOTPLAYER: received\n"; // idb
-char aAppmsgHoststar[] = "APPMSG_HOSTSTARTED: received"; // idb
-CHAR aSJoinedTheGame[] = "%s joined the game.\r\n"; // idb
-CHAR String[] = "%s left the game.\r\n"; // idb
-char aUnknown[8] = "unknown"; // weak
-void *off_100A6498 = &lutBuffer_0; // weak
-void *off_100A649C = &ciBuffer_0; // weak
-void *off_100A64A0 = &ciBuffer_0; // weak
-char byte_100A64B8[16] =
-{
-  '\x03',
-  '\x03',
-  '\0',
-  '\x01',
-  '\x02',
-  '\x02',
-  '\0',
-  '\0',
-  '\f',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0'
-}; // idb
-void *off_100A64C8 = &unk_10850001; // weak
-char byte_100A64F8[] = { '\0' }; // weak
-char byte_100A64F9[] = { '\0' }; // weak
-char byte_100A64FA[] = { '\0' }; // weak
-int dword_100A65D8[4] = { 2, 1, 3, 0 }; // idb
-char aBadVtxDl[11] = "BAD VTX DL"; // weak
-int dword_100A66E8 = 1; // weak
-int g_Interpolate = 1; // weak
-char (*off_100A66FC)[8] = &String2; // weak
-float flt_100A6CF0 =  30.0; // weak
-float flt_100A6CF4 =  30.0; // weak
-int dword_100A6CF8 = 2; // weak
-void *dword_100A6CFC = (void *)0xFFFFFFFF; // idb
-char aRy_0[4] = "%ry"; // weak
-char aY1[4] = "%y1"; // weak
-int dword_100A73A8[] = { -1 }; // weak
-char aWw[4] = "%ww"; // weak
-char asc_100A73D4[2] = "L"; // weak
-char aRyD[] = "%%ry%d."; // idb
-char aY1D[8] = "%%y1%d."; // weak
-int dword_100A74A8 = 255; // weak
-int dword_100A74AC = 255; // weak
-int dword_100A74B0 = 255; // weak
-float flt_100A79C8 =  0.5; // weak
-int dword_100A79CC = -1; // weak
-char aUnknown_0[8] = "UNKNOWN"; // weak
-int g_D3dinvsrcalpha = 2; // weak
-int dword_100A79DC = 1; // weak
-float flt_100A79E0 =  0.46000001; // weak
-float flt_100A79E4 =  0.46000001; // weak
-int dword_100A79E8 = 1065353216; // weak
-int (__cdecl *off_100A79EC)(_DWORD) = &sub_1001BC90; // weak
-int (__cdecl *funcs_10024A9E[4])(int) = { &sub_100243D0, &sub_10020DC0, &sub_100243D0, &sub_10024150 }; // weak
-int (__cdecl *off_100A7A00[180])(int) =
-{
-  &sub_10021BD0,
-  &sub_100243D0,
-  &sub_10020D60,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001E170,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001E790,
-  &sub_10020F20
-}; // weak
-int (__cdecl *off_100A7CB4[7])(int) =
-{
-  &sub_1001E170,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001E790,
-  &sub_10020F20
-}; // weak
-int (__cdecl *off_100A7CEC[65])(int) =
-{
-  &sub_1001CFF0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001BD70,
-  &sub_1001BE10,
-  &sub_1001CD60,
-  &sub_1001CD80,
-  &sub_100243D0,
-  &sub_1001C7A0,
-  &sub_1001CE70,
-  &sub_10021B80,
-  &sub_10021510,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001CDA0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001CF30,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_1001BE30,
-  &sub_1001CC00,
-  &sub_1001CC70,
-  &sub_100243D0,
-  &sub_1001CCA0,
-  &sub_1001CB40,
-  &sub_1001C7F0,
-  &sub_100243D0,
-  &sub_100243D0,
-  &sub_100243D0
-}; // weak
-void *off_100A7DF0 = &unk_104C59A8; // weak
-int dword_100A7DF4 = 32; // weak
-int dword_100A7DF8 = 32; // weak
-int dword_100A7DFC = 64; // weak
-int dword_100A7E00 = 64; // weak
-int dword_100A7E04 = 32; // weak
-int dword_100A7E08 = 32; // weak
-char aAppendtextureA[20] = "AppendTexture: atdb"; // weak
-char aTidfromtexture[] = "TIDFromTextureAppend: amid"; // idb
-CHAR aEarInteractive[] = "EAR Interactive Around-Sound"; // idb
-CHAR aEarDllUpdateea[] = "_EAR_DLL_UpdateEar@0"; // idb
-CHAR aEarDllShutdown_6[] = "_EAR_DLL_ShutDownTimer@0"; // idb
-CHAR aEarDllStarttim[] = "_EAR_DLL_StartTimer@0"; // idb
-CHAR aEarDllStarteve[] = "_EAR_DLL_StartEvent@4"; // idb
-CHAR aEarDllShutdown_5[] = "_EAR_DLL_ShutDownPreset@4"; // idb
-CHAR aEarDllShutdown_4[] = "_EAR_DLL_ShutDownMatrix@4"; // idb
-CHAR aEarDllShutdown_3[] = "_EAR_DLL_ShutDownEvent@8"; // idb
-CHAR aEarDllShutdown_2[] = "_EAR_DLL_ShutDownEnvironment@4"; // idb
-CHAR aEarDllShutdown_1[] = "_EAR_DLL_ShutDownEar@0"; // idb
-CHAR aEarDllShutdown_0[] = "_EAR_DLL_ShutDownChannel@4"; // idb
-CHAR aEarDllShutdown[] = "_EAR_DLL_ShutDownBank@4"; // idb
-CHAR aEarDllShowlast[] = "_EAR_DLL_ShowLastError@0"; // idb
-CHAR aEarDllSetuserd[] = "_EAR_DLL_SetUserDistanceUnit@8"; // idb
-CHAR aEarDllSetatten[] = "_EAR_DLL_SetAttenuationLevel@8"; // idb
-CHAR aEarDllResetear[] = "_EAR_DLL_ResetEar@0"; // idb
-CHAR aEarDllRegister_3[] = "_EAR_DLL_RegisterPreset@8"; // idb
-CHAR aEarDllRegister_2[] = "_EAR_DLL_RegisterMatrix@4"; // idb
-CHAR aEarDllRegister_1[] = "_EAR_DLL_RegisterEnvironment@4"; // idb
-CHAR aEarDllRegister_0[] = "_EAR_DLL_RegisterChannel@16"; // idb
-CHAR aEarDllRegister[] = "_EAR_DLL_RegisterBank@8"; // idb
-CHAR aEarDllMoveeven[] = "_EAR_DLL_MoveEvent@4"; // idb
-CHAR aEarDllMixevent[] = "_EAR_DLL_MixEvent@4"; // idb
-CHAR aEarDllInitiali[] = "_EAR_DLL_InitializeEar@4"; // idb
-CHAR aEarDllGetversi[] = "_EAR_DLL_GetVersion@0"; // idb
-CHAR aEarDllGetlaste[] = "_EAR_DLL_GetLastError@0"; // idb
-CHAR aEarDllGetevent[] = "_EAR_DLL_GetEventStatus@8"; // idb
-CHAR aEarDllEarinact[] = "_EAR_DLL_EarInactive@0"; // idb
-CHAR aEarDllClearcha[] = "_EAR_DLL_ClearChannel@8"; // idb
-CHAR aEarDllChangech[] = "_EAR_DLL_ChangeChannelControl@8"; // idb
-CHAR aEarDllAssignhw[] = "_EAR_DLL_AssignHwnd@4"; // idb
-CHAR ProcName[] = "_EAR_DLL_AAA_Validate@4"; // idb
-char aEariasDll[11] = "earias.dll"; // weak
-CHAR aEarpdsDll[] = "earpds.dll"; // idb
-int dword_100A81A8 = 1; // weak
-int dword_100A81AC = 1065353216; // weak
-float flt_100A81B0 =  1.0; // weak
-int dword_100A81B4 = 1065353216; // weak
-float flt_100A81B8 =  1.0; // weak
-int dword_100A81BC = 2; // weak
-int g_Width = 640; // weak
-int g_Height = 480; // weak
-void *off_100A81C8 = &unk_10575540; // weak
-int dword_100AA008 = 5; // weak
-int dword_100AA00C = -1; // weak
-int g_GameMode = 1; // weak
-char (*off_100AA018)[8] = &String2; // weak
-float flt_100AA01C[] = {  4.0 }; // weak
-char (*off_100AA020)[8] = &String2; // weak
-float flt_100AA1F8[6] = {  2.1500001,  1.5,  0.85000002,  0.2,  0.0,  0.0 }; // idb
-char byte_100AA210[24] =
-{
-  '\t',
-  '\x06',
-  '\x05',
-  '\x03',
-  '\x02',
-  '\x01',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0'
-}; // idb
-int dword_100AA228[] = { 0 }; // weak
-float flt_100AA22C[15] =
-{
-   0.0,
-  ?flt,
-   2.2,
-  ?flt,
-   2.3,
-  ?flt,
-   2.0,
-  ?flt,
-   0.0,
-  ?flt,
-   2.0,
-  ?flt,
-   2.0,
-  ?flt,
-   0.0
-}; // idb
-int dword_100AA268[3] = { 33, 33, 34 }; // idb
-char aRallyintro2Dat[] = "RallyIntro2.dat"; // idb
-char aRallyintro1Dat[16] = "RallyIntro1.dat"; // weak
-char aRallycreditsDa[] = "RallyCredits.dat"; // idb
-char FileName[] = "RallyOutro.dat"; // idb
-int dword_100AA5A8 = 1; // weak
-char aLoadingImg[12] = "loading.img"; // weak
-int dword_100AA5D0[4] = { 1077952512, -2139062272, -1061109760, -256 }; // idb
-CHAR aCouldnTCreates[] = "Couldn't CreateSurface\r\n"; // idb
-CHAR aCouldnTSetCoop[] = "Couldn't Set coop level\r\n"; // idb
-CHAR aCouldnTQiDdraw[] = "Couldn't QI DDraw2\r\n"; // idb
-CHAR aCouldnTCreateD[] = "Couldn't create DDraw\r\n"; // idb
-CHAR aCouldnTLoadlib_0[] = "Couldn't LoadLibrary DDraw\r\n"; // idb
-CHAR aDirectdrawcrea[] = "DirectDrawCreate"; // idb
-CHAR LibFileName[] = "DDRAW.DLL"; // idb
-CHAR aCouldnTGetproc[] = "Couldn't GetProcAddress DInputCreate\r\n"; // idb
-CHAR aDirectinputcre[] = "DirectInputCreateA"; // idb
-CHAR aCouldnTLoadlib[] = "Couldn't LoadLibrary DInput\r\n"; // idb
-CHAR g_DINPUT_DLL[] = "DINPUT.DLL"; // idb
-int g_D3dalphacompar = 1; // weak
-int dword_100AA728 = -2143612928; // weak
-int dword_100AA72C = -2143518720; // weak
-_UNKNOWN unk_100AA770; // weak
-_UNKNOWN unk_100AA838; // weak
-_UNKNOWN unk_100AA860; // weak
-_UNKNOWN unk_100AA868; // weak
-int dword_100AA87C = 1; // weak
-int dword_100AA880 = 1; // weak
-int dword_100AA884 = 1; // weak
-int dword_100AA888 = 3; // weak
-int dword_100AA890 = 1; // weak
-int dword_100AA894 = 1; // weak
-int dword_100AA89C = -1; // weak
-int dword_100AA8A0 = -1; // weak
-int g_BitDepth = 16; // weak
-float flt_100AA8AC =  0.52359879; // weak
-float flt_100AA8B0 =  400.0; // idb
-int dword_100AA8B4 = 1; // weak
-int dword_100AA8B8[] = { -65896952 }; // weak
-int dword_100AA8BC[] = { -201329928 }; // weak
-int dword_100AA8C0[] = { -64577532 }; // weak
-int dword_100AA8C4[] = { 536646648 }; // weak
-int dword_100AA8C8[] = { -50356220 }; // weak
-int dword_100AA8CC[3] = { -158728, -61800956, 1073607672 }; // idb
-int dword_100AAB18 = 14; // weak
-char aHugeGlistError[17] = "HUGE GLIST ERROR"; // weak
-char aLoadcar[10] = "LoadCar()"; // weak
-char Str2[] = "RCar"; // idb
-char aRca[5] = ".rca"; // weak
-char aHnd[5] = ".hnd"; // weak
-char aBossrallyPod[14] = "BossRally.pod"; // weak
-char *off_100AAC48[20] =
-{
-  "First!",
-  "Second!",
-  "Third!",
-  "Fourth.",
-  "Fifth.",
-  "Sixth.",
-  "7th.",
-  "8th.",
-  "9th.",
-  "10th.",
-  "11th.",
-  "12th.",
-  "13th.",
-  "14th.",
-  "15th.",
-  "16th.",
-  "17th.",
-  "18th.",
-  "19th.",
-  "20th."
-}; // weak
-char aSS_1[9] = "%s: %s\r\n"; // weak
-CHAR aSS_0[] = "%s%s\r\n"; // idb
-char aDperrLogondeni[18] = "DPERR_LOGONDENIED"; // weak
-char aDpOk[6] = "DP_OK"; // weak
-char aDperrNotlogged[18] = "DPERR_NOTLOGGEDIN"; // weak
-char aDperrCantloadc[19] = "DPERR_CANTLOADCAPI"; // weak
-char aDperrEncryptio_0[29] = "DPERR_ENCRYPTIONNOTSUPPORTED"; // weak
-char aDperrCantloads_0[30] = "DPERR_CANTLOADSECURITYPACKAGE"; // weak
-char aDperrSignfaile[17] = "DPERR_SIGNFAILED"; // weak
-char aDperrEncryptio[23] = "DPERR_ENCRYPTIONFAILED"; // weak
-char aDperrCantloads[19] = "DPERR_CANTLOADSSPI"; // weak
-char aDperrAuthentic[27] = "DPERR_AUTHENTICATIONFAILED"; // weak
-char aDperrNotregist[20] = "DPERR_NOTREGISTERED"; // weak
-char aDperrAlreadyre[24] = "DPERR_ALREADYREGISTERED"; // weak
-char aDperrServicepr[28] = "DPERR_SERVICEPROVIDERLOADED"; // weak
-char aDperrNotlobbie[17] = "DPERR_NOTLOBBIED"; // weak
-char aDperrUnknownap[25] = "DPERR_UNKNOWNAPPLICATION"; // weak
-char aDperrNoservice[24] = "DPERR_NOSERVICEPROVIDER"; // weak
-char aDperrInvalidin[23] = "DPERR_INVALIDINTERFACE"; // weak
-char aDperrAppnotsta[20] = "DPERR_APPNOTSTARTED"; // weak
-char aDperrCantcreat_2[24] = "DPERR_CANTCREATEPROCESS"; // weak
-char aDperrBuffertoo_0[21] = "DPERR_BUFFERTOOLARGE"; // weak
-char aDperrConnectin[17] = "DPERR_CONNECTING"; // weak
-char aDperrInvalidpa_0[22] = "DPERR_INVALIDPASSWORD"; // weak
-char aDperrNonewplay[19] = "DPERR_NONEWPLAYERS"; // weak
-char aDperrUninitial[20] = "DPERR_UNINITIALIZED"; // weak
-char aDperrSessionlo[18] = "DPERR_SESSIONLOST"; // weak
-char aDperrPlayerlos[17] = "DPERR_PLAYERLOST"; // weak
-char aDperrCannotcre[25] = "DPERR_CANNOTCREATESERVER"; // weak
-char aDperrUsercance[17] = "DPERR_USERCANCEL"; // weak
-char aDperrBusy[11] = "DPERR_BUSY"; // weak
-char aDperrUnavailab[18] = "DPERR_UNAVAILABLE"; // weak
-char aDperrTimeout[14] = "DPERR_TIMEOUT"; // weak
-char aDperrSendtoobi[17] = "DPERR_SENDTOOBIG"; // weak
-char aDperrNosession[17] = "DPERR_NOSESSIONS"; // weak
-char aDperrNoplayers[16] = "DPERR_NOPLAYERS"; // weak
-char aDperrNonameser[24] = "DPERR_NONAMESERVERFOUND"; // weak
-char aDperrNomessage[17] = "DPERR_NOMESSAGES"; // weak
-char aDperrNoconnect[19] = "DPERR_NOCONNECTION"; // weak
-char aDperrNocaps[13] = "DPERR_NOCAPS"; // weak
-char aDperrInvalidgr[19] = "DPERR_INVALIDGROUP"; // weak
-char aDperrInvalidpl[20] = "DPERR_INVALIDPLAYER"; // weak
-char aDperrInvalidob[20] = "DPERR_INVALIDOBJECT"; // weak
-char aDperrInvalidfl[19] = "DPERR_INVALIDFLAGS"; // weak
-char aDperrException[16] = "DPERR_EXCEPTION"; // weak
-char aDperrCapsnotav[26] = "DPERR_CAPSNOTAVAILABLEYET"; // weak
-char aDperrCantcreat_1[24] = "DPERR_CANTCREATESESSION"; // weak
-char aDperrCantcreat_0[23] = "DPERR_CANTCREATEPLAYER"; // weak
-char aDperrCantcreat[22] = "DPERR_CANTCREATEGROUP"; // weak
-char aDperrCantaddpl[20] = "DPERR_CANTADDPLAYER"; // weak
-char aDperrBuffertoo[21] = "DPERR_BUFFERTOOSMALL"; // weak
-char aDperrActivepla[20] = "DPERR_ACTIVEPLAYERS"; // weak
-char aDperrAccessden[19] = "DPERR_ACCESSDENIED"; // weak
-char aDperrAlreadyin[25] = "DPERR_ALREADYINITIALIZED"; // weak
-char aDperrInvalidpa[20] = "DPERR_INVALIDPARAMS"; // weak
-char aDperrOutofmemo[18] = "DPERR_OUTOFMEMORY"; // weak
-char aDperrGeneric[14] = "DPERR_GENERIC"; // weak
-char aDperrNointerfa[18] = "DPERR_NOINTERFACE"; // weak
-char aDperrUnsupport[18] = "DPERR_UNSUPPORTED"; // weak
-char aDperrPending[14] = "DPERR_PENDING"; // weak
-char aE_0[2] = "Ê"; // weak
-int dword_100AB334[] = { 0 }; // weak
-int dword_100AB3D8 = 1; // weak
-__int16 word_100AB3DC = 1; // weak
-int dword_100AB3E0 = -1; // weak
-__int16 word_100AB3E4 = 258; // weak
-int dword_100AB3E8 = 258; // weak
-int dword_100AB3EC = 36; // weak
-int Value = -1; // idb
-int dword_100AB418 = 0; // weak
-int dword_100AB41C = 0; // weak
-int dword_100AB420 = 200; // weak
-int dword_100AB424 = 200; // weak
-int dword_100AB428 = 0; // weak
-int dword_100AB42C = 380; // weak
-int dword_100AB430 = 200; // weak
-int dword_100AB434 = 480; // weak
-int dword_100AB448 = 148; // weak
-int dword_100AB44C = 110; // weak
-int dword_100AB450 = 358; // weak
-int dword_100AB454 = 260; // weak
-__int16 word_100AB568[] = { 0 }; // weak
-int dword_100AB56C[4] = { 0, 0, 640, 480 }; // idb
-int dword_100AB57C[30] =
-{
-  0,
-  1,
-  0,
-  0,
-  28,
-  30,
-  1,
-  2,
-  0,
-  0,
-  128,
-  144,
-  1,
-  3,
-  0,
-  0,
-  128,
-  144,
-  1,
-  4,
-  0,
-  0,
-  128,
-  144,
-  1,
-  5,
-  0,
-  0,
-  204,
-  93
-}; // idb
-int dword_100AB5F4 = 0; // weak
-int dword_100AB9C4 = 16; // weak
-int dword_100AB9C8 = 16; // weak
-int dword_100AB9EC = 0; // weak
-int dword_100AB9F0 = 0; // weak
-int dword_100AB9F4 = 16; // weak
-int dword_100AB9F8 = 16; // weak
-int dword_100AC300 = 1; // weak
-int dword_100AC304 = 1; // weak
-unsigned int dword_100AC308[16] =
-{
-  119u,
-  120u,
-  121u,
-  122u,
-  123u,
-  124u,
-  119u,
-  120u,
-  121u,
-  122u,
-  123u,
-  124u,
-  0u,
-  125u,
-  125u,
-  0u
-}; // idb
-unsigned int dword_100AC348[4] = { 126u, 127u, 128u, 0u }; // idb
-unsigned int dword_100AC358[4] = { 129u, 127u, 130u, 0u }; // idb
-unsigned int dword_100AC368[16] =
-{
-  141u,
-  142u,
-  143u,
-  144u,
-  145u,
-  146u,
-  147u,
-  148u,
-  149u,
-  150u,
-  151u,
-  152u,
-  153u,
-  154u,
-  155u,
-  156u
-}; // idb
-unsigned int dword_100AC3A8 = 117u; // idb
-unsigned int dword_100AC3B0[6] = { 131u, 132u, 133u, 134u, 135u, 0u }; // idb
-unsigned int dword_100AC3C8[6] = { 157u, 158u, 159u, 160u, 161u, 0u }; // idb
-unsigned int dword_100AC3E0[4] = { 136u, 137u, 138u, 139u }; // idb
-unsigned int dword_100AC3F0[4] = { 85u, 86u, 87u, 140u }; // idb
-int dword_100AC400[] = { 115 }; // weak
-unsigned int dword_100AC408 = 115u; // idb
-unsigned int dword_100AC410 = 115u; // idb
-unsigned int dword_100AC418 = 115u; // idb
-int dword_100AC420[32] =
-{
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  18,
-  19,
-  20,
-  21,
-  22,
-  23,
-  24,
-  25,
-  26,
-  27,
-  28,
-  29,
-  30,
-  31
-}; // idb
-int dword_100AC4A0[4] = { 0, 1, 2, 0 }; // idb
-int dword_100AC4B0[4] = { 0, 1, 2, 0 }; // idb
-int dword_100AC4C0[6] = { 0, 1, 2, 3, 4, 0 }; // idb
-int dword_100AC4D8[16] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 0 }; // idb
-int dword_100AC518[] = { 1 }; // weak
-int dword_100AC520[4] = { 0, 1, 2, 3 }; // idb
-int dword_100AC530[] = { 1 }; // weak
-int dword_100AC538[] = { 1 }; // weak
-int dword_100AC540[] = { 1 }; // weak
-int dword_100AC548[] = { 1 }; // weak
-__int16 word_100AC550[16] = { 16, 18, 17, 27, 28, 118, 16, 18, 17, 27, 28, 118, 0, 143, 143, 0 }; // idb
-__int16 word_100AC570[16] = { 65, 62, 66, 63, 64, 119, 65, 62, 66, 63, 64, 119, 0, 144, 144, 0 }; // idb
-char byte_100AC590[8] = { '\x17', '\x13', '\x15', '\x16', '\x14', '\0', '\0', '\0' }; // idb
-char byte_100AC598[4] = { '\x1D', '\f', '\0', '\0' }; // idb
-char byte_100AC59C[4] = { '\x1A', '\x19', '\x18', '\0' }; // idb
-char byte_100AC5A0[8] = { '\r', '\x0E', '\x0F', '\0', '\0', '\0', '\0', '\0' }; // idb
-__int16 word_100AC5A8[] = { 31 }; // weak
-char byte_100AC628[4] = { '2', '3', '1', '`' }; // idb
-char byte_100AC62C[4] = { 'E', 'D', 'C', 'F' }; // idb
-char byte_100AC630[] = { 'a' }; // weak
-char byte_100AC631 = 'f'; // weak
-char byte_100AC634[4] = { 'c', 'b', '\0', '\0' }; // idb
-char byte_100AC638[8] = { 'e', 'd', '\0', '\0', '\0', '\0', '\0', '\0' }; // idb
-__int16 word_100AC640[] = { 140 }; // weak
-int dword_100AC648 = 2; // weak
-int dword_100AC64C = 1; // weak
-int dword_100AC650 = 1; // weak
-int dword_100AC654 = 1; // weak
-int dword_100AC658 = 3; // weak
-int dword_100AC65C = 4; // weak
-int dword_100AC660[] = { 1 }; // weak
-unsigned int dword_100AC664[15] = { 162u, 1u, 163u, 0u, 164u, 0u, 165u, 1u, 166u, 0u, 167u, 1u, 168u, 1u, 169u }; // idb
-int dword_100AC6A0 = -1; // weak
-__int16 word_100AC6A4 = 256; // weak
-char *off_100AC6AC = "madeleine"; // weak
-__int16 word_100AC6E4[] = { -1 }; // weak
-__int16 word_100AC6E6[] = { -1 }; // weak
-__int16 word_100AC6E8[] = { -1 }; // weak
-__int16 word_100AC9DC = 36; // weak
-__int16 word_100ACB5C[] = { -1 }; // weak
-__int16 word_100ACB5E[] = { -1 }; // weak
-__int16 word_100ACB60[] = { -1 }; // weak
-char byte_100ACE5C[] = { ' ' }; // weak
-char aR[2] = "r"; // idb
-char a1[2] = "1"; // weak
-char a0[2] = "0"; // weak
-char kBackslash[] = "\\"; // idb
-char asc_100AD300[2] = " "; // weak
-char asc_100AD304[3] = "  "; // weak
-char asc_100AD308[6] = "--:--"; // weak
-char aAutosaveBrf[] = "AutoSave.brf"; // idb
-char aBrf[5] = ".brf"; // weak
-char aRallyseason[12] = "RallySeason"; // weak
-char aGrf[5] = ".grf"; // weak
-char aTimeattack[11] = "TimeAttack"; // weak
-char aRallyseasonBrf[17] = "RallySeason*.BRF"; // weak
-char aTimeattackGrf[16] = "TimeAttack*.GRF"; // weak
-char aSeasondescDat[] = "seasondesc.dat"; // idb
-char aCRallyghostDat[18] = "c:\\RallyGhost.dat"; // weak
-char aCRallyseasonDa[19] = "c:\\RallySeason.dat"; // weak
-char aImagesTrakqBmp_0[18] = "images\\trakQ_.bmp"; // weak
-char aImagesTrakqBmp[17] = "images\\trakQ.bmp"; // weak
-char aImagesListbox2[20] = "images\\listbox2.bmp"; // weak
-char aImagesTire2off[20] = "images\\tire2off.bmp"; // weak
-char aImagesTire2onB[19] = "images\\tire2on.bmp"; // weak
-char aImagesLightgBm[18] = "images\\lightg.bmp"; // weak
-char aImagesLightrBm[18] = "images\\lightr.bmp"; // weak
-char aImagesZCarbbBm[19] = "images\\z-carBB.bmp"; // weak
-char aImagesZCarspBm[19] = "images\\z-carSP.bmp"; // weak
-char aImagesZCarrsBm[19] = "images\\z-carRS.bmp"; // weak
-char aImagesZCarpsBm[19] = "images\\z-carPS.bmp"; // weak
-char aImagesZCarpjBm[19] = "images\\z-carPJ.bmp"; // weak
-char aImagesZCarnsBm[19] = "images\\z-carNS.bmp"; // weak
-char aImagesZCarmnBm[19] = "images\\z-carMN.bmp"; // weak
-char aImagesZCarm3Bm[19] = "images\\z-carM3.bmp"; // weak
-char aImagesZCarldBm[19] = "images\\z-carLD.bmp"; // weak
-char aImagesZCaripBm[19] = "images\\z-carIP.bmp"; // weak
-char aImagesZCarfhBm[19] = "images\\z-carFH.bmp"; // weak
-char aImagesZCaresBm[19] = "images\\z-carES.bmp"; // weak
-char aImagesZCarcuBm[19] = "images\\z-carCU.bmp"; // weak
-char aImagesZCarceBm[19] = "images\\z-carCE.bmp"; // weak
-char aImagesZCartrBm[19] = "images\\z-carTR.bmp"; // weak
-char aImagesZCarmtBm[19] = "images\\z-carMT.bmp"; // weak
-char aImagesButSavdB[20] = "images\\but-savd.bmp"; // weak
-char aImagesButSavBm[19] = "images\\but-sav.bmp"; // weak
-char aImagesTrakrace_0[21] = "images\\trakracel.bmp"; // weak
-char aImagesTrakrace[21] = "images\\trakraceb.bmp"; // weak
-char aImagesSndlevl3[20] = "images\\sndlevl3.bmp"; // weak
-char aImagesSndlevl2[20] = "images\\sndlevl2.bmp"; // weak
-char aImagesMtrwdBmp[17] = "images\\mtrwd.bmp"; // weak
-char aImagesFbrwdBmp[17] = "images\\fbrwd.bmp"; // weak
-char aImagesCurwdBmp[17] = "images\\curwd.bmp"; // weak
-char aImagesBbrwdBmp[17] = "images\\bbrwd.bmp"; // weak
-char aImagesMirrwdBm[18] = "images\\mirrwd.bmp"; // weak
-char aImagesMnrwdBmp[17] = "images\\mnrwd.bmp"; // weak
-char aImagesPjrwdBmp[17] = "images\\pjrwd.bmp"; // weak
-char aImagesTrrwdBmp[17] = "images\\trrwd.bmp"; // weak
-char aImagesSoundptr[20] = "images\\soundptr.bmp"; // weak
-char aImagesSoundtik[20] = "images\\soundtik.bmp"; // weak
-char aImagesMusicBmp[17] = "images\\music.bmp"; // weak
-char aImagesEngsound[20] = "images\\engsound.bmp"; // weak
-char aImagesListboxB[19] = "images\\listbox.bmp"; // weak
-char aImagesNoffstik[20] = "images\\noffstik.bmp"; // weak
-char aImagesSpeconBm[18] = "images\\specon.bmp"; // weak
-char aImagesSpecoffB[19] = "images\\specoff.bmp"; // weak
-char aImagesCarwshad[21] = "images\\carwshad2.bmp"; // weak
-char aImagesCarwnosh[23] = "images\\carwnoshad2.bmp"; // weak
-char aImagesFfstickB[19] = "images\\ffstick.bmp"; // weak
-char aImagesMousinpt[20] = "images\\mousinpt.bmp"; // weak
-char aImagesChatbar2[20] = "images\\chatbar2.bmp"; // weak
-char aImagesCars5bBm[18] = "images\\cars5b.bmp"; // weak
-char aImagesCars5aBm[18] = "images\\cars5a.bmp"; // weak
-char aImagesCars4bBm[18] = "images\\cars4b.bmp"; // weak
-char aImagesCars4aBm[18] = "images\\cars4a.bmp"; // weak
-char aImagesCars3bBm[18] = "images\\cars3b.bmp"; // weak
-char aImagesCars3aBm[18] = "images\\cars3a.bmp"; // weak
-char aImagesCars2bBm[18] = "images\\cars2b.bmp"; // weak
-char aImagesCars2aBm[18] = "images\\cars2a.bmp"; // weak
-char aImagesCars1aBm[18] = "images\\cars1a.bmp"; // weak
-char aImagesButOpdBm[19] = "images\\but-opd.bmp"; // weak
-char aImagesButOpBmp[18] = "images\\but-op.bmp"; // weak
-char aImagesButMaind[21] = "images\\but-maind.bmp"; // weak
-char aImagesButMainB[20] = "images\\but-main.bmp"; // weak
-char aImagesNoadv2Bm[18] = "images\\noadv2.bmp"; // weak
-char aImagesNoadv1Bm[18] = "images\\noadv1.bmp"; // weak
-char aImagesCongratB[19] = "images\\congrat.bmp"; // weak
-char aImagesBgdimBmp[17] = "images\\bgdim.bmp"; // weak
-char aImagesSeasn5aB[19] = "images\\seasn5a.bmp"; // weak
-char aImagesSeasn4bB[19] = "images\\seasn4b.bmp"; // weak
-char aImagesSeasn4aB[19] = "images\\seasn4a.bmp"; // weak
-char aImagesSeasn3bB[19] = "images\\seasn3b.bmp"; // weak
-char aImagesSeasn3aB[19] = "images\\seasn3a.bmp"; // weak
-char aImagesSeasn2bB[19] = "images\\seasn2b.bmp"; // weak
-char aImagesSeasn2aB[19] = "images\\seasn2a.bmp"; // weak
-char aImagesMpserial[20] = "images\\mpserial.bmp"; // weak
-char aImagesMpipxBmp[17] = "images\\mpipx.bmp"; // weak
-char aImagesMptcpipB[19] = "images\\mptcpip.bmp"; // weak
-char aImagesMpmodemB[19] = "images\\mpmodem.bmp"; // weak
-char aImagesCoasttrB[20] = "images\\coasttr_.bmp"; // weak
-char aImagesDesrttrB[20] = "images\\desrttr_.bmp"; // weak
-char aImagesTrakeBmp_0[18] = "images\\trake_.bmp"; // weak
-char aImagesTrakdBmp_0[18] = "images\\trakd_.bmp"; // weak
-char aImagesTrakcBmp_0[18] = "images\\trakc_.bmp"; // weak
-char aImagesLboxendB[19] = "images\\lboxend.bmp"; // weak
-char aImagesRboxendB[19] = "images\\rboxend.bmp"; // weak
-char aImagesBoxtile2[20] = "images\\boxtile2.bmp"; // weak
-char aImagesSlidebox[20] = "images\\slidebox.bmp"; // weak
-char aImagesNamebarB[19] = "images\\namebar.bmp"; // weak
-char aImagesMonitrBm[18] = "images\\monitr.bmp"; // weak
-char aImagesSpkrBmp[16] = "images\\spkr.bmp"; // weak
-char aImagesSteeradj[20] = "images\\steeradj.bmp"; // weak
-char aImagesSteerarr[20] = "images\\steerarr.bmp"; // weak
-char aImagesTypeYelB[20] = "images\\type_yel.bmp"; // weak
-char aImagesSteerinp[20] = "images\\steerinp.bmp"; // weak
-char aImagesKeybdBmp[17] = "images\\keybd.bmp"; // weak
-char aImagesJoystkBm[18] = "images\\joystk.bmp"; // weak
-char aImagesArrowuuB[19] = "images\\arrowuu.bmp"; // weak
-char aImagesArrowudB[19] = "images\\arrowud.bmp"; // weak
-char aImagesArrowduB[19] = "images\\arrowdu.bmp"; // weak
-char aImagesArrowddB[19] = "images\\arrowdd.bmp"; // weak
-char aImagesCarbbBmp[17] = "images\\carBB.bmp"; // weak
-char aImagesCarspBmp[17] = "images\\carSP.bmp"; // weak
-char aImagesCarrsBmp[17] = "images\\carRS.bmp"; // weak
-char aImagesCarpsBmp[17] = "images\\carPS.bmp"; // weak
-char aImagesCarpjBmp[17] = "images\\carPJ.bmp"; // weak
-char aImagesCarnsBmp[17] = "images\\carNS.bmp"; // weak
-char aImagesCarmnBmp[17] = "images\\carMN.bmp"; // weak
-char aImagesCarm3Bmp[17] = "images\\carM3.bmp"; // weak
-char aImagesCarldBmp[17] = "images\\carLD.bmp"; // weak
-char aImagesCaripBmp[17] = "images\\carIP.bmp"; // weak
-char aImagesCarfhBmp[17] = "images\\carFH.bmp"; // weak
-char aImagesCaresBmp[17] = "images\\carES.bmp"; // weak
-char aImagesCarcuBmp[17] = "images\\carCU.bmp"; // weak
-char aImagesCarceBmp[17] = "images\\carCE.bmp"; // weak
-char aImagesCartrBmp[17] = "images\\carTR.bmp"; // weak
-char aImagesAshftBmp[17] = "images\\ashft.bmp"; // weak
-char aImagesTrakeBmp[17] = "images\\trake.bmp"; // weak
-char aImagesTrakdBmp[17] = "images\\trakd.bmp"; // weak
-char aImagesWettireB[19] = "images\\wettire.bmp"; // weak
-char aImagesMedtireB[19] = "images\\medtire.bmp"; // weak
-char aImagesDrytireB[19] = "images\\drytire.bmp"; // weak
-char aImagesSunwethB[19] = "images\\sunweth.bmp"; // weak
-char aImagesSnowBmp[16] = "images\\snow.bmp"; // weak
-char aImagesRainBmp[16] = "images\\rain.bmp"; // weak
-char aImagesNiteBmp[16] = "images\\nite.bmp"; // weak
-char aImagesFogBmp[15] = "images\\fog.bmp"; // weak
-char aImagesTrakcBmp[17] = "images\\trakc.bmp"; // weak
-char aImagesCoasttrk[20] = "images\\coasttrk.bmp"; // weak
-char aImagesDesrttrk[20] = "images\\desrttrk.bmp"; // weak
-char aImagesHardshok[20] = "images\\hardshok.bmp"; // weak
-char aImagesMedshokB[19] = "images\\medshok.bmp"; // weak
-char aImagesSoftshok[20] = "images\\softshok.bmp"; // weak
-char aImagesMshftBmp[17] = "images\\mshft.bmp"; // weak
-char aImagesCarmtBmp[17] = "images\\carmt.bmp"; // weak
-char aImagesQrBmp[14] = "images\\qr.bmp"; // weak
-char aImagesOpBmp[14] = "images\\op.bmp"; // weak
-char aImagesTaBmp[14] = "images\\ta.bmp"; // weak
-char aImagesMpBmp[14] = "images\\mp.bmp"; // weak
-char aImagesChampBmp[17] = "images\\champ.bmp"; // weak
-char aImagesBignumsB[19] = "images\\bignums.bmp"; // weak
-char aImagesTypeMidB[20] = "images\\type_mid.bmp"; // weak
-char aImagesTypeWitB[20] = "images\\type_wit.bmp"; // weak
-char aImagesTypeGryB[20] = "images\\type_gry.bmp"; // weak
-char aImagesCursorBm[18] = "images\\cursor.bmp"; // weak
-char aImagesWork1aBm[18] = "images\\work1a.bmp"; // weak
-char aDdrawDoinitLoa[] = "DDraw_DoInit: loading.bmp failed to load!"; // idb
-CHAR name[] = "images\\loading.bmp"; // idb
-int dword_100ADF58 = 9; // weak
-int dword_100ADF5C = 9; // weak
-int dword_100ADF60 = 1; // weak
-char byte_100ADF68[] = { '\0' }; // weak
-char byte_100ADF90[] = { '\0' }; // weak
-int dword_100ADFC8 = 1; // weak
-int dword_100ADFE0[] = { -1 }; // weak
-int dword_100ADFE4[] = { 0 }; // weak
-int dword_100ADFE8[] = { 0 }; // weak
-int dword_100ADFEC[] = { 0 }; // weak
-int dword_100ADFF0[] = { 0 }; // weak
-_DWORD dword_100AE6D8[109] =
-{
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  64,
-  32,
-  64
-}; // idb
-int dword_100B2AD0 = -1; // weak
-int g_SpeedSensitive = 1; // weak
-int dword_100B3668 = 1096810496; // weak
-int dword_100B366C = 1008981770; // weak
-float flt_100B3670 =  10.0; // weak
-int dword_100B36F8 = 1; // weak
-int dword_100B36FC = 2; // weak
-void *off_100B3700 = &unk_10AF9B48; // weak
-char byte_100B37D0[] = { '\0' }; // weak
-char byte_100B37D1[] = { '\x7F' }; // weak
-char byte_100B37D2[58] =
-{
-  '\0',
-  '\xFF',
-  '¯',
-  '\0',
-  '\0',
-  '\0',
-  '¯',
-  'È',
-  '\0',
-  '\0',
-  ' ',
-  '\0',
-  'Œ',
-  '\xFF',
-  '\xFF',
-  '\xFF',
-  '\0',
-  '0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  'ð',
-  'x',
-  '\0',
-  '`',
-  '0',
-  '\x10',
-  '€',
-  '\xFF',
-  'Œ',
-  '€',
-  '€',
-  '€',
-  '€',
-  '¸',
-  '\xFF',
-  'X',
-  '\0',
-  'H',
-  'Ð',
-  'È',
-  '€',
-  '€',
-  '€',
-  '€',
-  'È',
-  '\0',
-  'd',
-  '\0',
-  '¾',
-  ' ',
-  '\xFF',
-  '”',
-  ' ',
-  '\0',
-  '\0',
-  '@'
-}; // idb
-int g_chosenTrack = 2; // weak
-unsigned int dword_100B3810 = 223u; // idb
-int dword_100B3814[] = { 2 }; // weak
-int dword_100B3818[] = { 10 }; // weak
-char byte_100B381C[2] = { '\x01', '\b' }; // idb
-__int16 word_100B381E[] = { 129 }; // weak
-char byte_100B3820[] = { '\x02' }; // weak
-char byte_100B3821[107] =
-{
-  '\0',
-  '\x04',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  'à',
-  '\0',
-  '\0',
-  '\0',
-  '\x03',
-  '\0',
-  '\0',
-  '\0',
-  '\x0F',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\a',
-  'P',
-  '\0',
-  '\0',
-  '\0',
-  '\x02',
-  '\0',
-  '\x04',
-  '\x02',
-  '\0',
-  '\0',
-  'á',
-  '\0',
-  '\0',
-  '\0',
-  '\x04',
-  '\0',
-  '\0',
-  '\0',
-  '\x14',
-  '\0',
-  '\0',
-  '\0',
-  '\x04',
-  '\x06',
-  '\f',
-  '\0',
-  '\x04',
-  '\x01',
-  '\0',
-  '\x01',
-  '\x02',
-  '\x02',
-  '\x01',
-  '\0',
-  'â',
-  '\0',
-  '\0',
-  '\0',
-  '\x04',
-  '\0',
-  '\0',
-  '\0',
-  '\x14',
-  '\0',
-  '\0',
-  '\0',
-  '\x03',
-  '\x02',
-  ' ',
-  '\0',
-  '\x04',
-  '\x03',
-  '\x01',
-  '\x01',
-  '\x02',
-  '\x04',
-  '\0',
-  '\x02',
-  'ã',
-  '\0',
-  '\0',
-  '\0',
-  '\x04',
-  '\0',
-  '\0',
-  '\0',
-  '\x14',
-  '\0',
-  '\0',
-  '\0',
-  '\x02',
-  '\x05',
-  ' ',
-  '\0',
-  '\x02',
-  '\x03',
-  '\0',
-  '\x04',
-  '\n',
-  '\x03',
-  '\x01',
-  '\x02',
-  'ä',
-  '\0',
-  '\0',
-  '\0'
-}; // idb
-int dword_100B388C = 4; // weak
-float dword_100B38A0[48] =
-{
-   0.99550003,
-   0.99800003,
-   0.99550003,
-   0.99800003,
-   0.99550003,
-   0.99800003,
-   0.99550003,
-   0.99800003,
-   0.99680001,
-   0.99629998,
-   0.99650002,
-   0.99680001,
-   0.99650002,
-   0.99550003,
-   0.99550003,
-   0.99849999,
-   0.995,
-   0.99739999,
-   0.99510002,
-   0.99769998,
-   0.99349999,
-   0.99699998,
-   0.99349999,
-   0.99690002,
-   0.99299997,
-   0.99540001,
-   0.99400002,
-   0.99669999,
-   0.995,
-   0.99779999,
-   0.99379998,
-   0.99699998,
-   0.99299997,
-   0.99540001,
-   0.99550003,
-   0.99800003,
-   0.99299997,
-   0.99540001,
-   0.99330002,
-   0.99629998,
-   0.99519998,
-   0.99790001,
-   0.99440002,
-   0.9982,
-   0.99379998,
-   0.99680001,
-   0.99360001,
-   0.9964
-}; // idb
-unsigned int dword_100B3960[20] =
-{
-  269u,
-  270u,
-  271u,
-  272u,
-  273u,
-  274u,
-  275u,
-  276u,
-  277u,
-  278u,
-  279u,
-  280u,
-  281u,
-  282u,
-  283u,
-  284u,
-  285u,
-  286u,
-  287u,
-  288u
-}; // idb
-int (*off_100B39B0)[81] = &dword_10ACDEA8; // weak
-int *off_100B3A68 = &dword_10A9BFD0; // weak
-size_t SizeInBytes = 0u; // idb
-char *Format = NULL; // idb
-struct tm *Tm = (struct tm *)0xFFFFFFFF; // idb
-char aMakeenemycarco_4[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+3]"; // idb
-char aMakeenemycarco_3[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+2]"; // idb
-char aMakeenemycarco_2[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+1]"; // idb
-char aMakeenemycarco_1[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+0]"; // idb
-char aMakeenemycarco_0[] = "MakeEnemyCarColorPanels: penm->aptex[i]"; // idb
-char aMakeenemycarco[] = "MakeEnemyCarColorPanels: penm->aptex"; // idb
-char aRy[] = "%%ry"; // idb
-int dword_100B4050 = 1; // weak
-char aE[2] = "Ë"; // weak
-_UNKNOWN unk_100B4140; // weak
-_UNKNOWN unk_100B41E8; // weak
-_UNKNOWN unk_100B4290; // weak
-char aEscape[7] = "ESCAPE"; // weak
-char aRcfg[] = "RCfg"; // idb
-int dword_100B5420 = 5; // weak
-int dword_100B5424 = -1; // weak
-int dword_100B5968 = 1065353216; // weak
-int dword_100B5970[] = { 1161527296 }; // weak
-char aMiscModellight[22] = "misc\\modelLights.blob"; // weak
-__int16 word_100B5D90 = 1; // weak
-char aRsea[] = "RSea"; // idb
-char aRgho[] = "RGho"; // idb
-char aCRallyconfigDa[] = "c:\\RallyConfig.dat"; // idb
-int g_Playsfx = 1; // weak
-int dword_100B5DF0[16] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
-int dword_100B5E30[] = { 0 }; // weak
-int dword_100B5E34[415] =
-{
-  1086687360,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1088244736,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1088244736,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936
-}; // idb
-int dword_100B64B0[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
-_UNKNOWN unk_100B64EC; // weak
-int dword_100B64F8[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
-_UNKNOWN unk_100B6534; // weak
-int dword_100B6540[432] =
-{
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086687360,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1088244736,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1088244736,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  0,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1086684160,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936,
-  0,
-  1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  1087735936
-}; // idb
-int dword_100B6C00[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
-_UNKNOWN unk_100B6C3C; // weak
-int dword_100B6C48[18] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360 }; // idb
-char aRWav[6] = "r.wav"; // weak
-char aHWav[6] = "h.wav"; // weak
-char aWav[5] = ".wav"; // weak
-_UNKNOWN unk_100B6CA8; // weak
-CHAR filename[] = "BRString.dll"; // idb
-char g_TrackDir[] = { '\0' }; // weak
-char aTracks[8] = "tracks/"; // weak
-char *off_100B80B8[15] =
-{
-  "desert.trk",
-  "mountain.trk",
-  "coast.trk",
-  "mine.trk",
-  "amazon.trk",
-  "race.trk",
-  "desert.trk",
-  "mountain.trk",
-  "coast.trk",
-  "mine.trk",
-  "amazon.trk",
-  "race.trk",
-  "gamewin.trk",
-  "bonus.trk",
-  "bonus.trk"
-}; // weak
-char g_CarDir[] = { '\0' }; // weak
-char aCars[6] = "cars/"; // weak
-int dword_100B84F4[] = { 0 }; // weak
-char *carNames[16] =
-{
-  "ce",
-  "es",
-  "ns",
-  "rs",
-  "sp",
-  "ps",
-  "m3",
-  "ip",
-  "ld",
-  "hm",
-  "mt",
-  "cu",
-  "bb",
-  "pj",
-  "tr",
-  "mn"
-}; // weak
-char *g_SfxDir = "mn"; // weak
-char aSfx[5] = "sfx/"; // weak
-_UNKNOWN unk_100B8938; // weak
-_UNKNOWN unk_100B89A0; // weak
-char *off_100B89C8[12] =
-{
-  "Fear and Loathing",
-  "Alice",
-  "Tre",
-  "Nagasaki",
-  "Chewbaca",
-  "Projectile",
-  "Numb VI",
-  "Gelex",
-  "Three Blind Lice",
-  "10 to 0",
-  "Bottle Rocket",
-  "Fancy Car"
-}; // weak
-char aFancyCar[10] = "Fancy Car"; // weak
-int dword_100B8C90 = 1; // weak
-int (*off_100B8C94)(void) = &sub_1002A640; // weak
-_UNKNOWN unk_100B8CA0; // weak
-_UNKNOWN unk_100B94A8; // weak
-_UNKNOWN unk_100B9CB0; // weak
-_UNKNOWN unk_100BAAC8; // weak
-int dword_100BBAC8[3] = { 33, 33, 34 }; // idb
-int needToCheckSupportHRPC = 1; // weak
-char byte_100BBAD8 = '¿'; // weak
-char byte_100BBADC = '\xFF'; // weak
-char byte_100BBAE0 = '\xFF'; // weak
-char byte_100BBAE4 = '\xFF'; // weak
+char aAppmsgHoststar[] = "APPMSG_HOSTSTARTED: received";  // idb
+CHAR aSJoinedTheGame[] = "%s joined the game.\r\n";       // idb
+CHAR String[] = "%s left the game.\r\n";                  // idb
+char aUnknown[8] = "unknown";                             // weak
+void *off_100A6498 = &lutBuffer_0;                        // weak
+void *off_100A649C = &ciBuffer_0;                         // weak
+void *off_100A64A0 = &ciBuffer_0;                         // weak
+char byte_100A64B8[16] = {'\x03',
+                          '\x03',
+                          '\0',
+                          '\x01',
+                          '\x02',
+                          '\x02',
+                          '\0',
+                          '\0',
+                          '\f',
+                          '\0',
+                          '\0',
+                          '\0',
+                          '\0',
+                          '\0',
+                          '\0',
+                          '\0'};                    // idb
+void *off_100A64C8 = &unk_10850001;                 // weak
+char byte_100A64F8[] = {'\0'};                      // weak
+char byte_100A64F9[] = {'\0'};                      // weak
+char byte_100A64FA[] = {'\0'};                      // weak
+int dword_100A65D8[4] = {2, 1, 3, 0};               // idb
+char aBadVtxDl[11] = "BAD VTX DL";                  // weak
+int dword_100A66E8 = 1;                             // weak
+int g_Interpolate = 1;                              // weak
+char (*off_100A66FC)[8] = &String2;                 // weak
+float flt_100A6CF0 = 30.0;                          // weak
+float flt_100A6CF4 = 30.0;                          // weak
+int dword_100A6CF8 = 2;                             // weak
+void *dword_100A6CFC = (void *)0xFFFFFFFF;          // idb
+char aRy_0[4] = "%ry";                              // weak
+char aY1[4] = "%y1";                                // weak
+int dword_100A73A8[] = {-1};                        // weak
+char aWw[4] = "%ww";                                // weak
+char asc_100A73D4[2] = "L";                         // weak
+char aRyD[] = "%%ry%d.";                            // idb
+char aY1D[8] = "%%y1%d.";                           // weak
+int dword_100A74A8 = 255;                           // weak
+int dword_100A74AC = 255;                           // weak
+int dword_100A74B0 = 255;                           // weak
+float flt_100A79C8 = 0.5;                           // weak
+int dword_100A79CC = -1;                            // weak
+char aUnknown_0[8] = "UNKNOWN";                     // weak
+int g_D3dinvsrcalpha = 2;                           // weak
+int dword_100A79DC = 1;                             // weak
+float flt_100A79E0 = 0.46000001;                    // weak
+float flt_100A79E4 = 0.46000001;                    // weak
+int dword_100A79E8 = 1065353216;                    // weak
+int(__cdecl *off_100A79EC)(_DWORD) = &sub_1001BC90; // weak
+int(__cdecl *funcs_10024A9E[4])(int) = {
+    &sub_100243D0, &sub_10020DC0, &sub_100243D0, &sub_10024150}; // weak
+int(__cdecl *off_100A7A00[180])(int) = {
+    &sub_10021BD0, &sub_100243D0, &sub_10020D60, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001E170, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001E790, &sub_10020F20}; // weak
+int(__cdecl *off_100A7CB4[7])(int) = {&sub_1001E170,
+                                      &sub_100243D0,
+                                      &sub_100243D0,
+                                      &sub_100243D0,
+                                      &sub_100243D0,
+                                      &sub_1001E790,
+                                      &sub_10020F20}; // weak
+int(__cdecl *off_100A7CEC[65])(int) = {
+    &sub_1001CFF0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001BD70,
+    &sub_1001BE10, &sub_1001CD60, &sub_1001CD80, &sub_100243D0, &sub_1001C7A0, &sub_1001CE70,
+    &sub_10021B80, &sub_10021510, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001CDA0, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001CF30, &sub_100243D0, &sub_100243D0,
+    &sub_100243D0, &sub_1001BE30, &sub_1001CC00, &sub_1001CC70, &sub_100243D0, &sub_1001CCA0,
+    &sub_1001CB40, &sub_1001C7F0, &sub_100243D0, &sub_100243D0, &sub_100243D0}; // weak
+void *off_100A7DF0 = &unk_104C59A8;                                             // weak
+int dword_100A7DF4 = 32;                                                        // weak
+int dword_100A7DF8 = 32;                                                        // weak
+int dword_100A7DFC = 64;                                                        // weak
+int dword_100A7E00 = 64;                                                        // weak
+int dword_100A7E04 = 32;                                                        // weak
+int dword_100A7E08 = 32;                                                        // weak
+char aAppendtextureA[20] = "AppendTexture: atdb";                               // weak
+char aTidfromtexture[] = "TIDFromTextureAppend: amid";                          // idb
+CHAR aEarInteractive[] = "EAR Interactive Around-Sound";                        // idb
+CHAR aEarDllUpdateea[] = "_EAR_DLL_UpdateEar@0";                                // idb
+CHAR aEarDllShutdown_6[] = "_EAR_DLL_ShutDownTimer@0";                          // idb
+CHAR aEarDllStarttim[] = "_EAR_DLL_StartTimer@0";                               // idb
+CHAR aEarDllStarteve[] = "_EAR_DLL_StartEvent@4";                               // idb
+CHAR aEarDllShutdown_5[] = "_EAR_DLL_ShutDownPreset@4";                         // idb
+CHAR aEarDllShutdown_4[] = "_EAR_DLL_ShutDownMatrix@4";                         // idb
+CHAR aEarDllShutdown_3[] = "_EAR_DLL_ShutDownEvent@8";                          // idb
+CHAR aEarDllShutdown_2[] = "_EAR_DLL_ShutDownEnvironment@4";                    // idb
+CHAR aEarDllShutdown_1[] = "_EAR_DLL_ShutDownEar@0";                            // idb
+CHAR aEarDllShutdown_0[] = "_EAR_DLL_ShutDownChannel@4";                        // idb
+CHAR aEarDllShutdown[] = "_EAR_DLL_ShutDownBank@4";                             // idb
+CHAR aEarDllShowlast[] = "_EAR_DLL_ShowLastError@0";                            // idb
+CHAR aEarDllSetuserd[] = "_EAR_DLL_SetUserDistanceUnit@8";                      // idb
+CHAR aEarDllSetatten[] = "_EAR_DLL_SetAttenuationLevel@8";                      // idb
+CHAR aEarDllResetear[] = "_EAR_DLL_ResetEar@0";                                 // idb
+CHAR aEarDllRegister_3[] = "_EAR_DLL_RegisterPreset@8";                         // idb
+CHAR aEarDllRegister_2[] = "_EAR_DLL_RegisterMatrix@4";                         // idb
+CHAR aEarDllRegister_1[] = "_EAR_DLL_RegisterEnvironment@4";                    // idb
+CHAR aEarDllRegister_0[] = "_EAR_DLL_RegisterChannel@16";                       // idb
+CHAR aEarDllRegister[] = "_EAR_DLL_RegisterBank@8";                             // idb
+CHAR aEarDllMoveeven[] = "_EAR_DLL_MoveEvent@4";                                // idb
+CHAR aEarDllMixevent[] = "_EAR_DLL_MixEvent@4";                                 // idb
+CHAR aEarDllInitiali[] = "_EAR_DLL_InitializeEar@4";                            // idb
+CHAR aEarDllGetversi[] = "_EAR_DLL_GetVersion@0";                               // idb
+CHAR aEarDllGetlaste[] = "_EAR_DLL_GetLastError@0";                             // idb
+CHAR aEarDllGetevent[] = "_EAR_DLL_GetEventStatus@8";                           // idb
+CHAR aEarDllEarinact[] = "_EAR_DLL_EarInactive@0";                              // idb
+CHAR aEarDllClearcha[] = "_EAR_DLL_ClearChannel@8";                             // idb
+CHAR aEarDllChangech[] = "_EAR_DLL_ChangeChannelControl@8";                     // idb
+CHAR aEarDllAssignhw[] = "_EAR_DLL_AssignHwnd@4";                               // idb
+CHAR ProcName[] = "_EAR_DLL_AAA_Validate@4";                                    // idb
+char aEariasDll[11] = "earias.dll";                                             // weak
+CHAR aEarpdsDll[] = "earpds.dll";                                               // idb
+int dword_100A81A8 = 1;                                                         // weak
+int dword_100A81AC = 1065353216;                                                // weak
+float flt_100A81B0 = 1.0;                                                       // weak
+int dword_100A81B4 = 1065353216;                                                // weak
+float flt_100A81B8 = 1.0;                                                       // weak
+int dword_100A81BC = 2;                                                         // weak
+int g_Width = 640;                                                              // weak
+int g_Height = 480;                                                             // weak
+void *off_100A81C8 = &unk_10575540;                                             // weak
+int dword_100AA008 = 5;                                                         // weak
+int dword_100AA00C = -1;                                                        // weak
+int g_GameMode = 1;                                                             // weak
+char (*off_100AA018)[8] = &String2;                                             // weak
+float flt_100AA01C[] = {4.0};                                                   // weak
+char (*off_100AA020)[8] = &String2;                                             // weak
+float flt_100AA1F8[6] = {2.1500001, 1.5, 0.85000002, 0.2, 0.0, 0.0};            // idb
+char byte_100AA210[24] = {'\t', '\x06', '\x05', '\x03', '\x02', '\x01', '\0', '\0',
+                          '\0', '\0',   '\0',   '\0',   '\0',   '\0',   '\0', '\0',
+                          '\0', '\0',   '\0',   '\0',   '\0',   '\0',   '\0', '\0'}; // idb
+int dword_100AA228[] = {0};                                                          // weak
+float flt_100AA22C[15] = {
+    0.0, ? flt, 2.2, ? flt, 2.3, ? flt, 2.0, ? flt, 0.0, ? flt, 2.0, ? flt, 2.0, ? flt, 0.0 }; // idb
+int dword_100AA268[3] = {33, 33, 34};                                 // idb
+char aRallyintro2Dat[] = "RallyIntro2.dat";                           // idb
+char aRallyintro1Dat[16] = "RallyIntro1.dat";                         // weak
+char aRallycreditsDa[] = "RallyCredits.dat";                          // idb
+char FileName[] = "RallyOutro.dat";                                   // idb
+int dword_100AA5A8 = 1;                                               // weak
+char aLoadingImg[12] = "loading.img";                                 // weak
+int dword_100AA5D0[4] = {1077952512, -2139062272, -1061109760, -256}; // idb
+CHAR aCouldnTCreates[] = "Couldn't CreateSurface\r\n";                // idb
+CHAR aCouldnTSetCoop[] = "Couldn't Set coop level\r\n";               // idb
+CHAR aCouldnTQiDdraw[] = "Couldn't QI DDraw2\r\n";                    // idb
+CHAR aCouldnTCreateD[] = "Couldn't create DDraw\r\n";                 // idb
+CHAR aCouldnTLoadlib_0[] = "Couldn't LoadLibrary DDraw\r\n";          // idb
+CHAR aDirectdrawcrea[] = "DirectDrawCreate";                          // idb
+CHAR LibFileName[] = "DDRAW.DLL";                                     // idb
+CHAR aCouldnTGetproc[] = "Couldn't GetProcAddress DInputCreate\r\n";  // idb
+CHAR aDirectinputcre[] = "DirectInputCreateA";                        // idb
+CHAR aCouldnTLoadlib[] = "Couldn't LoadLibrary DInput\r\n";           // idb
+CHAR g_DINPUT_DLL[] = "DINPUT.DLL";                                   // idb
+int g_D3dalphacompar = 1;                                             // weak
+int dword_100AA728 = -2143612928;                                     // weak
+int dword_100AA72C = -2143518720;                                     // weak
+_UNKNOWN unk_100AA770;                                                // weak
+_UNKNOWN unk_100AA838;                                                // weak
+_UNKNOWN unk_100AA860;                                                // weak
+_UNKNOWN unk_100AA868;                                                // weak
+int dword_100AA87C = 1;                                               // weak
+int dword_100AA880 = 1;                                               // weak
+int dword_100AA884 = 1;                                               // weak
+int dword_100AA888 = 3;                                               // weak
+int dword_100AA890 = 1;                                               // weak
+int dword_100AA894 = 1;                                               // weak
+int dword_100AA89C = -1;                                              // weak
+int dword_100AA8A0 = -1;                                              // weak
+int g_BitDepth = 16;                                                  // weak
+float flt_100AA8AC = 0.52359879;                                      // weak
+float flt_100AA8B0 = 400.0;                                           // idb
+int dword_100AA8B4 = 1;                                               // weak
+int dword_100AA8B8[] = {-65896952};                                   // weak
+int dword_100AA8BC[] = {-201329928};                                  // weak
+int dword_100AA8C0[] = {-64577532};                                   // weak
+int dword_100AA8C4[] = {536646648};                                   // weak
+int dword_100AA8C8[] = {-50356220};                                   // weak
+int dword_100AA8CC[3] = {-158728, -61800956, 1073607672};             // idb
+int dword_100AAB18 = 14;                                              // weak
+char aHugeGlistError[17] = "HUGE GLIST ERROR";                        // weak
+char aLoadcar[10] = "LoadCar()";                                      // weak
+char Str2[] = "RCar";                                                 // idb
+char aRca[5] = ".rca";                                                // weak
+char aHnd[5] = ".hnd";                                                // weak
+char aBossrallyPod[14] = "BossRally.pod";                             // weak
+char *off_100AAC48[20] = {"First!", "Second!", "Third!", "Fourth.", "Fifth.", "Sixth.", "7th.",
+                          "8th.",   "9th.",    "10th.",  "11th.",   "12th.",  "13th.",  "14th.",
+                          "15th.",  "16th.",   "17th.",  "18th.",   "19th.",  "20th."}; // weak
+char aSS_1[9] = "%s: %s\r\n";                                                           // weak
+CHAR aSS_0[] = "%s%s\r\n";                                                              // idb
+char aDperrLogondeni[18] = "DPERR_LOGONDENIED";                                         // weak
+char aDpOk[6] = "DP_OK";                                                                // weak
+char aDperrNotlogged[18] = "DPERR_NOTLOGGEDIN";                                         // weak
+char aDperrCantloadc[19] = "DPERR_CANTLOADCAPI";                                        // weak
+char aDperrEncryptio_0[29] = "DPERR_ENCRYPTIONNOTSUPPORTED";                            // weak
+char aDperrCantloads_0[30] = "DPERR_CANTLOADSECURITYPACKAGE";                           // weak
+char aDperrSignfaile[17] = "DPERR_SIGNFAILED";                                          // weak
+char aDperrEncryptio[23] = "DPERR_ENCRYPTIONFAILED";                                    // weak
+char aDperrCantloads[19] = "DPERR_CANTLOADSSPI";                                        // weak
+char aDperrAuthentic[27] = "DPERR_AUTHENTICATIONFAILED";                                // weak
+char aDperrNotregist[20] = "DPERR_NOTREGISTERED";                                       // weak
+char aDperrAlreadyre[24] = "DPERR_ALREADYREGISTERED";                                   // weak
+char aDperrServicepr[28] = "DPERR_SERVICEPROVIDERLOADED";                               // weak
+char aDperrNotlobbie[17] = "DPERR_NOTLOBBIED";                                          // weak
+char aDperrUnknownap[25] = "DPERR_UNKNOWNAPPLICATION";                                  // weak
+char aDperrNoservice[24] = "DPERR_NOSERVICEPROVIDER";                                   // weak
+char aDperrInvalidin[23] = "DPERR_INVALIDINTERFACE";                                    // weak
+char aDperrAppnotsta[20] = "DPERR_APPNOTSTARTED";                                       // weak
+char aDperrCantcreat_2[24] = "DPERR_CANTCREATEPROCESS";                                 // weak
+char aDperrBuffertoo_0[21] = "DPERR_BUFFERTOOLARGE";                                    // weak
+char aDperrConnectin[17] = "DPERR_CONNECTING";                                          // weak
+char aDperrInvalidpa_0[22] = "DPERR_INVALIDPASSWORD";                                   // weak
+char aDperrNonewplay[19] = "DPERR_NONEWPLAYERS";                                        // weak
+char aDperrUninitial[20] = "DPERR_UNINITIALIZED";                                       // weak
+char aDperrSessionlo[18] = "DPERR_SESSIONLOST";                                         // weak
+char aDperrPlayerlos[17] = "DPERR_PLAYERLOST";                                          // weak
+char aDperrCannotcre[25] = "DPERR_CANNOTCREATESERVER";                                  // weak
+char aDperrUsercance[17] = "DPERR_USERCANCEL";                                          // weak
+char aDperrBusy[11] = "DPERR_BUSY";                                                     // weak
+char aDperrUnavailab[18] = "DPERR_UNAVAILABLE";                                         // weak
+char aDperrTimeout[14] = "DPERR_TIMEOUT";                                               // weak
+char aDperrSendtoobi[17] = "DPERR_SENDTOOBIG";                                          // weak
+char aDperrNosession[17] = "DPERR_NOSESSIONS";                                          // weak
+char aDperrNoplayers[16] = "DPERR_NOPLAYERS";                                           // weak
+char aDperrNonameser[24] = "DPERR_NONAMESERVERFOUND";                                   // weak
+char aDperrNomessage[17] = "DPERR_NOMESSAGES";                                          // weak
+char aDperrNoconnect[19] = "DPERR_NOCONNECTION";                                        // weak
+char aDperrNocaps[13] = "DPERR_NOCAPS";                                                 // weak
+char aDperrInvalidgr[19] = "DPERR_INVALIDGROUP";                                        // weak
+char aDperrInvalidpl[20] = "DPERR_INVALIDPLAYER";                                       // weak
+char aDperrInvalidob[20] = "DPERR_INVALIDOBJECT";                                       // weak
+char aDperrInvalidfl[19] = "DPERR_INVALIDFLAGS";                                        // weak
+char aDperrException[16] = "DPERR_EXCEPTION";                                           // weak
+char aDperrCapsnotav[26] = "DPERR_CAPSNOTAVAILABLEYET";                                 // weak
+char aDperrCantcreat_1[24] = "DPERR_CANTCREATESESSION";                                 // weak
+char aDperrCantcreat_0[23] = "DPERR_CANTCREATEPLAYER";                                  // weak
+char aDperrCantcreat[22] = "DPERR_CANTCREATEGROUP";                                     // weak
+char aDperrCantaddpl[20] = "DPERR_CANTADDPLAYER";                                       // weak
+char aDperrBuffertoo[21] = "DPERR_BUFFERTOOSMALL";                                      // weak
+char aDperrActivepla[20] = "DPERR_ACTIVEPLAYERS";                                       // weak
+char aDperrAccessden[19] = "DPERR_ACCESSDENIED";                                        // weak
+char aDperrAlreadyin[25] = "DPERR_ALREADYINITIALIZED";                                  // weak
+char aDperrInvalidpa[20] = "DPERR_INVALIDPARAMS";                                       // weak
+char aDperrOutofmemo[18] = "DPERR_OUTOFMEMORY";                                         // weak
+char aDperrGeneric[14] = "DPERR_GENERIC";                                               // weak
+char aDperrNointerfa[18] = "DPERR_NOINTERFACE";                                         // weak
+char aDperrUnsupport[18] = "DPERR_UNSUPPORTED";                                         // weak
+char aDperrPending[14] = "DPERR_PENDING";                                               // weak
+char aE_0[2] = "\xca";                                                                  // weak
+int dword_100AB334[] = {0};                                                             // weak
+int dword_100AB3D8 = 1;                                                                 // weak
+__int16 word_100AB3DC = 1;                                                              // weak
+int dword_100AB3E0 = -1;                                                                // weak
+__int16 word_100AB3E4 = 258;                                                            // weak
+int dword_100AB3E8 = 258;                                                               // weak
+int dword_100AB3EC = 36;                                                                // weak
+int Value = -1;                                                                         // idb
+int dword_100AB418 = 0;                                                                 // weak
+int dword_100AB41C = 0;                                                                 // weak
+int dword_100AB420 = 200;                                                               // weak
+int dword_100AB424 = 200;                                                               // weak
+int dword_100AB428 = 0;                                                                 // weak
+int dword_100AB42C = 380;                                                               // weak
+int dword_100AB430 = 200;                                                               // weak
+int dword_100AB434 = 480;                                                               // weak
+int dword_100AB448 = 148;                                                               // weak
+int dword_100AB44C = 110;                                                               // weak
+int dword_100AB450 = 358;                                                               // weak
+int dword_100AB454 = 260;                                                               // weak
+__int16 word_100AB568[] = {0};                                                          // weak
+int dword_100AB56C[4] = {0, 0, 640, 480};                                               // idb
+int dword_100AB57C[30] = {0, 1,   0,   0, 28, 30, 1, 2,   0,   0, 128, 144, 1, 3,   0,
+                          0, 128, 144, 1, 4,  0,  0, 128, 144, 1, 5,   0,   0, 204, 93}; // idb
+int dword_100AB5F4 = 0;                                                                  // weak
+int dword_100AB9C4 = 16;                                                                 // weak
+int dword_100AB9C8 = 16;                                                                 // weak
+int dword_100AB9EC = 0;                                                                  // weak
+int dword_100AB9F0 = 0;                                                                  // weak
+int dword_100AB9F4 = 16;                                                                 // weak
+int dword_100AB9F8 = 16;                                                                 // weak
+int dword_100AC300 = 1;                                                                  // weak
+int dword_100AC304 = 1;                                                                  // weak
+unsigned int dword_100AC308[16] = {119u,
+                                   120u,
+                                   121u,
+                                   122u,
+                                   123u,
+                                   124u,
+                                   119u,
+                                   120u,
+                                   121u,
+                                   122u,
+                                   123u,
+                                   124u,
+                                   0u,
+                                   125u,
+                                   125u,
+                                   0u};                  // idb
+unsigned int dword_100AC348[4] = {126u, 127u, 128u, 0u}; // idb
+unsigned int dword_100AC358[4] = {129u, 127u, 130u, 0u}; // idb
+unsigned int dword_100AC368[16] = {141u,
+                                   142u,
+                                   143u,
+                                   144u,
+                                   145u,
+                                   146u,
+                                   147u,
+                                   148u,
+                                   149u,
+                                   150u,
+                                   151u,
+                                   152u,
+                                   153u,
+                                   154u,
+                                   155u,
+                                   156u};                            // idb
+unsigned int dword_100AC3A8 = 117u;                                  // idb
+unsigned int dword_100AC3B0[6] = {131u, 132u, 133u, 134u, 135u, 0u}; // idb
+unsigned int dword_100AC3C8[6] = {157u, 158u, 159u, 160u, 161u, 0u}; // idb
+unsigned int dword_100AC3E0[4] = {136u, 137u, 138u, 139u};           // idb
+unsigned int dword_100AC3F0[4] = {85u, 86u, 87u, 140u};              // idb
+int dword_100AC400[] = {115};                                        // weak
+unsigned int dword_100AC408 = 115u;                                  // idb
+unsigned int dword_100AC410 = 115u;                                  // idb
+unsigned int dword_100AC418 = 115u;                                  // idb
+int dword_100AC420[32] = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15,
+                          16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}; // idb
+int dword_100AC4A0[4] = {0, 1, 2, 0};                                                      // idb
+int dword_100AC4B0[4] = {0, 1, 2, 0};                                                      // idb
+int dword_100AC4C0[6] = {0, 1, 2, 3, 4, 0};                                                // idb
+int dword_100AC4D8[16] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 0};            // idb
+int dword_100AC518[] = {1};                                                                // weak
+int dword_100AC520[4] = {0, 1, 2, 3};                                                      // idb
+int dword_100AC530[] = {1};                                                                // weak
+int dword_100AC538[] = {1};                                                                // weak
+int dword_100AC540[] = {1};                                                                // weak
+int dword_100AC548[] = {1};                                                                // weak
+__int16 word_100AC550[16] = {
+    16, 18, 17, 27, 28, 118, 16, 18, 17, 27, 28, 118, 0, 143, 143, 0}; // idb
+__int16 word_100AC570[16] = {
+    65, 62, 66, 63, 64, 119, 65, 62, 66, 63, 64, 119, 0, 144, 144, 0};              // idb
+char byte_100AC590[8] = {'\x17', '\x13', '\x15', '\x16', '\x14', '\0', '\0', '\0'}; // idb
+char byte_100AC598[4] = {'\x1D', '\f', '\0', '\0'};                                 // idb
+char byte_100AC59C[4] = {'\x1A', '\x19', '\x18', '\0'};                             // idb
+char byte_100AC5A0[8] = {'\r', '\x0E', '\x0F', '\0', '\0', '\0', '\0', '\0'};       // idb
+__int16 word_100AC5A8[] = {31};                                                     // weak
+char byte_100AC628[4] = {'2', '3', '1', '`'};                                       // idb
+char byte_100AC62C[4] = {'E', 'D', 'C', 'F'};                                       // idb
+char byte_100AC630[] = {'a'};                                                       // weak
+char byte_100AC631 = 'f';                                                           // weak
+char byte_100AC634[4] = {'c', 'b', '\0', '\0'};                                     // idb
+char byte_100AC638[8] = {'e', 'd', '\0', '\0', '\0', '\0', '\0', '\0'};             // idb
+__int16 word_100AC640[] = {140};                                                    // weak
+int dword_100AC648 = 2;                                                             // weak
+int dword_100AC64C = 1;                                                             // weak
+int dword_100AC650 = 1;                                                             // weak
+int dword_100AC654 = 1;                                                             // weak
+int dword_100AC658 = 3;                                                             // weak
+int dword_100AC65C = 4;                                                             // weak
+int dword_100AC660[] = {1};                                                         // weak
+unsigned int dword_100AC664[15] = {
+    162u, 1u, 163u, 0u, 164u, 0u, 165u, 1u, 166u, 0u, 167u, 1u, 168u, 1u, 169u}; // idb
+int dword_100AC6A0 = -1;                                                         // weak
+__int16 word_100AC6A4 = 256;                                                     // weak
+char *off_100AC6AC = "madeleine";                                                // weak
+__int16 word_100AC6E4[] = {-1};                                                  // weak
+__int16 word_100AC6E6[] = {-1};                                                  // weak
+__int16 word_100AC6E8[] = {-1};                                                  // weak
+__int16 word_100AC9DC = 36;                                                      // weak
+__int16 word_100ACB5C[] = {-1};                                                  // weak
+__int16 word_100ACB5E[] = {-1};                                                  // weak
+__int16 word_100ACB60[] = {-1};                                                  // weak
+char byte_100ACE5C[] = {' '};                                                    // weak
+char aR[2] = "r";                                                                // idb
+char a1[2] = "1";                                                                // weak
+char a0[2] = "0";                                                                // weak
+char kBackslash[] = "\\";                                                        // idb
+char asc_100AD300[2] = " ";                                                      // weak
+char asc_100AD304[3] = "  ";                                                     // weak
+char asc_100AD308[6] = "--:--";                                                  // weak
+char aAutosaveBrf[] = "AutoSave.brf";                                            // idb
+char aBrf[5] = ".brf";                                                           // weak
+char aRallyseason[12] = "RallySeason";                                           // weak
+char aGrf[5] = ".grf";                                                           // weak
+char aTimeattack[11] = "TimeAttack";                                             // weak
+char aRallyseasonBrf[17] = "RallySeason*.BRF";                                   // weak
+char aTimeattackGrf[16] = "TimeAttack*.GRF";                                     // weak
+char aSeasondescDat[] = "seasondesc.dat";                                        // idb
+char aCRallyghostDat[18] = "c:\\RallyGhost.dat";                                 // weak
+char aCRallyseasonDa[19] = "c:\\RallySeason.dat";                                // weak
+char aImagesTrakqBmp_0[18] = "images\\trakQ_.bmp";                               // weak
+char aImagesTrakqBmp[17] = "images\\trakQ.bmp";                                  // weak
+char aImagesListbox2[20] = "images\\listbox2.bmp";                               // weak
+char aImagesTire2off[20] = "images\\tire2off.bmp";                               // weak
+char aImagesTire2onB[19] = "images\\tire2on.bmp";                                // weak
+char aImagesLightgBm[18] = "images\\lightg.bmp";                                 // weak
+char aImagesLightrBm[18] = "images\\lightr.bmp";                                 // weak
+char aImagesZCarbbBm[19] = "images\\z-carBB.bmp";                                // weak
+char aImagesZCarspBm[19] = "images\\z-carSP.bmp";                                // weak
+char aImagesZCarrsBm[19] = "images\\z-carRS.bmp";                                // weak
+char aImagesZCarpsBm[19] = "images\\z-carPS.bmp";                                // weak
+char aImagesZCarpjBm[19] = "images\\z-carPJ.bmp";                                // weak
+char aImagesZCarnsBm[19] = "images\\z-carNS.bmp";                                // weak
+char aImagesZCarmnBm[19] = "images\\z-carMN.bmp";                                // weak
+char aImagesZCarm3Bm[19] = "images\\z-carM3.bmp";                                // weak
+char aImagesZCarldBm[19] = "images\\z-carLD.bmp";                                // weak
+char aImagesZCaripBm[19] = "images\\z-carIP.bmp";                                // weak
+char aImagesZCarfhBm[19] = "images\\z-carFH.bmp";                                // weak
+char aImagesZCaresBm[19] = "images\\z-carES.bmp";                                // weak
+char aImagesZCarcuBm[19] = "images\\z-carCU.bmp";                                // weak
+char aImagesZCarceBm[19] = "images\\z-carCE.bmp";                                // weak
+char aImagesZCartrBm[19] = "images\\z-carTR.bmp";                                // weak
+char aImagesZCarmtBm[19] = "images\\z-carMT.bmp";                                // weak
+char aImagesButSavdB[20] = "images\\but-savd.bmp";                               // weak
+char aImagesButSavBm[19] = "images\\but-sav.bmp";                                // weak
+char aImagesTrakrace_0[21] = "images\\trakracel.bmp";                            // weak
+char aImagesTrakrace[21] = "images\\trakraceb.bmp";                              // weak
+char aImagesSndlevl3[20] = "images\\sndlevl3.bmp";                               // weak
+char aImagesSndlevl2[20] = "images\\sndlevl2.bmp";                               // weak
+char aImagesMtrwdBmp[17] = "images\\mtrwd.bmp";                                  // weak
+char aImagesFbrwdBmp[17] = "images\\fbrwd.bmp";                                  // weak
+char aImagesCurwdBmp[17] = "images\\curwd.bmp";                                  // weak
+char aImagesBbrwdBmp[17] = "images\\bbrwd.bmp";                                  // weak
+char aImagesMirrwdBm[18] = "images\\mirrwd.bmp";                                 // weak
+char aImagesMnrwdBmp[17] = "images\\mnrwd.bmp";                                  // weak
+char aImagesPjrwdBmp[17] = "images\\pjrwd.bmp";                                  // weak
+char aImagesTrrwdBmp[17] = "images\\trrwd.bmp";                                  // weak
+char aImagesSoundptr[20] = "images\\soundptr.bmp";                               // weak
+char aImagesSoundtik[20] = "images\\soundtik.bmp";                               // weak
+char aImagesMusicBmp[17] = "images\\music.bmp";                                  // weak
+char aImagesEngsound[20] = "images\\engsound.bmp";                               // weak
+char aImagesListboxB[19] = "images\\listbox.bmp";                                // weak
+char aImagesNoffstik[20] = "images\\noffstik.bmp";                               // weak
+char aImagesSpeconBm[18] = "images\\specon.bmp";                                 // weak
+char aImagesSpecoffB[19] = "images\\specoff.bmp";                                // weak
+char aImagesCarwshad[21] = "images\\carwshad2.bmp";                              // weak
+char aImagesCarwnosh[23] = "images\\carwnoshad2.bmp";                            // weak
+char aImagesFfstickB[19] = "images\\ffstick.bmp";                                // weak
+char aImagesMousinpt[20] = "images\\mousinpt.bmp";                               // weak
+char aImagesChatbar2[20] = "images\\chatbar2.bmp";                               // weak
+char aImagesCars5bBm[18] = "images\\cars5b.bmp";                                 // weak
+char aImagesCars5aBm[18] = "images\\cars5a.bmp";                                 // weak
+char aImagesCars4bBm[18] = "images\\cars4b.bmp";                                 // weak
+char aImagesCars4aBm[18] = "images\\cars4a.bmp";                                 // weak
+char aImagesCars3bBm[18] = "images\\cars3b.bmp";                                 // weak
+char aImagesCars3aBm[18] = "images\\cars3a.bmp";                                 // weak
+char aImagesCars2bBm[18] = "images\\cars2b.bmp";                                 // weak
+char aImagesCars2aBm[18] = "images\\cars2a.bmp";                                 // weak
+char aImagesCars1aBm[18] = "images\\cars1a.bmp";                                 // weak
+char aImagesButOpdBm[19] = "images\\but-opd.bmp";                                // weak
+char aImagesButOpBmp[18] = "images\\but-op.bmp";                                 // weak
+char aImagesButMaind[21] = "images\\but-maind.bmp";                              // weak
+char aImagesButMainB[20] = "images\\but-main.bmp";                               // weak
+char aImagesNoadv2Bm[18] = "images\\noadv2.bmp";                                 // weak
+char aImagesNoadv1Bm[18] = "images\\noadv1.bmp";                                 // weak
+char aImagesCongratB[19] = "images\\congrat.bmp";                                // weak
+char aImagesBgdimBmp[17] = "images\\bgdim.bmp";                                  // weak
+char aImagesSeasn5aB[19] = "images\\seasn5a.bmp";                                // weak
+char aImagesSeasn4bB[19] = "images\\seasn4b.bmp";                                // weak
+char aImagesSeasn4aB[19] = "images\\seasn4a.bmp";                                // weak
+char aImagesSeasn3bB[19] = "images\\seasn3b.bmp";                                // weak
+char aImagesSeasn3aB[19] = "images\\seasn3a.bmp";                                // weak
+char aImagesSeasn2bB[19] = "images\\seasn2b.bmp";                                // weak
+char aImagesSeasn2aB[19] = "images\\seasn2a.bmp";                                // weak
+char aImagesMpserial[20] = "images\\mpserial.bmp";                               // weak
+char aImagesMpipxBmp[17] = "images\\mpipx.bmp";                                  // weak
+char aImagesMptcpipB[19] = "images\\mptcpip.bmp";                                // weak
+char aImagesMpmodemB[19] = "images\\mpmodem.bmp";                                // weak
+char aImagesCoasttrB[20] = "images\\coasttr_.bmp";                               // weak
+char aImagesDesrttrB[20] = "images\\desrttr_.bmp";                               // weak
+char aImagesTrakeBmp_0[18] = "images\\trake_.bmp";                               // weak
+char aImagesTrakdBmp_0[18] = "images\\trakd_.bmp";                               // weak
+char aImagesTrakcBmp_0[18] = "images\\trakc_.bmp";                               // weak
+char aImagesLboxendB[19] = "images\\lboxend.bmp";                                // weak
+char aImagesRboxendB[19] = "images\\rboxend.bmp";                                // weak
+char aImagesBoxtile2[20] = "images\\boxtile2.bmp";                               // weak
+char aImagesSlidebox[20] = "images\\slidebox.bmp";                               // weak
+char aImagesNamebarB[19] = "images\\namebar.bmp";                                // weak
+char aImagesMonitrBm[18] = "images\\monitr.bmp";                                 // weak
+char aImagesSpkrBmp[16] = "images\\spkr.bmp";                                    // weak
+char aImagesSteeradj[20] = "images\\steeradj.bmp";                               // weak
+char aImagesSteerarr[20] = "images\\steerarr.bmp";                               // weak
+char aImagesTypeYelB[20] = "images\\type_yel.bmp";                               // weak
+char aImagesSteerinp[20] = "images\\steerinp.bmp";                               // weak
+char aImagesKeybdBmp[17] = "images\\keybd.bmp";                                  // weak
+char aImagesJoystkBm[18] = "images\\joystk.bmp";                                 // weak
+char aImagesArrowuuB[19] = "images\\arrowuu.bmp";                                // weak
+char aImagesArrowudB[19] = "images\\arrowud.bmp";                                // weak
+char aImagesArrowduB[19] = "images\\arrowdu.bmp";                                // weak
+char aImagesArrowddB[19] = "images\\arrowdd.bmp";                                // weak
+char aImagesCarbbBmp[17] = "images\\carBB.bmp";                                  // weak
+char aImagesCarspBmp[17] = "images\\carSP.bmp";                                  // weak
+char aImagesCarrsBmp[17] = "images\\carRS.bmp";                                  // weak
+char aImagesCarpsBmp[17] = "images\\carPS.bmp";                                  // weak
+char aImagesCarpjBmp[17] = "images\\carPJ.bmp";                                  // weak
+char aImagesCarnsBmp[17] = "images\\carNS.bmp";                                  // weak
+char aImagesCarmnBmp[17] = "images\\carMN.bmp";                                  // weak
+char aImagesCarm3Bmp[17] = "images\\carM3.bmp";                                  // weak
+char aImagesCarldBmp[17] = "images\\carLD.bmp";                                  // weak
+char aImagesCaripBmp[17] = "images\\carIP.bmp";                                  // weak
+char aImagesCarfhBmp[17] = "images\\carFH.bmp";                                  // weak
+char aImagesCaresBmp[17] = "images\\carES.bmp";                                  // weak
+char aImagesCarcuBmp[17] = "images\\carCU.bmp";                                  // weak
+char aImagesCarceBmp[17] = "images\\carCE.bmp";                                  // weak
+char aImagesCartrBmp[17] = "images\\carTR.bmp";                                  // weak
+char aImagesAshftBmp[17] = "images\\ashft.bmp";                                  // weak
+char aImagesTrakeBmp[17] = "images\\trake.bmp";                                  // weak
+char aImagesTrakdBmp[17] = "images\\trakd.bmp";                                  // weak
+char aImagesWettireB[19] = "images\\wettire.bmp";                                // weak
+char aImagesMedtireB[19] = "images\\medtire.bmp";                                // weak
+char aImagesDrytireB[19] = "images\\drytire.bmp";                                // weak
+char aImagesSunwethB[19] = "images\\sunweth.bmp";                                // weak
+char aImagesSnowBmp[16] = "images\\snow.bmp";                                    // weak
+char aImagesRainBmp[16] = "images\\rain.bmp";                                    // weak
+char aImagesNiteBmp[16] = "images\\nite.bmp";                                    // weak
+char aImagesFogBmp[15] = "images\\fog.bmp";                                      // weak
+char aImagesTrakcBmp[17] = "images\\trakc.bmp";                                  // weak
+char aImagesCoasttrk[20] = "images\\coasttrk.bmp";                               // weak
+char aImagesDesrttrk[20] = "images\\desrttrk.bmp";                               // weak
+char aImagesHardshok[20] = "images\\hardshok.bmp";                               // weak
+char aImagesMedshokB[19] = "images\\medshok.bmp";                                // weak
+char aImagesSoftshok[20] = "images\\softshok.bmp";                               // weak
+char aImagesMshftBmp[17] = "images\\mshft.bmp";                                  // weak
+char aImagesCarmtBmp[17] = "images\\carmt.bmp";                                  // weak
+char aImagesQrBmp[14] = "images\\qr.bmp";                                        // weak
+char aImagesOpBmp[14] = "images\\op.bmp";                                        // weak
+char aImagesTaBmp[14] = "images\\ta.bmp";                                        // weak
+char aImagesMpBmp[14] = "images\\mp.bmp";                                        // weak
+char aImagesChampBmp[17] = "images\\champ.bmp";                                  // weak
+char aImagesBignumsB[19] = "images\\bignums.bmp";                                // weak
+char aImagesTypeMidB[20] = "images\\type_mid.bmp";                               // weak
+char aImagesTypeWitB[20] = "images\\type_wit.bmp";                               // weak
+char aImagesTypeGryB[20] = "images\\type_gry.bmp";                               // weak
+char aImagesCursorBm[18] = "images\\cursor.bmp";                                 // weak
+char aImagesWork1aBm[18] = "images\\work1a.bmp";                                 // weak
+char aDdrawDoinitLoa[] = "DDraw_DoInit: loading.bmp failed to load!";            // idb
+CHAR name[] = "images\\loading.bmp";                                             // idb
+int dword_100ADF58 = 9;                                                          // weak
+int dword_100ADF5C = 9;                                                          // weak
+int dword_100ADF60 = 1;                                                          // weak
+char byte_100ADF68[] = {'\0'};                                                   // weak
+char byte_100ADF90[] = {'\0'};                                                   // weak
+int dword_100ADFC8 = 1;                                                          // weak
+int dword_100ADFE0[] = {-1};                                                     // weak
+int dword_100ADFE4[] = {0};                                                      // weak
+int dword_100ADFE8[] = {0};                                                      // weak
+int dword_100ADFEC[] = {0};                                                      // weak
+int dword_100ADFF0[] = {0};                                                      // weak
+_DWORD dword_100AE6D8[109] = {
+    0,  0, 0, 0, -1, 0, 0,  0, 0,  0, 0,  0, 0, 0, -1, 0, 0,  0, 0,  0, 0,  0, 0,  0,  -1, 0, 0,  0,
+    0,  0, 0, 0, 0,  0, -1, 0, 0,  0, 0,  0, 0, 0, 0,  0, -1, 0, 0,  0, 0,  0, 0,  0,  0,  0, -1, 0,
+    0,  0, 0, 0, 0,  0, 0,  0, -1, 0, 0,  0, 0, 0, 0,  0, 0,  0, -1, 0, 0,  0, 0,  0,  0,  0, 0,  0,
+    -1, 0, 0, 0, 0,  0, 0,  0, 0,  0, -1, 0, 0, 0, 0,  0, 0,  0, 0,  0, -1, 0, 64, 32, 64}; // idb
+int dword_100B2AD0 = -1;                                                                    // weak
+int g_SpeedSensitive = 1;                                                                   // weak
+int dword_100B3668 = 1096810496;                                                            // weak
+int dword_100B366C = 1008981770;                                                            // weak
+float flt_100B3670 = 10.0;                                                                  // weak
+int dword_100B36F8 = 1;                                                                     // weak
+int dword_100B36FC = 2;                                                                     // weak
+void *off_100B3700 = &unk_10AF9B48;                                                         // weak
+char byte_100B37D0[] = {'\0'};                                                              // weak
+char byte_100B37D1[] = {'\x7F'};                                                            // weak
+char byte_100B37D2[58] = {
+    '\0',   '\xFF', '\xaf', '\0',   '\0',   '\0',   '\xaf', '\xc8', '\0',   '\0',   '\xa0', '\0',
+    '\x8c', '\xFF', '\xFF', '\xFF', '\0',   '0',    '\0',   '\0',   '\0',   '\0',   '\xf0', 'x',
+    '\0',   '`',    '0',    '\x10', '\x80', '\xFF', '\x8c', '\x80', '\x80', '\x80', '\x80', '\xb8',
+    '\xFF', 'X',    '\0',   'H',    '\xd0', '\xc8', '\x80', '\x80', '\x80', '\x80', '\xc8', '\0',
+    'd',    '\0',   '\xbe', '\xa0', '\xFF', '\x94', '\xa0', '\0',   '\0',   '@'}; // idb
+int g_chosenTrack = 2;                                                            // weak
+unsigned int dword_100B3810 = 223u;                                               // idb
+int dword_100B3814[] = {2};                                                       // weak
+int dword_100B3818[] = {10};                                                      // weak
+char byte_100B381C[2] = {'\x01', '\b'};                                           // idb
+__int16 word_100B381E[] = {129};                                                  // weak
+char byte_100B3820[] = {'\x02'};                                                  // weak
+char byte_100B3821[107] = {
+    '\0',   '\x04', '\0',   '\0',   '\0',   '\0',   '\0',   '\xe0', '\0',   '\0', '\0', '\x03',
+    '\0',   '\0',   '\0',   '\x0F', '\0',   '\0',   '\0',   '\0',   '\a',   'P',  '\0', '\0',
+    '\0',   '\x02', '\0',   '\x04', '\x02', '\0',   '\0',   '\xe1', '\0',   '\0', '\0', '\x04',
+    '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x04', '\x06', '\f', '\0', '\x04',
+    '\x01', '\0',   '\x01', '\x02', '\x02', '\x01', '\0',   '\xe2', '\0',   '\0', '\0', '\x04',
+    '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x03', '\x02', ' ',  '\0', '\x04',
+    '\x03', '\x01', '\x01', '\x02', '\x04', '\0',   '\x02', '\xe3', '\0',   '\0', '\0', '\x04',
+    '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x02', '\x05', ' ',  '\0', '\x02',
+    '\x03', '\0',   '\x04', '\n',   '\x03', '\x01', '\x02', '\xe4', '\0',   '\0', '\0'}; // idb
+int dword_100B388C = 4;                                                                  // weak
+float dword_100B38A0[48] = {
+    0.99550003, 0.99800003, 0.99550003, 0.99800003, 0.99550003, 0.99800003, 0.99550003,
+    0.99800003, 0.99680001, 0.99629998, 0.99650002, 0.99680001, 0.99650002, 0.99550003,
+    0.99550003, 0.99849999, 0.995,      0.99739999, 0.99510002, 0.99769998, 0.99349999,
+    0.99699998, 0.99349999, 0.99690002, 0.99299997, 0.99540001, 0.99400002, 0.99669999,
+    0.995,      0.99779999, 0.99379998, 0.99699998, 0.99299997, 0.99540001, 0.99550003,
+    0.99800003, 0.99299997, 0.99540001, 0.99330002, 0.99629998, 0.99519998, 0.99790001,
+    0.99440002, 0.9982,     0.99379998, 0.99680001, 0.99360001, 0.9964}; // idb
+unsigned int dword_100B3960[20] = {269u, 270u, 271u, 272u, 273u, 274u, 275u, 276u, 277u, 278u, 279u,
+                                   280u, 281u, 282u, 283u, 284u, 285u, 286u, 287u, 288u}; // idb
+int (*off_100B39B0)[81] = &dword_10ACDEA8;                                                // weak
+int *off_100B3A68 = &dword_10A9BFD0;                                                      // weak
+size_t SizeInBytes = 0u;                                                                  // idb
+char *Format = NULL;                                                                      // idb
+struct tm *Tm = (struct tm *)0xFFFFFFFF;                                                  // idb
+char aMakeenemycarco_4[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+3]";               // idb
+char aMakeenemycarco_3[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+2]";               // idb
+char aMakeenemycarco_2[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+1]";               // idb
+char aMakeenemycarco_1[] = "MakeEnemyCarColorPanels: penm->aptex[cptex+0]";               // idb
+char aMakeenemycarco_0[] = "MakeEnemyCarColorPanels: penm->aptex[i]";                     // idb
+char aMakeenemycarco[] = "MakeEnemyCarColorPanels: penm->aptex";                          // idb
+char aRy[] = "%%ry";                                                                      // idb
+int dword_100B4050 = 1;                                                                   // weak
+char aE[2] = "\xcb";                                                                      // weak
+_UNKNOWN unk_100B4140;                                                                    // weak
+_UNKNOWN unk_100B41E8;                                                                    // weak
+_UNKNOWN unk_100B4290;                                                                    // weak
+char aEscape[7] = "ESCAPE";                                                               // weak
+char aRcfg[] = "RCfg";                                                                    // idb
+int dword_100B5420 = 5;                                                                   // weak
+int dword_100B5424 = -1;                                                                  // weak
+int dword_100B5968 = 1065353216;                                                          // weak
+int dword_100B5970[] = {1161527296};                                                      // weak
+char aMiscModellight[22] = "misc\\modelLights.blob";                                      // weak
+__int16 word_100B5D90 = 1;                                                                // weak
+char aRsea[] = "RSea";                                                                    // idb
+char aRgho[] = "RGho";                                                                    // idb
+char aCRallyconfigDa[] = "c:\\RallyConfig.dat";                                           // idb
+int g_Playsfx = 1;                                                                        // weak
+int dword_100B5DF0[16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};                // idb
+int dword_100B5E30[] = {0};                                                               // weak
+int dword_100B5E34[415] = {1086687360, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1088244736, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1088244736, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1086684160, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                           1087735936};                                 // idb
+int dword_100B64B0[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // idb
+_UNKNOWN unk_100B64EC;                                                  // weak
+int dword_100B64F8[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // idb
+_UNKNOWN unk_100B6534;                                                  // weak
+int dword_100B6540[432] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1088244736,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1088244736,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086684160,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
+                           0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936}; // idb
+int dword_100B6C00[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};                    // idb
+_UNKNOWN unk_100B6C3C;                                                                     // weak
+int dword_100B6C48[18] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360};  // idb
+char aRWav[6] = "r.wav";                                                                   // weak
+char aHWav[6] = "h.wav";                                                                   // weak
+char aWav[5] = ".wav";                                                                     // weak
+_UNKNOWN unk_100B6CA8;                                                                     // weak
+CHAR filename[] = "BRString.dll";                                                          // idb
+char g_TrackDir[] = {'\0'};                                                                // weak
+char aTracks[8] = "tracks/";                                                               // weak
+char *off_100B80B8[15] = {"desert.trk",
+                          "mountain.trk",
+                          "coast.trk",
+                          "mine.trk",
+                          "amazon.trk",
+                          "race.trk",
+                          "desert.trk",
+                          "mountain.trk",
+                          "coast.trk",
+                          "mine.trk",
+                          "amazon.trk",
+                          "race.trk",
+                          "gamewin.trk",
+                          "bonus.trk",
+                          "bonus.trk"}; // weak
+char g_CarDir[] = {'\0'};               // weak
+char aCars[6] = "cars/";                // weak
+int dword_100B84F4[] = {0};             // weak
+char *carNames[16] = {"ce",
+                      "es",
+                      "ns",
+                      "rs",
+                      "sp",
+                      "ps",
+                      "m3",
+                      "ip",
+                      "ld",
+                      "hm",
+                      "mt",
+                      "cu",
+                      "bb",
+                      "pj",
+                      "tr",
+                      "mn"}; // weak
+char *g_SfxDir = "mn";       // weak
+char aSfx[5] = "sfx/";       // weak
+_UNKNOWN unk_100B8938;       // weak
+_UNKNOWN unk_100B89A0;       // weak
+char *off_100B89C8[12] = {"Fear and Loathing",
+                          "Alice",
+                          "Tre",
+                          "Nagasaki",
+                          "Chewbaca",
+                          "Projectile",
+                          "Numb VI",
+                          "Gelex",
+                          "Three Blind Lice",
+                          "10 to 0",
+                          "Bottle Rocket",
+                          "Fancy Car"};        // weak
+char aFancyCar[10] = "Fancy Car";              // weak
+int dword_100B8C90 = 1;                        // weak
+int (*off_100B8C94)(void) = &sub_1002A640;     // weak
+_UNKNOWN unk_100B8CA0;                         // weak
+_UNKNOWN unk_100B94A8;                         // weak
+_UNKNOWN unk_100B9CB0;                         // weak
+_UNKNOWN unk_100BAAC8;                         // weak
+int dword_100BBAC8[3] = {33, 33, 34};          // idb
+int needToCheckSupportHRPC = 1;                // weak
+char byte_100BBAD8 = '\xbf';                   // weak
+char byte_100BBADC = '\xFF';                   // weak
+char byte_100BBAE0 = '\xFF';                   // weak
+char byte_100BBAE4 = '\xFF';                   // weak
 char *pLutsArray = "cargfx/skytexdesert.lut4"; // weak
-char *ciArray = "cargfx/skytexdesertn.lut4"; // weak
-char **stringOffsets[16] =
-{
-  &off_100BBAE8,
-  &off_100BBC64,
-  &off_100BBDE0,
-  &off_100BBF5C,
-  &off_100BC0D8,
-  &off_100BC254,
-  &off_100BC3D0,
-  &off_100BC54C,
-  &off_100BC6C8,
-  &off_100BC844,
-  &off_100BC9C0,
-  &off_100BCB3C,
-  &off_100BCCB8,
-  &off_100BCE34,
-  &off_100BCFB0,
-  &off_100BD12C
-}; // weak
-int dword_100BD3E0 = 1; // idb
-int dword_100BD3E8 = 1; // weak
-int dword_100BD3EC = 1; // weak
-int dword_100BD3F0 = 1; // weak
-int dword_100BD3F4 = 1; // weak
-int dword_100BD3F8 = 1; // weak
-int dword_100BD3FC = 1; // weak
-int dword_100BD400[9] = { 803, 618, 475, 366, 281, 216, 166, 128, 1 }; // idb
-int dword_100BD424 = 10000; // weak
-int dword_100BD428 = 2000; // weak
-int dword_100BD42C = 10000; // weak
+char *ciArray = "cargfx/skytexdesertn.lut4";   // weak
+char **stringOffsets[16] = {&off_100BBAE8,
+                            &off_100BBC64,
+                            &off_100BBDE0,
+                            &off_100BBF5C,
+                            &off_100BC0D8,
+                            &off_100BC254,
+                            &off_100BC3D0,
+                            &off_100BC54C,
+                            &off_100BC6C8,
+                            &off_100BC844,
+                            &off_100BC9C0,
+                            &off_100BCB3C,
+                            &off_100BCCB8,
+                            &off_100BCE34,
+                            &off_100BCFB0,
+                            &off_100BD12C};                          // weak
+int dword_100BD3E0 = 1;                                              // idb
+int dword_100BD3E8 = 1;                                              // weak
+int dword_100BD3EC = 1;                                              // weak
+int dword_100BD3F0 = 1;                                              // weak
+int dword_100BD3F4 = 1;                                              // weak
+int dword_100BD3F8 = 1;                                              // weak
+int dword_100BD3FC = 1;                                              // weak
+int dword_100BD400[9] = {803, 618, 475, 366, 281, 216, 166, 128, 1}; // idb
+int dword_100BD424 = 10000;                                          // weak
+int dword_100BD428 = 2000;                                           // weak
+int dword_100BD42C = 10000;                                          // weak
 LONG diEffectRglDirection_0 = -1;
-int dword_100BD438 = 125000; // weak
-CHAR aErrorFailedToC_0[] = "Error: Failed to create device.\n"; // idb
-CHAR aErrorFailedToS_0[] = "Error: Failed to set game device data format.\n"; // idb
-char aErrorFailedToS[41] = "Error: Failed to set cooperative level.\n"; // weak
-CHAR aErrorFailedToO[] = "Error: Failed to obtain interface.\n"; // idb
+int dword_100BD438 = 125000;                                                             // weak
+CHAR aErrorFailedToC_0[] = "Error: Failed to create device.\n";                          // idb
+CHAR aErrorFailedToS_0[] = "Error: Failed to set game device data format.\n";            // idb
+char aErrorFailedToS[41] = "Error: Failed to set cooperative level.\n";                  // weak
+CHAR aErrorFailedToO[] = "Error: Failed to obtain interface.\n";                         // idb
 CHAR aErrorIdirectin_0[] = "Error: IDirectInputDevice::SetProperty(DIPH_WORD) FAILED\n"; // idb
-CHAR aErrorIdirectin[] = "Error: IDirectInputDevice::SetProperty(DIPH_RANGE) FAILED\n"; // idb
-CHAR aErrorFailedToC[] = "Error: Failed to change device property.\n"; // idb
-LPCSTR lpClassName = "BossRally"; // idb
-LPCSTR lpWindowName = "Boss Rally"; // idb
-char aBossrallyCfg[14] = "BossRally.cfg"; // weak
-char aSplashImg[11] = "splash.img"; // weak
-CHAR aUnableToInitia[] = "Unable to initialize Direct3D accelerated video card."; // idb
-FILE Stream = { NULL, 0, NULL, 2, 2, 0, 0, NULL }; // idb
-int (*off_100BFC00)(void) = &terminate; // weak
-int dword_100C0378[6] = { 1024, -1023, 53, 11, 64, 1023 }; // idb
-_UNKNOWN unk_100C0390; // weak
-int dword_100C0C44 = 1; // weak
-int dword_100C0CD8 = -1; // weak
-int dword_100C0CDC = 0; // weak
-int dword_100C0CE0 = 0; // weak
-int dword_100C0CE8 = -1; // weak
-int dword_100C0CEC = 0; // weak
-int dword_100C0CF0 = 0; // weak
-int dword_100C129C = 0; // weak
-_UNKNOWN unk_100C12A0; // weak
-char byte_100C1385[1349651] =
-{
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  
-}; // idb
-_UNKNOWN unk_1020AB98; // weak
-int dword_10220B20; // weak
-int dword_10220B24; // weak
-int dword_10220B28; // weak
-int dword_10220B2C; // weak
-int dword_10220B30; // weak
-int dword_10220B34; // weak
-int dword_10220B38; // weak
-char byte_10220B3C; // weak
-__int16 word_10220B40; // weak
-int dword_10220B44; // weak
-_UNKNOWN unk_10220B48; // weak
-_UNKNOWN unk_10220B7C; // weak
-int playParmsPlayTo; // weak
-int dword_10220C3C; // weak
-MCIDEVICEID mciId; // idb
-int dword_10220C44; // weak
-int dword_10220C48; // weak
-HWND hWnd; // idb
-__int16 word_10220C50; // weak
-__int16 word_10220C52; // weak
-int dword_10220C54; // weak
-int g_WPARAM; // weak
-__int16 word_10220C5C; // weak
-__int16 word_10220C5E; // weak
-__int16 word_10220C60; // weak
-__int16 word_10220C62; // weak
-int dword_10220C64; // weak
-int dword_10220C68; // weak
-int dword_10220C6C; // weak
-int dword_10220C70; // weak
-int dword_10220C74; // weak
-__int16 word_10220C78; // weak
-__int16 word_10220C7A; // weak
-int dword_10220C7C; // weak
-int dword_10220C80; // weak
-int dword_10220C84; // weak
-int dword_10220C88; // weak
-__int16 word_10220C8C; // weak
-__int16 word_10220C8E; // weak
-__int16 word_10220C90; // weak
-__int16 word_10220C92; // weak
-__int16 word_10220C94; // weak
-__int16 word_10220C96; // weak
-int dword_10220C98; // weak
-__int16 word_10220C9C; // weak
-__int16 word_10220C9E; // weak
-int dword_10220CA0; // weak
-int dword_10220CA4; // weak
-int dword_10220CA8; // weak
-int dword_10220CAC; // weak
-int dword_10220CB0; // weak
-int dword_10220CB4; // weak
-int dword_10220CB8; // weak
-int dword_10220CBC; // weak
-__int16 word_10220CC0; // weak
-__int16 word_10220CC2; // weak
-__int16 word_10220CC4; // weak
-__int16 word_10220CC6; // weak
-__int16 word_10220CC8; // weak
-__int16 word_10220CCA; // weak
-__int16 word_10220CCC; // weak
-int dword_10220CD0; // weak
-int dword_10220CD4; // weak
-int dword_10220CD8; // weak
-char byte_10220CDC; // weak
-int debugOutput; // weak
-HANDLE g_hMutex_8; // idb
-float flt_10220CF0[30]; // idb
-float flt_10220D68; // weak
-int dword_10220D90[16]; // idb
-int dword_10220DD0; // weak
-int dword_10220DD4; // weak
-int dword_10220DD8; // weak
-HANDLE g_hMutex_6; // idb
-float flt_10220E60; // weak
-float flt_10220E64; // weak
-float flt_10220E68; // weak
-float flt_10220E6C; // weak
-float flt_10220E70; // weak
-float flt_10220E74; // weak
-float flt_10220E78; // weak
-char byte_10220E80; // weak
-int dword_10221280; // weak
-int dword_10221288[16]; // idb
-int g_cPlayers; // weak
-int dword_102212D0[16]; // idb
-int dword_10221310; // weak
-int dword_10221314; // weak
-int dword_10221318; // weak
-HANDLE g_hMutex_7; // idb
-int g_bcar; // weak
-HANDLE g_hMutex_4; // idb
-int dword_10221328[]; // weak
-int dword_1022132C[]; // weak
-int dword_10221330[]; // weak
-int dword_10221334[8]; // idb
-int dword_10221354[]; // weak
-int dword_10221358[]; // weak
-char byte_1022135C[]; // weak
-char byte_1022135D[]; // weak
-char byte_1022135E[]; // weak
-int dword_10221360[]; // weak
-float flt_10221380[320]; // idb
-int dword_10221880[]; // weak
-int dword_10221884[]; // weak
-int dword_10221888[]; // weak
-int dword_1022188C[]; // weak
-int dword_10221890[]; // weak
-int dword_10221894[]; // weak
-char byte_10221898[1024]; // idb
-int dword_10221C98[]; // weak
-int dword_10221C9C[9091]; // idb
-int dword_1022AAA8; // weak
-int dword_1022AAB0[]; // weak
-int dword_1022AAB4[15]; // idb
-_UNKNOWN unk_1022AAF0; // weak
-int dword_1022AAF4; // weak
-char byte_1022AAF8[1024]; // idb
-int dword_1022AEF8; // weak
-int dword_1022AEFC; // weak
-int dword_1022AF00; // weak
-HANDLE g_hMutex_5; // idb
-int dword_1022AF08; // weak
-int g_bsuspension; // weak
-int g_btire; // weak
-int g_usingGameMode4; // weak
-int g_NetworkPlay; // weak
-int dword_1022AF1C; // weak
-int dword_1022AF20; // weak
-HANDLE hMutex; // idb
-HANDLE g_hMutex_0; // idb
-HANDLE g_hMutex_1; // idb
-HANDLE g_hMutex_2; // idb
-HANDLE hMutex_3; // idb
-int dword_1022AF38; // weak
-int dword_1022AF3C; // weak
-int dword_1022AF40; // weak
+CHAR aErrorIdirectin[] = "Error: IDirectInputDevice::SetProperty(DIPH_RANGE) FAILED\n";  // idb
+CHAR aErrorFailedToC[] = "Error: Failed to change device property.\n";                   // idb
+LPCSTR lpClassName = "BossRally";                                                        // idb
+LPCSTR lpWindowName = "Boss Rally";                                                      // idb
+char aBossrallyCfg[14] = "BossRally.cfg";                                                // weak
+char aSplashImg[11] = "splash.img";                                                      // weak
+CHAR aUnableToInitia[] = "Unable to initialize Direct3D accelerated video card.";        // idb
+FILE Stream = {NULL, 0, NULL, 2, 2, 0, 0, NULL};                                         // idb
+int (*off_100BFC00)(void) = &terminate;                                                  // weak
+int dword_100C0378[6] = {1024, -1023, 53, 11, 64, 1023};                                 // idb
+_UNKNOWN unk_100C0390;                                                                   // weak
+int dword_100C0C44 = 1;                                                                  // weak
+int dword_100C0CD8 = -1;                                                                 // weak
+int dword_100C0CDC = 0;                                                                  // weak
+int dword_100C0CE0 = 0;                                                                  // weak
+int dword_100C0CE8 = -1;                                                                 // weak
+int dword_100C0CEC = 0;                                                                  // weak
+int dword_100C0CF0 = 0;                                                                  // weak
+int dword_100C129C = 0;                                                                  // weak
+_UNKNOWN unk_100C12A0;                                                                   // weak
+char byte_100C1385[1349651] = {
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+
+};                          // idb
+_UNKNOWN unk_1020AB98;      // weak
+int dword_10220B20;         // weak
+int dword_10220B24;         // weak
+int dword_10220B28;         // weak
+int dword_10220B2C;         // weak
+int dword_10220B30;         // weak
+int dword_10220B34;         // weak
+int dword_10220B38;         // weak
+char byte_10220B3C;         // weak
+__int16 word_10220B40;      // weak
+int dword_10220B44;         // weak
+_UNKNOWN unk_10220B48;      // weak
+_UNKNOWN unk_10220B7C;      // weak
+int playParmsPlayTo;        // weak
+int dword_10220C3C;         // weak
+MCIDEVICEID mciId;          // idb
+int dword_10220C44;         // weak
+int dword_10220C48;         // weak
+HWND hWnd;                  // idb
+__int16 word_10220C50;      // weak
+__int16 word_10220C52;      // weak
+int dword_10220C54;         // weak
+int g_WPARAM;               // weak
+__int16 word_10220C5C;      // weak
+__int16 word_10220C5E;      // weak
+__int16 word_10220C60;      // weak
+__int16 word_10220C62;      // weak
+int dword_10220C64;         // weak
+int dword_10220C68;         // weak
+int dword_10220C6C;         // weak
+int dword_10220C70;         // weak
+int dword_10220C74;         // weak
+__int16 word_10220C78;      // weak
+__int16 word_10220C7A;      // weak
+int dword_10220C7C;         // weak
+int dword_10220C80;         // weak
+int dword_10220C84;         // weak
+int dword_10220C88;         // weak
+__int16 word_10220C8C;      // weak
+__int16 word_10220C8E;      // weak
+__int16 word_10220C90;      // weak
+__int16 word_10220C92;      // weak
+__int16 word_10220C94;      // weak
+__int16 word_10220C96;      // weak
+int dword_10220C98;         // weak
+__int16 word_10220C9C;      // weak
+__int16 word_10220C9E;      // weak
+int dword_10220CA0;         // weak
+int dword_10220CA4;         // weak
+int dword_10220CA8;         // weak
+int dword_10220CAC;         // weak
+int dword_10220CB0;         // weak
+int dword_10220CB4;         // weak
+int dword_10220CB8;         // weak
+int dword_10220CBC;         // weak
+__int16 word_10220CC0;      // weak
+__int16 word_10220CC2;      // weak
+__int16 word_10220CC4;      // weak
+__int16 word_10220CC6;      // weak
+__int16 word_10220CC8;      // weak
+__int16 word_10220CCA;      // weak
+__int16 word_10220CCC;      // weak
+int dword_10220CD0;         // weak
+int dword_10220CD4;         // weak
+int dword_10220CD8;         // weak
+char byte_10220CDC;         // weak
+int debugOutput;            // weak
+HANDLE g_hMutex_8;          // idb
+float flt_10220CF0[30];     // idb
+float flt_10220D68;         // weak
+int dword_10220D90[16];     // idb
+int dword_10220DD0;         // weak
+int dword_10220DD4;         // weak
+int dword_10220DD8;         // weak
+HANDLE g_hMutex_6;          // idb
+float flt_10220E60;         // weak
+float flt_10220E64;         // weak
+float flt_10220E68;         // weak
+float flt_10220E6C;         // weak
+float flt_10220E70;         // weak
+float flt_10220E74;         // weak
+float flt_10220E78;         // weak
+char byte_10220E80;         // weak
+int dword_10221280;         // weak
+int dword_10221288[16];     // idb
+int g_cPlayers;             // weak
+int dword_102212D0[16];     // idb
+int dword_10221310;         // weak
+int dword_10221314;         // weak
+int dword_10221318;         // weak
+HANDLE g_hMutex_7;          // idb
+int g_bcar;                 // weak
+HANDLE g_hMutex_4;          // idb
+int dword_10221328[];       // weak
+int dword_1022132C[];       // weak
+int dword_10221330[];       // weak
+int dword_10221334[8];      // idb
+int dword_10221354[];       // weak
+int dword_10221358[];       // weak
+char byte_1022135C[];       // weak
+char byte_1022135D[];       // weak
+char byte_1022135E[];       // weak
+int dword_10221360[];       // weak
+float flt_10221380[320];    // idb
+int dword_10221880[];       // weak
+int dword_10221884[];       // weak
+int dword_10221888[];       // weak
+int dword_1022188C[];       // weak
+int dword_10221890[];       // weak
+int dword_10221894[];       // weak
+char byte_10221898[1024];   // idb
+int dword_10221C98[];       // weak
+int dword_10221C9C[9091];   // idb
+int dword_1022AAA8;         // weak
+int dword_1022AAB0[];       // weak
+int dword_1022AAB4[15];     // idb
+_UNKNOWN unk_1022AAF0;      // weak
+int dword_1022AAF4;         // weak
+char byte_1022AAF8[1024];   // idb
+int dword_1022AEF8;         // weak
+int dword_1022AEFC;         // weak
+int dword_1022AF00;         // weak
+HANDLE g_hMutex_5;          // idb
+int dword_1022AF08;         // weak
+int g_bsuspension;          // weak
+int g_btire;                // weak
+int g_usingGameMode4;       // weak
+int g_NetworkPlay;          // weak
+int dword_1022AF1C;         // weak
+int dword_1022AF20;         // weak
+HANDLE hMutex;              // idb
+HANDLE g_hMutex_0;          // idb
+HANDLE g_hMutex_1;          // idb
+HANDLE g_hMutex_2;          // idb
+HANDLE hMutex_3;            // idb
+int dword_1022AF38;         // weak
+int dword_1022AF3C;         // weak
+int dword_1022AF40;         // weak
 char bossRallyIniPath[208]; // idb
-_UNKNOWN unk_1022B018; // weak
-int g_dwTotalPhys; // weak
-int g_chosenCar; // weak
-int g_ChosenWeather; // weak
-_UNKNOWN unk_1022B358; // weak
-int dword_10277358; // weak
-FILE *dword_1027735C; // idb
+_UNKNOWN unk_1022B018;      // weak
+int g_dwTotalPhys;          // weak
+int g_chosenCar;            // weak
+int g_ChosenWeather;        // weak
+_UNKNOWN unk_1022B358;      // weak
+int dword_10277358;         // weak
+FILE *dword_1027735C;       // idb
 IDirect3DDevice2 *g_D3DDevice2;
 unk0 *g_gsu0;
 int dword_10277370; // weak
-int renderState_0; // weak
-int renderState; // weak
+int renderState_0;  // weak
+int renderState;    // weak
 int dword_10277380; // weak
 int dword_10277384; // weak
 int dword_10277388; // weak
@@ -4804,1569 +3260,1597 @@ int dword_10277420; // weak
 IDirect3D2 *g_pD3D2;
 _D3DDeviceDesc g_HWCaps;
 _D3DDeviceDesc g_HELCaps;
-DWORD stru_10277680; // idb
-int dword_10277B1C; // weak
-int dword_10277B20; // weak
+DWORD stru_10277680;                          // idb
+int dword_10277B1C;                           // weak
+int dword_10277B20;                           // weak
 struct _RTL_CRITICAL_SECTION CriticalSection; // idb
-SIZE_T unk; // idb
-int dword_10277B44; // weak
-int dword_10277B48; // weak
-int dword_10277B4C; // weak
-HANDLE dword_10277B54; // idb
-DWORD ThreadId; // idb
-HANDLE hEvent; // idb
-int dword_10277B60; // weak
-int dword_10277B68[16]; // idb
-int dword_10277BA8; // weak
-float flt_10277BAC; // weak
-float flt_10277BB0; // weak
-_UNKNOWN unk_10277BB8; // weak
-_UNKNOWN unk_10277BC0; // weak
-char byte_10277BC8[]; // weak
-char byte_10277BC9[]; // weak
-char byte_10277BCA[366]; // idb
-int dword_10277D38[16]; // idb
-float dword_10277D78; // idb
-float dword_10277D7C; // idb
-float dword_10277D80; // idb
-float flt_10277D88[16]; // idb
-int dword_10277DC8[19]; // idb
-int dword_10277E14; // weak
-int dword_10277E18[16]; // idb
-int dword_10277E58; // weak
-int dword_10277E5C; // weak
-int dword_10277E60[16]; // idb
-int dword_10277EA0; // weak
-float flt_10277EA8[]; // weak
-float flt_10277EAC[]; // weak
-float flt_10277EB0[]; // weak
-float flt_10277EB4[]; // weak
-float flt_10277EB8[]; // weak
-float flt_10277EBC[]; // weak
-int dword_10277EC0[111994]; // idb
-float flt_102E54A8[3]; // idb
-int dword_102E54B4; // weak
-int dword_102E54B8; // weak
-int dword_102E54C0[630]; // idb
-int dword_102E5EC0; // weak
-int dword_102E5EC4; // weak
-int dword_102E5EC8; // weak
-int dword_102E5ECC; // weak
-int dword_102E5ED0; // weak
-int dword_102E5ED4; // weak
-int dword_102E5ED8; // weak
-int dword_102E5EE0[]; // weak
-int dword_102E5EE4[16]; // idb
-int dword_102E5F24; // weak
-__int16 word_10362F28[2048]; // idb
-float flt_10363F28[]; // weak
-float dword_10363F2C[15]; // idb
-int dword_10363F68[32]; // idb
-float flt_10363FE8; // weak
-int dword_10363FEC; // weak
-int dword_10363FF0; // weak
-int dword_10363FF4; // weak
-int dword_10363FF8; // weak
-int dword_10364000[]; // weak
-int dword_10364304; // weak
-int dword_10364308[32]; // idb
-int dword_10364388; // weak
-int dword_1036438C; // weak
-float flt_10364390; // weak
-int dword_10364394; // weak
-int dword_10364398; // weak
-int dword_1036439C; // weak
-int dword_103643A0; // weak
-int dword_103643A4; // weak
-float flt_103643A8; // weak
-float flt_103643AC; // weak
-float flt_103643B0; // weak
-int dword_103643B4; // weak
-int dword_103643B8; // weak
-int dword_103643BC; // weak
-char byte_1038B4C0[2048]; // idb
-int dword_1039B6C0; // weak
-int dword_1039B6C4; // weak
-int g_D3ddrawcarshadow; // weak
-int dword_1039B6CC; // weak
-float flt_1039B6D0[16]; // idb
-int dword_1039B710; // weak
-int dword_1039B714; // weak
-int dword_1039B718; // weak
-int dword_1039B71C; // weak
-CHAR String2[8]; // idb
-int dword_1039B728[]; // weak
-int dword_1039B72C; // weak
-int dword_1039B730; // weak
-int dword_1039B734; // weak
-int dword_1039B738; // weak
-float flt_1039B73C; // weak
-char Buffer[28]; // idb
-int dword_1039B75C; // weak
-int dword_1039B760[]; // weak
-_UNKNOWN unk_1039B7C4; // weak
-float flt_1039C168[]; // weak
-float flt_1039C16C; // weak
-float flt_1039C170; // weak
-float flt_1039C178; // weak
-float flt_1039C17C; // weak
-float flt_1039C180; // weak
-float flt_1039C188; // weak
-float flt_1039C18C; // weak
-float flt_1039C190; // weak
-float flt_1039C198; // weak
-float flt_1039C19C; // weak
-float flt_1039C1A0; // weak
-float flt_1039C1D8; // weak
-float flt_1039C1DC; // weak
-float flt_1039C1E0; // weak
-float flt_1039C218; // weak
-float flt_1039C21C; // weak
-float flt_1039C220; // weak
-float flt_1039C258; // weak
-float flt_1039C25C; // weak
-float flt_1039C260; // weak
-float flt_1039C298; // weak
-float flt_1039C29C; // weak
-float flt_1039C2A0; // weak
-int dword_1039E89C; // weak
-int dword_1039E8A0; // weak
-float flt_1039E8A4; // weak
-float flt_1039E8A8; // weak
-float flt_1039E8AC; // weak
-float flt_1039E8C4; // weak
-float flt_1039E8C8; // weak
-float flt_1039E8CC; // weak
-float flt_1039E8E4; // weak
-float flt_1039E8E8; // weak
-float flt_1039E8EC; // weak
-float flt_1039E8F0; // weak
-float flt_1039E918; // weak
-float flt_1039E91C; // weak
-float flt_1039E920; // weak
-float flt_1039E928; // weak
-float flt_1039E92C; // weak
-float flt_1039E930; // weak
-float flt_1039E934; // weak
-float flt_1039E94C; // weak
-float flt_1039E950; // weak
-float flt_1039E954; // weak
-float flt_1039E96C; // weak
-float flt_1039E970; // weak
-float flt_1039E974; // weak
-float flt_1039E978; // weak
-float flt_1039E980; // weak
-float flt_1039E984; // weak
-float flt_1039E988; // weak
-float flt_1039E990; // weak
-float flt_1039E994; // weak
-float flt_1039E998; // weak
-float flt_1039E9A0; // weak
-float flt_1039E9A4; // weak
-float flt_1039E9A8; // weak
-float flt_1039E9B0; // weak
-_UNKNOWN unk_1039E9F8; // weak
-_UNKNOWN unk_103C77E8; // weak
-int dword_103C7840[]; // weak
-_WORD word_103C7844[381414]; // idb
-int dword_104ADCF0; // weak
-int dword_104AFD00; // weak
-int dword_104AFD04; // weak
-int dword_104AFD08; // weak
-int dword_104AFD0C; // weak
-int dword_104AFD14; // weak
-int dword_104AFD18; // weak
-int dword_104AFD1C; // weak
-char byte_104AFF20; // weak
-char byte_104AFF21[1023]; // idb
-char byte_104B0320[24]; // idb
-int dword_104B0338; // weak
-int dword_104B033C; // weak
-int dword_104B0340; // weak
-int dword_104B0344; // weak
-int dword_104B0348; // weak
-char byte_104B0358; // weak
-char byte_104B035C; // weak
-char byte_104B0360; // weak
-int dword_104B0364; // weak
-int dword_104B0368; // weak
-int dword_104B036C; // weak
-int dword_104B0370; // weak
-float flt_104B0378; // weak
-float flt_104B037C; // weak
-int dword_104B0380; // weak
-int dword_104B0688; // weak
-int dword_104B068C; // weak
-int dword_104B0690; // weak
-int dword_104B0694; // weak
-int dword_104B0698; // weak
-int dword_104B069C; // weak
-float flt_104B1F00; // weak
-int dword_104B2550; // weak
-int dword_104B2554; // weak
-int dword_104B2558; // weak
-float flt_104B255C; // weak
-float flt_104B2560; // weak
-float flt_104B2564; // weak
-int dword_104B2568; // weak
-_UNKNOWN unk_104B3DE8; // weak
-_UNKNOWN unk_104B7DE8; // weak
-float flt_104BBDE8; // weak
-float flt_104BBDF4; // weak
-float flt_104BBDF8; // weak
-int dword_104BBE08; // weak
-int dword_104BBE0C; // weak
-int dword_104BBE14; // weak
-int g_hasCalledDDrawEnum; // weak
-int dword_104BBE1C; // weak
+SIZE_T unk;                                   // idb
+int dword_10277B44;                           // weak
+int dword_10277B48;                           // weak
+int dword_10277B4C;                           // weak
+HANDLE dword_10277B54;                        // idb
+DWORD ThreadId;                               // idb
+HANDLE hEvent;                                // idb
+int dword_10277B60;                           // weak
+int dword_10277B68[16];                       // idb
+int dword_10277BA8;                           // weak
+float flt_10277BAC;                           // weak
+float flt_10277BB0;                           // weak
+_UNKNOWN unk_10277BB8;                        // weak
+_UNKNOWN unk_10277BC0;                        // weak
+char byte_10277BC8[];                         // weak
+char byte_10277BC9[];                         // weak
+char byte_10277BCA[366];                      // idb
+int dword_10277D38[16];                       // idb
+float dword_10277D78;                         // idb
+float dword_10277D7C;                         // idb
+float dword_10277D80;                         // idb
+float flt_10277D88[16];                       // idb
+int dword_10277DC8[19];                       // idb
+int dword_10277E14;                           // weak
+int dword_10277E18[16];                       // idb
+int dword_10277E58;                           // weak
+int dword_10277E5C;                           // weak
+int dword_10277E60[16];                       // idb
+int dword_10277EA0;                           // weak
+float flt_10277EA8[];                         // weak
+float flt_10277EAC[];                         // weak
+float flt_10277EB0[];                         // weak
+float flt_10277EB4[];                         // weak
+float flt_10277EB8[];                         // weak
+float flt_10277EBC[];                         // weak
+int dword_10277EC0[111994];                   // idb
+float flt_102E54A8[3];                        // idb
+int dword_102E54B4;                           // weak
+int dword_102E54B8;                           // weak
+int dword_102E54C0[630];                      // idb
+int dword_102E5EC0;                           // weak
+int dword_102E5EC4;                           // weak
+int dword_102E5EC8;                           // weak
+int dword_102E5ECC;                           // weak
+int dword_102E5ED0;                           // weak
+int dword_102E5ED4;                           // weak
+int dword_102E5ED8;                           // weak
+int dword_102E5EE0[];                         // weak
+int dword_102E5EE4[16];                       // idb
+int dword_102E5F24;                           // weak
+__int16 word_10362F28[2048];                  // idb
+float flt_10363F28[];                         // weak
+float dword_10363F2C[15];                     // idb
+int dword_10363F68[32];                       // idb
+float flt_10363FE8;                           // weak
+int dword_10363FEC;                           // weak
+int dword_10363FF0;                           // weak
+int dword_10363FF4;                           // weak
+int dword_10363FF8;                           // weak
+int dword_10364000[];                         // weak
+int dword_10364304;                           // weak
+int dword_10364308[32];                       // idb
+int dword_10364388;                           // weak
+int dword_1036438C;                           // weak
+float flt_10364390;                           // weak
+int dword_10364394;                           // weak
+int dword_10364398;                           // weak
+int dword_1036439C;                           // weak
+int dword_103643A0;                           // weak
+int dword_103643A4;                           // weak
+float flt_103643A8;                           // weak
+float flt_103643AC;                           // weak
+float flt_103643B0;                           // weak
+int dword_103643B4;                           // weak
+int dword_103643B8;                           // weak
+int dword_103643BC;                           // weak
+char byte_1038B4C0[2048];                     // idb
+int dword_1039B6C0;                           // weak
+int dword_1039B6C4;                           // weak
+int g_D3ddrawcarshadow;                       // weak
+int dword_1039B6CC;                           // weak
+float flt_1039B6D0[16];                       // idb
+int dword_1039B710;                           // weak
+int dword_1039B714;                           // weak
+int dword_1039B718;                           // weak
+int dword_1039B71C;                           // weak
+CHAR String2[8];                              // idb
+int dword_1039B728[];                         // weak
+int dword_1039B72C;                           // weak
+int dword_1039B730;                           // weak
+int dword_1039B734;                           // weak
+int dword_1039B738;                           // weak
+float flt_1039B73C;                           // weak
+char Buffer[28];                              // idb
+int dword_1039B75C;                           // weak
+int dword_1039B760[];                         // weak
+_UNKNOWN unk_1039B7C4;                        // weak
+float flt_1039C168[];                         // weak
+float flt_1039C16C;                           // weak
+float flt_1039C170;                           // weak
+float flt_1039C178;                           // weak
+float flt_1039C17C;                           // weak
+float flt_1039C180;                           // weak
+float flt_1039C188;                           // weak
+float flt_1039C18C;                           // weak
+float flt_1039C190;                           // weak
+float flt_1039C198;                           // weak
+float flt_1039C19C;                           // weak
+float flt_1039C1A0;                           // weak
+float flt_1039C1D8;                           // weak
+float flt_1039C1DC;                           // weak
+float flt_1039C1E0;                           // weak
+float flt_1039C218;                           // weak
+float flt_1039C21C;                           // weak
+float flt_1039C220;                           // weak
+float flt_1039C258;                           // weak
+float flt_1039C25C;                           // weak
+float flt_1039C260;                           // weak
+float flt_1039C298;                           // weak
+float flt_1039C29C;                           // weak
+float flt_1039C2A0;                           // weak
+int dword_1039E89C;                           // weak
+int dword_1039E8A0;                           // weak
+float flt_1039E8A4;                           // weak
+float flt_1039E8A8;                           // weak
+float flt_1039E8AC;                           // weak
+float flt_1039E8C4;                           // weak
+float flt_1039E8C8;                           // weak
+float flt_1039E8CC;                           // weak
+float flt_1039E8E4;                           // weak
+float flt_1039E8E8;                           // weak
+float flt_1039E8EC;                           // weak
+float flt_1039E8F0;                           // weak
+float flt_1039E918;                           // weak
+float flt_1039E91C;                           // weak
+float flt_1039E920;                           // weak
+float flt_1039E928;                           // weak
+float flt_1039E92C;                           // weak
+float flt_1039E930;                           // weak
+float flt_1039E934;                           // weak
+float flt_1039E94C;                           // weak
+float flt_1039E950;                           // weak
+float flt_1039E954;                           // weak
+float flt_1039E96C;                           // weak
+float flt_1039E970;                           // weak
+float flt_1039E974;                           // weak
+float flt_1039E978;                           // weak
+float flt_1039E980;                           // weak
+float flt_1039E984;                           // weak
+float flt_1039E988;                           // weak
+float flt_1039E990;                           // weak
+float flt_1039E994;                           // weak
+float flt_1039E998;                           // weak
+float flt_1039E9A0;                           // weak
+float flt_1039E9A4;                           // weak
+float flt_1039E9A8;                           // weak
+float flt_1039E9B0;                           // weak
+_UNKNOWN unk_1039E9F8;                        // weak
+_UNKNOWN unk_103C77E8;                        // weak
+int dword_103C7840[];                         // weak
+_WORD word_103C7844[381414];                  // idb
+int dword_104ADCF0;                           // weak
+int dword_104AFD00;                           // weak
+int dword_104AFD04;                           // weak
+int dword_104AFD08;                           // weak
+int dword_104AFD0C;                           // weak
+int dword_104AFD14;                           // weak
+int dword_104AFD18;                           // weak
+int dword_104AFD1C;                           // weak
+char byte_104AFF20;                           // weak
+char byte_104AFF21[1023];                     // idb
+char byte_104B0320[24];                       // idb
+int dword_104B0338;                           // weak
+int dword_104B033C;                           // weak
+int dword_104B0340;                           // weak
+int dword_104B0344;                           // weak
+int dword_104B0348;                           // weak
+char byte_104B0358;                           // weak
+char byte_104B035C;                           // weak
+char byte_104B0360;                           // weak
+int dword_104B0364;                           // weak
+int dword_104B0368;                           // weak
+int dword_104B036C;                           // weak
+int dword_104B0370;                           // weak
+float flt_104B0378;                           // weak
+float flt_104B037C;                           // weak
+int dword_104B0380;                           // weak
+int dword_104B0688;                           // weak
+int dword_104B068C;                           // weak
+int dword_104B0690;                           // weak
+int dword_104B0694;                           // weak
+int dword_104B0698;                           // weak
+int dword_104B069C;                           // weak
+float flt_104B1F00;                           // weak
+int dword_104B2550;                           // weak
+int dword_104B2554;                           // weak
+int dword_104B2558;                           // weak
+float flt_104B255C;                           // weak
+float flt_104B2560;                           // weak
+float flt_104B2564;                           // weak
+int dword_104B2568;                           // weak
+_UNKNOWN unk_104B3DE8;                        // weak
+_UNKNOWN unk_104B7DE8;                        // weak
+float flt_104BBDE8;                           // weak
+float flt_104BBDF4;                           // weak
+float flt_104BBDF8;                           // weak
+int dword_104BBE08;                           // weak
+int dword_104BBE0C;                           // weak
+int dword_104BBE14;                           // weak
+int g_hasCalledDDrawEnum;                     // weak
+int dword_104BBE1C;                           // weak
 gameSpecificUnk1 *gameSpecificUnk1_instance0;
-int dword_104BBE24; // weak
-int dword_104BBE28; // weak
-float flt_104BBE2C; // weak
-int dword_104BBE30; // weak
-int dword_104BBE38[]; // weak
-char byte_104BBE3C[]; // weak
-char byte_104BBE3D[]; // weak
-char byte_104BBE3E[]; // weak
-char byte_104BBE40; // weak
-char byte_104BBE41; // weak
-char byte_104BBE42; // weak
-int dword_104BBE48; // weak
-float flt_104BBEB8; // weak
-float flt_104BBEC0[4]; // idb
-_UNKNOWN unk_104BBED0; // weak
-char byte_104BBF00; // weak
-float flt_104BBF04; // weak
-float flt_104BBF08; // weak
-int dword_104BC190; // weak
-char byte_104BC194; // weak
-float flt_104BC198; // weak
-_UNKNOWN g_vertices; // weak
-int dword_104C01A0; // weak
-int dword_104C01A4; // weak
-int dword_104C01A8[3]; // idb
-float flt_104C0BA8; // weak
-float flt_104C0BAC; // weak
-float flt_104C0BB0; // weak
-int dword_104C0BB4; // weak
-float flt_104C0BB8; // weak
-int dword_104C0BBC; // weak
+int dword_104BBE24;      // weak
+int dword_104BBE28;      // weak
+float flt_104BBE2C;      // weak
+int dword_104BBE30;      // weak
+int dword_104BBE38[];    // weak
+char byte_104BBE3C[];    // weak
+char byte_104BBE3D[];    // weak
+char byte_104BBE3E[];    // weak
+char byte_104BBE40;      // weak
+char byte_104BBE41;      // weak
+char byte_104BBE42;      // weak
+int dword_104BBE48;      // weak
+float flt_104BBEB8;      // weak
+float flt_104BBEC0[4];   // idb
+_UNKNOWN unk_104BBED0;   // weak
+char byte_104BBF00;      // weak
+float flt_104BBF04;      // weak
+float flt_104BBF08;      // weak
+int dword_104BC190;      // weak
+char byte_104BC194;      // weak
+float flt_104BC198;      // weak
+_UNKNOWN g_vertices;     // weak
+int dword_104C01A0;      // weak
+int dword_104C01A4;      // weak
+int dword_104C01A8[3];   // idb
+float flt_104C0BA8;      // weak
+float flt_104C0BAC;      // weak
+float flt_104C0BB0;      // weak
+int dword_104C0BB4;      // weak
+float flt_104C0BB8;      // weak
+int dword_104C0BBC;      // weak
 int dword_104C0BC0[128]; // idb
-int dword_104C0DC0; // weak
-float flt_104C15C8; // weak
-char byte_104C15CC; // weak
-float flt_104C15D0; // weak
-float flt_104C15D4; // weak
-float flt_104C15D8; // weak
-float flt_104C15DC; // weak
-float flt_104C15E0; // weak
-float flt_104C15E4; // weak
-float flt_104C15E8; // weak
-float flt_104C15EC; // weak
-float flt_104C15F0; // weak
-float flt_104C1690; // weak
-int dword_104C1694; // weak
-int dword_104C1698; // weak
-int dword_104C169C; // weak
-int dword_104C16A0; // weak
-int dword_104C16A8[10]; // idb
-float flt_104C16D0[3]; // idb
-int dword_104C16DC[]; // weak
-int dword_104C16E0[]; // weak
-int dword_104C16E4[]; // weak
-int dword_104C170C[]; // weak
-_UNKNOWN unk_104C1710; // weak
-float flt_104C1720[]; // weak
-float flt_104C1724[]; // weak
-int dword_104C172C[]; // weak
-int dword_104C1730[]; // weak
-int dword_104C1734[]; // weak
-float flt_104C4CD0[16]; // idb
-float flt_104C4D10; // weak
-float flt_104C4D14; // weak
-float flt_104C4D18; // weak
-float flt_104C4D1C; // weak
-float flt_104C4D20; // weak
-float flt_104C4D24; // weak
-float flt_104C4D28; // weak
-float flt_104C4D2C; // weak
-float flt_104C4D30; // weak
-float flt_104C4D34; // weak
-float flt_104C4D38; // weak
-float flt_104C4D3C; // weak
-float flt_104C4D40; // weak
-float flt_104C4D44; // weak
-float flt_104C4D48; // weak
-float flt_104C4D4C; // weak
+int dword_104C0DC0;      // weak
+float flt_104C15C8;      // weak
+char byte_104C15CC;      // weak
+float flt_104C15D0;      // weak
+float flt_104C15D4;      // weak
+float flt_104C15D8;      // weak
+float flt_104C15DC;      // weak
+float flt_104C15E0;      // weak
+float flt_104C15E4;      // weak
+float flt_104C15E8;      // weak
+float flt_104C15EC;      // weak
+float flt_104C15F0;      // weak
+float flt_104C1690;      // weak
+int dword_104C1694;      // weak
+int dword_104C1698;      // weak
+int dword_104C169C;      // weak
+int dword_104C16A0;      // weak
+int dword_104C16A8[10];  // idb
+float flt_104C16D0[3];   // idb
+int dword_104C16DC[];    // weak
+int dword_104C16E0[];    // weak
+int dword_104C16E4[];    // weak
+int dword_104C170C[];    // weak
+_UNKNOWN unk_104C1710;   // weak
+float flt_104C1720[];    // weak
+float flt_104C1724[];    // weak
+int dword_104C172C[];    // weak
+int dword_104C1730[];    // weak
+int dword_104C1734[];    // weak
+float flt_104C4CD0[16];  // idb
+float flt_104C4D10;      // weak
+float flt_104C4D14;      // weak
+float flt_104C4D18;      // weak
+float flt_104C4D1C;      // weak
+float flt_104C4D20;      // weak
+float flt_104C4D24;      // weak
+float flt_104C4D28;      // weak
+float flt_104C4D2C;      // weak
+float flt_104C4D30;      // weak
+float flt_104C4D34;      // weak
+float flt_104C4D38;      // weak
+float flt_104C4D3C;      // weak
+float flt_104C4D40;      // weak
+float flt_104C4D44;      // weak
+float flt_104C4D48;      // weak
+float flt_104C4D4C;      // weak
 WORD g_indexedPrimitiveIndices;
-char byte_104C5150; // weak
-float flt_104C5154; // weak
-int dword_104C5158; // weak
-int dword_104C515C; // weak
-float flt_104C5160; // weak
-int dword_104C5164; // weak
-int g_D3Dclearzbuffer; // weak
-int minX; // weak
-int dword_104C5170; // weak
-int dword_104C5174; // weak
-int dword_104C5178; // weak
-int dword_104C517C; // weak
-int dword_104C5180; // weak
-int dword_104C5184; // weak
-int g_vertexCount; // weak
-int g_indexedPrimitiveIndexCount; // weak
-int dword_104C5190; // weak
-int dword_104C5194; // weak
-int dword_104C5198; // weak
-char byte_104C51A0; // weak
-int dword_104C51A4; // weak
-char byte_104D51A8; // weak
-int dword_104D51AC; // weak
-char byte_104D51B0; // weak
-int dword_104D51B4; // weak
-int dword_104D51B8; // weak
-int dword_104D51BC; // weak
-_UNKNOWN unk_104D51D0; // weak
-char byte_105551D0; // weak
-char byte_105551D4; // weak
-int dword_105551D8[]; // weak
-int dword_105551DC[]; // weak
-int dword_105551E0; // weak
-int dword_105551E4; // weak
-int dword_105551E8[]; // weak
-int dword_105551EC[]; // weak
-int dword_105551F0[]; // weak
-int dword_105551F4[]; // weak
-int dword_105551F8[]; // weak
-int dword_105551FC[]; // weak
-int dword_10555200; // weak
-int dword_10555204; // weak
-int dword_10555208[]; // weak
-int dword_1055520C[]; // weak
-int dword_10555210[]; // weak
-int dword_10555214[113]; // idb
-char byte_105553D8; // weak
-int dword_105553DC; // weak
-int dword_105553E0; // weak
-int dword_105553E4; // weak
-int dword_105553E8; // weak
-int dword_105553EC; // weak
-int dword_105553F0; // weak
-int dword_105553F4; // weak
-int dword_105553F8; // weak
-int dword_105553FC; // weak
-char byte_10555400; // weak
-char byte_10575410; // weak
-int dword_10575414; // weak
-int g_D3dalwayssquar; // weak
-int dword_10575424; // weak
-int dword_10575428; // weak
-void *Block; // idb
-int dword_10575430; // weak
-int dword_10575434; // weak
-int dword_10575438; // weak
-void *dword_1057543C; // idb
-int dword_10575440; // weak
-int dword_10575444; // weak
-int dword_10575448; // weak
-int dword_1057544C; // weak
-int EAR_DLL_GetVersion; // weak
-int (__stdcall *EAR_DLL_SetAttenuationLevel)(_DWORD, _DWORD); // weak
-int EAR_DLL_ShutDownBank; // weak
-int EAR_DLL_ShutDownMatrix; // weak
-int EAR_DLL_EarInactive; // weak
-HMODULE hModule; // idb
-int EAR_DLL_ShutDownTimer; // weak
-int (__stdcall *EAR_DLL_MixEvent)(_DWORD); // weak
-int (__stdcall *EAR_DLL_ShutDownChannel)(_DWORD); // weak
-int (*EAR_DLL_ShutDownEar)(void); // weak
-int aEarInteractiveMessageID; // weak
-int EAR_DLL_StartEvent; // weak
-int (__stdcall *EAR_DLL_ClearChannel)(_DWORD, _DWORD); // weak
-int (__stdcall *EAR_DLL_ChangeChannelControl)(_DWORD, _DWORD); // weak
-int EAR_DLL_MoveEvent; // weak
-int (__stdcall *EAR_DLL_AssignHwnd)(_DWORD); // weak
-int EAR_DLL_ShutDownPreset; // weak
-int EAR_DLL_ResetEar; // weak
-int EAR_DLL_ShutDownEvent; // weak
-int EAR_DLL_StartTimer; // weak
-int (__stdcall *EAR_DLL_RegisterChannel)(_DWORD, _DWORD, _DWORD, _DWORD); // weak
-int EAR_DLL_ShutDownEnvironment; // weak
-int (*EAR_DLL_ShowLastError)(void); // weak
-int EAR_DLL_RegisterEnvironment; // weak
-int (__stdcall *EAR_DLL_AAA_Validate)(_DWORD); // weak
-int EAR_DLL_GetEventStatus; // weak
-int EAR_DLL_SetUserDistanceUnit; // weak
-int EAR_DLL_UpdateEar; // weak
-int (__stdcall *EAR_DLL_InitializeEar)(_DWORD); // weak
-int (*EAR_DLL_GetLastError)(void); // weak
-int EAR_DLL_RegisterPreset; // weak
-int EAR_DLL_RegisterBank; // weak
-int (__stdcall *EAR_DLL_RegisterMatrix)(_DWORD); // weak
-int dword_105754D4; // weak
-int dword_105754D8; // weak
-int dword_105754DC; // weak
-int dword_105754E0; // weak
-int dword_105754E8[]; // weak
-int dword_105754F0[]; // weak
-float flt_105754F8; // weak
-int dword_105754FC; // weak
-int dword_10575500; // weak
-float flt_10575504; // weak
-int dword_10575508; // weak
-int dword_1057550C; // weak
-int dword_10575510; // weak
-float flt_10575514; // weak
-int dword_10575518; // weak
-float flt_1057551C; // weak
-float flt_10575520; // weak
-int dword_10575524; // weak
-int dword_10575528; // weak
-int dword_1057552C; // weak
-int dword_10575530; // weak
-int dword_10575538; // weak
-int dword_1057553C; // weak
-int dword_10675540; // weak
-int dword_10675548[]; // weak
-int dword_1067554C[]; // weak
-int dword_10675550[6142]; // idb
-int dword_1067B548; // weak
-int dword_1067B54C; // weak
-int dword_1067B550[2048]; // idb
-int dword_1067D550; // weak
-int dword_1067D570; // weak
-int dword_1067D578; // weak
-int dword_1067D57C; // weak
-HWND g_HWND; // idb
-int dword_10680598; // weak
-int dword_1068059C; // weak
-int dword_106805A0; // weak
-int dword_106805A8; // weak
-int dword_106805B0[]; // weak
-int dword_106805B8; // weak
-int dword_106805BC; // weak
-int dword_106805C0; // weak
-int dword_106805C4; // weak
-int dword_106805C8[]; // weak
-int dword_106805D0[16]; // idb
-int dword_10680610; // weak
-void *dword_10680618; // idb
-int dword_1068061C; // weak
-int dword_10680620; // weak
-int dword_10680624; // weak
-int dword_10680628; // weak
-int dword_1068062C; // weak
-float flt_10680630; // idb
-int dword_10680634; // weak
-int dword_10680638; // weak
-int dword_1068063C; // weak
-int dword_10680640; // weak
-int dword_10680644; // weak
-int dword_10680648; // weak
-int dword_1068064C; // weak
-int dword_10680650; // weak
-int dword_10680654; // weak
-int dword_10680658; // weak
-int dword_1068065C; // weak
-int dword_10680660; // weak
-int dword_10680664; // weak
-int dword_10680668; // weak
-int dword_1068066C[17]; // idb
-LARGE_INTEGER stru_106806B0[5]; // idb
-float flt_106806D8; // weak
-int dword_106806DC; // weak
-int dword_106806E0; // weak
-int dword_106806E4[17]; // idb
-int dword_10680728[]; // weak
-size_t ElementCount; // idb
-int dword_10680734; // weak
-int dword_10680738; // weak
-int dword_1068073C; // weak
-int dword_10680740; // weak
-int dword_10680744; // weak
-int dword_10680748[]; // weak
-int dword_10680750; // weak
-int dword_10680758[120]; // idb
-int dword_10680938; // weak
-int dword_1068093C; // weak
-int dword_10680940; // weak
-unsigned int C; // idb
-int dword_10680948; // weak
-_UNKNOWN unk_10680950; // weak
-_UNKNOWN unk_10690950; // weak
-int dword_106909B0; // weak
-int dword_106909B4; // weak
-int dword_106909B8; // weak
-int dword_106909BC; // weak
-int dword_106909C8; // weak
-int dword_106909CC; // weak
-int dword_106909D0; // weak
-int dword_106909D4; // weak
-int dword_106909D8; // weak
-int dword_106909E0; // weak
-int dword_106909E4; // weak
-int dword_106909E8; // weak
-int dword_106909EC; // weak
-int dword_106909F0; // weak
-int g_needToPlayIntro2; // weak
-int dword_106909F8; // weak
-int dword_106909FC; // weak
-_DWORD dword_10690A00; // idb
-_DWORD dword_10690A04; // idb
-_DWORD dword_10690A08; // idb
-_DWORD dword_10690A0C; // idb
-int dword_10690A10; // weak
-int dword_10690A14; // weak
-int dword_10690A18; // weak
-int dword_10690A1C; // weak
-int (*dword_10690A20)(void); // weak
-int (*dword_10690A24)(void); // weak
-int (*dword_10690A28)(void); // weak
-char byte_10690BE8; // weak
-int dword_10690BEC; // weak
-char byte_10690BF0; // weak
-char byte_10690FF8[]; // weak
-char byte_10690FF9; // weak
-char byte_10690FFA; // weak
-char byte_10690FFB; // weak
-_UNKNOWN unk_10691018; // weak
-char byte_106C0200; // weak
-int dword_106C0208; // weak
-int dword_106C020C; // weak
-float flt_106C0210; // weak
-float flt_106C0218[16]; // idb
-int dword_106C0258; // weak
-char byte_106C0260; // weak
-int dword_106C0670; // weak
-int dword_106C0674; // weak
-int dword_106C0678; // weak
-__int16 word_106C067C; // weak
-int dword_106C0680; // weak
-int g_Width1; // weak
-int dword_106C0688; // weak
-float flt_106C0690[3]; // idb
-int dword_106C069C; // weak
-char byte_106C06A0[]; // weak
-int dword_106C06A4; // weak
-void *dword_106C06A8; // idb
-float flt_106C0860; // weak
-float flt_106C0864; // weak
-float flt_106C0868; // weak
-float flt_106C086C; // weak
-float flt_106C0870; // weak
-float flt_106C0874; // weak
-float flt_106C0878; // weak
-float flt_106C087C; // weak
-float flt_106C0880; // weak
-float flt_106C0884; // weak
-float flt_106C0888; // weak
-float flt_106C088C; // weak
-float flt_106C0890; // weak
-float flt_106C0894; // weak
-float flt_106C0898; // weak
-void *flt_106C089C; // idb
-float flt_106C08A0; // weak
-float flt_106C08A4; // weak
-int dword_106C08A8; // weak
-int dword_106C08AC; // weak
-float flt_106C08B0; // weak
-float flt_106C08B4; // weak
-int dword_106C08B8; // weak
-int dword_106C08BC; // weak
-int dword_106C08C0; // weak
-int dword_106C08C4; // weak
-int dword_106C08C8; // weak
-int dword_106C08CC; // weak
-int dword_106C08D0; // weak
-int dword_106C08D4; // weak
-int dword_106C08D8; // weak
-int dword_106C08DC; // weak
-float flt_106C08E0[16]; // idb
-int dword_106C0920; // weak
-__int16 word_106C0928[]; // weak
-char byte_106C092A[]; // weak
-char byte_106C092B[13]; // idb
-int dword_106C0944; // weak
-int dword_106C0950[]; // weak
-char byte_106C0960; // weak
-int (*dword_106C0964)(void); // weak
-char byte_106C0968; // weak
-int dword_106C1170; // weak
-int dword_106C1174; // weak
-int dword_106C1178; // weak
-char byte_106C1580; // weak
-int dword_106C1608; // weak
-int dword_106C1610; // weak
-char byte_106C1614; // weak
-int dword_106C1618; // weak
-int dword_106C161C; // weak
-int dword_106C1620; // weak
-_DWORD dword_106C1628[4]; // idb
-int dword_106C1638; // weak
-_UNKNOWN unk_106C163C; // weak
-int dword_106C1690; // weak
-__int16 word_106C1788[]; // weak
-__int16 word_106C178A[]; // weak
-__int16 word_106C178C[]; // weak
-__int16 word_106C178E[]; // weak
-__int16 word_106C1790[]; // weak
-__int16 word_106C1792[]; // weak
-__int16 word_106C1794[]; // weak
-__int16 word_106C1796[249]; // idb
-int dword_106C1988; // weak
-int (*dword_106C198C)(void); // weak
-float flt_106C2990[3]; // idb
-int g_Height1; // weak
-int dword_106C29A4; // weak
-float flt_106C29A8; // weak
-float flt_106C29AC; // weak
-float flt_106C29B0; // weak
-float flt_106C29B4; // weak
-float flt_106C29B8; // weak
-float flt_106C29BC; // weak
-float flt_106C29C0; // weak
-float flt_106C29C4; // weak
-float flt_106C29C8; // weak
-float flt_106C29CC; // weak
-float flt_106C29D0; // weak
-float flt_106C29D4; // weak
-float flt_106C29D8; // weak
-float flt_106C29DC; // weak
-float flt_106C29E0; // weak
-float flt_106C29E4; // weak
-int dword_106C29E8; // weak
-int dword_106C2CF0; // weak
-int dword_106C2CF4; // weak
-int dword_106C2CF8; // weak
-int dword_106C2CFC; // weak
-int dword_106C32CC; // weak
-int dword_106C32D0; // weak
-int dword_106C3308; // weak
-float dword_106C3310; // idb
-float dword_106C3314; // idb
-float dword_106C331C; // idb
-float dword_106C3320; // idb
-float dword_106C3328; // idb
-float dword_106C332C; // idb
-float dword_106C3334; // idb
-float dword_106C3338; // idb
-float dword_106C3340; // idb
-float dword_106C3344; // idb
-float dword_106C334C; // idb
-float dword_106C3350; // idb
-char byte_106C3358[]; // weak
-char byte_106C3359; // weak
-char byte_106C335A; // weak
-char byte_106C335B; // weak
-char byte_106C335C; // weak
-float dword_106C3360; // idb
-int dword_106C3364; // weak
-int dword_106C3398; // weak
-int dword_106C33B8; // weak
-int dword_106C53C0; // weak
-float flt_106C5468[4]; // idb
-int dword_106C56D0; // weak
-int dword_106C56D8; // weak
-int dword_106C56DC; // weak
-int dword_106C56E0; // weak
-int dword_106C56E4; // weak
-int dword_106C56E8; // weak
-int dword_106C56EC; // weak
-float flt_106C56F8[3]; // idb
-int dword_106C5708; // weak
-float flt_106C58C0[124]; // idb
-int dword_106C5AB0; // weak
-float dword_106C5AB4; // idb
-int dword_106C62D8; // weak
-void *dword_106C6490; // idb
-char byte_106C6494[]; // weak
-char byte_106C6495; // weak
-char byte_106C6496; // weak
-char byte_106C6497; // weak
-int dword_106C64D8; // weak
-int dword_106C6558[16]; // idb
-int dword_106C6598; // weak
-int dword_106C65B8; // weak
-char byte_106C65BC; // weak
-int dword_106C65D8; // weak
-int dword_106C65DC; // weak
-int dword_106C65E0; // weak
-int dword_106C65E4; // weak
-int dword_106C65E8; // weak
-int dword_106C65EC; // weak
-int dword_106C65F4; // weak
-int dword_106C65F8; // weak
-int dword_106C65FC; // weak
-int dword_106C6608; // weak
-int dword_106C660C; // weak
-int dword_106C6614; // weak
-int dword_106C6618; // weak
-int dword_106C661C; // weak
-int dword_106C6620; // weak
-int dword_106C6624; // weak
-int dword_106C662C; // weak
-int dword_106C6630; // weak
-int dword_106C6644; // weak
-int dword_106C6648; // weak
-int dword_106C664C; // weak
-HANDLE dword_106C6650; // idb
-int dword_106C6654; // weak
-int dword_106C6658; // weak
-int dword_106C665C; // weak
-int dword_106C6660; // weak
-int dword_106C6664; // weak
-int dword_106C6668; // weak
-int dword_106C666C; // weak
-_UNKNOWN unk_106C6678; // weak
-_UNKNOWN unk_106C6930; // weak
-int dword_106C7C38; // weak
-int dword_106C7C3C; // weak
-int dword_106C7C40; // weak
-int g_TrackHeader; // weak
-int g_TrackHeaderSize; // weak
-int dword_106C7C54; // weak
-int dword_106C7C5C; // weak
-int dword_106C7C60; // weak
-int dword_106C7C64; // weak
-int dword_106C7C68; // weak
-int dword_106C7C6C; // weak
-float flt_106C7C70; // weak
-float flt_106C7C74; // weak
-float flt_106C7C80; // weak
-float flt_106C7C84; // weak
-float flt_106C7C88; // weak
-float flt_106C7C8C; // weak
-float flt_106C7C90; // weak
-float dword_106C7C94; // idb
-int dword_106C7C98; // weak
-int dword_106C7CA4; // weak
-int dword_106C7CA8; // weak
-int g_TrackInstances; // weak
-int dword_106C7CB0; // weak
-int dword_106C7CB4; // weak
-int dword_106C7CB8; // idb
-int dword_106C7CC0; // weak
-int dword_106C7CC4; // weak
-char byte_106C7CC8; // weak
-char byte_106C7CC9; // weak
-char byte_106C7CCA; // weak
-int dword_106C7CCC; // weak
-int dword_106C7CD0; // weak
-int dword_106C7CD4; // weak
-int dword_106C7CD8; // weak
-int dword_106C7CDC; // weak
-_UNKNOWN unk_106C7CE0; // weak
-_UNKNOWN unk_106C7CE8; // weak
-void *dword_106C7DA8; // idb
-_UNKNOWN unk_106C7DAC; // weak
-int dword_106C7E6C; // weak
-_UNKNOWN unk_106C7E78; // weak
-_UNKNOWN unk_106C7E7C; // weak
-int dword_106C7E80[]; // weak
-int dword_106C7E84[1021]; // idb
-_UNKNOWN unk_106C8E78; // weak
-_UNKNOWN g_TrackBuffer; // weak
-int dword_10A99778; // weak
-int dword_10A9977C; // weak
-_DWORD dword_10A99780[266]; // idb
-int dword_10A99BA8; // weak
-int dword_10A99BAC; // weak
-int dword_10A99BB0; // weak
-int dword_10A99BB4; // weak
-float flt_10A99BB8[]; // weak
-float flt_10A99BBC[]; // weak
-float flt_10A99BC0[]; // weak
-float flt_10A99BC4[]; // weak
-float flt_10A99BC8[]; // weak
-float flt_10A99BCC[]; // weak
-float flt_10A99BD0[]; // weak
-__int16 word_10A99BD4[]; // weak
-char byte_10A99BD6[]; // weak
-char byte_10A99BD7[29]; // idb
-__int16 word_10A9BBB4; // weak
-int dword_10A9BBB8; // weak
-int dword_10A9BBC0; // weak
-int dword_10A9BBC4; // weak
-int dword_10A9BBC8; // weak
-int dword_10A9BBCC; // weak
-int dword_10A9BBD0[]; // weak
-int dword_10A9BCD0[64]; // idb
-int dword_10A9BDD0[64]; // idb
-int dword_10A9BED0[64]; // idb
-int dword_10A9BFD0; // weak
-int dword_10A9BFD8; // weak
-UINT_PTR uIDEvent; // idb
-CHAR byte_10A9BFE0[16]; // idb
-int dword_10A9C0C8[]; // weak
-int dword_10A9C0CC[]; // weak
-CHAR String1[220]; // idb
-CHAR byte_10A9CEF8[260]; // idb
-int dword_10A9CFFC; // weak
-int dword_10A9D000; // weak
-int dword_10A9D004; // weak
-int dword_10A9D008; // idb
-int dword_10A9D010; // weak
-char g_lpSessionDesc_dwUser3[80]; // idb
-int dword_10A9D068; // weak
-int dword_10A9D06C; // weak
-int dword_10A9D070; // idb
-char byte_10A9D078[264]; // idb
-int dword_10A9D5C0[]; // weak
-char byte_10A9D618[36]; // idb
-int dword_10A9DBD0; // weak
-_UNKNOWN unk_10A9DBD8; // weak
-char byte_10A9DBDC; // weak
-char byte_10A9DD28[1064]; // idb
-int dword_10A9E150[32]; // idb
-int dword_10A9E360[]; // weak
+char byte_104C5150;                                                      // weak
+float flt_104C5154;                                                      // weak
+int dword_104C5158;                                                      // weak
+int dword_104C515C;                                                      // weak
+float flt_104C5160;                                                      // weak
+int dword_104C5164;                                                      // weak
+int g_D3Dclearzbuffer;                                                   // weak
+int minX;                                                                // weak
+int dword_104C5170;                                                      // weak
+int dword_104C5174;                                                      // weak
+int dword_104C5178;                                                      // weak
+int dword_104C517C;                                                      // weak
+int dword_104C5180;                                                      // weak
+int dword_104C5184;                                                      // weak
+int g_vertexCount;                                                       // weak
+int g_indexedPrimitiveIndexCount;                                        // weak
+int dword_104C5190;                                                      // weak
+int dword_104C5194;                                                      // weak
+int dword_104C5198;                                                      // weak
+char byte_104C51A0;                                                      // weak
+int dword_104C51A4;                                                      // weak
+char byte_104D51A8;                                                      // weak
+int dword_104D51AC;                                                      // weak
+char byte_104D51B0;                                                      // weak
+int dword_104D51B4;                                                      // weak
+int dword_104D51B8;                                                      // weak
+int dword_104D51BC;                                                      // weak
+_UNKNOWN unk_104D51D0;                                                   // weak
+char byte_105551D0;                                                      // weak
+char byte_105551D4;                                                      // weak
+int dword_105551D8[];                                                    // weak
+int dword_105551DC[];                                                    // weak
+int dword_105551E0;                                                      // weak
+int dword_105551E4;                                                      // weak
+int dword_105551E8[];                                                    // weak
+int dword_105551EC[];                                                    // weak
+int dword_105551F0[];                                                    // weak
+int dword_105551F4[];                                                    // weak
+int dword_105551F8[];                                                    // weak
+int dword_105551FC[];                                                    // weak
+int dword_10555200;                                                      // weak
+int dword_10555204;                                                      // weak
+int dword_10555208[];                                                    // weak
+int dword_1055520C[];                                                    // weak
+int dword_10555210[];                                                    // weak
+int dword_10555214[113];                                                 // idb
+char byte_105553D8;                                                      // weak
+int dword_105553DC;                                                      // weak
+int dword_105553E0;                                                      // weak
+int dword_105553E4;                                                      // weak
+int dword_105553E8;                                                      // weak
+int dword_105553EC;                                                      // weak
+int dword_105553F0;                                                      // weak
+int dword_105553F4;                                                      // weak
+int dword_105553F8;                                                      // weak
+int dword_105553FC;                                                      // weak
+char byte_10555400;                                                      // weak
+char byte_10575410;                                                      // weak
+int dword_10575414;                                                      // weak
+int g_D3dalwayssquar;                                                    // weak
+int dword_10575424;                                                      // weak
+int dword_10575428;                                                      // weak
+void *Block;                                                             // idb
+int dword_10575430;                                                      // weak
+int dword_10575434;                                                      // weak
+int dword_10575438;                                                      // weak
+void *dword_1057543C;                                                    // idb
+int dword_10575440;                                                      // weak
+int dword_10575444;                                                      // weak
+int dword_10575448;                                                      // weak
+int dword_1057544C;                                                      // weak
+int EAR_DLL_GetVersion;                                                  // weak
+int(__stdcall *EAR_DLL_SetAttenuationLevel)(_DWORD, _DWORD);             // weak
+int EAR_DLL_ShutDownBank;                                                // weak
+int EAR_DLL_ShutDownMatrix;                                              // weak
+int EAR_DLL_EarInactive;                                                 // weak
+HMODULE hModule;                                                         // idb
+int EAR_DLL_ShutDownTimer;                                               // weak
+int(__stdcall *EAR_DLL_MixEvent)(_DWORD);                                // weak
+int(__stdcall *EAR_DLL_ShutDownChannel)(_DWORD);                         // weak
+int (*EAR_DLL_ShutDownEar)(void);                                        // weak
+int aEarInteractiveMessageID;                                            // weak
+int EAR_DLL_StartEvent;                                                  // weak
+int(__stdcall *EAR_DLL_ClearChannel)(_DWORD, _DWORD);                    // weak
+int(__stdcall *EAR_DLL_ChangeChannelControl)(_DWORD, _DWORD);            // weak
+int EAR_DLL_MoveEvent;                                                   // weak
+int(__stdcall *EAR_DLL_AssignHwnd)(_DWORD);                              // weak
+int EAR_DLL_ShutDownPreset;                                              // weak
+int EAR_DLL_ResetEar;                                                    // weak
+int EAR_DLL_ShutDownEvent;                                               // weak
+int EAR_DLL_StartTimer;                                                  // weak
+int(__stdcall *EAR_DLL_RegisterChannel)(_DWORD, _DWORD, _DWORD, _DWORD); // weak
+int EAR_DLL_ShutDownEnvironment;                                         // weak
+int (*EAR_DLL_ShowLastError)(void);                                      // weak
+int EAR_DLL_RegisterEnvironment;                                         // weak
+int(__stdcall *EAR_DLL_AAA_Validate)(_DWORD);                            // weak
+int EAR_DLL_GetEventStatus;                                              // weak
+int EAR_DLL_SetUserDistanceUnit;                                         // weak
+int EAR_DLL_UpdateEar;                                                   // weak
+int(__stdcall *EAR_DLL_InitializeEar)(_DWORD);                           // weak
+int (*EAR_DLL_GetLastError)(void);                                       // weak
+int EAR_DLL_RegisterPreset;                                              // weak
+int EAR_DLL_RegisterBank;                                                // weak
+int(__stdcall *EAR_DLL_RegisterMatrix)(_DWORD);                          // weak
+int dword_105754D4;                                                      // weak
+int dword_105754D8;                                                      // weak
+int dword_105754DC;                                                      // weak
+int dword_105754E0;                                                      // weak
+int dword_105754E8[];                                                    // weak
+int dword_105754F0[];                                                    // weak
+float flt_105754F8;                                                      // weak
+int dword_105754FC;                                                      // weak
+int dword_10575500;                                                      // weak
+float flt_10575504;                                                      // weak
+int dword_10575508;                                                      // weak
+int dword_1057550C;                                                      // weak
+int dword_10575510;                                                      // weak
+float flt_10575514;                                                      // weak
+int dword_10575518;                                                      // weak
+float flt_1057551C;                                                      // weak
+float flt_10575520;                                                      // weak
+int dword_10575524;                                                      // weak
+int dword_10575528;                                                      // weak
+int dword_1057552C;                                                      // weak
+int dword_10575530;                                                      // weak
+int dword_10575538;                                                      // weak
+int dword_1057553C;                                                      // weak
+int dword_10675540;                                                      // weak
+int dword_10675548[];                                                    // weak
+int dword_1067554C[];                                                    // weak
+int dword_10675550[6142];                                                // idb
+int dword_1067B548;                                                      // weak
+int dword_1067B54C;                                                      // weak
+int dword_1067B550[2048];                                                // idb
+int dword_1067D550;                                                      // weak
+int dword_1067D570;                                                      // weak
+int dword_1067D578;                                                      // weak
+int dword_1067D57C;                                                      // weak
+HWND g_HWND;                                                             // idb
+int dword_10680598;                                                      // weak
+int dword_1068059C;                                                      // weak
+int dword_106805A0;                                                      // weak
+int dword_106805A8;                                                      // weak
+int dword_106805B0[];                                                    // weak
+int dword_106805B8;                                                      // weak
+int dword_106805BC;                                                      // weak
+int dword_106805C0;                                                      // weak
+int dword_106805C4;                                                      // weak
+int dword_106805C8[];                                                    // weak
+int dword_106805D0[16];                                                  // idb
+int dword_10680610;                                                      // weak
+void *dword_10680618;                                                    // idb
+int dword_1068061C;                                                      // weak
+int dword_10680620;                                                      // weak
+int dword_10680624;                                                      // weak
+int dword_10680628;                                                      // weak
+int dword_1068062C;                                                      // weak
+float flt_10680630;                                                      // idb
+int dword_10680634;                                                      // weak
+int dword_10680638;                                                      // weak
+int dword_1068063C;                                                      // weak
+int dword_10680640;                                                      // weak
+int dword_10680644;                                                      // weak
+int dword_10680648;                                                      // weak
+int dword_1068064C;                                                      // weak
+int dword_10680650;                                                      // weak
+int dword_10680654;                                                      // weak
+int dword_10680658;                                                      // weak
+int dword_1068065C;                                                      // weak
+int dword_10680660;                                                      // weak
+int dword_10680664;                                                      // weak
+int dword_10680668;                                                      // weak
+int dword_1068066C[17];                                                  // idb
+LARGE_INTEGER stru_106806B0[5];                                          // idb
+float flt_106806D8;                                                      // weak
+int dword_106806DC;                                                      // weak
+int dword_106806E0;                                                      // weak
+int dword_106806E4[17];                                                  // idb
+int dword_10680728[];                                                    // weak
+size_t ElementCount;                                                     // idb
+int dword_10680734;                                                      // weak
+int dword_10680738;                                                      // weak
+int dword_1068073C;                                                      // weak
+int dword_10680740;                                                      // weak
+int dword_10680744;                                                      // weak
+int dword_10680748[];                                                    // weak
+int dword_10680750;                                                      // weak
+int dword_10680758[120];                                                 // idb
+int dword_10680938;                                                      // weak
+int dword_1068093C;                                                      // weak
+int dword_10680940;                                                      // weak
+unsigned int C;                                                          // idb
+int dword_10680948;                                                      // weak
+_UNKNOWN unk_10680950;                                                   // weak
+_UNKNOWN unk_10690950;                                                   // weak
+int dword_106909B0;                                                      // weak
+int dword_106909B4;                                                      // weak
+int dword_106909B8;                                                      // weak
+int dword_106909BC;                                                      // weak
+int dword_106909C8;                                                      // weak
+int dword_106909CC;                                                      // weak
+int dword_106909D0;                                                      // weak
+int dword_106909D4;                                                      // weak
+int dword_106909D8;                                                      // weak
+int dword_106909E0;                                                      // weak
+int dword_106909E4;                                                      // weak
+int dword_106909E8;                                                      // weak
+int dword_106909EC;                                                      // weak
+int dword_106909F0;                                                      // weak
+int g_needToPlayIntro2;                                                  // weak
+int dword_106909F8;                                                      // weak
+int dword_106909FC;                                                      // weak
+_DWORD dword_10690A00;                                                   // idb
+_DWORD dword_10690A04;                                                   // idb
+_DWORD dword_10690A08;                                                   // idb
+_DWORD dword_10690A0C;                                                   // idb
+int dword_10690A10;                                                      // weak
+int dword_10690A14;                                                      // weak
+int dword_10690A18;                                                      // weak
+int dword_10690A1C;                                                      // weak
+int (*dword_10690A20)(void);                                             // weak
+int (*dword_10690A24)(void);                                             // weak
+int (*dword_10690A28)(void);                                             // weak
+char byte_10690BE8;                                                      // weak
+int dword_10690BEC;                                                      // weak
+char byte_10690BF0;                                                      // weak
+char byte_10690FF8[];                                                    // weak
+char byte_10690FF9;                                                      // weak
+char byte_10690FFA;                                                      // weak
+char byte_10690FFB;                                                      // weak
+_UNKNOWN unk_10691018;                                                   // weak
+char byte_106C0200;                                                      // weak
+int dword_106C0208;                                                      // weak
+int dword_106C020C;                                                      // weak
+float flt_106C0210;                                                      // weak
+float flt_106C0218[16];                                                  // idb
+int dword_106C0258;                                                      // weak
+char byte_106C0260;                                                      // weak
+int dword_106C0670;                                                      // weak
+int dword_106C0674;                                                      // weak
+int dword_106C0678;                                                      // weak
+__int16 word_106C067C;                                                   // weak
+int dword_106C0680;                                                      // weak
+int g_Width1;                                                            // weak
+int dword_106C0688;                                                      // weak
+float flt_106C0690[3];                                                   // idb
+int dword_106C069C;                                                      // weak
+char byte_106C06A0[];                                                    // weak
+int dword_106C06A4;                                                      // weak
+void *dword_106C06A8;                                                    // idb
+float flt_106C0860;                                                      // weak
+float flt_106C0864;                                                      // weak
+float flt_106C0868;                                                      // weak
+float flt_106C086C;                                                      // weak
+float flt_106C0870;                                                      // weak
+float flt_106C0874;                                                      // weak
+float flt_106C0878;                                                      // weak
+float flt_106C087C;                                                      // weak
+float flt_106C0880;                                                      // weak
+float flt_106C0884;                                                      // weak
+float flt_106C0888;                                                      // weak
+float flt_106C088C;                                                      // weak
+float flt_106C0890;                                                      // weak
+float flt_106C0894;                                                      // weak
+float flt_106C0898;                                                      // weak
+void *flt_106C089C;                                                      // idb
+float flt_106C08A0;                                                      // weak
+float flt_106C08A4;                                                      // weak
+int dword_106C08A8;                                                      // weak
+int dword_106C08AC;                                                      // weak
+float flt_106C08B0;                                                      // weak
+float flt_106C08B4;                                                      // weak
+int dword_106C08B8;                                                      // weak
+int dword_106C08BC;                                                      // weak
+int dword_106C08C0;                                                      // weak
+int dword_106C08C4;                                                      // weak
+int dword_106C08C8;                                                      // weak
+int dword_106C08CC;                                                      // weak
+int dword_106C08D0;                                                      // weak
+int dword_106C08D4;                                                      // weak
+int dword_106C08D8;                                                      // weak
+int dword_106C08DC;                                                      // weak
+float flt_106C08E0[16];                                                  // idb
+int dword_106C0920;                                                      // weak
+__int16 word_106C0928[];                                                 // weak
+char byte_106C092A[];                                                    // weak
+char byte_106C092B[13];                                                  // idb
+int dword_106C0944;                                                      // weak
+int dword_106C0950[];                                                    // weak
+char byte_106C0960;                                                      // weak
+int (*dword_106C0964)(void);                                             // weak
+char byte_106C0968;                                                      // weak
+int dword_106C1170;                                                      // weak
+int dword_106C1174;                                                      // weak
+int dword_106C1178;                                                      // weak
+char byte_106C1580;                                                      // weak
+int dword_106C1608;                                                      // weak
+int dword_106C1610;                                                      // weak
+char byte_106C1614;                                                      // weak
+int dword_106C1618;                                                      // weak
+int dword_106C161C;                                                      // weak
+int dword_106C1620;                                                      // weak
+_DWORD dword_106C1628[4];                                                // idb
+int dword_106C1638;                                                      // weak
+_UNKNOWN unk_106C163C;                                                   // weak
+int dword_106C1690;                                                      // weak
+__int16 word_106C1788[];                                                 // weak
+__int16 word_106C178A[];                                                 // weak
+__int16 word_106C178C[];                                                 // weak
+__int16 word_106C178E[];                                                 // weak
+__int16 word_106C1790[];                                                 // weak
+__int16 word_106C1792[];                                                 // weak
+__int16 word_106C1794[];                                                 // weak
+__int16 word_106C1796[249];                                              // idb
+int dword_106C1988;                                                      // weak
+int (*dword_106C198C)(void);                                             // weak
+float flt_106C2990[3];                                                   // idb
+int g_Height1;                                                           // weak
+int dword_106C29A4;                                                      // weak
+float flt_106C29A8;                                                      // weak
+float flt_106C29AC;                                                      // weak
+float flt_106C29B0;                                                      // weak
+float flt_106C29B4;                                                      // weak
+float flt_106C29B8;                                                      // weak
+float flt_106C29BC;                                                      // weak
+float flt_106C29C0;                                                      // weak
+float flt_106C29C4;                                                      // weak
+float flt_106C29C8;                                                      // weak
+float flt_106C29CC;                                                      // weak
+float flt_106C29D0;                                                      // weak
+float flt_106C29D4;                                                      // weak
+float flt_106C29D8;                                                      // weak
+float flt_106C29DC;                                                      // weak
+float flt_106C29E0;                                                      // weak
+float flt_106C29E4;                                                      // weak
+int dword_106C29E8;                                                      // weak
+int dword_106C2CF0;                                                      // weak
+int dword_106C2CF4;                                                      // weak
+int dword_106C2CF8;                                                      // weak
+int dword_106C2CFC;                                                      // weak
+int dword_106C32CC;                                                      // weak
+int dword_106C32D0;                                                      // weak
+int dword_106C3308;                                                      // weak
+float dword_106C3310;                                                    // idb
+float dword_106C3314;                                                    // idb
+float dword_106C331C;                                                    // idb
+float dword_106C3320;                                                    // idb
+float dword_106C3328;                                                    // idb
+float dword_106C332C;                                                    // idb
+float dword_106C3334;                                                    // idb
+float dword_106C3338;                                                    // idb
+float dword_106C3340;                                                    // idb
+float dword_106C3344;                                                    // idb
+float dword_106C334C;                                                    // idb
+float dword_106C3350;                                                    // idb
+char byte_106C3358[];                                                    // weak
+char byte_106C3359;                                                      // weak
+char byte_106C335A;                                                      // weak
+char byte_106C335B;                                                      // weak
+char byte_106C335C;                                                      // weak
+float dword_106C3360;                                                    // idb
+int dword_106C3364;                                                      // weak
+int dword_106C3398;                                                      // weak
+int dword_106C33B8;                                                      // weak
+int dword_106C53C0;                                                      // weak
+float flt_106C5468[4];                                                   // idb
+int dword_106C56D0;                                                      // weak
+int dword_106C56D8;                                                      // weak
+int dword_106C56DC;                                                      // weak
+int dword_106C56E0;                                                      // weak
+int dword_106C56E4;                                                      // weak
+int dword_106C56E8;                                                      // weak
+int dword_106C56EC;                                                      // weak
+float flt_106C56F8[3];                                                   // idb
+int dword_106C5708;                                                      // weak
+float flt_106C58C0[124];                                                 // idb
+int dword_106C5AB0;                                                      // weak
+float dword_106C5AB4;                                                    // idb
+int dword_106C62D8;                                                      // weak
+void *dword_106C6490;                                                    // idb
+char byte_106C6494[];                                                    // weak
+char byte_106C6495;                                                      // weak
+char byte_106C6496;                                                      // weak
+char byte_106C6497;                                                      // weak
+int dword_106C64D8;                                                      // weak
+int dword_106C6558[16];                                                  // idb
+int dword_106C6598;                                                      // weak
+int dword_106C65B8;                                                      // weak
+char byte_106C65BC;                                                      // weak
+int dword_106C65D8;                                                      // weak
+int dword_106C65DC;                                                      // weak
+int dword_106C65E0;                                                      // weak
+int dword_106C65E4;                                                      // weak
+int dword_106C65E8;                                                      // weak
+int dword_106C65EC;                                                      // weak
+int dword_106C65F4;                                                      // weak
+int dword_106C65F8;                                                      // weak
+int dword_106C65FC;                                                      // weak
+int dword_106C6608;                                                      // weak
+int dword_106C660C;                                                      // weak
+int dword_106C6614;                                                      // weak
+int dword_106C6618;                                                      // weak
+int dword_106C661C;                                                      // weak
+int dword_106C6620;                                                      // weak
+int dword_106C6624;                                                      // weak
+int dword_106C662C;                                                      // weak
+int dword_106C6630;                                                      // weak
+int dword_106C6644;                                                      // weak
+int dword_106C6648;                                                      // weak
+int dword_106C664C;                                                      // weak
+HANDLE dword_106C6650;                                                   // idb
+int dword_106C6654;                                                      // weak
+int dword_106C6658;                                                      // weak
+int dword_106C665C;                                                      // weak
+int dword_106C6660;                                                      // weak
+int dword_106C6664;                                                      // weak
+int dword_106C6668;                                                      // weak
+int dword_106C666C;                                                      // weak
+_UNKNOWN unk_106C6678;                                                   // weak
+_UNKNOWN unk_106C6930;                                                   // weak
+int dword_106C7C38;                                                      // weak
+int dword_106C7C3C;                                                      // weak
+int dword_106C7C40;                                                      // weak
+int g_TrackHeader;                                                       // weak
+int g_TrackHeaderSize;                                                   // weak
+int dword_106C7C54;                                                      // weak
+int dword_106C7C5C;                                                      // weak
+int dword_106C7C60;                                                      // weak
+int dword_106C7C64;                                                      // weak
+int dword_106C7C68;                                                      // weak
+int dword_106C7C6C;                                                      // weak
+float flt_106C7C70;                                                      // weak
+float flt_106C7C74;                                                      // weak
+float flt_106C7C80;                                                      // weak
+float flt_106C7C84;                                                      // weak
+float flt_106C7C88;                                                      // weak
+float flt_106C7C8C;                                                      // weak
+float flt_106C7C90;                                                      // weak
+float dword_106C7C94;                                                    // idb
+int dword_106C7C98;                                                      // weak
+int dword_106C7CA4;                                                      // weak
+int dword_106C7CA8;                                                      // weak
+int g_TrackInstances;                                                    // weak
+int dword_106C7CB0;                                                      // weak
+int dword_106C7CB4;                                                      // weak
+int dword_106C7CB8;                                                      // idb
+int dword_106C7CC0;                                                      // weak
+int dword_106C7CC4;                                                      // weak
+char byte_106C7CC8;                                                      // weak
+char byte_106C7CC9;                                                      // weak
+char byte_106C7CCA;                                                      // weak
+int dword_106C7CCC;                                                      // weak
+int dword_106C7CD0;                                                      // weak
+int dword_106C7CD4;                                                      // weak
+int dword_106C7CD8;                                                      // weak
+int dword_106C7CDC;                                                      // weak
+_UNKNOWN unk_106C7CE0;                                                   // weak
+_UNKNOWN unk_106C7CE8;                                                   // weak
+void *dword_106C7DA8;                                                    // idb
+_UNKNOWN unk_106C7DAC;                                                   // weak
+int dword_106C7E6C;                                                      // weak
+_UNKNOWN unk_106C7E78;                                                   // weak
+_UNKNOWN unk_106C7E7C;                                                   // weak
+int dword_106C7E80[];                                                    // weak
+int dword_106C7E84[1021];                                                // idb
+_UNKNOWN unk_106C8E78;                                                   // weak
+_UNKNOWN g_TrackBuffer;                                                  // weak
+int dword_10A99778;                                                      // weak
+int dword_10A9977C;                                                      // weak
+_DWORD dword_10A99780[266];                                              // idb
+int dword_10A99BA8;                                                      // weak
+int dword_10A99BAC;                                                      // weak
+int dword_10A99BB0;                                                      // weak
+int dword_10A99BB4;                                                      // weak
+float flt_10A99BB8[];                                                    // weak
+float flt_10A99BBC[];                                                    // weak
+float flt_10A99BC0[];                                                    // weak
+float flt_10A99BC4[];                                                    // weak
+float flt_10A99BC8[];                                                    // weak
+float flt_10A99BCC[];                                                    // weak
+float flt_10A99BD0[];                                                    // weak
+__int16 word_10A99BD4[];                                                 // weak
+char byte_10A99BD6[];                                                    // weak
+char byte_10A99BD7[29];                                                  // idb
+__int16 word_10A9BBB4;                                                   // weak
+int dword_10A9BBB8;                                                      // weak
+int dword_10A9BBC0;                                                      // weak
+int dword_10A9BBC4;                                                      // weak
+int dword_10A9BBC8;                                                      // weak
+int dword_10A9BBCC;                                                      // weak
+int dword_10A9BBD0[];                                                    // weak
+int dword_10A9BCD0[64];                                                  // idb
+int dword_10A9BDD0[64];                                                  // idb
+int dword_10A9BED0[64];                                                  // idb
+int dword_10A9BFD0;                                                      // weak
+int dword_10A9BFD8;                                                      // weak
+UINT_PTR uIDEvent;                                                       // idb
+CHAR byte_10A9BFE0[16];                                                  // idb
+int dword_10A9C0C8[];                                                    // weak
+int dword_10A9C0CC[];                                                    // weak
+CHAR String1[220];                                                       // idb
+CHAR byte_10A9CEF8[260];                                                 // idb
+int dword_10A9CFFC;                                                      // weak
+int dword_10A9D000;                                                      // weak
+int dword_10A9D004;                                                      // weak
+int dword_10A9D008;                                                      // idb
+int dword_10A9D010;                                                      // weak
+char g_lpSessionDesc_dwUser3[80];                                        // idb
+int dword_10A9D068;                                                      // weak
+int dword_10A9D06C;                                                      // weak
+int dword_10A9D070;                                                      // idb
+char byte_10A9D078[264];                                                 // idb
+int dword_10A9D5C0[];                                                    // weak
+char byte_10A9D618[36];                                                  // idb
+int dword_10A9DBD0;                                                      // weak
+_UNKNOWN unk_10A9DBD8;                                                   // weak
+char byte_10A9DBDC;                                                      // weak
+char byte_10A9DD28[1064];                                                // idb
+int dword_10A9E150[32];                                                  // idb
+int dword_10A9E360[];                                                    // weak
 char *g_aImagesWork1aBmFilepath;
 int g_aImagesCursorBmFilepath; // weak
 int g_aImagesTypeGryBFilepath; // weak
 int g_aImagesTypeWitBFilepath; // weak
-int dword_10A9E5A0; // weak
-int dword_10A9E614; // weak
-int dword_10A9E688; // weak
-int dword_10A9E6FC; // weak
-int dword_10A9E770; // weak
-int dword_10A9E7E4; // weak
-int dword_10A9E858; // weak
-int dword_10A9E8CC; // weak
-int dword_10A9E940; // weak
-int dword_10A9E9B4; // weak
-int dword_10A9EA28; // weak
-int dword_10A9EA9C; // weak
-int dword_10A9EB10; // weak
-int dword_10A9EB84; // weak
-int dword_10A9EBF8; // weak
-int dword_10A9EC6C; // weak
-int dword_10A9ECE0; // weak
-int dword_10A9ED54; // weak
-int dword_10A9EDC8; // weak
-int dword_10A9EE3C; // weak
-int dword_10A9EEB0; // weak
-int dword_10A9EF24; // weak
-int dword_10A9EF98; // weak
-int dword_10A9F00C; // weak
-int dword_10A9F080; // weak
-int dword_10A9F0F4; // weak
-int dword_10A9F168; // weak
-int dword_10A9F1DC; // weak
-int dword_10A9F250; // weak
-int dword_10A9F2C4; // weak
-int dword_10A9F338; // weak
-int dword_10A9F3AC; // weak
-int dword_10A9F420; // weak
-int dword_10A9F494; // weak
-int dword_10A9F508; // weak
-int dword_10A9F57C; // weak
-int dword_10A9F5F0; // weak
-int dword_10A9F664; // weak
-int dword_10A9F6D8; // weak
-int dword_10A9F74C; // weak
-int dword_10A9F7C0; // weak
-int dword_10A9F834; // weak
-int dword_10A9F8A8; // weak
-int dword_10A9F91C; // weak
-int dword_10A9F990; // weak
-int dword_10A9FA04; // weak
-int dword_10A9FA78; // weak
-int dword_10A9FAEC; // weak
-int dword_10A9FB60; // weak
-int dword_10A9FBD4; // weak
-int dword_10A9FC48; // weak
-int dword_10A9FCBC; // weak
-int dword_10A9FD30; // weak
-int dword_10A9FDA4; // weak
-int dword_10A9FE18; // weak
-int dword_10A9FE8C; // weak
-int dword_10A9FF00; // weak
-int dword_10A9FF74; // weak
-int dword_10A9FFE8; // weak
-int dword_10AA005C; // weak
-int dword_10AA00D0; // weak
-int dword_10AA0144; // weak
-int dword_10AA01B8; // weak
-int dword_10AA022C; // weak
-int dword_10AA02A0; // weak
-int dword_10AA0314; // weak
-int dword_10AA0388; // weak
-int dword_10AA03FC; // weak
-int dword_10AA0470; // weak
-int dword_10AA04E4; // weak
-int dword_10AA0558; // weak
-int dword_10AA05CC; // weak
-int dword_10AA0640; // weak
-int dword_10AA06B4; // weak
-int dword_10AA0728; // weak
-int dword_10AA079C; // weak
-int dword_10AA0810; // weak
-int dword_10AA0884; // weak
-int dword_10AA08F8; // weak
-int dword_10AA096C; // weak
-int dword_10AA09E0; // weak
-int dword_10AA0A54; // weak
-int dword_10AA0AC8; // weak
-int dword_10AA0B3C; // weak
-int dword_10AA0BB0; // weak
-int dword_10AA0C24; // weak
-int dword_10AA0C98; // weak
-int dword_10AA0D0C; // weak
-int dword_10AA0D80; // weak
+int dword_10A9E5A0;            // weak
+int dword_10A9E614;            // weak
+int dword_10A9E688;            // weak
+int dword_10A9E6FC;            // weak
+int dword_10A9E770;            // weak
+int dword_10A9E7E4;            // weak
+int dword_10A9E858;            // weak
+int dword_10A9E8CC;            // weak
+int dword_10A9E940;            // weak
+int dword_10A9E9B4;            // weak
+int dword_10A9EA28;            // weak
+int dword_10A9EA9C;            // weak
+int dword_10A9EB10;            // weak
+int dword_10A9EB84;            // weak
+int dword_10A9EBF8;            // weak
+int dword_10A9EC6C;            // weak
+int dword_10A9ECE0;            // weak
+int dword_10A9ED54;            // weak
+int dword_10A9EDC8;            // weak
+int dword_10A9EE3C;            // weak
+int dword_10A9EEB0;            // weak
+int dword_10A9EF24;            // weak
+int dword_10A9EF98;            // weak
+int dword_10A9F00C;            // weak
+int dword_10A9F080;            // weak
+int dword_10A9F0F4;            // weak
+int dword_10A9F168;            // weak
+int dword_10A9F1DC;            // weak
+int dword_10A9F250;            // weak
+int dword_10A9F2C4;            // weak
+int dword_10A9F338;            // weak
+int dword_10A9F3AC;            // weak
+int dword_10A9F420;            // weak
+int dword_10A9F494;            // weak
+int dword_10A9F508;            // weak
+int dword_10A9F57C;            // weak
+int dword_10A9F5F0;            // weak
+int dword_10A9F664;            // weak
+int dword_10A9F6D8;            // weak
+int dword_10A9F74C;            // weak
+int dword_10A9F7C0;            // weak
+int dword_10A9F834;            // weak
+int dword_10A9F8A8;            // weak
+int dword_10A9F91C;            // weak
+int dword_10A9F990;            // weak
+int dword_10A9FA04;            // weak
+int dword_10A9FA78;            // weak
+int dword_10A9FAEC;            // weak
+int dword_10A9FB60;            // weak
+int dword_10A9FBD4;            // weak
+int dword_10A9FC48;            // weak
+int dword_10A9FCBC;            // weak
+int dword_10A9FD30;            // weak
+int dword_10A9FDA4;            // weak
+int dword_10A9FE18;            // weak
+int dword_10A9FE8C;            // weak
+int dword_10A9FF00;            // weak
+int dword_10A9FF74;            // weak
+int dword_10A9FFE8;            // weak
+int dword_10AA005C;            // weak
+int dword_10AA00D0;            // weak
+int dword_10AA0144;            // weak
+int dword_10AA01B8;            // weak
+int dword_10AA022C;            // weak
+int dword_10AA02A0;            // weak
+int dword_10AA0314;            // weak
+int dword_10AA0388;            // weak
+int dword_10AA03FC;            // weak
+int dword_10AA0470;            // weak
+int dword_10AA04E4;            // weak
+int dword_10AA0558;            // weak
+int dword_10AA05CC;            // weak
+int dword_10AA0640;            // weak
+int dword_10AA06B4;            // weak
+int dword_10AA0728;            // weak
+int dword_10AA079C;            // weak
+int dword_10AA0810;            // weak
+int dword_10AA0884;            // weak
+int dword_10AA08F8;            // weak
+int dword_10AA096C;            // weak
+int dword_10AA09E0;            // weak
+int dword_10AA0A54;            // weak
+int dword_10AA0AC8;            // weak
+int dword_10AA0B3C;            // weak
+int dword_10AA0BB0;            // weak
+int dword_10AA0C24;            // weak
+int dword_10AA0C98;            // weak
+int dword_10AA0D0C;            // weak
+int dword_10AA0D80;            // weak
 char *dword_10AA0DF4;
-int dword_10AA0E68; // weak
-int dword_10AA0EDC; // weak
-int dword_10AA0F50; // weak
-int dword_10AA0FC4; // weak
-int dword_10AA1038; // weak
-int dword_10AA10AC; // weak
-int dword_10AA1120; // weak
-int dword_10AA1194; // weak
-int dword_10AA1208; // weak
-int dword_10AA127C; // weak
-int dword_10AA12F0; // weak
-int dword_10AA1364; // weak
-int dword_10AA13D8; // weak
-int dword_10AA144C; // weak
-int dword_10AA14C0; // weak
-int dword_10AA1534; // weak
-int dword_10AA15A8; // weak
-int dword_10AA161C; // weak
-int dword_10AA1690; // weak
-int dword_10AA1704; // weak
-int dword_10AA1778; // weak
-int dword_10AA17EC; // weak
-int dword_10AA1860; // weak
-int dword_10AA18D4; // weak
-int dword_10AA1948; // weak
-int dword_10AA19BC; // weak
-int dword_10AA1A30; // weak
-int dword_10AA1AA4; // weak
-int dword_10AA1B18; // weak
-int dword_10AA1B8C; // weak
-int dword_10AA1C00; // weak
-int dword_10AA1C74; // weak
-int dword_10AA1CE8; // weak
-int dword_10AA1D5C; // weak
-int dword_10AA1DD0; // weak
-int dword_10AA1E44; // weak
-int dword_10AA1EB8; // weak
-int dword_10AA1F2C; // weak
-int dword_10AA1FA0; // weak
-int dword_10AA2014; // weak
-int dword_10AA2088; // weak
-int dword_10AA20FC; // weak
-int dword_10AA2170; // weak
-int dword_10AA21E4; // weak
-int dword_10AA2258; // weak
-int dword_10AA22CC; // weak
-int dword_10AA2340; // weak
-int dword_10AA23B4; // weak
-int dword_10AA2428; // weak
-int dword_10AA249C; // weak
-int dword_10AA2510; // weak
-char byte_10AA2518[32]; // idb
-int dword_10AA2538[]; // weak
-int dword_10AA253C[]; // weak
-int dword_10AA2540[17]; // idb
-_UNKNOWN unk_10AA2584; // weak
-int dword_10AA2598; // weak
-_UNKNOWN unk_10AA259C; // weak
-float flt_10AA25A0[12]; // idb
-_UNKNOWN unk_10AA25D0; // weak
-char byte_10AA25D4; // weak
-int dword_10AA25D8; // weak
-int dword_10AA25DC; // weak
-int dword_10AA26E8; // weak
-int dword_10AA26F0; // weak
-int dword_10AA26F4[]; // weak
-__int16 word_10AA270E[]; // weak
-int dword_10AA2740[24]; // idb
-float flt_10AA27A0[16]; // idb
-int dword_10AA27E0; // weak
-int dword_10AA27EC; // weak
-int dword_10AA27F0; // weak
-int dword_10AA27F4; // weak
-int dword_10AA27F8; // weak
-float flt_10AA27FC[17]; // idb
-int dword_10AA2840; // weak
-int dword_10AA2844; // weak
-int dword_10AA2848; // weak
-int dword_10AA284C; // weak
-int dword_10AA2850; // weak
-int dword_10AA2854; // weak
-int dword_10AA2858; // weak
-int dword_10AA285C; // weak
-int dword_10AA2860; // weak
-int dword_10AA2864; // weak
-int dword_10AA2868; // weak
-__int16 word_10AA286C; // weak
-__int16 word_10AA2870; // weak
-int dword_10AA2874; // weak
-int dword_10AA2878; // weak
-int dword_10AA287C; // weak
-int dword_10AA2880; // weak
-int dword_10AA2884; // weak
-int dword_10AA2888; // weak
-int dword_10AA288C; // weak
-int dword_10AA2890; // weak
-int dword_10AA2894; // weak
-int dword_10AA2898; // weak
-int dword_10AA289C; // weak
-int dword_10AA28A0; // weak
-int dword_10AA28A4; // weak
-char byte_10AA28A8; // weak
-int dword_10AA28AC; // weak
-int dword_10AA28B0; // weak
-int dword_10AA28B4; // weak
-int dword_10AA28B8; // weak
-int dword_10AA28BC; // weak
-int dword_10AA28C0; // weak
-int dword_10AA28C4; // idb
-int dword_10AA28C8; // weak
-int dword_10AA28CC; // weak
-int dword_10AA28D0; // weak
-int dword_10AA28D4; // weak
-int dword_10AA28D8; // weak
-int dword_10AA28E0; // weak
-int dword_10AA28E4; // weak
-int dword_10AA28E8; // weak
-int dword_10AA28EC; // weak
-int dword_10AA28F0; // weak
-int dword_10AA28F4; // weak
-int dword_10AA28F8; // weak
-int dword_10AA28FC; // weak
-void *dword_10AA2900; // idb
-void *dword_10AA2904; // idb
-int dword_10AA2908; // weak
-int dword_10AA290C; // weak
-int dword_10AA2910; // weak
-int dword_10AA2914; // weak
-int dword_10AA2918; // weak
-int dword_10AA291C; // weak
-int dword_10AA2920; // weak
-int dword_10AA2924; // weak
-int dword_10AA2928; // weak
-int dword_10AA292C; // weak
-int dword_10AA2930; // weak
-int dword_10AA2934; // weak
-int dword_10AA2938; // weak
-int dword_10AA293C; // weak
-int dword_10AA2940; // weak
-int dword_10AA2944; // weak
-int dword_10AA2948; // weak
-int dword_10AA294C; // weak
-int dword_10AA2950; // weak
-int dword_10AA2954; // weak
-int dword_10AA2958; // weak
-int dword_10AA295C; // weak
-int dword_10AA2960; // weak
-int dword_10AA2964; // weak
-int dword_10AA2968; // weak
-int dword_10AA296C; // weak
-int dword_10AA2970; // weak
-int dword_10AA2974; // weak
-int dword_10AA2978; // weak
-int dword_10AA297C; // weak
-int dword_10AA2980; // weak
-int dword_10AA2984; // weak
-int dword_10AA2988; // weak
-int dword_10AA298C; // weak
-int dword_10AA2990; // weak
-int dword_10AA2994; // weak
-int dword_10AA2998; // weak
-int dword_10AA29A8; // weak
-int dword_10AA29AC; // weak
-int dword_10AA29B0; // weak
-int dword_10AA29B4; // weak
-int dword_10AA29B8; // weak
-int dword_10AA29BC; // weak
-int dword_10AA29C0; // weak
-int dword_10AA29C4; // weak
-int dword_10AA29C8; // weak
-int dword_10AA29CC; // weak
-int dword_10AA29D0; // weak
-int dword_10AA29D4; // weak
-int dword_10AA29D8; // weak
-int dword_10AA29E0; // weak
-int dword_10AA29E4; // weak
-int dword_10AA29E8; // weak
-int dword_10AA29EC; // weak
-int dword_10AA29F0; // weak
-int dword_10AA29F4; // weak
-__int16 word_10AA29F8; // weak
-__int16 word_10AA29FC; // weak
-int dword_10AA2A00; // weak
-int dword_10AA2A04; // weak
-int dword_10AA2A08; // weak
-int dword_10AA2A0C; // weak
-int dword_10AA2A10; // weak
-int dword_10AA2A14; // weak
-int dword_10AA2A18; // weak
-int dword_10AA2A1C; // weak
-int dword_10AA2A20; // weak
-int dword_10AA2A24; // weak
-int dword_10AA2A28; // weak
-int dword_10AA2A2C; // weak
-int dword_10AA2A30; // weak
-int dword_10AA2A34; // weak
-int dword_10AA2A38; // weak
-int dword_10AA2A3C; // weak
-int dword_10AA2A40; // weak
-int dword_10AA2A44; // weak
-int dword_10AA2A48; // weak
-int dword_10AA2A4C; // weak
-int dword_10AA2A50; // weak
-int dword_10AA2A54; // weak
-int dword_10AA2A58; // weak
-int dword_10AA2A5C; // weak
-int dword_10AA2A60; // weak
-float flt_10AA2A64; // weak
-float flt_10AA2A68; // weak
-int dword_10AA2A6C; // weak
-CHAR SrcStr[16]; // idb
-int dword_10AA2A80[]; // weak
-int dword_10AA2A84; // weak
-int dword_10AA2AD4; // weak
-int dword_10AA2AF0; // weak
-int dword_10AA2B6C; // weak
-int dword_10AA2B70; // weak
-int dword_10AA2B74; // weak
-int dword_10AA2B78; // weak
-int dword_10AA2BDC; // weak
-int dword_10AA2BE0; // weak
-int dword_10AA2CF0; // weak
-int dword_10AA2DAC; // weak
-int dword_10AA2DB4; // weak
-void *dword_10AA2E80; // idb
-int dword_10AA2E88[256]; // idb
-char byte_10AA3288[200]; // idb
-char byte_10AA3350; // weak
-char byte_10AA3353; // weak
-char byte_10AA3355; // weak
-char byte_10AA3358; // weak
-int dword_10AA3388[]; // weak
-int dword_10AA3398; // weak
-int dword_10AA339C; // weak
-int dword_10AA33A0; // weak
-int dword_10AA33A4; // weak
-int dword_10AA33A8; // weak
-int dword_10AA33AC; // weak
-int dword_10AA33B0; // weak
-int dword_10AA33B4; // weak
-int dword_10AA33B8; // weak
-int dword_10AA33C0[]; // weak
-int dword_10AA33C4; // weak
-int dword_10AA33C8; // weak
-int dword_10AA33CC; // weak
-int dword_10AA33D0[]; // weak
-int dword_10AA33D4; // weak
-int dword_10AA33D8; // weak
-int dword_10AA33DC; // weak
-int dword_10AA33E0; // weak
-int dword_10AA33E4; // weak
-int g_TickCount; // weak
-int dword_10AA3440; // weak
-int dword_10AA3444; // weak
-int dword_10AA3448; // weak
-int dword_10AA344C[]; // weak
-int dword_10AA345C; // weak
-int dword_10AA3460; // weak
-int g_bmWidth; // weak
-int g_bmHeight; // weak
-__int16 word_10AA346C; // weak
-int dword_10AA3470; // weak
-int dword_10AA3474; // weak
-int dword_10AA34AC; // weak
-int dword_10ACD490; // weak
-_UNKNOWN unk_10ACD498; // weak
-int dword_10ACD4EC; // weak
-int dword_10ACD4F8; // weak
-_UNKNOWN unk_10ACD4FC; // weak
-char byte_10ACD500[2456]; // idb
-int dword_10ACDE98; // weak
-int dword_10ACDE9C; // weak
-int dword_10ACDEA0; // weak
+int dword_10AA0E68;        // weak
+int dword_10AA0EDC;        // weak
+int dword_10AA0F50;        // weak
+int dword_10AA0FC4;        // weak
+int dword_10AA1038;        // weak
+int dword_10AA10AC;        // weak
+int dword_10AA1120;        // weak
+int dword_10AA1194;        // weak
+int dword_10AA1208;        // weak
+int dword_10AA127C;        // weak
+int dword_10AA12F0;        // weak
+int dword_10AA1364;        // weak
+int dword_10AA13D8;        // weak
+int dword_10AA144C;        // weak
+int dword_10AA14C0;        // weak
+int dword_10AA1534;        // weak
+int dword_10AA15A8;        // weak
+int dword_10AA161C;        // weak
+int dword_10AA1690;        // weak
+int dword_10AA1704;        // weak
+int dword_10AA1778;        // weak
+int dword_10AA17EC;        // weak
+int dword_10AA1860;        // weak
+int dword_10AA18D4;        // weak
+int dword_10AA1948;        // weak
+int dword_10AA19BC;        // weak
+int dword_10AA1A30;        // weak
+int dword_10AA1AA4;        // weak
+int dword_10AA1B18;        // weak
+int dword_10AA1B8C;        // weak
+int dword_10AA1C00;        // weak
+int dword_10AA1C74;        // weak
+int dword_10AA1CE8;        // weak
+int dword_10AA1D5C;        // weak
+int dword_10AA1DD0;        // weak
+int dword_10AA1E44;        // weak
+int dword_10AA1EB8;        // weak
+int dword_10AA1F2C;        // weak
+int dword_10AA1FA0;        // weak
+int dword_10AA2014;        // weak
+int dword_10AA2088;        // weak
+int dword_10AA20FC;        // weak
+int dword_10AA2170;        // weak
+int dword_10AA21E4;        // weak
+int dword_10AA2258;        // weak
+int dword_10AA22CC;        // weak
+int dword_10AA2340;        // weak
+int dword_10AA23B4;        // weak
+int dword_10AA2428;        // weak
+int dword_10AA249C;        // weak
+int dword_10AA2510;        // weak
+char byte_10AA2518[32];    // idb
+int dword_10AA2538[];      // weak
+int dword_10AA253C[];      // weak
+int dword_10AA2540[17];    // idb
+_UNKNOWN unk_10AA2584;     // weak
+int dword_10AA2598;        // weak
+_UNKNOWN unk_10AA259C;     // weak
+float flt_10AA25A0[12];    // idb
+_UNKNOWN unk_10AA25D0;     // weak
+char byte_10AA25D4;        // weak
+int dword_10AA25D8;        // weak
+int dword_10AA25DC;        // weak
+int dword_10AA26E8;        // weak
+int dword_10AA26F0;        // weak
+int dword_10AA26F4[];      // weak
+__int16 word_10AA270E[];   // weak
+int dword_10AA2740[24];    // idb
+float flt_10AA27A0[16];    // idb
+int dword_10AA27E0;        // weak
+int dword_10AA27EC;        // weak
+int dword_10AA27F0;        // weak
+int dword_10AA27F4;        // weak
+int dword_10AA27F8;        // weak
+float flt_10AA27FC[17];    // idb
+int dword_10AA2840;        // weak
+int dword_10AA2844;        // weak
+int dword_10AA2848;        // weak
+int dword_10AA284C;        // weak
+int dword_10AA2850;        // weak
+int dword_10AA2854;        // weak
+int dword_10AA2858;        // weak
+int dword_10AA285C;        // weak
+int dword_10AA2860;        // weak
+int dword_10AA2864;        // weak
+int dword_10AA2868;        // weak
+__int16 word_10AA286C;     // weak
+__int16 word_10AA2870;     // weak
+int dword_10AA2874;        // weak
+int dword_10AA2878;        // weak
+int dword_10AA287C;        // weak
+int dword_10AA2880;        // weak
+int dword_10AA2884;        // weak
+int dword_10AA2888;        // weak
+int dword_10AA288C;        // weak
+int dword_10AA2890;        // weak
+int dword_10AA2894;        // weak
+int dword_10AA2898;        // weak
+int dword_10AA289C;        // weak
+int dword_10AA28A0;        // weak
+int dword_10AA28A4;        // weak
+char byte_10AA28A8;        // weak
+int dword_10AA28AC;        // weak
+int dword_10AA28B0;        // weak
+int dword_10AA28B4;        // weak
+int dword_10AA28B8;        // weak
+int dword_10AA28BC;        // weak
+int dword_10AA28C0;        // weak
+int dword_10AA28C4;        // idb
+int dword_10AA28C8;        // weak
+int dword_10AA28CC;        // weak
+int dword_10AA28D0;        // weak
+int dword_10AA28D4;        // weak
+int dword_10AA28D8;        // weak
+int dword_10AA28E0;        // weak
+int dword_10AA28E4;        // weak
+int dword_10AA28E8;        // weak
+int dword_10AA28EC;        // weak
+int dword_10AA28F0;        // weak
+int dword_10AA28F4;        // weak
+int dword_10AA28F8;        // weak
+int dword_10AA28FC;        // weak
+void *dword_10AA2900;      // idb
+void *dword_10AA2904;      // idb
+int dword_10AA2908;        // weak
+int dword_10AA290C;        // weak
+int dword_10AA2910;        // weak
+int dword_10AA2914;        // weak
+int dword_10AA2918;        // weak
+int dword_10AA291C;        // weak
+int dword_10AA2920;        // weak
+int dword_10AA2924;        // weak
+int dword_10AA2928;        // weak
+int dword_10AA292C;        // weak
+int dword_10AA2930;        // weak
+int dword_10AA2934;        // weak
+int dword_10AA2938;        // weak
+int dword_10AA293C;        // weak
+int dword_10AA2940;        // weak
+int dword_10AA2944;        // weak
+int dword_10AA2948;        // weak
+int dword_10AA294C;        // weak
+int dword_10AA2950;        // weak
+int dword_10AA2954;        // weak
+int dword_10AA2958;        // weak
+int dword_10AA295C;        // weak
+int dword_10AA2960;        // weak
+int dword_10AA2964;        // weak
+int dword_10AA2968;        // weak
+int dword_10AA296C;        // weak
+int dword_10AA2970;        // weak
+int dword_10AA2974;        // weak
+int dword_10AA2978;        // weak
+int dword_10AA297C;        // weak
+int dword_10AA2980;        // weak
+int dword_10AA2984;        // weak
+int dword_10AA2988;        // weak
+int dword_10AA298C;        // weak
+int dword_10AA2990;        // weak
+int dword_10AA2994;        // weak
+int dword_10AA2998;        // weak
+int dword_10AA29A8;        // weak
+int dword_10AA29AC;        // weak
+int dword_10AA29B0;        // weak
+int dword_10AA29B4;        // weak
+int dword_10AA29B8;        // weak
+int dword_10AA29BC;        // weak
+int dword_10AA29C0;        // weak
+int dword_10AA29C4;        // weak
+int dword_10AA29C8;        // weak
+int dword_10AA29CC;        // weak
+int dword_10AA29D0;        // weak
+int dword_10AA29D4;        // weak
+int dword_10AA29D8;        // weak
+int dword_10AA29E0;        // weak
+int dword_10AA29E4;        // weak
+int dword_10AA29E8;        // weak
+int dword_10AA29EC;        // weak
+int dword_10AA29F0;        // weak
+int dword_10AA29F4;        // weak
+__int16 word_10AA29F8;     // weak
+__int16 word_10AA29FC;     // weak
+int dword_10AA2A00;        // weak
+int dword_10AA2A04;        // weak
+int dword_10AA2A08;        // weak
+int dword_10AA2A0C;        // weak
+int dword_10AA2A10;        // weak
+int dword_10AA2A14;        // weak
+int dword_10AA2A18;        // weak
+int dword_10AA2A1C;        // weak
+int dword_10AA2A20;        // weak
+int dword_10AA2A24;        // weak
+int dword_10AA2A28;        // weak
+int dword_10AA2A2C;        // weak
+int dword_10AA2A30;        // weak
+int dword_10AA2A34;        // weak
+int dword_10AA2A38;        // weak
+int dword_10AA2A3C;        // weak
+int dword_10AA2A40;        // weak
+int dword_10AA2A44;        // weak
+int dword_10AA2A48;        // weak
+int dword_10AA2A4C;        // weak
+int dword_10AA2A50;        // weak
+int dword_10AA2A54;        // weak
+int dword_10AA2A58;        // weak
+int dword_10AA2A5C;        // weak
+int dword_10AA2A60;        // weak
+float flt_10AA2A64;        // weak
+float flt_10AA2A68;        // weak
+int dword_10AA2A6C;        // weak
+CHAR SrcStr[16];           // idb
+int dword_10AA2A80[];      // weak
+int dword_10AA2A84;        // weak
+int dword_10AA2AD4;        // weak
+int dword_10AA2AF0;        // weak
+int dword_10AA2B6C;        // weak
+int dword_10AA2B70;        // weak
+int dword_10AA2B74;        // weak
+int dword_10AA2B78;        // weak
+int dword_10AA2BDC;        // weak
+int dword_10AA2BE0;        // weak
+int dword_10AA2CF0;        // weak
+int dword_10AA2DAC;        // weak
+int dword_10AA2DB4;        // weak
+void *dword_10AA2E80;      // idb
+int dword_10AA2E88[256];   // idb
+char byte_10AA3288[200];   // idb
+char byte_10AA3350;        // weak
+char byte_10AA3353;        // weak
+char byte_10AA3355;        // weak
+char byte_10AA3358;        // weak
+int dword_10AA3388[];      // weak
+int dword_10AA3398;        // weak
+int dword_10AA339C;        // weak
+int dword_10AA33A0;        // weak
+int dword_10AA33A4;        // weak
+int dword_10AA33A8;        // weak
+int dword_10AA33AC;        // weak
+int dword_10AA33B0;        // weak
+int dword_10AA33B4;        // weak
+int dword_10AA33B8;        // weak
+int dword_10AA33C0[];      // weak
+int dword_10AA33C4;        // weak
+int dword_10AA33C8;        // weak
+int dword_10AA33CC;        // weak
+int dword_10AA33D0[];      // weak
+int dword_10AA33D4;        // weak
+int dword_10AA33D8;        // weak
+int dword_10AA33DC;        // weak
+int dword_10AA33E0;        // weak
+int dword_10AA33E4;        // weak
+int g_TickCount;           // weak
+int dword_10AA3440;        // weak
+int dword_10AA3444;        // weak
+int dword_10AA3448;        // weak
+int dword_10AA344C[];      // weak
+int dword_10AA345C;        // weak
+int dword_10AA3460;        // weak
+int g_bmWidth;             // weak
+int g_bmHeight;            // weak
+__int16 word_10AA346C;     // weak
+int dword_10AA3470;        // weak
+int dword_10AA3474;        // weak
+int dword_10AA34AC;        // weak
+int dword_10ACD490;        // weak
+_UNKNOWN unk_10ACD498;     // weak
+int dword_10ACD4EC;        // weak
+int dword_10ACD4F8;        // weak
+_UNKNOWN unk_10ACD4FC;     // weak
+char byte_10ACD500[2456];  // idb
+int dword_10ACDE98;        // weak
+int dword_10ACDE9C;        // weak
+int dword_10ACDEA0;        // weak
 _DWORD dword_10ACDEA8[81]; // idb
-int dword_10ACDFEC[]; // weak
-char byte_10ACDFF0[32]; // idb
-int dword_10ACE010; // weak
-int dword_10ACE014; // weak
-char byte_10ACE215; // weak
-int dword_10ACED0C; // weak
-int dword_10ACED30; // weak
-#505 *dword_10ACED34;
-int dword_10ACED38; // weak
-int dword_10ACED3C[]; // weak
-int dword_10ACED40; // weak
-int dword_10ACED44; // weak
-int dword_10ACEDA8[]; // weak
-_UNKNOWN unk_10ACEDB0; // weak
-int dword_10ACEE20[]; // weak
-int dword_10ACEE50; // weak
-int dword_10ACEE8C; // weak
-float flt_10ACEE94; // idb
-float flt_10ACEE9C; // weak
-int dword_10ACEEA0; // weak
-int dword_10ACEEA4; // weak
-int dword_10ACEEA8; // weak
-int dword_10ACEEAC; // weak
-int dword_10ACEEB0; // weak
-char byte_10ACEEB4[24]; // idb
-_UNKNOWN unk_10ACEECC; // weak
-int dword_10AD05DC[]; // weak
-int dword_10AD05E0[]; // weak
-_UNKNOWN unk_10AD05E4; // weak
-float flt_10AD061C; // weak
-_UNKNOWN unk_10AD0628; // weak
-_UNKNOWN unk_10AD066C; // weak
-_UNKNOWN unk_10AD06B0; // weak
-_UNKNOWN unk_10AD0738; // weak
-__int16 word_10AD07B4[32]; // idb
-_UNKNOWN unk_10AD07F4; // weak
-int dword_10AD084C[]; // weak
-int dword_10AD0850[]; // weak
-char byte_10AD0854[]; // weak
-char byte_10AD0855[]; // weak
-char byte_10AD0856[]; // weak
-char byte_10AD0857[]; // weak
-void *dword_10AD0868; // idb
-int dword_10AD086C[]; // weak
-int dword_10AD0978; // weak
-int dword_10AD097C; // weak
-int dword_10AD0980; // weak
-int dword_10AD0984; // weak
-int dword_10AD0988; // weak
-int dword_10AD098C; // weak
-char byte_10AD0990[128]; // idb
+int dword_10ACDFEC[];      // weak
+char byte_10ACDFF0[32];    // idb
+int dword_10ACE010;        // weak
+int dword_10ACE014;        // weak
+char byte_10ACE215;        // weak
+int dword_10ACED0C;        // weak
+int dword_10ACED30;        // weak
+# 505 * dword_10ACED34;
+int dword_10ACED38;         // weak
+int dword_10ACED3C[];       // weak
+int dword_10ACED40;         // weak
+int dword_10ACED44;         // weak
+int dword_10ACEDA8[];       // weak
+_UNKNOWN unk_10ACEDB0;      // weak
+int dword_10ACEE20[];       // weak
+int dword_10ACEE50;         // weak
+int dword_10ACEE8C;         // weak
+float flt_10ACEE94;         // idb
+float flt_10ACEE9C;         // weak
+int dword_10ACEEA0;         // weak
+int dword_10ACEEA4;         // weak
+int dword_10ACEEA8;         // weak
+int dword_10ACEEAC;         // weak
+int dword_10ACEEB0;         // weak
+char byte_10ACEEB4[24];     // idb
+_UNKNOWN unk_10ACEECC;      // weak
+int dword_10AD05DC[];       // weak
+int dword_10AD05E0[];       // weak
+_UNKNOWN unk_10AD05E4;      // weak
+float flt_10AD061C;         // weak
+_UNKNOWN unk_10AD0628;      // weak
+_UNKNOWN unk_10AD066C;      // weak
+_UNKNOWN unk_10AD06B0;      // weak
+_UNKNOWN unk_10AD0738;      // weak
+__int16 word_10AD07B4[32];  // idb
+_UNKNOWN unk_10AD07F4;      // weak
+int dword_10AD084C[];       // weak
+int dword_10AD0850[];       // weak
+char byte_10AD0854[];       // weak
+char byte_10AD0855[];       // weak
+char byte_10AD0856[];       // weak
+char byte_10AD0857[];       // weak
+void *dword_10AD0868;       // idb
+int dword_10AD086C[];       // weak
+int dword_10AD0978;         // weak
+int dword_10AD097C;         // weak
+int dword_10AD0980;         // weak
+int dword_10AD0984;         // weak
+int dword_10AD0988;         // weak
+int dword_10AD098C;         // weak
+char byte_10AD0990[128];    // idb
 _DWORD dword_10AD0A10[931]; // idb
-int dword_10AD189C; // weak
-int dword_10AD18A0; // weak
-int dword_10AD18A4; // weak
-int dword_10AD18A8; // weak
-int dword_10AD18AC; // weak
-float flt_10AD1A04; // weak
-_UNKNOWN unk_10AD1A08; // weak
-int dword_10AD33C4; // weak
-int dword_10AD33D0; // weak
-_UNKNOWN unk_10AD34F8; // weak
-int dword_10AF9528; // weak
-float flt_10AF953C[18]; // idb
-float flt_10AF959C[23]; // idb
-_UNKNOWN unk_10AF9658; // weak
-int dword_10AF96B8; // weak
-int dword_10AF96BC; // weak
-int dword_10AF96C0; // weak
-_UNKNOWN unk_10AF96C8; // weak
-_UNKNOWN unk_10AF96D4; // weak
-int dword_10AF9728[]; // weak
-float flt_10AF9740[15]; // idb
-float flt_10AF9794[18]; // idb
-float flt_10AF97DC[3]; // idb
-float flt_10AF97F4[21]; // idb
-char byte_10AF9848[64]; // idb
-int dword_10AF9888; // weak
-int dword_10AF988C; // weak
-int dword_10AF9B28; // weak
-int dword_10AF9B2C; // weak
-int dword_10AF9B30; // weak
-int dword_10AF9B38; // weak
-int dword_10AF9B3C; // weak
-int dword_10AF9B40; // weak
-int dword_10AF9B44; // weak
-int dword_10AF9B58; // weak
-int dword_10AF9B5C; // weak
-int dword_10AF9B60; // weak
-int dword_10AF9B64; // weak
-int dword_10AF9B68; // weak
-int dword_10AF9B6C; // weak
-int dword_10AF9B70; // weak
-int dword_10AF9B74; // weak
-int dword_10AF9B78; // weak
-int dword_10AF9B7C; // weak
-int dword_10AF9B80; // weak
-int dword_10AF9B84; // weak
-int dword_10AF9B88; // weak
-int dword_10AF9B8C; // weak
-int dword_10AF9B90; // weak
-int dword_10AF9B94; // weak
-float flt_10AF9B98; // weak
-int dword_10AF9B9C; // weak
-int dword_10AF9BA0; // weak
-int dword_10AF9BA4; // weak
-int dword_10AF9BA8; // weak
-int dword_10AF9BAC; // weak
-int dword_10AF9BB0; // weak
-int dword_10AF9BB4; // weak
-int dword_10AF9BB8; // weak
-_UNKNOWN unk_10AF9BC0; // weak
-_UNKNOWN unk_10AFBEE8; // weak
-_UNKNOWN unk_10AFDBC0; // weak
-int dword_10B01C40; // weak
-int dword_10B01C44; // weak
-int dword_10B01C48; // weak
-_UNKNOWN unk_10B01C50; // weak
-_UNKNOWN unk_10B01ED0; // weak
-_UNKNOWN unk_10B02190; // weak
-_UNKNOWN unk_10B022D0; // weak
-void *dword_10B02434; // idb
-int dword_10B4DF28; // weak
-_WORD g_Config[84]; // idb
-_UNKNOWN unk_10B4DFD8; // weak
-_UNKNOWN unk_10B4E080; // weak
-_UNKNOWN unk_10B4E128; // weak
-int g_ReadJoystick; // weak
+int dword_10AD189C;         // weak
+int dword_10AD18A0;         // weak
+int dword_10AD18A4;         // weak
+int dword_10AD18A8;         // weak
+int dword_10AD18AC;         // weak
+float flt_10AD1A04;         // weak
+_UNKNOWN unk_10AD1A08;      // weak
+int dword_10AD33C4;         // weak
+int dword_10AD33D0;         // weak
+_UNKNOWN unk_10AD34F8;      // weak
+int dword_10AF9528;         // weak
+float flt_10AF953C[18];     // idb
+float flt_10AF959C[23];     // idb
+_UNKNOWN unk_10AF9658;      // weak
+int dword_10AF96B8;         // weak
+int dword_10AF96BC;         // weak
+int dword_10AF96C0;         // weak
+_UNKNOWN unk_10AF96C8;      // weak
+_UNKNOWN unk_10AF96D4;      // weak
+int dword_10AF9728[];       // weak
+float flt_10AF9740[15];     // idb
+float flt_10AF9794[18];     // idb
+float flt_10AF97DC[3];      // idb
+float flt_10AF97F4[21];     // idb
+char byte_10AF9848[64];     // idb
+int dword_10AF9888;         // weak
+int dword_10AF988C;         // weak
+int dword_10AF9B28;         // weak
+int dword_10AF9B2C;         // weak
+int dword_10AF9B30;         // weak
+int dword_10AF9B38;         // weak
+int dword_10AF9B3C;         // weak
+int dword_10AF9B40;         // weak
+int dword_10AF9B44;         // weak
+int dword_10AF9B58;         // weak
+int dword_10AF9B5C;         // weak
+int dword_10AF9B60;         // weak
+int dword_10AF9B64;         // weak
+int dword_10AF9B68;         // weak
+int dword_10AF9B6C;         // weak
+int dword_10AF9B70;         // weak
+int dword_10AF9B74;         // weak
+int dword_10AF9B78;         // weak
+int dword_10AF9B7C;         // weak
+int dword_10AF9B80;         // weak
+int dword_10AF9B84;         // weak
+int dword_10AF9B88;         // weak
+int dword_10AF9B8C;         // weak
+int dword_10AF9B90;         // weak
+int dword_10AF9B94;         // weak
+float flt_10AF9B98;         // weak
+int dword_10AF9B9C;         // weak
+int dword_10AF9BA0;         // weak
+int dword_10AF9BA4;         // weak
+int dword_10AF9BA8;         // weak
+int dword_10AF9BAC;         // weak
+int dword_10AF9BB0;         // weak
+int dword_10AF9BB4;         // weak
+int dword_10AF9BB8;         // weak
+_UNKNOWN unk_10AF9BC0;      // weak
+_UNKNOWN unk_10AFBEE8;      // weak
+_UNKNOWN unk_10AFDBC0;      // weak
+int dword_10B01C40;         // weak
+int dword_10B01C44;         // weak
+int dword_10B01C48;         // weak
+_UNKNOWN unk_10B01C50;      // weak
+_UNKNOWN unk_10B01ED0;      // weak
+_UNKNOWN unk_10B02190;      // weak
+_UNKNOWN unk_10B022D0;      // weak
+void *dword_10B02434;       // idb
+int dword_10B4DF28;         // weak
+_WORD g_Config[84];         // idb
+_UNKNOWN unk_10B4DFD8;      // weak
+_UNKNOWN unk_10B4E080;      // weak
+_UNKNOWN unk_10B4E128;      // weak
+int g_ReadJoystick;         // weak
 WORD *dword_10B4E1D4;
-int dword_10B4E1D8; // weak
-int dword_10B4E1DC; // weak
-int dword_10B4E1E0; // weak
-char byte_10B4E1E4[260]; // idb
-char dplay4aShortName[1024]; // idb
-int dword_10B4E6E8; // weak
-int dword_10B4E6EC; // weak
-int dword_10B4E6F0; // weak
-int dword_10B4E6F4; // weak
-int dword_10B4E6F8; // weak
-int dword_10B4E6FC; // weak
-int dword_10B4E700; // weak
-int dword_10B4E704; // weak
-int dword_10B4E708; // weak
-int dword_10B4E70C; // weak
-int dword_10B4E710; // weak
-int dword_10B4E714; // weak
-int dword_10B4E718; // weak
-int dword_10B4E71C; // weak
-int dword_10B4E720; // weak
-int dword_10B4E724; // weak
-int dword_10B4E728; // weak
-int dword_10B4E72C; // weak
-int dword_10B4E730; // weak
-int dword_10B4E734; // weak
-int dword_10B4E738; // weak
-int dword_10B4E73C; // weak
-CHAR byte_10B4E740[32]; // idb
-CHAR byte_10B4E760[64]; // idb
-int dword_10B4E7A0; // weak
-char byte_10B4E7AC[144]; // idb
-char byte_10B4E914[4608]; // idb
-char g_bossRallyCfgPath[4]; // idb
-int dword_10B4FFE8[120]; // idb
-int (*dword_10B501C8)(void); // weak
-int (*dword_10B501CC)(void); // weak
-int (__cdecl *dword_10B501D0)(_DWORD); // weak
-int (*dword_10B501D4)(void); // weak
-int dword_10B501D8; // weak
-char byte_10B501DF[]; // weak
+int dword_10B4E1D8;                   // weak
+int dword_10B4E1DC;                   // weak
+int dword_10B4E1E0;                   // weak
+char byte_10B4E1E4[260];              // idb
+char dplay4aShortName[1024];          // idb
+int dword_10B4E6E8;                   // weak
+int dword_10B4E6EC;                   // weak
+int dword_10B4E6F0;                   // weak
+int dword_10B4E6F4;                   // weak
+int dword_10B4E6F8;                   // weak
+int dword_10B4E6FC;                   // weak
+int dword_10B4E700;                   // weak
+int dword_10B4E704;                   // weak
+int dword_10B4E708;                   // weak
+int dword_10B4E70C;                   // weak
+int dword_10B4E710;                   // weak
+int dword_10B4E714;                   // weak
+int dword_10B4E718;                   // weak
+int dword_10B4E71C;                   // weak
+int dword_10B4E720;                   // weak
+int dword_10B4E724;                   // weak
+int dword_10B4E728;                   // weak
+int dword_10B4E72C;                   // weak
+int dword_10B4E730;                   // weak
+int dword_10B4E734;                   // weak
+int dword_10B4E738;                   // weak
+int dword_10B4E73C;                   // weak
+CHAR byte_10B4E740[32];               // idb
+CHAR byte_10B4E760[64];               // idb
+int dword_10B4E7A0;                   // weak
+char byte_10B4E7AC[144];              // idb
+char byte_10B4E914[4608];             // idb
+char g_bossRallyCfgPath[4];           // idb
+int dword_10B4FFE8[120];              // idb
+int (*dword_10B501C8)(void);          // weak
+int (*dword_10B501CC)(void);          // weak
+int(__cdecl *dword_10B501D0)(_DWORD); // weak
+int (*dword_10B501D4)(void);          // weak
+int dword_10B501D8;                   // weak
+char byte_10B501DF[];                 // weak
 char g_InstallPath[260];
-int dword_10B502E4; // weak
-int dword_10B502E8[]; // weak
-int dword_10B502EC; // weak
-int dword_11750308; // weak
-int dword_11750310[]; // weak
-int dword_11750314; // weak
-_UNKNOWN unk_11750318; // weak
-int dword_11750330; // weak
-_UNKNOWN unk_11750338; // weak
-int dword_11754E38; // weak
-int dword_11754E3C; // idb
-int dword_11754E40; // weak
-int dword_11754E44; // weak
-int dword_11754E48; // weak
-int dword_11755490; // weak
-int dword_11755494; // weak
-int dword_11755498; // weak
-int dword_1175549C; // weak
-int dword_117554A0; // weak
-int dword_117554A4; // weak
-int dword_117554A8; // weak
-int dword_117554C0; // weak
-int dword_117554C8[]; // weak
-int dword_117554CC; // weak
-int dword_117554D0; // weak
-int dword_117554D4; // weak
-int dword_117554D8; // weak
-int dword_117554DC; // weak
-int dword_117554E0; // weak
-int dword_117554E4; // weak
-int dword_117554E8; // weak
-_UNKNOWN unk_117554F0; // weak
-_UNKNOWN unk_117644F0; // weak
-__int16 word_11782BA8[]; // weak
-__int16 word_11782BAC[]; // weak
-__int16 word_11782BB0[]; // weak
-__int16 word_11782BB4[]; // weak
-__int16 word_11782BB8[]; // weak
-__int16 word_11782BBC[]; // weak
-__int16 word_11782BC0; // weak
-char aCRallyghostDatFilepath_ptr[264]; // idb
+int dword_10B502E4;                     // weak
+int dword_10B502E8[];                   // weak
+int dword_10B502EC;                     // weak
+int dword_11750308;                     // weak
+int dword_11750310[];                   // weak
+int dword_11750314;                     // weak
+_UNKNOWN unk_11750318;                  // weak
+int dword_11750330;                     // weak
+_UNKNOWN unk_11750338;                  // weak
+int dword_11754E38;                     // weak
+int dword_11754E3C;                     // idb
+int dword_11754E40;                     // weak
+int dword_11754E44;                     // weak
+int dword_11754E48;                     // weak
+int dword_11755490;                     // weak
+int dword_11755494;                     // weak
+int dword_11755498;                     // weak
+int dword_1175549C;                     // weak
+int dword_117554A0;                     // weak
+int dword_117554A4;                     // weak
+int dword_117554A8;                     // weak
+int dword_117554C0;                     // weak
+int dword_117554C8[];                   // weak
+int dword_117554CC;                     // weak
+int dword_117554D0;                     // weak
+int dword_117554D4;                     // weak
+int dword_117554D8;                     // weak
+int dword_117554DC;                     // weak
+int dword_117554E0;                     // weak
+int dword_117554E4;                     // weak
+int dword_117554E8;                     // weak
+_UNKNOWN unk_117554F0;                  // weak
+_UNKNOWN unk_117644F0;                  // weak
+__int16 word_11782BA8[];                // weak
+__int16 word_11782BAC[];                // weak
+__int16 word_11782BB0[];                // weak
+__int16 word_11782BB4[];                // weak
+__int16 word_11782BB8[];                // weak
+__int16 word_11782BBC[];                // weak
+__int16 word_11782BC0;                  // weak
+char aCRallyghostDatFilepath_ptr[264];  // idb
 char aCRallyseasonDatFilepath_ptr[268]; // idb
-char byte_11782DDC; // weak
-char Str1[]; // idb
-void *dword_11782E2C; // idb
-int dword_11782E30; // weak
-HANDLE dword_11786828; // idb
-int dword_1178682C[]; // weak
-int dword_11786834[8]; // idb
-int dword_11786854[]; // weak
-int dword_11786858[]; // weak
-char byte_1178685C[]; // weak
-char byte_1178685D[]; // weak
-char byte_1178685E[]; // weak
-int dword_11786860[]; // weak
-float flt_117868F8[290]; // idb
-int dword_11786D80[]; // weak
-int dword_11787184[]; // weak
-int dword_11787188[]; // weak
-int dword_1178718C[]; // weak
-int dword_11787190[]; // weak
-int dword_1178FEE8; // weak
-int dword_1178FEEC; // weak
-int dword_1178FEF0; // weak
-int dword_1178FEF8[]; // weak
-int dword_1178FEFC[]; // weak
-int dword_1178FF00[]; // weak
-int dword_1178FF24[]; // weak
-int dword_1178FF28[]; // weak
-char byte_1178FF2C[]; // weak
-char byte_1178FF2D[]; // weak
-char byte_1178FF2E[1318]; // idb
-char byte_11790454[1024]; // idb
-int dword_11826AF8; // weak
-HANDLE dword_11826B00; // idb
-DWORD dword_11826B04; // idb
-int dword_11826B08[]; // weak
-int dword_11826B48; // weak
-_DWORD dword_11826BD0[2128]; // idb
-int dword_11828D10; // weak
-int dword_11828D14; // weak
-int dword_11828D18; // weak
-HANDLE dword_11828D1C; // idb
-int dword_11828D20[]; // weak
-int dword_11828D28[]; // weak
-int dword_11828D2C[]; // weak
-int dword_11828D34[85]; // idb
-double dbl_11828E88[]; // weak
-int dword_11828F00; // weak
-int dword_11828F08[15]; // idb
-_UNKNOWN unk_11828F44; // weak
-LPCVOID dword_11828F48; // idb
-#514 *pMem;
+char byte_11782DDC;                     // weak
+char Str1[];                            // idb
+void *dword_11782E2C;                   // idb
+int dword_11782E30;                     // weak
+HANDLE dword_11786828;                  // idb
+int dword_1178682C[];                   // weak
+int dword_11786834[8];                  // idb
+int dword_11786854[];                   // weak
+int dword_11786858[];                   // weak
+char byte_1178685C[];                   // weak
+char byte_1178685D[];                   // weak
+char byte_1178685E[];                   // weak
+int dword_11786860[];                   // weak
+float flt_117868F8[290];                // idb
+int dword_11786D80[];                   // weak
+int dword_11787184[];                   // weak
+int dword_11787188[];                   // weak
+int dword_1178718C[];                   // weak
+int dword_11787190[];                   // weak
+int dword_1178FEE8;                     // weak
+int dword_1178FEEC;                     // weak
+int dword_1178FEF0;                     // weak
+int dword_1178FEF8[];                   // weak
+int dword_1178FEFC[];                   // weak
+int dword_1178FF00[];                   // weak
+int dword_1178FF24[];                   // weak
+int dword_1178FF28[];                   // weak
+char byte_1178FF2C[];                   // weak
+char byte_1178FF2D[];                   // weak
+char byte_1178FF2E[1318];               // idb
+char byte_11790454[1024];               // idb
+int dword_11826AF8;                     // weak
+HANDLE dword_11826B00;                  // idb
+DWORD dword_11826B04;                   // idb
+int dword_11826B08[];                   // weak
+int dword_11826B48;                     // weak
+_DWORD dword_11826BD0[2128];            // idb
+int dword_11828D10;                     // weak
+int dword_11828D14;                     // weak
+int dword_11828D18;                     // weak
+HANDLE dword_11828D1C;                  // idb
+int dword_11828D20[];                   // weak
+int dword_11828D28[];                   // weak
+int dword_11828D2C[];                   // weak
+int dword_11828D34[85];                 // idb
+double dbl_11828E88[];                  // weak
+int dword_11828F00;                     // weak
+int dword_11828F08[15];                 // idb
+_UNKNOWN unk_11828F44;                  // weak
+LPCVOID dword_11828F48;                 // idb
+# 514 * pMem;
 IDirectSoundBuffer *g_dSoundBuffer;
 int dword_118290F4; // weak
 IDirectSound *g_DSound;
-int dword_118290FC; // weak
-int dword_11829100[]; // weak
-int dword_11829104; // weak
-int dword_11829108; // weak
-int dword_11829110; // weak
-char byte_11829118[64]; // idb
-int dword_11829158[]; // weak
-int dword_118291C8[]; // weak
-int dword_11829238[]; // weak
-int dword_118292A8[]; // weak
-int dword_11829314; // weak
-int dword_11829318; // weak
-int dword_1182931C; // weak
-int dword_11829324; // weak
-int dword_11829328; // weak
-_UNKNOWN unk_11829330; // weak
-_UNKNOWN unk_11829331; // weak
-int dword_11829370[]; // weak
-_UNKNOWN unk_11829374; // weak
-void *g_brstring; // idb
-int dword_11829830; // weak
-size_t Size; // idb
-int dword_11829838; // weak
-int dword_1182983C; // weak
-int dword_11829840; // weak
-int dword_11829844; // weak
-int dword_11829848; // weak
-int dword_11829850[8]; // idb
-unsigned __int8 byte_11829870[131072]; // idb
-unsigned __int8 buf[393216]; // idb
-int dword_118A9870; // weak
-int dword_118A9874; // weak
-int dword_118A9878; // weak
-_DWORD dword_118A9880; // idb
-_DWORD dword_118A9884[511]; // idb
-int dword_118AA080; // weak
-int (__cdecl *dword_118AA084)(_DWORD, _DWORD, _DWORD); // weak
-int dword_118AA088; // weak
-float flt_118AA08C; // weak
-float flt_118AA090; // weak
-int dword_118AA094; // weak
-int dword_118AA098; // weak
-int dword_118AA09C; // weak
-HANDLE dword_118AA0A0; // idb
-int (__cdecl *dword_118AA0A4)(_DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0A8)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0B4)(_DWORD); // weak
-int (__cdecl *dword_118AA0B8)(_DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0BC)(_DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0C0)(_DWORD); // weak
-int (__cdecl *dword_118AA0C4)(_DWORD); // weak
-int (__cdecl *dword_118AA0C8)(_DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0CC)(_DWORD, _DWORD); // weak
-int (*dword_118AA0D0)(void); // weak
-_UNKNOWN lutBuffer; // weak
-_UNKNOWN ciBuffer_0; // weak
-_UNKNOWN lutBuffer_0; // weak
-_UNKNOWN ciBuffer; // weak
-int dword_118AB118; // weak
-LARGE_INTEGER Frequency; // idb
-int supportsHRPerformanceCounter; // weak
-int dword_118AB12C; // weak
-int performanceSomething; // weak
-int dword_118AB134; // weak
-int dword_118AB144; // weak
-int dword_118AB470; // weak
-_UNKNOWN unk_118AB478; // weak
+int dword_118290FC;                                   // weak
+int dword_11829100[];                                 // weak
+int dword_11829104;                                   // weak
+int dword_11829108;                                   // weak
+int dword_11829110;                                   // weak
+char byte_11829118[64];                               // idb
+int dword_11829158[];                                 // weak
+int dword_118291C8[];                                 // weak
+int dword_11829238[];                                 // weak
+int dword_118292A8[];                                 // weak
+int dword_11829314;                                   // weak
+int dword_11829318;                                   // weak
+int dword_1182931C;                                   // weak
+int dword_11829324;                                   // weak
+int dword_11829328;                                   // weak
+_UNKNOWN unk_11829330;                                // weak
+_UNKNOWN unk_11829331;                                // weak
+int dword_11829370[];                                 // weak
+_UNKNOWN unk_11829374;                                // weak
+void *g_brstring;                                     // idb
+int dword_11829830;                                   // weak
+size_t Size;                                          // idb
+int dword_11829838;                                   // weak
+int dword_1182983C;                                   // weak
+int dword_11829840;                                   // weak
+int dword_11829844;                                   // weak
+int dword_11829848;                                   // weak
+int dword_11829850[8];                                // idb
+unsigned __int8 byte_11829870[131072];                // idb
+unsigned __int8 buf[393216];                          // idb
+int dword_118A9870;                                   // weak
+int dword_118A9874;                                   // weak
+int dword_118A9878;                                   // weak
+_DWORD dword_118A9880;                                // idb
+_DWORD dword_118A9884[511];                           // idb
+int dword_118AA080;                                   // weak
+int(__cdecl *dword_118AA084)(_DWORD, _DWORD, _DWORD); // weak
+int dword_118AA088;                                   // weak
+float flt_118AA08C;                                   // weak
+float flt_118AA090;                                   // weak
+int dword_118AA094;                                   // weak
+int dword_118AA098;                                   // weak
+int dword_118AA09C;                                   // weak
+HANDLE dword_118AA0A0;                                // idb
+int(__cdecl *dword_118AA0A4)(_DWORD, _DWORD);         // weak
+int(__cdecl *dword_118AA0A8)(
+    _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
+int(__cdecl *dword_118AA0AC)(_DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD); // weak
+int(__cdecl *dword_118AA0B0)(_DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD,
+                             _DWORD);         // weak
+int(__cdecl *dword_118AA0B4)(_DWORD);         // weak
+int(__cdecl *dword_118AA0B8)(_DWORD, _DWORD); // weak
+int(__cdecl *dword_118AA0BC)(_DWORD, _DWORD); // weak
+int(__cdecl *dword_118AA0C0)(_DWORD);         // weak
+int(__cdecl *dword_118AA0C4)(_DWORD);         // weak
+int(__cdecl *dword_118AA0C8)(_DWORD, _DWORD); // weak
+int(__cdecl *dword_118AA0CC)(_DWORD, _DWORD); // weak
+int (*dword_118AA0D0)(void);                  // weak
+_UNKNOWN lutBuffer;                           // weak
+_UNKNOWN ciBuffer_0;                          // weak
+_UNKNOWN lutBuffer_0;                         // weak
+_UNKNOWN ciBuffer;                            // weak
+int dword_118AB118;                           // weak
+LARGE_INTEGER Frequency;                      // idb
+int supportsHRPerformanceCounter;             // weak
+int dword_118AB12C;                           // weak
+int performanceSomething;                     // weak
+int dword_118AB134;                           // weak
+int dword_118AB144;                           // weak
+int dword_118AB470;                           // weak
+_UNKNOWN unk_118AB478;                        // weak
 DIEFFECT diEffect_0;
-char byte_118AB8B8[]; // weak
-char byte_118AB8F7[]; // weak
-char byte_118AB8F8[]; // weak
-char byte_118AB8F9[]; // weak
-char byte_118AB8FA[]; // weak
-char byte_118AB8FB[]; // weak
-char byte_118AB8FC[]; // weak
-char byte_118AB90F[]; // weak
-char byte_118AB910[424]; // idb
-int dword_118ABAB8; // weak
+char byte_118AB8B8[];             // weak
+char byte_118AB8F7[];             // weak
+char byte_118AB8F8[];             // weak
+char byte_118AB8F9[];             // weak
+char byte_118AB8FA[];             // weak
+char byte_118AB8FB[];             // weak
+char byte_118AB8FC[];             // weak
+char byte_118AB90F[];             // weak
+char byte_118AB910[424];          // idb
+int dword_118ABAB8;               // weak
 int diEffectTypeSpecificParams_0; // weak
-int dword_118ABAC4; // weak
-int dword_118ABAC8; // weak
-int dword_118ABACC; // weak
-int dword_118ABAD0; // weak
-int dword_118ABAD4; // weak
-int dword_118ABAD8; // weak
-int dword_118ABAE0[]; // weak
-int dword_118ABAE4[]; // weak
-int dword_118ABAE8[]; // weak
-char byte_118ABB10[496]; // idb
-int dword_118ABD00; // weak
-int diEffectTypeSpecificParams; // weak
-int dword_118ABD0C; // weak
-int dword_118ABD10; // weak
-int dword_118ABD14; // weak
-int dword_118ABD18; // weak
-int dword_118ABD1C; // weak
-int dword_118ABD20; // weak
-int dword_118ABD24; // weak
-int dword_118ABD28; // weak
-int dword_118ABD2C; // weak
-int dword_118ABD30; // weak
-int dword_118ABD34; // weak
-int dword_118ABD38[]; // weak
-int dword_118ABD3C[]; // weak
-int dword_118ABD40[]; // weak
-int dword_118ABD44[]; // weak
-int dword_118ABD48[]; // weak
-int dword_118ABD4C[]; // weak
-char byte_118ABD50[]; // weak
-char byte_118ABD51[]; // weak
-char byte_118ABD52[]; // weak
-char byte_118ABD53[29]; // idb
+int dword_118ABAC4;               // weak
+int dword_118ABAC8;               // weak
+int dword_118ABACC;               // weak
+int dword_118ABAD0;               // weak
+int dword_118ABAD4;               // weak
+int dword_118ABAD8;               // weak
+int dword_118ABAE0[];             // weak
+int dword_118ABAE4[];             // weak
+int dword_118ABAE8[];             // weak
+char byte_118ABB10[496];          // idb
+int dword_118ABD00;               // weak
+int diEffectTypeSpecificParams;   // weak
+int dword_118ABD0C;               // weak
+int dword_118ABD10;               // weak
+int dword_118ABD14;               // weak
+int dword_118ABD18;               // weak
+int dword_118ABD1C;               // weak
+int dword_118ABD20;               // weak
+int dword_118ABD24;               // weak
+int dword_118ABD28;               // weak
+int dword_118ABD2C;               // weak
+int dword_118ABD30;               // weak
+int dword_118ABD34;               // weak
+int dword_118ABD38[];             // weak
+int dword_118ABD3C[];             // weak
+int dword_118ABD40[];             // weak
+int dword_118ABD44[];             // weak
+int dword_118ABD48[];             // weak
+int dword_118ABD4C[];             // weak
+char byte_118ABD50[];             // weak
+char byte_118ABD51[];             // weak
+char byte_118ABD52[];             // weak
+char byte_118ABD53[29];           // idb
 LPDIRECTINPUTA g_DirectInputA;
 int dword_118ABD74; // weak
 int dword_118ABD78; // weak
@@ -6379,47 +4863,44 @@ int dword_118ABDC8; // weak
 int dword_118ABDCC; // weak
 LPDIRECTINPUTDEVICEA g_lpDirectInputDeviceA;
 IDirectInputDevice2A *g_DirectInputDevice2A;
-int dword_118ABDD8; // weak
-int dword_118ABDDC; // weak
+int dword_118ABDD8;     // weak
+int dword_118ABDDC;     // weak
 __int64 qword_118ABDE0; // weak
-int mouseCreated; // weak
+int mouseCreated;       // weak
 IDirectInputEffect *g_DirectInputEffect_0;
 LONG diEffectRglDirection;
 int dword_118ABDF8; // weak
 IDirectInputEffect *g_DirectInputEffect;
-int dword_118ABE00; // weak
-int dword_118ABE08; // weak
-HINSTANCE hInst; // idb
-HACCEL hAccTable; // idb
-HCURSOR hCursor; // idb
-int dword_118ABE2C; // weak
-int dword_118AC230; // weak
-int dword_118AC234; // weak
-_BYTE *dword_118AC238; // idb
-int dword_118AC23C; // weak
-int dword_118AC240; // weak
-void *Base; // idb
-int dword_118AC2D0; // weak
-int dword_118AC608; // weak
+int dword_118ABE00;                                // weak
+int dword_118ABE08;                                // weak
+HINSTANCE hInst;                                   // idb
+HACCEL hAccTable;                                  // idb
+HCURSOR hCursor;                                   // idb
+int dword_118ABE2C;                                // weak
+int dword_118AC230;                                // weak
+int dword_118AC234;                                // weak
+_BYTE *dword_118AC238;                             // idb
+int dword_118AC23C;                                // weak
+int dword_118AC240;                                // weak
+void *Base;                                        // idb
+int dword_118AC2D0;                                // weak
+int dword_118AC608;                                // weak
 struct _TIME_ZONE_INFORMATION TimeZoneInformation; // idb
-_UNKNOWN unk_118AC70C; // weak
-int dword_118AC720[]; // weak
-int dword_118AC728[]; // weak
-int dword_118AC72C[]; // weak
-int dword_118AC730[]; // weak
-int dword_118AC734[]; // weak
-__int64 qword_118AC740[]; // weak
-int dword_118AC74C; // weak
-int dword_118AC758; // weak
-int dword_118AC75C; // weak
-int dword_118AC764; // weak
-__int64 qword_118AC770; // weak
-int dword_118AC778; // weak
-int dword_118AC77C; // weak
-int dword_118AC788; // weak
-int dword_118AC78C; // weak
-int dword_118AC794; // weak
-_UNKNOWN unk_118AC898; // weak
-
-
-
+_UNKNOWN unk_118AC70C;                             // weak
+int dword_118AC720[];                              // weak
+int dword_118AC728[];                              // weak
+int dword_118AC72C[];                              // weak
+int dword_118AC730[];                              // weak
+int dword_118AC734[];                              // weak
+__int64 qword_118AC740[];                          // weak
+int dword_118AC74C;                                // weak
+int dword_118AC758;                                // weak
+int dword_118AC75C;                                // weak
+int dword_118AC764;                                // weak
+__int64 qword_118AC770;                            // weak
+int dword_118AC778;                                // weak
+int dword_118AC77C;                                // weak
+int dword_118AC788;                                // weak
+int dword_118AC78C;                                // weak
+int dword_118AC794;                                // weak
+_UNKNOWN unk_118AC898;                             // weak

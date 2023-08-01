@@ -1,5 +1,4 @@
 //----- (1001AD90) --------------------------------------------------------
-BOOL __thiscall sub_1001AD90(_DWORD *this)
-{
-  return this[9] != 0;
+BOOL __thiscall sub_1001AD90(_DWORD *this) {
+    return this[9] != 0;
 }

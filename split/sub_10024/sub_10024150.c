@@ -1,21 +1,19 @@
 //----- (10024150) --------------------------------------------------------
-int __cdecl sub_10024150(int a1)
-{
-  int result; // eax
+int __cdecl sub_10024150(int a1) {
+    int result; // eax
 
-  switch ( (unsigned __int8)BYTE2(*(_DWORD *)a1) )
-  {
+    switch ((unsigned __int8)BYTE2(*(_DWORD *)a1)) {
     case 0x80u:
-      result = sub_10024260(a1);
-      break;
+        result = sub_10024260(a1);
+        break;
     case 0x82u:
-      dword_104C1698 = *(_DWORD *)(a1 + 4);
-      result = a1 + 8;
-      break;
+        dword_104C1698 = *(_DWORD *)(a1 + 4);
+        result = a1 + 8;
+        break;
     case 0x84u:
-      result = a1 + 8;
-      dword_104C169C = *(_DWORD *)(a1 + 4);
-      break;
+        result = a1 + 8;
+        dword_104C169C = *(_DWORD *)(a1 + 4);
+        break;
     case 0x86u:
     case 0x88u:
     case 0x8Au:
@@ -24,21 +22,21 @@ int __cdecl sub_10024150(int a1)
     case 0x90u:
     case 0x92u:
     case 0x94u:
-      qmemcpy(
-        &dword_104BBE38[4 * (((unsigned int)(unsigned __int8)BYTE2(*(_DWORD *)a1) - 134) >> 1)],
-        *(const void **)(a1 + 4),
-        (unsigned __int16)*(_DWORD *)a1);
-      dword_104C5180 = 0;
-      goto LABEL_7;
+        qmemcpy(
+            &dword_104BBE38[4 * (((unsigned int)(unsigned __int8)BYTE2(*(_DWORD *)a1) - 134) >> 1)],
+            *(const void **)(a1 + 4),
+            (unsigned __int16)*(_DWORD *)a1);
+        dword_104C5180 = 0;
+        goto LABEL_7;
     case 0x9Eu:
-      result = sub_10024240(a1);
-      break;
+        result = sub_10024240(a1);
+        break;
     default:
-LABEL_7:
-      result = a1 + 8;
-      break;
-  }
-  return result;
+    LABEL_7:
+        result = a1 + 8;
+        break;
+    }
+    return result;
 }
 // 10024240: using guessed type _DWORD __cdecl sub_10024240(_DWORD);
 // 10024260: using guessed type _DWORD __cdecl sub_10024260(_DWORD);

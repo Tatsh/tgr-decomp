@@ -1,5 +1,4 @@
 //----- (10002250) --------------------------------------------------------
-long double __cdecl sqrt_(float a1)
-{
-  return sqrt(a1);
+long double __cdecl sqrt_(float a1) {
+    return sqrt(a1);
 }

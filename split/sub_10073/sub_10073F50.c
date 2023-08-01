@@ -1,5 +1,4 @@
 //----- (10073F50) --------------------------------------------------------
-int __thiscall sub_10073F50(_DWORD *this)
-{
-  return this[4];
+int __thiscall sub_10073F50(_DWORD *this) {
+    return this[4];
 }

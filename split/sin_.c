@@ -1,5 +1,4 @@
 //----- (10002240) --------------------------------------------------------
-long double __cdecl sin_(float a1)
-{
-  return sin(a1);
+long double __cdecl sin_(float a1) {
+    return sin(a1);
 }

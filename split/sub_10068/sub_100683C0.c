@@ -1,5 +1,4 @@
 //----- (100683C0) --------------------------------------------------------
-void __thiscall sub_100683C0(_DWORD *this)
-{
-  this[990] = 0;
+void __thiscall sub_100683C0(_DWORD *this) {
+    this[990] = 0;
 }

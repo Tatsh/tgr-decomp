@@ -1,29 +1,28 @@
 //----- (10067DC0) --------------------------------------------------------
-int sub_10067DC0()
-{
-  int result; // eax
+int sub_10067DC0() {
+    int result; // eax
 
-  result = -1;
-  dword_10AA3470 = -1;
-  dword_10AF9B58 = 0;
-  dword_10AF9B5C = 0;
-  dword_10AF9B60 = 0;
-  dword_10AF9B64 = 0;
-  dword_10AF9B68 = 0;
-  dword_10AF9B6C = 0;
-  dword_10AF9B70 = 0;
-  dword_10AF9B74 = 0;
-  dword_10AF9B78 = 0;
-  dword_10AF9B7C = 0;
-  dword_10AF9B80 = 0;
-  dword_10AF9B84 = -1;
-  dword_10AF9B88 = -1;
-  dword_10AF9B8C = -1;
-  dword_10AF9B90 = -1;
-  dword_10AF9B94 = 1342177280;
-  dword_10AF9BA0 = 0;
-  dword_10AF9B9C = 0;
-  return result;
+    result = -1;
+    dword_10AA3470 = -1;
+    dword_10AF9B58 = 0;
+    dword_10AF9B5C = 0;
+    dword_10AF9B60 = 0;
+    dword_10AF9B64 = 0;
+    dword_10AF9B68 = 0;
+    dword_10AF9B6C = 0;
+    dword_10AF9B70 = 0;
+    dword_10AF9B74 = 0;
+    dword_10AF9B78 = 0;
+    dword_10AF9B7C = 0;
+    dword_10AF9B80 = 0;
+    dword_10AF9B84 = -1;
+    dword_10AF9B88 = -1;
+    dword_10AF9B8C = -1;
+    dword_10AF9B90 = -1;
+    dword_10AF9B94 = 1342177280;
+    dword_10AF9BA0 = 0;
+    dword_10AF9B9C = 0;
+    return result;
 }
 // 10AA3470: using guessed type int dword_10AA3470;
 // 10AF9B58: using guessed type int dword_10AF9B58;

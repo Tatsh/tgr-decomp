@@ -1,8 +1,7 @@
 //----- (10001140) --------------------------------------------------------
-int __thiscall sub_10001140(_DWORD *this, int a2)
-{
-  if ( !a2 )
-    return -2005522670;
-  *this = a2;
-  return 0;
+int __thiscall sub_10001140(_DWORD *this, int a2) {
+    if (!a2)
+        return -2005522670;
+    *this = a2;
+    return 0;
 }

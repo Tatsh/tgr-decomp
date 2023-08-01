@@ -1,35 +1,30 @@
 //----- (10044D00) --------------------------------------------------------
-int sub_10044D00()
-{
-  _DWORD *v0; // eax
-  int result; // eax
+int sub_10044D00() {
+    _DWORD *v0; // eax
+    int result; // eax
 
-  dword_10AA28C8 = 0;
-  dword_10AA28CC = 0;
-  if ( dword_10AA2964 )
-  {
-    dword_10AA2904 = (void *)dword_10AA2964;
-    result = 1;
-  }
-  else
-  {
-    v0 = (_DWORD *)operator new(0xC8u);
-    if ( v0 )
-      result = (int)sub_10048710(v0);
-    else
-      result = 0;
-    dword_10AA2964 = result;
-    dword_10AA2904 = (void *)result;
-    if ( result )
-    {
-      *(_DWORD *)(result + 4) = sub_10059BB0;
-      (*(void (__cdecl **)(int))(dword_10AA2964 + 4))(dword_10AA2964);
-      *((_DWORD *)dword_10AA2904 + 3) = 1;
-      result = 1;
-      *((_DWORD *)dword_10AA2904 + 26) = 1;
+    dword_10AA28C8 = 0;
+    dword_10AA28CC = 0;
+    if (dword_10AA2964) {
+        dword_10AA2904 = (void *)dword_10AA2964;
+        result = 1;
+    } else {
+        v0 = (_DWORD *)malloc(0xC8u);
+        if (v0)
+            result = (int)sub_10048710(v0);
+        else
+            result = 0;
+        dword_10AA2964 = result;
+        dword_10AA2904 = (void *)result;
+        if (result) {
+            *(_DWORD *)(result + 4) = sub_10059BB0;
+            (*(void(__cdecl **)(int))(dword_10AA2964 + 4))(dword_10AA2964);
+            *((_DWORD *)dword_10AA2904 + 3) = 1;
+            result = 1;
+            *((_DWORD *)dword_10AA2904 + 26) = 1;
+        }
     }
-  }
-  return result;
+    return result;
 }
 // 10059BB0: using guessed type int __cdecl sub_10059BB0(int);
 // 10AA28C8: using guessed type int dword_10AA28C8;

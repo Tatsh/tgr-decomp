@@ -1,63 +1,61 @@
 //----- (10002260) --------------------------------------------------------
-int pm_sub_10002260()
-{
-  if ( !g_Playmusic || !dword_10220CD0 || dword_10220C3C )
+int pm_sub_10002260() {
+    if (!g_Playmusic || !dword_10220CD0 || dword_10220C3C)
+        return 1;
+    if (!EAR_DLL_RegisterChannel(dword_100940A8, 6, 10000, 5)) {
+        dword_10220C3C = 0;
+        return 1;
+    }
+    if (!dword_10220C48)
+        EAR_DLL_RegisterMatrix(1);
+    dword_10220CA0 = 0;
+    dword_10220CB0 = 4;
+    dword_10220CB4 = 0;
+    dword_10220CA4 = 0;
+    word_10220C78 = 4;
+    dword_10220CB8 = 0;
+    dword_10220CA8 = 0;
+    dword_10220C48 = 1;
+    word_10220C50 = 128;
+    dword_10220C54 = 0;
+    g_WPARAM = 0;
+    word_10220C60 = 0;
+    word_10220C62 = 10000;
+    dword_10220C64 = 10000;
+    dword_10220C68 = 0;
+    dword_10220C6C = 0;
+    dword_10220C70 = 0;
+    dword_10220C74 = 0;
+    word_10220C7A = 0;
+    dword_10220C7C = 0;
+    dword_10220C80 = 0;
+    word_10220C8E = 10000;
+    word_10220C90 = 10000;
+    word_10220C92 = 0;
+    word_10220C94 = 0;
+    word_10220C96 = 0;
+    dword_10220C98 = 0;
+    word_10220C8C = 0;
+    dword_10220C84 = 0;
+    dword_10220C88 = 1;
+    word_10220C9C = 0;
+    word_10220C9E = 0;
+    dword_10220CBC = 0;
+    word_10220CC0 = 0;
+    word_10220CC2 = 1000;
+    word_10220CC4 = 2500;
+    word_10220CC6 = 5000;
+    word_10220CC8 = 7500;
+    word_10220CCA = 9000;
+    word_10220CCC = 10000;
+    dword_10220CAC = 0;
+    word_10220C52 = 30;
+    word_10220C5E = 1;
+    word_10220C5C = dword_100940A8;
+    dword_10220C44 = EAR_DLL_ChangeChannelControl(dword_100940A8, 268435488);
+    playParmsPlayTo = EAR_DLL_ChangeChannelControl(dword_100940A8, 268435520);
+    dword_10220C3C = 1;
     return 1;
-  if ( !EAR_DLL_RegisterChannel(dword_100940A8, 6, 10000, 5) )
-  {
-    dword_10220C3C = 0;
-    return 1;
-  }
-  if ( !dword_10220C48 )
-    EAR_DLL_RegisterMatrix(1);
-  dword_10220CA0 = 0;
-  dword_10220CB0 = 4;
-  dword_10220CB4 = 0;
-  dword_10220CA4 = 0;
-  word_10220C78 = 4;
-  dword_10220CB8 = 0;
-  dword_10220CA8 = 0;
-  dword_10220C48 = 1;
-  word_10220C50 = 128;
-  dword_10220C54 = 0;
-  g_WPARAM = 0;
-  word_10220C60 = 0;
-  word_10220C62 = 10000;
-  dword_10220C64 = 10000;
-  dword_10220C68 = 0;
-  dword_10220C6C = 0;
-  dword_10220C70 = 0;
-  dword_10220C74 = 0;
-  word_10220C7A = 0;
-  dword_10220C7C = 0;
-  dword_10220C80 = 0;
-  word_10220C8E = 10000;
-  word_10220C90 = 10000;
-  word_10220C92 = 0;
-  word_10220C94 = 0;
-  word_10220C96 = 0;
-  dword_10220C98 = 0;
-  word_10220C8C = 0;
-  dword_10220C84 = 0;
-  dword_10220C88 = 1;
-  word_10220C9C = 0;
-  word_10220C9E = 0;
-  dword_10220CBC = 0;
-  word_10220CC0 = 0;
-  word_10220CC2 = 1000;
-  word_10220CC4 = 2500;
-  word_10220CC6 = 5000;
-  word_10220CC8 = 7500;
-  word_10220CCA = 9000;
-  word_10220CCC = 10000;
-  dword_10220CAC = 0;
-  word_10220C52 = 30;
-  word_10220C5E = 1;
-  word_10220C5C = dword_100940A8;
-  dword_10220C44 = EAR_DLL_ChangeChannelControl(dword_100940A8, 268435488);
-  playParmsPlayTo = EAR_DLL_ChangeChannelControl(dword_100940A8, 268435520);
-  dword_10220C3C = 1;
-  return 1;
 }
 // 100940A4: using guessed type int g_Playmusic;
 // 10220C38: using guessed type int playParmsPlayTo;
