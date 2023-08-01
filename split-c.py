@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from pathlib import Path
 from shutil import rmtree
-from typing import Any, Iterator, List, Optional, Tuple
+from typing import Any, Dict, Iterator, List, Optional, Tuple
 import re
 import sys
 
@@ -40,19 +40,41 @@ def get_function_name(lines_str: str) -> Tuple[Optional[str], Optional[str]]:
     return func_name, prefix
 
 
-if __name__ == '__main__':
+def append_or_create_list(key: str, dest: Dict[str, Any], val: Any) -> None:
+    try:
+        dest[key].append(val)
+    except KeyError:
+        dest[key] = [val]
+
+
+def fix_operator_calls(lines_str: str) -> str:
+    return re.sub(r' = operator new\(([^\)]+)\)',
+                  r' = malloc(\1)',
+                  re.sub(r'operator delete\((.*)\);',
+                         r'free(\1);',
+                         re.sub(r'\((.*) \*\)operator new\(([^\)]+)\)',
+                                r'(\1 *)malloc(\2)',
+                                lines_str,
+                                flags=re.MULTILINE),
+                         flags=re.MULTILINE),
+                  flags=re.MULTILINE)
+
+
+def main() -> int:
     try:
         rmtree(SPLIT_PATH)
     except FileNotFoundError:
         pass
-    SPLIT_PATH.mkdir(parents=True, exist_ok=True)
-    METHODS_PATH.mkdir(parents=True, exist_ok=True)
-    SUBS_PATH.mkdir(parents=True, exist_ok=True)
-    with open(sys.argv[1]) as f:
-        content = f.read()
+    SPLIT_PATH.mkdir(exist_ok=True, parents=True)
+    METHODS_PATH.mkdir(exist_ok=True, parents=True)
+    SUBS_PATH.mkdir(exist_ok=True, parents=True)
+    with open(sys.argv[1], 'rb') as f:
+        content = f.read().replace(b'\r\n',
+                                   b'\n').decode(errors='backslashreplace')
     grouped = re.split(r'^(//----- \([0-9A-F]+\) -+)$',
                        content,
                        flags=re.MULTILINE)
+    files: Dict[str, List[Tuple[str, str]]] = {}
     with (SPLIT_PATH / 'decls.c').open('w+') as f:
         f.write(f'{grouped[0]}\n')
     for header, lines_str in ((_, y.strip())
@@ -60,20 +82,27 @@ if __name__ == '__main__':
         func_name, prefix = get_function_name(lines_str)
         if not func_name or not prefix:
             continue
-        out_dir = SPLIT_PATH / prefix
-        out_dir.mkdir(parents=True, exist_ok=True)
-        with (out_dir / f'{func_name}.c').open('w+') as f:
-            f.write(f'{header}\n')
-            f.write(f'{lines_str}\n')
-    for dir_ in SPLIT_PATH.iterdir():
-        if not dir_.is_dir():
-            continue
-        items = list(dir_.iterdir())
-        if len(items) == 1:
-            if items[0].name.startswith('meth_'):
-                items[0].rename(METHODS_PATH / items[0].name)
-            elif items[0].name.startswith('sub_'):
-                items[0].rename(SUBS_PATH / items[0].name)
+        lines_str = fix_operator_calls(lines_str)
+        append_or_create_list(prefix, files,
+                              (f'{func_name}.c', f'{header}\n{lines_str}\n'))
+    for prefix, l in list(files.items()):
+        if len(l) == 1:
+            t = name, _ = l[0]
+            if name.startswith('meth_'):
+                append_or_create_list('meth', files, t)
+            elif name.startswith('sub_'):
+                append_or_create_list('sub', files, t)
             else:
-                items[0].rename(SPLIT_PATH / items[0].name)
-            dir_.rmdir()
+                append_or_create_list('', files, t)
+            del files[prefix]
+    for prefix, l in files.items():
+        for name, code in l:
+            prefix_path = SPLIT_PATH / prefix
+            prefix_path.mkdir(exist_ok=True, parents=True)
+            with (prefix_path / name).open('w+') as f:
+                f.write(code)
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
