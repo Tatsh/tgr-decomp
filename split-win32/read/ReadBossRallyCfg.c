@@ -13,9 +13,9 @@ int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename)
   fp_1 = (FILE *)res;
   if ( res )
   {
-    sub_10069A90(&otherConfig);
+    meth_10069A90(&otherConfig);
     unk = 0;
-    sub_10069DE0(&otherConfig, this);
+    meth_10069DE0(&otherConfig, this);
     if ( freadLock(fourCC, 4u, 1u, fp_1) == 1
       && !strncmp(fourCC, aRcfg, strlen(aRcfg))
       && freadLock(&expectedToBe2, 4u, 1u, fp_1) == 1
@@ -60,7 +60,7 @@ int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename)
     }
     else
     {
-      sub_10069DE0(this, &otherConfig);
+      meth_10069DE0(this, &otherConfig);
       fclose(fp_1);
       meth_10069C90(this);
       unk = -1;

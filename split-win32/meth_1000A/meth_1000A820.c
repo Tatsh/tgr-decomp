@@ -22,7 +22,7 @@ HRESULT __thiscall meth_1000A820(unk0 *this)
   result = dd2Vtbl->CreateSurface(dd2, &ddSurfaceDesc, &this->lpDDrawSurface2, 0);
   if ( result >= 0 )
   {
-    result = sub_1000A8D0(this);
+    result = meth_1000A8D0(this);
     if ( result >= 0 )
     {
       v5 = this->field_1C;

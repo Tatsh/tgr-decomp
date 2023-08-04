@@ -4,13 +4,13 @@ int __cdecl sub_10072110(_DWORD *a1, char a2)
 {
   _BYTE *v2; // esi
 
-  if ( sub_10073F40(a1) + 9 > 256 )
+  if ( meth_10073F40(a1) + 9 > 256 )
     return 0;
-  sub_10073D60(a1, a2 | 0x20);
+  meth_10073D60(a1, a2 | 0x20);
   v2 = &unk_11826B0C;
   do
   {
-    sub_10073D60(a1, (16 * *v2) | *(v2 - 4));
+    meth_10073D60(a1, (16 * *v2) | *(v2 - 4));
     v2 += 8;
   }
   while ( (int)v2 < (int)&unk_11826B4C );

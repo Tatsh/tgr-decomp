@@ -5,7 +5,7 @@ int sub_1002F8F0()
   int result; // eax
   _DWORD *v1; // ecx
   DWORD ticks; // eax
-  __unk0 *v3; // eax
+  unk1 *v3; // eax
 
   switch ( dword_10690A14 )
   {
@@ -71,7 +71,7 @@ int sub_1002F8F0()
         v3 = g_gsu0->u0;
         if ( v3 )
         {
-          sub_1001AC80(v3, &dword_10690A0C, &dword_10690A08, &dword_10690A00, &dword_10690A04);
+          meth_1001AC80(v3, &dword_10690A0C, &dword_10690A08, &dword_10690A00, &dword_10690A04);
           v1 = dword_10AA2904;
         }
         (*(void (__thiscall **)(_DWORD *))(*v1 + 16))(v1);

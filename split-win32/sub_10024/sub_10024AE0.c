@@ -12,4 +12,3 @@ int __cdecl sub_10024AE0(int a1)
   *(float *)((char *)dword_1057543C + v2 + 692) = *(float *)((char *)dword_1057543C + v2 + 692) * 0.5;
   return result;
 }
-// 10024B60: using guessed type int sub_10024B60(void);

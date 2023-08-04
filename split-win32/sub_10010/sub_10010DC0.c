@@ -410,7 +410,7 @@ LABEL_9:
 // 106C5708: using guessed type int dword_106C5708;
 // 106C661C: using guessed type int dword_106C661C;
 // 106C7CA8: using guessed type int dword_106C7CA8;
-// 106C7CAC: using guessed type int dword_106C7CAC;
+// 106C7CAC: using guessed type int g_TrackInstances;
 // 10A9BBC4: using guessed type int dword_10A9BBC4;
 // 10A9BBCC: using guessed type int dword_10A9BBCC;
 // 10A9BBD0: using guessed type int dword_10A9BBD0[];

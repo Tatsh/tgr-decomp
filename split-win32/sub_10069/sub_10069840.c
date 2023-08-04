@@ -16,7 +16,7 @@ void sub_10069840()
   g_usingGameMode4 = g_GameMode == 4;
   dword_118ABDC0 = 0;
   dword_106909D8 = 0;
-  CreateMutexWrapper(v0);
+  meth_CreateMutexWrapper(v0);
   sub_10034C83();
   sub_10034C32();
   sub_10069800();

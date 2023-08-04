@@ -27,218 +27,213 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
   _DWORD *v45; // esi
   int v46; // ebx
   int v47; // ecx
-  int v48; // ecx
-  char v49; // bl
-  int v50; // ecx
-  int v51; // edi
-  _DWORD *v52; // esi
-  unsigned __int8 v53; // bl
-  int v54; // edi
-  _DWORD *v55; // esi
-  char v56; // bl
-  int v57; // edi
-  _DWORD *v58; // esi
-  int v59; // ecx
-  int v60; // edi
-  _DWORD *v61; // esi
-  int v62; // ecx
-  int v63; // edi
-  _DWORD *v64; // esi
-  int v65; // ecx
-  int v66; // ebx
-  int v67; // eax
-  int v68; // ecx
-  unsigned __int8 *v69; // eax
-  int v70; // edx
-  _BYTE *v71; // eax
-  int v72; // ecx
-  int v73; // ebx
-  int v74; // edi
-  _DWORD *v75; // esi
-  int v76; // ecx
-  unsigned __int16 v77; // bx
-  _BYTE *v78; // eax
-  int v79; // ebx
-  int v80; // edi
-  _DWORD *v81; // esi
-  unsigned __int16 v82; // bx
-  int v83; // edx
-  int v84; // edi
-  _DWORD *v85; // esi
-  int v86; // ecx
-  int v87; // edx
-  unsigned __int16 v88; // bx
-  unsigned __int16 v89; // bx
-  int v90; // ecx
-  int v91; // edi
-  _DWORD *v92; // esi
-  int v93; // ecx
-  int v94; // edi
-  _DWORD *v95; // esi
-  int v96; // ebx
-  int v97; // ecx
-  int v98; // ecx
-  char v99; // cl
+  char v48; // bl
+  int v49; // edi
+  _DWORD *v50; // esi
+  unsigned __int8 v51; // bl
+  int v52; // edi
+  _DWORD *v53; // esi
+  char v54; // bl
+  int v55; // edi
+  _DWORD *v56; // esi
+  int v57; // ecx
+  int v58; // edi
+  _DWORD *v59; // esi
+  int v60; // ecx
+  int v61; // edi
+  _DWORD *v62; // esi
+  int v63; // ecx
+  int v64; // ebx
+  int v65; // eax
+  int v66; // ecx
+  unsigned __int8 *v67; // eax
+  int v68; // edx
+  _BYTE *v69; // eax
+  int v70; // ecx
+  int v71; // ebx
+  int v72; // edi
+  _DWORD *v73; // esi
+  int v74; // ecx
+  unsigned __int16 v75; // bx
+  _BYTE *v76; // eax
+  int v77; // ebx
+  int v78; // edi
+  _DWORD *v79; // esi
+  unsigned __int16 v80; // bx
+  int v81; // edx
+  int v82; // edi
+  _DWORD *v83; // esi
+  int v84; // ecx
+  int v85; // edx
+  unsigned __int16 v86; // bx
+  unsigned __int16 v87; // bx
+  int v88; // ecx
+  int v89; // edi
+  _DWORD *v90; // esi
+  int v91; // ecx
+  int v92; // edi
+  _DWORD *v93; // esi
+  int v94; // ebx
+  int v95; // ecx
+  int v96; // ecx
+  char v97; // cl
+  int v98; // edi
+  _DWORD *v99; // esi
   int v100; // edi
   _DWORD *v101; // esi
-  int v102; // edi
-  _DWORD *v103; // esi
-  char v104; // cl
-  char v105; // cl
-  int v106; // edi
-  _DWORD *v107; // esi
-  int v108; // ecx
-  int v109; // edi
-  _DWORD *v110; // esi
-  int v111; // ecx
-  int v112; // edi
-  _DWORD *v113; // esi
+  char v102; // cl
+  char v103; // cl
+  int v104; // edi
+  _DWORD *v105; // esi
+  int v106; // ecx
+  int v107; // edi
+  _DWORD *v108; // esi
+  int v109; // ecx
+  int v110; // edi
+  _DWORD *v111; // esi
+  unsigned __int8 *v112; // ebx
+  int v113; // ecx
   unsigned __int8 *v114; // ebx
-  int v115; // eax
+  unsigned __int8 *v115; // ebx
   int v116; // ecx
-  unsigned __int8 *v117; // ebx
-  unsigned __int8 *v118; // ebx
-  int v119; // eax
-  int v120; // ecx
-  int v121; // ebx
-  int v122; // ecx
-  int v123; // ebx
-  int v124; // eax
+  int v117; // ebx
+  int v118; // ecx
+  int v119; // ebx
+  int v120; // eax
+  int v121; // ecx
+  unsigned __int8 *v122; // eax
+  int v123; // edx
+  _BYTE *v124; // eax
   int v125; // ecx
-  unsigned __int8 *v126; // eax
-  int v127; // edx
-  _BYTE *v128; // eax
-  int v129; // ecx
-  _BYTE *v130; // eax
-  int v131; // ecx
+  _BYTE *v126; // eax
+  int v127; // ecx
   int m; // ebx
-  int v133; // ecx
-  int v134; // ecx
+  int v129; // ecx
+  int v130; // ecx
+  int v131; // ecx
+  int v132; // ecx
+  _DWORD *v133; // ecx
+  _DWORD *v134; // ebx
   int v135; // ecx
-  int v136; // ecx
+  int v136; // edx
   _DWORD *v137; // ecx
-  _DWORD *v138; // ebx
-  int v139; // ecx
-  int v140; // edx
-  _DWORD *v141; // ecx
-  int v142; // ebx
-  int v143; // eax
-  int v144; // ecx
+  int v138; // ebx
+  int v139; // eax
+  int v140; // ecx
   int kk; // ecx
   int ll; // ecx
-  int v147; // ecx
-  int v148; // ecx
-  _WORD *v149; // ebx
-  _WORD *v150; // ebx
+  int v143; // ecx
+  int v144; // ecx
+  unsigned __int16 *v145; // ebx
+  unsigned __int16 *v146; // ebx
+  unsigned __int16 *v147; // ebx
+  unsigned __int16 *v148; // ebx
+  int v149; // ecx
+  int v150; // ebx
   int v151; // ecx
-  _WORD *v152; // ebx
-  _WORD *v153; // ebx
-  int v154; // ecx
-  int v155; // ebx
-  int v156; // ecx
-  int v158; // [esp+10h] [ebp-8Ch]
+  int v153; // [esp+10h] [ebp-8Ch]
   int i3; // [esp+10h] [ebp-8Ch]
   int nn; // [esp+10h] [ebp-8Ch]
-  int v161; // [esp+10h] [ebp-8Ch]
+  int v156; // [esp+10h] [ebp-8Ch]
   int i1; // [esp+10h] [ebp-8Ch]
-  int v163; // [esp+10h] [ebp-8Ch]
+  int v158; // [esp+10h] [ebp-8Ch]
   int i; // [esp+10h] [ebp-8Ch]
   int j; // [esp+10h] [ebp-8Ch]
   int l; // [esp+10h] [ebp-8Ch]
-  int v167; // [esp+10h] [ebp-8Ch]
+  int v162; // [esp+10h] [ebp-8Ch]
   int n; // [esp+10h] [ebp-8Ch]
-  int v169; // [esp+10h] [ebp-8Ch]
-  int v170; // [esp+10h] [ebp-8Ch]
-  int v171; // [esp+10h] [ebp-8Ch]
-  int v172; // [esp+14h] [ebp-88h]
+  int v164; // [esp+10h] [ebp-8Ch]
+  int v165; // [esp+10h] [ebp-8Ch]
+  int v166; // [esp+10h] [ebp-8Ch]
+  int v167; // [esp+14h] [ebp-88h]
   int k; // [esp+14h] [ebp-88h]
-  int v174; // [esp+14h] [ebp-88h]
+  int v169; // [esp+14h] [ebp-88h]
   int jj; // [esp+14h] [ebp-88h]
-  int v176; // [esp+14h] [ebp-88h]
-  int v177; // [esp+18h] [ebp-84h]
-  int v178; // [esp+18h] [ebp-84h]
-  int v179; // [esp+18h] [ebp-84h]
-  int v180; // [esp+18h] [ebp-84h]
-  char *v181; // [esp+1Ch] [ebp-80h]
-  char *v182; // [esp+1Ch] [ebp-80h]
-  unsigned __int8 *v183; // [esp+1Ch] [ebp-80h]
+  int v171; // [esp+14h] [ebp-88h]
+  int v172; // [esp+18h] [ebp-84h]
+  int v173; // [esp+18h] [ebp-84h]
+  int v174; // [esp+18h] [ebp-84h]
+  int v175; // [esp+18h] [ebp-84h]
+  char *v176; // [esp+1Ch] [ebp-80h]
+  char *v177; // [esp+1Ch] [ebp-80h]
+  unsigned __int8 *v178; // [esp+1Ch] [ebp-80h]
+  int v179; // [esp+1Ch] [ebp-80h]
+  int v180; // [esp+1Ch] [ebp-80h]
+  int v181; // [esp+1Ch] [ebp-80h]
+  int v182; // [esp+1Ch] [ebp-80h]
+  int v183; // [esp+1Ch] [ebp-80h]
   int v184; // [esp+1Ch] [ebp-80h]
   int v185; // [esp+1Ch] [ebp-80h]
-  int v186; // [esp+1Ch] [ebp-80h]
-  int v187; // [esp+1Ch] [ebp-80h]
-  int v188; // [esp+1Ch] [ebp-80h]
-  int v189; // [esp+1Ch] [ebp-80h]
-  int v190; // [esp+1Ch] [ebp-80h]
-  int v191; // [esp+20h] [ebp-7Ch]
-  int v192; // [esp+20h] [ebp-7Ch]
-  int v193; // [esp+20h] [ebp-7Ch]
-  int v194; // [esp+20h] [ebp-7Ch]
-  int v195; // [esp+20h] [ebp-7Ch]
-  int v196; // [esp+24h] [ebp-78h]
-  int v197; // [esp+24h] [ebp-78h]
+  int v186; // [esp+20h] [ebp-7Ch]
+  int v187; // [esp+20h] [ebp-7Ch]
+  int v188; // [esp+20h] [ebp-7Ch]
+  int v189; // [esp+20h] [ebp-7Ch]
+  int v190; // [esp+20h] [ebp-7Ch]
+  int v191; // [esp+24h] [ebp-78h]
+  int v192; // [esp+24h] [ebp-78h]
   int mm; // [esp+24h] [ebp-78h]
-  int v199; // [esp+24h] [ebp-78h]
-  int v200; // [esp+24h] [ebp-78h]
-  int v201; // [esp+24h] [ebp-78h]
+  int v194; // [esp+24h] [ebp-78h]
+  int v195; // [esp+24h] [ebp-78h]
+  int v196; // [esp+24h] [ebp-78h]
+  int v197; // [esp+28h] [ebp-74h]
+  int v198; // [esp+28h] [ebp-74h]
+  char v199; // [esp+28h] [ebp-74h]
+  int v200; // [esp+28h] [ebp-74h]
+  int v201; // [esp+28h] [ebp-74h]
   int v202; // [esp+28h] [ebp-74h]
-  int v203; // [esp+28h] [ebp-74h]
-  char v204; // [esp+28h] [ebp-74h]
-  int v205; // [esp+28h] [ebp-74h]
-  int v206; // [esp+28h] [ebp-74h]
-  int v207; // [esp+28h] [ebp-74h]
   int ii; // [esp+28h] [ebp-74h]
-  int v209; // [esp+28h] [ebp-74h]
-  int v210; // [esp+28h] [ebp-74h]
+  int v204; // [esp+28h] [ebp-74h]
+  int v205; // [esp+28h] [ebp-74h]
+  int v206; // [esp+2Ch] [ebp-70h]
+  int v207; // [esp+2Ch] [ebp-70h]
+  int v208; // [esp+2Ch] [ebp-70h]
+  int v209; // [esp+2Ch] [ebp-70h]
+  int v210; // [esp+2Ch] [ebp-70h]
   int v211; // [esp+2Ch] [ebp-70h]
   int v212; // [esp+2Ch] [ebp-70h]
   int v213; // [esp+2Ch] [ebp-70h]
   int v214; // [esp+2Ch] [ebp-70h]
   int v215; // [esp+2Ch] [ebp-70h]
-  int v216; // [esp+2Ch] [ebp-70h]
-  int v217; // [esp+2Ch] [ebp-70h]
-  int v218; // [esp+2Ch] [ebp-70h]
-  int v219; // [esp+2Ch] [ebp-70h]
-  int v220; // [esp+2Ch] [ebp-70h]
-  int v221; // [esp+30h] [ebp-6Ch]
-  int v222; // [esp+30h] [ebp-6Ch]
-  signed int v223; // [esp+30h] [ebp-6Ch]
-  unsigned __int8 v224; // [esp+37h] [ebp-65h]
-  unsigned __int8 v225; // [esp+37h] [ebp-65h]
-  unsigned __int8 v226; // [esp+37h] [ebp-65h]
-  int v227; // [esp+38h] [ebp-64h]
-  int v228; // [esp+38h] [ebp-64h]
-  int v229; // [esp+3Ch] [ebp-60h]
-  int v230; // [esp+3Ch] [ebp-60h]
-  int v231; // [esp+3Ch] [ebp-60h]
+  int v216; // [esp+30h] [ebp-6Ch]
+  int v217; // [esp+30h] [ebp-6Ch]
+  signed int v218; // [esp+30h] [ebp-6Ch]
+  unsigned __int8 v219; // [esp+37h] [ebp-65h]
+  unsigned __int8 v220; // [esp+37h] [ebp-65h]
+  unsigned __int8 v221; // [esp+37h] [ebp-65h]
+  int v222; // [esp+38h] [ebp-64h]
+  int v223; // [esp+38h] [ebp-64h]
+  int v224; // [esp+3Ch] [ebp-60h]
+  int v225; // [esp+3Ch] [ebp-60h]
+  int v226; // [esp+3Ch] [ebp-60h]
   int i2; // [esp+3Ch] [ebp-60h]
-  int v233; // [esp+3Ch] [ebp-60h]
-  int v234; // [esp+40h] [ebp-5Ch]
-  _BYTE *v235; // [esp+40h] [ebp-5Ch]
-  _BYTE *v236; // [esp+40h] [ebp-5Ch]
-  int v237; // [esp+40h] [ebp-5Ch]
-  _BYTE *v238; // [esp+40h] [ebp-5Ch]
-  _BYTE *v239; // [esp+40h] [ebp-5Ch]
-  int v240; // [esp+44h] [ebp-58h]
-  int v241; // [esp+4Ch] [ebp-50h]
-  unsigned __int8 v242; // [esp+50h] [ebp-4Ch]
-  unsigned __int8 v243; // [esp+68h] [ebp-34h]
-  unsigned __int8 v244; // [esp+70h] [ebp-2Ch]
-  unsigned __int8 v245; // [esp+78h] [ebp-24h]
-  unsigned __int8 v246; // [esp+88h] [ebp-14h]
-  unsigned __int8 v247; // [esp+90h] [ebp-Ch]
-  unsigned __int8 v249; // [esp+98h] [ebp-4h]
-  int v250; // [esp+ACh] [ebp+10h]
+  int v228; // [esp+3Ch] [ebp-60h]
+  int v229; // [esp+40h] [ebp-5Ch]
+  _BYTE *v230; // [esp+40h] [ebp-5Ch]
+  _BYTE *v231; // [esp+40h] [ebp-5Ch]
+  int v232; // [esp+40h] [ebp-5Ch]
+  _BYTE *v233; // [esp+40h] [ebp-5Ch]
+  _BYTE *v234; // [esp+40h] [ebp-5Ch]
+  int v235; // [esp+44h] [ebp-58h]
+  int v236; // [esp+4Ch] [ebp-50h]
+  unsigned __int8 v237; // [esp+50h] [ebp-4Ch]
+  unsigned __int8 v238; // [esp+68h] [ebp-34h]
+  unsigned __int8 v239; // [esp+70h] [ebp-2Ch]
+  unsigned __int8 v240; // [esp+78h] [ebp-24h]
+  unsigned __int8 v241; // [esp+88h] [ebp-14h]
+  unsigned __int8 v242; // [esp+90h] [ebp-Ch]
+  unsigned __int8 v244; // [esp+98h] [ebp-4h]
+  int v245; // [esp+ACh] [ebp+10h]
 
   LODWORD(v22) = a9;
   v23 = 0;
-  v241 = a9;
+  v236 = a9;
   if ( a9 >= a10 )
     return v22;
   while ( 1 )
   {
     HIDWORD(v22) = &a11[16 * (_DWORD)v22];
-    v227 = HIDWORD(v22);
-    v250 = a4 + 8 * *(_DWORD *)(HIDWORD(v22) + 12);
+    v222 = HIDWORD(v22);
+    v245 = a4 + 8 * *(_DWORD *)(HIDWORD(v22) + 12);
     if ( a3 )
     {
       if ( a3 == 1 )
@@ -246,83 +241,72 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
         switch ( a6 )
         {
           case 2:
-            v194 = 0;
-            v179 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
-            v200 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-            if ( v200 > 0 )
+            v189 = 0;
+            v174 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
+            v195 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+            if ( v195 > 0 )
             {
               do
               {
-                v114 = (unsigned __int8 *)v250;
-                if ( (v194 & a22) != 0 )
+                v112 = (unsigned __int8 *)v245;
+                if ( (v189 & a22) != 0 )
                 {
-                  HIWORD(v115) = HIWORD(v179);
-                  v116 = 0;
-                  for ( i = 0; v116 < v179; v114 = v118 + 4 )
+                  v113 = 0;
+                  for ( i = 0; v113 < v174; v112 = v115 + 4 )
                   {
-                    v117 = v114 + 4;
-                    v215 = 0;
+                    v114 = v112 + 4;
+                    v210 = 0;
                     do
                     {
-                      if ( v116 >= v179 )
+                      if ( v113 >= v174 )
                         break;
-                      LOWORD(v115) = *(_WORD *)(a5 + 2 * *v117);
-                      LODWORD(v22) = sub_10027B10(v115);
+                      LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * *v114));
                       *a1 = v22;
                       v23 += 4;
                       ++a1;
                       if ( v23 >= a2 )
                         return v22;
-                      ++v117;
-                      v116 = i + 1;
-                      v115 = v215 + 1;
-                      ++i;
-                      ++v215;
+                      ++v114;
+                      v113 = ++i;
+                      ++v210;
                     }
-                    while ( v215 < 4 );
-                    v118 = v117 - 8;
-                    v216 = 0;
+                    while ( v210 < 4 );
+                    v115 = v114 - 8;
+                    v211 = 0;
                     do
                     {
-                      if ( v116 >= v179 )
+                      if ( v113 >= v174 )
                         break;
-                      LOWORD(v115) = *(_WORD *)(a5 + 2 * *v118);
-                      LODWORD(v22) = sub_10027B10(v115);
+                      LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * *v115));
                       *a1 = v22;
                       v23 += 4;
                       ++a1;
                       if ( v23 >= a2 )
                         return v22;
-                      ++v118;
-                      v116 = i + 1;
-                      v115 = v216 + 1;
-                      ++i;
-                      ++v216;
+                      ++v115;
+                      v113 = ++i;
+                      ++v211;
                     }
-                    while ( v216 < 4 );
-                    HIWORD(v115) = HIWORD(v179);
+                    while ( v211 < 4 );
                   }
                 }
                 else
                 {
-                  HIWORD(v119) = HIWORD(v179);
-                  for ( j = 0; j < v179; ++j )
+                  for ( j = 0; j < v174; ++j )
                   {
-                    LOWORD(v119) = *(_WORD *)(a5 + 2 * *v114);
-                    LODWORD(v22) = sub_10027B10(v119);
+                    LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * *v112));
                     *a1 = v22;
                     v23 += 4;
                     ++a1;
                     if ( v23 >= a2 )
                       return v22;
-                    ++v114;
-                    v119 = j + 1;
+                    ++v112;
                   }
                 }
                 if ( a7 )
                 {
-                  v120 = 0;
-                  for ( LODWORD(v22) = a1 - 1; v120 < v179; ++v120 )
+                  v116 = 0;
+                  for ( LODWORD(v22) = a1 - 1; v116 < v174; ++v116 )
                   {
                     v23 += 4;
                     *a1++ = *(_DWORD *)v22;
@@ -331,30 +315,30 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                       return v22;
                   }
                 }
-                v31 = v194 + 1 < v200;
-                v250 += *(_DWORD *)(v227 + 8);
-                ++v194;
+                v31 = v189 + 1 < v195;
+                v245 += *(_DWORD *)(v222 + 8);
+                ++v189;
               }
               while ( v31 );
             }
             if ( a8 )
             {
               HIDWORD(v22) = a1;
-              v195 = 0;
-              if ( v200 > 0 )
+              v190 = 0;
+              if ( v195 > 0 )
               {
-                v121 = v179;
+                v117 = v174;
                 do
                 {
-                  LODWORD(v22) = 2 * v121;
+                  LODWORD(v22) = 2 * v117;
                   if ( !a7 )
-                    LODWORD(v22) = v121;
+                    LODWORD(v22) = v117;
                   HIDWORD(v22) -= 4 * v22;
-                  v122 = 2 * v121;
+                  v118 = 2 * v117;
                   LODWORD(v22) = HIDWORD(v22);
                   if ( !a7 )
-                    v122 = v121;
-                  if ( v122 > 0 )
+                    v118 = v117;
+                  if ( v118 > 0 )
                   {
                     do
                     {
@@ -363,118 +347,118 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                       LODWORD(v22) = v22 + 4;
                       if ( v23 >= a2 )
                         return v22;
-                      --v122;
+                      --v118;
                     }
-                    while ( v122 > 0 );
-                    v121 = v179;
+                    while ( v118 > 0 );
+                    v117 = v174;
                   }
-                  ++v195;
+                  ++v190;
                 }
-                while ( v195 < v200 );
+                while ( v190 < v195 );
               }
             }
             break;
           case 3:
             if ( a13 == 1 )
             {
-              v123 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
-              v124 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-              v125 = 0;
-              v233 = v123;
-              v205 = 0;
-              for ( k = v124; v205 < k; ++v205 )
+              v119 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
+              v120 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+              v121 = 0;
+              v228 = v119;
+              v200 = 0;
+              for ( k = v120; v200 < k; ++v200 )
               {
-                v126 = (unsigned __int8 *)v250;
-                v237 = v250;
-                if ( (a22 & v125) != 0 )
+                v122 = (unsigned __int8 *)v245;
+                v232 = v245;
+                if ( (a22 & v121) != 0 )
                 {
-                  v127 = 0;
-                  for ( l = 0; v127 < v123; v126 = v130 + 4 )
+                  v123 = 0;
+                  for ( l = 0; v123 < v119; v122 = v126 + 4 )
                   {
-                    v128 = v126 + 4;
-                    v217 = 0;
-                    v238 = v128;
+                    v124 = v122 + 4;
+                    v212 = 0;
+                    v233 = v124;
                     do
                     {
-                      if ( v127 >= v123 )
+                      if ( v123 >= v119 )
                         break;
-                      v243 = *v128;
+                      v238 = *v124;
                       v23 += 4;
                       ++a1;
-                      v129 = v243 & 0xF0 | (v243 >> 4);
-                      LODWORD(v22) = *v128 & 0xF;
-                      *(a1 - 1) = (((unsigned int)v22 | (16 * (v243 & 0xF))) << 24) | ((a20
-                                                                                      + v129
+                      v125 = v238 & 0xF0 | (v238 >> 4);
+                      LODWORD(v22) = *v124 & 0xF;
+                      *(a1 - 1) = (((unsigned int)v22 | (16 * (v238 & 0xF))) << 24) | ((a20
+                                                                                      + v125
                                                                                       * (a16 - (unsigned int)a20)
-                                                                                      / 0xFF) << 16) | ((a19 + v129 * (a15 - (unsigned int)a19) / 0xFF) << 8) | (a18 + v129 * (a14 - (unsigned int)a18) / 0xFF);
+                                                                                      / 0xFF) << 16) | ((a19 + v125 * (a15 - (unsigned int)a19) / 0xFF) << 8) | (a18 + v125 * (a14 - (unsigned int)a18) / 0xFF);
                       if ( v23 >= a2 )
                         return v22;
-                      v123 = v233;
-                      v128 = v238 + 1;
-                      v127 = l + 1;
-                      ++v238;
-                      v31 = v217 + 1 < 4;
+                      v119 = v228;
+                      v124 = v233 + 1;
+                      v123 = l + 1;
+                      ++v233;
+                      v31 = v212 + 1 < 4;
                       ++l;
-                      ++v217;
+                      ++v212;
                     }
                     while ( v31 );
-                    v130 = v128 - 8;
-                    v218 = 0;
-                    v239 = v130;
+                    v126 = v124 - 8;
+                    v213 = 0;
+                    v234 = v126;
                     do
                     {
-                      if ( v127 >= v123 )
+                      if ( v123 >= v119 )
                         break;
-                      v244 = *v130;
+                      v239 = *v126;
                       v23 += 4;
                       ++a1;
-                      v131 = v244 & 0xF0 | (v244 >> 4);
-                      LODWORD(v22) = *v130 & 0xF;
-                      *(a1 - 1) = (((unsigned int)v22 | (16 * (v244 & 0xF))) << 24) | ((a20
-                                                                                      + v131
+                      v127 = v239 & 0xF0 | (v239 >> 4);
+                      LODWORD(v22) = *v126 & 0xF;
+                      *(a1 - 1) = (((unsigned int)v22 | (16 * (v239 & 0xF))) << 24) | ((a20
+                                                                                      + v127
                                                                                       * (a16 - (unsigned int)a20)
-                                                                                      / 0xFF) << 16) | (a18 + v131 * (a14 - (unsigned int)a18) / 0xFF) | ((a19 + v131 * (a15 - (unsigned int)a19) / 0xFF) << 8);
+                                                                                      / 0xFF) << 16) | (a18 + v127 * (a14 - (unsigned int)a18) / 0xFF) | ((a19 + v127 * (a15 - (unsigned int)a19) / 0xFF) << 8);
                       if ( v23 >= a2 )
                         return v22;
-                      v123 = v233;
-                      v130 = v239 + 1;
-                      v127 = l + 1;
-                      ++v239;
-                      v31 = v218 + 1 < 4;
+                      v119 = v228;
+                      v126 = v234 + 1;
+                      v123 = l + 1;
+                      ++v234;
+                      v31 = v213 + 1 < 4;
                       ++l;
-                      ++v218;
+                      ++v213;
                     }
                     while ( v31 );
                   }
                 }
                 else
                 {
-                  v167 = 0;
-                  if ( v123 > 0 )
+                  v162 = 0;
+                  if ( v119 > 0 )
                   {
                     for ( m = a15 - a19; ; m = a15 - a19 )
                     {
                       v23 += 4;
-                      v245 = *v126;
+                      v240 = *v122;
                       ++a1;
-                      LODWORD(v22) = *v126 & 0xF;
-                      *(a1 - 1) = (((unsigned int)v22 | (16 * (v245 & 0xF))) << 24) | ((a20
+                      LODWORD(v22) = *v122 & 0xF;
+                      *(a1 - 1) = (((unsigned int)v22 | (16 * (v240 & 0xF))) << 24) | ((a20
                                                                                       + (a16 - a20)
-                                                                                      * (v245 & 0xF0 | (v245 >> 4))
-                                                                                      / 0xFFu) << 16) | ((a19 + m * (v245 & 0xF0 | (v245 >> 4)) / 0xFFu) << 8) | (a18 + (a14 - a18) * (v245 & 0xF0 | (v245 >> 4)) / 0xFFu);
+                                                                                      * (v240 & 0xF0 | (v240 >> 4))
+                                                                                      / 0xFFu) << 16) | ((a19 + m * (v240 & 0xF0 | (v240 >> 4)) / 0xFFu) << 8) | (a18 + (a14 - a18) * (v240 & 0xF0 | (v240 >> 4)) / 0xFFu);
                       if ( v23 >= a2 )
                         return v22;
-                      v123 = v233;
-                      v126 = (unsigned __int8 *)++v237;
-                      if ( ++v167 >= v233 )
+                      v119 = v228;
+                      v122 = (unsigned __int8 *)++v232;
+                      if ( ++v162 >= v228 )
                         break;
                     }
                   }
                 }
                 if ( a7 )
                 {
-                  v133 = 0;
-                  for ( LODWORD(v22) = a1 - 1; v133 < v123; ++v133 )
+                  v129 = 0;
+                  for ( LODWORD(v22) = a1 - 1; v129 < v119; ++v129 )
                   {
                     v23 += 4;
                     *a1++ = *(_DWORD *)v22;
@@ -483,27 +467,27 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                       return v22;
                   }
                 }
-                v250 += *(_DWORD *)(v227 + 8);
-                v124 = k;
-                v125 = v205 + 1;
+                v245 += *(_DWORD *)(v222 + 8);
+                v120 = k;
+                v121 = v200 + 1;
               }
               if ( a8 )
               {
                 HIDWORD(v22) = a1;
-                v206 = 0;
-                if ( v124 > 0 )
+                v201 = 0;
+                if ( v120 > 0 )
                 {
                   do
                   {
-                    LODWORD(v22) = 2 * v123;
+                    LODWORD(v22) = 2 * v119;
                     if ( !a7 )
-                      LODWORD(v22) = v123;
+                      LODWORD(v22) = v119;
                     HIDWORD(v22) -= 4 * v22;
-                    v134 = 2 * v123;
+                    v130 = 2 * v119;
                     LODWORD(v22) = HIDWORD(v22);
                     if ( !a7 )
-                      v134 = v123;
-                    for ( ; v134 > 0; --v134 )
+                      v130 = v119;
+                    for ( ; v130 > 0; --v130 )
                     {
                       v23 += 4;
                       *a1++ = *(_DWORD *)v22;
@@ -511,99 +495,99 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                       if ( v23 >= a2 )
                         return v22;
                     }
-                    ++v206;
+                    ++v201;
                   }
-                  while ( v206 < k );
+                  while ( v201 < k );
                 }
               }
             }
             else
             {
               LODWORD(v22) = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
-              v135 = 0;
-              v223 = v22;
-              v207 = 0;
-              v174 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-              if ( v174 > 0 )
+              v131 = 0;
+              v218 = v22;
+              v202 = 0;
+              v169 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+              if ( v169 > 0 )
               {
                 do
                 {
-                  HIDWORD(v22) = v250;
-                  if ( (a22 & v135) != 0 )
+                  HIDWORD(v22) = v245;
+                  if ( (a22 & v131) != 0 )
                   {
-                    v136 = 0;
-                    for ( n = 0; v136 < (int)v22; HIDWORD(v22) += 4 )
+                    v132 = 0;
+                    for ( n = 0; v132 < (int)v22; HIDWORD(v22) += 4 )
                     {
                       HIDWORD(v22) += 4;
-                      v219 = 0;
+                      v214 = 0;
                       do
                       {
-                        if ( v136 >= (int)v22 )
+                        if ( v132 >= (int)v22 )
                           break;
                         v23 += 4;
                         ++a1;
-                        v246 = *(_BYTE *)HIDWORD(v22) & 0xF0 | (*(_BYTE *)HIDWORD(v22) >> 4);
+                        v241 = *(_BYTE *)HIDWORD(v22) & 0xF0 | (*(_BYTE *)HIDWORD(v22) >> 4);
                         LODWORD(v22) = (unsigned __int8)(16 * *(_BYTE *)HIDWORD(v22));
-                        *(a1 - 1) = v246 | ((v246 | ((v246 | (((unsigned int)v22 | *(_BYTE *)HIDWORD(v22) & 0xF) << 8)) << 8)) << 8);
+                        *(a1 - 1) = v241 | ((v241 | ((v241 | (((unsigned int)v22 | *(_BYTE *)HIDWORD(v22) & 0xF) << 8)) << 8)) << 8);
                         if ( v23 >= a2 )
                           return v22;
                         ++HIDWORD(v22);
-                        v136 = ++n;
-                        ++v219;
-                        LODWORD(v22) = v223;
+                        v132 = ++n;
+                        ++v214;
+                        LODWORD(v22) = v218;
                       }
-                      while ( v219 < 4 );
+                      while ( v214 < 4 );
                       HIDWORD(v22) -= 8;
-                      v220 = 0;
+                      v215 = 0;
                       do
                       {
-                        if ( v136 >= (int)v22 )
+                        if ( v132 >= (int)v22 )
                           break;
                         v23 += 4;
                         ++a1;
-                        v247 = *(_BYTE *)HIDWORD(v22) & 0xF0 | (*(_BYTE *)HIDWORD(v22) >> 4);
+                        v242 = *(_BYTE *)HIDWORD(v22) & 0xF0 | (*(_BYTE *)HIDWORD(v22) >> 4);
                         LODWORD(v22) = *(_BYTE *)HIDWORD(v22) & 0xF;
-                        *(a1 - 1) = v247 | ((v247 | ((v247 | (((unsigned int)v22 | (unsigned __int8)(16 * *(_BYTE *)HIDWORD(v22))) << 8)) << 8)) << 8);
+                        *(a1 - 1) = v242 | ((v242 | ((v242 | (((unsigned int)v22 | (unsigned __int8)(16 * *(_BYTE *)HIDWORD(v22))) << 8)) << 8)) << 8);
                         if ( v23 >= a2 )
                           return v22;
                         ++HIDWORD(v22);
-                        v136 = ++n;
-                        ++v220;
-                        LODWORD(v22) = v223;
+                        v132 = ++n;
+                        ++v215;
+                        LODWORD(v22) = v218;
                       }
-                      while ( v220 < 4 );
+                      while ( v215 < 4 );
                     }
                   }
                   else
                   {
-                    v169 = 0;
+                    v164 = 0;
                     if ( (int)v22 > 0 )
                     {
                       do
                       {
                         v23 += 4;
                         ++a1;
-                        v249 = *(_BYTE *)HIDWORD(v22) & 0xF0 | (*(_BYTE *)HIDWORD(v22) >> 4);
+                        v244 = *(_BYTE *)HIDWORD(v22) & 0xF0 | (*(_BYTE *)HIDWORD(v22) >> 4);
                         LODWORD(v22) = (unsigned __int8)(16 * *(_BYTE *)HIDWORD(v22));
-                        *(a1 - 1) = v249 | ((v249 | ((v249 | (((unsigned int)v22 | *(_BYTE *)HIDWORD(v22) & 0xF) << 8)) << 8)) << 8);
+                        *(a1 - 1) = v244 | ((v244 | ((v244 | (((unsigned int)v22 | *(_BYTE *)HIDWORD(v22) & 0xF) << 8)) << 8)) << 8);
                         if ( v23 >= a2 )
                           return v22;
-                        v22 = __PAIR64__(HIDWORD(v22), v223) + 0x100000000i64;
-                        ++v169;
+                        v22 = __PAIR64__(HIDWORD(v22), v218) + 0x100000000i64;
+                        ++v164;
                       }
-                      while ( v169 < v223 );
+                      while ( v164 < v218 );
                     }
                   }
                   if ( a7 )
                   {
                     HIDWORD(v22) = 0;
-                    v137 = a1 - 1;
+                    v133 = a1 - 1;
                     if ( (int)v22 > 0 )
                     {
                       do
                       {
                         v23 += 4;
-                        *a1++ = *v137--;
+                        *a1++ = *v133--;
                         if ( v23 >= a2 )
                           return v22;
                         ++HIDWORD(v22);
@@ -611,28 +595,28 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                       while ( SHIDWORD(v22) < (int)v22 );
                     }
                   }
-                  v250 += *(_DWORD *)(v227 + 8);
-                  v135 = ++v207;
+                  v245 += *(_DWORD *)(v222 + 8);
+                  v131 = ++v202;
                 }
-                while ( v207 < v174 );
+                while ( v202 < v169 );
               }
               if ( a8 )
               {
-                v138 = a1;
-                for ( ii = 0; ii < v174; ++ii )
+                v134 = a1;
+                for ( ii = 0; ii < v169; ++ii )
                 {
-                  v139 = 2 * v22;
+                  v135 = 2 * v22;
                   if ( !a7 )
-                    v139 = v22;
-                  v138 -= v139;
-                  v140 = 2 * v22;
-                  v141 = v138;
+                    v135 = v22;
+                  v134 -= v135;
+                  v136 = 2 * v22;
+                  v137 = v134;
                   if ( !a7 )
-                    v140 = v22;
-                  for ( ; v140 > 0; --v140 )
+                    v136 = v22;
+                  for ( ; v136 > 0; --v136 )
                   {
                     v23 += 4;
-                    *a1++ = *v141++;
+                    *a1++ = *v137++;
                     if ( v23 >= a2 )
                       return v22;
                   }
@@ -641,28 +625,28 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
             }
             break;
           case 4:
-            v142 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
-            v143 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-            v144 = 0;
-            v201 = v142;
-            v209 = 0;
-            for ( jj = v143; v209 < jj; ++v209 )
+            v138 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
+            v139 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+            v140 = 0;
+            v196 = v138;
+            v204 = 0;
+            for ( jj = v139; v204 < jj; ++v204 )
             {
-              LODWORD(v22) = v250;
-              if ( (a22 & v144) != 0 )
+              LODWORD(v22) = v245;
+              if ( (a22 & v140) != 0 )
               {
-                for ( kk = 0; kk < v142; LODWORD(v22) = v22 + 4 )
+                for ( kk = 0; kk < v138; LODWORD(v22) = v22 + 4 )
                 {
                   v22 = (unsigned int)(v22 + 4);
                   do
                   {
-                    if ( kk >= v142 )
+                    if ( kk >= v138 )
                       break;
                     v23 += 4;
                     *a1++ = (*(unsigned __int8 *)v22 << 24) | 0xFFFFFF;
                     if ( v23 >= a2 )
                       return v22;
-                    v142 = v201;
+                    v138 = v196;
                     LODWORD(v22) = v22 + 1;
                     ++kk;
                     ++HIDWORD(v22);
@@ -671,13 +655,13 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                   v22 = (unsigned int)(v22 - 8);
                   do
                   {
-                    if ( kk >= v142 )
+                    if ( kk >= v138 )
                       break;
                     v23 += 4;
                     *a1++ = (*(unsigned __int8 *)v22 << 24) | 0xFFFFFF;
                     if ( v23 >= a2 )
                       return v22;
-                    v142 = v201;
+                    v138 = v196;
                     LODWORD(v22) = v22 + 1;
                     ++kk;
                     ++HIDWORD(v22);
@@ -687,7 +671,7 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
               }
               else
               {
-                for ( ll = 0; ll < v142; ++ll )
+                for ( ll = 0; ll < v138; ++ll )
                 {
                   v23 += 4;
                   *a1++ = (*(unsigned __int8 *)v22 << 24) | 0xFFFFFF;
@@ -698,8 +682,8 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
               }
               if ( a7 )
               {
-                v147 = 0;
-                for ( LODWORD(v22) = a1 - 1; v147 < v142; ++v147 )
+                v143 = 0;
+                for ( LODWORD(v22) = a1 - 1; v143 < v138; ++v143 )
                 {
                   v23 += 4;
                   *a1++ = *(_DWORD *)v22;
@@ -708,27 +692,27 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                     return v22;
                 }
               }
-              v250 += *(_DWORD *)(v227 + 8);
-              v143 = jj;
-              v144 = v209 + 1;
+              v245 += *(_DWORD *)(v222 + 8);
+              v139 = jj;
+              v140 = v204 + 1;
             }
             if ( a8 )
             {
               HIDWORD(v22) = a1;
-              v210 = 0;
-              if ( v143 > 0 )
+              v205 = 0;
+              if ( v139 > 0 )
               {
                 do
                 {
-                  LODWORD(v22) = 2 * v142;
+                  LODWORD(v22) = 2 * v138;
                   if ( !a7 )
-                    LODWORD(v22) = v142;
+                    LODWORD(v22) = v138;
                   HIDWORD(v22) -= 4 * v22;
-                  v148 = 2 * v142;
+                  v144 = 2 * v138;
                   LODWORD(v22) = HIDWORD(v22);
                   if ( !a7 )
-                    v148 = v142;
-                  for ( ; v148 > 0; --v148 )
+                    v144 = v138;
+                  for ( ; v144 > 0; --v144 )
                   {
                     v23 += 4;
                     *a1++ = *(_DWORD *)v22;
@@ -736,9 +720,9 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
                     if ( v23 >= a2 )
                       return v22;
                   }
-                  ++v210;
+                  ++v205;
                 }
-                while ( v210 < jj );
+                while ( v205 < jj );
               }
             }
             break;
@@ -747,30 +731,30 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
       }
       if ( a3 != 2 || a6 )
         goto LABEL_336;
-      v170 = 0;
-      v180 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
-      v176 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-      if ( v176 <= 0 )
+      v165 = 0;
+      v175 = 1 << *(_DWORD *)(HIDWORD(v22) + 32);
+      v171 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+      if ( v171 <= 0 )
       {
 LABEL_324:
         if ( a8 )
         {
           HIDWORD(v22) = a1;
-          v171 = 0;
-          if ( v176 > 0 )
+          v166 = 0;
+          if ( v171 > 0 )
           {
-            v155 = v180;
+            v150 = v175;
             do
             {
-              LODWORD(v22) = 2 * v155;
+              LODWORD(v22) = 2 * v150;
               if ( !a7 )
-                LODWORD(v22) = v155;
+                LODWORD(v22) = v150;
               HIDWORD(v22) -= 4 * v22;
-              v156 = 2 * v155;
+              v151 = 2 * v150;
               LODWORD(v22) = HIDWORD(v22);
               if ( !a7 )
-                v156 = v155;
-              if ( v156 > 0 )
+                v151 = v150;
+              if ( v151 > 0 )
               {
                 do
                 {
@@ -779,69 +763,62 @@ LABEL_324:
                   LODWORD(v22) = v22 + 4;
                   if ( v23 >= a2 )
                     return v22;
-                  --v156;
+                  --v151;
                 }
-                while ( v156 > 0 );
-                v155 = v180;
+                while ( v151 > 0 );
+                v150 = v175;
               }
-              ++v171;
+              ++v166;
             }
-            while ( v171 < v176 );
+            while ( v166 < v171 );
           }
         }
         goto LABEL_336;
       }
       while ( 1 )
       {
-        WORD1(v22) = HIWORD(v170);
-        v149 = (_WORD *)v250;
-        HIDWORD(v22) = v180;
-        v187 = 0;
-        if ( (v170 & a22) != 0 )
+        v145 = (unsigned __int16 *)v245;
+        HIDWORD(v22) = v175;
+        v182 = 0;
+        if ( (v165 & a22) != 0 )
         {
-          if ( v180 <= 0 )
+          if ( v175 <= 0 )
             goto LABEL_319;
           while ( 1 )
           {
-            WORD2(v22) = v149[2];
-            *a1++ = sub_10027B10(HIDWORD(v22));
-            v150 = v149 + 1;
+            *a1++ = sub_10027B10(v145[2]);
+            v146 = v145 + 1;
             v23 += 4;
-            LODWORD(v22) = v187 + 1;
-            v188 = v187 + 1;
-            if ( v188 >= v180 )
+            LOBYTE(v22) = v182 + 1;
+            v183 = v182 + 1;
+            if ( v183 >= v175 )
               break;
             if ( v23 >= a2 )
               return v22;
-            LOWORD(v22) = v150[2];
-            LODWORD(v22) = sub_10027B10(v22);
-            HIWORD(v151) = HIWORD(v180);
-            *a1++ = v22;
-            v152 = v150 + 1;
+            *a1++ = sub_10027B10(v146[2]);
+            v147 = v146 + 1;
             v23 += 4;
-            LOBYTE(v22) = v188 + 1;
-            v189 = v188 + 1;
-            if ( v189 >= v180 )
+            LOBYTE(v22) = v183 + 1;
+            v184 = v183 + 1;
+            if ( v184 >= v175 )
               break;
             if ( v23 >= a2 )
               return v22;
-            LOWORD(v151) = *(v152 - 2);
-            *a1++ = sub_10027B10(v151);
-            v153 = v152 + 1;
+            *a1++ = sub_10027B10(*(v147 - 2));
+            v148 = v147 + 1;
             v23 += 4;
-            LOBYTE(v22) = v189 + 1;
-            v190 = v189 + 1;
-            if ( v190 >= v180 )
+            LOBYTE(v22) = v184 + 1;
+            v185 = v184 + 1;
+            if ( v185 >= v175 )
               break;
             if ( v23 >= a2 )
               return v22;
-            WORD2(v22) = *(v153 - 2);
-            *a1++ = sub_10027B10(HIDWORD(v22));
-            v149 = v153 + 1;
+            *a1++ = sub_10027B10(*(v148 - 2));
+            v145 = v148 + 1;
             v23 += 4;
-            LOBYTE(v22) = v190 + 1;
-            v187 = v190 + 1;
-            if ( v187 >= v180 )
+            LOBYTE(v22) = v185 + 1;
+            v182 = v185 + 1;
+            if ( v182 >= v175 )
               break;
             if ( v23 >= a2 )
               return v22;
@@ -849,28 +826,27 @@ LABEL_324:
         }
         else
         {
-          if ( v180 <= 0 )
+          if ( v175 <= 0 )
             goto LABEL_319;
           do
           {
-            LOWORD(v22) = *v149;
-            LODWORD(v22) = sub_10027B10(v22);
+            LODWORD(v22) = sub_10027B10(*v145);
             *a1 = v22;
             v23 += 4;
             ++a1;
-            ++v149;
+            ++v145;
             if ( v23 >= a2 )
               return v22;
-            LODWORD(v22) = ++v187;
+            ++v182;
           }
-          while ( v187 < v180 );
+          while ( v182 < v175 );
         }
-        HIDWORD(v22) = v180;
+        HIDWORD(v22) = v175;
 LABEL_319:
         if ( a7 )
         {
-          v154 = 0;
-          for ( LODWORD(v22) = a1 - 1; v154 < SHIDWORD(v22); ++v154 )
+          v149 = 0;
+          for ( LODWORD(v22) = a1 - 1; v149 < SHIDWORD(v22); ++v149 )
           {
             v23 += 4;
             *a1++ = *(_DWORD *)v22;
@@ -879,9 +855,9 @@ LABEL_319:
               return v22;
           }
         }
-        v31 = v170 + 1 < v176;
-        v250 += *(_DWORD *)(v227 + 8);
-        ++v170;
+        v31 = v165 + 1 < v171;
+        v245 += *(_DWORD *)(v222 + 8);
+        ++v165;
         if ( !v31 )
           goto LABEL_324;
       }
@@ -890,154 +866,154 @@ LABEL_319:
     {
       if ( a6 == 4 )
       {
-        v65 = *(_DWORD *)(HIDWORD(v22) + 32);
+        v63 = *(_DWORD *)(HIDWORD(v22) + 32);
         if ( a13 == 1 )
         {
-          v66 = 1 << (v65 - 1);
-          v67 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-          v68 = 0;
-          v221 = v66;
-          v211 = 0;
-          for ( mm = v67; v211 < mm; ++v211 )
+          v64 = 1 << (v63 - 1);
+          v65 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+          v66 = 0;
+          v216 = v64;
+          v206 = 0;
+          for ( mm = v65; v206 < mm; ++v206 )
           {
-            v69 = (unsigned __int8 *)v250;
-            v234 = v250;
-            if ( (v68 & a22) != 0 )
+            v67 = (unsigned __int8 *)v245;
+            v229 = v245;
+            if ( (v66 & a22) != 0 )
             {
-              v70 = 0;
-              for ( nn = 0; v70 < v66; v69 = v78 + 4 )
+              v68 = 0;
+              for ( nn = 0; v68 < v64; v67 = v76 + 4 )
               {
-                v71 = v69 + 4;
-                v229 = 0;
-                v235 = v71;
+                v69 = v67 + 4;
+                v224 = 0;
+                v230 = v69;
                 do
                 {
-                  if ( v70 >= v66 )
+                  if ( v68 >= v64 )
                     break;
-                  v224 = *v71;
-                  v184 = a14 - a18;
-                  v72 = (v224 >> 4) | v224 & 0xF0;
-                  v73 = (unsigned __int8)(a20 - v72 * (a16 - a20));
-                  BYTE1(v73) = a21 - v72 * (a17 - a21);
-                  v74 = v23 + 4;
-                  v22 = 2155905153i64 * v184 * v72;
+                  v219 = *v69;
+                  v179 = a14 - a18;
+                  v70 = (v219 >> 4) | v219 & 0xF0;
+                  v71 = (unsigned __int8)(a20 - v70 * (a16 - a20));
+                  BYTE1(v71) = a21 - v70 * (a17 - a21);
+                  v72 = v23 + 4;
+                  v22 = 2155905153i64 * v179 * v70;
                   LOBYTE(v22) = a18;
-                  v75 = a1 + 1;
-                  *(v75 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - v72 * (a15 - a19)) | (v73 << 8)) << 8);
-                  if ( v74 >= a2 )
+                  v73 = a1 + 1;
+                  *(v73 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - v70 * (a15 - a19)) | (v71 << 8)) << 8);
+                  if ( v72 >= a2 )
                     return v22;
-                  v23 = v74 + 4;
-                  a1 = v75 + 1;
-                  v76 = v224 & 0xF | (unsigned __int8)(16 * v224);
-                  LOBYTE(v77) = a20 - v76 * (a16 - a20);
-                  HIBYTE(v77) = a21 - v76 * (a17 - a21);
-                  v22 = 2155905153i64 * v184 * v76;
+                  v23 = v72 + 4;
+                  a1 = v73 + 1;
+                  v74 = v219 & 0xF | (unsigned __int8)(16 * v219);
+                  LOBYTE(v75) = a20 - v74 * (a16 - a20);
+                  HIBYTE(v75) = a21 - v74 * (a17 - a21);
+                  v22 = 2155905153i64 * v179 * v74;
                   LOBYTE(v22) = a18;
-                  *(a1 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - v76 * (a15 - a19)) | (v77 << 8)) << 8);
+                  *(a1 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - v74 * (a15 - a19)) | (v75 << 8)) << 8);
                   if ( v23 >= a2 )
                     return v22;
-                  v66 = v221;
-                  v71 = v235 + 1;
-                  v70 = nn + 1;
-                  ++v235;
-                  v31 = v229 + 1 < 4;
+                  v64 = v216;
+                  v69 = v230 + 1;
+                  v68 = nn + 1;
+                  ++v230;
+                  v31 = v224 + 1 < 4;
                   ++nn;
-                  ++v229;
+                  ++v224;
                 }
                 while ( v31 );
-                v78 = v71 - 8;
-                v230 = 0;
-                v236 = v78;
+                v76 = v69 - 8;
+                v225 = 0;
+                v231 = v76;
                 do
                 {
-                  if ( v70 >= v66 )
+                  if ( v68 >= v64 )
                     break;
-                  v225 = *v78;
-                  v242 = (v225 >> 4) | v225 & 0xF0;
-                  v185 = a14 - a18;
-                  v79 = (unsigned __int8)(a20 - (a16 - a20) * v242);
-                  BYTE1(v79) = a21 - (a17 - a21) * v242;
-                  v80 = v23 + 4;
-                  v22 = 2155905153i64 * v185 * v242;
+                  v220 = *v76;
+                  v237 = (v220 >> 4) | v220 & 0xF0;
+                  v180 = a14 - a18;
+                  v77 = (unsigned __int8)(a20 - (a16 - a20) * v237);
+                  BYTE1(v77) = a21 - (a17 - a21) * v237;
+                  v78 = v23 + 4;
+                  v22 = 2155905153i64 * v180 * v237;
                   LOBYTE(v22) = a18;
-                  v81 = a1 + 1;
-                  *(v81 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - (a15 - a19) * v242) | (v79 << 8)) << 8);
-                  if ( v80 >= a2 )
+                  v79 = a1 + 1;
+                  *(v79 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - (a15 - a19) * v237) | (v77 << 8)) << 8);
+                  if ( v78 >= a2 )
                     return v22;
-                  v23 = v80 + 4;
-                  a1 = v81 + 1;
-                  LOBYTE(v82) = a20 - (a16 - a20) * (v225 & 0xF | (16 * v225));
-                  HIBYTE(v82) = a21 - (a17 - a21) * (v225 & 0xF | (16 * v225));
-                  v22 = 2155905153i64 * v185 * (v225 & 0xFu | (unsigned __int8)(16 * v225));
+                  v23 = v78 + 4;
+                  a1 = v79 + 1;
+                  LOBYTE(v80) = a20 - (a16 - a20) * (v220 & 0xF | (16 * v220));
+                  HIBYTE(v80) = a21 - (a17 - a21) * (v220 & 0xF | (16 * v220));
+                  v22 = 2155905153i64 * v180 * (v220 & 0xFu | (unsigned __int8)(16 * v220));
                   LOBYTE(v22) = a18;
-                  *(a1 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - (a15 - a19) * (v225 & 0xF | (16 * v225))) | (v82 << 8)) << 8);
+                  *(a1 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - (a15 - a19) * (v220 & 0xF | (16 * v220))) | (v80 << 8)) << 8);
                   if ( v23 >= a2 )
                     return v22;
-                  v66 = v221;
-                  v78 = v236 + 1;
-                  v70 = nn + 1;
-                  ++v236;
-                  v31 = v230 + 1 < 4;
+                  v64 = v216;
+                  v76 = v231 + 1;
+                  v68 = nn + 1;
+                  ++v231;
+                  v31 = v225 + 1 < 4;
                   ++nn;
-                  ++v230;
+                  ++v225;
                 }
                 while ( v31 );
               }
             }
             else
             {
-              v161 = 0;
-              if ( v66 > 0 )
+              v156 = 0;
+              if ( v64 > 0 )
               {
-                v186 = a14 - a18;
-                v178 = a15 - a19;
-                v83 = a16 - a20;
-                v204 = a17 - a21;
+                v181 = a14 - a18;
+                v173 = a15 - a19;
+                v81 = a16 - a20;
+                v199 = a17 - a21;
                 while ( 1 )
                 {
-                  v84 = v23 + 4;
-                  v226 = *v69;
-                  v85 = a1 + 1;
-                  v86 = (v226 >> 4) | v226 & 0xF0;
-                  v87 = (int)((unsigned __int64)(2155905153i64 * v83 * v86) >> 32) >> 7;
-                  LOBYTE(v88) = a20 + (v87 < 0) + v87;
-                  HIBYTE(v88) = a21 - v204 * v86;
-                  v22 = 2155905153i64 * v186 * v86;
+                  v82 = v23 + 4;
+                  v221 = *v67;
+                  v83 = a1 + 1;
+                  v84 = (v221 >> 4) | v221 & 0xF0;
+                  v85 = (int)((unsigned __int64)(2155905153i64 * v81 * v84) >> 32) >> 7;
+                  LOBYTE(v86) = a20 + (v85 < 0) + v85;
+                  HIBYTE(v86) = a21 - v199 * v84;
+                  v22 = 2155905153i64 * v181 * v84;
                   LOBYTE(v22) = a18;
-                  *(v85 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 + ((int)((unsigned __int64)(2155905153i64 * v178 * v86) >> 32) >> 7 < 0) + ((int)((unsigned __int64)(2155905153i64 * v178 * v86) >> 32) >> 7)) | (v88 << 8)) << 8);
-                  if ( v84 >= a2 )
+                  *(v83 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 + ((int)((unsigned __int64)(2155905153i64 * v173 * v84) >> 32) >> 7 < 0) + ((int)((unsigned __int64)(2155905153i64 * v173 * v84) >> 32) >> 7)) | (v86 << 8)) << 8);
+                  if ( v82 >= a2 )
                     return v22;
-                  v23 = v84 + 4;
-                  a1 = v85 + 1;
-                  LOBYTE(v89) = a20 - (a16 - a20) * (v226 & 0xF | (16 * v226));
-                  HIBYTE(v89) = a21 - v204 * (v226 & 0xF | (16 * v226));
-                  v22 = 2155905153i64 * v186 * (v226 & 0xFu | (unsigned __int8)(16 * v226));
+                  v23 = v82 + 4;
+                  a1 = v83 + 1;
+                  LOBYTE(v87) = a20 - (a16 - a20) * (v221 & 0xF | (16 * v221));
+                  HIBYTE(v87) = a21 - v199 * (v221 & 0xF | (16 * v221));
+                  v22 = 2155905153i64 * v181 * (v221 & 0xFu | (unsigned __int8)(16 * v221));
                   LOBYTE(v22) = a18;
-                  *(a1 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - v178 * (v226 & 0xF | (16 * v226))) | (v89 << 8)) << 8);
+                  *(a1 - 1) = (unsigned __int8)(a18 + (SHIDWORD(v22) >> 7 < 0) + (SHIDWORD(v22) >> 7)) | (((unsigned __int8)(a19 - v173 * (v221 & 0xF | (16 * v221))) | (v87 << 8)) << 8);
                   if ( v23 >= a2 )
                     return v22;
-                  v66 = v221;
-                  v69 = (unsigned __int8 *)++v234;
-                  if ( ++v161 >= v221 )
+                  v64 = v216;
+                  v67 = (unsigned __int8 *)++v229;
+                  if ( ++v156 >= v216 )
                     break;
-                  v83 = a16 - a20;
+                  v81 = a16 - a20;
                 }
               }
             }
             if ( a7 )
             {
-              v90 = 0;
-              for ( LODWORD(v22) = a1 - 1; v90 < v66; ++v90 )
+              v88 = 0;
+              for ( LODWORD(v22) = a1 - 1; v88 < v64; ++v88 )
               {
-                v91 = v23 + 4;
+                v89 = v23 + 4;
                 *a1 = *(_DWORD *)v22;
-                v92 = a1 + 1;
+                v90 = a1 + 1;
                 LODWORD(v22) = v22 - 4;
-                if ( v91 < a2 )
+                if ( v89 < a2 )
                 {
-                  v23 = v91 + 4;
-                  *v92 = *(_DWORD *)v22;
-                  a1 = v92 + 1;
+                  v23 = v89 + 4;
+                  *v90 = *(_DWORD *)v22;
+                  a1 = v90 + 1;
                   LODWORD(v22) = v22 - 4;
                   if ( v23 < a2 )
                     continue;
@@ -1045,163 +1021,163 @@ LABEL_319:
                 return v22;
               }
             }
-            v250 += *(_DWORD *)(v227 + 8);
-            v67 = mm;
-            v68 = v211 + 1;
+            v245 += *(_DWORD *)(v222 + 8);
+            v65 = mm;
+            v66 = v206 + 1;
           }
           if ( a8 )
           {
             HIDWORD(v22) = a1;
-            v212 = 0;
-            if ( v67 > 0 )
+            v207 = 0;
+            if ( v65 > 0 )
             {
               do
               {
-                LODWORD(v22) = 2 * v66;
+                LODWORD(v22) = 2 * v64;
                 if ( !a7 )
-                  LODWORD(v22) = v66;
+                  LODWORD(v22) = v64;
                 HIDWORD(v22) -= 8 * v22;
-                v93 = 2 * v66;
+                v91 = 2 * v64;
                 LODWORD(v22) = HIDWORD(v22);
                 if ( !a7 )
-                  v93 = v66;
-                for ( ; v93 > 0; --v93 )
+                  v91 = v64;
+                for ( ; v91 > 0; --v91 )
                 {
-                  v94 = v23 + 4;
+                  v92 = v23 + 4;
                   *a1 = *(_DWORD *)v22;
-                  v95 = a1 + 1;
+                  v93 = a1 + 1;
                   LODWORD(v22) = v22 + 4;
-                  if ( v94 < a2 )
+                  if ( v92 < a2 )
                   {
-                    v23 = v94 + 4;
-                    *v95 = *(_DWORD *)v22;
-                    a1 = v95 + 1;
+                    v23 = v92 + 4;
+                    *v93 = *(_DWORD *)v22;
+                    a1 = v93 + 1;
                     LODWORD(v22) = v22 + 4;
                     if ( v23 < a2 )
                       continue;
                   }
                   return v22;
                 }
-                ++v212;
+                ++v207;
               }
-              while ( v212 < mm );
+              while ( v207 < mm );
             }
           }
         }
         else
         {
-          v96 = 1 << (v65 - 1);
-          v97 = 0;
-          v222 = v96;
-          v231 = 0;
-          v199 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-          if ( v199 > 0 )
+          v94 = 1 << (v63 - 1);
+          v95 = 0;
+          v217 = v94;
+          v226 = 0;
+          v194 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+          if ( v194 > 0 )
           {
             do
             {
-              HIDWORD(v22) = v250;
-              if ( (a22 & v97) != 0 )
+              HIDWORD(v22) = v245;
+              if ( (a22 & v95) != 0 )
               {
-                v98 = 0;
-                for ( i1 = 0; v98 < v96; HIDWORD(v22) += 4 )
+                v96 = 0;
+                for ( i1 = 0; v96 < v94; HIDWORD(v22) += 4 )
                 {
                   HIDWORD(v22) += 4;
-                  v213 = 0;
+                  v208 = 0;
                   do
                   {
-                    if ( v98 >= v96 )
+                    if ( v96 >= v94 )
                       break;
-                    v99 = *(_BYTE *)HIDWORD(v22);
-                    v100 = v23 + 4;
-                    v101 = a1 + 1;
+                    v97 = *(_BYTE *)HIDWORD(v22);
+                    v98 = v23 + 4;
+                    v99 = a1 + 1;
                     LODWORD(v22) = (unsigned __int8)*(_BYTE *)HIDWORD(v22) >> 4;
-                    *(v101 - 1) = (((unsigned int)v22 | *(_BYTE *)HIDWORD(v22) & 0xF0) << 24) | 0xFFFFFF;
-                    if ( v100 >= a2 )
+                    *(v99 - 1) = (((unsigned int)v22 | *(_BYTE *)HIDWORD(v22) & 0xF0) << 24) | 0xFFFFFF;
+                    if ( v98 >= a2 )
                       return v22;
-                    v23 = v100 + 4;
-                    a1 = v101 + 1;
-                    LODWORD(v22) = ((v99 & 0xF | (unsigned __int8)(16 * v99)) << 24) | 0xFFFFFF;
+                    v23 = v98 + 4;
+                    a1 = v99 + 1;
+                    LODWORD(v22) = ((v97 & 0xF | (unsigned __int8)(16 * v97)) << 24) | 0xFFFFFF;
                     *(a1 - 1) = v22;
                     if ( v23 >= a2 )
                       return v22;
-                    v96 = v222;
+                    v94 = v217;
                     ++HIDWORD(v22);
-                    v98 = i1 + 1;
-                    v31 = v213 + 1 < 4;
+                    v96 = i1 + 1;
+                    v31 = v208 + 1 < 4;
                     ++i1;
-                    ++v213;
+                    ++v208;
                   }
                   while ( v31 );
                   HIDWORD(v22) -= 8;
-                  v214 = 0;
+                  v209 = 0;
                   do
                   {
-                    if ( v98 >= v96 )
+                    if ( v96 >= v94 )
                       break;
                     LOBYTE(v22) = *(_BYTE *)HIDWORD(v22);
-                    v102 = v23 + 4;
-                    v103 = a1 + 1;
-                    *(v103 - 1) = ((((unsigned __int8)*(_BYTE *)HIDWORD(v22) >> 4) | *(_BYTE *)HIDWORD(v22) & 0xF0) << 24) | 0xFFFFFF;
-                    if ( v102 >= a2 )
+                    v100 = v23 + 4;
+                    v101 = a1 + 1;
+                    *(v101 - 1) = ((((unsigned __int8)*(_BYTE *)HIDWORD(v22) >> 4) | *(_BYTE *)HIDWORD(v22) & 0xF0) << 24) | 0xFFFFFF;
+                    if ( v100 >= a2 )
                       return v22;
-                    v104 = v22;
-                    v23 = v102 + 4;
+                    v102 = v22;
+                    v23 = v100 + 4;
                     LODWORD(v22) = (unsigned __int8)(16 * v22);
-                    a1 = v103 + 1;
-                    *(a1 - 1) = (((unsigned int)v22 | v104 & 0xF) << 24) | 0xFFFFFF;
+                    a1 = v101 + 1;
+                    *(a1 - 1) = (((unsigned int)v22 | v102 & 0xF) << 24) | 0xFFFFFF;
                     if ( v23 >= a2 )
                       return v22;
-                    v96 = v222;
+                    v94 = v217;
                     ++HIDWORD(v22);
-                    v98 = i1 + 1;
-                    v31 = v214 + 1 < 4;
+                    v96 = i1 + 1;
+                    v31 = v209 + 1 < 4;
                     ++i1;
-                    ++v214;
+                    ++v209;
                   }
                   while ( v31 );
                 }
               }
               else
               {
-                v163 = 0;
-                if ( v96 > 0 )
+                v158 = 0;
+                if ( v94 > 0 )
                 {
                   do
                   {
-                    v105 = *(_BYTE *)HIDWORD(v22);
-                    v106 = v23 + 4;
-                    v107 = a1 + 1;
+                    v103 = *(_BYTE *)HIDWORD(v22);
+                    v104 = v23 + 4;
+                    v105 = a1 + 1;
                     LODWORD(v22) = *(_BYTE *)HIDWORD(v22) & 0xF0;
-                    *(v107 - 1) = (((unsigned int)v22 | ((unsigned __int8)*(_BYTE *)HIDWORD(v22) >> 4)) << 24) | 0xFFFFFF;
-                    if ( v106 >= a2 )
+                    *(v105 - 1) = (((unsigned int)v22 | ((unsigned __int8)*(_BYTE *)HIDWORD(v22) >> 4)) << 24) | 0xFFFFFF;
+                    if ( v104 >= a2 )
                       return v22;
-                    v23 = v106 + 4;
-                    a1 = v107 + 1;
-                    LODWORD(v22) = ((v105 & 0xF | (unsigned __int8)(16 * v105)) << 24) | 0xFFFFFF;
+                    v23 = v104 + 4;
+                    a1 = v105 + 1;
+                    LODWORD(v22) = ((v103 & 0xF | (unsigned __int8)(16 * v103)) << 24) | 0xFFFFFF;
                     *(a1 - 1) = v22;
                     if ( v23 >= a2 )
                       return v22;
-                    v96 = v222;
+                    v94 = v217;
                     ++HIDWORD(v22);
-                    ++v163;
+                    ++v158;
                   }
-                  while ( v163 < v222 );
+                  while ( v158 < v217 );
                 }
               }
               if ( a7 )
               {
-                v108 = 0;
-                for ( LODWORD(v22) = a1 - 1; v108 < v96; ++v108 )
+                v106 = 0;
+                for ( LODWORD(v22) = a1 - 1; v106 < v94; ++v106 )
                 {
-                  v109 = v23 + 4;
+                  v107 = v23 + 4;
                   *a1 = *(_DWORD *)v22;
-                  v110 = a1 + 1;
+                  v108 = a1 + 1;
                   LODWORD(v22) = v22 - 4;
-                  if ( v109 < a2 )
+                  if ( v107 < a2 )
                   {
-                    v23 = v109 + 4;
-                    *v110 = *(_DWORD *)v22;
-                    a1 = v110 + 1;
+                    v23 = v107 + 4;
+                    *v108 = *(_DWORD *)v22;
+                    a1 = v108 + 1;
                     LODWORD(v22) = v22 - 4;
                     if ( v23 < a2 )
                       continue;
@@ -1209,35 +1185,35 @@ LABEL_319:
                   return v22;
                 }
               }
-              v250 += *(_DWORD *)(v227 + 8);
-              v97 = ++v231;
+              v245 += *(_DWORD *)(v222 + 8);
+              v95 = ++v226;
             }
-            while ( v231 < v199 );
+            while ( v226 < v194 );
           }
           if ( a8 )
           {
             HIDWORD(v22) = a1;
-            for ( i2 = 0; i2 < v199; ++i2 )
+            for ( i2 = 0; i2 < v194; ++i2 )
             {
-              LODWORD(v22) = 2 * v96;
+              LODWORD(v22) = 2 * v94;
               if ( !a7 )
-                LODWORD(v22) = v96;
+                LODWORD(v22) = v94;
               HIDWORD(v22) -= 8 * v22;
-              v111 = 2 * v96;
+              v109 = 2 * v94;
               LODWORD(v22) = HIDWORD(v22);
               if ( !a7 )
-                v111 = v96;
-              for ( ; v111 > 0; --v111 )
+                v109 = v94;
+              for ( ; v109 > 0; --v109 )
               {
-                v112 = v23 + 4;
+                v110 = v23 + 4;
                 *a1 = *(_DWORD *)v22;
-                v113 = a1 + 1;
+                v111 = a1 + 1;
                 LODWORD(v22) = v22 + 4;
-                if ( v112 < a2 )
+                if ( v110 < a2 )
                 {
-                  v23 = v112 + 4;
-                  *v113 = *(_DWORD *)v22;
-                  a1 = v113 + 1;
+                  v23 = v110 + 4;
+                  *v111 = *(_DWORD *)v22;
+                  a1 = v111 + 1;
                   LODWORD(v22) = v22 + 4;
                   if ( v23 < a2 )
                     continue;
@@ -1250,49 +1226,49 @@ LABEL_319:
       }
       goto LABEL_336;
     }
-    if ( (a12 & 2) == 0 || v241 != 1 )
+    if ( (a12 & 2) == 0 || v236 != 1 )
     {
       v46 = 1 << (*(_DWORD *)(HIDWORD(v22) + 32) - 1);
       v47 = 0;
-      v193 = v46;
-      v158 = 0;
-      v197 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
-      if ( v197 <= 0 )
+      v188 = v46;
+      v153 = 0;
+      v192 = 1 << *(_DWORD *)(HIDWORD(v22) + 36);
+      if ( v192 <= 0 )
       {
 LABEL_73:
         if ( a8 )
         {
           HIDWORD(v22) = a1;
-          for ( i3 = 0; i3 < v197; ++i3 )
+          for ( i3 = 0; i3 < v192; ++i3 )
           {
             LODWORD(v22) = 2 * v46;
             if ( !a7 )
               LODWORD(v22) = v46;
             HIDWORD(v22) -= 8 * v22;
-            v62 = 2 * v46;
+            v60 = 2 * v46;
             LODWORD(v22) = HIDWORD(v22);
             if ( !a7 )
-              v62 = v46;
-            if ( v62 > 0 )
+              v60 = v46;
+            if ( v60 > 0 )
             {
               do
               {
-                v63 = v23 + 4;
+                v61 = v23 + 4;
                 *a1 = *(_DWORD *)v22;
-                v64 = a1 + 1;
+                v62 = a1 + 1;
                 LODWORD(v22) = v22 + 4;
-                if ( v63 >= a2 )
+                if ( v61 >= a2 )
                   return v22;
-                v23 = v63 + 4;
-                *v64 = *(_DWORD *)v22;
-                a1 = v64 + 1;
+                v23 = v61 + 4;
+                *v62 = *(_DWORD *)v22;
+                a1 = v62 + 1;
                 LODWORD(v22) = v22 + 4;
                 if ( v23 >= a2 )
                   return v22;
-                --v62;
+                --v60;
               }
-              while ( v62 > 0 );
-              v46 = v193;
+              while ( v60 > 0 );
+              v46 = v188;
             }
           }
         }
@@ -1300,73 +1276,65 @@ LABEL_73:
       }
       while ( 2 )
       {
-        WORD1(v22) = 0;
-        v181 = (char *)v250;
-        HIWORD(v22) = HIWORD(a22);
-        v177 = 0;
+        v176 = (char *)v245;
+        v172 = 0;
         if ( (a22 & v47) != 0 )
         {
           if ( v46 > 0 )
           {
             do
             {
-              v202 = 0;
-              v182 = v181 + 4;
+              v197 = 0;
+              v177 = v176 + 4;
               do
               {
-                HIWORD(v48) = HIWORD(v193);
-                if ( v177 >= v193 )
+                if ( v172 >= v188 )
                   break;
-                v49 = *v182;
-                WORD2(v22) = *(_WORD *)(a5 + 2 * ((unsigned __int8)*v182 >> 4));
-                LODWORD(v22) = sub_10027B10(HIDWORD(v22));
+                v48 = *v177;
+                LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * ((unsigned __int8)*v177 >> 4)));
                 *a1 = v22;
-                v51 = v23 + 4;
-                v52 = a1 + 1;
-                if ( v51 >= a2 )
+                v49 = v23 + 4;
+                v50 = a1 + 1;
+                if ( v49 >= a2 )
                   return v22;
-                LOWORD(v50) = *(_WORD *)(a5 + 2 * (v49 & 0xF));
-                LODWORD(v22) = sub_10027B10(v50);
-                *v52 = v22;
-                v23 = v51 + 4;
-                a1 = v52 + 1;
+                LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * (v48 & 0xF)));
+                *v50 = v22;
+                v23 = v49 + 4;
+                a1 = v50 + 1;
                 if ( v23 >= a2 )
                   return v22;
-                ++v182;
                 ++v177;
-                ++v202;
+                ++v172;
+                ++v197;
               }
-              while ( v202 < 4 );
-              v203 = 0;
-              v183 = (unsigned __int8 *)(v182 - 8);
+              while ( v197 < 4 );
+              v198 = 0;
+              v178 = (unsigned __int8 *)(v177 - 8);
               do
               {
-                HIWORD(v22) = HIWORD(v177);
-                if ( v177 >= v193 )
+                if ( v172 >= v188 )
                   break;
-                v53 = *v183;
-                LOWORD(v48) = *(_WORD *)(a5 + 2 * (*v183 >> 4));
-                LODWORD(v22) = sub_10027B10(v48);
+                v51 = *v178;
+                LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * (*v178 >> 4)));
                 *a1 = v22;
-                v54 = v23 + 4;
-                v55 = a1 + 1;
-                if ( v54 >= a2 )
+                v52 = v23 + 4;
+                v53 = a1 + 1;
+                if ( v52 >= a2 )
                   return v22;
-                LOWORD(v22) = *(_WORD *)(a5 + 2 * (v53 & 0xF));
-                LODWORD(v22) = sub_10027B10(v22);
-                *v55 = v22;
-                v23 = v54 + 4;
-                a1 = v55 + 1;
+                LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * (v51 & 0xF)));
+                *v53 = v22;
+                v23 = v52 + 4;
+                a1 = v53 + 1;
                 if ( v23 >= a2 )
                   return v22;
-                ++v183;
-                ++v177;
-                ++v203;
+                ++v178;
+                ++v172;
+                ++v198;
               }
-              while ( v203 < 4 );
-              v181 = (char *)(v183 + 4);
+              while ( v198 < 4 );
+              v176 = (char *)(v178 + 4);
             }
-            while ( v177 < v193 );
+            while ( v172 < v188 );
             goto LABEL_66;
           }
         }
@@ -1374,43 +1342,40 @@ LABEL_73:
         {
           do
           {
-            v56 = *v181;
-            LOWORD(v22) = *(_WORD *)(a5 + 2 * ((unsigned __int8)*v181 >> 4));
-            LODWORD(v22) = sub_10027B10(v22);
+            v54 = *v176;
+            LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * ((unsigned __int8)*v176 >> 4)));
             *a1 = v22;
-            v57 = v23 + 4;
-            v58 = a1 + 1;
-            if ( v57 >= a2 )
+            v55 = v23 + 4;
+            v56 = a1 + 1;
+            if ( v55 >= a2 )
               return v22;
-            WORD2(v22) = *(_WORD *)(a5 + 2 * (v56 & 0xF));
-            LODWORD(v22) = sub_10027B10(HIDWORD(v22));
-            *v58 = v22;
-            v23 = v57 + 4;
-            a1 = v58 + 1;
+            LODWORD(v22) = sub_10027B10(*(_WORD *)(a5 + 2 * (v54 & 0xF)));
+            *v56 = v22;
+            v23 = v55 + 4;
+            a1 = v56 + 1;
             if ( v23 >= a2 )
               return v22;
-            LODWORD(v22) = v177 + 1;
-            ++v181;
-            ++v177;
+            ++v176;
+            ++v172;
           }
-          while ( v177 < v193 );
+          while ( v172 < v188 );
 LABEL_66:
-          v46 = v193;
+          v46 = v188;
         }
         if ( a7 )
         {
-          v59 = 0;
-          for ( LODWORD(v22) = a1 - 1; v59 < v46; ++v59 )
+          v57 = 0;
+          for ( LODWORD(v22) = a1 - 1; v57 < v46; ++v57 )
           {
-            v60 = v23 + 4;
+            v58 = v23 + 4;
             *a1 = *(_DWORD *)v22;
-            v61 = a1 + 1;
+            v59 = a1 + 1;
             LODWORD(v22) = v22 - 4;
-            if ( v60 < a2 )
+            if ( v58 < a2 )
             {
-              v23 = v60 + 4;
-              *v61 = *(_DWORD *)v22;
-              a1 = v61 + 1;
+              v23 = v58 + 4;
+              *v59 = *(_DWORD *)v22;
+              a1 = v59 + 1;
               LODWORD(v22) = v22 - 4;
               if ( v23 < a2 )
                 continue;
@@ -1418,27 +1383,27 @@ LABEL_66:
             return v22;
           }
         }
-        v250 += *(_DWORD *)(v227 + 8);
-        v47 = ++v158;
-        if ( v158 >= v197 )
+        v245 += *(_DWORD *)(v222 + 8);
+        v47 = ++v153;
+        if ( v153 >= v192 )
           goto LABEL_73;
         continue;
       }
     }
     v25 = 1 << (a11[24] - 1);
-    v191 = 0;
-    v228 = v25;
-    v240 = 1 << a11[25];
-    if ( v240 > 0 )
+    v186 = 0;
+    v223 = v25;
+    v235 = 1 << a11[25];
+    if ( v235 > 0 )
       break;
 LABEL_33:
     if ( a8 )
     {
       v42 = a1;
-      v192 = 0;
-      if ( v240 > 0 )
+      v187 = 0;
+      if ( v235 > 0 )
       {
-        HIDWORD(v22) = v228;
+        HIDWORD(v22) = v223;
         while ( 1 )
         {
           LODWORD(v22) = 2 * HIDWORD(v22);
@@ -1452,7 +1417,7 @@ LABEL_33:
           if ( v43 > 0 )
             break;
 LABEL_45:
-          if ( ++v192 >= v240 )
+          if ( ++v187 >= v235 )
             goto LABEL_336;
         }
         while ( 1 )
@@ -1471,33 +1436,33 @@ LABEL_45:
             return v22;
           if ( --v43 <= 0 )
           {
-            HIDWORD(v22) = v228;
+            HIDWORD(v22) = v223;
             goto LABEL_45;
           }
         }
       }
     }
 LABEL_336:
-    LODWORD(v22) = ++v241;
-    if ( v241 >= a10 )
+    LODWORD(v22) = ++v236;
+    if ( v236 >= a10 )
       return v22;
   }
   while ( 1 )
   {
-    v26 = (_BYTE *)v250;
-    if ( (a22 & v191) == 0 )
+    v26 = (_BYTE *)v245;
+    if ( (a22 & v186) == 0 )
       break;
     v27 = 0;
-    v196 = 0;
+    v191 = 0;
     if ( v25 > 0 )
     {
       do
       {
         v28 = v26 + 4;
-        v172 = 0;
+        v167 = 0;
         do
         {
-          if ( v27 >= v228 )
+          if ( v27 >= v223 )
             break;
           v29 = v23 + 4;
           v30 = a1 + 1;
@@ -1513,16 +1478,16 @@ LABEL_336:
             return v22;
           ++v28;
           ++v27;
-          v31 = v172 + 1 < 4;
-          v196 = v27;
-          ++v172;
+          v31 = v167 + 1 < 4;
+          v191 = v27;
+          ++v167;
         }
         while ( v31 );
         v32 = v28 - 8;
         v33 = 0;
         do
         {
-          if ( v27 >= v228 )
+          if ( v27 >= v223 )
             break;
           v34 = v23 + 4;
           v35 = a1 + 1;
@@ -1537,21 +1502,21 @@ LABEL_336:
           if ( v23 >= a2 )
             return v22;
           ++v32;
-          v27 = v196 + 1;
+          v27 = v191 + 1;
           ++v33;
-          ++v196;
+          ++v191;
         }
         while ( v33 < 4 );
         v26 = v32 + 4;
       }
-      while ( v27 < v228 );
+      while ( v27 < v223 );
     }
 LABEL_27:
     if ( a7 )
     {
       v39 = 0;
       LODWORD(v22) = a1 - 1;
-      if ( v228 > 0 )
+      if ( v223 > 0 )
       {
         do
         {
@@ -1568,13 +1533,13 @@ LABEL_27:
           if ( v23 >= a2 )
             return v22;
         }
-        while ( ++v39 < v228 );
+        while ( ++v39 < v223 );
       }
     }
-    v250 += a11[18];
-    if ( ++v191 >= v240 )
+    v245 += a11[18];
+    if ( ++v186 >= v235 )
       goto LABEL_33;
-    v25 = v228;
+    v25 = v223;
   }
   v36 = 0;
   if ( v25 <= 0 )
@@ -1594,11 +1559,7 @@ LABEL_27:
     if ( v23 >= a2 )
       return v22;
     ++v26;
-    if ( ++v36 >= v228 )
+    if ( ++v36 >= v223 )
       goto LABEL_27;
   }
 }
-// 10025E67: variable 'v22' is possibly undefined
-// 10025E8E: variable 'v50' is possibly undefined
-// 10025F18: variable 'v48' is possibly undefined
-// 10027B10: using guessed type _DWORD __cdecl sub_10027B10(_DWORD);

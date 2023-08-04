@@ -7,7 +7,7 @@ int *__cdecl sub_100106A0(int a1, int a2, int a3, _DWORD *a4, _DWORD *a5, _DWORD
   int v9; // esi
   int *result; // eax
   int *v11; // ecx
-  int v12; // edx
+  int *v12; // edx
   int *v13; // esi
   int *v14; // esi
   int *v15; // [esp+10h] [ebp-8h] BYREF
@@ -82,7 +82,7 @@ int *__cdecl sub_100106A0(int a1, int a2, int a3, _DWORD *a4, _DWORD *a5, _DWORD
   else if ( (int)result > 0 )
   {
     v11 = v15;
-    v12 = dword_102E5ECC;
+    v12 = (int *)dword_102E5ECC;
     v13 = result;
     do
     {
@@ -91,9 +91,9 @@ int *__cdecl sub_100106A0(int a1, int a2, int a3, _DWORD *a4, _DWORD *a5, _DWORD
       v15 = v11;
       if ( result >= dword_102E54C0 && result < &dword_102E5EC0 )
       {
-        *result = v12;
+        *result = (int)v12;
         v11 = v15;
-        v12 = (int)result;
+        v12 = result;
         dword_102E5ECC = (int)result;
       }
       v13 = (int *)((char *)v13 - 1);
@@ -103,7 +103,5 @@ int *__cdecl sub_100106A0(int a1, int a2, int a3, _DWORD *a4, _DWORD *a5, _DWORD
   return result;
 }
 // 10010894: conditional instruction was optimized away because of '%var_4.4>=2'
-// 10010960: using guessed type int sub_10010960();
-// 10010980: using guessed type int sub_10010980();
 // 102E5EC0: using guessed type int dword_102E5EC0;
 // 102E5ECC: using guessed type int dword_102E5ECC;

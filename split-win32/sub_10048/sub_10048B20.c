@@ -2,22 +2,22 @@
 //----- (10048B20) --------------------------------------------------------
 void __stdcall sub_10048B20(int a1)
 {
-  int v1; // esi
-  DWORD ticks; // esi
+  int waitTicksAdd; // esi
+  DWORD waitTicks; // esi
   char **ppFilepath; // esi
   void *v4; // esi
 
-  v1 = 0;
+  waitTicksAdd = 0;
   if ( dword_10AA2854 == 2 )
   {
-    v1 = 0x11DA;
+    waitTicksAdd = 0x11DA;
   }
   else if ( dword_10AA2854 == 3 )
   {
-    v1 = 0x604;
+    waitTicksAdd = 0x604;
   }
-  ticks = getTicks() + v1;
-  while ( getTicks() < ticks )
+  waitTicks = getTicks() + waitTicksAdd;
+  while ( getTicks() < waitTicks )
     Sleep(0);
   if ( !a1 )
   {

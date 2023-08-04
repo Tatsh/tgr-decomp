@@ -41,8 +41,6 @@ LABEL_7:
   }
   return result;
 }
-// 10024240: using guessed type _DWORD __cdecl sub_10024240(_DWORD);
-// 10024260: using guessed type _DWORD __cdecl sub_10024260(_DWORD);
 // 104BBE38: using guessed type int dword_104BBE38[];
 // 104C1698: using guessed type int dword_104C1698;
 // 104C169C: using guessed type int dword_104C169C;

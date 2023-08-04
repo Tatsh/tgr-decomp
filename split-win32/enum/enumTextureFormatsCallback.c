@@ -29,7 +29,7 @@ int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2)
       if ( v4 )
       {
         qmemcpy(v4, a1, 0x6Cu);
-        if ( sub_1001B030(v2, (int)v4) >= 0 )
+        if ( meth_1001B030(v2, (int)v4) >= 0 )
           ++*(_DWORD *)(a2 + 4);
       }
     }

@@ -12,7 +12,7 @@ int sub_10079C40()
   v0 = g_gsu0;
   if ( g_gsu0 )
   {
-    sub_1000A1C0(g_gsu0);
+    meth_1000A1C0(g_gsu0);
     free(v0);
     g_gsu0 = 0;
   }

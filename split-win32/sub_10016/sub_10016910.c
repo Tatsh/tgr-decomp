@@ -7,7 +7,7 @@ int *sub_10016910()
   result = (int *)dword_104AFD1C;
   if ( !dword_104AFD1C )
   {
-    dword_1039B728 = 0;
+    dword_1039B728[0] = 0;
     dword_104AFD14 = -1;
     dword_1039B72C = 0;
     dword_1039B75C = -1;
@@ -33,7 +33,7 @@ int *sub_10016910()
   return result;
 }
 // 100A66E8: using guessed type int dword_100A66E8;
-// 1039B728: using guessed type int dword_1039B728;
+// 1039B728: using guessed type int dword_1039B728[];
 // 1039B72C: using guessed type int dword_1039B72C;
 // 1039B730: using guessed type int dword_1039B730;
 // 1039B734: using guessed type int dword_1039B734;

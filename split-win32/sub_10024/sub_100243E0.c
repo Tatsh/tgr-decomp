@@ -2,15 +2,15 @@
 //----- (100243E0) --------------------------------------------------------
 HRESULT sub_100243E0()
 {
-  #489 *v0; // ecx
+  IDirect3DDevice2Vtbl *v0; // ecx
 
   if ( !dword_106C6618 )
     return g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_FOGENABLE, 0);
   if ( dword_106C6624 || dword_106C6620 || (flt_104C15C8 = 16384.0, !dword_106C661C) )
     flt_104C15C8 = 8192.0;
-  v0 = (#489 *)g_D3DDevice2->lpVtbl;
+  v0 = g_D3DDevice2->lpVtbl;
   dword_104BBE30 = 8;
-  (*((void (__stdcall **)(IDirect3DDevice2 *, int, int))v0 + 23))(g_D3DDevice2, 28, 1);
+  v0->SetRenderState(g_D3DDevice2, D3DRS_FOGENABLE, 1);
   return g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_FOGTABLEMODE, 0);
 }
 // 104BBE30: using guessed type int dword_104BBE30;

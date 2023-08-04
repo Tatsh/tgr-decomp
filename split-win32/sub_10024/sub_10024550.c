@@ -3,7 +3,7 @@
 int __cdecl sub_10024550(int a1)
 {
   int result; // eax
-  #489 *d3dDevice2LPVtbl; // ecx
+  IDirect3DDevice2Vtbl *d3dDevice2LPVtbl; // ecx
   _DWORD *v3; // eax
   int v4; // eax
   int *v5; // ecx
@@ -21,7 +21,7 @@ int __cdecl sub_10024550(int a1)
     goto LABEL_6;
   for ( ; result == -2005532222; result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2) )
   {
-    while ( sub_1000B2C0(g_gsu0) == -2005532222 )
+    while ( meth_1000B2C0(g_gsu0) == -2005532222 )
       ;
   }
   if ( !result )
@@ -42,9 +42,9 @@ LABEL_6:
     dword_1027739C = 1;
     dword_10277370 = -1;
     sub_10024850();
-    d3dDevice2LPVtbl = (#489 *)g_D3DDevice2->lpVtbl;
+    d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
     dword_104C5178 = 8193;
-    (*((void (__stdcall **)(IDirect3DDevice2 *, int, _DWORD))d3dDevice2LPVtbl + 23))(g_D3DDevice2, 29, 0);
+    d3dDevice2LPVtbl->SetRenderState(g_D3DDevice2, D3DRS_SPECULARENABLE, 0);
     g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZENABLE, 1);
     g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)1, 0);
     g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_DITHERENABLE, 1);
@@ -103,7 +103,7 @@ LABEL_6:
       goto LABEL_18;
     for ( ; result == -2005532222; result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2) )
     {
-      while ( sub_1000B2C0(g_gsu0) == -2005532222 )
+      while ( meth_1000B2C0(g_gsu0) == -2005532222 )
         ;
     }
     if ( !result )

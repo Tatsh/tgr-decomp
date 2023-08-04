@@ -90,7 +90,7 @@ int sub_10033838()
       debugPrint(v9);
     if ( dword_106C65F8 )
       --dword_106C65F8;
-    sub_1002C210(v9);
+    meth_1002C210(v9);
     dword_106C0208 = sub_10060E90();
     dword_106C020C = sub_10060E90() - dword_106C020C;
   }

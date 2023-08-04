@@ -84,7 +84,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4)
   char v83[160]; // [esp+704h] [ebp-ACh] BYREF
   int v84; // [esp+7ACh] [ebp-4h]
 
-  sub_10073B60(v80, a2, a3);
+  meth_10073B60(v80, a2, a3);
   v84 = 0;
   WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);
   v4 = dword_10220DD0;
@@ -92,15 +92,15 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4)
   if ( v4 )
   {
     Concurrency::details::StructuredWorkStealingQueue<Concurrency::details::_UnrealizedChore,Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v80);
-    v67 = sub_10073C10(v80);
+    v67 = meth_10073C10(v80);
     WaitForSingleObject(hMutex_3, 0xFFFFFFFF);
     dword_10221310 = sub_10003460();
     ReleaseMutex(hMutex_3);
-    if ( !sub_10073D40(v80) )
+    if ( !meth_10073D40(v80) )
     {
       while ( 2 )
       {
-        v5 = sub_10073BC0(v80);
+        v5 = meth_10073BC0(v80);
         v6 = v5 & 0xE0;
         v7 = v5 & 0xF;
         switch ( v6 )
@@ -108,25 +108,25 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4)
           case 0:
             if ( a4 != 1 )
               goto LABEL_122;
-            v68 = (unsigned __int8)sub_10073BC0(v80);
-            v69 = (unsigned __int8)sub_10073BC0(v80);
-            v74 = sub_10073BC0(v80);
-            v76 = sub_10073BC0(v80);
-            v78 = sub_10073BC0(v80);
+            v68 = (unsigned __int8)meth_10073BC0(v80);
+            v69 = (unsigned __int8)meth_10073BC0(v80);
+            v74 = meth_10073BC0(v80);
+            v76 = meth_10073BC0(v80);
+            v78 = meth_10073BC0(v80);
             v8 = 0;
             v9 = v68 & 0x3F;
-            v71 = sub_10073C40(v80);
+            v71 = meth_10073C40(v80);
             v79 = 0;
             if ( v9 <= 2 )
             {
               do
-                Buffer[v8++] = sub_10073BC0(v80);
+                Buffer[v8++] = meth_10073BC0(v80);
               while ( v8 < 24 );
               v79 = v8;
               Buffer[24] = 0;
             }
             if ( v9 == 4 )
-              dword_1022AEFC = sub_10073C10(v80);
+              dword_1022AEFC = meth_10073C10(v80);
             waitForSingleObjectRef = WaitForSingleObject;
             v11 = 606 * v7;
             WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
@@ -220,7 +220,7 @@ LABEL_17:
             v15 = dword_102212D0;
             do
             {
-              v16 = sub_10073BC0(v80);
+              v16 = meth_10073BC0(v80);
               v15 += 2;
               *(v15 - 1) = v16 >> 4;
               *(v15 - 2) = v16 & 0xF;
@@ -290,12 +290,12 @@ LABEL_17:
                 strcpy(Buffer, sub_10005E70(v44));
                 strcat(Buffer, asc_10094334);
 LABEL_82:
-                v45 = (const char *)(sub_10073F50(v80) + 4);
+                v45 = (const char *)(meth_10073F50(v80) + 4);
                 v46 = strlen(v45) + 1;
                 v47 = &Buffer[strlen(Buffer) + 1];
                 goto LABEL_111;
               case 0x60000004:
-                v49 = sub_10073F50(v80);
+                v49 = meth_10073F50(v80);
                 if ( *(_DWORD *)(v49 + 4) != sub_10005CF0(dword_10094294) )
                   goto LABEL_122;
                 sub_1000C4A0();
@@ -320,7 +320,7 @@ LABEL_82:
                 v47 = &Buffer[strlen(Buffer) + 1];
                 goto LABEL_111;
               case 0x60000005:
-                v48 = sub_10073F50(v80);
+                v48 = meth_10073F50(v80);
                 WaitForSingleObject(hMutex, INFINITE);
                 switch ( *(_DWORD *)(v48 + 4) )
                 {
@@ -346,7 +346,7 @@ LABEL_88:
                 }
                 goto LABEL_122;
               case 0x60000006:
-                if ( *(_DWORD *)(sub_10073F50(v80) + 4) != a4 )
+                if ( *(_DWORD *)(meth_10073F50(v80) + 4) != a4 )
                   goto LABEL_122;
                 v53 = 0;
                 if ( dword_100B36FC <= 0 )
@@ -375,7 +375,7 @@ LABEL_88:
                 v47 = &Buffer[strlen(Buffer) + 1];
                 goto LABEL_111;
               case 0x60000007:
-                if ( *(_DWORD *)(sub_10073F50(v80) + 4) != a4 )
+                if ( *(_DWORD *)(meth_10073F50(v80) + 4) != a4 )
                   goto LABEL_122;
                 v56 = 0;
                 if ( dword_100B36FC <= 0 )
@@ -400,7 +400,7 @@ LABEL_111:
                 sub_10003530(Buffer);
                 goto LABEL_122;
               case 0x60000008:
-                v59 = sub_10073F50(v80);
+                v59 = meth_10073F50(v80);
                 if ( a4 != 1 )
                   goto LABEL_122;
                 v60 = 0;
@@ -493,8 +493,8 @@ LABEL_111:
             if ( a4 != 1 )
               goto LABEL_122;
             v73 = getTicks();
-            v38 = sub_10073C10(v80);
-            v39 = (unsigned __int16)sub_10073BE0(v80);
+            v38 = meth_10073C10(v80);
+            v39 = (unsigned __int16)meth_10073BE0(v80);
             WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
             dword_10221C98[606 * v7] = v38;
             dword_10221C9C[606 * v7] = v39;
@@ -510,24 +510,24 @@ LABEL_111:
               goto LABEL_122;
             dword_10094294 = v7;
             sub_100049C0();
-            LOBYTE(g_cPlayers) = sub_10073BC0(v80);
+            LOBYTE(g_cPlayers) = meth_10073BC0(v80);
             g_cPlayers = (unsigned __int8)g_cPlayers;
-            LOBYTE(g_chosenTrack) = sub_10073BC0(v80);
+            LOBYTE(g_chosenTrack) = meth_10073BC0(v80);
             g_chosenTrack = (unsigned __int8)g_chosenTrack;
-            LOBYTE(g_ChosenWeather) = sub_10073BC0(v80);
+            LOBYTE(g_ChosenWeather) = meth_10073BC0(v80);
             g_ChosenWeather = (unsigned __int8)g_ChosenWeather;
-            LOWORD(g_bcar) = sub_10073BE0(v80);
+            LOWORD(g_bcar) = meth_10073BE0(v80);
             g_bcar = (unsigned __int16)g_bcar;
-            LOBYTE(dword_10221280) = sub_10073BC0(v80);
+            LOBYTE(dword_10221280) = meth_10073BC0(v80);
             dword_10221280 = (unsigned __int8)dword_10221280;
-            LOBYTE(g_btire) = sub_10073BC0(v80);
+            LOBYTE(g_btire) = meth_10073BC0(v80);
             g_btire = (unsigned __int8)g_btire;
-            LOBYTE(g_bsuspension) = sub_10073BC0(v80);
+            LOBYTE(g_bsuspension) = meth_10073BC0(v80);
             g_bsuspension = (unsigned __int8)g_bsuspension;
             sub_10004590(a1, v7, byte_10AD0854[0], byte_10AD0855[0], byte_10AD0856[0], (int)dplay4aShortName, 16);
             atomic_sub_10004A50(v7, 2);
 LABEL_73:
-            if ( sub_10073D40(v80) )
+            if ( meth_10073D40(v80) )
               goto LABEL_122;
             continue;
           default:

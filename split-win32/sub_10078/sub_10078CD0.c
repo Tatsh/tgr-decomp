@@ -4,7 +4,7 @@ int sub_10078CD0()
 {
   const CHAR *text; // eax
   _DWORD *v2; // eax
-  __unk0 *v3; // eax
+  unk1 *v3; // eax
   const CHAR *caption; // [esp-8h] [ebp-18h]
 
   if ( ++mouseCreated == 1 )
@@ -18,11 +18,11 @@ int sub_10078CD0()
     }
     v2 = (_DWORD *)malloc(0x54u);
     if ( v2 )
-      v3 = (__unk0 *)sub_10060280(v2);
+      v3 = (unk1 *)meth_10060280(v2);
     else
       v3 = 0;
     dword_10AA2E80 = v3;
-    DICreateMouseDevice(v3, g_HWND);
+    meth_DICreateMouseDevice(v3, g_HWND);
   }
   return 1;
 }

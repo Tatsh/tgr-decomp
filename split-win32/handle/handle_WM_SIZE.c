@@ -26,7 +26,7 @@ int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam)
     if ( dword_118AC230 )
     {
       if ( v3 )
-        sub_1000B2C0(v3);
+        meth_1000B2C0(v3);
       dword_118AC234 = 0;
       dword_118AC230 = 0;
     }

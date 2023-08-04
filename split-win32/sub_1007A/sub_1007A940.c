@@ -12,7 +12,7 @@ int sub_1007A940()
   int v8; // edx
   int v9; // esi
   unsigned int v10; // eax
-  __unk0 *v11; // ecx
+  unk1 *v11; // ecx
   int v12; // eax
   unsigned int i; // [esp+20h] [ebp-64h] BYREF
   int v14; // [esp+24h] [ebp-60h] BYREF
@@ -41,7 +41,7 @@ int sub_1007A940()
   if ( !v5 )
     return 0;
   if ( !dword_118AC240 )
-    dword_118AC240 = (int)sub_1001A570(v0, 640, 480, 16, 0, (IID *)v3);
+    dword_118AC240 = (int)meth_1001A570(v0, 640, 480, 16, 0, (IID *)v3);
   if ( Base )
   {
     free(Base);
@@ -67,10 +67,10 @@ int sub_1007A940()
   v10 = 0;
   for ( i = 0; i < v5; ++i )
   {
-    v11 = (__unk0 *)*((_DWORD *)Base + v10);
-    if ( !v11 || !sub_1001ACF0(v11, (IID **)dword_118AC23C) )
+    v11 = (unk1 *)*((_DWORD *)Base + v10);
+    if ( !v11 || !meth_1001ACF0(v11, (IID **)dword_118AC23C) )
       goto LABEL_41;
-    sub_1001AC80(*((__unk0 **)Base + i), &v16, &v14, &v15, &v17);
+    meth_1001AC80(*((unk1 **)Base + i), &v16, &v14, &v15, &v17);
     if ( v17 )
     {
       wsprintfA(v18, "%4d x %4d x %2d (%4d Hz)", v16, v14, v15, v17);

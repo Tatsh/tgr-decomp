@@ -42,8 +42,8 @@ LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam)
         v6 = v5->unkMeth1;
         LOBYTE(v6) = v6 | 8;
         v5->unkMeth1 = v6;
-        sub_1000B2C0(v5);
-        sub_1000B150(v5);
+        meth_1000B2C0(v5);
+        meth_1000B150(v5);
       }
     }
     else if ( v5 )

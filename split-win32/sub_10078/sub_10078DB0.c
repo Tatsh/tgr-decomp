@@ -14,7 +14,7 @@ int sub_10078DB0()
       v1 = dword_10AA2E80;
       if ( dword_10AA2E80 )
       {
-        sub_100602B0(dword_10AA2E80);
+        meth_100602B0(dword_10AA2E80);
         free(v1);
         dida = g_DirectInputA;
       }

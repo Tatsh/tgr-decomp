@@ -26,9 +26,9 @@ int __cdecl sub_10040330(int a1)
   {
     v10 = *v4;
     *v2 = 0;
-    v13 = sub_10069BC0(g_Config, a1, v10);
+    v13 = meth_10069BC0(g_Config, a1, v10);
     ++v1;
-    v16 = sub_10069C30(g_Config, a1, *v4);
+    v16 = meth_10069C30(g_Config, a1, *v4);
     v15 = v1;
     if ( v1 < 21 )
     {
@@ -38,8 +38,8 @@ int __cdecl sub_10040330(int a1)
       {
         if ( (int)v4 >= (int)&unk_100AB394 || (v6 = *v5, *v5 != 12) && v6 != 13 && v6 != 14 )
         {
-          v7 = sub_10069BC0(g_Config, a1, *v5);
-          v8 = sub_10069C30(g_Config, a1, *v5);
+          v7 = meth_10069BC0(g_Config, a1, *v5);
+          v8 = meth_10069C30(g_Config, a1, *v5);
           if ( (v13 || v16) && v13 == v7 && v16 == v8 )
           {
             v14 = 1;

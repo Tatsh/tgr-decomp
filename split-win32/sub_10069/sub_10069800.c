@@ -10,8 +10,8 @@ char *sub_10069800()
   v1 = dword_10ACDEA8;
   do
   {
-    sub_100634F0((int)v1);
-    result = sub_10035FE0(v0);
+    meth_100634F0((int)v1);
+    result = meth_10035FE0(v0);
     v1 += 2778;
     v0 += 348;
   }

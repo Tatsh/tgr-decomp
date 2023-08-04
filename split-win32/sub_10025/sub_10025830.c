@@ -8,7 +8,7 @@ char *__cdecl sub_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a6, in
   int v11; // eax
   int v12; // eax
   int v14; // [esp+20h] [ebp-29Ch]
-  int v15[10]; // [esp+28h] [ebp-294h] BYREF
+  DWORD v15[10]; // [esp+28h] [ebp-294h] BYREF
   int v16; // [esp+50h] [ebp-26Ch]
   int v17; // [esp+54h] [ebp-268h]
   int v18; // [esp+58h] [ebp-264h]

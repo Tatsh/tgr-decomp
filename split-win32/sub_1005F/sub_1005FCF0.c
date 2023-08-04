@@ -42,4 +42,4 @@ int sub_1005FCF0()
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA2A10: using guessed type int dword_10AA2A10;
 // 10AA2A14: using guessed type int dword_10AA2A14;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;

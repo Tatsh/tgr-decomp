@@ -47,7 +47,7 @@ int sub_100447D0()
     v3[1] = (int)v1;
     v4 = 0;
     if ( v1 )
-      result = (int)sub_10048710(v1);
+      result = (int)meth_10048710(v1);
     else
       result = 0;
     v4 = -1;

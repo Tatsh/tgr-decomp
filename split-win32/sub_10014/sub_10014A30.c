@@ -300,7 +300,7 @@ int __cdecl sub_10014A30(int a1)
       debugPrint(v27);
       sub_10014450((int)v1, (int)v124);
       debugPrint(v31);
-      sub_10019B50();
+      meth_10019B50();
       debugPrint(v32);
       v104 = flt_10575504 - flt_105754F8 * -0.5;
       sub_1002AF10((int)v1, v104);

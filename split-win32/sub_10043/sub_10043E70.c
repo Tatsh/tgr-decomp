@@ -13,7 +13,7 @@ int sub_10043E70()
   {
     v0 = (_DWORD *)malloc(0xC8u);
     if ( v0 )
-      result = (int)sub_10048710(v0);
+      result = (int)meth_10048710(v0);
     else
       result = 0;
     dword_10AA2948 = result;

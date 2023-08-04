@@ -11,6 +11,6 @@ int __cdecl sub_1002C430(int a1)
        + *(float *)(a1 + 496) * *(float *)(a1 + 496);
     *(float *)(a1 + 4144) = sqrt_(v2) * 2.24;
   }
-  return sub_10075F10(a1);
+  return meth_10075F10(a1);
 }
 // 1002C430: using guessed type int __cdecl sub_1002C430(int);

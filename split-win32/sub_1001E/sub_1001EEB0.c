@@ -5,7 +5,7 @@ float *__cdecl sub_1001EEB0(int a1, int a2, int a3, int a4, int a5, int a6)
   float *result; // eax
   int v7; // edi
   float *v8; // ecx
-  int v9; // edx
+  float *v9; // edx
   float *v10; // edx
   unsigned int v11; // ecx
   double v12; // st7
@@ -211,7 +211,7 @@ LABEL_8:
     if ( v7 > 0 )
     {
       v8 = v35;
-      v9 = dword_104C0BBC;
+      v9 = (float *)dword_104C0BBC;
       do
       {
         result = v8;
@@ -221,7 +221,7 @@ LABEL_8:
         {
           *(_DWORD *)result = v9;
           v8 = v35;
-          v9 = (int)result;
+          v9 = result;
           dword_104C0BBC = (int)result;
         }
         --v7;

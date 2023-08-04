@@ -15,7 +15,7 @@ gameSpecificUnk1 *__cdecl sub_1001BA70(const void *a1, gameSpecificUnk1 **a2, ga
   while ( 1 )
   {
     v4 = *(gameSpecificUnk1 **)&v3[816];
-    if ( sub_1001B2D0(v3, a1) )
+    if ( meth_1001B2D0(v3, a1) )
       break;
     if ( (*(_BYTE *)v3 & 2) != 0 )
     {

@@ -43,9 +43,9 @@ int __cdecl TIDFromTexture(_DWORD *a1, int a2)
     dword_10575440 = 0;
     sub_10024BF0(&a4, &a1, v2);
     if ( v2[15] )
-      sub_10009C40(*((void **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (DWORD)a1, v2[4], v2[15]);
+      meth_10009C40(*((void **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (DWORD)a1, v2[4], v2[15]);
     else
-      sub_10009EA0(*((void **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (int)a1, v2[4]);
+      meth_10009EA0(*((void **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (int)a1, v2[4]);
     result = sub_100284A0(v2, v6);
   }
   return result;

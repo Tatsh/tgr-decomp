@@ -13,7 +13,7 @@ int sub_100169B0()
   v1 = -1;
   v2 = 0;
   v3 = dword_1039B760;
-  v4 = &dword_1039B728;
+  v4 = dword_1039B728;
   do
   {
     if ( !*v4 && v2 != dword_104AFD00 && v1 >= *v3 )
@@ -36,7 +36,7 @@ int sub_100169B0()
   dword_1039B760[47164 * result] = v5 + 1;
   return result;
 }
-// 1039B728: using guessed type int dword_1039B728;
+// 1039B728: using guessed type int dword_1039B728[];
 // 1039B73C: using guessed type float flt_1039B73C;
 // 1039B760: using guessed type int dword_1039B760[];
 // 104AFD00: using guessed type int dword_104AFD00;

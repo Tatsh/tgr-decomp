@@ -8,7 +8,7 @@ int __thiscall ReleaseDDrawSurface(unk0 *this)
 
   if ( this->field_0 )
     returnZeroWrapper();
-  sub_1000AEA0(this);
+  meth_1000AEA0(this);
   dev = this->lpD3DDevice2;
   this->field_1C &= 0xFFFFFFF7;
   if ( dev )

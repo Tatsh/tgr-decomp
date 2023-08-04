@@ -23,7 +23,7 @@ float *__cdecl sub_1001F550(int a1, int a2, int a3)
   int v21; // eax
   int *v22; // ecx
   int v23; // ebp
-  int v24; // [esp+20h] [ebp-Ch]
+  float *v24; // [esp+20h] [ebp-Ch]
   int v25; // [esp+24h] [ebp-8h]
   int v26; // [esp+28h] [ebp-4h]
   int v27; // [esp+30h] [ebp+4h]
@@ -61,7 +61,7 @@ float *__cdecl sub_1001F550(int a1, int a2, int a3)
       v29 = dword_104C16DC[27 * a2];
       v27 = dword_104C16E0[27 * a2];
       v28 = dword_104C16E4[27 * a2];
-      v24 = dword_104C16DC[v5];
+      v24 = (float *)dword_104C16DC[v5];
       v25 = dword_104C16E0[v5];
       v26 = dword_104C16E4[v5];
       v11 = *(int *)((char *)dword_104C16DC + (_DWORD)result);
@@ -115,10 +115,10 @@ float *__cdecl sub_1001F550(int a1, int a2, int a3)
         dword_104C5190 = 0;
       }
       dword_104C16DC[v3] = v29;
-      result = (float *)v24;
+      result = v24;
       dword_104C16E0[v3] = v27;
       dword_104C16E4[v3] = v28;
-      dword_104C16DC[v5] = v24;
+      dword_104C16DC[v5] = (int)v24;
       dword_104C16E0[v5] = v25;
       dword_104C16E4[v5] = v26;
     }

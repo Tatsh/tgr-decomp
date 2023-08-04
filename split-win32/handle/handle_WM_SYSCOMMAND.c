@@ -30,7 +30,7 @@ LABEL_15:
       if ( dword_118AC230 )
       {
         if ( v3 )
-          sub_1000B2C0(v3);
+          meth_1000B2C0(v3);
       }
       dword_118AC230 = 0;
       goto LABEL_15;

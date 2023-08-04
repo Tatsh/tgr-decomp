@@ -35,9 +35,6 @@ _DWORD *__cdecl sub_10017690(int a1)
   }
   return result;
 }
-// 10019270: using guessed type int sub_10019270(void);
-// 100192F0: using guessed type _DWORD __cdecl sub_100192F0(_DWORD);
-// 1002B2A0: using guessed type int sub_1002B2A0(void);
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 104B0338: using guessed type int dword_104B0338;
 // 106C5708: using guessed type int dword_106C5708;

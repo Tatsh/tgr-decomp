@@ -177,21 +177,21 @@ LABEL_47:
   {
     *(_DWORD *)(a1 + 10036) = a1 + 10044;
     *(_DWORD *)(a1 + 3960) = 1;
-    sub_10035FA0(v24, 0x1000000);
+    meth_10035FA0(v24, 0x1000000);
   }
   if ( (**(_DWORD **)(a1 + 10688) & 0x2000000) != 0 )
   {
-    sub_10001970((#481 *)a1);
+    meth_10001970((#481 *)a1);
     v25 = *(int **)(a1 + 10688);
     *(_DWORD *)(a1 + 3960) = 1;
-    sub_10035FA0(v25, 0x2000000);
+    meth_10035FA0(v25, 0x2000000);
   }
   v26 = *(int **)(a1 + 10688);
   if ( (*v26 & 0x4000000) != 0 )
   {
     *(_DWORD *)(a1 + 10036) = a1 + 10112;
     *(_DWORD *)(a1 + 3960) = 1;
-    sub_10035FA0(v26, 0x4000000);
+    meth_10035FA0(v26, 0x4000000);
   }
   if ( dword_100AA8B4 == 1 )
   {
@@ -200,7 +200,7 @@ LABEL_47:
     {
       *(_DWORD *)(a1 + 10036) = a1 + 10180;
       *(_DWORD *)(a1 + 3960) = 1;
-      sub_10035FA0(v27, 0x8000000);
+      meth_10035FA0(v27, 0x8000000);
     }
   }
   v28 = *(_DWORD *)(a1 + 10688);
@@ -258,14 +258,14 @@ LABEL_47:
   if ( g_GameMode == 5 )
   {
     sub_1003B020(a1 + 48, a1, 15.0);
-    sub_10064350(a1);
+    meth_10064350(a1);
     v36 = *(_DWORD *)(a1 + 3880);
     v37 = *(_DWORD *)(a1 + 3884);
     v58 = *(_DWORD *)(a1 + 3876);
     v59 = v36;
     v60 = v37;
     sub_1003B020(a1 + 48, a1, -15.0);
-    sub_10064350(a1);
+    meth_10064350(a1);
     **(_DWORD **)(a1 + 10688) &= 0xF0C0FFFF;
     if ( *(float *)(a1 + 4084) >= 114.5 )
     {
@@ -297,7 +297,7 @@ LABEL_47:
     *(float *)(a1 + 3616) = v40 * 3.0;
     *(float *)&v55 = *(float *)&v55 - *(float *)(a1 + 3916) * 0.2;
     v56 = v56 - *(float *)(a1 + 3920) * 0.2;
-    sub_100767A0((_DWORD *)a1, v55, SLODWORD(v56), v47);
+    meth_100767A0((_DWORD *)a1, v55, SLODWORD(v56), v47);
   }
   if ( (dword_118ABAD0 & 0x10000) != 0 )
     *(_BYTE *)(a1 + 870) = 0x80;
@@ -309,7 +309,7 @@ LABEL_47:
     *(_BYTE *)(a1 + 873) = 0x80;
   if ( (dword_118ABAD0 & 0x80u) != 0 )
     *(_BYTE *)(a1 + 874) = 0x80;
-  sub_10075F10(a1);
+  meth_10075F10(a1);
   if ( !*(_DWORD *)(a1 + 3964) )
   {
     sub_1003AF40((float *)&v55, (float *)(a1 + 48), (float *)a1);
@@ -348,7 +348,7 @@ LABEL_47:
       *(_DWORD *)(a1 + 860) = -1;
     dword_118ABDCC = 0;
   }
-  sub_10063660(a1);
+  meth_10063660(a1);
 }
 // 10063876: variable 'v4' is possibly undefined
 // 10063876: variable 'v5' is possibly undefined

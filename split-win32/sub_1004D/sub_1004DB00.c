@@ -34,7 +34,7 @@ int __cdecl sub_1004DB00(int a1)
   *(_DWORD *)(a1 + 4 * v1 + 108) = 1;
   v2 = (_DWORD *)malloc(0x348u);
   if ( v2 )
-    v3 = sub_10048470(v2);
+    v3 = meth_10048470(v2);
   else
     v3 = 0;
   *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v3;
@@ -47,7 +47,7 @@ int __cdecl sub_1004DB00(int a1)
   v3[207] = 1124204544;
   v4 = (_DWORD *)malloc(0x1E214u);
   if ( v4 )
-    v5 = sub_100476C0(v4);
+    v5 = meth_100476C0(v4);
   else
     v5 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v5;
@@ -66,7 +66,7 @@ int __cdecl sub_1004DB00(int a1)
   ++*((_WORD *)v3 + 10);
   v6 = (_DWORD *)malloc(0x1E214u);
   if ( v6 )
-    v7 = sub_100476C0(v6);
+    v7 = meth_100476C0(v6);
   else
     v7 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v7;
@@ -89,7 +89,7 @@ int __cdecl sub_1004DB00(int a1)
   ++*((_WORD *)v3 + 10);
   v10 = (_DWORD *)malloc(0x1E214u);
   if ( v10 )
-    v11 = sub_100476C0(v10);
+    v11 = meth_100476C0(v10);
   else
     v11 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v11;
@@ -108,7 +108,7 @@ int __cdecl sub_1004DB00(int a1)
   ++*((_WORD *)v3 + 10);
   v12 = (_DWORD *)malloc(0x1E214u);
   if ( v12 )
-    v13 = sub_100476C0(v12);
+    v13 = meth_100476C0(v12);
   else
     v13 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v13;
@@ -127,7 +127,7 @@ int __cdecl sub_1004DB00(int a1)
   ++*((_WORD *)v3 + 10);
   v14 = (_DWORD *)malloc(0x1E214u);
   if ( v14 )
-    v15 = sub_100476C0(v14);
+    v15 = meth_100476C0(v14);
   else
     v15 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v15;
@@ -158,7 +158,7 @@ int __cdecl sub_1004DB00(int a1)
   ++*((_WORD *)v3 + 418);
   v17 = (_DWORD *)malloc(0x1E214u);
   if ( v17 )
-    v18 = sub_100476C0(v17);
+    v18 = meth_100476C0(v17);
   else
     v18 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v18;
@@ -186,7 +186,7 @@ int __cdecl sub_1004DB00(int a1)
   ++*((_WORD *)v3 + 418);
   v21 = (_DWORD *)malloc(0x1E214u);
   if ( v21 )
-    v22 = sub_100476C0(v21);
+    v22 = meth_100476C0(v21);
   else
     v22 = 0;
   v3[*((unsigned __int16 *)v3 + 10) + 6] = v22;

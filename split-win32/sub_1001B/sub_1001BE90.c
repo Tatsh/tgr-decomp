@@ -1,6 +1,6 @@
 #include "../../types-win32.h"
 //----- (1001BE90) --------------------------------------------------------
-int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
+HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
 {
   int v4; // edi
   int v5; // esi
@@ -12,12 +12,12 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
   char v11; // al
   unsigned __int16 v12; // cx
   int v13; // ebp
-  #489 *v14; // edx
-  #489 *v15; // edx
-  int result; // eax
-  float *v17; // eax
+  IDirect3DDevice2Vtbl *v14; // edx
+  IDirect3DDevice2Vtbl *v15; // edx
+  HRESULT result; // eax
+  unk0_member2 *v17; // eax
   unk0_member2 *v18; // esi
-  #490 *v19; // edi
+  IDirect3DViewport2 *v19; // edi
   unsigned __int8 v20; // [esp+D4h] [ebp-A0h]
   float v21; // [esp+D4h] [ebp-A0h]
   float v22; // [esp+D4h] [ebp-A0h]
@@ -243,9 +243,9 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     v33[5] = -16776961;
     v33[6] = 0;
     v33[7] = 1065353216;
-    v14 = (#489 *)g_D3DDevice2->lpVtbl;
+    v14 = g_D3DDevice2->lpVtbl;
     qmemcpy(v40, v33, sizeof(v40));
-    (*((void (__stdcall **)(IDirect3DDevice2 *, int, int, char *, int, int))v14 + 29))(g_D3DDevice2, 4, 3, v38, 3, 9);
+    v14->DrawPrimitive(g_D3DDevice2, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, v38, 3, 9);
     *(float *)v33 = v22;
     v33[2] = 0;
     v33[3] = 1065353216;
@@ -270,14 +270,14 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     v33[3] = 1065353216;
     v23 = (float)(g_Height - a2);
     v35 = v23;
-    v15 = (#489 *)g_D3DDevice2->lpVtbl;
+    v15 = g_D3DDevice2->lpVtbl;
     *(float *)&v33[1] = v23;
     v33[4] = v13;
     v33[5] = -16776961;
     v33[6] = 1065353216;
     v33[7] = 1065353216;
     qmemcpy(v40, v33, sizeof(v40));
-    (*((void (__stdcall **)(IDirect3DDevice2 *, int, int, char *, int, int))v15 + 29))(g_D3DDevice2, 4, 3, v38, 3, 9);
+    v15->DrawPrimitive(g_D3DDevice2, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, v38, 3, 9);
     result = g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_CULLMODE, dword_10277408);
   }
   else
@@ -300,19 +300,19 @@ int __cdecl sub_1001BE90(int a1, int a2, int a3, int a4)
     v37 = g_Height - a2;
     v34 = v4;
     v36 = v5;
-    v17 = (float *)&g_gsu0->unknown->d3dMaterial.dwSize;
-    v17[1] = v32 * 0.0039215689;
-    *((_DWORD *)v17 + 22) = 1;
+    v17 = g_gsu0->unknown;
+    v17->d3dMaterial.diffuse.r = v32 * 0.0039215689;
+    v17->field_58 = 1;
     v28 = (float)v25;
-    v17[2] = v28 * 0.0039215689;
+    v17->d3dMaterial.diffuse.g = v28 * 0.0039215689;
     v24 = (float)v20;
-    v17[3] = v24 * 0.0039215689;
+    v17->d3dMaterial.diffuse.b = v24 * 0.0039215689;
     v18 = g_gsu0->unknown;
-    v19 = (#490 *)g_gsu0->lpDirect3DViewport2;
+    v19 = g_gsu0->lpDirect3DViewport2;
     v18->d3dMaterial.dwRampSize = 1;
     v18->field_58 = 1;
-    sub_1001C620(v18);
-    (*(void (__stdcall **)(#490 *, D3DMATERIALHANDLE))(*(_DWORD *)v19 + 32))(v19, v18->lpD3DMaterialHandle);
+    meth_1001C620(v18);
+    v19->lpVtbl->SetBackground(v19, v18->lpD3DMaterialHandle);
     result = g_gsu0->lpDirect3DViewport2->lpVtbl->Clear(g_gsu0->lpDirect3DViewport2, 1, (LPD3DRECT)&v34, 3);
   }
   return result;

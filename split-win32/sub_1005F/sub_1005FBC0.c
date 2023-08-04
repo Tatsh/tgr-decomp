@@ -18,16 +18,16 @@ int __cdecl sub_1005FBC0(int a1)
   switch ( dword_10AA27F8 )
   {
     case 1:
-      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4DFD8];
+      g_ConfigJoystickPtr = g_Config.joystick1;
       break;
     case 2:
-      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
+      g_ConfigJoystickPtr = g_Config.joystick2;
       break;
     case 3:
-      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E128];
+      g_ConfigJoystickPtr = g_Config.joystick3;
       break;
     default:
-      g_ConfigJoystickPtr = (int)&g_Config;
+      g_ConfigJoystickPtr = &g_Config;
       break;
   }
   sprintf(byte_10AA2518, "%d", dword_10AA26F0 + 1);
@@ -68,5 +68,4 @@ int __cdecl sub_1005FBC0(int a1)
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA2A10: using guessed type int dword_10AA2A10;
 // 10AA2A14: using guessed type int dword_10AA2A14;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;

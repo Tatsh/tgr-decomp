@@ -14,16 +14,16 @@ size_t MakeEnemyCarColorPanels()
     switch ( g_ConfigJoystickIndex )
     {
       case 1:
-        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4DFD8];
+        g_ConfigJoystickPtr = g_Config.joystick1;
         break;
       case 2:
-        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E080];
+        g_ConfigJoystickPtr = g_Config.joystick2;
         break;
       case 3:
-        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E128];
+        g_ConfigJoystickPtr = g_Config.joystick3;
         break;
       default:
-        g_ConfigJoystickPtr = g_Config;
+        g_ConfigJoystickPtr = &g_Config;
         break;
     }
   }
@@ -59,4 +59,4 @@ size_t MakeEnemyCarColorPanels()
 }
 // 100B36FC: using guessed type int dword_100B36FC;
 // 10AD0850: using guessed type int dword_10AD0850[];
-// 10B4E1D0: using guessed type int g_ReadJoystick;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;

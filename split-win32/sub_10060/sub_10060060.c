@@ -3,7 +3,7 @@
 LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam)
 {
   LRESULT v5; // edi
-  _DWORD *v7; // ecx
+  unk1 *v7; // ecx
   BOOL v8; // eax
 
   v5 = 1;
@@ -28,7 +28,7 @@ LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM 
           {
             if ( dword_10AA2E80 )
             {
-              sub_10060750(dword_10AA2E80, (int)hWnd);
+              meth_10060750(dword_10AA2E80, (int)hWnd);
               return v5;
             }
           }
@@ -56,7 +56,7 @@ LABEL_24:
         if ( dword_10AA2E80 )
         {
 LABEL_25:
-          sub_10060750(v7, (int)hWnd);
+          meth_10060750(v7, (int)hWnd);
           return 1;
         }
         return v5;
@@ -92,7 +92,6 @@ LABEL_28:
   }
   return v5;
 }
-// 10AA2844: using guessed type int dword_10AA2844;
 // 10AA3350: using guessed type char byte_10AA3350;
 // 10AA3353: using guessed type char byte_10AA3353;
 // 10AA3355: using guessed type char byte_10AA3355;

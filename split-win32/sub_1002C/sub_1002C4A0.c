@@ -13,7 +13,7 @@ int sub_1002C4A0()
     v2 = (char *)&unk_10ACD498;
     do
     {
-      sub_100664C0((int)v2);
+      meth_100664C0((int)v2);
       result = dword_100B36F8;
       ++v1;
       v2 += 128;

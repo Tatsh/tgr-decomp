@@ -15,7 +15,7 @@ int __cdecl sub_1002F130(int a1)
          &byte_10AD0854[11112 * dword_100B36FC],
          &byte_10AD0855[11112 * dword_100B36FC],
          &byte_10AD0856[11112 * dword_100B36FC]);
-  sub_10076AE0(&dword_10ACDEA8[2778 * dword_100B36FC], v1);
+  meth_10076AE0(&dword_10ACDEA8[2778 * dword_100B36FC], v1);
   v2 = 2778 * dword_100B36FC;
   v3 = sub_10005E70(a1);
   v4 = dword_100B36FC;

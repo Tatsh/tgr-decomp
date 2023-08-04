@@ -6,13 +6,13 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
   IDirectDrawSurfaceVtbl *iSurface; // edx
   HRESULT result; // eax
   BOOL v5; // eax
-  IID *v6; // edi
-  unsigned __int8 *v7; // edi
+  char *v6; // edi
+  char *v7; // edi
   int v8; // ebp
   char v9; // al
   IDirectDrawSurfaceVtbl *ddrawSurfaceVtbl; // edx
   DWORD v11; // ebx
-  int v12; // edx
+  unsigned int v12; // edx
   IDirectDraw2 *ddraw2; // eax
   LPDIRECTDRAWSURFACE *ddSurface; // edi
   IDirectDraw2Vtbl *ddraw2Vtbl; // edx
@@ -44,16 +44,16 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
   result = iSurface->GetAttachedSurface(lpSurface, &ddsCaps, &this->lpDDrawSurface1);
   if ( result < 0 )
     return result;
-  v5 = sub_1001AD90(&this->unk->Data1);
-  v6 = this->unk;
+  v5 = meth_1001AD90((unk0 *)this->unk);
+  v6 = (char *)this->unk;
   if ( v5 )
   {
-    v7 = &v6[1].Data4[4];
+    v7 = v6 + 28;
     v8 = 0x4000;
   }
   else
   {
-    v7 = v6[17].Data4;
+    v7 = v6 + 280;
     v8 = 2048;
   }
   v9 = this->unkMeth1;
@@ -96,21 +96,21 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
   lpD3DDevice2 = (IDirect3DDevice *)&this->lpD3DDevice2;
   result = this->d3d2->lpVtbl->CreateDevice(
              this->d3d2,
-             (const CLSID *const)&this->unk->Data2,
+             (const CLSID *const)((char *)this->unk + 4),
              this->lpDDrawSurface1,
              &this->lpD3DDevice2);
   if ( result >= 0 )
   {
     g_D3DDevice2 = (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl;
     setup_g_DevCaps(g_D3DDevice2);
-    sub_1001AF20((int)this->unk, (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl);
+    meth_1001AF20((unk0 *)this->unk, (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl);
     this->field_1C |= 8u;
-    result = sub_1000ADF0(this);
+    result = meth_1000ADF0(this);
     if ( result >= 0 )
     {
       v17 = (int *)this->field_0;
       if ( v17 )
-        sub_10001160(v17);
+        meth_10001160(v17);
       enumTextureFormatsSomething((#486 *)g_D3DDevice2);
       result = 0;
     }

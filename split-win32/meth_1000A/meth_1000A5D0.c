@@ -3,16 +3,16 @@
 int __thiscall meth_1000A5D0(unk0 *this)
 {
   DWORD flags; // edi
-  __unk0 *u0; // ecx
+  unk1 *u0; // ecx
   int hr; // edi
   int v5; // eax
   int v6; // ecx
   int v7; // eax
   int result; // eax
-  IID *iid; // edx
-  __unk0 *v10; // eax
+  void *iid; // edx
+  unk1 *v10; // eax
   _DWORD *v11; // ecx
-  __unk0 *u0_1; // eax
+  unk1 *u0_1; // eax
   int v13; // eax
   int v14; // ecx
   int v15; // edx
@@ -28,17 +28,17 @@ int __thiscall meth_1000A5D0(unk0 *this)
   u0 = this->u0;
   if ( !u0 || !this->ddraw2 )
     return -2005522669;
-  sub_1001AC80(u0, &width, &height, &bitDepth, &refreshRate);
+  meth_1001AC80(u0, &width, &height, &bitDepth, &refreshRate);
   if ( width == 320 && height == 200 && bitDepth == 8 )
     flags = 1;
   hr = this->ddraw2->lpVtbl->SetDisplayMode(this->ddraw2, width, height, bitDepth, refreshRate, flags);
   if ( hr < 0
     && (width == 640 && height == 480
-     || (iid = (IID *)this->unk,
+     || (iid = this->unk,
          height = 480,
          v17 = this->gameSpecificUnk1_instance,
          width = 640,
-         v10 = sub_1001A570(v17, 640, 480, bitDepth, 0, iid),
+         v10 = meth_1001A570(v17, 640, 480, bitDepth, 0, (int)iid),
          (this->u0 = v10) == 0)
      || (hr = this->ddraw2->lpVtbl->SetDisplayMode(this->ddraw2, width, height, bitDepth, 0, 0), hr < 0)) )
   {
@@ -46,7 +46,7 @@ int __thiscall meth_1000A5D0(unk0 *this)
       || (iid0 = (int)this->unk,
           v11 = this->gameSpecificUnk1_instance,
           bitDepth = 16,
-          u0_1 = sub_1001A570(v11, width, height, 16, 0, (IID *)iid0),
+          u0_1 = meth_1001A570(v11, width, height, 16, 0, iid0),
           (this->u0 = u0_1) == 0)
       || (hr = this->ddraw2->lpVtbl->SetDisplayMode(this->ddraw2, width, height, bitDepth, 0, 0), hr < 0) )
     {

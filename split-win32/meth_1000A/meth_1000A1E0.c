@@ -42,7 +42,7 @@ HRESULT __thiscall meth_1000A1E0(unk0 *this, HWND hWnd, int a3, int a4, int a5, 
       }
       else
       {
-        sub_1000A350(this);
+        meth_1000A350(this);
         result = v12;
       }
     }

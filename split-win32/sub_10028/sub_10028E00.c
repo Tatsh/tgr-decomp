@@ -13,7 +13,7 @@ BOOL __cdecl sub_10028E00(LONG a1, char *a2)
   {
     v4 = 696 * a1;
     sub_10028720(&v5, &a1, *((_DWORD *)dword_1057543C + 174 * a1 + 8), *((_DWORD *)dword_1057543C + 174 * a1 + 9));
-    result = sub_10009ED0(*((#511 **)Block + *(_DWORD *)((char *)dword_1057543C + v4)), a2, v5, a1);
+    result = meth_10009ED0(*((void **)Block + *(_DWORD *)((char *)dword_1057543C + v4)), a2, v5, a1);
   }
   return result;
 }

@@ -32,7 +32,7 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
       GetWindowRect(hWnd, &Rect);
       v6 = abs32(Rect.right - Rect.left);
       v7 = abs32(Rect.bottom - Rect.top);
-      sub_1000B350(v5, &v14);
+      meth_1000B350(v5, &v14);
       v8 = v14;
       v9 = abs32(v16 - v14);
       v10 = abs32(v17 - v15);

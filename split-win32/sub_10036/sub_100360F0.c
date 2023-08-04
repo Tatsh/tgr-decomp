@@ -74,42 +74,42 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4)
 
   v63 = 0;
   v62 = 0;
-  sub_10073B60(v67, a2, a3);
+  meth_10073B60(v67, a2, a3);
   v72 = 0;
   Concurrency::details::StructuredWorkStealingQueue<Concurrency::details::_UnrealizedChore,Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v67);
-  v56 = sub_10073C10(v67);
+  v56 = meth_10073C10(v67);
   v4 = (void (__stdcall *)(HANDLE, DWORD))WaitForSingleObject;
   v5 = (void (__stdcall *)(HANDLE))ReleaseMutex;
-  if ( sub_10073D40(v67) )
+  if ( meth_10073D40(v67) )
     goto LABEL_88;
   while ( 2 )
   {
-    v6 = sub_10073BC0(v67);
+    v6 = meth_10073BC0(v67);
     v7 = v6 & 0x10;
     v8 = v6 & 0xF;
     v65 = v7;
     switch ( v6 & 0xE0 )
     {
       case 0:
-        v60 = (unsigned __int8)sub_10073BC0(v67);
-        v9 = (unsigned __int8)sub_10073BC0(v67);
-        v57 = (unsigned __int8)sub_10073BC0(v67);
-        v51 = sub_10073BC0(v67);
-        v47 = sub_10073BC0(v67);
-        v49 = sub_10073BC0(v67);
+        v60 = (unsigned __int8)meth_10073BC0(v67);
+        v9 = (unsigned __int8)meth_10073BC0(v67);
+        v57 = (unsigned __int8)meth_10073BC0(v67);
+        v51 = meth_10073BC0(v67);
+        v47 = meth_10073BC0(v67);
+        v49 = meth_10073BC0(v67);
         v10 = 0;
-        v66 = sub_10073C40(v67);
+        v66 = meth_10073C40(v67);
         v53 = 0;
         if ( (v9 & 0x3Fu) <= 2 )
         {
           do
-            v70[v10++] = sub_10073BC0(v67);
+            v70[v10++] = meth_10073BC0(v67);
           while ( v10 < 24 );
           v53 = v10;
           v71 = 0;
         }
         if ( (v9 & 0x3F) == 4 )
-          sub_10073C10(v67);
+          meth_10073C10(v67);
         v11 = 2412 * v8;
         WaitForSingleObject(*(&dword_11786828 + 603 * v8), 0xFFFFFFFF);
         if ( (dword_11786854[603 * v8] & 0x3F) == 0 || a4 != (void *)dword_1178682C[603 * v8] )
@@ -206,7 +206,7 @@ LABEL_70:
           }
         }
 LABEL_86:
-        if ( !sub_10073D40(v67) )
+        if ( !meth_10073D40(v67) )
         {
           v4 = (void (__stdcall *)(HANDLE, DWORD))WaitForSingleObject;
           continue;
@@ -249,9 +249,9 @@ LABEL_88:
           while ( (int)v45 < (int)&unk_1178FF14 );
         }
         if ( a4 != (void *)1
-          && ((*(_BYTE *)(sub_10073F50(v67) + 3) & 0xE0) == 64
-           || (*(_BYTE *)(sub_10073F50(v67) + 3) & 0xE0) == 0x80
-           || (*(_BYTE *)(sub_10073F50(v67) + 3) & 0xE0) == 96) )
+          && ((*(_BYTE *)(meth_10073F50(v67) + 3) & 0xE0) == 64
+           || (*(_BYTE *)(meth_10073F50(v67) + 3) & 0xE0) == 0x80
+           || (*(_BYTE *)(meth_10073F50(v67) + 3) & 0xE0) == 96) )
         {
           np_sub_10003580(a1, a2, a3, (int)a4);
         }
@@ -261,8 +261,8 @@ LABEL_105:
         return;
       case 0x60:
         Concurrency::details::StructuredWorkStealingQueue<Concurrency::details::_UnrealizedChore,Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v67);
-        v32 = sub_10073F40(v67);
-        sub_10073BA0(v67, v32);
+        v32 = meth_10073F40(v67);
+        meth_10073BA0(v67, v32);
         goto LABEL_86;
       case 0x80:
         v15 = 603 * v8;
@@ -342,7 +342,7 @@ LABEL_105:
         }
         goto LABEL_70;
       case 0xC0:
-        v33 = sub_10073C10(v67);
+        v33 = meth_10073C10(v67);
         v34 = sub_100713A0() - v33;
         v15 = 603 * v8;
         WaitForSingleObject(*(HANDLE *)((char *)&dword_11786828 + v15 * 4), 0xFFFFFFFF);
@@ -353,13 +353,13 @@ LABEL_105:
         }
         goto LABEL_70;
       case 0xE0:
-        v61 = (unsigned __int8)sub_10073BC0(v67);
-        v59 = (unsigned __int8)sub_10073BC0(v67);
-        v52 = sub_10073BC0(v67);
-        v48 = sub_10073BC0(v67);
-        v50 = sub_10073BC0(v67);
+        v61 = (unsigned __int8)meth_10073BC0(v67);
+        v59 = (unsigned __int8)meth_10073BC0(v67);
+        v52 = meth_10073BC0(v67);
+        v48 = meth_10073BC0(v67);
+        v50 = meth_10073BC0(v67);
         for ( i = 0; i < 24; ++i )
-          v70[i] = sub_10073BC0(v67);
+          v70[i] = meth_10073BC0(v67);
         v71 = 0;
         if ( v7 )
         {

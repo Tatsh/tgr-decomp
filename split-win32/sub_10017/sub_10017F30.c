@@ -40,9 +40,6 @@ int __cdecl sub_10017F30(int a1)
   }
   return result;
 }
-// 10019260: using guessed type int sub_10019260(void);
-// 10019290: using guessed type int sub_10019290(void);
-// 100192F0: using guessed type _DWORD __cdecl sub_100192F0(_DWORD);
 // 100A81C0: using guessed type int g_Width;
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 100BD3F0: using guessed type int dword_100BD3F0;

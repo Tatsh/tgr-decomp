@@ -41,8 +41,8 @@ int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR
         v11 = 0;
       }
       if ( v11
-        && sub_1001ADE0((#478 *)v11, a1, lpDeviceDescription, deviceName, desc, a5) >= 0
-        && sub_1001B630(v7, v11) >= 0 )
+        && meth_1001ADE0((unk0 *)v11, a1, lpDeviceDescription, deviceName, desc, a5) >= 0
+        && meth_1001B630(v7, v11) >= 0 )
       {
         ++v6[1];
       }

@@ -1,13 +1,13 @@
 #include "../types-win32.h"
 //----- (1000A170) --------------------------------------------------------
-IDirect3DMaterial2 *__thiscall SafeReleaseDirect3DMaterial2(unk0_member2 *this)
+HRESULT __thiscall SafeReleaseDirect3DMaterial2(unk0_member2 *this)
 {
-  IDirect3DMaterial2 *hr; // eax
+  HRESULT hr; // eax
 
-  hr = this->lpDirect3DMaterial2;
+  hr = (HRESULT)this->lpDirect3DMaterial2;
   if ( hr )
   {
-    hr = (IDirect3DMaterial2 *)hr->lpVtbl->Release(hr);
+    hr = (*(int (__stdcall **)(HRESULT))(*(_DWORD *)hr + 8))(hr);// IDirect3DMaterial2::Release()
     this->lpDirect3DMaterial2 = 0;
   }
   return hr;

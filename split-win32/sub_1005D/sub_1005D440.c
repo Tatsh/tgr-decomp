@@ -8,7 +8,7 @@ int sub_1005D440()
   Iostream_init *v4; // eax
   Iostream_init *v5; // eax
 
-  memset(&dword_10A9E360, 0, 0x41B4u);
+  memset(dword_10A9E360, 0, 0x41B4u);
   LOWORD(dword_10AA28D4) = 0;
   word_10AA29F8 = 0;
   word_10AA29FC = 0;
@@ -312,7 +312,7 @@ int sub_1005D440()
   while ( (int)v0 < (int)&unk_10A9DA50 );
   v1 = (_DWORD *)malloc(0xC8u);
   if ( v1 )
-    v2 = sub_10048710(v1);
+    v2 = meth_10048710(v1);
   else
     v2 = 0;
   dword_10AA2908 = (int)v2;
@@ -337,7 +337,7 @@ int sub_1005D440()
   return 1;
 }
 // 100491B0: using guessed type int __cdecl sub_100491B0(int);
-// 10A9E360: using guessed type int dword_10A9E360;
+// 10A9E360: using guessed type int dword_10A9E360[];
 // 10A9E444: using guessed type int g_aImagesCursorBmFilepath;
 // 10A9E4B8: using guessed type int g_aImagesTypeGryBFilepath;
 // 10A9E52C: using guessed type int g_aImagesTypeWitBFilepath;

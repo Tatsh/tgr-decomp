@@ -36,9 +36,9 @@ BOOL __stdcall ddrawEnumerateCallback(GUID *lpGUID, LPSTR a2, LPSTR Source, LPVO
     }
     if ( v7 )
     {
-      if ( sub_1001B090(v7, lpGUID, Source, a2) < 0 || sub_1001BA10(v7) < 0 )
+      if ( meth_1001B090((unk0 *)v7, lpGUID, Source, a2) < 0 || sub_1001BA10(v7) < 0 )
       {
-        sub_1001B280((void **)v7);
+        meth_1001B280((unk0 *)v7);
         free(v7);
         return 1;
       }

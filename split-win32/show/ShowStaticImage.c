@@ -51,7 +51,7 @@ int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag)
     return -2147467259;
   flipSurfaces(game);
   v7 = sub_10009AD0(filename, flag, (char **)&a3, &a4);
-  sub_10009EA0(&stru_10277680, dev, v7, 256, 256, 11);
+  meth_10009EA0(&stru_10277680, dev, v7, 256, 256, 11);
   v22 = 0;
   beginSceneFunc = dev->lpVtbl->BeginScene;
   beginSceneFunc_1 = beginSceneFunc;
@@ -61,7 +61,7 @@ int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag)
     {
       for ( ; result == -2005532222; result = beginSceneFunc_1(dev) )
       {
-        while ( sub_1000B2C0(gsu0) == 2289435074 )
+        while ( meth_1000B2C0(gsu0) == 2289435074 )
           ;
       }
       if ( result )
@@ -165,7 +165,7 @@ int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag)
     {
       for ( ; result == -2005532222; result = endScene(dev) )
       {
-        while ( sub_1000B2C0(gsu0) == -2005532222 )
+        while ( meth_1000B2C0(gsu0) == -2005532222 )
           ;
       }
       if ( result )
@@ -176,7 +176,7 @@ int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag)
       ;
     if ( ++v22 >= 2 )
     {
-      sub_1000A0B0(&stru_10277680);
+      meth_1000A0B0(&stru_10277680);
       return v17;
     }
     beginSceneFunc_1 = beginSceneFunc;

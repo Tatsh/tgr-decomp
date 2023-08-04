@@ -6,7 +6,7 @@ void __stdcall __noreturn StartAddress(LPVOID lpThreadParameter)
 
   Handles[0] = *((HANDLE *)lpThreadParameter + 1);
   Handles[1] = hEvent;
-  while ( !WaitForMultipleObjects(2u, Handles, 0, 0xFFFFFFFF) )
+  while ( !WaitForMultipleObjects(2u, Handles, 0, INFINITE) )
     sub_1000C350((int)lpThreadParameter);
   ExitThread(0);
 }

@@ -7,10 +7,10 @@ int __usercall sub_10069330@<eax>(int a1@<ecx>, double a2@<st0>)
   result = *(_DWORD *)(a1 + 96);
   if ( result )
   {
-    if ( !g_NetworkPlay || (result = sub_10060CC0(result, *(_DWORD *)(result + 324))) != 0 )
+    if ( !g_NetworkPlay || (result = sub_10060CC0(a2, result, *(_DWORD *)(result + 324))) != 0 )
     {
       sub_10061C60(*(_DWORD *)(a1 + 96), a2);
-      result = sub_100019D0(*(#479 **)(a1 + 96));
+      result = meth_100019D0(*(#479 **)(a1 + 96));
     }
   }
   return result;

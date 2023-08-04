@@ -56,7 +56,7 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWind
     }
     else
     {
-      sub_1000A1C0(gsu0_1);
+      meth_1000A1C0(gsu0_1);
       free(gsu0_1);
       MessageBoxA(wnd0, aUnableToInitia, Caption, MB_ICONSTOP);
       DestroyWindow(wnd0);
@@ -65,7 +65,7 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWind
   }
   else
   {
-    sub_1000A1C0(gsu0_1);
+    meth_1000A1C0(gsu0_1);
     free(gsu0_1);
     result = -2147467259;
   }

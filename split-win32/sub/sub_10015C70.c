@@ -386,7 +386,7 @@ int __cdecl sub_10015C70(int a1)
   }
   qmemcpy(&unk_104ADC98, (char *)&unk_103C77E8 + 188656 * v9, 0x58u);
   dword_104ADCF0 = dword_103C7840[47164 * v9];
-  qmemcpy(&unk_104ADCF4, (char *)&word_103C7844 + 188656 * v9, 0x2008u);
+  qmemcpy(&unk_104ADCF4, &word_103C7844[94328 * v9], 0x2008u);
   sub_10014A30(5);
   ++dword_104AFD08;
   return 1;

@@ -2,8 +2,8 @@
 //----- (10058750) --------------------------------------------------------
 int __cdecl sub_10058750(int a1)
 {
-  int v1; // eax
-  int v2; // ebp
+  _DWORD *v1; // eax
+  _DWORD *v2; // ebp
   _DWORD *v3; // eax
   _DWORD *v4; // esi
   _DWORD *v5; // eax
@@ -95,25 +95,25 @@ int __cdecl sub_10058750(int a1)
   sub_1003E310();
   sub_1003E510();
   *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 108) = 1;
-  v1 = malloc(0x348u);
+  v1 = (_DWORD *)malloc(0x348u);
   if ( v1 )
-    v2 = sub_10048470(v1);
+    v2 = meth_10048470(v1);
   else
     v2 = 0;
   *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v2;
   if ( !v2 )
     sub_1003E260(4);
   ++*(_WORD *)(a1 + 16);
-  *(_DWORD *)(v2 + 832) = a1;
-  *(_DWORD *)(v2 + 16) = 0;
-  *(_DWORD *)(v2 + 824) = 1128464384;
-  *(_DWORD *)(v2 + 828) = 1121845248;
+  v2[208] = a1;
+  v2[4] = 0;
+  v2[206] = 1128464384;
+  v2[207] = 1121845248;
   v3 = (_DWORD *)malloc(0x1E214u);
   if ( v3 )
-    v4 = sub_100476C0(v3);
+    v4 = meth_100476C0(v3);
   else
     v4 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v4;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v4;
   if ( !v4 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))(*v4 + 56))(
@@ -126,13 +126,13 @@ int __cdecl sub_10058750(int a1)
     5,
     0,
     0);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v5 = (_DWORD *)malloc(0x1E214u);
   if ( v5 )
-    v6 = sub_100476C0(v5);
+    v6 = meth_100476C0(v5);
   else
     v6 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v6;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v6;
   if ( !v6 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, _DWORD, int))(*v6 + 56))(
@@ -145,21 +145,21 @@ int __cdecl sub_10058750(int a1)
     5,
     0,
     95);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v7 = (_DWORD *)malloc(0x1E214u);
   if ( v7 )
-    v8 = sub_100476C0(v7);
+    v8 = meth_100476C0(v7);
   else
     v8 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v8;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v8;
   if ( !v8 )
     sub_1003E260(4);
   v9 = *v8;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v8 + 56))(
     v8,
     a1,
-    *(_DWORD *)(v2 + 824),
-    *(_DWORD *)(v2 + 828),
+    v2[206],
+    v2[207],
     1056769,
     2,
     5,
@@ -170,22 +170,22 @@ int __cdecl sub_10058750(int a1)
   *((_WORD *)v8 + 61702) = 3;
   v10 = getCaptionString(0x14u);
   (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v9 + 52))(v8, v10, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   v11 = (_DWORD *)malloc(0x1E214u);
   if ( v11 )
-    v12 = sub_100476C0(v11);
+    v12 = meth_100476C0(v11);
   else
     v12 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v12;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v12;
   if ( !v12 )
     sub_1003E260(4);
   v13 = *v12;
-  v82 = *(float *)(v2 + 828) - -19.0;
+  v82 = *((float *)v2 + 207) - -19.0;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v12 + 56))(
     v12,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     LODWORD(v82),
     1056769,
     2,
@@ -197,22 +197,22 @@ int __cdecl sub_10058750(int a1)
   *((_WORD *)v12 + 61702) = 3;
   v14 = getCaptionString(0x15u);
   (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v13 + 52))(v12, v14, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   v15 = (_DWORD *)malloc(0x1E214u);
   if ( v15 )
-    v16 = sub_100476C0(v15);
+    v16 = meth_100476C0(v15);
   else
     v16 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v16;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v16;
   if ( !v16 )
     sub_1003E260(4);
   v17 = *v16;
-  v83 = *(float *)(v2 + 828) - -38.0;
+  v83 = *((float *)v2 + 207) - -38.0;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v16 + 56))(
     v16,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     LODWORD(v83),
     1056769,
     2,
@@ -224,22 +224,22 @@ int __cdecl sub_10058750(int a1)
   *((_WORD *)v16 + 61702) = 3;
   v18 = getCaptionString(0x16u);
   (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v17 + 52))(v16, v18, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   v19 = (_DWORD *)malloc(0x1E214u);
   if ( v19 )
-    v20 = sub_100476C0(v19);
+    v20 = meth_100476C0(v19);
   else
     v20 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v20;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v20;
   if ( !v20 )
     sub_1003E260(4);
   v21 = *v20;
-  v84 = *(float *)(v2 + 828) - -57.0;
+  v84 = *((float *)v2 + 207) - -57.0;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v20 + 56))(
     v20,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     LODWORD(v84),
     1056769,
     2,
@@ -251,22 +251,22 @@ int __cdecl sub_10058750(int a1)
   *((_WORD *)v20 + 61702) = 3;
   v22 = getCaptionString(0x17u);
   (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v21 + 52))(v20, v22, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   v23 = (_DWORD *)malloc(0x1E214u);
   if ( v23 )
-    v24 = sub_100476C0(v23);
+    v24 = meth_100476C0(v23);
   else
     v24 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v24;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v24;
   if ( !v24 )
     sub_1003E260(4);
   v25 = *v24;
-  v85 = *(float *)(v2 + 828) - -76.0;
+  v85 = *((float *)v2 + 207) - -76.0;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v24 + 56))(
     v24,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     LODWORD(v85),
     1056769,
     2,
@@ -278,24 +278,24 @@ int __cdecl sub_10058750(int a1)
   *((_WORD *)v24 + 61702) = 3;
   v26 = getCaptionString(0x18u);
   (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v25 + 52))(v24, v26, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   if ( g_NetworkPlay == 2 )
   {
     v27 = (_DWORD *)malloc(0x1E214u);
     if ( v27 )
-      v28 = sub_100476C0(v27);
+      v28 = meth_100476C0(v27);
     else
       v28 = 0;
-    *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v28;
+    v2[*((unsigned __int16 *)v2 + 10) + 6] = v28;
     if ( !v28 )
       sub_1003E260(4);
     v29 = *v28;
-    v86 = *(float *)(v2 + 828) - -95.0;
+    v86 = *((float *)v2 + 207) - -95.0;
     (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v28 + 56))(
       v28,
       a1,
-      *(_DWORD *)(v2 + 824),
+      v2[206],
       LODWORD(v86),
       1056769,
       2,
@@ -307,23 +307,23 @@ int __cdecl sub_10058750(int a1)
     *((_WORD *)v28 + 61702) = 3;
     v30 = getCaptionString(0x68u);
     (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v29 + 52))(v28, v30, 1, 1, &dword_100AB448);
-    ++*(_WORD *)(v2 + 20);
-    ++*(_WORD *)(v2 + 836);
+    ++*((_WORD *)v2 + 10);
+    ++*((_WORD *)v2 + 418);
   }
   v31 = (_DWORD *)malloc(0x1E214u);
   if ( v31 )
-    v32 = sub_100476C0(v31);
+    v32 = meth_100476C0(v31);
   else
     v32 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v32;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v32;
   if ( !v32 )
     sub_1003E260(4);
   v33 = *v32;
-  v87 = *(float *)(v2 + 828) - -114.0;
+  v87 = *((float *)v2 + 207) - -114.0;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v32 + 56))(
     v32,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     LODWORD(v87),
     1056769,
     2,
@@ -339,22 +339,22 @@ int __cdecl sub_10058750(int a1)
   else
     v34 = getCaptionString(0x69u);
   (*(void (__thiscall **)(_DWORD *, LPCSTR))(v33 + 52))(v32, v34);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   v35 = (_DWORD *)malloc(0x1E214u);
   if ( v35 )
-    v36 = sub_100476C0(v35);
+    v36 = meth_100476C0(v35);
   else
     v36 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v36;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v36;
   if ( !v36 )
     sub_1003E260(4);
   v37 = *v36;
-  v88 = *(float *)(v2 + 828) - -133.0;
+  v88 = *((float *)v2 + 207) - -133.0;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v36 + 56))(
     v36,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     LODWORD(v88),
     1056769,
     2,
@@ -366,14 +366,14 @@ int __cdecl sub_10058750(int a1)
   *((_WORD *)v36 + 61702) = 3;
   v38 = getCaptionString(0xCu);
   (*(void (__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v37 + 52))(v36, v38, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
-  ++*(_WORD *)(v2 + 836);
+  ++*((_WORD *)v2 + 10);
+  ++*((_WORD *)v2 + 418);
   v39 = (_DWORD *)malloc(0x1E214u);
   if ( v39 )
-    v40 = sub_100476C0(v39);
+    v40 = meth_100476C0(v39);
   else
     v40 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v40;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v40;
   if ( !v40 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v40 + 56))(
@@ -397,13 +397,13 @@ int __cdecl sub_10058750(int a1)
     0,
     -1);
   dword_10AA29E0 = (int)v40;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v42 = (_DWORD *)malloc(0x1E214u);
   if ( v42 )
-    v43 = sub_100476C0(v42);
+    v43 = meth_100476C0(v42);
   else
     v43 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v43;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v43;
   if ( !v43 )
     sub_1003E260(4);
   v44 = *v43;
@@ -435,13 +435,13 @@ int __cdecl sub_10058750(int a1)
   dword_10AA28D8 = 0;
   dword_10AA285C = 1;
   v43[3039] = 1;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v46 = (_DWORD *)malloc(0x1E214u);
   if ( v46 )
-    v47 = sub_100476C0(v46);
+    v47 = meth_100476C0(v46);
   else
     v47 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v47;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v47;
   if ( !v47 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v47 + 56))(
@@ -474,13 +474,13 @@ int __cdecl sub_10058750(int a1)
       0,
       -1);
   dword_10AA29E4 = (int)v47;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v49 = (_DWORD *)malloc(0x1E214u);
   if ( v49 )
-    v50 = sub_100476C0(v49);
+    v50 = meth_100476C0(v49);
   else
     v50 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v50;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v50;
   if ( !v50 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v50 + 56))(
@@ -493,13 +493,13 @@ int __cdecl sub_10058750(int a1)
     5,
     1,
     54);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v51 = (_DWORD *)malloc(0x1E214u);
   if ( v51 )
-    v52 = sub_100476C0(v51);
+    v52 = meth_100476C0(v51);
   else
     v52 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v52;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v52;
   if ( !v52 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v52 + 56))(
@@ -513,13 +513,13 @@ int __cdecl sub_10058750(int a1)
     1,
     53);
   v52[1] = sub_1003E920;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v53 = (_DWORD *)malloc(0x1E214u);
   if ( v53 )
-    v54 = sub_100476C0(v53);
+    v54 = meth_100476C0(v53);
   else
     v54 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v54;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v54;
   if ( !v54 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v54 + 56))(
@@ -533,23 +533,23 @@ int __cdecl sub_10058750(int a1)
     1,
     11);
   v54[1] = sub_1003F720;
-  v55 = *(_WORD *)(v2 + 20) + 1;
+  v55 = *((_WORD *)v2 + 10) + 1;
   ++*((_WORD *)v54 + 5466);
   *((_WORD *)v54 + 5467) = v55;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v56 = (_DWORD *)malloc(0x1E214u);
   if ( v56 )
-    v57 = sub_100476C0(v56);
+    v57 = meth_100476C0(v56);
   else
     v57 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v57;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v57;
   if ( !v57 )
     sub_1003E260(4);
   v58 = *v57;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v57 + 56))(
     v57,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     1124663296,
     1052673,
     2,
@@ -559,13 +559,13 @@ int __cdecl sub_10058750(int a1)
   v57[1] = sub_1003F760;
   *((_WORD *)v57 + 61702) = 3;
   (*(void (__thiscall **)(_DWORD *, char *, int, int, void *))(v58 + 52))(v57, asc_100AD300, 1, 1, &unk_100AB468);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v59 = (_DWORD *)malloc(0x1E214u);
   if ( v59 )
-    v60 = sub_100476C0(v59);
+    v60 = meth_100476C0(v59);
   else
     v60 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v60;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v60;
   if ( !v60 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v60 + 56))(
@@ -579,23 +579,23 @@ int __cdecl sub_10058750(int a1)
     1,
     25);
   v60[1] = sub_10040890;
-  v61 = *(_WORD *)(v2 + 20) + 1;
+  v61 = *((_WORD *)v2 + 10) + 1;
   ++*((_WORD *)v60 + 5466);
   *((_WORD *)v60 + 5467) = v61;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v62 = (_DWORD *)malloc(0x1E214u);
   if ( v62 )
-    v63 = sub_100476C0(v62);
+    v63 = meth_100476C0(v62);
   else
     v63 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v63;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v63;
   if ( !v63 )
     sub_1003E260(4);
   v64 = *v63;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v63 + 56))(
     v63,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     1123418112,
     1052673,
     2,
@@ -605,13 +605,13 @@ int __cdecl sub_10058750(int a1)
   v63[1] = sub_1003F7F0;
   *((_WORD *)v63 + 61702) = 3;
   (*(void (__thiscall **)(_DWORD *, char *, int, int, void *))(v64 + 52))(v63, asc_100AD300, 1, 1, &unk_100AB498);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v65 = (_DWORD *)malloc(0x1E214u);
   if ( v65 )
-    v66 = sub_100476C0(v65);
+    v66 = meth_100476C0(v65);
   else
     v66 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v66;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v66;
   if ( !v66 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v66 + 56))(
@@ -625,23 +625,23 @@ int __cdecl sub_10058750(int a1)
     1,
     14);
   v66[1] = sub_100408B0;
-  v67 = *(_WORD *)(v2 + 20) + 1;
+  v67 = *((_WORD *)v2 + 10) + 1;
   ++*((_WORD *)v66 + 5466);
   *((_WORD *)v66 + 5467) = v67;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v68 = (_DWORD *)malloc(0x1E214u);
   if ( v68 )
-    v69 = sub_100476C0(v68);
+    v69 = meth_100476C0(v68);
   else
     v69 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v69;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v69;
   if ( !v69 )
     sub_1003E260(4);
   v70 = *v69;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v69 + 56))(
     v69,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     1127546880,
     1052673,
     2,
@@ -651,13 +651,13 @@ int __cdecl sub_10058750(int a1)
   v69[1] = sub_1003F990;
   *((_WORD *)v69 + 61702) = 3;
   (*(void (__thiscall **)(_DWORD *, char *, int, int, void *))(v70 + 52))(v69, asc_100AD300, 1, 1, &unk_100AB488);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v71 = (_DWORD *)malloc(0x1E214u);
   if ( v71 )
-    v72 = sub_100476C0(v71);
+    v72 = meth_100476C0(v71);
   else
     v72 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v72;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v72;
   if ( !v72 )
     sub_1003E260(4);
   (*(void (__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v72 + 56))(
@@ -671,23 +671,23 @@ int __cdecl sub_10058750(int a1)
     1,
     12);
   v72[1] = sub_10040870;
-  v73 = *(_WORD *)(v2 + 20) + 1;
+  v73 = *((_WORD *)v2 + 10) + 1;
   ++*((_WORD *)v72 + 5466);
   *((_WORD *)v72 + 5467) = v73;
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v74 = (_DWORD *)malloc(0x1E214u);
   if ( v74 )
-    v75 = sub_100476C0(v74);
+    v75 = meth_100476C0(v74);
   else
     v75 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v75;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v75;
   if ( !v75 )
     sub_1003E260(4);
   v76 = *v75;
   (*(void (__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v75 + 56))(
     v75,
     a1,
-    *(_DWORD *)(v2 + 824),
+    v2[206],
     1132658688,
     1052673,
     2,
@@ -697,13 +697,13 @@ int __cdecl sub_10058750(int a1)
   v75[1] = sub_1003F860;
   *((_WORD *)v75 + 61702) = 3;
   (*(void (__thiscall **)(_DWORD *, char *, int, int, void *))(v76 + 52))(v75, asc_100AD300, 1, 1, &unk_100AB478);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   v77 = (_DWORD *)malloc(0x1E214u);
   if ( v77 )
-    v78 = sub_100476C0(v77);
+    v78 = meth_100476C0(v77);
   else
     v78 = 0;
-  *(_DWORD *)(v2 + 4 * *(unsigned __int16 *)(v2 + 20) + 24) = v78;
+  v2[*((unsigned __int16 *)v2 + 10) + 6] = v78;
   if ( !v78 )
     sub_1003E260(4);
   v79 = *v78;
@@ -722,7 +722,7 @@ int __cdecl sub_10058750(int a1)
   v80 = v78[2775];
   strcpy((char *)v78 + 11109, g_lpSessionDesc_dwUser3);
   (*(void (__thiscall **)(_DWORD *, int, int, int *))(v80 + 4))(v78 + 2775, 1, 1, &dword_100AB448);
-  ++*(_WORD *)(v2 + 20);
+  ++*((_WORD *)v2 + 10);
   return 1;
 }
 // 1003E920: using guessed type int __cdecl sub_1003E920(int);
@@ -737,14 +737,12 @@ int __cdecl sub_10058750(int a1)
 // 10040870: using guessed type int __cdecl sub_10040870(int);
 // 10040890: using guessed type int __cdecl sub_10040890(int);
 // 100408B0: using guessed type int __cdecl sub_100408B0(int);
-// 10042AF0: using guessed type int __cdecl sub_10042AF0(_DWORD);
 // 10042B30: using guessed type int sub_10042B30();
 // 10042C80: using guessed type int sub_10042C80();
 // 10042DC0: using guessed type int sub_10042DC0();
 // 10042E20: using guessed type int sub_10042E20();
 // 10042E80: using guessed type int sub_10042E80();
 // 100437B0: using guessed type int sub_100437B0();
-// 10048470: using guessed type int __thiscall sub_10048470(_DWORD);
 // 10058750: using guessed type int __cdecl sub_10058750(int);
 // 100AA010: using guessed type int g_GameMode;
 // 100AB448: using guessed type int dword_100AB448;

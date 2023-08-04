@@ -1,16 +1,16 @@
 #include "../../types-win32.h"
 //----- (1005D0A0) --------------------------------------------------------
-int __stdcall sub_1005D0A0(LPCSTR lpFileName)
+void *__stdcall sub_1005D0A0(LPCSTR lpFileName)
 {
-  int result; // eax
+  void *result; // eax
   void *v2; // ebx
   int v3; // edi
   int i; // esi
   int v5[70]; // [esp+4h] [ebp-118h] BYREF
 
-  result = _findfirst(lpFileName, (int)v5);
-  v2 = (void *)result;
-  if ( result != -1 )
+  result = (void *)_findfirst(lpFileName, (int)v5);
+  v2 = result;
+  if ( result != (void *)-1 )
   {
     v3 = 0;
     for ( i = 1; i < 100; ++i )
@@ -20,7 +20,7 @@ int __stdcall sub_1005D0A0(LPCSTR lpFileName)
       ++v3;
     }
     _findclose((intptr_t)v2);
-    result = v3;
+    result = (void *)v3;
   }
   return result;
 }

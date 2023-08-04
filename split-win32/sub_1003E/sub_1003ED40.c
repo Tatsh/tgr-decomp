@@ -7,13 +7,13 @@ int __usercall sub_1003ED40@<eax>(int a1@<edi>, int a2)
   int v5; // [esp+Ch] [ebp-8h] BYREF
   int v6; // [esp+10h] [ebp-4h] BYREF
 
-  sub_1001AC80(*((__unk0 **)Base + **(_DWORD **)(dword_10AA29EC + 8 * dword_10AA2A30 + 122440)), &v3, &v4, &v5, &v6);
+  meth_1001AC80(*((unk1 **)Base + **(_DWORD **)(dword_10AA29EC + 8 * dword_10AA2A30 + 122440)), &v3, &v4, &v5, &v6);
   dword_10B4E6F4 = v6;
   dword_10AA2864 = dword_10AA2A30;
   dword_10B4E6E8 = v3;
   dword_10B4E6EC = v4;
   dword_10B4E6F0 = v5;
-  dword_118AC240 = (int)sub_1001A570(a1, dword_118AC238, v3, v4, v5, 0, (IID *)dword_118AC23C);
+  dword_118AC240 = (int)meth_1001A570(a1, dword_118AC238, v3, v4, v5, 0, (IID *)dword_118AC23C);
   sub_10046670(a2);
   return 0;
 }

@@ -53,7 +53,7 @@ int sub_100798F0()
   if ( result )
   {
     ShowStaticImage(g_gsu0, aSplashImg, 0x2AC7E58B);
-    result = sub_1000B280((int)g_gsu0, (_DWORD *)dword_118ABE08) >= 0;
+    result = meth_1000B280((int)g_gsu0, (_DWORD *)dword_118ABE08) >= 0;
   }
   return result;
 }

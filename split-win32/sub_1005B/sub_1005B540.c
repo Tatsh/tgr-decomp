@@ -11,7 +11,7 @@ char __cdecl sub_1005B540(int a1)
   {
     v2 += 2;
     ++v1;
-    if ( v2 >= MEMORY[0x100AE6D8] )
+    if ( v2 >= (_DWORD *)&gCarsArray[1].gap2E[554] )
       return 0;
   }
   return byte_100ACE5C[8 * v1];
