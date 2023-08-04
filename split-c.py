@@ -7,10 +7,6 @@ import sys
 
 T = TypeVar('T')
 
-SPLIT_PATH = Path('./split')
-METHODS_PATH = Path('./split/meth')
-SUBS_PATH = Path('./split/sub')
-
 
 def chunks(sequence: list[T], length: int) -> Iterator[list[T]]:
     """Returns an iterator of sequence split into length-sized lists."""
@@ -25,8 +21,8 @@ def split_camel(name: str) -> list[str]:
 
 def get_function_name(lines_str: str) -> tuple[str | None, str | None]:
     lines = lines_str.splitlines()
-    which = lines[1] if 'may be wrong' in lines[0] else lines[0]
-    func_name = re.sub(r'@<[a-z]+>', '',
+    which = [l for l in lines if not l.startswith('//')][0]
+    func_name = re.sub(r'@<[\$a-z0-9]+>', '',
                        which.split('(')[0].split(' ')[-1].replace('*', ''))
     if not func_name:
         return None, None
@@ -63,13 +59,18 @@ def fix_operator_calls(lines_str: str) -> str:
 
 
 def main() -> int:
+    split_path = Path(sys.argv[2])
+    methods_path = split_path / 'meth'
+    sub_path = split_path / 'sub'
+    types_file = Path(sys.argv[3])
+    assert types_file.exists() and types_file.is_file()
     try:
-        rmtree(SPLIT_PATH)
+        rmtree(split_path)
     except FileNotFoundError:
         pass
-    SPLIT_PATH.mkdir(exist_ok=True, parents=True)
-    METHODS_PATH.mkdir(exist_ok=True, parents=True)
-    SUBS_PATH.mkdir(exist_ok=True, parents=True)
+    split_path.mkdir(exist_ok=True, parents=True)
+    methods_path.mkdir(exist_ok=True, parents=True)
+    sub_path.mkdir(exist_ok=True, parents=True)
     with open(sys.argv[1], 'rb') as f:
         content = f.read().replace(b'\r\n',
                                    b'\n').decode(errors='backslashreplace')
@@ -77,7 +78,7 @@ def main() -> int:
                        content,
                        flags=re.MULTILINE)
     files: dict[str, list[tuple[str, str]]] = {}
-    with (SPLIT_PATH / 'decls.c').open('w+') as f:
+    with (split_path / 'decls.c').open('w+') as f:
         f.write(f'{grouped[0]}\n')
     for header, lines_str in ((_, y.strip())
                               for _, y in chunks(grouped[1:], 2)):
@@ -99,9 +100,11 @@ def main() -> int:
             del files[prefix]
     for prefix, l in files.items():
         for name, code in l:
-            prefix_path = SPLIT_PATH / prefix
+            prefix_path = split_path / prefix
             prefix_path.mkdir(exist_ok=True, parents=True)
+            path_ref = '..' if len(prefix_path.parents) == 1 else '../..'
             with (prefix_path / name).open('w+') as f:
+                f.write(f'#include "{path_ref}/{types_file.name}"\n')
                 f.write(code)
     return 0
 

@@ -1,7 +1,0 @@
-//----- (10060030) --------------------------------------------------------
-int __cdecl showMessageBox_0(HWND hWnd, HRESULT hr, LPCSTR lpText) {
-    const CHAR *caption; // eax
-
-    caption = getCaptionString(0xAAu);
-    return MessageBoxA(hWnd, lpText, caption, 0);
-}

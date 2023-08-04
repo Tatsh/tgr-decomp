@@ -8,8 +8,6 @@
 #include <math.h>
 #include <defs.h>
 
-#include <stdarg.h>
-
 
 //-------------------------------------------------------------------------
 // Function declarations
@@ -148,36 +146,36 @@ int __cdecl sub_100079E0(int, float, int, int); // idb
 int BringWindowToFront();
 void setupMemoryStatus();
 void __cdecl ReadSettings(char *Str);
-void *__thiscall sub_100085C0(void *this, char a2); // idb
-void __thiscall sub_100085E0(_DWORD *this);
+Pod *__thiscall sub_100085C0(Pod *this, char a2);
+void __thiscall setPodVtbl(Pod *this); // idb
 char __stdcall CleanupName(const char *a1, char *buff); // idb
-int __thiscall sub_10008670(unk1 *this, int a2); // idb
-int __thiscall GetNumForNameWrapper(unk1 *this, const char *ArgList); // idb
-int __thiscall GetPodLength(unk1 *this, unsigned int argList); // idb
-size_t __thiscall ReadPod(unk1 *this, unsigned int argList, void *buffer); // idb
-int __thiscall LoadPod(unk1 *this, unsigned int ArgList); // idb
-int __thiscall LoadPod_0(unk1 *this, unsigned int argList, int a3); // idb
-int __thiscall sub_10008890(unk1 *this, int a2); // idb
-int __thiscall meth_100088B0(int *this, int a2, int a3);
-size_t __thiscall sub_100088D0(_DWORD *this); // idb
-int __thiscall meth_10008970(_DWORD *this); // idb
-int __stdcall sub_100089C0(char *FileName); // idb
+int __thiscall meth_10008670(Pod *this, int a2); // idb
+int __thiscall GetNumForNameWrapper(Pod *this, char *ArgList); // idb
+int __thiscall GetPodLength(Pod *this, unsigned int argList); // idb
+size_t __thiscall ReadPod(#674 *this, unsigned int argList, void *buffer); // idb
+int __thiscall LoadPod(#674 *this, unsigned int ArgList); // idb
+int __thiscall LoadPod_0(Pod *this, unsigned int argList, int a3); // idb
+int __thiscall sub_10008890(Pod *this, int a2); // idb
+int __thiscall pod_meth_100088B0(Pod *this, int a2, int a3); // idb
+size_t __thiscall readPodFile(Pod *this); // idb
+int __thiscall cleanUpPod(Pod *this); // idb
+int __stdcall meth_100089C0(char *FileName); // idb
 size_t __thiscall meth_10008A00(_DWORD *this, const char *a2, int a3, int a4, char a5, char a6);
-int __thiscall sub_10008AA0(_DWORD *this); // idb
-void __thiscall sub_10008B40(char *this, const char *a2);
+int __thiscall meth_10008AA0(_DWORD *this); // idb
+void __thiscall setPodFilename(Pod *this, const char *a2); // idb
 // Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this);
 void __thiscall debugPrint(void *); // idb
 unsigned int __stdcall basename(const char *path, char *out); // idb
 FILE *__stdcall fopenWriteBinary(char *FileName);
 FILE *__stdcall fopenReadBinary(char *FileName);
-size_t __stdcall sub_10008C60(FILE *fp, void *buffer, size_t elementCount); // idb
+size_t __stdcall freadLockHandleError(FILE *fp, void *buffer, size_t elementCount); // idb
 size_t __stdcall sub_10008C90(FILE *Stream, void *Buffer, size_t ElementCount);
 void __noreturn writeToRandomBufferAndExit(char *format, ...); // idb
 void __cdecl __noreturn sub_10008CF0(int a1);
 HRESULT __cdecl setup_g_DevCaps(IDirect3DDevice2 *dev2); // idb
 int sub_10008DF0();
 int sub_10008E00();
-int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag); // idb
+int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag); // idb
 int __stdcall d3dEnumTextureFormatsCallback(DDSURFACEDESC *a1, void *context); // idb
 int __cdecl sub_10009640(int a1);
 char *__cdecl sub_10009660(_WORD *arg0, unsigned __int8 *a2, int a3, int a1, int *a5);
@@ -188,12 +186,12 @@ char *__cdecl sub_100098A0(_WORD *out_a1, unsigned __int8 *out_a2, int a3, int a
 // char __usercall sub_10009A50@<al>(unsigned int checksumOrZero@<eax>, _BYTE *a2, _WORD *a3, int size); idb
 unsigned __int8 *__cdecl sub_10009AD0(char *filename, int expectedChecksum, char **outFilename, int *outBuff); // idb
 HRESULT __cdecl enumTextureFormatsSomething(#486 *dev);
-IDirectDraw2 *__thiscall sub_10009C40(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue);
+IDirectDraw2 *__thiscall sub_10009C40(void *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue);
 IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev); // idb
-IDirectDraw2 *__thiscall sub_10009EA0(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6);
-BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBottom); // idb
+IDirectDraw2 *__thiscall sub_10009EA0(void *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6);
+BOOL __thiscall sub_10009ED0(void *this, char *a2, LONG rectRight, LONG rectBottom); // idb
 BOOL __thiscall sub_1000A020(#511 *this); // idb
-int __thiscall sub_1000A0B0(#511 *this);
+int __thiscall sub_1000A0B0(void *this);
 unk0_member2 *__thiscall sub_1000A100(unk0_member2 *this, IDirect3D2 *d3d2, IDirect3DDevice2 *d3dDevice2); // idb
 IDirect3DMaterial2 *__thiscall SafeReleaseDirect3DMaterial2(unk0_member2 *this);
 unk0 *__thiscall initUnk(unk0 *this);
@@ -316,7 +314,7 @@ int sub_10019B50();
 int *__cdecl sub_1001A4B0(int a1);
 int __cdecl sub_1001A4D0(int a1, int a2, int a3, int a4);
 gameSpecificUnk1 *__cdecl sub_1001A550(gameSpecificUnk1 *a1); // idb
-__unk0 *__cdecl sub_1001A570(_DWORD *a1, int a2, int a3, int a4, __unk0 *a5, IID *a6);
+__unk0 *__cdecl sub_1001A570(_DWORD *a1, int width, int height, int bitDepth, __unk0 *a5, int a6); // idb
 IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, __unk0 *a3);
 int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4);
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8);
@@ -328,12 +326,12 @@ BOOL __stdcall ddrawEnumerateCallback(GUID *, LPSTR, LPSTR, LPVOID); // idb
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2);
 int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2);
 int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, #469 *desc, #469 *a5, LPVOID userArg); // idb
-int __thiscall sub_1001AC60(__unk0 *this); // idb
+LPPALETTEENTRY __thiscall sub_1001AC60(unk0 *this);
 int __thiscall sub_1001AC80(__unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5); // idb
-BOOL __thiscall sub_1001ACF0(__unk0 *this, int iid);
+BOOL __thiscall sub_1001ACF0(unk0 *this, int a2); // idb
 BOOL __thiscall sub_1001AD50(__unk0 *this, int width, int height, int bitDepth); // idb
-BOOL __thiscall sub_1001AD90(_DWORD *this);
-bool __thiscall sub_1001ADA0(_BYTE *this, const void *a2);
+BOOL __thiscall sub_1001AD90(unk0 *this);
+bool __thiscall sub_1001ADA0(unk0 *this, const void *a2); // idb
 int __thiscall sub_1001ADE0(#478 *this, GUID *a2, char *Source, char *a4, #469 *a5, #469 *a6); // idb
 void __thiscall sub_1001AEE0(int this);
 HRESULT __thiscall sub_1001AF20(int a1, IDirect3DDevice2 *dev); // idb
@@ -350,8 +348,8 @@ int __thiscall sub_1001B510(#468 *this, #462 *a2); // idb
 int __thiscall sub_1001B5A0(int *this);
 int __thiscall sub_1001B630(#478 *this, int a2); // idb
 int __thiscall sub_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4);
-int __thiscall sub_1001B7C0(__unk0 *this, const void *a2, _DWORD a3, int a4, int a5);
-__unk0 *__thiscall sub_1001B880(__unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8);
+int __thiscall sub_1001B7C0(unk0 *this, const void *a2, unk0 *a3, int a4, int a5);
+unk0 *__thiscall sub_1001B880(unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8);
 GUID *__thiscall getDirectDrawLPGUID(gameSpecificUnk1 *this);
 HRESULT sub_1001B970();
 HRESULT ddrawEnum();
@@ -472,7 +470,7 @@ char __cdecl sub_10025AB0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, in
 unsigned int __cdecl sub_10027B10(unsigned __int16 a1);
 int __cdecl sub_10027B90(int a1, int a2, int a3);
 int __cdecl sub_10027C00(int a1);
-int __cdecl sub_10027C60(unsigned __int8 *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15);
+int __cdecl tex_sub_10027C60(unsigned __int8 *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15);
 int __cdecl sub_10028200(_DWORD *a1, int a2, int a3);
 int __cdecl TIDFromTexture(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
@@ -638,7 +636,7 @@ void sub_10034A85();
 // int sub_10034AD5();
 void sub_10034C32();
 BOOL __cdecl sub_10034C51(int (*a1)(void));
-int __cdecl sub_10034C66(int a1);
+int __cdecl sub_10034C66(int callback); // idb
 int sub_10034C73();
 void sub_10034C7E();
 void sub_10034C83();
@@ -652,7 +650,7 @@ int __cdecl sub_10035585(int a1, __int16 a2, int a3);
 void __cdecl sub_1003563A(int a1);
 void __noreturn sub_10035BA7();
 void __cdecl __noreturn sub_10035BBA(int a1);
-int sub_10035BD1();
+Car *sub_10035BD1();
 _DWORD *__cdecl sub_10035C70(_DWORD *a1, _DWORD *a2);
 _BYTE *__thiscall sub_10035CA0(_BYTE *this, char a2, char a3, char a4);
 void __thiscall sub_10035CE0(int *this);
@@ -666,7 +664,7 @@ int __cdecl sub_10036BD0(int a1, int a2);
 __int16 __cdecl sub_10036C00(int a1);
 int __cdecl sub_10037030(int a1);
 int __cdecl sub_10037070(int a1);
-int __cdecl sub_100370D0(char *a1); // idb
+int __cdecl sub_100370D0(char *outBuffer); // idb
 int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex); // idb
 void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCount);
 int __cdecl sub_10037930(int a1, _DWORD *a2, _DWORD *a3);
@@ -687,7 +685,7 @@ int __cdecl ParseTrackHeader(int outBuffer, CHK_File *fp);
 int __cdecl sub_10038B20(_BYTE *a1);
 HRESULT __cdecl SetupDirectPlayPlayer(#503 *u1); // idb
 int sub_10038E80();
-// _DWORD *unknown_libname_7();
+// Pod *unknown_libname_7();
 // void __cdecl unknown_libname_8(); idb
 int sub_10038EC0();
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code); // idb
@@ -1218,16 +1216,16 @@ char sub_10060DC0();
 char sub_10060DE0();
 int __cdecl sub_10060E00(int a1);
 int sub_10060E90(void); // weak
-_BYTE *__cdecl sub_10060EA0(PBITMAP pBitmap);
-_BYTE *__cdecl sub_10060F00(_BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes);
+char *__cdecl ConvertBitmapIf24Bit(PBITMAP pBitmap);
+char *__cdecl Convert24BitBitmap(char *mem, LPVOID bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes);
 int __cdecl sub_10060F70(int a1, int a2, int a3);
 int *__cdecl sub_10060FB0(int a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, int *a6);
 int sub_10061000();
-int __cdecl sub_10061010(int carIndex, int a2); // idb
-_BYTE *__cdecl LoadImageWrapper(LPCSTR name);
-int __cdecl sub_10061210(unsigned __int8 *a1, int bmHeight_1, int bmHeight, unsigned __int8 *mem);
+int __cdecl sub_10061010(int carIndex, int bSomething); // idb
+char *__cdecl LoadImageWrapper(LPCSTR name);
+unsigned int __cdecl sub_10061210(char *a1, int bmHeight_1, int bmHeight, unsigned __int8 *mem); // idb
 int __cdecl sub_10061290(int a1, int a2, int a3, int a4);
-void **sub_100613B0();
+Car *sub_100613B0();
 int sub_10061400(void); // weak
 HANDLE sub_10061410();
 int __cdecl sub_10061460(int a1, int a2, int a3);
@@ -1303,17 +1301,17 @@ int __cdecl sub_100697E0(int a1);
 char *sub_10069800();
 void sub_10069840();
 int sub_10069A50();
-void *sub_10069A60();
+BossRallyConfig *sub_10069A60();
 // void __cdecl unknown_libname_10(); idb
-void *__thiscall sub_10069A90(void *this);
+BossRallyConfig *__thiscall sub_10069A90(BossRallyConfig *this);
 int __thiscall sub_10069AA0(_DWORD *this, int a2); // idb
 int __thiscall sub_10069B10(_DWORD *this, int a2, int a3, __int16 a4, char a5); // idb
 int __thiscall sub_10069BC0(_WORD *this, int a2, int a3);
 char __thiscall sub_10069C30(_WORD *this, int a2, int a3);
-int __thiscall meth_10069C90(_DWORD *this);
-_DWORD *__thiscall sub_10069DE0(_DWORD *this, _DWORD *a2);
-int __thiscall ReadBossRallyCfg(_WORD *this, const char *cfgFilename); // idb
-FILE *__thiscall WriteConfigFile(_DWORD *this, char *FileName); // idb
+int __thiscall meth_10069C90(BossRallyConfig *this); // idb
+BossRallyConfig *__thiscall sub_10069DE0(BossRallyConfig *this, BossRallyConfig *otherConfig); // idb
+int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename); // idb
+FILE *__thiscall WriteConfigFile(BossRallyConfig *this, char *FileName); // idb
 unsigned int ReadInstallDirectory();
 int sub_1006A980();
 int __cdecl sub_1006A990(int a1);
@@ -1373,7 +1371,7 @@ char sub_100709A0();
 bool __cdecl sub_10070AF0(char *FileName, int a2);
 bool __cdecl sub_10070E60(int a1);
 char sub_10070E80();
-int sub_10071120(); // weak
+Car *sub_10071120();
 char __cdecl sub_10071130(int a1, FILE *Stream);
 DWORD sub_100713A0();
 int sub_100713B0(void); // weak
@@ -1482,7 +1480,7 @@ float *__cdecl sub_10074720(float *a1, float *a2, float *a3);
 float *__cdecl sub_10074770(float *a1, int a2, float *a3);
 float *__cdecl sub_100747C0(float *a1, float *a2, float *a3);
 float *__cdecl sub_10074830(float *a1, float *a2, float *a3);
-int __cdecl sub_10074870(int a1);
+void __cdecl sub_10074870(int a1);
 int __cdecl sub_100749D0(int a1, int a2);
 int __cdecl sub_10074A10(float *a1, int a2, float *a3);
 int *__cdecl sub_10074A50(_DWORD *a1, int *a2);
@@ -1708,7 +1706,9 @@ int __cdecl sub_1007F3C0(int a1, int a2);
 // int _heap_init(void); weak
 // int _heap_term(void); weak
 // _DWORD __cdecl __sbh_find_block(_DWORD, _DWORD, _DWORD); weak
+// _DWORD __cdecl __sbh_alloc_block(_DWORD); weak
 // int __cdecl _callnewh(size_t Size);
+// void *__cdecl calloc(size_t Count, size_t Size);
 // int __cdecl _fcloseall();
 // int __cdecl __InternalCxxFrameHandler(PEXCEPTION_RECORD ExceptionRecord, struct EHRegistrationNode *, struct _CONTEXT *, void *, struct _s_FuncInfo *, int, PVOID TargetFrame, char); idb
 // void __cdecl FindHandler(PEXCEPTION_RECORD ExceptionRecord, struct EHRegistrationNode *, struct _CONTEXT *, void *, const struct _s_FuncInfo *, char, int, PVOID TargetFrame); idb
@@ -1781,6 +1781,7 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // unsigned int __usercall unknown_libname_29@<eax>(char a1@<dl>, __int128 a2, int a3, int a4, __int128 a5);
 // int __usercall __spoils<ecx,st0> unknown_libname_30@<eax>(unsigned __int64 a1@<st0>);
 // _DWORD __cdecl __crtMessageBoxA(_DWORD, _DWORD, _DWORD); weak
+// _DWORD __cdecl __addl(_DWORD, _DWORD, _DWORD); weak
 // _DWORD __cdecl __add_12(_DWORD, _DWORD); weak
 // _DWORD __cdecl __shl_12(_DWORD); weak
 // _DWORD __cdecl __shr_12(_DWORD); weak
@@ -1790,7 +1791,7 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // int __cdecl __getlocaleinfo(UINT CodePage, LCID Locale, LCTYPE LCType, int); idb
 // char *__cdecl _itoa(int Value, char *Buffer, int Radix);
 // int __cdecl _strcmpi(const char *String1, const char *String2);
-// _DWORD __cdecl __ld12mul(_DWORD, _DWORD); weak
+// int __cdecl __ld12mul(int a1, int a2);
 // void __cdecl __multtenpow12(_WORD *a1, int a2, int a3);
 // void __stdcall RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);
 // LSTATUS __stdcall RegCloseKey(HKEY hKey);
@@ -1862,6 +1863,7 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // BOOL __stdcall ReleaseMutex(HANDLE hMutex);
 // void __stdcall OutputDebugStringA(LPCSTR lpOutputString);
 // DWORD __stdcall GetLastError();
+// LPVOID __stdcall HeapAlloc(HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes);
 // void __stdcall RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);
 // MMRESULT __stdcall acmMetrics(HACMOBJ hao, UINT uMetric, LPVOID pMetric);
 // int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
@@ -1929,7 +1931,24 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 DIDATAFORMAT g_diMouseDataFormat = { 24u, 16u, 2u, 16u, 7u, &off_1007ACB0 };
 DIDATAFORMAT g_lpcDiDataFormat = { 24u, 16u, 2u, 256u, 256u, &off_1007AD40 };
 DIDATAFORMAT g_diDataFormat = { 24u, 16u, 1u, 272u, 164u, &off_1007BD60 };
-int (__thiscall *off_1008F150)(void *Block, char) = &sub_100085C0; // weak
+PodVtbl gPodVtbl =
+{
+  &sub_100085C0,
+  &CleanupName,
+  &meth_10008670,
+  &GetNumForNameWrapper,
+  &GetPodLength,
+  &ReadPod,
+  &pod_meth_100088B0,
+  &LoadPod_0,
+  &sub_10008890,
+  &LoadPod,
+  &readPodFile,
+  &meth_100089C0,
+  &meth_10008A00,
+  268470944,
+  &cleanUpPod
+};
 int dword_1008F538 = -1363573792; // weak
 int (__thiscall *off_1008F6B8)(void *Block, char) = &sub_100478A0; // weak
 int (__thiscall *off_1008F6F8)(void *Block, char) = &sub_100484C0; // weak
@@ -2163,7 +2182,6 @@ int dword_100A6150[] = { 0 }; // weak
 int dword_100A61C0[] = { 0 }; // weak
 int dword_100A6230 = 2; // weak
 int d3dEnumTextureFormatsContextStart = 0;
-_UNKNOWN unk_100A6238; // weak
 int g_D3dwaitcanflip = 1; // weak
 int g_D3dwaitflipdon = 1; // weak
 CHAR Text[] = "This game requires DirectX 6."; // idb
@@ -2620,10 +2638,6 @@ CHAR g_DINPUT_DLL[] = "DINPUT.DLL"; // idb
 int g_D3dalphacompar = 1; // weak
 int dword_100AA728 = -2143612928; // weak
 int dword_100AA72C = -2143518720; // weak
-_UNKNOWN unk_100AA770; // weak
-_UNKNOWN unk_100AA838; // weak
-_UNKNOWN unk_100AA860; // weak
-_UNKNOWN unk_100AA868; // weak
 int dword_100AA87C = 1; // weak
 int dword_100AA880 = 1; // weak
 int dword_100AA884 = 1; // weak
@@ -3094,123 +3108,4673 @@ int dword_100ADF60 = 1; // weak
 char byte_100ADF68[] = { '\0' }; // weak
 char byte_100ADF90[] = { '\0' }; // weak
 int dword_100ADFC8 = 1; // weak
-int dword_100ADFE0[] = { -1 }; // weak
-int dword_100ADFE4[] = { 0 }; // weak
-int dword_100ADFE8[] = { 0 }; // weak
-int dword_100ADFEC[] = { 0 }; // weak
-int dword_100ADFF0[] = { 0 }; // weak
-_DWORD dword_100AE6D8[109] =
+Car gCarsArray[4] =
 {
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  -1,
-  0,
-  64,
-  32,
-  64
-}; // idb
+  {
+    NULL,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "",
+    {
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      56,
+      54,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      44,
+      54,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      28,
+      54,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12,
+      54,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      0,
+      54,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -12,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -24,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -36,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -48,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -64,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -80,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      28,
+      54,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -112,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      128,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      112,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    },
+    0
+  },
+  {
+    NULL,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "",
+    {
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      88,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      24,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      72,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      56,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      40,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      24,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      12,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      0,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -12,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -24,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -36,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -52,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      56,
+      53,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -68,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -84,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -100,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    },
+    0
+  },
+  {
+    NULL,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "",
+    {
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -112,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -124,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      116,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      84,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      72,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      60,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      48,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      36,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      24,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      8,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      -8,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      116,
+      52,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -24,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -40,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      112,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      64,
+      0,
+      0,
+      0,
+      -56,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    },
+    0
+  },
+  {
+    NULL,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    "",
+    {
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -68,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -80,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      -112,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      116,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      104,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      92,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      80,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      28,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      68,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      52,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -96,
+      0,
+      0,
+      0,
+      52,
+      0,
+      0,
+      0,
+      128,
+      0,
+      0,
+      0,
+      36,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      -112,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      20,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      4,
+      51,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      96,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      32,
+      0,
+      0,
+      0,
+      -12,
+      50,
+      11,
+      16,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    },
+    0
+  }
+};
 int dword_100B2AD0 = -1; // weak
 int g_SpeedSensitive = 1; // weak
 int dword_100B3668 = 1096810496; // weak
@@ -3491,6 +8055,7 @@ char aE[2] = "Ë"; // weak
 _UNKNOWN unk_100B4140; // weak
 _UNKNOWN unk_100B41E8; // weak
 _UNKNOWN unk_100B4290; // weak
+_UNKNOWN unk_100B4338; // weak
 char aEscape[7] = "ESCAPE"; // weak
 char aRcfg[] = "RCfg"; // idb
 int dword_100B5420 = 5; // weak
@@ -3924,9 +8489,7 @@ int dword_100B5E34[415] =
   1087735936
 }; // idb
 int dword_100B64B0[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
-_UNKNOWN unk_100B64EC; // weak
 int dword_100B64F8[15] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // idb
-_UNKNOWN unk_100B6534; // weak
 int dword_100B6540[432] =
 {
   0,
@@ -4368,7 +8931,6 @@ int dword_100B6C48[18] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10
 char aRWav[6] = "r.wav"; // weak
 char aHWav[6] = "h.wav"; // weak
 char aWav[5] = ".wav"; // weak
-_UNKNOWN unk_100B6CA8; // weak
 CHAR filename[] = "BRString.dll"; // idb
 char g_TrackDir[] = { '\0' }; // weak
 char aTracks[8] = "tracks/"; // weak
@@ -4414,8 +8976,6 @@ char *carNames[16] =
 }; // weak
 char *g_SfxDir = "mn"; // weak
 char aSfx[5] = "sfx/"; // weak
-_UNKNOWN unk_100B8938; // weak
-_UNKNOWN unk_100B89A0; // weak
 char *off_100B89C8[12] =
 {
   "Fear and Loathing",
@@ -4434,10 +8994,6 @@ char *off_100B89C8[12] =
 char aFancyCar[10] = "Fancy Car"; // weak
 int dword_100B8C90 = 1; // weak
 int (*off_100B8C94)(void) = &sub_1002A640; // weak
-_UNKNOWN unk_100B8CA0; // weak
-_UNKNOWN unk_100B94A8; // weak
-_UNKNOWN unk_100B9CB0; // weak
-_UNKNOWN unk_100BAAC8; // weak
 int dword_100BBAC8[3] = { 33, 33, 34 }; // idb
 int needToCheckSupportHRPC = 1; // weak
 char byte_100BBAD8 = '¿'; // weak
@@ -4493,7 +9049,6 @@ CHAR aUnableToInitia[] = "Unable to initialize Direct3D accelerated video card."
 FILE Stream = { NULL, 0, NULL, 2, 2, 0, 0, NULL }; // idb
 int (*off_100BFC00)(void) = &terminate; // weak
 int dword_100C0378[6] = { 1024, -1023, 53, 11, 64, 1023 }; // idb
-_UNKNOWN unk_100C0390; // weak
 int dword_100C0C44 = 1; // weak
 int dword_100C0CD8 = -1; // weak
 int dword_100C0CDC = 0; // weak
@@ -4641,8 +9196,6 @@ int dword_10220B38; // weak
 char byte_10220B3C; // weak
 __int16 word_10220B40; // weak
 int dword_10220B44; // weak
-_UNKNOWN unk_10220B48; // weak
-_UNKNOWN unk_10220B7C; // weak
 int playParmsPlayTo; // weak
 int dword_10220C3C; // weak
 MCIDEVICEID mciId; // idb
@@ -4746,7 +9299,6 @@ int dword_10221C9C[9091]; // idb
 int dword_1022AAA8; // weak
 int dword_1022AAB0[]; // weak
 int dword_1022AAB4[15]; // idb
-_UNKNOWN unk_1022AAF0; // weak
 int dword_1022AAF4; // weak
 char byte_1022AAF8[1024]; // idb
 int dword_1022AEF8; // weak
@@ -4769,11 +9321,9 @@ int dword_1022AF38; // weak
 int dword_1022AF3C; // weak
 int dword_1022AF40; // weak
 char bossRallyIniPath[208]; // idb
-_UNKNOWN unk_1022B018; // weak
 int g_dwTotalPhys; // weak
 int g_chosenCar; // weak
 int g_ChosenWeather; // weak
-_UNKNOWN unk_1022B358; // weak
 int dword_10277358; // weak
 FILE *dword_1027735C; // idb
 IDirect3DDevice2 *g_D3DDevice2;
@@ -4804,7 +9354,7 @@ int dword_10277420; // weak
 IDirect3D2 *g_pD3D2;
 _D3DDeviceDesc g_HWCaps;
 _D3DDeviceDesc g_HELCaps;
-DWORD stru_10277680; // idb
+DWORD stru_10277680;
 int dword_10277B1C; // weak
 int dword_10277B20; // weak
 struct _RTL_CRITICAL_SECTION CriticalSection; // idb
@@ -4820,8 +9370,6 @@ int dword_10277B68[16]; // idb
 int dword_10277BA8; // weak
 float flt_10277BAC; // weak
 float flt_10277BB0; // weak
-_UNKNOWN unk_10277BB8; // weak
-_UNKNOWN unk_10277BC0; // weak
 char byte_10277BC8[]; // weak
 char byte_10277BC9[]; // weak
 char byte_10277BCA[366]; // idb
@@ -4904,6 +9452,7 @@ float flt_1039B73C; // weak
 char Buffer[28]; // idb
 int dword_1039B75C; // weak
 int dword_1039B760[]; // weak
+_UNKNOWN unk_1039B764; // weak
 _UNKNOWN unk_1039B7C4; // weak
 float flt_1039C168[]; // weak
 float flt_1039C16C; // weak
@@ -5034,14 +9583,12 @@ char byte_104BBE42; // weak
 int dword_104BBE48; // weak
 float flt_104BBEB8; // weak
 float flt_104BBEC0[4]; // idb
-_UNKNOWN unk_104BBED0; // weak
 char byte_104BBF00; // weak
 float flt_104BBF04; // weak
 float flt_104BBF08; // weak
 int dword_104BC190; // weak
 char byte_104BC194; // weak
 float flt_104BC198; // weak
-_UNKNOWN g_vertices; // weak
 int dword_104C01A0; // weak
 int dword_104C01A4; // weak
 int dword_104C01A8[3]; // idb
@@ -5075,7 +9622,6 @@ int dword_104C16DC[]; // weak
 int dword_104C16E0[]; // weak
 int dword_104C16E4[]; // weak
 int dword_104C170C[]; // weak
-_UNKNOWN unk_104C1710; // weak
 float flt_104C1720[]; // weak
 float flt_104C1724[]; // weak
 int dword_104C172C[]; // weak
@@ -5293,7 +9839,6 @@ int dword_10680940; // weak
 unsigned int C; // idb
 int dword_10680948; // weak
 _UNKNOWN unk_10680950; // weak
-_UNKNOWN unk_10690950; // weak
 int dword_106909B0; // weak
 int dword_106909B4; // weak
 int dword_106909B8; // weak
@@ -5305,7 +9850,7 @@ int dword_106909D4; // weak
 int dword_106909D8; // weak
 int dword_106909E0; // weak
 int dword_106909E4; // weak
-int dword_106909E8; // weak
+int gTicks; // weak
 int dword_106909EC; // weak
 int dword_106909F0; // weak
 int g_needToPlayIntro2; // weak
@@ -5322,6 +9867,7 @@ int dword_10690A1C; // weak
 int (*dword_10690A20)(void); // weak
 int (*dword_10690A24)(void); // weak
 int (*dword_10690A28)(void); // weak
+_UNKNOWN unk_10690A34; // weak
 char byte_10690BE8; // weak
 int dword_10690BEC; // weak
 char byte_10690BF0; // weak
@@ -5329,7 +9875,7 @@ char byte_10690FF8[]; // weak
 char byte_10690FF9; // weak
 char byte_10690FFA; // weak
 char byte_10690FFB; // weak
-_UNKNOWN unk_10691018; // weak
+_UNKNOWN unk_106C01FC; // weak
 char byte_106C0200; // weak
 int dword_106C0208; // weak
 int dword_106C020C; // weak
@@ -5472,6 +10018,7 @@ int dword_106C56E0; // weak
 int dword_106C56E4; // weak
 int dword_106C56E8; // weak
 int dword_106C56EC; // weak
+_UNKNOWN unk_106C56F0; // weak
 float flt_106C56F8[3]; // idb
 int dword_106C5708; // weak
 float flt_106C58C0[124]; // idb
@@ -5483,7 +10030,9 @@ char byte_106C6494[]; // weak
 char byte_106C6495; // weak
 char byte_106C6496; // weak
 char byte_106C6497; // weak
+_UNKNOWN unk_106C6498; // weak
 int dword_106C64D8; // weak
+_UNKNOWN unk_106C6500; // weak
 int dword_106C6558[16]; // idb
 int dword_106C6598; // weak
 int dword_106C65B8; // weak
@@ -5555,20 +10104,14 @@ int dword_106C7CD0; // weak
 int dword_106C7CD4; // weak
 int dword_106C7CD8; // weak
 int dword_106C7CDC; // weak
-_UNKNOWN unk_106C7CE0; // weak
-_UNKNOWN unk_106C7CE8; // weak
 void *dword_106C7DA8; // idb
 _UNKNOWN unk_106C7DAC; // weak
 int dword_106C7E6C; // weak
-_UNKNOWN unk_106C7E78; // weak
-_UNKNOWN unk_106C7E7C; // weak
 int dword_106C7E80[]; // weak
 int dword_106C7E84[1021]; // idb
-_UNKNOWN unk_106C8E78; // weak
-_UNKNOWN g_TrackBuffer; // weak
 int dword_10A99778; // weak
 int dword_10A9977C; // weak
-_DWORD dword_10A99780[266]; // idb
+Pod gPod;
 int dword_10A99BA8; // weak
 int dword_10A99BAC; // weak
 int dword_10A99BB0; // weak
@@ -5614,7 +10157,6 @@ char byte_10A9D078[264]; // idb
 int dword_10A9D5C0[]; // weak
 char byte_10A9D618[36]; // idb
 int dword_10A9DBD0; // weak
-_UNKNOWN unk_10A9DBD8; // weak
 char byte_10A9DBDC; // weak
 char byte_10A9DD28[1064]; // idb
 int dword_10A9E150[32]; // idb
@@ -5770,9 +10312,7 @@ int dword_10AA253C[]; // weak
 int dword_10AA2540[17]; // idb
 _UNKNOWN unk_10AA2584; // weak
 int dword_10AA2598; // weak
-_UNKNOWN unk_10AA259C; // weak
 float flt_10AA25A0[12]; // idb
-_UNKNOWN unk_10AA25D0; // weak
 char byte_10AA25D4; // weak
 int dword_10AA25D8; // weak
 int dword_10AA25DC; // weak
@@ -5981,7 +10521,6 @@ int dword_10ACD490; // weak
 _UNKNOWN unk_10ACD498; // weak
 int dword_10ACD4EC; // weak
 int dword_10ACD4F8; // weak
-_UNKNOWN unk_10ACD4FC; // weak
 char byte_10ACD500[2456]; // idb
 int dword_10ACDE98; // weak
 int dword_10ACDE9C; // weak
@@ -6012,7 +10551,6 @@ int dword_10ACEEA8; // weak
 int dword_10ACEEAC; // weak
 int dword_10ACEEB0; // weak
 char byte_10ACEEB4[24]; // idb
-_UNKNOWN unk_10ACEECC; // weak
 int dword_10AD05DC[]; // weak
 int dword_10AD05E0[]; // weak
 _UNKNOWN unk_10AD05E4; // weak
@@ -6045,19 +10583,14 @@ int dword_10AD18A4; // weak
 int dword_10AD18A8; // weak
 int dword_10AD18AC; // weak
 float flt_10AD1A04; // weak
-_UNKNOWN unk_10AD1A08; // weak
 int dword_10AD33C4; // weak
 int dword_10AD33D0; // weak
-_UNKNOWN unk_10AD34F8; // weak
 int dword_10AF9528; // weak
 float flt_10AF953C[18]; // idb
 float flt_10AF959C[23]; // idb
-_UNKNOWN unk_10AF9658; // weak
 int dword_10AF96B8; // weak
 int dword_10AF96BC; // weak
 int dword_10AF96C0; // weak
-_UNKNOWN unk_10AF96C8; // weak
-_UNKNOWN unk_10AF96D4; // weak
 int dword_10AF9728[]; // weak
 float flt_10AF9740[15]; // idb
 float flt_10AF9794[18]; // idb
@@ -6098,24 +10631,15 @@ int dword_10AF9BAC; // weak
 int dword_10AF9BB0; // weak
 int dword_10AF9BB4; // weak
 int dword_10AF9BB8; // weak
-_UNKNOWN unk_10AF9BC0; // weak
 _UNKNOWN unk_10AFBEE8; // weak
-_UNKNOWN unk_10AFDBC0; // weak
 int dword_10B01C40; // weak
 int dword_10B01C44; // weak
 int dword_10B01C48; // weak
-_UNKNOWN unk_10B01C50; // weak
-_UNKNOWN unk_10B01ED0; // weak
-_UNKNOWN unk_10B02190; // weak
-_UNKNOWN unk_10B022D0; // weak
 void *dword_10B02434; // idb
 int dword_10B4DF28; // weak
-_WORD g_Config[84]; // idb
-_UNKNOWN unk_10B4DFD8; // weak
-_UNKNOWN unk_10B4E080; // weak
-_UNKNOWN unk_10B4E128; // weak
-int g_ReadJoystick; // weak
-WORD *dword_10B4E1D4;
+BossRallyConfig g_Config;
+int g_ConfigJoystickIndex; // weak
+void *g_ConfigJoystickPtr;
 int dword_10B4E1D8; // weak
 int dword_10B4E1DC; // weak
 int dword_10B4E1E0; // weak
@@ -6146,7 +10670,9 @@ int dword_10B4E73C; // weak
 CHAR byte_10B4E740[32]; // idb
 CHAR byte_10B4E760[64]; // idb
 int dword_10B4E7A0; // weak
+_UNKNOWN unk_10B4E7A8; // weak
 char byte_10B4E7AC[144]; // idb
+_UNKNOWN unk_10B4E910; // weak
 char byte_10B4E914[4608]; // idb
 char g_bossRallyCfgPath[4]; // idb
 int dword_10B4FFE8[120]; // idb
@@ -6163,9 +10689,7 @@ int dword_10B502EC; // weak
 int dword_11750308; // weak
 int dword_11750310[]; // weak
 int dword_11750314; // weak
-_UNKNOWN unk_11750318; // weak
 int dword_11750330; // weak
-_UNKNOWN unk_11750338; // weak
 int dword_11754E38; // weak
 int dword_11754E3C; // idb
 int dword_11754E40; // weak
@@ -6247,7 +10771,6 @@ int dword_11828D34[85]; // idb
 double dbl_11828E88[]; // weak
 int dword_11828F00; // weak
 int dword_11828F08[15]; // idb
-_UNKNOWN unk_11828F44; // weak
 LPCVOID dword_11828F48; // idb
 #514 *pMem;
 IDirectSoundBuffer *g_dSoundBuffer;
@@ -6271,7 +10794,6 @@ int dword_11829328; // weak
 _UNKNOWN unk_11829330; // weak
 _UNKNOWN unk_11829331; // weak
 int dword_11829370[]; // weak
-_UNKNOWN unk_11829374; // weak
 void *g_brstring; // idb
 int dword_11829830; // weak
 size_t Size; // idb
@@ -6299,7 +10821,7 @@ int dword_118AA09C; // weak
 HANDLE dword_118AA0A0; // idb
 int (__cdecl *dword_118AA0A4)(_DWORD, _DWORD); // weak
 int (__cdecl *dword_118AA0A8)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
-int (__cdecl *dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
+int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
 int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
 int (__cdecl *dword_118AA0B4)(_DWORD); // weak
 int (__cdecl *dword_118AA0B8)(_DWORD, _DWORD); // weak
@@ -6309,10 +10831,6 @@ int (__cdecl *dword_118AA0C4)(_DWORD); // weak
 int (__cdecl *dword_118AA0C8)(_DWORD, _DWORD); // weak
 int (__cdecl *dword_118AA0CC)(_DWORD, _DWORD); // weak
 int (*dword_118AA0D0)(void); // weak
-_UNKNOWN lutBuffer; // weak
-_UNKNOWN ciBuffer_0; // weak
-_UNKNOWN lutBuffer_0; // weak
-_UNKNOWN ciBuffer; // weak
 int dword_118AB118; // weak
 LARGE_INTEGER Frequency; // idb
 int supportsHRPerformanceCounter; // weak
@@ -6321,7 +10839,6 @@ int performanceSomething; // weak
 int dword_118AB134; // weak
 int dword_118AB144; // weak
 int dword_118AB470; // weak
-_UNKNOWN unk_118AB478; // weak
 DIEFFECT diEffect_0;
 char byte_118AB8B8[]; // weak
 char byte_118AB8F7[]; // weak
@@ -10142,7 +14659,7 @@ BOOL sub_100060C0()
 //----- (100060F0) --------------------------------------------------------
 BOOL sub_100060F0()
 {
-  WaitForSingleObject(hMutex, 0xFFFFFFFF);
+  WaitForSingleObject(hMutex, INFINITE);
   if ( dword_1022AEF8 >= 0 )
   {
     sub_10072AF0(dword_1022AEF8, 0x200020u);
@@ -11250,20 +15767,20 @@ void __cdecl ReadSettings(char *Str)
       }
       else if ( !strncmp(settingNameWithEq, aReadjoystick, 0xDu) )
       {
-        g_ReadJoystick = atoi(&v27);
-        switch ( g_ReadJoystick )
+        g_ConfigJoystickIndex = atoi(&v27);
+        switch ( g_ConfigJoystickIndex )
         {
           case 1:
-            dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
+            g_ConfigJoystickPtr = g_Config.joystick1;
             break;
           case 2:
-            dword_10B4E1D4 = (WORD *)&unk_10B4E080;
+            g_ConfigJoystickPtr = g_Config.joystick2;
             break;
           case 3:
-            dword_10B4E1D4 = (WORD *)&unk_10B4E128;
+            g_ConfigJoystickPtr = g_Config.joystick3;
             break;
           default:
-            dword_10B4E1D4 = g_Config;
+            g_ConfigJoystickPtr = &g_Config;
             break;
         }
       }
@@ -11380,20 +15897,20 @@ void __cdecl ReadSettings(char *Str)
     v11 = strstr(Str, aReadjoystick);
     if ( v11 )
     {
-      g_ReadJoystick = atoi(&v11[strlen(aReadjoystick)]);
-      switch ( g_ReadJoystick )
+      g_ConfigJoystickIndex = atoi(&v11[strlen(aReadjoystick)]);
+      switch ( g_ConfigJoystickIndex )
       {
         case 1:
-          dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
+          g_ConfigJoystickPtr = g_Config.joystick1;
           break;
         case 2:
-          dword_10B4E1D4 = (WORD *)&unk_10B4E080;
+          g_ConfigJoystickPtr = g_Config.joystick2;
           break;
         case 3:
-          dword_10B4E1D4 = (WORD *)&unk_10B4E128;
+          g_ConfigJoystickPtr = g_Config.joystick3;
           break;
         default:
-          dword_10B4E1D4 = g_Config;
+          g_ConfigJoystickPtr = &g_Config;
           break;
       }
     }
@@ -11448,25 +15965,24 @@ void __cdecl ReadSettings(char *Str)
 // 1039B6C8: using guessed type int g_D3ddrawcarshadow;
 // 104C5168: using guessed type int g_D3Dclearzbuffer;
 // 10575420: using guessed type int g_D3dalwayssquar;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
 // 118ABDC4: using guessed type int g_Runbenchmark;
 
 //----- (100085C0) --------------------------------------------------------
-void *__thiscall sub_100085C0(void *this, char a2)
+Pod *__thiscall sub_100085C0(Pod *this, char a2)
 {
-  sub_100085E0(this);
+  setPodVtbl(this);
   if ( (a2 & 1) != 0 )
     operator delete(this);
   return this;
 }
 
 //----- (100085E0) --------------------------------------------------------
-void __thiscall sub_100085E0(_DWORD *this)
+void __thiscall setPodVtbl(Pod *this)
 {
-  *this = &off_1008F150;
-  debugPrint(this + 1);
+  this->lpVtbl = &gPodVtbl;
+  debugPrint(&this->lpVtbl + 1);
 }
-// 1008F150: using guessed type int (__thiscall *off_1008F150)(void *Block, char);
 
 //----- (100085F0) --------------------------------------------------------
 char __stdcall CleanupName(const char *a1, char *buff)
@@ -11494,21 +16010,21 @@ char __stdcall CleanupName(const char *a1, char *buff)
 }
 
 //----- (10008670) --------------------------------------------------------
-int __thiscall sub_10008670(unk1 *this, int a2)
+int __thiscall meth_10008670(Pod *this, int a2)
 {
-  int v3; // ecx
+  char *v3; // ecx
   unsigned int v4; // esi
   int result; // eax
   _DWORD *i; // ecx
   int v7[16]; // [esp+10h] [ebp-40h] BYREF
 
-  this->vtbl->field_4(this, a2, v7);
-  v3 = this->field_18;
-  v4 = this->cNumPods;
+  this->lpVtbl->meth4(this, a2, v7);
+  v3 = (char *)this->unkInstance;
+  v4 = this->header.m_cNumPods;
   result = 0;
   if ( !v4 )
     return -1;
-  for ( i = (_DWORD *)(v3 + 16);
+  for ( i = v3 + 16;
         *(i - 1) != v7[0]
      || *i != v7[1]
      || i[1] != v7[2]
@@ -11534,125 +16050,125 @@ int __thiscall sub_10008670(unk1 *this, int a2)
 }
 
 //----- (10008750) --------------------------------------------------------
-int __thiscall GetNumForNameWrapper(unk1 *this, const char *ArgList)
+int __thiscall GetNumForNameWrapper(Pod *this, char *ArgList)
 {
   int result; // eax
 
-  result = this->vtbl->field_8(this, (unsigned int)ArgList);
+  result = this->lpVtbl->GetNumForName(this, ArgList);
   if ( result == -1 )
     writeToRandomBufferAndExit("GetNumForName: %s not found!", ArgList);
   return result;
 }
 
 //----- (10008780) --------------------------------------------------------
-int __thiscall GetPodLength(unk1 *this, unsigned int argList)
+int __thiscall GetPodLength(Pod *this, unsigned int argList)
 {
-  if ( argList >= this->cNumPods )
+  if ( argList >= this->header.m_cNumPods )
     writeToRandomBufferAndExit("GetPodLength: %i >= m_cNumPods", argList);
-  return *(_DWORD *)(this->field_18 + 76 * argList + 4);
+  return *((_DWORD *)this->unkInstance + 19 * argList + 1);
 }
 
 //----- (100087B0) --------------------------------------------------------
-size_t __thiscall ReadPod(unk1 *this, unsigned int argList, void *buffer)
+size_t __thiscall ReadPod(#674 *this, unsigned int argList, void *buffer)
 {
   unsigned int *offsetAndElementCount; // edi
 
-  if ( argList >= this->cNumPods )
+  if ( argList >= *((_DWORD *)this + 4) )
     writeToRandomBufferAndExit("ReadPod: %i >= cNumPods", argList);
-  offsetAndElementCount = (unsigned int *)(this->field_18 + 76 * argList);
-  fseek(this->fp, *offsetAndElementCount, SEEK_SET);
-  return sub_10008C60(this->fp, buffer, offsetAndElementCount[1]);
+  offsetAndElementCount = (unsigned int *)(*((_DWORD *)this + 6) + 76 * argList);
+  fseek(*((FILE **)this + 7), *offsetAndElementCount, SEEK_SET);
+  return freadLockHandleError(*((FILE **)this + 7), buffer, offsetAndElementCount[1]);
 }
 
 //----- (10008810) --------------------------------------------------------
-int __thiscall LoadPod(unk1 *this, unsigned int ArgList)
+int __thiscall LoadPod(#674 *this, unsigned int ArgList)
 {
-  unk1Vtbl *v3; // edi
+  int v3; // edi
   size_t v4; // eax
   int v5; // ebx
 
-  if ( ArgList >= this->cNumPods )
+  if ( ArgList >= *((_DWORD *)this + 4) )
     writeToRandomBufferAndExit("LoadPod: %i >= m_cNumPods", ArgList);
-  v3 = this->vtbl;
-  v4 = this->vtbl->field_10(this, ArgList);
+  v3 = *(_DWORD *)this;
+  v4 = (*(int (__thiscall **)(#674 *, unsigned int))(*(_DWORD *)this + 16))(this, ArgList);
   v5 = operator new(v4);
-  v3->field_14(this, ArgList, v5);
+  (*(void (__thiscall **)(#674 *, unsigned int, int))(v3 + 20))(this, ArgList, v5);
   return v5;
 }
 
 //----- (10008850) --------------------------------------------------------
-int __thiscall LoadPod_0(unk1 *this, unsigned int argList, int a3)
+int __thiscall LoadPod_0(Pod *this, unsigned int argList, int a3)
 {
-  if ( argList >= this->cNumPods )
+  if ( argList >= this->header.m_cNumPods )
     writeToRandomBufferAndExit("LoadPod: %i >= m_cNumPods", argList);
-  this->vtbl->field_14(this, argList, a3);
+  this->lpVtbl->meth14(this, argList, a3);
   return a3;
 }
 
 //----- (10008890) --------------------------------------------------------
-int __thiscall sub_10008890(unk1 *this, int a2)
+int __thiscall sub_10008890(Pod *this, int a2)
 {
-  unk1Vtbl *v3; // edi
+  PodVtbl *v3; // edi
   int v4; // eax
 
-  v3 = this->vtbl;
-  v4 = this->vtbl->field_C(this, a2);
-  return v3->field_24(this, v4);
+  v3 = this->lpVtbl;
+  v4 = ((int (__thiscall *)(Pod *, int))this->lpVtbl->methC)(this, a2);
+  return v3->field_24(this, (char *)v4);
 }
 
 //----- (100088B0) --------------------------------------------------------
-int __thiscall meth_100088B0(int *this, int a2, int a3)
+int __thiscall pod_meth_100088B0(Pod *this, int a2, int a3)
 {
-  int v4; // edi
+  PodVtbl *v4; // edi
   int v5; // eax
 
-  v4 = *this;
-  v5 = (*(int (__thiscall **)(int *, int, int))(*this + 12))(this, a2, a3);
-  return (*(int (__thiscall **)(int *, int))(v4 + 28))(this, v5);
+  v4 = this->lpVtbl;
+  v5 = this->lpVtbl->methC(this, a2, a3);
+  return v4->meth1C(this, v5);
 }
 
 //----- (100088D0) --------------------------------------------------------
-size_t __thiscall sub_100088D0(_DWORD *this)
+size_t __thiscall readPodFile(Pod *this)
 {
-  const char *v2; // ebp
-  FILE *v3; // eax
-  int v4; // eax
+  char *v2; // ebp
+  FILE *fp; // eax
+  void *v4; // eax
   int v5; // edx
-  size_t v7; // [esp-4h] [ebp-14h]
+  int elementCount; // [esp-4h] [ebp-14h]
 
-  v2 = (const char *)(this + 8);
-  v3 = fopenReadBinary((char *)this + 32);
-  this[7] = v3;
-  sub_10008C60(v3, this + 2, 0x10u);
-  if ( strncmp((const char *)this + 8, aPod, 3u) )
+  v2 = this->filename;
+  fp = fopenReadBinary(this->filename);
+  this->fp = fp;
+  freadLockHandleError(fp, &this->header, 0x10u);
+  if ( strncmp(this->header.magic, aPod, 3u) )
     writeToRandomBufferAndExit("%s is not a valid POD file", v2);
-  v7 = 76 * this[4];
-  this[264] = v7;
-  v4 = operator new(v7);
-  v5 = this[5];
-  this[6] = v4;
-  fseek((FILE *)this[7], v5, 0);
-  return sub_10008C60((FILE *)this[7], (void *)this[6], this[264]);
+  elementCount = 76 * this->header.m_cNumPods;
+  this->elementCount = elementCount;
+  v4 = (void *)operator new(elementCount);
+  v5 = this->header.last;
+  this->unkInstance = v4;
+  fseek(this->fp, v5, 0);
+  return freadLockHandleError(this->fp, this->unkInstance, this->elementCount);
 }
 
 //----- (10008970) --------------------------------------------------------
-int __thiscall meth_10008970(_DWORD *this)
+int __thiscall cleanUpPod(Pod *this)
 {
   int result; // eax
 
-  if ( this[7] )
-    fclose((FILE *)this[7]);
-  if ( this[6] )
-    operator delete((void *)this[6]);
+  if ( this->fp )
+    fclose(this->fp);
+  if ( this->unkInstance )
+    operator delete(this->unkInstance);
   result = 0;
-  this[6] = 0;
-  this[7] = 0;
-  this[264] = 0;
-  this[2] = 0;
-  this[3] = 0;
-  this[4] = 0;
-  this[5] = 0;
-  memset(this + 8, 0, 0x400u);
+  this->unkInstance = 0;
+  this->fp = 0;
+  this->elementCount = 0;
+  *(_DWORD *)this->header.magic = 0;
+  this->header.field_4 = 0;
+  this->header.m_cNumPods = 0;
+  this->header.last = 0;
+  memset(this->filename, 0, 0x400u);
   return result;
 }
 
@@ -11713,10 +16229,10 @@ int __thiscall sub_10008AA0(_DWORD *this)
 // 10277358: using guessed type int dword_10277358;
 
 //----- (10008B40) --------------------------------------------------------
-void __thiscall sub_10008B40(char *this, const char *a2)
+void __thiscall setPodFilename(Pod *this, const char *a2)
 {
   if ( a2 )
-    strcpy(this + 32, a2);
+    strcpy(this->filename, a2);
 }
 
 //----- (10008B90) --------------------------------------------------------
@@ -11770,7 +16286,7 @@ FILE *__stdcall fopenReadBinary(char *FileName)
 }
 
 //----- (10008C60) --------------------------------------------------------
-size_t __stdcall sub_10008C60(FILE *fp, void *buffer, size_t elementCount)
+size_t __stdcall freadLockHandleError(FILE *fp, void *buffer, size_t elementCount)
 {
   size_t result; // eax
 
@@ -11857,7 +16373,7 @@ int sub_10008E00()
 }
 
 //----- (10008E30) --------------------------------------------------------
-int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
+int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag)
 {
   unk0 *gsu0; // esi
   IDirect3D2 *d3d2; // ecx
@@ -11871,13 +16387,13 @@ int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
   double v12; // st7
   double v13; // st7
   IDirect3DDevice2Vtbl *v14; // eax
-  HRESULT (__stdcall *v15)(IDirect3DDevice2 *, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD); // eax
+  HRESULT (__stdcall *drawPrimitive)(IDirect3DDevice2 *, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD); // eax
   HRESULT (__stdcall *endScene)(IDirect3DDevice2 *); // ebp
   int v17; // ebp
-  int v18; // [esp+ECh] [ebp-15Ch]
-  int v19; // [esp+F0h] [ebp-158h]
-  int v20; // [esp+F4h] [ebp-154h]
-  float v21; // [esp+F8h] [ebp-150h]
+  D3DVALUE v18; // [esp+ECh] [ebp-15Ch]
+  float v19; // [esp+F0h] [ebp-158h]
+  float v20; // [esp+F4h] [ebp-154h]
+  D3DVALUE v21; // [esp+F8h] [ebp-150h]
   int v22; // [esp+FCh] [ebp-14Ch]
   int a4; // [esp+104h] [ebp-144h] BYREF
   HRESULT (__stdcall *beginSceneFunc)(IDirect3DDevice2 *); // [esp+108h] [ebp-140h]
@@ -11885,15 +16401,15 @@ int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
   HRESULT (__stdcall *drawPrimitive_1)(IDirect3DDevice2 *, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD); // [esp+110h] [ebp-138h]
   IDirect3DViewport2 *d3dviewport2; // [esp+114h] [ebp-134h]
   D3DRECT rect; // [esp+118h] [ebp-130h] BYREF
-  int v29[8]; // [esp+128h] [ebp-120h] BYREF
-  int v30[8]; // [esp+148h] [ebp-100h] BYREF
-  int v31[8]; // [esp+168h] [ebp-E0h] BYREF
-  int v32[8]; // [esp+188h] [ebp-C0h] BYREF
-  int v33[8]; // [esp+1A8h] [ebp-A0h] BYREF
-  int v34[8]; // [esp+1C8h] [ebp-80h] BYREF
-  char v35[32]; // [esp+1E8h] [ebp-60h] BYREF
-  char v36[32]; // [esp+208h] [ebp-40h] BYREF
-  char v37[32]; // [esp+228h] [ebp-20h] BYREF
+  D3DTLVERTEX v29; // [esp+128h] [ebp-120h] BYREF
+  D3DTLVERTEX v30; // [esp+148h] [ebp-100h] BYREF
+  D3DTLVERTEX v31; // [esp+168h] [ebp-E0h] BYREF
+  D3DTLVERTEX v32; // [esp+188h] [ebp-C0h] BYREF
+  D3DTLVERTEX v33; // [esp+1A8h] [ebp-A0h] BYREF
+  D3DTLVERTEX v34; // [esp+1C8h] [ebp-80h] BYREF
+  D3DTLVERTEX v35; // [esp+1E8h] [ebp-60h] BYREF
+  D3DTLVERTEX v36; // [esp+208h] [ebp-40h] BYREF
+  D3DTLVERTEX v37; // [esp+228h] [ebp-20h] BYREF
 
   gsu0 = game;
   if ( !game )
@@ -11907,8 +16423,8 @@ int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
   if ( !d3d2 || !dev || !viewport )
     return -2147467259;
   flipSurfaces(game);
-  v7 = sub_10009AD0((char *)filename, flag, (char **)&a3, &a4);
-  sub_10009EA0((#511 *)&stru_10277680, dev, v7, 256, 256, 11);
+  v7 = sub_10009AD0(filename, flag, (char **)&a3, &a4);
+  sub_10009EA0(&stru_10277680, dev, v7, 256, 256, 11);
   v22 = 0;
   beginSceneFunc = dev->lpVtbl->BeginScene;
   beginSceneFunc_1 = beginSceneFunc;
@@ -11918,7 +16434,7 @@ int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
     {
       for ( ; result == -2005532222; result = beginSceneFunc_1(dev) )
       {
-        while ( sub_1000B2C0(gsu0) == -2005532222 )
+        while ( sub_1000B2C0(gsu0) == 2289435074 )
           ;
       }
       if ( result )
@@ -11944,74 +16460,74 @@ int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
       setRenderState(dev, (D3DRENDERSTATETYPE)D3DRENDERSTATE_TEXTUREPERSPECTIVE, 1);
       setRenderState(dev, (D3DRENDERSTATETYPE)D3DRENDERSTATE_TEXTUREHANDLE, *(&stru_10277680 + 3));
       v12 = (double)((g_Width - (int)a3) / 2);
-      *(float *)&v19 = v12;
+      v19 = v12;
       if ( v12 < 0.0 )
-        *(float *)&v19 = 0.0;
+        v19 = 0.0;
       v13 = (double)((g_Height - a4) / 2);
-      *(float *)&v20 = v13;
+      v20 = v13;
       if ( v13 < 0.0 )
-        *(float *)&v20 = 0.0;
-      v29[0] = v19;
-      v29[1] = v20;
-      v21 = *(float *)&v19 - -256.0;
-      *(float *)&v18 = *(float *)&v20 - -256.0;
-      *(float *)v34 = v21;
-      v34[1] = v18;
-      v29[2] = 0;
-      v29[3] = 1065353216;
-      v29[6] = 0;
-      v29[7] = 0;
-      v29[4] = -1;
-      v29[5] = -16776961;
-      v34[4] = -1;
-      v34[2] = 0;
-      qmemcpy(v35, v29, sizeof(v35));
-      v32[1] = v18;
-      v32[0] = v19;
-      v34[3] = 1065353216;
-      v34[6] = 1065353216;
-      v34[7] = 1065353216;
-      v34[5] = -16776961;
+        v20 = 0.0;
+      v29.sx = v19;
+      v29.sy = v20;
+      v21 = v19 - -256.0;
+      v18 = v20 - -256.0;
+      v34.sx = v21;
+      v34.sy = v18;
+      v29.sz = 0.0;
+      v29.rhw = 1.0;
+      v29.tu = 0.0;
+      v29.tv = 0.0;
+      v29.color = -1;
+      v29.specular = 0xFF0000FF;
+      v34.color = -1;
+      v34.sz = 0.0;
+      qmemcpy(&v35, &v29, sizeof(v35));
+      v32.sy = v18;
+      v32.sx = v19;
+      v34.rhw = 1.0;
+      v34.tu = 1.0;
+      v34.tv = 1.0;
+      v34.specular = 0xFF0000FF;
       v14 = dev->lpVtbl;
-      qmemcpy(v36, v34, sizeof(v36));
-      v15 = v14->DrawPrimitive;
-      v32[2] = 0;
-      v32[3] = 1065353216;
-      v32[6] = 0;
-      v32[7] = 1065353216;
-      v32[4] = -1;
-      v32[5] = -16776961;
-      qmemcpy(v37, v32, sizeof(v37));
-      drawPrimitive_1 = v15;
-      v15(dev, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, v35, 3, 9);
-      v30[0] = v19;
-      v30[1] = v20;
-      v30[2] = 0;
-      v30[3] = 0x3F800000;
-      v30[6] = 0;
-      v30[4] = 0xFFFFFFFF;
-      v30[5] = 0xFF0000FF;
-      v30[7] = 0;
-      qmemcpy(v35, v30, sizeof(v35));
-      *(float *)v31 = v21;
-      v31[1] = v20;
-      v31[2] = 0;
-      v31[3] = 1065353216;
-      v31[4] = 0xFFFFFFFF;
-      v31[5] = 0xFF0000FF;
-      v31[6] = 0x3F800000;
-      v31[7] = 0;
-      v33[4] = 0xFFFFFFFF;
-      qmemcpy(v36, v31, sizeof(v36));
-      *(float *)v33 = v21;
-      v33[1] = v18;
-      v33[2] = 0;
-      v33[3] = 1065353216;
-      v33[5] = 0xFF0000FF;
-      v33[6] = 1065353216;
-      v33[7] = 1065353216;
-      qmemcpy(v37, v33, sizeof(v37));
-      drawPrimitive_1(dev, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, v35, 3, 9);
+      qmemcpy(&v36, &v34, sizeof(v36));
+      drawPrimitive = v14->DrawPrimitive;
+      v32.sz = 0.0;
+      v32.rhw = 1.0;
+      v32.tu = 0.0;
+      v32.tv = 1.0;
+      v32.color = -1;
+      v32.specular = 0xFF0000FF;
+      qmemcpy(&v37, &v32, sizeof(v37));
+      drawPrimitive_1 = drawPrimitive;
+      drawPrimitive(dev, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, &v35, 3, 9);
+      v30.sx = v19;
+      v30.sy = v20;
+      v30.sz = 0.0;
+      v30.rhw = 1.0;
+      v30.tu = 0.0;
+      v30.color = 0xFFFFFFFF;
+      v30.specular = 0xFF0000FF;
+      v30.tv = 0.0;
+      qmemcpy(&v35, &v30, sizeof(v35));
+      v31.sx = v21;
+      v31.sy = v20;
+      v31.sz = 0.0;
+      v31.rhw = 1.0;
+      v31.color = 0xFFFFFFFF;
+      v31.specular = 0xFF0000FF;
+      v31.tu = 1.0;
+      v31.tv = 0.0;
+      v33.color = 0xFFFFFFFF;
+      qmemcpy(&v36, &v31, sizeof(v36));
+      v33.sx = v21;
+      v33.sy = v18;
+      v33.sz = 0.0;
+      v33.rhw = 1.0;
+      v33.specular = 0xFF0000FF;
+      v33.tu = 1.0;
+      v33.tv = 1.0;
+      qmemcpy(&v37, &v33, sizeof(v37));
+      drawPrimitive_1(dev, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, &v35, 3, 9);
       if ( setRenderState(dev, D3DRS_SHADEMODE, 2) )
         return 0;
       gsu0 = game;
@@ -12033,7 +16549,7 @@ int __stdcall sub_10008E30(unk0 *game, const char *filename, int flag)
       ;
     if ( ++v22 >= 2 )
     {
-      sub_1000A0B0((#511 *)&stru_10277680);
+      sub_1000A0B0(&stru_10277680);
       return v17;
     }
     beginSceneFunc_1 = beginSceneFunc;
@@ -12506,7 +17022,7 @@ HRESULT __cdecl enumTextureFormatsSomething(#486 *dev)
 // 100A62FC: using guessed type int g_D3dwaitflipdon;
 
 //----- (10009C40) --------------------------------------------------------
-IDirectDraw2 *__thiscall sub_10009C40(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue)
+IDirectDraw2 *__thiscall sub_10009C40(void *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, DWORD dwWidth, DWORD dwHeight, int a6, DWORD dwColorKeyValue)
 {
   IDirectDraw2 *dd; // eax
   IDirectDraw2 *dd_1; // ebp
@@ -12588,15 +17104,15 @@ IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev)
 }
 
 //----- (10009EA0) --------------------------------------------------------
-IDirectDraw2 *__thiscall sub_10009EA0(#511 *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6)
+IDirectDraw2 *__thiscall sub_10009EA0(void *this, IDirect3DDevice2 *dev, unsigned __int8 *a3, int a4, int a5, int a6)
 {
   return sub_10009C40(this, dev, a3, a4, a5, a6, 0);
 }
 
 //----- (10009ED0) --------------------------------------------------------
-BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBottom)
+BOOL __thiscall sub_10009ED0(void *this, char *a2, LONG rectRight, LONG rectBottom)
 {
-  #511 *unk2; // ebp
+  int **unk2; // ebp
   int *ddSurface; // eax
   BOOL result; // eax
   int ddSurfaceVtbl; // ecx
@@ -12617,15 +17133,15 @@ BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBott
   RECT rect; // [esp+20h] [ebp-7Ch] BYREF
   DDSURFACEDESC ddSurfaceDesc; // [esp+30h] [ebp-6Ch] BYREF
 
-  unk2 = this;
+  unk2 = (int **)this;
   ddSurface = *(int **)this;
   if ( !*(_DWORD *)this )
     return 0;
   ddSurfaceVtbl = *ddSurface;
   ddSurfaceDesc.dwSize = 108;
   (*(void (__stdcall **)(int *, DDSURFACEDESC *))(ddSurfaceVtbl + 88))(ddSurface, &ddSurfaceDesc);
-  ddSurface_1 = *(int **)unk2;
-  ddSurfaceVtbl_1 = **(_DWORD **)unk2;
+  ddSurface_1 = *unk2;
+  ddSurfaceVtbl_1 = **unk2;
   rect.left = 0;
   rect.top = 0;
   v10 = rectBottom;
@@ -12716,7 +17232,7 @@ BOOL __thiscall sub_10009ED0(#511 *this, char *a2, LONG rectRight, LONG rectBott
   if ( (*(int (__stdcall **)(_DWORD, LPVOID))(**(_DWORD **)this + 128))(*(_DWORD *)this, ddSurfaceDesc.lpSurface) )
     result = 0;
   else
-    result = sub_1000A020(this);
+    result = sub_1000A020((#511 *)this);
   return result;
 }
 
@@ -12754,7 +17270,7 @@ BOOL __thiscall sub_1000A020(#511 *this)
 }
 
 //----- (1000A0B0) --------------------------------------------------------
-int __thiscall sub_1000A0B0(#511 *this)
+int __thiscall sub_1000A0B0(void *this)
 {
   int v2; // eax
   IUnknown *result; // eax
@@ -12832,7 +17348,7 @@ int __thiscall sub_1000A1C0(unk0 *this)
   result = 0;
   this->gameSpecificUnk1_instance = 0;
   this->u0 = 0;
-  this->refclsid = 0;
+  this->unk = 0;
   this->hwnd = 0;
   this->field_0 = 0;
   return result;
@@ -12864,7 +17380,7 @@ HRESULT __thiscall meth_1000A1E0(unk0 *this, HWND hWnd, int a3, int a4, int a5, 
              1,
              &this->gameSpecificUnk1_instance,
              (int **)&this->u0,
-             (int ***)&this->refclsid);
+             (int ***)&this->unk);
   if ( result >= 0 )
   {
     result = meth_1000A480(this);
@@ -12955,7 +17471,7 @@ HRESULT __thiscall sub_1000A390(unk0 *this)
       guid = (gameSpecificUnk1 *)getDirectDrawLPGUID(gsu1);
     else
       guid = 0;
-    v5 = this->refclsid;
+    v5 = this->unk;
     if ( v5 )
       v6 = (int)&v5->Data2;
     else
@@ -12980,7 +17496,7 @@ HRESULT __thiscall sub_1000A390(unk0 *this)
         refclsid = v15;
         this->u0 = v14;
         this->gameSpecificUnk1_instance = v7;
-        this->refclsid = refclsid;
+        this->unk = refclsid;
         result = 0;
       }
       else
@@ -13014,7 +17530,7 @@ int __thiscall meth_1000A480(unk0 *this)
     if ( !v2 )
       return -2005522669;
   }
-  v4 = getDirectDrawLPGUID(this->gameSpecificUnk1_instance);
+  v4 = getDirectDrawLPGUID((gameSpecificUnk1 *)this->gameSpecificUnk1_instance);
   v5 = DirectDrawCreate(v4, &this->lpDDraw, 0);
   if ( v5 < 0 )
     goto LABEL_8;
@@ -13096,14 +17612,14 @@ int __thiscall meth_1000A5D0(unk0 *this)
   int result; // eax
   IID *iid; // edx
   __unk0 *v10; // eax
-  gameSpecificUnk1 *v11; // ecx
+  _DWORD *v11; // ecx
   __unk0 *u0_1; // eax
   int v13; // eax
   int v14; // ecx
   int v15; // edx
   int v16; // eax
-  gameSpecificUnk1 *v17; // [esp+8h] [ebp-38h]
-  IID *iid0; // [esp+1Ch] [ebp-24h]
+  _DWORD *v17; // [esp+8h] [ebp-38h]
+  int iid0; // [esp+1Ch] [ebp-24h]
   DWORD width; // [esp+30h] [ebp-10h] BYREF
   DWORD height; // [esp+34h] [ebp-Ch] BYREF
   int bitDepth; // [esp+38h] [ebp-8h] BYREF
@@ -13119,7 +17635,7 @@ int __thiscall meth_1000A5D0(unk0 *this)
   hr = this->ddraw2->lpVtbl->SetDisplayMode(this->ddraw2, width, height, bitDepth, refreshRate, flags);
   if ( hr < 0
     && (width == 640 && height == 480
-     || (iid = this->refclsid,
+     || (iid = (IID *)this->unk,
          height = 480,
          v17 = this->gameSpecificUnk1_instance,
          width = 640,
@@ -13128,10 +17644,10 @@ int __thiscall meth_1000A5D0(unk0 *this)
      || (hr = this->ddraw2->lpVtbl->SetDisplayMode(this->ddraw2, width, height, bitDepth, 0, 0), hr < 0)) )
   {
     if ( bitDepth == 16
-      || (iid0 = this->refclsid,
+      || (iid0 = (int)this->unk,
           v11 = this->gameSpecificUnk1_instance,
           bitDepth = 16,
-          u0_1 = sub_1001A570(v11, width, height, 16, 0, iid0),
+          u0_1 = sub_1001A570(v11, width, height, 16, 0, (IID *)iid0),
           (this->u0 = u0_1) == 0)
       || (hr = this->ddraw2->lpVtbl->SetDisplayMode(this->ddraw2, width, height, bitDepth, 0, 0), hr < 0) )
     {
@@ -13291,35 +17807,35 @@ HRESULT __thiscall sub_1000A8D0(unk0 *this)
         this->tPaletteEntry = tPaletteEntry;
         if ( !tPaletteEntry
           || (tPaletteEntry2 = (tagPALETTEENTRY *)operator new(4 * this->sizePalette),
-              (this->lPaletteEntry = tPaletteEntry2) == 0) )
+              (this->lpPaletteEntry = tPaletteEntry2) == 0) )
         {
           ReleaseDC(0, dc);
           resetPalette(this);
           return -2005522668;
         }
         GetSystemPaletteEntries(dc, 0, this->sizePalette, this->tPaletteEntry);
-        qmemcpy(this->lPaletteEntry, this->tPaletteEntry, 4 * this->sizePalette);
+        qmemcpy(this->lpPaletteEntry, this->tPaletteEntry, 4 * this->sizePalette);
       }
       ReleaseDC(0, dc);
       if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED1) != 0 )
       {
         v9 = 256;
-        for ( i = 0; i < 2; this->lPaletteEntry[i - 1].peFlags = PC_POLYGON )
+        for ( i = 0; i < 2; this->lpPaletteEntry[i - 1].peFlags = PC_POLYGON )
           ++i;
       }
       else if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED2) != 0 )
       {
-        for ( j = 0; j < 4; this->lPaletteEntry[j - 1].peFlags = PC_POLYGON )
+        for ( j = 0; j < 4; this->lpPaletteEntry[j - 1].peFlags = PC_POLYGON )
           ++j;
         v9 = 512;
       }
       else if ( (surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED4) != 0 )
       {
-        this->lPaletteEntry->peFlags = 64;
+        this->lpPaletteEntry->peFlags = 64;
         v12 = 1;
-        this->lPaletteEntry[15].peFlags = 64;
+        this->lpPaletteEntry[15].peFlags = 64;
         do
-          this->lPaletteEntry[v12++].peFlags = 1;
+          this->lpPaletteEntry[v12++].peFlags = 1;
         while ( v12 < 15 );
         v9 = 1;
       }
@@ -13332,16 +17848,16 @@ LABEL_34:
           resetPalette(this);
           return palette;
         }
-        for ( k = 0; k < 10; this->lPaletteEntry[k + 245].peFlags = PC_WIDESTYLED )
-          this->lPaletteEntry[k++].peFlags = PC_WIDESTYLED;
-        for ( l = 10; l < 246; this->lPaletteEntry[l - 1].peFlags = PC_POLYGON )
+        for ( k = 0; k < 10; this->lpPaletteEntry[k + 245].peFlags = PC_WIDESTYLED )
+          this->lpPaletteEntry[k++].peFlags = PC_WIDESTYLED;
+        for ( l = 10; l < 246; this->lpPaletteEntry[l - 1].peFlags = PC_POLYGON )
           ++l;
         v9 = 4;
       }
       palette = this->ddraw2->lpVtbl->CreatePalette(
                   this->ddraw2,
                   v9,
-                  this->lPaletteEntry,
+                  this->lpPaletteEntry,
                   &this->lpDirectDrawPalette,
                   0);
       if ( palette >= 0 )
@@ -13367,10 +17883,10 @@ int __thiscall resetPalette(unk0 *this)
     ddrawPalette->lpVtbl->Release(ddrawPalette);
     this->lpDirectDrawPalette = 0;
   }
-  if ( this->lPaletteEntry )
+  if ( this->lpPaletteEntry )
   {
-    operator delete(this->lPaletteEntry);
-    this->lPaletteEntry = 0;
+    operator delete(this->lpPaletteEntry);
+    this->lpPaletteEntry = 0;
   }
   if ( this->tPaletteEntry )
   {
@@ -13410,7 +17926,7 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
     return -2005522669;
   if ( !IsWindow(this->hwnd) )
     return -2005522669;
-  if ( !this->refclsid )
+  if ( !this->unk )
     return -2005522669;
   if ( !this->u0 )
     return -2005522669;
@@ -13426,8 +17942,8 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
   result = iSurface->GetAttachedSurface(lpSurface, &ddsCaps, &this->lpDDrawSurface1);
   if ( result < 0 )
     return result;
-  v5 = sub_1001AD90(&this->refclsid->Data1);
-  v6 = this->refclsid;
+  v5 = sub_1001AD90(&this->unk->Data1);
+  v6 = this->unk;
   if ( v5 )
   {
     v7 = &v6[1].Data4[4];
@@ -13439,7 +17955,7 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
     v8 = 2048;
   }
   v9 = this->unkMeth1;
-  this->field_C = 0;
+  this->textureHandle = 0;
   if ( (v9 & 4) != 0 && v7 && *((_DWORD *)v7 + 40) )
   {
     ddrawSurface = this->lpDDrawSurface2;
@@ -13466,7 +17982,7 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
     {
       if ( this->lpDDrawSurface1->lpVtbl->AddAttachedSurface(this->lpDDrawSurface1, *ddSurface) >= 0 )
       {
-        this->field_C = 1;
+        this->textureHandle = 1;
       }
       else if ( *ddSurface )
       {
@@ -13478,14 +17994,14 @@ HRESULT __thiscall meth_1000AB70(unk0 *this)
   lpD3DDevice2 = (IDirect3DDevice *)&this->lpD3DDevice2;
   result = this->d3d2->lpVtbl->CreateDevice(
              this->d3d2,
-             (const CLSID *const)&this->refclsid->Data2,
+             (const CLSID *const)&this->unk->Data2,
              this->lpDDrawSurface1,
              &this->lpD3DDevice2);
   if ( result >= 0 )
   {
     g_D3DDevice2 = (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl;
     setup_g_DevCaps(g_D3DDevice2);
-    sub_1001AF20((int)this->refclsid, (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl);
+    sub_1001AF20((int)this->unk, (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl);
     this->field_1C |= 8u;
     result = sub_1000ADF0(this);
     if ( result >= 0 )
@@ -13734,7 +18250,7 @@ HRESULT __thiscall sub_1000B170(unk0 *this)
 
   v2 = this->lpDirectDrawPalette;
   if ( !v2
-    || (result = v2->lpVtbl->GetEntries(v2, 0, 0, this->sizePalette, this->lPaletteEntry), result >= 0)
+    || (result = v2->lpVtbl->GetEntries(v2, 0, 0, this->sizePalette, this->lpPaletteEntry), result >= 0)
     && (result = this->lpDirectDrawPalette->lpVtbl->SetEntries(
                    this->lpDirectDrawPalette,
                    0,
@@ -13767,7 +18283,7 @@ HRESULT __thiscall sub_1000B1F0(unk0 *this)
   HRESULT result; // eax
 
   v1 = this->lpDirectDrawPalette;
-  if ( !v1 || (result = v1->lpVtbl->SetEntries(v1, 0, 0, this->sizePalette, this->lPaletteEntry), result >= 0) )
+  if ( !v1 || (result = v1->lpVtbl->SetEntries(v1, 0, 0, this->sizePalette, this->lpPaletteEntry), result >= 0) )
     result = 0;
   return result;
 }
@@ -13892,7 +18408,7 @@ HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4)
   }
   else
   {
-    v8 = lParam->refclsid;
+    v8 = lParam->unk;
     if ( v8 )
       v7 = (int)&v8->Data2;
     else
@@ -13913,13 +18429,13 @@ HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4)
     return -2005522671;
   v9 = lParam->gameSpecificUnk1_instance;
   v10 = lParam->u0;
-  a3 = (int)lParam->refclsid;
+  a3 = (int)lParam->unk;
   sub_1000A350(lParam);
   v11 = v18;
   v12 = v19;
   lParam->gameSpecificUnk1_instance = v5;
   lParam->u0 = v11;
-  lParam->refclsid = v12;
+  lParam->unk = v12;
   v13 = sub_1000A2C0(lParam);
   if ( v13 >= 0 )
   {
@@ -13931,7 +18447,7 @@ HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4)
     sub_1000A350(lParam);
     v14 = (IID *)a3;
     lParam->gameSpecificUnk1_instance = v9;
-    lParam->refclsid = v14;
+    lParam->unk = v14;
     lParam->u0 = v10;
     sub_1000A2C0(lParam);
     result = v13;
@@ -13943,33 +18459,33 @@ HRESULT __thiscall sub_1000B390(unk0 *lParam, int a2, int a3, int a4)
 HRESULT __thiscall meth_1000B4D0(unk0 *this, int a2, int a3, int a4, int a5)
 {
   int v6; // edi
-  IID *v7; // ebp
-  int v8; // eax
+  int v7; // ebp
+  unk0 *v8; // eax
   __unk0 *v9; // ebx
   HRESULT result; // eax
-  IID *v11; // edi
+  void *v11; // edi
   HRESULT v12; // edi
   int v13; // [esp+10h] [ebp-4h]
 
   if ( !this->hwnd || !IsWindow(this->hwnd) )
     return -2005522669;
   v6 = (int)this->gameSpecificUnk1_instance;
-  v7 = this->refclsid;
+  v7 = (int)this->unk;
   v13 = (int)this->u0;
-  v8 = (int)sub_1001B490((_DWORD *)v6, a2, a3, a4, 0, 0, 0);
+  v8 = (unk0 *)sub_1001B490((_DWORD *)v6, a2, a3, a4, 0, 0, 0);
   v9 = (__unk0 *)v8;
   if ( !v8 )
     return -2005522670;
-  if ( sub_1001ACF0((__unk0 *)v8, (int)v7) )
+  if ( sub_1001ACF0(v8, v7) )
   {
     v11 = 0;
   }
   else
   {
-    v11 = (IID *)sub_1001B7C0((__unk0 *)v6, &v7->Data2, v9, (int)&a4, 0);
+    v11 = (void *)sub_1001B7C0((unk0 *)v6, (const void *)(v7 + 4), (unk0 *)v9, (int)&a4, 0);
     if ( !v11 )
     {
-      v11 = (IID *)a4;
+      v11 = (void *)a4;
       if ( !a4 )
         return -2005522671;
     }
@@ -13978,7 +18494,7 @@ HRESULT __thiscall meth_1000B4D0(unk0 *this, int a2, int a3, int a4, int a5)
   ReleaseDDraw2Surface(this);
   this->u0 = v9;
   if ( v11 )
-    this->refclsid = v11;
+    this->unk = v11;
   result = meth_1000A5D0(this);
   if ( result >= 0 )
   {
@@ -13987,7 +18503,7 @@ HRESULT __thiscall meth_1000B4D0(unk0 *this, int a2, int a3, int a4, int a5)
     {
       this->u0 = (__unk0 *)v13;
 LABEL_17:
-      this->refclsid = v7;
+      this->unk = (void *)v7;
       meth_1000A5D0(this);
       meth_1000A820(this);
       meth_1000AB70(this);
@@ -20393,7 +24909,7 @@ int __cdecl sub_10014A30(int a1)
   float *v124; // [esp+44h] [ebp+4h]
 
   v1 = (int *)((char *)&unk_103C77E8 + 188656 * a1);
-  v100 = (_WORD *)((char *)&word_103C7844 + 188656 * a1);
+  v100 = &word_103C7844[94328 * a1];
   v112 = &flt_1039C168[47164 * a1];
   v124 = (float *)((char *)&unk_1039B764 + 188656 * a1);
   v113 = (int)v1;
@@ -20504,7 +25020,7 @@ int __cdecl sub_10014A30(int a1)
           while ( v15 < dword_100B36F8 );
         }
         debugPrint(v14);
-        nullsub_2(v1);
+        nullsub_2();
         sub_100140E0((int)v1);
       }
       debugPrint(v12);
@@ -20530,7 +25046,7 @@ int __cdecl sub_10014A30(int a1)
           while ( v21 < dword_100B36F8 );
         }
         debugPrint(v20);
-        nullsub_2(v1);
+        nullsub_2();
         sub_100140E0((int)v1);
       }
       debugPrint(v18);
@@ -20644,7 +25160,7 @@ int __cdecl sub_10014A30(int a1)
             while ( v42 < dword_100B36F8 );
           }
           debugPrint(v41);
-          nullsub_2(v113);
+          nullsub_2();
           sub_100140E0(v113);
         }
         sub_10011590(v113, 1, (int)v124, (int)v112);
@@ -20966,7 +25482,6 @@ LABEL_141:
 // 10015B7A: variable 'v84' is possibly undefined
 // 10015B92: variable 'v83' is possibly undefined
 // 10015BAF: variable 'v85' is possibly undefined
-// 10075330: using guessed type int __cdecl nullsub_2(_DWORD);
 // 100A6CF8: using guessed type int dword_100A6CF8;
 // 100AA010: using guessed type int g_GameMode;
 // 100AA018: using guessed type char (*off_100AA018)[8];
@@ -24268,21 +28783,20 @@ gameSpecificUnk1 *__cdecl sub_1001A550(gameSpecificUnk1 *a1)
 }
 
 //----- (1001A570) --------------------------------------------------------
-__unk0 *__cdecl sub_1001A570(_DWORD *a1, int a2, int a3, int a4, __unk0 *a5, IID *a6)
+__unk0 *__cdecl sub_1001A570(_DWORD *a1, int width, int height, int bitDepth, __unk0 *a5, int a6)
 {
   __unk0 *result; // eax
 
   if ( !a1 )
     return 0;
   if ( a6 )
-    result = sub_1001B880((__unk0 *)a1, a2, a3, a4, (int)a5, (int)a6, &a5, 0);
+    result = sub_1001B880((__unk0 *)a1, width, height, bitDepth, (int)a5, a6, &a5, 0);
   else
-    result = (__unk0 *)sub_1001B490(a2, a3, a4, a5, &a5, 0);
+    result = sub_1001B490(a1, width, height, bitDepth, (int)a5, &a5, 0);
   if ( !result )
     result = a5;
   return result;
 }
-// 1001B490: using guessed type _DWORD __stdcall sub_1001B490(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 
 //----- (1001A5D0) --------------------------------------------------------
 IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, __unk0 *a3)
@@ -24694,14 +29208,14 @@ int __stdcall d3d2enumDevicesCallback(GUID *a1, LPSTR lpDeviceDescription, LPSTR
 }
 
 //----- (1001AC60) --------------------------------------------------------
-int __thiscall sub_1001AC60(__unk0 *this)
+LPPALETTEENTRY __thiscall sub_1001AC60(unk0 *this)
 {
-  if ( this->field_46 != 108 )
+  if ( this->field_27 != (void *)108 )
     return 0;
-  if ( (this->field_45 & 0x1000) == 0 )
+  if ( (this->field_30 & 0x1000) == 0 )
     return 0;
-  if ( this->field_27 == 32 )
-    return this->bitDepth0;
+  if ( this->lpDirectDrawPalette == (LPDIRECTDRAWPALETTE)32 )
+    return this->lpPaletteEntry;
   return 0;
 }
 
@@ -24729,20 +29243,20 @@ int __thiscall sub_1001AC80(__unk0 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _D
 }
 
 //----- (1001ACF0) --------------------------------------------------------
-BOOL __thiscall sub_1001ACF0(__unk0 *this, int iid)
+BOOL __thiscall sub_1001ACF0(unk0 *this, int a2)
 {
-  int v3; // eax
+  LPPALETTEENTRY v3; // eax
   int v4; // edi
   int v5; // eax
 
-  if ( !iid )
+  if ( !a2 )
     return 0;
   v3 = sub_1001AC60(this);
-  v4 = sub_1001A8C0(v3);
-  if ( sub_1001AD90((_DWORD *)iid) )
-    v5 = v4 & *(_DWORD *)(iid + 184);
+  v4 = sub_1001A8C0((int)v3);
+  if ( sub_1001AD90((unk0 *)a2) )
+    v5 = v4 & *(_DWORD *)(a2 + 184);
   else
-    v5 = v4 & *(_DWORD *)(iid + 436);
+    v5 = v4 & *(_DWORD *)(a2 + 436);
   return v5 != 0;
 }
 
@@ -24753,18 +29267,18 @@ BOOL __thiscall sub_1001AD50(__unk0 *this, int width, int height, int bitDepth)
 }
 
 //----- (1001AD90) --------------------------------------------------------
-BOOL __thiscall sub_1001AD90(_DWORD *this)
+BOOL __thiscall sub_1001AD90(unk0 *this)
 {
-  return this[9] != 0;
+  return this->field_24 != 0;
 }
 
 //----- (1001ADA0) --------------------------------------------------------
-bool __thiscall sub_1001ADA0(_BYTE *this, const void *a2)
+bool __thiscall sub_1001ADA0(unk0 *this, const void *a2)
 {
   if ( !a2 )
     return 0;
-  if ( (*this & 1) != 0 )
-    return memcmp(this + 4, a2, 0x10u) == 0;
+  if ( ((int)this->field_27 & 1) != 0 )
+    return memcmp(&this->field_30, a2, 0x10u) == 0;
   return 0;
 }
 
@@ -25445,10 +29959,10 @@ LABEL_20:
 // 1001B6E9: variable 'v11' is possibly undefined
 
 //----- (1001B7C0) --------------------------------------------------------
-int __thiscall sub_1001B7C0(__unk0 *this, const void *a2, __unk0 *a3, int a4, int a5)
+int __thiscall sub_1001B7C0(unk0 *this, const void *a2, unk0 *a3, int a4, int a5)
 {
-  int v6; // esi
-  int v7; // ebx
+  unk0 *v6; // esi
+  unk0 *v7; // ebx
   int v8; // eax
 
   if ( !a3 )
@@ -25460,30 +29974,30 @@ int __thiscall sub_1001B7C0(__unk0 *this, const void *a2, __unk0 *a3, int a4, in
     }
     return 0;
   }
-  v6 = a5;
+  v6 = (unk0 *)a5;
   if ( !a5 )
-    v6 = this[6].field_33;
-  if ( a4 && sub_1001ACF0(a3, v6) )
+    v6 = (unk0 *)this[5].field_5;
+  if ( a4 && sub_1001ACF0(a3, (int)v6) )
     *(_DWORD *)a4 = v6;
   if ( v6 )
   {
     while ( 1 )
     {
-      v7 = *(_DWORD *)(v6 + 548);
-      LOBYTE(v8) = sub_1001ADA0((_BYTE *)v6, a2);
+      v7 = (unk0 *)v6[3].field_80;
+      LOBYTE(v8) = sub_1001ADA0(v6, a2);
       if ( v8 )
       {
-        if ( sub_1001ACF0(a3, v6) )
-          return v6;
+        if ( sub_1001ACF0(a3, (int)v6) )
+          return (int)v6;
       }
       else
       {
-        if ( sub_1001AD90((_DWORD *)v6) )
+        if ( sub_1001AD90(v6) )
         {
-          if ( !a4 || !sub_1001ACF0(a3, v6) )
+          if ( !a4 || !sub_1001ACF0(a3, (int)v6) )
             goto LABEL_20;
         }
-        else if ( !sub_1001ACF0(a3, v6) || !a4 )
+        else if ( !sub_1001ACF0(a3, (int)v6) || !a4 )
         {
           goto LABEL_20;
         }
@@ -25500,10 +30014,10 @@ LABEL_20:
 // 1001B81F: variable 'v8' is possibly undefined
 
 //----- (1001B880) --------------------------------------------------------
-__unk0 *__thiscall sub_1001B880(__unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8)
+unk0 *__thiscall sub_1001B880(unk0 *this, int width, int height, int bitDepth, int a5, int a6, _DWORD *a7, int a8)
 {
-  __unk0 *u0; // esi
-  __unk0 *v10; // edi
+  unk0 *u0; // esi
+  IDirectDrawSurface *v10; // edi
 
   if ( !a6 )
   {
@@ -25514,36 +30028,36 @@ __unk0 *__thiscall sub_1001B880(__unk0 *this, int width, int height, int bitDept
     }
     return 0;
   }
-  u0 = (__unk0 *)a8;
+  u0 = (unk0 *)a8;
   if ( !a8 )
-    u0 = (__unk0 *)this[6].field_41;
-  if ( a7 && sub_1001ACF0(u0, (IID **)a6) )
+    u0 = (unk0 *)this[5].lpDDSurface;
+  if ( a7 && sub_1001ACF0(u0, a6) )
     *a7 = u0;
   if ( u0 )
   {
     while ( 1 )
     {
-      v10 = (__unk0 *)u0->field_8;
-      if ( sub_1001AD50(u0, width, height, bitDepth) )
+      v10 = (IDirectDrawSurface *)u0->field_3;
+      if ( sub_1001AD50((__unk0 *)u0, width, height, bitDepth) )
       {
-        if ( sub_1001ACF0(u0, (IID **)a6) )
+        if ( sub_1001ACF0(u0, a6) )
           return u0;
       }
       else
       {
-        if ( sub_1001AD50(u0, 640, 480, 16) )
+        if ( sub_1001AD50((__unk0 *)u0, 640, 480, 16) )
         {
-          if ( !a7 || !sub_1001ACF0(u0, (IID **)a6) )
+          if ( !a7 || !sub_1001ACF0(u0, a6) )
             goto LABEL_20;
         }
-        else if ( !sub_1001ACF0(u0, (IID **)a6) || !a7 )
+        else if ( !sub_1001ACF0(u0, a6) || !a7 )
         {
           goto LABEL_20;
         }
         *a7 = u0;
       }
 LABEL_20:
-      u0 = v10;
+      u0 = (unk0 *)v10;
       if ( !v10 )
         return 0;
     }
@@ -25705,7 +30219,7 @@ int __cdecl sub_1001BB00(int a1, int a2, int a3, int a4)
   if ( !sub_1007AC20(a1, a2, a3, a4) && (a1 != g_Width1 || a2 != g_Height1 || a3 != g_BitDepth || a4 != dword_106C6644) )
   {
     meth_1000B4D0(g_gsu0, a1, a2, a3, a4);
-    if ( !g_gsu0->field_C )
+    if ( !g_gsu0->textureHandle )
       meth_1000B4D0(g_gsu0, 640, 480, 16, 0);
   }
   return sub_1001BAE0();
@@ -35882,7 +40396,7 @@ int __cdecl sub_10027C00(int a1)
 }
 
 //----- (10027C60) --------------------------------------------------------
-int __cdecl sub_10027C60(unsigned __int8 *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15)
+int __cdecl tex_sub_10027C60(unsigned __int8 *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15)
 {
   int v15; // ebp
   int v16; // ebx
@@ -36050,7 +40564,7 @@ int __cdecl sub_10027C60(unsigned __int8 *a1, int a2, int a3, int a4, int a5, in
       && (g_HELCaps.dpcTriCaps.dwTextureCaps & 0x20) == 0
       || v21 == v20 )
     {
-      goto LABEL_47;
+      goto label_HWAlwaysSquareTextures;
     }
     if ( v21 < v20 )
     {
@@ -36073,7 +40587,7 @@ LABEL_46:
       pow2ExponentToAdd(&v33, v21, v20);
       sub_10028200(v34, v21, v20);
       v32 = dword_10575430 + v33;
-LABEL_47:
+label_HWAlwaysSquareTextures:
       v28 = v21;
       v29 = v20;
       sub_10028200(v34, v21, v20);
@@ -36087,7 +40601,7 @@ LABEL_48:
   v34[7] = 0;
   v34[3] = 1;
   v34[4] = 1;
-  v34[5] = -1073741824;
+  v34[5] = 0xC0000000;
   v34[6] = 0;
   v44[128] = dword_118AA088;
   v54 = v35;
@@ -36260,9 +40774,9 @@ int __cdecl TIDFromTexture(_DWORD *a1, int a2)
     dword_10575440 = 0;
     sub_10024BF0(&a4, &a1, v2);
     if ( v2[15] )
-      sub_10009C40(*((#511 **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (DWORD)a1, v2[4], v2[15]);
+      sub_10009C40(*((void **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (DWORD)a1, v2[4], v2[15]);
     else
-      sub_10009EA0(*((#511 **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (int)a1, v2[4]);
+      sub_10009EA0(*((void **)Block + v6), g_D3DDevice2, (unsigned __int8 *)a2, a4, (int)a1, v2[4]);
     result = sub_100284A0(v2, v6);
   }
   return result;
@@ -36620,10 +41134,9 @@ int __cdecl sub_10028BF0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
 
   v14 = 1 << sub_10027C00(a3);
   v15 = sub_10028C70(a5);
-  return dword_118AA0AC(a1, a2, a3, a4, 8 * (v14 / v15), a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+  return tex_sub_dword_118AA0AC(a1, a2, a3, a4, 8 * (v14 / v15), a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
 }
-// 10028C70: using guessed type _DWORD __cdecl sub_10028C70(_DWORD);
-// 118AA0AC: using guessed type int (__cdecl *dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+// 118AA0AC: using guessed type int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 
 //----- (10028C70) --------------------------------------------------------
 int __cdecl sub_10028C70(int a1)
@@ -37987,7 +42500,7 @@ HANDLE sub_1002A640()
 {
   dword_118AA0A4 = (int (__cdecl *)(_DWORD, _DWORD))sub_10024AB0;
   dword_118AA0A8 = (int (__cdecl *)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))sub_10025830;
-  dword_118AA0AC = (int (__cdecl *)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))sub_10027C60;
+  tex_sub_dword_118AA0AC = (int (__cdecl *)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))tex_sub_10027C60;
   dword_118AA0B0 = sub_10028BF0;
   dword_118AA0B4 = (int (__cdecl *)(_DWORD))sub_10028CA0;
   dword_118AA0B8 = (int (__cdecl *)(_DWORD, _DWORD))sub_10028E00;
@@ -38029,7 +42542,7 @@ HANDLE sub_1002A640()
 // 118AA084: using guessed type int (__cdecl *dword_118AA084)(_DWORD, _DWORD, _DWORD);
 // 118AA0A4: using guessed type int (__cdecl *dword_118AA0A4)(_DWORD, _DWORD);
 // 118AA0A8: using guessed type int (__cdecl *dword_118AA0A8)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
-// 118AA0AC: using guessed type int (__cdecl *dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+// 118AA0AC: using guessed type int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 118AA0B0: using guessed type int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 118AA0B4: using guessed type int (__cdecl *dword_118AA0B4)(_DWORD);
 // 118AA0B8: using guessed type int (__cdecl *dword_118AA0B8)(_DWORD, _DWORD);
@@ -39558,11 +44071,11 @@ unsigned int sub_1002C4D0()
 //----- (1002C500) --------------------------------------------------------
 int __usercall sub_1002C500@<eax>(double a1@<st0>)
 {
-  DWORD v1; // eax
-  int v2; // esi
-  DWORD v3; // edx
+  DWORD ticks; // eax
+  int oldTicks; // esi
+  DWORD ticks_1; // edx
   int v4; // eax
-  int v5; // edx
+  int ticksDiff; // edx
   int v6; // esi
   void *v7; // ecx
   int v8; // eax
@@ -39750,25 +44263,25 @@ int __usercall sub_1002C500@<eax>(double a1@<st0>)
   int v191[3]; // [esp+30h] [ebp-18h] BYREF
   float v192[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
-  v1 = getTicks();
-  v2 = dword_106909E8;
-  v3 = v1;
-  dword_106909E8 = v1;
+  ticks = getTicks();
+  oldTicks = gTicks;
+  ticks_1 = ticks;
+  gTicks = ticks;
   v4 = dword_100AA00C;
-  v5 = v3 - v2;
+  ticksDiff = ticks_1 - oldTicks;
   v6 = dword_100AA008;
   if ( dword_100AA00C < 0 )
   {
     v4 = 0;
     if ( dword_100AA008 > 0 )
     {
-      memset32(dword_10680758, v5, dword_100AA008);
+      memset32(dword_10680758, ticksDiff, dword_100AA008);
       v4 = v6;
     }
   }
   v7 = (void *)++dword_1068093C;
   if ( dword_1068093C )
-    dword_106909D4 += v5;
+    dword_106909D4 += ticksDiff;
   else
     dword_106909D4 = 0;
   v8 = v4 + 1;
@@ -39778,7 +44291,7 @@ int __usercall sub_1002C500@<eax>(double a1@<st0>)
     v8 = 0;
     dword_100AA00C = 0;
   }
-  dword_10680758[v8] = v5;
+  dword_10680758[v8] = ticksDiff;
   if ( dword_106909EC )
   {
     if ( g_NetworkPlay )
@@ -40135,14 +44648,14 @@ LABEL_32:
     v41[2] = (#505 *)*((_DWORD *)*v41 + 65);
     v41[1] = (#505 *)*((_DWORD *)*v41 + 64);
     v41[3] = (#505 *)*((_DWORD *)*v41 + 62);
-    if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
+    if ( g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2 )
     {
       v42 = v41[1741];
     }
     else
     {
       v42 = v41[1741];
-      if ( g_ReadJoystick != 3 )
+      if ( g_ConfigJoystickIndex != 3 )
       {
         *((_BYTE *)v42 + 37) = 2;
         goto LABEL_101;
@@ -40249,7 +44762,7 @@ LABEL_122:
         v52 = v51 + 768;
         if ( dword_104BBE08 != 4 )
           v52 = v51 + 256;
-        *v176 = dword_118AA0AC(v51 + 1280, v52, v51[228], v51[229], v51[228], 1, 2, 0, 0, 1, 1, 0, 0, 0, 0);
+        *v176 = tex_sub_dword_118AA0AC(v51 + 1280, v52, v51[228], v51[229], v51[228], 1, 2, 0, 0, 1, 1, 0, 0, 0, 0);
         v53 = v51[219];
         if ( v53 == 1 || v53 == 2 )
         {
@@ -40270,7 +44783,7 @@ LABEL_122:
             {
               *v55 &= 0xFEFFu;
             }
-            *v54++ = dword_118AA0AC(v51 + 1280, v52, v51[228], v51[229], v51[228], 1, 2, 0, 0, 1, 1, 0, 0, 0, 0);
+            *v54++ = tex_sub_dword_118AA0AC(v51 + 1280, v52, v51[228], v51[229], v51[228], 1, 2, 0, 0, 1, 1, 0, 0, 0, 0);
             --v55;
             --v182;
           }
@@ -40278,7 +44791,7 @@ LABEL_122:
           dword_118AA09C = 0;
         }
         v58 = v51 + 1280;
-        v176[16] = dword_118AA0AC(
+        v176[16] = tex_sub_dword_118AA0AC(
                      &v51[v51[229] * v51[228] + 1280],
                      v52,
                      v51[232],
@@ -41447,7 +45960,7 @@ LABEL_527:
       if ( (g_GameMode != 4 || dword_106805B8 != 1 && (dword_106805B8 || dword_10680938)) && dword_106909F0 == 2 )
       {
         if ( dword_106C56D0 != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C )
-          WriteConfigFile(g_Config, g_bossRallyCfgPath);
+          WriteConfigFile(&g_Config, g_bossRallyCfgPath);
         cleanUpAndExitWithCode(0);
       }
     }
@@ -41605,7 +46118,6 @@ LABEL_533:
 // 10034A8A: using guessed type int _cfltcvt_init(void);
 // 10039000: using guessed type int sub_10039000();
 // 1006AA90: using guessed type int __setargv_0(void);
-// 10071120: using guessed type int sub_10071120();
 // 100A66E8: using guessed type int dword_100A66E8;
 // 100A73A8: using guessed type int dword_100A73A8[];
 // 100AA008: using guessed type int dword_100AA008;
@@ -41686,7 +46198,7 @@ LABEL_533:
 // 106909D8: using guessed type int dword_106909D8;
 // 106909E0: using guessed type int dword_106909E0;
 // 106909E4: using guessed type int dword_106909E4;
-// 106909E8: using guessed type int dword_106909E8;
+// 106909E8: using guessed type int gTicks;
 // 106909EC: using guessed type int dword_106909EC;
 // 106909F0: using guessed type int dword_106909F0;
 // 106909F4: using guessed type int g_needToPlayIntro2;
@@ -41731,7 +46243,7 @@ LABEL_533:
 // 10AD33C4: using guessed type int dword_10AD33C4;
 // 10AD33D0: using guessed type int dword_10AD33D0;
 // 10AF9BB0: using guessed type int dword_10AF9BB0;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
 // 10B4E708: using guessed type int dword_10B4E708;
 // 10B4E70C: using guessed type int dword_10B4E70C;
 // 10B501C8: using guessed type int (*dword_10B501C8)(void);
@@ -41742,7 +46254,7 @@ LABEL_533:
 // 118290F4: using guessed type int dword_118290F4;
 // 118AA09C: using guessed type int dword_118AA09C;
 // 118AA0A8: using guessed type int (__cdecl *dword_118AA0A8)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
-// 118AA0AC: using guessed type int (__cdecl *dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+// 118AA0AC: using guessed type int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 118AA0D0: using guessed type int (*dword_118AA0D0)(void);
 // 118AB470: using guessed type int dword_118AB470;
 // 118ABAD0: using guessed type int dword_118ABAD0;
@@ -42135,7 +46647,7 @@ int sub_1002F8F0()
       return dword_100AA5A8;
     case 3:
       sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
-      sub_10008E30(g_gsu0, aLoadingImg, 0);
+      ShowStaticImage(g_gsu0, aLoadingImg, 0);
       sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
       sub_10069840();
       dword_10690A14 = 1;
@@ -42163,8 +46675,8 @@ int sub_1002F8F0()
         g_chosenTrack = 2;
         g_chosenCar = 5;
         g_ChosenWeather = 0;
-        g_ReadJoystick = 0;
-        dword_10B4E1D4 = (int)g_Config;
+        g_ConfigJoystickIndex = 0;
+        g_ConfigJoystickPtr = &g_Config;
         g_HandlingType = 1;
         g_SuspensionType = 1;
         g_UltraCarHeader = (void *)2;
@@ -42221,8 +46733,7 @@ int sub_1002F8F0()
 // 10690A14: using guessed type int dword_10690A14;
 // 10AA2868: using guessed type int dword_10AA2868;
 // 10AA33E8: using guessed type int g_TickCount;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
 // 10B4E6E8: using guessed type int dword_10B4E6E8;
 // 10B4E6EC: using guessed type int dword_10B4E6EC;
 // 10B4E6F0: using guessed type int dword_10B4E6F0;
@@ -45143,12 +49654,12 @@ BOOL __cdecl sub_10034C51(int (*a1)(void))
 // 106C0964: using guessed type int (*dword_106C0964)(void);
 
 //----- (10034C66) --------------------------------------------------------
-int __cdecl sub_10034C66(int a1)
+int __cdecl sub_10034C66(int callback)
 {
   int result; // eax
 
-  result = a1;
-  dword_106C0964 = (int (*)(void))a1;
+  result = callback;
+  dword_106C0964 = (int (*)(void))callback;
   return result;
 }
 // 106C0964: using guessed type int (*dword_106C0964)(void);
@@ -45502,10 +50013,10 @@ void __cdecl __noreturn sub_10035BBA(int a1)
 // 106C2CF0: using guessed type int dword_106C2CF0;
 
 //----- (10035BD1) --------------------------------------------------------
-int sub_10035BD1()
+Car *sub_10035BD1()
 {
   if ( dword_106C56D0 != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C )
-    WriteConfigFile((#483 *)&g_Config, g_bossRallyCfgPath);
+    WriteConfigFile(&g_Config, g_bossRallyCfgPath);
   sub_100734F0();
   sub_10079550();
   if ( g_NetworkPlay )
@@ -45521,10 +50032,7 @@ int sub_10035BD1()
   sub_1006A9C0(1, 640, 480, 16, 0);
   return sub_100613B0();
 }
-// 1002F690: using guessed type int sub_1002F690(void);
-// 100613B0: using guessed type int sub_100613B0(void);
 // 100713B0: using guessed type int sub_100713B0(void);
-// 10079550: using guessed type int sub_10079550(void);
 // 1022AF18: using guessed type int g_NetworkPlay;
 // 106C29A4: using guessed type int dword_106C29A4;
 // 106C56D0: using guessed type int dword_106C56D0;
@@ -45662,7 +50170,7 @@ void __thiscall sub_10035CE0(int *this)
       *this |= 0x200000u;
     if ( (*this & 0x2000) != 0 )
       *this |= 0x100000u;
-    if ( *(char *)(dword_10B4E1D4 + 1) < 0 || *(char *)(dword_10B4E1D4 + 7) < 0 )
+    if ( *((char *)g_ConfigJoystickPtr + 1) < 0 || *((char *)g_ConfigJoystickPtr + 7) < 0 )
     {
       *((_BYTE *)this + 36) = *(_BYTE *)(this[86] + 2);
       goto LABEL_46;
@@ -45757,7 +50265,6 @@ LABEL_61:
 // 10035F1B: variable 'v22' is possibly undefined
 // 10035F1B: variable 'v23' is possibly undefined
 // 106909B4: using guessed type int dword_106909B4;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
 
 //----- (10035FA0) --------------------------------------------------------
 int __thiscall sub_10035FA0(int *this, int a2)
@@ -46294,7 +50801,7 @@ int __cdecl sub_10036BD0(int a1, int a2)
 {
   int v2; // esi
 
-  v2 = meth_100088B0(dword_10A99780, a2, a1);
+  v2 = pod_meth_100088B0(&gPod, a2, a1);
   sub_1002B9A0(0, v2);
   sub_10036C00(v2);
   return v2;
@@ -46617,7 +51124,7 @@ int __cdecl sub_10037070(int a1)
 // 106C7C3C: using guessed type int dword_106C7C3C;
 
 //----- (100370D0) --------------------------------------------------------
-int __cdecl sub_100370D0(char *a1)
+int __cdecl sub_100370D0(char *outBuffer)
 {
   unsigned __int16 v2; // ax
   char v3; // cl
@@ -46680,46 +51187,46 @@ int __cdecl sub_100370D0(char *a1)
   char v60; // cl
   char v61; // dl
   char v62; // cl
-  int v64; // [esp+14h] [ebp+4h]
-  int v65; // [esp+14h] [ebp+4h]
+  int outBuffera; // [esp+14h] [ebp+4h]
+  int outBufferb; // [esp+14h] [ebp+4h]
 
-  sub_1002B9A0(-2143518720, (int)(a1 + 0x8000));
+  sub_1002B9A0(-2143518720, (int)(outBuffer + 0x8000));
   sub_1002B9D0(0);
-  dword_106C7C3C = (int)a1;
-  *((_DWORD *)a1 + 31) = 0;
-  LOBYTE(v2) = a1[32769];
-  HIBYTE(v2) = a1[0x8000];
-  *((_DWORD *)a1 + 0x2000) = (unsigned __int8)a1[32771] | (((unsigned __int8)a1[32770] | (v2 << 8)) << 8);
-  v3 = a1[32775];
-  a1[32775] = a1[32772];
-  a1[32772] = v3;
-  v4 = a1[32774];
-  a1[32774] = a1[32773];
-  a1[32773] = v4;
-  sub_1002B970((int *)a1 + 8193);
-  LOBYTE(v5) = a1[32777];
-  HIBYTE(v5) = a1[32776];
-  *((_DWORD *)a1 + 8194) = (unsigned __int8)a1[32779] | (((unsigned __int8)a1[32778] | (v5 << 8)) << 8);
-  v6 = a1[32783];
-  a1[32783] = a1[32780];
-  a1[32780] = v6;
-  v7 = a1[32782];
-  a1[32782] = a1[32781];
-  a1[32781] = v7;
-  sub_1002B970((int *)a1 + 8195);
-  LOBYTE(v8) = a1[32785];
-  HIBYTE(v8) = a1[32784];
-  v9 = a1 + 32788;
-  *((_DWORD *)a1 + 8196) = (unsigned __int8)a1[32787] | (((unsigned __int8)a1[32786] | (v8 << 8)) << 8);
-  LOBYTE(v8) = a1[32791];
-  a1[32791] = a1[32788];
-  a1[32788] = v8;
-  LOBYTE(v8) = a1[32790];
-  a1[32790] = a1[32789];
-  a1[32789] = v8;
-  sub_1002B970((int *)a1 + 8197);
-  sub_1002BA80(*((_DWORD *)a1 + 8197), *((_DWORD *)a1 + 8196));
-  v10 = *(_DWORD *)(*((_DWORD *)a1 + 8197) + 36 * (unsigned __int8)a1[33050] + 4);
+  dword_106C7C3C = (int)outBuffer;
+  *((_DWORD *)outBuffer + 31) = 0;
+  LOBYTE(v2) = outBuffer[32769];
+  HIBYTE(v2) = outBuffer[0x8000];
+  *((_DWORD *)outBuffer + 0x2000) = (unsigned __int8)outBuffer[32771] | (((unsigned __int8)outBuffer[32770] | (v2 << 8)) << 8);
+  v3 = outBuffer[32775];
+  outBuffer[32775] = outBuffer[32772];
+  outBuffer[32772] = v3;
+  v4 = outBuffer[32774];
+  outBuffer[32774] = outBuffer[32773];
+  outBuffer[32773] = v4;
+  sub_1002B970((int *)outBuffer + 8193);
+  LOBYTE(v5) = outBuffer[32777];
+  HIBYTE(v5) = outBuffer[32776];
+  *((_DWORD *)outBuffer + 8194) = (unsigned __int8)outBuffer[32779] | (((unsigned __int8)outBuffer[32778] | (v5 << 8)) << 8);
+  v6 = outBuffer[32783];
+  outBuffer[32783] = outBuffer[32780];
+  outBuffer[32780] = v6;
+  v7 = outBuffer[32782];
+  outBuffer[32782] = outBuffer[32781];
+  outBuffer[32781] = v7;
+  sub_1002B970((int *)outBuffer + 8195);
+  LOBYTE(v8) = outBuffer[32785];
+  HIBYTE(v8) = outBuffer[32784];
+  v9 = outBuffer + 32788;
+  *((_DWORD *)outBuffer + 8196) = (unsigned __int8)outBuffer[32787] | (((unsigned __int8)outBuffer[32786] | (v8 << 8)) << 8);
+  LOBYTE(v8) = outBuffer[32791];
+  outBuffer[32791] = outBuffer[32788];
+  outBuffer[32788] = v8;
+  LOBYTE(v8) = outBuffer[32790];
+  outBuffer[32790] = outBuffer[32789];
+  outBuffer[32789] = v8;
+  sub_1002B970((int *)outBuffer + 8197);
+  sub_1002BA80(*((_DWORD *)outBuffer + 8197), *((_DWORD *)outBuffer + 8196));
+  v10 = *(_DWORD *)(*((_DWORD *)outBuffer + 8197) + 36 * (unsigned __int8)outBuffer[33050] + 4);
   if ( v10 )
   {
     v11 = v10 + 24;
@@ -46736,8 +51243,8 @@ int __cdecl sub_100370D0(char *a1)
     while ( v12 );
   }
   sub_10074E00();
-  v13 = a1 + 32792;
-  v64 = 3;
+  v13 = outBuffer + 32792;
+  outBuffera = 3;
   do
   {
     v14 = 10;
@@ -46760,62 +51267,62 @@ int __cdecl sub_100370D0(char *a1)
       --v14;
     }
     while ( v14 );
-    --v64;
+    --outBuffera;
   }
-  while ( v64 );
-  v17 = a1[32915];
-  a1[32915] = a1[32912];
-  a1[32912] = v17;
-  v18 = a1[32914];
-  a1[32914] = a1[32913];
-  a1[32913] = v18;
-  sub_1002B970((int *)a1 + 8229);
-  v19 = a1[32923];
-  v20 = a1[32921];
-  a1[32923] = a1[32920];
-  v21 = a1[32924];
-  a1[32920] = v19;
-  v22 = a1[32922];
-  a1[32922] = v20;
-  v23 = a1[32925];
-  a1[32921] = v22;
-  v24 = a1[32927];
-  a1[32927] = v21;
-  v25 = a1[32928];
-  a1[32924] = v24;
-  v26 = a1[32926];
-  a1[32926] = v23;
-  v27 = a1[32929];
-  a1[32925] = v26;
-  v28 = a1[32931];
-  a1[32931] = v25;
-  v29 = a1[32932];
-  a1[32928] = v28;
-  v30 = a1[32930];
-  a1[32930] = v27;
-  v31 = a1[32933];
-  a1[32929] = v30;
-  v32 = a1[32935];
-  a1[32935] = v29;
-  v33 = a1[32936];
-  a1[32932] = v32;
-  v34 = a1[32934];
-  a1[32934] = v31;
-  v35 = a1[32937];
-  a1[32933] = v34;
-  v36 = a1[32939];
-  a1[32939] = v33;
-  v37 = a1[32940];
-  a1[32936] = v36;
-  v38 = a1[32938];
-  a1[32938] = v35;
-  v39 = a1[32941];
-  a1[32937] = v38;
-  a1[32940] = a1[32943];
-  a1[32941] = a1[32942];
-  a1[32943] = v37;
-  a1[32942] = v39;
-  v40 = a1 + 32944;
+  while ( outBuffera );
+  v17 = outBuffer[32915];
+  outBuffer[32915] = outBuffer[32912];
+  outBuffer[32912] = v17;
+  v18 = outBuffer[32914];
+  outBuffer[32914] = outBuffer[32913];
+  outBuffer[32913] = v18;
+  sub_1002B970((int *)outBuffer + 8229);
+  v19 = outBuffer[32923];
+  v20 = outBuffer[32921];
+  outBuffer[32923] = outBuffer[32920];
+  v21 = outBuffer[32924];
+  outBuffer[32920] = v19;
+  v22 = outBuffer[32922];
+  outBuffer[32922] = v20;
+  v23 = outBuffer[32925];
+  outBuffer[32921] = v22;
+  v24 = outBuffer[32927];
+  outBuffer[32927] = v21;
+  v25 = outBuffer[32928];
+  outBuffer[32924] = v24;
+  v26 = outBuffer[32926];
+  outBuffer[32926] = v23;
+  v27 = outBuffer[32929];
+  outBuffer[32925] = v26;
+  v28 = outBuffer[32931];
+  outBuffer[32931] = v25;
+  v29 = outBuffer[32932];
+  outBuffer[32928] = v28;
+  v30 = outBuffer[32930];
+  outBuffer[32930] = v27;
+  v31 = outBuffer[32933];
+  outBuffer[32929] = v30;
+  v32 = outBuffer[32935];
+  outBuffer[32935] = v29;
+  v33 = outBuffer[32936];
+  outBuffer[32932] = v32;
+  v34 = outBuffer[32934];
+  outBuffer[32934] = v31;
+  v35 = outBuffer[32937];
+  outBuffer[32933] = v34;
+  v36 = outBuffer[32939];
+  outBuffer[32939] = v33;
+  v37 = outBuffer[32940];
+  outBuffer[32936] = v36;
+  v38 = outBuffer[32938];
+  outBuffer[32938] = v35;
+  v39 = outBuffer[32941];
+  outBuffer[32937] = v38;
+  outBuffer[32940] = outBuffer[32943];
+  outBuffer[32941] = outBuffer[32942];
+  outBuffer[32943] = v37;
+  outBuffer[32942] = v39;
+  v40 = outBuffer + 32944;
   v41 = 3;
   do
   {
@@ -46829,8 +51336,8 @@ int __cdecl sub_100370D0(char *a1)
     --v41;
   }
   while ( v41 );
-  v44 = a1 + 32956;
-  v65 = 3;
+  v44 = outBuffer + 32956;
+  outBufferb = 3;
   do
   {
     v45 = 3;
@@ -46853,28 +51360,28 @@ int __cdecl sub_100370D0(char *a1)
       --v45;
     }
     while ( v45 );
-    --v65;
+    --outBufferb;
   }
-  while ( v65 );
+  while ( outBufferb );
   sub_10074DC0(2);
   dword_118AA0C8(*(_DWORD *)v9 + 216, 0);
   dword_118AA0C8(*(_DWORD *)v9 + 108, 0);
   dword_118AA0C8(*(_DWORD *)v9 + 180, 0);
-  v48 = *(_WORD **)(*(_DWORD *)v9 + 36 * (unsigned __int8)a1[33051] + 4);
-  v49 = (int *)(*(_DWORD *)v9 + 36 * (unsigned __int8)a1[33051]);
+  v48 = *(_WORD **)(*(_DWORD *)v9 + 36 * (unsigned __int8)outBuffer[33051] + 4);
+  v49 = (int *)(*(_DWORD *)v9 + 36 * (unsigned __int8)outBuffer[33051]);
   if ( !v48 || dword_100AC300 )
   {
-    *((_DWORD *)a1 + 36) = 0;
-    *((_DWORD *)a1 + 35) = 0;
-    *((_DWORD *)a1 + 34) = 0;
-    *((_DWORD *)a1 + 33) = 0;
-    *((_DWORD *)a1 + 32) = 0;
+    *((_DWORD *)outBuffer + 36) = 0;
+    *((_DWORD *)outBuffer + 35) = 0;
+    *((_DWORD *)outBuffer + 34) = 0;
+    *((_DWORD *)outBuffer + 33) = 0;
+    *((_DWORD *)outBuffer + 32) = 0;
   }
   else
   {
     v50 = *v49;
     dword_118AA0C8(v49, 1);
-    *((_DWORD *)a1 + 32) = *v49;
+    *((_DWORD *)outBuffer + 32) = *v49;
     if ( dword_106C661C || dword_106C6624 )
     {
       v48[15] = 112;
@@ -46895,14 +51402,14 @@ int __cdecl sub_100370D0(char *a1)
     v48[7] = 16786;
     v48[11] = 27565;
     v48[6] = 12742;
-    *((_DWORD *)a1 + 33) = dword_118AA084(*((_DWORD *)a1 + 32), v50, v48);
+    *((_DWORD *)outBuffer + 33) = dword_118AA084(*((_DWORD *)outBuffer + 32), v50, v48);
     v48[14] = 192;
     v48[13] = 192;
     v48[9] = 1273;
     v48[8] = 1273;
     v48[11] = 27565;
     v48[6] = 12742;
-    *((_DWORD *)a1 + 34) = dword_118AA084(*((_DWORD *)a1 + 32), v50, v48);
+    *((_DWORD *)outBuffer + 34) = dword_118AA084(*((_DWORD *)outBuffer + 32), v50, v48);
     v53 = v48[15];
     v54 = v48[10];
     v48[14] = 400;
@@ -46911,16 +51418,16 @@ int __cdecl sub_100370D0(char *a1)
     v48[8] = v54;
     v48[11] = 14567;
     v48[6] = -257;
-    *((_DWORD *)a1 + 35) = dword_118AA084(*((_DWORD *)a1 + 32), v50, v48);
+    *((_DWORD *)outBuffer + 35) = dword_118AA084(*((_DWORD *)outBuffer + 32), v50, v48);
     v48[9] = 1273;
     v48[14] = 192;
     v48[13] = 192;
     v48[8] = 1273;
     v48[11] = 14567;
     v48[6] = -257;
-    *((_DWORD *)a1 + 36) = dword_118AA084(*((_DWORD *)a1 + 32), v50, v48);
+    *((_DWORD *)outBuffer + 36) = dword_118AA084(*((_DWORD *)outBuffer + 32), v50, v48);
   }
-  v55 = a1 + 32994;
+  v55 = outBuffer + 32994;
   v56 = 4;
   do
   {
@@ -46940,14 +51447,14 @@ int __cdecl sub_100370D0(char *a1)
     --v56;
   }
   while ( v56 );
-  v60 = a1[33055];
-  a1[33055] = a1[33052];
-  v61 = a1[33053];
-  a1[33052] = v60;
-  v62 = a1[33054];
-  a1[33054] = v61;
-  a1[33053] = v62;
-  return sub_1002B970((int *)a1 + 8263);
+  v60 = outBuffer[33055];
+  outBuffer[33055] = outBuffer[33052];
+  v61 = outBuffer[33053];
+  outBuffer[33052] = v60;
+  v62 = outBuffer[33054];
+  outBuffer[33054] = v61;
+  outBuffer[33053] = v62;
+  return sub_1002B970((int *)outBuffer + 8263);
 }
 // 100AC300: using guessed type int dword_100AC300;
 // 106C661C: using guessed type int dword_106C661C;
@@ -47003,7 +51510,7 @@ void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCo
 {
   int v3; // eax
   CHK_File *cFile; // esi
-  intptr_t unk; // eax
+  intptr_t filesize; // eax
   void *v6; // [esp+0h] [ebp-204h]
   char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
@@ -47014,10 +51521,10 @@ void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCo
     sub_10008CF0((int)Buffer);
   }
   cFile = CHK_FReadOpen(filename);
-  unk = elementCount;
+  filesize = elementCount;
   if ( elementCount < 0 )
-    unk = CHK_GetFileSize(cFile, v6);
-  CHK_FReadReportError((void *)elementCount, 1u, unk, cFile);
+    filesize = CHK_GetFileSize(cFile, v6);
+  CHK_FReadReportError((void *)elementCount, 1u, filesize, cFile);
   CHK_FClose(cFile);
 }
 // 100378C9: variable 'v3' is possibly undefined
@@ -48280,10 +52787,10 @@ int sub_10038EC0()
   HGLOBAL v1; // eax
   HRESULT hr; // esi
   SIZE_T pMetric; // [esp+10h] [ebp-18h] BYREF
-  int dsBufferDesc[5]; // [esp+14h] [ebp-14h] BYREF
+  DSBUFFERDESC1 dsBufferDesc; // [esp+14h] [ebp-14h] BYREF
 
-  sub_10008B40((char *)dword_10A99780, aBossrallyPod);
-  sub_100088D0(dword_10A99780);
+  setPodFilename(&gPod, aBossrallyPod);
+  readPodFile(&gPod);
   sub_1006AA20(1);
   sub_10061400();
   sub_10078CD0();
@@ -48303,7 +52810,7 @@ int sub_10038EC0()
     sub_10073060();
     if ( acmMetrics(0, 0x32u, &pMetric) )
       return 0;
-    v1 = GlobalAlloc(0x40u, pMetric);
+    v1 = GlobalAlloc(GMEM_ZEROINIT, pMetric);
     result = (int)GlobalLock(v1);
     pMem = (#514 *)result;
     if ( result )
@@ -48324,12 +52831,12 @@ int sub_10038EC0()
         hr = g_DSound->lpVtbl->SetCooperativeLevel(g_DSound, g_HWND, 2);
         if ( hr >= 0 )
         {
-          dsBufferDesc[0] = 20;
-          dsBufferDesc[2] = 0;
-          dsBufferDesc[1] = 1;
-          dsBufferDesc[3] = 0;
-          dsBufferDesc[4] = 0;
-          hr = g_DSound->lpVtbl->CreateSoundBuffer(g_DSound, (LPCDSBUFFERDESC)dsBufferDesc, &g_dSoundBuffer, 0);
+          dsBufferDesc.dwSize = 20;
+          dsBufferDesc.dwBufferBytes = 0;
+          dsBufferDesc.dwFlags = 1;
+          dsBufferDesc.dwReserved = 0;
+          dsBufferDesc.lpwfxFormat = 0;
+          hr = g_DSound->lpVtbl->CreateSoundBuffer(g_DSound, (LPCDSBUFFERDESC)&dsBufferDesc, &g_dSoundBuffer, 0);
           if ( hr >= 0 )
           {
             hr = g_dSoundBuffer->lpVtbl->Play(g_dSoundBuffer, 0, 0, 1);
@@ -48383,7 +52890,7 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code)
   if ( dword_10690A28 )
     dword_10690A28();
   sub_10061620();
-  meth_10008970(dword_10A99780);
+  cleanUpPod(&gPod);
   sub_1002AEA0();
   sub_10074050();
   CoUninitialize();
@@ -52531,8 +57038,8 @@ int __cdecl sub_1003DFC0()
   g_TransmissionType = 1;
   g_UltraCarHeader = (void *)2;
   g_SuspensionType = 1;
-  g_ReadJoystick = 0;
-  dword_10B4E1D4 = (int)&g_Config;
+  g_ConfigJoystickIndex = 0;
+  g_ConfigJoystickPtr = &g_Config;
   g_HandlingType = 1;
   return result;
 }
@@ -52542,8 +57049,7 @@ int __cdecl sub_1003DFC0()
 // 100B380C: using guessed type int g_chosenTrack;
 // 1022B34C: using guessed type int g_chosenCar;
 // 1022B350: using guessed type int g_ChosenWeather;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
 
 //----- (1003E020) --------------------------------------------------------
 int sub_1003E020()
@@ -52745,20 +57251,20 @@ int sub_1003E3A0()
 {
   int result; // eax
 
-  g_ReadJoystick = dword_100AC520[dword_10AA2A0C];
-  switch ( g_ReadJoystick )
+  g_ConfigJoystickIndex = dword_100AC520[dword_10AA2A0C];
+  switch ( g_ConfigJoystickIndex )
   {
     case 1:
-      dword_10B4E1D4 = (int)&unk_10B4DFD8;
+      g_ConfigJoystickPtr = g_Config.joystick1;
       break;
     case 2:
-      dword_10B4E1D4 = (int)&unk_10B4E080;
+      g_ConfigJoystickPtr = g_Config.joystick2;
       break;
     case 3:
-      dword_10B4E1D4 = (int)&unk_10B4E128;
+      g_ConfigJoystickPtr = g_Config.joystick3;
       break;
     default:
-      dword_10B4E1D4 = (int)&g_Config;
+      g_ConfigJoystickPtr = &g_Config;
       break;
   }
   dword_10AA2A1C = dword_10B4E1E0 == 0;
@@ -52804,8 +57310,7 @@ int sub_1003E3A0()
 // 10AA2A20: using guessed type int dword_10AA2A20;
 // 10AA2A24: using guessed type int dword_10AA2A24;
 // 10AA2A28: using guessed type int dword_10AA2A28;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
+// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
 // 10B4E1D8: using guessed type int dword_10B4E1D8;
 // 10B4E1DC: using guessed type int dword_10B4E1DC;
 // 10B4E1E0: using guessed type int dword_10B4E1E0;
@@ -54269,14 +58774,14 @@ int __cdecl sub_100400E0(int a1)
     switch ( dword_10AA2A0C )
     {
       case 0:
-        v2 = sub_10069C30(g_Config, 0, dword_100AB334[2 * dword_10AA2840]);
+        v2 = sub_10069C30(&g_Config, 0, dword_100AB334[2 * dword_10AA2840]);
         v3 = &aEscape[36 * sub_10040040(0, v2)];
         v4 = (char *)(a1 + 11109);
         goto LABEL_17;
       case 1:
-        v5 = sub_10069C30(g_Config, 1, dword_100AB334[2 * dword_10AA2840]);
+        v5 = sub_10069C30(&g_Config, 1, dword_100AB334[2 * dword_10AA2840]);
         v12 = v5;
-        if ( sub_10069BC0(g_Config, 1, dword_100AB334[2 * dword_10AA2840]) )
+        if ( sub_10069BC0(&g_Config, 1, dword_100AB334[2 * dword_10AA2840]) )
         {
           v6 = sub_10040040(1, v5);
           v4 = (char *)(a1 + 11109);
@@ -54287,18 +58792,18 @@ int __cdecl sub_100400E0(int a1)
           goto LABEL_13;
         goto LABEL_14;
       case 2:
-        v7 = sub_10069C30(g_Config, 2, dword_100AB334[2 * dword_10AA2840]);
+        v7 = sub_10069C30(&g_Config, 2, dword_100AB334[2 * dword_10AA2840]);
         v12 = v7;
-        if ( !sub_10069BC0(g_Config, 2, dword_100AB334[2 * dword_10AA2840]) )
+        if ( !sub_10069BC0(&g_Config, 2, dword_100AB334[2 * dword_10AA2840]) )
           goto LABEL_12;
         v8 = sub_10040040(2, v7);
         v4 = (char *)(a1 + 11109);
         v3 = &byte_10B4E914[36 * v8];
         goto LABEL_17;
       case 3:
-        v7 = sub_10069C30(g_Config, 3, dword_100AB334[2 * dword_10AA2840]);
+        v7 = sub_10069C30(&g_Config, 3, dword_100AB334[2 * dword_10AA2840]);
         v12 = v7;
-        if ( sub_10069BC0(g_Config, 3, dword_100AB334[2 * dword_10AA2840]) )
+        if ( sub_10069BC0(&g_Config, 3, dword_100AB334[2 * dword_10AA2840]) )
         {
           v9 = sub_10040040(3, v7);
           v4 = (char *)(a1 + 11109);
@@ -56486,23 +60991,23 @@ LABEL_11:
   }
 LABEL_12:
   dword_10B4E728 = v0;
-  g_ReadJoystick = dword_100AC520[v0];
-  if ( g_ReadJoystick == 1 )
+  g_ConfigJoystickIndex = dword_100AC520[v0];
+  if ( g_ConfigJoystickIndex == 1 )
   {
-    dword_10B4E1D4 = (int)&unk_10B4DFD8;
+    g_ConfigJoystickPtr = (int)&MEMORY[0x10B4DFD8];
     result = 1;
   }
-  else if ( g_ReadJoystick == 2 )
+  else if ( g_ConfigJoystickIndex == 2 )
   {
-    dword_10B4E1D4 = (int)&unk_10B4E080;
+    g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
     result = 1;
   }
   else
   {
-    if ( g_ReadJoystick == 3 )
-      dword_10B4E1D4 = (int)&unk_10B4E128;
+    if ( g_ConfigJoystickIndex == 3 )
+      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E128];
     else
-      dword_10B4E1D4 = (int)&g_Config;
+      g_ConfigJoystickPtr = (int)&g_Config;
     result = 1;
   }
   return result;
@@ -74973,7 +79478,7 @@ char __cdecl sub_1005B540(int a1)
   {
     v2 += 2;
     ++v1;
-    if ( v2 >= dword_100AE6D8 )
+    if ( v2 >= MEMORY[0x100AE6D8] )
       return 0;
   }
   return byte_100ACE5C[8 * v1];
@@ -77255,22 +81760,22 @@ int __cdecl sub_1005FBC0(int a1)
   g_TransmissionType = dword_10AA27EC;
   g_SuspensionType = dword_10AA27F4;
   dword_10AA28A4 = BYTE1(dword_10AA26F4[0]);
-  g_ReadJoystick = dword_10AA27F8;
+  g_ConfigJoystickIndex = dword_10AA27F8;
   dword_10AA28A0 = dword_10AA26F0;
   g_UltraCarHeader = (void *)dword_10AA27F0;
   switch ( dword_10AA27F8 )
   {
     case 1:
-      dword_10B4E1D4 = (int)&unk_10B4DFD8;
+      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4DFD8];
       break;
     case 2:
-      dword_10B4E1D4 = (int)&unk_10B4E080;
+      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
       break;
     case 3:
-      dword_10B4E1D4 = (int)&unk_10B4E128;
+      g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E128];
       break;
     default:
-      dword_10B4E1D4 = (int)&g_Config;
+      g_ConfigJoystickPtr = (int)&g_Config;
       break;
   }
   sprintf(byte_10AA2518, "%d", dword_10AA26F0 + 1);
@@ -77326,7 +81831,7 @@ int sub_1005FCF0()
   dword_10AA26F0 = dword_10AA28A0;
   dword_10AA27F4 = g_SuspensionType;
   LOBYTE(dword_10AA26F4[0]) = dword_10AA28B8;
-  dword_10AA27F8 = g_ReadJoystick;
+  dword_10AA27F8 = g_ConfigJoystickIndex;
   BYTE1(dword_10AA26F4[0]) = dword_10AA28A4;
   if ( !g_GameMode )
   {
@@ -78339,7 +82844,7 @@ int __cdecl sub_10060E00(int a1)
 // 100773F0: using guessed type _DWORD __cdecl sub_100773F0(_DWORD, _DWORD);
 
 //----- (10060EA0) --------------------------------------------------------
-_BYTE *__cdecl sub_10060EA0(PBITMAP pBitmap)
+char *__cdecl ConvertBitmapIf24Bit(PBITMAP pBitmap)
 {
   _BYTE *mem; // edi
 
@@ -78348,7 +82853,7 @@ _BYTE *__cdecl sub_10060EA0(PBITMAP pBitmap)
   mem = malloc(4 * pBitmap->bmWidth * pBitmap->bmHeight);
   if ( mem )
   {
-    sub_10060F00(mem, (char *)pBitmap->bmBits, pBitmap->bmWidth, pBitmap->bmHeight, pBitmap->bmWidthBytes);
+    Convert24BitBitmap(mem, pBitmap->bmBits, pBitmap->bmWidth, pBitmap->bmHeight, pBitmap->bmWidthBytes);
     g_bmWidth = pBitmap->bmWidth;
     g_bmHeight = pBitmap->bmHeight;
   }
@@ -78358,31 +82863,31 @@ _BYTE *__cdecl sub_10060EA0(PBITMAP pBitmap)
 // 10AA3468: using guessed type int g_bmHeight;
 
 //----- (10060F00) --------------------------------------------------------
-_BYTE *__cdecl sub_10060F00(_BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes)
+char *__cdecl Convert24BitBitmap(char *mem, LPVOID bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes)
 {
-  _BYTE *result; // eax
-  char *calc; // edi
+  char *result; // eax
+  char *currentBytePtr; // edi
   char *calc_1; // ecx
-  LONG bmWidth_1; // esi
+  LONG x; // esi
   char calc_2; // dl
   char *calc_3; // ecx
   char calc_4; // bl
   char *calc_5; // eax
-  LONG bmBitsa; // [esp+Ch] [ebp+8h]
+  LONG y; // [esp+Ch] [ebp+8h]
   char calc_1_1; // [esp+14h] [ebp+10h]
 
-  result = (_BYTE *)bmHeight;
-  calc = &bmBits[bmWidthBytes * (bmHeight - 1)];
+  result = (char *)bmHeight;
+  currentBytePtr = (char *)bmBits + bmWidthBytes * (bmHeight - 1);
   if ( bmHeight )
   {
-    bmBitsa = bmHeight;
+    y = bmHeight;
     result = mem;
     do
     {
-      calc_1 = calc;
+      calc_1 = currentBytePtr;
       if ( bmWidth )
       {
-        bmWidth_1 = bmWidth;
+        x = bmWidth;
         do
         {
           calc_2 = *calc_1;
@@ -78396,14 +82901,14 @@ _BYTE *__cdecl sub_10060F00(_BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeigh
           *calc_5++ = calc_2;
           *calc_5 = -1;
           result = calc_5 + 1;
-          --bmWidth_1;
+          --x;
         }
-        while ( bmWidth_1 );
+        while ( x );
       }
-      calc -= bmWidthBytes;
-      --bmBitsa;
+      currentBytePtr -= bmWidthBytes;
+      --y;
     }
-    while ( bmBitsa );
+    while ( y );
   }
   return result;
 }
@@ -78411,10 +82916,9 @@ _BYTE *__cdecl sub_10060F00(_BYTE *mem, char *bmBits, LONG bmWidth, LONG bmHeigh
 //----- (10060F70) --------------------------------------------------------
 int __cdecl sub_10060F70(int a1, int a2, int a3)
 {
-  dword_100B2AD0 = dword_100ADFE0[300 * a1 + 10 * a2];
-  return *((_DWORD *)&unk_100ADFD0 + 300 * a1 + 10 * a2 + a3);
+  dword_100B2AD0 = *(&gCarsArray[a1].field_10 + 10 * a2);
+  return *((_DWORD *)&gCarsArray[a1].imageData0 + 10 * a2 + a3);
 }
-// 100ADFE0: using guessed type int dword_100ADFE0[];
 // 100B2AD0: using guessed type int dword_100B2AD0;
 
 //----- (10060FB0) --------------------------------------------------------
@@ -78424,19 +82928,15 @@ int *__cdecl sub_10060FB0(int a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, in
   int v7; // edx
   int *result; // eax
 
-  v6 = 10 * (a2 + 30 * a1);
-  *a3 = dword_100ADFE4[v6];
-  *a4 = dword_100ADFE8[v6];
-  *a5 = dword_100ADFEC[v6];
-  v7 = dword_100ADFF0[v6];
+  v6 = 40 * (a2 + 30 * a1);
+  *a3 = *(int *)((char *)&gCarsArray[0].field_14 + v6);
+  *a4 = *(_DWORD *)((char *)&gCarsArray[0].field_18 + v6);
+  *a5 = *(int *)((char *)&gCarsArray[0].field_1A + v6 + 2);
+  v7 = *(int *)((char *)&gCarsArray[0].field_1E + v6 + 2);
   result = a6;
   *a6 = v7;
   return result;
 }
-// 100ADFE4: using guessed type int dword_100ADFE4[];
-// 100ADFE8: using guessed type int dword_100ADFE8[];
-// 100ADFEC: using guessed type int dword_100ADFEC[];
-// 100ADFF0: using guessed type int dword_100ADFF0[];
 
 //----- (10061000) --------------------------------------------------------
 int sub_10061000()
@@ -78446,89 +82946,95 @@ int sub_10061000()
 // 100B2AD0: using guessed type int dword_100B2AD0;
 
 //----- (10061010) --------------------------------------------------------
-int __cdecl sub_10061010(int carIndex, int a2)
+int __cdecl sub_10061010(int carIndex, int bSomething)
 {
-  _BYTE *v2; // ebx
+  Car *car; // ebx
+  bool paintFileExists; // al
+  int paintFileExists_1; // eax
   _BYTE *mem; // esi
-  int *v4; // ebp
+  int *v6; // ebp
   int *mem_1; // eax
   int result; // eax
-  int v7; // [esp+10h] [ebp-408h]
-  int v8; // [esp+14h] [ebp-404h]
+  int v9; // [esp+10h] [ebp-408h]
+  int v10; // [esp+14h] [ebp-404h]
   char filename[1024]; // [esp+18h] [ebp-400h] BYREF
 
-  v8 = 30;
-  v2 = (char *)&unk_100ADFD0 + 1200 * carIndex;
+  v10 = 30;
+  car = &gCarsArray[carIndex];
   do
   {
-    if ( !*(_DWORD *)v2 )
+    if ( !car->imageData0 )
     {
-      if ( *((_DWORD *)v2 + 9) )
+      if ( *(_DWORD *)car->paintFilename )
       {
-        sprintf(filename, "Paint\\%s", *((const char **)v2 + 9));
-        if ( CHK_FileExists(filename) )
+        sprintf(filename, "Paint\\%s", *(const char **)car->paintFilename);
+        paintFileExists = CHK_FileExists(filename);
+        if ( *(_DWORD *)&paintFileExists )
         {
-          *(_DWORD *)v2 = LoadImageWrapper(filename);
-          filename[8] = 100;
-          if ( CHK_FileExists(filename) )
+          car->imageData0 = LoadImageWrapper(filename);
+          filename[8] = 0x64;
+          LOBYTE(paintFileExists_1) = CHK_FileExists(filename);
+          if ( paintFileExists_1 )
           {
             mem = LoadImageWrapper(filename);
-            if ( *(_DWORD *)v2 )
+            if ( car->imageData0 )
             {
               if ( mem )
               {
-                sub_10061210(*(unsigned __int8 **)v2, g_bmWidth, g_bmHeight, mem);
+                sub_10061210(car->imageData0, g_bmWidth, g_bmHeight, mem);
                 free(mem);
               }
             }
           }
-          if ( *(_DWORD *)v2 && *((int *)v2 + 4) >= 0 && a2 && dword_100ADFC8 )
+          if ( car->imageData0 && car->field_10 >= 0 && bSomething && dword_100ADFC8 )
           {
-            v7 = 1;
-            v4 = (int *)(v2 + 4);
+            v9 = 1;
+            v6 = &car->field_4;
             do
             {
               mem_1 = (int *)malloc(4 * g_bmWidth * g_bmHeight);
-              *v4 = (int)mem_1;
+              *v6 = (int)mem_1;
               if ( mem_1 )
               {
-                qmemcpy(mem_1, *(const void **)v2, 4 * g_bmWidth * g_bmHeight);
-                sub_10061290(v7, *v4, g_bmWidth, g_bmHeight);
+                qmemcpy(mem_1, car->imageData0, 4 * g_bmWidth * g_bmHeight);
+                sub_10061290(v9, *v6, g_bmWidth, g_bmHeight);
               }
-              ++v4;
-              ++v7;
+              ++v6;
+              ++v9;
             }
-            while ( v7 < 4 );
+            while ( v9 < 4 );
           }
         }
       }
     }
-    v2 += 40;
-    result = --v8;
+    car = (Car *)((char *)car + 40);
+    result = --v10;
   }
-  while ( v8 );
+  while ( v10 );
   return result;
 }
+// 10061071: variable 'paintFileExists' is possibly undefined
+// 1006109A: variable 'paintFileExists_1' is possibly undefined
 // 100ADFC8: using guessed type int dword_100ADFC8;
 // 10AA3464: using guessed type int g_bmWidth;
 // 10AA3468: using guessed type int g_bmHeight;
 
 //----- (100611A0) --------------------------------------------------------
-_BYTE *__cdecl LoadImageWrapper(LPCSTR name)
+char *__cdecl LoadImageWrapper(LPCSTR name)
 {
-  _BYTE *result; // eax
-  _BYTE *hResult; // esi
-  _BYTE *mem; // edi
+  char *result; // eax
+  char *hResult; // esi
+  char *mem; // edi
   BITMAP bitmap; // [esp+8h] [ebp-18h] BYREF
 
-  result = LoadImageA(0, name, 0, 0, 0, 0x2010u);// LR_CREATEDIBSECTION | LR_LOADFROMFILE
+  result = (char *)LoadImageA(0, name, 0, 0, 0, 0x2010u);// LR_CREATEDIBSECTION | LR_LOADFROMFILE
   hResult = result;
   if ( result )
   {
     GetObjectA(result, 0x18, &bitmap);          // 0x18 = sizeof(BITMAP)
     if ( bitmap.bmBitsPixel == 24 )
     {
-      mem = sub_10060EA0(&bitmap);
+      mem = ConvertBitmapIf24Bit(&bitmap);
       DeleteObject(hResult);
       result = mem;
     }
@@ -78541,34 +83047,34 @@ _BYTE *__cdecl LoadImageWrapper(LPCSTR name)
 }
 
 //----- (10061210) --------------------------------------------------------
-int __cdecl sub_10061210(unsigned __int8 *a1, int bmHeight_1, int bmHeight, unsigned __int8 *mem)
+unsigned int __cdecl sub_10061210(char *a1, int bmHeight_1, int bmHeight, unsigned __int8 *mem)
 {
-  int v4; // ebp
+  int totalPixels; // ebp
   int v7; // esi
   unsigned int v8; // kr00_4
   unsigned int v9; // edx
   unsigned int v10; // esi
-  int result; // eax
+  unsigned int result; // eax
 
-  v4 = bmHeight_1 * bmHeight;
+  totalPixels = bmHeight_1 * bmHeight;
   if ( bmHeight_1 * bmHeight > 0 )
   {
     do
     {
       v7 = *mem;
-      v8 = v7 * *a1;
-      v9 = a1[1] * v7;
+      v8 = v7 * (unsigned __int8)*a1;
+      v9 = (unsigned __int8)a1[1] * v7;
       a1 += 4;
       mem += 4;
-      v10 = *(a1 - 2) * v7;
-      result = -2139062143 * v10;
+      v10 = (unsigned __int8)*(a1 - 2) * v7;
+      result = 0x80808081 * v10;
       LOBYTE(result) = v9 / 0xFF;
       *(a1 - 4) = v8 / 0xFF;
       *(a1 - 3) = result;
       *(a1 - 2) = v10 / 0xFF;
-      --v4;
+      --totalPixels;
     }
-    while ( v4 );
+    while ( totalPixels );
   }
   return result;
 }
@@ -78643,15 +83149,15 @@ int __cdecl sub_10061290(int a1, int a2, int a3, int a4)
 // 10AA344C: using guessed type int dword_10AA344C[];
 
 //----- (100613B0) --------------------------------------------------------
-void **sub_100613B0()
+Car *sub_100613B0()
 {
-  void **result; // eax
-  void **v1; // ebx
+  Car *result; // eax
+  Car *v1; // ebx
   int v2; // ebp
-  void **v3; // esi
+  Car *v3; // esi
   int v4; // edi
 
-  result = (void **)&unk_100ADFD0;
+  result = gCarsArray;
   do
   {
     v1 = result;
@@ -78662,16 +83168,16 @@ void **sub_100613B0()
       v4 = 4;
       do
       {
-        if ( *v3 )
+        if ( v3->imageData0 )
         {
-          free(*v3);
-          *v3 = 0;
+          free(v3->imageData0);
+          v3->imageData0 = 0;
         }
-        ++v3;
+        v3 = (Car *)((char *)v3 + 4);
         --v4;
       }
       while ( v4 );
-      v1 += 10;
+      v1 = (Car *)((char *)v1 + 40);
       --v2;
     }
     while ( v2 );
@@ -79195,7 +83701,7 @@ void __thiscall sub_10061F70(int this)
   float v63[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v2 = *(float *)(*(_DWORD *)(this + 10688) + 32);
-  if ( *(__int16 *)dword_10B4E1D4 >= 0 && (*(_WORD *)(dword_10B4E1D4 + 6) & 0x8000) == 0 )
+  if ( *(__int16 *)g_ConfigJoystickPtr >= 0 && (*(_WORD *)(g_ConfigJoystickPtr + 6) & 0x8000) == 0 )
   {
     if ( v2 <= 0.0 )
     {
@@ -79521,7 +84027,7 @@ LABEL_124:
   }
   v62 = 6000.0;
   v19 = 4000.0;
-  if ( (*(_WORD *)(dword_10B4E1D4 + 12) & 0x8000) != 0 )
+  if ( (*(_WORD *)(g_ConfigJoystickPtr + 12) & 0x8000) != 0 )
   {
     v51 = *(float *)(*(_DWORD *)(this + 10688) + 28);
     if ( v51 > 0.40000001 )
@@ -79615,7 +84121,7 @@ LABEL_161:
   if ( (*(_DWORD *)v33 & 0x10000) == 0 )
     v32 = 0.0;
   v34 = 7.0;
-  if ( (*(_WORD *)(dword_10B4E1D4 + 12) & 0x8000) != 0 && v33[7] > 0.0 )
+  if ( (*(_WORD *)(g_ConfigJoystickPtr + 12) & 0x8000) != 0 && v33[7] > 0.0 )
     v34 = v33[7] * 7.0;
   v35 = *(_DWORD *)(this + 3840);
   *(float *)(this + 3688) = v34 * v32;
@@ -79653,7 +84159,7 @@ LABEL_161:
     *(_DWORD *)(this + 3620) = 1147207680;
   if ( *(float *)(this + 3620) > 8000.0 )
     *(_DWORD *)(this + 3620) = 1174011904;
-  if ( (*(_WORD *)(dword_10B4E1D4 + 12) & 0x8000) != 0 && !v36 )
+  if ( (*(_WORD *)(g_ConfigJoystickPtr + 12) & 0x8000) != 0 && !v36 )
   {
     v41 = v33[7] * 8000.0;
     if ( v41 < 900.0 )
@@ -83467,22 +87973,22 @@ size_t MakeEnemyCarColorPanels()
   int *v3; // edi
   size_t result; // eax
 
-  if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
+  if ( g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2 )
   {
-    g_ReadJoystick = sub_100791D0();
-    switch ( g_ReadJoystick )
+    g_ConfigJoystickIndex = sub_100791D0();
+    switch ( g_ConfigJoystickIndex )
     {
       case 1:
-        dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
+        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4DFD8];
         break;
       case 2:
-        dword_10B4E1D4 = (WORD *)&unk_10B4E080;
+        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E080];
         break;
       case 3:
-        dword_10B4E1D4 = (WORD *)&unk_10B4E128;
+        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E128];
         break;
       default:
-        dword_10B4E1D4 = g_Config;
+        g_ConfigJoystickPtr = g_Config;
         break;
     }
   }
@@ -84563,13 +89069,13 @@ int sub_10069A50()
 }
 
 //----- (10069A60) --------------------------------------------------------
-void *sub_10069A60()
+BossRallyConfig *sub_10069A60()
 {
-  return sub_10069A90(g_Config);
+  return sub_10069A90(&g_Config);
 }
 
 //----- (10069A90) --------------------------------------------------------
-void *__thiscall sub_10069A90(void *this)
+BossRallyConfig *__thiscall sub_10069A90(BossRallyConfig *this)
 {
   meth_10069C90(this);
   return this;
@@ -84723,165 +89229,165 @@ char __thiscall sub_10069C30(_WORD *this, int a2, int a3)
 }
 
 //----- (10069C90) --------------------------------------------------------
-int __thiscall meth_10069C90(_DWORD *this)
+int __thiscall meth_10069C90(BossRallyConfig *this)
 {
   int result; // eax
 
   qmemcpy(this, aE, 0xA8u);
-  qmemcpy(this + 42, &unk_100B4140, 0xA8u);
-  qmemcpy(this + 84, &unk_100B41E8, 0xA8u);
-  qmemcpy(this + 126, &unk_100B4290, 0xA8u);
-  this[168] = 0;
-  this[169] = this;
-  this[170] = 1;
-  this[171] = 1;
-  this[172] = 1;
-  memset(this + 173, 0, 0x104u);
-  memset(this + 238, 0, 0x400u);
-  this[494] = 640;
-  this[495] = 480;
-  this[496] = 16;
-  this[497] = 0;
-  this[498] = 0;
-  this[499] = 0;
-  this[500] = 0;
-  this[501] = 0;
-  this[502] = 9;
-  this[503] = 9;
+  qmemcpy(this->joystick1, &unk_100B4140, sizeof(this->joystick1));
+  qmemcpy(this->joystick2, &unk_100B41E8, sizeof(this->joystick2));
+  qmemcpy(this->joystick3, &unk_100B4290, sizeof(this->joystick3));
+  this->field_2A0 = 0;
+  this->field_2A4 = (int)this;
+  this->field_2A8 = 1;
+  this->field_2AC = 1;
+  this->field_2B0 = 1;
+  memset(this->field_2B4, 0, sizeof(this->field_2B4));
+  memset(this->field_3B8, 0, sizeof(this->field_3B8));
+  this->field_7B8 = 640;
+  this->field_7BC = 480;
+  this->field_7C0 = 16;
+  this->field_7C4 = 0;
+  *(_DWORD *)this->field_7C8 = 0;
+  *(_DWORD *)&this->field_7C8[4] = 0;
+  *(_DWORD *)&this->field_7C8[8] = 0;
+  *(_DWORD *)&this->field_7C8[12] = 0;
+  this->field_7D8 = 9;
+  this->field_7DC = 9;
   result = 0;
-  this[504] = 2;
-  this[505] = 0;
-  this[506] = 0;
-  this[507] = 1;
-  this[508] = 1;
-  this[509] = 1;
-  this[510] = 0;
-  this[511] = 3;
-  this[512] = 0;
-  this[513] = 0;
-  this[514] = 4;
-  this[515] = 0;
-  memset(this + 516, 0, 0x20u);
-  memset(this + 524, 0, 0x40u);
-  this[540] = 1;
+  this->field_7E0 = 2;
+  this->field_7E4 = 0;
+  this->field_7E8 = 0;
+  this->field_7EC = 1;
+  this->field_7F0 = 1;
+  this->field_7F4 = 1;
+  this->field_7F8 = 0;
+  this->field_7FC = 3;
+  this->field_800 = 0;
+  this->field_804 = 0;
+  this->field_808 = 4;
+  this->field_80C = 0;
+  memset(this->field_810, 0, sizeof(this->field_810));
+  memset(this->field_830, 0, sizeof(this->field_830));
+  this->field_870 = 1;
   return result;
 }
 
 //----- (10069DE0) --------------------------------------------------------
-_DWORD *__thiscall sub_10069DE0(_DWORD *this, _DWORD *a2)
+BossRallyConfig *__thiscall sub_10069DE0(BossRallyConfig *this, BossRallyConfig *otherConfig)
 {
-  _DWORD *result; // eax
-  _DWORD *v3; // ebx
-  _DWORD *v4; // ebp
-  int v5; // ecx
+  BossRallyConfig *result; // eax
+  char *v3; // ebx
+  char *v4; // ebp
+  int old_field_2a0; // ecx
   int v6; // ecx
   int v7; // ecx
 
   result = this;
-  v3 = this + 42;
-  qmemcpy(this, a2, 0xA8u);
-  v4 = this + 84;
-  qmemcpy(this + 42, a2 + 42, 0xA8u);
-  qmemcpy(this + 84, a2 + 84, 0xA8u);
-  qmemcpy(this + 126, a2 + 126, 0xA8u);
-  v5 = a2[168];
-  result[168] = v5;
-  v6 = v5 - 1;
+  v3 = this->joystick1;
+  qmemcpy(this, otherConfig, 0xA8u);
+  v4 = this->joystick2;
+  qmemcpy(this->joystick1, otherConfig->joystick1, sizeof(this->joystick1));
+  qmemcpy(this->joystick2, otherConfig->joystick2, sizeof(this->joystick2));
+  qmemcpy(this->joystick3, otherConfig->joystick3, sizeof(this->joystick3));
+  old_field_2a0 = otherConfig->field_2A0;
+  result->field_2A0 = old_field_2a0;
+  v6 = old_field_2a0 - 1;
   if ( v6 )
   {
     v7 = v6 - 1;
     if ( v7 )
     {
       if ( v7 == 1 )
-        result[169] = result + 126;
+        result->field_2A4 = (int)result->joystick3;
       else
-        result[169] = result;
+        result->field_2A4 = (int)result;
     }
     else
     {
-      result[169] = v4;
+      result->field_2A4 = (int)v4;
     }
   }
   else
   {
-    result[169] = v3;
+    result->field_2A4 = (int)v3;
   }
-  result[170] = a2[170];
-  result[171] = a2[171];
-  result[172] = a2[172];
-  qmemcpy(result + 173, a2 + 173, 0x104u);
-  qmemcpy(result + 238, a2 + 238, 0x458u);
-  qmemcpy(result + 516, a2 + 516, 0x20u);
-  qmemcpy(result + 524, a2 + 524, 0x44u);
+  result->field_2A8 = otherConfig->field_2A8;
+  result->field_2AC = otherConfig->field_2AC;
+  result->field_2B0 = otherConfig->field_2B0;
+  qmemcpy(result->field_2B4, otherConfig->field_2B4, sizeof(result->field_2B4));
+  qmemcpy(result->field_3B8, otherConfig->field_3B8, 0x458u);
+  qmemcpy(result->field_810, otherConfig->field_810, sizeof(result->field_810));
+  qmemcpy(result->field_830, otherConfig->field_830, 0x44u);
   return result;
 }
 
 //----- (10069FF0) --------------------------------------------------------
-int __thiscall ReadBossRallyCfg(_WORD *this, const char *cfgFilename)
+int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename)
 {
   int res; // eax
   FILE *fp_1; // esi
   int expectedToBe2; // [esp+Ch] [ebp-888h] BYREF
   char fourCC[4]; // [esp+10h] [ebp-884h] BYREF
-  _DWORD unkObjInstance[541]; // [esp+14h] [ebp-880h] BYREF
+  BossRallyConfig otherConfig; // [esp+14h] [ebp-880h] BYREF
   int unk; // [esp+890h] [ebp-4h]
 
   res = (int)fopen(cfgFilename, kFileModeReadBinary);
   fp_1 = (FILE *)res;
   if ( res )
   {
-    sub_10069A90(unkObjInstance);
+    sub_10069A90(&otherConfig);
     unk = 0;
-    sub_10069DE0(unkObjInstance, this);
+    sub_10069DE0(&otherConfig, this);
     if ( freadLock(fourCC, 4u, 1u, fp_1) == 1
       && !strncmp(fourCC, aRcfg, strlen(aRcfg))
       && freadLock(&expectedToBe2, 4u, 1u, fp_1) == 1
       && expectedToBe2 == 2
-      && freadLock(this + 0x154, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x156, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x158, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x15A, 0x104u, 1u, fp_1) == 1
-      && freadLock(this + 0x1DC, 0x400u, 1u, fp_1) == 1
-      && freadLock(this + 0x3DC, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3DE, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3E0, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3E2, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3E4, 0x10u, 1u, fp_1) == 1
-      && freadLock(this + 0x3EC, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3EE, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3F0, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3F2, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3F4, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3F6, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3F8, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3FA, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3FC, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x3FE, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x400, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x402, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x404, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x406, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x408, 0x20u, 1u, fp_1) == 1
-      && freadLock(this + 0x418, 0x40u, 1u, fp_1) == 1
-      && freadLock(this + 0x438, 4u, 1u, fp_1) == 1
-      && freadLock(this + 0x150, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_2A8, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_2AC, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_2B0, 4u, 1u, fp_1) == 1
+      && freadLock(this->field_2B4, 0x104u, 1u, fp_1) == 1
+      && freadLock(this->field_3B8, 0x400u, 1u, fp_1) == 1
+      && freadLock(&this->field_7B8, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7BC, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7C0, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7C4, 4u, 1u, fp_1) == 1
+      && freadLock(this->field_7C8, 0x10u, 1u, fp_1) == 1
+      && freadLock(&this->field_7D8, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7DC, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7E0, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7E4, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7E8, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7EC, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7F0, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7F4, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7F8, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_7FC, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_800, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_804, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_808, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_80C, 4u, 1u, fp_1) == 1
+      && freadLock(this->field_810, 0x20u, 1u, fp_1) == 1
+      && freadLock(this->field_830, 0x40u, 1u, fp_1) == 1
+      && freadLock(&this->field_870, 4u, 1u, fp_1) == 1
+      && freadLock(&this->field_2A0, 4u, 1u, fp_1) == 1
       && freadLock(this, 0xA8u, 1u, fp_1) == 1
-      && freadLock(this + 0x54, 0xA8u, 1u, fp_1) == 1
-      && freadLock(this + 0xA8, 0xA8u, 1u, fp_1) == 1
-      && freadLock(this + 0xFC, 0xA8u, 1u, fp_1) == 1 )
+      && freadLock(this->joystick1, 0xA8u, 1u, fp_1) == 1
+      && freadLock(this->joystick2, 0xA8u, 1u, fp_1) == 1
+      && freadLock(this->joystick3, 0xA8u, 1u, fp_1) == 1 )
     {
       fclose(fp_1);
       unk = -1;
-      debugPrint(unkObjInstance);
+      debugPrint(&otherConfig);
       res = 1;
     }
     else
     {
-      sub_10069DE0(this, unkObjInstance);
+      sub_10069DE0(this, &otherConfig);
       fclose(fp_1);
       meth_10069C90(this);
       unk = -1;
-      debugPrint(unkObjInstance);
+      debugPrint(&otherConfig);
       res = 0;
     }
   }
@@ -84889,56 +89395,56 @@ int __thiscall ReadBossRallyCfg(_WORD *this, const char *cfgFilename)
 }
 
 //----- (1006A4A0) --------------------------------------------------------
-FILE *__thiscall WriteConfigFile(_DWORD *this, char *FileName)
+FILE *__thiscall WriteConfigFile(BossRallyConfig *this, char *FileName)
 {
   FILE *result; // eax
-  FILE *result2; // esi
+  FILE *fp; // esi
 
   result = fopen(FileName, aWb);
-  result2 = result;
+  fp = result;
   if ( result )
   {
     if ( fwriteLock(aRcfg, strlen(aRcfg), 1u, result) == 1
-      && fwriteLock(&unk_1008FA64, 4u, 1u, result2) == 1
-      && fwriteLock(this + 170, 4u, 1u, result2) == 1
-      && fwriteLock(this + 171, 4u, 1u, result2) == 1
-      && fwriteLock(this + 172, 4u, 1u, result2) == 1
-      && fwriteLock(this + 173, 0x104u, 1u, result2) == 1
-      && fwriteLock(this + 238, 0x400u, 1u, result2) == 1
-      && fwriteLock(this + 494, 4u, 1u, result2) == 1
-      && fwriteLock(this + 495, 4u, 1u, result2) == 1
-      && fwriteLock(this + 496, 4u, 1u, result2) == 1
-      && fwriteLock(this + 497, 4u, 1u, result2) == 1
-      && fwriteLock(this + 498, 0x10u, 1u, result2) == 1
-      && fwriteLock(this + 502, 4u, 1u, result2) == 1
-      && fwriteLock(this + 503, 4u, 1u, result2) == 1
-      && fwriteLock(this + 504, 4u, 1u, result2) == 1
-      && fwriteLock(this + 505, 4u, 1u, result2) == 1
-      && fwriteLock(this + 506, 4u, 1u, result2) == 1
-      && fwriteLock(this + 507, 4u, 1u, result2) == 1
-      && fwriteLock(this + 508, 4u, 1u, result2) == 1
-      && fwriteLock(this + 509, 4u, 1u, result2) == 1
-      && fwriteLock(this + 510, 4u, 1u, result2) == 1
-      && fwriteLock(this + 511, 4u, 1u, result2) == 1
-      && fwriteLock(this + 512, 4u, 1u, result2) == 1
-      && fwriteLock(this + 513, 4u, 1u, result2) == 1
-      && fwriteLock(this + 514, 4u, 1u, result2) == 1
-      && fwriteLock(this + 515, 4u, 1u, result2) == 1
-      && fwriteLock(this + 516, 0x20u, 1u, result2) == 1
-      && fwriteLock(this + 524, 0x40u, 1u, result2) == 1
-      && fwriteLock(this + 540, 4u, 1u, result2) == 1
-      && fwriteLock(this + 168, 4u, 1u, result2) == 1
-      && fwriteLock(this, 0xA8u, 1u, result2) == 1
-      && fwriteLock(this + 42, 0xA8u, 1u, result2) == 1
-      && fwriteLock(this + 84, 0xA8u, 1u, result2) == 1
-      && fwriteLock(this + 126, 0xA8u, 1u, result2) == 1 )
+      && fwriteLock(&unk_1008FA64, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_2A8, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_2AC, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_2B0, 4u, 1u, fp) == 1
+      && fwriteLock(this->field_2B4, 0x104u, 1u, fp) == 1
+      && fwriteLock(this->field_3B8, 0x400u, 1u, fp) == 1
+      && fwriteLock(&this->field_7B8, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7BC, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7C0, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7C4, 4u, 1u, fp) == 1
+      && fwriteLock(this->field_7C8, 0x10u, 1u, fp) == 1
+      && fwriteLock(&this->field_7D8, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7DC, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7E0, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7E4, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7E8, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7EC, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7F0, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7F4, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7F8, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_7FC, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_800, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_804, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_808, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_80C, 4u, 1u, fp) == 1
+      && fwriteLock(this->field_810, 0x20u, 1u, fp) == 1
+      && fwriteLock(this->field_830, 0x40u, 1u, fp) == 1
+      && fwriteLock(&this->field_870, 4u, 1u, fp) == 1
+      && fwriteLock(&this->field_2A0, 4u, 1u, fp) == 1
+      && fwriteLock(this, 0xA8u, 1u, fp) == 1
+      && fwriteLock(this->joystick1, 0xA8u, 1u, fp) == 1
+      && fwriteLock(this->joystick2, 0xA8u, 1u, fp) == 1
+      && fwriteLock(this->joystick3, 0xA8u, 1u, fp) == 1 )
     {
-      fclose(result2);
+      fclose(fp);
       result = (FILE *)1;
     }
     else
     {
-      fclose(result2);
+      fclose(fp);
       result = 0;
     }
   }
@@ -89525,12 +94031,11 @@ LABEL_16:
 // 10AA2A08: using guessed type int dword_10AA2A08;
 
 //----- (10071120) --------------------------------------------------------
-int sub_10071120()
+Car *sub_10071120()
 {
   dword_10220B20 = 5;
   return sub_10035BD1();
 }
-// 10071120: using guessed type int sub_10071120();
 // 10220B20: using guessed type int dword_10220B20;
 
 //----- (10071130) --------------------------------------------------------
@@ -91423,7 +95928,7 @@ int sub_10073820()
   if ( dword_100B8C90 <= 1 )
   {
     for ( i = 0; i < 27; ++i )
-      dword_11829238[i] = dword_118AA0AC(
+      dword_11829238[i] = tex_sub_dword_118AA0AC(
                             (char *)&unk_1009B4C8 + dword_100A6070[i],
                             0,
                             64,
@@ -91440,7 +95945,7 @@ int sub_10073820()
                             1,
                             0);
     for ( j = 0; j < 26; ++j )
-      dword_118292A8[j] = dword_118AA0AC(
+      dword_118292A8[j] = tex_sub_dword_118AA0AC(
                             (char *)&unk_100946C8 + dword_100A60E0[j],
                             0,
                             64,
@@ -91458,7 +95963,7 @@ int sub_10073820()
                             0);
   }
   for ( k = 0; k < 27; ++k )
-    dword_11829158[k] = dword_118AA0AC(
+    dword_11829158[k] = tex_sub_dword_118AA0AC(
                           (char *)&unk_100A4170 + dword_100A6150[k],
                           0,
                           32,
@@ -91476,7 +95981,22 @@ int sub_10073820()
                           0);
   for ( l = 0; l < 26; ++l )
   {
-    result = dword_118AA0AC((char *)&unk_100A22D0 + dword_100A61C0[l], 0, 32, 32, 392, 1, 3, 0, 0, 0, 0, 0, 0, 1, 0);
+    result = tex_sub_dword_118AA0AC(
+               (char *)&unk_100A22D0 + dword_100A61C0[l],
+               0,
+               32,
+               32,
+               392,
+               1,
+               3,
+               0,
+               0,
+               0,
+               0,
+               0,
+               0,
+               1,
+               0);
     dword_118291C8[l] = result;
   }
   return result;
@@ -91490,7 +96010,7 @@ int sub_10073820()
 // 118291C8: using guessed type int dword_118291C8[];
 // 11829238: using guessed type int dword_11829238[];
 // 118292A8: using guessed type int dword_118292A8[];
-// 118AA0AC: using guessed type int (__cdecl *dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+// 118AA0AC: using guessed type int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 
 //----- (10073950) --------------------------------------------------------
 int sub_10073950()
@@ -92401,13 +96921,13 @@ float *__cdecl sub_10074830(float *a1, float *a2, float *a3)
 }
 
 //----- (10074870) --------------------------------------------------------
-int __cdecl sub_10074870(int a1)
+void __cdecl sub_10074870(int a1)
 {
   int v1; // ecx
   int v3; // edx
   int i; // eax
   int v5; // ebx
-  int result; // eax
+  int v6; // eax
   double v7; // st7
   double v8; // st6
   double v9; // st5
@@ -92447,8 +96967,8 @@ int __cdecl sub_10074870(int a1)
     ++v3;
   }
   while ( v1 < 21 );
-  result = *(_DWORD *)(a1 + 28);
-  if ( result >= 0 && result <= 1 )
+  v6 = *(_DWORD *)(a1 + 28);
+  if ( v6 >= 0 && v6 <= 1 )
   {
     v7 = *(float *)(a1 + 32) * *(float *)(a1 + 32);
     v14 = *(float *)(a1 + 40) * *(float *)(a1 + 40);
@@ -92462,7 +96982,7 @@ int __cdecl sub_10074870(int a1)
     *(float *)(a1 + 48) = v11 * 0.083333336;
     *(float *)(a1 + 64) = v12;
     *(float *)(a1 + 80) = v13;
-    result = nullsub_2(a1 + 48);
+    nullsub_2();
   }
   if ( *(_DWORD *)(a1 + 28) != 2 )
   {
@@ -92472,9 +96992,7 @@ int __cdecl sub_10074870(int a1)
   }
   *(_DWORD *)(a1 + 468) = 0;
   *(_DWORD *)(a1 + 472) = 0;
-  return result;
 }
-// 10075330: using guessed type int __cdecl nullsub_2(_DWORD);
 
 //----- (100749D0) --------------------------------------------------------
 int __cdecl sub_100749D0(int a1, int a2)
@@ -94496,8 +99014,8 @@ int __cdecl sub_10077200(_DWORD *a1)
   v1 = g_DirectInputDevice2A;
   if ( !g_DirectInputDevice2A )
   {
-    g_ReadJoystick = 2;
-    dword_10B4E1D4 = (int)&unk_10B4E080;
+    g_ConfigJoystickIndex = 2;
+    g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
     sub_100791D0();
     v1 = g_DirectInputDevice2A;
     if ( !g_DirectInputDevice2A )
@@ -94709,8 +99227,8 @@ int __cdecl sub_100773F0(int *a1, int *a2)
       return 0;
     }
   }
-  v6 = g_ReadJoystick;
-  v7 = g_ReadJoystick == 1;
+  v6 = g_ConfigJoystickIndex;
+  v7 = g_ConfigJoystickIndex == 1;
   byte_118AB8B8[256 * dword_118ABAD8] = 0;
   if ( v7 || v6 == 2 )
   {
@@ -94901,9 +99419,9 @@ LABEL_298:
     *a1 = 0;
     if ( g_GameMode == 4 || g_GameMode == 5 )
       goto LABEL_203;
-    if ( (HIBYTE(*(_WORD *)dword_10B4E1D4) & 0x80u) == 0 )
+    if ( (HIBYTE(*(_WORD *)g_ConfigJoystickPtr) & 0x80u) == 0 )
       goto LABEL_158;
-    v25 = *(_WORD *)dword_10B4E1D4 & 0xFF00;
+    v25 = *(_WORD *)g_ConfigJoystickPtr & 0xFF00;
     if ( v25 <= 0x8100 )
     {
       if ( v25 != 33024 )
@@ -94929,7 +99447,7 @@ LABEL_154:
       v29 = dword_118ABAE0[68 * dword_118ABAB8];
       goto LABEL_134;
     }
-    if ( (*(_WORD *)dword_10B4E1D4 & 0xFF00u) <= 0x8300 )
+    if ( (*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) <= 0x8300 )
     {
       if ( v25 != 33536 )
       {
@@ -94956,7 +99474,7 @@ LABEL_134:
       }
       goto LABEL_157;
     }
-    if ( (*(_WORD *)dword_10B4E1D4 & 0xFF00u) <= 0x8500 )
+    if ( (*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) <= 0x8500 )
     {
       if ( v25 == 34048 )
       {
@@ -94980,9 +99498,9 @@ LABEL_158:
       v32 = dword_118ABD80;
       goto LABEL_160;
     }
-    if ( (*(_WORD *)dword_10B4E1D4 & 0xFF00u) > 0x8700 )
+    if ( (*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) > 0x8700 )
     {
-      if ( (*(_WORD *)dword_10B4E1D4 & 0xFF00u) > 0x8900 )
+      if ( (*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) > 0x8900 )
       {
         if ( v25 == 35328 )
         {
@@ -95061,7 +99579,7 @@ LABEL_157:
     }
     v26 = dword_118ABAB8;
 LABEL_160:
-    v39 = *(_WORD *)(dword_10B4E1D4 + 6);
+    v39 = *(_WORD *)(g_ConfigJoystickPtr + 6);
     if ( v39 >= 0 )
       goto LABEL_203;
     v40 = v39 & 0xFF00;
@@ -95103,10 +99621,10 @@ LABEL_203:
       if ( sub_10078420(2) )
       {
         v2 |= 4u;
-        if ( *(char *)(dword_10B4E1D4 + 13) >= 0 )
+        if ( *(char *)(g_ConfigJoystickPtr + 13) >= 0 )
           *a2 = 80;
       }
-      v49 = *(_WORD *)(dword_10B4E1D4 + 12);
+      v49 = *(_WORD *)(g_ConfigJoystickPtr + 12);
       if ( v49 >= 0 )
         goto LABEL_260;
       v50 = v49 & 0xFF00;
@@ -95446,7 +99964,7 @@ char __cdecl sub_10078420(int a1)
   unsigned int v3; // ecx
 
   result = 0;
-  v2 = (unsigned __int8 *)(dword_10B4E1D4 + 6 * a1);
+  v2 = (unsigned __int8 *)(g_ConfigJoystickPtr + 6 * a1);
   v3 = *(_WORD *)v2 & 0xFF00;
   if ( v3 <= 0x100 )
   {
@@ -95569,7 +100087,7 @@ char __cdecl sub_100786E0(int a1)
   int v10; // ecx
 
   result = 0;
-  v2 = (unsigned __int8 *)(dword_10B4E1D4 + 6 * a1);
+  v2 = (unsigned __int8 *)(g_ConfigJoystickPtr + 6 * a1);
   v3 = *(_WORD *)v2 & 0xFF00;
   if ( v3 <= 0x100 )
   {
@@ -95858,8 +100376,8 @@ int __cdecl sub_10078E10(int a1)
 {
   int result; // eax
 
-  result = g_ReadJoystick;
-  if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
+  result = g_ConfigJoystickIndex;
+  if ( g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2 )
   {
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
@@ -95889,8 +100407,8 @@ int sub_10078E50()
 {
   int result; // eax
 
-  result = g_ReadJoystick;
-  if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
+  result = g_ConfigJoystickIndex;
+  if ( g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2 )
   {
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
@@ -95917,8 +100435,8 @@ int sub_10078E90()
 {
   int result; // eax
 
-  result = g_ReadJoystick;
-  if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
+  result = g_ConfigJoystickIndex;
+  if ( g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2 )
   {
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
@@ -95945,8 +100463,8 @@ int sub_10078ED0()
 {
   int result; // eax
 
-  result = g_ReadJoystick;
-  if ( g_ReadJoystick == 1 || g_ReadJoystick == 2 )
+  result = g_ConfigJoystickIndex;
+  if ( g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2 )
   {
     result = dword_10B4E1E0;
     if ( dword_10B4E1E0 )
@@ -95989,8 +100507,8 @@ int __cdecl sub_10078F20(int a1, int a2, int a3)
   int v7; // esi
   int v8; // edx
 
-  result = g_ReadJoystick;
-  if ( g_ReadJoystick != 1 && g_ReadJoystick != 2 )
+  result = g_ConfigJoystickIndex;
+  if ( g_ConfigJoystickIndex != 1 && g_ConfigJoystickIndex != 2 )
     return result;
   result = dword_10B4E1E0;
   if ( !dword_10B4E1E0 )
@@ -96132,8 +100650,8 @@ int sub_100791D0()
   IDirectInputDevice2AVtbl *diDevice2AVtbl; // edx
   int v2[5]; // [esp+14h] [ebp-14h] BYREF
 
-  result = g_ReadJoystick;
-  if ( g_ReadJoystick )
+  result = g_ConfigJoystickIndex;
+  if ( g_ConfigJoystickIndex )
   {
     if ( ++dword_118ABE00 == 1 )
     {
@@ -96186,7 +100704,7 @@ LABEL_15:
       }
       if ( sub_10078C80((int *)g_DirectInputDevice2A, 5, 4, 1, 0) >= 0 )
       {
-        result = g_ReadJoystick;
+        result = g_ConfigJoystickIndex;
       }
       else
       {
@@ -96337,14 +100855,14 @@ int sub_100795D0()
   int v3; // esi
   int v4; // esi
 
-  v0 = g_ReadJoystick;
+  v0 = g_ConfigJoystickIndex;
   v1 = dword_10B4E1E0;
-  g_ReadJoystick = 2;
-  dword_10B4E1D4 = (WORD *)&unk_10B4E080;
+  g_ConfigJoystickIndex = 2;
+  g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E080];
   dword_10B4E1E0 = 1;
   sub_100791D0();
   result = sub_10079550();
-  g_ReadJoystick = v0;
+  g_ConfigJoystickIndex = v0;
   v3 = v0 - 1;
   if ( v3 )
   {
@@ -96352,21 +100870,21 @@ int sub_100795D0()
     if ( v4 )
     {
       if ( v4 == 1 )
-        dword_10B4E1D4 = (WORD *)&unk_10B4E128;
+        g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E128];
       else
-        dword_10B4E1D4 = g_Config;
+        g_ConfigJoystickPtr = g_Config;
       dword_10B4E1E0 = v1;
     }
     else
     {
-      dword_10B4E1D4 = (WORD *)&unk_10B4E080;
+      g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4E080];
       dword_10B4E1E0 = v1;
     }
   }
   else
   {
     dword_10B4E1E0 = v1;
-    dword_10B4E1D4 = (WORD *)&unk_10B4DFD8;
+    g_ConfigJoystickPtr = (WORD *)&MEMORY[0x10B4DFD8];
   }
   return result;
 }
@@ -96468,7 +100986,7 @@ int __cdecl RallyMain(int a1, int a2, char *Str)
     ReadSettings(Str);
     strcpy(g_bossRallyCfgPath, g_InstallPath);
     strcat(g_bossRallyCfgPath, aBossrallyCfg);
-    ReadBossRallyCfg(g_Config, g_bossRallyCfgPath);
+    ReadBossRallyCfg(&g_Config, g_bossRallyCfgPath);
     if ( sub_100796B0() )
     {
       sub_1000C6D0();
@@ -96538,7 +101056,7 @@ int sub_100798F0()
   dword_118ABE08 = result;
   if ( result )
   {
-    sub_10008E30(g_gsu0, aSplashImg, 0x2AC7E58B);
+    ShowStaticImage(g_gsu0, aSplashImg, 0x2AC7E58B);
     result = sub_1000B280((int)g_gsu0, (_DWORD *)dword_118ABE08) >= 0;
   }
   return result;

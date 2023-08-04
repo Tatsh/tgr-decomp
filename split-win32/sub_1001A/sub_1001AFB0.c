@@ -1,0 +1,47 @@
+#include "../../types-win32.h"
+//----- (1001AFB0) --------------------------------------------------------
+int __thiscall sub_1001AFB0(int *this)
+{
+  _DWORD *v2; // eax
+  int v3; // ecx
+  int v4; // esi
+  int v5; // eax
+
+  if ( (*(_BYTE *)this & 2) != 0 )
+  {
+    v2 = (_DWORD *)this[134];
+    if ( v2 )
+    {
+      do
+      {
+        v3 = v2[27];
+        v4 = v2[28];
+        if ( v3 )
+          *(_DWORD *)(v3 + 112) = v4;
+        else
+          this[134] = v4;
+        if ( v4 )
+          *(_DWORD *)(v4 + 108) = v3;
+        else
+          this[135] = v3;
+        v2[28] = 0;
+        v2[27] = 0;
+        if ( v2 )
+        {
+          v2[27] = 0;
+          v2[28] = 0;
+          free(v2);
+        }
+        v2 = (_DWORD *)v4;
+      }
+      while ( v4 );
+    }
+    v5 = *this;
+    this[133] = 0;
+    LOBYTE(v5) = v5 & 0xFD;
+    this[134] = 0;
+    this[135] = 0;
+    *this = v5;
+  }
+  return 0;
+}
