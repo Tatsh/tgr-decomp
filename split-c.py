@@ -1,27 +1,29 @@
 #!/usr/bin/env python
 from pathlib import Path
 from shutil import rmtree
-from typing import Any, Dict, Iterator, List, Optional, Tuple
+from typing import Any, Iterator, TypeVar
 import re
 import sys
+
+T = TypeVar('T')
 
 SPLIT_PATH = Path('./split')
 METHODS_PATH = Path('./split/meth')
 SUBS_PATH = Path('./split/sub')
 
 
-def chunks(sequence: List[Any], length: int) -> Iterator[List[Any]]:
+def chunks(sequence: list[T], length: int) -> Iterator[list[T]]:
     """Returns an iterator of sequence split into length-sized lists."""
     for i in range(0, len(sequence), length):
         yield sequence[i:i + length]
 
 
-def split_camel(name: str) -> List[str]:
+def split_camel(name: str) -> list[str]:
     return re.sub(r'([A-Z][a-z]+)', r' \1', re.sub(r'([A-Z]+)', r' \1',
                                                    name)).split()
 
 
-def get_function_name(lines_str: str) -> Tuple[Optional[str], Optional[str]]:
+def get_function_name(lines_str: str) -> tuple[str | None, str | None]:
     lines = lines_str.splitlines()
     which = lines[1] if 'may be wrong' in lines[0] else lines[0]
     func_name = re.sub(r'@<[a-z]+>', '',
@@ -40,7 +42,7 @@ def get_function_name(lines_str: str) -> Tuple[Optional[str], Optional[str]]:
     return func_name, prefix
 
 
-def append_or_create_list(key: str, dest: Dict[str, Any], val: Any) -> None:
+def append_or_create_list(key: str, dest: dict[str, Any], val: Any) -> None:
     try:
         dest[key].append(val)
     except KeyError:
@@ -74,7 +76,7 @@ def main() -> int:
     grouped = re.split(r'^(//----- \([0-9A-F]+\) -+)$',
                        content,
                        flags=re.MULTILINE)
-    files: Dict[str, List[Tuple[str, str]]] = {}
+    files: dict[str, list[tuple[str, str]]] = {}
     with (SPLIT_PATH / 'decls.c').open('w+') as f:
         f.write(f'{grouped[0]}\n')
     for header, lines_str in ((_, y.strip())
