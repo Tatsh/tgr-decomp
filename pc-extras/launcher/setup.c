@@ -10,33 +10,29 @@ int SetInitialStates() {
 
 //----- (004014B0) --------------------------------------------------------
 HRESULT SetupGlobalOAEvent() {
-    HRESULT hr;                // eax
-    HRESULT getEventHandleRet; // esi
-    IMediaEvent *mediaEvent;   // [esp+14h] [ebp-4h] BYREF
-
-    if (CoCreateInstance(
-            &CLSID_FilgraphManager, 0, 1u, &IID_IGraphBuilder, (void **)&gGraphBuilder) >= 0) {
-        if (gGraphBuilder->lpVtbl->QueryInterface(
-                gGraphBuilder, &IID_IMediaEvent, (void **)&mediaEvent) < 0 ||
-            (getEventHandleRet = mediaEvent->lpVtbl->GetEventHandle(mediaEvent, &gOAEvent),
-             mediaEvent->lpVtbl->Release(mediaEvent),
-             getEventHandleRet < 0)) {
-            ReleaseIGraphBuilder();
-            hr = 0;
-        } else {
-            hr = 1;
+    if (SUCCEEDED(CoCreateInstance(
+            &CLSID_FilgraphManager, 0, 1, &IID_IGraphBuilder, (void **)&gGraphBuilder))) {
+        IMediaEvent *mediaEvent; // [esp+14h] [ebp-4h] BYREF
+        if (FAILED(gGraphBuilder->lpVtbl->QueryInterface(
+                gGraphBuilder, &IID_IMediaEvent, (void **)&mediaEvent))) {
+            return 1;
         }
-    } else {
-        gGraphBuilder = 0;
-        hr = 0;
+        HRESULT getEventHandleRet = mediaEvent->lpVtbl->GetEventHandle(mediaEvent, &gOAEvent);
+        mediaEvent->lpVtbl->Release(mediaEvent);
+        if (FAILED(getEventHandleRet)) {
+            ReleaseIGraphBuilder();
+            return 0;
+        }
+        return 1;
     }
-    return hr;
+    gGraphBuilder = NULL;
+    return 0;
 }
 
 int ReleaseIGraphBuilder() {
     if (gGraphBuilder) {
         gGraphBuilder->lpVtbl->Release(gGraphBuilder);
-        gGraphBuilder = 0;
+        gGraphBuilder = NULL;
     }
     gOAEvent = 0;
     SetPlaybackState(PLAYBACK_STATE_INIT);

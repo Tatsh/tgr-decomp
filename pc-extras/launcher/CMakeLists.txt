@@ -36,7 +36,7 @@ set(GCC_CLANG_DEBUG_C_FLAGS "-ggdb;\
 
 add_executable(BossRally main.c media-events.c playback.c setup.c sub_401230.c video.c)
 target_compile_definitions(BossRally PUBLIC STRSAFE_NO_DEPRECATE=0)
-target_compile_options(BossRally PUBLIC -municode)
+target_compile_options(BossRally PUBLIC -mno-unicode)
 target_link_options(BossRally PUBLIC "-Wl,-subsystem,windows")
 if(CMAKE_COMPILER_IS_GNUCC OR ${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
   target_compile_options(BossRally

@@ -22,8 +22,6 @@ bool IsPlaybackInitialized() {
 
 //----- (00401470) --------------------------------------------------------
 enum MACRO_PLAYBACK_STATE SetPlaybackState(enum MACRO_PLAYBACK_STATE newValue) {
-    enum MACRO_PLAYBACK_STATE result; // eax
-    result = newValue;
     gPlaybackState = newValue;
-    return result;
+    return newValue;
 }

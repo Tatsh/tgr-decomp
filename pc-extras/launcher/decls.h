@@ -24,7 +24,7 @@ HRESULT SetupGlobalOAEvent();
 int VideoWindowPutMessageDrain(OAHWND oaHwnd); // idb
 HRESULT HandleIMediaEventFullscreenLost();
 int ReleaseIGraphBuilder();
-void RenderFileToWindow(HWND hWnd, LPCSTR lpFileName);
+void RenderFileToWindow(HWND hWnd, const char *lpFileName);
 HRESULT PlayIfStopped(IMediaControl *mediaControl);
 HRESULT HandleIMediaEventAbort();
 HRESULT HandleIMediaEventComplete();
