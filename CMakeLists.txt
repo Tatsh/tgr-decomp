@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.27)
+project(boss-rally-decomp)
+option(BUILD_LAUNCHER "Build the Windows version launcher" ON)
+if(BUILD_LAUNCHER)
+add_subdirectory(pc-extras/launcher)
+endif()

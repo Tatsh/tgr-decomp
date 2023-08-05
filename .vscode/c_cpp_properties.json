@@ -17,11 +17,59 @@
         "/usr/include/wine-staging-8.13/wine/msvcrt/stdio.h"
       ],
       "includePath": [
-        "${workspaceFolder}/split/**",
+        "${workspaceFolder}/split-win32/**",
         "/usr/include/wine-staging-8.13/wine/windows",
         "/usr/include/wine-staging-8.13/wine/msvcrt"
       ],
       "name": "Linux"
+    },
+    {
+      "name": "Launcher",
+      "includePath": ["${workspaceFolder}/launcher/**"],
+      "defines": ["_DEBUG", "UNICODE", "_UNICODE", "STRSAFE_NO_DEPRECATE=0"],
+      "macFrameworkPath": [],
+      "compilerArgs": [
+        "-pedantic",
+        "-Wall",
+        "-Wdeprecated-declarations",
+        "-Wempty-body",
+        "-Werror",
+        "-Werror=conversion",
+        "-Werror=float-conversion",
+        "-Werror=implicit-function-declaration",
+        "-Werror=incompatible-pointer-types",
+        "-Werror=int-conversion",
+        "-Werror=return-type",
+        "-Werror=sign-conversion",
+        "-Wmissing-braces",
+        "-Wmissing-field-initializers",
+        "-Wno-missing-prototypes",
+        "-Wno-strict-prototypes",
+        "-Wno-trigraphs",
+        "-Wno-unknown-pragmas",
+        "-Wparentheses",
+        "-Wpointer-sign",
+        "-Wshadow",
+        "-Wsign-compare",
+        "-Wswitch",
+        "-Wuninitialized",
+        "-Wunknown-pragmas",
+        "-Wunreachable-code",
+        "-Wunused-function",
+        "-Wunused-label",
+        "-Wunused-parameter",
+        "-Wunused-value",
+        "-Wunused-variable"
+      ],
+      "cStandard": "c23",
+      "cppStandard": "c++23",
+      "intelliSenseMode": "${default}",
+      "mergeConfigurations": false,
+      "compilerPath": "C:/msys64/mingw64/bin/gcc.exe",
+      "browse": {
+        "path": ["${workspaceFolder}/**"],
+        "limitSymbolsToIncludedHeaders": true
+      }
     }
   ],
   "version": 4

@@ -8,6 +8,7 @@
   "[python]": {
     "editor.tabSize": 4
   },
+  "cmake.configureArgs": ["-G", "Ninja", "-DBUILD_LAUNCHER=ON"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
