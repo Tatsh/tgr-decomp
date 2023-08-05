@@ -43,4 +43,4 @@ if(CMAKE_COMPILER_IS_GNUCC OR ${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
                          PRIVATE ${GCC_CLANG_SHARED_C_FLAGS}
                                  $<$<CONFIG:Debug>:${GCC_CLANG_DEBUG_C_FLAGS}>)
 endif()
-target_link_libraries(BossRally gdi32 strmiids quartz)
+target_link_libraries(BossRally gdi32 ole32 strmiids quartz)
