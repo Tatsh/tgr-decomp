@@ -18,7 +18,7 @@ enum MACRO_PLAYBACK_STATE gPlaybackState;
 OAEVENT gOAEvent;
 
 #define APP_EXIT 0xE141
-#define WS_MFC_E0000 WS_UNKNOWN_E0000
+#define WS_UNKNOWN_E0000 0xE0000
 
 static bool SetupClassNameCOM() {
     strcpy(ClassName, "Player");
