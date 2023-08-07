@@ -1,12 +1,11 @@
 #include "../../types-n64.h"
 //----- (8023DBC0) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8023DBC0()
-{
-  dword_8028A858 = 8;
-  MEMORY[4] = 1;
-  MEMORY[0] = -1191182334;
-  sub_8023BB50();
+void sub_8023DBC0() {
+    dword_8028A858 = 8;
+    MEMORY[4] = 1;
+    MEMORY[0] = -1191182334;
+    sub_8023BB50();
 }
 // 8023DBD8: write access to const memory at 8028A858 has been detected
 // 8023DBF8: write access to const memory at 8028A858 has been detected

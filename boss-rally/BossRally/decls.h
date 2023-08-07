@@ -21,7 +21,7 @@ bool IsPlaybackInitialized();
 enum MACRO_PLAYBACK_STATE SetPlaybackState(enum MACRO_PLAYBACK_STATE newValue);
 int SetInitialStates();
 HRESULT SetupGlobalOAEvent();
-int VideoWindowPutMessageDrain(OAHWND oaHwnd); // idb
+int VideoWindowPutMessageDrain(HWND hwnd); // idb
 HRESULT HandleIMediaEventFullscreenLost();
 int ReleaseIGraphBuilder();
 void RenderFileToWindow(HWND hWnd, const char *lpFileName);
@@ -34,6 +34,6 @@ HRESULT HandleMediaEvents();
 extern enum MACRO_PLAYBACK_STATE gPlaybackState;
 extern IGraphBuilder *gGraphBuilder;
 extern OAEVENT gOAEvent;
-extern HWND oaHwnd;
+extern HWND gHwnd;
 
 #endif // DECLS_H

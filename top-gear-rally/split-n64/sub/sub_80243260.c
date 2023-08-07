@@ -1,79 +1,77 @@
 #include "../../types-n64.h"
 //----- (80243260) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_80243260()
-{
-  int **v0; // $s1
-  int *v1; // $v0
+void sub_80243260() {
+    int **v0; // $s1
+    int *v1;  // $v0
 
-  word_802A4BE8 = 0;
-  dword_8028C328 = 0;
-  byte_8028DBBC = 0;
-  dword_8028B7F4 = 1;
-  sub_802260A0((int)dword_8031B760);
-  dword_8031C634[1] = (int)sub_80226D7C;
-  dword_8031D7BC = -845608134;
-  sub_80220438((int)dword_8031B760, 0, -845608134);
-  dword_8028AB08 = 1544627315;
-  dword_8031B760[14] = 0.0;
-  dword_8031B760[13] = 0.0;
-  dword_8031B760[12] = 0.0;
-  dword_8031B760[10] = 1.0;
-  dword_8031B760[9] = 0.0;
-  dword_8031B760[8] = 0.0;
-  dword_8031B760[1] = 1.0;
-  dword_8031B760[0] = 0.0;
-  dword_8031B760[2] = 0.0;
-  dword_8031B760[6] = 0.0;
-  dword_8031B760[5] = 0.0;
-  dword_8031B760[4] = -1.0;
-  dword_8031D64C[0] = 6.5;
-  dword_8031D64C[1] = 6.5;
-  dword_8031D64C[2] = 2.0;
-  sub_80224434((float *)dword_8031D61C, (float *)dword_8031D64C);
-  sub_80224760((float *)dword_8031D61C);
-  flt_8031D640 = 0.0;
-  flt_8031D63C = 0.0;
-  flt_8031D644 = 1.0;
-  sub_8022439C((float *)dword_8031D62C, &flt_8031D63C, (float *)dword_8031D61C);
-  sub_8022439C(&flt_8031D63C, (float *)dword_8031D61C, (float *)dword_8031D62C);
-  dword_8031D760 = 0;
-  dword_8031D764[16] = 0;
-  sub_80242940();
-  debugPrint("\nAllocating %d bytes (x2) for decal buffers...\n\n");
-  dword_8028DB80 = sub_8024296C(2048);
-  dword_8028DB84 = sub_8024296C(2048);
-  AllocPaintShopGfxMem((int)&dword_8028CB40);
-  AllocPaintShopGfxMem((int)&dword_8028CB70);
-  AllocPaintShopGfxMem((int)&dword_8028CBA0);
-  byte_8028CBCC = 99;
-  AllocPaintShopGfxMem((int)&dword_8028CBD0);
-  dword_8028CC00 = 0;
-  AllocPaintShopGfxMem((int)&dword_8028CC30);
-  dword_8028CC60 = 0;
-  AllocPaintShopGfxMem((int)&dword_8028CC90);
-  AllocPaintShopGfxMem((int)&dword_8028CCC0);
-  AllocPaintShopGfxMem((int)&dword_8028CCF0);
-  dword_8028CD20 = 0;
-  AllocPaintShopGfxMem((int)&dword_8028CD50);
-  AllocPaintShopGfxMem((int)&dword_8028CD80);
-  AllocPaintShopGfxMem((int)&dword_8028CDB0);
-  dword_8028CDCC = 132;
-  dword_8028CDD0 = 248;
-  AllocPaintShopGfxMem((int)&dword_8028CDE0);
-  dword_8028CE00 = 104;
-  v0 = off_8028DB0C;
-  dword_8028CDFC = 132;
-  while ( 1 )
-  {
-    v1 = *v0;
-    dword_80369DB0[0] = (*v0)[7] + 5;
-    dword_80369DB0[1] = v1[8] + 2;
-    dword_80369DB0[2] = v1[4] - 10;
-    dword_80369DB0[3] = v1[5] - 4;
-    ++v0;
-    *((_BYTE *)v1 + 44) = 99;
-  }
+    word_802A4BE8 = 0;
+    dword_8028C328 = 0;
+    byte_8028DBBC = 0;
+    dword_8028B7F4 = 1;
+    sub_802260A0((int)dword_8031B760);
+    dword_8031C634[1] = (int)sub_80226D7C;
+    dword_8031D7BC = -845608134;
+    sub_80220438((int)dword_8031B760, 0, -845608134);
+    dword_8028AB08 = 1544627315;
+    dword_8031B760[14] = 0.0;
+    dword_8031B760[13] = 0.0;
+    dword_8031B760[12] = 0.0;
+    dword_8031B760[10] = 1.0;
+    dword_8031B760[9] = 0.0;
+    dword_8031B760[8] = 0.0;
+    dword_8031B760[1] = 1.0;
+    dword_8031B760[0] = 0.0;
+    dword_8031B760[2] = 0.0;
+    dword_8031B760[6] = 0.0;
+    dword_8031B760[5] = 0.0;
+    dword_8031B760[4] = -1.0;
+    dword_8031D64C[0] = 6.5;
+    dword_8031D64C[1] = 6.5;
+    dword_8031D64C[2] = 2.0;
+    sub_80224434((float *)dword_8031D61C, (float *)dword_8031D64C);
+    sub_80224760((float *)dword_8031D61C);
+    flt_8031D640 = 0.0;
+    flt_8031D63C = 0.0;
+    flt_8031D644 = 1.0;
+    sub_8022439C((float *)dword_8031D62C, &flt_8031D63C, (float *)dword_8031D61C);
+    sub_8022439C(&flt_8031D63C, (float *)dword_8031D61C, (float *)dword_8031D62C);
+    dword_8031D760 = 0;
+    dword_8031D764[16] = 0;
+    sub_80242940();
+    debugPrint("\nAllocating %d bytes (x2) for decal buffers...\n\n");
+    dword_8028DB80 = sub_8024296C(2048);
+    dword_8028DB84 = sub_8024296C(2048);
+    AllocPaintShopGfxMem((int)&dword_8028CB40);
+    AllocPaintShopGfxMem((int)&dword_8028CB70);
+    AllocPaintShopGfxMem((int)&dword_8028CBA0);
+    byte_8028CBCC = 99;
+    AllocPaintShopGfxMem((int)&dword_8028CBD0);
+    dword_8028CC00 = 0;
+    AllocPaintShopGfxMem((int)&dword_8028CC30);
+    dword_8028CC60 = 0;
+    AllocPaintShopGfxMem((int)&dword_8028CC90);
+    AllocPaintShopGfxMem((int)&dword_8028CCC0);
+    AllocPaintShopGfxMem((int)&dword_8028CCF0);
+    dword_8028CD20 = 0;
+    AllocPaintShopGfxMem((int)&dword_8028CD50);
+    AllocPaintShopGfxMem((int)&dword_8028CD80);
+    AllocPaintShopGfxMem((int)&dword_8028CDB0);
+    dword_8028CDCC = 132;
+    dword_8028CDD0 = 248;
+    AllocPaintShopGfxMem((int)&dword_8028CDE0);
+    dword_8028CE00 = 104;
+    v0 = off_8028DB0C;
+    dword_8028CDFC = 132;
+    while (1) {
+        v1 = *v0;
+        dword_80369DB0[0] = (*v0)[7] + 5;
+        dword_80369DB0[1] = v1[8] + 2;
+        dword_80369DB0[2] = v1[4] - 10;
+        dword_80369DB0[3] = v1[5] - 4;
+        ++v0;
+        *((_BYTE *)v1 + 44) = 99;
+    }
 }
 // 80243290: write access to const memory at 802A4BE8 has been detected
 // 802432A4: write access to const memory at 8028C328 has been detected

@@ -1,20 +1,16 @@
 #include "../../types-win32.h"
 //----- (10041890) --------------------------------------------------------
-int __cdecl sub_10041890(int a1)
-{
-  int v1; // ecx
+int __cdecl sub_10041890(int a1) {
+    int v1; // ecx
 
-  v1 = *(_DWORD *)(a1 + 28);
-  if ( dword_10AA28E0 )
-  {
-    *(_DWORD *)(a1 + 28) = v1 & 0xFFFFEFEF;
-  }
-  else
-  {
-    *(_WORD *)(a1 + 123404) = 2;
-    *(_DWORD *)(a1 + 28) = v1 | 0x1010;
-    *(_BYTE *)(a1 + 11108) = 0;
-  }
-  return 1;
+    v1 = *(_DWORD *)(a1 + 28);
+    if (dword_10AA28E0) {
+        *(_DWORD *)(a1 + 28) = v1 & 0xFFFFEFEF;
+    } else {
+        *(_WORD *)(a1 + 123404) = 2;
+        *(_DWORD *)(a1 + 28) = v1 | 0x1010;
+        *(_BYTE *)(a1 + 11108) = 0;
+    }
+    return 1;
 }
 // 10AA28E0: using guessed type int dword_10AA28E0;

@@ -1,114 +1,102 @@
 #include "../../types-n64.h"
 //----- (80209434) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_80209434()
-{
-  int v0; // $s1
-  char ***v1; // $v1
-  int v2; // $s1
-  int *v3; // $s0
-  int v5; // $v0
-  int result; // $v0
+int sub_80209434() {
+    int v0;     // $s1
+    char ***v1; // $v1
+    int v2;     // $s1
+    int *v3;    // $s0
+    int v5;     // $v0
+    int result; // $v0
 
-  sub_8020C408((int)&off_80271D1C, &dword_80315F88);
-  v0 = 0;
-  v1 = &off_80271D1C;
-  do
-  {
-    (*v1)[1] = (char *)((unsigned int)(*v1)[1] & 0xFFFFFFFE);
-    ++v0;
-    ++v1;
-  }
-  while ( v0 < 10 );
-  v2 = 0;
-  sub_80214A3C();
-  sub_802089D0();
-  v3 = dword_8031B760;
-  do
-  {
-    sub_802260A0((int)v3);
-    v3[950] = (int)sub_80226D7C;
-    sub_80220438((int)v3, v2, *(unsigned __int8 *)(28 * MEMORY[0xC74C1D3C] + v2 - 2144814764));
-    v3[2048] = 0;
-    v3[2065] = 0;
-    *(float *)v3 = 1.0;
-    *((float *)v3 + 1) = 0.0;
-    *((float *)v3 + 2) = 0.0;
-    *((float *)v3 + 4) = 0.0;
-    *((float *)v3 + 5) = 1.0;
-    *((float *)v3 + 6) = 0.0;
-    *((float *)v3 + 8) = 0.0;
-    *((float *)v3 + 9) = 0.0;
-    *((float *)v3 + 10) = 1.0;
-    *((float *)v3 + 12) = 0.0;
-    *((float *)v3 + 13) = 0.0;
-    ++v2;
-    v3 += 2084;
-    *((float *)v3 - 2070) = 0.25400001;
-  }
-  while ( v2 != 2 );
-  dword_8031D64C[0] = 10.0;
-  dword_8031D64C[1] = 10.0;
-  dword_8031D64C[2] = 5.0;
-  sub_802244FC((float *)dword_8031D61C, (float *)dword_8031D64C, -1.0);
-  sub_80224760((float *)dword_8031D61C);
-  flt_8031D63C = 0.0;
-  flt_8031D640 = 0.0;
-  flt_8031D644 = 1.0;
-  sub_8022439C((float *)dword_8031D62C, &flt_8031D63C, (float *)dword_8031D61C);
-  sub_8022439C(&flt_8031D63C, (float *)dword_8031D61C, (float *)dword_8031D62C);
-  sub_80260B20((char *)dword_8031F6AC, (const char *)dword_8031D61C, 68);
-  dword_8028C328 = 0;
-  dword_80315F8C = 2;
-  if ( !sub_80208900(2) )
-  {
-    do
-      dword_80315F8C = -1;
-    while ( !sub_80208900(-1) );
-  }
-  dword_80271FAC = -1044482972;
-  dword_80271FC8 = (int)sub_80208A58;
-  dword_80315F90 = 1;
-  dword_80315EE0 = 1;
-  dword_80270850 = 0;
-  dword_802715BC[92] = (int)"Load Season Data";
-  dword_80271738[92] = (int)"Reset To First Round";
-  dword_802718D4[84] = (int)"Reset To First Season";
-  dword_80271A50[84] = (int)"Reset To First Year";
-  dword_80271D60 = 1;
-  dword_80271FCC = (int)sub_80208CF0;
-  dword_802709DC[93] = 2;
-  v5 = sub_8020AD5C(
-         *(const char **)(28 * MEMORY[0xC74C1D3C] - 2144814780),
-         -1522440201,
-         (int)&off_80271D1C,
-         &dword_80315F8C,
-         (int (*)(void))sub_80208900,
-         0,
-         0,
-         0,
-         0,
-         120,
-         130);
-  dword_802709DC[93] = 0;
-  if ( v5 == 1 )
-  {
-    result = 0;
-    dword_80315F8C = -1044482972;
-    dword_80315EE0 = 0;
-  }
-  else if ( v5 == 2 )
-  {
-    sub_8021C6E4((int)sub_802111E0);
-    result = 0;
-    dword_80271D60 = 0;
-  }
-  else
-  {
-    result = 0;
-  }
-  dword_802709DC[92] = -2144700956;
-  return result;
+    sub_8020C408((int)&off_80271D1C, &dword_80315F88);
+    v0 = 0;
+    v1 = &off_80271D1C;
+    do {
+        (*v1)[1] = (char *)((unsigned int)(*v1)[1] & 0xFFFFFFFE);
+        ++v0;
+        ++v1;
+    } while (v0 < 10);
+    v2 = 0;
+    sub_80214A3C();
+    sub_802089D0();
+    v3 = dword_8031B760;
+    do {
+        sub_802260A0((int)v3);
+        v3[950] = (int)sub_80226D7C;
+        sub_80220438((int)v3, v2, *(unsigned __int8 *)(28 * MEMORY[0xC74C1D3C] + v2 - 2144814764));
+        v3[2048] = 0;
+        v3[2065] = 0;
+        *(float *)v3 = 1.0;
+        *((float *)v3 + 1) = 0.0;
+        *((float *)v3 + 2) = 0.0;
+        *((float *)v3 + 4) = 0.0;
+        *((float *)v3 + 5) = 1.0;
+        *((float *)v3 + 6) = 0.0;
+        *((float *)v3 + 8) = 0.0;
+        *((float *)v3 + 9) = 0.0;
+        *((float *)v3 + 10) = 1.0;
+        *((float *)v3 + 12) = 0.0;
+        *((float *)v3 + 13) = 0.0;
+        ++v2;
+        v3 += 2084;
+        *((float *)v3 - 2070) = 0.25400001;
+    } while (v2 != 2);
+    dword_8031D64C[0] = 10.0;
+    dword_8031D64C[1] = 10.0;
+    dword_8031D64C[2] = 5.0;
+    sub_802244FC((float *)dword_8031D61C, (float *)dword_8031D64C, -1.0);
+    sub_80224760((float *)dword_8031D61C);
+    flt_8031D63C = 0.0;
+    flt_8031D640 = 0.0;
+    flt_8031D644 = 1.0;
+    sub_8022439C((float *)dword_8031D62C, &flt_8031D63C, (float *)dword_8031D61C);
+    sub_8022439C(&flt_8031D63C, (float *)dword_8031D61C, (float *)dword_8031D62C);
+    sub_80260B20((char *)dword_8031F6AC, (const char *)dword_8031D61C, 68);
+    dword_8028C328 = 0;
+    dword_80315F8C = 2;
+    if (!sub_80208900(2)) {
+        do
+            dword_80315F8C = -1;
+        while (!sub_80208900(-1));
+    }
+    dword_80271FAC = -1044482972;
+    dword_80271FC8 = (int)sub_80208A58;
+    dword_80315F90 = 1;
+    dword_80315EE0 = 1;
+    dword_80270850 = 0;
+    dword_802715BC[92] = (int)"Load Season Data";
+    dword_80271738[92] = (int)"Reset To First Round";
+    dword_802718D4[84] = (int)"Reset To First Season";
+    dword_80271A50[84] = (int)"Reset To First Year";
+    dword_80271D60 = 1;
+    dword_80271FCC = (int)sub_80208CF0;
+    dword_802709DC[93] = 2;
+    v5 = sub_8020AD5C(*(const char **)(28 * MEMORY[0xC74C1D3C] - 2144814780),
+                      -1522440201,
+                      (int)&off_80271D1C,
+                      &dword_80315F8C,
+                      (int (*)(void))sub_80208900,
+                      0,
+                      0,
+                      0,
+                      0,
+                      120,
+                      130);
+    dword_802709DC[93] = 0;
+    if (v5 == 1) {
+        result = 0;
+        dword_80315F8C = -1044482972;
+        dword_80315EE0 = 0;
+    } else if (v5 == 2) {
+        sub_8021C6E4((int)sub_802111E0);
+        result = 0;
+        dword_80271D60 = 0;
+    } else {
+        result = 0;
+    }
+    dword_802709DC[92] = -2144700956;
+    return result;
 }
 // 8020964C: write access to const memory at 8028C328 has been detected
 // 80209658: write access to const memory at 80315F8C has been detected

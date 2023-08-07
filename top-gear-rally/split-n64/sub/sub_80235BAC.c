@@ -2,58 +2,53 @@
 //----- (80235BAC) --------------------------------------------------------
 // sub_10011590 on PC
 // write access to const memory has been detected, the output may be wrong!
-int __fastcall sub_80235BAC(int a1)
-{
-  int result; // $v0
-  int v2; // [sp+3BCh] [-Ch]
-  int v3; // [sp+3C0h] [-8h]
+int __fastcall sub_80235BAC(int a1) {
+    int result; // $v0
+    int v2;     // [sp+3BCh] [-Ch]
+    int v3;     // [sp+3C0h] [-8h]
 
-  if ( !a1 )
-  {
-    sub_80234FF8();
-    dword_8028C748 = -1;
-    v2 = -1;
-    dword_8028C744 = 0;
-    v3 = 0;
-    flt_8035D51C = sub_80217420(&flt_8031AA50);
-    dword_8035D520 = -887858248;
-    dword_8028C784 = 4096;
-    dword_8028C77C = 4096;
-    dword_8028C78C = 4096;
-  }
-  sub_8022D7E0(0, 255, 128, 128, 255);
-  dword_8028C74C = 201850880;
-  dword_8028C750 = 1122360;
-  dword_8028A858 = 8;
-  MEMORY[0] = -1224736768;
-  MEMORY[4] = 664069;
-  sub_80219F04();
-  dword_8028A858 = 8;
-  MEMORY[0] = -1140841462;
-  MEMORY[4] = 0;
-  sub_802182A8();
-  sub_802182A8();
-  dword_8028A858 = 8;
-  MEMORY[4] = 83886080;
-  MEMORY[0] = -184549120;
-  if ( a1 )
-  {
-    v2 = 0;
-    dword_8028C740 = 1;
-    v3 = 0;
-  }
-  else
-  {
-    sub_80254D90();
-  }
-  if ( !a1 )
-    dword_8028C78C = v2 + v3;
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -419430400;
-  result = sub_8022D7E0(0, 0, 180, 0, 255);
-  dword_8028C748 = v2;
-  return result;
+    if (!a1) {
+        sub_80234FF8();
+        dword_8028C748 = -1;
+        v2 = -1;
+        dword_8028C744 = 0;
+        v3 = 0;
+        flt_8035D51C = sub_80217420(&flt_8031AA50);
+        dword_8035D520 = -887858248;
+        dword_8028C784 = 4096;
+        dword_8028C77C = 4096;
+        dword_8028C78C = 4096;
+    }
+    sub_8022D7E0(0, 255, 128, 128, 255);
+    dword_8028C74C = 201850880;
+    dword_8028C750 = 1122360;
+    dword_8028A858 = 8;
+    MEMORY[0] = -1224736768;
+    MEMORY[4] = 664069;
+    sub_80219F04();
+    dword_8028A858 = 8;
+    MEMORY[0] = -1140841462;
+    MEMORY[4] = 0;
+    sub_802182A8();
+    sub_802182A8();
+    dword_8028A858 = 8;
+    MEMORY[4] = 83886080;
+    MEMORY[0] = -184549120;
+    if (a1) {
+        v2 = 0;
+        dword_8028C740 = 1;
+        v3 = 0;
+    } else {
+        sub_80254D90();
+    }
+    if (!a1)
+        dword_8028C78C = v2 + v3;
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -419430400;
+    result = sub_8022D7E0(0, 0, 180, 0, 255);
+    dword_8028C748 = v2;
+    return result;
 }
 // 80235C48: write access to const memory at 8035D51C has been detected
 // 80235C58: write access to const memory at 8035D520 has been detected

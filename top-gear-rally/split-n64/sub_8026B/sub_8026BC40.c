@@ -1,20 +1,19 @@
 #include "../../types-n64.h"
 //----- (8026BC40) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8026BC40()
-{
-  dword_803818C4 = 0;
-  dword_803818C0 = 0;
-  dword_803818C8 = 0;
-  dword_803818CC = 0;
-  dword_803818A4 = (int)&dword_803818A0;
-  dword_803818A0 = 101183896;
-  dword_803818B0 = 0;
-  dword_803818B4 = 0;
-  dword_803818A8 = 31110685;
-  dword_803818AC = 1838495068;
-  dword_803818B8 = 0;
-  dword_803818BC = 0;
+void sub_8026BC40() {
+    dword_803818C4 = 0;
+    dword_803818C0 = 0;
+    dword_803818C8 = 0;
+    dword_803818CC = 0;
+    dword_803818A4 = (int)&dword_803818A0;
+    dword_803818A0 = 101183896;
+    dword_803818B0 = 0;
+    dword_803818B4 = 0;
+    dword_803818A8 = 31110685;
+    dword_803818AC = 1838495068;
+    dword_803818B8 = 0;
+    dword_803818BC = 0;
 }
 // 8026BC4C: write access to const memory at 803818C4 has been detected
 // 8026BC50: write access to const memory at 803818C0 has been detected

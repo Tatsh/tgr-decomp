@@ -1,17 +1,16 @@
 #include "../../types-n64.h"
 //----- (8026B444) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8026B444()
-{
-  struct OSThread_s *v0; // $v0
+void sub_8026B444() {
+    struct OSThread_s *v0; // $v0
 
-  v0 = sub_8026B434((OSThread *)&gMtqueue.queue);
-  *(_DWORD *)&gMtqueue.state = v0;
-  v0->state = 4;
-  _$K0 = v0;
-  _$K1 = v0->context.pc & 0xFFFF00FF | v0->context.pc & 0xFF00;
-  __asm
-  {
+    v0 = sub_8026B434((OSThread *)&gMtqueue.queue);
+    *(_DWORD *)&gMtqueue.state = v0;
+    v0->state = 4;
+    _$K0 = v0;
+    _$K1 = v0->context.pc & 0xFFFF00FF | v0->context.pc & 0xFF00;
+    __asm
+        {
     mtc0    $k1, SR # Status register
     ld      $k1, 0x108($k0)
     ld      $at, 0x20($k0)
@@ -44,16 +43,15 @@ void sub_8026B444()
     ld      $sp, 0xF0($k0)
     ld      $fp, 0xF8($k0)
     ld      $ra, 0x100($k0)
-  }
-  _$K1 = _$K0->context.cause;
-  __asm { mtc0    $k1, EPC # Exception Program Counter }
-  if ( _$K0->_fp )
-  {
-    _$K1 = _$K0->context.fp0.f.f_odd;
-    __asm { ctc1    $k1, FCSR }
-  }
-  MEMORY[0xA430000C] = *((unsigned __int16 *)dword_802ABB60 + (_$K0->context.fpcsr & 0x3F));
-  __asm { eret }
+        }
+    _$K1 = _$K0->context.cause;
+    __asm { mtc0    $k1, EPC # Exception Program Counter }
+    if (_$K0->_fp) {
+        _$K1 = _$K0->context.fp0.f.f_odd;
+        __asm { ctc1    $k1, FCSR }
+    }
+    MEMORY[0xA430000C] = *((unsigned __int16 *)dword_802ABB60 + (_$K0->context.fpcsr & 0x3F));
+    __asm { eret }
 }
 // 8026B450: write access to const memory at 802A62A0 has been detected
 // 802A6150: using guessed type int dword_802A6150;

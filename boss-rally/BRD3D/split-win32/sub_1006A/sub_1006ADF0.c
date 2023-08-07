@@ -1,6 +1,5 @@
 #include "../../types-win32.h"
 //----- (1006ADF0) --------------------------------------------------------
-void *sub_1006ADF0()
-{
-  return &unk_10CD0308;
+void *sub_1006ADF0() {
+    return &unk_10CD0308;
 }

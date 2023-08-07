@@ -1,35 +1,34 @@
 #include "../../types-n64.h"
 //----- (8021AA08) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8021AA08()
-{
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -1207959552;
-  dword_8031A9A8[0] = 1;
-  dword_8031A9A8[4] = (int)sub_8026EAD0;
-  dword_8031A9A8[6] = (int)&dword_802ABC00;
-  dword_8031A9A8[1] = 6;
-  dword_8031A9A8[10] = (int)dword_803B1000;
-  dword_8031A9A8[5] = 4096;
-  dword_8031A9A8[11] = (int)dword_803C8000;
-  dword_8031A9A8[7] = 2048;
-  dword_8031A9A8[8] = (unsigned int)&byte_8031A5A7 & 0xFFFFFFF0;
-  dword_8031A9A8[9] = 1024;
-  dword_8031A9A8[2] = (int)sub_8026EA00;
-  dword_8031A9A8[3] = (char *)sub_8026EAD0 - (char *)sub_8026EA00;
-  dword_8031A9A8[12] = 512;
-  dword_8031A9A8[13] = -512;
-  dword_8028AB70 = -64;
-  sub_802649C0();
-  dword_8028AB80 = 1;
-  sub_8022D7E0(0, 200, 0, 200, 255);
-  dword_8028AA24 = 0;
-  sub_8022D7E0(2, 200, 0, 0, 255);
-  sub_8022D7E0(1, 200, 100, 0, 255);
-  sub_80264C7C((int)dword_8031A9A8);
-  sub_80264E0C();
-  dword_8028A85C = 1;
+void sub_8021AA08() {
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -1207959552;
+    dword_8031A9A8[0] = 1;
+    dword_8031A9A8[4] = (int)sub_8026EAD0;
+    dword_8031A9A8[6] = (int)&dword_802ABC00;
+    dword_8031A9A8[1] = 6;
+    dword_8031A9A8[10] = (int)dword_803B1000;
+    dword_8031A9A8[5] = 4096;
+    dword_8031A9A8[11] = (int)dword_803C8000;
+    dword_8031A9A8[7] = 2048;
+    dword_8031A9A8[8] = (unsigned int)&byte_8031A5A7 & 0xFFFFFFF0;
+    dword_8031A9A8[9] = 1024;
+    dword_8031A9A8[2] = (int)sub_8026EA00;
+    dword_8031A9A8[3] = (char *)sub_8026EAD0 - (char *)sub_8026EA00;
+    dword_8031A9A8[12] = 512;
+    dword_8031A9A8[13] = -512;
+    dword_8028AB70 = -64;
+    sub_802649C0();
+    dword_8028AB80 = 1;
+    sub_8022D7E0(0, 200, 0, 200, 255);
+    dword_8028AA24 = 0;
+    sub_8022D7E0(2, 200, 0, 0, 255);
+    sub_8022D7E0(1, 200, 100, 0, 255);
+    sub_80264C7C((int)dword_8031A9A8);
+    sub_80264E0C();
+    dword_8028A85C = 1;
 }
 // 8021ACA4: write access to const memory at 8031B31C has been detected
 // 8021ADF8: write access to const memory at 8031B31C has been detected

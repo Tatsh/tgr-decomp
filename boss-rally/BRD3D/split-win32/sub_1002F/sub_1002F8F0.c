@@ -1,100 +1,89 @@
 #include "../../types-win32.h"
 //----- (1002F8F0) --------------------------------------------------------
-int sub_1002F8F0()
-{
-  int result; // eax
-  _DWORD *v1; // ecx
-  DWORD ticks; // eax
-  unk1 *v3; // eax
+int sub_1002F8F0() {
+    int result;  // eax
+    _DWORD *v1;  // ecx
+    DWORD ticks; // eax
+    unk1 *v3;    // eax
 
-  switch ( dword_10690A14 )
-  {
+    switch (dword_10690A14) {
     case 0:
-      sub_10038EC0();
-      pm_sub_10073320(0);
-      sub_1005FDB0();
-      dword_10690A14 = 4;
-      return 1;
-    case 1:
-      dword_10690A14 = 2;
-      return 1;
-    case 2:
-      ++dword_10690A10;
-      sub_10034C73();
-      return dword_100AA5A8;
-    case 3:
-      sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
-      ShowStaticImage(g_gsu0, aLoadingImg, 0);
-      sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
-      sub_10069840();
-      dword_10690A14 = 1;
-      return 1;
-    case 4:
-      v1 = dword_10AA2904;
-      if ( !dword_10AA2904 && !dword_100AC300 )
-      {
-        sub_100734F0();
-        dword_10690A14 = 3;
-        return 1;
-      }
-      if ( !dword_10AA2904 && dword_100AC300 )
-      {
+        sub_10038EC0();
         pm_sub_10073320(0);
-        sub_1005D440();
-        ticks = getTicks();
-        v1 = dword_10AA2904;
-        g_TickCount = ticks;
-      }
-      if ( g_Runbenchmark )
-      {
-        result = 1;
-        g_GameMode = 1;
-        g_chosenTrack = 2;
-        g_chosenCar = 5;
-        g_ChosenWeather = 0;
-        g_ConfigJoystickIndex = 0;
-        g_ConfigJoystickPtr = &g_Config;
-        g_HandlingType = 1;
-        g_SuspensionType = 1;
-        g_UltraCarHeader = (void *)2;
-        g_TransmissionType = 1;
-        dword_100AC300 = 0;
-        dword_10690A14 = 3;
-        return result;
-      }
-      if ( v1[3] )
-      {
-        (*(void (__thiscall **)(_DWORD *))(*v1 + 12))(v1);
-      }
-      else
-      {
-        v3 = g_gsu0->u0;
-        if ( v3 )
-        {
-          meth_1001AC80(v3, &dword_10690A0C, &dword_10690A08, &dword_10690A00, &dword_10690A04);
-          v1 = dword_10AA2904;
-        }
-        (*(void (__thiscall **)(_DWORD *))(*v1 + 16))(v1);
-      }
-      if ( !dword_10AA2904 || !dword_100AC300 )
+        sub_1005FDB0();
+        dword_10690A14 = 4;
         return 1;
-      if ( dword_10AA2868 )
-      {
-        if ( g_TickCount + 90000 < getTicks() )
-        {
-          *((_DWORD *)dword_10AA2904 + 26) = 0;
-          (*(void (__thiscall **)(void *, _DWORD))(*(_DWORD *)dword_10AA2904 + 24))(dword_10AA2904, 0);
-          g_GameMode = 4;
-          dword_106805B8 = 0;
-          return 1;
+    case 1:
+        dword_10690A14 = 2;
+        return 1;
+    case 2:
+        ++dword_10690A10;
+        sub_10034C73();
+        return dword_100AA5A8;
+    case 3:
+        sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
+        ShowStaticImage(g_gsu0, aLoadingImg, 0);
+        sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
+        sub_10069840();
+        dword_10690A14 = 1;
+        return 1;
+    case 4:
+        v1 = dword_10AA2904;
+        if (!dword_10AA2904 && !dword_100AC300) {
+            sub_100734F0();
+            dword_10690A14 = 3;
+            return 1;
         }
-      }
-      else
-      {
-        g_TickCount = getTicks();
-      }
-      return 1;
-  }
+        if (!dword_10AA2904 && dword_100AC300) {
+            pm_sub_10073320(0);
+            sub_1005D440();
+            ticks = getTicks();
+            v1 = dword_10AA2904;
+            g_TickCount = ticks;
+        }
+        if (g_Runbenchmark) {
+            result = 1;
+            g_GameMode = 1;
+            g_chosenTrack = 2;
+            g_chosenCar = 5;
+            g_ChosenWeather = 0;
+            g_ConfigJoystickIndex = 0;
+            g_ConfigJoystickPtr = &g_Config;
+            g_HandlingType = 1;
+            g_SuspensionType = 1;
+            g_UltraCarHeader = (void *)2;
+            g_TransmissionType = 1;
+            dword_100AC300 = 0;
+            dword_10690A14 = 3;
+            return result;
+        }
+        if (v1[3]) {
+            (*(void(__thiscall **)(_DWORD *))(*v1 + 12))(v1);
+        } else {
+            v3 = g_gsu0->u0;
+            if (v3) {
+                meth_1001AC80(
+                    v3, &dword_10690A0C, &dword_10690A08, &dword_10690A00, &dword_10690A04);
+                v1 = dword_10AA2904;
+            }
+            (*(void(__thiscall **)(_DWORD *))(*v1 + 16))(v1);
+        }
+        if (!dword_10AA2904 || !dword_100AC300)
+            return 1;
+        if (dword_10AA2868) {
+            if (g_TickCount + 90000 < getTicks()) {
+                *((_DWORD *)dword_10AA2904 + 26) = 0;
+                (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)dword_10AA2904 + 24))(
+                    dword_10AA2904, 0);
+                g_GameMode = 4;
+                dword_106805B8 = 0;
+                return 1;
+            }
+        } else {
+            g_TickCount = getTicks();
+        }
+        return 1;
+    }
 }
 // 10094350: using guessed type int g_HandlingType;
 // 10094354: using guessed type int g_TransmissionType;

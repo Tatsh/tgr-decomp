@@ -1,6 +1,5 @@
 #include "../../types-win32.h"
 //----- (10010960) --------------------------------------------------------
-double __cdecl sub_10010960(int a1)
-{
-  return *(float *)(a1 + 12);
+double __cdecl sub_10010960(int a1) {
+    return *(float *)(a1 + 12);
 }

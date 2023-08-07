@@ -1,23 +1,22 @@
 #include "../../types-n64.h"
 //----- (80248F88) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int __fastcall sub_80248F88(int a1, int a2, int a3, char a4, _BYTE *a5)
-{
-  word_802A4BE8 = 0;
-  byte_8028DCBC = 1;
-  byte_80369E50 = 0;
-  byte_80369E51 = 0;
-  dword_80369E54 = 0;
-  byte_80369E61 = 0;
-  dword_8028DCC4 = 0;
-  dword_80369E5C = 0;
-  byte_80369E62 = 0;
-  if ( a4 == 1 )
-    byte_80369E60 = 0;
-  else
-    byte_80369E60 = 2;
-  *a5 = 0;
-  return 0;
+int __fastcall sub_80248F88(int a1, int a2, int a3, char a4, _BYTE *a5) {
+    word_802A4BE8 = 0;
+    byte_8028DCBC = 1;
+    byte_80369E50 = 0;
+    byte_80369E51 = 0;
+    dword_80369E54 = 0;
+    byte_80369E61 = 0;
+    dword_8028DCC4 = 0;
+    dword_80369E5C = 0;
+    byte_80369E62 = 0;
+    if (a4 == 1)
+        byte_80369E60 = 0;
+    else
+        byte_80369E60 = 2;
+    *a5 = 0;
+    return 0;
 }
 // 80248FE8: write access to const memory at 802A4BE8 has been detected
 // 80248FFC: write access to const memory at 8028DCBC has been detected

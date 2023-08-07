@@ -12,11 +12,10 @@
 struct _iobuf;
 
 /* 1 */
-struct _SCOPETABLE_ENTRY
-{
-  int EnclosingLevel;
-  void *FilterFunc;
-  void *HandlerFunc;
+struct _SCOPETABLE_ENTRY {
+    int EnclosingLevel;
+    void *FilterFunc;
+    void *HandlerFunc;
 };
 
 /* 2 */
@@ -26,12 +25,11 @@ typedef struct _SCOPETABLE_ENTRY *PSCOPETABLE_ENTRY;
 typedef unsigned int DWORD;
 
 /* 3 */
-struct _EH3_EXCEPTION_REGISTRATION
-{
-  struct _EH3_EXCEPTION_REGISTRATION *Next;
-  PVOID ExceptionHandler;
-  PSCOPETABLE_ENTRY ScopeTable;
-  DWORD TryLevel;
+struct _EH3_EXCEPTION_REGISTRATION {
+    struct _EH3_EXCEPTION_REGISTRATION *Next;
+    PVOID ExceptionHandler;
+    PSCOPETABLE_ENTRY ScopeTable;
+    DWORD TryLevel;
 };
 
 /* 4 */
@@ -41,11 +39,10 @@ typedef struct _EH3_EXCEPTION_REGISTRATION EH3_EXCEPTION_REGISTRATION;
 typedef struct _EH3_EXCEPTION_REGISTRATION *PEH3_EXCEPTION_REGISTRATION;
 
 /* 6 */
-struct CPPEH_RECORD
-{
-  DWORD old_esp;
-  EXCEPTION_POINTERS *exc_ptr;
-  struct _EH3_EXCEPTION_REGISTRATION registration;
+struct CPPEH_RECORD {
+    DWORD old_esp;
+    EXCEPTION_POINTERS *exc_ptr;
+    struct _EH3_EXCEPTION_REGISTRATION registration;
 };
 
 /* 10 */
@@ -67,120 +64,111 @@ typedef BYTE *LPBYTE;
 typedef void *HANDLE;
 
 /* 7 */
-struct _STARTUPINFOA
-{
-  DWORD cb;
-  LPSTR lpReserved;
-  LPSTR lpDesktop;
-  LPSTR lpTitle;
-  DWORD dwX;
-  DWORD dwY;
-  DWORD dwXSize;
-  DWORD dwYSize;
-  DWORD dwXCountChars;
-  DWORD dwYCountChars;
-  DWORD dwFillAttribute;
-  DWORD dwFlags;
-  WORD wShowWindow;
-  WORD cbReserved2;
-  LPBYTE lpReserved2;
-  HANDLE hStdInput;
-  HANDLE hStdOutput;
-  HANDLE hStdError;
+struct _STARTUPINFOA {
+    DWORD cb;
+    LPSTR lpReserved;
+    LPSTR lpDesktop;
+    LPSTR lpTitle;
+    DWORD dwX;
+    DWORD dwY;
+    DWORD dwXSize;
+    DWORD dwYSize;
+    DWORD dwXCountChars;
+    DWORD dwYCountChars;
+    DWORD dwFillAttribute;
+    DWORD dwFlags;
+    WORD wShowWindow;
+    WORD cbReserved2;
+    LPBYTE lpReserved2;
+    HANDLE hStdInput;
+    HANDLE hStdOutput;
+    HANDLE hStdError;
 };
 
 /* 15 */
-enum MACRO_KEY
-{
-  KEY_QUERY_VALUE = 0x1,
-  KEY_SET_VALUE = 0x2,
-  KEY_CREATE_SUB_KEY = 0x4,
-  KEY_ENUMERATE_SUB_KEYS = 0x8,
-  KEY_NOTIFY = 0x10,
-  KEY_CREATE_LINK = 0x20,
-  KEY_WOW64_32KEY = 0x200,
-  KEY_WOW64_64KEY = 0x100,
-  KEY_WOW64_RES = 0x300,
-  KEY_READ = 0x20019,
-  KEY_WRITE = 0x20006,
-  KEY_EXECUTE = 0x20019,
-  KEY_ALL_ACCESS = 0xF003F,
+enum MACRO_KEY {
+    KEY_QUERY_VALUE = 0x1,
+    KEY_SET_VALUE = 0x2,
+    KEY_CREATE_SUB_KEY = 0x4,
+    KEY_ENUMERATE_SUB_KEYS = 0x8,
+    KEY_NOTIFY = 0x10,
+    KEY_CREATE_LINK = 0x20,
+    KEY_WOW64_32KEY = 0x200,
+    KEY_WOW64_64KEY = 0x100,
+    KEY_WOW64_RES = 0x300,
+    KEY_READ = 0x20019,
+    KEY_WRITE = 0x20006,
+    KEY_EXECUTE = 0x20019,
+    KEY_ALL_ACCESS = 0xF003F,
 };
 
 /* 16 */
-struct ReadListRet
-{
-  int nObj;
-  int *rgiObj;
-  char **rgszObj;
+struct ReadListRet {
+    int nObj;
+    int *rgiObj;
+    char **rgszObj;
 };
 
 /* 17 */
-struct RgiObj
-{
-};
+struct RgiObj {};
 
 /* 19 */
 typedef _iobuf FILE;
 
 /* 20 */
-struct _iobuf
-{
-  char *_ptr;
-  int _cnt;
-  char *_base;
-  int _flag;
-  int _file;
-  int _charbuf;
-  int _bufsiz;
-  char *_tmpfname;
+struct _iobuf {
+    char *_ptr;
+    int _cnt;
+    char *_base;
+    int _flag;
+    int _file;
+    int _charbuf;
+    int _bufsiz;
+    char *_tmpfname;
 };
 
 /* 21 */
-enum MACRO_MB
-{
-  MB_OK = 0x0,
-  MB_OKCANCEL = 0x1,
-  MB_ABORTRETRYIGNORE = 0x2,
-  MB_YESNOCANCEL = 0x3,
-  MB_YESNO = 0x4,
-  MB_RETRYCANCEL = 0x5,
-  MB_CANCELTRYCONTINUE = 0x6,
-  MB_ICONHAND = 0x10,
-  MB_ICONQUESTION = 0x20,
-  MB_ICONEXCLAMATION = 0x30,
-  MB_ICONASTERISK = 0x40,
-  MB_USERICON = 0x80,
-  MB_ICONWARNING = 0x30,
-  MB_ICONERROR = 0x10,
-  MB_ICONINFORMATION = 0x40,
-  MB_ICONSTOP = 0x10,
-  MB_DEFBUTTON1 = 0x0,
-  MB_DEFBUTTON2 = 0x100,
-  MB_DEFBUTTON3 = 0x200,
-  MB_DEFBUTTON4 = 0x300,
-  MB_APPLMODAL = 0x0,
-  MB_SYSTEMMODAL = 0x1000,
-  MB_TASKMODAL = 0x2000,
-  MB_HELP = 0x4000,
-  MB_NOFOCUS = 0x8000,
-  MB_SETFOREGROUND = 0x10000,
-  MB_DEFAULT_DESKTOP_ONLY = 0x20000,
-  MB_TOPMOST = 0x40000,
-  MB_RIGHT = 0x80000,
-  MB_RTLREADING = 0x100000,
-  MB_SERVICE_NOTIFICATION = 0x200000,
-  MB_SERVICE_NOTIFICATION_NT3X = 0x40000,
-  MB_TYPEMASK = 0xF,
-  MB_ICONMASK = 0xF0,
-  MB_DEFMASK = 0xF00,
-  MB_MODEMASK = 0x3000,
-  MB_MISCMASK = 0xC000,
+enum MACRO_MB {
+    MB_OK = 0x0,
+    MB_OKCANCEL = 0x1,
+    MB_ABORTRETRYIGNORE = 0x2,
+    MB_YESNOCANCEL = 0x3,
+    MB_YESNO = 0x4,
+    MB_RETRYCANCEL = 0x5,
+    MB_CANCELTRYCONTINUE = 0x6,
+    MB_ICONHAND = 0x10,
+    MB_ICONQUESTION = 0x20,
+    MB_ICONEXCLAMATION = 0x30,
+    MB_ICONASTERISK = 0x40,
+    MB_USERICON = 0x80,
+    MB_ICONWARNING = 0x30,
+    MB_ICONERROR = 0x10,
+    MB_ICONINFORMATION = 0x40,
+    MB_ICONSTOP = 0x10,
+    MB_DEFBUTTON1 = 0x0,
+    MB_DEFBUTTON2 = 0x100,
+    MB_DEFBUTTON3 = 0x200,
+    MB_DEFBUTTON4 = 0x300,
+    MB_APPLMODAL = 0x0,
+    MB_SYSTEMMODAL = 0x1000,
+    MB_TASKMODAL = 0x2000,
+    MB_HELP = 0x4000,
+    MB_NOFOCUS = 0x8000,
+    MB_SETFOREGROUND = 0x10000,
+    MB_DEFAULT_DESKTOP_ONLY = 0x20000,
+    MB_TOPMOST = 0x40000,
+    MB_RIGHT = 0x80000,
+    MB_RTLREADING = 0x100000,
+    MB_SERVICE_NOTIFICATION = 0x200000,
+    MB_SERVICE_NOTIFICATION_NT3X = 0x40000,
+    MB_TYPEMASK = 0xF,
+    MB_ICONMASK = 0xF0,
+    MB_DEFMASK = 0xF00,
+    MB_MODEMASK = 0x3000,
+    MB_MISCMASK = 0xC000,
 };
 
 /* 22 */
-enum MACRO_NULL
-{
-  NULL = 0,
+enum MACRO_NULL {
+    NULL = 0,
 };
-

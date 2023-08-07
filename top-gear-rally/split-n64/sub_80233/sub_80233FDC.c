@@ -1,16 +1,15 @@
 #include "../../types-n64.h"
 //----- (80233FDC) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_80233FDC()
-{
-  int result; // $v0
+int sub_80233FDC() {
+    int result; // $v0
 
-  result = 0;
-  dword_8028C75C = (int)dword_80353580;
-  dword_8028C760 = (int)dword_80353580;
-  dword_8028C764 = (int)dword_803554C0;
-  dword_8028C768 = (int)dword_803554C0;
-  return result;
+    result = 0;
+    dword_8028C75C = (int)dword_80353580;
+    dword_8028C760 = (int)dword_80353580;
+    dword_8028C764 = (int)dword_803554C0;
+    dword_8028C768 = (int)dword_803554C0;
+    return result;
 }
 // 8023402C: write access to const memory at 8028C760 has been detected
 // 8023404C: write access to const memory at 8028C768 has been detected

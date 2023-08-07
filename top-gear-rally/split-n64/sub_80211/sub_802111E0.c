@@ -1,34 +1,31 @@
 #include "../../types-n64.h"
 //----- (802111E0) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_802111E0()
-{
-  int v0; // $v0
+void sub_802111E0() {
+    int v0; // $v0
 
-  dword_80271FA4 = -1;
-  dword_80271FA0 = -1;
-  dword_8026FF08 = 2;
-  sub_8020C408((int)&off_80272360, &dword_80316380);
-  dword_80271FB0 = (int)dword_802722C0;
-  dword_80271FB4 = 25;
-  dword_80271FB8 = 14;
-  dword_80271FBC = 280;
-  dword_80271FC0 = 32;
-  flt_80271FC4 = 20.0;
-  dword_80272380 = 0;
-  dword_80316384 = 0;
-  dword_80272384 = 1;
-  v0 = sub_8020AD5C("TOP GEAR RALLY", -1861126107, (int)&off_80272360, &dword_80316384, 0, 0, 0, 0, 64, 64, 64);
-  if ( v0 == 1 )
-  {
-    dword_80272070 = 0;
-    dword_80272384 = -1;
-  }
-  else if ( v0 == 2 || v0 == 5 )
-  {
-    sub_8021C6E4((int)sub_8020686C);
-    dword_80272384 = 0;
-  }
+    dword_80271FA4 = -1;
+    dword_80271FA0 = -1;
+    dword_8026FF08 = 2;
+    sub_8020C408((int)&off_80272360, &dword_80316380);
+    dword_80271FB0 = (int)dword_802722C0;
+    dword_80271FB4 = 25;
+    dword_80271FB8 = 14;
+    dword_80271FBC = 280;
+    dword_80271FC0 = 32;
+    flt_80271FC4 = 20.0;
+    dword_80272380 = 0;
+    dword_80316384 = 0;
+    dword_80272384 = 1;
+    v0 = sub_8020AD5C(
+        "TOP GEAR RALLY", -1861126107, (int)&off_80272360, &dword_80316384, 0, 0, 0, 0, 64, 64, 64);
+    if (v0 == 1) {
+        dword_80272070 = 0;
+        dword_80272384 = -1;
+    } else if (v0 == 2 || v0 == 5) {
+        sub_8021C6E4((int)sub_8020686C);
+        dword_80272384 = 0;
+    }
 }
 // 802111F8: write access to const memory at 80271FA4 has been detected
 // 80211200: write access to const memory at 80271FA0 has been detected

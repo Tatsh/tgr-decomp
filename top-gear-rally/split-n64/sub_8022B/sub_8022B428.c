@@ -1,31 +1,30 @@
 #include "../../types-n64.h"
 //----- (8022B428) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_8022B428()
-{
-  int result; // $v0
+int sub_8022B428() {
+    int result; // $v0
 
-  result = -1;
-  dword_8028B7EC = -1;
-  dword_8028B7B8 = 0;
-  dword_8028B7BC = 0;
-  dword_8028B7CC = -1;
-  dword_8028B7D0 = 0;
-  dword_8028B7D4 = -1;
-  dword_8028B7D8 = 0;
-  dword_8028B7E8 = 0;
-  dword_8028B7E4 = 0;
-  flt_8028B7A0 = 0.0;
-  flt_8028B7A4 = 0.0;
-  flt_8028B7A8 = 0.0;
-  flt_8028B7AC = 0.0;
-  flt_8028B7B0 = 0.0;
-  flt_8028B7B4 = 0.0;
-  flt_8028B7C0 = 0.0;
-  flt_8028B7C4 = 0.0;
-  flt_8028B7C8 = 0.0;
-  flt_8028B7DC = 8589934600.0;
-  return result;
+    result = -1;
+    dword_8028B7EC = -1;
+    dword_8028B7B8 = 0;
+    dword_8028B7BC = 0;
+    dword_8028B7CC = -1;
+    dword_8028B7D0 = 0;
+    dword_8028B7D4 = -1;
+    dword_8028B7D8 = 0;
+    dword_8028B7E8 = 0;
+    dword_8028B7E4 = 0;
+    flt_8028B7A0 = 0.0;
+    flt_8028B7A4 = 0.0;
+    flt_8028B7A8 = 0.0;
+    flt_8028B7AC = 0.0;
+    flt_8028B7B0 = 0.0;
+    flt_8028B7B4 = 0.0;
+    flt_8028B7C0 = 0.0;
+    flt_8028B7C4 = 0.0;
+    flt_8028B7C8 = 0.0;
+    flt_8028B7DC = 8589934600.0;
+    return result;
 }
 // 8022B434: write access to const memory at 8028B7EC has been detected
 // 8022B448: write access to const memory at 8028B7B8 has been detected

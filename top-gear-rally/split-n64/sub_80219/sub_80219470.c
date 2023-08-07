@@ -1,33 +1,31 @@
 #include "../../types-n64.h"
 //----- (80219470) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void __fastcall sub_80219470(int a1)
-{
-  if ( a1 )
-  {
-    dword_8028A84C = 1;
-    dword_8028A850 = a1;
-  }
-  sub_8022D7E0(0, 0, 130, 0, 255);
-  dword_8031B2C8 = 8;
-  dword_8031B2CC = 8;
-  dword_8031B2D0 = 304;
-  dword_8031B2D4 = 224;
-  sub_802173C8();
-  sub_80255E64();
-  dword_8028A898 = 0x2000;
-  dword_8028A8A0 = 64;
-  dword_8028A89C = 0;
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -419430400;
-  sub_80219A78(0, 0, 320, 240);
-  dword_8028A858 = 8;
-  MEMORY[0] = -33554432;
-  MEMORY[4] = 1024;
-  sub_80264490(64);
-  sub_80264490(16);
-  sub_80264490(2);
+void __fastcall sub_80219470(int a1) {
+    if (a1) {
+        dword_8028A84C = 1;
+        dword_8028A850 = a1;
+    }
+    sub_8022D7E0(0, 0, 130, 0, 255);
+    dword_8031B2C8 = 8;
+    dword_8031B2CC = 8;
+    dword_8031B2D0 = 304;
+    dword_8031B2D4 = 224;
+    sub_802173C8();
+    sub_80255E64();
+    dword_8028A898 = 0x2000;
+    dword_8028A8A0 = 64;
+    dword_8028A89C = 0;
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -419430400;
+    sub_80219A78(0, 0, 320, 240);
+    dword_8028A858 = 8;
+    MEMORY[0] = -33554432;
+    MEMORY[4] = 1024;
+    sub_80264490(64);
+    sub_80264490(16);
+    sub_80264490(2);
 }
 // 80219490: write access to const memory at 8028A84C has been detected
 // 80219654: write access to const memory at 8028A898 has been detected

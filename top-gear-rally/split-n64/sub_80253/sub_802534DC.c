@@ -1,151 +1,138 @@
 #include "../../types-n64.h"
 //----- (802534DC) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_802534DC()
-{
-  int v0; // $s2
-  int v1; // $s0
-  int i; // $s2
-  int *v3; // $s0
-  char *v4; // $s1
-  char v5; // $v0
-  int v6; // $v0
-  int v7; // [sp+40h] [-88h]
-  int v8; // [sp+40h] [-88h]
-  int *v9; // [sp+44h] [-84h]
-  char v10[16]; // [sp+58h] [-70h] BYREF
-  char v11; // [sp+68h] [-60h] BYREF
-  char v12[11]; // [sp+74h] [-54h] BYREF
-  char v13; // [sp+7Fh] [-49h] BYREF
+void sub_802534DC() {
+    int v0;       // $s2
+    int v1;       // $s0
+    int i;        // $s2
+    int *v3;      // $s0
+    char *v4;     // $s1
+    char v5;      // $v0
+    int v6;       // $v0
+    int v7;       // [sp+40h] [-88h]
+    int v8;       // [sp+40h] [-88h]
+    int *v9;      // [sp+44h] [-84h]
+    char v10[16]; // [sp+58h] [-70h] BYREF
+    char v11;     // [sp+68h] [-60h] BYREF
+    char v12[11]; // [sp+74h] [-54h] BYREF
+    char v13;     // [sp+7Fh] [-49h] BYREF
 
-  word_802A4BE8 = 0;
-  byte_8028DD94 = 1;
-  byte_8036A060 = 0;
-  sub_80261940((int)unkMessageQueue4, &v13);
-  if ( (v13 & 1) != 0 )
-  {
-    sub_80242940();
-    AllocPaintShopGfxMem((int)&dword_8028CB40);
-    AllocPaintShopGfxMem((int)&dword_8028CB70);
-    AllocPaintShopGfxMem((int)&dword_8028D0B0);
-    AllocPaintShopGfxMem((int)&dword_8028D0E0);
-    AllocPaintShopGfxMem((int)&dword_8028DD20);
-    dword_802724F0 = 0;
-    byte_8036A270 = 1;
-    sub_80223688(1.0, 0.2);
-    sub_8021C4B4();
-    sub_80223F54();
-    sub_80219A3C();
-    sub_8021B458();
-    sub_80219BF0(0, 0, 320, 240, 1);
-    sub_80217C94();
-    sub_80217FB8();
-    sub_80245798((int)&dword_8028CB40);
-    sub_8024594C((int)&dword_8028CB70, 66, 16, 520, 65);
-    sub_8022F504();
-    sub_8022F4F8();
-    sub_8022F5D0(22);
-    formatter("%ryCONTROLLER PAK MENU", 160, 32);
-    sub_8022F514();
-    sub_8022F5D0(12);
-    formatter("%yw#", 72, 52);
-    formatter("%ywGAME NOTE", 116, 52);
-    sub_8022F520();
-    formatter("%ywPAGES", 250, 52);
-    sub_8022F5D0(9);
-    v7 = 63;
-    v0 = 0;
-    do
-    {
-      v1 = v0 + 1;
-      sub_80260DD4((int)v12, "%d", v0 + 1);
-      if ( v0 == 224 )
-        sub_8022F530(128, 255, 128, 0, 255, 0);
-      else
-        sub_8022F530(255, 255, 255, 128, 128, 128);
-      formatter(v12, 82, v7);
-      ++v0;
-      v7 += 9;
+    word_802A4BE8 = 0;
+    byte_8028DD94 = 1;
+    byte_8036A060 = 0;
+    sub_80261940((int)unkMessageQueue4, &v13);
+    if ((v13 & 1) != 0) {
+        sub_80242940();
+        AllocPaintShopGfxMem((int)&dword_8028CB40);
+        AllocPaintShopGfxMem((int)&dword_8028CB70);
+        AllocPaintShopGfxMem((int)&dword_8028D0B0);
+        AllocPaintShopGfxMem((int)&dword_8028D0E0);
+        AllocPaintShopGfxMem((int)&dword_8028DD20);
+        dword_802724F0 = 0;
+        byte_8036A270 = 1;
+        sub_80223688(1.0, 0.2);
+        sub_8021C4B4();
+        sub_80223F54();
+        sub_80219A3C();
+        sub_8021B458();
+        sub_80219BF0(0, 0, 320, 240, 1);
+        sub_80217C94();
+        sub_80217FB8();
+        sub_80245798((int)&dword_8028CB40);
+        sub_8024594C((int)&dword_8028CB70, 66, 16, 520, 65);
+        sub_8022F504();
+        sub_8022F4F8();
+        sub_8022F5D0(22);
+        formatter("%ryCONTROLLER PAK MENU", 160, 32);
+        sub_8022F514();
+        sub_8022F5D0(12);
+        formatter("%yw#", 72, 52);
+        formatter("%ywGAME NOTE", 116, 52);
+        sub_8022F520();
+        formatter("%ywPAGES", 250, 52);
+        sub_8022F5D0(9);
+        v7 = 63;
+        v0 = 0;
+        do {
+            v1 = v0 + 1;
+            sub_80260DD4((int)v12, "%d", v0 + 1);
+            if (v0 == 224)
+                sub_8022F530(128, 255, 128, 0, 255, 0);
+            else
+                sub_8022F530(255, 255, 255, 128, 128, 128);
+            formatter(v12, 82, v7);
+            ++v0;
+            v7 += 9;
+        } while (v1 < 16);
+        for (i = 0; i != 16; ++i) {
+            v8 = 9 * i + 63;
+            v9 = &dword_8036A070[8 * i];
+            v3 = v9;
+            v4 = v10;
+            do {
+                v5 = sub_80253460(*((_BYTE *)v3 + 14));
+                *v4 = v5;
+                if (!v5)
+                    break;
+                ++v4;
+                v3 = (int *)((char *)v3 + 1);
+            } while (v4 != &v11);
+            v6 = sub_80253460(*((_BYTE *)v9 + 10));
+            if (v6) {
+                *v4 = 32;
+                v4[1] = 46;
+                v4[2] = v6;
+                v4[3] = 0;
+            } else {
+                *v4 = 0;
+            }
+            sub_8022F514();
+            if (i == 224)
+                sub_8022F530(128, 255, 128, 0, 255, 0);
+            else
+                sub_8022F530(255, 255, 255, 128, 128, 128);
+            formatter(v10, 98, v8);
+            sub_80260DD4((int)v12, "%d", (unsigned int)*v9 >> 8);
+            sub_8022F520();
+            formatter(v12, 244, v8);
+        }
+        sub_8022F514();
+        sub_8022F5D0(10);
+        formatter("%ywPAGES USED:", 71, 211);
+        sub_80260DD4((int)v12, "%%yw%d", 6194799);
+        formatter(v12, 133, 211);
+        formatter("%ywPAGES FREE:", 172, 211);
+        sub_80260DD4((int)v12, "%%yw%d", -6194676);
+        sub_8022F520();
+        formatter(v12, 250, 211);
+        sub_80245604((int)&dword_8028D0B0, 214, 432);
+        sub_80245604((int)&dword_8028DD20, 344, 432);
+        sub_8022F514();
+        formatter("%wwSELECT", 123, 225);
+        formatter("%wwEXIT", 188, 225);
+        dword_8028A858 = 8;
+        MEMORY[4] = 0;
+        MEMORY[0] = -419430400;
+        sub_80223A70();
+        sub_8021AA08();
+        if (sub_80223988()) {
+            byte_8028DD94 = 0;
+            dword_802724F0 = 0;
+            sub_80219A3C();
+            sub_80217FB8();
+            sub_8021AA08();
+            osViBlack(1);
+            sub_80219A3C();
+            sub_80217FB8();
+            sub_8021AA08();
+            sub_8021C6E4((int)sub_80200108);
+        }
+        word_802A4BE8 = 1;
+    } else {
+        sub_8021C6E4((int)sub_80200108);
+        byte_8028DD94 = 0;
+        word_802A4BE8 = 1;
     }
-    while ( v1 < 16 );
-    for ( i = 0; i != 16; ++i )
-    {
-      v8 = 9 * i + 63;
-      v9 = &dword_8036A070[8 * i];
-      v3 = v9;
-      v4 = v10;
-      do
-      {
-        v5 = sub_80253460(*((_BYTE *)v3 + 14));
-        *v4 = v5;
-        if ( !v5 )
-          break;
-        ++v4;
-        v3 = (int *)((char *)v3 + 1);
-      }
-      while ( v4 != &v11 );
-      v6 = sub_80253460(*((_BYTE *)v9 + 10));
-      if ( v6 )
-      {
-        *v4 = 32;
-        v4[1] = 46;
-        v4[2] = v6;
-        v4[3] = 0;
-      }
-      else
-      {
-        *v4 = 0;
-      }
-      sub_8022F514();
-      if ( i == 224 )
-        sub_8022F530(128, 255, 128, 0, 255, 0);
-      else
-        sub_8022F530(255, 255, 255, 128, 128, 128);
-      formatter(v10, 98, v8);
-      sub_80260DD4((int)v12, "%d", (unsigned int)*v9 >> 8);
-      sub_8022F520();
-      formatter(v12, 244, v8);
-    }
-    sub_8022F514();
-    sub_8022F5D0(10);
-    formatter("%ywPAGES USED:", 71, 211);
-    sub_80260DD4((int)v12, "%%yw%d", 6194799);
-    formatter(v12, 133, 211);
-    formatter("%ywPAGES FREE:", 172, 211);
-    sub_80260DD4((int)v12, "%%yw%d", -6194676);
-    sub_8022F520();
-    formatter(v12, 250, 211);
-    sub_80245604((int)&dword_8028D0B0, 214, 432);
-    sub_80245604((int)&dword_8028DD20, 344, 432);
-    sub_8022F514();
-    formatter("%wwSELECT", 123, 225);
-    formatter("%wwEXIT", 188, 225);
-    dword_8028A858 = 8;
-    MEMORY[4] = 0;
-    MEMORY[0] = -419430400;
-    sub_80223A70();
-    sub_8021AA08();
-    if ( sub_80223988() )
-    {
-      byte_8028DD94 = 0;
-      dword_802724F0 = 0;
-      sub_80219A3C();
-      sub_80217FB8();
-      sub_8021AA08();
-      osViBlack(1);
-      sub_80219A3C();
-      sub_80217FB8();
-      sub_8021AA08();
-      sub_8021C6E4((int)sub_80200108);
-    }
-    word_802A4BE8 = 1;
-  }
-  else
-  {
-    sub_8021C6E4((int)sub_80200108);
-    byte_8028DD94 = 0;
-    word_802A4BE8 = 1;
-  }
 }
 // 80253504: write access to const memory at 802A4BE8 has been detected
 // 8025350C: write access to const memory at 8028DD94 has been detected

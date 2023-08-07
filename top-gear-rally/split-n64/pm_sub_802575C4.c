@@ -1,82 +1,79 @@
 #include "../types-n64.h"
 //----- (802575C4) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void __fastcall pm_sub_802575C4(int a1, int a2)
-{
-  int frequency; // $v0
-  __int64 v3; // $v1
-  int v4; // $v1
-  __int64 v5; // $v1
-  int v6; // $v0
-  int v7; // $a1
-  int v8; // $v1
-  __int64 *v9; // $v0
-  double v10; // $f6
-  int v11; // $a1
-  int v12; // [sp+28h] [-28h]
-  int v13; // [sp+2Ch] [-24h]
-  int v14; // [sp+44h] [-Ch]
+void __fastcall pm_sub_802575C4(int a1, int a2) {
+    int frequency; // $v0
+    __int64 v3;    // $v1
+    int v4;        // $v1
+    __int64 v5;    // $v1
+    int v6;        // $v0
+    int v7;        // $a1
+    int v8;        // $v1
+    __int64 *v9;   // $v0
+    double v10;    // $f6
+    int v11;       // $a1
+    int v12;       // [sp+28h] [-28h]
+    int v13;       // [sp+2Ch] [-24h]
+    int v14;       // [sp+44h] [-Ch]
 
-  dword_802A4918 = 0xFFFEFFFE;
-  dword_802A491C = 0xFFFEFFFE;
-  frequency = sub_80268230(0x55EEu);
-  debugPrint("Real Frequency is = %d\n", frequency);
-  osCreateMesgQueue(&gMusicMesgQueue, dword_80374708, 2);
-  HIDWORD(v3) = sub_80266188();
-  v12 = sub_80266088(v3, 1000000LL);
-  v13 = v4;
-  HIDWORD(v5) = sub_80266188();
-  v6 = sub_80266088(v5, 1000000LL);
-  sub_80268390(dword_80374710, v7, v12, v13, v6, v8, &gMusicMesgQueue, 0);
-  v9 = qword_802A4798;
-  do
-  {
-    v9 += 3;
-    *((_DWORD *)v9 - 6) = word_803747D0;
-    *((_DWORD *)v9 - 3) = 0;
-    *((_DWORD *)v9 - 4) = 0;
-    *((_DWORD *)v9 - 1) = 32;
-  }
-  while ( v9 < (__int64 *)&dword_802A4918 );
-  HIDWORD(qword_802A4920[0]) = &dword_802A4A08;
-  HIDWORD(qword_802A4928) = 0;
-  LODWORD(qword_802A4928) = 0;
-  dword_802A4934 = 32;
-  HIDWORD(qword_802A4938) = 0;
-  HIDWORD(qword_802A4940) = 0;
-  LODWORD(qword_802A4940) = 0;
-  dword_802A494C = 0;
-  dword_802A4998[3] = 0;
-  dword_802A4998[2] = 0;
-  HIDWORD(qword_802A4968) = &dword_802A4A08;
-  HIDWORD(qword_802A4970) = 0;
-  LODWORD(qword_802A4970) = 0;
-  dword_802A497C = 32;
-  HIDWORD(qword_802A4980) = &dword_802A4A08;
-  HIDWORD(qword_802A4988) = 0;
-  LODWORD(qword_802A4988) = 0;
-  dword_802A4994 = 32;
-  dword_802A4998[0] = (int)&dword_802A4A08;
-  dword_802A4998[5] = 32;
-  HIDWORD(qword_802A4950) = &dword_802A4A08;
-  LODWORD(qword_802A4958) = 0;
-  HIDWORD(qword_802A4958) = 0;
-  dword_802A4964 = 32;
-  word_802A4790 = 0;
-  v14 = -sub_802649F0();
-  sub_802562F0(word_803747D0, 0x4000);
-  v10 = (double)(unsigned int)(v14 + sub_802649F0());
-  debugPrint("%1.7f", v11, v10 / 46875500.0);
-  debugPrint("Creating I entries\n");
-  sub_80256720(a1, a2);
-  debugPrint("Creating Note Frequency entries\n");
-  sub_80256C2C();
-  debugPrint("Starting Mod\n");
-  sub_802571AC();
-  dword_80378F98 = 1;
-  sub_80268470((unsigned int)word_803747D0, 0x4000);
-  osCreateThread(&gMusicThread, 7, gMusicThreadEntry, 0, gMusicThreadStack, 127);
-  osStartThread(&gMusicThread);
+    dword_802A4918 = 0xFFFEFFFE;
+    dword_802A491C = 0xFFFEFFFE;
+    frequency = sub_80268230(0x55EEu);
+    debugPrint("Real Frequency is = %d\n", frequency);
+    osCreateMesgQueue(&gMusicMesgQueue, dword_80374708, 2);
+    HIDWORD(v3) = sub_80266188();
+    v12 = sub_80266088(v3, 1000000LL);
+    v13 = v4;
+    HIDWORD(v5) = sub_80266188();
+    v6 = sub_80266088(v5, 1000000LL);
+    sub_80268390(dword_80374710, v7, v12, v13, v6, v8, &gMusicMesgQueue, 0);
+    v9 = qword_802A4798;
+    do {
+        v9 += 3;
+        *((_DWORD *)v9 - 6) = word_803747D0;
+        *((_DWORD *)v9 - 3) = 0;
+        *((_DWORD *)v9 - 4) = 0;
+        *((_DWORD *)v9 - 1) = 32;
+    } while (v9 < (__int64 *)&dword_802A4918);
+    HIDWORD(qword_802A4920[0]) = &dword_802A4A08;
+    HIDWORD(qword_802A4928) = 0;
+    LODWORD(qword_802A4928) = 0;
+    dword_802A4934 = 32;
+    HIDWORD(qword_802A4938) = 0;
+    HIDWORD(qword_802A4940) = 0;
+    LODWORD(qword_802A4940) = 0;
+    dword_802A494C = 0;
+    dword_802A4998[3] = 0;
+    dword_802A4998[2] = 0;
+    HIDWORD(qword_802A4968) = &dword_802A4A08;
+    HIDWORD(qword_802A4970) = 0;
+    LODWORD(qword_802A4970) = 0;
+    dword_802A497C = 32;
+    HIDWORD(qword_802A4980) = &dword_802A4A08;
+    HIDWORD(qword_802A4988) = 0;
+    LODWORD(qword_802A4988) = 0;
+    dword_802A4994 = 32;
+    dword_802A4998[0] = (int)&dword_802A4A08;
+    dword_802A4998[5] = 32;
+    HIDWORD(qword_802A4950) = &dword_802A4A08;
+    LODWORD(qword_802A4958) = 0;
+    HIDWORD(qword_802A4958) = 0;
+    dword_802A4964 = 32;
+    word_802A4790 = 0;
+    v14 = -sub_802649F0();
+    sub_802562F0(word_803747D0, 0x4000);
+    v10 = (double)(unsigned int)(v14 + sub_802649F0());
+    debugPrint("%1.7f", v11, v10 / 46875500.0);
+    debugPrint("Creating I entries\n");
+    sub_80256720(a1, a2);
+    debugPrint("Creating Note Frequency entries\n");
+    sub_80256C2C();
+    debugPrint("Starting Mod\n");
+    sub_802571AC();
+    dword_80378F98 = 1;
+    sub_80268470((unsigned int)word_803747D0, 0x4000);
+    osCreateThread(&gMusicThread, 7, gMusicThreadEntry, 0, gMusicThreadStack, 127);
+    osStartThread(&gMusicThread);
 }
 // 802575D0: write access to const memory at 802A4918 has been detected
 // 802575E8: write access to const memory at 802A491C has been detected

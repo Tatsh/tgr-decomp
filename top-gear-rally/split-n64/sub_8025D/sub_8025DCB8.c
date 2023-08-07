@@ -1,17 +1,17 @@
 #include "../../types-n64.h"
 //----- (8025DCB8) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-float *__fastcall sub_8025DCB8(int a1, float *a2, float a3, float *a4)
-{
-  float *result; // $v0
-  float v5; // $f0
+float *__fastcall sub_8025DCB8(int a1, float *a2, float a3, float *a4) {
+    float *result; // $v0
+    float v5;      // $f0
 
-  result = &flt_8037EAC8;
-  v5 = (float)((float)(a4[2] * a2[2]) + (float)((float)(*a2 * *a4) + (float)(a2[1] * a4[1]))) - a3;
-  flt_8037EAC8 = *a2 * (float)-v5;
-  flt_8037EACC = a2[1] * (float)-v5;
-  flt_8037EAD0 = a2[2] * (float)-v5;
-  return result;
+    result = &flt_8037EAC8;
+    v5 =
+        (float)((float)(a4[2] * a2[2]) + (float)((float)(*a2 * *a4) + (float)(a2[1] * a4[1]))) - a3;
+    flt_8037EAC8 = *a2 * (float)-v5;
+    flt_8037EACC = a2[1] * (float)-v5;
+    flt_8037EAD0 = a2[2] * (float)-v5;
+    return result;
 }
 // 8025DD18: write access to const memory at 8037EAC8 has been detected
 // 8025DD24: write access to const memory at 8037EACC has been detected

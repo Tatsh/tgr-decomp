@@ -4,22 +4,21 @@
    Detected compiler: Visual C++
 */
 
-#include <windows.h>
 #include <defs.h>
-
+#include <windows.h>
 
 //-------------------------------------------------------------------------
 // Function declarations
 
 void __cdecl FreeReadListRet(ReadListRet *a1); // idb
-int __cdecl CHK_FileExists(char *FileName); // idb
+int __cdecl CHK_FileExists(char *FileName);    // idb
 void *__cdecl CHK_AllocateMemory(size_t size, char *debugName);
 ReadListRet ***__cdecl SetSubtituteDir(ReadListRet **rlRetArray, const char *sectionName); // idb
 // void __cdecl operator delete(void *Block); idb
 char *__cdecl GetSectionName(ReadListRet ***rlRet);
 ReadListRet **__cdecl FixReadListRetPtr(ReadListRet ***rlRet);
-char *__cdecl GetValue(ReadListRet **rlRet); // idb
-ReadListRet **__cdecl ReadINI(char *filename); // idb
+char *__cdecl GetValue(ReadListRet **rlRet);            // idb
+ReadListRet **__cdecl ReadINI(char *filename);          // idb
 void __cdecl FreeReadListRetArray(ReadListRet **Block); // idb
 ReadListRet *__cdecl ReadList(char *filename);
 void SetCurrentFilePointerIndexToZero();
@@ -75,919 +74,534 @@ void nullsub_1();
 //-------------------------------------------------------------------------
 // Data declarations
 
-char Mode[3] = "rb"; // idb
-char debugName[] = "SetSubstituteDir():pins"; // idb
-char aReadiniPini[15] = "ReadINI():pini"; // weak
-char gDelim = '#'; // weak
-char aReadlistSzobji[18] = "ReadList():szObji"; // weak
-char aRgszobj[8] = "rgszObj"; // weak
-char aRgiobj[7] = "rgiObj"; // weak
-char aPrj[4] = "PRJ"; // weak
-char aRt[] = "rt"; // idb
-char kHashInclude[] = "#include"; // idb
-char kBackslash[2] = "\\"; // weak
-CHAR ProcName[] = "RallyMain"; // idb
-char aBrglideDll[12] = "BRGlide.dll"; // weak
-char aGlide[6] = "Glide"; // weak
-char aBrd3dDll[10] = "BRD3D.dll"; // weak
-char aD3d[4] = "D3D"; // weak
-char kDriver[] = "Driver"; // idb
-char sectionName[] = "[Video]"; // idb
+char Mode[3] = "rb";                                          // idb
+char debugName[] = "SetSubstituteDir():pins";                 // idb
+char aReadiniPini[15] = "ReadINI():pini";                     // weak
+char gDelim = '#';                                            // weak
+char aReadlistSzobji[18] = "ReadList():szObji";               // weak
+char aRgszobj[8] = "rgszObj";                                 // weak
+char aRgiobj[7] = "rgiObj";                                   // weak
+char aPrj[4] = "PRJ";                                         // weak
+char aRt[] = "rt";                                            // idb
+char kHashInclude[] = "#include";                             // idb
+char kBackslash[2] = "\\";                                    // weak
+CHAR ProcName[] = "RallyMain";                                // idb
+char aBrglideDll[12] = "BRGlide.dll";                         // weak
+char aGlide[6] = "Glide";                                     // weak
+char aBrd3dDll[10] = "BRD3D.dll";                             // weak
+char aD3d[4] = "D3D";                                         // weak
+char kDriver[] = "Driver";                                    // idb
+char sectionName[] = "[Video]";                               // idb
 CHAR kUserCancelledSetVideo[] = "User canceled SetVideo.exe"; // idb
-CHAR kMessageBoxCaption[] = "Boss Rally"; // idb
-char kSetVideoExe[] = "SetVideo.exe"; // idb
-char aBossrallyIni[14] = "BossRally.ini"; // weak
-int dword_403218 = 0; // weak
-FILE *gFilePointers[8] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+CHAR kMessageBoxCaption[] = "Boss Rally";                     // idb
+char kSetVideoExe[] = "SetVideo.exe";                         // idb
+char aBossrallyIni[14] = "BossRally.ini";                     // weak
+int dword_403218 = 0;                                         // weak
+FILE *gFilePointers[8] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
 int gCurrentFilePointerIndex = 0; // weak
-char gUnk0[] = { '\0' }; // weak
-char gInstallDirectoryFromRegistry[264] =
-{
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0'
-};
-char gBossRallyINIFilepath[1024] =
-{
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  '\0',
-  
-}; // idb
-char key[1024]; // idb
+char gUnk0[] = {'\0'};            // weak
+char gInstallDirectoryFromRegistry[264] = {
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'};
+char gBossRallyINIFilepath[1024] = {
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+
+};                   // idb
+char key[1024];      // idb
 char gBuffer[32768]; // idb
-char *Arguments; // idb
+char *Arguments;     // idb
 FARPROC gRallyMainPA;
 int gArgumentsIndex; // weak
-int gBufferIndex; // weak
-HMODULE hLibModule; // idb
-
+int gBufferIndex;    // weak
+HMODULE hLibModule;  // idb
 
 //----- (00401000) --------------------------------------------------------
-void __cdecl FreeReadListRet(ReadListRet *a1)
-{
-  int i; // esi
+void __cdecl FreeReadListRet(ReadListRet *a1) {
+    int i; // esi
 
-  if ( a1->nObj )
-  {
-    for ( i = 0; i < a1->nObj; ++i )
-      free(a1->rgszObj[i]);
-    free(a1->rgszObj);
-    free(a1->rgiObj);
-  }
+    if (a1->nObj) {
+        for (i = 0; i < a1->nObj; ++i)
+            free(a1->rgszObj[i]);
+        free(a1->rgszObj);
+        free(a1->rgiObj);
+    }
 }
 
 //----- (00401050) --------------------------------------------------------
-int __cdecl CHK_FileExists(char *FileName)
-{
-  int result; // eax
-  char Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
+int __cdecl CHK_FileExists(char *FileName) {
+    int result;        // eax
+    char Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
 
-  if ( dword_403218 )
-  {
-    sprintf(Buffer, "CHK_FileExists(%s)\n", FileName);
-    OutputDebugStringA(Buffer);
-  }
-  result = (int)fopen(FileName, Mode);
-  if ( result )
-  {
-    fclose((FILE *)result);
-    result = 1;
-  }
-  return result;
+    if (dword_403218) {
+        sprintf(Buffer, "CHK_FileExists(%s)\n", FileName);
+        OutputDebugStringA(Buffer);
+    }
+    result = (int)fopen(FileName, Mode);
+    if (result) {
+        fclose((FILE *)result);
+        result = 1;
+    }
+    return result;
 }
 // 403218: using guessed type int dword_403218;
 
 //----- (004010C0) --------------------------------------------------------
-void *__cdecl CHK_AllocateMemory(size_t size, char *debugName)
-{
-  void *result; // eax
-  char Buffer[1024]; // [esp+0h] [ebp-400h] BYREF
+void *__cdecl CHK_AllocateMemory(size_t size, char *debugName) {
+    void *result;      // eax
+    char Buffer[1024]; // [esp+0h] [ebp-400h] BYREF
 
-  result = (void *)size;
-  if ( size )
-  {
-    result = malloc(size);
-    if ( !result )
-    {
-      sprintf(Buffer, "CHK_AllocateMemory(): Out of memory: couldn't allocate %s\n", debugName);
-      OutputDebugStringA(Buffer);
-      exit(1);
+    result = (void *)size;
+    if (size) {
+        result = malloc(size);
+        if (!result) {
+            sprintf(
+                Buffer, "CHK_AllocateMemory(): Out of memory: couldn't allocate %s\n", debugName);
+            OutputDebugStringA(Buffer);
+            exit(1);
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 //----- (00401130) --------------------------------------------------------
-ReadListRet ***__cdecl SetSubtituteDir(ReadListRet **rlRetArray, const char *sectionName)
-{
-  ReadListRet ***result; // eax
-  intptr_t rlRetArrOrNull; // ebp
-  char **i; // edi
-  ReadListRet ***rlRet_1; // [esp+10h] [ebp-4h]
+ReadListRet ***__cdecl SetSubtituteDir(ReadListRet **rlRetArray, const char *sectionName) {
+    ReadListRet ***result;   // eax
+    intptr_t rlRetArrOrNull; // ebp
+    char **i;                // edi
+    ReadListRet ***rlRet_1;  // [esp+10h] [ebp-4h]
 
-  result = (ReadListRet ***)CHK_AllocateMemory(8u, debugName);
-  rlRet_1 = result;
-  *result = rlRetArray;
-  result[1] = (ReadListRet **)0xFFFFFFFF;
-  if ( rlRetArray )
-  {
-    rlRetArrOrNull = NULL;
-    if ( (*rlRetArray)->nObj > 0 )
-    {
-      for ( i = (*rlRetArray)->rgszObj; strcmp(*i, sectionName); ++i )
-      {
-        if ( ++rlRetArrOrNull >= (*rlRetArray)->nObj )
-          return rlRet_1;
-      }
-      result = rlRet_1;
-      rlRet_1[1] = (ReadListRet **)rlRetArrOrNull;
+    result = (ReadListRet ***)CHK_AllocateMemory(8u, debugName);
+    rlRet_1 = result;
+    *result = rlRetArray;
+    result[1] = (ReadListRet **)0xFFFFFFFF;
+    if (rlRetArray) {
+        rlRetArrOrNull = NULL;
+        if ((*rlRetArray)->nObj > 0) {
+            for (i = (*rlRetArray)->rgszObj; strcmp(*i, sectionName); ++i) {
+                if (++rlRetArrOrNull >= (*rlRetArray)->nObj)
+                    return rlRet_1;
+            }
+            result = rlRet_1;
+            rlRet_1[1] = (ReadListRet **)rlRetArrOrNull;
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 //----- (004011D0) --------------------------------------------------------
-char *__cdecl GetSectionName(ReadListRet ***rlRet)
-{
-  intptr_t rgiObjPtr; // ecx
-  char *result; // eax
+char *__cdecl GetSectionName(ReadListRet ***rlRet) {
+    intptr_t rgiObjPtr; // ecx
+    char *result;       // eax
 
-  if ( rlRet && *rlRet && (rgiObjPtr = (intptr_t)rlRet[1], rgiObjPtr != -1) )
-    result = (**rlRet)->rgszObj[rgiObjPtr];
-  else
-    result = 0;
-  return result;
+    if (rlRet && *rlRet && (rgiObjPtr = (intptr_t)rlRet[1], rgiObjPtr != -1))
+        result = (**rlRet)->rgszObj[rgiObjPtr];
+    else
+        result = 0;
+    return result;
 }
 
 //----- (00401200) --------------------------------------------------------
-ReadListRet **__cdecl FixReadListRetPtr(ReadListRet ***rlRet)
-{
-  ReadListRet **rlRet_1; // edx
+ReadListRet **__cdecl FixReadListRetPtr(ReadListRet ***rlRet) {
+    ReadListRet **rlRet_1; // edx
 
-  if ( !rlRet )
-    return NULL;
-  if ( !*rlRet )
-    return NULL;
-  rlRet_1 = rlRet[1];
-  if ( rlRet_1 == (ReadListRet **)0xFFFFFFFF )
-    return NULL;
-  (*rlRet)[1] = (ReadListRet *)rlRet_1;
-  return *rlRet;
+    if (!rlRet)
+        return NULL;
+    if (!*rlRet)
+        return NULL;
+    rlRet_1 = rlRet[1];
+    if (rlRet_1 == (ReadListRet **)0xFFFFFFFF)
+        return NULL;
+    (*rlRet)[1] = (ReadListRet *)rlRet_1;
+    return *rlRet;
 }
 
 //----- (00401220) --------------------------------------------------------
-char *__cdecl GetValue(ReadListRet **rlRet)
-{
-  intptr_t rlRetPtr; // eax
-  ReadListRet *rlRet_1; // edx
-  intptr_t rgSzObjIndex; // eax
-  char *result; // eax
+char *__cdecl GetValue(ReadListRet **rlRet) {
+    intptr_t rlRetPtr;     // eax
+    ReadListRet *rlRet_1;  // edx
+    intptr_t rgSzObjIndex; // eax
+    char *result;          // eax
 
-  if ( !rlRet )
-    goto LABEL_6;
-  rlRetPtr = (intptr_t)rlRet[1];
-  if ( rlRetPtr < 0 )
-    goto LABEL_6;
-  rlRet_1 = *rlRet;
-  rgSzObjIndex = rlRetPtr + 1;
-  rlRet[1] = (ReadListRet *)rgSzObjIndex;
-  if ( rgSzObjIndex >= rlRet_1->nObj || (result = rlRet_1->rgszObj[rgSzObjIndex], *result == '[') )
-  {
-    rlRet[1] = (ReadListRet *)0xFFFFFFFF;
-LABEL_6:
-    result = NULL;
-  }
-  return result;
+    if (!rlRet)
+        goto LABEL_6;
+    rlRetPtr = (intptr_t)rlRet[1];
+    if (rlRetPtr < 0)
+        goto LABEL_6;
+    rlRet_1 = *rlRet;
+    rgSzObjIndex = rlRetPtr + 1;
+    rlRet[1] = (ReadListRet *)rgSzObjIndex;
+    if (rgSzObjIndex >= rlRet_1->nObj ||
+        (result = rlRet_1->rgszObj[rgSzObjIndex], *result == '[')) {
+        rlRet[1] = (ReadListRet *)0xFFFFFFFF;
+    LABEL_6:
+        result = NULL;
+    }
+    return result;
 }
 
 //----- (00401250) --------------------------------------------------------
-ReadListRet **__cdecl ReadINI(char *filename)
-{
-  ReadListRet **pini; // esi
-  char oldDelim; // [esp+4h] [ebp-4h]
+ReadListRet **__cdecl ReadINI(char *filename) {
+    ReadListRet **pini; // esi
+    char oldDelim;      // [esp+4h] [ebp-4h]
 
-  pini = (ReadListRet **)CHK_AllocateMemory(8u, aReadiniPini);
-  oldDelim = GetDelim();
-  SetDelim(';');
-  *pini = ReadList(filename);
-  SetDelim(oldDelim);
-  pini[1] = (ReadListRet *)0xFFFFFFFF;
-  return pini;
+    pini = (ReadListRet **)CHK_AllocateMemory(8u, aReadiniPini);
+    oldDelim = GetDelim();
+    SetDelim(';');
+    *pini = ReadList(filename);
+    SetDelim(oldDelim);
+    pini[1] = (ReadListRet *)0xFFFFFFFF;
+    return pini;
 }
 
 //----- (004012A0) --------------------------------------------------------
-void __cdecl FreeReadListRetArray(ReadListRet **Block)
-{
-  FreeReadListRet(*Block);
-  free(Block);
+void __cdecl FreeReadListRetArray(ReadListRet **Block) {
+    FreeReadListRet(*Block);
+    free(Block);
 }
 
 //----- (004012C0) --------------------------------------------------------
-ReadListRet *__cdecl ReadList(char *filename)
-{
-  int nObj; // ebp
-  char *filename_1; // edi
-  FILE *fp_1; // eax
-  FILE *fp_2; // esi
-  FILE *fp_3; // edx
-  ReadListRet *ret; // ebx
-  FILE *fp; // esi
-  int i; // ebp
-  char *newlinePtr; // eax
-  FILE *fp_4; // [esp+10h] [ebp-8004h]
-  char str[32768]; // [esp+14h] [ebp-8000h] BYREF
+ReadListRet *__cdecl ReadList(char *filename) {
+    int nObj;         // ebp
+    char *filename_1; // edi
+    FILE *fp_1;       // eax
+    FILE *fp_2;       // esi
+    FILE *fp_3;       // edx
+    ReadListRet *ret; // ebx
+    FILE *fp;         // esi
+    int i;            // ebp
+    char *newlinePtr; // eax
+    FILE *fp_4;       // [esp+10h] [ebp-8004h]
+    char str[32768];  // [esp+14h] [ebp-8000h] BYREF
 
-  nObj = 0;
-  SetCurrentFilePointerIndexToZero();
-  filename_1 = filename;
-  fp_1 = fopen(filename, aRt);
-  fp_2 = fp_1;
-  if ( !fp_1 )
-  {
-    printf("ReadList: error opening file %s.\n", filename);
-    exit(1);
-  }
-  fp_3 = ReadList2(str, 0x7FFF, fp_1);
-  if ( fp_3 )
-  {
-    do
-    {
-      fp_2 = fp_3;
-      if ( strlen(str) > 1 )
-        ++nObj;
-      fp_3 = ReadList2(str, 0x7FFF, fp_3);
-    }
-    while ( fp_3 );
+    nObj = 0;
+    SetCurrentFilePointerIndexToZero();
     filename_1 = filename;
-  }
-  fclose(fp_2);
-  ret = (ReadListRet *)CHK_AllocateMemory(sizeof(ReadListRet), aPrj);
-  ret->nObj = nObj;
-  ret->rgiObj = (int *)CHK_AllocateMemory(4 * nObj, aRgiobj);
-  ret->rgszObj = (char **)CHK_AllocateMemory(4 * ret->nObj, aRgszobj);
-  fp = fopen(filename_1, aRt);
-  if ( !fp )
-  {
-    printf("ReadList: error opening file %s.\n", filename_1);
-    exit(1);
-  }
-  for ( i = 0; i < ret->nObj; fp = fp_4 )
-  {
-    fp_4 = ReadList2(str, 0x7FFF, fp);
-    if ( strlen(str) > 1 )
-    {
-      newlinePtr = strrchr(str, '\n');
-      if ( newlinePtr )
-        *newlinePtr = 0;
-      ret->rgszObj[i] = (char *)CHK_AllocateMemory(strlen(str) + 1, aReadlistSzobji);
-      strcpy(ret->rgszObj[i], str);
-      ret->rgiObj[i] = i;
-      ++i;
+    fp_1 = fopen(filename, aRt);
+    fp_2 = fp_1;
+    if (!fp_1) {
+        printf("ReadList: error opening file %s.\n", filename);
+        exit(1);
     }
-  }
-  fclose(fp);
-  return ret;
+    fp_3 = ReadList2(str, 0x7FFF, fp_1);
+    if (fp_3) {
+        do {
+            fp_2 = fp_3;
+            if (strlen(str) > 1)
+                ++nObj;
+            fp_3 = ReadList2(str, 0x7FFF, fp_3);
+        } while (fp_3);
+        filename_1 = filename;
+    }
+    fclose(fp_2);
+    ret = (ReadListRet *)CHK_AllocateMemory(sizeof(ReadListRet), aPrj);
+    ret->nObj = nObj;
+    ret->rgiObj = (int *)CHK_AllocateMemory(4 * nObj, aRgiobj);
+    ret->rgszObj = (char **)CHK_AllocateMemory(4 * ret->nObj, aRgszobj);
+    fp = fopen(filename_1, aRt);
+    if (!fp) {
+        printf("ReadList: error opening file %s.\n", filename_1);
+        exit(1);
+    }
+    for (i = 0; i < ret->nObj; fp = fp_4) {
+        fp_4 = ReadList2(str, 0x7FFF, fp);
+        if (strlen(str) > 1) {
+            newlinePtr = strrchr(str, '\n');
+            if (newlinePtr)
+                *newlinePtr = 0;
+            ret->rgszObj[i] = (char *)CHK_AllocateMemory(strlen(str) + 1, aReadlistSzobji);
+            strcpy(ret->rgszObj[i], str);
+            ret->rgiObj[i] = i;
+            ++i;
+        }
+    }
+    fclose(fp);
+    return ret;
 }
 
 //----- (004014A0) --------------------------------------------------------
-void SetCurrentFilePointerIndexToZero()
-{
-  gCurrentFilePointerIndex = 0;
+void SetCurrentFilePointerIndexToZero() {
+    gCurrentFilePointerIndex = 0;
 }
 // 4032A0: using guessed type int gCurrentFilePointerIndex;
 
 //----- (004014B0) --------------------------------------------------------
-FILE *__cdecl ReadList2(char *outBuff, int MaxCount, FILE *fp)
-{
-  char *quotePtr; // eax
-  char *ltPtr; // eax
-  char *ptr; // eax
-  int charSearchFor; // [esp-4h] [ebp-8014h]
-  char str[32768]; // [esp+10h] [ebp-8000h] BYREF
+FILE *__cdecl ReadList2(char *outBuff, int MaxCount, FILE *fp) {
+    char *quotePtr;    // eax
+    char *ltPtr;       // eax
+    char *ptr;         // eax
+    int charSearchFor; // [esp-4h] [ebp-8014h]
+    char str[32768];   // [esp+10h] [ebp-8000h] BYREF
 
-  do
-  {
-    while ( 1 )
-    {
-      while ( !fgets(outBuff, MaxCount, fp) )
-      {
-        if ( (fp->_flag & 0x10) == 0 )
-        {
-          printf("ReadList: error reading file.\n");
-          exit(1);
+    do {
+        while (1) {
+            while (!fgets(outBuff, MaxCount, fp)) {
+                if ((fp->_flag & 0x10) == 0) {
+                    printf("ReadList: error reading file.\n");
+                    exit(1);
+                }
+                if (IsCurrentFilePointerIndexZero())
+                    return NULL;
+                fclose(fp);
+                fp = PopFile();
+            }
+            if (strncmp(outBuff, kHashInclude, 8u))
+                break;
+            quotePtr = strchr(outBuff, '"');
+            if (quotePtr) {
+                charSearchFor = '"';
+                strcpy(str, quotePtr + 1);
+            } else {
+                ltPtr = strchr(outBuff, '<');
+                if (!ltPtr) {
+                    strcpy(str, outBuff + 8);
+                    goto error;
+                }
+                charSearchFor = '>';
+                strcpy(str, ltPtr + 1);
+            }
+            ptr = strrchr(str, charSearchFor);
+            if (ptr)
+                *ptr = 0;
+        error:
+            PushFile(fp);
+            fp = fopen(str, aRt);
+            if (!fp) {
+                printf("ReadList: error opening #include file %s.\n", str);
+                exit(1);
+            }
         }
-        if ( IsCurrentFilePointerIndexZero() )
-          return NULL;
-        fclose(fp);
-        fp = PopFile();
-      }
-      if ( strncmp(outBuff, kHashInclude, 8u) )
-        break;
-      quotePtr = strchr(outBuff, '"');
-      if ( quotePtr )
-      {
-        charSearchFor = '"';
-        strcpy(str, quotePtr + 1);
-      }
-      else
-      {
-        ltPtr = strchr(outBuff, '<');
-        if ( !ltPtr )
-        {
-          strcpy(str, outBuff + 8);
-          goto error;
-        }
-        charSearchFor = '>';
-        strcpy(str, ltPtr + 1);
-      }
-      ptr = strrchr(str, charSearchFor);
-      if ( ptr )
-        *ptr = 0;
-error:
-      PushFile(fp);
-      fp = fopen(str, aRt);
-      if ( !fp )
-      {
-        printf("ReadList: error opening #include file %s.\n", str);
-        exit(1);
-      }
-    }
-  }
-  while ( *outBuff == gDelim );
-  return fp;
+    } while (*outBuff == gDelim);
+    return fp;
 }
 // 40308C: using guessed type char gDelim;
 
 //----- (00401660) --------------------------------------------------------
-BOOL IsCurrentFilePointerIndexZero()
-{
-  return gCurrentFilePointerIndex == 0;
+BOOL IsCurrentFilePointerIndexZero() {
+    return gCurrentFilePointerIndex == 0;
 }
 // 4032A0: using guessed type int gCurrentFilePointerIndex;
 
 //----- (00401670) --------------------------------------------------------
-int __cdecl PushFile(FILE *fp)
-{
-  int index; // eax
-  int newIndex; // eax
+int __cdecl PushFile(FILE *fp) {
+    int index;    // eax
+    int newIndex; // eax
 
-  index = gCurrentFilePointerIndex;
-  gFilePointers[gCurrentFilePointerIndex] = fp;
-  newIndex = index + 1;
-  gCurrentFilePointerIndex = newIndex;
-  return newIndex;
+    index = gCurrentFilePointerIndex;
+    gFilePointers[gCurrentFilePointerIndex] = fp;
+    newIndex = index + 1;
+    gCurrentFilePointerIndex = newIndex;
+    return newIndex;
 }
 // 4032A0: using guessed type int gCurrentFilePointerIndex;
 
 //----- (00401690) --------------------------------------------------------
-FILE *PopFile()
-{
-  --gCurrentFilePointerIndex;
-  return gFilePointers[gCurrentFilePointerIndex];
+FILE *PopFile() {
+    --gCurrentFilePointerIndex;
+    return gFilePointers[gCurrentFilePointerIndex];
 }
 // 4032A0: using guessed type int gCurrentFilePointerIndex;
 
 //----- (004016B0) --------------------------------------------------------
-char GetDelim()
-{
-  return gDelim;
+char GetDelim() {
+    return gDelim;
 }
 // 40308C: using guessed type char gDelim;
 
 //----- (004016C0) --------------------------------------------------------
-char __cdecl SetDelim(char a1)
-{
-  char result; // al
+char __cdecl SetDelim(char a1) {
+    char result; // al
 
-  result = a1;
-  gDelim = a1;
-  return result;
+    result = a1;
+    gDelim = a1;
+    return result;
 }
 // 40308C: using guessed type char gDelim;
 
 //----- (004016D0) --------------------------------------------------------
-unsigned int SetupInstallDirectory()
-{
-  LSTATUS ls; // esi
-  unsigned int len; // eax
-  HKEY phkResult; // [esp+8h] [ebp-8h] BYREF
-  DWORD cbData; // [esp+Ch] [ebp-4h] BYREF
+unsigned int SetupInstallDirectory() {
+    LSTATUS ls;       // esi
+    unsigned int len; // eax
+    HKEY phkResult;   // [esp+8h] [ebp-8h] BYREF
+    DWORD cbData;     // [esp+Ch] [ebp-4h] BYREF
 
-  if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SOFTWARE\\SouthPeak Interactive\\Boss Rally", 0, KEY_READ, &phkResult)
-    || (cbData = 260,
-        ls = RegQueryValueExA(phkResult, "Directory", 0, 0, gInstallDirectoryFromRegistry, &cbData),
-        RegCloseKey(phkResult),
-        ls) )
-  {
-    len = strlen("c:\\") + 1;
-    qmemcpy(gInstallDirectoryFromRegistry, "c:\\", len);
-  }
-  else
-  {
-    len = 0;
-    if ( gUnk0[strlen((const char *)gInstallDirectoryFromRegistry)] != '\\' )
-    {
-      len = 0;
-      strcat((char *)gInstallDirectoryFromRegistry, kBackslash);
+    if (RegOpenKeyExA(HKEY_LOCAL_MACHINE,
+                      "SOFTWARE\\SouthPeak Interactive\\Boss Rally",
+                      0,
+                      KEY_READ,
+                      &phkResult) ||
+        (cbData = 260,
+         ls =
+             RegQueryValueExA(phkResult, "Directory", 0, 0, gInstallDirectoryFromRegistry, &cbData),
+         RegCloseKey(phkResult),
+         ls)) {
+        len = strlen("c:\\") + 1;
+        qmemcpy(gInstallDirectoryFromRegistry, "c:\\", len);
+    } else {
+        len = 0;
+        if (gUnk0[strlen((const char *)gInstallDirectoryFromRegistry)] != '\\') {
+            len = 0;
+            strcat((char *)gInstallDirectoryFromRegistry, kBackslash);
+        }
     }
-  }
-  return len;
+    return len;
 }
 
 //----- (004017B0) --------------------------------------------------------
-HMODULE __cdecl SetRallyMain(LPCSTR lpLibFileName)
-{
-  HMODULE result; // eax
+HMODULE __cdecl SetRallyMain(LPCSTR lpLibFileName) {
+    HMODULE result; // eax
 
-  result = LoadLibraryA(lpLibFileName);
-  hLibModule = result;
-  if ( result )
-  {
-    gRallyMainPA = GetProcAddress(result, ProcName);
-    result = (HMODULE)(gRallyMainPA != 0);
-  }
-  return result;
+    result = LoadLibraryA(lpLibFileName);
+    hLibModule = result;
+    if (result) {
+        gRallyMainPA = GetProcAddress(result, ProcName);
+        result = (HMODULE)(gRallyMainPA != 0);
+    }
+    return result;
 }
 
 //----- (004017E0) --------------------------------------------------------
-BOOL RemoveLibrary()
-{
-  BOOL result; // eax
+BOOL RemoveLibrary() {
+    BOOL result; // eax
 
-  if ( !hLibModule )
-    return 1;
-  result = FreeLibrary(hLibModule);
-  hLibModule = 0;
-  return result;
+    if (!hLibModule)
+        return 1;
+    result = FreeLibrary(hLibModule);
+    hLibModule = 0;
+    return result;
 }
 
 //----- (00401810) --------------------------------------------------------
-int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
-{
-  HWND hwnd; // ebx
-  int result; // eax
-  ReadListRet **rlRetArray; // ebp
-  ReadListRet ***rlRet; // ebx
-  char *driverName; // eax
-  const char *dllName; // edi
-  int rallyMainRet; // esi
-  HWND hWnd; // [esp+10h] [ebp-804h]
-  char libFilename[1024]; // [esp+14h] [ebp-800h] BYREF
-  char buffer[1024]; // [esp+414h] [ebp-400h] BYREF
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
+    HWND hwnd;                // ebx
+    int result;               // eax
+    ReadListRet **rlRetArray; // ebp
+    ReadListRet ***rlRet;     // ebx
+    char *driverName;         // eax
+    const char *dllName;      // edi
+    int rallyMainRet;         // esi
+    HWND hWnd;                // [esp+10h] [ebp-804h]
+    char libFilename[1024];   // [esp+14h] [ebp-800h] BYREF
+    char buffer[1024];        // [esp+414h] [ebp-400h] BYREF
 
-  hwnd = GetDesktopWindow();
-  hWnd = hwnd;
-  SetupInstallDirectory();
-  strcpy(gBossRallyINIFilepath, gInstallDirectoryFromRegistry);
-  strcat(gBossRallyINIFilepath, aBossrallyIni);
-  if ( CHK_FileExists(gBossRallyINIFilepath)
-    || (SetupSpawnvArguments(kSetVideoExe), !spawnv(0, kSetVideoExe, (const char *const *)&Arguments)) )
-  {
-    libFilename[0] = 0;
-    rlRetArray = ReadINI(gBossRallyINIFilepath);
-    rlRet = SetSubtituteDir(rlRetArray, sectionName);
-    driverName = GetDriver(rlRet, kDriver);
-    dllName = driverName;
-    if ( driverName )
-    {
-      if ( !strcmp(driverName, aD3d) )
-      {
-        dllName = aBrd3dDll;
-      }
-      else if ( !strcmp(dllName, aGlide) )
-      {
-        dllName = aBrglideDll;
-      }
-      strcpy(libFilename, dllName);
+    hwnd = GetDesktopWindow();
+    hWnd = hwnd;
+    SetupInstallDirectory();
+    strcpy(gBossRallyINIFilepath, gInstallDirectoryFromRegistry);
+    strcat(gBossRallyINIFilepath, aBossrallyIni);
+    if (CHK_FileExists(gBossRallyINIFilepath) ||
+        (SetupSpawnvArguments(kSetVideoExe),
+         !spawnv(0, kSetVideoExe, (const char *const *)&Arguments))) {
+        libFilename[0] = 0;
+        rlRetArray = ReadINI(gBossRallyINIFilepath);
+        rlRet = SetSubtituteDir(rlRetArray, sectionName);
+        driverName = GetDriver(rlRet, kDriver);
+        dllName = driverName;
+        if (driverName) {
+            if (!strcmp(driverName, aD3d)) {
+                dllName = aBrd3dDll;
+            } else if (!strcmp(dllName, aGlide)) {
+                dllName = aBrglideDll;
+            }
+            strcpy(libFilename, dllName);
+        }
+        operator delete(rlRet);
+        FreeReadListRetArray(rlRetArray);
+        if (libFilename[0]) {
+            if (!SetRallyMain(libFilename)) {
+                sprintf(buffer, "Error: failed to load %s.", libFilename);
+                MessageBoxA(hWnd, buffer, kMessageBoxCaption, MB_ICONSTOP);
+                exit(1);
+            }
+            rallyMainRet = ((int(__cdecl *)(HINSTANCE, HINSTANCE, char *))gRallyMainPA)(
+                hInstance, hPrevInstance, lpCmdLine);
+            RemoveLibrary();
+            result = rallyMainRet;
+        } else {
+            result = 0;
+        }
+    } else {
+        MessageBoxA(hwnd, kUserCancelledSetVideo, kMessageBoxCaption, MB_OK);
+        result = 0;
     }
-    operator delete(rlRet);
-    FreeReadListRetArray(rlRetArray);
-    if ( libFilename[0] )
-    {
-      if ( !SetRallyMain(libFilename) )
-      {
-        sprintf(buffer, "Error: failed to load %s.", libFilename);
-        MessageBoxA(hWnd, buffer, kMessageBoxCaption, MB_ICONSTOP);
-        exit(1);
-      }
-      rallyMainRet = ((int (__cdecl *)(HINSTANCE, HINSTANCE, char *))gRallyMainPA)(hInstance, hPrevInstance, lpCmdLine);
-      RemoveLibrary();
-      result = rallyMainRet;
-    }
-    else
-    {
-      result = 0;
-    }
-  }
-  else
-  {
-    MessageBoxA(hwnd, kUserCancelledSetVideo, kMessageBoxCaption, MB_OK);
-    result = 0;
-  }
-  return result;
+    return result;
 }
 
 //----- (00401A70) --------------------------------------------------------
-int __cdecl SetupSpawnvArguments(const char *exe)
-{
-  int bufferIndex; // ebx
-  char *bufferPtr; // edx
-  int result; // eax
-  int argsIndex; // esi
+int __cdecl SetupSpawnvArguments(const char *exe) {
+    int bufferIndex; // ebx
+    char *bufferPtr; // edx
+    int result;      // eax
+    int argsIndex;   // esi
 
-  bufferIndex = gBufferIndex;
-  bufferPtr = &gBuffer[gBufferIndex];
-  strcpy(&gBuffer[gBufferIndex], exe);
-  result = 0;
-  argsIndex = gArgumentsIndex;
-  (&Arguments)[gArgumentsIndex] = bufferPtr;
-  gArgumentsIndex = argsIndex + 1;
-  (&Arguments)[argsIndex + 1] = 0;
-  gBufferIndex = bufferIndex + strlen(exe) + 1;
-  return result;
+    bufferIndex = gBufferIndex;
+    bufferPtr = &gBuffer[gBufferIndex];
+    strcpy(&gBuffer[gBufferIndex], exe);
+    result = 0;
+    argsIndex = gArgumentsIndex;
+    (&Arguments)[gArgumentsIndex] = bufferPtr;
+    gArgumentsIndex = argsIndex + 1;
+    (&Arguments)[argsIndex + 1] = 0;
+    gBufferIndex = bufferIndex + strlen(exe) + 1;
+    return result;
 }
 // 40BDB4: using guessed type int gArgumentsIndex;
 // 40BDB8: using guessed type int gBufferIndex;
 
 //----- (00401AE0) --------------------------------------------------------
-char *__cdecl GetDriver(ReadListRet ***rlRet, char *String2)
-{
-  ReadListRet **rlRet_2; // eax
-  char *result; // eax
-  char *equalPtr; // esi
-  char *section; // eax
-  ReadListRet **rlRet_1; // [esp+10h] [ebp-4h]
+char *__cdecl GetDriver(ReadListRet ***rlRet, char *String2) {
+    ReadListRet **rlRet_2; // eax
+    char *result;          // eax
+    char *equalPtr;        // esi
+    char *section;         // eax
+    ReadListRet **rlRet_1; // [esp+10h] [ebp-4h]
 
-  rlRet_2 = FixReadListRetPtr(rlRet);
-  rlRet_1 = rlRet_2;
-  if ( !rlRet_2 )
-    return NULL;
-  result = GetValue(rlRet_2);
-  if ( !result )
-    return NULL;
-  while ( 1 )
-  {
-    strcpy(key, result);
-    equalPtr = strchr(key, '=');
-    if ( !equalPtr )
-    {
-      section = GetSectionName(rlRet);
-      printf("Unable to parse %s in section %s.\n", key, section);
-      exit(1);
+    rlRet_2 = FixReadListRetPtr(rlRet);
+    rlRet_1 = rlRet_2;
+    if (!rlRet_2)
+        return NULL;
+    result = GetValue(rlRet_2);
+    if (!result)
+        return NULL;
+    while (1) {
+        strcpy(key, result);
+        equalPtr = strchr(key, '=');
+        if (!equalPtr) {
+            section = GetSectionName(rlRet);
+            printf("Unable to parse %s in section %s.\n", key, section);
+            exit(1);
+        }
+        *equalPtr = NULL;
+        if (!stricmp(key, String2))
+            break;
+        result = GetValue(rlRet_1);
+        if (!result)
+            return result;
     }
-    *equalPtr = NULL;
-    if ( !stricmp(key, String2) )
-      break;
-    result = GetValue(rlRet_1);
-    if ( !result )
-      return result;
-  }
-  return equalPtr + 1;
+    return equalPtr + 1;
 }
 
 //----- (00401DD0) --------------------------------------------------------
-int __cdecl UserMathErrorFunction()
-{
-  return 0;
+int __cdecl UserMathErrorFunction() {
+    return 0;
 }
 
 // nfuncs=33 queued=24 decompiled=24 lumina nreq=0 worse=0 better=0

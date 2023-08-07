@@ -1,6 +1,5 @@
 #include "../../types-n64.h"
 //----- (80220534) --------------------------------------------------------
-BOOL __fastcall sub_80220534(int a1)
-{
-  return *(_DWORD *)(a1 + 24) == 0;
+BOOL __fastcall sub_80220534(int a1) {
+    return *(_DWORD *)(a1 + 24) == 0;
 }

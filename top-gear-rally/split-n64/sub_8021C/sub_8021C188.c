@@ -1,71 +1,59 @@
 #include "../../types-n64.h"
 //----- (8021C188) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8021C188()
-{
-  char v0; // $t0
-  int v1; // $v0
-  char v2; // [sp+2Fh] [-1h] BYREF
+void sub_8021C188() {
+    char v0; // $t0
+    int v1;  // $v0
+    char v2; // [sp+2Fh] [-1h] BYREF
 
-  sub_8021A9B4();
-  word_802A4BE8 = 0;
-  sub_8021C6E4((int)sub_80208570);
-  byte_80270840 = 0;
-  while ( sub_80208570 == (void (*)())-1282369048 )
-    sub_80208570();
-  sub_80261940((int)unkMessageQueue4, &v2);
-  if ( (v2 & 1) != 0 )
-  {
-    byte_8028ADF0 = 1;
-    debugPrint("\nInitializing controller pak...\n");
-    dword_802724F0 = sub_80261CB0((int)unkMessageQueue4, (int)dword_80369EC0, 0);
-    sub_80260B20((int)dword_803163E0, (char *)dword_80369ECC, 32);
-    byte_80316420 = 1;
-    v0 = v2;
-  }
-  else
-  {
+    sub_8021A9B4();
+    word_802A4BE8 = 0;
     sub_8021C6E4((int)sub_80208570);
-    byte_80270840 = 1;
-    if ( sub_80208570 == (void (*)())-1282369048 )
-    {
-      do
+    byte_80270840 = 0;
+    while (sub_80208570 == (void (*)()) - 1282369048)
         sub_80208570();
-      while ( sub_80208570 == (void (*)())-1282369048 );
-      v0 = v2;
+    sub_80261940((int)unkMessageQueue4, &v2);
+    if ((v2 & 1) != 0) {
+        byte_8028ADF0 = 1;
+        debugPrint("\nInitializing controller pak...\n");
+        dword_802724F0 = sub_80261CB0((int)unkMessageQueue4, (int)dword_80369EC0, 0);
+        sub_80260B20((int)dword_803163E0, (char *)dword_80369ECC, 32);
+        byte_80316420 = 1;
+        v0 = v2;
+    } else {
+        sub_8021C6E4((int)sub_80208570);
+        byte_80270840 = 1;
+        if (sub_80208570 == (void (*)()) - 1282369048) {
+            do
+                sub_80208570();
+            while (sub_80208570 == (void (*)()) - 1282369048);
+            v0 = v2;
+        } else {
+            v0 = v2;
+        }
     }
-    else
-    {
-      v0 = v2;
+    if ((v0 & 2) != 0) {
+        v1 = sub_80261CB0((int)unkMessageQueue4, (int)dword_80369F28, 1);
+        dword_802724F0 = v1;
+        if (v1) {
+            if (v1 == 10)
+                sub_80262370((int)unkMessageQueue4, (int)dword_8031A460, 1);
+        } else {
+            sub_80260B20((int)dword_80316400, (char *)dword_80369F34, 32);
+            byte_80316421 = 1;
+        }
     }
-  }
-  if ( (v0 & 2) != 0 )
-  {
-    v1 = sub_80261CB0((int)unkMessageQueue4, (int)dword_80369F28, 1);
-    dword_802724F0 = v1;
-    if ( v1 )
-    {
-      if ( v1 == 10 )
-        sub_80262370((int)unkMessageQueue4, (int)dword_8031A460, 1);
+    sub_80255910(dword_8036A8E0, 0x4000);
+    sub_8021C6E4((int)sub_802534DC);
+    while (sub_802534DC == (void (*)()) - 1282369048)
+        sub_802534DC();
+    if (!sub_80254620()) {
+        sub_8021C6E4((int)sub_80208570);
+        byte_80270840 = 2;
+        while (sub_80208570 == (void (*)()) - 1282369048)
+            sub_80208570();
     }
-    else
-    {
-      sub_80260B20((int)dword_80316400, (char *)dword_80369F34, 32);
-      byte_80316421 = 1;
-    }
-  }
-  sub_80255910(dword_8036A8E0, 0x4000);
-  sub_8021C6E4((int)sub_802534DC);
-  while ( sub_802534DC == (void (*)())-1282369048 )
-    sub_802534DC();
-  if ( !sub_80254620() )
-  {
-    sub_8021C6E4((int)sub_80208570);
-    byte_80270840 = 2;
-    while ( sub_80208570 == (void (*)())-1282369048 )
-      sub_80208570();
-  }
-  word_802A4BE8 = 1;
+    word_802A4BE8 = 1;
 }
 // 8021C1A4: write access to const memory at 802A4BE8 has been detected
 // 8021C1CC: write access to const memory at 80270840 has been detected

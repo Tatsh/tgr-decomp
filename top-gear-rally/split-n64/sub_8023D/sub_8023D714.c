@@ -1,43 +1,42 @@
 #include "../../types-n64.h"
 //----- (8023D714) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_8023D714()
-{
-  int result; // $v0
+int sub_8023D714() {
+    int result; // $v0
 
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -1174400255;
-  sub_80225370((int)&flt_8031AB10, 0);
-  flt_8031AB50 = 0.0;
-  flt_8031AB54 = 0.0;
-  flt_8031AB5C = 0.0;
-  flt_8031AB64 = 0.0;
-  flt_8031AB68 = 0.0;
-  flt_8031AB6C = 0.0;
-  flt_8031AB70 = 0.0;
-  flt_8031AB78 = 0.0;
-  flt_8031AB7C = 0.0;
-  flt_8031AB80 = 0.0;
-  flt_8031AB84 = 0.0;
-  flt_8031AB88 = 0.0;
-  flt_8031AB58 = -1.0;
-  flt_8031AB60 = -1.0;
-  flt_8031AB74 = -1.0;
-  flt_8031AB8C = 1.0;
-  sub_80225180((int)&flt_8031AB10, &flt_8031AB10, &flt_8031AB50);
-  sub_80260B20((int)&flt_8031AB50, (char *)&flt_8031AB10, 64);
-  sub_80225180((int)dword_80368A80, &flt_8031AB10, (float *)dword_8031AA90);
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -117440512;
-  sub_8023D134(0);
-  sub_8023D134(0);
-  result = 0;
-  dword_8028A858 = 8;
-  MEMORY[4] = 1;
-  MEMORY[0] = -1191182334;
-  return result;
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -1174400255;
+    sub_80225370((int)&flt_8031AB10, 0);
+    flt_8031AB50 = 0.0;
+    flt_8031AB54 = 0.0;
+    flt_8031AB5C = 0.0;
+    flt_8031AB64 = 0.0;
+    flt_8031AB68 = 0.0;
+    flt_8031AB6C = 0.0;
+    flt_8031AB70 = 0.0;
+    flt_8031AB78 = 0.0;
+    flt_8031AB7C = 0.0;
+    flt_8031AB80 = 0.0;
+    flt_8031AB84 = 0.0;
+    flt_8031AB88 = 0.0;
+    flt_8031AB58 = -1.0;
+    flt_8031AB60 = -1.0;
+    flt_8031AB74 = -1.0;
+    flt_8031AB8C = 1.0;
+    sub_80225180((int)&flt_8031AB10, &flt_8031AB10, &flt_8031AB50);
+    sub_80260B20((int)&flt_8031AB50, (char *)&flt_8031AB10, 64);
+    sub_80225180((int)dword_80368A80, &flt_8031AB10, (float *)dword_8031AA90);
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -117440512;
+    sub_8023D134(0);
+    sub_8023D134(0);
+    result = 0;
+    dword_8028A858 = 8;
+    MEMORY[4] = 1;
+    MEMORY[0] = -1191182334;
+    return result;
 }
 // 8023D734: write access to const memory at 8028A858 has been detected
 // 8023D750: write access to const memory at 8028A858 has been detected

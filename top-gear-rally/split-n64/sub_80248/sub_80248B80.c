@@ -1,26 +1,25 @@
 #include "../../types-n64.h"
 //----- (80248B80) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_80248B80()
-{
-  int v0; // $s3
-  int result; // $v0
+int sub_80248B80() {
+    int v0;     // $s3
+    int result; // $v0
 
-  byte_80369DAB = 3;
-  byte_8028DB6C = 2;
-  v0 = *(_DWORD *)(MEMORY[0x14] + 36 * MEMORY[0x112]);
-  byte_8028DB68 = -51;
-  dword_8028DB78 = *(_DWORD *)(MEMORY[0x14] + 36 * MEMORY[0x1DD]);
-  dword_8028DB7C = *(_DWORD *)(MEMORY[0x11C] + 820);
-  dword_8028DB08 = 0x100000;
-  dword_8028DCA4 = v0;
-  sub_80244CA8();
-  result = -2144796672;
-  byte_8028DBD0 = 1;
-  word_8028DBB0 = 0;
-  byte_8028DB60 = 1;
-  dword_8028DCA4 = 0;
-  return result;
+    byte_80369DAB = 3;
+    byte_8028DB6C = 2;
+    v0 = *(_DWORD *)(MEMORY[0x14] + 36 * MEMORY[0x112]);
+    byte_8028DB68 = -51;
+    dword_8028DB78 = *(_DWORD *)(MEMORY[0x14] + 36 * MEMORY[0x1DD]);
+    dword_8028DB7C = *(_DWORD *)(MEMORY[0x11C] + 820);
+    dword_8028DB08 = 0x100000;
+    dword_8028DCA4 = v0;
+    sub_80244CA8();
+    result = -2144796672;
+    byte_8028DBD0 = 1;
+    word_8028DBB0 = 0;
+    byte_8028DB60 = 1;
+    dword_8028DCA4 = 0;
+    return result;
 }
 // 80248BB4: write access to const memory at 8028DB60 has been detected
 // 80248BF0: write access to const memory at 80369DAB has been detected

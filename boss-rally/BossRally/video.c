@@ -1,15 +1,34 @@
 #include "decls.h"
 
-int VideoWindowPutMessageDrain(OAHWND oaHwnd2) {
+int VideoWindowPutMessageDrain(HWND hwnd) {
     IVideoWindow *vw;
-    if (FAILED(gGraphBuilder->lpVtbl->QueryInterface(
-            gGraphBuilder, &IID_IVideoWindow, (void **)&vw))) {
+    HRESULT hr;
+    if (FAILED(hr = gGraphBuilder->lpVtbl->QueryInterface(
+                   gGraphBuilder, &IID_IVideoWindow, (void **)&vw))) {
         return 0;
     }
-    if (SUCCEEDED(vw->lpVtbl->put_MessageDrain(vw, oaHwnd2))) {
+    hr = vw->lpVtbl->put_MessageDrain(vw, (OAHWND)hwnd);
+    char buf[255];
+    sprintf(buf, "%p", vw->lpVtbl->put_MessageDrain);
+    MessageBox(hwnd, buf, "error", MB_ICONERROR);
+    vw->lpVtbl->Release(vw);
+
+    if (SUCCEEDED(hr = vw->lpVtbl->put_MessageDrain(vw, (OAHWND)hwnd))) {
+        MessageBox(hwnd, "put_MessageDrain ok", "not error", MB_OK);
         vw->lpVtbl->Release(vw);
         return 1;
     }
+
+    FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
+                  NULL,
+                  hr,
+                  MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+                  buf,
+                  sizeof(buf),
+                  NULL);
+    MessageBox(hwnd, buf, "error", MB_ICONERROR);
+    sprintf(buf, "%x", hr);
+    MessageBox(hwnd, buf, "error", MB_ICONERROR);
     vw->lpVtbl->Release(vw);
     return 0;
 }
@@ -39,7 +58,7 @@ static bool RenderFile(const char *lpMultiByteStr) {
         wchar_t wcStr[260];
         MultiByteToWideChar(0, 0, lpMultiByteStr, -1, wcStr, 260);
         SetCursor(LoadCursor(0, MAKEINTRESOURCE(IDC_WAIT)));
-        HRESULT renderFileRet = gGraphBuilder->lpVtbl->RenderFile(gGraphBuilder, wcStr, 0);
+        HRESULT renderFileRet = gGraphBuilder->lpVtbl->RenderFile(gGraphBuilder, wcStr, NULL);
         SetCursor(LoadCursor(0, MAKEINTRESOURCE(IDC_ARROW)));
         return SUCCEEDED(renderFileRet);
     }

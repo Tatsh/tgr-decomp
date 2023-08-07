@@ -1676,8 +1676,8 @@ struct __attribute__((aligned(4))) z_stream_s {
     unsigned int total_out;
     char *msg;
     struct internal_state *state;
-    void* zalloc;
-    void* zfree;
+    void *zalloc;
+    void *zfree;
     void *opaque;
     int data_type;
     unsigned int adler;

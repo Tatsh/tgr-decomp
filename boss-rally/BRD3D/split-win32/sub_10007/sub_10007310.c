@@ -1,6 +1,5 @@
 #include "../../types-win32.h"
 //----- (10007310) --------------------------------------------------------
-double __cdecl sub_10007310(unsigned int a1)
-{
-  return (double)a1 * 0.00012207031;
+double __cdecl sub_10007310(unsigned int a1) {
+    return (double)a1 * 0.00012207031;
 }

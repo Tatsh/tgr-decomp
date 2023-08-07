@@ -1,35 +1,30 @@
 #include "../../types-n64.h"
 //----- (8023CF30) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int *sub_8023CF30()
-{
-  int *v0; // $v1
-  int v1; // $v0
-  BOOL v2; // $at
-  int *result; // $v0
+int *sub_8023CF30() {
+    int *v0;     // $v1
+    int v1;      // $v0
+    BOOL v2;     // $at
+    int *result; // $v0
 
-  v0 = dword_80366AA0;
-  v1 = 1;
-  do
-  {
-    v2 = ++v1 < 256;
-    v0 += 8;
-    *((_WORD *)v0 - 2) = v1;
-  }
-  while ( v2 );
-  word_80368A7C = 0;
-  word_8028C830 = 1;
-  result = dword_8031B760;
-  do
-  {
-    result += 2084;
-    *((float *)result - 1056) = 0.0;
-  }
-  while ( result < &dword_8031F868[6] );
-  word_8028C834 = 0;
-  word_8028C838 = 0;
-  word_8028C83C = 0;
-  return result;
+    v0 = dword_80366AA0;
+    v1 = 1;
+    do {
+        v2 = ++v1 < 256;
+        v0 += 8;
+        *((_WORD *)v0 - 2) = v1;
+    } while (v2);
+    word_80368A7C = 0;
+    word_8028C830 = 1;
+    result = dword_8031B760;
+    do {
+        result += 2084;
+        *((float *)result - 1056) = 0.0;
+    } while (result < &dword_8031F868[6]);
+    word_8028C834 = 0;
+    word_8028C838 = 0;
+    word_8028C83C = 0;
+    return result;
 }
 // 8023CF5C: write access to const memory at 80368A7C has been detected
 // 8023CF70: write access to const memory at 8028C830 has been detected

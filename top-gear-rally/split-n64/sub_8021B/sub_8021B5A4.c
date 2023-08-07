@@ -1,26 +1,25 @@
 #include "../../types-n64.h"
 //----- (8021B5A4) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_8021B5A4()
-{
-  float v0; // $f12
-  float v1; // $f14
-  int result; // $v0
+int sub_8021B5A4() {
+    float v0;   // $f12
+    float v1;   // $f14
+    int result; // $v0
 
-  sub_80264E50((float *)dword_8031AAD0, 160.0, 120.0, 290.0, 160.0, 120.0, 0.0, 0.0, 1.0, 0.0);
-  flt_8028A86C = 1.0;
-  flt_8028A870 = 500.0;
-  sub_80265180(v0, v1, 45.0, 1.3333334, &word_8028A874, (float *)dword_8031AA90, 0.0, 0.0, 1.0);
-  sub_80260940((float *)dword_8031AAD0, (float *)dword_8031AA90, (int)&flt_8031AA50);
-  dword_8028A858 = 8;
-  MEMORY[0] = -1140850674;
-  MEMORY[4] = 0;
-  dword_8028A878 = (int)sub_80255CD0();
-  result = sub_80260ED0(&flt_8031AA50, 0);
-  dword_8028A858 = 8;
-  MEMORY[0] = 16973888;
-  MEMORY[4] = 0x80000000;
-  return result;
+    sub_80264E50((float *)dword_8031AAD0, 160.0, 120.0, 290.0, 160.0, 120.0, 0.0, 0.0, 1.0, 0.0);
+    flt_8028A86C = 1.0;
+    flt_8028A870 = 500.0;
+    sub_80265180(v0, v1, 45.0, 1.3333334, &word_8028A874, (float *)dword_8031AA90, 0.0, 0.0, 1.0);
+    sub_80260940((float *)dword_8031AAD0, (float *)dword_8031AA90, (int)&flt_8031AA50);
+    dword_8028A858 = 8;
+    MEMORY[0] = -1140850674;
+    MEMORY[4] = 0;
+    dword_8028A878 = (int)sub_80255CD0();
+    result = sub_80260ED0(&flt_8031AA50, 0);
+    dword_8028A858 = 8;
+    MEMORY[0] = 16973888;
+    MEMORY[4] = 0x80000000;
+    return result;
 }
 // 8021B624: write access to const memory at 8028A86C has been detected
 // 8021B634: write access to const memory at 8028A870 has been detected

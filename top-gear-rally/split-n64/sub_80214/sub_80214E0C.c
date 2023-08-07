@@ -1,51 +1,44 @@
 #include "../../types-n64.h"
 //----- (80214E0C) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int __fastcall sub_80214E0C(int a1)
-{
-  _DWORD v2[4]; // [sp+40h] [-78h] BYREF
-  _DWORD v3[4]; // [sp+50h] [-68h] BYREF
-  _DWORD v4[4]; // [sp+60h] [-58h] BYREF
-  int v5; // [sp+84h] [-34h]
-  _DWORD *v6; // [sp+90h] [-28h]
+int __fastcall sub_80214E0C(int a1) {
+    _DWORD v2[4]; // [sp+40h] [-78h] BYREF
+    _DWORD v3[4]; // [sp+50h] [-68h] BYREF
+    _DWORD v4[4]; // [sp+60h] [-58h] BYREF
+    int v5;       // [sp+84h] [-34h]
+    _DWORD *v6;   // [sp+90h] [-28h]
 
-  v4[0] = 757606671;
-  v4[1] = 538843691;
-  v4[2] = 254549530;
-  v4[3] = 740828928;
-  v3[0] = 757606671;
-  v3[1] = 538843691;
-  v3[2] = 253763880;
-  v3[3] = 741146624;
-  v2[0] = 757606671;
-  v2[1] = 538843691;
-  v2[2] = 254290221;
-  v2[3] = 573056812;
-  word_802A4BE8 = 0;
-  byte_802724F8 = 1;
-  dword_802724F0 = 0;
-  byte_80316430 = 0;
-  byte_80316431 = 0;
-  if ( a1 )
-  {
-    if ( a1 == 1 )
-    {
-      v6 = v3;
-      v5 = 14848;
+    v4[0] = 757606671;
+    v4[1] = 538843691;
+    v4[2] = 254549530;
+    v4[3] = 740828928;
+    v3[0] = 757606671;
+    v3[1] = 538843691;
+    v3[2] = 253763880;
+    v3[3] = 741146624;
+    v2[0] = 757606671;
+    v2[1] = 538843691;
+    v2[2] = 254290221;
+    v2[3] = 573056812;
+    word_802A4BE8 = 0;
+    byte_802724F8 = 1;
+    dword_802724F0 = 0;
+    byte_80316430 = 0;
+    byte_80316431 = 0;
+    if (a1) {
+        if (a1 == 1) {
+            v6 = v3;
+            v5 = 14848;
+        } else if (a1 == 2 || a1 == 3) {
+            v6 = v2;
+            v5 = 256;
+        }
+    } else {
+        v6 = v4;
+        v5 = 512;
     }
-    else if ( a1 == 2 || a1 == 3 )
-    {
-      v6 = v2;
-      v5 = 256;
-    }
-  }
-  else
-  {
-    v6 = v4;
-    v5 = 512;
-  }
-  word_802A4BE8 = 1;
-  return 0;
+    word_802A4BE8 = 1;
+    return 0;
 }
 // 80214EC0: write access to const memory at 802A4BE8 has been detected
 // 80214EDC: write access to const memory at 802724F0 has been detected

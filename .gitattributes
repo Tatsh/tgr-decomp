@@ -1,0 +1,4 @@
+* text=auto eol=lf working-tree-encoding=utf-8
+*.ico -text
+poetry.lock -diff
+yarn.lock -diff

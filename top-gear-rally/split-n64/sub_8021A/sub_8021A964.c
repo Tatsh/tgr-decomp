@@ -1,16 +1,15 @@
 #include "../../types-n64.h"
 //----- (8021A964) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_8021A964()
-{
-  int result; // $v0
+int sub_8021A964() {
+    int result; // $v0
 
-  sub_8021A920();
-  sub_802642E0(unkMessageQueue4, 0, 1);
-  result = sub_80264824(dword_8031A3E0);
-  word_802A4BE8 = 1;
-  dword_8028AB6C = 0;
-  return result;
+    sub_8021A920();
+    sub_802642E0(unkMessageQueue4, 0, 1);
+    result = sub_80264824(dword_8031A3E0);
+    word_802A4BE8 = 1;
+    dword_8028AB6C = 0;
+    return result;
 }
 // 8021A99C: write access to const memory at 802A4BE8 has been detected
 // 8021A9A4: write access to const memory at 8028AB6C has been detected

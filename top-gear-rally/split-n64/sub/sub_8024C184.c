@@ -1,27 +1,24 @@
 #include "../../types-n64.h"
 //----- (8024C184) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-BOOL sub_8024C184()
-{
-  int *v0; // $a0
-  int v1; // $t0
-  int *v3; // [sp+1Ch] [-54h]
-  int v4; // [sp+68h] [-8h]
+BOOL sub_8024C184() {
+    int *v0; // $a0
+    int v1;  // $t0
+    int *v3; // [sp+1Ch] [-54h]
+    int v4;  // [sp+68h] [-8h]
 
-  if ( !sub_8024D3F0(&dword_8028D480) )
-    sub_8024D3F0(&dword_8028D490);
-  v0 = &dword_80369CD8;
-  v1 = 0;
-  do
-  {
-    v3 = v0;
-    v4 = v1;
-    sub_8024D3F0(v0);
-    v1 = v4 + 1;
-    v0 = v3 + 4;
-  }
-  while ( v4 != 12 );
-  return sub_8024D3F0(&dword_8028DB94);
+    if (!sub_8024D3F0(&dword_8028D480))
+        sub_8024D3F0(&dword_8028D490);
+    v0 = &dword_80369CD8;
+    v1 = 0;
+    do {
+        v3 = v0;
+        v4 = v1;
+        sub_8024D3F0(v0);
+        v1 = v4 + 1;
+        v0 = v3 + 4;
+    } while (v4 != 12);
+    return sub_8024D3F0(&dword_8028DB94);
 }
 // 8024C1B0: write access to const memory at 80369B8C has been detected
 // 8024C1C0: write access to const memory at 80369B80 has been detected

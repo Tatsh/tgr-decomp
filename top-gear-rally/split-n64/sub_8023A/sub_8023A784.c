@@ -1,9 +1,8 @@
 #include "../../types-n64.h"
 //----- (8023A784) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8023A784()
-{
-  ;
+void sub_8023A784() {
+    ;
 }
 // 8023A868: write access to const memory at 8028A858 has been detected
 // 8023A884: write access to const memory at 8028A858 has been detected

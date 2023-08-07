@@ -1,19 +1,18 @@
 #include "../../types-n64.h"
 //----- (8021C46C) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int *sub_8021C46C()
-{
-  int *result; // $v0
+int *sub_8021C46C() {
+    int *result; // $v0
 
-  dword_8028ADFC = 0;
-  dword_8028ADF8 = 0;
-  dword_8028AE00 = 0;
-  result = &dword_8028AAD4;
-  dword_8028AAD4 = 0;
-  dword_8028AAD0 = 0;
-  dword_8028AADC = 0;
-  flt_8028AAD8 = 0.0;
-  return result;
+    dword_8028ADFC = 0;
+    dword_8028ADF8 = 0;
+    dword_8028AE00 = 0;
+    result = &dword_8028AAD4;
+    dword_8028AAD4 = 0;
+    dword_8028AAD0 = 0;
+    dword_8028AADC = 0;
+    flt_8028AAD8 = 0.0;
+    return result;
 }
 // 8021C478: write access to const memory at 8028ADFC has been detected
 // 8021C47C: write access to const memory at 8028ADF8 has been detected

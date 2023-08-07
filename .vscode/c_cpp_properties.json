@@ -26,9 +26,10 @@
     {
       "name": "Launcher",
       "includePath": ["${workspaceFolder}/launcher/**"],
-      "defines": ["_DEBUG", "UNICODE", "_UNICODE", "STRSAFE_NO_DEPRECATE=0"],
+      "defines": ["_DEBUG", "STRSAFE_NO_DEPRECATE=0"],
       "macFrameworkPath": [],
       "compilerArgs": [
+        "-mno-unicode",
         "-pedantic",
         "-Wall",
         "-Wdeprecated-declarations",

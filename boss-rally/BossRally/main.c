@@ -8,7 +8,7 @@
 static const char kClassName[] = "Player"; // idb
 static const char kBrallyExe[] = "brally.exe";
 static HINSTANCE gHInstance;
-HWND oaHwnd;
+HWND gHwnd;
 IGraphBuilder *gGraphBuilder;
 enum MACRO_PLAYBACK_STATE gPlaybackState;
 OAEVENT gOAEvent;
@@ -16,7 +16,7 @@ OAEVENT gOAEvent;
 #define APP_EXIT 0xE141
 #define WS_UNKNOWN_E0000 0xE0000
 
-static LRESULT WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+LRESULT WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     if (uMsg <= WM_CHAR) {
         if (uMsg != WM_CHAR) {
             if (uMsg == WM_DESTROY) {
@@ -48,7 +48,7 @@ static int RegisterMainWindowClass(HINSTANCE hInstance, HINSTANCE hPrevInstance)
     WNDCLASS WndClass; // [esp+0h] [ebp-28h] BYREF
     if (!hPrevInstance) {
         WndClass.style = CS_HREDRAW | CS_VREDRAW;
-        WndClass.lpfnWndProc = WindowProc;
+        WndClass.lpfnWndProc = (WNDPROC)WindowProc;
         WndClass.cbClsExtra = 0;
         WndClass.cbWndExtra = 0;
         WndClass.hInstance = hInstance;
@@ -62,27 +62,28 @@ static int RegisterMainWindowClass(HINSTANCE hInstance, HINSTANCE hPrevInstance)
     return 1;
 }
 
-int WinMain(HINSTANCE hInstance,
-            HINSTANCE hPrevInstance,
-            __attribute__((unused)) LPSTR lpCmdLine,
-            __attribute__((unused)) int nShowCmd) {
+int WINAPI WinMain(HINSTANCE hInstance,
+                   HINSTANCE hPrevInstance,
+                   __attribute__((unused)) LPSTR lpCmdLine,
+                   __attribute__((unused)) int nShowCmd) {
     IMediaControl *mediaControl;
-    if (SUCCEEDED(CoInitialize(0)) && RegisterMainWindowClass(hInstance, hPrevInstance)) {
-        oaHwnd = CreateWindowEx(WS_EX_LTRREADING,
-                                kClassName,
-                                "Player - Untitled",
-                                WS_CAPTION | WS_UNKNOWN_E0000,
-                                CW_USEDEFAULT,
-                                CW_USEDEFAULT,
-                                0,
-                                0x41,
-                                0,
-                                0,
-                                hInstance,
-                                0);
-        UpdateWindow(oaHwnd);
+    if (SUCCEEDED(CoInitializeEx(NULL, COINIT_APARTMENTTHREADED)) &&
+        RegisterMainWindowClass(hInstance, hPrevInstance)) {
+        gHwnd = CreateWindowEx(WS_EX_LTRREADING,
+                               kClassName,
+                               "Player - Untitled",
+                               WS_CAPTION | WS_UNKNOWN_E0000,
+                               CW_USEDEFAULT,
+                               CW_USEDEFAULT,
+                               0,
+                               0x41,
+                               0,
+                               0,
+                               hInstance,
+                               0);
+        UpdateWindow(gHwnd);
         if (SetInitialStates()) {
-            RenderFileToWindow(oaHwnd, "brally.avi");
+            RenderFileToWindow(gHwnd, "brally.avi");
             if (IsPlaybackInitialized() && !IsPlaybackStateStopped2()) {
             event_loop:
                 sub_401230();
@@ -92,7 +93,7 @@ int WinMain(HINSTANCE hInstance,
                 ReleaseIGraphBuilder();
                 goto start_game;
             }
-            if (VideoWindowPutMessageDrain((OAHWND)oaHwnd) && HandleIMediaEventFullscreenLost()) {
+            if (VideoWindowPutMessageDrain(gHwnd) && HandleIMediaEventFullscreenLost()) {
                 PlayIfStopped(mediaControl);
                 goto event_loop;
             }

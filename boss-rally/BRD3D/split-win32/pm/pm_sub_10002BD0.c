@@ -1,12 +1,11 @@
 #include "../../types-win32.h"
 //----- (10002BD0) --------------------------------------------------------
-int pm_sub_10002BD0()
-{
-  if ( g_Playmusic == 1 )
-    return pm_sub_10002B40();
-  if ( g_Playmusic && dword_10220CD0 && dword_10220C3C )
-    return EAR_DLL_ChangeChannelControl(dword_100940A8, 12) != 0;
-  return 1;
+int pm_sub_10002BD0() {
+    if (g_Playmusic == 1)
+        return pm_sub_10002B40();
+    if (g_Playmusic && dword_10220CD0 && dword_10220C3C)
+        return EAR_DLL_ChangeChannelControl(dword_100940A8, 12) != 0;
+    return 1;
 }
 // 100940A4: using guessed type int g_Playmusic;
 // 10220C3C: using guessed type int dword_10220C3C;

@@ -1,23 +1,20 @@
 #include "../../types-n64.h"
 //----- (802571AC) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int *sub_802571AC()
-{
-  int *result; // $v0
+int *sub_802571AC() {
+    int *result; // $v0
 
-  word_80378FA2 = 1;
-  word_80378FA4 = 0;
-  byte_80378FB0 = -1;
-  result = dword_80378DD0;
-  do
-  {
-    result += 6;
-    *(_WORD *)((char *)result - 11) = 64;
-    *(result - 5) = 0;
-    *(result - 6) = 0;
-  }
-  while ( result < dword_80378F50 );
-  return result;
+    word_80378FA2 = 1;
+    word_80378FA4 = 0;
+    byte_80378FB0 = -1;
+    result = dword_80378DD0;
+    do {
+        result += 6;
+        *(_WORD *)((char *)result - 11) = 64;
+        *(result - 5) = 0;
+        *(result - 6) = 0;
+    } while (result < dword_80378F50);
+    return result;
 }
 // 802571BC: write access to const memory at 80378FA2 has been detected
 // 802571C0: write access to const memory at 80378FA4 has been detected

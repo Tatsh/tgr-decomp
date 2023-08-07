@@ -1,10 +1,9 @@
 #include "../../types-n64.h"
 //----- (802531C0) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_802531C0()
-{
-  byte_8028DBE8 = 1;
-  return sub_80223688(0.0, 0.2);
+int sub_802531C0() {
+    byte_8028DBE8 = 1;
+    return sub_80223688(0.0, 0.2);
 }
 // 802533A4: write access to const memory at 8028DBE8 has been detected
 // 802533DC: write access to const memory at 8028DB60 has been detected

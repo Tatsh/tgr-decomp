@@ -1,24 +1,24 @@
 #include "../../types-n64.h"
 //----- (8022F968) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-int sub_8022F968()
-{
-  int result; // $v0
-  int *v1; // [sp+2Ch] [-14h]
+int sub_8022F968() {
+    int result; // $v0
+    int *v1;    // [sp+2Ch] [-14h]
 
-  dword_8028A858 = 8;
-  MEMORY[4] = 0xFFFF;
-  MEMORY[0] = -1140843516;
-  if ( sub_8022F900() )
-    return sub_80218104();
-  sub_80260E30((int)&flt_8031AB10, MEMORY[0x30], MEMORY[0x34], COERCE_INT(MEMORY[0x38] * 0.99000001));
-  v1 = sub_80255CD0();
-  sub_80260ED0(&flt_8031AB10, (int)v1);
-  result = 0;
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -1124073472;
-  return result;
+    dword_8028A858 = 8;
+    MEMORY[4] = 0xFFFF;
+    MEMORY[0] = -1140843516;
+    if (sub_8022F900())
+        return sub_80218104();
+    sub_80260E30(
+        (int)&flt_8031AB10, MEMORY[0x30], MEMORY[0x34], COERCE_INT(MEMORY[0x38] * 0.99000001));
+    v1 = sub_80255CD0();
+    sub_80260ED0(&flt_8031AB10, (int)v1);
+    result = 0;
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -1124073472;
+    return result;
 }
 // 8022F980: write access to const memory at 8028A858 has been detected
 // 8022F9A8: write access to const memory at 8028A858 has been detected

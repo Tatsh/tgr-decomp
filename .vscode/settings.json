@@ -21,6 +21,9 @@
   "editor.wordWrapColumn": 100,
   "esbonio.sphinx.confDir": "docs",
   "eslint.lintTask.enable": true,
+  "files.associations": {
+    "*.rh": "c"
+  },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,

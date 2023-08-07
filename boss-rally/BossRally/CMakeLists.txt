@@ -1,5 +1,6 @@
 set(GCC_CLANG_SHARED_C_FLAGS "-fno-builtin")
-set(GCC_CLANG_DEBUG_C_FLAGS "-ggdb;\
+set(GCC_CLANG_DEBUG_C_FLAGS
+    "-ggdb;\
 -O0;\
 -pedantic;\
 -Wall;\
@@ -34,13 +35,21 @@ set(GCC_CLANG_DEBUG_C_FLAGS "-ggdb;\
 -Wunused-value;\
 -Wunused-variable")
 
-add_executable(BossRally main.c media-events.c playback.c setup.c sub_401230.c video.c)
-target_compile_definitions(BossRally PUBLIC STRSAFE_NO_DEPRECATE=0)
-target_compile_options(BossRally PUBLIC -mno-unicode)
-target_link_options(BossRally PUBLIC "-Wl,-subsystem,windows")
+add_executable(
+  BossRally
+  BossRally.rc
+  main.c
+  media-events.c
+  playback.c
+  setup.c
+  sub_401230.c
+  video.c)
+target_compile_definitions(BossRally PRIVATE STRSAFE_NO_DEPRECATE=0)
+target_compile_options(BossRally PRIVATE -mno-unicode)
+target_link_options(BossRally PRIVATE "-Wl,-subsystem,windows")
 if(CMAKE_COMPILER_IS_GNUCC OR ${CMAKE_C_COMPILER_ID} STREQUAL "Clang")
-  target_compile_options(BossRally
-                         PRIVATE ${GCC_CLANG_SHARED_C_FLAGS}
-                                 $<$<CONFIG:Debug>:${GCC_CLANG_DEBUG_C_FLAGS}>)
+  target_compile_options(
+    BossRally PRIVATE ${GCC_CLANG_SHARED_C_FLAGS}
+                      $<$<CONFIG:Debug>:${GCC_CLANG_DEBUG_C_FLAGS}>)
 endif()
 target_link_libraries(BossRally gdi32 ole32 strmiids quartz)

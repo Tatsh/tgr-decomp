@@ -1,33 +1,32 @@
 #include "../../types-n64.h"
 //----- (80211A3C) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_80211A3C()
-{
-  int v0; // $v0
+void sub_80211A3C() {
+    int v0; // $v0
 
-  dword_80271FA4 = -1;
-  dword_80271FA0 = -1;
-  sub_8020C408((int)off_80272468, &dword_803163A8);
-  sub_80214A3C();
-  dword_80271FC8 = (int)sub_8021196C;
-  dword_80271FB0 = (int)dword_8027205C;
-  dword_80271FB4 = 22;
-  dword_80271FB8 = 9;
-  dword_80271FBC = 280;
-  dword_80271FC0 = 42;
-  dword_803163AC = 0;
-  dword_802724E0 = 1;
-  sub_80260DD4((char *)dword_803163B0, "BGM Volume: %d", 10);
-  sub_80260DD4((char *)dword_803163C8, "SFX Volume: %d", 10);
-  off_802723DC = dword_803163B0;
-  off_802723F0 = dword_803163C8;
-  off_80272404 = "Units: mph";
-  v0 = sub_8020AD5C("OPTIONS", -1291329915, (int)off_80272468, &dword_803163AC, 0, 0, 0, 0, 128, 64, 32);
-  if ( v0 != 1 && v0 == 2 )
-  {
-    sub_8021C6E4((int)sub_802111E0);
-    dword_802724E0 = 0;
-  }
+    dword_80271FA4 = -1;
+    dword_80271FA0 = -1;
+    sub_8020C408((int)off_80272468, &dword_803163A8);
+    sub_80214A3C();
+    dword_80271FC8 = (int)sub_8021196C;
+    dword_80271FB0 = (int)dword_8027205C;
+    dword_80271FB4 = 22;
+    dword_80271FB8 = 9;
+    dword_80271FBC = 280;
+    dword_80271FC0 = 42;
+    dword_803163AC = 0;
+    dword_802724E0 = 1;
+    sub_80260DD4((char *)dword_803163B0, "BGM Volume: %d", 10);
+    sub_80260DD4((char *)dword_803163C8, "SFX Volume: %d", 10);
+    off_802723DC = dword_803163B0;
+    off_802723F0 = dword_803163C8;
+    off_80272404 = "Units: mph";
+    v0 = sub_8020AD5C(
+        "OPTIONS", -1291329915, (int)off_80272468, &dword_803163AC, 0, 0, 0, 0, 128, 64, 32);
+    if (v0 != 1 && v0 == 2) {
+        sub_8021C6E4((int)sub_802111E0);
+        dword_802724E0 = 0;
+    }
 }
 // 80211A54: write access to const memory at 80271FA4 has been detected
 // 80211A68: write access to const memory at 80271FA0 has been detected

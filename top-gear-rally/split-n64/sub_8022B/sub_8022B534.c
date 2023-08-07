@@ -1,40 +1,40 @@
 #include "../../types-n64.h"
 //----- (8022B534) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_8022B534()
-{
-  int v0; // $v1
-  float v1; // [sp+4Ch] [-14h] BYREF
-  float v2; // [sp+50h] [-10h] BYREF
-  int v3; // [sp+54h] [-Ch] BYREF
-  float v4; // [sp+58h] [-8h]
+void sub_8022B534() {
+    int v0;   // $v1
+    float v1; // [sp+4Ch] [-14h] BYREF
+    float v2; // [sp+50h] [-10h] BYREF
+    int v3;   // [sp+54h] [-Ch] BYREF
+    float v4; // [sp+58h] [-8h]
 
-  if ( (MEMORY[0xC710271C] & 1) == 0 )
-  {
-    dword_8028B7EC = -1;
-    dword_8028B7D8 = -1;
-    dword_8028B7E8 = 0;
-    v4 = 0.0 * sub_8022B0F8(&flt_8028B7A0, &flt_8028B7AC, (float *)0x30, &flt_8028B7C0);
-    sub_8022B1D4(&flt_8028B7A0, 0, &v2, &v1, &v3, 0);
-    v3 = 0;
-    dword_8028B7E8 = 1;
-    sub_80257B78(3, 0, 0, -1);
-    if ( !MEMORY[0x72328048] )
-    {
-      HIDWORD(qword_802A4970) = sub_80266A08((float)(v4 * 0.000090909089) * 4294967300.0);
-      LODWORD(qword_802A4970) = v0;
-      dword_802A497C = ((int)(float)((float)((int)(float)((float)v3 * v2) << 16) + (float)(v1 * (float)v3)) >> 1) & 0x7FFF7FFF;
+    if ((MEMORY[0xC710271C] & 1) == 0) {
+        dword_8028B7EC = -1;
+        dword_8028B7D8 = -1;
+        dword_8028B7E8 = 0;
+        v4 = 0.0 * sub_8022B0F8(&flt_8028B7A0, &flt_8028B7AC, (float *)0x30, &flt_8028B7C0);
+        sub_8022B1D4(&flt_8028B7A0, 0, &v2, &v1, &v3, 0);
+        v3 = 0;
+        dword_8028B7E8 = 1;
+        sub_80257B78(3, 0, 0, -1);
+        if (!MEMORY[0x72328048]) {
+            HIDWORD(qword_802A4970) = sub_80266A08((float)(v4 * 0.000090909089) * 4294967300.0);
+            LODWORD(qword_802A4970) = v0;
+            dword_802A497C = ((int)(float)((float)((int)(float)((float)v3 * v2) << 16) +
+                                           (float)(v1 * (float)v3)) >>
+                              1) &
+                             0x7FFF7FFF;
+        }
+        flt_8028B7AC = 0.0;
+        flt_8028B7B0 = 0.0;
+        flt_8028B7B4 = 0.0;
+        flt_8028B7C0 = MEMORY[0x30];
+        flt_8028B7C4 = MEMORY[0x34];
+        flt_8028B7C8 = MEMORY[0x38];
+        dword_8028B7D8 = 0;
+        dword_8028B7BC = 0;
+        dword_8028B7D0 = 0;
     }
-    flt_8028B7AC = 0.0;
-    flt_8028B7B0 = 0.0;
-    flt_8028B7B4 = 0.0;
-    flt_8028B7C0 = MEMORY[0x30];
-    flt_8028B7C4 = MEMORY[0x34];
-    flt_8028B7C8 = MEMORY[0x38];
-    dword_8028B7D8 = 0;
-    dword_8028B7BC = 0;
-    dword_8028B7D0 = 0;
-  }
 }
 // 8022B80C: write access to const memory at 802A497C has been detected
 // 8022B594: write access to const memory at 8028B7D8 has been detected

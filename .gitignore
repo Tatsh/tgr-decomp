@@ -6,3 +6,4 @@
 *.til
 *.z64
 build/
+node_modules/

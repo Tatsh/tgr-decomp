@@ -1,124 +1,117 @@
 #include "../../types-n64.h"
 //----- (80211D70) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void __fastcall sub_80211D70(int a1)
-{
-  int v1; // $v0
-  int v2; // [sp+34h] [-ACh]
-  const char **v3; // [sp+38h] [-A8h]
-  _DWORD v4[15]; // [sp+48h] [-98h] BYREF
-  _DWORD v5[14]; // [sp+84h] [-5Ch] BYREF
-  int v6; // [sp+DCh] [-4h]
+void __fastcall sub_80211D70(int a1) {
+    int v1;          // $v0
+    int v2;          // [sp+34h] [-ACh]
+    const char **v3; // [sp+38h] [-A8h]
+    _DWORD v4[15];   // [sp+48h] [-98h] BYREF
+    _DWORD v5[14];   // [sp+84h] [-5Ch] BYREF
+    int v6;          // [sp+DCh] [-4h]
 
-  v5[0] = 757606671;
-  v5[1] = 538843691;
-  v5[3] = 740828928;
-  v5[2] = 254549530;
-  v4[12] = 538843691;
-  v4[11] = 757606671;
-  v4[13] = 253763880;
-  v4[14] = 741146624;
-  v4[8] = 538843691;
-  v4[7] = 757606671;
-  v4[9] = 254290221;
-  v4[10] = 573056812;
-  v4[6] = 0;
-  v4[1] = "SAVE SEASON DATA";
-  v4[0] = "LOAD SEASON DATA";
-  v4[2] = "LOAD GHOST CAR DATA";
-  v4[3] = "SAVE GHOST CAR DATA";
-  v4[5] = "SAVE OPTIONS";
-  v4[4] = "LOAD OPTIONS";
-  word_802A4BE8 = 0;
-  byte_802724F8 = 1;
-  byte_80316422 = 0;
-  byte_80316423 = 1;
-  dword_802724F0 = 0;
-  byte_80316428 = 0;
-  sub_80242940();
-  osViBlack(1);
-  sub_80219A3C();
-  sub_8021AA08();
-  osViBlack(1);
-  sub_80219A3C();
-  sub_8021AA08();
-  AllocPaintShopGfxMem((int)&dword_8028CB40);
-  AllocPaintShopGfxMem((int)&dword_8028CB70);
-  AllocPaintShopGfxMem((int)&dword_8028D0B0);
-  AllocPaintShopGfxMem((int)&dword_8028D0E0);
-  dword_80272500 = (char *)sub_8024296C(14848);
-  byte_80272550 = 0;
-  byte_80272554 = 0;
-  sub_80223688(1.0, 0.2);
-  sub_8021C4B4();
-  sub_80223F54();
-  sub_80219A3C();
-  sub_8021B458();
-  sub_80219BF0(0, 0, 320, 240, 1);
-  sub_80217C94();
-  sub_80217FB8();
-  sub_80245798((int)&dword_8028CB40);
-  sub_80245604((int)&dword_8028CB70, 42, 22);
-  v5[12] = v5;
-  v5[9] = 512;
-  sub_8022F4F8();
-  sub_8022F504();
-  sub_8022F5D0(30);
-  formatter("%ryDATA LOAD/SAVE", 160, 41);
-  sub_8022F5D0(16);
-  v2 = 87;
-  v3 = (const char **)v4;
-  v1 = 0;
-  do
-  {
-    if ( v1 )
-    {
-      v6 = v1;
-      sub_8022F530(255, 245, 0, 200, 0, 0);
-    }
-    else
-    {
-      v6 = 0;
-      sub_8022F530(255, 255, 255, 255, 255, 0);
-    }
-    formatter(*v3, 158, v2);
-    v1 = v6 + 1;
-    v2 += 18;
-    ++v3;
-  }
-  while ( v6 != 5 );
-  sub_80245604((int)&dword_8028D0B0, 202, 432);
-  sub_80245604((int)&dword_8028D0E0, 322, 432);
-  sub_8022F514();
-  sub_8022F5D0(11);
-  formatter("%wwSelect", 116, 225);
-  formatter("%wwGo Back", 176, 225);
-  byte_80316423 = 1;
-  sub_80255ADC((int)dword_8036A8E0);
-  sub_80255910(dword_8036A8E0, 8);
-  byte_80272550 = 5;
-  sub_80255910(dword_8036A8E0, 32);
-  byte_80272554 = 15;
-  dword_8028A858 = 8;
-  MEMORY[4] = 0;
-  MEMORY[0] = -419430400;
-  sub_80223A70();
-  sub_8021AA08();
-  if ( sub_80223988() )
-  {
-    byte_802724F8 = 0;
-    sub_80219A3C();
-    sub_80217FB8();
-    sub_8021AA08();
-    sub_80219A3C();
-    sub_80217FB8();
-    sub_8021AA08();
-    dword_802724F0 = 0;
+    v5[0] = 757606671;
+    v5[1] = 538843691;
+    v5[3] = 740828928;
+    v5[2] = 254549530;
+    v4[12] = 538843691;
+    v4[11] = 757606671;
+    v4[13] = 253763880;
+    v4[14] = 741146624;
+    v4[8] = 538843691;
+    v4[7] = 757606671;
+    v4[9] = 254290221;
+    v4[10] = 573056812;
+    v4[6] = 0;
+    v4[1] = "SAVE SEASON DATA";
+    v4[0] = "LOAD SEASON DATA";
+    v4[2] = "LOAD GHOST CAR DATA";
+    v4[3] = "SAVE GHOST CAR DATA";
+    v4[5] = "SAVE OPTIONS";
+    v4[4] = "LOAD OPTIONS";
+    word_802A4BE8 = 0;
+    byte_802724F8 = 1;
     byte_80316422 = 0;
-    word_802A4BE8 = 1;
-    sub_8021C6E4((int)sub_80211150);
-  }
-  word_802A4BE8 = 0;
+    byte_80316423 = 1;
+    dword_802724F0 = 0;
+    byte_80316428 = 0;
+    sub_80242940();
+    osViBlack(1);
+    sub_80219A3C();
+    sub_8021AA08();
+    osViBlack(1);
+    sub_80219A3C();
+    sub_8021AA08();
+    AllocPaintShopGfxMem((int)&dword_8028CB40);
+    AllocPaintShopGfxMem((int)&dword_8028CB70);
+    AllocPaintShopGfxMem((int)&dword_8028D0B0);
+    AllocPaintShopGfxMem((int)&dword_8028D0E0);
+    dword_80272500 = (char *)sub_8024296C(14848);
+    byte_80272550 = 0;
+    byte_80272554 = 0;
+    sub_80223688(1.0, 0.2);
+    sub_8021C4B4();
+    sub_80223F54();
+    sub_80219A3C();
+    sub_8021B458();
+    sub_80219BF0(0, 0, 320, 240, 1);
+    sub_80217C94();
+    sub_80217FB8();
+    sub_80245798((int)&dword_8028CB40);
+    sub_80245604((int)&dword_8028CB70, 42, 22);
+    v5[12] = v5;
+    v5[9] = 512;
+    sub_8022F4F8();
+    sub_8022F504();
+    sub_8022F5D0(30);
+    formatter("%ryDATA LOAD/SAVE", 160, 41);
+    sub_8022F5D0(16);
+    v2 = 87;
+    v3 = (const char **)v4;
+    v1 = 0;
+    do {
+        if (v1) {
+            v6 = v1;
+            sub_8022F530(255, 245, 0, 200, 0, 0);
+        } else {
+            v6 = 0;
+            sub_8022F530(255, 255, 255, 255, 255, 0);
+        }
+        formatter(*v3, 158, v2);
+        v1 = v6 + 1;
+        v2 += 18;
+        ++v3;
+    } while (v6 != 5);
+    sub_80245604((int)&dword_8028D0B0, 202, 432);
+    sub_80245604((int)&dword_8028D0E0, 322, 432);
+    sub_8022F514();
+    sub_8022F5D0(11);
+    formatter("%wwSelect", 116, 225);
+    formatter("%wwGo Back", 176, 225);
+    byte_80316423 = 1;
+    sub_80255ADC((int)dword_8036A8E0);
+    sub_80255910(dword_8036A8E0, 8);
+    byte_80272550 = 5;
+    sub_80255910(dword_8036A8E0, 32);
+    byte_80272554 = 15;
+    dword_8028A858 = 8;
+    MEMORY[4] = 0;
+    MEMORY[0] = -419430400;
+    sub_80223A70();
+    sub_8021AA08();
+    if (sub_80223988()) {
+        byte_802724F8 = 0;
+        sub_80219A3C();
+        sub_80217FB8();
+        sub_8021AA08();
+        sub_80219A3C();
+        sub_80217FB8();
+        sub_8021AA08();
+        dword_802724F0 = 0;
+        byte_80316422 = 0;
+        word_802A4BE8 = 1;
+        sub_8021C6E4((int)sub_80211150);
+    }
+    word_802A4BE8 = 0;
 }
 // 80211E4C: write access to const memory at 802A4BE8 has been detected
 // 80211E5C: write access to const memory at 802724F8 has been detected

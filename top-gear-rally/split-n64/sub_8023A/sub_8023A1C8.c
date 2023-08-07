@@ -1,24 +1,23 @@
 #include "../../types-n64.h"
 //----- (8023A1C8) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-float *sub_8023A1C8()
-{
-  float v1; // [sp+ACh] [-3Ch] BYREF
-  float v2; // [sp+B0h] [-38h]
-  float v3; // [sp+B4h] [-34h]
+float *sub_8023A1C8() {
+    float v1; // [sp+ACh] [-3Ch] BYREF
+    float v2; // [sp+B0h] [-38h]
+    float v3; // [sp+B4h] [-34h]
 
-  sub_80239D84();
-  dword_8028C804 = 512;
-  sub_8022494C(&v1, (float *)0xC5B10E66, (float *)0xC5B10E36, 3.0);
-  sub_80239CF0();
-  flt_803634B8 = v1;
-  flt_803634C4 = v1;
-  flt_803634BC = v2;
-  flt_803634C8 = v2;
-  flt_803634C0 = v3;
-  flt_803634CC = v3;
-  dword_8028C824 = 1;
-  return &flt_803634B8;
+    sub_80239D84();
+    dword_8028C804 = 512;
+    sub_8022494C(&v1, (float *)0xC5B10E66, (float *)0xC5B10E36, 3.0);
+    sub_80239CF0();
+    flt_803634B8 = v1;
+    flt_803634C4 = v1;
+    flt_803634BC = v2;
+    flt_803634C8 = v2;
+    flt_803634C0 = v3;
+    flt_803634CC = v3;
+    dword_8028C824 = 1;
+    return &flt_803634B8;
 }
 // 8023A268: write access to const memory at 8028C804 has been detected
 // 8023A2E8: write access to const memory at 8028C824 has been detected

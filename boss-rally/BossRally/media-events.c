@@ -6,8 +6,8 @@ HRESULT HandleMediaEvents() {
     HRESULT result;          // eax
     IMediaEvent *mediaEvent; // [esp+20h] [ebp-10h] BYREF
     long int eventCode;      // [esp+24h] [ebp-Ch] BYREF
-    long long int v3;        // [esp+28h] [ebp-8h] BYREF
-    long long int v4;        // [esp+2Ch] [ebp-4h] BYREF
+    long int v3;             // [esp+28h] [ebp-8h] BYREF
+    long int v4;             // [esp+2Ch] [ebp-4h] BYREF
     if (SUCCEEDED(gGraphBuilder->lpVtbl->QueryInterface(
             gGraphBuilder, &IID_IMediaEvent, (void **)&mediaEvent)) &&
         SUCCEEDED(mediaEvent->lpVtbl->GetEvent(mediaEvent, &eventCode, &v4, &v3, 0))) {

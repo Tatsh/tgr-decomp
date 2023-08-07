@@ -1,20 +1,19 @@
 #include "../../types-n64.h"
 //----- (80223F54) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-float *sub_80223F54()
-{
-  float *result; // $v0
+float *sub_80223F54() {
+    float *result; // $v0
 
-  dword_8031B370[40] = 0;
-  dword_8031B370[42] = 320;
-  dword_8028B748 = 0;
-  dword_8028B74C = 240;
-  dword_8028B740 = 0;
-  dword_8028B744 = 320;
-  byte_802A49D0 = (int)(1.0 * 255.0);
-  result = &flt_8028B768;
-  byte_802A49C8 = (int)(1.0 * 255.0);
-  return result;
+    dword_8031B370[40] = 0;
+    dword_8031B370[42] = 320;
+    dword_8028B748 = 0;
+    dword_8028B74C = 240;
+    dword_8028B740 = 0;
+    dword_8028B744 = 320;
+    byte_802A49D0 = (int)(1.0 * 255.0);
+    result = &flt_8028B768;
+    byte_802A49C8 = (int)(1.0 * 255.0);
+    return result;
 }
 // 80224084: write access to const memory at 8028B748 has been detected
 // 80224090: write access to const memory at 8028B74C has been detected

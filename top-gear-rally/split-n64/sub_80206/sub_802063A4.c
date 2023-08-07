@@ -1,9 +1,8 @@
 #include "../../types-n64.h"
 //----- (802063A4) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
-void sub_802063A4()
-{
-  dword_802707C0 = 0;
+void sub_802063A4() {
+    dword_802707C0 = 0;
 }
 // 80206820: write access to const memory at 802707C0 has been detected
 // 8026FF08: using guessed type int dword_8026FF08;

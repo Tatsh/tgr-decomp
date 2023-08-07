@@ -10,8 +10,11 @@ int SetInitialStates() {
 
 //----- (004014B0) --------------------------------------------------------
 HRESULT SetupGlobalOAEvent() {
-    if (SUCCEEDED(CoCreateInstance(
-            &CLSID_FilgraphManager, 0, 1, &IID_IGraphBuilder, (void **)&gGraphBuilder))) {
+    if (SUCCEEDED(CoCreateInstance(&CLSID_FilterGraph,
+                                   NULL,
+                                   CLSCTX_INPROC,
+                                   &IID_IGraphBuilder,
+                                   (void **)&gGraphBuilder))) {
         IMediaEvent *mediaEvent; // [esp+14h] [ebp-4h] BYREF
         if (FAILED(gGraphBuilder->lpVtbl->QueryInterface(
                 gGraphBuilder, &IID_IMediaEvent, (void **)&mediaEvent))) {

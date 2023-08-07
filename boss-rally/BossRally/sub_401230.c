@@ -7,8 +7,7 @@ OAEVENT GetGlobalOAEvent() {
 WPARAM sub_401230() {
     int msgWaitRet;
     HANDLE pHandles;
-    struct tagMSG Msg;
-
+    MSG Msg = {0};
     do {
         while (1) {
         LABEL_1:
@@ -23,7 +22,7 @@ WPARAM sub_401230() {
             } else if (!msgWaitRet) {
                 HandleMediaEvents();
                 if (IsPlaybackStateStopped()) {
-                    PostMessage(oaHwnd, WM_QUIT, 0, 0);
+                    PostMessage(gHwnd, WM_QUIT, 0, 0);
                 }
             }
         }
@@ -31,7 +30,7 @@ WPARAM sub_401230() {
     while (Msg.message != WM_QUIT) {
         if (Msg.message == WM_CHAR && LOBYTE(Msg.wParam) == VK_ESCAPE && IsPlaybackStateFailed()) {
             HandleIMediaEventComplete();
-            PostMessage(oaHwnd, WM_QUIT, 0, 0);
+            PostMessage(gHwnd, WM_QUIT, 0, 0);
         }
         if (Msg.message != WM_SYSKEYDOWN) {
             TranslateMessage(&Msg);

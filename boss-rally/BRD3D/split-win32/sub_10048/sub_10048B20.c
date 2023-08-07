@@ -1,330 +1,284 @@
 #include "../../types-win32.h"
 //----- (10048B20) --------------------------------------------------------
-void __stdcall sub_10048B20(int a1)
-{
-  int waitTicksAdd; // esi
-  DWORD waitTicks; // esi
-  char **ppFilepath; // esi
-  void *v4; // esi
+void __stdcall sub_10048B20(int a1) {
+    int waitTicksAdd;  // esi
+    DWORD waitTicks;   // esi
+    char **ppFilepath; // esi
+    void *v4;          // esi
 
-  waitTicksAdd = 0;
-  if ( dword_10AA2854 == 2 )
-  {
-    waitTicksAdd = 0x11DA;
-  }
-  else if ( dword_10AA2854 == 3 )
-  {
-    waitTicksAdd = 0x604;
-  }
-  waitTicks = getTicks() + waitTicksAdd;
-  while ( getTicks() < waitTicks )
-    Sleep(0);
-  if ( !a1 )
-  {
-    dword_100AC300 = 0;
-    dword_10AA2904 = 0;
-    sub_1005F530();
-    ppFilepath = &g_aImagesWork1aBmFilepath;
-    do
-    {
-      if ( *ppFilepath )
-        free(*ppFilepath);
-      *ppFilepath = 0;
-      ppFilepath += 29;
+    waitTicksAdd = 0;
+    if (dword_10AA2854 == 2) {
+        waitTicksAdd = 0x11DA;
+    } else if (dword_10AA2854 == 3) {
+        waitTicksAdd = 0x604;
     }
-    while ( (int)ppFilepath < (int)&unk_10AA2584 );
-  }
-  if ( dword_10AA2940 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2940 + 28))(dword_10AA2940);
-    if ( dword_10AA2940 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2940)(dword_10AA2940, 1);
-    dword_10AA2940 = 0;
-    dword_10A9CFFC = 0;
-  }
-  if ( dword_10AA290C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA290C + 28))(dword_10AA290C);
-    if ( dword_10AA290C )
-      (**(void (__thiscall ***)(int, int))dword_10AA290C)(dword_10AA290C, 1);
-    dword_10AA290C = 0;
-    dword_10AA29AC = 0;
-  }
-  if ( dword_10AA2910 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2910 + 28))(dword_10AA2910);
-    if ( dword_10AA2910 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2910)(dword_10AA2910, 1);
-    dword_10AA2910 = 0;
-  }
-  if ( dword_10AA2914 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2914 + 28))(dword_10AA2914);
-    if ( dword_10AA2914 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2914)(dword_10AA2914, 1);
-    dword_10AA2914 = 0;
-    dword_10AA29B4 = 0;
-  }
-  if ( dword_10AA2918 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2918 + 28))(dword_10AA2918);
-    if ( dword_10AA2918 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2918)(dword_10AA2918, 1);
-    dword_10AA2918 = 0;
-  }
-  if ( dword_10AA291C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA291C + 28))(dword_10AA291C);
-    if ( dword_10AA291C )
-      (**(void (__thiscall ***)(int, int))dword_10AA291C)(dword_10AA291C, 1);
-    dword_10AA291C = 0;
-  }
-  if ( dword_10AA2920 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2920 + 28))(dword_10AA2920);
-    if ( dword_10AA2920 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2920)(dword_10AA2920, 1);
-    dword_10AA2920 = 0;
-    dword_10AA29A8 = 0;
-  }
-  if ( dword_10AA2924 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2924 + 28))(dword_10AA2924);
-    if ( dword_10AA2924 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2924)(dword_10AA2924, 1);
-    dword_10AA2924 = 0;
-  }
-  if ( dword_10AA2928 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2928 + 28))(dword_10AA2928);
-    if ( dword_10AA2928 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2928)(dword_10AA2928, 1);
-    dword_10AA2928 = 0;
-    dword_10AA29C0 = 0;
-    dword_10AA29CC = 0;
-    dword_10AA29F4 = 0;
-  }
-  if ( dword_10AA292C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA292C + 28))(dword_10AA292C);
-    if ( dword_10AA292C )
-      (**(void (__thiscall ***)(int, int))dword_10AA292C)(dword_10AA292C, 1);
-    dword_10AA292C = 0;
-    dword_10AA29B0 = 0;
-  }
-  if ( dword_10AA2930 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2930 + 28))(dword_10AA2930);
-    if ( dword_10AA2930 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2930)(dword_10AA2930, 1);
-    dword_10AA2930 = 0;
-  }
-  if ( dword_10AA2934 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2934 + 28))(dword_10AA2934);
-    if ( dword_10AA2934 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2934)(dword_10AA2934, 1);
-    dword_10AA2934 = 0;
-  }
-  if ( dword_10AA2938 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2938 + 28))(dword_10AA2938);
-    if ( dword_10AA2938 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2938)(dword_10AA2938, 1);
-    dword_10AA2938 = 0;
-  }
-  if ( dword_10AA293C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA293C + 28))(dword_10AA293C);
-    if ( dword_10AA293C )
-      (**(void (__thiscall ***)(int, int))dword_10AA293C)(dword_10AA293C, 1);
-    dword_10AA293C = 0;
-  }
-  if ( dword_10AA2940 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2940 + 28))(dword_10AA2940);
-    if ( dword_10AA2940 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2940)(dword_10AA2940, 1);
-    dword_10AA2940 = 0;
-  }
-  if ( dword_10AA2944 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2944 + 28))(dword_10AA2944);
-    if ( dword_10AA2944 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2944)(dword_10AA2944, 1);
-    dword_10AA2944 = 0;
-  }
-  if ( dword_10AA2948 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2948 + 28))(dword_10AA2948);
-    if ( dword_10AA2948 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2948)(dword_10AA2948, 1);
-    dword_10AA2948 = 0;
-    dword_10AA29B8 = 0;
-    dword_10AA29D8 = 0;
-    dword_10AA29D4 = 0;
-    dword_10AA2880 = 0;
-  }
-  if ( dword_10AA294C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA294C + 28))(dword_10AA294C);
-    if ( dword_10AA294C )
-      (**(void (__thiscall ***)(int, int))dword_10AA294C)(dword_10AA294C, 1);
-    dword_10AA294C = 0;
-    dword_10AA29B8 = 0;
-  }
-  if ( dword_10AA2950 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
-    if ( dword_10AA2950 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2950)(dword_10AA2950, 1);
-    dword_10AA2950 = 0;
-  }
-  if ( dword_10AA2954 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2954 + 28))(dword_10AA2954);
-    if ( dword_10AA2954 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2954)(dword_10AA2954, 1);
-    dword_10AA2954 = 0;
-    dword_10AA29E4 = 0;
-    dword_10AA29E0 = 0;
-  }
-  if ( dword_10AA2958 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2958 + 28))(dword_10AA2958);
-    if ( dword_10AA2958 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2958)(dword_10AA2958, 1);
-    dword_10AA2958 = 0;
-    dword_10AA29A8 = 0;
-  }
-  if ( dword_10AA298C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA298C + 28))(dword_10AA298C);
-    if ( dword_10AA298C )
-      (**(void (__thiscall ***)(int, int))dword_10AA298C)(dword_10AA298C, 1);
-    dword_10AA298C = 0;
-    dword_10AA29E8 = 0;
-  }
-  if ( dword_10AA295C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA295C + 28))(dword_10AA295C);
-    if ( dword_10AA295C )
-      (**(void (__thiscall ***)(int, int))dword_10AA295C)(dword_10AA295C, 1);
-    dword_10AA295C = 0;
-  }
-  if ( dword_10AA2960 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2960 + 28))(dword_10AA2960);
-    if ( dword_10AA2960 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2960)(dword_10AA2960, 1);
-    dword_10AA2960 = 0;
-  }
-  if ( dword_10AA2964 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2964 + 28))(dword_10AA2964);
-    if ( dword_10AA2964 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2964)(dword_10AA2964, 1);
-    dword_10AA2964 = 0;
-  }
-  if ( dword_10AA2968 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2968 + 28))(dword_10AA2968);
-    if ( dword_10AA2968 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2968)(dword_10AA2968, 1);
-    dword_10AA2968 = 0;
-    dword_10AA29C4 = 0;
-    dword_10AA29D0 = 0;
-  }
-  if ( dword_10AA296C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA296C + 28))(dword_10AA296C);
-    if ( dword_10AA296C )
-      (**(void (__thiscall ***)(int, int))dword_10AA296C)(dword_10AA296C, 1);
-    dword_10AA296C = 0;
-  }
-  if ( dword_10AA2970 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2970 + 28))(dword_10AA2970);
-    if ( dword_10AA2970 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2970)(dword_10AA2970, 1);
-    dword_10AA2970 = 0;
-  }
-  if ( dword_10AA2974 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2974 + 28))(dword_10AA2974);
-    if ( dword_10AA2974 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2974)(dword_10AA2974, 1);
-    dword_10AA2974 = 0;
-  }
-  if ( dword_10AA297C )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA297C + 28))(dword_10AA297C);
-    if ( dword_10AA297C )
-      (**(void (__thiscall ***)(int, int))dword_10AA297C)(dword_10AA297C, 1);
-    dword_10AA297C = 0;
-  }
-  if ( dword_10AA2980 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2980 + 28))(dword_10AA2980);
-    if ( dword_10AA2980 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2980)(dword_10AA2980, 1);
-    dword_10AA2980 = 0;
-  }
-  if ( dword_10AA2984 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2984 + 28))(dword_10AA2984);
-    if ( dword_10AA2984 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2984)(dword_10AA2984, 1);
-    dword_10AA2984 = 0;
-  }
-  if ( dword_10AA2988 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2988 + 28))(dword_10AA2988);
-    if ( dword_10AA2988 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2988)(dword_10AA2988, 1);
-    dword_10AA2988 = 0;
-  }
-  if ( dword_10AA2990 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2990 + 28))(dword_10AA2990);
-    if ( dword_10AA2990 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2990)(dword_10AA2990, 1);
-    dword_10AA2990 = 0;
-    dword_10AA29F0 = 0;
-  }
-  if ( dword_10AA2994 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2994 + 28))(dword_10AA2994);
-    if ( dword_10AA2994 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2994)(dword_10AA2994, 1);
-    dword_10AA2994 = 0;
-    dword_10AA29EC = 0;
-  }
-  if ( dword_10AA2998 )
-  {
-    (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2998 + 28))(dword_10AA2998);
-    if ( dword_10AA2998 )
-      (**(void (__thiscall ***)(int, int))dword_10AA2998)(dword_10AA2998, 1);
-    dword_10AA2998 = 0;
-  }
-  if ( !a1 )
-  {
-    if ( dword_10AA2908 )
-    {
-      (*(void (__thiscall **)(int))(*(_DWORD *)dword_10AA2908 + 28))(dword_10AA2908);
-      if ( dword_10AA2908 )
-        (**(void (__thiscall ***)(int, int))dword_10AA2908)(dword_10AA2908, 1);
-      dword_10AA2908 = 0;
+    waitTicks = getTicks() + waitTicksAdd;
+    while (getTicks() < waitTicks)
+        Sleep(0);
+    if (!a1) {
+        dword_100AC300 = 0;
+        dword_10AA2904 = 0;
+        sub_1005F530();
+        ppFilepath = &g_aImagesWork1aBmFilepath;
+        do {
+            if (*ppFilepath)
+                free(*ppFilepath);
+            *ppFilepath = 0;
+            ppFilepath += 29;
+        } while ((int)ppFilepath < (int)&unk_10AA2584);
     }
-    v4 = dword_10AA2900;
-    if ( dword_10AA2900 )
-    {
-      debugPrint(dword_10AA2900);
-      free(v4);
-      dword_10AA2900 = 0;
+    if (dword_10AA2940) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2940 + 28))(dword_10AA2940);
+        if (dword_10AA2940)
+            (**(void(__thiscall ***)(int, int))dword_10AA2940)(dword_10AA2940, 1);
+        dword_10AA2940 = 0;
+        dword_10A9CFFC = 0;
     }
-    sub_1005FCF0();
-  }
+    if (dword_10AA290C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA290C + 28))(dword_10AA290C);
+        if (dword_10AA290C)
+            (**(void(__thiscall ***)(int, int))dword_10AA290C)(dword_10AA290C, 1);
+        dword_10AA290C = 0;
+        dword_10AA29AC = 0;
+    }
+    if (dword_10AA2910) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2910 + 28))(dword_10AA2910);
+        if (dword_10AA2910)
+            (**(void(__thiscall ***)(int, int))dword_10AA2910)(dword_10AA2910, 1);
+        dword_10AA2910 = 0;
+    }
+    if (dword_10AA2914) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2914 + 28))(dword_10AA2914);
+        if (dword_10AA2914)
+            (**(void(__thiscall ***)(int, int))dword_10AA2914)(dword_10AA2914, 1);
+        dword_10AA2914 = 0;
+        dword_10AA29B4 = 0;
+    }
+    if (dword_10AA2918) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2918 + 28))(dword_10AA2918);
+        if (dword_10AA2918)
+            (**(void(__thiscall ***)(int, int))dword_10AA2918)(dword_10AA2918, 1);
+        dword_10AA2918 = 0;
+    }
+    if (dword_10AA291C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA291C + 28))(dword_10AA291C);
+        if (dword_10AA291C)
+            (**(void(__thiscall ***)(int, int))dword_10AA291C)(dword_10AA291C, 1);
+        dword_10AA291C = 0;
+    }
+    if (dword_10AA2920) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2920 + 28))(dword_10AA2920);
+        if (dword_10AA2920)
+            (**(void(__thiscall ***)(int, int))dword_10AA2920)(dword_10AA2920, 1);
+        dword_10AA2920 = 0;
+        dword_10AA29A8 = 0;
+    }
+    if (dword_10AA2924) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2924 + 28))(dword_10AA2924);
+        if (dword_10AA2924)
+            (**(void(__thiscall ***)(int, int))dword_10AA2924)(dword_10AA2924, 1);
+        dword_10AA2924 = 0;
+    }
+    if (dword_10AA2928) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2928 + 28))(dword_10AA2928);
+        if (dword_10AA2928)
+            (**(void(__thiscall ***)(int, int))dword_10AA2928)(dword_10AA2928, 1);
+        dword_10AA2928 = 0;
+        dword_10AA29C0 = 0;
+        dword_10AA29CC = 0;
+        dword_10AA29F4 = 0;
+    }
+    if (dword_10AA292C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA292C + 28))(dword_10AA292C);
+        if (dword_10AA292C)
+            (**(void(__thiscall ***)(int, int))dword_10AA292C)(dword_10AA292C, 1);
+        dword_10AA292C = 0;
+        dword_10AA29B0 = 0;
+    }
+    if (dword_10AA2930) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2930 + 28))(dword_10AA2930);
+        if (dword_10AA2930)
+            (**(void(__thiscall ***)(int, int))dword_10AA2930)(dword_10AA2930, 1);
+        dword_10AA2930 = 0;
+    }
+    if (dword_10AA2934) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2934 + 28))(dword_10AA2934);
+        if (dword_10AA2934)
+            (**(void(__thiscall ***)(int, int))dword_10AA2934)(dword_10AA2934, 1);
+        dword_10AA2934 = 0;
+    }
+    if (dword_10AA2938) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2938 + 28))(dword_10AA2938);
+        if (dword_10AA2938)
+            (**(void(__thiscall ***)(int, int))dword_10AA2938)(dword_10AA2938, 1);
+        dword_10AA2938 = 0;
+    }
+    if (dword_10AA293C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA293C + 28))(dword_10AA293C);
+        if (dword_10AA293C)
+            (**(void(__thiscall ***)(int, int))dword_10AA293C)(dword_10AA293C, 1);
+        dword_10AA293C = 0;
+    }
+    if (dword_10AA2940) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2940 + 28))(dword_10AA2940);
+        if (dword_10AA2940)
+            (**(void(__thiscall ***)(int, int))dword_10AA2940)(dword_10AA2940, 1);
+        dword_10AA2940 = 0;
+    }
+    if (dword_10AA2944) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2944 + 28))(dword_10AA2944);
+        if (dword_10AA2944)
+            (**(void(__thiscall ***)(int, int))dword_10AA2944)(dword_10AA2944, 1);
+        dword_10AA2944 = 0;
+    }
+    if (dword_10AA2948) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2948 + 28))(dword_10AA2948);
+        if (dword_10AA2948)
+            (**(void(__thiscall ***)(int, int))dword_10AA2948)(dword_10AA2948, 1);
+        dword_10AA2948 = 0;
+        dword_10AA29B8 = 0;
+        dword_10AA29D8 = 0;
+        dword_10AA29D4 = 0;
+        dword_10AA2880 = 0;
+    }
+    if (dword_10AA294C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA294C + 28))(dword_10AA294C);
+        if (dword_10AA294C)
+            (**(void(__thiscall ***)(int, int))dword_10AA294C)(dword_10AA294C, 1);
+        dword_10AA294C = 0;
+        dword_10AA29B8 = 0;
+    }
+    if (dword_10AA2950) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
+        if (dword_10AA2950)
+            (**(void(__thiscall ***)(int, int))dword_10AA2950)(dword_10AA2950, 1);
+        dword_10AA2950 = 0;
+    }
+    if (dword_10AA2954) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2954 + 28))(dword_10AA2954);
+        if (dword_10AA2954)
+            (**(void(__thiscall ***)(int, int))dword_10AA2954)(dword_10AA2954, 1);
+        dword_10AA2954 = 0;
+        dword_10AA29E4 = 0;
+        dword_10AA29E0 = 0;
+    }
+    if (dword_10AA2958) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2958 + 28))(dword_10AA2958);
+        if (dword_10AA2958)
+            (**(void(__thiscall ***)(int, int))dword_10AA2958)(dword_10AA2958, 1);
+        dword_10AA2958 = 0;
+        dword_10AA29A8 = 0;
+    }
+    if (dword_10AA298C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA298C + 28))(dword_10AA298C);
+        if (dword_10AA298C)
+            (**(void(__thiscall ***)(int, int))dword_10AA298C)(dword_10AA298C, 1);
+        dword_10AA298C = 0;
+        dword_10AA29E8 = 0;
+    }
+    if (dword_10AA295C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA295C + 28))(dword_10AA295C);
+        if (dword_10AA295C)
+            (**(void(__thiscall ***)(int, int))dword_10AA295C)(dword_10AA295C, 1);
+        dword_10AA295C = 0;
+    }
+    if (dword_10AA2960) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2960 + 28))(dword_10AA2960);
+        if (dword_10AA2960)
+            (**(void(__thiscall ***)(int, int))dword_10AA2960)(dword_10AA2960, 1);
+        dword_10AA2960 = 0;
+    }
+    if (dword_10AA2964) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2964 + 28))(dword_10AA2964);
+        if (dword_10AA2964)
+            (**(void(__thiscall ***)(int, int))dword_10AA2964)(dword_10AA2964, 1);
+        dword_10AA2964 = 0;
+    }
+    if (dword_10AA2968) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2968 + 28))(dword_10AA2968);
+        if (dword_10AA2968)
+            (**(void(__thiscall ***)(int, int))dword_10AA2968)(dword_10AA2968, 1);
+        dword_10AA2968 = 0;
+        dword_10AA29C4 = 0;
+        dword_10AA29D0 = 0;
+    }
+    if (dword_10AA296C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA296C + 28))(dword_10AA296C);
+        if (dword_10AA296C)
+            (**(void(__thiscall ***)(int, int))dword_10AA296C)(dword_10AA296C, 1);
+        dword_10AA296C = 0;
+    }
+    if (dword_10AA2970) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2970 + 28))(dword_10AA2970);
+        if (dword_10AA2970)
+            (**(void(__thiscall ***)(int, int))dword_10AA2970)(dword_10AA2970, 1);
+        dword_10AA2970 = 0;
+    }
+    if (dword_10AA2974) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2974 + 28))(dword_10AA2974);
+        if (dword_10AA2974)
+            (**(void(__thiscall ***)(int, int))dword_10AA2974)(dword_10AA2974, 1);
+        dword_10AA2974 = 0;
+    }
+    if (dword_10AA297C) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA297C + 28))(dword_10AA297C);
+        if (dword_10AA297C)
+            (**(void(__thiscall ***)(int, int))dword_10AA297C)(dword_10AA297C, 1);
+        dword_10AA297C = 0;
+    }
+    if (dword_10AA2980) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2980 + 28))(dword_10AA2980);
+        if (dword_10AA2980)
+            (**(void(__thiscall ***)(int, int))dword_10AA2980)(dword_10AA2980, 1);
+        dword_10AA2980 = 0;
+    }
+    if (dword_10AA2984) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2984 + 28))(dword_10AA2984);
+        if (dword_10AA2984)
+            (**(void(__thiscall ***)(int, int))dword_10AA2984)(dword_10AA2984, 1);
+        dword_10AA2984 = 0;
+    }
+    if (dword_10AA2988) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2988 + 28))(dword_10AA2988);
+        if (dword_10AA2988)
+            (**(void(__thiscall ***)(int, int))dword_10AA2988)(dword_10AA2988, 1);
+        dword_10AA2988 = 0;
+    }
+    if (dword_10AA2990) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2990 + 28))(dword_10AA2990);
+        if (dword_10AA2990)
+            (**(void(__thiscall ***)(int, int))dword_10AA2990)(dword_10AA2990, 1);
+        dword_10AA2990 = 0;
+        dword_10AA29F0 = 0;
+    }
+    if (dword_10AA2994) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2994 + 28))(dword_10AA2994);
+        if (dword_10AA2994)
+            (**(void(__thiscall ***)(int, int))dword_10AA2994)(dword_10AA2994, 1);
+        dword_10AA2994 = 0;
+        dword_10AA29EC = 0;
+    }
+    if (dword_10AA2998) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2998 + 28))(dword_10AA2998);
+        if (dword_10AA2998)
+            (**(void(__thiscall ***)(int, int))dword_10AA2998)(dword_10AA2998, 1);
+        dword_10AA2998 = 0;
+    }
+    if (!a1) {
+        if (dword_10AA2908) {
+            (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2908 + 28))(dword_10AA2908);
+            if (dword_10AA2908)
+                (**(void(__thiscall ***)(int, int))dword_10AA2908)(dword_10AA2908, 1);
+            dword_10AA2908 = 0;
+        }
+        v4 = dword_10AA2900;
+        if (dword_10AA2900) {
+            debugPrint(dword_10AA2900);
+            free(v4);
+            dword_10AA2900 = 0;
+        }
+        sub_1005FCF0();
+    }
 }
 // 100AC300: using guessed type int dword_100AC300;
 // 10A9CFFC: using guessed type int dword_10A9CFFC;
