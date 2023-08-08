@@ -96,7 +96,7 @@ def main() -> int:
             prefix_path.mkdir(exist_ok=True, parents=True)
             path_ref = '..' if len(prefix_path.parents) == 1 else '../..'
             with (prefix_path / name).open('w+') as f:
-                f.write(f'#include "{path_ref}/{types_file.name}"\n')
+                f.write(f'#include "{types_file.name}"\n')
                 f.write(code)
     return 0
 
