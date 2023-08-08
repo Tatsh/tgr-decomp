@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021D534) --------------------------------------------------------
 int __fastcall LoadCarWithIndex(unsigned __int8 *a1, int carIndex) {
     unk0 *u0;          // $s0

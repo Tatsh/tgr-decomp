@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10043810) --------------------------------------------------------
 int __cdecl sub_10043810(LPCVOID pMem) {
     _DWORD **v1; // edi

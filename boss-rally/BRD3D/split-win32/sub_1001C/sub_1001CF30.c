@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001CF30) --------------------------------------------------------
 _DWORD *__cdecl sub_1001CF30(_DWORD *a1) {
     int v1;         // edx

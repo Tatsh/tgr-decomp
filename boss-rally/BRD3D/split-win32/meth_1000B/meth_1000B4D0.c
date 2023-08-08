@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B4D0) --------------------------------------------------------
 HRESULT __thiscall meth_1000B4D0(unk334 *this, int a2, int a3, int a4, int a5) {
     int v6;         // edi

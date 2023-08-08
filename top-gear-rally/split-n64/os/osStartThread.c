@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802657C0) --------------------------------------------------------
 void __fastcall osStartThread(OSThread *thread) {
     int v1;              // $s0

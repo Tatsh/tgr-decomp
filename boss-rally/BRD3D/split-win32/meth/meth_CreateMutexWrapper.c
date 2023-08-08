@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10034812) --------------------------------------------------------
 HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     void *v1;      // ecx

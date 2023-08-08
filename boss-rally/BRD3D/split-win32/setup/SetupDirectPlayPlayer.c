@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10038CB0) --------------------------------------------------------
 HRESULT __cdecl SetupDirectPlayPlayer(#503 * u1) {
     DPLCONNECTION *dplConnection;     // ebx

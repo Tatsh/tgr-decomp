@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005B160) --------------------------------------------------------
 void __fastcall sub_1005B160(int a1, int a2) {
     char v2;    // dl

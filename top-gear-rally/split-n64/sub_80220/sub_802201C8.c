@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802201C8) --------------------------------------------------------
 _DWORD *__fastcall sub_802201C8(_DWORD *a1, int a2, int a3, int a4) {
     _DWORD *result; // $v0

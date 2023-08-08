@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003D0B0) --------------------------------------------------------
 int __cdecl sub_1003D0B0(SIZE_T dwBytes, LPDWORD a2) {
     SIZE_T size;                                         // ebx

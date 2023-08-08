@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80264E50) --------------------------------------------------------
 void __fastcall sub_80264E50(float *a1,
                              float a2,

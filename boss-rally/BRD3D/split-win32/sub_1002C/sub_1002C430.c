@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002C430) --------------------------------------------------------
 int __cdecl sub_1002C430(int a1) {
     float v2; // [esp+0h] [ebp-Ch]

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100020D0) --------------------------------------------------------
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds) {
     QWORD qwTotalSeconds; // rax

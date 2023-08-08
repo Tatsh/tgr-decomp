@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008A00) --------------------------------------------------------
 size_t __thiscall meth_10008A00(Pod *this, const char *a2, int a3, int a4, char a5, char a6) {
     int v6;   // edx

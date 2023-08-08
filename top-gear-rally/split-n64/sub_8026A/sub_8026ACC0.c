@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026ACC0) --------------------------------------------------------
 void __usercall sub_8026ACC0(int a1 @<$a3>,
                              int a2 @<$a2>,

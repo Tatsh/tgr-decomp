@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10028C70) --------------------------------------------------------
 int __cdecl sub_10028C70(int a1) {
     switch (a1) {

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022D43C) --------------------------------------------------------
 BOOL __fastcall sub_8022D43C(float a1, float a2) {
     int v2; // $v0

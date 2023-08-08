@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000C170) --------------------------------------------------------
 void __cdecl sub_1000C170(int a1, _DWORD *a2) {
     CHAR *v2;               // esi

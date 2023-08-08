@@ -1,4 +1,4 @@
-#include "../types-n64.h"
+#include "types-n64.h"
 //----- (80242640) --------------------------------------------------------
 int __fastcall CalculateChecksum(int seed, unsigned __int8 *buff, unsigned int elementSize) {
     unsigned int sum2; // $v1

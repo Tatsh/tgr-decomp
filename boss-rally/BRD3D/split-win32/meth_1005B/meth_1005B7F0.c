@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005B7F0) --------------------------------------------------------
 _DWORD *__thiscall meth_1005B7F0(_DWORD *this) {
     this[6] = 0;

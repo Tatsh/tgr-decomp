@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060280) --------------------------------------------------------
 unk54 *__thiscall meth_unk54_init(unk54 *this) {
     unk54 *result; // eax

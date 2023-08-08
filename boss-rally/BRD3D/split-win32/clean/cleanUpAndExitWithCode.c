@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10038F30) --------------------------------------------------------
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
     void *v1; // ecx

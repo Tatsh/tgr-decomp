@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021AA08) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 void sub_8021AA08() {

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80265410) --------------------------------------------------------
 void __fastcall osCreateMesgQueue(OSMesgQueue *mq, OSMesg *msg, s32 count) {
     mq->mtqueue = &gMtqueue;

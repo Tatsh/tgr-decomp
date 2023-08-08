@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001AB00) --------------------------------------------------------
 int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2) {
     _DWORD *v2; // ebx

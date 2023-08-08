@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1004F700) --------------------------------------------------------
 int __cdecl sub_1004F700(unkC8 *a1) {
     unk348 *v2;        // eax

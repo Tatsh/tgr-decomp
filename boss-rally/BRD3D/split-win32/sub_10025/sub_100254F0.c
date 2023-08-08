@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100254F0) --------------------------------------------------------
 char __cdecl sub_100254F0(int a1, int a2, int a3, int a4, int a5, float a6, float a7) {
     int v7;               // edx

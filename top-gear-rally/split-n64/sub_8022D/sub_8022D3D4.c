@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022D3D4) --------------------------------------------------------
 BOOL __fastcall sub_8022D3D4(int a1, int a2) {
     BOOL result; // $v0

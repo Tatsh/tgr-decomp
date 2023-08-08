@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003DB50) --------------------------------------------------------
 int __cdecl sub_1003DB50(_DWORD *a1, int a2, int a3) {
     int v3;    // eax

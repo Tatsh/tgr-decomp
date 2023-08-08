@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B170) --------------------------------------------------------
 HRESULT __thiscall meth_1000B170(unk334 *this) {
     IDirectDrawPalette *v2; // eax

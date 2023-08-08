@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005CB90) --------------------------------------------------------
 unk6594 *__thiscall meth_1005CB90(unk6594 *this) {
     char **v2;       // edx

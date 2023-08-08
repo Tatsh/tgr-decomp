@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000F480) --------------------------------------------------------
 void __cdecl sub_1000F480(int a1, int a2, int a3, _WORD *a4, _WORD *a5) {
     int v5;      // edi

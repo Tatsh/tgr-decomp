@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10005960) --------------------------------------------------------
 int sub_10005960() {
     int *unkObjInstance; // esi

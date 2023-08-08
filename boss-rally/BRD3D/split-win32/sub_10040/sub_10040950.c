@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10040950) --------------------------------------------------------
 int __cdecl sub_10040950(int a1) {
     if (MEMORY[0x118ABDBC])

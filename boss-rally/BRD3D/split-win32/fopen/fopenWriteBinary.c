@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008BE0) --------------------------------------------------------
 FILE *__stdcall fopenWriteBinary(char *FileName) {
     FILE *result; // eax

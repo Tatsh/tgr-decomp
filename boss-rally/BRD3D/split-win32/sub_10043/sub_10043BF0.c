@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10043BF0) --------------------------------------------------------
 int __stdcall sub_10043BF0() {
     unkC8 *v0;     // eax

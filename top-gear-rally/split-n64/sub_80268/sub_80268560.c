@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80268560) --------------------------------------------------------
 void __fastcall sub_80268560(int a1) {
     __asm { mfc0    $t0, SR # Status register }

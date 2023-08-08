@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005C590) --------------------------------------------------------
 int __thiscall meth_1005C590(char *this, int *a2) {
     int v3;                                // ebp

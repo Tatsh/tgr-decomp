@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10004A50) --------------------------------------------------------
 BOOL __cdecl atomic_sub_10004A50(int a1, int a2) {
     WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100407A0) --------------------------------------------------------
 int __cdecl sub_100407A0(int a1) {
     if (g_unkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8)

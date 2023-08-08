@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10071130) --------------------------------------------------------
 char __cdecl sub_10071130(int a1, FILE *Stream) {
     char result;    // al

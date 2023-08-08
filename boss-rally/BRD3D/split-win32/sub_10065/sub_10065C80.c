@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10065C80) --------------------------------------------------------
 void __cdecl sub_10065C80(int a1, int a2, float a3, float a4) {
     int v6;    // ecx

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A390) --------------------------------------------------------
 HRESULT __thiscall meth_1000A390(unk334 *this) {
     HRESULT result;         // eax

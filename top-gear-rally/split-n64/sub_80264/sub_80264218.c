@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80264218) --------------------------------------------------------
 int __fastcall sub_80264218(int a1, int a2, unsigned __int8 *a3, char a4) {
     int result; // $v0

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80242490) --------------------------------------------------------
 int __fastcall sub_80242490(z_streamp a1, z_streamp a2, int a3) {
     const char *v3;                                   // $s1

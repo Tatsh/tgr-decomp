@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001C820) --------------------------------------------------------
 int(__cdecl *__cdecl sub_1001C820(int a1, int a2))(int) {
     int v2;                     // edx

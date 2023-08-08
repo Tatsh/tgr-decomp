@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001AA70) --------------------------------------------------------
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2) {
     _DWORD *v2; // ebx

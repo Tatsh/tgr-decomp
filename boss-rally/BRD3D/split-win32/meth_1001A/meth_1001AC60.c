@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001AC60) --------------------------------------------------------
 LPPALETTEENTRY __thiscall meth_1001AC60(unk334 *this) {
     if (this->field_27 != (void *)108)

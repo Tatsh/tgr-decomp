@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001A5D0) --------------------------------------------------------
 IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, unk1 *a3) {
     IID **__attribute__((__org_arrdim(0, 3))) result; // eax

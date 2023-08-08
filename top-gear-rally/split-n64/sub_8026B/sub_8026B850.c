@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026B850) --------------------------------------------------------
 void __fastcall sub_8026B850(int a1) {
     MEMORY[0xA4040010] = a1;

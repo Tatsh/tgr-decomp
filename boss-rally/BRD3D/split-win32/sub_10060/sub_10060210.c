@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060210) --------------------------------------------------------
 int __stdcall sub_10060210(int a1) {
     dword_10AA33B8 = g_Width;

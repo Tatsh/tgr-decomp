@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80268390) --------------------------------------------------------
 int __fastcall sub_80268390(
     _DWORD *a1, int a2, int a3, int a4, int a5, int a6, OSMesgQueue *mq, int a8) {

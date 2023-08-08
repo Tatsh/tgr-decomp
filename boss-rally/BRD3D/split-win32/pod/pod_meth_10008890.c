@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008890) --------------------------------------------------------
 int __thiscall pod_meth_10008890(Pod *this, int a2) {
     PodVtbl *v3; // edi

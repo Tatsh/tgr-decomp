@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026C760) --------------------------------------------------------
 int __fastcall sub_8026C760(int a1, int a2, int a3, unsigned int a4, int a5) {
     unsigned __int8 *v5; // $t6

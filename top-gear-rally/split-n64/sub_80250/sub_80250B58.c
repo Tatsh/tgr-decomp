@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80250B58) --------------------------------------------------------
 int __fastcall sub_80250B58(int a1, int a2, int a3, int a4) {
     int v4;     // $t5

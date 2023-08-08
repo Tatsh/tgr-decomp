@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000BEA0) --------------------------------------------------------
 void __cdecl sub_1000BEA0(int a1, int *a2) {
     int v2; // eax

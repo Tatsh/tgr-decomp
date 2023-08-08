@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10007BD0) --------------------------------------------------------
 void __cdecl ReadSettings(char *Str) {
     int v1;                      // eax

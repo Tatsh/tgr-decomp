@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002A20) --------------------------------------------------------
 int __cdecl pm_sub_10002A20(unsigned __int8 a1) {
     if (g_Playmusic && dword_10220CD0 && dword_10220C3C)

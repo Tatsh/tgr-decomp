@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A5D0) --------------------------------------------------------
 int __thiscall meth_1000A5D0(unk334 *this) {
     DWORD flags;       // edi

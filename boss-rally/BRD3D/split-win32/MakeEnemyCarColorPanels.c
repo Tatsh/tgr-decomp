@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100682A0) --------------------------------------------------------
 size_t MakeEnemyCarColorPanels() {
     size_t v0;     // ecx

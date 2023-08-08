@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003FE10) --------------------------------------------------------
 int __cdecl sub_1003FE10(int a1) {
     const char *v1; // edi

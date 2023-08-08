@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8025AC9C) --------------------------------------------------------
 void __fastcall sub_8025AC9C(int a1, int a2, float *a3, _BYTE *a4, float a5) {
     float v7;     // $f0

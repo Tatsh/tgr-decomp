@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80260DD4) --------------------------------------------------------
 int sub_80260DD4(char *buffer, const char *format, ...) {
     int result; // $v0

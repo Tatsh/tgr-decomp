@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10021560) --------------------------------------------------------
 int *__cdecl sub_10021560(unsigned int a1, unsigned int a2, int a3, int a4) {
     double v4;    // st6

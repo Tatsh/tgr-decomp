@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10029FA0) --------------------------------------------------------
 void __cdecl sub_10029FA0(_DWORD *a1) {
     int v1; // ecx

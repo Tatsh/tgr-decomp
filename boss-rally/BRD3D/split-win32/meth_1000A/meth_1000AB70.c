@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000AB70) --------------------------------------------------------
 HRESULT __thiscall meth_1000AB70(unk334 *this) {
     LPDIRECTDRAWSURFACE lpSurface;            // eax

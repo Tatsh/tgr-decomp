@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10040AC0) --------------------------------------------------------
 int __cdecl sub_10040AC0(int a1) {
     int v1; // edi

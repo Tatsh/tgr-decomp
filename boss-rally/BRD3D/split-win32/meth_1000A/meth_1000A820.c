@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A820) --------------------------------------------------------
 HRESULT __thiscall meth_1000A820(unk334 *this) {
     IDirectDraw2 *dd2;           // edx

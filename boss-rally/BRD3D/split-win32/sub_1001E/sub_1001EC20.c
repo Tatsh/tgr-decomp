@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001EC20) --------------------------------------------------------
 float *__cdecl sub_1001EC20(int a1, int a2, int a3) {
     int v3;        // edi

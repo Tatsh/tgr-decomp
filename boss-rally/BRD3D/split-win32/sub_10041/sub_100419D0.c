@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100419D0) --------------------------------------------------------
 unkC8 *__cdecl sub_100419D0(LPCSTR a1) {
     unkC8 *result; // eax

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001AC80) --------------------------------------------------------
 int __thiscall meth_1001AC80(unk1 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5) {
     int v6; // eax

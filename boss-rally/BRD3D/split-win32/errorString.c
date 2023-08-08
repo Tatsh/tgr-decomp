@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003DC10) --------------------------------------------------------
 char *__cdecl errorString(int a1) {
     if (a1 <= -2147467263) {

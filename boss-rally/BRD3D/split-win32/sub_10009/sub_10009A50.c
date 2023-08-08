@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10009A50) --------------------------------------------------------
 char __usercall sub_10009A50
     @<al>(unsigned int checksumOrZero @<eax>, _BYTE *a2, _WORD *a3, int size) {

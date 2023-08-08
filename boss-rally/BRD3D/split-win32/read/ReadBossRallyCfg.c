@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10069FF0) --------------------------------------------------------
 int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename) {
     int res;                     // eax

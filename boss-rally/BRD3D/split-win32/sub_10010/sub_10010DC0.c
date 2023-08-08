@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10010DC0) --------------------------------------------------------
 int __cdecl sub_10010DC0(int a1, int a2, int a3) {
     int v3;                // edx

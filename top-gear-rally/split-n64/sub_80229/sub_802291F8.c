@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802291F8) --------------------------------------------------------
 // sub_100662A0 on PC
 int *__fastcall sub_802291F8(int size) {

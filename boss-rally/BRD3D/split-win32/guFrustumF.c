@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10030810) --------------------------------------------------------
 struct_a1_1 *__cdecl guFrustumF(
     struct_a1_1 *a1, float a2, float a3, float a4, float a5, float a6, float a7) {

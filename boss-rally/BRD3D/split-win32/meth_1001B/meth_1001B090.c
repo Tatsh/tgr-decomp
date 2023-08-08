@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B090) --------------------------------------------------------
 HRESULT __thiscall meth_1001B090(unk334 *this, GUID *lpGUID, char *Source, char *a4) {
     void *v5;                         // eax

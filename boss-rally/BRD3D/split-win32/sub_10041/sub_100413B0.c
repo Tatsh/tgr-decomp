@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100413B0) --------------------------------------------------------
 int __cdecl sub_100413B0(int a1) {
     LPCSTR v1;        // eax

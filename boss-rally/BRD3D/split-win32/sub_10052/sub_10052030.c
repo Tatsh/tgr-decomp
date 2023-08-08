@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10052030) --------------------------------------------------------
 int __cdecl sub_10052030(int a1) {
     unsigned __int16 v2; // ax

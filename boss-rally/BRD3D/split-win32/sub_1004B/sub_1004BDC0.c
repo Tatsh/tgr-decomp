@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1004BDC0) --------------------------------------------------------
 int __cdecl sub_1004BDC0(unkC8 *a1) {
     unsigned __int16 v1; // ax

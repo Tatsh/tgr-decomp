@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80228A3C) --------------------------------------------------------
 int __fastcall sub_80228A3C(_WORD *a1) {
     int result; // $v0

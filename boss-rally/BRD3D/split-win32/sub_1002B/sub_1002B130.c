@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002B130) --------------------------------------------------------
 void __cdecl sub_1002B130(float a1, float a2) {
     dword_10575524 = 1;

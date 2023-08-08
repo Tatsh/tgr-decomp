@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8024026C) --------------------------------------------------------
 int __fastcall inflate(z_streamp a1, int f) {
     struct internal_state *v3;  // $s1

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001A550) --------------------------------------------------------
 gameSpecificUnk1 *__cdecl sub_1001A550(gameSpecificUnk1 *a1) {
     gameSpecificUnk1 *result; // eax

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10013D90) --------------------------------------------------------
 __int16 __cdecl sub_10013D90(int a1, int a2, int a3, unsigned __int8 a4, unsigned __int8 a5) {
     int v5;            // ecx

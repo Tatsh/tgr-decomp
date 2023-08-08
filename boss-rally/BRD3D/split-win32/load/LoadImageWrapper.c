@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100611A0) --------------------------------------------------------
 char *__cdecl LoadImageWrapper(LPCSTR name) {
     char *result;  // eax

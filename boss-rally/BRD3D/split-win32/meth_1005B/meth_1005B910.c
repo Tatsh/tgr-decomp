@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005B910) --------------------------------------------------------
 int __thiscall meth_1005B910(int this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6) {
     int v7;     // edi

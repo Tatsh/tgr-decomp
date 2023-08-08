@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B940) --------------------------------------------------------
 int __cdecl sub_1000B940(_DWORD *a1, COLORREF color) {
 # 463 * v2;                                                       // edi

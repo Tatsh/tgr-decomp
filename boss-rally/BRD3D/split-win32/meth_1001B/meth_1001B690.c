@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B690) --------------------------------------------------------
 unk334 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4) {
     _DWORD *v4;                                    // eax

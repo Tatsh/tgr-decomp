@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10010D10) --------------------------------------------------------
 float *__cdecl sub_10010D10(float *a1) {
     float *result; // eax

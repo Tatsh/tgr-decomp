@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10047EB0) --------------------------------------------------------
 __int16 __thiscall meth_10047EB0(int this, const char *a2, int a3, char a4, _DWORD *a5) {
     void(__thiscall * *v6)(_DWORD); // ebx

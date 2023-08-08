@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10048710) --------------------------------------------------------
 unkC8 *__thiscall meth_10048710(unkC8 *this) {
     int v2;         // esi

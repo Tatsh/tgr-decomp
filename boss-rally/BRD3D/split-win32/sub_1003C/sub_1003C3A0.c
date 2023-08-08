@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003C3A0) --------------------------------------------------------
 int __stdcall sub_1003C3A0(int a1, int a2, int a3, LPCVOID pMem) {
     HGLOBAL v4; // eax

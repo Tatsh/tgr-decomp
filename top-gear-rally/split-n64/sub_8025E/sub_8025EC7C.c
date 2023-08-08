@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8025EC7C) --------------------------------------------------------
 void __fastcall sub_8025EC7C(_DWORD *a1) {
     int v2;    // $s0

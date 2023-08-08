@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026A37C) --------------------------------------------------------
 int __fastcall sub_8026A37C(int a1) {
     int v1;                 // $ra

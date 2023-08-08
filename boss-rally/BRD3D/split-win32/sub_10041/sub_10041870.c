@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10041870) --------------------------------------------------------
 int __cdecl sub_10041870(int a1) {
     *(_WORD *)(a1 + 123404) = byte_100AC628[dword_10AA2A0C];

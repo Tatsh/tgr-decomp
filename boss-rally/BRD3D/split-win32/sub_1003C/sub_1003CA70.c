@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003CA70) --------------------------------------------------------
 int *sub_1003CA70() {
     int *result; // eax

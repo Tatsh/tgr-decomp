@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100347BA) --------------------------------------------------------
 void __cdecl sub_100347BA(int a1, float a2) {
     if (a2 > 2.5)

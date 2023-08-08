@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10006BD0) --------------------------------------------------------
 char __cdecl sub_10006BD0(int a1, float *a2) {
     _BOOL2 v3;   // di

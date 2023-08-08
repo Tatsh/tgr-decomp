@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10003530) --------------------------------------------------------
 BOOL __cdecl sub_10003530(const char *a1) {
     HANDLE v2; // [esp-4h] [ebp-Ch]

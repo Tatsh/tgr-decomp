@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80268DC0) --------------------------------------------------------
 int sub_80268DC0(char *(__fastcall *callback)(char *, char *, int),
                  char *buffer,

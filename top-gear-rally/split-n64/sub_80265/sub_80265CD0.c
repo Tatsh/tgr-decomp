@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80265CD0) --------------------------------------------------------
 int __fastcall sub_80265CD0(void *a1, int a2, int a3) {
     int result; // $v0

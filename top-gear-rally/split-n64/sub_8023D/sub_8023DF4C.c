@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8023DF4C) --------------------------------------------------------
 int __fastcall sub_8023DF4C(int *a1, int(__fastcall *a2)(int)) {
     int v2;              // $v0

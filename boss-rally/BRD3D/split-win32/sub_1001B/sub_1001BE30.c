@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001BE30) --------------------------------------------------------
 _DWORD *__cdecl sub_1001BE30(_DWORD *a1) {
     sub_1001BE90(((int)(a1[1] << 8) >> 22) & 0x3FF,

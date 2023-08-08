@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80242890) --------------------------------------------------------
 int __fastcall inflateWrapper(char *next_out,
                               int *total_out,

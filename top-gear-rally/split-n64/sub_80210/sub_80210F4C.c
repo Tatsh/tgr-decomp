@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80210F4C) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 void sub_80210F4C() {

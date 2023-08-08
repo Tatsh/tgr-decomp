@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80265440) --------------------------------------------------------
 void __fastcall osSetEventMesg(MACRO_OS_EVENT e, OSMesgQueue *mq, OSMesg m) {
     int v3;            // $v0

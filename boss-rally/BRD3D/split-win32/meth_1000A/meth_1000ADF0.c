@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000ADF0) --------------------------------------------------------
 HRESULT __thiscall meth_1000ADF0(unk334 *this) {
     IDirect3D2 *d3d2;                      // eax

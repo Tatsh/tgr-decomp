@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10010D90) --------------------------------------------------------
 int __cdecl CompareFunction(const void *a1, const void *a2) {
     __int16 v2; // ax

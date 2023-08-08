@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80255E80) --------------------------------------------------------
 void __fastcall sub_80255E80(unsigned int a1,
                              unsigned int a2,

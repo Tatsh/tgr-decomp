@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002A8A0) --------------------------------------------------------
 HMODULE __cdecl loadEARDLL(int useEarpdsDll) {
     HMODULE result;           // eax

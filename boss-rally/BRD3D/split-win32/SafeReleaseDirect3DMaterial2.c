@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A170) --------------------------------------------------------
 HRESULT __thiscall SafeReleaseDirect3DMaterial2(unk8C *this) {
     HRESULT hr; // eax

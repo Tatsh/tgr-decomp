@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026B8A0) --------------------------------------------------------
 int __fastcall sub_8026B8A0(int a1, int a2, unsigned int a3, int a4) {
     if (sub_8026B930())

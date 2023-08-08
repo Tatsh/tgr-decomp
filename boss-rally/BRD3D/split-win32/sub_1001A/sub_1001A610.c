@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001A610) --------------------------------------------------------
 int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4) {
     HWND v4;    // ebp

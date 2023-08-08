@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000C440) --------------------------------------------------------
 void __stdcall __noreturn StartAddress(LPVOID lpThreadParameter) {
     HANDLE Handles[2]; // [esp+8h] [ebp-8h] BYREF

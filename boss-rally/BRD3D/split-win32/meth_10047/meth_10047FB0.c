@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10047FB0) --------------------------------------------------------
 __int16 __thiscall meth_10047FB0(
     int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, __int16 a9) {

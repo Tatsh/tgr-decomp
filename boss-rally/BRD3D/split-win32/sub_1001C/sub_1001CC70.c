@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001CC70) --------------------------------------------------------
 int __cdecl sub_1001CC70(int a1) {
     g_D3DDevice2->lpVtbl->SetRenderState(

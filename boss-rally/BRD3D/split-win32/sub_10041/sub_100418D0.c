@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100418D0) --------------------------------------------------------
 int __cdecl sub_100418D0(int a1) {
     if (dword_10AA28E4)

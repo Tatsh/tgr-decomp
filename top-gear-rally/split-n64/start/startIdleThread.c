@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021E5C4) --------------------------------------------------------
 void startIdleThread() {
     osInitialize();

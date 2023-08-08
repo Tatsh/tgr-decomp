@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10037B10) --------------------------------------------------------
 int __cdecl LoadTrack(int trackIndex) {
     CHK_File *cFile;     // esi

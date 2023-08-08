@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000AB20) --------------------------------------------------------
 int __thiscall resetPalette(unk8C *this) {
     IDirectDrawPalette *ddrawPalette; // eax

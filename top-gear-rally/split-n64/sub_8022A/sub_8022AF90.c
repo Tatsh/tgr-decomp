@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022AF90) --------------------------------------------------------
 void __fastcall sub_8022AF90(_DWORD *a1) {
     int v1;  // $a1

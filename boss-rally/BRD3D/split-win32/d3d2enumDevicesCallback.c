@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001AB90) --------------------------------------------------------
 int __stdcall d3d2enumDevicesCallback(GUID *a2,
                                       LPSTR lpDeviceDescription,

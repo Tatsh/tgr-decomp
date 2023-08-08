@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802560DC) --------------------------------------------------------
 void __fastcall sub_802560DC(unsigned int a1,
                              unsigned int a2,

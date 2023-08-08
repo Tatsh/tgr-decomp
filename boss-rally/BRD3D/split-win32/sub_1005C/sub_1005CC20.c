@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005CC20) --------------------------------------------------------
 int __stdcall sub_1005CC20(int a1) {
     FILE *v1;         // ebp

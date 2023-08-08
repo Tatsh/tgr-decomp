@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008D90) --------------------------------------------------------
 HRESULT __cdecl setup_g_DevCaps(IDirect3DDevice2 *dev2) {
     IDirect3DDevice2Vtbl *d3dDev2Vtbl; // ecx

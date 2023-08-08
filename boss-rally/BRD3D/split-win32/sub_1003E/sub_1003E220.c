@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003E220) --------------------------------------------------------
 int sub_1003E220() {
     IUnknown *v0;     // eax

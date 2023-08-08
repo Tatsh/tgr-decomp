@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005CE30) --------------------------------------------------------
 int __stdcall sub_1005CE30(int a1, const char *a2) {
     int v2;          // edx

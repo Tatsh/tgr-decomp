@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10061F70) --------------------------------------------------------
 void __thiscall meth_10061F70(_DWORD *this) {
     double v2;       // st7

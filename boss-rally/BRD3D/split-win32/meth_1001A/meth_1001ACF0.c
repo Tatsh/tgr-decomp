@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001ACF0) --------------------------------------------------------
 BOOL __thiscall meth_1001ACF0(unk334 *this, int a2) {
     LPPALETTEENTRY v3; // eax

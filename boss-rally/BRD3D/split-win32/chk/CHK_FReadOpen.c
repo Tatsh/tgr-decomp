@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002FE0) --------------------------------------------------------
 CHK_File *__cdecl CHK_FReadOpen(const char *filename) {
     CHK_File *cFile;         // ebx

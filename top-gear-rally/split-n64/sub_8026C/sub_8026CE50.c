@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026CE50) --------------------------------------------------------
 int __fastcall sub_8026CE50(_DWORD *a1, char a2) {
     const char *v3; // $s3

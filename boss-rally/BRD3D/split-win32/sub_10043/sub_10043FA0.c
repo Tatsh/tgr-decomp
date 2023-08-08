@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10043FA0) --------------------------------------------------------
 int __cdecl sub_10043FA0(int a1) {
     (*(void(__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 10984) + 24))(*(_DWORD *)(a1 + 10984),

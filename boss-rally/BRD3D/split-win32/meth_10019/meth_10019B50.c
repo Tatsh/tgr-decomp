@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10019B50) --------------------------------------------------------
 int meth_10019B50() {
     int result;           // eax

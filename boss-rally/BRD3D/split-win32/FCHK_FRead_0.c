@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100030E0) --------------------------------------------------------
 size_t __cdecl FCHK_FRead_0(void *buffer, size_t elementSize, size_t elementCount, CHK_File *fp) {
     size_t result;           // eax

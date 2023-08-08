@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003CB90) --------------------------------------------------------
 int __stdcall sub_1003CB90(int a1, int a2, _DWORD *a3, int a4) {
     int v5;     // eax

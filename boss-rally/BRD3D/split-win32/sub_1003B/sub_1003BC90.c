@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003BC90) --------------------------------------------------------
 int __cdecl sub_1003BC90(float *a1, float *a2, float *a3, float *a4) {
     double v5;  // st5

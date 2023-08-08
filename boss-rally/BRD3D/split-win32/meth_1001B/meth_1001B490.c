@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B490) --------------------------------------------------------
 unk1 *__thiscall meth_1001B490(_DWORD *this, int a2, int a3, int a4, int a5, unk1 **a6, unk1 *a7) {
     unk1 *v7; // esi

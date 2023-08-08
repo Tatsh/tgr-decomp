@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000F620) --------------------------------------------------------
 int sub_1000F620() {
     int result; // eax

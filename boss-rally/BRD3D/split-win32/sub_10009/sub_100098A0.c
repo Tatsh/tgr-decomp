@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100098A0) --------------------------------------------------------
 char *__cdecl sub_100098A0(_WORD *out_a1, unsigned __int8 *out_a2, int a3, int a4) {
     DDPIXELFORMAT *pixelFormat; // edi

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B880) --------------------------------------------------------
 unk334 *__thiscall meth_1001B880(
     unk1 *this, int width, int height, int bitDepth, int a5, int a2, _DWORD *a7, unk334 *u0_1) {

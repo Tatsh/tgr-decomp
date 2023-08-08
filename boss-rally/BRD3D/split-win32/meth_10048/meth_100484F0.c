@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100484F0) --------------------------------------------------------
 int __thiscall meth_100484F0(unsigned __int16 *this) {
     unsigned __int16 v1; // ax

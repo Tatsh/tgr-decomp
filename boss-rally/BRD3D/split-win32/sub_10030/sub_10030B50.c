@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10030B50) --------------------------------------------------------
 __int64 __cdecl sub_10030B50(int a1,
                              int a2,

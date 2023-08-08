@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021A0F8) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 int __fastcall sub_8021A0F8(int a1, __int16 a2, int a3, __int16 a4) {

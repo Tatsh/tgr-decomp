@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10017C80) --------------------------------------------------------
 char *__cdecl sub_10017C80(int a1, float a2) {
     double v2; // st7

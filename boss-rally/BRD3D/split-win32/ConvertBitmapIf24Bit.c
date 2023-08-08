@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060EA0) --------------------------------------------------------
 char *__cdecl ConvertBitmapIf24Bit(PBITMAP pBitmap) {
     _BYTE *mem; // edi

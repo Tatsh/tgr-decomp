@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10003460) --------------------------------------------------------
 unsigned int sub_10003460() {
     int v0; // eax

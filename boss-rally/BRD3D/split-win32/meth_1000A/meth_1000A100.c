@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A100) --------------------------------------------------------
 unk5C *__thiscall meth_1000A100(unk5C *this, IDirect3D2 *d3d2, IDirect3DDevice2 *d3dDevice2) {
     IDirect3DMaterial2 **d3dMaterial2;  // edi

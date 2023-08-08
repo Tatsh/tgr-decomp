@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060F70) --------------------------------------------------------
 int __cdecl sub_10060F70(int a1, int a2, int a3) {
     dword_100B2AD0 = *(&gCarsArray[a1].field_10 + 10 * a2);

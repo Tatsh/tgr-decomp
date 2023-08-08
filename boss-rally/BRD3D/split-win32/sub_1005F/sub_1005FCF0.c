@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005FCF0) --------------------------------------------------------
 int sub_1005FCF0() {
     int v0;     // eax

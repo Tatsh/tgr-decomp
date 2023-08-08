@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026AC80) --------------------------------------------------------
 void __fastcall sub_8026AC80(_DWORD **a1, _DWORD *a2) {
     _DWORD *v2; // $a2

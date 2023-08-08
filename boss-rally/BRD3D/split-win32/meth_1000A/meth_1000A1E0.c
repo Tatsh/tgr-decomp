@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A1E0) --------------------------------------------------------
 HRESULT __thiscall meth_1000A1E0(
     unk8C *this, HWND hWnd, int a3, int a4, int a5, int a6, int a7, int a8, int a9) {

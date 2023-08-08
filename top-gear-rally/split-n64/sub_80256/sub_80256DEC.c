@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80256DEC) --------------------------------------------------------
 char *__fastcall sub_80256DEC(char *a1) {
     int *v1;             // $v0

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A800) --------------------------------------------------------
 int __thiscall RestoreDisplayMode(unk8C *this) {
     IDirectDraw2 *ddraw2; // ecx

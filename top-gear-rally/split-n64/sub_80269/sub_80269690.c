@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80269690) --------------------------------------------------------
 int __fastcall sub_80269690(unsigned __int8 *a1, int a2) {
     BOOL v2;             // $at

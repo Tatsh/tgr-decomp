@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100244E0) --------------------------------------------------------
 HRESULT sub_100244E0() {
     HRESULT hr;    // eax

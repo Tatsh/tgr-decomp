@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100634F0) --------------------------------------------------------
 unsigned int __thiscall meth_100634F0(_DWORD *this) {
     int v2;              // eax

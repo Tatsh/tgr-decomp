@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003ADA0) --------------------------------------------------------
 float *__cdecl sub_1003ADA0(float *a1, float *a2, float *a3) {
     double v3;      // st6

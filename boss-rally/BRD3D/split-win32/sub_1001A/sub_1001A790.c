@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001A790) --------------------------------------------------------
 HRESULT __cdecl sub_1001A790(int a1,
                              int a2,

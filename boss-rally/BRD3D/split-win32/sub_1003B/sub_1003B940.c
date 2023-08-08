@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003B940) --------------------------------------------------------
 BOOL __cdecl sub_1003B940(float *a1, float *a2, float *a3, float *a4, int a5) {
     float v6[3];  // [esp+10h] [ebp-48h] BYREF

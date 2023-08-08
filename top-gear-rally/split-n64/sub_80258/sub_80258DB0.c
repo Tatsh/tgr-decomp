@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80258DB0) --------------------------------------------------------
 void __fastcall sub_80258DB0(int a1, int a2) {
     *(float *)(a1 + 32) = 0.0;

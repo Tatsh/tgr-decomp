@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021DC34) --------------------------------------------------------
 void __fastcall sub_8021DC34(unsigned int *a1) {
     int v2;            // $s6

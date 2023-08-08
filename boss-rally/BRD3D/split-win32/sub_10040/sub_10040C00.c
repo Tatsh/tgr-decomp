@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10040C00) --------------------------------------------------------
 int __cdecl sub_10040C00(int a1) {
     double v1;       // st7

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002260) --------------------------------------------------------
 int pm_sub_10002260() {
     if (!g_Playmusic || !dword_10220CD0 || dword_10220C3C)

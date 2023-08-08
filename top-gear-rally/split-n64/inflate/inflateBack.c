@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8023EF4C) --------------------------------------------------------
 int __fastcall inflateBack(z_streamp a1, z_streamp a2, int a3) {
     unsigned int v3;      // $a3

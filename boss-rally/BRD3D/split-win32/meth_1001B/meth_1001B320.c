@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B320) --------------------------------------------------------
 HRESULT __thiscall meth_1001B320(unk334 *this, IDirectDraw2 *ddraw) {
     HRESULT result;              // eax

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060F00) --------------------------------------------------------
 char *__cdecl Convert24BitBitmap(
     char *mem, LPVOID bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes) {

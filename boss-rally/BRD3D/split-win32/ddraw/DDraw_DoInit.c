@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005F690) --------------------------------------------------------
 int DDraw_DoInit() {
     int v0;                        // ebp

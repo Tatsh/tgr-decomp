@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026B5D0) --------------------------------------------------------
 int __fastcall sub_8026B5D0(OSThread *a1, int a2, int a3) {
     int v3;           // $s0

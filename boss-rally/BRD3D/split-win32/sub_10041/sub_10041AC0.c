@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10041AC0) --------------------------------------------------------
 int __cdecl sub_10041AC0(int a1) {
     *(_DWORD *)(*(_DWORD *)(a1 + 10984) + 112) = 0;

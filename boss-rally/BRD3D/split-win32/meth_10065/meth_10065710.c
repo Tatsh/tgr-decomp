@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10065710) --------------------------------------------------------
 int __thiscall meth_10065710(_DWORD *this) {
     int result; // eax

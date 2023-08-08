@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021CD30) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 int __fastcall LoadCarWithIndex2(char *next_out, int a2, char *a3) {

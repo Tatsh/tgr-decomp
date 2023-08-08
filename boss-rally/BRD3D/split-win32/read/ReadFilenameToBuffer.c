@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100378B0) --------------------------------------------------------
 void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCount) {
     int v3;            // eax

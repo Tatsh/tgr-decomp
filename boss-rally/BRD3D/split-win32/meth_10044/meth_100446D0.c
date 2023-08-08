@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100446D0) --------------------------------------------------------
 int __thiscall meth_100446D0(void *this) {
     unkC8 *v1;  // eax

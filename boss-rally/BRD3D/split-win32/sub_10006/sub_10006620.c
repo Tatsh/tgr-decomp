@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10006620) --------------------------------------------------------
 int __cdecl sub_10006620(float a1) {
     __int64 v1; // rax

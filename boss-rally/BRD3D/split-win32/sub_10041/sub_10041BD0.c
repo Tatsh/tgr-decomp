@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10041BD0) --------------------------------------------------------
 FILE *sub_10041BD0() {
     FILE *result;        // eax

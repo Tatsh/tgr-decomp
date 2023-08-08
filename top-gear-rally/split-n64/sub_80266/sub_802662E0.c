@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802662E0) --------------------------------------------------------
 // a2 = often 4
 void __fastcall sub_802662E0(unsigned int a1, int a2) {

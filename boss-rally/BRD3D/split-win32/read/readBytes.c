@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100031E0) --------------------------------------------------------
 _BYTE *__cdecl readBytes(_BYTE *a1, int maxBytes, FILE **pfp) {
     int readBytes_1; // edi

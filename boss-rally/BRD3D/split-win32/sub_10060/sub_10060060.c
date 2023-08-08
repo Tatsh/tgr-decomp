@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060060) --------------------------------------------------------
 LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam) {
     LRESULT v5; // edi

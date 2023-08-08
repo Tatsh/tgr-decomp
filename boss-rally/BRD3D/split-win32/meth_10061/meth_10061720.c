@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10061720) --------------------------------------------------------
 void __thiscall meth_10061720(_DWORD *this) {
     int v2;     // edx

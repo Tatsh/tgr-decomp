@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006AE00) --------------------------------------------------------
 unsigned int __cdecl sub_1006AE00(unsigned int a1) {
     unsigned int result; // eax

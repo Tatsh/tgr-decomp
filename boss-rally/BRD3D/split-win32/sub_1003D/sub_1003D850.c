@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003D850) --------------------------------------------------------
 int __stdcall sub_1003D850(int a1, int a2, LPCSTR lpString, int a4) {
     const CHAR *v4; // ebx

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100060C0) --------------------------------------------------------
 BOOL sub_100060C0() {
     WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000E950) --------------------------------------------------------
 int __cdecl sub_1000E950(float a1) {
     int result;        // eax

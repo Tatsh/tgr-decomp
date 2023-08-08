@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10039020) --------------------------------------------------------
 void __thiscall meth_10039020(int this) {
     __int16 v2;         // ax

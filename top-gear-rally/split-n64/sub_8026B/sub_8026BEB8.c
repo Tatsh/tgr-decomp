@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026BEB8) --------------------------------------------------------
 unsigned __int64 __fastcall sub_8026BEB8(int a1) {
     int v1;              // $t3

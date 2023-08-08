@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8020A820) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 __int16 *sub_8020A820() {

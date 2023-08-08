@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008970) --------------------------------------------------------
 int __thiscall cleanUpPod(Pod *this) {
     int result; // eax

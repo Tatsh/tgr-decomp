@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10039F20) --------------------------------------------------------
 void __thiscall meth_10039F20(int this) {
     int v2;             // ebx

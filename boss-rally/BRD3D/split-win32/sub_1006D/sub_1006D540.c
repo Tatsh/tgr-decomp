@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006D540) --------------------------------------------------------
 int __cdecl sub_1006D540(float *a1, char a2) {
     int v2;     // esi

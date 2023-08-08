@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006F720) --------------------------------------------------------
 __int16 __cdecl sub_1006F720(float a1, float a2) {
     unsigned int v2;    // ebx

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002F900) --------------------------------------------------------
 int __cdecl sub_1002F900(unsigned int *a1,
                          int a2,

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022F720) --------------------------------------------------------
 int __fastcall sub_8022F720(unsigned __int8 *a1, int a2) {
     int v3;   // $v1

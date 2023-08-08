@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006F650) --------------------------------------------------------
 void __cdecl sub_1006F650(int a1) {
     float *v1;  // edi

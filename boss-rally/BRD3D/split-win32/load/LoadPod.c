@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008810) --------------------------------------------------------
 int __thiscall LoadPod(Pod *this, unsigned int ArgList) {
     PodVtbl *v3; // edi

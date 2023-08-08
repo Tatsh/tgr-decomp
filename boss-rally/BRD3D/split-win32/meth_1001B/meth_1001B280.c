@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B280) --------------------------------------------------------
 char __thiscall meth_1001B280(unk334 *this) {
     void *v2; // eax

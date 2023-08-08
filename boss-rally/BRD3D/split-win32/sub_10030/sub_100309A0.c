@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100309A0) --------------------------------------------------------
 int __cdecl sub_100309A0(int a1,
                          float a2,

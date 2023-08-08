@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10001000) --------------------------------------------------------
 unsigned int __cdecl CalculateChecksum(unsigned int seed,
                                        unsigned __int8 *buf,

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10025830) --------------------------------------------------------
 char *__cdecl sub_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
     int v8;              // esi

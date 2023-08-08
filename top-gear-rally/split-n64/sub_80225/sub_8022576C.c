@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022576C) --------------------------------------------------------
 void __fastcall sub_8022576C(float a1, float a2) {
     float v2;  // $f20

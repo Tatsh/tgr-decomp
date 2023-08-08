@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80268540) --------------------------------------------------------
 int sub_80268540() {
     __asm { mfc0    $t0, SR # Status register }

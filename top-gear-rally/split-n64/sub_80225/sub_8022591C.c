@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022591C) --------------------------------------------------------
 BOOL __fastcall sub_8022591C(float *a1, float *a2, float *a3, float *a4, float *a5) {
     float v6[3];  // [sp+18h] [-48h] BYREF

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002480) --------------------------------------------------------
 int getWPARAM() {
     return g_WPARAM;

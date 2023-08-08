@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026B2EC) --------------------------------------------------------
 void __fastcall sub_8026B2EC(OSMesgQueue *a1) {
     double v12; // $f20

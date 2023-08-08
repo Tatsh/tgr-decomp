@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100350EE) --------------------------------------------------------
 _WORD *__usercall sub_100350EE
     @<eax>(_WORD *result @<eax>, int a2, __int16 a3, __int16 a4, __int16 a5) {

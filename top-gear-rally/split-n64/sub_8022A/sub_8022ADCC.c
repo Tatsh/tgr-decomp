@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022ADCC) --------------------------------------------------------
 void __fastcall sub_8022ADCC(char **a1, int a2, int a3) {
     char *v3;    // $s2

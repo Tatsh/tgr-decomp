@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003E980) --------------------------------------------------------
 int __cdecl sub_1003E980(float *a1) {
     float *v1;                                     // ebx

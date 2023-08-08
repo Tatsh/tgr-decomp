@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001ADA0) --------------------------------------------------------
 bool __thiscall meth_1001ADA0(unk334 *this, const void *a2) {
     if (!a2)

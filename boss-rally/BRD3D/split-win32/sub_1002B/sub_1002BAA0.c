@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002BAA0) --------------------------------------------------------
 int __cdecl sub_1002BAA0(int a1) {
     char v1;              // al

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002BD0) --------------------------------------------------------
 int pm_sub_10002BD0() {
     if (g_Playmusic == 1)

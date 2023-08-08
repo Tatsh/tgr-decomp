@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B790) --------------------------------------------------------
 int __cdecl sub_1000B790(int a1, LPCSTR name) {
     HMODULE v2; // eax

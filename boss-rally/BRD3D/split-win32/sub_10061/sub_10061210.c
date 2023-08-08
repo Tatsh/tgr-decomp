@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10061210) --------------------------------------------------------
 unsigned int __cdecl sub_10061210(char *a1, int bmHeight_1, int bmHeight, unsigned __int8 *mem) {
     int totalPixels;     // ebp

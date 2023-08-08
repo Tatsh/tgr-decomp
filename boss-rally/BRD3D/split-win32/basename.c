@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008B90) --------------------------------------------------------
 unsigned int __stdcall basename(const char *path, char *out) {
     const char *p;       // edi

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80240A30) --------------------------------------------------------
 int __fastcall sub_80240A30(int *a1,
                             unsigned int a2,

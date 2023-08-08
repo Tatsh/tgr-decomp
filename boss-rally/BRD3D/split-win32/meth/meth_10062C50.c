@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10062C50) --------------------------------------------------------
 void __thiscall meth_10062C50(_DWORD *this) {
     char v2;  // al

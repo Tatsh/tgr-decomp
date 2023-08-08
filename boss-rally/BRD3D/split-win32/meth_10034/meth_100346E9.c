@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100346E9) --------------------------------------------------------
 void __thiscall __noreturn meth_100346E9(void *this) {
     void *v1; // ecx

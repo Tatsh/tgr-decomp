@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100193C0) --------------------------------------------------------
 int __cdecl sub_100193C0(char *a1, int a2) {
     int v2;   // ebp

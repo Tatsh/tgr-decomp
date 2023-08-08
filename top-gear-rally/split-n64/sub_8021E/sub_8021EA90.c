@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021EA90) --------------------------------------------------------
 int __fastcall sub_8021EA90(unsigned __int16 *a1) {
     int result; // $v0

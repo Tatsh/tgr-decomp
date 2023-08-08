@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006F310) --------------------------------------------------------
 double __cdecl sub_1006F310(float *a2) {
     __int16 v3;          // ax

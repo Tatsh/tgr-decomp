@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005BC10) --------------------------------------------------------
 int __thiscall meth_1005BC10(char *this, char *Source, int a3, int a4, int a5, int a6) {
     int result;           // eax

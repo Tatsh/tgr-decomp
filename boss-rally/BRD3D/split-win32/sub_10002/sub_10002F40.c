@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002F40) --------------------------------------------------------
 __int16 __cdecl sub_10002F40(unsigned __int16 *a1) {
     int v1; // ecx

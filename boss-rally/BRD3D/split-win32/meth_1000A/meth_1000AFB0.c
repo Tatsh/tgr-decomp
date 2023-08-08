@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000AFB0) --------------------------------------------------------
 HRESULT __thiscall meth_1000AFB0(unk334 *this) {
     signed int viewportWidth;    // ebx

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026BAC0) --------------------------------------------------------
 void __fastcall sub_8026BAC0(unsigned int a1, int a2) {
     bool v3; // dc

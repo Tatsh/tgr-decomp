@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005CF20) --------------------------------------------------------
 int __thiscall meth_1005CF20(void *this, LPCSTR lpFileName) {
     void *v3;                                       // esi

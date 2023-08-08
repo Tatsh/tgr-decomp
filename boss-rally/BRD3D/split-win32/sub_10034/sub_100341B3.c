@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100341B3) --------------------------------------------------------
 int __cdecl sub_100341B3(_DWORD *a1, int a2) {
     BOOL v3; // [esp+4h] [ebp-18h]

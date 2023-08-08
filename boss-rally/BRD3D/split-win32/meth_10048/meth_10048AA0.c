@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10048AA0) --------------------------------------------------------
 int __thiscall meth_10048AA0(unsigned __int16 *this) {
     unsigned __int16 *v1;                 // ebp

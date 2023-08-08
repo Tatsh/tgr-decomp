@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021E620) --------------------------------------------------------
 int __fastcall sub_8021E620(float a1, float a2) {
     unsigned int v6;  // $t7

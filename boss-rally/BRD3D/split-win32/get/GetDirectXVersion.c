@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10030210) --------------------------------------------------------
 void __cdecl GetDirectXVersion(_DWORD *dxVersion, _DWORD *out_b) {
     DWORD result;                                                                            // eax

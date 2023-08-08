@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100400E0) --------------------------------------------------------
 int __cdecl sub_100400E0(int a1) {
     unsigned __int8 v2;  // al

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003F0B0) --------------------------------------------------------
 int __cdecl sub_1003F0B0(int a1) {
     sub_1003EE50(a1, 0);

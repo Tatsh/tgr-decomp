@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006A8A0) --------------------------------------------------------
 unsigned int ReadInstallDirectory() {
     LSTATUS ls;       // esi

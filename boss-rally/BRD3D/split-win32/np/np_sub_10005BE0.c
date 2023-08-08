@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10005BE0) --------------------------------------------------------
 BOOL np_sub_10005BE0() {
     BOOL v0;    // ebp

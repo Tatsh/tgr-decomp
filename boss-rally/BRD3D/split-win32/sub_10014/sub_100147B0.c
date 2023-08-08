@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100147B0) --------------------------------------------------------
 _DWORD *sub_100147B0() {
     _DWORD *result; // eax

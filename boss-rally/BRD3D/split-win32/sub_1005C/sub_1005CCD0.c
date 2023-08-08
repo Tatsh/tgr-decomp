@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005CCD0) --------------------------------------------------------
 int __stdcall sub_1005CCD0(__int16 a1) {
     FILE *v1;           // ebx

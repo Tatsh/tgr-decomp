@@ -1,4 +1,4 @@
-#include "../types-n64.h"
+#include "types-n64.h"
 //----- (80242B10) --------------------------------------------------------
 int __fastcall AllocPaintShopGfxMem(int a1) {
     int v2; // $v0

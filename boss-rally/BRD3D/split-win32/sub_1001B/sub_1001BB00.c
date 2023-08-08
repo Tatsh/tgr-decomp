@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001BB00) --------------------------------------------------------
 int __cdecl sub_1001BB00(int a1, int a2, int a3, int a4) {
     if (!sub_1007AC20(a1, a2, a3, a4) &&

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10007B10) --------------------------------------------------------
 int BringWindowToFront() {
     HWND hwnd_1; // esi

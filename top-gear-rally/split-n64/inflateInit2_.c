@@ -1,4 +1,4 @@
-#include "../types-n64.h"
+#include "types-n64.h"
 //----- (80240070) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 int __fastcall inflateInit2_(z_streamp z, int w, const char *version, int stream_size) {

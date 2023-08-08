@@ -1,4 +1,4 @@
-#include "../types-n64.h"
+#include "types-n64.h"
 //----- (802575C4) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 void __fastcall pm_sub_802575C4(int a1, int a2) {

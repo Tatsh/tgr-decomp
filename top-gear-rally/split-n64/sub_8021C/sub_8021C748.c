@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021C748) --------------------------------------------------------
 // a3 = often 4
 void __fastcall sub_8021C748(unsigned int a1, int a2, int a3) {

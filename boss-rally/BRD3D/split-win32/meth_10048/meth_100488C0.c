@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100488C0) --------------------------------------------------------
 int __thiscall meth_100488C0(_BYTE *this) {
     int v3;    // ecx

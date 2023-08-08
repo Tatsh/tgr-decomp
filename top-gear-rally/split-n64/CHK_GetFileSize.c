@@ -1,4 +1,4 @@
-#include "../types-n64.h"
+#include "types-n64.h"
 //----- (8021C814) --------------------------------------------------------
 // Equivalent to CHK_GetFileSize() on PC
 int __fastcall CHK_GetFileSize(int a1) {

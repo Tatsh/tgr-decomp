@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026B3EC) --------------------------------------------------------
 void __fastcall sub_8026B3EC(OSThread *a1, OSThread *a2) {
     struct OSThread_s *v2; // $t8

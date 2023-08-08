@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022AF34) --------------------------------------------------------
 void sub_8022AF34() {
     sub_8022ADCC((char **)&off_8028BBC4, (int)dword_8034E570, 64);

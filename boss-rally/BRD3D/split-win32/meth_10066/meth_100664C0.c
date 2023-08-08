@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100664C0) --------------------------------------------------------
 void __thiscall meth_100664C0(_DWORD *this) {
     int i; // edi

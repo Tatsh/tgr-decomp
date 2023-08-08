@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10009880) --------------------------------------------------------
 int __cdecl CountBits(unsigned int bitMask) {
     unsigned int mask; // ecx

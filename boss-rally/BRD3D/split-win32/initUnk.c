@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A190) --------------------------------------------------------
 unk8C *__thiscall initUnk(unk8C *this) {
     int v1; // eax

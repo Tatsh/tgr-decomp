@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8023A1C8) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 float *sub_8023A1C8() {

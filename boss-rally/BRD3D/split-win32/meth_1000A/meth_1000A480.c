@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A480) --------------------------------------------------------
 int __thiscall meth_1000A480(unk334 *this) {
     gameSpecificUnk1 *v2; // eax

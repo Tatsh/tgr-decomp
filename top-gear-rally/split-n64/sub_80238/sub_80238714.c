@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80238714) --------------------------------------------------------
 int __fastcall sub_80238714(const char *a1, int a2, int a3, int a4, int a5) {
     char v6[44]; // [sp+2Ch] [-2Ch] BYREF

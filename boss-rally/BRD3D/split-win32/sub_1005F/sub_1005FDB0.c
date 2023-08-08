@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005FDB0) --------------------------------------------------------
 int sub_1005FDB0() {
     int v0;         // ebx

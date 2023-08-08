@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10045AA0) --------------------------------------------------------
 int sub_10045AA0() {
     g_GameMode = 0;

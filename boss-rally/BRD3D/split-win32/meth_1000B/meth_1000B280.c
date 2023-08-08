@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B280) --------------------------------------------------------
 int __thiscall meth_1000B280(unk334 *this, _DWORD *a2) {
     if (!a2)

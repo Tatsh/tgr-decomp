@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000AD70) --------------------------------------------------------
 int __thiscall ReleaseDDrawSurface(unk8C *this) {
     IDirect3DDevice *dev;              // eax

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021EADC) --------------------------------------------------------
 int __fastcall sub_8021EADC(unsigned __int16 *a1) {
     int result; // $v0

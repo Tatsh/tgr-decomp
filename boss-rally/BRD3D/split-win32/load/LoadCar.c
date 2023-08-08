@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10035520) --------------------------------------------------------
 int __cdecl LoadCar(int a1, int carIndex, int a3) {
     int result; // eax

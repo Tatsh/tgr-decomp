@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8022AF64) --------------------------------------------------------
 int sub_8022AF64() {
     return sub_8022AE70((int *)&off_8028BBC4, (char *)dword_8034E570);

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001BA70) --------------------------------------------------------
 gameSpecificUnk1 *__cdecl sub_1001BA70(const void *a1,
                                        gameSpecificUnk1 **a2,

@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80260E78) --------------------------------------------------------
 int __fastcall sub_80260E78(int a1, float a2, float a3, float a4) {
     float v5[16]; // [sp+28h] [-40h] BYREF

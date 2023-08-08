@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001ADE0) --------------------------------------------------------
 int __thiscall meth_1001ADE0(
     unk228 *this, GUID *a2, char *Source, char *a4, LPD3DDEVICEDESC a5, LPD3DDEVICEDESC a6) {

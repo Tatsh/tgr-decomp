@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802249D4) --------------------------------------------------------
 void __fastcall sub_802249D4(float *a1, float *a2, float *a3) {
     *a1 = (float)(*a3 + *a2) * 0.5;

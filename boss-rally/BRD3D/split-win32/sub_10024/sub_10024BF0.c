@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10024BF0) --------------------------------------------------------
 int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     _DWORD *v3;           // ebx

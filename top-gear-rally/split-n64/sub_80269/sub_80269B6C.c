@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80269B6C) --------------------------------------------------------
 int __fastcall sub_80269B6C(int a1, int a2) {
     int v2;              // $ra

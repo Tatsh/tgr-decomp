@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10069B10) --------------------------------------------------------
 int __thiscall meth_10069B10(BossRallyConfig *this, int a2, int a3, __int16 a4, char a5) {
     BossRallyConfig *v5;  // ebp

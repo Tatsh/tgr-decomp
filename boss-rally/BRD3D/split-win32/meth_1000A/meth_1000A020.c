@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A020) --------------------------------------------------------
 BOOL __thiscall meth_1000A020(#511 * this) {
     int lpDDSurface;                  // eax

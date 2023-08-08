@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000C350) --------------------------------------------------------
 int __cdecl sub_1000C350(int a1) {
     SIZE_T *v1;     // ebx

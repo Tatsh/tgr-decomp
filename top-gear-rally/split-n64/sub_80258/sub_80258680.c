@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80258680) --------------------------------------------------------
 void __fastcall sub_80258680(int a1, int a2, float a3, int a4, int a5, int a6, int a7, int a8) {
     *(_DWORD *)(a1 + 8) = a2;

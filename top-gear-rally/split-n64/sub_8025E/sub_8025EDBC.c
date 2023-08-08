@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8025EDBC) --------------------------------------------------------
 float *__fastcall sub_8025EDBC(int a1) {
     float *result; // $v0

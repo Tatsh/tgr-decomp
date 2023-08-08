@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8020C66C) --------------------------------------------------------
 BOOL __fastcall sub_8020C66C(char a1) {
     BOOL result; // $v0

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10046FC0) --------------------------------------------------------
 int sub_10046FC0() {
     g_unkC8Ptr1 = (void *)dword_10AA292C;

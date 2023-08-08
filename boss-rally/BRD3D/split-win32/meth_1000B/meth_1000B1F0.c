@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B1F0) --------------------------------------------------------
 HRESULT __thiscall meth_1000B1F0(unk334 *this) {
     LPDIRECTDRAWPALETTE v1; // eax

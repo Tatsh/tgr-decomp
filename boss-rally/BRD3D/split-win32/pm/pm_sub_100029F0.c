@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100029F0) --------------------------------------------------------
 int __cdecl pm_sub_100029F0(int a1) {
     int result; // eax

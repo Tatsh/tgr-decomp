@@ -1,4 +1,4 @@
-#include "../types-n64.h"
+#include "types-n64.h"
 //----- (8026C990) --------------------------------------------------------
 void __fastcall __noreturn piManagerThreadEntry(void *a1) {
     int v1;           // $t9

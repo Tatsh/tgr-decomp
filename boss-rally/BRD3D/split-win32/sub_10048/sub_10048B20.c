@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10048B20) --------------------------------------------------------
 void __stdcall sub_10048B20(int a1) {
     int waitTicksAdd;  // esi

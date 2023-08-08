@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008AA0) --------------------------------------------------------
 int __thiscall meth_10008AA0(Pod *this) {
     int v1;        // edi

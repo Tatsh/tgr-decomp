@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10067BC0) --------------------------------------------------------
 __int64 __cdecl sub_10067BC0(float *a1, float *a2, float *a3, float *a4, _DWORD *a5, int a6) {
     double v6;           // st7

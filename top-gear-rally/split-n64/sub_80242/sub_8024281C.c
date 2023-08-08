@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8024281C) --------------------------------------------------------
 unsigned int __fastcall sub_8024281C(_DWORD *a1, int a2, int a3) {
     unsigned int v3; // $t9

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100011F0) --------------------------------------------------------
 void __thiscall meth_100011F0(float *this, float a2, int a3) {
     float *this_offset_A38;   // ebx

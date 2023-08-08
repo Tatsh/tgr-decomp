@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100251A0) --------------------------------------------------------
 int __cdecl pow2ExponentToAdd(DWORD *outExponent, int a2, int a3) {
     int result; // eax

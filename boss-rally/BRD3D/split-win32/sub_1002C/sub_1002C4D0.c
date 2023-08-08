@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002C4D0) --------------------------------------------------------
 unsigned int sub_1002C4D0() {
     meth_10075190(stru_106806B0);

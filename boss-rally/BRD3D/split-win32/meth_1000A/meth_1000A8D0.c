@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A8D0) --------------------------------------------------------
 HRESULT __thiscall meth_1000A8D0(unk334 *this) {
     LPDIRECTDRAWSURFACE ddSurface;         // edx

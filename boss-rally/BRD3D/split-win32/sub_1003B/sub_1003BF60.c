@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003BF60) --------------------------------------------------------
 int sub_1003BF60() {
     int result; // eax

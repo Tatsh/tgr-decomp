@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100087B0) --------------------------------------------------------
 size_t __thiscall ReadPod(Pod *this, unsigned int argList, void *buffer) {
     unsigned int *offsetAndElementCount; // edi

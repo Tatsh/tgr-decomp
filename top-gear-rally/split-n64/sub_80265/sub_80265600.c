@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80265600) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 void __fastcall sub_80265600(OSMesgQueue *a1, int a2, __int16 a3) {

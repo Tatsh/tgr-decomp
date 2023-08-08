@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8025DFCC) --------------------------------------------------------
 int __fastcall sub_8025DFCC(int a1) {
     if (*(unsigned __int8 *)(a1 + 512) < 0x28u)

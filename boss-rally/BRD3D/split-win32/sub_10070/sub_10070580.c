@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10070580) --------------------------------------------------------
 int __cdecl sub_10070580(int trackIndex) {
     int result; // eax

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10065B20) --------------------------------------------------------
 __int16 __cdecl sub_10065B20(int a1, float a2) {
     int v3;    // eax

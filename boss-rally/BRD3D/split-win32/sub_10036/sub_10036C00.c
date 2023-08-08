@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10036C00) --------------------------------------------------------
 __int16 __cdecl sub_10036C00(int a1) {
     int v1;               // ebp

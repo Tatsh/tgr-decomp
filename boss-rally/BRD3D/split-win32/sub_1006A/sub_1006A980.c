@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006A980) --------------------------------------------------------
 int sub_1006A980() {
     return dword_10B502E4;

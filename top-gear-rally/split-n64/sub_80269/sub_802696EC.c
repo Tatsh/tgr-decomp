@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802696EC) --------------------------------------------------------
 int __fastcall sub_802696EC(int a1, _WORD *a2, _WORD *a3) {
     unsigned int i; // [sp+0h] [-8h]

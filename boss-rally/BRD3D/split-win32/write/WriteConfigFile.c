@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006A4A0) --------------------------------------------------------
 FILE *__thiscall WriteConfigFile(BossRallyConfig *this, char *FileName) {
     FILE *result; // eax

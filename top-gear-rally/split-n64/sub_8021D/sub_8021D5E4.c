@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021D5E4) --------------------------------------------------------
 unsigned int __fastcall sub_8021D5E4(int a1, int a2, char *a3) {
     unsigned int *v3;    // $a0

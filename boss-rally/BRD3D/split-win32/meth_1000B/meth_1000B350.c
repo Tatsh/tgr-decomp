@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B350) --------------------------------------------------------
 int __thiscall meth_1000B350(unk334 *this, _DWORD *a2) {
     int result; // eax

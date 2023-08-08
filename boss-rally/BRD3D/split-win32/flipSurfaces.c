@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000AF00) --------------------------------------------------------
 HRESULT __thiscall flipSurfaces(unk334 *this) {
     unk5C *v2;                             // eax

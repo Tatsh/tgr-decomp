@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80255A18) --------------------------------------------------------
 int __fastcall sub_80255A18(_DWORD *a1, int *a2, float *a3, int a4) {
     int result; // $v0

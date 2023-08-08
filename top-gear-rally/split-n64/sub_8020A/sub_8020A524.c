@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8020A524) --------------------------------------------------------
 __int64 __fastcall sub_8020A524(unsigned int *a1, int a2, int a3, int a4, float a5) {
     sub_80260BC0(&flt_8031AB10, a5 * 57.295776, 0.0, 0.0, 1.0);

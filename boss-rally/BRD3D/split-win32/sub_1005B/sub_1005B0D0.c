@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005B0D0) --------------------------------------------------------
 void __usercall sub_1005B0D0(int a1 @<ecx>, int a2 @<esi>) {
     char v2;    // dl

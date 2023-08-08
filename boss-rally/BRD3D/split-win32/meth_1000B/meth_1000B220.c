@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000B220) --------------------------------------------------------
 HRESULT __thiscall meth_1000B220(unk334 *this, int a2) {
     int v3;         // eax

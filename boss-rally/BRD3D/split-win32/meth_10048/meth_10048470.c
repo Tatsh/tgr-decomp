@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10048470) --------------------------------------------------------
 unk348 *__thiscall meth_10048470(unk348 *this) {
     this->field_10 = 0;

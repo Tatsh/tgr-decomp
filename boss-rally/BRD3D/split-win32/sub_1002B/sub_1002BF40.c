@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002BF40) --------------------------------------------------------
 int __cdecl sub_1002BF40(int a1) {
     int v2; // eax

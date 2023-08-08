@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10009E30) --------------------------------------------------------
 IDirectDraw2 *__cdecl GetDeviceIDirectDraw2_Released(IDirect3DDevice2 *dev) {
     IDirectDrawSurface2 *drawSurface; // [esp+24h] [ebp-8h] BYREF

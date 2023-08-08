@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8031B670) --------------------------------------------------------
 void __fastcall __noreturn sub_8031B670(int a1, int a2, int _$A2, int _$A3) {
     int v5;     // $gp

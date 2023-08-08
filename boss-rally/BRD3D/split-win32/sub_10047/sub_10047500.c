@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10047500) --------------------------------------------------------
 BOOL sub_10047500() {
     BOOL result; // eax

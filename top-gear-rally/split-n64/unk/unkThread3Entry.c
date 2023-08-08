@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802001B4) --------------------------------------------------------
 // write access to const memory has been detected, the output may be wrong!
 void __fastcall __noreturn unkThread3Entry(void *a1) {

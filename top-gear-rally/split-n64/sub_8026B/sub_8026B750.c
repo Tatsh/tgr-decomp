@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026B750) --------------------------------------------------------
 unsigned int __fastcall sub_8026B750(unsigned int a1) {
     if (a1 >= 0x80000000 && a1 < 0xA0000000)

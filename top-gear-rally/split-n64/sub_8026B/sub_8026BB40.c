@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8026BB40) --------------------------------------------------------
 void sub_8026BB40() {
     __asm { mfc0    $t0, EntryHi # High half of TLB entry }

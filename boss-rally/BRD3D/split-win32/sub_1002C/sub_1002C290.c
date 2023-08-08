@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002C290) --------------------------------------------------------
 int sub_1002C290() {
     unknown_libname_3();

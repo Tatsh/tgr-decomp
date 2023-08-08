@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100476C0) --------------------------------------------------------
 unk1E214 *__thiscall meth_100476C0(unk1E214 *this) {
     *(_DWORD *)&this->gap10[12] = 1;

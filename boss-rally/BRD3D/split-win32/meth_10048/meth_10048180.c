@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10048180) --------------------------------------------------------
 int __thiscall meth_10048180(char *this) {
     int v2;                      // edi

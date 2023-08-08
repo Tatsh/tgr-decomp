@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10009830) --------------------------------------------------------
 DDPIXELFORMAT *__cdecl GetDDPixelFormatPtr(int a1) {
     int v1;  // ecx

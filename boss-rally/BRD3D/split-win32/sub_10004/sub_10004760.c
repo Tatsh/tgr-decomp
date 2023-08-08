@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10004760) --------------------------------------------------------
 int __cdecl sub_10004760(
     _DWORD *a1, char a2, char a3, char a4, char a5, char a6, int a7, int a8, char a9, char a10) {

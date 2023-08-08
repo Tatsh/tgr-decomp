@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100383C0) --------------------------------------------------------
 _BYTE *__cdecl sub_100383C0(_BYTE *a1) {
     _BYTE *result; // eax

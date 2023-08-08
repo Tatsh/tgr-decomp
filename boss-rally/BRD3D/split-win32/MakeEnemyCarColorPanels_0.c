@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10065D50) --------------------------------------------------------
 int __cdecl MakeEnemyCarColorPanels_0(size_t size) {
     size_t size_1; // ebp

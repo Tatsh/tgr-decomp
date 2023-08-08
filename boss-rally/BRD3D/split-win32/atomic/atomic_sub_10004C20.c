@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10004C20) --------------------------------------------------------
 int atomic_sub_10004C20() {
     WaitForSingleObject(g_hMutex_6, INFINITE);

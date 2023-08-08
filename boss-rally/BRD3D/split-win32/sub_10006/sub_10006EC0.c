@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10006EC0) --------------------------------------------------------
 unsigned int __cdecl sub_10006EC0(int a1, int *a2) {
     char v2;             // al

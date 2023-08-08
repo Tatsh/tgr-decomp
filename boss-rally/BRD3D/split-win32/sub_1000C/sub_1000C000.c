@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000C000) --------------------------------------------------------
 void __cdecl sub_1000C000(int a1, int *a2) {
     int v2; // eax

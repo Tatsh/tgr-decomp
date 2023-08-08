@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000AEA0) --------------------------------------------------------
 int __thiscall meth_1000AEA0(unk8C *this) {
     unk8C *v2; // edi

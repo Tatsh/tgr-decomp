@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003C740) --------------------------------------------------------
 int __cdecl sub_1003C740(SIZE_T dwBytes, int a2, int a3, int a4) {
     int *v5;          // edi

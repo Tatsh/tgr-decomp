@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10009BD0) --------------------------------------------------------
 HRESULT __cdecl enumTextureFormatsSomething(#486 * dev) {
     int *contextStart; // esi

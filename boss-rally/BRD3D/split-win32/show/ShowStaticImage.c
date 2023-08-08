@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008E30) --------------------------------------------------------
 int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
     unk334 *gsu0;                                                                       // esi

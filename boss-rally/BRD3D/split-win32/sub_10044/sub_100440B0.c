@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100440B0) --------------------------------------------------------
 int __cdecl sub_100440B0(int a1) {
     dword_10AA287C = 2;

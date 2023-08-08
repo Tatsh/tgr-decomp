@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021BBDC) --------------------------------------------------------
 void __fastcall __noreturn unkThread0Entry(void *a1) {
     osCreateMesgQueue((OSMesgQueue *)unkThread0MessageQueue, (OSMesg *)&unkThread0MessageBuffer, 1);

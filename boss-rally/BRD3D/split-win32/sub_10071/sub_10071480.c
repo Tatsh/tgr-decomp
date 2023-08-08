@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10071480) --------------------------------------------------------
 BOOL __cdecl sub_10071480(int a1) {
     int *v1;     // esi

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002BA60) --------------------------------------------------------
 _BYTE *__cdecl sub_1002BA60(_BYTE *a1, int a2) {
     int v2;        // edi

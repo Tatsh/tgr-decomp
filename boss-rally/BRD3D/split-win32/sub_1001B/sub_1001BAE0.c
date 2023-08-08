@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001BAE0) --------------------------------------------------------
 int sub_1001BAE0() {
     dword_10690A24 = sub_1001BAD0;

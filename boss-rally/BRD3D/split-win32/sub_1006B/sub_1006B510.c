@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006B510) --------------------------------------------------------
 float *__cdecl sub_1006B510(float *a1, float *a2, int *a3) {
     int v4;        // edx

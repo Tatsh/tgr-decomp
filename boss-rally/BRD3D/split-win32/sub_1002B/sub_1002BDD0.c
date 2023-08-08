@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002BDD0) --------------------------------------------------------
 void __cdecl sub_1002BDD0(_BYTE *a1, int a2) {
     int v2;     // ecx

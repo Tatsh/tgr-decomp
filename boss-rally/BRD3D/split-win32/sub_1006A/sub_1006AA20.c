@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006AA20) --------------------------------------------------------
 void __cdecl sub_1006AA20(int a1) {
     sub_1006A990(a1);

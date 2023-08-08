@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8021FE04) --------------------------------------------------------
 void __fastcall sub_8021FE04(int a1, int a2, int a3, int a4) {
     int v5;     // $a1

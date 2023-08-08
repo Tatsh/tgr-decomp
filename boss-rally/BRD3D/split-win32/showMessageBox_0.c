@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10060030) --------------------------------------------------------
 int __cdecl showMessageBox_0(HWND hWnd, HRESULT hr, LPCSTR lpText) {
     const CHAR *caption; // eax

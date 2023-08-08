@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80255ADC) --------------------------------------------------------
 int __fastcall sub_80255ADC(int a1) {
     float *v3; // [sp+24h] [-4h]

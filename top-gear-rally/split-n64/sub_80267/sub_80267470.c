@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80267470) --------------------------------------------------------
 int __fastcall sub_80267470(_DWORD *a1, _DWORD *a2, int a3) {
     float v4[16]; // [sp+18h] [-C0h] BYREF

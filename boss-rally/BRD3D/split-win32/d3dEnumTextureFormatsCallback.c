@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10009360) --------------------------------------------------------
 int __stdcall d3dEnumTextureFormatsCallback(DDSURFACEDESC *a1, void *context) {
     int v3;     // edi

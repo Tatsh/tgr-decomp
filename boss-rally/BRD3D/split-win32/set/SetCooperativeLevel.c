@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A590) --------------------------------------------------------
 int __thiscall SetCooperativeLevel(unk334 *this) {
     HRESULT hr; // eax

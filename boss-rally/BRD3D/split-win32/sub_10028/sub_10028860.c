@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10028860) --------------------------------------------------------
 unsigned __int8 *__cdecl sub_10028860(#506 * a1) {
     int v1;                  // edx

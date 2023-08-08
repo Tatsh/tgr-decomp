@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001AF20) --------------------------------------------------------
 HRESULT __thiscall meth_1001AF20(unk334 *a1, IDirect3DDevice2 *dev) {
     HRESULT result;                       // eax

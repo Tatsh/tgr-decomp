@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001BA10) --------------------------------------------------------
 int __cdecl sub_1001BA10(unk334 *a1) {
     int v2; // ecx

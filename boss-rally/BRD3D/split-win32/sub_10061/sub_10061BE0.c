@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10061BE0) --------------------------------------------------------
 void __usercall sub_10061BE0(double a1 @<st0>, _DWORD *a2) {
     sub_1006F4A0(a1, a2 + 89);

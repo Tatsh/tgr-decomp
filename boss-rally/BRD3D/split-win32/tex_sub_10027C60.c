@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10027C60) --------------------------------------------------------
 int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
                              int a2,

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1005B2B0) --------------------------------------------------------
 int __thiscall meth_1005B2B0(float *this) {
     char v2;    // al

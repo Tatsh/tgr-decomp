@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10005EE0) --------------------------------------------------------
 BOOL __cdecl np_sub_10005EE0(int a1, const char *a2) {
     WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);

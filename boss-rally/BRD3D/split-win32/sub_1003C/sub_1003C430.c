@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003C430) --------------------------------------------------------
 int __stdcall sub_1003C430(IID *iid, int a2, SIZE_T dwBytes, int a4, int a5, int a6) {
     int v6;     // ecx

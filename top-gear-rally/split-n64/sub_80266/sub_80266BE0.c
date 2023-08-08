@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80266BE0) --------------------------------------------------------
 int __fastcall sub_80266BE0(float *a1,
                             int a2,

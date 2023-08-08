@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10063FF0) --------------------------------------------------------
 int __thiscall meth_10063FF0(_DWORD *this, int a2, int a3, int a4) {
     int v4;          // esi

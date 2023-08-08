@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10028350) --------------------------------------------------------
 int __cdecl TIDFromTexture(_DWORD *a1, int a2) {
     _DWORD *v2; // esi

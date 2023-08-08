@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1002BF80) --------------------------------------------------------
 int __cdecl sub_1002BF80(int a1) {
     int v1;              // esi

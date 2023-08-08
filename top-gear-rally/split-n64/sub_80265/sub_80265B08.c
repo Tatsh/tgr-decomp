@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80265B08) --------------------------------------------------------
 void __fastcall sub_80265B08(_BYTE *a1, int a2[4]) {
     BOOL v2; // $at

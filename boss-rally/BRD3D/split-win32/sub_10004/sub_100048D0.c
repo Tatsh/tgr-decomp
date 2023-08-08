@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100048D0) --------------------------------------------------------
 BOOL __cdecl sub_100048D0(int a1) {
     meth_10073B80((_DWORD *)a1);

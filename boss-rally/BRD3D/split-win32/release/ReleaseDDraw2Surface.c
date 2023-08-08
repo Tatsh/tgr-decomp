@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1000A8A0) --------------------------------------------------------
 int __thiscall ReleaseDDraw2Surface(unk8C *this) {
     LPDIRECTDRAWSURFACE ddrawSurface; // eax

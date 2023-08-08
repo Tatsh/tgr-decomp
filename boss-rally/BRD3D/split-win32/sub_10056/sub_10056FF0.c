@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10056FF0) --------------------------------------------------------
 int __cdecl sub_10056FF0(int a1) {
     unk348 *v1;        // eax

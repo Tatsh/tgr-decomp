@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001A990) --------------------------------------------------------
 BOOL __stdcall ddrawEnumerateCallback(GUID *lpGUID, LPSTR a2, LPSTR Source, LPVOID a4) {
     unk334 *mem;  // eax

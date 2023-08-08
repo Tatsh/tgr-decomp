@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10008750) --------------------------------------------------------
 int __thiscall GetNumForNameWrapper(Pod *this, char *ArgList) {
     int result; // eax

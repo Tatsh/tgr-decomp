@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10061010) --------------------------------------------------------
 int __cdecl sub_10061010(int carIndex, int bSomething) {
     Car *car;              // ebx

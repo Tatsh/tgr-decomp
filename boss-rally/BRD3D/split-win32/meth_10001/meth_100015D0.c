@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (100015D0) --------------------------------------------------------
 float *__thiscall meth_100015D0(#479 * this, float a2, float a3) {
     int v4;        // esi

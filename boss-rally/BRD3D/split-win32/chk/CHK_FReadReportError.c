@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10003170) --------------------------------------------------------
 void *__cdecl CHK_FReadReportError(void *buffer,
                                    size_t elementSize,

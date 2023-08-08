@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10013A10) --------------------------------------------------------
 _WORD *__cdecl sub_10013A10(_WORD *a1) {
     _WORD *result; // eax

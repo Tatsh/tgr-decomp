@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003CFE0) --------------------------------------------------------
 void sub_1003CFE0() {
     LPCVOID *v0; // edi

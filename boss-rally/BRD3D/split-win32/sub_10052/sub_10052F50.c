@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10052F50) --------------------------------------------------------
 int __cdecl sub_10052F50(int a1) {
     unk348 *v2;        // eax

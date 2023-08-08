@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002A80) --------------------------------------------------------
 int __cdecl sub_10002A80(char a1) {
     if (!a1 || byte_10220CDC) {

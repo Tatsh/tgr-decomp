@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1006E760) --------------------------------------------------------
 int __cdecl sub_1006E760(int a1, float *a2) {
     int *v2;             // ebx

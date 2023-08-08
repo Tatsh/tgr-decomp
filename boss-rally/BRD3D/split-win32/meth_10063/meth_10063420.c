@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10063420) --------------------------------------------------------
 unsigned int __thiscall meth_10063420(_DWORD *this) {
     unsigned int v1;     // edx

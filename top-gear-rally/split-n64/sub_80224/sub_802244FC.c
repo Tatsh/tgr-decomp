@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (802244FC) --------------------------------------------------------
 void __fastcall sub_802244FC(float *a1, float *a2, float a3) {
     *a1 = *a2 * a3;

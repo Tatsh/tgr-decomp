@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1001B7C0) --------------------------------------------------------
 int __thiscall meth_1001B7C0(unk334 *this, const void *a2, unk334 *a3, int a4, int a5) {
     unk334 *v6; // esi

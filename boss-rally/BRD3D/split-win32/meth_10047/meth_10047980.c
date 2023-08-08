@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10047980) --------------------------------------------------------
 int __thiscall meth_10047980(int this, int *a2) {
     sub_1005F5A0((__int64)*(float *)(this + 60),

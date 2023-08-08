@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10003290) --------------------------------------------------------
 void __cdecl CHK_FClose(CHK_File *cFile) {
     CHAR debugMessage[1024]; // [esp+8h] [ebp-400h] BYREF

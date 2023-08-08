@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (8023FFF0) --------------------------------------------------------
 int __fastcall inflateEnd(z_streamp z) {
     z_streamp z_2;                // $a3

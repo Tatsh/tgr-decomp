@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10032E5D) --------------------------------------------------------
 int __cdecl sub_10032E5D(__int16 a1, __int16 a2, __int16 a3, __int16 a4) {
     int result;        // eax

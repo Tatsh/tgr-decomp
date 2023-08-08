@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10002550) --------------------------------------------------------
 MCIERROR __cdecl mciPlayOrClose(DWORD_PTR callback, unsigned __int8 positionToPlayFrom) {
     MCIERROR v2;              // esi

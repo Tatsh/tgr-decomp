@@ -1,4 +1,4 @@
-#include "../../types-n64.h"
+#include "types-n64.h"
 //----- (80262370) --------------------------------------------------------
 int __fastcall sub_80262370(OSMesgQueue *a1, int a2, int a3) {
     int v3;                 // $ra

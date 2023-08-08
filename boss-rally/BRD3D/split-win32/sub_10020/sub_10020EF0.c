@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (10020EF0) --------------------------------------------------------
 int __cdecl sub_10020EF0(int a1) {
     if (dword_100A79DC) {

@@ -1,4 +1,4 @@
-#include "../types-win32.h"
+#include "types-win32.h"
 //----- (1003FCB0) --------------------------------------------------------
 int __cdecl sub_1003FCB0(int a1) {
     const char *v1; // eax
