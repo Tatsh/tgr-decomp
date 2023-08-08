@@ -1,0 +1,56 @@
+add_project_arguments('-fno-builtin', language: 'c')
+if get_option('buildtype') == 'debug'
+  add_project_arguments(
+    '-ggdb',
+    '-pedantic',
+    '-Wdeprecated-declarations',
+    '-Wempty-body',
+    '-Werror=conversion',
+    '-Werror=float-conversion',
+    '-Werror=implicit-function-declaration',
+    '-Werror=incompatible-pointer-types',
+    '-Werror=int-conversion',
+    '-Werror=return-type',
+    '-Werror=sign-conversion',
+    '-Wmissing-braces',
+    '-Wmissing-field-initializers',
+    '-Wno-maybe-uninitialized',
+    '-Wno-missing-prototypes',
+    '-Wno-strict-prototypes',
+    '-Wno-trigraphs',
+    '-Wno-unknown-pragmas',
+    '-Wparentheses',
+    '-Wpointer-sign',
+    '-Wshadow',
+    '-Wsign-compare',
+    '-Wswitch',
+    '-Wuninitialized',
+    '-Wunknown-pragmas',
+    '-Wunreachable-code',
+    '-Wunused-function',
+    '-Wunused-label',
+    '-Wunused-parameter',
+    '-Wunused-value',
+    '-Wunused-variable',
+    language: 'c'
+  )
+endif
+cc = meson.get_compiler('c')
+executable('BossRally',
+  [
+    'main.c',
+    'media-events.c',
+    'playback.c',
+    'setup.c',
+    'sub_401230.c',
+    'video.c'
+  ],
+  c_args: '-DSTRSAFE_NO_DEPRECATE=0',
+  dependencies: [
+    cc.find_library('gdi32', required: true),
+    cc.find_library('ole32', required: true),
+    cc.find_library('quartz', required: true),
+    cc.find_library('strmiids', required: true)
+  ],
+  win_subsystem: 'windows'
+)

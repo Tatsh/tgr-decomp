@@ -1,0 +1,15 @@
+[binaries]
+ar = '/usr/lib/mingw64-toolchain/bin/i686-w64-mingw32-ar'
+c = '/usr/lib/mingw64-toolchain/bin/i686-w64-mingw32-gcc'
+cpp = '/usr/lib/mingw64-toolchain/bin/i686-w64-mingw32-g++'
+exe_wrapper = 'wine'
+strip = '/usr/lib/mingw64-toolchain/bin/i686-w64-mingw32-strip'
+windres = '/usr/lib/mingw64-toolchain/bin/i686-w64-mingw32-windres'
+
+[host_machine]
+cpu = 'x86'
+cpu_family = 'i686'
+endian = 'little'
+kernel = 'nt'
+subsystem = 'windows'
+system = 'windows'
