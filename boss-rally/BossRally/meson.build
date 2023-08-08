@@ -43,14 +43,15 @@ executable('BossRally',
     'playback.c',
     'setup.c',
     'sub_401230.c',
-    'video.c'
+    'video.c',
+    import('windows').compile_resources('BossRally.rc', depend_files: '../boss-rally.ico')
   ],
   c_args: '-DSTRSAFE_NO_DEPRECATE=0',
   dependencies: [
-    cc.find_library('gdi32', required: true),
-    cc.find_library('ole32', required: true),
-    cc.find_library('quartz', required: true),
-    cc.find_library('strmiids', required: true)
+    cc.find_library('gdi32'),
+    cc.find_library('ole32'),
+    cc.find_library('quartz'),
+    cc.find_library('strmiids')
   ],
   win_subsystem: 'windows'
 )
