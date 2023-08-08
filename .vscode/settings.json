@@ -1,4 +1,5 @@
 {
+  "C_Cpp.default.compileCommands": "builddir/compile_commands.json",
   "[c]": {
     "files.eol": "\r\n"
   },
@@ -28,6 +29,12 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "mesonbuild.configureOptions": [
+    "--cross-file",
+    "${workspaceFolder}/linux-i686-w64-mingw32.txt",
+    "-Dwarning_level=3",
+    "-Dwerror=true"
+  ],
   "python.analysis.autoImportCompletions": true,
   "python.analysis.completeFunctionParens": true,
   "python.analysis.diagnosticSeverityOverrides": {
