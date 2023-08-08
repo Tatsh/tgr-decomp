@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10074F20) --------------------------------------------------------
 HANDLE sub_10074F20() {
     HANDLE result; // eax

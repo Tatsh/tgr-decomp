@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002C30) --------------------------------------------------------
 BOOL pm_sub_10002C30() {
     BOOL result; // eax

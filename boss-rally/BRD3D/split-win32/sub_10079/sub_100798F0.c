@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100798F0) --------------------------------------------------------
 int sub_100798F0() {
     int result;         // eax
@@ -36,7 +36,7 @@ int sub_100798F0() {
                           (int)&dword_10B4E6F8,
                           1,
                           &wnd,
-                          (unk0 *)&g_gsu0) < 0)
+                          (unk334 *)&g_gsu0) < 0)
         return 0;
     g_HWND = wnd;
     v1 = malloc(4u);

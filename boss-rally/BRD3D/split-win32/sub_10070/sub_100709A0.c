@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100709A0) --------------------------------------------------------
 char sub_100709A0() {
     unsigned int v0;     // eax

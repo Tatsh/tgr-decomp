@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10063420) --------------------------------------------------------
-int __thiscall meth_10063420(_DWORD *this) {
-    unsigned int v1; // edx
-    int result;      // eax
-    int v3;          // edi
-    int i;           // eax
-    __int16 v5;      // [esp+10h] [ebp-4h]
+unsigned int __thiscall meth_10063420(_DWORD *this) {
+    unsigned int v1;     // edx
+    unsigned int result; // eax
+    int v3;              // edi
+    int i;               // eax
+    __int16 v5;          // [esp+10h] [ebp-4h]
 
     v1 = *((unsigned __int8 *)dword_10ACED34 + 4);
     result = v1;

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003A910) --------------------------------------------------------
 BOOL __cdecl sub_1003A910(int a1, int a2) {
     return a2 >= dword_10A9BBCC && a2 <= dword_10A9BBC4 && a1 >= dword_10A9BBD0[a2] &&

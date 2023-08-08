@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005B540) --------------------------------------------------------
 char __cdecl sub_1005B540(int a1) {
     int v1;     // ecx

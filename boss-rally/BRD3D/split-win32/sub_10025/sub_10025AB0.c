@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10025AB0) --------------------------------------------------------
 char __cdecl sub_10025AB0(_DWORD *a1,
                           int a2,

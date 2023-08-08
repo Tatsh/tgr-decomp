@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005CBF0) --------------------------------------------------------
 void *__thiscall meth_1005CBF0(void *Block, char a2) {
     meth_1005CC10(Block);

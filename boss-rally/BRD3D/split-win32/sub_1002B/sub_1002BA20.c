@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002BA20) --------------------------------------------------------
 _BYTE *__cdecl sub_1002BA20(_BYTE *a1) {
     _BYTE *result; // eax

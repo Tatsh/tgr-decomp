@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10079390) --------------------------------------------------------
 HRESULT __cdecl sub_10079390(int a1, int a2) {
     IDirectInputDevice2AVtbl *diDevice2AVtbl_1; // ecx

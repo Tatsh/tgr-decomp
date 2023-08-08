@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008CC0) --------------------------------------------------------
 void __noreturn writeToRandomBufferAndExit(char *format, ...) {
     char *buff; // eax

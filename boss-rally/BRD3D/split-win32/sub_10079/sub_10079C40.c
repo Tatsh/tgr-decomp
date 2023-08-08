@@ -1,7 +1,7 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10079C40) --------------------------------------------------------
 int sub_10079C40() {
-    unk0 *v0; // esi
+    unk334 *v0; // esi
 
     if (g_HWND && IsWindow(g_HWND)) {
         DestroyWindow(g_HWND);

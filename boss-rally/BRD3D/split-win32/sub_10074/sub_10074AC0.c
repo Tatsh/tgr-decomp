@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10074AC0) --------------------------------------------------------
 float *__cdecl sub_10074AC0(int a1, int a2, int a3) {
     float *v4;     // ecx

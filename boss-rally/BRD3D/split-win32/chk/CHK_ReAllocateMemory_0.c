@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100033F0) --------------------------------------------------------
 void *__cdecl CHK_ReAllocateMemory_0(void *ptr, size_t size, char *debugName) {
     void *result;            // eax

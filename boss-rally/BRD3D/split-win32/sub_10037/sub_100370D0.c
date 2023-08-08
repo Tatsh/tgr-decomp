@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100370D0) --------------------------------------------------------
 int __cdecl sub_100370D0(char *outBuffer) {
     unsigned __int16 v2; // ax

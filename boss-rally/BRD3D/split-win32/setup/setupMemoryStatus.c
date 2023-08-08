@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10007BA0) --------------------------------------------------------
 void setupMemoryStatus() {
     struct _MEMORYSTATUS g_memoryStatus; // [esp+0h] [ebp-20h] BYREF

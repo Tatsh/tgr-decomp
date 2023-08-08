@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100322E6) --------------------------------------------------------
 void __cdecl sub_100322E6(_DWORD *a1, void *a2) {
     void *v3;         // ecx

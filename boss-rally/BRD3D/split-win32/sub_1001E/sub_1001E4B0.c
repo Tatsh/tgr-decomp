@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001E4B0) --------------------------------------------------------
 int __cdecl sub_1001E4B0(int a1, int a2) {
     int result; // eax

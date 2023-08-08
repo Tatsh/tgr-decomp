@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10066650) --------------------------------------------------------
 int *__thiscall meth_10066650(_DWORD *this) {
     int v2;         // ecx
@@ -238,7 +238,7 @@ int *__thiscall meth_10066650(_DWORD *this) {
                     *(_BYTE *)(v27 + 10671) = 0;
                     *(_DWORD *)(v27 + 10672) = 1065353216;
                     *(_DWORD *)(v27 + 3960) = 1;
-                    meth_10062C50(v27);
+                    meth_10062C50((_DWORD *)v27);
                     meth_10065630((_DWORD *)v27);
                     *(_DWORD *)(v27 + 3968) = *((_DWORD *)v26 + 3);
                     *(_DWORD *)(v27 + 3972) = *((_DWORD *)v26 + 4);

@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B430) --------------------------------------------------------
-int __thiscall meth_1001B430(_DWORD *this, int a2) {
+int __thiscall meth_1001B430(_DWORD *this, unk74 *a2) {
     int v3; // edx
     int v4; // edx
     int v5; // edx
@@ -8,8 +8,8 @@ int __thiscall meth_1001B430(_DWORD *this, int a2) {
     if (!a2)
         return -2147024809;
     v3 = this[199];
-    *(_DWORD *)(a2 + 112) = 0;
-    *(_DWORD *)(a2 + 108) = v3;
+    a2->last = 0;
+    *(_DWORD *)a2->gap6C = v3;
     v4 = this[199];
     if (v4)
         *(_DWORD *)(v4 + 112) = a2;

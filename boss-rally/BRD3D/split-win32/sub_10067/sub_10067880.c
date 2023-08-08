@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10067880) --------------------------------------------------------
 char *__cdecl sub_10067880(const void **a1, char *a2, int a3) {
     const void **v3; // edx

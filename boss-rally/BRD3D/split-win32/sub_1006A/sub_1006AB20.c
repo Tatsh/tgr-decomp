@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006AB20) --------------------------------------------------------
 int *sub_1006AB20() {
     int *result; // eax

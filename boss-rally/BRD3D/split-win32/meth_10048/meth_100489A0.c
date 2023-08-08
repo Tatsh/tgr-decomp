@@ -1,13 +1,13 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100489A0) --------------------------------------------------------
 int __thiscall meth_100489A0(char *this) {
-    int v2;   // eax
-    void *v4; // edi
-    int v5;   // ebx
-    bool v6;  // zf
-    char *v7; // edi
-    int v8;   // eax
-    int v9;   // edi
+    int v2;    // eax
+    unkC8 *v4; // edi
+    int v5;    // ebx
+    bool v6;   // zf
+    char *v7;  // edi
+    int v8;    // eax
+    int v9;    // edi
 
     if (!*((_DWORD *)this + 26)) {
         sub_1003E310();
@@ -18,13 +18,13 @@ int __thiscall meth_100489A0(char *this) {
         return 0;
     }
     (*(void(__thiscall **)(char *))(*(_DWORD *)this + 4))(this);
-    v4 = dword_10AA2904;
-    dword_10AA2904 = (void *)dword_10AA2908;
+    v4 = g_unkC8Ptr1;
+    g_unkC8Ptr1 = g_unkC8Ptr2;
     sub_10060260();
-    dword_10AA2904 = v4;
+    g_unkC8Ptr1 = v4;
     sub_1005FFB0();
     v5 = 0;
-    dword_10AA2868 = dword_10AA2904 == (void *)dword_10AA2908;
+    g_unkC8AreSamePtr = g_unkC8Ptr1 == g_unkC8Ptr2;
     v6 = *((_WORD *)this + 8) == 0;
     *((_WORD *)this + 9) = 0;
     if (!v6) {
@@ -55,5 +55,4 @@ int __thiscall meth_100489A0(char *this) {
     }
     return 1;
 }
-// 10AA2868: using guessed type int dword_10AA2868;
-// 10AA2908: using guessed type int dword_10AA2908;
+// 10AA2868: using guessed type int g_unkC8AreSamePtr;

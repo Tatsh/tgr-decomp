@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10072CA0) --------------------------------------------------------
 HMMIO __cdecl sub_10072CA0(LPSTR pszFileName) {
     HGLOBAL v1; // eax

@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005D440) --------------------------------------------------------
 int sub_1005D440() {
-    _DWORD *v0;        // eax
-    _DWORD *v1;        // eax
-    _DWORD *v2;        // eax
-    Iostream_init *v4; // eax
-    Iostream_init *v5; // eax
+    _DWORD *v0;                  // eax
+    unkC8 *v1;                   // eax
+    unkC8 *v2;                   // eax
+    Iostream_init *iostreamInit; // eax
+    Iostream_init *v5;           // eax
 
     memset(dword_10A9E360, 0, 0x41B4u);
     LOWORD(dword_10AA28D4) = 0;
@@ -307,20 +307,20 @@ int sub_1005D440() {
         *v0 = 0;
         v0 += 3;
     } while ((int)v0 < (int)&unk_10A9DA50);
-    v1 = (_DWORD *)malloc(0xC8u);
+    v1 = (unkC8 *)malloc(0xC8u);
     if (v1)
         v2 = meth_10048710(v1);
     else
         v2 = 0;
-    dword_10AA2908 = (int)v2;
-    dword_10AA2904 = v2;
+    g_unkC8Ptr2 = v2;
+    g_unkC8Ptr1 = v2;
     if (!v2)
         return 0;
-    v2[1] = sub_100491B0;
+    v2->lpFn0 = (int(__cdecl *)(unkC8 *))sub_100491B0;
     if (!dword_10AA2900) {
-        v4 = (Iostream_init *)malloc(0x400u);
-        if (v4)
-            v5 = Iostream_init::Iostream_init(v4);
+        iostreamInit = (Iostream_init *)malloc(0x400u);
+        if (iostreamInit)
+            v5 = Iostream_init::Iostream_init(iostreamInit);
         else
             v5 = 0;
         dword_10AA2900 = v5;
@@ -478,6 +478,5 @@ int sub_1005D440() {
 // 10AA249C: using guessed type int dword_10AA249C;
 // 10AA2510: using guessed type int dword_10AA2510;
 // 10AA28D4: using guessed type int dword_10AA28D4;
-// 10AA2908: using guessed type int dword_10AA2908;
 // 10AA29F8: using guessed type __int16 word_10AA29F8;
 // 10AA29FC: using guessed type __int16 word_10AA29FC;

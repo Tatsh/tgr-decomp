@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10075F10) --------------------------------------------------------
 void __thiscall meth_10075F10(int this) {
     double v2;  // st7
@@ -54,7 +54,7 @@ void __thiscall meth_10075F10(int this) {
         *(_DWORD *)(this + 4128) = v4;
         *(_DWORD *)(v5 + 448) = 0;
         *(_DWORD *)(*(_DWORD *)(this + 360) + 448) = 0;
-        meth_10061F70(this);
+        meth_10061F70((_DWORD *)this);
         *(_DWORD *)(*(_DWORD *)(this + 372) + 448) = *(_DWORD *)(this + 3616);
         *(_DWORD *)(*(_DWORD *)(this + 368) + 448) = *(_DWORD *)(*(_DWORD *)(this + 372) + 448);
         *(_DWORD *)(*(_DWORD *)(this + 360) + 460) = 0;
@@ -115,7 +115,7 @@ void __thiscall meth_10075F10(int this) {
                 if (g_GameMode != 5 && !g_usingGameMode4 && *(int *)(this + 1840) > 90)
                     goto LABEL_29;
             }
-            meth_10061720(this);
+            meth_10061720((_DWORD *)this);
             goto LABEL_29;
         }
     }

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008A00) --------------------------------------------------------
 size_t __thiscall meth_10008A00(Pod *this, const char *a2, int a3, int a4, char a5, char a6) {
     int v6;   // edx
@@ -15,6 +15,6 @@ size_t __thiscall meth_10008A00(Pod *this, const char *a2, int a3, int a4, char 
     v7[8] = a5;
     *((_DWORD *)v7 + 1) = a4;
     v7[9] = a6;
-    return sub_10008C90(dword_1027735C, (void *)a3, a4);
+    return fwriteLockHandleError(dword_1027735C, (void *)a3, a4);
 }
 // 10277358: using guessed type int dword_10277358;

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10073D40) --------------------------------------------------------
 BOOL __thiscall meth_10073D40(_DWORD *this) {
     int v1; // eax

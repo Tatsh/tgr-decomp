@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10041BD0) --------------------------------------------------------
 FILE *sub_10041BD0() {
     FILE *result;        // eax
@@ -21,7 +21,7 @@ FILE *sub_10041BD0() {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     strcpy(FileName, aAutosaveBrf);
-    result = fopen(FileName, aR);
+    result = fopen(FileName, Mode);
     if (result) {
         fclose(result);
         strcpy(aCRallyseasonDatFilepath_ptr, FileName);

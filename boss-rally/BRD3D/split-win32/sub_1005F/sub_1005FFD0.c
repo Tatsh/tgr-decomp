@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005FFD0) --------------------------------------------------------
 int sub_1005FFD0() {
     int result; // eax
@@ -9,7 +9,7 @@ int sub_1005FFD0() {
     while (!*v1) {
         ++v1;
         ++result;
-        if ((int)v1 >= (int)&dword_10AA2E80)
+        if ((int)v1 >= (int)&g_unk54Ptr)
             return -1;
     }
     return result;

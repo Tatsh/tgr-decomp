@@ -147,7 +147,6 @@ struct IDirectMusicDownloadedInstrument;
 struct _D3DTRANSFORMCAPS;
 struct _D3DLIGHTINGCAPS;
 struct _D3DPrimCaps;
-struct __unk0;
 struct _D3DRECT;
 struct IDirectPlayLobby3AVtbl;
 struct DPLCONNECTION;
@@ -158,9 +157,9 @@ struct IDirect3DTexture2;
 struct IDirect3DTexture2Vtbl;
 struct _D3DCLIPSTATUS;
 struct tagBITMAP;
-struct unk0_member2;
 struct IDirect3DMaterial2;
 struct IDirect3DMaterial2Vtbl;
+struct _D3DMATERIAL;
 struct IDirect3D2;
 struct IDirect3D2Vtbl;
 struct _D3DDeviceDesc;
@@ -199,6 +198,13 @@ struct IDirect3DViewport2;
 struct IDirect3DViewport2Vtbl;
 struct _DSBUFFERDESC1;
 struct PodVtbl;
+struct _DDCAPS_DX6;
+struct unk6594;
+struct unk348;
+struct unk1E214;
+struct unk6594Vtbl;
+struct unk1E214Vtbl;
+struct unkC8Vtbl;
 
 /* 1 */
 struct _SCOPETABLE_ENTRY {
@@ -4183,312 +4189,47 @@ struct _D3DPrimCaps {
 #pragma pack(pop)
 
 /* 484 */
-struct unk0 {
+struct unk334 {
     void *field_27;
-    int field_30;
-    unk0_member2 *unknown;
-    int textureHandle;
-    int field_10;
+    GUID field_30;
     int unkMeth1;
     int field_19;
     int field_1C;
-    HWND hwnd;
-    int field_24;
-    int field_28;
-    void *gameSpecificUnk1_instance;
-    __unk0 *u0;
-    void *unk;
-    LPDIRECTDRAW lpDDraw;
-    IDirectDraw2 *ddraw2;
-    IDirect3D2 *d3d2;
-    LPDIRECTDRAWSURFACE lpDDrawSurface2;
-    LPDIRECTDRAWPALETTE lpDirectDrawPalette;
-    int sizePalette;
-    LPPALETTEENTRY tPaletteEntry;
-    LPPALETTEENTRY lpPaletteEntry;
-    LPDIRECTDRAWSURFACE lpDDrawSurface1;
-    LPDIRECTDRAWSURFACE lpDDSurface;
-    IDirect3DDevice2 *lpD3DDevice2;
-    IDirect3DViewport2 *lpDirect3DViewport2;
-    int field_5;
-    int field_4;
-    int field_3;
-    int field_2;
-    int field_1;
-    int field_7C;
-    int field_80;
-    int field_84;
-    int field_0;
-};
-
-/* 557 */
-#pragma pack(push, 4)
-union _D3DCOLORVALUE::$79F58B462609A8478E0156545A48EE38 {
-    D3DVALUE r;
-    D3DVALUE dvR;
-};
-#pragma pack(pop)
-
-/* 558 */
-#pragma pack(push, 4)
-union _D3DCOLORVALUE::$1870E08CD1297AF1183F2104CF0E68BB {
-    D3DVALUE g;
-    D3DVALUE dvG;
-};
-#pragma pack(pop)
-
-/* 559 */
-#pragma pack(push, 4)
-union _D3DCOLORVALUE::$89D0C02BD3EDF7E42F4E64602AB90C16 {
-    D3DVALUE b;
-    D3DVALUE dvB;
-};
-#pragma pack(pop)
-
-/* 560 */
-#pragma pack(push, 4)
-union _D3DCOLORVALUE::$5FBE30F4B5EDEA02F5A8FF631684CD5C {
-    D3DVALUE a;
-    D3DVALUE dvA;
-};
-#pragma pack(pop)
-
-/* 556 */
-#pragma pack(push, 4)
-struct _D3DCOLORVALUE {
-#pragma pack(push, 4)
-    union {
-        D3DVALUE r;
-        D3DVALUE dvR;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE g;
-        D3DVALUE dvG;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE b;
-        D3DVALUE dvB;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE a;
-        D3DVALUE dvA;
-    };
-#pragma pack(pop)
-};
-#pragma pack(pop)
-
-/* 555 */
-typedef _D3DCOLORVALUE D3DCOLORVALUE;
-
-/* 554 */
-#pragma pack(push, 4)
-union _D3DMATERIAL::$F37024B6A2A7DA8F8161E452127F778F {
-    D3DCOLORVALUE diffuse;
-    D3DCOLORVALUE dcvDiffuse;
-};
-#pragma pack(pop)
-
-/* 561 */
-#pragma pack(push, 4)
-union _D3DMATERIAL::$B545799AB1B094EA7448ADA6B118C0D5 {
-    D3DCOLORVALUE ambient;
-    D3DCOLORVALUE dcvAmbient;
-};
-#pragma pack(pop)
-
-/* 562 */
-#pragma pack(push, 4)
-union _D3DMATERIAL::$48A7D73869B8DD97079A7DB0052C867A {
-    D3DCOLORVALUE specular;
-    D3DCOLORVALUE dcvSpecular;
-};
-#pragma pack(pop)
-
-/* 563 */
-#pragma pack(push, 4)
-union _D3DMATERIAL::$4E89CE7B3871A99DAB3B73BC63770FCE {
-    D3DCOLORVALUE emissive;
-    D3DCOLORVALUE dcvEmissive;
-};
-#pragma pack(pop)
-
-/* 564 */
-#pragma pack(push, 4)
-union _D3DMATERIAL::$0E29CCD1ABCFA56B0343B217BB93547E {
-    D3DVALUE power;
-    D3DVALUE dvPower;
-};
-#pragma pack(pop)
-
-/* 565 */
-typedef DWORD D3DTEXTUREHANDLE;
-
-/* 553 */
-#pragma pack(push, 4)
-struct _D3DMATERIAL {
-    DWORD dwSize;
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE diffuse;
-        D3DCOLORVALUE dcvDiffuse;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE ambient;
-        D3DCOLORVALUE dcvAmbient;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE specular;
-        D3DCOLORVALUE dcvSpecular;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE emissive;
-        D3DCOLORVALUE dcvEmissive;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE power;
-        D3DVALUE dvPower;
-    };
-#pragma pack(pop)
-    D3DTEXTUREHANDLE hTexture;
-    DWORD dwRampSize;
-};
-#pragma pack(pop)
-
-/* 666 */
-typedef _D3DMATERIAL D3DMATERIAL;
-
-/* 627 */
-typedef DWORD D3DMATERIALHANDLE;
-
-/* 645 */
-typedef IDirect3DMaterial2 *LPDIRECT3DMATERIAL2;
-
-/* 549 */
-struct unk0_member2 {
-    D3DMATERIAL d3dMaterial;
-    D3DMATERIALHANDLE lpD3DMaterialHandle;
-    LPDIRECT3DMATERIAL2 lpDirect3DMaterial2;
-    int field_58;
-};
-
-/* 492 */
-struct __unk0 {
-    int field_46;
-    int field_45;
-    int height0;
-    int width0;
-    int field_43;
-    int field_42;
-    int field_41;
-    int field_40;
-    int unk_34;
-    int field_33;
-    int height;
-    int width;
-    int field_30;
-    int field_14;
-    int field_18;
-    int field_1C;
-    int field_29;
-    int field_28;
-    int field_27;
-    int field_26;
-    LPDIRECTINPUTDEVICEA lpDIDeviceA;
-    int bitDepth0;
-    int field_23;
-    int field_22;
     int field_20;
-    int field_21;
-    int field_1;
-    int field_4;
-    int field_8;
-    int bitDepth;
-    int field_10;
-    int field_0;
+    _BYTE gap24[372];
+    DDCAPS ddCaps0;
+    int field_314;
+    int field_318;
+    int field_31C;
+    int field_320;
+    int field_324;
+    int field_328;
+    int field_32C;
+    int last;
 };
 
-/* 567 */
-struct IDirect3D2 {
-    IDirect3D2Vtbl *lpVtbl;
-};
+/* 485 */
+struct gameSpecificUnk1 {};
+
+/* 487 */
+typedef struct IDirect3DDevice2 *LPDIRECT3DDEVICE2;
 
 /* 651 */
 struct IDirect3DDevice2 {
     IDirect3DDevice2Vtbl *lpVtbl;
 };
 
-/* 670 */
-struct IDirect3DViewport2 {
-    IDirect3DViewport2Vtbl *lpVtbl;
-};
-
-/* 550 */
-struct IDirect3DMaterial2 {
-    IDirect3DMaterial2Vtbl *lpVtbl;
-};
-
 /* 570 */
 typedef _D3DDeviceDesc *LPD3DDEVICEDESC;
-
-/* 569 */
-typedef HRESULT(__stdcall *LPD3DENUMDEVICESCALLBACK)(LPGUID lpGuid,
-                                                     LPSTR lpDeviceDescription,
-                                                     LPSTR lpDeviceName,
-                                                     LPD3DDEVICEDESC,
-                                                     LPD3DDEVICEDESC,
-                                                     LPVOID);
-
-/* 572 */
-typedef IDirect3DLight *LPDIRECT3DLIGHT;
-
-/* 646 */
-typedef IDirect3DViewport2 *LPDIRECT3DVIEWPORT2;
-
-/* 636 */
-typedef _D3DFINDDEVICESEARCH *LPD3DFINDDEVICESEARCH;
-
-/* 638 */
-typedef _D3DFINDDEVICERESULT *LPD3DFINDDEVICERESULT;
-
-/* 488 */
-typedef GUID CLSID;
-
-/* 487 */
-typedef struct IDirect3DDevice2 *LPDIRECT3DDEVICE2;
-
-/* 568 */
-struct IDirect3D2Vtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3D2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3D2 *This);
-    ULONG(__stdcall *Release)(IDirect3D2 *This);
-    HRESULT(__stdcall *EnumDevices)(IDirect3D2 *This, LPD3DENUMDEVICESCALLBACK, LPVOID);
-    HRESULT(__stdcall *CreateLight)(IDirect3D2 *This, LPDIRECT3DLIGHT *, IUnknown *);
-    HRESULT(__stdcall *CreateMaterial)(IDirect3D2 *This, LPDIRECT3DMATERIAL2 *, IUnknown *);
-    HRESULT(__stdcall *CreateViewport)(IDirect3D2 *This, LPDIRECT3DVIEWPORT2 *, IUnknown *);
-    HRESULT(__stdcall *FindDevice)(IDirect3D2 *This, LPD3DFINDDEVICESEARCH, LPD3DFINDDEVICERESULT);
-    HRESULT(__stdcall *CreateDevice)
-    (IDirect3D2 *This, const CLSID *const, LPDIRECTDRAWSURFACE, LPDIRECT3DDEVICE2 *);
-};
 
 /* 653 */
 typedef IDirect3DTexture2 *LPDIRECT3DTEXTURE2;
 
 /* 598 */
 typedef _D3DSTATS *LPD3DSTATS;
+
+/* 646 */
+typedef IDirect3DViewport2 *LPDIRECT3DVIEWPORT2;
 
 /* 631 */
 typedef HRESULT(__stdcall *LPD3DENUMTEXTUREFORMATSCALLBACK)(LPDDSURFACEDESC lpDdsd,
@@ -4713,69 +4454,6 @@ struct IDirect3DDevice2Vtbl {
     HRESULT(__stdcall *GetClipStatus)(IDirect3DDevice2 *This, LPD3DCLIPSTATUS);
 };
 
-/* 575 */
-typedef IDirect3D *LPDIRECT3D;
-
-/* 603 */
-typedef _D3DVIEWPORT *LPD3DVIEWPORT;
-
-/* 605 */
-typedef _D3DTRANSFORMDATA *LPD3DTRANSFORMDATA;
-
-/* 612 */
-typedef _D3DLIGHTDATA *LPD3DLIGHTDATA;
-
-/* 566 */
-typedef DWORD *LPD3DMATERIALHANDLE;
-
-/* 628 */
-typedef _D3DRECT *LPD3DRECT;
-
-/* 668 */
-typedef _D3DVIEWPORT2 D3DVIEWPORT2;
-
-/* 649 */
-typedef D3DVIEWPORT2 *LPD3DVIEWPORT2;
-
-/* 671 */
-struct IDirect3DViewport2Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DViewport2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DViewport2 *This);
-    ULONG(__stdcall *Release)(IDirect3DViewport2 *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DViewport2 *This, LPDIRECT3D);
-    HRESULT(__stdcall *GetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
-    HRESULT(__stdcall *SetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
-    HRESULT(__stdcall *TransformVertices)
-    (IDirect3DViewport2 *This, DWORD, LPD3DTRANSFORMDATA, DWORD, LPDWORD);
-    HRESULT(__stdcall *LightElements)(IDirect3DViewport2 *This, DWORD, LPD3DLIGHTDATA);
-    HRESULT(__stdcall *SetBackground)(IDirect3DViewport2 *This, D3DMATERIALHANDLE);
-    HRESULT(__stdcall *GetBackground)(IDirect3DViewport2 *This, LPD3DMATERIALHANDLE, LPBOOL);
-    HRESULT(__stdcall *SetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE);
-    HRESULT(__stdcall *GetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE *, LPBOOL);
-    HRESULT(__stdcall *Clear)(IDirect3DViewport2 *This, DWORD, LPD3DRECT, DWORD);
-    HRESULT(__stdcall *AddLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
-    HRESULT(__stdcall *DeleteLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
-    HRESULT(__stdcall *NextLight)
-    (IDirect3DViewport2 *This, LPDIRECT3DLIGHT, LPDIRECT3DLIGHT *, DWORD);
-    HRESULT(__stdcall *GetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
-    HRESULT(__stdcall *SetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
-};
-
-/* 552 */
-typedef _D3DMATERIAL *LPD3DMATERIAL;
-
-/* 551 */
-struct IDirect3DMaterial2Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DMaterial2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DMaterial2 *This);
-    ULONG(__stdcall *Release)(IDirect3DMaterial2 *This);
-    HRESULT(__stdcall *SetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
-    HRESULT(__stdcall *GetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
-    HRESULT(__stdcall *GetHandle)(IDirect3DMaterial2 *This, LPDIRECT3DDEVICE2, LPD3DMATERIALHANDLE);
-};
-
 /* 571 */
 #pragma pack(push, 4)
 struct _D3DDeviceDesc {
@@ -4803,37 +4481,6 @@ struct _D3DDeviceDesc {
 };
 #pragma pack(pop)
 
-/* 573 */
-struct IDirect3DLight {
-    IDirect3DLightVtbl *lpVtbl;
-};
-
-/* 637 */
-#pragma pack(push, 4)
-struct _D3DFINDDEVICESEARCH {
-    DWORD dwSize;
-    DWORD dwFlags;
-    BOOL bHardware;
-    D3DCOLORMODEL dcmColorModel;
-    GUID guid;
-    DWORD dwCaps;
-    D3DPRIMCAPS dpcPrimCaps;
-};
-#pragma pack(pop)
-
-/* 640 */
-typedef _D3DDeviceDesc D3DDEVICEDESC;
-
-/* 639 */
-#pragma pack(push, 4)
-struct _D3DFINDDEVICERESULT {
-    DWORD dwSize;
-    GUID guid;
-    D3DDEVICEDESC ddHwDesc;
-    D3DDEVICEDESC ddSwDesc;
-};
-#pragma pack(pop)
-
 /* 509 */
 struct IDirect3DTexture2 {
     IDirect3DTexture2Vtbl *lpVtbl;
@@ -4850,6 +4497,16 @@ struct _D3DSTATS {
     DWORD dwVerticesProcessed;
 };
 #pragma pack(pop)
+
+/* 670 */
+struct IDirect3DViewport2 {
+    IDirect3DViewport2Vtbl *lpVtbl;
+};
+
+/* 567 */
+struct IDirect3D2 {
+    IDirect3D2Vtbl *lpVtbl;
+};
 
 /* 635 */
 #pragma pack(push, 4)
@@ -4886,6 +4543,108 @@ struct _D3DCLIPSTATUS {
     float maxz;
 };
 #pragma pack(pop)
+
+/* 565 */
+typedef DWORD D3DTEXTUREHANDLE;
+
+/* 510 */
+struct IDirect3DTexture2Vtbl {
+    HRESULT(__stdcall *QueryInterface)(IDirect3DTexture2 *, GUID *, LPVOID *);
+    HRESULT(__stdcall *AddRef)(IDirect3DTexture2 *);
+    HRESULT(__stdcall *Release)(IDirect3DTexture2 *);
+    HRESULT(__stdcall *GetHandle)(IDirect3DTexture2 *, #486 *, D3DTEXTUREHANDLE *);
+    HRESULT(__stdcall *PaletteChanged)(IDirect3DTexture2 *, DWORD, DWORD);
+    HRESULT(__stdcall *Load)(IDirect3DTexture2 *, IDirect3DTexture2 *);
+};
+
+/* 575 */
+typedef IDirect3D *LPDIRECT3D;
+
+/* 603 */
+typedef _D3DVIEWPORT *LPD3DVIEWPORT;
+
+/* 605 */
+typedef _D3DTRANSFORMDATA *LPD3DTRANSFORMDATA;
+
+/* 612 */
+typedef _D3DLIGHTDATA *LPD3DLIGHTDATA;
+
+/* 627 */
+typedef DWORD D3DMATERIALHANDLE;
+
+/* 566 */
+typedef DWORD *LPD3DMATERIALHANDLE;
+
+/* 628 */
+typedef _D3DRECT *LPD3DRECT;
+
+/* 572 */
+typedef IDirect3DLight *LPDIRECT3DLIGHT;
+
+/* 668 */
+typedef _D3DVIEWPORT2 D3DVIEWPORT2;
+
+/* 649 */
+typedef D3DVIEWPORT2 *LPD3DVIEWPORT2;
+
+/* 671 */
+struct IDirect3DViewport2Vtbl {
+    HRESULT(__stdcall *QueryInterface)
+    (IDirect3DViewport2 *This, const IID *const riid, LPVOID *ppvObj);
+    ULONG(__stdcall *AddRef)(IDirect3DViewport2 *This);
+    ULONG(__stdcall *Release)(IDirect3DViewport2 *This);
+    HRESULT(__stdcall *Initialize)(IDirect3DViewport2 *This, LPDIRECT3D);
+    HRESULT(__stdcall *GetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
+    HRESULT(__stdcall *SetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
+    HRESULT(__stdcall *TransformVertices)
+    (IDirect3DViewport2 *This, DWORD, LPD3DTRANSFORMDATA, DWORD, LPDWORD);
+    HRESULT(__stdcall *LightElements)(IDirect3DViewport2 *This, DWORD, LPD3DLIGHTDATA);
+    HRESULT(__stdcall *SetBackground)(IDirect3DViewport2 *This, D3DMATERIALHANDLE);
+    HRESULT(__stdcall *GetBackground)(IDirect3DViewport2 *This, LPD3DMATERIALHANDLE, LPBOOL);
+    HRESULT(__stdcall *SetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE);
+    HRESULT(__stdcall *GetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE *, LPBOOL);
+    HRESULT(__stdcall *Clear)(IDirect3DViewport2 *This, DWORD, LPD3DRECT, DWORD);
+    HRESULT(__stdcall *AddLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
+    HRESULT(__stdcall *DeleteLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
+    HRESULT(__stdcall *NextLight)
+    (IDirect3DViewport2 *This, LPDIRECT3DLIGHT, LPDIRECT3DLIGHT *, DWORD);
+    HRESULT(__stdcall *GetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
+    HRESULT(__stdcall *SetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
+};
+
+/* 569 */
+typedef HRESULT(__stdcall *LPD3DENUMDEVICESCALLBACK)(LPGUID lpGuid,
+                                                     LPSTR lpDeviceDescription,
+                                                     LPSTR lpDeviceName,
+                                                     LPD3DDEVICEDESC,
+                                                     LPD3DDEVICEDESC,
+                                                     LPVOID);
+
+/* 645 */
+typedef IDirect3DMaterial2 *LPDIRECT3DMATERIAL2;
+
+/* 636 */
+typedef _D3DFINDDEVICESEARCH *LPD3DFINDDEVICESEARCH;
+
+/* 638 */
+typedef _D3DFINDDEVICERESULT *LPD3DFINDDEVICERESULT;
+
+/* 488 */
+typedef GUID CLSID;
+
+/* 568 */
+struct IDirect3D2Vtbl {
+    HRESULT(__stdcall *QueryInterface)(IDirect3D2 *This, const IID *const riid, LPVOID *ppvObj);
+    ULONG(__stdcall *AddRef)(IDirect3D2 *This);
+    ULONG(__stdcall *Release)(IDirect3D2 *This);
+    HRESULT(__stdcall *EnumDevices)(IDirect3D2 *This, LPD3DENUMDEVICESCALLBACK, LPVOID);
+    HRESULT(__stdcall *CreateLight)(IDirect3D2 *This, LPDIRECT3DLIGHT *, IUnknown *);
+    HRESULT(__stdcall *CreateMaterial)(IDirect3D2 *This, LPDIRECT3DMATERIAL2 *, IUnknown *);
+    HRESULT(__stdcall *CreateViewport)(IDirect3D2 *This, LPDIRECT3DVIEWPORT2 *, IUnknown *);
+    HRESULT(__stdcall *FindDevice)(IDirect3D2 *This, LPD3DFINDDEVICESEARCH, LPD3DFINDDEVICERESULT);
+    HRESULT(__stdcall *CreateDevice)
+    (IDirect3D2 *This, const CLSID *const, LPDIRECTDRAWSURFACE, LPDIRECT3DDEVICE2 *);
+};
 
 /* 576 */
 struct IDirect3D {
@@ -4958,6 +4717,11 @@ struct _D3DLIGHTDATA {
 };
 #pragma pack(pop)
 
+/* 573 */
+struct IDirect3DLight {
+    IDirect3DLightVtbl *lpVtbl;
+};
+
 /* 669 */
 #pragma pack(push, 4)
 struct _D3DVIEWPORT2 {
@@ -4975,28 +4739,36 @@ struct _D3DVIEWPORT2 {
 };
 #pragma pack(pop)
 
-/* 641 */
-typedef _D3DLIGHT *LPD3DLIGHT;
-
-/* 574 */
-struct IDirect3DLightVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3DLight *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DLight *This);
-    ULONG(__stdcall *Release)(IDirect3DLight *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DLight *This, LPDIRECT3D);
-    HRESULT(__stdcall *SetLight)(IDirect3DLight *This, LPD3DLIGHT);
-    HRESULT(__stdcall *GetLight)(IDirect3DLight *This, LPD3DLIGHT);
+/* 550 */
+struct IDirect3DMaterial2 {
+    IDirect3DMaterial2Vtbl *lpVtbl;
 };
 
-/* 510 */
-struct IDirect3DTexture2Vtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3DTexture2 *, GUID *, LPVOID *);
-    HRESULT(__stdcall *AddRef)(IDirect3DTexture2 *);
-    HRESULT(__stdcall *Release)(IDirect3DTexture2 *);
-    HRESULT(__stdcall *GetHandle)(IDirect3DTexture2 *, #486 *, D3DTEXTUREHANDLE *);
-    HRESULT(__stdcall *PaletteChanged)(IDirect3DTexture2 *, DWORD, DWORD);
-    HRESULT(__stdcall *Load)(IDirect3DTexture2 *, IDirect3DTexture2 *);
+/* 637 */
+#pragma pack(push, 4)
+struct _D3DFINDDEVICESEARCH {
+    DWORD dwSize;
+    DWORD dwFlags;
+    BOOL bHardware;
+    D3DCOLORMODEL dcmColorModel;
+    GUID guid;
+    DWORD dwCaps;
+    D3DPRIMCAPS dpcPrimCaps;
 };
+#pragma pack(pop)
+
+/* 640 */
+typedef _D3DDeviceDesc D3DDEVICEDESC;
+
+/* 639 */
+#pragma pack(push, 4)
+struct _D3DFINDDEVICERESULT {
+    DWORD dwSize;
+    GUID guid;
+    D3DDEVICEDESC ddHwDesc;
+    D3DDEVICEDESC ddSwDesc;
+};
+#pragma pack(pop)
 
 /* 578 */
 typedef IDirect3DMaterial *LPDIRECT3DMATERIAL;
@@ -5195,6 +4967,43 @@ struct _D3DTLVERTEX {
 };
 #pragma pack(pop)
 
+/* 641 */
+typedef _D3DLIGHT *LPD3DLIGHT;
+
+/* 574 */
+struct IDirect3DLightVtbl {
+    HRESULT(__stdcall *QueryInterface)(IDirect3DLight *This, const IID *const riid, LPVOID *ppvObj);
+    ULONG(__stdcall *AddRef)(IDirect3DLight *This);
+    ULONG(__stdcall *Release)(IDirect3DLight *This);
+    HRESULT(__stdcall *Initialize)(IDirect3DLight *This, LPDIRECT3D);
+    HRESULT(__stdcall *SetLight)(IDirect3DLight *This, LPD3DLIGHT);
+    HRESULT(__stdcall *GetLight)(IDirect3DLight *This, LPD3DLIGHT);
+};
+
+/* 552 */
+typedef _D3DMATERIAL *LPD3DMATERIAL;
+
+/* 551 */
+struct IDirect3DMaterial2Vtbl {
+    HRESULT(__stdcall *QueryInterface)
+    (IDirect3DMaterial2 *This, const IID *const riid, LPVOID *ppvObj);
+    ULONG(__stdcall *AddRef)(IDirect3DMaterial2 *This);
+    ULONG(__stdcall *Release)(IDirect3DMaterial2 *This);
+    HRESULT(__stdcall *SetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
+    HRESULT(__stdcall *GetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
+    HRESULT(__stdcall *GetHandle)(IDirect3DMaterial2 *This, LPDIRECT3DDEVICE2, LPD3DMATERIALHANDLE);
+};
+
+/* 579 */
+struct IDirect3DMaterial {
+    IDirect3DMaterialVtbl *lpVtbl;
+};
+
+/* 601 */
+struct IDirect3DViewport {
+    IDirect3DViewportVtbl *lpVtbl;
+};
+
 /* 644 */
 enum _D3DLIGHTTYPE {
     D3DLIGHT_POINT = 0x1,
@@ -5206,6 +5015,71 @@ enum _D3DLIGHTTYPE {
 
 /* 643 */
 typedef _D3DLIGHTTYPE D3DLIGHTTYPE;
+
+/* 557 */
+#pragma pack(push, 4)
+union _D3DCOLORVALUE::$79F58B462609A8478E0156545A48EE38 {
+    D3DVALUE r;
+    D3DVALUE dvR;
+};
+#pragma pack(pop)
+
+/* 558 */
+#pragma pack(push, 4)
+union _D3DCOLORVALUE::$1870E08CD1297AF1183F2104CF0E68BB {
+    D3DVALUE g;
+    D3DVALUE dvG;
+};
+#pragma pack(pop)
+
+/* 559 */
+#pragma pack(push, 4)
+union _D3DCOLORVALUE::$89D0C02BD3EDF7E42F4E64602AB90C16 {
+    D3DVALUE b;
+    D3DVALUE dvB;
+};
+#pragma pack(pop)
+
+/* 560 */
+#pragma pack(push, 4)
+union _D3DCOLORVALUE::$5FBE30F4B5EDEA02F5A8FF631684CD5C {
+    D3DVALUE a;
+    D3DVALUE dvA;
+};
+#pragma pack(pop)
+
+/* 556 */
+#pragma pack(push, 4)
+struct _D3DCOLORVALUE {
+#pragma pack(push, 4)
+    union {
+        D3DVALUE r;
+        D3DVALUE dvR;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DVALUE g;
+        D3DVALUE dvG;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DVALUE b;
+        D3DVALUE dvB;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DVALUE a;
+        D3DVALUE dvA;
+    };
+#pragma pack(pop)
+};
+#pragma pack(pop)
+
+/* 555 */
+typedef _D3DCOLORVALUE D3DCOLORVALUE;
 
 /* 642 */
 #pragma pack(push, 4)
@@ -5225,15 +5099,84 @@ struct _D3DLIGHT {
 };
 #pragma pack(pop)
 
-/* 579 */
-struct IDirect3DMaterial {
-    IDirect3DMaterialVtbl *lpVtbl;
+/* 554 */
+#pragma pack(push, 4)
+union _D3DMATERIAL::$F37024B6A2A7DA8F8161E452127F778F {
+    D3DCOLORVALUE diffuse;
+    D3DCOLORVALUE dcvDiffuse;
 };
+#pragma pack(pop)
 
-/* 601 */
-struct IDirect3DViewport {
-    IDirect3DViewportVtbl *lpVtbl;
+/* 561 */
+#pragma pack(push, 4)
+union _D3DMATERIAL::$B545799AB1B094EA7448ADA6B118C0D5 {
+    D3DCOLORVALUE ambient;
+    D3DCOLORVALUE dcvAmbient;
 };
+#pragma pack(pop)
+
+/* 562 */
+#pragma pack(push, 4)
+union _D3DMATERIAL::$48A7D73869B8DD97079A7DB0052C867A {
+    D3DCOLORVALUE specular;
+    D3DCOLORVALUE dcvSpecular;
+};
+#pragma pack(pop)
+
+/* 563 */
+#pragma pack(push, 4)
+union _D3DMATERIAL::$4E89CE7B3871A99DAB3B73BC63770FCE {
+    D3DCOLORVALUE emissive;
+    D3DCOLORVALUE dcvEmissive;
+};
+#pragma pack(pop)
+
+/* 564 */
+#pragma pack(push, 4)
+union _D3DMATERIAL::$0E29CCD1ABCFA56B0343B217BB93547E {
+    D3DVALUE power;
+    D3DVALUE dvPower;
+};
+#pragma pack(pop)
+
+/* 553 */
+#pragma pack(push, 4)
+struct _D3DMATERIAL {
+    DWORD dwSize;
+#pragma pack(push, 4)
+    union {
+        D3DCOLORVALUE diffuse;
+        D3DCOLORVALUE dcvDiffuse;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DCOLORVALUE ambient;
+        D3DCOLORVALUE dcvAmbient;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DCOLORVALUE specular;
+        D3DCOLORVALUE dcvSpecular;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DCOLORVALUE emissive;
+        D3DCOLORVALUE dcvEmissive;
+    };
+#pragma pack(pop)
+#pragma pack(push, 4)
+    union {
+        D3DVALUE power;
+        D3DVALUE dvPower;
+    };
+#pragma pack(pop)
+    D3DTEXTUREHANDLE hTexture;
+    DWORD dwRampSize;
+};
+#pragma pack(pop)
 
 /* 581 */
 typedef IDirect3DDevice *LPDIRECT3DDEVICE;
@@ -5426,8 +5369,41 @@ struct _D3DEXECUTEDATA {
 };
 #pragma pack(pop)
 
-/* 485 */
-struct gameSpecificUnk1 {};
+/* 492 */
+struct unk1 {
+    int field_46;
+    int field_45;
+    int height0;
+    int width0;
+    int field_43;
+    int field_42;
+    int field_41;
+    int field_40;
+    int unk_34;
+    int field_33;
+    int height;
+    int width;
+    int field_30;
+    int field_14;
+    int field_18;
+    int field_1C;
+    int field_29;
+    int field_28;
+    int field_27;
+    int field_26;
+    LPDIRECTINPUTDEVICEA lpDIDeviceA;
+    int bitDepth0;
+    int field_23;
+    int field_22;
+    int field_20;
+    int field_21;
+    int field_1;
+    int field_4;
+    int field_8;
+    int bitDepth;
+    int field_10;
+    int last;
+};
 
 /* 495 */
 struct __declspec(align(4)) CHK_File {
@@ -5915,6 +5891,17 @@ enum MACRO_DDFLIP {
 enum MACRO_DDGFS {
     DDGFS_CANFLIP = 0x1,
     DDGFS_ISFLIPDONE = 0x2,
+};
+
+/* 666 */
+typedef _D3DMATERIAL D3DMATERIAL;
+
+/* 549 */
+struct unk5C {
+    D3DMATERIAL d3dMaterial;
+    D3DMATERIALHANDLE lpD3DMaterialHandle;
+    LPDIRECT3DMATERIAL2 lpDirect3DMaterial2;
+    int field_58;
 };
 
 /* 672 */
@@ -7487,3 +7474,253 @@ struct PodVtbl {
 
 /* 684 */
 typedef _D3DTLVERTEX D3DTLVERTEX;
+
+/* 685 */
+enum MACRO_DIRECTINPUT {
+    DIRECTINPUT_VERSION = 0x500,
+};
+
+/* 686 */
+typedef _DDCAPS_DX6 DDCAPS_DX6;
+
+/* 687 */
+struct _DDCAPS_DX6 {
+    DWORD dwSize;
+    DWORD dwCaps;
+    DWORD dwCaps2;
+    DWORD dwCKeyCaps;
+    DWORD dwFXCaps;
+    DWORD dwFXAlphaCaps;
+    DWORD dwPalCaps;
+    DWORD dwSVCaps;
+    DWORD dwAlphaBltConstBitDepths;
+    DWORD dwAlphaBltPixelBitDepths;
+    DWORD dwAlphaBltSurfaceBitDepths;
+    DWORD dwAlphaOverlayConstBitDepths;
+    DWORD dwAlphaOverlayPixelBitDepths;
+    DWORD dwAlphaOverlaySurfaceBitDepths;
+    DWORD dwZBufferBitDepths;
+    DWORD dwVidMemTotal;
+    DWORD dwVidMemFree;
+    DWORD dwMaxVisibleOverlays;
+    DWORD dwCurrVisibleOverlays;
+    DWORD dwNumFourCCCodes;
+    DWORD dwAlignBoundarySrc;
+    DWORD dwAlignSizeSrc;
+    DWORD dwAlignBoundaryDest;
+    DWORD dwAlignSizeDest;
+    DWORD dwAlignStrideAlign;
+    DWORD dwRops[8];
+    DDSCAPS ddsOldCaps;
+    DWORD dwMinOverlayStretch;
+    DWORD dwMaxOverlayStretch;
+    DWORD dwMinLiveVideoStretch;
+    DWORD dwMaxLiveVideoStretch;
+    DWORD dwMinHwCodecStretch;
+    DWORD dwMaxHwCodecStretch;
+    DWORD dwReserved1;
+    DWORD dwReserved2;
+    DWORD dwReserved3;
+    DWORD dwSVBCaps;
+    DWORD dwSVBCKeyCaps;
+    DWORD dwSVBFXCaps;
+    DWORD dwSVBRops[8];
+    DWORD dwVSBCaps;
+    DWORD dwVSBCKeyCaps;
+    DWORD dwVSBFXCaps;
+    DWORD dwVSBRops[8];
+    DWORD dwSSBCaps;
+    DWORD dwSSBCKeyCaps;
+    DWORD dwSSBFXCaps;
+    DWORD dwSSBRops[8];
+    DWORD dwMaxVideoPorts;
+    DWORD dwCurrVideoPorts;
+    DWORD dwSVBCaps2;
+    DWORD dwNLVBCaps;
+    DWORD dwNLVBCaps2;
+    DWORD dwNLVBCKeyCaps;
+    DWORD dwNLVBFXCaps;
+    DWORD dwNLVBRops[8];
+    DDSCAPS2 ddsCaps;
+};
+
+/* 688 */
+struct unk74 {
+    int field_0;
+    _BYTE gap4[96];
+    int field_64;
+    int field_68;
+    _BYTE gap6C[4];
+    int last;
+};
+
+/* 689 */
+struct unk228 {
+    int field_0;
+    _BYTE gap4[36];
+    int field_28;
+    int field_2C;
+    int field_30;
+    _BYTE gap34[8];
+    char field_3C;
+    _BYTE gap3D[483];
+    int field_220;
+    int last;
+};
+
+/* 690 */
+struct unk20 {
+    int field_0;
+    int field_4;
+    int field_8;
+    int field_C;
+    int field_10;
+    int field_14;
+    int field_18;
+    int last;
+};
+
+/* 691 */
+struct unkC8 {
+    unkC8Vtbl *lpVtbl;
+    int(__cdecl *lpFn0)(unkC8 *);
+    int field_8;
+    int field_C;
+    int field_10;
+    unk348 *field_14[2];
+    int field_1C;
+    _BYTE gap20[68];
+    int field_64;
+    int field_68;
+    int field_6C;
+    _BYTE gap70[76];
+    int field_BC;
+    char *field_C0;
+    unk6594 *last;
+};
+
+/* 700 */
+struct unkC8Vtbl {
+    void(__thiscall *field_0)(unkC8 *, int);
+    int field_4;
+    int field_8;
+    int field_C;
+    int field_10;
+    int field_14;
+    int field_18;
+    void(__thiscall *field_1C)(unkC8 *);
+    int last;
+};
+
+/* 696 */
+struct unk348 {
+    int field_0;
+    _BYTE gap4[12];
+    int field_10;
+    int field_14;
+    unk1E214 *field_18[2];
+    _BYTE gap20[792];
+    int field_338;
+    float field_33C;
+    unkC8 *field_340;
+    int last;
+};
+
+/* 692 */
+struct unk6594 {
+    unk6594Vtbl *lpVtbl;
+    char *field_4;
+    int field_8;
+    _BYTE gapC[440];
+    int field_1C4;
+    _BYTE gap1C8[25544];
+    unk6594 *last;
+};
+
+/* 697 */
+struct unk1E214 {
+    unk1E214Vtbl *field_0;
+    int(__cdecl *field_4)(int);
+    int(__cdecl *field_8)();
+    int(__cdecl *field_C)(int);
+    _BYTE gap10[64];
+    int field_50;
+    _BYTE gap54[4];
+    int field_58;
+    _BYTE gap5C[12060];
+    int field_2F78;
+    int field_2F7C;
+    int field_2F80;
+    int field_2F84;
+    _BYTE gap2F88[4];
+    int field_2F8C;
+    _BYTE gap2F90[2216];
+    int field_3838;
+    _BYTE gap383C[108984];
+    int field_1E1F4;
+    _BYTE gap1E1F8[20];
+    int field_1E20C;
+    int last;
+};
+
+/* 698 */
+struct unk6594Vtbl {
+    int field_0;
+    void(__thiscall *unknownMeth0)(unk6594 *, char *);
+    int last;
+};
+
+/* 699 */
+struct unk1E214Vtbl {
+    int field_0;
+    int field_4;
+    _BYTE gap8[40];
+    int field_30;
+    void(__thiscall *field_34)(unk1E214 *, LPCSTR, int, int, void *);
+    void(__thiscall *field_38)(unk1E214 *, unkC8 *, _DWORD, _DWORD, int, int, int, int, int);
+    int last;
+};
+
+/* 693 */
+struct unk8C {
+    int field_0;
+    _BYTE gap4[4];
+    int field_8;
+    _BYTE gapC[4];
+    int field_10;
+    int field_14;
+    _BYTE gap18[4];
+    int field_1C;
+    HWND field_20;
+    _BYTE gap24[20];
+    IDirectDraw *lpDirectDraw;
+    IDirectDraw2 *lpDirectDraw2;
+    IDirect3D2 *lpDirect3D2;
+    LPDIRECTDRAWSURFACE lpDirectDrawSurface0;
+    IDirectDrawPalette *lpDirectDrawPalette;
+    int field_4C;
+    int field_50;
+    IDirect3DMaterial2 *lpDirect3DMaterial2;
+    IDirectDrawSurface *lpDirectDrawSurface1;
+    LPDIRECTDRAWSURFACE lpDirectDrawSurface2;
+    IDirect3DDevice2 *lpDirect3DDevice;
+    LPDIRECT3DVIEWPORT2 lpDirect3DViewport2;
+    int field_68;
+    int field_6C;
+    _BYTE gap70[24];
+    int last;
+};
+
+/* 694 */
+enum MACRO_NULL {
+    NULL = 0,
+    _IOREAD = 1,
+    _IOWRT = 2,
+};
+
+/* 695 */
+struct unk54 {
+    int field_0;
+    _BYTE gap4[76];
+    LPDIRECTINPUTDEVICEA lpDIDeviceA;
+};

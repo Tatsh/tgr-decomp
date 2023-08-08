@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A7D0) --------------------------------------------------------
 gameSpecificUnk1 *__cdecl sub_1007A7D0(const void *a1) {
     gameSpecificUnk1 *v1; // ebx

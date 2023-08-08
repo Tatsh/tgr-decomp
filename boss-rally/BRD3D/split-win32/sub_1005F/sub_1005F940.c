@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005F940) --------------------------------------------------------
 int sub_1005F940() {
     int v0;              // eax
@@ -57,8 +57,8 @@ int sub_1005F940() {
         }
         if (dword_10220B24 < 4 && dword_10220B2C < 1)
             dword_10AA28B0 = 1;
-        *((_DWORD *)dword_10AA2904 + 26) = 0;
-        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)dword_10AA2904 + 24))(dword_10AA2904, 0);
+        *((_DWORD *)g_unkC8Ptr1 + 26) = 0;
+        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)g_unkC8Ptr1 + 24))(g_unkC8Ptr1, 0);
         result = 0;
     } else {
         g_GameMode = 0;

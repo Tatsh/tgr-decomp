@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10047A60) --------------------------------------------------------
 int __thiscall meth_10047A60(_DWORD *this) {
     int v2;  // eax
@@ -66,7 +66,7 @@ int __thiscall meth_10047A60(_DWORD *this) {
             }
             v11 = this[7];
             if ((v11 & 0x40000) != 0) {
-                if (dword_10AA2E80->width || dword_10AA2E80->field_30) {
+                if (g_unk54Ptr->width || g_unk54Ptr->field_30) {
                     v11 |= 0x80002u;
                 LABEL_47:
                     this[7] = v11;

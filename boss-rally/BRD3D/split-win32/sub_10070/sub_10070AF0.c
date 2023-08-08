@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10070AF0) --------------------------------------------------------
 bool __cdecl sub_10070AF0(char *FileName, int a2) {
     FILE *v2;             // eax

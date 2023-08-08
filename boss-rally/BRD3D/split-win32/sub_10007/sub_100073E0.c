@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100073E0) --------------------------------------------------------
 unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3) {
     char v3;             // al

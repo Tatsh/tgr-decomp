@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10078BC0) --------------------------------------------------------
 LPDIRECTINPUTDEVICEA sub_10078BC0() {
     LPDIRECTINPUTDEVICEA result; // eax

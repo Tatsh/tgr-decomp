@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003F760) --------------------------------------------------------
 int __cdecl sub_1003F760(int a1) {
     const char *v1; // eax
     int v2;         // eax
     int v3;         // edx
 
-    if (dword_10AA2904 != (void *)dword_10AA2964 || dword_10AA28E8) {
+    if (g_unkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
         v2 = dword_100AC654;
         if (dword_100AC654 > 15)
             v2 = dword_100AC654 - 16;

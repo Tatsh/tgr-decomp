@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10031D3F) --------------------------------------------------------
 double __cdecl sub_10031D3F(float *a1) {
     float v2;    // [esp+0h] [ebp-1Ch]

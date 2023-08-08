@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10072030) --------------------------------------------------------
 int __cdecl sub_10072030(_DWORD *a1, char a2, int a3, __int16 a4) {
     if (meth_10073F40(a1) + 6 > 256)

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B960) --------------------------------------------------------
 GUID *__thiscall getDirectDrawLPGUID(gameSpecificUnk1 *this) {
     GUID *result; // eax

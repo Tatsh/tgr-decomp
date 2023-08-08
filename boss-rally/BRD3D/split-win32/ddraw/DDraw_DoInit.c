@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005F690) --------------------------------------------------------
 int DDraw_DoInit() {
     int v0;                        // ebp
@@ -19,9 +19,9 @@ int DDraw_DoInit() {
             sprintf(Buffer, aDdrawDoinitLoa);
             sub_1005F580();
         }
-        (*(void(__thiscall **)(void *))(*(_DWORD *)dword_10AA2904 + 32))(dword_10AA2904);
+        (*(void(__thiscall **)(void *))(*(_DWORD *)g_unkC8Ptr1 + 32))(g_unkC8Ptr1);
         sub_1005F5A0(0, 0, 0, dword_100AB56C, dword_100AB57C[0]);
-        (*(void(__thiscall **)(void *))(*(_DWORD *)dword_10AA2904 + 20))(dword_10AA2904);
+        (*(void(__thiscall **)(void *))(*(_DWORD *)g_unkC8Ptr1 + 20))(g_unkC8Ptr1);
         if (dword_10A9E360[0]) {
             (*(void(__stdcall **)(int))(*(_DWORD *)dword_10A9E360[0] + 8))(dword_10A9E360[0]);
             dword_10A9E360[0] = 0;

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10079A90) --------------------------------------------------------
 int __cdecl RallyCreateWindow(DWORD dwExStyle,
                               LPCSTR lpClassName,
@@ -15,12 +15,12 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle,
                               int a3,
                               int a14,
                               HWND *a15,
-                              unk0 *a16) {
-    unk0 *gsu0_1;    // edi
+                              unk334 *a16) {
+    unk8C *gsu0_1;   // edi
     int result;      // eax
     HINSTANCE hInst; // ebx
     HWND wnd1;       // esi
-    unk0 *gsu0;      // eax
+    unk8C *gsu0;     // eax
     HWND wnd;        // eax
     HWND wnd0;       // esi
     int v23;         // ebx
@@ -34,7 +34,7 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle,
     wnd1 = hWndParent;
     if (!hWndParent)
         wnd1 = GetDesktopWindow();
-    gsu0 = (unk0 *)malloc(0x8Cu);
+    gsu0 = (unk8C *)malloc(0x8Cu);
     if (gsu0)
         gsu0_1 = initUnk(gsu0);
     if (!gsu0_1)
@@ -65,14 +65,14 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle,
                 a16->field_27 = gsu0_1;
             result = 0;
         } else {
-            meth_1000A1C0(gsu0_1);
+            meth_1000A1C0((unk334 *)gsu0_1);
             free(gsu0_1);
             MessageBoxA(wnd0, aUnableToInitia, Caption, MB_ICONSTOP);
             DestroyWindow(wnd0);
             result = v23;
         }
     } else {
-        meth_1000A1C0(gsu0_1);
+        meth_1000A1C0((unk334 *)gsu0_1);
         free(gsu0_1);
         result = -2147467259;
     }

@@ -1,42 +1,42 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10056A10) --------------------------------------------------------
 int __cdecl sub_10056A10(int a1) {
     unsigned __int16 v1; // ax
-    _DWORD *v2;          // eax
-    _DWORD *v3;          // ebp
-    _DWORD *v4;          // eax
-    _DWORD *v5;          // ebx
-    _DWORD *v6;          // eax
-    _WORD *v7;           // ebx
-    int v8;              // esi
+    unk348 *v2;          // eax
+    unk348 *v3;          // ebp
+    unk1E214 *v4;        // eax
+    unk1E214 *v5;        // ebx
+    unk1E214 *v6;        // eax
+    unk1E214 *v7;        // ebx
+    unk1E214Vtbl *v8;    // esi
     LPCSTR v9;           // eax
-    _DWORD *v10;         // eax
-    _WORD *v11;          // ebx
-    int v12;             // esi
+    unk1E214 *v10;       // eax
+    unk1E214 *v11;       // ebx
+    unk1E214Vtbl *v12;   // esi
     LPCSTR v13;          // eax
-    _DWORD *v14;         // eax
-    _DWORD *v15;         // ebx
-    _DWORD *v16;         // eax
-    _DWORD *v17;         // ebx
-    int v18;             // esi
+    unk1E214 *v14;       // eax
+    unk1E214 *v15;       // ebx
+    unk1E214 *v16;       // eax
+    unk1E214 *v17;       // ebx
+    unk1E214Vtbl *v18;   // esi
     int v19;             // edx
-    _DWORD *v20;         // eax
-    _DWORD *v21;         // esi
-    int v22;             // edi
+    unk1E214 *v20;       // eax
+    unk1E214 *v21;       // esi
+    unk1E214Vtbl *v22;   // edi
     LPCSTR v23;          // eax
-    _DWORD *v24;         // eax
-    _DWORD *v25;         // esi
-    int v26;             // edi
+    unk1E214 *v24;       // eax
+    unk1E214 *v25;       // esi
+    unk1E214Vtbl *v26;   // edi
     LPCSTR v27;          // eax
-    _DWORD *v28;         // eax
-    _DWORD *v29;         // esi
+    unk1E214 *v28;       // eax
+    unk1E214 *v29;       // esi
     float v31;           // [esp+124h] [ebp-38h]
     float v32;           // [esp+124h] [ebp-38h]
 
     v1 = *(_WORD *)(a1 + 16);
     *(_WORD *)(a1 + 18) = 0;
     *(_DWORD *)(a1 + 4 * v1 + 108) = 1;
-    v2 = (_DWORD *)malloc(0x348u);
+    v2 = (unk348 *)malloc(0x348u);
     if (v2)
         v3 = meth_10048470(v2);
     else
@@ -45,147 +45,135 @@ int __cdecl sub_10056A10(int a1) {
     if (!v3)
         sub_1003E260(4);
     ++*(_WORD *)(a1 + 16);
-    v3[208] = a1;
-    v3[4] = 0;
-    v3[206] = 1128136704;
-    v3[207] = 1124204544;
-    v4 = (_DWORD *)malloc(0x1E214u);
+    v3->field_340 = (unkC8 *)a1;
+    v3->field_10 = 0;
+    v3->field_338 = 1128136704;
+    v3->field_33C = 130.0;
+    v4 = (unk1E214 *)malloc(0x1E214u);
     if (v4)
         v5 = meth_100476C0(v4);
     else
         v5 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v5;
+    v3->field_18[LOWORD(v3->field_14)] = v5;
     if (!v5)
         sub_1003E260(4);
-    (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))(
-        *v5 + 56))(v5, a1, 0, 0, 9, 2, 5, 0, 0);
-    ++*((_WORD *)v3 + 10);
-    v6 = (_DWORD *)malloc(0x1E214u);
+    v5->field_0->field_38(v5, (unkC8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+    ++LOWORD(v3->field_14);
+    v6 = (unk1E214 *)malloc(0x1E214u);
     if (v6)
         v7 = meth_100476C0(v6);
     else
         v7 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v7;
+    v3->field_18[LOWORD(v3->field_14)] = v7;
     if (!v7)
         sub_1003E260(4);
-    v8 = *(_DWORD *)v7;
-    (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(
-        *(_DWORD *)v7 + 56))(v7, a1, v3[206], 1092616192, 1048585, 2, 5, 1, -1);
-    v7[61702] = 3;
+    v8 = v7->field_0;
+    v7->field_0->field_38(v7, (unkC8 *)a1, v3->field_338, 1092616192, 1048585, 2, 5, 1, -1);
+    LOWORD(v7->field_1E20C) = 3;
     v9 = getCaptionString(0x5Du);
-    (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v8 + 52))(
-        v7, v9, 1, 1, &unk_100AB508);
-    ++*((_WORD *)v3 + 10);
-    v10 = (_DWORD *)malloc(0x1E214u);
+    v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+    ++LOWORD(v3->field_14);
+    v10 = (unk1E214 *)malloc(0x1E214u);
     if (v10)
         v11 = meth_100476C0(v10);
     else
         v11 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v11;
+    v3->field_18[LOWORD(v3->field_14)] = v11;
     if (!v11)
         sub_1003E260(4);
-    v12 = *(_DWORD *)v11;
-    (*(void(__thiscall **)(_WORD *, int, _DWORD, _DWORD, int, int, int, int, int))(
-        *(_DWORD *)v11 + 56))(v11, a1, v3[206], v3[207], 1048585, 2, 5, 1, -1);
-    v11[61702] = 52;
+    v12 = v11->field_0;
+    v11->field_0->field_38(
+        v11, (unkC8 *)a1, v3->field_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
+    LOWORD(v11->field_1E20C) = 52;
     v13 = getCaptionString(0x5Eu);
-    (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, int *))(v12 + 52))(
-        v11, v13, 1, 4, &dword_100AB448);
-    ++*((_WORD *)v3 + 10);
-    v14 = (_DWORD *)malloc(0x1E214u);
+    v12->field_34(v11, v13, 1, 4, &dword_100AB448);
+    ++LOWORD(v3->field_14);
+    v14 = (unk1E214 *)malloc(0x1E214u);
     if (v14)
         v15 = meth_100476C0(v14);
     else
         v15 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v15;
+    v3->field_18[LOWORD(v3->field_14)] = v15;
     if (!v15)
         sub_1003E260(4);
-    (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, _DWORD, int))(*v15 + 56))(
-        v15, a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
-    ++*((_WORD *)v3 + 10);
-    v16 = (_DWORD *)malloc(0x1E214u);
+    v15->field_0->field_38(v15, (unkC8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
+    ++LOWORD(v3->field_14);
+    v16 = (unk1E214 *)malloc(0x1E214u);
     if (v16)
         v17 = meth_100476C0(v16);
     else
         v17 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v17;
+    v3->field_18[LOWORD(v3->field_14)] = v17;
     if (!v17)
         sub_1003E260(4);
-    v18 = *v17;
-    (*(void(__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v17 + 56))(
-        v17, a1, v3[206], 1127088128, 2097153, 2, 5, 1, -1);
-    v17[2] = sub_10042AC0;
-    v17[1] = sub_1003EF90;
-    v17[4] = sub_1003F020;
-    *((_WORD *)v17 + 61702) = 3;
-    (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, int *))(v18 + 52))(
-        v17, String2, 1, 1, &dword_100AB448);
-    v19 = v17[2775];
-    strcpy((char *)v17 + 11109, String1);
-    (*(void(__thiscall **)(_DWORD *))(v19 + 4))(v17 + 2775);
-    v17[20] = 155;
-    v17[3040] = 155;
-    v17[22] = 347;
-    v17[3042] = 347;
-    v17[21] = 172;
-    v17[3041] = 172;
-    v17[23] = 188;
-    v17[3043] = 188;
-    *((_WORD *)v17 + 6076) = *((_WORD *)v17 + 6084) - *((_WORD *)v17 + 6080) - 16;
-    ++*((_WORD *)v3 + 10);
-    ++*((_WORD *)v3 + 418);
-    v20 = (_DWORD *)malloc(0x1E214u);
+    v18 = v17->field_0;
+    v17->field_0->field_38(v17, (unkC8 *)a1, v3->field_338, 1127088128, 2097153, 2, 5, 1, -1);
+    v17->field_8 = (int(__cdecl *)())sub_10042AC0;
+    v17->field_4 = sub_1003EF90;
+    *(_DWORD *)v17->gap10 = sub_1003F020;
+    LOWORD(v17->field_1E20C) = 3;
+    v18->field_34(v17, String2, 1, 1, &dword_100AB448);
+    v19 = *(_DWORD *)&v17->gap5C[11008];
+    strcpy(&v17->gap5C[11017], String1);
+    (*(void(__thiscall **)(_BYTE *))(v19 + 4))(&v17->gap5C[11008]);
+    v17->field_50 = 155;
+    v17->field_2F80 = 155;
+    v17->field_58 = 347;
+    *(_DWORD *)v17->gap2F88 = 347;
+    *(_DWORD *)v17->gap54 = 172;
+    v17->field_2F84 = 172;
+    *(_DWORD *)v17->gap5C = 188;
+    v17->field_2F8C = 188;
+    LOWORD(v17->field_2F78) = *(_WORD *)v17->gap2F88 - LOWORD(v17->field_2F80) - 16;
+    ++LOWORD(v3->field_14);
+    ++LOWORD(v3->last);
+    v20 = (unk1E214 *)malloc(0x1E214u);
     if (v20)
         v21 = meth_100476C0(v20);
     else
         v21 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v21;
+    v3->field_18[LOWORD(v3->field_14)] = v21;
     if (!v21)
         sub_1003E260(4);
-    v22 = *v21;
-    v31 = *((float *)v3 + 207) - -95.0;
-    (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v21 + 56))(
-        v21, a1, v3[206], LODWORD(v31), 1056785, 2, 5, 1, -1);
-    v21[3] = sub_10047360;
-    v21[2] = sub_10043F50;
-    *((_WORD *)v21 + 61702) = 2;
+    v22 = v21->field_0;
+    v31 = v3->field_33C - -95.0;
+    v21->field_0->field_38(v21, (unkC8 *)a1, v3->field_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
+    v21->field_C = sub_10047360;
+    v21->field_8 = (int(__cdecl *)())sub_10043F50;
+    LOWORD(v21->field_1E20C) = 2;
     v23 = getCaptionString(0x1Eu);
-    (*(void(__thiscall **)(_DWORD *, LPCSTR, int, _DWORD, int *))(v22 + 52))(
-        v21, v23, 1, 0, &dword_100AB448);
+    v22->field_34(v21, v23, 1, 0, &dword_100AB448);
     dword_10AA29E8 = (int)v21;
-    ++*((_WORD *)v3 + 10);
-    ++*((_WORD *)v3 + 418);
-    v24 = (_DWORD *)malloc(0x1E214u);
+    ++LOWORD(v3->field_14);
+    ++LOWORD(v3->last);
+    v24 = (unk1E214 *)malloc(0x1E214u);
     if (v24)
         v25 = meth_100476C0(v24);
     else
         v25 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v25;
+    v3->field_18[LOWORD(v3->field_14)] = v25;
     if (!v25)
         sub_1003E260(4);
-    v26 = *v25;
-    v32 = *((float *)v3 + 207) - -114.0;
-    (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v25 + 56))(
-        v25, a1, v3[206], LODWORD(v32), 1056769, 2, 5, 1, -1);
-    v25[3] = sub_10047360;
-    v25[2] = sub_10044B40;
-    *((_WORD *)v25 + 61702) = 3;
+    v26 = v25->field_0;
+    v32 = v3->field_33C - -114.0;
+    v25->field_0->field_38(v25, (unkC8 *)a1, v3->field_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+    v25->field_C = sub_10047360;
+    v25->field_8 = (int(__cdecl *)())sub_10044B40;
+    LOWORD(v25->field_1E20C) = 3;
     v27 = getCaptionString(0xCu);
-    (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v26 + 52))(
-        v25, v27, 1, 1, &dword_100AB448);
-    ++*((_WORD *)v3 + 10);
-    ++*((_WORD *)v3 + 418);
-    v28 = (_DWORD *)malloc(0x1E214u);
+    v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+    ++LOWORD(v3->field_14);
+    ++LOWORD(v3->last);
+    v28 = (unk1E214 *)malloc(0x1E214u);
     if (v28)
         v29 = meth_100476C0(v28);
     else
         v29 = 0;
-    v3[*((unsigned __int16 *)v3 + 10) + 6] = v29;
+    v3->field_18[LOWORD(v3->field_14)] = v29;
     if (!v29)
         sub_1003E260(4);
-    (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, _DWORD, int))(*v29 + 56))(
-        v29, a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
-    ++*((_WORD *)v3 + 10);
+    v29->field_0->field_38(v29, (unkC8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+    ++LOWORD(v3->field_14);
     return 1;
 }
 // 10056A10: using guessed type int __cdecl sub_10056A10(int);

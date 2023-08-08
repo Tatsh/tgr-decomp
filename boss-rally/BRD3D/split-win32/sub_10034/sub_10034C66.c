@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10034C66) --------------------------------------------------------
 int __cdecl sub_10034C66(int callback) {
     int result; // eax

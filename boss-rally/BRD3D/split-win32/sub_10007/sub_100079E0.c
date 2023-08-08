@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100079E0) --------------------------------------------------------
 int __cdecl sub_100079E0(int a1, float a2, int a3, int a4) {
     int v4;     // ebp

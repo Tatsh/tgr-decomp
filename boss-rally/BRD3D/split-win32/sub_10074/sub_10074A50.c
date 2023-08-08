@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10074A50) --------------------------------------------------------
 int *__cdecl sub_10074A50(_DWORD *a1, int *a2) {
     int v4;      // ebx

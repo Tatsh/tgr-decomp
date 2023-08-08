@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076A70) --------------------------------------------------------
 void __thiscall meth_10076A70(unsigned __int8 *this, int a2, int a3) {
     sub_10061460(this[10668], this[10669], this[10670]);

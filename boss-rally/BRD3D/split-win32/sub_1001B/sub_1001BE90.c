@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001BE90) --------------------------------------------------------
 HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
     int v4;                    // edi
@@ -14,8 +14,8 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
     IDirect3DDevice2Vtbl *v14; // edx
     IDirect3DDevice2Vtbl *v15; // edx
     HRESULT result;            // eax
-    unk0_member2 *v17;         // eax
-    unk0_member2 *v18;         // esi
+    unk5C *v17;                // eax
+    unk5C *v18;                // esi
     IDirect3DViewport2 *v19;   // edi
     unsigned __int8 v20;       // [esp+D4h] [ebp-A0h]
     float v21;                 // [esp+D4h] [ebp-A0h]
@@ -279,21 +279,20 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
         v37 = g_Height - a2;
         v34 = v4;
         v36 = v5;
-        v17 = g_gsu0->unknown;
+        v17 = g_gsu0->? ;
         v17->d3dMaterial.diffuse.r = v32 * 0.0039215689;
         v17->field_58 = 1;
         v28 = (float)v25;
         v17->d3dMaterial.diffuse.g = v28 * 0.0039215689;
         v24 = (float)v20;
         v17->d3dMaterial.diffuse.b = v24 * 0.0039215689;
-        v18 = g_gsu0->unknown;
-        v19 = g_gsu0->lpDirect3DViewport2;
+        v18 = g_gsu0->? ;
+        v19 = g_gsu0->? ;
         v18->d3dMaterial.dwRampSize = 1;
         v18->field_58 = 1;
         meth_1001C620(v18);
         v19->lpVtbl->SetBackground(v19, v18->lpD3DMaterialHandle);
-        result = g_gsu0->lpDirect3DViewport2->lpVtbl->Clear(
-            g_gsu0->lpDirect3DViewport2, 1, (LPD3DRECT)&v34, 3);
+        result = g_gsu0->?->lpVtbl->Clear(g_gsu0->?, 1, (LPD3DRECT)&v34, 3);
     }
     return result;
 }

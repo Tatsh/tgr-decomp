@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007CF10) --------------------------------------------------------
 size_t __cdecl freadLock(void *buffer, size_t elementSize, size_t elementCount, FILE *fp) {
     size_t v4; // edi

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10035CE0) --------------------------------------------------------
 void __thiscall meth_10035CE0(int *this) {
     int v2;              // eax

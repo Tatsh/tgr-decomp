@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003D480) --------------------------------------------------------
 int __cdecl sub_1003D480(_DWORD *a1, SIZE_T *a2) {
     const void *v2;  // ebp

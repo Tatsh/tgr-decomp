@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10038F30) --------------------------------------------------------
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
     void *v1; // ecx
 
-    if (dword_10AA2904 && dword_100AC300) {
-        *((_DWORD *)dword_10AA2904 + 26) = 0;
-        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)dword_10AA2904 + 24))(dword_10AA2904, 0);
+    if (g_unkC8Ptr1 && dword_100AC300) {
+        *((_DWORD *)g_unkC8Ptr1 + 26) = 0;
+        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)g_unkC8Ptr1 + 24))(g_unkC8Ptr1, 0);
     }
     sub_1002C4A0();
     sub_10016990();

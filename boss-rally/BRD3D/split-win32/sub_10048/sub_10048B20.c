@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10048B20) --------------------------------------------------------
 void __stdcall sub_10048B20(int a1) {
     int waitTicksAdd;  // esi
@@ -17,7 +17,7 @@ void __stdcall sub_10048B20(int a1) {
         Sleep(0);
     if (!a1) {
         dword_100AC300 = 0;
-        dword_10AA2904 = 0;
+        g_unkC8Ptr1 = 0;
         sub_1005F530();
         ppFilepath = &g_aImagesWork1aBmFilepath;
         do {
@@ -55,16 +55,16 @@ void __stdcall sub_10048B20(int a1) {
         dword_10AA29B4 = 0;
     }
     if (dword_10AA2918) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2918 + 28))(dword_10AA2918);
+        dword_10AA2918->lpVtbl->field_1C(dword_10AA2918);
         if (dword_10AA2918)
-            (**(void(__thiscall ***)(int, int))dword_10AA2918)(dword_10AA2918, 1);
+            dword_10AA2918->lpVtbl->field_0(dword_10AA2918, 1);
         dword_10AA2918 = 0;
     }
-    if (dword_10AA291C) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA291C + 28))(dword_10AA291C);
-        if (dword_10AA291C)
-            (**(void(__thiscall ***)(int, int))dword_10AA291C)(dword_10AA291C, 1);
-        dword_10AA291C = 0;
+    if (g_unkC8Ptr3) {
+        g_unkC8Ptr3->lpVtbl->field_1C(g_unkC8Ptr3);
+        if (g_unkC8Ptr3)
+            g_unkC8Ptr3->lpVtbl->field_0(g_unkC8Ptr3, 1);
+        g_unkC8Ptr3 = 0;
     }
     if (dword_10AA2920) {
         (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2920 + 28))(dword_10AA2920);
@@ -194,11 +194,11 @@ void __stdcall sub_10048B20(int a1) {
             (**(void(__thiscall ***)(int, int))dword_10AA2964)(dword_10AA2964, 1);
         dword_10AA2964 = 0;
     }
-    if (dword_10AA2968) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2968 + 28))(dword_10AA2968);
-        if (dword_10AA2968)
-            (**(void(__thiscall ***)(int, int))dword_10AA2968)(dword_10AA2968, 1);
-        dword_10AA2968 = 0;
+    if (g_unkC8Ptr0) {
+        g_unkC8Ptr0->lpVtbl->field_1C(g_unkC8Ptr0);
+        if (g_unkC8Ptr0)
+            g_unkC8Ptr0->lpVtbl->field_0(g_unkC8Ptr0, 1);
+        g_unkC8Ptr0 = 0;
         dword_10AA29C4 = 0;
         dword_10AA29D0 = 0;
     }
@@ -265,11 +265,11 @@ void __stdcall sub_10048B20(int a1) {
         dword_10AA2998 = 0;
     }
     if (!a1) {
-        if (dword_10AA2908) {
-            (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2908 + 28))(dword_10AA2908);
-            if (dword_10AA2908)
-                (**(void(__thiscall ***)(int, int))dword_10AA2908)(dword_10AA2908, 1);
-            dword_10AA2908 = 0;
+        if (g_unkC8Ptr2) {
+            g_unkC8Ptr2->lpVtbl->field_1C(g_unkC8Ptr2);
+            if (g_unkC8Ptr2)
+                g_unkC8Ptr2->lpVtbl->field_0(g_unkC8Ptr2, 1);
+            g_unkC8Ptr2 = 0;
         }
         v4 = dword_10AA2900;
         if (dword_10AA2900) {
@@ -284,12 +284,9 @@ void __stdcall sub_10048B20(int a1) {
 // 10A9CFFC: using guessed type int dword_10A9CFFC;
 // 10AA2854: using guessed type int dword_10AA2854;
 // 10AA2880: using guessed type int dword_10AA2880;
-// 10AA2908: using guessed type int dword_10AA2908;
 // 10AA290C: using guessed type int dword_10AA290C;
 // 10AA2910: using guessed type int dword_10AA2910;
 // 10AA2914: using guessed type int dword_10AA2914;
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA291C: using guessed type int dword_10AA291C;
 // 10AA2920: using guessed type int dword_10AA2920;
 // 10AA2924: using guessed type int dword_10AA2924;
 // 10AA2928: using guessed type int dword_10AA2928;
@@ -308,7 +305,6 @@ void __stdcall sub_10048B20(int a1) {
 // 10AA295C: using guessed type int dword_10AA295C;
 // 10AA2960: using guessed type int dword_10AA2960;
 // 10AA2964: using guessed type int dword_10AA2964;
-// 10AA2968: using guessed type int dword_10AA2968;
 // 10AA296C: using guessed type int dword_10AA296C;
 // 10AA2970: using guessed type int dword_10AA2970;
 // 10AA2974: using guessed type int dword_10AA2974;

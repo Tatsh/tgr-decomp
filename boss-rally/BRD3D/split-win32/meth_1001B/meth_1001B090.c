@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B090) --------------------------------------------------------
-HRESULT __thiscall meth_1001B090(unk0 *this, GUID *lpGUID, char *Source, char *a4) {
+HRESULT __thiscall meth_1001B090(unk334 *this, GUID *lpGUID, char *Source, char *a4) {
     void *v5;                         // eax
     char *src;                        // ebp
     size_t lll;                       // kr04_4
@@ -16,8 +16,8 @@ HRESULT __thiscall meth_1001B090(unk0 *this, GUID *lpGUID, char *Source, char *a
     void *v18;                        // edi
     void *v19;                        // eax
     IDirectDraw2 *ppvDDraw2_a;        // [esp+Ch] [ebp-28h]
-    IDirectDraw *ppvDDraw2_b;         // [esp+14h] [ebp-20h]
-# 462 * d3d2_a;                       // [esp+14h] [ebp-20h]
+    IDirectDraw2 *ppvDDraw2_b;        // [esp+14h] [ebp-20h]
+    IDirect3D2 *d3d2_a;               // [esp+14h] [ebp-20h]
     IDirect3D2 *ppvD3D2;              // [esp+28h] [ebp-Ch] BYREF
     IDirectDraw2 *ppvDDraw2;          // [esp+2Ch] [ebp-8h] BYREF
     LPDIRECTDRAW lpDD;                // [esp+30h] [ebp-4h] BYREF
@@ -29,7 +29,7 @@ HRESULT __thiscall meth_1001B090(unk0 *this, GUID *lpGUID, char *Source, char *a
     if (((unsigned __int8)v5 & 1) != 0)
         return 0;
     if (lpGUID) {
-        *(GUID *)&this->field_30 = *lpGUID;
+        this->field_30 = *lpGUID;
     } else {
         LOBYTE(v5) = (unsigned __int8)v5 | 2;
         this->field_27 = v5;
@@ -66,22 +66,22 @@ HRESULT __thiscall meth_1001B090(unk0 *this, GUID *lpGUID, char *Source, char *a
                 ppvDDraw2_vtbl = ppvDDraw2->lpVtbl;
                 ppvDDraw2_a = ppvDDraw2;
                 this->field_1C = 380;
-                this[2].field_80 = 380;
+                this->ddCaps0.dwSize = 380;
                 hr = ppvDDraw2_vtbl->GetCaps(
-                    ppvDDraw2_a, (LPDDCAPS) & this->field_1C, (LPDDCAPS) & this[2].field_80);
+                    ppvDDraw2_a, (LPDDCAPS) & this->field_1C, &this->ddCaps0);
                 if (hr >= 0) {
-                    if (this->lpPaletteEntry) {
+                    if (*(_DWORD *)&this->gap24[48]) {
                         v17 = (void *)((int)this->field_27 & 0xFFFFFFF7);
-                        ppvDDraw2_b = (IDirectDraw *)ppvDDraw2;
-                        this[5].lpDDrawSurface1 = 0;
+                        ppvDDraw2_b = ppvDDraw2;
+                        this->field_314 = 0;
                         this->field_27 = v17;
                         hr = meth_1001B320(this, ppvDDraw2_b);
                         if (hr >= 0) {
                             v18 = (void *)((int)this->field_27 & 0xFFFFFFEF);
-                            d3d2_a = (#462 *)ppvD3D2;
-                            this[5].lpDirect3DViewport2 = 0;
+                            d3d2_a = ppvD3D2;
+                            this->field_320 = 0;
                             this->field_27 = v18;
-                            hr = meth_1001B510((#468 *)this, d3d2_a);
+                            hr = meth_1001B510(this, d3d2_a);
                             if (hr >= 0) {
                                 v19 = this->field_27;
                                 LOBYTE(v19) = (int)this->field_27 | 1;

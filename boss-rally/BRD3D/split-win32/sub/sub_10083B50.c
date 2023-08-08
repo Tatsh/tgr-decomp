@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10083B50) --------------------------------------------------------
 void __noreturn sub_10083B50() {
     if (off_100BFC00)

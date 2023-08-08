@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005F5A0) --------------------------------------------------------
 int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
     int v5;     // eax

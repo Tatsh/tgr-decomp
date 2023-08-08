@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10045DC0) --------------------------------------------------------
 int sub_10045DC0() {
     _DWORD *v0; // eax
@@ -6,7 +6,7 @@ int sub_10045DC0() {
 
     dword_10AA28AC = dword_10AA28A4;
     if (dword_10AA2930) {
-        dword_10AA2904 = (void *)dword_10AA2930;
+        g_unkC8Ptr1 = (void *)dword_10AA2930;
         result = 1;
     } else {
         v0 = (_DWORD *)malloc(0xC8u);
@@ -15,13 +15,13 @@ int sub_10045DC0() {
         else
             result = 0;
         dword_10AA2930 = result;
-        dword_10AA2904 = (void *)result;
+        g_unkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10052030;
             (*(void(__cdecl **)(int))(dword_10AA2930 + 4))(dword_10AA2930);
             result = 1;
-            *((_DWORD *)dword_10AA2904 + 3) = 1;
-            *((_DWORD *)dword_10AA2904 + 26) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
         }
     }
     return result;

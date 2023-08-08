@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A3A0) --------------------------------------------------------
 LRESULT __cdecl handle_WM_NCPAINT(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     LONG v3;        // eax

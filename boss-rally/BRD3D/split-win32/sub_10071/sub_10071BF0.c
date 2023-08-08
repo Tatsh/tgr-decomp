@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10071BF0) --------------------------------------------------------
 int __cdecl sub_10071BF0(_DWORD *a1) {
     meth_10073B80(a1);

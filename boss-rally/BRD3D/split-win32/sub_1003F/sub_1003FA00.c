@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003FA00) --------------------------------------------------------
 int __cdecl sub_1003FA00(int a1) {
     int v1;          // ebx
@@ -16,7 +16,7 @@ int __cdecl sub_1003FA00(int a1) {
     int v14;         // [esp+Ch] [ebp-84h]
     char v15[128];   // [esp+10h] [ebp-80h] BYREF
 
-    if (dword_10AA2904 != (void *)dword_10AA2964 || dword_10AA28E8) {
+    if (g_unkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
         if (g_GameMode) {
             strcpy(v15, getCaptionString(dword_100AC308[dword_100AC648]));
             v6 = dword_100AC648;

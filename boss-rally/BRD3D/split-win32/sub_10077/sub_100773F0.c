@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100773F0) --------------------------------------------------------
 int __cdecl sub_100773F0(int *a1, int *a2) {
     int v2;                      // ebp
@@ -107,9 +107,9 @@ int __cdecl sub_100773F0(int *a1, int *a2) {
     dword_118ABAD4 = dword_118ABD80;
     v9 = ((_BYTE)dword_118ABD80 - 1) & 1;
     dword_118ABD80 = v9;
-    if (dword_10AA2E80 && (v10 = *((_DWORD *)dword_10AA2E80 + 20)) != 0) {
+    if (g_unk54Ptr && (v10 = *((_DWORD *)g_unk54Ptr + 20)) != 0) {
         v11 = (*(int(__stdcall **)(_DWORD, int, int *))(*(_DWORD *)v10 + 36))(
-            *((_DWORD *)dword_10AA2E80 + 20), 16, &v62);
+            *((_DWORD *)g_unk54Ptr + 20), 16, &v62);
         if (!v11) {
             v12 = &dword_118ABD44[7 * dword_118ABAD4];
             v13 = 7 * dword_118ABD80;
@@ -169,8 +169,8 @@ int __cdecl sub_100773F0(int *a1, int *a2) {
             goto LABEL_36;
         }
         if (v11 == -2147024866)
-            (*(void(__stdcall **)(_DWORD))(**((_DWORD **)dword_10AA2E80 + 20) + 28))(
-                *((_DWORD *)dword_10AA2E80 + 20));
+            (*(void(__stdcall **)(_DWORD))(**((_DWORD **)g_unk54Ptr + 20) + 28))(
+                *((_DWORD *)g_unk54Ptr + 20));
         *(_DWORD *)&byte_118ABD50[28 * dword_118ABD80] = 0;
     } else {
         memset(&dword_118ABD38[7 * v9], 0, 0x1Cu);

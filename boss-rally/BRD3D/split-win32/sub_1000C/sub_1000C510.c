@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000C510) --------------------------------------------------------
 int __cdecl sub_1000C510(HANDLE *a1) {
     if (dword_10277B60) {

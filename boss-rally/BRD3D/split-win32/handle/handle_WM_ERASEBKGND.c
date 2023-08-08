@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A210) --------------------------------------------------------
 LRESULT __cdecl handle_WM_ERASEBKGND(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     LONG v3;        // eax

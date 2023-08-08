@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000BA40) --------------------------------------------------------
 int __cdecl sub_1000BA40(int a1, COLORREF color) {
     int v2;    // eax

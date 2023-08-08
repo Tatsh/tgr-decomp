@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10005F90) --------------------------------------------------------
 int __cdecl sub_10005F90(int offsetX606) {
     int v1; // edi

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10060060) --------------------------------------------------------
 LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam) {
     LRESULT v5; // edi
@@ -17,8 +17,8 @@ LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM 
                 } else if (a3 == 274) {
                     v5 = DefWindowProcA(hWnd, 0x112u, wParam, lParam);
                     if (IsWindow(hWnd)) {
-                        if (dword_10AA2E80) {
-                            meth_10060750(dword_10AA2E80, (int)hWnd);
+                        if (g_unk54Ptr) {
+                            meth_10060750(g_unk54Ptr, (int)hWnd);
                             return v5;
                         }
                     }
@@ -36,9 +36,9 @@ LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM 
         } else {
             if (a3 == 561) {
             LABEL_24:
-                v7 = dword_10AA2E80;
+                v7 = g_unk54Ptr;
                 dword_10AA33E0 = 1;
-                if (dword_10AA2E80) {
+                if (g_unk54Ptr) {
                 LABEL_25:
                     meth_10060750(v7, (int)hWnd);
                     return 1;
@@ -64,8 +64,8 @@ LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM 
     if (a3 == 6) {
         dword_10AA33E0 = wParam == 0;
     LABEL_28:
-        v7 = dword_10AA2E80;
-        if (dword_10AA2E80)
+        v7 = g_unk54Ptr;
+        if (g_unk54Ptr)
             goto LABEL_25;
     }
     return v5;

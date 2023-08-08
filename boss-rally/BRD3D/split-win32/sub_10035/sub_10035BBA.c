@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10035BBA) --------------------------------------------------------
 void __cdecl __noreturn sub_10035BBA(int a1) {
     dword_106C2CF0 = a1;

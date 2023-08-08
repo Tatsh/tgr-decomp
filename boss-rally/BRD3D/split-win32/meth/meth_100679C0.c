@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100679C0) --------------------------------------------------------
 char *__thiscall meth_100679C0(_DWORD *this) {
     char *result; // eax
@@ -44,7 +44,6 @@ char *__thiscall meth_100679C0(_DWORD *this) {
     return result;
 }
 // 10067A2B: variable 'v3' is possibly undefined
-// 1006AA90: using guessed type int __setargv_0(void);
 // 100AA010: using guessed type int g_GameMode;
 // 100B4050: using guessed type int dword_100B4050;
 // 106909E0: using guessed type int dword_106909E0;

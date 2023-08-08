@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A090) --------------------------------------------------------
 LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam) {
-    void *v3; // ecx
-    void *v4; // ecx
-    unk0 *v5; // esi
-    int v6;   // eax
-    int v7;   // eax
+    void *v3;   // ecx
+    void *v4;   // ecx
+    unk334 *v5; // esi
+    int v6;     // eax
+    int v7;     // eax
 
     dword_10680598 = wParam;
     if (!wParam) {
@@ -25,7 +25,7 @@ LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam) {
         debugPrint(v3);
     }
     if (sub_1006A980() == 1) {
-        v5 = (unk0 *)GetWindowLongA(hWnd, -21);
+        v5 = (unk334 *)GetWindowLongA(hWnd, -21);
         if (dword_10680598) {
             if (v5) {
                 v6 = v5->unkMeth1;

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100484E0) --------------------------------------------------------
 void __thiscall meth_100484E0(_DWORD *this) {
     *this = &off_1008F6F8;

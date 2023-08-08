@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10038510) --------------------------------------------------------
 int __cdecl ParseTrackHeader(int outBuffer, CHK_File *fp) {
     unsigned __int16 v3;  // cx

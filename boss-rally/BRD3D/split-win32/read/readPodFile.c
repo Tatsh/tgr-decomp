@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100088D0) --------------------------------------------------------
 size_t __thiscall readPodFile(Pod *this) {
     char *v2;         // ebp

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10046260) --------------------------------------------------------
 int sub_10046260() {
     _DWORD *v0; // eax
@@ -13,7 +13,7 @@ int sub_10046260() {
     dword_100AC304 = 1;
     LOBYTE(dword_10680738) = -1;
     if (dword_10AA290C) {
-        dword_10AA2904 = (void *)dword_10AA290C;
+        g_unkC8Ptr1 = (void *)dword_10AA290C;
         result = 1;
     } else {
         dword_100AC304 = 1;
@@ -23,13 +23,13 @@ int sub_10046260() {
         else
             result = 0;
         dword_10AA290C = result;
-        dword_10AA2904 = (void *)result;
+        g_unkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004B430;
             (*(void(__cdecl **)(int))(dword_10AA290C + 4))(dword_10AA290C);
-            *((_DWORD *)dword_10AA2904 + 3) = 1;
-            v2 = dword_10AA2904;
-            *((_DWORD *)dword_10AA2904 + 26) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
+            v2 = g_unkC8Ptr1;
+            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
             debugPrint(v2);
             sub_1003DFC0();
             sub_1003E510();

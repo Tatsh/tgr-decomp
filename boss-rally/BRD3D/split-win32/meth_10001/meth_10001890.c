@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10001890) --------------------------------------------------------
 float *__thiscall meth_10001890(_DWORD *this, float a2) {
     double v4; // st7

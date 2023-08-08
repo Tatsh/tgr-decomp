@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100602E0) --------------------------------------------------------
-int __thiscall meth_DICreateMouseDevice(unk1 *this, HWND hWnd) {
+int __thiscall meth_DICreateMouseDevice(unk54 *this, HWND hWnd) {
     LPDIRECTINPUTDEVICEA *diDeviceA; // esi
     HRESULT hr;                      // edi
     const CHAR *v4;                  // eax

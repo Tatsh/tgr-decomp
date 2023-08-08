@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100771B0) --------------------------------------------------------
 HRESULT __cdecl sub_100771B0(void *a1) {
     HRESULT result; // eax

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008780) --------------------------------------------------------
 int __thiscall GetPodLength(Pod *this, unsigned int argList) {
     if (argList >= this->header.m_cNumPods)

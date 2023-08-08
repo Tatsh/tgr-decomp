@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003EA90) --------------------------------------------------------
 int __cdecl sub_1003EA90(int a1) {
     int v1; // ebx

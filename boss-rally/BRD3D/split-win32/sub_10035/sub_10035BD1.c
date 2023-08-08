@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10035BD1) --------------------------------------------------------
 Car *sub_10035BD1() {
     if (dword_106C56D0 != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C)

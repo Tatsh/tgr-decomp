@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100725C0) --------------------------------------------------------
 BOOL __cdecl sub_100725C0(int a1, int a2) {
     int v2; // eax

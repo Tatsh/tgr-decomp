@@ -1,45 +1,47 @@
 #include "../types-win32.h"
 //----- (1001AB90) --------------------------------------------------------
-int __stdcall d3d2enumDevicesCallback(
-    GUID *a1, LPSTR lpDeviceDescription, LPSTR deviceName, #469 * desc, #469 * a5, LPVOID userArg) {
-    int *v6; // ebx
-# 478 * v7;  // ebp
-# 478 * v8;  // eax
-# 478 * v9;  // edx
-    int v10; // eax
-    int v11; // edi
+int __stdcall d3d2enumDevicesCallback(GUID *a2,
+                                      LPSTR lpDeviceDescription,
+                                      LPSTR deviceName,
+                                      LPD3DDEVICEDESC desc,
+                                      LPD3DDEVICEDESC a6,
+                                      LPVOID userArg) {
+    int *v6;     // ebx
+    unk334 *v7;  // ebp
+    unk228 *v8;  // eax
+    unk228 *v9;  // edx
+    int v10;     // eax
+    unk228 *v11; // edi
 
     v6 = (int *)userArg;
     if (userArg) {
-        v7 = (#478 *)*((_DWORD *)userArg + 2);
+        v7 = (unk334 *)*((_DWORD *)userArg + 2);
         if (v7) {
-            v8 = (#478 *)malloc(0x228u);
+            v8 = (unk228 *)malloc(0x228u);
             v9 = v8;
             if (v8) {
-                v10 = *(_DWORD *)v8;
-                LOBYTE(v10) = *(_DWORD *)v9 & 0xFC;
-                *(_DWORD *)v9 = v10;
-                *((_DWORD *)v9 + 5) = 0;
-                *((_DWORD *)v9 + 6) = 0;
-                memset((char *)v9 + 28, 0, 0xFCu);
-                *((_DWORD *)v9 + 7) = 252;
-                memset((char *)v9 + 280, 0, 0xFCu);
-                *((_DWORD *)v9 + 70) = 252;
+                v10 = v8->field_0;
+                LOBYTE(v10) = v9->field_0 & 0xFC;
+                v9->field_0 = v10;
+                *(_DWORD *)&v9->gap4[16] = 0;
+                *(_DWORD *)&v9->gap4[20] = 0;
+                memset(&v9->gap4[24], 0, 0xFCu);
+                *(_DWORD *)&v9->gap4[24] = 0xFC;
+                memset(&v9->gap3D[219], 0, 0xFCu);
+                *(_DWORD *)&v9->gap3D[219] = 0xFC;
                 v6 = (int *)userArg;
-                *((_DWORD *)v9 + 133) = 0;
-                *((_DWORD *)v9 + 134) = 0;
-                *((_DWORD *)v9 + 135) = 0;
-                *((_DWORD *)v9 + 136) = 0;
-                *((_DWORD *)v9 + 137) = 0;
-                v11 = (int)v9;
+                *(_DWORD *)&v9->gap3D[471] = 0;
+                *(_DWORD *)&v9->gap3D[475] = 0;
+                *(_DWORD *)&v9->gap3D[479] = 0;
+                v9->field_220 = 0;
+                v9->last = 0;
+                v11 = v9;
             } else {
                 v11 = 0;
             }
-            if (v11 &&
-                meth_1001ADE0((unk0 *)v11, a1, lpDeviceDescription, deviceName, desc, a5) >= 0 &&
-                meth_1001B630(v7, v11) >= 0) {
+            if (v11 && meth_1001ADE0(v11, a2, lpDeviceDescription, deviceName, desc, a6) >= 0 &&
+                meth_1001B630(v7, v11) >= 0)
                 ++v6[1];
-            }
         }
     }
     return 1;

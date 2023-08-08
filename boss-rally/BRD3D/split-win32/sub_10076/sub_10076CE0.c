@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076CE0) --------------------------------------------------------
 MMRESULT __cdecl sub_10076CE0(LPSTR pszFileName, int a2, int a3, LPMMCKINFO pmmcki) {
     CHAR *v4;             // ecx

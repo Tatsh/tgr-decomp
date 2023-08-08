@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10038B20) --------------------------------------------------------
 int __cdecl sub_10038B20(_BYTE *a1) {
     _BYTE *v1;            // ebx

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10009ED0) --------------------------------------------------------
 BOOL __thiscall meth_10009ED0(void *this, char *a2, LONG rectRight, LONG rectBottom) {
     int **unk2;                       // ebp

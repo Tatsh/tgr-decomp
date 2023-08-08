@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076700) --------------------------------------------------------
 void __thiscall meth_10076700(int this, void *a2) {
     _DWORD *v3; // esi

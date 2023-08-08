@@ -4,8 +4,8 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
     LONG result; // eax
     LONG v5;     // eax
 
-    if (dword_10AA2904) {
-        if (*((_DWORD *)dword_10AA2904 + 26)) {
+    if (g_unkC8Ptr1) {
+        if (*((_DWORD *)g_unkC8Ptr1 + 26)) {
             sub_10060060((int)dword_10AA2900, hWnd, Msg, wParam, lParam);
             if (dword_10A9CFFC)
                 sub_1003C3A0((int)hWnd, Msg, wParam, (LPCVOID)lParam);

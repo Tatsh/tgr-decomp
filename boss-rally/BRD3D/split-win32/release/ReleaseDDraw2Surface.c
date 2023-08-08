@@ -1,14 +1,14 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000A8A0) --------------------------------------------------------
-int __thiscall ReleaseDDraw2Surface(unk0 *this) {
-    LPDIRECTDRAWSURFACE v2; // eax
+int __thiscall ReleaseDDraw2Surface(unk8C *this) {
+    LPDIRECTDRAWSURFACE ddrawSurface; // eax
 
     this->field_1C &= 0xFFFFFFFB;
     resetPalette(this);
-    v2 = this->lpDDrawSurface2;
-    if (v2) {
-        v2->lpVtbl->Release(this->lpDDrawSurface2);
-        this->lpDDrawSurface2 = 0;
+    ddrawSurface = this->lpDirectDrawSurface0;
+    if (ddrawSurface) {
+        ddrawSurface->lpVtbl->Release(this->lpDirectDrawSurface0);
+        this->lpDirectDrawSurface0 = 0;
     }
     return 0;
 }

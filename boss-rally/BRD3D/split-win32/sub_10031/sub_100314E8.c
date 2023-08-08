@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100314E8) --------------------------------------------------------
 _DWORD *__cdecl sub_100314E8(__int16 a1, __int16 a2, int a3) {
     unsigned __int16 v3; // ax

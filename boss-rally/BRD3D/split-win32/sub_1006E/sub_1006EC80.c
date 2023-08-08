@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006EC80) --------------------------------------------------------
 int __cdecl sub_1006EC80(int a1, int a2) {
     void *v2;       // ecx

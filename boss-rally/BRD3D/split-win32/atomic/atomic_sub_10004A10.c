@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10004A10) --------------------------------------------------------
 int __cdecl atomic_sub_10004A10(int a1) {
     int v1; // edi

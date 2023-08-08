@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10017FE0) --------------------------------------------------------
 _DWORD *__cdecl sub_10017FE0(int a1, int a2, float a3, int a4, int a5) {
     __int64 v5;      // rax

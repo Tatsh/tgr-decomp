@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003EE50) --------------------------------------------------------
 int __cdecl sub_1003EE50(int a1, __int16 a2) {
     int v2;                  // esi

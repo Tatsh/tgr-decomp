@@ -1,9 +1,9 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A4E0) --------------------------------------------------------
 LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam) {
-    unk0 *v3; // eax
+    unk334 *v3; // eax
 
-    v3 = (unk0 *)GetWindowLongA(hWnd, -21);
+    v3 = (unk334 *)GetWindowLongA(hWnd, -21);
     if (wParam <= 0xF010) {
         if (wParam != 61456) {
             if (wParam == 61440)

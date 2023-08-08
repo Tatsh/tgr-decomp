@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10061F70) --------------------------------------------------------
-void __thiscall meth_10061F70(int this) {
+void __thiscall meth_10061F70(_DWORD *this) {
     double v2;       // st7
     double v3;       // st7
     double v4;       // st7
@@ -62,7 +62,7 @@ void __thiscall meth_10061F70(int this) {
     float v62;       // [esp+18h] [ebp-10h]
     float v63[3];    // [esp+1Ch] [ebp-Ch] BYREF
 
-    v2 = *(float *)(*(_DWORD *)(this + 10688) + 32);
+    v2 = *(float *)(this[2672] + 32);
     if (*(__int16 *)g_ConfigJoystickPtr >= 0 &&
         (*((_WORD *)g_ConfigJoystickPtr + 3) & 0x8000) == 0) {
         if (v2 <= 0.0) {
@@ -80,13 +80,13 @@ void __thiscall meth_10061F70(int this) {
                 goto LABEL_7;
         }
     LABEL_8:
-        sub_10074720(v63, (float *)(this + 544), (float *)(this + 488));
+        sub_10074720(v63, (float *)this + 136, (float *)this + 122);
         v52 = v63[0];
         if (v63[0] < 10.0)
             v52 = 10.0;
         if (v52 > 70.0)
             v52 = 70.0;
-        switch (*(_DWORD *)(this + 3736)) {
+        switch (this[934]) {
         case 0:
             flt_100B3670 = 10.0;
             v5 = 6.0;
@@ -167,32 +167,32 @@ void __thiscall meth_10061F70(int this) {
         } else {
             v10 = 1.0;
         }
-        if (*(float *)(this + 3616) == 0.0) {
+        if (*((float *)this + 904) == 0.0) {
             v11 = 0.0;
-        } else if (*(float *)(this + 3616) <= 0.0) {
+        } else if (*((float *)this + 904) <= 0.0) {
             v11 = -1.0;
         } else {
             v11 = 1.0;
         }
-        v12 = v10 != v11 || *(float *)(this + 3616) > 0.0 && v9 < *(float *)(this + 3616) ||
-              *(float *)(this + 3616) < 0.0 && v9 > *(float *)(this + 3616);
-        if (*(float *)(this + 3616) == 0.0) {
+        v12 = v10 != v11 || *((float *)this + 904) > 0.0 && v9 < *((float *)this + 904) ||
+              *((float *)this + 904) < 0.0 && v9 > *((float *)this + 904);
+        if (*((float *)this + 904) == 0.0) {
             v12 = 0;
-            *(_BYTE *)(this + 3713) = 0;
+            *((_BYTE *)this + 3713) = 0;
         }
-        if (v9 < *(float *)(this + 3616) && *(char *)(this + 3713) < 0)
+        if (v9 < *((float *)this + 904) && *((char *)this + 3713) < 0)
             v12 = 1;
-        if (v9 > *(float *)(this + 3616) && *(char *)(this + 3713) > 0)
+        if (v9 > *((float *)this + 904) && *((char *)this + 3713) > 0)
             v12 = 1;
         if (v12) {
-            if (v9 >= *(float *)(this + 3616))
-                *(_BYTE *)(this + 3713) = 1;
+            if (v9 >= *((float *)this + 904))
+                *((_BYTE *)this + 3713) = 1;
             else
-                *(_BYTE *)(this + 3713) = -1;
+                *((_BYTE *)this + 3713) = -1;
             v57 = 1.0;
-            if (*(float *)(this + 3616) == 0.0) {
+            if (*((float *)this + 904) == 0.0) {
                 v13 = 0.0;
-            } else if (*(float *)(this + 3616) <= 0.0) {
+            } else if (*((float *)this + 904) <= 0.0) {
                 v13 = -1.0;
             } else {
                 v13 = 1.0;
@@ -207,38 +207,38 @@ void __thiscall meth_10061F70(int this) {
             if (v13 != v14)
                 v9 = 0.0;
         } else {
-            *(_BYTE *)(this + 3713) = 0;
+            *((_BYTE *)this + 3713) = 0;
         }
-        v15 = *(float *)(this + 3616) - v9;
+        v15 = *((float *)this + 904) - v9;
         if (v15 < 0.0)
             v15 = -v15;
         if (v15 >= v57) {
-            if (v9 >= *(float *)(this + 3616))
-                v16 = v57 + *(float *)(this + 3616);
+            if (v9 >= *((float *)this + 904))
+                v16 = v57 + *((float *)this + 904);
             else
-                v16 = *(float *)(this + 3616) - v57;
-            *(float *)(this + 3616) = v16;
+                v16 = *((float *)this + 904) - v57;
+            *((float *)this + 904) = v16;
         } else {
-            *(float *)(this + 3616) = v9;
+            *((float *)this + 904) = v9;
         }
         goto LABEL_124;
     }
     if (v2 >= 0.0)
-        v55 = *(float *)(*(_DWORD *)(this + 10688) + 32);
+        v55 = *(float *)(this[2672] + 32);
     else
         v55 = -v2;
     v50 = 1.0;
     if (g_SpeedSensitive) {
-        if (*(float *)(this + 4144) > 50.0) {
-            if (*(float *)(this + 4144) < 100.0)
-                v50 = 1.0 - (*(float *)(this + 4144) - 50.0) * 0.001;
+        if (*((float *)this + 1036) > 50.0) {
+            if (*((float *)this + 1036) < 100.0)
+                v50 = 1.0 - (*((float *)this + 1036) - 50.0) * 0.001;
             else
                 v50 = 0.94999999;
         } else {
             v50 = 1.0;
         }
     }
-    switch (*(_DWORD *)(this + 3736)) {
+    switch (this[934]) {
     case 0:
         if (v2 == 0.0) {
             v58 = 0.0;
@@ -247,7 +247,7 @@ void __thiscall meth_10061F70(int this) {
             if (v2 <= 0.0)
                 v58 = -1.0;
         }
-        *(float *)(this + 3616) = (pow(11.0, v55) - 1.0) * v58 * 0.1 * v50 * -0.078539819;
+        *((float *)this + 904) = (pow(11.0, v55) - 1.0) * v58 * 0.1 * v50 * -0.078539819;
         break;
     case 1:
         if (v2 == 0.0) {
@@ -269,7 +269,7 @@ void __thiscall meth_10061F70(int this) {
         }
         v17 = (pow(2.0, v55) - 1.0) * v60;
     LABEL_109:
-        *(float *)(this + 3616) = v17 * v50 * -0.087266468;
+        *((float *)this + 904) = v17 * v50 * -0.087266468;
         break;
     case 3:
         if (v2 == 0.0) {
@@ -279,16 +279,16 @@ void __thiscall meth_10061F70(int this) {
             if (v2 <= 0.0)
                 v61 = -1.0;
         }
-        *(float *)(this + 3616) = (pow(2.0, v55) - 1.0) * v61 * v50 * -0.095993109;
+        *((float *)this + 904) = (pow(2.0, v55) - 1.0) * v61 * v50 * -0.095993109;
         break;
     case 4:
-        *(float *)(this + 3616) = v50 * v2 * -0.087266468;
+        *((float *)this + 904) = v50 * v2 * -0.087266468;
         break;
     case 5:
-        *(float *)(this + 3616) = v50 * v2 * -0.10471976;
+        *((float *)this + 904) = v50 * v2 * -0.10471976;
         break;
     case 6:
-        *(float *)(this + 3616) = v50 * v2 * -0.12217305;
+        *((float *)this + 904) = v50 * v2 * -0.12217305;
         break;
     default:
         if (v2 == 0.0) {
@@ -298,53 +298,52 @@ void __thiscall meth_10061F70(int this) {
         } else {
             v18 = 1.0;
         }
-        *(float *)(this + 3616) = v2 * v2 * v18 * v50 * -0.1308997;
+        *((float *)this + 904) = v2 * v2 * v18 * v50 * -0.1308997;
         break;
     }
 LABEL_124:
-    v56 = *(float *)(this + 3620);
+    v56 = *((float *)this + 905);
     if (v56 < 800.0)
-        *(_DWORD *)(this + 3620) = 1145569280;
-    if (!*(_DWORD *)(this + 3680)) {
-        v22 = *(_DWORD *)(this + 3696);
-        if (v22 > 0 && (v23 = *(int **)(this + 10688), (*v23 & 0x200000) != 0)) {
+        this[905] = 1145569280;
+    if (!this[920]) {
+        v22 = this[924];
+        if (v22 > 0 && (v23 = (int *)this[2672], (*v23 & 0x200000) != 0)) {
             meth_10035FA0(v23, 0x200000);
-            v24 = *(_DWORD *)(this + 3696) - 1;
+            v24 = this[924] - 1;
         } else {
-            if (v22 >= *(_DWORD *)(this + 3672))
+            if (v22 >= this[918])
                 goto LABEL_145;
-            v25 = *(int **)(this + 10688);
+            v25 = (int *)this[2672];
             if ((*v25 & 0x100000) == 0 || (*v25 & 0x20000) != 0)
                 goto LABEL_145;
             meth_10035FA0(v25, 0x100000);
-            v24 = *(_DWORD *)(this + 3696) + 1;
+            v24 = this[924] + 1;
         }
-        *(_DWORD *)(this + 3696) = v24;
+        this[924] = v24;
         goto LABEL_145;
     }
     v62 = 6000.0;
     v19 = 4000.0;
     if ((*((_WORD *)g_ConfigJoystickPtr + 6) & 0x8000) != 0) {
-        v51 = *(float *)(*(_DWORD *)(this + 10688) + 28);
+        v51 = *(float *)(this[2672] + 28);
         if (v51 > 0.40000001) {
             v20 = 4000.0 - v51 * -2000.0;
             v62 = v20;
             v19 = v20 - 2000.0;
         }
     }
-    v21 = *(_DWORD *)(this + 3696);
-    if (v21 <= 1 || v19 <= *(float *)(this + 3620)) {
-        if (v21 < *(_DWORD *)(this + 3672) && *(float *)(this + 3620) > (double)v62 &&
-            (**(_DWORD **)(this + 10688) & 0x20000) == 0) {
-            *(_DWORD *)(this + 3696) = v21 + 1;
-        }
+    v21 = this[924];
+    if (v21 <= 1 || v19 <= *((float *)this + 905)) {
+        if (v21 < this[918] && *((float *)this + 905) > (double)v62 &&
+            (*(_DWORD *)this[2672] & 0x20000) == 0)
+            this[924] = v21 + 1;
     } else {
-        *(_DWORD *)(this + 3696) = v21 - 1;
+        this[924] = v21 - 1;
     }
 LABEL_145:
     v26 = 0.0;
     if (g_GameMode == 1) {
-        if (!*(_DWORD *)(this + 4088))
+        if (!this[1022])
             goto LABEL_161;
         v27 = 0.0;
         if (dword_100B36F8 > 0) {
@@ -362,7 +361,7 @@ LABEL_145:
                 --v29;
             } while (v29);
         }
-        v31 = v27 - *(float *)(this + 4084);
+        v31 = v27 - *((float *)this + 1021);
         if (v31 < 0.0)
             v31 = -v31;
         v26 = v31 * 0.5 - 18.0;
@@ -373,7 +372,7 @@ LABEL_145:
         if (v26 > 30.0)
             goto LABEL_160;
     } else if (g_GameMode == 6) {
-        v47 = *(_DWORD *)(this + 4088);
+        v47 = this[1022];
         if (v47) {
             if (v47 != 1) {
             LABEL_160:
@@ -387,59 +386,59 @@ LABEL_145:
     }
 LABEL_161:
     v32 = v26 +
-          ((*(float *)(this + 3652) * *(float *)(this + 3620) + *(float *)(this + 3656)) *
-               *(float *)(this + 3620) +
-           *(float *)(this + 3660)) *
-              *(float *)(this + 3620) +
-          *(float *)(this + 3664);
-    if (!*(_DWORD *)(this + 3680))
+          ((*((float *)this + 913) * *((float *)this + 905) + *((float *)this + 914)) *
+               *((float *)this + 905) +
+           *((float *)this + 915)) *
+              *((float *)this + 905) +
+          *((float *)this + 916);
+    if (!this[920])
         v32 = v32 * 1.03;
-    v33 = *(float **)(this + 10688);
+    v33 = (float *)this[2672];
     if ((*(_DWORD *)v33 & 0x10000) == 0)
         v32 = 0.0;
     v34 = 7.0;
     if ((*((_WORD *)g_ConfigJoystickPtr + 6) & 0x8000) != 0 && v33[7] > 0.0)
         v34 = v33[7] * 7.0;
-    v35 = *(_DWORD *)(this + 3840);
-    *(float *)(this + 3688) = v34 * v32;
+    v35 = this[960];
+    *((float *)this + 922) = v34 * v32;
     if ((*(_BYTE *)(v35 + 104) & 1) != 0) {
-        *(_DWORD *)(this + 3696) = 0;
-    } else if (!*(_DWORD *)(this + 3696)) {
-        *(_DWORD *)(this + 3696) = 1;
+        this[924] = 0;
+    } else if (!this[924]) {
+        this[924] = 1;
     }
-    v36 = *(_DWORD *)(this + 3696);
+    v36 = this[924];
     v37 = *v33;
     if (v36) {
         if ((LODWORD(v37) & 0x20000) != 0)
-            v38 = *(float *)(this + 3628) * *(float *)(this + 3668) *
-                  (*(float *)(this + 1856) * 0.15915494) * -60.0;
+            v38 = *((float *)this + 907) * *((float *)this + 917) *
+                  (*((float *)this + 464) * 0.15915494) * -60.0;
         else
-            v38 = *(float *)(this + 4 * v36 + 3624) * *(float *)(this + 3668) *
-                  (*(float *)(this + 1856) * 0.15915494) * -60.0;
-        *(float *)(this + 3620) = v38;
+            v38 = *(float *)&this[v36 + 906] * *((float *)this + 917) *
+                  (*((float *)this + 464) * 0.15915494) * -60.0;
+        *((float *)this + 905) = v38;
     } else {
-        v39 = *(float *)(this + 3620);
+        v39 = *((float *)this + 905);
         if ((LODWORD(v37) & 0x10000) != 0)
             v40 = v39 - -300.0;
         else
             v40 = v39 - 200.0;
-        *(float *)(this + 3620) = v40;
-        *(_DWORD *)(this + 3688) = 0;
+        *((float *)this + 905) = v40;
+        this[922] = 0;
     }
-    if (*(float *)(this + 3620) < 0.0)
-        *(float *)(this + 3620) = -*(float *)(this + 3620);
-    if (*(float *)(this + 3620) < 900.0)
-        *(_DWORD *)(this + 3620) = 1147207680;
-    if (*(float *)(this + 3620) > 8000.0)
-        *(_DWORD *)(this + 3620) = 1174011904;
+    if (*((float *)this + 905) < 0.0)
+        *((float *)this + 905) = -*((float *)this + 905);
+    if (*((float *)this + 905) < 900.0)
+        this[905] = 1147207680;
+    if (*((float *)this + 905) > 8000.0)
+        this[905] = 1174011904;
     if ((*((_WORD *)g_ConfigJoystickPtr + 6) & 0x8000) != 0 && !v36) {
         v41 = v33[7] * 8000.0;
         if (v41 < 900.0)
             v41 = 900.0;
-        if (v41 < *(float *)(this + 3620))
-            *(float *)(this + 3620) = v41;
+        if (v41 < *((float *)this + 905))
+            *((float *)this + 905) = v41;
     }
-    v42 = *(float *)(this + 3620) - v56;
+    v42 = *((float *)this + 905) - v56;
     v44 = v42;
     if (v45)
         v44 = -v42;
@@ -453,10 +452,10 @@ LABEL_161:
         }
         v42 = v46 * 400.0;
     }
-    *(_DWORD *)(this + 3692) = 0;
-    *(float *)(this + 3620) = v42 + v56;
+    this[923] = 0;
+    *((float *)this + 905) = v42 + v56;
     if ((*(_DWORD *)v33 & 0x40000) != 0)
-        *(_DWORD *)(this + 3692) = -938952704;
+        this[923] = -938952704;
 }
 // 100621EE: variable 'v8' is possibly undefined
 // 10062B63: variable 'v45' is possibly undefined

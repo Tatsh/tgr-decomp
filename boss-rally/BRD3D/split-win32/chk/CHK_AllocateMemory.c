@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10003390) --------------------------------------------------------
 void *__cdecl CHK_AllocateMemory(size_t size, const char *debugName) {
     void *ptr;               // eax

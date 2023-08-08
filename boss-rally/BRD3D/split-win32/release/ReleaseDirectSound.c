@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10073730) --------------------------------------------------------
 int ReleaseDirectSound() {
     HGLOBAL v1; // eax

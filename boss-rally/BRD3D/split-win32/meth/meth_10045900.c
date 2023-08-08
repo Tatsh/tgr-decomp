@@ -1,37 +1,35 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10045900) --------------------------------------------------------
 int __thiscall meth_10045900(void *this) {
-    _DWORD *v1; // eax
-    _DWORD *v2; // eax
-    int result; // eax
-    LPCSTR v4;  // eax
+    unkC8 *v1;      // eax
+    unkC8 *v2;      // eax
+    int result;     // eax
+    const CHAR *v4; // eax
 
     if (sub_10045A00()) {
-        sub_100419D0((int)asc_100AD300);
-        if (dword_10AA291C) {
-            dword_10AA2904 = (void *)dword_10AA291C;
+        sub_100419D0(asc_100AD300);
+        if (g_unkC8Ptr3) {
+            g_unkC8Ptr1 = g_unkC8Ptr3;
             return 1;
         }
-        v1 = (_DWORD *)malloc(0xC8u);
+        v1 = (unkC8 *)malloc(0xC8u);
         if (v1)
             v2 = meth_10048710(v1);
         else
             v2 = 0;
-        dword_10AA291C = (int)v2;
-        dword_10AA2904 = v2;
+        g_unkC8Ptr3 = v2;
+        g_unkC8Ptr1 = v2;
         if (v2) {
-            v2[1] = sub_1004F2B0;
-            (*(void(__cdecl **)(int))(dword_10AA291C + 4))(dword_10AA291C);
-            *((_DWORD *)dword_10AA2904 + 3) = 1;
+            v2->lpFn0 = sub_1004F2B0;
+            g_unkC8Ptr3->lpFn0(g_unkC8Ptr3);
+            g_unkC8Ptr1->field_C = 1;
             result = 1;
-            *((_DWORD *)dword_10AA2904 + 26) = 1;
+            g_unkC8Ptr1->field_68 = 1;
             return result;
         }
     } else {
         v4 = getCaptionString(0xDu);
-        sub_100419D0((int)v4);
+        sub_100419D0(v4);
     }
     return 0;
 }
-// 1004F2B0: using guessed type int __cdecl sub_1004F2B0(int);
-// 10AA291C: using guessed type int dword_10AA291C;

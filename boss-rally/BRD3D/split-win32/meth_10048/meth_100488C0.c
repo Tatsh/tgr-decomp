@@ -1,8 +1,8 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100488C0) --------------------------------------------------------
 int __thiscall meth_100488C0(_BYTE *this) {
     int v3;    // ecx
-    void *v4;  // esi
+    unkC8 *v4; // esi
     float *v5; // ecx
     float v6;  // edx
 
@@ -18,20 +18,19 @@ int __thiscall meth_100488C0(_BYTE *this) {
     }
     if (v3)
         dword_10AA2A34 = pm_sub_10002910() - 2;
-    v4 = dword_10AA2904;
-    dword_10AA2904 = (void *)dword_10AA2908;
-    v5 = *(float **)(*(_DWORD *)(dword_10AA2908 + 20) + 820);
-    v5[15] = (float)dword_10AA2E80->field_46;
+    v4 = g_unkC8Ptr1;
+    g_unkC8Ptr1 = g_unkC8Ptr2;
+    v5 = *(float **)&g_unkC8Ptr2->field_14[0]->gap20[788];
+    v5[15] = (float)g_unk54Ptr->field_0;
     v6 = *v5;
-    v5[16] = (float)dword_10AA2E80->field_45;
+    v5[16] = (float)*(int *)g_unk54Ptr->gap4;
     (*(void (**)(void))(LODWORD(v6) + 12))();
-    dword_10AA2904 = v4;
+    g_unkC8Ptr1 = v4;
     if (!dword_10AA2874)
         (*(void(__thiscall **)(_BYTE *))(*(_DWORD *)this + 20))(this);
     return 1;
 }
 // 100940A4: using guessed type int g_Playmusic;
 // 10AA2874: using guessed type int dword_10AA2874;
-// 10AA2908: using guessed type int dword_10AA2908;
 // 10AA2A34: using guessed type int dword_10AA2A34;
 // 10AA2A4C: using guessed type int dword_10AA2A4C;

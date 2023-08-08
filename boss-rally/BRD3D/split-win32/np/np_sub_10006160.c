@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10006160) --------------------------------------------------------
 BOOL np_sub_10006160() {
     WaitForSingleObject(g_hMutex_8, 0xFFFFFFFF);

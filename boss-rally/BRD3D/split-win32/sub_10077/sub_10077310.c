@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10077310) --------------------------------------------------------
 int sub_10077310() {
     int v0;      // eax
@@ -6,17 +6,17 @@ int sub_10077310() {
     int *v2;     // ecx
     char v3[16]; // [esp+4h] [ebp-10h] BYREF
 
-    if (!dword_10AA2E80 || !*((_DWORD *)dword_10AA2E80 + 20))
+    if (!g_unk54Ptr || !*((_DWORD *)g_unk54Ptr + 20))
         return -1;
     dword_10AA33C0[0] = 0;
     dword_10AA33C4 = 0;
     dword_10AA33C8 = 0;
     dword_10AA33CC = 0;
-    v0 = (*(int(__stdcall **)(_DWORD, int, char *))(**((_DWORD **)dword_10AA2E80 + 20) + 36))(
-        *((_DWORD *)dword_10AA2E80 + 20), 16, v3);
+    v0 = (*(int(__stdcall **)(_DWORD, int, char *))(**((_DWORD **)g_unk54Ptr + 20) + 36))(
+        *((_DWORD *)g_unk54Ptr + 20), 16, v3);
     if (v0 && v0 == -2147024866)
-        (*(void(__stdcall **)(_DWORD))(**((_DWORD **)dword_10AA2E80 + 20) + 28))(
-            *((_DWORD *)dword_10AA2E80 + 20));
+        (*(void(__stdcall **)(_DWORD))(**((_DWORD **)g_unk54Ptr + 20) + 28))(
+            *((_DWORD *)g_unk54Ptr + 20));
     if (v3[12] < 0)
         dword_10AA33C0[0] = 1;
     if ((v3[13] & 0x80) != 0)

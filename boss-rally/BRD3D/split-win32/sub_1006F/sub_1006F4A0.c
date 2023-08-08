@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006F4A0) --------------------------------------------------------
 void __usercall sub_1006F4A0(double a1 @<st0>, _DWORD *a2) {
     int v2;             // esi

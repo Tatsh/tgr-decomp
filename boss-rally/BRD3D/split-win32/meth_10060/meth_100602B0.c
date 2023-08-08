@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100602B0) --------------------------------------------------------
 LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(unk1 *this) {
     LPDIRECTINPUTDEVICEA result; // eax

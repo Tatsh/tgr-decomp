@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002ADC0) --------------------------------------------------------
 int __cdecl setupEAR(HWND hWnd) {
     const CHAR *v2; // eax

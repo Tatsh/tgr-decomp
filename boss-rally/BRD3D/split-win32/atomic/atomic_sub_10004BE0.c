@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10004BE0) --------------------------------------------------------
 int atomic_sub_10004BE0() {
     WaitForSingleObject(g_hMutex_5, INFINITE);

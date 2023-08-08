@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100786E0) --------------------------------------------------------
 char __cdecl sub_100786E0(int a1) {
     char result;         // al

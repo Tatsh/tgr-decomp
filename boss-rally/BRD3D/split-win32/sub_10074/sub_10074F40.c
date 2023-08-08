@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10074F40) --------------------------------------------------------
 BOOL sub_10074F40() {
     BOOL result; // eax

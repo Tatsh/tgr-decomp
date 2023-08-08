@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000B820) --------------------------------------------------------
 int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc) {
     int v6;      // edi

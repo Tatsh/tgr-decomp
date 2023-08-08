@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10060FB0) --------------------------------------------------------
 int *__cdecl sub_10060FB0(int a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, int *a6) {
     int v6;      // eax

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10072FE0) --------------------------------------------------------
 BOOL __cdecl pm_sub_10072FE0(int a1) {
     if (!g_Playsfx || !g_DSound || !dword_118290FC)

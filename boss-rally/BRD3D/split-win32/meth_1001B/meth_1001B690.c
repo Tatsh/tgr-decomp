@@ -1,18 +1,18 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B690) --------------------------------------------------------
-unk0 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4) {
+unk334 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4) {
     _DWORD *v4;                                    // eax
-    unk0 *v5;                                      // esi
-    unk0 *v6;                                      // edi
-    unk0 *v7;                                      // edx
-    unk0 *v8;                                      // ebx
+    unk334 *v5;                                    // esi
+    unk334 *v6;                                    // edi
+    unk334 *v7;                                    // edx
+    unk334 *v8;                                    // ebx
     void *v9;                                      // ecx
-    unk0 *v10;                                     // ebp
+    unk334 *v10;                                   // ebp
     int v11;                                       // eax
-    unk0 *result;                                  // eax
-    unk0 *v13;                                     // [esp+10h] [ebp-Ch]
-    unk0 *v14;                                     // [esp+14h] [ebp-8h]
-    unk0 *v15;                                     // [esp+18h] [ebp-4h]
+    unk334 *result;                                // eax
+    unk334 *v13;                                   // [esp+10h] [ebp-Ch]
+    unk334 *v14;                                   // [esp+14h] [ebp-8h]
+    unk334 *v15;                                   // [esp+18h] [ebp-4h]
     IID **__attribute__((__org_arrdim(0, 3))) iid; // [esp+28h] [ebp+Ch]
 
     v4 = a3;
@@ -24,14 +24,14 @@ unk0 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4) {
     v15 = 0;
     if (a3)
         *a3 = 0;
-    v8 = (unk0 *)a4;
+    v8 = (unk334 *)a4;
     if (!a4)
-        v8 = (unk0 *)this[201];
+        v8 = (unk334 *)this[201];
     v9 = v8;
     iid = (IID **)v8;
     if (v8) {
         while (1) {
-            v10 = (unk0 *)v8[3].field_80;
+            v10 = (unk334 *)v8[3].? ;
             LOBYTE(v11) = meth_1001ADA0(v8, (const void *)a2);
             if (v11)
                 break;

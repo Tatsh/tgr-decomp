@@ -1,9 +1,9 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005C590) --------------------------------------------------------
 int __thiscall meth_1005C590(char *this, int *a2) {
     int v3;                                // ebp
     int v4;                                // eax
-    unk1 *v6;                              // edx
+    unk54 *v6;                             // edx
     DWORD v7;                              // eax
     int v8;                                // ebx
     char *v9;                              // edi
@@ -51,15 +51,17 @@ int __thiscall meth_1005C590(char *this, int *a2) {
     v4 = *((_DWORD *)this + 6);
     if ((v4 & 0x18) != 0)
         return 0;
-    v6 = dword_10AA2E80;
-    if ((v4 & 0x80000) == 0 || dword_10AA2E80->width || dword_10AA2E80->field_30) {
-        if ((v4 & 0x80000) != 0 && (dword_10AA2E80->width || dword_10AA2E80->field_30)) {
+    v6 = g_unk54Ptr;
+    if ((v4 & 0x80000) == 0 || *(_DWORD *)&g_unk54Ptr->gap4[40] ||
+        *(_DWORD *)&g_unk54Ptr->gap4[44]) {
+        if ((v4 & 0x80000) != 0 &&
+            (*(_DWORD *)&g_unk54Ptr->gap4[40] || *(_DWORD *)&g_unk54Ptr->gap4[44])) {
             LOBYTE(v4) = v4 | 0x22;
             *((_DWORD *)this + 6) = v4;
             v7 = getTicks();
             v8 = dword_10AA2A60;
             dword_10AA2A60 = v7;
-            v6 = (unk1 *)(v7 - v8);
+            v6 = (unk54 *)(v7 - v8);
             dword_10AA2A5C += v7 - v8;
             if (dword_10AA2A5C < 60)
                 return 1;
@@ -73,7 +75,7 @@ int __thiscall meth_1005C590(char *this, int *a2) {
     v9 = this + 108940;
     v10 = *(int(__thiscall **)(char *, char *))(*(_DWORD *)this + 24);
     v50 = v10;
-    if (((int(__fastcall *)(char *, unk1 *, char *))v10)(this, v6, this + 108940) ||
+    if (((int(__fastcall *)(char *, unk54 *, char *))v10)(this, v6, this + 108940) ||
         *((_DWORD *)this + 27245)) {
         v11 = *((_DWORD *)this + 6);
         if ((v11 & 0x200000) == 0) {

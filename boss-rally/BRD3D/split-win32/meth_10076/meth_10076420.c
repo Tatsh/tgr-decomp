@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076420) --------------------------------------------------------
 void __thiscall meth_10076420(float *this, int a2, int a3, int a4) {
     float *v4; // eax

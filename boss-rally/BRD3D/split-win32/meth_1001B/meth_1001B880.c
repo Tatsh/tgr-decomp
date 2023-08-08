@@ -1,8 +1,8 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B880) --------------------------------------------------------
-unk0 *__thiscall meth_1001B880(
-    unk1 *this, int width, int height, int bitDepth, int a5, int a2, _DWORD *a7, unk0 *u0_1) {
-    unk0 *u0;                         // esi
+unk334 *__thiscall meth_1001B880(
+    unk1 *this, int width, int height, int bitDepth, int a5, int a2, _DWORD *a7, unk334 *u0_1) {
+    unk334 *u0;                       // esi
     IDirectDrawSurface *ddrawSurface; // edi
 
     if (!a2) {
@@ -14,12 +14,12 @@ unk0 *__thiscall meth_1001B880(
     }
     u0 = u0_1;
     if (!u0_1)
-        u0 = (unk0 *)this[6].field_41;
+        u0 = (unk334 *)this[6].field_41;
     if (a7 && meth_1001ACF0(u0, a2))
         *a7 = u0;
     if (u0) {
         while (1) {
-            ddrawSurface = u0->field_3;
+            ddrawSurface = u0->? ;
             if (meth_1001AD50((unk1 *)u0, width, height, bitDepth)) {
                 if (meth_1001ACF0(u0, a2))
                     return u0;
@@ -33,7 +33,7 @@ unk0 *__thiscall meth_1001B880(
                 *a7 = u0;
             }
         LABEL_20:
-            u0 = (unk0 *)ddrawSurface;
+            u0 = (unk334 *)ddrawSurface;
             if (!ddrawSurface)
                 return 0;
         }

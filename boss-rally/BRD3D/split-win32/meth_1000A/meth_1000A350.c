@@ -1,7 +1,7 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000A350) --------------------------------------------------------
-int __thiscall meth_1000A350(unk0 *this) {
-    SendMessageA(this->hwnd, 0xBD1u, 0, (LPARAM)this);
+int __thiscall meth_1000A350(unk8C *this) {
+    SendMessageA(this->field_20, 0xBD1u, 0, (LPARAM)this);
     ReleaseDDrawSurface(this);
     ReleaseDDraw2Surface(this);
     RestoreDisplayMode(this);

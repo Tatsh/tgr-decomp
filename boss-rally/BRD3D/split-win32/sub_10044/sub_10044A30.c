@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10044A30) --------------------------------------------------------
 int __cdecl sub_10044A30(int a1) {
     int v1; // eax
@@ -9,10 +9,10 @@ int __cdecl sub_10044A30(int a1) {
         cleanUpAndExitWithCode(0);
     }
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (dword_10AA2904)
-        (**(void(__thiscall ***)(void *, int))dword_10AA2904)(dword_10AA2904, 1);
+    if (g_unkC8Ptr1)
+        (**(void(__thiscall ***)(void *, int))g_unkC8Ptr1)(g_unkC8Ptr1, 1);
     dword_10AA2950 = 0;
-    dword_10AA2904 = (void *)dword_10AA294C;
+    g_unkC8Ptr1 = (void *)dword_10AA294C;
     sub_1003BF60();
     v1 = dword_10AA287C;
     if ((!dword_10AA287C || dword_10AA287C == 1) && !dword_10A9D000) {

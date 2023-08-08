@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001DEF0) --------------------------------------------------------
 int *__cdecl sub_1001DEF0(int a1) {
     int *v2;     // ecx

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002C150) --------------------------------------------------------
 void __cdecl sub_1002C150(int a1) {
     *(_DWORD *)(a1 + 4) = dword_1057553C ^ (*(_DWORD *)(a1 + 4) ^ dword_1057553C) & 0xFFFFFF;

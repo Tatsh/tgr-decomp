@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002BC90) --------------------------------------------------------
 void __cdecl sub_1002BC90(_BYTE *a1) {
     __int16 v1;          // cx

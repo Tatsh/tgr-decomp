@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003E3A0) --------------------------------------------------------
 int sub_1003E3A0() {
     int result; // eax

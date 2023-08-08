@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10074FC0) --------------------------------------------------------
 BOOL sub_10074FC0() {
     WaitForSingleObject(dword_118AA0A0, 0xFFFFFFFF);

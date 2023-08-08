@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003E100) --------------------------------------------------------
 BOOL __cdecl sub_1003E100(int Drive) {
     char Buffer[260];           // [esp+8h] [ebp-208h] BYREF

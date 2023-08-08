@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002A640) --------------------------------------------------------
 HANDLE sub_1002A640() {
     dword_118AA0A4 = (int(__cdecl *)(_DWORD, _DWORD))sub_10024AB0;

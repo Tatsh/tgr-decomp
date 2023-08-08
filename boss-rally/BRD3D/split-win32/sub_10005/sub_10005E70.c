@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10005E70) --------------------------------------------------------
 char *__cdecl sub_10005E70(int a1) {
     WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);

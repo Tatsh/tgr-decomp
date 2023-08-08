@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003C520) --------------------------------------------------------
 HRESULT __cdecl sub_1003C520(LPVOID *a1) {
     HRESULT result; // eax

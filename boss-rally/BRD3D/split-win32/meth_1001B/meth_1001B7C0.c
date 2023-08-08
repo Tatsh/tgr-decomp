@@ -1,9 +1,9 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B7C0) --------------------------------------------------------
-int __thiscall meth_1001B7C0(unk0 *this, const void *a2, unk0 *a3, int a4, int a5) {
-    unk0 *v6; // esi
-    unk0 *v7; // ebx
-    int v8;   // eax
+int __thiscall meth_1001B7C0(unk334 *this, const void *a2, unk334 *a3, int a4, int a5) {
+    unk334 *v6; // esi
+    unk334 *v7; // ebx
+    int v8;     // eax
 
     if (!a3) {
         if (a4) {
@@ -12,14 +12,14 @@ int __thiscall meth_1001B7C0(unk0 *this, const void *a2, unk0 *a3, int a4, int a
         }
         return 0;
     }
-    v6 = (unk0 *)a5;
+    v6 = (unk334 *)a5;
     if (!a5)
-        v6 = (unk0 *)this[5].field_5;
+        v6 = (unk334 *)this[5].? ;
     if (a4 && meth_1001ACF0(a3, (int)v6))
         *(_DWORD *)a4 = v6;
     if (v6) {
         while (1) {
-            v7 = (unk0 *)v6[3].field_80;
+            v7 = (unk334 *)v6[3].? ;
             LOBYTE(v8) = meth_1001ADA0(v6, a2);
             if (v8) {
                 if (meth_1001ACF0(a3, (int)v6))

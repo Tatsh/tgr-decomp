@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10075780) --------------------------------------------------------
 void __thiscall meth_10075780(int this) {
     double v1; // st7

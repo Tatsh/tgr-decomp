@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10078C30) --------------------------------------------------------
 int __cdecl sub_10078C30(
     IDirectInputDevice2A *diDevice2A, GUID *guid, int dwObj, int dwHow, int a5, int a6) {

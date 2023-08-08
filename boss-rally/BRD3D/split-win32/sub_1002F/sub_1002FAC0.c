@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002FAC0) --------------------------------------------------------
 int __cdecl sub_1002FAC0(int a1) {
     switch (a1) {

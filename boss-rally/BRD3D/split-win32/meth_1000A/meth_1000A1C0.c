@@ -1,14 +1,14 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000A1C0) --------------------------------------------------------
-int __thiscall meth_1000A1C0(unk0 *this) {
+int __thiscall meth_1000A1C0(unk334 *this) {
     int result; // eax
 
     meth_1000A350(this);
     result = 0;
-    this->gameSpecificUnk1_instance = 0;
-    this->u0 = 0;
-    this->unk = 0;
-    this->hwnd = 0;
-    this->field_0 = 0;
+    this->? = 0;
+    this->? = 0;
+    this->? = 0;
+    this->field_20 = 0;
+    this->? = 0;
     return result;
 }

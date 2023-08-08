@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003A6B0) --------------------------------------------------------
 void __cdecl sub_1003A6B0(float a1, float a2, float a3, float a4) {
     float v4;   // esi

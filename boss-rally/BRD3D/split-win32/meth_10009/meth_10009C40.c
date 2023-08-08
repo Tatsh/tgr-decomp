@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10009C40) --------------------------------------------------------
 IDirectDraw2 *__thiscall meth_10009C40(void *this,
                                        IDirect3DDevice2 *dev,

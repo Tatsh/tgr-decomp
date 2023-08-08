@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005D0A0) --------------------------------------------------------
 void *__stdcall sub_1005D0A0(LPCSTR lpFileName) {
     void *result; // eax

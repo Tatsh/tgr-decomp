@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006F950) --------------------------------------------------------
 int __cdecl sub_1006F950(float *a1, float *a2, float *a3, float *a4) {
     double v5;  // st7

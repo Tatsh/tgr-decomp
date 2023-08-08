@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008C20) --------------------------------------------------------
 FILE *__stdcall fopenReadBinary(char *FileName) {
     FILE *result; // eax

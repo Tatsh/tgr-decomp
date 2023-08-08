@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000C5D0) --------------------------------------------------------
 int __cdecl sub_1000C5D0(int a1, LPVOID lpParameter) {
     HANDLE v2; // eax

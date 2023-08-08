@@ -6,7 +6,7 @@ int __cdecl TIDFromTexture(_DWORD *a1, int a2) {
     int v4;     // ecx
     bool v5;    // cf
     int v6;     // ebx
-    _DWORD *v7; // eax
+    unk20 *v7;  // eax
     int a4;     // [esp+Ch] [ebp-4h] BYREF
 
     v2 = a1;
@@ -18,16 +18,16 @@ int __cdecl TIDFromTexture(_DWORD *a1, int a2) {
             dword_10575428 += 256;
             Block = CHK_ReAllocateMemory_0(Block, 4 * (v4 + 256), aTidfromtexture);
         }
-        v7 = (_DWORD *)malloc(0x20u);
+        v7 = (unk20 *)malloc(0x20u);
         if (v7) {
-            *v7 = 0;
-            v7[1] = 0;
-            v7[2] = 0;
-            v7[3] = 0;
-            v7[5] = 0;
-            v7[4] = 0;
-            v7[6] = 0;
-            v7[7] = 0;
+            v7->field_0 = 0;
+            v7->field_4 = 0;
+            v7->field_8 = 0;
+            v7->field_C = 0;
+            v7->field_14 = 0;
+            v7->field_10 = 0;
+            v7->field_18 = 0;
+            v7->last = 0;
         } else {
             v7 = 0;
         }

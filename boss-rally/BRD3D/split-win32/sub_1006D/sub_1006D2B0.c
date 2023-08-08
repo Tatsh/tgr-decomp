@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006D2B0) --------------------------------------------------------
 int __cdecl sub_1006D2B0(int a1) {
     int v1;      // ebx

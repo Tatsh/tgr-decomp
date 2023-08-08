@@ -1,5 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10071610) --------------------------------------------------------
 void __cdecl sub_10071610() {
-    `eh vector destructor iterator'(&dword_11826BD0, 0x214u, 16, debugPrint);
-}
+    `eh vector destructor iterator'(&dword_11826BD0, 0x214u, 16, debugPrint); }

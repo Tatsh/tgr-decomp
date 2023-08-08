@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10035CA0) --------------------------------------------------------
 _BYTE *__thiscall meth_10035CA0(_BYTE *this, char a2, char a3, char a4) {
     _BYTE *result; // eax

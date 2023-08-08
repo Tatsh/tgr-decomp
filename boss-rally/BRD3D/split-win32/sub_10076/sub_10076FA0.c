@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076FA0) --------------------------------------------------------
 MMRESULT __cdecl sub_10076FA0(LPSTR pszFileName, int a2, int a3, int a4, HMMIO hmmio) {
     HGLOBAL *v5;             // ebx

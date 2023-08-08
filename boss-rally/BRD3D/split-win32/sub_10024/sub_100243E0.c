@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100243E0) --------------------------------------------------------
 HRESULT sub_100243E0() {
     IDirect3DDevice2Vtbl *v0; // ecx

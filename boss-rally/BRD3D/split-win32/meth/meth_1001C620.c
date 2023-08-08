@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001C620) --------------------------------------------------------
 int __thiscall meth_1001C620(_DWORD *this) {
     int v2; // [esp-8h] [ebp-8h]

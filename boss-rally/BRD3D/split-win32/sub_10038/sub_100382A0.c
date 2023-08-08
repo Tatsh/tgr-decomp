@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100382A0) --------------------------------------------------------
 unsigned __int16 __cdecl sub_100382A0(char *a1) {
     char v1;                 // cl

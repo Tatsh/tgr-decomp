@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100072E0) --------------------------------------------------------
 double __cdecl sub_100072E0(char a1) {
     switch (a1) {

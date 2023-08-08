@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002FAF0) --------------------------------------------------------
 int __cdecl sub_1002FAF0(int a1) {
     if (!a1)

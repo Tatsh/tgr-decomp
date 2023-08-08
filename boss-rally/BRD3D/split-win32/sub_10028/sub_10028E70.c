@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10028E70) --------------------------------------------------------
 unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
     _DWORD *v2;              // esi

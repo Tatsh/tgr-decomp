@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B9A0) --------------------------------------------------------
 HRESULT ddrawEnum() {
     HRESULT result; // eax

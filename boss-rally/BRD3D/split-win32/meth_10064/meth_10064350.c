@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10064350) --------------------------------------------------------
-void __thiscall meth_10064350(int this) {
+void __thiscall meth_10064350(_DWORD *this) {
     int v2;       // eax
     int v3;       // ecx
     int v4;       // eax
@@ -45,33 +45,33 @@ void __thiscall meth_10064350(int this) {
     float v44[3]; // [esp+60h] [ebp-18h] BYREF
     float v45[3]; // [esp+6Ch] [ebp-Ch] BYREF
 
-    v2 = *(_DWORD *)(this + 3984);
-    v3 = *(_DWORD *)(this + 3980);
+    v2 = this[996];
+    v3 = this[995];
     v2 *= 5;
     v30 = *(float *)(v3 + 8 * v2 + 100) - *(float *)(v3 + 8 * v2 + 140);
     sub_1003AEE0((float *)v40, (float *)(v3 + 8 * v2 + 64), (float *)(v3 + 8 * v2 + 76));
-    v4 = *(_DWORD *)(this + 3980) + 40 * *(_DWORD *)(this + 3984);
+    v4 = this[995] + 40 * this[996];
     sub_1003AEE0((float *)v39, (float *)(v4 + 104), (float *)(v4 + 116));
     sub_1003B050((float *)v39, (float *)v40, (float *)v39);
-    v5 = *(_DWORD *)(this + 3980);
+    v5 = this[995];
     v40[1] = v39[0];
-    v6 = 5 * *(_DWORD *)(this + 3984);
+    v6 = 5 * this[996];
     *(float *)v40 = -*(float *)&v39[1];
     v40[2] = 0;
     sub_1003B050((float *)v39, (float *)(v5 + 8 * v6 + 76), (float *)(v5 + 8 * v6 + 116));
-    sub_1003AEE0((float *)v39, (float *)(this + 48), (float *)v39);
+    sub_1003AEE0((float *)v39, (float *)this + 12, (float *)v39);
     v7 = sub_1003AC90((float *)v40, (float *)v39);
-    v8 = *(int **)(this + 3980);
+    v8 = (int *)this[995];
     if (v7 >= 0.0) {
-        v10 = *(_DWORD *)(this + 3984);
+        v10 = this[996];
         v9 = v10 - 1;
         goto LABEL_7;
     }
-    v9 = *(_DWORD *)(this + 3984);
+    v9 = this[996];
     v10 = v9 + 1;
     if (v9 + 1 != *((unsigned __int16 *)v8 + 10)) {
     LABEL_7:
-        i = *(_DWORD *)(this + 3980);
+        i = this[995];
         v28 = v10;
         goto LABEL_8;
     }
@@ -92,8 +92,8 @@ LABEL_8:
     sub_1003AD10((int)v39, v33);
     sub_1003B050((float *)v42, v14, v13);
     sub_1003B050((float *)v43, v36, v16);
-    v17 = *(_DWORD *)(this + 52);
-    v41[0] = *(_DWORD *)(this + 48);
+    v17 = this[13];
+    v41[0] = this[12];
     v41[1] = v17;
     v41[2] = 0;
     sub_1003AEE0(v44, (float *)v41, (float *)v42);
@@ -109,23 +109,23 @@ LABEL_8:
     v35 = v20;
     v38 = v20 * -2.0;
     v24 = 1.0 - (v38 - v29 * -3.0);
-    sub_1003ACE0(this + 3864, (int)v42, v24);
+    sub_1003ACE0((int)(this + 966), (int)v42, v24);
     v25 = v38 - v29 * -3.0;
-    sub_1003B020(this + 3864, (int)v43, v25);
+    sub_1003B020((int)(this + 966), (int)v43, v25);
     v26 = v35 - (v29 + v29) + v32;
-    sub_1003B020(this + 3864, (int)v40, v26);
+    sub_1003B020((int)(this + 966), (int)v40, v26);
     v27 = v35 - v29;
-    sub_1003B020(this + 3864, (int)v39, v27);
-    sub_1003AFA0(this + 3876, (int)v39, (int)v40, v32);
-    sub_1003AE50((float *)(this + 3876));
-    sub_1003AC30((float *)(this + 3888), (float *)(this + 3900), (float *)(this + 3876));
-    sub_1003AE50((float *)(this + 3888));
-    sub_1003AC30((float *)(this + 3900), (float *)(this + 3876), (float *)(this + 3888));
-    sub_1003AEE0((float *)(this + 3916), (float *)(this + 48), (float *)(this + 3864));
-    v21 = sub_1003AC90((float *)(this + 3888), (float *)(this + 3916));
-    *(float *)(this + 3928) = v21;
+    sub_1003B020((int)(this + 966), (int)v39, v27);
+    sub_1003AFA0((int)(this + 969), (int)v39, (int)v40, v32);
+    sub_1003AE50((float *)this + 969);
+    sub_1003AC30((float *)this + 972, (float *)this + 975, (float *)this + 969);
+    sub_1003AE50((float *)this + 972);
+    sub_1003AC30((float *)this + 975, (float *)this + 969, (float *)this + 972);
+    sub_1003AEE0((float *)this + 979, (float *)this + 12, (float *)this + 966);
+    v21 = sub_1003AC90((float *)this + 972, (float *)this + 979);
+    *((float *)this + 982) = v21;
     if (v23)
         v21 = -v21;
-    *(float *)(this + 3912) = v21;
+    *((float *)this + 978) = v21;
 }
 // 100646E7: variable 'v23' is possibly undefined

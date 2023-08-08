@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000EF80) --------------------------------------------------------
 __int16 __fastcall sub_1000EF80(int a1, int a2, float *a3, int a4) {
     int v5;           // ebp

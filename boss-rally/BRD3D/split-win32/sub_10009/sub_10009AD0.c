@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10009AD0) --------------------------------------------------------
 unsigned __int8 *__cdecl sub_10009AD0(char *filename,
                                       int expectedChecksum,

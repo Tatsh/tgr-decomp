@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10028E00) --------------------------------------------------------
 BOOL __cdecl sub_10028E00(LONG a1, char *a2) {
     LONG v2;     // ecx

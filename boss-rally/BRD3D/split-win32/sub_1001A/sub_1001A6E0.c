@@ -1,13 +1,13 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001A6E0) --------------------------------------------------------
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8) {
-    unk1 *v8;   // edi
-    _DWORD *v9; // ebx
-    unk0 *v10;  // esi
-    int v11;    // edx
-    int v12;    // ecx
-    int v13;    // eax
-    unk0 *v14;  // eax
+    unk1 *v8;    // edi
+    _DWORD *v9;  // ebx
+    unk334 *v10; // esi
+    int v11;     // edx
+    int v12;     // ecx
+    int v13;     // eax
+    unk334 *v14; // eax
 
     v8 = (unk1 *)a1;
     if (!a1)
@@ -19,7 +19,7 @@ int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD 
         return 0;
     v10 = meth_1001B690((_DWORD *)a1, a2, &a1, 0);
     if (!v10) {
-        v10 = (unk0 *)a1;
+        v10 = (unk334 *)a1;
         if (!a1)
             return 0;
     }
@@ -31,7 +31,7 @@ int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD 
     }
     v14 = meth_1001B880(v8, v11, v12, v13, a6, (int)v10, &a8, 0);
     if (!v14) {
-        v14 = (unk0 *)a8;
+        v14 = (unk334 *)a8;
         if (!a8)
             return 0;
     }

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10071680) --------------------------------------------------------
 void __stdcall __noreturn sub_10071680(LPVOID lpThreadParameter) {
     DWORD v1; // eax

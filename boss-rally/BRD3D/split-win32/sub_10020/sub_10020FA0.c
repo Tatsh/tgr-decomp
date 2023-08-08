@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10020FA0) --------------------------------------------------------
 char __cdecl sub_10020FA0(int a1) {
     int v1;  // eax

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001A870) --------------------------------------------------------
 unsigned int __cdecl sub_1001A870(unsigned int a1) {
     if ((a1 & 0x4000) != 0)

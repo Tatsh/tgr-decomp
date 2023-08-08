@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10033E83) --------------------------------------------------------
 _DWORD *__cdecl sub_10033E83(int a1, float a2, int a3, float a4, float a5) {
     float v6;  // [esp+0h] [ebp-18h]

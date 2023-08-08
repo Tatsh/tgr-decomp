@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B280) --------------------------------------------------------
-char __thiscall meth_1001B280(unk0 *this) {
+char __thiscall meth_1001B280(unk334 *this) {
     void *v2; // eax
 
     meth_1001B5A0((int *)this);
@@ -14,9 +14,9 @@ char __thiscall meth_1001B280(unk0 *this) {
         this->unkMeth1 = 0;
     }
     v2 = this->field_27;
-    this[5].field_3 = 0;
+    this[5].? = 0;
     LOBYTE(v2) = (unsigned __int8)v2 & 0xFE;
-    this[5].field_2 = 0;
+    this[5].? = 0;
     this->field_27 = v2;
     return (char)v2;
 }

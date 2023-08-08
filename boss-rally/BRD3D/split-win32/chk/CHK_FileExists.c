@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10003320) --------------------------------------------------------
 bool __cdecl CHK_FileExists(char *filename) {
     FILE *fp;                // eax

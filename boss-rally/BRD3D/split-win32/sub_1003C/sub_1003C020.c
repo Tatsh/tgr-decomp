@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003C020) --------------------------------------------------------
 HANDLE sub_1003C020() {
     HANDLE result;     // eax

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000F5C0) --------------------------------------------------------
 char *sub_1000F5C0() {
     char *result; // eax

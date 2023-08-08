@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005C510) --------------------------------------------------------
 int __thiscall meth_1005C510(_DWORD *this, _DWORD *a2) {
     int v3;  // ecx
@@ -10,7 +10,7 @@ int __thiscall meth_1005C510(_DWORD *this, _DWORD *a2) {
         if (a2[1] <= v3 && a2[3] >= v3) {
             v4 = this[6];
             if ((v4 & 0x40000) != 0) {
-                if (dword_10AA2E80->width || dword_10AA2E80->field_30) {
+                if (*(_DWORD *)&g_unk54Ptr->gap4[40] || *(_DWORD *)&g_unk54Ptr->gap4[44]) {
                     v4 |= 0x80002u;
                 LABEL_12:
                     this[6] = v4;

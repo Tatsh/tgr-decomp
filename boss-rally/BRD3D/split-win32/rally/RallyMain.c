@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10079820) --------------------------------------------------------
 int __cdecl RallyMain(int a1, int a2, char *Str) {
     dword_118ABE2C = 0;
     if (CoInitialize(0) >= 0) {
         setupMemoryStatus();
         ReadInstallDirectory();
-        loadBrstringDll();
+        LoadBrstringDll();
         ReadSettings(Str);
         strcpy(g_bossRallyCfgPath, g_InstallPath);
         strcat(g_bossRallyCfgPath, aBossrallyCfg);

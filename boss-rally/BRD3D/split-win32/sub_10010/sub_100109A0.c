@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100109A0) --------------------------------------------------------
 int *__cdecl sub_100109A0(int a1, double(__cdecl *a2)(_DWORD *)) {
     int *v3;     // ecx

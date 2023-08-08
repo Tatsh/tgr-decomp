@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000A390) --------------------------------------------------------
-HRESULT __thiscall meth_1000A390(unk0 *this) {
+HRESULT __thiscall meth_1000A390(unk334 *this) {
     HRESULT result;         // eax
     gameSpecificUnk1 *gsu1; // ecx
     gameSpecificUnk1 *guid; // eax
@@ -17,19 +17,19 @@ HRESULT __thiscall meth_1000A390(unk0 *this) {
     void *v15;              // [esp+24h] [ebp-4h] BYREF
 
     if ((g_hasCalledDDrawEnum & 1) != 0 || (result = sub_1001B970(), result >= 0)) {
-        gsu1 = (gameSpecificUnk1 *)this->gameSpecificUnk1_instance;
+        gsu1 = (gameSpecificUnk1 *)this->? ;
         if (gsu1)
             guid = (gameSpecificUnk1 *)getDirectDrawLPGUID(gsu1);
         else
             guid = 0;
-        v5 = this->unk;
+        v5 = this->? ;
         if (v5)
             v6 = (int)v5 + 4;
         else
             v6 = 0;
         v7 = sub_1001A550(guid);
         if (v7) {
-            v8 = this->u0;
+            v8 = this->? ;
             if (v8) {
                 meth_1001AC80(v8, &v13, &v12, &v11, &v10);
             } else {
@@ -40,9 +40,9 @@ HRESULT __thiscall meth_1000A390(unk0 *this) {
             }
             if (sub_1001A6E0((int)v7, v6, v13, v12, v11, v10, &v14, &v15)) {
                 refclsid = v15;
-                this->u0 = v14;
-                this->gameSpecificUnk1_instance = v7;
-                this->unk = refclsid;
+                this->? = v14;
+                this->? = v7;
+                this->? = refclsid;
                 result = 0;
             } else {
                 result = -2005522671;

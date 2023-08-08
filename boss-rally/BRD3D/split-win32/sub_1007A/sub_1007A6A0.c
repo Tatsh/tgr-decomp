@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A6A0) --------------------------------------------------------
 int __cdecl sub_1007A6A0(HWND hWnd, intptr_t dwNewLong) {
     bool isActiveWindow; // zf

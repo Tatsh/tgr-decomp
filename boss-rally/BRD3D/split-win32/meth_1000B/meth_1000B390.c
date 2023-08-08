@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000B390) --------------------------------------------------------
-HRESULT __thiscall meth_1000B390(unk0 *this, int a2, int a3, int a4) {
+HRESULT __thiscall meth_1000B390(unk334 *this, int a2, int a3, int a4) {
     gameSpecificUnk1 *v5; // edi
     HRESULT result;       // eax
     int v7;               // ebx
@@ -23,7 +23,7 @@ HRESULT __thiscall meth_1000B390(unk0 *this, int a2, int a3, int a4) {
     if (a3) {
         v7 = a3 + 4;
     } else {
-        v8 = this->unk;
+        v8 = this->? ;
         if (v8)
             v7 = (int)v8 + 4;
         else
@@ -39,25 +39,25 @@ HRESULT __thiscall meth_1000B390(unk0 *this, int a2, int a3, int a4) {
     }
     if (!sub_1001A6E0((int)v5, v7, v17, v16, v15, a2, &v18, &v19))
         return -2005522671;
-    v9 = this->gameSpecificUnk1_instance;
-    v10 = this->u0;
-    a3 = (int)this->unk;
+    v9 = this->     ? ;
+    v10 = this->    ? ;
+    a3 = (int)this->? ;
     meth_1000A350(this);
     v11 = v18;
     v12 = v19;
-    this->gameSpecificUnk1_instance = v5;
-    this->u0 = v11;
-    this->unk = v12;
+    this->? = v5;
+    this->? = v11;
+    this->? = v12;
     v13 = meth_1000A2C0(this);
     if (v13 >= 0) {
-        SendMessageA(this->hwnd, 0xBD2u, 0, 0);
+        SendMessageA(this->field_20, 0xBD2u, 0, 0);
         result = 0;
     } else {
         meth_1000A350(this);
         v14 = (void *)a3;
-        this->gameSpecificUnk1_instance = v9;
-        this->unk = v14;
-        this->u0 = v10;
+        this->? = v9;
+        this->? = v14;
+        this->? = v10;
         meth_1000A2C0(this);
         result = v13;
     }

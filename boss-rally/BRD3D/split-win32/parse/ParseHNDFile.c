@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10037990) --------------------------------------------------------
 int __cdecl ParseHNDFile(char *hndFilepath) {
     int v1;            // eax

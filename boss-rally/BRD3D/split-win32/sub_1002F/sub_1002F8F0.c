@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002F8F0) --------------------------------------------------------
 int sub_1002F8F0() {
     int result;  // eax
@@ -28,17 +28,17 @@ int sub_1002F8F0() {
         dword_10690A14 = 1;
         return 1;
     case 4:
-        v1 = dword_10AA2904;
-        if (!dword_10AA2904 && !dword_100AC300) {
+        v1 = g_unkC8Ptr1;
+        if (!g_unkC8Ptr1 && !dword_100AC300) {
             sub_100734F0();
             dword_10690A14 = 3;
             return 1;
         }
-        if (!dword_10AA2904 && dword_100AC300) {
+        if (!g_unkC8Ptr1 && dword_100AC300) {
             pm_sub_10073320(0);
             sub_1005D440();
             ticks = getTicks();
-            v1 = dword_10AA2904;
+            v1 = g_unkC8Ptr1;
             g_TickCount = ticks;
         }
         if (g_Runbenchmark) {
@@ -60,21 +60,21 @@ int sub_1002F8F0() {
         if (v1[3]) {
             (*(void(__thiscall **)(_DWORD *))(*v1 + 12))(v1);
         } else {
-            v3 = g_gsu0->u0;
+            v3 = g_gsu0->? ;
             if (v3) {
                 meth_1001AC80(
                     v3, &dword_10690A0C, &dword_10690A08, &dword_10690A00, &dword_10690A04);
-                v1 = dword_10AA2904;
+                v1 = g_unkC8Ptr1;
             }
             (*(void(__thiscall **)(_DWORD *))(*v1 + 16))(v1);
         }
-        if (!dword_10AA2904 || !dword_100AC300)
+        if (!g_unkC8Ptr1 || !dword_100AC300)
             return 1;
-        if (dword_10AA2868) {
+        if (g_unkC8AreSamePtr) {
             if (g_TickCount + 90000 < getTicks()) {
-                *((_DWORD *)dword_10AA2904 + 26) = 0;
-                (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)dword_10AA2904 + 24))(
-                    dword_10AA2904, 0);
+                *((_DWORD *)g_unkC8Ptr1 + 26) = 0;
+                (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)g_unkC8Ptr1 + 24))(g_unkC8Ptr1,
+                                                                                      0);
                 g_GameMode = 4;
                 dword_106805B8 = 0;
                 return 1;

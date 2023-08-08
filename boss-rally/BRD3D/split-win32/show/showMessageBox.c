@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003DBC0) --------------------------------------------------------
 int __cdecl showMessageBox(LPCSTR format, int errno) {
     char *v2;       // eax

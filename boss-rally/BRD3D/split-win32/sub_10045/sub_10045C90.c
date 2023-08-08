@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10045C90) --------------------------------------------------------
 int sub_10045C90() {
     _DWORD *v0; // eax
@@ -6,7 +6,7 @@ int sub_10045C90() {
     _DWORD *v2; // eax
 
     if (dword_10AA292C) {
-        dword_10AA2904 = (void *)dword_10AA292C;
+        g_unkC8Ptr1 = (void *)dword_10AA292C;
         result = 1;
     } else {
         v0 = (_DWORD *)malloc(0xC8u);
@@ -15,12 +15,12 @@ int sub_10045C90() {
         else
             result = 0;
         dword_10AA292C = result;
-        dword_10AA2904 = (void *)result;
+        g_unkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_100509F0;
             (*(void(__cdecl **)(int))(dword_10AA292C + 4))(dword_10AA292C);
-            *((_DWORD *)dword_10AA2904 + 3) = 1;
-            *((_DWORD *)dword_10AA2904 + 26) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
             v2 = (_DWORD *)malloc(0xC8u);
             if (v2)
                 result = (int)meth_10048710(v2);

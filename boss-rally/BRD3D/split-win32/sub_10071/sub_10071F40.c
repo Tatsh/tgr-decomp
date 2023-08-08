@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10071F40) --------------------------------------------------------
 int __cdecl sub_10071F40(
     _DWORD *a1, char a2, char a3, char a4, char a5, char a6, char a7, int a8, int a9) {

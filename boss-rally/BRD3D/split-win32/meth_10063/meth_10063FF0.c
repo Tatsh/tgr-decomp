@@ -1,6 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10063FF0) --------------------------------------------------------
-int __thiscall meth_10063FF0(float *this, int a2, int a3, int a4) {
+int __thiscall meth_10063FF0(_DWORD *this, int a2, int a3, int a4) {
     int v4;          // esi
     int v5;          // ebx
     int v6;          // eax
@@ -63,12 +63,14 @@ int __thiscall meth_10063FF0(float *this, int a2, int a3, int a4) {
                 if (v11 <= 2) {
                     dword_10AF9888 = 0;
                     dword_10AF9BA4 = 0;
-                } else if (sub_1003BA70(this + 12, flt_10AF9740, flt_10AF959C, flt_10AF9794)) {
+                } else if (sub_1003BA70(
+                               (float *)this + 12, flt_10AF9740, flt_10AF959C, flt_10AF9794)) {
                     v11 = a2;
                     dword_10AF9888 = 0;
                     dword_10AF9BA4 = 1;
                 } else {
-                    if (sub_1003BA70(this + 12, flt_10AF9740, flt_10AF953C, flt_10AF97F4)) {
+                    if (sub_1003BA70(
+                            (float *)this + 12, flt_10AF9740, flt_10AF953C, flt_10AF97F4)) {
                         v11 = a2;
                         dword_10AF9888 = 1;
                     } else {
@@ -92,8 +94,9 @@ int __thiscall meth_10063FF0(float *this, int a2, int a3, int a4) {
             }
         } else {
             v22 = 0;
-            for (i = sub_1003BA70(this + 12, v23, flt_10AF9794, flt_10AF97F4); i;
-                 i = sub_1003BA70(this + 12, v23, &flt_10AF9794[v22], &flt_10AF97F4[v22])) {
+            for (i = sub_1003BA70((float *)this + 12, v23, flt_10AF9794, flt_10AF97F4); i;
+                 i = sub_1003BA70(
+                     (float *)this + 12, v23, &flt_10AF9794[v22], &flt_10AF97F4[v22])) {
                 ++v13;
                 v22 += 3;
                 if (v13 >= a2 - 1) {

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10029E10) --------------------------------------------------------
 int __cdecl sub_10029E10(int a1, int a2, int a3) {
     int v3;     // esi

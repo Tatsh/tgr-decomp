@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10037FA0) --------------------------------------------------------
 int __cdecl sub_10037FA0(_DWORD *a1) {
     int v1;               // edx

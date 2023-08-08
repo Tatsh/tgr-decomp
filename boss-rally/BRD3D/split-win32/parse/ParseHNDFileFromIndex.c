@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10037A90) --------------------------------------------------------
 int __cdecl ParseHNDFileFromIndex(int trackIndex) {
     char trackHndFilepath[1024]; // [esp+8h] [ebp-400h] BYREF

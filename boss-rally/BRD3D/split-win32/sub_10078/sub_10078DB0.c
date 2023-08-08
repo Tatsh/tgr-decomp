@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10078DB0) --------------------------------------------------------
 int sub_10078DB0() {
     LPDIRECTINPUTA dida;         // eax
@@ -8,14 +8,14 @@ int sub_10078DB0() {
     if (!--mouseCreated) {
         dida = g_DirectInputA;
         if (g_DirectInputA) {
-            v1 = dword_10AA2E80;
-            if (dword_10AA2E80) {
-                meth_100602B0(dword_10AA2E80);
+            v1 = g_unk54Ptr;
+            if (g_unk54Ptr) {
+                meth_100602B0(g_unk54Ptr);
                 free(v1);
                 dida = g_DirectInputA;
             }
             didaVtbl = dida->lpVtbl;
-            dword_10AA2E80 = 0;
+            g_unk54Ptr = 0;
             didaVtbl->Release(dida);
             g_DirectInputA = 0;
         }

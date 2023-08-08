@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100290E0) --------------------------------------------------------
 void __cdecl sub_100290E0(_DWORD *a1) {
     _DWORD *v1; // esi

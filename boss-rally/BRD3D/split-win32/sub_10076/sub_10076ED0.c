@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076ED0) --------------------------------------------------------
 int __cdecl sub_10076ED0(HMMIO hmmio, int a2, int a3, int a4, int a5) {
     int result;                 // eax

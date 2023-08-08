@@ -1,21 +1,21 @@
 #include "../types-win32.h"
 //----- (1000AB20) --------------------------------------------------------
-int __thiscall resetPalette(unk0 *this) {
-    LPDIRECTDRAWPALETTE ddrawPalette; // eax
+int __thiscall resetPalette(unk8C *this) {
+    IDirectDrawPalette *ddrawPalette; // eax
 
     ddrawPalette = this->lpDirectDrawPalette;
     if (ddrawPalette) {
         ddrawPalette->lpVtbl->Release(ddrawPalette);
-        this->lpDirectDrawPalette = 0;
+        this->lpDirectDrawPalette = NULL;
     }
-    if (this->lpPaletteEntry) {
-        free(this->lpPaletteEntry);
-        this->lpPaletteEntry = 0;
+    if (this->lpDirect3DMaterial2) {
+        free(this->lpDirect3DMaterial2);
+        this->lpDirect3DMaterial2 = NULL;
     }
-    if (this->tPaletteEntry) {
-        free(this->tPaletteEntry);
-        this->tPaletteEntry = 0;
+    if (this->field_50) {
+        free((void *)this->field_50);
+        this->field_50 = NULL;
     }
-    this->sizePalette = 0;
+    this->field_4C = NULL;
     return 0;
 }

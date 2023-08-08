@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10077200) --------------------------------------------------------
 int __cdecl sub_10077200(_DWORD *a1) {
     IDirectInputDevice2A *v1; // eax

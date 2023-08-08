@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100616C0) --------------------------------------------------------
 int __cdecl sub_100616C0(int *a1) {
     int *i;     // esi

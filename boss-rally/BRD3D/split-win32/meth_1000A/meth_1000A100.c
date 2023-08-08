@@ -1,8 +1,6 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000A100) --------------------------------------------------------
-unk0_member2 *__thiscall meth_1000A100(unk0_member2 *this,
-                                       IDirect3D2 *d3d2,
-                                       IDirect3DDevice2 *d3dDevice2) {
+unk5C *__thiscall meth_1000A100(unk5C *this, IDirect3D2 *d3d2, IDirect3DDevice2 *d3dDevice2) {
     IDirect3DMaterial2 **d3dMaterial2;  // edi
     IDirect3D2Vtbl *d3d2Vtbl;           // ecx
     IDirect3DMaterial2 *d3dMaterial2_1; // [esp-4h] [ebp-10h]

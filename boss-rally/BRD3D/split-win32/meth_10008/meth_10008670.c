@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008670) --------------------------------------------------------
 int __thiscall meth_10008670(Pod *this, int a2) {
     char *v3;        // ecx

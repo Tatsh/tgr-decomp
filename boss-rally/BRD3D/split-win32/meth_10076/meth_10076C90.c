@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10076C90) --------------------------------------------------------
 _DWORD *__thiscall meth_10076C90(char *this) {
     *((_DWORD *)this + 2672) =

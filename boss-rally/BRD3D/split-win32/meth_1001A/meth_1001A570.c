@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001A570) --------------------------------------------------------
 unk1 *__cdecl meth_1001A570(_DWORD *a1, int width, int height, int bitDepth, unk1 *a5, int a6) {
     unk1 *result; // eax

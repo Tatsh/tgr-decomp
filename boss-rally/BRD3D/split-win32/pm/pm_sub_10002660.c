@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002660) --------------------------------------------------------
 int __cdecl pm_sub_10002660(HWND a1) {
     unsigned int v1;         // eax

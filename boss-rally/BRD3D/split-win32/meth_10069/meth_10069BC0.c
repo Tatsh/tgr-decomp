@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10069BC0) --------------------------------------------------------
 int __thiscall meth_10069BC0(BossRallyConfig *this, int a2, int a3) {
     switch (a2) {

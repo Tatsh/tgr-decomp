@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10075100) --------------------------------------------------------
 unsigned int sub_10075100() {
     DWORD v0;            // eax

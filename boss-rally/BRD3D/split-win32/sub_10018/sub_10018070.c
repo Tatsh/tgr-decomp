@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10018070) --------------------------------------------------------
 BOOL sub_10018070() {
     return dword_106C661C || dword_106C6620 || dword_106C6624 || !dword_106C7C98 ||

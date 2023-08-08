@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100231D0) --------------------------------------------------------
 _DWORD *__cdecl sub_100231D0(_DWORD *a1) {
     float *v1;  // esi

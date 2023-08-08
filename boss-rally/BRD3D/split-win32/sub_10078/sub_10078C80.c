@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10078C80) --------------------------------------------------------
 int __cdecl sub_10078C80(int *a1, int a2, int a3, int a4, int a5) {
     int v5;    // ecx

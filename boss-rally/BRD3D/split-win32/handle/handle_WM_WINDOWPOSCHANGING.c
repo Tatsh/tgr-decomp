@@ -1,9 +1,9 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A590) --------------------------------------------------------
 LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     HWND v3;             // esi
     LONG v4;             // eax
-    unk0 *v5;            // ebp
+    unk334 *v5;          // ebp
     unsigned int v6;     // esi
     unsigned int v7;     // edi
     int v8;              // ebp
@@ -19,7 +19,7 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
 
     v3 = hWnd;
     v4 = GetWindowLongA(hWnd, GWL_USERDATA);
-    v5 = (unk0 *)v4;
+    v5 = (unk334 *)v4;
     if (v4 && (*(_BYTE *)(v4 + 28) & 2) != 0 && !dword_118AC230 && lParam) {
         if (IsIconic(hWnd)) {
             dword_118AC230 = 1;

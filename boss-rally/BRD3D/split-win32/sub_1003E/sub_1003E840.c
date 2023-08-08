@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003E840) --------------------------------------------------------
 int __cdecl sub_1003E840(int a1) {
     const char *v1; // eax

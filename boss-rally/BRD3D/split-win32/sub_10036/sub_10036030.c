@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10036030) --------------------------------------------------------
 int __cdecl sub_10036030(HANDLE a1) {
     HANDLE *v2; // esi

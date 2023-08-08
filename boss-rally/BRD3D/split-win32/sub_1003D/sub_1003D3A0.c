@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003D3A0) --------------------------------------------------------
 SIZE_T __cdecl sub_1003D3A0(SIZE_T dwBytes, int a2, LPCSTR lpString, int a4, int a5) {
     SIZE_T result;       // eax

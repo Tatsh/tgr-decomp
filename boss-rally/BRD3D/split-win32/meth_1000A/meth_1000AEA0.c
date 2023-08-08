@@ -1,19 +1,20 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000AEA0) --------------------------------------------------------
-int __thiscall meth_1000AEA0(unk0 *this) {
-    unk0_member2 *v2; // edi
+int __thiscall meth_1000AEA0(unk8C *this) {
+    unk8C *v2; // edi
 
-    v2 = this->unknown;
+    v2 = (unk8C *)this->field_8;
     this->field_1C |= 0x10u;
     if (v2) {
         SafeReleaseDirect3DMaterial2(v2);
         free(v2);
-        this->unknown = 0;
+        this->field_8 = NULL;
     }
     if (this->lpDirect3DViewport2) {
-        this->lpD3DDevice2->lpVtbl->DeleteViewport(this->lpD3DDevice2, this->lpDirect3DViewport2);
+        this->lpDirect3DDevice->lpVtbl->DeleteViewport(this->lpDirect3DDevice,
+                                                       this->lpDirect3DViewport2);
         this->lpDirect3DViewport2->lpVtbl->Release(this->lpDirect3DViewport2);
-        this->lpDirect3DViewport2 = 0;
+        this->lpDirect3DViewport2 = NULL;
     }
     return 0;
 }

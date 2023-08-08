@@ -1,11 +1,11 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10044F00) --------------------------------------------------------
 int __cdecl sub_10044F00(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (dword_10AA2968)
-        (**(void(__thiscall ***)(int, int))dword_10AA2968)(dword_10AA2968, 1);
-    dword_10AA2968 = 0;
-    dword_10AA2904 = (void *)dword_10AA295C;
+    if (g_unkC8Ptr0)
+        (**(void(__thiscall ***)(int, int))g_unkC8Ptr0)(g_unkC8Ptr0, 1);
+    g_unkC8Ptr0 = 0;
+    g_unkC8Ptr1 = (void *)dword_10AA295C;
     g_GameMode = 2;
     return 0;
 }

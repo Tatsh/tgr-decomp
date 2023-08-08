@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005C270) --------------------------------------------------------
 int __stdcall sub_1005C270(int a1, float a2, float a3) {
     sub_1005F5A0((__int64)a2,

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002A350) --------------------------------------------------------
 int __cdecl sub_1002A350(int a1, unsigned __int8 *a2, int a3) {
     unsigned __int8 *v3; // eax

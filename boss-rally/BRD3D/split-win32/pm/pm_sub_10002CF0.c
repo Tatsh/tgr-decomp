@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002CF0) --------------------------------------------------------
 int pm_sub_10002CF0() {
     int result; // eax

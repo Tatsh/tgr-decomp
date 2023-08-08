@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10073C90) --------------------------------------------------------
 unsigned int __thiscall meth_10073C90(int *this, int a2) {
     int v3;              // ecx

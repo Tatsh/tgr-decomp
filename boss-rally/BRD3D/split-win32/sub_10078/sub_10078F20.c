@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10078F20) --------------------------------------------------------
 int __cdecl sub_10078F20(int a1, int a2, int a3) {
     int result; // eax

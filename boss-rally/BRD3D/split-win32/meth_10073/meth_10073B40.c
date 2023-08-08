@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10073B40) --------------------------------------------------------
 void __thiscall meth_10073B40(void *this) {
     *((_DWORD *)this + 2) = 0;

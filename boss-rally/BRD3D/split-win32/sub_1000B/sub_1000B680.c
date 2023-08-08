@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000B680) --------------------------------------------------------
 HANDLE __cdecl sub_1000B680(int a1, LPCSTR filepath, int cx_, int cy, int a5) {
     HINSTANCE hInst; // eax

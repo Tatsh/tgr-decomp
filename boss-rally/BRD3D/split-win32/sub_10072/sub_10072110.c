@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10072110) --------------------------------------------------------
 int __cdecl sub_10072110(_DWORD *a1, char a2) {
     _BYTE *v2; // esi

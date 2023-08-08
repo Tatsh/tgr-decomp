@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10074B70) --------------------------------------------------------
 float *__cdecl sub_10074B70(float *a1, int a2, int a3) {
     float *v3;    // ebx

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002DE0) --------------------------------------------------------
 int __cdecl sub_10002DE0(float a1, float a2) {
     unsigned __int16 v2; // si

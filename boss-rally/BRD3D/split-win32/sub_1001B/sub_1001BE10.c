@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001BE10) --------------------------------------------------------
 _DWORD *__cdecl sub_1001BE10(_DWORD *a1) {
     dword_118AA0B8(*a1 & 0xFFFFFF, a1[1]);

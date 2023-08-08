@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003E260) --------------------------------------------------------
 void __cdecl sub_1003E260(int a1) {
     LPCSTR v1;      // edi

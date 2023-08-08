@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001A4D0) --------------------------------------------------------
 int __cdecl sub_1001A4D0(int a1, int a2, int a3, int a4) {
     int v4;     // ecx

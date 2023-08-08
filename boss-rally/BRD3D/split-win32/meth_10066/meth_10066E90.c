@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10066E90) --------------------------------------------------------
 void __thiscall meth_10066E90(_DWORD *this) {
     int v2;          // ecx

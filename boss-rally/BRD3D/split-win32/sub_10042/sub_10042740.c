@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10042740) --------------------------------------------------------
 int __cdecl sub_10042740(int a1, int *a2) {
     int v2;             // edx
@@ -17,7 +17,7 @@ int __cdecl sub_10042740(int a1, int *a2) {
         strcat(FileName, Buffer);
         strcat(FileName, aGrf);
     }
-    v4 = fopen(FileName, aR);
+    v4 = fopen(FileName, Mode);
     if (v4)
         fclose(v4);
     else

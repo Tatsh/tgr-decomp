@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100242F0) --------------------------------------------------------
 _DWORD *__cdecl sub_100242F0(_DWORD *a1) {
     _DWORD *result;  // eax

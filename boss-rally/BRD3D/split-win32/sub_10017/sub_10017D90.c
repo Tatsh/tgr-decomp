@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10017D90) --------------------------------------------------------
 _DWORD *__cdecl sub_10017D90(int a1) {
     double v1;      // st7

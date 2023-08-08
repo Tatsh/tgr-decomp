@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003FE80) --------------------------------------------------------
 int __cdecl sub_1003FE80(int a1) {
     const char *v1; // edi
@@ -8,7 +8,7 @@ int __cdecl sub_1003FE80(int a1) {
     int v5;         // ecx
     int v6;         // edx
 
-    if (dword_10AA2904 == (void *)dword_10AA2964 && !dword_10AA28E8) {
+    if (g_unkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8) {
         *(float *)(a1 + 12144) = *(float *)(a1 + 12144) - 8.0;
         v1 = getCaptionString(0x1Cu);
         v2 = *(_DWORD *)(a1 + 11100);

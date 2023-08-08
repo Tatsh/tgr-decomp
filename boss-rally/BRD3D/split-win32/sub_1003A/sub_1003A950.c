@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003A950) --------------------------------------------------------
 BOOL __cdecl sub_1003A950(float a1, float a2) {
     int v2;   // eax

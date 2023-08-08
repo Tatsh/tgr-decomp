@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006FFD0) --------------------------------------------------------
 void sub_1006FFD0() {
     int v0;        // ecx

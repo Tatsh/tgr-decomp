@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10077090) --------------------------------------------------------
 void __cdecl sub_10077090(unsigned int a1) {
     dword_10680598 = a1;

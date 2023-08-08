@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002F90) --------------------------------------------------------
 DWORD __stdcall CHK_GetFileSize(CHK_File *cFile, void *_unused) {
     int originalPos; // edi

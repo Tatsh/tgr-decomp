@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10043810) --------------------------------------------------------
 int __cdecl sub_10043810(LPCVOID pMem) {
     _DWORD **v1; // edi
@@ -23,7 +23,7 @@ int __cdecl sub_10043810(LPCVOID pMem) {
             (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
             dword_10AA2950 = 0;
         }
-        dword_10AA2904 = (void *)dword_10AA2948;
+        g_unkC8Ptr1 = (void *)dword_10AA2948;
         sub_1003BF60();
         v9 = dword_10AA287C;
         dword_10AA2898 = 1;

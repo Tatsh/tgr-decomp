@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10031DCF) --------------------------------------------------------
 int sub_10031DCF() {
     int result; // eax

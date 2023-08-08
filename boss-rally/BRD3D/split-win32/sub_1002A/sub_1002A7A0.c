@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002A7A0) --------------------------------------------------------
 void sub_1002A7A0() {
     unsigned int i;  // esi

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10046170) --------------------------------------------------------
 int sub_10046170() {
     _DWORD *v0; // eax
@@ -8,7 +8,7 @@ int sub_10046170() {
     sub_10072AF0(3, 0x200020u);
     dword_10AA2854 = 3;
     if (dword_10AA2910) {
-        dword_10AA2904 = (void *)dword_10AA2910;
+        g_unkC8Ptr1 = (void *)dword_10AA2910;
         result = 1;
     } else {
         v0 = (_DWORD *)malloc(0xC8u);
@@ -17,13 +17,13 @@ int sub_10046170() {
         else
             result = 0;
         dword_10AA2910 = result;
-        dword_10AA2904 = (void *)result;
+        g_unkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10049C20;
             (*(void(__cdecl **)(int))(dword_10AA2910 + 4))(dword_10AA2910);
-            *((_DWORD *)dword_10AA2904 + 3) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
             result = 1;
-            *((_DWORD *)dword_10AA2904 + 26) = 1;
+            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
         }
     }
     return result;

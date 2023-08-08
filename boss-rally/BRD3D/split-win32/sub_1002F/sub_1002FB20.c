@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1002FB20) --------------------------------------------------------
 _DWORD *__cdecl sub_1002FB20(unsigned int a1, int a2) {
     _DWORD *v2;        // eax

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10075810) --------------------------------------------------------
 void __thiscall meth_10075810(int this) {
     unsigned __int8 v2; // c0

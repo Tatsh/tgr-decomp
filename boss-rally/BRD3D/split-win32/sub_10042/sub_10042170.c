@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10042170) --------------------------------------------------------
 int __cdecl sub_10042170(int a1, int *a2) {
     FILE *v2;            // eax
@@ -26,7 +26,7 @@ int __cdecl sub_10042170(int a1, int *a2) {
     _itoa(*a2, Buffer, 10);
     strcat(FileName, Buffer);
     strcat(FileName, aBrf);
-    v2 = fopen(FileName, aR);
+    v2 = fopen(FileName, Mode);
     if (!v2)
         return 0;
     fclose(v2);

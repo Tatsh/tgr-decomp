@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A710) --------------------------------------------------------
 int __cdecl sub_1007A710(const void *a1, const void *a2) {
     unk1 *v2;        // esi

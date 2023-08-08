@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100741B0) --------------------------------------------------------
 void __cdecl sub_100741B0(float *a1) {
     long double v2; // st6

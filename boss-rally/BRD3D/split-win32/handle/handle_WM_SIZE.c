@@ -1,10 +1,10 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1007A450) --------------------------------------------------------
 int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam) {
-    unk0 *v3;   // eax
+    unk334 *v3; // eax
     int result; // eax
 
-    v3 = (unk0 *)GetWindowLongA(hWnd, -21);
+    v3 = (unk334 *)GetWindowLongA(hWnd, -21);
     if (wParam) {
         if (wParam == 1) {
             dword_118AC230 = 1;

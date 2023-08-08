@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003CAA0) --------------------------------------------------------
 int __stdcall sub_1003CAA0(int a1, int a2, int a3, __int16 a4, int a5) {
     int result; // eax

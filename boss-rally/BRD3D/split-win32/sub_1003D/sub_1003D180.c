@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1003D180) --------------------------------------------------------
 int __cdecl sub_1003D180(SIZE_T dwBytes, int a2, int a3) {
     SIZE_T v3;                                                // ebx

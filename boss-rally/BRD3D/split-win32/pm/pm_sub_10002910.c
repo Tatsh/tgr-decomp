@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002910) --------------------------------------------------------
 DWORD pm_sub_10002910() {
     DWORD result;             // eax

@@ -1,10 +1,10 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000A2C0) --------------------------------------------------------
-HRESULT __thiscall meth_1000A2C0(unk0 *this) {
+HRESULT __thiscall meth_1000A2C0(unk334 *this) {
     HRESULT result; // eax
     HRESULT v3;     // esi
 
-    if (!this->hwnd || !IsWindow(this->hwnd))
+    if (!this->field_20 || !IsWindow(this->field_20))
         return -2005522669;
     result = meth_1000A390(this);
     if (result >= 0) {
@@ -12,7 +12,7 @@ HRESULT __thiscall meth_1000A2C0(unk0 *this) {
         if (v3 >= 0 && (v3 = SetCooperativeLevel(this), v3 >= 0) &&
             (v3 = meth_1000A5D0(this), v3 >= 0) && (v3 = meth_1000A820(this), v3 >= 0) &&
             (v3 = meth_1000AB70(this), v3 >= 0)) {
-            SendMessageA(this->hwnd, 0xBD0u, 0, (LPARAM)this);
+            SendMessageA(this->field_20, 0xBD0u, 0, (LPARAM)this);
             result = 0;
         } else {
             meth_1000A350(this);

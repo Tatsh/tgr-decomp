@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005CF20) --------------------------------------------------------
 int __thiscall meth_1005CF20(void *this, LPCSTR lpFileName) {
     void *v3;                                       // esi
@@ -18,7 +18,7 @@ int __thiscall meth_1005CF20(void *this, LPCSTR lpFileName) {
     v10 = v3;
     if (v3 == (void *)-1)
         return 0;
-    v5 = fopen(FileName, aR);
+    v5 = fopen(FileName, Mode);
     fseek(v5, 0, 2);
     v6 = ftell(v5);
     fseek(v5, v6 - 128, 0);
@@ -30,7 +30,7 @@ int __thiscall meth_1005CF20(void *this, LPCSTR lpFileName) {
         memset(Buffer, 0, sizeof(Buffer));
         if (_findnext(v3, (int)v13))
             break;
-        v8 = fopen(FileName, aR);
+        v8 = fopen(FileName, Mode);
         fseek(v8, 0, 2);
         v9 = ftell(v8);
         fseek(v8, v9 - 128, 0);

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001B2D0) --------------------------------------------------------
 int __thiscall meth_1001B2D0(gameSpecificUnk1 *this, const void *a2) {
     int v3; // ecx

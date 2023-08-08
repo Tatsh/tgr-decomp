@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1006C1F0) --------------------------------------------------------
 void __cdecl sub_1006C1F0(int a1, int a2, int a3, int a4, float a5) {
     int v6;              // eax

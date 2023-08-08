@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100089C0) --------------------------------------------------------
 int __stdcall sub_100089C0(char *FileName) {
     int result; // eax

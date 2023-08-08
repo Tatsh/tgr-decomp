@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10005FE0) --------------------------------------------------------
 int __cdecl np_sub_10005FE0(int a1) {
     int v1;            // esi

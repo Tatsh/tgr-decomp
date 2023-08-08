@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005FFB0) --------------------------------------------------------
 HRESULT sub_1005FFB0() {
     HRESULT result; // eax

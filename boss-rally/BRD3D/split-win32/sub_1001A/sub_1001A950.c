@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001A950) --------------------------------------------------------
 HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat) {
     HRESULT hr;    // eax

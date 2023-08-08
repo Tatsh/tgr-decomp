@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100360F0) --------------------------------------------------------
 void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
     void(__stdcall * v4)(HANDLE, DWORD); // edi

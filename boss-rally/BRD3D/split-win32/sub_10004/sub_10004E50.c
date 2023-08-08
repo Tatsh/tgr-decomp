@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10004E50) --------------------------------------------------------
 int __cdecl sub_10004E50(void *a1, float *a2) {
     int *v2;           // ebx

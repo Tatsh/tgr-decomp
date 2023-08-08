@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1005CCD0) --------------------------------------------------------
 int __stdcall sub_1005CCD0(__int16 a1) {
     FILE *v1;           // ebx
@@ -15,7 +15,7 @@ int __stdcall sub_1005CCD0(__int16 a1) {
         memset(String, 0, sizeof(String));
         if ((int)freadLock(String, 1u, 0x80u, v1) < 128)
             sub_1003E260(7);
-        strcpy((char *)(*((_DWORD *)dword_10AA2904 + 48) + 260 * a1 + 4), _strupr(String));
+        strcpy((char *)(*((_DWORD *)g_unkC8Ptr1 + 48) + 260 * a1 + 4), _strupr(String));
         fclose(v1);
     }
     return 1;

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1000F640) --------------------------------------------------------
 int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
     float **v5;           // ebx

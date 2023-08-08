@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (1001AEE0) --------------------------------------------------------
 void __thiscall meth_1001AEE0(int this) {
     meth_1001AFB0((int *)this);

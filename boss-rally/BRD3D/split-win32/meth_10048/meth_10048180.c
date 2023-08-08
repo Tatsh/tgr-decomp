@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10048180) --------------------------------------------------------
 int __thiscall meth_10048180(char *this) {
     int v2;                      // edi
@@ -60,7 +60,7 @@ LABEL_9:
         goto LABEL_44;
     }
     v6 = *((_DWORD *)this + 7);
-    if ((v6 & 0x400000) != 0 && (dword_10AA2E80->width || dword_10AA2E80->field_30))
+    if ((v6 & 0x400000) != 0 && (g_unk54Ptr->width || g_unk54Ptr->field_30))
         *((_WORD *)this + 61702) = *((_WORD *)this + 5409);
     if ((v6 & 2) == 0) {
         v9 = (void(__cdecl *)(char *)) * ((_DWORD *)this + 3);

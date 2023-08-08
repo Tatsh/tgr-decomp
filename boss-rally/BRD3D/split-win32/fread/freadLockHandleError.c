@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008C60) --------------------------------------------------------
 size_t __stdcall freadLockHandleError(FILE *fp, void *buffer, size_t elementCount) {
     size_t result; // eax

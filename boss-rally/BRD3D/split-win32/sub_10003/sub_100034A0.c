@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (100034A0) --------------------------------------------------------
 int __cdecl sub_100034A0(int a1, int a2, int a3, unsigned int a4) {
     int *v4;         // edi

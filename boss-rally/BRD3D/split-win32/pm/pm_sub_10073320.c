@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10073320) --------------------------------------------------------
 int __cdecl pm_sub_10073320(int a1) {
     char *v1;               // ebp

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10006090) --------------------------------------------------------
 BOOL atomic_sub_10006090() {
     WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);

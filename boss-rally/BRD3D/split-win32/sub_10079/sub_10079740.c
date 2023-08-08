@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10079740) --------------------------------------------------------
 HINSTANCE sub_10079740() {
     HINSTANCE result;  // eax

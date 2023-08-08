@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10069C90) --------------------------------------------------------
 int __thiscall meth_10069C90(BossRallyConfig *this) {
     int result; // eax

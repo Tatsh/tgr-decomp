@@ -1,7 +1,7 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10008E30) --------------------------------------------------------
-int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag) {
-    unk0 *gsu0;                                                                         // esi
+int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
+    unk334 *gsu0;                                                                       // esi
     IDirect3D2 *d3d2;                                                                   // ecx
     IDirect3DViewport2 *viewport;                                                       // eax
     IDirect3DDevice2 *dev;                                                              // ebx
@@ -49,9 +49,9 @@ int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag) {
         return -2147467259;
     if ((game->field_1C & 0x1F) != 31)
         return -2147467259;
-    d3d2 = game->d3d2;
-    viewport = game->lpDirect3DViewport2;
-    dev = game->lpD3DDevice2;
+    d3d2 = game->    ? ;
+    viewport = game->? ;
+    dev = game->     ? ;
     d3dviewport2 = viewport;
     if (!d3d2 || !dev || !viewport)
         return -2147467259;
@@ -172,14 +172,14 @@ int __stdcall ShowStaticImage(unk0 *game, char *filename, int flag) {
             if (result)
                 return result;
         }
-        v17 = gsu0->lpDDrawSurface2->lpVtbl->Flip(gsu0->lpDDrawSurface2, gsu0->lpDDrawSurface1, 1);
-        while (gsu0->lpDDrawSurface2->lpVtbl->GetFlipStatus(gsu0->lpDDrawSurface2, 2))
-            ;
-        if (++v22 >= 2) {
-            meth_1000A0B0(&stru_10277680);
-            return v17;
-        }
-        beginSceneFunc_1 = beginSceneFunc;
+        v17 = gsu0->?->lpVtbl->Flip(gsu0->?, gsu0->?, 1);
+    while ( gsu0->?->lpVtbl->GetFlipStatus(gsu0->?, 2) )
+        ;
+    if (++v22 >= 2) {
+        meth_1000A0B0(&stru_10277680);
+        return v17;
+    }
+    beginSceneFunc_1 = beginSceneFunc;
     }
     return result;
 }

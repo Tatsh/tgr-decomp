@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10071630) --------------------------------------------------------
 HANDLE sub_10071630() {
     HANDLE result; // eax

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10067AE0) --------------------------------------------------------
 double __cdecl sub_10067AE0(int a1, int a2, float a3, int a4) {
     double v4;   // st7

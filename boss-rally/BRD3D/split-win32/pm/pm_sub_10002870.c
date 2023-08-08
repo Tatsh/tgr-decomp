@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10002870) --------------------------------------------------------
 int __cdecl pm_sub_10002870(int a1) {
     if (g_Playmusic) {

@@ -1,4 +1,4 @@
-#include "../../types-win32.h"
+#include "../types-win32.h"
 //----- (10006830) --------------------------------------------------------
 int __cdecl sub_10006830(int a1, float *a2, float *a3) {
     __int16 v3;           // ax
