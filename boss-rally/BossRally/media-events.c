@@ -3,7 +3,6 @@
 #include "decls.h"
 
 HRESULT HandleMediaEvents() {
-    HRESULT result;          // eax
     IMediaEvent *mediaEvent; // [esp+20h] [ebp-10h] BYREF
     long int eventCode;      // [esp+24h] [ebp-Ch] BYREF
     long int v3;             // [esp+28h] [ebp-8h] BYREF
@@ -25,10 +24,10 @@ HRESULT HandleMediaEvents() {
         }
         return (HRESULT)mediaEvent->lpVtbl->Release(mediaEvent);
     }
+    return 0;
 }
 
 HRESULT HandleIMediaEventFullscreenLost() {
-    HRESULT result;      // eax
     IVideoWindow *vw;    // [esp+1Ch] [ebp-8h] BYREF
     long fullscreenMode; // [esp+20h] [ebp-4h] BYREF
     if (FAILED(
@@ -67,7 +66,6 @@ HRESULT HandleIMediaEventComplete() {
 }
 
 HRESULT HandleIMediaEventAbort() {
-    HRESULT result;              // eax
     IMediaControl *mediaControl; // [esp+28h] [ebp-8h] BYREF
     if (IsPlaybackStateFailed() &&
         SUCCEEDED(gGraphBuilder->lpVtbl->QueryInterface(

@@ -5,7 +5,7 @@ OAEVENT GetGlobalOAEvent() {
 }
 
 WPARAM sub_401230() {
-    int msgWaitRet;
+    DWORD msgWaitRet;
     HANDLE pHandles;
     MSG Msg = {0};
     do {

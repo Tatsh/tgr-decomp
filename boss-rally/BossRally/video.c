@@ -2,33 +2,15 @@
 
 int VideoWindowPutMessageDrain(HWND hwnd) {
     IVideoWindow *vw;
-    HRESULT hr;
-    if (FAILED(hr = gGraphBuilder->lpVtbl->QueryInterface(
-                   gGraphBuilder, &IID_IVideoWindow, (void **)&vw))) {
+    if (FAILED(gGraphBuilder->lpVtbl->QueryInterface(
+            gGraphBuilder, &IID_IVideoWindow, (void **)&vw))) {
         return 0;
     }
-    hr = vw->lpVtbl->put_MessageDrain(vw, (OAHWND)hwnd);
-    char buf[255];
-    sprintf(buf, "%p", vw->lpVtbl->put_MessageDrain);
-    MessageBox(hwnd, buf, "error", MB_ICONERROR);
-    vw->lpVtbl->Release(vw);
-
-    if (SUCCEEDED(hr = vw->lpVtbl->put_MessageDrain(vw, (OAHWND)hwnd))) {
+    if (SUCCEEDED(vw->lpVtbl->put_MessageDrain(vw, (OAHWND)hwnd))) {
         MessageBox(hwnd, "put_MessageDrain ok", "not error", MB_OK);
         vw->lpVtbl->Release(vw);
         return 1;
     }
-
-    FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
-                  NULL,
-                  hr,
-                  MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                  buf,
-                  sizeof(buf),
-                  NULL);
-    MessageBox(hwnd, buf, "error", MB_ICONERROR);
-    sprintf(buf, "%x", hr);
-    MessageBox(hwnd, buf, "error", MB_ICONERROR);
     vw->lpVtbl->Release(vw);
     return 0;
 }

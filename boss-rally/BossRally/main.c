@@ -7,7 +7,6 @@
 
 static const char kClassName[] = "Player"; // idb
 static const char kBrallyExe[] = "brally.exe";
-static HINSTANCE gHInstance;
 HWND gHwnd;
 IGraphBuilder *gGraphBuilder;
 enum MACRO_PLAYBACK_STATE gPlaybackState;
