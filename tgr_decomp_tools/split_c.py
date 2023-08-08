@@ -70,7 +70,7 @@ def main() -> int:
     sub_path.mkdir(exist_ok=True, parents=True)
     with open(sys.argv[1], 'rb') as f:
         content = f.read().replace(b'\r\n', b'\n').decode(errors='backslashreplace')
-    grouped = re.split(r'^(//----- \([0-9A-F]+\) -+)$', content, flags=re.MULTILINE)
+    grouped = re.split(r'^(?:\s+)?(//----- \([0-9A-F]+\) -+)$', content, flags=re.MULTILINE)
     files: dict[str, list[tuple[str, str]]] = {}
     with (split_path / 'decls.c').open('w+') as f:
         f.write(f'{grouped[0]}\n')
