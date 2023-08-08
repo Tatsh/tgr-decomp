@@ -15,9 +15,8 @@ _DWORD *__thiscall meth_100476C0(_DWORD *this) {
     *((_WORD *)this + 36) = 0;
     *((_WORD *)this + 37) = 0;
     this[19] = 0;
-    `eh vector constructor
-        iterator'(this + 2775, 0x438u, 3, meth_1005B050, meth_1005B0C0); this[3585] = 0;
-    this[3586] = 0;
+    `eh vector constructor iterator'(this + 2775, 0x438u, 3, meth_1005B050, meth_1005B0C0); this[3585] = 0; this
+        [3586] = 0;
     *((_BYTE *)this + 14348) = 0;
     *((_BYTE *)this + 14349) = 0;
     this[3588] = 0;

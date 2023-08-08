@@ -27,7 +27,7 @@
     "check-spelling": "cspell --no-progress .",
     "clean-dict": "r=(); while IFS=$\\n read -r w; do ! rg --no-config -qi. -g '!.vscode/dictionary.txt' -m 1 \"$w\" . && r+=(\"$w\"); done < ./.vscode/dictionary.txt; j=$(printf \"|%s\" \"${r[@]}\"); j=\"^(${j:1})$\"; grep -Ev \"${j}\" ./.vscode/dictionary.txt > new && mv new ./.vscode/dictionary.txt",
     "fix-pluggy": "touch \"$(poetry run python -c 'import inspect, os, pluggy; print(os.path.dirname(inspect.getabsfile(pluggy)))')/py.typed\"",
-    "format": "shopt -s globstar && clang-format -i ./**/*.c ./**/*.h && prettier -w . && poetry run isort . && poetry run yapf -pri . && markdownlint-cli2 --fix '**/*.md' '#node_modules'",
+    "format": "shopt -s globstar && clang-format -i ./**/*.c ./**/*.h && muon fmt -c muon_fmt.ini -i ./**/meson.build && prettier -w . && poetry run isort . && poetry run yapf -pri . && markdownlint-cli2 --fix '**/*.md' '#node_modules'",
     "mypy": "yarn fix-pluggy && poetry run mypy .",
     "pylint": "poetry run pylint .",
     "qa": "yarn mypy && yarn pylint && yarn check-spelling && yarn check-formatting"

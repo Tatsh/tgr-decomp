@@ -32,11 +32,12 @@ if get_option('buildtype') == 'debug'
     '-Wunused-parameter',
     '-Wunused-value',
     '-Wunused-variable',
-    language: 'c'
+    language: 'c',
   )
 endif
 cc = meson.get_compiler('c')
-executable('BossRally',
+executable(
+  'BossRally',
   [
     'main.c',
     'media-events.c',
@@ -44,14 +45,14 @@ executable('BossRally',
     'setup.c',
     'sub_401230.c',
     'video.c',
-    import('windows').compile_resources('BossRally.rc', depend_files: '../boss-rally.ico')
+    import('windows').compile_resources('BossRally.rc', depend_files: '../boss-rally.ico'),
   ],
   c_args: '-DSTRSAFE_NO_DEPRECATE=0',
   dependencies: [
     cc.find_library('gdi32'),
     cc.find_library('ole32'),
     cc.find_library('quartz'),
-    cc.find_library('strmiids')
+    cc.find_library('strmiids'),
   ],
-  win_subsystem: 'windows'
+  win_subsystem: 'windows',
 )

@@ -359,8 +359,8 @@ int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2);
 int __stdcall d3d2enumDevicesCallback(GUID *a1,
                                       LPSTR lpDeviceDescription,
                                       LPSTR deviceName,
-                                      #469 * desc,
-                                      #469 * a5,
+# 469 * desc,
+# 469 * a5,
                                       LPVOID userArg); // idb
 LPPALETTEENTRY __thiscall meth_1001AC60(unk0 *this);
 int __thiscall meth_1001AC80(unk1 *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5); // idb

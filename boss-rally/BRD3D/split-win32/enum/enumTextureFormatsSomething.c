@@ -8,7 +8,7 @@ HRESULT __cdecl enumTextureFormatsSomething(#486 * dev) {
 
     contextStart = &d3dEnumTextureFormatsContextStart;
     enumTextureFormats = *(void(__stdcall **)(
-        #486 *, int(__stdcall *)(DDSURFACEDESC *, void *), int *))(*(_DWORD *)dev + 36);
+# 486 *, int(__stdcall *)(DDSURFACEDESC *, void *), int *))(*(_DWORD *) dev + 36);
     do {
         memset(contextStart + 1, 0, 32u);
         *(_WORD *)contextStart = 8;
