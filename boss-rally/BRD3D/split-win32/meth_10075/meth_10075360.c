@@ -60,7 +60,7 @@ int __thiscall meth_10075360(int this) {
     v33 = 1;
     v27 = v3;
     v28 = v4;
-    if ((g_chosenTrack == 3 || g_chosenTrack == 9) && v3 >= 0x38u && v3 <= 0x3Au && v4 >= 0x17u &&
+    if ((gChosenTrack == 3 || gChosenTrack == 9) && v3 >= 0x38u && v3 <= 0x3Au && v4 >= 0x17u &&
         v4 <= 0x1Bu) {
         v27 = 57;
         v28 = 25;
@@ -80,7 +80,7 @@ int __thiscall meth_10075360(int this) {
         if (dword_106C7CC4 > 0) {
             v10 = dword_106C7CB8;
             do {
-                if (*(_DWORD *)(v1 + 320) < dword_100B4050 || g_GameMode == 2 ||
+                if (*(_DWORD *)(v1 + 320) < dword_100B4050 || gGameMode == GAME_MODE_2 ||
                     (*(_BYTE *)(*(_DWORD *)(dword_106C7CC0 + 4 * v9) + 22) & 1) == 0) {
                     v11 = *(_DWORD *)(dword_106C7CC0 + 4 * v9);
                     if (v27 >= *(_BYTE *)(v11 + 16) && v27 <= *(_BYTE *)(v11 + 18) &&
@@ -156,8 +156,7 @@ int __thiscall meth_10075360(int this) {
     *(float *)(this + 3992) = v25;
     return 1;
 }
-// 100AA010: using guessed type int g_GameMode;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
 // 106C7C70: using guessed type float flt_106C7C70;
 // 106C7C74: using guessed type float flt_106C7C74;

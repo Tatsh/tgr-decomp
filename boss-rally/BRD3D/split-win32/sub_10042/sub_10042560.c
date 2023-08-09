@@ -17,9 +17,9 @@ int __cdecl sub_10042560(char *a1, int a2) {
             _itoa(v3, Buffer, 10);
             strcat(v5, Buffer);
             strcat(v5, aGrf);
-            strcpy(aCRallyghostDatFilepath_ptr, v5);
-            strcpy((char *)&g_unkC8Ptr2->last->field_4 + 0x104 * Value, &a1[1080 * Value + 0x35]);
-            strcpy(byte_10AD0990, &a1[1080 * Value + 0x35]);
+            strcpy(aCRallyghostDatFilepath, v5);
+            strcpy((char *)&gUnkC8Ptr6->last->field_4 + 0x104 * Value, &a1[1080 * Value + 0x35]);
+            strcpy(gBuffer1, &a1[1080 * Value + 0x35]);
             sub_10070E80();
             dword_10AA28EC = 1;
         }

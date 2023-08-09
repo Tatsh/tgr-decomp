@@ -6,7 +6,7 @@ int __thiscall meth_10001FF0(#482 * this) {
     int result; // eax
 
     v2 = (char *)this + 10112;
-    if (g_GameMode != 5)
+    if (gGameMode != GAME_MODE_5)
         v2 = (char *)this + 10044;
     *((_DWORD *)this + 2509) = v2;
     *((_DWORD *)this + 2510) = v2;
@@ -29,5 +29,4 @@ int __thiscall meth_10001FF0(#482 * this) {
     *((_DWORD *)this + 2615) = 0x40000000;
     return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 106909E0: using guessed type int dword_106909E0;

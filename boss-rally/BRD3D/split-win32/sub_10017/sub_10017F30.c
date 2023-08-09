@@ -12,11 +12,11 @@ int __cdecl sub_10017F30(int a1) {
 
     result = dword_100BD3F0;
     if (dword_100BD3F0) {
-        v2 = g_Width - 16;
+        v2 = gWidth - 16;
         v3 = dword_100AA8B4 != 1 ? 0 : 30;
         v4 = *(_DWORD *)(a1 + 88 * dword_106C5708 + 4) + 20;
         sub_10019260();
-        sub_10019290();
+        Set_byte_104B035C_To1();
         sub_100192F0(15);
         v5 = dword_106C2CF8;
         result = 0;

@@ -98,7 +98,7 @@ int __cdecl sub_1006E760(int a1, float *a2) {
         v7 = (void *)++v46;
         dword_1175549C = 0;
         v45 = *(float *)&v53 * *(float *)&v67 + v54 * v68 + v55 * v69;
-        if (g_GameMode == 4) {
+        if (gGameMode == 4) {
             v9 = *(float *)&v53;
             if (v10)
                 v9 = -v9;
@@ -116,7 +116,7 @@ int __cdecl sub_1006E760(int a1, float *a2) {
             LABEL_40:
                 v20 = 1;
                 dword_1175549C = 1;
-                debugPrint(v7);
+                meth_DebugPrint(v7);
                 v50 = 1;
                 goto LABEL_18;
             }
@@ -124,14 +124,14 @@ int __cdecl sub_1006E760(int a1, float *a2) {
             if (v19)
                 v18 = -v18;
             if (v18 < 0.5) {
-                debugPrint(v7);
+                meth_DebugPrint(v7);
                 v50 = 0;
                 dword_1175549C = 2;
             }
         }
         v20 = 1;
     LABEL_18:
-        debugPrint(v7);
+        meth_DebugPrint(v7);
         v58 = v45 * v55;
         if (v22)
             v47 = -1;
@@ -158,7 +158,7 @@ int __cdecl sub_1006E760(int a1, float *a2) {
         if (*(float *)(a1 + 228) > 0.5)
             v20 = 0;
         if (v20)
-            debugPrint(v31);
+            meth_DebugPrint(v31);
         if (dword_1175549C == 1)
             v32 = sub_1006C9D0(a1, (float *)dword_11754E3C, v20, v50);
         else

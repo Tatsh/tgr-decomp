@@ -80,8 +80,8 @@ char __cdecl sub_10020FA0(int a1) {
             LOBYTE(v1) = v1 & 0xFB;
         else
             LOBYTE(v1) = v1 | 4;
-        dword_10277384 = g_D3dinvsrcalpha;
-        if (dword_10277404 == g_D3dinvsrcalpha) {
+        dword_10277384 = gD3DInvSrcAlpha;
+        if (dword_10277404 == gD3DInvSrcAlpha) {
             LOBYTE(v1) = v1 & 0xF7;
             goto LABEL_31;
         }
@@ -199,7 +199,7 @@ char __cdecl sub_10020FA0(int a1) {
             goto LABEL_140;
         }
         if ((a1 & 0x10000) != 0) {
-            if (!g_D3dalphacompar)
+            if (!gD3dalphacompar)
                 return v1;
             dword_10277390 = 128;
             if (dword_10277410 == 128)

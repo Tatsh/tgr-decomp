@@ -5,7 +5,7 @@ int __cdecl sub_10072910(int a1, int a2, int a3) {
     __int64 v4; // rax
     int v5;     // ecx
 
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     v3 = dword_100B5DF0[18 * a1 + a2];
     if (!v3 || sub_100729E0(v3, a3))

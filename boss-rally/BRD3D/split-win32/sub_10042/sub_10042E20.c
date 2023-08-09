@@ -11,7 +11,7 @@ int sub_10042E20() {
             dword_100AC650 = 2;
     }
     result = 1;
-    g_SuspensionType = dword_100AC4B0[dword_100AC650];
+    gSuspensionType = dword_100AC4B0[dword_100AC650];
     return result;
 }
 // 10042E20: using guessed type int sub_10042E20();

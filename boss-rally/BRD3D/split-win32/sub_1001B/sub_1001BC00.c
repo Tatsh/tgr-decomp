@@ -3,8 +3,8 @@
 int sub_1001BC00() {
     int result; // eax
 
-    result = g_Height / -2;
-    flt_104BC198 = (float)(g_Height / -2);
+    result = gHeight / -2;
+    flt_104BC198 = (float)(gHeight / -2);
     return result;
 }
 // 100A81C4: using guessed type int g_Height;

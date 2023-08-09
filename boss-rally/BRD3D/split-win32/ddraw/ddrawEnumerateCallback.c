@@ -1,18 +1,18 @@
 #include "types-win32.h"
 //----- (1001A990) --------------------------------------------------------
 BOOL __stdcall ddrawEnumerateCallback(GUID *lpGUID, LPSTR a2, LPSTR Source, LPVOID a4) {
-    unk334 *mem;  // eax
-    unk334 *memo; // edx
-    void *v6;     // eax
-    unk334 *v7;   // edi
+    unk00334 *mem;  // eax
+    unk00334 *memo; // edx
+    void *v6;       // eax
+    unk00334 *v7;   // edi
 
     if (a4) {
-        mem = (unk334 *)malloc(0x334u);
+        mem = (unk00334 *)malloc(0x334u);
         memo = mem;
         if (mem) {
-            v6 = mem->field_27;
-            LOBYTE(v6) = (int)memo->field_27 & 0xFE;
-            memo->field_27 = v6;
+            v6 = mem->u8c;
+            LOBYTE(v6) = (int)memo->u8c & 0xFE;
+            memo->u8c = v6;
             memset(&memo->field_1C, 0, 0x17Cu);
             memo->field_1C = 0x17C;
             memset(&memo->ddCaps0, 0, sizeof(memo->ddCaps0));
@@ -30,8 +30,8 @@ BOOL __stdcall ddrawEnumerateCallback(GUID *lpGUID, LPSTR a2, LPSTR Source, LPVO
             v7 = 0;
         }
         if (v7) {
-            if (meth_1001B090(v7, lpGUID, Source, a2) < 0 || sub_1001BA10(v7) < 0) {
-                meth_1001B280(v7);
+            if (meth_unk00334_1001B090(v7, lpGUID, Source, a2) < 0 || sub_1001BA10(v7) < 0) {
+                meth_unk00334_1001B280(v7);
                 free(v7);
                 return 1;
             }

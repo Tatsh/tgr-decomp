@@ -18,23 +18,23 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     int i;         // [esp+20h] [ebp-8h]
 
     dword_106C0944 = (int)&unk_10691018;
-    debugPrint(this);
-    debugPrint(v1);
-    debugPrint(v2);
-    debugPrint(v3);
-    debugPrint(dword_106C06A8);
-    debugPrint(v4);
-    debugPrint(v5);
-    debugPrint(v6);
-    debugPrint(v7);
-    debugPrint(dword_10B02434);
-    debugPrint(v8);
+    meth_DebugPrint(this);
+    meth_DebugPrint(v1);
+    meth_DebugPrint(v2);
+    meth_DebugPrint(v3);
+    meth_DebugPrint(dword_106C06A8);
+    meth_DebugPrint(v4);
+    meth_DebugPrint(v5);
+    meth_DebugPrint(v6);
+    meth_DebugPrint(v7);
+    meth_DebugPrint(dword_10B02434);
+    meth_DebugPrint(v8);
     dword_106C56E0 = 1194793728;
-    debugPrint(v9);
-    debugPrint(v14);
-    sub_10042AF0();
-    debugPrint(v10);
-    debugPrint(v11);
+    meth_DebugPrint(v9);
+    meth_DebugPrint(v14);
+    meth_unk1A5E0_10042AF0();
+    meth_DebugPrint(v10);
+    meth_DebugPrint(v11);
     for (i = 0; i < 4; ++i) {
         byte_106C06A0[i] = 0;
         if ((((int)(unsigned __int8)v14[24] >> i) & 1) != 0 && (byte_106C092B[4 * i] & 8) == 0 &&

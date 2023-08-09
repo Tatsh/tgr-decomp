@@ -9,14 +9,14 @@ int __cdecl sub_10044A30(int a1) {
         cleanUpAndExitWithCode(0);
     }
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (g_unkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))g_unkC8Ptr1)(g_unkC8Ptr1, 1);
+    if (gUnkC8Ptr1)
+        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
     dword_10AA2950 = 0;
-    g_unkC8Ptr1 = (void *)dword_10AA294C;
+    gUnkC8Ptr1 = (void *)dword_10AA294C;
     sub_1003BF60();
     v1 = dword_10AA287C;
     if ((!dword_10AA287C || dword_10AA287C == 1) && !dword_10A9D000) {
-        sub_1003C020();
+        np_sub_1003C020();
         v1 = dword_10AA287C;
     }
     if (v1 == 2 || v1 == 3) {

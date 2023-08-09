@@ -54,21 +54,21 @@ int sub_10042EE0() {
     v2 = dword_100AC648;
 LABEL_19:
     v5 = dword_100AC4D8[v2];
-    g_chosenTrack = v5;
+    gChosenTrack = v5;
     if (unk) {
-        v8 = getCaptionString(dword_100AC308[v5]);
-        v6 = getCaptionString(0xB8u);
+        v8 = GetStringWithIndex(dword_100AC308[v5]);
+        v6 = GetStringWithIndex(0xB8u);
         sprintf(byte_10A9DD28, v6, v8);
-        if (((_BYTE)stringOffsets[g_chosenTrack][1] & 0x10) != 0)
-            strcat(byte_10A9DD28, getCaptionString(0xB0u));
-        sub_1003D210(g_HWND, dword_10A9D008, 1);
+        if (((_BYTE)gTrackDataOffsets[gChosenTrack][1] & 0x10) != 0)
+            strcat(byte_10A9DD28, GetStringWithIndex(0xB0u));
+        sub_1003D210(gHwnd, dword_10A9D008, 1);
         strcpy(byte_10A9DD28, String2);
     }
     return 1;
 }
 // 100AC648: using guessed type int dword_100AC648;
-// 100B380C: using guessed type int g_chosenTrack;
-// 100BD2A8: using guessed type char **stringOffsets[16];
+// 100B380C: using guessed type int gChosenTrack;
+// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
 // 10AA28FC: using guessed type int dword_10AA28FC;
 // 10AA33D0: using guessed type int dword_10AA33D0[];
 // 10AA33D4: using guessed type int dword_10AA33D4;

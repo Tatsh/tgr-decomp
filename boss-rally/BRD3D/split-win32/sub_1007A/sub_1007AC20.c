@@ -6,10 +6,10 @@ BOOL __cdecl sub_1007AC20(int a1, int a2, int a3, int a4) {
     _DWORD *v6;  // esi
     _DWORD *v7;  // eax
     int v8;      // esi
-    unk1 *v9;    // eax
+# 492 * v9;      // eax
     BOOL result; // eax
 
-    v4 = GetWindowLongA(g_HWND, -21);
+    v4 = GetWindowLongA(gHwnd, -21);
     v5 = v4;
     result = 0;
     if (v4) {
@@ -19,8 +19,8 @@ BOOL __cdecl sub_1007AC20(int a1, int a2, int a3, int a4) {
             if (v7) {
                 v8 = *(_DWORD *)(v5 + 52);
                 if (v8) {
-                    v9 = meth_1001A570(v7, a1, a2, a3, (unk1 *)a4, *(IID **)(v5 + 52));
-                    if (!meth_1000B390(v5, (int)&dword_10B4E6F8, v8, (int)v9))
+                    v9 = meth_unk00334_1001A570(v7, a1, a2, a3, (#492 *)a4, *(IID **)(v5 + 52));
+                    if (!meth_unk0008C_1000B390(v5, (int)&dword_10B4E6F8, v8, (int)v9))
                         result = 1;
                 }
             }

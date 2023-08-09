@@ -104,15 +104,15 @@ void __thiscall meth_10075F10(int this) {
                 *(float *)(*(_DWORD *)(this + 372) + 464) = v3;
             }
         }
-        if (!dword_106909E0 && (g_GameMode != 2 || *(_DWORD *)(this + 320) != 1 ||
+        if (!dword_106909E0 && (gGameMode != GAME_MODE_2 || *(_DWORD *)(this + 320) != 1 ||
                                 !*(_DWORD *)(*(_DWORD *)(this + 10688) + 68))) {
-            if (g_GameMode != 4)
+            if (gGameMode != GAME_MODE_4)
                 goto LABEL_27;
             if (!*(_DWORD *)(this + 320) && *(_DWORD *)(*(_DWORD *)(this + 10688) + 68))
                 goto LABEL_29;
-            if (g_GameMode != 4) {
+            if (gGameMode != GAME_MODE_4) {
             LABEL_27:
-                if (g_GameMode != 5 && !g_usingGameMode4 && *(int *)(this + 1840) > 90)
+                if (gGameMode != GAME_MODE_5 && !gIsGameMode4 && *(int *)(this + 1840) > 90)
                     goto LABEL_29;
             }
             meth_10061720((_DWORD *)this);
@@ -120,8 +120,8 @@ void __thiscall meth_10075F10(int this) {
         }
     }
 LABEL_29:
-    if (g_NetworkPlay) {
-        if (*(void(__cdecl **)(int))(this + 3848) == sub_10063FE0 && !dword_106909E0)
+    if (gNetworkPlay) {
+        if (*(void(__cdecl **)(int))(this + 0xF08) == sub_10063FE0 && !dword_106909E0)
             sub_100609E0(this);
     } else if (!dword_106909E0) {
         sub_10061C60(this, v3);
@@ -132,7 +132,7 @@ LABEL_29:
               *(float *)(this + 496) * *(float *)(this + 496);
         *(float *)(this + 4144) = sqrt_(v16) * 2.24;
     }
-    if (!g_NetworkPlay) {
+    if (!gNetworkPlay) {
         v10 = 0;
         if (dword_100AA8B4 > 0) {
             for (i = &dword_106C1638; *(_DWORD *)(this + 320) != *i; i += 22) {
@@ -144,10 +144,9 @@ LABEL_29:
     }
 }
 // 100762BC: variable 'v9' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 100AA8B4: using guessed type int dword_100AA8B4;
-// 1022AF14: using guessed type int g_usingGameMode4;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF14: using guessed type int gIsGameMode4;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 106909E0: using guessed type int dword_106909E0;
 // 106C1638: using guessed type int dword_106C1638;
 // 106C2CFC: using guessed type int dword_106C2CFC;

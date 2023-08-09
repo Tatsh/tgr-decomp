@@ -6,7 +6,7 @@ int sub_10033780() {
     if (!dword_106C56E8) {
         dword_106C56E8 = 1;
         word_100B5D90 = 0;
-        result = sub_10042AF0();
+        result = meth_unk1A5E0_10042AF0();
     }
     return result;
 }

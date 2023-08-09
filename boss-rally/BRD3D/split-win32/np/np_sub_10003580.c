@@ -269,12 +269,12 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         strcpy(Buffer, sub_10005E70(v44));
                         strcat(Buffer, asc_10094334);
                     LABEL_82:
-                        v45 = (const char *)(meth_10073F50(v80) + 4);
+                        v45 = (const char *)(meth_unk00214_GetField10(v80) + 4);
                         v46 = strlen(v45) + 1;
                         v47 = &Buffer[strlen(Buffer) + 1];
                         goto LABEL_111;
                     case 0x60000004:
-                        v49 = meth_10073F50(v80);
+                        v49 = meth_unk00214_GetField10(v80);
                         if (*(_DWORD *)(v49 + 4) != sub_10005CF0(dword_10094294))
                             goto LABEL_122;
                         sub_1000C4A0();
@@ -298,7 +298,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v47 = &Buffer[strlen(Buffer) + 1];
                         goto LABEL_111;
                     case 0x60000005:
-                        v48 = meth_10073F50(v80);
+                        v48 = meth_unk00214_GetField10(v80);
                         WaitForSingleObject(hMutex, INFINITE);
                         switch (*(_DWORD *)(v48 + 4)) {
                         case 4:
@@ -323,7 +323,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         }
                         goto LABEL_122;
                     case 0x60000006:
-                        if (*(_DWORD *)(meth_10073F50(v80) + 4) != a4)
+                        if (*(_DWORD *)(meth_unk00214_GetField10(v80) + 4) != a4)
                             goto LABEL_122;
                         v53 = 0;
                         if (dword_100B36FC <= 0)
@@ -351,7 +351,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v47 = &Buffer[strlen(Buffer) + 1];
                         goto LABEL_111;
                     case 0x60000007:
-                        if (*(_DWORD *)(meth_10073F50(v80) + 4) != a4)
+                        if (*(_DWORD *)(meth_unk00214_GetField10(v80) + 4) != a4)
                             goto LABEL_122;
                         v56 = 0;
                         if (dword_100B36FC <= 0)
@@ -375,7 +375,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         sub_10003530(Buffer);
                         goto LABEL_122;
                     case 0x60000008:
-                        v59 = meth_10073F50(v80);
+                        v59 = meth_unk00214_GetField10(v80);
                         if (a4 != 1)
                             goto LABEL_122;
                         v60 = 0;
@@ -472,20 +472,20 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         goto LABEL_122;
                     dword_10094294 = v7;
                     sub_100049C0();
-                    LOBYTE(g_cPlayers) = meth_10073BC0(v80);
-                    g_cPlayers = (unsigned __int8)g_cPlayers;
-                    LOBYTE(g_chosenTrack) = meth_10073BC0(v80);
-                    g_chosenTrack = (unsigned __int8)g_chosenTrack;
-                    LOBYTE(g_ChosenWeather) = meth_10073BC0(v80);
-                    g_ChosenWeather = (unsigned __int8)g_ChosenWeather;
-                    LOWORD(g_bcar) = meth_10073BE0(v80);
-                    g_bcar = (unsigned __int16)g_bcar;
+                    LOBYTE(gCPlayers) = meth_10073BC0(v80);
+                    gCPlayers = (unsigned __int8)gCPlayers;
+                    LOBYTE(gChosenTrack) = meth_10073BC0(v80);
+                    gChosenTrack = (unsigned __int8)gChosenTrack;
+                    LOBYTE(gChosenWeather0) = meth_10073BC0(v80);
+                    gChosenWeather0 = (unsigned __int8)gChosenWeather0;
+                    LOWORD(gBcar) = meth_10073BE0(v80);
+                    gBcar = (unsigned __int16)gBcar;
                     LOBYTE(dword_10221280) = meth_10073BC0(v80);
                     dword_10221280 = (unsigned __int8)dword_10221280;
-                    LOBYTE(g_btire) = meth_10073BC0(v80);
-                    g_btire = (unsigned __int8)g_btire;
-                    LOBYTE(g_bsuspension) = meth_10073BC0(v80);
-                    g_bsuspension = (unsigned __int8)g_bsuspension;
+                    LOBYTE(gBtire) = meth_10073BC0(v80);
+                    gBtire = (unsigned __int8)gBtire;
+                    LOBYTE(gBsuspension) = meth_10073BC0(v80);
+                    gBsuspension = (unsigned __int8)gBsuspension;
                     sub_10004590(a1,
                                  v7,
                                  byte_10AD0854[0],
@@ -518,7 +518,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
             }
             v63 = *(_DWORD *)(v59 + 8);
             if (v63 >= 0 && v63 < 8) {
-                v66 = off_100AAC48[v63];
+                v66 = gPositionStringOffsets[v63];
                 v64 = sub_10005E70(v62);
                 sprintf(Buffer, "%s finished %s", v64, v66);
                 sub_10003530(Buffer);
@@ -527,7 +527,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
     }
 LABEL_122:
     v84 = -1;
-    debugPrint(v80);
+    meth_DebugPrint(v80);
 }
 // 10073B90: using guessed type int __thiscall Concurrency::details::StructuredWorkStealingQueue<Concurrency::details::_UnrealizedChore,Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(_DWORD);
 // 10094294: using guessed type int dword_10094294;

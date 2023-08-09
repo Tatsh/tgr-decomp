@@ -9,7 +9,7 @@ int sub_1005FFD0() {
     while (!*v1) {
         ++v1;
         ++result;
-        if ((int)v1 >= (int)&g_unk54Ptr)
+        if ((int)v1 >= (int)&gUnk54Ptr)
             return -1;
     }
     return result;

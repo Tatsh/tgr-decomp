@@ -8,7 +8,7 @@ void __cdecl sub_10068180(int a1, int *a2, int a3) {
     v3 = -1;
     v5 = 1177280512;
     v4 = 128;
-    switch (g_chosenTrack) {
+    switch (gChosenTrack) {
     case 2:
     case 8:
         v3 = 0;

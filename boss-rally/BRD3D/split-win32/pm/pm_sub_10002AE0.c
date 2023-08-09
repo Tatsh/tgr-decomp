@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10002AE0) --------------------------------------------------------
 int pm_sub_10002AE0() {
-    if (!g_Playmusic)
+    if (!gPlayMusic)
         return 1;
     if (!dword_10220CD0)
         return 1;

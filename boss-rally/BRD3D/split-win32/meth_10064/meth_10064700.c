@@ -95,7 +95,7 @@ void __thiscall meth_10064700(_DWORD *this) {
         v1[990] = 1;
         meth_10001970((#481 *)v1);
     }
-    debugPrint(v2);
+    meth_DebugPrint(v2);
     i = (int *)v1[995];
     v4 = v1[996];
     v5 = sub_1003B170((float *)v1 + 1033);
@@ -476,10 +476,10 @@ LABEL_92:
             sub_1003B020((int)(v1 + 122), (int)(v1 + 972), v56);
             sub_1003B020((int)(v1 + 122), (int)(v1 + 975), v81);
         }
-        if (g_GameMode) {
-            if (g_GameMode == 1 || g_GameMode == 6) {
-                v47 = dword_104BBE08 - 1;
-                if ((__int16)(dword_104BBE08 - 1) > 2 || v47 < 0)
+        if (gGameMode) {
+            if (gGameMode == GAME_MODE_1 || gGameMode == GAME_MODE_6) {
+                v47 = gChosenWeather1 - 1;
+                if ((__int16)(gChosenWeather1 - 1) > 2 || v47 < 0)
                     v47 = 0;
                 if (v47 == 2)
                     sub_1003AD10((int)(v1 + 122), 0.99000001);
@@ -494,7 +494,7 @@ LABEL_92:
         }
     }
 LABEL_131:
-    debugPrint(this);
+    meth_DebugPrint(this);
     v48 = sub_1003B170((float *)v1 + 129);
     if (v48 > 1.0 && v1[329]) {
         v73 = v48;
@@ -513,9 +513,8 @@ LABEL_131:
 // 10064B19: variable 'v24' is possibly undefined
 // 10065153: variable 'v45' is possibly undefined
 // 100652CD: variable 'this' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 100B36F8: using guessed type int dword_100B36F8;
-// 104BBE08: using guessed type int dword_104BBE08;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 106C2CFC: using guessed type int dword_106C2CFC;
 // 10AA34AC: using guessed type int dword_10AA34AC;
 // 10ACD4F8: using guessed type int dword_10ACD4F8;

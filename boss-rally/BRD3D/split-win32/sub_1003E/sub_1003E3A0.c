@@ -3,19 +3,19 @@
 int sub_1003E3A0() {
     int result; // eax
 
-    g_ConfigJoystickIndex = dword_100AC520[dword_10AA2A0C];
-    switch (g_ConfigJoystickIndex) {
+    gConfigJoystickIndex = dword_100AC520[dword_10AA2A0C];
+    switch (gConfigJoystickIndex) {
     case 1:
-        g_ConfigJoystickPtr = g_Config.joystick1;
+        gConfigJoystickPtr = gConfig.joystick1;
         break;
     case 2:
-        g_ConfigJoystickPtr = g_Config.joystick2;
+        gConfigJoystickPtr = gConfig.joystick2;
         break;
     case 3:
-        g_ConfigJoystickPtr = g_Config.joystick3;
+        gConfigJoystickPtr = gConfig.joystick3;
         break;
     default:
-        g_ConfigJoystickPtr = &g_Config;
+        gConfigJoystickPtr = &gConfig;
         break;
     }
     dword_10AA2A1C = dword_10B4E1E0 == 0;

@@ -13,12 +13,12 @@ int sub_10043180() {
             dword_10AA2A00 = 4;
     }
     v0 = dword_100AC4C0[dword_10AA2A00];
-    g_ChosenWeather = v0;
+    gChosenWeather0 = v0;
     if (unk) {
-        v3 = getCaptionString(dword_100AC3B0[v0]);
-        v1 = getCaptionString(0xBAu);
+        v3 = GetStringWithIndex(dword_100AC3B0[v0]);
+        v1 = GetStringWithIndex(0xBAu);
         sprintf(byte_10A9DD28, v1, v3);
-        sub_1003D210(g_HWND, dword_10A9D008, 1);
+        sub_1003D210(gHwnd, dword_10A9D008, 1);
         strcpy(byte_10A9DD28, String2);
     }
     return 1;

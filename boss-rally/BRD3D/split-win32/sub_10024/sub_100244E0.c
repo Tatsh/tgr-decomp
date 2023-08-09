@@ -6,16 +6,15 @@ HRESULT sub_100244E0() {
 
     hr = *(&stru_10277680 + 8);
     if (!*(&stru_10277680 + 8)) {
-        hr = g_D3Dclearzbuffer;
-    if ( !g_D3Dclearzbuffer
-      || (rects.x1 = 0,
-          rects.x2 = g_Width,
-          rects.y1 = 0,
-          rects.y2 = g_Height,
-          (hr = g_gsu0->?->lpVtbl->Clear(g_gsu0->?, 1, &rects, 3)) == 0) )
-    {
-        *(&stru_10277680 + 8) = 1;
-    }
+        hr = gD3DClearZBuffer;
+        if (!gD3DClearZBuffer ||
+            (rects.x1 = 0,
+             rects.x2 = gWidth,
+             rects.y1 = 0,
+             rects.y2 = gHeight,
+             (hr = gUnk8C->gap64->lpVtbl->Clear(gUnk8C->gap64, 1, &rects, 3)) == 0)) {
+            *(&stru_10277680 + 8) = 1;
+        }
     }
     return hr;
 }

@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1000A8A0) --------------------------------------------------------
-int __thiscall ReleaseDDraw2Surface(unk8C *this) {
+int __thiscall ReleaseDDraw2Surface(unk0008C *this) {
     LPDIRECTDRAWSURFACE ddrawSurface; // eax
 
     this->field_1C &= 0xFFFFFFFB;

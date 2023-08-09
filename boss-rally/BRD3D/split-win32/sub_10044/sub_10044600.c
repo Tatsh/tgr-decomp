@@ -16,10 +16,10 @@ int sub_10044600() {
     sub_10044540();
 LABEL_8:
     if (unk) {
-        v2 = getCaptionString(dword_100AC3C8[dword_10AA2A18]);
-        v0 = getCaptionString(0xBDu);
+        v2 = GetStringWithIndex(dword_100AC3C8[dword_10AA2A18]);
+        v0 = GetStringWithIndex(0xBDu);
         sprintf(byte_10A9DD28, v0, v2);
-        sub_1003D210(g_HWND, dword_10A9D008, 1);
+        sub_1003D210(gHwnd, dword_10A9D008, 1);
         strcpy(byte_10A9DD28, String2);
     }
     return 1;

@@ -31,7 +31,7 @@ char sub_100709A0() {
         fwriteLock(&dword_100AC650, 4u, 1u, v2);
         fwriteLock(&dword_100AC654, 4u, 1u, v2);
         fwriteLock(&dword_100AC65C, 4u, 1u, v2);
-        v6 = fwriteLock(byte_10AD0990, 1u, 0x80u, v2);
+        v6 = fwriteLock(gBuffer1, 1u, 0x80u, v2);
         v7 = v2;
         if (v6 == 128) {
             fclose(v2);

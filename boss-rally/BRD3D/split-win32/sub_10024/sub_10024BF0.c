@@ -54,10 +54,10 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     a3[155] = 0;
     if (dword_118AA088 != 2)
         return 0;
-    v4 = (_BYTE *)sub_10060F70(dword_10AA3444, ++dword_10AA3460, 0);
+    v4 = (_BYTE *)sub_10060F70(gCarIndex, ++dword_10AA3460, 0);
     if (!v4)
         return 0;
-    sub_10060FB0(dword_10AA3444, dword_10AA3460, &v49, &v48, &v47, (int *)&a3);
+    sub_10060FB0(gCarIndex, dword_10AA3460, &v49, &v48, &v47, (int *)&a3);
     v5 = v49;
     if (v49) {
         v7 = a3;
@@ -98,7 +98,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                 *a2 *= 2;
                 v14 = a3;
                 v3[155] = 1;
-                v3[156] = dword_10AA3444;
+                v3[156] = gCarIndex;
                 v15 = v47;
                 v3[157] = dword_10AA3460;
                 v43 = v48;
@@ -117,7 +117,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                     v20 = v3 + 163;
                     v50 = 3;
                     do {
-                        v21 = sub_10060F70(dword_10AA3444, dword_10AA3460, v19);
+                        v21 = sub_10060F70(gCarIndex, dword_10AA3460, v19);
                         if (v21) {
                             if (sub_10061480(v21,
                                              v49,
@@ -164,7 +164,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     v3[155] = 1;
     v46 = (int)v27;
     v28 = v49;
-    v3[156] = dword_10AA3444;
+    v3[156] = gCarIndex;
     v29 = v47;
     v3[157] = dword_10AA3460;
     v44 = v48;
@@ -197,7 +197,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     v34 = v3 + 163;
     v51 = 3;
     do {
-        v35 = sub_10060F70(dword_10AA3444, dword_10AA3460, v33);
+        v35 = sub_10060F70(gCarIndex, dword_10AA3460, v33);
         if (v35) {
             if (sub_10061480(
                     v35, v49, v48, v47, (int)a3, (int)&unk_104D51D0, 2 * v3[169], 2 * v3[170])) {

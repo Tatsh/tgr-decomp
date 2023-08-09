@@ -3,7 +3,7 @@
 int __thiscall meth_10069B10(BossRallyConfig *this, int a2, int a3, __int16 a4, char a5) {
     BossRallyConfig *v5;  // ebp
     char *v6;             // edi
-    char *v7;             // eax
+    _WORD *v7;            // eax
     int v8;               // edi
     _WORD *v9;            // esi
     int v10;              // ebx
@@ -15,16 +15,16 @@ int __thiscall meth_10069B10(BossRallyConfig *this, int a2, int a3, __int16 a4, 
 
     switch (a2) {
     case 1:
-        v5 = (BossRallyConfig *)this->joystick1;
-        v6 = (char *)&unk_100B4140;
+        v5 = (BossRallyConfig *)&this->joystick1;
+        v6 = gJoystick1Data;
         break;
     case 2:
-        v5 = (BossRallyConfig *)this->joystick2;
-        v6 = (char *)&unk_100B41E8;
+        v5 = (BossRallyConfig *)&this->joystick2;
+        v6 = gJoystick2Data;
         break;
     case 3:
-        v5 = (BossRallyConfig *)this->joystick3;
-        v6 = (char *)&unk_100B4290;
+        v5 = (BossRallyConfig *)&this->joystick3;
+        v6 = gJoystick3Data;
         break;
     default:
         v5 = this;
@@ -32,10 +32,10 @@ int __thiscall meth_10069B10(BossRallyConfig *this, int a2, int a3, __int16 a4, 
         break;
     }
     v15 = 2;
-    v7 = &v5->joystick0[6 * a3];
+    v7 = (_WORD *)((char *)v5 + 6 * a3);
     v8 = v6 - (char *)v5;
-    *(_WORD *)v7 = a4 ^ (unsigned __int8)(a4 ^ a5);
-    v9 = v7 + 2;
+    *v7 = a4 ^ (unsigned __int8)(a4 ^ a5);
+    v9 = v7 + 1;
     do {
         v10 = 28;
         do {
@@ -43,7 +43,7 @@ int __thiscall meth_10069B10(BossRallyConfig *this, int a2, int a3, __int16 a4, 
             v12 = 0;
             *v9 = v11;
             v13 = v5;
-            while (*(_WORD *)v13->joystick0 != v11) {
+            while (LOWORD(v13->joystick0.field_0) != v11) {
                 ++v12;
                 v13 = (BossRallyConfig *)((char *)v13 + 6);
                 if (v12 >= 28)

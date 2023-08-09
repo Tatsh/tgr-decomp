@@ -89,15 +89,15 @@ int __cdecl sub_100773F0(int *a1, int *a2) {
             return 0;
         }
     }
-    v6 = g_ConfigJoystickIndex;
-    v7 = g_ConfigJoystickIndex == 1;
+    v6 = gConfigJoystickIndex;
+    v7 = gConfigJoystickIndex == 1;
     byte_118AB8B8[256 * dword_118ABAD8] = 0;
     if (v7 || v6 == 2) {
         dword_118ABD7C = dword_118ABAB8;
         dword_118ABAB8 = ((_BYTE)dword_118ABAB8 - 1) & 1;
-        g_DirectInputDevice2A->lpVtbl->Poll(g_DirectInputDevice2A);
-        v8 = g_DirectInputDevice2A->lpVtbl->GetDeviceState(
-            g_DirectInputDevice2A, 272, &dword_118ABAE0[68 * dword_118ABAB8]);
+        gDirectInputDevice2A->lpVtbl->Poll(gDirectInputDevice2A);
+        v8 = gDirectInputDevice2A->lpVtbl->GetDeviceState(
+            gDirectInputDevice2A, 272, &dword_118ABAE0[68 * dword_118ABAB8]);
         if (v8) {
             if (v8 == -2147024866)
                 sub_100773D0();
@@ -107,9 +107,9 @@ int __cdecl sub_100773F0(int *a1, int *a2) {
     dword_118ABAD4 = dword_118ABD80;
     v9 = ((_BYTE)dword_118ABD80 - 1) & 1;
     dword_118ABD80 = v9;
-    if (g_unk54Ptr && (v10 = *((_DWORD *)g_unk54Ptr + 20)) != 0) {
+    if (gUnk54Ptr && (v10 = *((_DWORD *)gUnk54Ptr + 20)) != 0) {
         v11 = (*(int(__stdcall **)(_DWORD, int, int *))(*(_DWORD *)v10 + 36))(
-            *((_DWORD *)g_unk54Ptr + 20), 16, &v62);
+            *((_DWORD *)gUnk54Ptr + 20), 16, &v62);
         if (!v11) {
             v12 = &dword_118ABD44[7 * dword_118ABAD4];
             v13 = 7 * dword_118ABD80;
@@ -169,8 +169,8 @@ int __cdecl sub_100773F0(int *a1, int *a2) {
             goto LABEL_36;
         }
         if (v11 == -2147024866)
-            (*(void(__stdcall **)(_DWORD))(**((_DWORD **)g_unk54Ptr + 20) + 28))(
-                *((_DWORD *)g_unk54Ptr + 20));
+            (*(void(__stdcall **)(_DWORD))(**((_DWORD **)gUnk54Ptr + 20) + 28))(
+                *((_DWORD *)gUnk54Ptr + 20));
         *(_DWORD *)&byte_118ABD50[28 * dword_118ABD80] = 0;
     } else {
         memset(&dword_118ABD38[7 * v9], 0, 0x1Cu);
@@ -236,27 +236,27 @@ LABEL_41:
             return v2;
         }
         if (sub_100786E0(16)) {
-            if (!dword_106909B4 && g_GameMode != 4 && g_GameMode != 5)
+            if (!dword_106909B4 && gGameMode != 4 && gGameMode != 5)
                 dword_118ABDCC = 1;
-            if (g_NetworkPlay) {
+            if (gNetworkPlay) {
                 if (!dword_118ABDC0) {
                     atomic_sub_10004BB0();
                     dword_118ABDC0 = 1;
                 }
             } else {
-                g_usingGameMode4 = 1;
-                if (g_GameMode == 2)
+                gIsGameMode4 = 1;
+                if (gGameMode == 2)
                     __setargv_0();
             }
         }
         if (sub_100786E0(14))
             v2 = 0x8000;
         *a1 = 0;
-        if (g_GameMode == 4 || g_GameMode == 5)
+        if (gGameMode == 4 || gGameMode == 5)
             goto LABEL_203;
-        if ((HIBYTE(*(_WORD *)g_ConfigJoystickPtr) & 0x80u) == 0)
+        if ((HIBYTE(*(_WORD *)gConfigJoystickPtr) & 0x80u) == 0)
             goto LABEL_158;
-        v25 = *(_WORD *)g_ConfigJoystickPtr & 0xFF00;
+        v25 = *(_WORD *)gConfigJoystickPtr & 0xFF00;
         if (v25 <= 0x8100) {
             if (v25 != 33024) {
                 if (v25 == 0x8000) {
@@ -278,7 +278,7 @@ LABEL_41:
             v29 = dword_118ABAE0[68 * dword_118ABAB8];
             goto LABEL_134;
         }
-        if ((*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) <= 0x8300) {
+        if ((*(_WORD *)gConfigJoystickPtr & 0xFF00u) <= 0x8300) {
             if (v25 != 33536) {
                 if (v25 == 33280) {
                     v26 = dword_118ABAB8;
@@ -300,7 +300,7 @@ LABEL_41:
             }
             goto LABEL_157;
         }
-        if ((*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) <= 0x8500) {
+        if ((*(_WORD *)gConfigJoystickPtr & 0xFF00u) <= 0x8500) {
             if (v25 == 34048) {
                 v26 = dword_118ABAB8;
                 v29 = dword_118ABAE8[68 * dword_118ABAB8];
@@ -320,8 +320,8 @@ LABEL_41:
             v32 = dword_118ABD80;
             goto LABEL_160;
         }
-        if ((*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) > 0x8700) {
-            if ((*(_WORD *)g_ConfigJoystickPtr & 0xFF00u) > 0x8900) {
+        if ((*(_WORD *)gConfigJoystickPtr & 0xFF00u) > 0x8700) {
+            if ((*(_WORD *)gConfigJoystickPtr & 0xFF00u) > 0x8900) {
                 if (v25 == 35328) {
                     v32 = dword_118ABD80;
                     v38 = dword_118ABD40[7 * dword_118ABD80];
@@ -382,7 +382,7 @@ LABEL_41:
         }
         v26 = dword_118ABAB8;
     LABEL_160:
-        v39 = *(_WORD *)(g_ConfigJoystickPtr + 6);
+        v39 = *(_WORD *)(gConfigJoystickPtr + 6);
         if (v39 >= 0)
             goto LABEL_203;
         v40 = v39 & 0xFF00;
@@ -418,10 +418,10 @@ LABEL_41:
             *a2 = 0;
             if (sub_10078420(2)) {
                 v2 |= 4u;
-                if (*(char *)(g_ConfigJoystickPtr + 13) >= 0)
+                if (*(char *)(gConfigJoystickPtr + 13) >= 0)
                     *a2 = 80;
             }
-            v49 = *(_WORD *)(g_ConfigJoystickPtr + 12);
+            v49 = *(_WORD *)(gConfigJoystickPtr + 12);
             if (v49 >= 0)
                 goto LABEL_260;
             v50 = v49 & 0xFF00;
@@ -445,7 +445,7 @@ LABEL_41:
                     v2 |= 0x10u;
                     *a2 = -80;
                 }
-                if (g_GameMode != 4 && g_GameMode != 5) {
+                if (gGameMode != 4 && gGameMode != 5) {
                     if (sub_10078420(0))
                         v2 |= 1u;
                     if (sub_10078420(1))
@@ -471,7 +471,7 @@ LABEL_41:
                     v2 |= 0x80000u;
                 if (sub_10078420(7))
                     v2 |= 0x80u;
-                if (g_Runbenchmark) {
+                if (gRunBenchmark) {
                     if (dword_118ABDDC == 1) {
                         dword_118ABD00 = getTicks();
                         dword_118ABD74 = sub_10016A50();
@@ -656,7 +656,7 @@ LABEL_41:
         v43 = -5 * v41;
         goto LABEL_202;
     }
-    if (g_NetworkPlay && g_usingGameMode4 && !dword_106909E0 && dword_10ACEE50 < dword_100BD3E0) {
+    if (gNetworkPlay && gIsGameMode4 && !dword_106909E0 && dword_10ACEE50 < dword_100BD3E0) {
         atomic_sub_10004BE0();
         goto LABEL_47;
     }

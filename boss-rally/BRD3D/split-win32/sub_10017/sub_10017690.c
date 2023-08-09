@@ -20,11 +20,11 @@ _DWORD *__cdecl sub_10017690(int a1) {
         v4 = (_DWORD *)(a1 + 88 * dword_106C5708);
         v5 = *v4 + v4[2] / 2;
         v6 = v4[1] + v4[3] / 3 + 24;
-        sub_10019270();
+        Set_byte_104B035C_To2();
         result = (_DWORD *)dword_104B0338;
         if (dword_104B0338) {
             sub_100192F0(v3);
-            result = sub_10019300(dword_104B0338, v5, v6 + 3 * v2 / 16);
+            result = text_sub_10019300(dword_104B0338, v5, v6 + 3 * v2 / 16);
         }
     }
     return result;

@@ -4,7 +4,7 @@ int sub_1003BF60() {
     int result; // eax
 
     sub_100586A0();
-    KillTimer(g_HWND, uIDEvent);
+    KillTimer(gHwnd, uIDEvent);
     if (dword_10AA2884)
         sub_10072270();
     sub_1003C550();
@@ -19,7 +19,7 @@ int sub_1003BF60() {
     }
     dword_10A9CFFC = 0;
     dword_10AA2884 = 0;
-    g_NetworkPlay = 0;
+    gNetworkPlay = 0;
     dword_10AA2888 = 0;
     return result;
 }

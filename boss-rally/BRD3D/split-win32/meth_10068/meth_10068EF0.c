@@ -24,9 +24,9 @@ void __thiscall meth_10068EF0(_DWORD *this) {
     float v22;                   // [esp+0h] [ebp-18h]
     float v23;                   // [esp+14h] [ebp-4h]
 
-    if (!g_NetworkPlay || this[24]) {
+    if (!gNetworkPlay || this[24]) {
         v2 = this[24];
-        if (v2 && *(void(__cdecl **)(int))(v2 + 3848) == sub_10065620 && g_GameMode != 5) {
+        if (v2 && *(void(__cdecl **)(int))(v2 + 3848) == sub_10065620 && gGameMode != 5) {
             **(_DWORD **)(v2 + 10688) &= 0xF000000u;
             *(_DWORD *)(*(_DWORD *)(this[24] + 10688) + 32) = 0;
         }
@@ -68,7 +68,7 @@ void __thiscall meth_10068EF0(_DWORD *this) {
                         if (*(_BYTE *)(v8 + 10671) == 2) {
                             *(float *)(v8 + 10672) =
                                 *(float *)(v8 + 10672) - *(float *)&dword_106C2CFC * -1.6;
-                            if (g_GameMode == 2 && this[25]) {
+                            if (gGameMode == 2 && this[25]) {
                                 v13 = this[24];
                                 if (*(float *)(v13 + 10672) > 0.375)
                                     *(_DWORD *)(v13 + 10672) = 1052770304;
@@ -124,12 +124,12 @@ void __thiscall meth_10068EF0(_DWORD *this) {
                         meth_10066E90(this);
                     }
                 } else if (v8) {
-                    if (g_GameMode || this[25] < dword_100B4050) {
+                    if (gGameMode || this[25] < dword_100B4050) {
                         **(_DWORD **)(v8 + 10688) = 786432;
                         *(_BYTE *)(*(_DWORD *)(this[24] + 10688) + 36) = -127;
                         *(_DWORD *)(*(_DWORD *)(this[24] + 10688) + 32) = -1082130432;
                     }
-                    if (!g_GameMode && this[25] >= dword_100B4050) {
+                    if (!gGameMode && this[25] >= dword_100B4050) {
                         *(_BYTE *)(this[24] + 10671) = 2;
                         *(float *)(this[24] + 10672) =
                             *(float *)(this[24] + 10672) - *(float *)&dword_106C2CFC;

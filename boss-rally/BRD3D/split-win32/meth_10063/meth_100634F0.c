@@ -12,7 +12,7 @@ unsigned int __thiscall meth_100634F0(_DWORD *this) {
     meth_10076C90((char *)this);
     v2 = ((char *)this - (char *)dword_10ACDEA8) / 11112;
     this[80] = v2;
-    if (g_GameMode != 6) {
+    if (gGameMode != 6) {
         v3 = byte_100B37D2[3 * v2];
         v4 = byte_100B37D0[3 * v2];
         *((_BYTE *)this + 10669) = byte_100B37D1[3 * v2];

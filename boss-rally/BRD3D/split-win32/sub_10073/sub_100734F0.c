@@ -5,7 +5,7 @@ int sub_100734F0() {
     int *v1; // edx
     int *v2; // edi
 
-    if (g_Playsfx && g_DSound && dword_118290FC) {
+    if (gPlaysfx && g_DSound && dword_118290FC) {
         sub_10072BF0((int)&dword_11828F48);
         sub_10072C20((int)&dword_11828F48);
         v0 = dword_11828F00;

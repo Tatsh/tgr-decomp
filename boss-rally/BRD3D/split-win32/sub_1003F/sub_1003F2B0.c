@@ -7,7 +7,7 @@ int __cdecl sub_1003F2B0(int a1) {
         return 0;
     if (dword_10AA28F8)
         return 1;
-    if (g_GameMode) {
+    if (gGameMode) {
         if (dword_10AA28FC && (a1 == 14 || a1 == 13))
             result = 1;
         else

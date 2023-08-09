@@ -5,13 +5,13 @@ int __cdecl sub_1003F760(int a1) {
     int v2;         // eax
     int v3;         // edx
 
-    if (g_unkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
+    if (gUnkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
         v2 = dword_100AC654;
         if (dword_100AC654 > 15)
             v2 = dword_100AC654 - 16;
-        v1 = getCaptionString(dword_100AC368[v2]);
+        v1 = GetStringWithIndex(dword_100AC368[v2]);
     } else {
-        v1 = getCaptionString(0x14u);
+        v1 = GetStringWithIndex(0x14u);
     }
     v3 = *(_DWORD *)(a1 + 11100);
     strcpy((char *)(a1 + 11109), v1);

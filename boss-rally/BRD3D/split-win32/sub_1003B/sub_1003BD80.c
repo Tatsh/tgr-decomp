@@ -30,22 +30,22 @@ int sub_1003BD80() {
         errno = v4;
         if (v4 < 0) {
             sprintf(errorMessage, "Could not create DirectPlay object because of error 0x%08X", v4);
-            format = getCaptionString(0x12Bu);
+            format = GetStringWithIndex(0x12Bu);
             showMessageBox(format, errno);
             return 0;
         }
     } else {
         if (v3 < 0) {
             v8 = v3;
-            v7 = getCaptionString(0x12Au);
+            v7 = GetStringWithIndex(0x12Au);
             showMessageBox(v7, v8);
             exit(1);
         }
         if (dword_10277B4C) {
-            g_NetworkPlay = 2;
+            gNetworkPlay = 2;
             dword_10AA2884 = 1;
         } else {
-            g_NetworkPlay = 1;
+            gNetworkPlay = 1;
             dword_10AA2884 = 0;
         }
         dword_10A9D000 = 1;
@@ -55,12 +55,12 @@ int sub_1003BD80() {
         dword_10AA2898 = 0;
         if (dword_10AA29D4 && sub_1003CC70(unk) < 0)
             return 0;
-        uIDEvent = SetTimer(g_HWND, 1u, 0x3E8u, 0);
+        uIDEvent = SetTimer(gHwnd, 1u, 0x3E8u, 0);
         dword_10A9CFFC = 1;
     } else {
         (*(void(__stdcall **)(
             SIZE_T, int *, int(__stdcall *)(IID *, int, SIZE_T, int, int, int), HWND, _DWORD))(
-            *(_DWORD *)unk + 140))(unk, &dword_1008F538, sub_1003C430, g_HWND, 0);
+            *(_DWORD *)unk + 140))(unk, &dword_1008F538, sub_1003C430, gHwnd, 0);
         if (sub_1003D7B0(&dword_10A9BFD8) < 0)
             return 0;
     }

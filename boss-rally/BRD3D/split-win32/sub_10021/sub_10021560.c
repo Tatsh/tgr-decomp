@@ -96,9 +96,9 @@ int *__cdecl sub_10021560(unsigned int a1, unsigned int a2, int a3, int a4) {
     v7 = *(float *)&v35;
     *(float *)&v35 = v6;
     v8 = *(float *)&v35 / 4.0;
-    *(float *)&v35 = (float)g_Width;
+    *(float *)&v35 = (float)gWidth;
     v9 = *(float *)&v35;
-    *(float *)&v35 = (float)g_Height;
+    *(float *)&v35 = (float)gHeight;
     v44 = (float)a1;
     v10 = v5;
     v11 = v44;

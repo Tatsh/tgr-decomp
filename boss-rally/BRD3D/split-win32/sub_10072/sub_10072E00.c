@@ -4,7 +4,7 @@ int sub_10072E00() {
     int *v0; // edi
     int v1;  // esi
 
-    if (g_Playsfx && g_DSound && dword_118290FC) {
+    if (gPlaysfx && g_DSound && dword_118290FC) {
         v0 = dword_11828F08;
         do {
             v1 = *v0;

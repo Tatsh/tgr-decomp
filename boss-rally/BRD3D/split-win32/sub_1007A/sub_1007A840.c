@@ -1,25 +1,25 @@
 #include "types-win32.h"
 //----- (1007A840) --------------------------------------------------------
 int sub_1007A840() {
-    GUID *v0;             // eax
-    int result;           // eax
-    gameSpecificUnk1 *v2; // esi
-    int v3;               // edi
-    gameSpecificUnk1 *v4; // ebx
-    CHAR v5[80];          // [esp+10h] [ebp-50h] BYREF
+    GUID *v0;    // eax
+    int result;  // eax
+# 485 * v2;      // esi
+    int v3;      // edi
+# 485 * v4;      // ebx
+    CHAR v5[80]; // [esp+10h] [ebp-50h] BYREF
 
     if (dword_118AC238)
-        v0 = getDirectDrawLPGUID((gameSpecificUnk1 *)dword_118AC238);
+        v0 = getDirectDrawLPGUID((#485 *)dword_118AC238);
     else
         v0 = 0;
-    result = (int)sub_1001A550((gameSpecificUnk1 *)v0);
+    result = (int)sub_1001A550((#485 *)v0);
     dword_118AC238 = (_BYTE *)result;
     if (result) {
         v2 = gameSpecificUnk1_instance0;
         v3 = 0;
         if (gameSpecificUnk1_instance0) {
             do {
-                v4 = *(gameSpecificUnk1 **)&v2[816];
+                v4 = *(#485 **)&v2[816];
                 if ((*(_BYTE *)v2 & 2) != 0) {
                     wsprintfA(v5, "%s (Primary)", *(const char **)&v2[20]);
                     dword_10AA2860 = v3;
@@ -31,7 +31,7 @@ int sub_1007A840() {
                     (*(void(__thiscall **)(int, CHAR *, _DWORD, int, void *, int))(
                         *(_DWORD *)(dword_10AA29F0 + 14392) + 16))(
                         dword_10AA29F0 + 14392, v5, 0, 1, &unk_100AB528, 1);
-                    (*(void(__thiscall **)(int, gameSpecificUnk1 *, int, int))(
+                    (*(void(__thiscall **)(int, #485 *, int, int))(
                         *(_DWORD *)(dword_10AA29F0 + 14392) + 40))(
                         dword_10AA29F0 + 14392, v2 + 4, 16, v3);
                 }

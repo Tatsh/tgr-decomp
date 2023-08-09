@@ -1,28 +1,28 @@
 #include "types-win32.h"
 //----- (10043BF0) --------------------------------------------------------
 int __stdcall sub_10043BF0() {
-    unkC8 *v0;     // eax
-    unkC8 *result; // eax
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
 
     sub_100419D0(asc_100AD300);
     sub_1003E510();
     if (dword_10AA2958) {
-        g_unkC8Ptr1 = (unkC8 *)dword_10AA2958;
-        result = (unkC8 *)1;
+        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2958;
+        result = (unk000C8 *)1;
     } else {
-        v0 = (unkC8 *)malloc(0xC8u);
+        v0 = (unk000C8 *)malloc(0xC8u);
         if (v0)
-            result = meth_10048710(v0);
+            result = meth_unk000C8_10048710(v0);
         else
             result = 0;
         dword_10AA2958 = (int)result;
-        g_unkC8Ptr1 = result;
+        gUnkC8Ptr1 = result;
         if (result) {
             result->lpFn0 = sub_100563E0;
             (*(void(__cdecl **)(int))(dword_10AA2958 + 4))(dword_10AA2958);
-            g_unkC8Ptr1->field_C = 1;
-            result = (unkC8 *)1;
-            g_unkC8Ptr1->field_68 = 1;
+            gUnkC8Ptr1->field_C = 1;
+            result = (unk000C8 *)1;
+            gUnkC8Ptr1->field_68 = 1;
         }
     }
     return (int)result;

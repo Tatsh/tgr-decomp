@@ -18,7 +18,7 @@ int sub_100770F0() {
         if (g_lpDirectInputDeviceA->lpVtbl->SetDataFormat(g_lpDirectInputDeviceA,
                                                           &g_lpcDiDataFormat) < 0)
             return 0;
-        if (g_lpDirectInputDeviceA->lpVtbl->SetCooperativeLevel(g_lpDirectInputDeviceA, g_HWND, 6) <
+        if (g_lpDirectInputDeviceA->lpVtbl->SetCooperativeLevel(g_lpDirectInputDeviceA, gHwnd, 6) <
             0)
             return 0;
         if (g_lpDirectInputDeviceA)

@@ -10,7 +10,7 @@ int __cdecl pm_sub_10002660(HWND a1) {
     char *v8;                // [esp+2Ch] [ebp-40Ch]
     CHAR OutputString[1024]; // [esp+38h] [ebp-400h] BYREF
 
-    if (g_Playmusic) {
+    if (gPlayMusic) {
         if (++dword_10220CD0 == 1) {
             hWnd = a1;
             v1 = getTicks();

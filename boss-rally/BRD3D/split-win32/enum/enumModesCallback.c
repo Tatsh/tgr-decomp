@@ -1,8 +1,8 @@
 #include "types-win32.h"
 //----- (1001AA70) --------------------------------------------------------
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2) {
-    _DWORD *v2; // ebx
-    unk74 *v4;  // edx
+    _DWORD *v2;   // ebx
+    unk00074 *v4; // edx
 
     if (a2) {
         v2 = (_DWORD *)*((_DWORD *)a2 + 2);
@@ -11,11 +11,11 @@ HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2) {
                 return 0;
             if (a1->dwSize != 108)
                 return 0;
-            v4 = (unk74 *)malloc(0x74u);
+            v4 = (unk00074 *)malloc(0x74u);
             if (v4) {
                 memset(v4, 0, 0x6Cu);
                 v4->field_0 = 108;
-                *(_DWORD *)v4->gap6C = 0;
+                *(_DWORD *)v4->field_6C = 0;
                 v4->last = 0;
             } else {
                 v4 = 0;

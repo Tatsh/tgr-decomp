@@ -118,7 +118,7 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
     }
     v20 = v29;
     dword_100A7DF8 = v19;
-    if (a8 || a9 || g_D3dalwayssquar || (g_HWCaps.dpcTriCaps.dwTextureCaps & 0x20) != 0 ||
+    if (a8 || a9 || gD3DAlwaysSquareTextures || (g_HWCaps.dpcTriCaps.dwTextureCaps & 0x20) != 0 ||
         (g_HELCaps.dpcTriCaps.dwTextureCaps & 0x20) != 0 ||
         g_HWCaps.dwMaxTextureWidth && v28 > g_HWCaps.dwMaxTextureWidth ||
         g_HWCaps.dwMaxTextureHeight && v29 > g_HWCaps.dwMaxTextureHeight ||
@@ -162,7 +162,7 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
                 v32 = dword_10575430 + v33;
             }
         }
-        if (!g_D3dalwayssquar && (g_HWCaps.dpcTriCaps.dwTextureCaps & 0x20) == 0 &&
+        if (!gD3DAlwaysSquareTextures && (g_HWCaps.dpcTriCaps.dwTextureCaps & 0x20) == 0 &&
                 (g_HELCaps.dpcTriCaps.dwTextureCaps & 0x20) == 0 ||
             v21 == v20) {
             goto label_HWAlwaysSquareTextures;
@@ -205,14 +205,12 @@ LABEL_48:
     return TIDFromTexture(&v26, (int)v22);
 }
 // 100280A2: conditional instruction was optimized away because of '%arg_34.4!=0'
-// 100A7DF4: using guessed type int dword_100A7DF4;
-// 100A7DF8: using guessed type int dword_100A7DF8;
 // 100A7DFC: using guessed type int dword_100A7DFC;
 // 100A7E00: using guessed type int dword_100A7E00;
 // 100A7E04: using guessed type int dword_100A7E04;
 // 100A7E08: using guessed type int dword_100A7E08;
 // 100AC300: using guessed type int dword_100AC300;
-// 10575420: using guessed type int g_D3dalwayssquar;
+// 10575420: using guessed type int gD3DAlwaysSquareTextures;
 // 10575430: using guessed type int dword_10575430;
 // 10575440: using guessed type int dword_10575440;
 // 10575444: using guessed type int dword_10575444;

@@ -1,11 +1,11 @@
 #include "types-win32.h"
 //----- (10009ED0) --------------------------------------------------------
 BOOL __thiscall meth_10009ED0(void *this, char *a2, LONG rectRight, LONG rectBottom) {
-    int **unk2;                       // ebp
+    int *unk2;                        // ebp
     int *ddSurface;                   // eax
     BOOL result;                      // eax
     int ddSurfaceVtbl;                // ecx
-    int *ddSurface_1;                 // eax
+    int ddSurface_1;                  // eax
     int ddSurfaceVtbl_1;              // ecx
     LONG v10;                         // edi
     DWORD dwRGBBitCountShiftedRight3; // esi
@@ -22,22 +22,23 @@ BOOL __thiscall meth_10009ED0(void *this, char *a2, LONG rectRight, LONG rectBot
     RECT rect;                        // [esp+20h] [ebp-7Ch] BYREF
     DDSURFACEDESC ddSurfaceDesc;      // [esp+30h] [ebp-6Ch] BYREF
 
-    unk2 = (int **)this;
+    unk2 = (int *)this;
     ddSurface = *(int **)this;
     if (!*(_DWORD *)this)
         return 0;
     ddSurfaceVtbl = *ddSurface;
     ddSurfaceDesc.dwSize = 108;
-    (*(void(__stdcall **)(int *, DDSURFACEDESC *))(ddSurfaceVtbl + 88))(ddSurface, &ddSurfaceDesc);
+    (*(void(__stdcall **)(int *, DDSURFACEDESC *))(ddSurfaceVtbl + 0x58))(ddSurface,
+                                                                          &ddSurfaceDesc);
     ddSurface_1 = *unk2;
-    ddSurfaceVtbl_1 = **unk2;
+    ddSurfaceVtbl_1 = *(_DWORD *)*unk2;
     rect.left = 0;
     rect.top = 0;
     v10 = rectBottom;
     dwRGBBitCountShiftedRight3 = ddSurfaceDesc.ddpfPixelFormat.dwRGBBitCount >> 3;
     rect.right = rectRight;
     rect.bottom = rectBottom;
-    if ((*(int(__stdcall **)(int *, RECT *, DDSURFACEDESC *, int, _DWORD))(ddSurfaceVtbl_1 + 100))(
+    if ((*(int(__stdcall **)(int, RECT *, DDSURFACEDESC *, int, _DWORD))(ddSurfaceVtbl_1 + 100))(
             ddSurface_1, &rect, &ddSurfaceDesc, 33, 0)) {
         return 0;
     }

@@ -105,7 +105,7 @@ int __cdecl sub_1004A580(int a1) {
     v4[207] = 1121845248;
     v5 = (_DWORD *)malloc(0x1E214u);
     if (v5)
-        v6 = meth_100476C0(v5);
+        v6 = meth_unk1E214_init(v5);
     else
         v6 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v6;
@@ -116,7 +116,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v7 = (_DWORD *)malloc(0x1E214u);
     if (v7)
-        v8 = meth_100476C0(v7);
+        v8 = meth_unk1E214_init(v7);
     else
         v8 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v8;
@@ -126,13 +126,13 @@ int __cdecl sub_1004A580(int a1) {
     (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(
         *(_DWORD *)v8 + 56))(v8, a1, v4[206], 1092616192, 1048585, 2, 5, 1, -1);
     v8[61702] = 3;
-    v10 = getCaptionString(0x13u);
+    v10 = GetStringWithIndex(0x13u);
     (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v9 + 52))(
         v8, v10, 1, 1, &unk_100AB508);
     ++*((_WORD *)v4 + 10);
     v11 = (_DWORD *)malloc(0x1E214u);
     if (v11)
-        v12 = meth_100476C0(v11);
+        v12 = meth_unk1E214_init(v11);
     else
         v12 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v12;
@@ -144,14 +144,14 @@ int __cdecl sub_1004A580(int a1) {
     v12[3] = sub_10047360;
     v12[2] = sub_10042B30;
     *((_WORD *)v12 + 61702) = 3;
-    v14 = getCaptionString(0x14u);
+    v14 = GetStringWithIndex(0x14u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v13 + 52))(
         v12, v14, 1, 1, &dword_100AB448);
     ++*((_WORD *)v4 + 10);
     ++*((_WORD *)v4 + 418);
     v15 = (_DWORD *)malloc(0x1E214u);
     if (v15)
-        v16 = meth_100476C0(v15);
+        v16 = meth_unk1E214_init(v15);
     else
         v16 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v16;
@@ -164,14 +164,14 @@ int __cdecl sub_1004A580(int a1) {
     v16[3] = sub_10047360;
     v16[2] = sub_10042DC0;
     *((_WORD *)v16 + 61702) = 3;
-    v18 = getCaptionString(0x15u);
+    v18 = GetStringWithIndex(0x15u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v17 + 52))(
         v16, v18, 1, 1, &dword_100AB448);
     ++*((_WORD *)v4 + 10);
     ++*((_WORD *)v4 + 418);
     v19 = (_DWORD *)malloc(0x1E214u);
     if (v19)
-        v20 = meth_100476C0(v19);
+        v20 = meth_unk1E214_init(v19);
     else
         v20 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v20;
@@ -184,14 +184,14 @@ int __cdecl sub_1004A580(int a1) {
     v20[3] = sub_10047360;
     v20[2] = sub_10042E20;
     *((_WORD *)v20 + 61702) = 3;
-    v22 = getCaptionString(0x16u);
+    v22 = GetStringWithIndex(0x16u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v21 + 52))(
         v20, v22, 1, 1, &dword_100AB448);
     ++*((_WORD *)v4 + 10);
     ++*((_WORD *)v4 + 418);
     v23 = (_DWORD *)malloc(0x1E214u);
     if (v23)
-        v24 = meth_100476C0(v23);
+        v24 = meth_unk1E214_init(v23);
     else
         v24 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v24;
@@ -204,14 +204,14 @@ int __cdecl sub_1004A580(int a1) {
     v24[3] = sub_10047360;
     v24[2] = sub_10042C80;
     *((_WORD *)v24 + 61702) = 3;
-    v26 = getCaptionString(0x17u);
+    v26 = GetStringWithIndex(0x17u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v25 + 52))(
         v24, v26, 1, 1, &dword_100AB448);
     ++*((_WORD *)v4 + 10);
     ++*((_WORD *)v4 + 418);
     v27 = (_DWORD *)malloc(0x1E214u);
     if (v27)
-        v28 = meth_100476C0(v27);
+        v28 = meth_unk1E214_init(v27);
     else
         v28 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v28;
@@ -224,14 +224,14 @@ int __cdecl sub_1004A580(int a1) {
     v28[3] = sub_10047360;
     v28[2] = sub_10042E80;
     *((_WORD *)v28 + 61702) = 3;
-    v30 = getCaptionString(0x18u);
+    v30 = GetStringWithIndex(0x18u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v29 + 52))(
         v28, v30, 1, 1, &dword_100AB448);
     ++*((_WORD *)v4 + 10);
     ++*((_WORD *)v4 + 418);
     v31 = (_DWORD *)malloc(0x1E214u);
     if (v31)
-        v32 = meth_100476C0(v31);
+        v32 = meth_unk1E214_init(v31);
     else
         v32 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v32;
@@ -244,14 +244,14 @@ int __cdecl sub_1004A580(int a1) {
     v32[3] = sub_10047360;
     v32[2] = sub_10043760;
     *((_WORD *)v32 + 61702) = 3;
-    v34 = getCaptionString(0x19u);
+    v34 = GetStringWithIndex(0x19u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v33 + 52))(
         v32, v34, 1, 1, &dword_100AB448);
     ++*((_WORD *)v4 + 10);
     ++*((_WORD *)v4 + 418);
     v35 = (_DWORD *)malloc(0x1E214u);
     if (v35)
-        v36 = meth_100476C0(v35);
+        v36 = meth_unk1E214_init(v35);
     else
         v36 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v36;
@@ -264,7 +264,7 @@ int __cdecl sub_1004A580(int a1) {
     v36[3] = sub_10047360;
     v36[2] = sub_100464E0;
     *((_WORD *)v36 + 61702) = 3;
-    v38 = getCaptionString(0xCu);
+    v38 = GetStringWithIndex(0xCu);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v37 + 52))(
         v36, v38, 1, 1, &dword_100AB448);
     dword_10AA29B4 = (int)v36;
@@ -272,10 +272,10 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 418);
     v84 = (float)dword_100AB428;
     v86 = (float)dword_100AB42C;
-    if (!g_GameMode) {
+    if (!gGameMode) {
         v39 = (_DWORD *)malloc(0x1E214u);
         if (v39)
-            v40 = meth_100476C0(v39);
+            v40 = meth_unk1E214_init(v39);
         else
             v40 = 0;
         v4[*((unsigned __int16 *)v4 + 10) + 6] = v40;
@@ -298,7 +298,7 @@ int __cdecl sub_1004A580(int a1) {
     }
     v43 = (_DWORD *)malloc(0x1E214u);
     if (v43)
-        v44 = meth_100476C0(v43);
+        v44 = meth_unk1E214_init(v43);
     else
         v44 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v44;
@@ -320,7 +320,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v46 = (_DWORD *)malloc(0x1E214u);
     if (v46)
-        v47 = meth_100476C0(v46);
+        v47 = meth_unk1E214_init(v46);
     else
         v47 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v47;
@@ -340,7 +340,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v49 = (_DWORD *)malloc(0x1E214u);
     if (v49)
-        v50 = meth_100476C0(v49);
+        v50 = meth_unk1E214_init(v49);
     else
         v50 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v50;
@@ -351,7 +351,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v51 = (_DWORD *)malloc(0x1E214u);
     if (v51)
-        v52 = meth_100476C0(v51);
+        v52 = meth_unk1E214_init(v51);
     else
         v52 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v52;
@@ -363,7 +363,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v53 = (_DWORD *)malloc(0x1E214u);
     if (v53)
-        v54 = meth_100476C0(v53);
+        v54 = meth_unk1E214_init(v53);
     else
         v54 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v54;
@@ -378,7 +378,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v56 = (_DWORD *)malloc(0x1E214u);
     if (v56)
-        v57 = meth_100476C0(v56);
+        v57 = meth_unk1E214_init(v56);
     else
         v57 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v57;
@@ -394,7 +394,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v59 = (_DWORD *)malloc(0x1E214u);
     if (v59)
-        v60 = meth_100476C0(v59);
+        v60 = meth_unk1E214_init(v59);
     else
         v60 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v60;
@@ -409,7 +409,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v62 = (_DWORD *)malloc(0x1E214u);
     if (v62)
-        v63 = meth_100476C0(v62);
+        v63 = meth_unk1E214_init(v62);
     else
         v63 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v63;
@@ -425,7 +425,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v65 = (_DWORD *)malloc(0x1E214u);
     if (v65)
-        v66 = meth_100476C0(v65);
+        v66 = meth_unk1E214_init(v65);
     else
         v66 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v66;
@@ -440,7 +440,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v68 = (_DWORD *)malloc(0x1E214u);
     if (v68)
-        v69 = meth_100476C0(v68);
+        v69 = meth_unk1E214_init(v68);
     else
         v69 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v69;
@@ -456,7 +456,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v71 = (_DWORD *)malloc(0x1E214u);
     if (v71)
-        v72 = meth_100476C0(v71);
+        v72 = meth_unk1E214_init(v71);
     else
         v72 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v72;
@@ -471,7 +471,7 @@ int __cdecl sub_1004A580(int a1) {
     ++*((_WORD *)v4 + 10);
     v74 = (_DWORD *)malloc(0x1E214u);
     if (v74)
-        v75 = meth_100476C0(v74);
+        v75 = meth_unk1E214_init(v74);
     else
         v75 = 0;
     v4[*((unsigned __int16 *)v4 + 10) + 6] = v75;

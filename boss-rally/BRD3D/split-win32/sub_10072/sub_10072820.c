@@ -5,7 +5,7 @@ int __cdecl sub_10072820(int a1, unsigned int a2) {
     signed int v3; // esi
     int v4;        // eax
 
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     if (!a1)
         return 0;

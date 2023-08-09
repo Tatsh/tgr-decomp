@@ -9,7 +9,7 @@ LRESULT __cdecl handle_WM_GETMINMAXINFO(HWND hWnd, WPARAM wParam, LPARAM lParam)
     v3 = GetWindowLongA(hWnd, -21);
     if (!v3 || (*(_BYTE *)(v3 + 28) & 2) == 0 || dword_118AC230)
         return DefWindowProcA(hWnd, 0x24u, wParam, lParam);
-    meth_1000B350((unk334 *)v3, v7);
+    meth_unk00334_1000B350((unk00334 *)v3, v7);
     v4 = abs32(v7[2] - v7[0]);
     v5 = abs32(v7[3] - v7[1]);
     *(_DWORD *)(lParam + 36) = v5;

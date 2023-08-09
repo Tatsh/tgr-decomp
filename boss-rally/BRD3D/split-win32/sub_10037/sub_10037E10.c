@@ -53,7 +53,7 @@ int __cdecl sub_10037E10(_DWORD *a1) {
     sub_1002BA00((_BYTE *)a1[3], a1[2]);
     sub_1002BF80(a1[20]);
     sub_10074DC0(4);
-    if (dword_104BBE08 == 3)
+    if (gChosenWeather1 == 3)
         sub_10038450(a1[7], a1[6]);
     dword_118AA0C4(a1[20]);
     sub_10037FE0((int)a1);

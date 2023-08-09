@@ -5,8 +5,8 @@ int pm_sub_10002CF0() {
     BOOL v1;    // esi
     BOOL v2;    // esi
 
-    if (g_Playmusic == 1) {
-        if (g_Playmusic) {
+    if (gPlayMusic == 1) {
+        if (gPlayMusic) {
             --dword_10220CD0;
             v2 = mciSendCommandA(mciId, 0x808u, 0, 0) == 0;
             if (dword_10220CD0)
@@ -16,7 +16,7 @@ int pm_sub_10002CF0() {
         } else {
             result = 1;
         }
-    } else if (g_Playmusic) {
+    } else if (gPlayMusic) {
         --dword_10220CD0;
         if (dword_10220C3C)
             v1 = EAR_DLL_ClearChannel(dword_100940A8, 0) == 0;

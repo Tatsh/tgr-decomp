@@ -10,9 +10,9 @@ int __thiscall meth_1005AE70(int this) {
     sub_1003E3A0();
     if (!*(_DWORD *)(this + 12)) {
         DDraw_DoInit();
-        if (!sub_10060210((int)g_HWND)) {
-            v3 = getCaptionString(0xABu);
-            showMessageBox_0(g_HWND, 0, v3);
+        if (!sub_10060210((int)gHwnd)) {
+            v3 = GetStringWithIndex(0xABu);
+            showMessageBox_0(gHwnd, 0, v3);
             exit(1);
         }
         (*(void(__cdecl **)(int))(this + 4))(this);
@@ -26,12 +26,12 @@ int __thiscall meth_1005AE70(int this) {
         v2 = 0;
         BYTE1(dword_10AA26F4[0]) = 0;
     }
-    v5 = g_GameMode;
-    if (g_GameMode == 4 && dword_106805B8 == 2 && dword_10AA289C) {
+    v5 = gGameMode;
+    if (gGameMode == 4 && dword_106805B8 == 2 && dword_10AA289C) {
         sub_10045EA0();
         v4 = dword_10220B20;
         v5 = 0;
-        g_GameMode = 0;
+        gGameMode = 0;
     }
     if (v5 || v4 && v4 != 5) {
         if (v5 == 6) {

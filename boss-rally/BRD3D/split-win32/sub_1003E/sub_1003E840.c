@@ -3,10 +3,10 @@
 int __cdecl sub_1003E840(int a1) {
     const char *v1; // eax
 
-    if (g_GameMode || dword_10220B20)
-        v1 = getCaptionString(0xCu);
+    if (gGameMode || dword_10220B20)
+        v1 = GetStringWithIndex(0xCu);
     else
-        v1 = getCaptionString(0x51u);
+        v1 = GetStringWithIndex(0x51u);
     strcpy((char *)(a1 + 11109), v1);
     (*(void(__thiscall **)(int))(*(_DWORD *)(a1 + 11100) + 4))(a1 + 11100);
     return 1;

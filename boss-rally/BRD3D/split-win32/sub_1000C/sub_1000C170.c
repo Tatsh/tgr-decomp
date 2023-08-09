@@ -39,8 +39,8 @@ void __cdecl sub_1000C170(int a1, _DWORD *a2) {
             wsprintfA(v15, "%s joined the game.\r\n", v11);
         LABEL_21:
             if (v2) {
-                if (g_HWND) {
-                    PostMessageA(g_HWND, 0x501u, 0, (LPARAM)v2);
+                if (gHwnd) {
+                    PostMessageA(gHwnd, 0x501u, 0, (LPARAM)v2);
                 } else {
                     v16 = GlobalHandle(v2);
                     GlobalUnlock(v16);

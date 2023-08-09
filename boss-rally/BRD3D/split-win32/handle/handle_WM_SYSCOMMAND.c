@@ -1,9 +1,9 @@
 #include "types-win32.h"
 //----- (1007A4E0) --------------------------------------------------------
 LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam) {
-    unk334 *v3; // eax
+    unk00334 *v3; // eax
 
-    v3 = (unk334 *)GetWindowLongA(hWnd, -21);
+    v3 = (unk00334 *)GetWindowLongA(hWnd, -21);
     if (wParam <= 0xF010) {
         if (wParam != 61456) {
             if (wParam == 61440)
@@ -25,7 +25,7 @@ LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     case 0xF120u:
         if (dword_118AC230) {
             if (v3)
-                meth_1000B2C0(v3);
+                meth_unk0008C_1000B2C0(v3);
         }
         dword_118AC230 = 0;
         goto LABEL_15;

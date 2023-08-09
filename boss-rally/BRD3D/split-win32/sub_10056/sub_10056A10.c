@@ -2,8 +2,8 @@
 //----- (10056A10) --------------------------------------------------------
 int __cdecl sub_10056A10(int a1) {
     unsigned __int16 v1; // ax
-    unk348 *v2;          // eax
-    unk348 *v3;          // ebp
+    unk00348 *v2;        // eax
+    unk00348 *v3;        // ebp
     unk1E214 *v4;        // eax
     unk1E214 *v5;        // ebx
     unk1E214 *v6;        // eax
@@ -36,7 +36,7 @@ int __cdecl sub_10056A10(int a1) {
     v1 = *(_WORD *)(a1 + 16);
     *(_WORD *)(a1 + 18) = 0;
     *(_DWORD *)(a1 + 4 * v1 + 108) = 1;
-    v2 = (unk348 *)malloc(0x348u);
+    v2 = (unk00348 *)malloc(0x348u);
     if (v2)
         v3 = meth_10048470(v2);
     else
@@ -45,136 +45,136 @@ int __cdecl sub_10056A10(int a1) {
     if (!v3)
         sub_1003E260(4);
     ++*(_WORD *)(a1 + 16);
-    v3->field_340 = (unkC8 *)a1;
+    v3->field_340 = (unk000C8 *)a1;
     v3->field_10 = 0;
-    v3->field_338 = 1128136704;
+    v3->mask_338 = 1128136704;
     v3->field_33C = 130.0;
     v4 = (unk1E214 *)malloc(0x1E214u);
     if (v4)
-        v5 = meth_100476C0(v4);
+        v5 = meth_unk1E214_init(v4);
     else
         v5 = 0;
     v3->field_18[LOWORD(v3->field_14)] = v5;
     if (!v5)
         sub_1003E260(4);
-    v5->field_0->field_38(v5, (unkC8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+    v5->lpVtbl->field_38(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
     ++LOWORD(v3->field_14);
     v6 = (unk1E214 *)malloc(0x1E214u);
     if (v6)
-        v7 = meth_100476C0(v6);
+        v7 = meth_unk1E214_init(v6);
     else
         v7 = 0;
     v3->field_18[LOWORD(v3->field_14)] = v7;
     if (!v7)
         sub_1003E260(4);
-    v8 = v7->field_0;
-    v7->field_0->field_38(v7, (unkC8 *)a1, v3->field_338, 1092616192, 1048585, 2, 5, 1, -1);
-    LOWORD(v7->field_1E20C) = 3;
-    v9 = getCaptionString(0x5Du);
-    v8->field_34(v7, v9, 1, 1, &unk_100AB508);
-    ++LOWORD(v3->field_14);
-    v10 = (unk1E214 *)malloc(0x1E214u);
-    if (v10)
-        v11 = meth_100476C0(v10);
-    else
-        v11 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v11;
-    if (!v11)
-        sub_1003E260(4);
-    v12 = v11->field_0;
-    v11->field_0->field_38(
-        v11, (unkC8 *)a1, v3->field_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
-    LOWORD(v11->field_1E20C) = 52;
-    v13 = getCaptionString(0x5Eu);
-    v12->field_34(v11, v13, 1, 4, &dword_100AB448);
-    ++LOWORD(v3->field_14);
-    v14 = (unk1E214 *)malloc(0x1E214u);
-    if (v14)
-        v15 = meth_100476C0(v14);
-    else
-        v15 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v15;
-    if (!v15)
-        sub_1003E260(4);
-    v15->field_0->field_38(v15, (unkC8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
-    ++LOWORD(v3->field_14);
-    v16 = (unk1E214 *)malloc(0x1E214u);
-    if (v16)
-        v17 = meth_100476C0(v16);
-    else
-        v17 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v17;
-    if (!v17)
-        sub_1003E260(4);
-    v18 = v17->field_0;
-    v17->field_0->field_38(v17, (unkC8 *)a1, v3->field_338, 1127088128, 2097153, 2, 5, 1, -1);
-    v17->field_8 = (int(__cdecl *)())sub_10042AC0;
-    v17->field_4 = sub_1003EF90;
-    *(_DWORD *)v17->gap10 = sub_1003F020;
-    LOWORD(v17->field_1E20C) = 3;
-    v18->field_34(v17, String2, 1, 1, &dword_100AB448);
-    v19 = *(_DWORD *)&v17->gap5C[11008];
-    strcpy(&v17->gap5C[11017], String1);
-    (*(void(__thiscall **)(_BYTE *))(v19 + 4))(&v17->gap5C[11008]);
-    v17->field_50 = 155;
-    v17->field_2F80 = 155;
-    v17->field_58 = 347;
-    *(_DWORD *)v17->gap2F88 = 347;
-    *(_DWORD *)v17->gap54 = 172;
-    v17->field_2F84 = 172;
-    *(_DWORD *)v17->gap5C = 188;
-    v17->field_2F8C = 188;
-    LOWORD(v17->field_2F78) = *(_WORD *)v17->gap2F88 - LOWORD(v17->field_2F80) - 16;
-    ++LOWORD(v3->field_14);
-    ++LOWORD(v3->last);
-    v20 = (unk1E214 *)malloc(0x1E214u);
-    if (v20)
-        v21 = meth_100476C0(v20);
-    else
-        v21 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v21;
-    if (!v21)
-        sub_1003E260(4);
-    v22 = v21->field_0;
-    v31 = v3->field_33C - -95.0;
-    v21->field_0->field_38(v21, (unkC8 *)a1, v3->field_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
-    v21->field_C = sub_10047360;
-    v21->field_8 = (int(__cdecl *)())sub_10043F50;
-    LOWORD(v21->field_1E20C) = 2;
-    v23 = getCaptionString(0x1Eu);
-    v22->field_34(v21, v23, 1, 0, &dword_100AB448);
-    dword_10AA29E8 = (int)v21;
-    ++LOWORD(v3->field_14);
-    ++LOWORD(v3->last);
-    v24 = (unk1E214 *)malloc(0x1E214u);
-    if (v24)
-        v25 = meth_100476C0(v24);
-    else
-        v25 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v25;
-    if (!v25)
-        sub_1003E260(4);
-    v26 = v25->field_0;
-    v32 = v3->field_33C - -114.0;
-    v25->field_0->field_38(v25, (unkC8 *)a1, v3->field_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
-    v25->field_C = sub_10047360;
-    v25->field_8 = (int(__cdecl *)())sub_10044B40;
-    LOWORD(v25->field_1E20C) = 3;
-    v27 = getCaptionString(0xCu);
-    v26->field_34(v25, v27, 1, 1, &dword_100AB448);
-    ++LOWORD(v3->field_14);
-    ++LOWORD(v3->last);
-    v28 = (unk1E214 *)malloc(0x1E214u);
-    if (v28)
-        v29 = meth_100476C0(v28);
-    else
-        v29 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v29;
-    if (!v29)
-        sub_1003E260(4);
-    v29->field_0->field_38(v29, (unkC8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
-    ++LOWORD(v3->field_14);
-    return 1;
+    v8 = v7->lpVtbl;
+    v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  LOWORD(v7->?) = 3;
+  v9 = GetStringWithIndex(0x5Du);
+  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  ++LOWORD(v3->field_14);
+  v10 = (unk1E214 *)malloc(0x1E214u);
+  if (v10)
+      v11 = meth_unk1E214_init(v10);
+  else
+      v11 = 0;
+  v3->field_18[LOWORD(v3->field_14)] = v11;
+  if (!v11)
+      sub_1003E260(4);
+  v12 = v11->lpVtbl;
+  v11->lpVtbl->field_38(
+      v11, (unk000C8 *)a1, v3->mask_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
+  LOWORD(v11->?) = 52;
+  v13 = GetStringWithIndex(0x5Eu);
+  v12->field_34(v11, v13, 1, 4, &dword_100AB448);
+  ++LOWORD(v3->field_14);
+  v14 = (unk1E214 *)malloc(0x1E214u);
+  if (v14)
+      v15 = meth_unk1E214_init(v14);
+  else
+      v15 = 0;
+  v3->field_18[LOWORD(v3->field_14)] = v15;
+  if (!v15)
+      sub_1003E260(4);
+  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
+  ++LOWORD(v3->field_14);
+  v16 = (unk1E214 *)malloc(0x1E214u);
+  if (v16)
+      v17 = meth_unk1E214_init(v16);
+  else
+      v17 = 0;
+  v3->field_18[LOWORD(v3->field_14)] = v17;
+  if (!v17)
+      sub_1003E260(4);
+  v18 = v17->lpVtbl;
+  v17->lpVtbl->field_38(v17, (unk000C8 *)a1, v3->mask_338, 1127088128, 2097153, 2, 5, 1, -1);
+  v17->field_8 = (int(__cdecl *)())sub_10042AC0;
+  v17->field_4 = sub_1003EF90;
+  *(_DWORD *)v17->field_10 = sub_1003F020;
+  LOWORD(v17->?) = 3;
+  v18->field_34(v17, String2, 1, 1, &dword_100AB448);
+  v19 = *(_DWORD *)&v17->gap5C[11008];
+  strcpy(&v17->gap5C[11017], String1);
+  (*(void(__thiscall **)(_BYTE *))(v19 + 4))(&v17->gap5C[11008]);
+  v17->field_50 = 155;
+  v17->? = 155;
+  v17->field_58 = 347;
+  *(_DWORD *)v17->? = 347;
+  *(_DWORD *)v17->gap54 = 172;
+  v17->? = 172;
+  *(_DWORD *)v17->gap5C = 188;
+  v17->? = 188;
+  LOWORD(v17->?) = *(_WORD *)v17->? - LOWORD(v17->?) - 16;
+  ++LOWORD(v3->field_14);
+  ++LOWORD(v3->last);
+  v20 = (unk1E214 *)malloc(0x1E214u);
+  if (v20)
+      v21 = meth_unk1E214_init(v20);
+  else
+      v21 = 0;
+  v3->field_18[LOWORD(v3->field_14)] = v21;
+  if (!v21)
+      sub_1003E260(4);
+  v22 = v21->lpVtbl;
+  v31 = v3->field_33C - -95.0;
+  v21->lpVtbl->field_38(v21, (unk000C8 *)a1, v3->mask_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
+  v21->field_C = sub_10047360;
+  v21->field_8 = (int(__cdecl *)())sub_10043F50;
+  LOWORD(v21->?) = 2;
+  v23 = GetStringWithIndex(0x1Eu);
+  v22->field_34(v21, v23, 1, 0, &dword_100AB448);
+  dword_10AA29E8 = (int)v21;
+  ++LOWORD(v3->field_14);
+  ++LOWORD(v3->last);
+  v24 = (unk1E214 *)malloc(0x1E214u);
+  if (v24)
+      v25 = meth_unk1E214_init(v24);
+  else
+      v25 = 0;
+  v3->field_18[LOWORD(v3->field_14)] = v25;
+  if (!v25)
+      sub_1003E260(4);
+  v26 = v25->lpVtbl;
+  v32 = v3->field_33C - -114.0;
+  v25->lpVtbl->field_38(v25, (unk000C8 *)a1, v3->mask_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+  v25->field_C = sub_10047360;
+  v25->field_8 = (int(__cdecl *)())sub_10044B40;
+  LOWORD(v25->?) = 3;
+  v27 = GetStringWithIndex(0xCu);
+  v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+  ++LOWORD(v3->field_14);
+  ++LOWORD(v3->last);
+  v28 = (unk1E214 *)malloc(0x1E214u);
+  if (v28)
+      v29 = meth_unk1E214_init(v28);
+  else
+      v29 = 0;
+  v3->field_18[LOWORD(v3->field_14)] = v29;
+  if (!v29)
+      sub_1003E260(4);
+  v29->lpVtbl->field_38(v29, (unk000C8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+  ++LOWORD(v3->field_14);
+  return 1;
 }
 // 10056A10: using guessed type int __cdecl sub_10056A10(int);
 // 100AB448: using guessed type int dword_100AB448;

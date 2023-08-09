@@ -16,7 +16,7 @@ int __cdecl pm_sub_10073320(int a1) {
     CHAR pszFileName[1024]; // [esp+20h] [ebp-400h] BYREF
 
     v11 = 1;
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     if (a1) {
         if (a1 == 1) {
@@ -54,7 +54,7 @@ int __cdecl pm_sub_10073320(int a1) {
             v13 = 15;
             do {
                 if (*(int *)((char *)dword_100B6540 + v5)) {
-                    strcpy(pszFileName, aSfx);
+                    strcpy(pszFileName, kSfxSlash);
                     strcat(pszFileName, *v6);
                     v7 = sub_10072CA0(pszFileName);
                     *(int *)((char *)dword_100B5DF0 + v5) = (int)v7;

@@ -56,7 +56,7 @@ int __thiscall meth_10039200(int this) {
         (*(_BYTE *)(dword_106C7CA8 + 84 * *(unsigned __int16 *)(this + 10508) + 76) & 0x10) != 0) {
         v38 = 1;
     }
-    if (!dword_106C6620 || (result = g_chosenTrack, g_chosenTrack == 2) || g_chosenTrack == 8) {
+    if (!dword_106C6620 || (result = gChosenTrack, gChosenTrack == 2) || gChosenTrack == 8) {
         v3 = *(float *)(this + 4144) - -50.0;
         v51[1] = this + 1404;
         v51[0] = this + 2452;
@@ -212,7 +212,7 @@ int __thiscall meth_10039200(int this) {
 // 100394A1: conditional instruction was optimized away because of 'ebp.4!=3'
 // 10039356: variable 'v9' is possibly undefined
 // 10039356: variable 'v10' is possibly undefined
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 106C2CFC: using guessed type int dword_106C2CFC;
 // 106C6620: using guessed type int dword_106C6620;
 // 106C6624: using guessed type int dword_106C6624;

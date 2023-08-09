@@ -17,11 +17,11 @@ int sub_1005F940() {
 
     if (!dword_10220B20)
         qmemcpy(&unk_10AA25D0, &dword_10220B20, 0x118u);
-    g_ChosenWeather = dword_10220B34;
+    gChosenWeather0 = dword_10220B34;
     LOBYTE(dword_10AA28B8) = dword_10220B24;
     v0 = dword_10220B28;
     dword_10AA28A0 = dword_10220B2C;
-    g_chosenTrack = dword_10220B30;
+    gChosenTrack = dword_10220B30;
     v1 = dword_10220B2C + 1;
     dword_10AA28C0 = dword_10220B38;
     v2 = word_10220B40;
@@ -43,11 +43,11 @@ int sub_1005F940() {
     } while (v6);
     dword_10AA28C4 = v5;
     v8 = dword_10AA26F4[0];
-    if (BYTE1(dword_10AA26F4[0]) || g_GameMode == 5 || dword_10220B20)
+    if (BYTE1(dword_10AA26F4[0]) || gGameMode == 5 || dword_10220B20)
         return 1;
     if (LOBYTE(dword_10AA26F4[0]) > (unsigned __int8)byte_10A9DBDC ||
         !LOBYTE(dword_10AA26F4[0]) && byte_10A9DBDC) {
-        g_GameMode = 5;
+        gGameMode = 5;
         if (LOBYTE(dword_10AA26F4[0]) || !byte_10A9DBDC) {
             sub_1005FBC0(1);
         } else {
@@ -57,11 +57,11 @@ int sub_1005F940() {
         }
         if (dword_10220B24 < 4 && dword_10220B2C < 1)
             dword_10AA28B0 = 1;
-        *((_DWORD *)g_unkC8Ptr1 + 26) = 0;
-        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)g_unkC8Ptr1 + 24))(g_unkC8Ptr1, 0);
+        *((_DWORD *)gUnkC8Ptr1 + 26) = 0;
+        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)gUnkC8Ptr1 + 24))(gUnkC8Ptr1, 0);
         result = 0;
     } else {
-        g_GameMode = 0;
+        gGameMode = 0;
         dword_10AA28B4 = 1;
         v9 = 0;
         while (1) {

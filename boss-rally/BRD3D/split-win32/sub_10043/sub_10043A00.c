@@ -19,10 +19,10 @@ int sub_10043A00() {
     sub_1003D0B0(unk, (LPDWORD)&pMem);
     if (pMem) {
         if (*((_DWORD *)pMem + 11) <= 1u) {
-            v0 = getCaptionString(0xBBu);
+            v0 = GetStringWithIndex(0xBBu);
             v1 = dword_10A9D008;
             strcpy(byte_10A9DD28, v0);
-            sub_1003D210(g_HWND, v1, 1);
+            sub_1003D210(gHwnd, v1, 1);
             v12 = pMem;
             strcpy(byte_10A9DD28, String2);
             v2 = GlobalHandle(v12);
@@ -48,8 +48,8 @@ int sub_10043A00() {
                 (*(void(__stdcall **)(SIZE_T, LPCVOID, _DWORD))(*(_DWORD *)unk + 124))(
                     unk, pMem, 0);
             } else {
-                v7 = getCaptionString(0xBCu);
-                v8 = g_HWND;
+                v7 = GetStringWithIndex(0xBCu);
+                v8 = gHwnd;
                 strcpy(byte_10A9DD28, v7);
                 sub_1003D210(v8, dword_10A9D008, 1);
                 strcpy(byte_10A9DD28, String2);

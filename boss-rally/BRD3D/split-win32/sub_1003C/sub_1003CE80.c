@@ -21,9 +21,9 @@ int sub_1003CE80() {
     v1 = sub_1003D0B0(unk, (LPDWORD)&pMem);
     if (v1 >= 0) {
         dword_100AC648 = *((_DWORD *)pMem + 16);
-        g_chosenTrack = dword_100AC648;
+        gChosenTrack = dword_100AC648;
         dword_10AA2A00 = *((_DWORD *)pMem + 17);
-        g_ChosenWeather = dword_10AA2A00;
+        gChosenWeather0 = dword_10AA2A00;
         dword_10AA2A18 = *((_DWORD *)pMem + 18);
         dword_100BD3E0 = *((_DWORD *)pMem + 19);
         dword_100AC658 = dword_100BD3E0;

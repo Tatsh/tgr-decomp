@@ -8,21 +8,20 @@ int sub_1005AFA0() {
     int v4;     // eax
     int v6[4];  // [esp+10h] [ebp-10h] BYREF
 
-    v0 = *(_DWORD *)(*(_DWORD *)dword_118ABE08 + 100);
-    if (!*(_DWORD *)(*(_DWORD *)dword_118ABE08 + 64) ||
-        !*(_DWORD *)(*(_DWORD *)dword_118ABE08 + 96) || !v0)
+    v0 = *(_DWORD *)(*(_DWORD *)gUnk334 + 100);
+    if (!*(_DWORD *)(*(_DWORD *)gUnk334 + 64) || !*(_DWORD *)(*(_DWORD *)gUnk334 + 96) || !v0)
         return -2147467259;
     v6[0] = 0;
-    v6[2] = g_Width;
+    v6[2] = gWidth;
     v6[1] = 0;
-    v6[3] = g_Height;
-    v1 = *(_DWORD **)(*(_DWORD *)dword_118ABE08 + 8);
+    v6[3] = gHeight;
+    v1 = *(_DWORD **)(*(_DWORD *)gUnk334 + 8);
     v1[1] = 1048608897;
     v1[2] = 0;
     v1[3] = 0;
     v1[22] = 1;
-    v2 = *(_DWORD **)(*(_DWORD *)dword_118ABE08 + 8);
-    v3 = *(_DWORD *)(*(_DWORD *)dword_118ABE08 + 100);
+    v2 = *(_DWORD **)(*(_DWORD *)gUnk334 + 8);
+    v3 = *(_DWORD *)(*(_DWORD *)gUnk334 + 100);
     v4 = v2[21];
     v2[22] = 0;
     v2[19] = 1;

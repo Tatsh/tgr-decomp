@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1000A540) --------------------------------------------------------
-int __thiscall ReleaseD3D2_DDraw2_DDraw(unk8C *this) {
+int __thiscall ReleaseD3D2_DDraw2_DDraw(unk0008C *this) {
     IDirect3D2 *d3d2;     // eax
     IDirectDraw2 *ddraw2; // eax
     IDirectDraw *ddraw;   // eax

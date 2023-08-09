@@ -4,14 +4,14 @@ int sub_10042C80() {
     if (dword_10AA33D4) {
         if (++dword_100AC65C > 7) {
             dword_100AC65C = 0;
-            g_HandlingType = 0;
+            gHandlingType = 0;
             return 1;
         }
     } else if (dword_10AA33D0) {
         if (--dword_100AC65C < 0)
             dword_100AC65C = 7;
     }
-    g_HandlingType = dword_100AC65C;
+    gHandlingType = dword_100AC65C;
     return 1;
 }
 // 10042C80: using guessed type int sub_10042C80();

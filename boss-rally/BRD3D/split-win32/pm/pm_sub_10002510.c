@@ -3,7 +3,7 @@
 BOOL pm_sub_10002510() {
     BOOL result; // eax
 
-    if (g_Playmusic && dword_10220CD0 && dword_10220C3C)
+    if (gPlayMusic && dword_10220CD0 && dword_10220C3C)
         result = mciPlayOrClose((DWORD_PTR)hWnd, dword_10220CD4) == 0;
     else
         result = 1;

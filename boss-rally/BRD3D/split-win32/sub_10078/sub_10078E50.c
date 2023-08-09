@@ -3,15 +3,15 @@
 int sub_10078E50() {
     int result; // eax
 
-    result = g_ConfigJoystickIndex;
-    if (g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2) {
+    result = gConfigJoystickIndex;
+    if (gConfigJoystickIndex == 1 || gConfigJoystickIndex == 2) {
         result = dword_10B4E1E0;
         if (dword_10B4E1E0) {
             result = MEMORY[0x118ABDBC];
             if (MEMORY[0x118ABDBC]) {
                 result = dword_106909E0;
                 if (!dword_106909E0)
-                    dword_100BD438 = 250000;
+                    gDIEffectSquareDuration = 250000;
             }
         }
     }

@@ -8,24 +8,24 @@ int __cdecl sub_1005FBC0(int a1) {
     int result;          // eax
 
     LOBYTE(dword_10AA28B8) = dword_10AA26F4[0];
-    g_TransmissionType = dword_10AA27EC;
-    g_SuspensionType = dword_10AA27F4;
+    gTransmissionType = dword_10AA27EC;
+    gSuspensionType = dword_10AA27F4;
     dword_10AA28A4 = BYTE1(dword_10AA26F4[0]);
-    g_ConfigJoystickIndex = dword_10AA27F8;
+    gConfigJoystickIndex = dword_10AA27F8;
     dword_10AA28A0 = dword_10AA26F0;
-    g_UltraCarHeader = (void *)dword_10AA27F0;
+    gTireType = (void *)dword_10AA27F0;
     switch (dword_10AA27F8) {
     case 1:
-        g_ConfigJoystickPtr = g_Config.joystick1;
+        gConfigJoystickPtr = gConfig.joystick1;
         break;
     case 2:
-        g_ConfigJoystickPtr = g_Config.joystick2;
+        gConfigJoystickPtr = gConfig.joystick2;
         break;
     case 3:
-        g_ConfigJoystickPtr = g_Config.joystick3;
+        gConfigJoystickPtr = gConfig.joystick3;
         break;
     default:
-        g_ConfigJoystickPtr = &g_Config;
+        gConfigJoystickPtr = &gConfig;
         break;
     }
     sprintf(byte_10AA2518, "%d", dword_10AA26F0 + 1);

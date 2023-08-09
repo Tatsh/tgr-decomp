@@ -15,7 +15,7 @@ FILE *sub_10041BD0() {
     int v11;             // [esp+Ch] [ebp-108h]
     char FileName[260];  // [esp+10h] [ebp-104h] BYREF
 
-    g_GameMode = 0;
+    gGameMode = 0;
     sub_1003E680();
     dword_10690A18 = 0;
     strcpy(byte_10AA2518, String2);

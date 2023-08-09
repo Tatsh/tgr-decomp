@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1000A800) --------------------------------------------------------
-int __thiscall RestoreDisplayMode(unk8C *this) {
+int __thiscall RestoreDisplayMode(unk0008C *this) {
     IDirectDraw2 *ddraw2; // ecx
 
     this->field_1C &= 0xFFFFFFFD;

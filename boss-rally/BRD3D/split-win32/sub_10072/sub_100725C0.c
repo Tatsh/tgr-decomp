@@ -4,7 +4,7 @@ BOOL __cdecl sub_100725C0(int a1, int a2) {
     int v2; // eax
     int v3; // eax
 
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     LODWORD(dbl_11828E88[a2]) = dword_100B5E30[18 * a1];
     v2 = dword_11828F08[a2];

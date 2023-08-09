@@ -3,9 +3,9 @@
 int sub_1003128C() {
     int result; // eax
 
-    result = g_Width;
-    g_Width1 = g_Width;
-    g_Height1 = g_Height;
+    result = gWidth;
+    g_Width1 = gWidth;
+    g_Height1 = gHeight;
     return result;
 }
 // 100A81C0: using guessed type int g_Width;

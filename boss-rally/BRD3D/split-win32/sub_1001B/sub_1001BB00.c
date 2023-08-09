@@ -3,9 +3,9 @@
 int __cdecl sub_1001BB00(int a1, int a2, int a3, int a4) {
     if (!sub_1007AC20(a1, a2, a3, a4) &&
         (a1 != g_Width1 || a2 != g_Height1 || a3 != g_BitDepth || a4 != dword_106C6644)) {
-        meth_1000B4D0(g_gsu0, a1, a2, a3, a4);
-    if ( !g_gsu0->? )
-        meth_1000B4D0(g_gsu0, 640, 480, 16, 0);
+        meth_unk0008C_1000B4D0(gUnk8C, a1, a2, a3, a4);
+        if (!gUnk8C->width)
+            meth_unk0008C_1000B4D0(gUnk8C, 640, 480, 16, 0);
     }
     return sub_1001BAE0();
 }

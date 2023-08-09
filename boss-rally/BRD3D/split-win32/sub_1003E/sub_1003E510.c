@@ -12,8 +12,8 @@ int sub_1003E510() {
     int v8;     // edx
 
     sub_1003E3A0();
-    g_HandlingType = dword_100AC65C;
-    if (g_GameMode == 6)
+    gHandlingType = dword_100AC65C;
+    if (gGameMode == 6)
         sub_10044540();
     v0 = dword_100AC654;
     if (sub_1003F320(dword_100AC654)) {
@@ -32,12 +32,12 @@ int sub_1003E510() {
                 goto LABEL_8;
         }
     }
-    g_chosenCar = dword_100AC420[v1];
+    gChosenCar = dword_100AC420[v1];
     v2 = dword_100AC4B0[dword_100AC650];
-    g_UltraCarHeader = (void *)dword_100AC4A0[dword_100AC64C];
-    g_SuspensionType = v2;
-    g_TransmissionType = dword_100AC518[dword_10AA2A08];
-    if (g_GameMode) {
+    gTireType = (void *)dword_100AC4A0[dword_100AC64C];
+    gSuspensionType = v2;
+    gTransmissionType = dword_100AC518[dword_10AA2A08];
+    if (gGameMode) {
         v3 = dword_100AC648;
         if (!sub_1003F2B0(dword_100AC648)) {
             do {
@@ -54,16 +54,16 @@ int sub_1003E510() {
         }
         v4 = dword_100AC648;
     LABEL_16:
-        g_chosenTrack = dword_100AC4D8[v4];
+        gChosenTrack = dword_100AC4D8[v4];
         v5 = dword_100AC4C0[dword_10AA2A00];
         dword_100BD3E0 = dword_100AC658;
-        g_ChosenWeather = v5;
+        gChosenWeather0 = v5;
         result = sub_1005FCF0();
     } else {
         v7 = 2 * (BYTE1(dword_10AA26F4[0]) + 12 * LOBYTE(dword_10AA26F4[0]));
         v8 = (unsigned __int8)byte_100B3821[v7];
-        g_chosenTrack = (unsigned __int8)byte_100B3820[v7];
-        g_ChosenWeather = v8;
+        gChosenTrack = (unsigned __int8)byte_100B3820[v7];
+        gChosenWeather0 = v8;
         result = sub_1005FCF0();
     }
     return result;

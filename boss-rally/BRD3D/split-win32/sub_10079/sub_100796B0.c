@@ -6,11 +6,11 @@ HINSTANCE sub_100796B0() {
     char unk[4];            // [esp+4h] [ebp-4h] BYREF
 
     result = GetModuleHandleA(0);
-    hInst = result;
+    hInstance = result;
     if (result) {
         GetDirectXVersion(&dxVersion, unk);
         if (dxVersion >= 0x600) {
-            result = (HINSTANCE)BringWindowToFront();
+            result = (HINSTANCE)CheckPreviousApp();
             if (result)
                 result = (HINSTANCE)(sub_100798F0() != 0);
         } else {

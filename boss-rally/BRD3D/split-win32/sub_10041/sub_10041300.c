@@ -12,10 +12,10 @@ int __cdecl sub_10041300(int a1) {
     if (dword_10AA289C)
         v1 = (char)dword_10AA28B8;
     v2 = 3 * v1;
-    v3 = getCaptionString(*(&dword_100B3810 + 6 * v1));
+    v3 = GetStringWithIndex(*(&dword_100B3810 + 6 * v1));
     result = 0;
     if (strlen(v3)) {
-        v5 = (char *)getCaptionString(*(&dword_100B3810 + 2 * v2));
+        v5 = (char *)GetStringWithIndex(*(&dword_100B3810 + 2 * v2));
         strcpy((char *)(a1 + 11109), _strupr(v5));
         v6 = *(_DWORD *)(a1 + 11100);
         (*(void(__thiscall **)(int))(v6 + 4))(a1 + 11100);

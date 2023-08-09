@@ -19,7 +19,7 @@ int __cdecl sub_10024550(int a1) {
     if (!result)
         goto LABEL_6;
     for (; result == -2005532222; result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2)) {
-        while (meth_1000B2C0(g_gsu0) == -2005532222)
+        while (meth_unk0008C_1000B2C0(gUnk8C) == -2005532222)
             ;
     }
     if (!result) {
@@ -45,7 +45,7 @@ int __cdecl sub_10024550(int a1) {
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZENABLE, 1);
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)1, 0);
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_DITHERENABLE, 1);
-        if (!g_D3dalphacompar)
+        if (!gD3dalphacompar)
             g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE | 0x20, 1);
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE, 2);
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)5, 0);
@@ -61,7 +61,7 @@ int __cdecl sub_10024550(int a1) {
         sub_10024A90(a1);
         dword_106C0680 = (int)v12;
         sub_100192F0(20);
-        sub_10019300((int)&unk_118AB478, 0, 60);
+        text_sub_10019300((int)&unk_118AB478, 0, 60);
         v3 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v3 = -1207959552;
@@ -94,7 +94,7 @@ int __cdecl sub_10024550(int a1) {
         if (!result)
             goto LABEL_18;
         for (; result == -2005532222; result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2)) {
-            while (meth_1000B2C0(g_gsu0) == -2005532222)
+            while (meth_unk0008C_1000B2C0(gUnk8C) == -2005532222)
                 ;
         }
         if (!result) {

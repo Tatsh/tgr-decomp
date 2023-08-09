@@ -142,13 +142,13 @@ int __cdecl sub_1006DDC0(int a1) {
         return 0;
     if (v28 < 1)
         return 0;
-    debugPrint(v16);
+    meth_DebugPrint(v16);
     if (v36 > 0.6)
         return 0;
     sub_1006B510((float *)&v33, (float *)a1, (int *)&v30);
     v37 = *(float *)(v3 + 428) * v35 + *(float *)(v3 + 424) * v34 +
           *(float *)(v3 + 420) * *(float *)&v33;
-    debugPrint(v20);
+    meth_DebugPrint(v20);
     v23 = v37;
     if (v24)
         v23 = -v23;
@@ -161,7 +161,7 @@ int __cdecl sub_1006DDC0(int a1) {
     if (v26 + v25 <= 0.0)
         v31 = -0.1;
     v32 = 0.0;
-    debugPrint(v21);
+    meth_DebugPrint(v21);
     sub_10074770((float *)&v33, (int)v2, &v30);
     *(float *)(a1 + 316) = *(float *)(a1 + 316) - *(float *)&v33 * -2.0;
     *(float *)(a1 + 320) = *(float *)(a1 + 320) - v34 * -2.0;

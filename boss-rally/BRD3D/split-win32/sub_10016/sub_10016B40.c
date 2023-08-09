@@ -49,7 +49,7 @@ char __cdecl sub_10016B40(int a1) {
         v2 = (char *)&unk_100C12A0 + 89992 * *(_DWORD *)(a1 + 88 * dword_106C5708 + 16);
         sub_1003407D(v31, v32);
         v3 = dword_106C5708;
-        v4 = g_Width - v2[228] - 16;
+        v4 = gWidth - v2[228] - 16;
         v33 = v4;
         v5 = *(_DWORD *)(a1 + 88 * dword_106C5708 + 4) +
              *(_DWORD *)(a1 + 88 * dword_106C5708 + 12) - v2[229] - 4;
@@ -136,7 +136,7 @@ char __cdecl sub_10016B40(int a1) {
             if (v39 > 0.0)
                 v18 = v18 - (*((float *)v2 + 60) - *((float *)v2 + 59)) * v39 * 0.00012500001;
             v35 = (float)v34;
-            v37 = (float)(g_Height - v17);
+            v37 = (float)(gHeight - v17);
             *(float *)v15 = (float)(__int16)(__int64)(cos(v18 - 0.050000001) * v41 + v35);
             *((_DWORD *)v15 + 2) = 0;
             *((float *)v15 + 1) = (float)(__int16)(__int64)(sin(v18 - 0.050000001) * v41 + v37);

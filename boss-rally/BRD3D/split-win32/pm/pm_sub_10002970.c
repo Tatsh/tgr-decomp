@@ -3,7 +3,7 @@
 int pm_sub_10002970() {
     int v0; // eax
 
-    if (g_Playmusic && dword_10220CD0) {
+    if (gPlayMusic && dword_10220CD0) {
         v0 = pm_sub_10002910() + 1;
         dword_10220CD4 = v0;
         if (v0 > playParmsPlayTo) {

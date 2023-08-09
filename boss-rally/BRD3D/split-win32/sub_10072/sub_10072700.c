@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10072700) --------------------------------------------------------
 int __cdecl sub_10072700(int a1, int a2) {
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     if (!a1)
         return 0;

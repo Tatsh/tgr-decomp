@@ -1,18 +1,18 @@
 #include "types-win32.h"
 //----- (10003320) --------------------------------------------------------
-bool __cdecl CHK_FileExists(char *filename) {
-    FILE *fp;                // eax
+BOOL __cdecl CHK_FileExists(char *filename) {
+    BOOL fp;                 // eax
     CHAR debugMessage[1024]; // [esp+4h] [ebp-400h] BYREF
 
     if (debugOutput) {
         sprintf(debugMessage, "CHK_FileExists(%s)\n", filename);
         OutputDebugStringA(debugMessage);
     }
-    fp = fopen(filename, kFileModeReadBinary);
+    fp = (BOOL)fopen(filename, kFileModeReadBinary);
     if (fp) {
-        fclose(fp);
-        LOBYTE(fp) = 1;
+        fclose((FILE *)fp);
+        fp = 1;
     }
-    return (char)fp;
+    return fp;
 }
 // 10220CE0: using guessed type int debugOutput;

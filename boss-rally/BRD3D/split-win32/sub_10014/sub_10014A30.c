@@ -53,23 +53,23 @@ int __cdecl sub_10014A30(int a1) {
     int v50;         // ebx
     float v51;       // eax
     void *v52;       // ecx
-    LPCSTR v53;      // eax
-    LPCSTR v54;      // eax
+    char *v53;       // eax
+    char *v54;       // eax
     void *v55;       // ecx
     void *v56;       // ecx
     int v57;         // esi
-    LPCSTR v58;      // eax
+    char *v58;       // eax
     int v59;         // edi
-    LPCSTR v60;      // eax
+    char *v60;       // eax
     int v61;         // edi
-    LPCSTR v62;      // eax
+    char *v62;       // eax
     int v63;         // edi
-    LPCSTR v64;      // eax
-    LPCSTR v65;      // eax
+    char *v64;       // eax
+    char *v65;       // eax
     int v66;         // edi
-    LPCSTR v67;      // eax
+    char *v67;       // eax
     int v68;         // edi
-    LPCSTR v69;      // eax
+    char *v69;       // eax
     int v70;         // edi
     char *v71;       // eax
     const char *v72; // eax
@@ -77,7 +77,7 @@ int __cdecl sub_10014A30(int a1) {
     char *v74;       // eax
     const char *v75; // eax
     int v76;         // edi
-    LPCSTR v77;      // eax
+    char *v77;       // eax
     int v78;         // esi
     char(**v79)[8];  // eax
     int v80;         // ebx
@@ -133,9 +133,9 @@ int __cdecl sub_10014A30(int a1) {
     sub_10013A10(v100);
     sub_1002B670();
     sub_10032873(v1);
-    debugPrint(v2);
+    meth_DebugPrint(v2);
     sub_1000F5C0();
-    debugPrint(v3);
+    meth_DebugPrint(v3);
     if (dword_100A6CF8 || dword_106C6608) {
         sub_100314E8(0, 0, 0);
         if (dword_100A6CF8)
@@ -154,7 +154,7 @@ int __cdecl sub_10014A30(int a1) {
     v121 = 0;
     if (dword_100AA8B4 > 0) {
         while (1) {
-            debugPrint(v5);
+            meth_DebugPrint(v5);
             v7 = &v1[22 * v6];
             dword_106C2CF8 = (int)&v112[2778 * v7[4]];
             v8 = *(void **)(dword_106C2CF8 + 10036);
@@ -194,7 +194,7 @@ int __cdecl sub_10014A30(int a1) {
             }
             sub_10031866();
             sub_10031DCF();
-            debugPrint(v9);
+            meth_DebugPrint(v9);
             sub_100180B0((int)v1);
             sub_1002AEF0();
             sub_1003A990();
@@ -209,10 +209,10 @@ int __cdecl sub_10014A30(int a1) {
                 } while (v10 < dword_100B36FC);
             }
             sub_10011590((int)v1, 0, (int)v124, (int)v112);
-            if (!dword_106C6620 || g_chosenTrack == 2 || g_chosenTrack == 8) {
+            if (!dword_106C6620 || gChosenTrack == 2 || gChosenTrack == 8) {
                 sub_10031866();
                 sub_10031DCF();
-                debugPrint(v13);
+                meth_DebugPrint(v13);
                 v15 = 0;
                 if (dword_100B36F8 > 0) {
                     v16 = v124 + 24;
@@ -224,17 +224,17 @@ int __cdecl sub_10014A30(int a1) {
                         v16 += 32;
                     } while (v15 < dword_100B36F8);
                 }
-                debugPrint(v14);
+                meth_DebugPrint(v14);
                 nullsub_2();
                 sub_100140E0((int)v1);
             }
-            debugPrint(v12);
+            meth_DebugPrint(v12);
             sub_100147B0();
             sub_10011590((int)v1, 1, (int)v124, (int)v112);
-            if (dword_106C6620 && g_chosenTrack != 2 && g_chosenTrack != 8) {
+            if (dword_106C6620 && gChosenTrack != 2 && gChosenTrack != 8) {
                 sub_10031866();
                 sub_10031DCF();
-                debugPrint(v19);
+                meth_DebugPrint(v19);
                 v21 = 0;
                 if (dword_100B36F8 > 0) {
                     v22 = v124 + 24;
@@ -246,11 +246,11 @@ int __cdecl sub_10014A30(int a1) {
                         v22 += 32;
                     } while (v21 < dword_100B36F8);
                 }
-                debugPrint(v20);
+                meth_DebugPrint(v20);
                 nullsub_2();
                 sub_100140E0((int)v1);
             }
-            debugPrint(v18);
+            meth_DebugPrint(v18);
             v25 = 0;
             if (dword_100B36F8 > 0) {
                 v26 = v124 + 24;
@@ -261,7 +261,7 @@ int __cdecl sub_10014A30(int a1) {
                     v26 += 32;
                 } while (v25 < dword_100B36F8);
             }
-            debugPrint(v24);
+            meth_DebugPrint(v24);
             v28 = 0;
             if (dword_100B36F8 > 0) {
                 v27 = v124;
@@ -274,11 +274,11 @@ int __cdecl sub_10014A30(int a1) {
                     v29 += 32;
                 } while (v28 < dword_100B36F8);
             }
-            debugPrint(v27);
+            meth_DebugPrint(v27);
             sub_10014450((int)v1, (int)v124);
-            debugPrint(v31);
-            meth_10019B50();
-            debugPrint(v32);
+            meth_DebugPrint(v31);
+            sub_10019B50();
+            meth_DebugPrint(v32);
             v104 = flt_10575504 - flt_105754F8 * -0.5;
             sub_1002AF10((int)v1, v104);
             v105 = (float)v7[3];
@@ -313,11 +313,11 @@ int __cdecl sub_10014A30(int a1) {
                 sub_10033E83((int)dword_106C6490, *((float *)dword_106C6490 + 16), v92, v114, v122);
                 sub_10031866();
                 sub_10031DCF();
-                debugPrint(v37);
+                meth_DebugPrint(v37);
                 sub_100180B0(v113);
                 sub_1002AEF0();
                 sub_1003A990();
-                debugPrint(v38);
+                meth_DebugPrint(v38);
                 v39 = 0;
                 if (dword_100B36FC > 0) {
                     v115 = (int)v112;
@@ -328,10 +328,10 @@ int __cdecl sub_10014A30(int a1) {
                     } while (v39 < dword_100B36FC);
                 }
                 sub_10011590(v113, 0, (int)v124, (int)v112);
-                if (!dword_106C6620 || g_chosenTrack == 2 || g_chosenTrack == 8) {
+                if (!dword_106C6620 || gChosenTrack == 2 || gChosenTrack == 8) {
                     sub_10031866();
                     sub_10031DCF();
-                    debugPrint(v40);
+                    meth_DebugPrint(v40);
                     v42 = 0;
                     if (dword_100B36F8 > 0) {
                         v116 = v124 + 24;
@@ -344,16 +344,16 @@ int __cdecl sub_10014A30(int a1) {
                             v116 += 32;
                         } while (v42 < dword_100B36F8);
                     }
-                    debugPrint(v41);
+                    meth_DebugPrint(v41);
                     nullsub_2();
                     sub_100140E0(v113);
                 }
                 sub_10011590(v113, 1, (int)v124, (int)v112);
                 if (dword_106C6620) {
-                    if (g_chosenTrack != 2 && g_chosenTrack != 8) {
+                    if (gChosenTrack != 2 && gChosenTrack != 8) {
                         sub_10031866();
                         sub_10031DCF();
-                        debugPrint(v45);
+                        meth_DebugPrint(v45);
                         v46 = 0;
                         if (dword_100B36F8 > 0) {
                             v117 = v124 + 24;
@@ -368,7 +368,7 @@ int __cdecl sub_10014A30(int a1) {
                         }
                     }
                 }
-                debugPrint(v44);
+                meth_DebugPrint(v44);
                 v49 = 0;
                 if (dword_100B36F8 > 0) {
                     v118 = v124 + 24;
@@ -380,7 +380,7 @@ int __cdecl sub_10014A30(int a1) {
                         v118 += 32;
                     } while (v49 < dword_100B36F8);
                 }
-                debugPrint(v48);
+                meth_DebugPrint(v48);
                 v50 = 0;
                 if (dword_100B36F8 > 0) {
                     v119 = v124 + 24;
@@ -394,7 +394,7 @@ int __cdecl sub_10014A30(int a1) {
                 }
                 v106 = flt_105754F8 + flt_10575504;
                 sub_1002AF10(v113, v106);
-                debugPrint(v52);
+                meth_DebugPrint(v52);
                 *(_DWORD *)(dword_106C2CF8 + 10036) = v123;
                 dword_106C6490 = v123;
                 sub_10032A42(*v7, v7[1], v7[2], v7[3], 1);
@@ -402,11 +402,11 @@ int __cdecl sub_10014A30(int a1) {
                 v1 = (int *)v113;
             }
             sub_10014930();
-            if (g_GameMode == 5)
+            if (gGameMode == GAME_MODE_5)
                 break;
             if (dword_100AA894) {
-                if (g_GameMode == 4) {
-                    if (!dword_100AA894 || g_GameMode != 4 || dword_106805B8)
+                if (gGameMode == GAME_MODE_4) {
+                    if (!dword_100AA894 || gGameMode != GAME_MODE_4 || dword_106805B8)
                         goto LABEL_109;
                     sub_10019260();
                     sub_100192F0(15);
@@ -416,28 +416,28 @@ int __cdecl sub_10014A30(int a1) {
                             if ((*(_BYTE *)(*(_DWORD *)(dword_106C2CF8 + 3840) + 104) & 2) != 0)
                                 sub_10017790((int)v1);
                         } else {
-                            debugPrint((void *)(dword_106C2CF8 + 10248));
+                            meth_DebugPrint((void *)(dword_106C2CF8 + 10248));
                             sub_10032C38(*v7, v7[1], v7[2], v7[3], 1);
                             sub_10017D90((int)v1);
                             sub_10017890(v1, (int)v112);
-                            debugPrint(v55);
+                            meth_DebugPrint(v55);
                             if (dword_106C6490 != (void *)(dword_106C2CF8 + 10180))
-                                debugPrint(dword_106C6490);
+                                meth_DebugPrint(dword_106C6490);
                         }
                         goto LABEL_109;
                     }
                     sub_10019260();
-                    sub_10019280();
+                    Set_byte_104B035C_To0();
                     sub_100192F0(15);
-                    v54 = getCaptionString(0xF2u);
-                    sub_10019300((int)v54, 28, 32);
-                    if (g_GameMode == 6)
+                    v54 = (char *)GetStringWithIndex(0xF2u);
+                    text_sub_10019300(v54, 28, 32);
+                    if (gGameMode == GAME_MODE_6)
                         sub_10017890(v1, (int)v112);
                 }
-                sub_10019290();
+                Set_byte_104B035C_To1();
                 v107 = g_Height1 - 24;
                 v97 = g_Width1 - 28;
-                v53 = getCaptionString(0xF4u);
+                v53 = (char *)GetStringWithIndex(0xF4u);
                 goto LABEL_108;
             }
         LABEL_109:
@@ -448,16 +448,16 @@ int __cdecl sub_10014A30(int a1) {
                 goto LABEL_110;
         }
         sub_10019260();
-        sub_10019270();
+        Set_byte_104B035C_To2();
         sub_100192F0(40);
         v107 = g_Height1 - 30;
         v97 = g_Width1 / 2;
         if (*(_BYTE *)(*((_DWORD *)v112 + 931) + 4))
-            v53 = getCaptionString(0xF0u);
+            v53 = (char *)GetStringWithIndex(0xF0u);
         else
-            v53 = getCaptionString(0xF1u);
+            v53 = (char *)GetStringWithIndex(0xF1u);
     LABEL_108:
-        sub_10019300((int)v53, v97, v107);
+        text_sub_10019300(v53, v97, v107);
         goto LABEL_109;
     }
 LABEL_110:
@@ -465,55 +465,55 @@ LABEL_110:
     sub_1003289F(0, 0, g_Width1, g_Height1);
     if (dword_106909B4 == 2) {
         v57 = *v1 + (v1[2] >> 1);
-        debugPrint(v56);
+        meth_DebugPrint(v56);
         sub_10019260();
-        sub_10019270();
+        Set_byte_104B035C_To2();
         sub_100192F0(40);
         v108 = 5 * g_Height1 / 16;
-        v58 = getCaptionString(0xF5u);
-        sub_10019300((int)v58, v57, v108);
+        v58 = (char *)GetStringWithIndex(0xF5u);
+        text_sub_10019300(v58, v57, v108);
         v59 = 5 * g_Height1 / 11;
         sub_100192F0(20);
-        v60 = getCaptionString(0xF6u);
-        sub_10019300((int)v60, v57, v59);
+        v60 = (char *)GetStringWithIndex(0xF6u);
+        text_sub_10019300(v60, v57, v59);
         v61 = v59 + 40;
         if (dword_10680734)
-            v62 = getCaptionString(0xF8u);
+            v62 = (char *)GetStringWithIndex(0xF8u);
         else
-            v62 = getCaptionString(0xF7u);
-        sub_10019300((int)v62, v57, v61);
+            v62 = (char *)GetStringWithIndex(0xF7u);
+        text_sub_10019300(v62, v57, v61);
         v63 = v61 + 20;
         if (dword_10680734 == 1)
-            v64 = getCaptionString(0xF9u);
+            v64 = (char *)GetStringWithIndex(0xF9u);
         else
-            v64 = getCaptionString(0xFAu);
+            v64 = (char *)GetStringWithIndex(0xFAu);
     LABEL_140:
-        sub_10019300((int)v64, v57, v63);
+        text_sub_10019300(v64, v57, v63);
         goto LABEL_141;
     }
     if (dword_106909B4) {
         v57 = *v1 + (v1[2] >> 1);
-        debugPrint(v56);
+        meth_DebugPrint(v56);
         sub_10019260();
-        sub_10019270();
+        Set_byte_104B035C_To2();
         sub_100192F0(40);
         v109 = 5 * g_Height1 / 16;
-        v65 = getCaptionString(0xF5u);
-        sub_10019300((int)v65, v57, v109);
+        v65 = (char *)GetStringWithIndex(0xF5u);
+        text_sub_10019300(v65, v57, v109);
         v66 = 5 * g_Height1 / 11;
         sub_100192F0(20);
         if (dword_10680734)
-            v67 = getCaptionString(0xFCu);
+            v67 = (char *)GetStringWithIndex(0xFCu);
         else
-            v67 = getCaptionString(0xFBu);
-        sub_10019300((int)v67, v57, v66);
+            v67 = (char *)GetStringWithIndex(0xFBu);
+        text_sub_10019300(v67, v57, v66);
         v68 = v66 + 20;
-        if (!g_NetworkPlay) {
+        if (!gNetworkPlay) {
             if (dword_10680734 == 1)
-                v69 = getCaptionString(0xFFu);
+                v69 = (char *)GetStringWithIndex(0xFFu);
             else
-                v69 = getCaptionString(0x100u);
-            sub_10019300((int)v69, v57, v68);
+                v69 = (char *)GetStringWithIndex(0x100u);
+            text_sub_10019300(v69, v57, v68);
         }
         v70 = v68 + 20;
         v71 = aY1;
@@ -521,44 +521,44 @@ LABEL_110:
             v71 = aRy_0;
         v110 = dword_10B4E70C;
         v98 = v71;
-        v72 = getCaptionString(0x101u);
+        v72 = GetStringWithIndex(0x101u);
         sprintf(Buffer, v72, v98, v110);
-        sub_10019300((int)Buffer, v57, v70);
+        text_sub_10019300(Buffer, v57, v70);
         v73 = v70 + 20;
         v74 = aY1;
         if (dword_10680734 != 3)
             v74 = aRy_0;
         v111 = dword_10B4E708;
         v99 = v74;
-        v75 = getCaptionString(0x102u);
+        v75 = GetStringWithIndex(0x102u);
         sprintf(Buffer, v75, v99, v111);
-        sub_10019300((int)Buffer, v57, v73);
+        text_sub_10019300(Buffer, v57, v73);
         v76 = v73 + 20;
-        if (g_GameMode) {
+        if (gGameMode) {
             if (dword_10680734 == 4)
-                v77 = getCaptionString(0x105u);
+                v77 = (char *)GetStringWithIndex(0x105u);
             else
-                v77 = getCaptionString(0x106u);
+                v77 = (char *)GetStringWithIndex(0x106u);
         } else if (dword_10680734 == 4) {
-            v77 = getCaptionString(0x103u);
+            v77 = (char *)GetStringWithIndex(0x103u);
         } else {
-            v77 = getCaptionString(0x104u);
+            v77 = (char *)GetStringWithIndex(0x104u);
         }
-        sub_10019300((int)v77, v57, v76);
+        text_sub_10019300(v77, v57, v76);
         v63 = v76 + 20;
         if (dword_10680734 == 5)
-            v64 = getCaptionString(0x107u);
+            v64 = (char *)GetStringWithIndex(0x107u);
         else
-            v64 = getCaptionString(0x108u);
+            v64 = (char *)GetStringWithIndex(0x108u);
         goto LABEL_140;
     }
 LABEL_141:
-    if (g_GameMode == 4 && dword_106805B8 == 2) {
+    if (gGameMode == GAME_MODE_4 && dword_106805B8 == 2) {
         sub_10015BD0(v1);
-    } else if (g_GameMode == 4 && dword_106805B8 == 1 && (&off_100AA018)[8 * dword_106805C0] &&
-               *(float *)&dword_106806DC > 0.5) {
+    } else if (gGameMode == GAME_MODE_4 && dword_106805B8 == 1 &&
+               (&off_100AA018)[8 * dword_106805C0] && *(float *)&dword_106806DC > 0.5) {
         sub_10019260();
-        sub_10019270();
+        Set_byte_104B035C_To2();
         sub_100192A0(255, 255, 255, 255, 255, 255);
         v78 = 0;
         v79 = &(&off_100AA020)[8 * dword_106805C0];
@@ -577,30 +577,30 @@ LABEL_141:
             do {
                 if ((*(&off_100AA020)[8 * dword_106805C0 + 4 * v81])[0] == 96) {
                     sub_100192F0(15);
-                    sub_10019300((int)&(*(&off_100AA020)[8 * dword_106805C0 + 4 * v81])[1],
-                                 g_Width1 / 2,
-                                 v80 + v82 / 2);
+                    text_sub_10019300(&(*(&off_100AA020)[8 * dword_106805C0 + 4 * v81])[1],
+                                      g_Width1 / 2,
+                                      v80 + v82 / 2);
                 } else {
                     sub_100192F0(20);
-                    sub_10019300((int)(&off_100AA020)[8 * dword_106805C0 + 4 * v81],
-                                 g_Width1 / 2,
-                                 v80 + v82 / 2);
+                    text_sub_10019300((char *)(&off_100AA020)[8 * dword_106805C0 + 4 * v81],
+                                      g_Width1 / 2,
+                                      v80 + v82 / 2);
                 }
                 --v81;
                 v82 -= 40;
             } while (v81 >= 0);
         }
         sub_100192F0(15);
-        sub_10019300((int)(&off_100AA018)[8 * dword_106805C0], g_Width1 / 2, v80 - 20);
+        text_sub_10019300((char *)(&off_100AA018)[8 * dword_106805C0], g_Width1 / 2, v80 - 20);
     }
     sub_1002B340();
     if (dword_106C662C >= 2) {
         sub_10032A42(0, 0, g_Width1, g_Height1, 1);
-        debugPrint(v84);
+        meth_DebugPrint(v84);
     }
-    debugPrint(v83);
+    meth_DebugPrint(v83);
     sub_10033498();
-    debugPrint(v85);
+    meth_DebugPrint(v85);
     return sub_10033838();
 }
 // 10014A9B: variable 'v2' is possibly undefined
@@ -631,7 +631,6 @@ LABEL_141:
 // 10015B92: variable 'v83' is possibly undefined
 // 10015BAF: variable 'v85' is possibly undefined
 // 100A6CF8: using guessed type int dword_100A6CF8;
-// 100AA010: using guessed type int g_GameMode;
 // 100AA018: using guessed type char (*off_100AA018)[8];
 // 100AA020: using guessed type char (*off_100AA020)[8];
 // 100AA888: using guessed type int dword_100AA888;
@@ -639,8 +638,8 @@ LABEL_141:
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 100B36F8: using guessed type int dword_100B36F8;
 // 100B36FC: using guessed type int dword_100B36FC;
-// 100B380C: using guessed type int g_chosenTrack;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 100B380C: using guessed type int gChosenTrack;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 10277EA0: using guessed type int dword_10277EA0;
 // 1039C168: using guessed type float flt_1039C168[];
 // 105754F8: using guessed type float flt_105754F8;

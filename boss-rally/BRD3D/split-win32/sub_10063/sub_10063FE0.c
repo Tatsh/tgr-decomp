@@ -82,7 +82,7 @@ void __cdecl sub_10063FE0(int a1) {
             goto LABEL_25;
         }
     }
-    if (g_GameMode == 4 || g_GameMode == 5 || dword_106909E0) {
+    if (gGameMode == GAME_MODE_4 || gGameMode == GAME_MODE_5 || dword_106909E0) {
         v8 = *(_DWORD *)(a1 + 320);
         if (v8 == dword_106C1638 || dword_100AA8B4 > 1 && v8 == dword_106C1690) {
             if (dword_10AF9BB0) {
@@ -215,16 +215,16 @@ LABEL_47:
         else
             *(_DWORD *)(a1 + 10016) = 1065353216;
     }
-    if (g_GameMode == 5) {
+    if (gGameMode == GAME_MODE_5) {
         sub_1003B020(a1 + 48, a1, 15.0);
-        meth_10064350(a1);
+        meth_10064350((_DWORD *)a1);
         v36 = *(_DWORD *)(a1 + 3880);
         v37 = *(_DWORD *)(a1 + 3884);
         v58 = *(_DWORD *)(a1 + 3876);
         v59 = v36;
         v60 = v37;
         sub_1003B020(a1 + 48, a1, -15.0);
-        meth_10064350(a1);
+        meth_10064350((_DWORD *)a1);
         **(_DWORD **)(a1 + 10688) &= 0xF0C0FFFF;
         if (*(float *)(a1 + 4084) >= 114.5) {
             v46 = (168.5 - *(float *)(a1 + 4084)) * 0.5;
@@ -296,7 +296,7 @@ LABEL_47:
             *(_DWORD *)(a1 + 860) = -1;
         dword_118ABDCC = 0;
     }
-    meth_10063660(a1);
+    meth_10063660((_DWORD *)a1);
 }
 // 10063876: variable 'v4' is possibly undefined
 // 10063876: variable 'v5' is possibly undefined
@@ -304,7 +304,6 @@ LABEL_47:
 // 100639B7: variable 'v20' is possibly undefined
 // 10063BBF: variable 'v31' is possibly undefined
 // 10063BBF: variable 'v32' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 106909E0: using guessed type int dword_106909E0;
 // 106C1638: using guessed type int dword_106C1638;

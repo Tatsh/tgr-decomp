@@ -1,64 +1,64 @@
 #include "types-win32.h"
 //----- (10071130) --------------------------------------------------------
-char __cdecl sub_10071130(int a1, FILE *Stream) {
-    char result;    // al
-    const char *v3; // eax
-    size_t v4;      // esi
-    FILE *v5;       // eax
-    FILE *v6;       // ebx
-    BOOL v7;        // eax
-    _DWORD *v8;     // ecx
-    int v9[5];      // [esp+Ch] [ebp-14h] BYREF
+char __cdecl sub_10071130(enum MACRO_UNK10071130 a1, FILE *Stream) {
+    char result;            // al
+    char *filename;         // eax
+    size_t size;            // esi
+    FILE *fp0;              // eax
+    FILE *fp;               // ebx
+    BOOL bufferSizeMatches; // eax
+    _DWORD *v8;             // ecx
+    int v9[5];              // [esp+Ch] [ebp-14h] BYREF
 
     switch (a1) {
-    case 4:
-        return sub_10070610(4, Stream);
-    case 0:
-        return sub_10070610(0, Stream);
-    case 1:
+    case UNK10071130_4:
+        return sub_10070610(UNK10071130_4, Stream);
+    case UNK10071130_0:
+        return sub_10070610(UNK10071130_0, Stream);
+    case UNK10071130_1:
         return sub_10070E60((int)Stream);
-    case 2:
-    case 3:
-        v3 = aCRallyconfigDa;
-        v4 = 256;
+    case UNK10071130_2:
+    case UNK10071130_3:
+        filename = aCRallyconfigDa;
+        size = 256;
         break;
     default:
-        v3 = (const char *)Stream;
-        v4 = (size_t)Stream;
+        filename = (char *)Stream;
+        size = (size_t)Stream;
         break;
     }
-    v5 = fopen(v3, kFileModeReadBinary);
-    v6 = v5;
-    if (!v5)
-        return (_BYTE)Stream != 0;
-    if (a1 == 2)
-        v7 = freadLock(Str1, 1u, 0x80u, v5) == 128;
+    fp0 = fopen(filename, kFileModeReadBinary);
+    fp = fp0;
+    if (!fp0)
+        return (_BYTE)Stream != NULL;
+    if (a1 == UNK10071130_2)
+        bufferSizeMatches = freadLock(gBuffer, 1u, 0x80u, fp0) == 0x80;
     else
-        v7 = freadLock(Str1, 1u, v4, v5) == v4;
-    if (!v7)
+        bufferSizeMatches = freadLock(gBuffer, 1u, size, fp0) == size;
+    if (!bufferSizeMatches)
         goto LABEL_17;
-    if (a1 == 2) {
-        dword_100ADF58 = *(_DWORD *)Str1;
+    if (a1 == UNK10071130_2) {
+        dword_100ADF58 = *(_DWORD *)gBuffer;
         dword_100ADF5C = (int)dword_11782E2C;
         dword_100ADF60 = dword_11782E30;
-        debugPrint(dword_11782E2C);
-        if (freadLock(Str1, 1u, 0x80u, v6) != 128) {
+        meth_DebugPrint(dword_11782E2C);
+        if (freadLock(gBuffer, 1u, 0x80u, fp) != 128) {
         LABEL_17:
-            fclose(v6);
+            fclose(fp);
             return 0;
         }
-        qmemcpy(v9, Str1, sizeof(v9));
+        qmemcpy(v9, gBuffer, sizeof(v9));
         *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 62) = v9[0];
         *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 63) = v9[1];
         *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 64) = v9[2];
         *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 65) = v9[3];
         v8 = *(&dword_10ACED34 + 2778 * dword_10690A18);
         v8[66] = v9[4];
-        debugPrint(v8);
-        fclose(v6);
+        meth_DebugPrint(v8);
+        fclose(fp);
         result = 1;
     } else {
-        fclose(v6);
+        fclose(fp);
         result = 1;
     }
     return result;

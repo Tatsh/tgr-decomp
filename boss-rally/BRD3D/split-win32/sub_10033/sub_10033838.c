@@ -51,37 +51,37 @@ int sub_10033838() {
     dword_106C1170 = (dword_106C0680 - (int)v0) >> 3;
     if (dword_106C1170 > 12000)
         sub_10035BBA((int)aHugeGlistError);
-    debugPrint(v0);
+    meth_DebugPrint(v0);
     if (dword_106C6664) {
-        debugPrint(v1);
-        sub_10042AF0();
-        debugPrint(v2);
+        meth_DebugPrint(v1);
+        meth_unk1A5E0_10042AF0();
+        meth_DebugPrint(v2);
         if (dword_106C198C) {
             dword_106C198C();
             dword_106C198C = 0;
         }
-        debugPrint(v3);
-        sub_10042AF0();
+        meth_DebugPrint(v3);
+        meth_unk1A5E0_10042AF0();
         if (dword_106C1608) {
             dword_106C198C();
             dword_106C198C = 0;
         }
-        debugPrint(v4);
+        meth_DebugPrint(v4);
         dword_106C020C = sub_10060E90();
         dword_106C1620 = dword_106C020C - dword_106C0208;
         if (dword_106C65E0) {
             v5 = (void *)--dword_106C65E0;
             if (!dword_106C65E0) {
-                debugPrint(v5);
-                debugPrint(v6);
+                meth_DebugPrint(v5);
+                meth_DebugPrint(v6);
                 dword_106C65E8 = dword_106C65E4;
             }
         }
-        debugPrint(v5);
-        debugPrint(v7);
-        debugPrint(v8);
+        meth_DebugPrint(v5);
+        meth_DebugPrint(v7);
+        meth_DebugPrint(v8);
         if (!dword_106C65F4 && !dword_106C65F8)
-            debugPrint(v9);
+            meth_DebugPrint(v9);
         if (dword_106C65F8)
             --dword_106C65F8;
         meth_1002C210(v9);
@@ -90,10 +90,10 @@ int sub_10033838() {
     } else {
         v10 = (void *)++dword_106C6664;
     }
-    debugPrint(v10);
+    meth_DebugPrint(v10);
     dword_106C56E4 = dword_106C6598;
-    debugPrint(v11);
-    debugPrint(v12);
+    meth_DebugPrint(v11);
+    meth_DebugPrint(v12);
     result = dword_10B501D0(v16[12]);
     dword_106C65EC ^= 1u;
     return result;

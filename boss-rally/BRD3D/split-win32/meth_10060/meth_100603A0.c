@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100603A0) --------------------------------------------------------
-LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(unk1 *this, HWND hwnd) {
+LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd) {
     LPDIRECTINPUTDEVICEA result; // eax
     DWORD v4;                    // eax
     int v5;                      // ebx
@@ -29,43 +29,45 @@ LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(unk1 *this, HWND hwnd) {
     dword_10AA33B0 += v4 - v5;
     if (dword_10AA33B0 > 120)
         dword_10AA33A8 = 1;
-    result = this->lpDIDeviceA;
+    result = (LPDIRECTINPUTDEVICEA) * ((_DWORD *)this + 20);
     if (!result)
         return result;
-    result->lpVtbl->Acquire(this->lpDIDeviceA);
-    while (this->lpDIDeviceA->lpVtbl->GetDeviceState(this->lpDIDeviceA, 16, v19) == -2147024866) {
-        if (this->lpDIDeviceA->lpVtbl->Acquire(this->lpDIDeviceA) < 0)
+    result->lpVtbl->Acquire((IDirectInputDeviceA *)*((_DWORD *)this + 20));
+    while ((*(int(__stdcall **)(_DWORD, int, int *))(**((_DWORD **)this + 20) + 36))(
+               *((_DWORD *)this + 20), 16, v19) == -2147024866) {
+        if ((*(int(__stdcall **)(_DWORD))(**((_DWORD **)this + 20) + 28))(*((_DWORD *)this + 20)) <
+            0)
             break;
-        this->lpDIDeviceA->lpVtbl->Acquire(this->lpDIDeviceA);
+        (*(void(__stdcall **)(_DWORD))(**((_DWORD **)this + 20) + 28))(*((_DWORD *)this + 20));
     }
-    v6 = v19[0] + this->field_46;
-    v7 = v19[1] + this->field_45;
-    v8 = v19[2] + this->height0;
-    this->field_46 = v6;
-    this->field_45 = v7;
-    this->height0 = v8;
+    v6 = v19[0] + *(_DWORD *)this;
+    v7 = v19[1] + *((_DWORD *)this + 1);
+    v8 = v19[2] + *((_DWORD *)this + 2);
+    *(_DWORD *)this = v6;
+    *((_DWORD *)this + 1) = v7;
+    *((_DWORD *)this + 2) = v8;
     if (v6 >= 0) {
         if (v6 >= dword_10AA33B8)
-            this->field_46 = dword_10AA33B8;
+            *(_DWORD *)this = dword_10AA33B8;
     } else {
-        this->field_46 = 0;
+        *(_DWORD *)this = 0;
     }
     if (v7 >= 0) {
         if (v7 >= dword_10AA33B4)
-            this->field_45 = dword_10AA33B4;
+            *((_DWORD *)this + 1) = dword_10AA33B4;
     } else {
-        this->field_45 = 0;
+        *((_DWORD *)this + 1) = 0;
     }
     v9 = v20 & 0x80;
     v10 = BYTE1(v20) & 0x80;
     v11 = BYTE2(v20) & 0x80;
     v12 = HIBYTE(v20) & 0x80;
-    LOBYTE(this->field_33) = v20 & 0x80;
-    BYTE1(this->field_33) = v10;
-    BYTE2(this->field_33) = v11;
-    HIBYTE(this->field_33) = v12;
+    *((_BYTE *)this + 36) = v20 & 0x80;
+    *((_BYTE *)this + 37) = v10;
+    *((_BYTE *)this + 38) = v11;
+    *((_BYTE *)this + 39) = v12;
     if (v9 || v10 || v11 || v12)
-        this->field_26 = 1;
+        *((_DWORD *)this + 19) = 1;
     if (dword_10AA2BDC)
         pm_sub_10002930();
     if (dword_10AA2BE0)
@@ -97,14 +99,14 @@ LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(unk1 *this, HWND hwnd) {
     }
     if (v14) {
         v13 = 0;
-        LOBYTE(this->field_33) = 1;
-        this->field_26 = 0;
+        *((_BYTE *)this + 36) = 1;
+        *((_DWORD *)this + 19) = 0;
         dword_10AA33A8 = 0;
     }
     if (dword_10AA33A4) {
         v13 = 0;
-        BYTE1(this->field_33) = 1;
-        this->field_26 = 0;
+        *((_BYTE *)this + 37) = 1;
+        *((_DWORD *)this + 19) = 0;
         dword_10AA33A8 = 0;
     }
     if (v13) {
@@ -121,87 +123,88 @@ LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(unk1 *this, HWND hwnd) {
     dword_10AA33A0 = 0;
     dword_10AA339C = 0;
     dword_10AA3398 = 0;
-    if (this->field_46 != this->width0 || this->field_45 != this->field_43 ||
-        LOBYTE(this->field_33) != LOBYTE(this->height) ||
-        BYTE1(this->field_33) != BYTE1(this->height) ||
-        BYTE2(this->field_33) != BYTE2(this->height) ||
-        HIBYTE(this->field_33) != HIBYTE(this->height)) {
+    if (*(_DWORD *)this != *((_DWORD *)this + 3) ||
+        *((_DWORD *)this + 1) != *((_DWORD *)this + 4) ||
+        *((_BYTE *)this + 36) != *((_BYTE *)this + 40) ||
+        *((_BYTE *)this + 37) != *((_BYTE *)this + 41) ||
+        *((_BYTE *)this + 38) != *((_BYTE *)this + 42) ||
+        *((_BYTE *)this + 39) != *((_BYTE *)this + 43)) {
         g_TickCount = getTicks();
     }
-    v15 = this->field_45;
-    v16 = this->field_33;
-    this->width0 = this->field_46;
-    v17 = BYTE1(this->field_33);
-    this->field_43 = v15;
-    LOBYTE(v15) = BYTE2(this->field_33);
-    LOBYTE(this->height) = v16;
-    v18 = HIBYTE(this->field_33);
-    BYTE1(this->height) = v17;
-    BYTE2(this->height) = v15;
-    HIBYTE(this->height) = v18;
+    v15 = *((_DWORD *)this + 1);
+    v16 = *((_BYTE *)this + 36);
+    *((_DWORD *)this + 3) = *(_DWORD *)this;
+    v17 = *((_BYTE *)this + 37);
+    *((_DWORD *)this + 4) = v15;
+    LOBYTE(v15) = *((_BYTE *)this + 38);
+    *((_BYTE *)this + 40) = v16;
+    v18 = *((_BYTE *)this + 39);
+    *((_BYTE *)this + 41) = v17;
+    *((_BYTE *)this + 42) = v15;
+    *((_BYTE *)this + 43) = v18;
     dword_10AA33C0[0] = 0;
     dword_10AA33C4 = 0;
     dword_10AA33C8 = 0;
     dword_10AA33CC = 0;
-    if (LOBYTE(this->field_33)) {
-        if (!this->width) {
-            this->width = 1;
+    if (*((_BYTE *)this + 36)) {
+        if (!*((_DWORD *)this + 11)) {
+            *((_DWORD *)this + 11) = 1;
             goto LABEL_58;
         }
-    } else if (this->width) {
-        this->width = 0;
-        this->field_1C = 1;
-        this->field_26 = 0;
+    } else if (*((_DWORD *)this + 11)) {
+        *((_DWORD *)this + 11) = 0;
+        *((_DWORD *)this + 15) = 1;
+        *((_DWORD *)this + 19) = 0;
         dword_10AA33C0[0] = 1;
         goto LABEL_58;
     }
-    this->field_1C = 0;
+    *((_DWORD *)this + 15) = 0;
 LABEL_58:
-    if (BYTE1(this->field_33)) {
-        if (!this->field_30) {
-            this->field_30 = 1;
+    if (*((_BYTE *)this + 37)) {
+        if (!*((_DWORD *)this + 12)) {
+            *((_DWORD *)this + 12) = 1;
             goto LABEL_65;
         }
-    } else if (this->field_30) {
-        this->field_30 = 0;
-        this->field_29 = 1;
-        this->field_26 = 0;
+    } else if (*((_DWORD *)this + 12)) {
+        *((_DWORD *)this + 12) = 0;
+        *((_DWORD *)this + 16) = 1;
+        *((_DWORD *)this + 19) = 0;
         dword_10AA33C4 = 1;
         goto LABEL_65;
     }
-    this->field_29 = 0;
+    *((_DWORD *)this + 16) = 0;
 LABEL_65:
-    if (!BYTE2(this->field_33)) {
-        if (this->field_14) {
-            this->field_14 = 0;
-            this->field_28 = 1;
-            this->field_26 = 0;
+    if (!*((_BYTE *)this + 38)) {
+        if (*((_DWORD *)this + 13)) {
+            *((_DWORD *)this + 13) = 0;
+            *((_DWORD *)this + 17) = 1;
+            *((_DWORD *)this + 19) = 0;
             dword_10AA33C8 = 1;
             goto LABEL_72;
         }
     LABEL_71:
-        this->field_28 = 0;
+        *((_DWORD *)this + 17) = 0;
         goto LABEL_72;
     }
-    if (this->field_14)
+    if (*((_DWORD *)this + 13))
         goto LABEL_71;
-    this->field_14 = 1;
+    *((_DWORD *)this + 13) = 1;
 LABEL_72:
-    if (HIBYTE(this->field_33)) {
-        if (!this->field_18) {
-            this->field_18 = 1;
+    if (*((_BYTE *)this + 39)) {
+        if (!*((_DWORD *)this + 14)) {
+            *((_DWORD *)this + 14) = 1;
             *(_DWORD *)&SrcStr[8] = this;
             return (LPDIRECTINPUTDEVICEA)sub_1005FFF0();
         }
-    } else if (this->field_18) {
-        this->field_18 = 0;
-        this->field_27 = 1;
-        this->field_26 = 0;
+    } else if (*((_DWORD *)this + 14)) {
+        *((_DWORD *)this + 14) = 0;
+        *((_DWORD *)this + 18) = 1;
+        *((_DWORD *)this + 19) = 0;
         dword_10AA33CC = 1;
         *(_DWORD *)&SrcStr[8] = this;
         return (LPDIRECTINPUTDEVICEA)sub_1005FFF0();
     }
-    this->field_27 = 0;
+    *((_DWORD *)this + 18) = 0;
     *(_DWORD *)&SrcStr[8] = this;
     return (LPDIRECTINPUTDEVICEA)sub_1005FFF0();
 }

@@ -8,7 +8,7 @@ int sub_10046380() {
     result = 1;
     dword_100AC304 = 1;
     *(_DWORD *)(dword_10AA29B4 + 8) = sub_10046D20;
-    g_GameMode = 2;
+    gGameMode = 2;
     return result;
 }
 // 100AA010: using guessed type int g_GameMode;

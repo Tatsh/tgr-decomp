@@ -18,21 +18,21 @@ _DWORD *__cdecl sub_10017290(int a1) {
 
     result = (_DWORD *)dword_100BD3EC;
     if (dword_100BD3EC) {
-        v2 = g_Width - 16;
+        v2 = gWidth - 16;
         v3 = dword_100AA8B4 != 1 ? 0 : 30;
         v4 = *(_DWORD *)(a1 + 88 * dword_106C5708 + 4) + 20;
         sub_10019260();
-        sub_10019290();
+        Set_byte_104B035C_To1();
         sub_100192F0(15);
-        result = (_DWORD *)g_GameMode;
-        switch (g_GameMode) {
+        result = (_DWORD *)gGameMode;
+        switch (gGameMode) {
         case 0:
         case 1:
         case 2:
         case 6:
             if (dword_100AA8B4 == 1) {
                 v9 = *(float *)(dword_106C2CF8 + 4076);
-                v5 = getCaptionString(0xE7u);
+                v5 = GetStringWithIndex(0xE7u);
                 sub_100171F0((int)v5, (int)aWw, v9, v2, v4);
             }
             if (*(_DWORD *)(dword_106C2CF8 + 4008) < dword_100BD3E0) {
@@ -42,20 +42,20 @@ _DWORD *__cdecl sub_10017290(int a1) {
                 goto LABEL_11;
             }
             v10 = *(float *)(dword_106C2CF8 + 4068);
-            v6 = getCaptionString(0xE8u);
+            v6 = GetStringWithIndex(0xE8u);
             result = sub_100171F0((int)v6, (int)aWw, v10, v2, v4 + v3);
             break;
         case 3:
             if (dword_100AA8B4 == 1) {
                 v12 = *(float *)(dword_106C2CF8 + 4068);
-                v7 = getCaptionString(0xE8u);
+                v7 = GetStringWithIndex(0xE8u);
                 sub_100171F0((int)v7, (int)aWw, v12, v2, v4);
             }
             v14 = v4 + v3;
             v13 = v2;
             v11 = *(float *)(dword_106C2CF8 + 4016);
         LABEL_11:
-            v8 = getCaptionString(0xE9u);
+            v8 = GetStringWithIndex(0xE9u);
             result = sub_100171F0((int)v8, (int)aWw, v11, v13, v14);
             break;
         default:

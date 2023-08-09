@@ -17,12 +17,12 @@ int __cdecl sub_10032C38(int a1, int a2, int a3, int a4, int a5) {
             sub_1003289F(a1, a2, -a3, a4);
     }
     dword_106C1174 = 0;
-    word_106C1788[8 * dword_106C6654] = 2 * g_Width;
-    word_106C178A[8 * dword_106C6654] = 2 * g_Height;
+    word_106C1788[8 * dword_106C6654] = 2 * gWidth;
+    word_106C178A[8 * dword_106C6654] = 2 * gHeight;
     word_106C178C[8 * dword_106C6654] = 511;
     word_106C178E[8 * dword_106C6654] = 0;
-    word_106C1790[8 * dword_106C6654] = 4 * (g_Width / 2);
-    word_106C1792[8 * dword_106C6654] = 4 * (g_Height / 2);
+    word_106C1790[8 * dword_106C6654] = 4 * (gWidth / 2);
+    word_106C1792[8 * dword_106C6654] = 4 * (gHeight / 2);
     word_106C1794[8 * dword_106C6654] = 511;
     word_106C1796[8 * dword_106C6654] = 0;
     v6 = (_DWORD *)dword_106C0680;

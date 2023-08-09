@@ -33,18 +33,18 @@ int sub_10043400() {
     }
 LABEL_12:
     dword_10B4E728 = v0;
-    g_ConfigJoystickIndex = dword_100AC520[v0];
-    if (g_ConfigJoystickIndex == 1) {
-        g_ConfigJoystickPtr = (int)&MEMORY[0x10B4DFD8];
+    gConfigJoystickIndex = dword_100AC520[v0];
+    if (gConfigJoystickIndex == 1) {
+        gConfigJoystickPtr = (int)&MEMORY[0x10B4DFD8];
         result = 1;
-    } else if (g_ConfigJoystickIndex == 2) {
-        g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
+    } else if (gConfigJoystickIndex == 2) {
+        gConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
         result = 1;
     } else {
-        if (g_ConfigJoystickIndex == 3)
-            g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E128];
+        if (gConfigJoystickIndex == 3)
+            gConfigJoystickPtr = (int)&MEMORY[0x10B4E128];
         else
-            g_ConfigJoystickPtr = (int)&g_Config;
+            gConfigJoystickPtr = (int)&gConfig;
         result = 1;
     }
     return result;

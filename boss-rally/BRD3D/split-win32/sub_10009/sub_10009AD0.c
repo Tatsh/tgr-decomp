@@ -6,9 +6,9 @@ unsigned __int8 *__cdecl sub_10009AD0(char *filename,
                                       int *outBuff) {
     CHK_File *fp;       // ebx
     size_t elementSize; // esi
-    int cksum;          // eax
+    unsigned int cksum; // eax
     int flag_;          // edi
-    int seed;           // eax
+    unsigned int seed;  // eax
     int *v9;            // edx
     int buf;            // [esp+Ch] [ebp-4h] BYREF
 

@@ -4,7 +4,7 @@ int __cdecl sub_1003F860(int a1) {
     const char *v1; // edi
     int v2;         // edx
 
-    v1 = getCaptionString(*(&dword_100AC3A8 + dword_10AA2A08));
+    v1 = GetStringWithIndex(*(&dword_100AC3A8 + dword_10AA2A08));
     v2 = *(_DWORD *)(a1 + 11100);
     strcpy((char *)(a1 + 11109), v1);
     (*(void(__thiscall **)(int))(v2 + 4))(a1 + 11100);

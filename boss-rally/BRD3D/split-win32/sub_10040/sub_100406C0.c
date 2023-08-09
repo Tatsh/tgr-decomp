@@ -5,19 +5,19 @@ int sub_100406C0() {
 
     switch (dword_10AA2A0C) {
     case 0:
-        meth_10069AA0((int)&g_Config, 0);
+        meth_BossRallyConfig_10069AA0(&gConfig, 0);
         result = 1;
         break;
     case 1:
-        meth_10069AA0((int)&g_Config, 1);
+        meth_BossRallyConfig_10069AA0(&gConfig, 1);
         result = 1;
         break;
     case 2:
-        meth_10069AA0((int)&g_Config, 2);
+        meth_BossRallyConfig_10069AA0(&gConfig, 2);
         result = 1;
         break;
     case 3:
-        meth_10069AA0((int)&g_Config, 3);
+        meth_BossRallyConfig_10069AA0(&gConfig, 3);
         goto LABEL_6;
     default:
     LABEL_6:

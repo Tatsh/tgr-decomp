@@ -55,7 +55,7 @@ _DWORD *__cdecl sub_100140E0(int a1) {
     *v5 = -1174403582;
     v5[1] = 192;
     if (!dword_106C661C) {
-        switch (g_chosenTrack) {
+        switch (gChosenTrack) {
         case 1:
         case 7:
             sub_10013D90(a1, (unsigned __int16)dword_1039B710, 96, 0x54u, 0x38u);

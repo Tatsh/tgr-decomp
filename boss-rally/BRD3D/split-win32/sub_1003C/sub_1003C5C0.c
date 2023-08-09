@@ -31,9 +31,9 @@ int __cdecl sub_1003C5C0(int *a1, int a2, int *a3) {
     v5 = *a1;
     v20[9] = (int)&unk_11321608;
     v20[8] = 1610667455;
-    v20[17] = g_ChosenWeather;
+    v20[17] = gChosenWeather0;
     v20[1] = v4 != 0 ? 320 : 64;
-    v20[16] = g_chosenTrack;
+    v20[16] = gChosenTrack;
     v20[0] = 80;
     v20[10] = 8;
     v20[12] = a2;

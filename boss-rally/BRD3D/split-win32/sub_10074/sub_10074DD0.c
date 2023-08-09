@@ -30,5 +30,4 @@ int sub_10074DD0() {
 // 11829100: using guessed type int dword_11829100[];
 // 11829104: using guessed type int dword_11829104;
 // 11829318: using guessed type int dword_11829318;
-// 11829370: using guessed type int dword_11829370[];
 // 118AA0B0: using guessed type int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);

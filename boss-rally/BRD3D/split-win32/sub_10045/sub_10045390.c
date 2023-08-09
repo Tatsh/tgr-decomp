@@ -1,29 +1,27 @@
 #include "types-win32.h"
 //----- (10045390) --------------------------------------------------------
-int sub_10045390() {
-    _DWORD *v0; // eax
-    int result; // eax
+int __stdcall sub_10045390() {
+    unk000C8 *uC8;    // eax
+    unk000C8 *result; // eax
 
-    if (dword_10AA2980) {
-        g_unkC8Ptr1 = (void *)dword_10AA2980;
-        result = 1;
+    if (gUnkC8Ptr2) {
+        gUnkC8Ptr1 = gUnkC8Ptr2;
+        result = (unk000C8 *)1;
     } else {
-        v0 = (_DWORD *)malloc(0xC8u);
-        if (v0)
-            result = (int)meth_10048710(v0);
+        uC8 = (unk000C8 *)malloc(0xC8u);
+        if (uC8)
+            result = meth_unk000C8_10048710(uC8);
         else
             result = 0;
-        dword_10AA2980 = result;
-        g_unkC8Ptr1 = (void *)result;
+        gUnkC8Ptr2 = result;
+        gUnkC8Ptr1 = result;
         if (result) {
-            *(_DWORD *)(result + 4) = sub_1004D1F0;
-            (*(void(__cdecl **)(int))(dword_10AA2980 + 4))(dword_10AA2980);
-            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
-            result = 1;
-            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
+            result->lpFn0 = sub_1004D1F0;
+            gUnkC8Ptr2->lpFn0(gUnkC8Ptr2);
+            gUnkC8Ptr1->field_C = 1;
+            result = (unk000C8 *)1;
+            gUnkC8Ptr1->field_68 = 1;
         }
     }
-    return result;
+    return (int)result;
 }
-// 1004D1F0: using guessed type int __cdecl sub_1004D1F0(int);
-// 10AA2980: using guessed type int dword_10AA2980;

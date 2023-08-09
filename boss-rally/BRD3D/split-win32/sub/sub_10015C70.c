@@ -65,7 +65,7 @@ int __cdecl sub_10015C70(int a1) {
     } else {
         v8 = 0.0;
     }
-    if (!g_Interpolate) {
+    if (!gInterpolate) {
         v8 = 1.0;
         v6 = 1;
     }

@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10002260) --------------------------------------------------------
 int pm_sub_10002260() {
-    if (!g_Playmusic || !dword_10220CD0 || dword_10220C3C)
+    if (!gPlayMusic || !dword_10220CD0 || dword_10220C3C)
         return 1;
     if (!EAR_DLL_RegisterChannel(dword_100940A8, 6, 10000, 5)) {
         dword_10220C3C = 0;

@@ -23,18 +23,18 @@ int __cdecl sub_10004E50(void *a1, float *a2) {
     qmemcpy(&v2[40 * v2[343] + 22], a1, 0xA0u);
     ReleaseMutex((HANDLE)*v2);
     ReleaseMutex(hMutex_3);
-    meth_10073B40(v7);
+    meth_unk00214_10073B40_init(v7);
     v8 = 0;
     sub_100048D0((int)v7);
-    meth_10073D60(v7, dword_10094294 | 0x80);
+    meth_unk00214_10073D60(v7, dword_10094294 | 0x80);
     sub_10006830((int)v7, (float *)a1, a2);
     v4 = sub_10004DD0(&unk, (int)v7);
     v8 = -1;
     if (v4 == -1) {
-        debugPrint(v7);
+        meth_DebugPrint(v7);
         result = 0;
     } else {
-        debugPrint(v7);
+        meth_DebugPrint(v7);
         result = 1;
     }
     return result;

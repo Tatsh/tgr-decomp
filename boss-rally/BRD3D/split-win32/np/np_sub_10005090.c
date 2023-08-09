@@ -23,7 +23,7 @@ int np_sub_10005090() {
         v3 = atomic_sub_10004A10(dword_10094294);
         result = sub_10004760(&unk,
                               dword_10094294,
-                              g_chosenCar,
+                              gChosenCar,
                               byte_10AD0854[0],
                               byte_10AD0855[0],
                               byte_10AD0856[0],

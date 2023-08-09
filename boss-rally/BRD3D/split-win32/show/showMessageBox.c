@@ -7,6 +7,6 @@ int __cdecl showMessageBox(LPCSTR format, int errno) {
 
     v2 = errorString(errno);
     wsprintfA(text, format, v2);
-    caption = getCaptionString(0x126u);
+    caption = GetStringWithIndex(0x126u);
     return MessageBoxA(0, text, caption, 0);
 }

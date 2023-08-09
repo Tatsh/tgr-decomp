@@ -1,13 +1,14 @@
 #include "types-win32.h"
 //----- (100602B0) --------------------------------------------------------
-LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(unk1 *this) {
+LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(#492 * this) {
     LPDIRECTINPUTDEVICEA result; // eax
 
-    result = this->lpDIDeviceA;
+    result = (LPDIRECTINPUTDEVICEA) * ((_DWORD *)this + 20);
     if (result) {
         result->lpVtbl->Unacquire(result);
-        result = (LPDIRECTINPUTDEVICEA)this->lpDIDeviceA->lpVtbl->Release(this->lpDIDeviceA);
-        this->lpDIDeviceA = 0;
+        result = (LPDIRECTINPUTDEVICEA)(*(int(__stdcall **)(_DWORD))(**((_DWORD **)this + 20) + 8))(
+            *((_DWORD *)this + 20));
+        *((_DWORD *)this + 20) = 0;
     }
     return result;
 }

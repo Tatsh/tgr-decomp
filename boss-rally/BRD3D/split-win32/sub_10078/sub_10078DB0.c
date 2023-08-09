@@ -8,14 +8,14 @@ int sub_10078DB0() {
     if (!--mouseCreated) {
         dida = g_DirectInputA;
         if (g_DirectInputA) {
-            v1 = g_unk54Ptr;
-            if (g_unk54Ptr) {
-                meth_100602B0(g_unk54Ptr);
+            v1 = gUnk54Ptr;
+            if (gUnk54Ptr) {
+                meth_100602B0(gUnk54Ptr);
                 free(v1);
                 dida = g_DirectInputA;
             }
             didaVtbl = dida->lpVtbl;
-            g_unk54Ptr = 0;
+            gUnk54Ptr = 0;
             didaVtbl->Release(dida);
             g_DirectInputA = 0;
         }

@@ -3,8 +3,8 @@
 int __cdecl sub_10078E10(int a1) {
     int result; // eax
 
-    result = g_ConfigJoystickIndex;
-    if (g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2) {
+    result = gConfigJoystickIndex;
+    if (gConfigJoystickIndex == 1 || gConfigJoystickIndex == 2) {
         result = dword_10B4E1E0;
         if (dword_10B4E1E0) {
             result = MEMORY[0x118ABDBC];

@@ -17,7 +17,7 @@ int __cdecl sub_10042170(int a1, int *a2) {
     char FileName[260];  // [esp+18h] [ebp-104h] BYREF
 
     dword_10AA28E0 = 0;
-    g_GameMode = 0;
+    gGameMode = 0;
     sub_1003E680();
     dword_10690A18 = 0;
     strcpy(byte_10AA2518, String2);

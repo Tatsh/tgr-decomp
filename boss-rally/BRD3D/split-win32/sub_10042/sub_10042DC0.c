@@ -11,7 +11,7 @@ int sub_10042DC0() {
             dword_100AC64C = 2;
     }
     result = 1;
-    g_UltraCarHeader = (void *)dword_100AC4A0[dword_100AC64C];
+    gTireType = (void *)dword_100AC4A0[dword_100AC64C];
     return result;
 }
 // 10042DC0: using guessed type int sub_10042DC0();

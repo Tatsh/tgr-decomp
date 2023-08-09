@@ -24,13 +24,13 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
     result = dword_100BD3FC;
     if (dword_100BD3FC) {
         sub_100192F0(15);
-        sub_10019280();
-        result = g_NetworkPlay;
+        Set_byte_104B035C_To0();
+        result = gNetworkPlay;
         v3 = *a1 + 16;
         v4 = a1[1] + 29;
         v17 = v3;
         v19 = v4;
-        if (g_NetworkPlay) {
+        if (gNetworkPlay) {
             result = dword_100B36FC;
             if (dword_100B36FC) {
                 v5 = 0.0;
@@ -51,11 +51,12 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                 }
                                 sprintf(Buffer, v15, v16);
                             }
-                            sub_10019300((int)Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
+                            text_sub_10019300(
+                                (int)Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                             if (dword_118ABDC8) {
                                 v7 = 32;
                                 v8 = 32;
-                                if (g_NetworkPlay > 1) {
+                                if (gNetworkPlay > 1) {
                                     v9 = sub_100714D0(*(_DWORD *)(v6 + 324)) & 0x3F;
                                     if (v9 >= 3) {
                                         if (v9 == 3)
@@ -101,7 +102,7 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                             v8,
                                             v7);
                                 }
-                                sub_10019300(
+                                text_sub_10019300(
                                     (int)Buffer, v17 + 16, 16 * *(_DWORD *)(v6 + 4088) + v19 + 20);
                                 v4 = v19;
                                 v3 = v17;
@@ -126,14 +127,15 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                             (const char *)(v6 + 328),
                                             v13);
                                 }
-                                sub_10019300(
+                                text_sub_10019300(
                                     (int)Buffer, v3 + 16, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                             }
                         } else {
                             sprintf(Buffer, "%%55%d.", *(_DWORD *)(v6 + 4088) + 1);
-                            sub_10019300((int)Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
+                            text_sub_10019300(
+                                (int)Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                             sprintf(Buffer, "%%55%s", (const char *)(v6 + 328));
-                            sub_10019300(
+                            text_sub_10019300(
                                 (int)Buffer, v3 + 16, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                         }
                         result = dword_100B36FC;

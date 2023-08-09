@@ -10,7 +10,7 @@ _DWORD *sub_10014930() {
     int *v6;          // eax
     int v7;           // [esp+Ch] [ebp-108h]
     int v8;           // [esp+Ch] [ebp-108h]
-    char Buffer[256]; // [esp+14h] [ebp-100h] BYREF
+    char buffer[256]; // [esp+14h] [ebp-100h] BYREF
 
     result = (_DWORD *)dword_10B501D8;
     if (dword_10B501D8) {
@@ -40,17 +40,17 @@ _DWORD *sub_10014930() {
             }
             flt_100A6CF4 = (double)dword_100B5420 * 1000.0 / v5;
         }
-        sprintf(Buffer, "%6.2f FPS", flt_100A6CF4);
+        sprintf(buffer, "%6.2f FPS", flt_100A6CF4);
         sub_100192F0(15);
-        sub_10019270();
-        result = sub_10019300((int)Buffer, g_Width / 2, g_Height - 10);
+        Set_byte_104B035C_To2();
+        result = text_sub_10019300(buffer, gWidth / 2, gHeight - 10);
     }
     return result;
 }
 // 100A6CF0: using guessed type float flt_100A6CF0;
 // 100A6CF4: using guessed type float flt_100A6CF4;
-// 100A81C0: using guessed type int g_Width;
-// 100A81C4: using guessed type int g_Height;
+// 100A81C0: using guessed type int gWidth;
+// 100A81C4: using guessed type int gHeight;
 // 100AA008: using guessed type int dword_100AA008;
 // 100AA00C: using guessed type int dword_100AA00C;
 // 100B5420: using guessed type int dword_100B5420;

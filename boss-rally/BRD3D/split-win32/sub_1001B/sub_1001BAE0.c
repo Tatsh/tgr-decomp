@@ -2,7 +2,7 @@
 //----- (1001BAE0) --------------------------------------------------------
 int sub_1001BAE0() {
     dword_10690A24 = sub_1001BAD0;
-    dword_10690A28 = (int (*)(void))debugPrint;
+    dword_10690A28 = (int (*)(void))meth_DebugPrint;
     return 1;
 }
 // 1001BAD0: using guessed type int sub_1001BAD0();

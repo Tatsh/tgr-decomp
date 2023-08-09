@@ -15,7 +15,7 @@ void __thiscall meth_10063660(_DWORD *this) {
         v3 = this[996];
         v4 = v2 + 40 * v3;
         *(float *)&v6 = *(float *)(v4 + 84) - -2.0;
-        if (g_GameMode == 2) {
+        if (gGameMode == GAME_MODE_2) {
             meth_10076420((float *)this, *(_DWORD *)(v4 + 76), *(_DWORD *)(v2 + 40 * (v3 + 2)), v6);
         } else {
             *(float *)&v5 = *(float *)(v4 + 76) - (double)(int)this[80] * -0.0099999998;
@@ -51,5 +51,4 @@ void __thiscall meth_10063660(_DWORD *this) {
         this[990] = 1;
     }
 }
-// 100AA010: using guessed type int g_GameMode;
 // 106C7C80: using guessed type float flt_106C7C80;

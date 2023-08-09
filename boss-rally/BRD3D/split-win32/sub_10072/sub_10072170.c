@@ -17,15 +17,15 @@ int __cdecl sub_10072170(_DWORD *a1) {
         if (!WaitForMultipleObjects(2u, Handles, 0, 0xFFFFFFFF))
             ExitThread(0);
         if ((dword_11786854[603 * v1] & 0x3F) != 0 &&
-            meth_10073F40(&dword_11826BD0[133 * v1]) > 3) {
+            meth_unk00214_10073F40(&dword_11826BD0[133 * v1]) > 3) {
             if (v1) {
-                v6 = meth_10073F40(&dword_11826BD0[133 * v1]);
-                v3 = meth_10073F50(&dword_11826BD0[133 * v1]);
+                v6 = meth_unk00214_10073F40(&dword_11826BD0[133 * v1]);
+                v3 = meth_unk00214_GetField10(&dword_11826BD0[133 * v1]);
                 if (sub_1000C4D0(*a1, 1, dword_1178682C[603 * v1], 0, v3, v6))
                     v7 = -1;
             } else {
-                v5 = meth_10073F40(dword_11826BD0);
-                v2 = meth_10073F50(dword_11826BD0);
+                v5 = meth_unk00214_10073F40(dword_11826BD0);
+                v2 = meth_unk00214_GetField10(dword_11826BD0);
                 np_sub_10003580((int)a1, v2, v5, 1);
             }
         }

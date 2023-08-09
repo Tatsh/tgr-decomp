@@ -32,7 +32,7 @@ float *__thiscall meth_100015D0(#479 * this, float a2, float a3) {
         }
         if (dword_106909E0) {
             sub_1003ACE0((int)v6, (int)this, 11.0);
-        } else if (g_GameMode == 5) {
+        } else if (gGameMode == GAME_MODE_5) {
             sub_1003ACE0((int)v6, (int)this + 16, -11.0);
             sub_1003B020((int)v6, (int)this, -13.0);
         } else {
@@ -49,6 +49,5 @@ float *__thiscall meth_100015D0(#479 * this, float a2, float a3) {
     }
     return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 106909E0: using guessed type int dword_106909E0;

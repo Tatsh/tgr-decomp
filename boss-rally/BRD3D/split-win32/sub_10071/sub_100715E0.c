@@ -1,5 +1,10 @@
 #include "types-win32.h"
 //----- (100715E0) --------------------------------------------------------
 void sub_100715E0() {
-    `eh vector constructor iterator'(dword_11826BD0, 0x214u, 16, meth_10073B40, debugPrint);
+  `eh vector constructor iterator'(
+    dword_11826BD0,
+    0x214u,
+    16,
+    (void (__thiscall *)(void *))meth_unk00214_10073B40_init,
+    meth_DebugPrint);
 }

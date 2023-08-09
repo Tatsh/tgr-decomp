@@ -12,7 +12,7 @@ int sub_1003C150() {
         sub_1003D130(v2);
         v1 = sub_1003C5C0((int *)unk, (int)v2, (int *)dword_10A9D008);
         if (v1 >= 0) {
-            g_NetworkPlay = 2;
+            gNetworkPlay = 2;
             sub_10071550();
             result = sub_10005B10();
         } else {

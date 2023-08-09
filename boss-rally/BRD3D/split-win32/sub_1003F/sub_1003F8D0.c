@@ -5,7 +5,7 @@ int __cdecl sub_1003F8D0(int a1) {
 
     if (dword_10AA2850) {
         v1 = a1;
-        strcpy((char *)(a1 + 11109), getCaptionString(0xAFu));
+        strcpy((char *)(a1 + 11109), GetStringWithIndex(0xAFu));
         if (dword_10A9D5C0[dword_10AA2840])
             *(_BYTE *)(a1 + 11108) = 4;
         else

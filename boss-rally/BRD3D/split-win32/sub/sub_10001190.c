@@ -5,7 +5,7 @@ int sub_10001190() {
 
     sub_10024BB0();
     if (dword_100AC300)
-        debugPrint(v0);
+        meth_DebugPrint(v0);
     return 0;
 }
 // 1000119E: variable 'v0' is possibly undefined

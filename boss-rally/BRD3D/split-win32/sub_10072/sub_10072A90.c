@@ -5,7 +5,7 @@ BOOL __cdecl sub_10072A90(int a1, int a2, unsigned int a3, int a4) {
     BOOL result; // eax
 
     result = 1;
-    if (g_Playsfx) {
+    if (gPlaysfx) {
         if (g_DSound) {
             if (dword_118290FC) {
                 v4 = dword_100B5DF0[18 * a1 + a2];

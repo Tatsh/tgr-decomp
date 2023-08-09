@@ -4,7 +4,7 @@ BOOL np_sub_10005BE0() {
     BOOL v0;    // ebp
     HANDLE *v1; // esi
 
-    if (g_NetworkPlay > 1)
+    if (gNetworkPlay > 1)
         sub_10072270();
     v0 = sub_1000C510((HANDLE *)&unk) == 0;
     if (g_hMutex_8) {

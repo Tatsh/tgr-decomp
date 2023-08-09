@@ -18,8 +18,8 @@ int sub_1002F4C0() {
     char v14;             // cl
     int v15;              // edx
 
-    result = g_GameMode;
-    if (!g_GameMode) {
+    result = gGameMode;
+    if (!gGameMode) {
         result = dword_106909B8;
         if (dword_106909B8) {
             result = dword_100B4050;

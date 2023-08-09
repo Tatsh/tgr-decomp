@@ -1,13 +1,13 @@
 #include "types-win32.h"
 //----- (1003E260) --------------------------------------------------------
 void __cdecl sub_1003E260(int a1) {
-    LPCSTR v1;      // edi
-    const CHAR *v2; // eax
+    LPCSTR text;    // edi
+    LPCSTR caption; // eax
 
     if (a1 <= 8) {
-        v1 = getCaptionString(dword_100AC664[2 * a1]);
-        v2 = getCaptionString(0xAAu);
-        MessageBoxA(g_HWND, v1 + 1, v2, 0);
+        text = GetStringWithIndex(dword_100AC664[2 * a1]);
+        caption = GetStringWithIndex(0xAAu);
+        MessageBoxA(gHwnd, text + 1, caption, 0);
         if (dword_100AC660[2 * a1])
             exit(1);
     }

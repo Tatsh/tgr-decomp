@@ -1,13 +1,13 @@
 #include "types-win32.h"
 //----- (10008E30) --------------------------------------------------------
-int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
-    unk334 *gsu0;                                                                       // esi
+HRESULT __stdcall ShowStaticImage(unk0008C *u8C, char *filename, int checksum) {
+    unk0008C *u8C_1;                                                                    // esi
     IDirect3D2 *d3d2;                                                                   // ecx
     IDirect3DViewport2 *viewport;                                                       // eax
     IDirect3DDevice2 *dev;                                                              // ebx
     unsigned __int8 *v7;                                                                // eax
     HRESULT(__stdcall * beginSceneFunc_1)(IDirect3DDevice2 *);                          // ebp
-    int result;                                                                         // eax
+    HRESULT result;                                                                     // eax
     HRESULT(__stdcall * setRenderState)(IDirect3DDevice2 *, D3DRENDERSTATETYPE, DWORD); // ebp
     IDirect3DViewport2Vtbl *d3dviewport2vtbl;                                           // ecx
     double v12;                                                                         // st7
@@ -16,15 +16,15 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
     HRESULT(__stdcall * drawPrimitive)
     (IDirect3DDevice2 *, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD); // eax
     HRESULT(__stdcall * endScene)(IDirect3DDevice2 *);                           // ebp
-    int v17;                                                                     // ebp
+    HRESULT v17;                                                                 // ebp
     D3DVALUE v18;                                            // [esp+ECh] [ebp-15Ch]
     float v19;                                               // [esp+F0h] [ebp-158h]
     float v20;                                               // [esp+F4h] [ebp-154h]
     D3DVALUE v21;                                            // [esp+F8h] [ebp-150h]
     int v22;                                                 // [esp+FCh] [ebp-14Ch]
-    int a4;                                                  // [esp+104h] [ebp-144h] BYREF
+    int outBuf;                                              // [esp+104h] [ebp-144h] BYREF
     HRESULT(__stdcall * beginSceneFunc)(IDirect3DDevice2 *); // [esp+108h] [ebp-140h]
-    const char *a3;                                          // [esp+10Ch] [ebp-13Ch] BYREF
+    char *outFilename;                                       // [esp+10Ch] [ebp-13Ch] BYREF
     HRESULT(__stdcall * drawPrimitive_1)
     (IDirect3DDevice2 *,
      D3DPRIMITIVETYPE,
@@ -44,19 +44,19 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
     D3DTLVERTEX v36;                  // [esp+208h] [ebp-40h] BYREF
     D3DTLVERTEX v37;                  // [esp+228h] [ebp-20h] BYREF
 
-    gsu0 = game;
-    if (!game)
+    u8C_1 = u8C;
+    if (!u8C)
         return -2147467259;
-    if ((game->field_1C & 0x1F) != 31)
+    if ((u8C->field_1C & 0x1F) != 31)
         return -2147467259;
-    d3d2 = game->    ? ;
-    viewport = game->? ;
-    dev = game->     ? ;
+    d3d2 = u8C->lpDirect3D2;
+    viewport = u8C->lpDirect3DViewport2;
+    dev = u8C->lpDirect3DDevice;
     d3dviewport2 = viewport;
     if (!d3d2 || !dev || !viewport)
         return -2147467259;
-    flipSurfaces(game);
-    v7 = sub_10009AD0(filename, flag, (char **)&a3, &a4);
+    meth_unk0008C_FlipSurfaces(u8C);
+    v7 = sub_10009AD0(filename, checksum, &outFilename, &outBuf);
     meth_10009EA0(&stru_10277680, dev, v7, 256, 256, 11);
     v22 = 0;
     beginSceneFunc = dev->lpVtbl->BeginScene;
@@ -64,7 +64,7 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
     for (result = beginSceneFunc(dev);; result = beginSceneFunc(dev)) {
         if (result) {
             for (; result == -2005532222; result = beginSceneFunc_1(dev)) {
-                while (meth_1000B2C0(gsu0) == 2289435074)
+                while (meth_unk0008C_1000B2C0(u8C_1) == 2289435074)
                     ;
             }
             if (result)
@@ -75,8 +75,8 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
             !setRenderState(dev, D3DRS_ZENABLE, 1) &&
             !setRenderState(dev, (D3DRENDERSTATETYPE)D3DRENDERSTATE_TEXTUREHANDLE, 0) &&
             !setRenderState(dev, D3DRS_DITHERENABLE, 1)) {
-            rect.x2 = g_Width;
-            rect.y2 = g_Height;
+            rect.x2 = gWidth;
+            rect.y2 = gHeight;
             d3dviewport2vtbl = d3dviewport2->lpVtbl;
             rect.x1 = 0;
             rect.y1 = 0;
@@ -89,11 +89,11 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
             setRenderState(dev, (D3DRENDERSTATETYPE)D3DRENDERSTATE_TEXTUREPERSPECTIVE, 1);
             setRenderState(
                 dev, (D3DRENDERSTATETYPE)D3DRENDERSTATE_TEXTUREHANDLE, *(&stru_10277680 + 3));
-            v12 = (double)((g_Width - (int)a3) / 2);
+            v12 = (double)((gWidth - (int)outFilename) / 2);
             v19 = v12;
             if (v12 < 0.0)
                 v19 = 0.0;
-            v13 = (double)((g_Height - a4) / 2);
+            v13 = (double)((gHeight - outBuf) / 2);
             v20 = v13;
             if (v13 < 0.0)
                 v20 = 0.0;
@@ -125,7 +125,7 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
             v32.rhw = 1.0;
             v32.tu = 0.0;
             v32.tv = 1.0;
-            v32.color = -1;
+            v32.color = 0xFFFFFFFF;
             v32.specular = 0xFF0000FF;
             qmemcpy(&v37, &v32, sizeof(v37));
             drawPrimitive_1 = drawPrimitive;
@@ -160,28 +160,30 @@ int __stdcall ShowStaticImage(unk334 *game, char *filename, int flag) {
             drawPrimitive_1(dev, D3DPT_TRIANGLELIST, D3DVT_TLVERTEX, &v35, 3, 9);
             if (setRenderState(dev, D3DRS_SHADEMODE, 2))
                 return 0;
-            gsu0 = game;
+            u8C_1 = u8C;
         }
         endScene = dev->lpVtbl->EndScene;
         result = endScene(dev);
         if (result) {
             for (; result == -2005532222; result = endScene(dev)) {
-                while (meth_1000B2C0(gsu0) == -2005532222)
+                while (meth_unk0008C_1000B2C0(u8C_1) == -2005532222)
                     ;
             }
             if (result)
                 return result;
         }
-        v17 = gsu0->?->lpVtbl->Flip(gsu0->?, gsu0->?, 1);
-    while ( gsu0->?->lpVtbl->GetFlipStatus(gsu0->?, 2) )
-        ;
-    if (++v22 >= 2) {
-        meth_1000A0B0(&stru_10277680);
-        return v17;
-    }
-    beginSceneFunc_1 = beginSceneFunc;
+        v17 = u8C_1->lpDirectDrawSurface0->lpVtbl->Flip(
+            u8C_1->lpDirectDrawSurface0, u8C_1->lpDirectDrawSurface1, DDFLIP_WAIT);
+        while (u8C_1->lpDirectDrawSurface0->lpVtbl->GetFlipStatus(u8C_1->lpDirectDrawSurface0,
+                                                                  DDFLIP_EVEN))
+            ;
+        if (++v22 >= 2) {
+            meth_1000A0B0(&stru_10277680);
+            return v17;
+        }
+        beginSceneFunc_1 = beginSceneFunc;
     }
     return result;
 }
-// 100A81C0: using guessed type int g_Width;
-// 100A81C4: using guessed type int g_Height;
+// 100A81C0: using guessed type int gWidth;
+// 100A81C4: using guessed type int gHeight;

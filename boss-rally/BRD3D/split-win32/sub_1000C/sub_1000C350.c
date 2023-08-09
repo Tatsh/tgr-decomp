@@ -42,7 +42,7 @@ int __cdecl sub_1000C350(int a1) {
             break;
         if (dwBytes >= 4) {
             if (v13)
-                sub_1000BAF0(v1, (int)v2, dwBytes, v13);
+                np_sub_1000BAF0(v1, (int)v2, dwBytes, v13);
             else
                 sub_1000C170((int)v1, v2);
         }

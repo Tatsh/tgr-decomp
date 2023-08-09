@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (100020D0) --------------------------------------------------------
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds) {
-    QWORD qwTotalSeconds; // rax
+    __int64 qwTotalSeconds; // rax
 
     qwTotalSeconds = (__int64)(totalSeconds * 100.0);
     return sprintf(outBuffer,

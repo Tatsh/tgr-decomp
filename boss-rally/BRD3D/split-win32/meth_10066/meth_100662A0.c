@@ -9,10 +9,10 @@ int __thiscall meth_100662A0(_DWORD *this) {
     __int16 v7; // cx
     int result; // eax
 
-    if (g_GameMode) {
-        if (g_GameMode == 1) {
+    if (gGameMode) {
+        if (gGameMode == GAME_MODE_1) {
             v2 = 2;
-        } else if (g_GameMode == 6) {
+        } else if (gGameMode == GAME_MODE_6) {
             v2 = 9999;
         } else {
             v2 = dword_100B36FC;
@@ -32,7 +32,7 @@ int __thiscall meth_100662A0(_DWORD *this) {
         this[24] = 0;
         if (v5 == 1) {
             v6 = (double)(600 * (v3 - dword_100B4050) - 7760);
-        } else if (g_chosenTrack == 2 || g_chosenTrack == 8) {
+        } else if (gChosenTrack == 2 || gChosenTrack == 8) {
             v6 = (double)(520 * v3);
         } else {
             v6 = (double)(550 * v3);
@@ -48,17 +48,17 @@ int __thiscall meth_100662A0(_DWORD *this) {
         this[18] = dword_10AF96C0;
         this[17] = dword_10AF9B44;
         this[16] = dword_10AF9B44;
-        debugPrint((void *)this[25]);
+        meth_DebugPrint((void *)this[25]);
         this[3] = *this;
         this[4] = this[1];
         this[5] = this[2];
         this[12] = 0;
         this[14] = 0;
         this[13] = 0;
-        v7 = dword_104BBE08 - 1;
-        if ((__int16)(dword_104BBE08 - 1) > 2 || v7 < 0)
+        v7 = gChosenWeather1 - 1;
+        if ((__int16)(gChosenWeather1 - 1) > 2 || v7 < 0)
             v7 = 0;
-        this[15] = (&stringOffsets[g_chosenTrack][21 * dword_10ACED0C])[7 * v7 + 17];
+        this[15] = (&gTrackDataOffsets[gChosenTrack][21 * dword_10ACED0C])[7 * v7 + 17];
         this[21] = dword_100B36F8 - this[25] - 1;
     } else {
         v4 = &dword_10ACDEA8[2778 * v3];
@@ -72,13 +72,12 @@ int __thiscall meth_100662A0(_DWORD *this) {
     this[31] = 0;
     return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100B36F8: using guessed type int dword_100B36F8;
 // 100B36FC: using guessed type int dword_100B36FC;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 100BD2A8: using guessed type char **stringOffsets[16];
-// 104BBE08: using guessed type int dword_104BBE08;
+// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
+// 104BBE08: using guessed type int gChosenWeather1;
 // 10ACD490: using guessed type int dword_10ACD490;
 // 10ACED0C: using guessed type int dword_10ACED0C;
 // 10AF96C0: using guessed type int dword_10AF96C0;

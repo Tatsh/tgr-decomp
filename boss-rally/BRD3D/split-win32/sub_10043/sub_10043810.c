@@ -23,12 +23,12 @@ int __cdecl sub_10043810(LPCVOID pMem) {
             (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
             dword_10AA2950 = 0;
         }
-        g_unkC8Ptr1 = (void *)dword_10AA2948;
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
         sub_1003BF60();
         v9 = dword_10AA287C;
         dword_10AA2898 = 1;
         if (!dword_10AA287C || dword_10AA287C == 1) {
-            sub_1003C020();
+            np_sub_1003C020();
             v9 = dword_10AA287C;
         }
         if (v9 == 2 || v9 == 3) {
@@ -75,7 +75,7 @@ int __cdecl sub_10043810(LPCVOID pMem) {
         }
         if (dword_10AA288C) {
             sub_1003E310();
-            WriteConfigFile((#483 *)g_Config, g_bossRallyCfgPath);
+            WriteConfigFile((#483 *)gConfig, gBossRallyCfgPath);
             v1[2746][26] = 0;
             (*(void(__thiscall **)(_DWORD *, _DWORD))(*v1[2746] + 24))(v1[2746], 0);
             dword_10AA285C = 0;

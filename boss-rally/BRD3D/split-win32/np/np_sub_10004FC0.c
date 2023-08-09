@@ -20,10 +20,10 @@ int np_sub_10004FC0() {
     v1 = v0;
     result = ReleaseMutex(g_hMutex_5);
     if (v1) {
-        result = g_NetworkPlay;
-        if (g_NetworkPlay) {
-            result = g_usingGameMode4;
-            if (g_usingGameMode4) {
+        result = gNetworkPlay;
+        if (gNetworkPlay) {
+            result = gIsGameMode4;
+            if (gIsGameMode4) {
                 result = dword_106909E0;
                 if (!dword_106909E0) {
                     result = dword_100BD3E0;
@@ -31,7 +31,7 @@ int np_sub_10004FC0() {
                         v3 = atomic_sub_10004A10(dword_10094294);
                         result = sub_10004760(&unk,
                                               dword_10094294,
-                                              g_chosenCar,
+                                              gChosenCar,
                                               byte_10AD0854[0],
                                               byte_10AD0855[0],
                                               byte_10AD0856[0],

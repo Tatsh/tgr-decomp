@@ -31,26 +31,26 @@ int sub_100447D0() {
         sub_10044280();
     }
     if (dword_10AA2954) {
-        g_unkC8Ptr1 = (void *)dword_10AA2954;
+        gUnkC8Ptr1 = (void *)dword_10AA2954;
     } else {
         v1 = (_DWORD *)malloc(0xC8u);
         v3[1] = (int)v1;
         v4 = 0;
         if (v1)
-            result = (int)meth_10048710(v1);
+            result = (int)meth_unk000C8_10048710(v1);
         else
             result = 0;
         v4 = -1;
         dword_10AA2954 = result;
-        g_unkC8Ptr1 = (void *)result;
+        gUnkC8Ptr1 = (void *)result;
         if (!result)
             return result;
         *(_DWORD *)(result + 4) = sub_10058750;
         (*(void(__cdecl **)(int))(dword_10AA2954 + 4))(dword_10AA2954);
-        *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
-        *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
+        *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
+        *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     }
-    g_GameMode = 6;
+    gGameMode = 6;
     if (dword_10AA2884) {
         if (dword_10AA2888) {
             if (dword_10AA2884)

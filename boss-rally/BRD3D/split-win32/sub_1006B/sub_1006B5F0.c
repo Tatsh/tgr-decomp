@@ -215,8 +215,8 @@ void __cdecl sub_1006B5F0(int a1, float a2, int a3, int a4, int a5, int a6) {
     LOBYTE(v146) = *(_BYTE *)(v32 + 416);
     LOBYTE(v152) = *(_BYTE *)(v30 + 416);
     LOBYTE(v147) = *(_BYTE *)(v31 + 416);
-    v33 = dword_104BBE08 - 1;
-    if ((__int16)(dword_104BBE08 - 1) > 2 || (v33 & 0x8000u) != 0)
+    v33 = gChosenWeather1 - 1;
+    if ((__int16)(gChosenWeather1 - 1) > 2 || (v33 & 0x8000u) != 0)
         v33 = 0;
     LODWORD(v134) = 8 * v33;
     *(_BYTE *)(a1 + 521) = 0;

@@ -1,31 +1,31 @@
 #include "types-win32.h"
 //----- (10079A90) --------------------------------------------------------
-int __cdecl RallyCreateWindow(DWORD dwExStyle,
-                              LPCSTR lpClassName,
-                              LPCSTR lpWindowName,
-                              DWORD dwStyle,
-                              int X,
-                              int Y,
-                              int nWidth,
-                              int nHeight,
-                              HWND hWndParent,
-                              HMENU hMenu,
-                              HINSTANCE hInstance,
-                              LPVOID lpParam,
-                              int a3,
-                              int a14,
-                              HWND *a15,
-                              unk334 *a16) {
-    unk8C *gsu0_1;   // edi
-    int result;      // eax
-    HINSTANCE hInst; // ebx
-    HWND wnd1;       // esi
-    unk8C *gsu0;     // eax
-    HWND wnd;        // eax
-    HWND wnd0;       // esi
-    int v23;         // ebx
+HRESULT __cdecl RallyCreateWindow(DWORD dwExStyle,
+                                  LPCSTR lpClassName,
+                                  LPCSTR lpWindowName,
+                                  DWORD dwStyle,
+                                  int X,
+                                  int Y,
+                                  int nWidth,
+                                  int nHeight,
+                                  HWND hWndParent,
+                                  HMENU hMenu,
+                                  HINSTANCE hInstance,
+                                  LPVOID lpParam,
+                                  int a3,
+                                  int a14,
+                                  HWND *wnd2,
+                                  unk00334 *a16) {
+    unk0008C *unk8C_0; // edi
+    HRESULT result;    // eax
+    HINSTANCE hInst;   // ebx
+    HWND wnd1;         // esi
+    unk0008C *unk8C_1; // eax
+    HWND wnd;          // eax
+    HWND wnd0;         // esi
+    HRESULT v23;       // ebx
 
-    gsu0_1 = 0;
+    unk8C_0 = 0;
     if (!lpClassName)
         return -2147024809;
     hInst = hInstance;
@@ -34,10 +34,10 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle,
     wnd1 = hWndParent;
     if (!hWndParent)
         wnd1 = GetDesktopWindow();
-    gsu0 = (unk8C *)malloc(0x8Cu);
-    if (gsu0)
-        gsu0_1 = initUnk(gsu0);
-    if (!gsu0_1)
+    unk8C_1 = (unk0008C *)malloc(0x8Cu);
+    if (unk8C_1)
+        unk8C_0 = initUnk(unk8C_1);
+    if (!unk8C_0)
         return -2147024882;
     wnd = CreateWindowExA(dwExStyle,
                           lpClassName,
@@ -55,27 +55,27 @@ int __cdecl RallyCreateWindow(DWORD dwExStyle,
     if (wnd) {
         ShowWindow(wnd, 10);
         UpdateWindow(wnd0);
-        if (g_Playmusic == PLAYMUSIC_EAR)
+        if (gPlayMusic == PLAYMUSIC_EAR)
             setupEAR(wnd0);
-        v23 = meth_1000A1E0(gsu0_1, wnd0, a3, 0, 0, 0, 0, 0, 1);
+        v23 = meth_unk0008C_np_1000A1E0(unk8C_0, wnd0, a3, 0, 0, 0, 0, 0, 1);
         if (v23 >= 0) {
-            if (a15)
-                *a15 = wnd0;
+            if (wnd2)
+                *wnd2 = wnd0;
             if (a16)
-                a16->field_27 = gsu0_1;
+                a16->u8c = unk8C_0;
             result = 0;
         } else {
-            meth_1000A1C0((unk334 *)gsu0_1);
-            free(gsu0_1);
+            meth_unk0008C_Release(unk8C_0);
+            free(unk8C_0);
             MessageBoxA(wnd0, aUnableToInitia, Caption, MB_ICONSTOP);
             DestroyWindow(wnd0);
             result = v23;
         }
     } else {
-        meth_1000A1C0((unk334 *)gsu0_1);
-        free(gsu0_1);
-        result = -2147467259;
+        meth_unk0008C_Release(unk8C_0);
+        free(unk8C_0);
+        result = 0x80004005;
     }
     return result;
 }
-// 100940A4: using guessed type int g_Playmusic;
+// 100940A4: using guessed type int gPlayMusic;

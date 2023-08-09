@@ -3,7 +3,7 @@
 int __cdecl pm_sub_100027F0(int a1) {
     int v1; // esi
 
-    if (g_Playmusic && dword_10220CD0) {
+    if (gPlayMusic && dword_10220CD0) {
         v1 = a1;
         if (a1 < dword_10220C44)
             v1 = dword_10220C44;

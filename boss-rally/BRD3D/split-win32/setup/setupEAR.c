@@ -9,8 +9,8 @@ int __cdecl setupEAR(HWND hWnd) {
     if (++dword_105754E0 != 1)
         return 1;
     if (!loadEARDLL(dword_100A81A8)) {
-        v4 = getCaptionString(0xFDu);
-        v2 = getCaptionString(0xFEu);
+        v4 = GetStringWithIndex(0xFDu);
+        v2 = GetStringWithIndex(0xFEu);
         MessageBoxA(hWnd, v2, v4, 0x10u);
         exit(1);
     }
@@ -18,8 +18,8 @@ int __cdecl setupEAR(HWND hWnd) {
     EAR_DLL_AssignHwnd(hWnd);
     if (!EAR_DLL_InitializeEar(0)) {
         if (EAR_DLL_GetLastError() == 3) {
-            v5 = getCaptionString(0xFDu);
-            v3 = getCaptionString(0x12Eu);
+            v5 = GetStringWithIndex(0xFDu);
+            v3 = GetStringWithIndex(0x12Eu);
             MessageBoxA(hWnd, v3, v5, 0x10u);
             exit(1);
         }

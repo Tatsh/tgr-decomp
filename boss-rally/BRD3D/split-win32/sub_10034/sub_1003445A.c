@@ -6,7 +6,7 @@ int __cdecl sub_1003445A(int a1) {
     BOOL v3;    // [esp+0h] [ebp-8h]
 
     dword_106C666C = 0;
-    v3 = g_chosenTrack != 2 && g_chosenTrack != 8;
+    v3 = gChosenTrack != 2 && gChosenTrack != 8;
     if ((*(_WORD *)(a1 + 76) & 4) == 0)
         dword_106C666C = v3;
     result = sub_100341B3(*(_DWORD **)(a1 + 68), (int)&unk_100AA8D8);

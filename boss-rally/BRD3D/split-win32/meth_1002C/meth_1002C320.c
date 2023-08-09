@@ -6,11 +6,11 @@ void __thiscall meth_1002C320(void *this) {
     void *v3; // ecx
 
     if (!dword_106909B4) {
-        debugPrint(this);
+        meth_DebugPrint(this);
         meth_1002C2D0(v1);
-        debugPrint(v2);
+        meth_DebugPrint(v2);
         sub_100397C0();
-        debugPrint(v3);
+        meth_DebugPrint(v3);
     }
 }
 // 1002C347: variable 'v1' is possibly undefined

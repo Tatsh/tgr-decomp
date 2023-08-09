@@ -97,7 +97,7 @@ int sub_100397C0() {
                     break;
                 if (*v5 != 3) {
                     if (*v5 == 4) {
-                        if (g_chosenTrack == 2 || g_chosenTrack == 8) {
+                        if (gChosenTrack == 2 || gChosenTrack == 8) {
                             if (dword_106C6620) {
                                 *v6 = 70.0;
                                 v6[1] = 100.0;
@@ -113,7 +113,7 @@ int sub_100397C0() {
                                 v6[9] = 240.0;
                                 v6[10] = 190.0;
                             }
-                        } else if (g_chosenTrack == 3 || g_chosenTrack == 9) {
+                        } else if (gChosenTrack == 3 || gChosenTrack == 9) {
                             *v6 = 16.0;
                             v6[1] = 16.0;
                             v6[2] = 0.0;

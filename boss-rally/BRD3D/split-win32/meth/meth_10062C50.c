@@ -171,10 +171,10 @@ void __thiscall meth_10062C50(_DWORD *this) {
         this[927] = 0;
         this[925] = 0;
         *((_BYTE *)this + 865) = v2;
-        debugPrint(this + 832);
-        debugPrint(v3);
-        debugPrint(v4);
-        debugPrint(v5);
+        meth_DebugPrint(this + 832);
+        meth_DebugPrint(v3);
+        meth_DebugPrint(v4);
+        meth_DebugPrint(v5);
     }
     *((_BYTE *)this + 3712) = 0;
     *((_BYTE *)this + 3704) = 0;

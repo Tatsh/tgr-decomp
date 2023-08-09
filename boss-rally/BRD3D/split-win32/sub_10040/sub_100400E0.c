@@ -13,18 +13,18 @@ int __cdecl sub_100400E0(int a1) {
     unsigned __int8 v12; // [esp+14h] [ebp+4h]
 
     if (dword_10AA2844) {
-        v10 = getCaptionString(0xB2u);
+        v10 = GetStringWithIndex(0xB2u);
     } else {
         switch (dword_10AA2A0C) {
         case 0:
-            v2 = meth_10069C30(&g_Config, 0, dword_100AB334[2 * dword_10AA2840]);
+            v2 = meth_10069C30(&gConfig, 0, dword_100AB334[2 * dword_10AA2840]);
             v3 = &aEscape[36 * sub_10040040(0, v2)];
             v4 = (char *)(a1 + 11109);
             goto LABEL_17;
         case 1:
-            v5 = meth_10069C30(&g_Config, 1, dword_100AB334[2 * dword_10AA2840]);
+            v5 = meth_10069C30(&gConfig, 1, dword_100AB334[2 * dword_10AA2840]);
             v12 = v5;
-            if (meth_10069BC0(&g_Config, 1, dword_100AB334[2 * dword_10AA2840])) {
+            if (meth_10069BC0(&gConfig, 1, dword_100AB334[2 * dword_10AA2840])) {
                 v6 = sub_10040040(1, v5);
                 v4 = (char *)(a1 + 11109);
                 v3 = &byte_10B4E914[36 * v6];
@@ -34,18 +34,18 @@ int __cdecl sub_100400E0(int a1) {
                 goto LABEL_13;
             goto LABEL_14;
         case 2:
-            v7 = meth_10069C30(&g_Config, 2, dword_100AB334[2 * dword_10AA2840]);
+            v7 = meth_10069C30(&gConfig, 2, dword_100AB334[2 * dword_10AA2840]);
             v12 = v7;
-            if (!meth_10069BC0(&g_Config, 2, dword_100AB334[2 * dword_10AA2840]))
+            if (!meth_10069BC0(&gConfig, 2, dword_100AB334[2 * dword_10AA2840]))
                 goto LABEL_12;
             v8 = sub_10040040(2, v7);
             v4 = (char *)(a1 + 11109);
             v3 = &byte_10B4E914[36 * v8];
             goto LABEL_17;
         case 3:
-            v7 = meth_10069C30(&g_Config, 3, dword_100AB334[2 * dword_10AA2840]);
+            v7 = meth_10069C30(&gConfig, 3, dword_100AB334[2 * dword_10AA2840]);
             v12 = v7;
-            if (meth_10069BC0(&g_Config, 3, dword_100AB334[2 * dword_10AA2840])) {
+            if (meth_10069BC0(&gConfig, 3, dword_100AB334[2 * dword_10AA2840])) {
                 v9 = sub_10040040(3, v7);
                 v4 = (char *)(a1 + 11109);
                 v3 = &byte_10B4E7AC[36 * v9];
@@ -59,7 +59,7 @@ int __cdecl sub_100400E0(int a1) {
                 goto LABEL_17;
             }
         LABEL_14:
-            v10 = getCaptionString(0xB1u);
+            v10 = GetStringWithIndex(0xB1u);
             break;
         default:
             goto LABEL_18;

@@ -181,7 +181,7 @@ void sub_1006FFD0() {
                                         v8[3] = v25 + v8[3];
                                         v8[4] = v37 + v8[4];
                                         v8[5] = v38 + v8[5];
-                                        if (g_NetworkPlay) {
+                                        if (gNetworkPlay) {
                                             v26 = v34;
                                             *(float *)(*v34 + 644) = v4[3];
                                             *(float *)(*v26 + 648) = v4[4];

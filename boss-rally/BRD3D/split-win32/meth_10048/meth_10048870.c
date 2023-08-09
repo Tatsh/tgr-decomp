@@ -6,7 +6,7 @@ int __thiscall meth_10048870(_DWORD *this) {
     int(__thiscall * **v4)(_DWORD, int); // ecx
 
     v2 = (int(__thiscall ***)(_DWORD, int))this[48];
-    *this = &off_1008F700;
+    *this = &gUnkC8Vtbl;
     if (v2)
         result = (**v2)(v2, 1);
     v4 = (int(__thiscall ***)(_DWORD, int))this[49];

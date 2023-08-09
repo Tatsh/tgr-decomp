@@ -13,7 +13,7 @@ _DWORD *__cdecl sub_10017D90(int a1) {
     v8 = *(float *)(dword_106C2CF8 + 4144);
     sub_1003289F(0,
                  *(_DWORD *)(a1 + 88 * dword_106C5708 + 4),
-                 g_Width,
+                 gWidth,
                  *(_DWORD *)(a1 + 88 * dword_106C5708 + 12));
     if (v8 < 0.0)
         v8 = 0.0;
@@ -23,7 +23,7 @@ _DWORD *__cdecl sub_10017D90(int a1) {
     sub_100173F0((_DWORD *)a1);
     sub_10017790(a1);
     sub_10019260();
-    sub_10019290();
+    Set_byte_104B035C_To1();
     if (dword_100ADF60)
         v1 = v8 * 0.62137121;
     else
@@ -31,23 +31,23 @@ _DWORD *__cdecl sub_10017D90(int a1) {
     sprintf(byte_104B0320, "%%yw%.0f", v1);
     result = (_DWORD *)(a1 + 88 * dword_106C5708);
     if (!dword_1022AF1C && dword_100BD3F4) {
-        v3 = g_Width - 46;
+        v3 = gWidth - 46;
         v4 = *(_DWORD *)(a1 + 88 * dword_106C5708 + 12) + result[1] - 4 -
              byte_100C1385[89992 * result[4]];
         sub_100192F0(20);
         v5 = v4 - 3;
         if (dword_100ADF60)
-            sub_10019300((int)byte_104B0320, v3, v5);
+            text_sub_10019300((int)byte_104B0320, v3, v5);
         else
-            sub_10019300((int)byte_104B0320, v3 - 3, v5);
+            text_sub_10019300((int)byte_104B0320, v3 - 3, v5);
         sub_100192F0(15);
-        sub_10019280();
+        Set_byte_104B035C_To0();
         if (dword_100ADF60) {
-            v6 = getCaptionString(0xEBu);
-            result = sub_10019300((int)v6, v3, v5);
+            v6 = GetStringWithIndex(0xEBu);
+            result = text_sub_10019300((int)v6, v3, v5);
         } else {
-            v7 = getCaptionString(0xECu);
-            result = sub_10019300((int)v7, v3 - 3, v5);
+            v7 = GetStringWithIndex(0xECu);
+            result = text_sub_10019300((int)v7, v3 - 3, v5);
         }
     }
     return result;

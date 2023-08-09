@@ -72,5 +72,5 @@ void __cdecl sub_10074450(float *a1, float *a2) {
     a1[13] = a2[1];
     a1[14] = a2[2];
     a1[15] = 1.0;
-    debugPrint(a1);
+    meth_DebugPrint(a1);
 }

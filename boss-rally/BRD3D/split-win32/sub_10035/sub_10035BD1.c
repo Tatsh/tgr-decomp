@@ -2,18 +2,18 @@
 //----- (10035BD1) --------------------------------------------------------
 Car *sub_10035BD1() {
     if (dword_106C56D0 != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C)
-        WriteConfigFile(&g_Config, g_bossRallyCfgPath);
+        WriteConfigFile(&gConfig, gBossRallyCfgPath);
     sub_100734F0();
     sub_10079550();
-    if (g_NetworkPlay) {
-        if (g_NetworkPlay > 1)
+    if (gNetworkPlay) {
+        if (gNetworkPlay > 1)
             sub_100713B0();
         sub_10005960();
     }
     sub_1002F690();
     CloseHandle(dword_106C6650);
     dword_106C6650 = 0;
-    flipSurfaces(g_gsu0);
+    meth_unk0008C_FlipSurfaces(gUnk8C);
     sub_1006A9C0(1, 640, 480, 16, 0);
     return sub_100613B0();
 }

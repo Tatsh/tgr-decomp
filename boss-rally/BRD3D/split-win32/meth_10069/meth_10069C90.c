@@ -4,9 +4,9 @@ int __thiscall meth_10069C90(BossRallyConfig *this) {
     int result; // eax
 
     qmemcpy(this, aE, 0xA8u);
-    qmemcpy(this->joystick1, &unk_100B4140, sizeof(this->joystick1));
-    qmemcpy(this->joystick2, &unk_100B41E8, sizeof(this->joystick2));
-    qmemcpy(this->joystick3, &unk_100B4290, sizeof(this->joystick3));
+    qmemcpy(&this->joystick1, gJoystick1Data, sizeof(this->joystick1));
+    qmemcpy(&this->joystick2, gJoystick2Data, sizeof(this->joystick2));
+    qmemcpy(&this->joystick3, gJoystick3Data, sizeof(this->joystick3));
     this->field_2A0 = 0;
     this->field_2A4 = (int)this;
     this->field_2A8 = 1;

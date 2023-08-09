@@ -1,15 +1,15 @@
 #include "types-win32.h"
 //----- (100488C0) --------------------------------------------------------
 int __thiscall meth_100488C0(_BYTE *this) {
-    int v3;    // ecx
-    unkC8 *v4; // esi
-    float *v5; // ecx
-    float v6;  // edx
+    int v3;       // ecx
+    unk000C8 *v4; // esi
+    float *v5;    // ecx
+    float v6;     // edx
 
     if ((this[8] & 0x10) != 0)
         return 0;
     v3 = 0;
-    if (g_Playmusic == 2) {
+    if (gPlayMusic == 2) {
         v3 = 1;
     } else {
         if (!(dword_10AA2A4C % 120))
@@ -18,14 +18,14 @@ int __thiscall meth_100488C0(_BYTE *this) {
     }
     if (v3)
         dword_10AA2A34 = pm_sub_10002910() - 2;
-    v4 = g_unkC8Ptr1;
-    g_unkC8Ptr1 = g_unkC8Ptr2;
-    v5 = *(float **)&g_unkC8Ptr2->field_14[0]->gap20[788];
-    v5[15] = (float)g_unk54Ptr->field_0;
+    v4 = gUnkC8Ptr1;
+    gUnkC8Ptr1 = gUnkC8Ptr6;
+    v5 = *(float **)&gUnkC8Ptr6->field_14[0]->gap20[788];
+    v5[15] = (float)gUnk54Ptr->field_0;
     v6 = *v5;
-    v5[16] = (float)*(int *)g_unk54Ptr->gap4;
+    v5[16] = (float)*(int *)gUnk54Ptr->gap4;
     (*(void (**)(void))(LODWORD(v6) + 12))();
-    g_unkC8Ptr1 = v4;
+    gUnkC8Ptr1 = v4;
     if (!dword_10AA2874)
         (*(void(__thiscall **)(_BYTE *))(*(_DWORD *)this + 20))(this);
     return 1;

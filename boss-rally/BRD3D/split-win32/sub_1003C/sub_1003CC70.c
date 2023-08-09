@@ -20,10 +20,10 @@ int __cdecl sub_1003CC70(int a1) {
     if (dword_10AA2898)
         v2 = (*(int(__stdcall **)(
             int, int *, _DWORD, int(__stdcall *)(int, int, _DWORD *, int), HWND, int))(
-            *(_DWORD *)a1 + 52))(a1, v5, 0, sub_1003CB90, g_HWND, 145);
+            *(_DWORD *)a1 + 52))(a1, v5, 0, sub_1003CB90, gHwnd, 145);
     else
         v2 = a1;
-    sub_1003CB10((int)&v5[2], (int)sub_1003CAA0, (int)g_HWND, 0);
+    sub_1003CB10((int)&v5[2], (int)sub_1003CAA0, (int)gHwnd, 0);
     dword_10AA2874 = 0;
     if (dword_10AA29D8 && *(_WORD *)(dword_10AA29D4 + 123236) &&
         (*(_BYTE *)(dword_10AA29D4 + 1080 * dword_10AA2880 + 14440) & 0x10) == 0) {

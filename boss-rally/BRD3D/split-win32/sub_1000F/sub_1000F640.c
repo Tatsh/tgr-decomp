@@ -118,7 +118,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
         dword_106C06A4 += *(unsigned __int16 *)(v7 + 78);
         dword_106C1610 += *(unsigned __int16 *)(v7 + 82);
     } else {
-        debugPrint(dword_106C6490);
+        meth_DebugPrint(dword_106C6490);
         v8 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v8 = -1157623807;
@@ -246,7 +246,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                 if (dword_106C6490 != (void *)(dword_106C2CF8 + 10044) &&
                         dword_106C6490 != (void *)(dword_106C2CF8 + 10180) ||
                     (v32 = v76, *(_DWORD *)(dword_106C2CF8 + 320) != v76)) {
-                    if (g_D3ddrawcarshadow)
+                    if (gD3dDrawCarShadow)
                         sub_1000F460();
                     *v5 = (float *)-419430400;
                     v5[1] = 0;
@@ -337,7 +337,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                                 v87 = flt_106C0884;
                                 v88 = flt_106C0874;
                                 v90 = flt_106C0894;
-                                if (g_D3ddrawcarshadow || v5 != v75) {
+                                if (gD3dDrawCarShadow || v5 != v75) {
                                     v55 = (float *)v73;
                                 } else {
                                     v55 = v93;
@@ -415,7 +415,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                                          (unsigned __int8)v91[HIWORD(v6[1]) & 0x1F]) != 0) {
                                         v6 += 2;
                                     } else {
-                                        if (g_D3ddrawcarshadow) {
+                                        if (gD3dDrawCarShadow) {
                                             sub_100106A0((int)v72,
                                                          (int)(v41 + 352),
                                                          (int)(v41 + 342),
@@ -436,7 +436,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                                 if (((unsigned __int8)(v91[BYTE1(v6[1]) & 0x1F] &
                                                        v91[v6[1] & 0x1F]) &
                                      (unsigned __int8)v91[HIWORD(v6[1]) & 0x1F]) != 0) {
-                                    if (g_D3ddrawcarshadow) {
+                                    if (gD3dDrawCarShadow) {
                                         sub_100106A0((int)v72,
                                                      (int)(v41 + 352),
                                                      (int)(v41 + 342),
@@ -453,7 +453,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                                     v6 += 2;
                                     goto LABEL_53;
                                 }
-                                if (!g_D3ddrawcarshadow)
+                                if (!gD3dDrawCarShadow)
                                     goto LABEL_66;
                                 sub_100106A0((int)v72,
                                              (int)(v92 + 352),
@@ -480,7 +480,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                                                        v91[v6[1] & 0x1F]) &
                                      (unsigned __int8)v91[HIWORD(v6[1]) & 0x1F]) != 0) {
                                     v6 += 2;
-                                } else if (g_D3ddrawcarshadow) {
+                                } else if (gD3dDrawCarShadow) {
                                     sub_100106A0((int)v72,
                                                  (int)(v41 + 352),
                                                  (int)(v41 + 342),
@@ -506,7 +506,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                         }
                     }
                 LABEL_56:
-                    if (!g_D3ddrawcarshadow && v5 == v75) {
+                    if (!gD3dDrawCarShadow && v5 == v75) {
                         v5 -= 2;
                         v73 = (int)v93;
                     }
@@ -526,7 +526,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
         *v5 = (float *)-1207959552;
         v5[1] = 0;
         v5 += 2;
-        debugPrint((void *)v32);
+        meth_DebugPrint((void *)v32);
     }
     result = v73;
     dword_10363FF0 = (int)v5;

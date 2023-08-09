@@ -19,7 +19,7 @@ int __cdecl sub_10030930(int a1, int a2, float a3, float a4, float a5, float a6)
     v15 = v7;
     v12 = -v8;
     v11 = -v15;
-    guFrustumF((struct_a1_1 *)a1, v11, v15, v12, v9, a5, a6);
+    guFrustumF((#507 *)a1, v11, v15, v12, v9, a5, a6);
     result = a2;
     *(_WORD *)a2 = 1;
     return result;

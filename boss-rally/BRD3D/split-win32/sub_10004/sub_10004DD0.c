@@ -10,15 +10,15 @@ int __cdecl sub_10004DD0(_DWORD *a1, int a2) {
     if (dword_10AA2894)
         goto LABEL_2;
     if (a1[3]) {
-        v5 = meth_10073F40((_DWORD *)a2);
-        v3 = meth_10073F50((_DWORD *)a2);
+        v5 = meth_unk00214_10073F40((_DWORD *)a2);
+        v3 = meth_unk00214_GetField10((_DWORD *)a2);
         sub_100360F0((int)a1, v3, v5, (void *)1);
     }
-    v6 = meth_10073F40((_DWORD *)a2);
-    v4 = meth_10073F50((_DWORD *)a2);
+    v6 = meth_unk00214_10073F40((_DWORD *)a2);
+    v4 = meth_unk00214_GetField10((_DWORD *)a2);
     if (!sub_1000C4D0(*a1, a1[2], 0, 0, v4, v6))
     LABEL_2:
-        result = meth_10073F40((_DWORD *)a2);
+        result = meth_unk00214_10073F40((_DWORD *)a2);
     else
         result = -1;
     return result;

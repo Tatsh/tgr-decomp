@@ -8,17 +8,17 @@ int __cdecl sub_10077200(_DWORD *a1) {
     int v5;                   // [esp+14h] [ebp-10Ch]
     char v6[224];             // [esp+40h] [ebp-E0h]
 
-    v1 = g_DirectInputDevice2A;
-    if (!g_DirectInputDevice2A) {
-        g_ConfigJoystickIndex = 2;
-        g_ConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
+    v1 = gDirectInputDevice2A;
+    if (!gDirectInputDevice2A) {
+        gConfigJoystickIndex = 2;
+        gConfigJoystickPtr = (int)&MEMORY[0x10B4E080];
         sub_100791D0();
-        v1 = g_DirectInputDevice2A;
-        if (!g_DirectInputDevice2A)
+        v1 = gDirectInputDevice2A;
+        if (!gDirectInputDevice2A)
             return 1;
     }
     v1->lpVtbl->Poll(v1);
-    v3 = g_DirectInputDevice2A->lpVtbl->GetDeviceState(g_DirectInputDevice2A, 272, &v4);
+    v3 = gDirectInputDevice2A->lpVtbl->GetDeviceState(gDirectInputDevice2A, 272, &v4);
     if (v3 && v3 == -2147024866)
         sub_100773D0();
     for (result = 0; result < 128; ++result) {

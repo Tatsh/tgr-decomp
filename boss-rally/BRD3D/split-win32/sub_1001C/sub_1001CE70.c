@@ -16,17 +16,17 @@ unsigned int *__cdecl sub_1001CE70(unsigned int *a1) {
     minX = (v1 >> 12) & 0xFFF;
     v2 = *a1 & 0xFFF;
     d3dClipStatus.maxz = 1.0;
-    dword_104C01A0 = g_Height - v2;
+    dword_104C01A0 = gHeight - v2;
     v3 = a1[1] >> 12;
     d3dClipStatus.minx = (float)minX;
     dword_104C5164 = v3 & 0xFFF;
     v4 = (double)(v3 & 0xFFF);
-    v5 = g_Height - (a1[1] & 0xFFF);
+    v5 = gHeight - (a1[1] & 0xFFF);
     d3dClipStatus.maxx = v4;
     dword_104C5170 = v5;
-    d3dClipStatus.miny = (float)(g_Height - dword_104C01A0);
+    d3dClipStatus.miny = (float)(gHeight - dword_104C01A0);
     d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
-    d3dClipStatus.maxy = (float)(int)(g_Height - v5);
+    d3dClipStatus.maxy = (float)(int)(gHeight - v5);
     d3dDevice2LPVtbl->SetClipStatus(g_D3DDevice2, &d3dClipStatus);
     return a1 + 2;
 }

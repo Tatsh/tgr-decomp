@@ -5,32 +5,32 @@ int sub_10046260() {
     int result; // eax
     void *v2;   // ecx
 
-    g_GameMode = 2;
+    gGameMode = 2;
     sub_1003E680();
     dword_10ACED34 = 0;
     dword_10AD0984 = 1;
-    g_GameMode = 2;
+    gGameMode = 2;
     dword_100AC304 = 1;
     LOBYTE(dword_10680738) = -1;
     if (dword_10AA290C) {
-        g_unkC8Ptr1 = (void *)dword_10AA290C;
+        gUnkC8Ptr1 = (void *)dword_10AA290C;
         result = 1;
     } else {
         dword_100AC304 = 1;
         v0 = (_DWORD *)malloc(0xC8u);
         if (v0)
-            result = (int)meth_10048710(v0);
+            result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
         dword_10AA290C = result;
-        g_unkC8Ptr1 = (void *)result;
+        gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004B430;
             (*(void(__cdecl **)(int))(dword_10AA290C + 4))(dword_10AA290C);
-            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
-            v2 = g_unkC8Ptr1;
-            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
-            debugPrint(v2);
+            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
+            v2 = gUnkC8Ptr1;
+            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
+            meth_DebugPrint(v2);
             sub_1003DFC0();
             sub_1003E510();
             result = 1;

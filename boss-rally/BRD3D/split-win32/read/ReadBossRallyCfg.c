@@ -13,7 +13,7 @@ int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename) 
     if (res) {
         meth_10069A90(&otherConfig);
         unk = 0;
-        meth_10069DE0(&otherConfig, this);
+        meth_BossRallyConfig_10069DE0(&otherConfig, this);
         if (freadLock(fourCC, 4u, 1u, fp_1) == 1 && !strncmp(fourCC, aRcfg, strlen(aRcfg)) &&
             freadLock(&expectedToBe2, 4u, 1u, fp_1) == 1 && expectedToBe2 == 2 &&
             freadLock(&this->field_2A8, 4u, 1u, fp_1) == 1 &&
@@ -45,19 +45,19 @@ int __thiscall ReadBossRallyCfg(BossRallyConfig *this, const char *cfgFilename) 
             freadLock(&this->field_870, 4u, 1u, fp_1) == 1 &&
             freadLock(&this->field_2A0, 4u, 1u, fp_1) == 1 &&
             freadLock(this, 0xA8u, 1u, fp_1) == 1 &&
-            freadLock(this->joystick1, 0xA8u, 1u, fp_1) == 1 &&
-            freadLock(this->joystick2, 0xA8u, 1u, fp_1) == 1 &&
-            freadLock(this->joystick3, 0xA8u, 1u, fp_1) == 1) {
+            freadLock(&this->joystick1, 0xA8u, 1u, fp_1) == 1 &&
+            freadLock(&this->joystick2, 0xA8u, 1u, fp_1) == 1 &&
+            freadLock(&this->joystick3, 0xA8u, 1u, fp_1) == 1) {
             fclose(fp_1);
             unk = -1;
-            debugPrint(&otherConfig);
+            meth_DebugPrint(&otherConfig);
             res = 1;
         } else {
-            meth_10069DE0(this, &otherConfig);
+            meth_BossRallyConfig_10069DE0(this, &otherConfig);
             fclose(fp_1);
             meth_10069C90(this);
             unk = -1;
-            debugPrint(&otherConfig);
+            meth_DebugPrint(&otherConfig);
             res = 0;
         }
     }

@@ -18,8 +18,8 @@ int __cdecl LoadTrack(int trackIndex) {
     dword_10A9977C = -2147329024 - (_DWORD)&unk_106C8E78;
     sub_1002B9A0(-2147329024, (int)&unk_106C8E78);
     sub_1002B9D0(1);
-    strcpy((char *)&trackFilepath, aTracks);
-    strcat((char *)&trackFilepath, off_100B80B8[trackIndex]);
+    strcpy((char *)&trackFilepath, kTracksSlash);
+    strcat((char *)&trackFilepath, gTrackFilenames[trackIndex]);
     cFile = CHK_FReadOpen((const char *)&trackFilepath);
     filesize = CHK_GetFileSize(cFile, _);
     ParseTrackHeader((int)&g_TrackHeader, cFile);

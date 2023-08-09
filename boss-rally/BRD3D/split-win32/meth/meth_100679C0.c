@@ -10,15 +10,15 @@ char *__thiscall meth_100679C0(_DWORD *this) {
 
     result = (char *)dword_106909E0;
     if (!dword_106909E0) {
-        result = (char *)g_GameMode;
-        if (g_GameMode != 2 && g_GameMode != 4) {
+        result = (char *)gGameMode;
+        if (gGameMode != GAME_MODE_2 && gGameMode != GAME_MODE_4) {
             result = (char *)this[80];
             if ((int)result < dword_100B4050) {
                 result = (char *)dword_100BD3E0;
                 if (this[1002] == dword_100BD3E0 - 1 || dword_100BD3E0 <= 1) {
                     result = (char *)sub_1006AAA0();
                     if (!result) {
-                        debugPrint(v3);
+                        meth_DebugPrint(v3);
                         __setargv_0();
                         v4 = 0;
                         if (dword_100B4050 > 0) {
@@ -44,6 +44,5 @@ char *__thiscall meth_100679C0(_DWORD *this) {
     return result;
 }
 // 10067A2B: variable 'v3' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 100B4050: using guessed type int dword_100B4050;
 // 106909E0: using guessed type int dword_106909E0;

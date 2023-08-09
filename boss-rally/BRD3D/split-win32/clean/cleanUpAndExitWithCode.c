@@ -3,9 +3,9 @@
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
     void *v1; // ecx
 
-    if (g_unkC8Ptr1 && dword_100AC300) {
-        *((_DWORD *)g_unkC8Ptr1 + 26) = 0;
-        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)g_unkC8Ptr1 + 24))(g_unkC8Ptr1, 0);
+    if (gUnkC8Ptr1 && dword_100AC300) {
+        *((_DWORD *)gUnkC8Ptr1 + 26) = 0;
+        (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)gUnkC8Ptr1 + 24))(gUnkC8Ptr1, 0);
     }
     sub_1002C4A0();
     sub_10016990();
@@ -15,13 +15,13 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
     sub_10078BC0();
     sub_10078DB0();
     ReleaseDirectSound();
-    if (g_NetworkPlay)
+    if (gNetworkPlay)
         np_sub_10005BE0();
     sub_1003BFD0();
     sub_1003BF60();
-    if (g_Playmusic)
+    if (gPlayMusic)
         pm_sub_10002CF0();
-    debugPrint(v1);
+    meth_DebugPrint(v1);
     if (dword_118AA0D0)
         dword_118AA0D0();
     if (dword_10690A28)

@@ -7,7 +7,7 @@ int __cdecl sub_10042880(int a1, int *a2) {
     char Buffer[4]; // [esp+10h] [ebp-108h] BYREF
     char v7[260];   // [esp+14h] [ebp-104h] BYREF
 
-    g_GameMode = 2;
+    gGameMode = 2;
     dword_10AA28E8 = 0;
     dword_10690A18 = 0;
     sub_1003E680();
@@ -15,7 +15,7 @@ int __cdecl sub_10042880(int a1, int *a2) {
     _itoa(*a2, Buffer, 10);
     strcat(v7, Buffer);
     strcat(v7, aGrf);
-    strcpy(aCRallyghostDatFilepath_ptr, v7);
+    strcpy(aCRallyghostDatFilepath, v7);
     sub_10071130(1, (FILE *)1);
     if ((dword_10680738 & 0x80u) != 0)
         return 0;
@@ -32,16 +32,16 @@ int __cdecl sub_10042880(int a1, int *a2) {
     v3 = dword_100AC4D8[(char)dword_10680738];
     qmemcpy(&dword_10AA26F0, dword_10ACED34, 0x14Cu);
     dword_100BD3E0 = dword_10AD098C;
-    g_HandlingType = dword_10AD0988;
+    gHandlingType = dword_10AD0988;
     v4 = dword_100AC4C0[SHIBYTE(dword_1068073C)];
     v5 = dword_100AC420[dword_10AD0984];
     dword_10AA28E8 = 1;
-    g_chosenCar = v5;
-    g_chosenTrack = v3;
-    g_ChosenWeather = v4;
-    g_UltraCarHeader = (void *)dword_100AC4A0[dword_10AD097C];
-    g_SuspensionType = dword_100AC4B0[dword_10AD0980];
-    g_TransmissionType = dword_100AC518[dword_10AD0978];
+    gChosenCar = v5;
+    gChosenTrack = v3;
+    gChosenWeather0 = v4;
+    gTireType = (void *)dword_100AC4A0[dword_10AD097C];
+    gSuspensionType = dword_100AC4B0[dword_10AD0980];
+    gTransmissionType = dword_100AC518[dword_10AD0978];
     sub_1005FCF0();
     dword_10AA289C = 1;
     return 1;

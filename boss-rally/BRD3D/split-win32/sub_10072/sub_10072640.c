@@ -3,7 +3,7 @@
 int __cdecl sub_10072640(int a1, int a2) {
     int v2; // eax
 
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     v2 = dword_11828F08[a1];
     if (!v2)

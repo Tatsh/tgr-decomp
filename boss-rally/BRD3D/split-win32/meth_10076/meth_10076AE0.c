@@ -5,11 +5,11 @@ int __thiscall meth_10076AE0(_DWORD *this, int chosenCar) {
 
     result = chosenCar;
     if (chosenCar < 16) {
-        this[2669] = 0;
+        this[0xA6D] = 0;
     } else {
         result = chosenCar - 16;
-        this[2669] = 1;
+        this[0xA6D] = 1;
     }
-    this[2666] = result;
+    this[0xA6A] = result;
     return result;
 }

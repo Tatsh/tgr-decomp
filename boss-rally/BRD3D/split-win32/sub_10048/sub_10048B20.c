@@ -17,7 +17,7 @@ void __stdcall sub_10048B20(int a1) {
         Sleep(0);
     if (!a1) {
         dword_100AC300 = 0;
-        g_unkC8Ptr1 = 0;
+        gUnkC8Ptr1 = 0;
         sub_1005F530();
         ppFilepath = &g_aImagesWork1aBmFilepath;
         do {
@@ -54,17 +54,17 @@ void __stdcall sub_10048B20(int a1) {
         dword_10AA2914 = 0;
         dword_10AA29B4 = 0;
     }
-    if (dword_10AA2918) {
-        dword_10AA2918->lpVtbl->field_1C(dword_10AA2918);
-        if (dword_10AA2918)
-            dword_10AA2918->lpVtbl->field_0(dword_10AA2918, 1);
-        dword_10AA2918 = 0;
+    if (gUnkC8Ptr4) {
+        gUnkC8Ptr4->lpVtbl->field_1C(gUnkC8Ptr4);
+        if (gUnkC8Ptr4)
+            gUnkC8Ptr4->lpVtbl->field_0(gUnkC8Ptr4, 1);
+        gUnkC8Ptr4 = 0;
     }
-    if (g_unkC8Ptr3) {
-        g_unkC8Ptr3->lpVtbl->field_1C(g_unkC8Ptr3);
-        if (g_unkC8Ptr3)
-            g_unkC8Ptr3->lpVtbl->field_0(g_unkC8Ptr3, 1);
-        g_unkC8Ptr3 = 0;
+    if (gUnkC8Ptr5) {
+        gUnkC8Ptr5->lpVtbl->field_1C(gUnkC8Ptr5);
+        if (gUnkC8Ptr5)
+            gUnkC8Ptr5->lpVtbl->field_0(gUnkC8Ptr5, 1);
+        gUnkC8Ptr5 = 0;
     }
     if (dword_10AA2920) {
         (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2920 + 28))(dword_10AA2920);
@@ -131,11 +131,11 @@ void __stdcall sub_10048B20(int a1) {
             (**(void(__thiscall ***)(int, int))dword_10AA2944)(dword_10AA2944, 1);
         dword_10AA2944 = 0;
     }
-    if (dword_10AA2948) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2948 + 28))(dword_10AA2948);
-        if (dword_10AA2948)
-            (**(void(__thiscall ***)(int, int))dword_10AA2948)(dword_10AA2948, 1);
-        dword_10AA2948 = 0;
+    if (gUnkC8Ptr10) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr10 + 28))(gUnkC8Ptr10);
+        if (gUnkC8Ptr10)
+            (**(void(__thiscall ***)(int, int))gUnkC8Ptr10)(gUnkC8Ptr10, 1);
+        gUnkC8Ptr10 = 0;
         dword_10AA29B8 = 0;
         dword_10AA29D8 = 0;
         dword_10AA29D4 = 0;
@@ -202,17 +202,17 @@ void __stdcall sub_10048B20(int a1) {
         dword_10AA29C4 = 0;
         dword_10AA29D0 = 0;
     }
-    if (dword_10AA296C) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA296C + 28))(dword_10AA296C);
-        if (dword_10AA296C)
-            (**(void(__thiscall ***)(int, int))dword_10AA296C)(dword_10AA296C, 1);
-        dword_10AA296C = 0;
+    if (gUnkC8Ptr7) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr7 + 28))(gUnkC8Ptr7);
+        if (gUnkC8Ptr7)
+            (**(void(__thiscall ***)(int, int))gUnkC8Ptr7)(gUnkC8Ptr7, 1);
+        gUnkC8Ptr7 = 0;
     }
-    if (dword_10AA2970) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2970 + 28))(dword_10AA2970);
-        if (dword_10AA2970)
-            (**(void(__thiscall ***)(int, int))dword_10AA2970)(dword_10AA2970, 1);
-        dword_10AA2970 = 0;
+    if (gUnkC8Ptr8) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr8 + 28))(gUnkC8Ptr8);
+        if (gUnkC8Ptr8)
+            (**(void(__thiscall ***)(int, int))gUnkC8Ptr8)(gUnkC8Ptr8, 1);
+        gUnkC8Ptr8 = 0;
     }
     if (dword_10AA2974) {
         (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2974 + 28))(dword_10AA2974);
@@ -220,17 +220,17 @@ void __stdcall sub_10048B20(int a1) {
             (**(void(__thiscall ***)(int, int))dword_10AA2974)(dword_10AA2974, 1);
         dword_10AA2974 = 0;
     }
-    if (dword_10AA297C) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA297C + 28))(dword_10AA297C);
-        if (dword_10AA297C)
-            (**(void(__thiscall ***)(int, int))dword_10AA297C)(dword_10AA297C, 1);
-        dword_10AA297C = 0;
+    if (gUnkC8Ptr3) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr3 + 28))(gUnkC8Ptr3);
+        if (gUnkC8Ptr3)
+            (**(void(__thiscall ***)(int, int))gUnkC8Ptr3)(gUnkC8Ptr3, 1);
+        gUnkC8Ptr3 = 0;
     }
-    if (dword_10AA2980) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2980 + 28))(dword_10AA2980);
-        if (dword_10AA2980)
-            (**(void(__thiscall ***)(int, int))dword_10AA2980)(dword_10AA2980, 1);
-        dword_10AA2980 = 0;
+    if (gUnkC8Ptr2) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr2 + 28))(gUnkC8Ptr2);
+        if (gUnkC8Ptr2)
+            (**(void(__thiscall ***)(int, int))gUnkC8Ptr2)(gUnkC8Ptr2, 1);
+        gUnkC8Ptr2 = 0;
     }
     if (dword_10AA2984) {
         (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2984 + 28))(dword_10AA2984);
@@ -258,24 +258,24 @@ void __stdcall sub_10048B20(int a1) {
         dword_10AA2994 = 0;
         dword_10AA29EC = 0;
     }
-    if (dword_10AA2998) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2998 + 28))(dword_10AA2998);
-        if (dword_10AA2998)
-            (**(void(__thiscall ***)(int, int))dword_10AA2998)(dword_10AA2998, 1);
-        dword_10AA2998 = 0;
+    if (gUnkC8Ptr9) {
+        (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr9 + 28))(gUnkC8Ptr9);
+        if (gUnkC8Ptr9)
+            (**(void(__thiscall ***)(int, int))gUnkC8Ptr9)(gUnkC8Ptr9, 1);
+        gUnkC8Ptr9 = 0;
     }
     if (!a1) {
-        if (g_unkC8Ptr2) {
-            g_unkC8Ptr2->lpVtbl->field_1C(g_unkC8Ptr2);
-            if (g_unkC8Ptr2)
-                g_unkC8Ptr2->lpVtbl->field_0(g_unkC8Ptr2, 1);
-            g_unkC8Ptr2 = 0;
+        if (gUnkC8Ptr6) {
+            gUnkC8Ptr6->lpVtbl->field_1C(gUnkC8Ptr6);
+            if (gUnkC8Ptr6)
+                gUnkC8Ptr6->lpVtbl->field_0(gUnkC8Ptr6, 1);
+            gUnkC8Ptr6 = 0;
         }
-        v4 = dword_10AA2900;
-        if (dword_10AA2900) {
-            debugPrint(dword_10AA2900);
+        v4 = gIostreamInit;
+        if (gIostreamInit) {
+            meth_DebugPrint(gIostreamInit);
             free(v4);
-            dword_10AA2900 = 0;
+            gIostreamInit = 0;
         }
         sub_1005FCF0();
     }

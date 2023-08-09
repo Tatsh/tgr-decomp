@@ -3,7 +3,7 @@
 int __cdecl pm_sub_100025F0(HWND hWnd) {
     unsigned int v2; // eax
 
-    if (!g_Playmusic)
+    if (!gPlayMusic)
         return 1;
     if (++dword_10220CD0 != 1)
         return 1;

@@ -22,14 +22,14 @@ int __thiscall meth_10065740(_DWORD *this) {
     float v20;      // [esp+24h] [ebp-4h]
 
     meth_10076B20(this);
-    if (g_GameMode == 2 || g_GameMode == 4 || g_GameMode == 3 && dword_100B4050 == 1 ||
-        !g_GameMode) {
+    if (gGameMode == GAME_MODE_2 || gGameMode == GAME_MODE_4 ||
+        gGameMode == GAME_MODE_3 && dword_100B4050 == 1 || gGameMode == GAME_MODE_0) {
         meth_10076A40(this, this[80]);
         v14 = 0.0;
         v15 = 0.5;
     } else {
         meth_10076A40(this, this[80]);
-        if (g_NetworkPlay)
+        if (gNetworkPlay)
             v2 = this[81];
         else
             v2 = this[80];
@@ -67,10 +67,10 @@ int __thiscall meth_10065740(_DWORD *this) {
         this[1004] = 0;
         this[1019] = 0;
         this[1017] = 0;
-        v5 = dword_104BBE08 - 1;
-        if ((__int16)(dword_104BBE08 - 1) > 2 || v5 < 0)
+        v5 = gChosenWeather1 - 1;
+        if ((__int16)(gChosenWeather1 - 1) > 2 || v5 < 0)
             v5 = 0;
-        this[1020] = (&stringOffsets[g_chosenTrack][21 * this[921]])[7 * v5 + 17];
+        this[1020] = (&gTrackDataOffsets[gChosenTrack][21 * this[921]])[7 * v5 + 17];
         this[995] = dword_106C7CB8;
         this[996] = 0;
         sub_1003ADA0(
@@ -86,8 +86,8 @@ int __thiscall meth_10065740(_DWORD *this) {
     this[1018] = 0;
     this[1022] = v7 - 1;
     this[1000] = 0;
-    if (v6 < dword_100B4050 || g_GameMode == 1 || g_GameMode == 2 || g_GameMode == 4 ||
-        g_GameMode == 6) {
+    if (v6 < dword_100B4050 || gGameMode == GAME_MODE_1 || gGameMode == GAME_MODE_2 ||
+        gGameMode == GAME_MODE_4 || gGameMode == GAME_MODE_6) {
         this[1003] = -1;
         this[1001] = -1;
     } else {
@@ -119,13 +119,12 @@ int __thiscall meth_10065740(_DWORD *this) {
     this[989] = 1065353216;
     return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100B36F8: using guessed type int dword_100B36F8;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 100BD2A8: using guessed type char **stringOffsets[16];
-// 1022AF18: using guessed type int g_NetworkPlay;
-// 104BBE08: using guessed type int dword_104BBE08;
+// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
+// 1022AF18: using guessed type int gNetworkPlay;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 106C7C88: using guessed type float flt_106C7C88;
 // 106C7C8C: using guessed type float flt_106C7C8C;
 // 106C7C90: using guessed type float flt_106C7C90;

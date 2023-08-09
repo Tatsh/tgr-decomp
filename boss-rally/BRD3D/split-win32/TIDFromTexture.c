@@ -1,13 +1,13 @@
 #include "types-win32.h"
 //----- (10028350) --------------------------------------------------------
 int __cdecl TIDFromTexture(_DWORD *a1, int a2) {
-    _DWORD *v2; // esi
-    int result; // eax
-    int v4;     // ecx
-    bool v5;    // cf
-    int v6;     // ebx
-    unk20 *v7;  // eax
-    int a4;     // [esp+Ch] [ebp-4h] BYREF
+    _DWORD *v2;   // esi
+    int result;   // eax
+    int v4;       // ecx
+    bool v5;      // cf
+    int v6;       // ebx
+    unk00020 *v7; // eax
+    int a4;       // [esp+Ch] [ebp-4h] BYREF
 
     v2 = a1;
     if (dword_118AA09C || (result = sub_10028630((int)a1), result == -1)) {
@@ -18,7 +18,7 @@ int __cdecl TIDFromTexture(_DWORD *a1, int a2) {
             dword_10575428 += 256;
             Block = CHK_ReAllocateMemory_0(Block, 4 * (v4 + 256), aTidfromtexture);
         }
-        v7 = (unk20 *)malloc(0x20u);
+        v7 = (unk00020 *)malloc(0x20u);
         if (v7) {
             v7->field_0 = 0;
             v7->field_4 = 0;

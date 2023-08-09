@@ -5,22 +5,22 @@ int sub_100440D0() {
     int result; // eax
 
     if (dword_10AA294C) {
-        g_unkC8Ptr1 = (void *)dword_10AA294C;
+        gUnkC8Ptr1 = (void *)dword_10AA294C;
         result = 1;
     } else {
         v0 = (_DWORD *)malloc(0xC8u);
         if (v0)
-            result = (int)meth_10048710(v0);
+            result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
         dword_10AA294C = result;
-        g_unkC8Ptr1 = (void *)result;
+        gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_100575F0;
             (*(void(__cdecl **)(int))(dword_10AA294C + 4))(dword_10AA294C);
-            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
+            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
-            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
+            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
         }
     }
     return result;

@@ -2,11 +2,11 @@
 //----- (10046D20) --------------------------------------------------------
 int __cdecl sub_10046D20(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (g_unkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))g_unkC8Ptr1)(g_unkC8Ptr1, 1);
+    if (gUnkC8Ptr1)
+        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
     dword_10AA2914 = 0;
     dword_10AA29B4 = 0;
-    g_unkC8Ptr1 = (void *)dword_10AA295C;
+    gUnkC8Ptr1 = (void *)dword_10AA295C;
     return 0;
 }
 // 10AA2914: using guessed type int dword_10AA2914;

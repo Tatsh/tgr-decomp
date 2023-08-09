@@ -11,7 +11,7 @@ int sub_10042E80() {
             dword_10AA2A08 = 1;
     }
     result = 1;
-    g_TransmissionType = dword_100AC518[dword_10AA2A08];
+    gTransmissionType = dword_100AC518[dword_10AA2A08];
     return result;
 }
 // 10042E80: using guessed type int sub_10042E80();

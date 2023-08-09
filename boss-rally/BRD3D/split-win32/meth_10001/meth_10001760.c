@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10001760) --------------------------------------------------------
-int __thiscall meth_10001760(#480 * this) {
+int __thiscall meth_10001760(void *this) {
     int result;          // eax
     double v3;           // st7
     int v4;              // edx
@@ -20,9 +20,9 @@ int __thiscall meth_10001760(#480 * this) {
     *((float *)this + 0xA3A) = v3;
     *((_DWORD *)this + 0xA38) = v4;
     v5 = sub_1003B170((float *)this + 0x81);
-    result = g_GameMode;
+    result = gGameMode;
     v14 = v5;
-    if (g_GameMode != 5) {
+    if (gGameMode != GAME_MODE_5) {
         v7 = 0.0;
         if (v8) {
             v7 = 2.0;
@@ -48,4 +48,3 @@ int __thiscall meth_10001760(#480 * this) {
 // 1000183A: variable 'v10' is possibly undefined
 // 1000183A: variable 'v11' is possibly undefined
 // 1000186D: variable 'v13' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;

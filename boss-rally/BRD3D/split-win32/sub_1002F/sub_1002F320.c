@@ -9,7 +9,7 @@ int sub_1002F320() {
     int *v5;        // ebx
     char *v7;       // [esp+10h] [ebp-4h]
 
-    if (!g_GameMode) {
+    if (!gGameMode) {
         if (dword_106909B8) {
             v0 = 0;
             if (dword_100B4050 > 0) {
@@ -21,8 +21,8 @@ int sub_1002F320() {
                       *((unsigned __int8 *)*v1 + 5) + 6) = dword_106805C8[v0];
                     *((_DWORD *)*v1 + 4 * *((unsigned __int8 *)*v1 + 4) +
                       *((unsigned __int8 *)*v1 + 5) + 20) = dword_10680728[v0];
-                    debugPrint((void *)(*((unsigned __int8 *)*v1 + 5) +
-                                        4 * *((unsigned __int8 *)*v1 + 4)));
+                    meth_DebugPrint((void *)(*((unsigned __int8 *)*v1 + 5) +
+                                             4 * *((unsigned __int8 *)*v1 + 4)));
                     ++v0;
                     v1 += 2778;
                 } while (v0 < dword_100B4050);

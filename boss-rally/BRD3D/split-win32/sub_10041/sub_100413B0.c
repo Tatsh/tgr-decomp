@@ -10,18 +10,18 @@ int __cdecl sub_100413B0(int a1) {
     sprintf(byte_10AA2518, "%d", dword_10AA28A0 + 1);
     if (dword_10AA28A0) {
         if (dword_10AA28A0 == 1) {
-            v5 = getCaptionString(0xB4u);
+            v5 = GetStringWithIndex(0xB4u);
             sprintf(Buffer, "%s%s", byte_10AA2518, v5);
             goto LABEL_9;
         }
         if (dword_10AA28A0 == 2) {
-            v4 = getCaptionString(0xB5u);
+            v4 = GetStringWithIndex(0xB5u);
             sprintf(Buffer, "%s%s", byte_10AA2518, v4);
             goto LABEL_9;
         }
-        v1 = getCaptionString(0xB6u);
+        v1 = GetStringWithIndex(0xB6u);
     } else {
-        v1 = getCaptionString(0xB3u);
+        v1 = GetStringWithIndex(0xB3u);
     }
     sprintf(Buffer, "%s%s", byte_10AA2518, v1);
 LABEL_9:

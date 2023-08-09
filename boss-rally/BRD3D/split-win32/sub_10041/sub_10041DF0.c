@@ -20,8 +20,8 @@ int __cdecl sub_10041DF0(char *a1, int a2) {
             strcat(v5, Buffer);
             strcat(v5, aBrf);
             strcpy(aCRallyseasonDatFilepath_ptr, v5);
-            strcpy(&g_unkC8Ptr2->field_C0[260 * Value + 4], &a1[1080 * Value + 53]);
-            strcpy(byte_10AD0990, &a1[1080 * Value + 53]);
+            strcpy(&gUnkC8Ptr6->field_C0[260 * Value + 4], &a1[1080 * Value + 53]);
+            strcpy(gBuffer1, &a1[1080 * Value + 53]);
             if (!*((_BYTE *)dword_10ACED34 + 4) && !*((_BYTE *)dword_10ACED34 + 5)) {
                 memset((char *)dword_10ACED34 + 6, 0, 0x18u);
                 memset((char *)dword_10ACED34 + 30, 0, 0x30u);

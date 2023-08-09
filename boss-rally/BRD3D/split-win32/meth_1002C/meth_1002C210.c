@@ -7,7 +7,7 @@ _DWORD *__thiscall meth_1002C210(void *this) {
     int v4;         // ecx
 
     for (i = 0; i < 3; ++i)
-        debugPrint(this);
+        meth_DebugPrint(this);
     dword_1067D570 ^= 1u;
     dword_1067D578 = sub_10060E90();
     dword_1067D57C = 0;

@@ -1,22 +1,14 @@
 #include "types-win32.h"
 //----- (1001A790) --------------------------------------------------------
-HRESULT __cdecl sub_1001A790(int a1,
-                             int a2,
-                             int a3,
-                             int a4,
-                             int a5,
-                             int a6,
-                             int a7,
-                             gameSpecificUnk1 **a8,
-                             int **a9,
-                             int ***a10) {
-    gameSpecificUnk1 **gsu1; // ebp
-    int **v11;               // ebx
-    int ***v12;              // edi
-    HRESULT result;          // eax
-    gameSpecificUnk1 *v14;   // esi
-    gameSpecificUnk1 **v15;  // edx
-    int **v16;               // eax
+HRESULT __cdecl sub_1001A790(
+    int a1, int a2, int a3, int a4, int a5, int a6, int a7, #485 * *a8, int **a9, int ***a10) {
+# 485 ** gsu1;      // ebp
+    int **v11;      // ebx
+    int ***v12;     // edi
+    HRESULT result; // eax
+# 485 * v14;        // esi
+# 485 ** v15;       // edx
+    int **v16;      // eax
 
     gsu1 = a8;
     if (!a8)
@@ -32,7 +24,7 @@ HRESULT __cdecl sub_1001A790(int a1,
         if (result < 0)
             return result;
     }
-    v14 = sub_1001A550((gameSpecificUnk1 *)a1);
+    v14 = sub_1001A550((#485 *)a1);
     if (!v14)
         return -2005522670;
     if (a7) {

@@ -45,8 +45,8 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
         v7 = a2;
         v6 = a1;
         result = (*(int(__stdcall **)(_DWORD, int, int, int, int *, int))(
-            **(_DWORD **)(*(_DWORD *)dword_118ABE08 + 88) + 28))(
-            *(_DWORD *)(*(_DWORD *)dword_118ABE08 + 88), a1, a2, dword_10A9E360[29 * a3], v14, v17);
+            **(_DWORD **)(*(_DWORD *)gUnk334 + 88) + 28))(
+            *(_DWORD *)(*(_DWORD *)gUnk334 + 88), a1, a2, dword_10A9E360[29 * a3], v14, v17);
         if (!result)
             break;
         if (result == -2005532222) {

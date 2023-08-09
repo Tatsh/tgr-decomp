@@ -22,21 +22,21 @@ int sub_10044280() {
         }
     }
     if (dword_10AA2950) {
-        g_unkC8Ptr1 = (void *)dword_10AA2950;
+        gUnkC8Ptr1 = (void *)dword_10AA2950;
         goto LABEL_20;
     }
     v0 = (_DWORD *)malloc(0xC8u);
     if (v0)
-        result = (int)meth_10048710(v0);
+        result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
     dword_10AA2950 = result;
-    g_unkC8Ptr1 = (void *)result;
+    gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_10057C10;
         (*(void(__cdecl **)(int))(dword_10AA2950 + 4))(dword_10AA2950);
-        *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
-        *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
+        *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
+        *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_20:
         *(_DWORD *)(dword_10AA29B8 + 8) = sub_10044970;
         return 1;

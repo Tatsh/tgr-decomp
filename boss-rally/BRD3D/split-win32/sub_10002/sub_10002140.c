@@ -10,16 +10,16 @@ int sub_10002140() {
     int v6;         // ecx
 
     memset(&dword_10220B20, 0, 0x118u);
-    v0 = g_GameMode;
-    dword_10220B20 = g_GameMode;
-    if (!g_GameMode) {
+    v0 = gGameMode;
+    dword_10220B20 = gGameMode;
+    if (!gGameMode) {
         v1 = dword_10ACED34;
         LOBYTE(v0) = *((_BYTE *)dword_10ACED34 + 4);
         dword_10220B24 = v0;
         dword_10220B28 = *((unsigned __int8 *)dword_10ACED34 + 5);
         dword_10220B2C = *(_DWORD *)dword_10ACED34;
-        dword_10220B30 = g_chosenTrack;
-        dword_10220B34 = dword_104BBE08;
+        dword_10220B30 = gChosenTrack;
+        dword_10220B34 = gChosenWeather1;
         v2 = &byte_10220B3C;
         v3 = &dword_10ACED34;
         do {

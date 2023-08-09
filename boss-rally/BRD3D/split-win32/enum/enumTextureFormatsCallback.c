@@ -1,29 +1,29 @@
 #include "types-win32.h"
 //----- (1001AB00) --------------------------------------------------------
-int __stdcall enumTextureFormatsCallback(_DWORD *a1, int a2) {
-    _DWORD *v2; // ebx
-    _DWORD *v4; // edx
+int __stdcall enumTextureFormatsCallback(LPDDSURFACEDESC lpSurfaceDesc, LPVOID ctx) {
+    intptr_t v2;   // ebx
+    unk00074 *u74; // edx
 
-    if (a2) {
-        v2 = *(_DWORD **)(a2 + 8);
+    if (ctx) {
+        v2 = *((_DWORD *)ctx + 2);
         if (v2) {
-            if (!a1)
+            if (!lpSurfaceDesc)
                 return 0;
-            if (*a1 != 108)
+            if (lpSurfaceDesc->dwSize != 0x6C)
                 return 0;
-            v4 = (_DWORD *)malloc(0x74u);
-            if (v4) {
-                memset(v4, 0, 0x6Cu);
-                *v4 = 108;
-                v4[27] = 0;
-                v4[28] = 0;
+            u74 = (unk00074 *)malloc(0x74u);
+            if (u74) {
+                memset(u74, 0, 0x6Cu);
+                u74->field_0.dwSize = 0x6C;
+                u74->field_6C = 0;
+                u74->last = 0;
             } else {
-                v4 = 0;
+                u74 = NULL;
             }
-            if (v4) {
-                qmemcpy(v4, a1, 0x6Cu);
-                if (meth_1001B030(v2, (int)v4) >= 0)
-                    ++*(_DWORD *)(a2 + 4);
+            if (u74) {
+                qmemcpy(u74, lpSurfaceDesc, 0x6Cu);
+                if (meth_1001B030((_DWORD *)v2, u74) >= 0)
+                    ++*((_DWORD *)ctx + 1);
             }
         }
     }

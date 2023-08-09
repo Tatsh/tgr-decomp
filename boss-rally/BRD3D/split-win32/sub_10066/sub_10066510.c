@@ -1,83 +1,81 @@
 #include "types-win32.h"
 //----- (10066510) --------------------------------------------------------
 void sub_10066510() {
-    int v0;         // edi
-    int *v1;        // esi
-    int v2;         // ebx
-    signed int v3;  // ebp
-    int v4;         // edi
-    char *v5;       // eax
-    int *v6;        // edx
-    char *v7;       // esi
-    int v8;         // ecx
-    int v9;         // ecx
-    signed int v10; // ecx
-    char *v11;      // esi
-    int v12;        // eax
-    int v13;        // edx
-    char Base[4];   // [esp+10h] [ebp-A0h] BYREF
-    char v15[156];  // [esp+14h] [ebp-9Ch] BYREF
+    _DWORD edi2;     // edi
+    _DWORD esi3;     // esi
+    _DWORD ebx6;     // ebx
+    _DWORD ebp6;     // ebp
+    _DWORD edi6;     // edi
+    _DWORD eax7;     // eax
+    _DWORD edx7;     // edx
+    _DWORD esi7;     // esi
+    _DWORD ecx9;     // ecx
+    _DWORD ecx10;    // ecx
+    _DWORD ecx16;    // ecx
+    _DWORD esi17;    // esi
+    _DWORD eax18;    // eax
+    _DWORD edx18;    // edx
+    char Base[4];    // [esp+10h] [ebp-A0h]
+    char var9C[156]; // [esp+14h] [ebp-9Ch]
 
-    if (g_NetworkPlay) {
-        v0 = 0;
+    if (gNetworkPlay) {
+        edi2 = 0;
         if (dword_100B36FC > 0) {
-            v1 = &dword_10ACEEA0;
+            esi3 = &dword_10ACEEA0;
             do {
-                *v1 = sub_10005E40(*(v1 - 941));
-                ++v0;
-                v1 += 2778;
-            } while (v0 < dword_100B36FC);
+                *esi3 = sub_10005E40(*(esi3 - 941));
+                ++edi2;
+                esi3 += 2778;
+            } while (edi2 < dword_100B36FC);
         }
     } else {
-        v2 = dword_100B36F8;
-        v3 = 0;
-        v4 = 0;
+        ebx6 = dword_100B36F8;
+        ebp6 = 0;
+        edi6 = 0;
         if (dword_100B36F8 > 0) {
-            v5 = Base;
-            v6 = &dword_10ACD4F8;
-            v7 = v15;
+            eax7 = Base;
+            edx7 = &dword_10ACD4F8;
+            esi7 = var9C;
             do {
-                if ((v6[2] & 2) == 0) {
-                    v8 = *v6;
-                    *(_DWORD *)v7 = v4;
-                    if (v8)
-                        v9 = *(_DWORD *)(v8 + 4084);
+                if ((edx7[2] & 2) == 0) {
+                    ecx9 = *edx7;
+                    *(_DWORD *)esi7 = edi6;
+                    if (ecx9)
+                        ecx10 = *(_DWORD *)(ecx9 + 4084);
                     else
-                        v9 = *(v6 - 4);
-                    *(_DWORD *)v5 = v9;
-                    ++v3;
-                    v7 += 8;
-                    v5 += 8;
+                        ecx10 = *(edx7 - 4);
+                    *(_DWORD *)eax7 = ecx10;
+                    ++ebp6;
+                    esi7 += 8;
+                    eax7 += 8;
                 }
-                ++v4;
-                v6 += 32;
-            } while (v4 < v2);
+                ++edi6;
+                edx7 += 32;
+            } while (edi6 < ebx6);
         }
-        if (v3) {
-            qsort(Base, v3, 8u, sub_10066620);
-            v2 = dword_100B36F8;
+        if (ebp6) {
+            qsort(Base, ebp6, 8u, sub_10066620);
+            ebx6 = dword_100B36F8;
         }
-        v10 = 0;
-        if (v3 > 0) {
-            v11 = v15;
+        ecx16 = 0;
+        if (ebp6 > 0) {
+            esi17 = var9C;
             do {
-                v12 = *(_DWORD *)v11 << 7;
-                v13 = *(int *)((char *)&dword_10ACD4F8 + v12);
-                if (v13) {
-                    *(_DWORD *)(v13 + 4088) = v2 - v10 - 1;
-                    v2 = dword_100B36F8;
+                eax18 = *(_DWORD *)esi17 << 7;
+                edx18 = *(int *)((char *)&dword_10ACD4F8 + eax18);
+                if (edx18) {
+                    *(_DWORD *)(edx18 + 4088) = ebx6 - ecx16 - 1;
+                    ebx6 = dword_100B36F8;
                 } else {
-                    *(int *)((char *)&dword_10ACD4EC + v12) = v2 - v10 - 1;
+                    *(int *)((char *)&dword_10ACD4EC + eax18) = ebx6 - ecx16 - 1;
                 }
-                ++v10;
-                v11 += 8;
-            } while (v10 < v3);
+                ++ecx16;
+                esi17 += 8;
+            } while (ecx16 < ebp6);
         }
     }
 }
+// 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
 // 100B36F8: using guessed type int dword_100B36F8;
 // 100B36FC: using guessed type int dword_100B36FC;
-// 1022AF18: using guessed type int g_NetworkPlay;
-// 10ACD4EC: using guessed type int dword_10ACD4EC;
-// 10ACD4F8: using guessed type int dword_10ACD4F8;
-// 10ACEEA0: using guessed type int dword_10ACEEA0;
+// 1022AF18: using guessed type int gNetworkPlay;

@@ -66,7 +66,7 @@ char sub_10031866() {
         } else {
             LOBYTE(v11) = 0;
         }
-        if (g_chosenTrack) {
+        if (gChosenTrack) {
             byte_106C0260 = byte_106C7CC8;
             byte_106C1614 = byte_106C7CC9;
             byte_106C0200 = byte_106C7CCA;

@@ -3,7 +3,7 @@
 LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     HWND v3;             // esi
     LONG v4;             // eax
-    unk334 *v5;          // ebp
+    unk00334 *v5;        // ebp
     unsigned int v6;     // esi
     unsigned int v7;     // edi
     int v8;              // ebp
@@ -19,7 +19,7 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
 
     v3 = hWnd;
     v4 = GetWindowLongA(hWnd, GWL_USERDATA);
-    v5 = (unk334 *)v4;
+    v5 = (unk00334 *)v4;
     if (v4 && (*(_BYTE *)(v4 + 28) & 2) != 0 && !dword_118AC230 && lParam) {
         if (IsIconic(hWnd)) {
             dword_118AC230 = 1;
@@ -27,7 +27,7 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
             GetWindowRect(hWnd, &Rect);
             v6 = abs32(Rect.right - Rect.left);
             v7 = abs32(Rect.bottom - Rect.top);
-            meth_1000B350(v5, &v14);
+            meth_unk00334_1000B350(v5, &v14);
             v8 = v14;
             v9 = abs32(v16 - v14);
             v10 = abs32(v17 - v15);

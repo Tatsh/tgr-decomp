@@ -8,7 +8,7 @@ int __cdecl sub_10045050() {
     result = 1;
     dword_100AC304 = 1;
     *(_DWORD *)(dword_10AA29B4 + 8) = sub_10046CD0;
-    g_GameMode = 0;
+    gGameMode = 0;
     return result;
 }
 // 10046CD0: using guessed type int __cdecl sub_10046CD0(int);

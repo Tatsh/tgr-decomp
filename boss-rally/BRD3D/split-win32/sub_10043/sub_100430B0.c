@@ -27,9 +27,9 @@ LABEL_8:
     dword_100AC658 = v0;
     if (unk) {
         _itoa(v0, Buffer, 10);
-        v1 = getCaptionString(0xB9u);
+        v1 = GetStringWithIndex(0xB9u);
         sprintf(byte_10A9DD28, v1, Buffer);
-        sub_1003D210(g_HWND, dword_10A9D008, 1);
+        sub_1003D210(gHwnd, dword_10A9D008, 1);
         strcpy(byte_10A9DD28, String2);
     }
     return 1;

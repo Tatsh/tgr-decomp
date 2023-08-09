@@ -3,8 +3,8 @@
 int sub_1001BBB0() {
     int result; // eax
 
-    result = g_Height;
-    dword_104C01A0 = g_Height;
+    result = gHeight;
+    dword_104C01A0 = gHeight;
     return result;
 }
 // 100A81C4: using guessed type int g_Height;

@@ -8,7 +8,7 @@ _DWORD *sub_10024460() {
 
     dword_10B501D0 = sub_10024550;
     dword_10B501D4 = sub_100243E0;
-    dword_10B501CC = (int (*)(void))debugPrint;
+    dword_10B501CC = (int (*)(void))meth_DebugPrint;
     v0 = 0;
     v1 = (int *)&unk_104C0B80;
     do {

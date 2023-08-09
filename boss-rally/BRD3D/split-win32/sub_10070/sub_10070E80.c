@@ -32,7 +32,7 @@ char sub_10070E80() {
     v3 = (unsigned __int8 *)sub_1006AB90();
     v20 = CalculateChecksum(v20, v3, v17);
     Buffer = sub_1006ABA0() + ElementCount + 12;
-    v4 = fopen(aCRallyghostDatFilepath_ptr, aWb);
+    v4 = fopen(aCRallyghostDatFilepath, aWb);
     v5 = v4;
     if (!v4)
         return 0;
@@ -68,7 +68,7 @@ char sub_10070E80() {
             fwriteLock(&dword_100AC654, 4u, 1u, v5);
             fwriteLock(&dword_100AC65C, 4u, 1u, v5);
             fwriteLock(&dword_100AC658, 4u, 1u, v5);
-            v15 = fwriteLock(byte_10AD0990, 1u, 0x80u, v5);
+            v15 = fwriteLock(gBuffer1, 1u, 0x80u, v5);
             v19 = v5;
             if (v15 == 128) {
                 fclose(v5);

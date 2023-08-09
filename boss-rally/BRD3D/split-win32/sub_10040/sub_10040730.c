@@ -6,7 +6,7 @@ int __cdecl sub_10040730(int a1) {
     __int16 v3; // cx
     int result; // eax
 
-    if (g_GameMode) {
+    if (gGameMode) {
         v2 = dword_100AC648;
     } else {
         if (byte_10AA28A8)

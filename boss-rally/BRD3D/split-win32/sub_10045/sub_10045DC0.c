@@ -6,22 +6,22 @@ int sub_10045DC0() {
 
     dword_10AA28AC = dword_10AA28A4;
     if (dword_10AA2930) {
-        g_unkC8Ptr1 = (void *)dword_10AA2930;
+        gUnkC8Ptr1 = (void *)dword_10AA2930;
         result = 1;
     } else {
         v0 = (_DWORD *)malloc(0xC8u);
         if (v0)
-            result = (int)meth_10048710(v0);
+            result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
         dword_10AA2930 = result;
-        g_unkC8Ptr1 = (void *)result;
+        gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10052030;
             (*(void(__cdecl **)(int))(dword_10AA2930 + 4))(dword_10AA2930);
             result = 1;
-            *((_DWORD *)g_unkC8Ptr1 + 3) = 1;
-            *((_DWORD *)g_unkC8Ptr1 + 26) = 1;
+            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
+            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
         }
     }
     return result;

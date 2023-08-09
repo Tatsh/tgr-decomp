@@ -3,7 +3,7 @@
 int __cdecl sub_10072680(int a1, __int64 a2) {
     int v2; // ecx
 
-    if (!g_Playsfx || !g_DSound || !dword_118290FC)
+    if (!gPlaysfx || !g_DSound || !dword_118290FC)
         return 1;
     if (!sub_10072700(dword_11828F08[a1],
                       (__int64)((double)a2 * dbl_11828E88[a1] * 2.328306436538696e-10)))

@@ -3,7 +3,7 @@
 int __thiscall meth_1001C620(_DWORD *this) {
     int v2; // [esp-8h] [ebp-8h]
 
-    if (!this[22])
+    if (!this[0x16])
         return 0;
     v2 = this[21];
     this[22] = 0;

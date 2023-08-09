@@ -3,8 +3,8 @@
 int sub_1001BB90() {
     int result; // eax
 
-    result = g_Width;
-    dword_104C5164 = g_Width;
+    result = gWidth;
+    dword_104C5164 = gWidth;
     return result;
 }
 // 100A81C0: using guessed type int g_Width;

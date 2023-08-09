@@ -66,7 +66,7 @@ int __thiscall meth_10047A60(_DWORD *this) {
             }
             v11 = this[7];
             if ((v11 & 0x40000) != 0) {
-                if (g_unk54Ptr->width || g_unk54Ptr->field_30) {
+                if (gUnk54Ptr->field_2C || gUnk54Ptr->field_30) {
                     v11 |= 0x80002u;
                 LABEL_47:
                     this[7] = v11;

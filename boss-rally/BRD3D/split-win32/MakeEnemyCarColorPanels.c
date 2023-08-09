@@ -7,20 +7,20 @@ size_t MakeEnemyCarColorPanels() {
     int *v3;       // edi
     size_t result; // eax
 
-    if (g_ConfigJoystickIndex == 1 || g_ConfigJoystickIndex == 2) {
-        g_ConfigJoystickIndex = sub_100791D0();
-        switch (g_ConfigJoystickIndex) {
+    if (gConfigJoystickIndex == 1 || gConfigJoystickIndex == 2) {
+        gConfigJoystickIndex = sub_100791D0();
+        switch (gConfigJoystickIndex) {
         case 1:
-            g_ConfigJoystickPtr = g_Config.joystick1;
+            gConfigJoystickPtr = gConfig.joystick1;
             break;
         case 2:
-            g_ConfigJoystickPtr = g_Config.joystick2;
+            gConfigJoystickPtr = gConfig.joystick2;
             break;
         case 3:
-            g_ConfigJoystickPtr = g_Config.joystick3;
+            gConfigJoystickPtr = gConfig.joystick3;
             break;
         default:
-            g_ConfigJoystickPtr = &g_Config;
+            gConfigJoystickPtr = &gConfig;
             break;
         }
     }

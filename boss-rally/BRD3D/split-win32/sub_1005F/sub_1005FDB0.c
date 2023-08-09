@@ -20,22 +20,22 @@ int sub_1005FDB0() {
             *((_DWORD *)v1 - 1) = (unsigned __int8)(v0 - 126);
             switch ((char)v0) {
             case 4:
-                v3 = getCaptionString(0xC4u);
+                v3 = GetStringWithIndex(0xC4u);
                 goto LABEL_11;
             case 5:
-                v3 = getCaptionString(0xC5u);
+                v3 = GetStringWithIndex(0xC5u);
                 goto LABEL_11;
             case 6:
-                v3 = getCaptionString(0xC6u);
+                v3 = GetStringWithIndex(0xC6u);
                 goto LABEL_11;
             case 7:
-                v3 = getCaptionString(0xC7u);
+                v3 = GetStringWithIndex(0xC7u);
                 goto LABEL_11;
             case 8:
-                v3 = getCaptionString(0xC8u);
+                v3 = GetStringWithIndex(0xC8u);
                 goto LABEL_11;
             case 9:
-                v3 = getCaptionString(0xC9u);
+                v3 = GetStringWithIndex(0xC9u);
             LABEL_11:
                 sprintf(v1, v3);
                 break;
@@ -44,7 +44,7 @@ int sub_1005FDB0() {
             }
         } else {
             *((_DWORD *)v1 - 1) = v0;
-            v2 = getCaptionString(0xC3u);
+            v2 = GetStringWithIndex(0xC3u);
             sprintf(v1, v2, v0);
         }
         v1 += 36;
@@ -58,22 +58,22 @@ int sub_1005FDB0() {
             result = (unsigned __int8)v4 - 128;
             switch ((char)v4) {
             case -128:
-                v8 = getCaptionString(0xC4u);
+                v8 = GetStringWithIndex(0xC4u);
                 goto LABEL_23;
             case -127:
-                v8 = getCaptionString(0xC5u);
+                v8 = GetStringWithIndex(0xC5u);
                 goto LABEL_23;
             case -126:
-                v8 = getCaptionString(0xC6u);
+                v8 = GetStringWithIndex(0xC6u);
                 goto LABEL_23;
             case -125:
-                v8 = getCaptionString(0xC7u);
+                v8 = GetStringWithIndex(0xC7u);
                 goto LABEL_23;
             case -124:
-                v8 = getCaptionString(0xC8u);
+                v8 = GetStringWithIndex(0xC8u);
                 goto LABEL_23;
             case -123:
-                v8 = getCaptionString(0xC9u);
+                v8 = GetStringWithIndex(0xC9u);
             LABEL_23:
                 result = sprintf(v5, v8);
                 break;
@@ -82,7 +82,7 @@ int sub_1005FDB0() {
             }
         } else {
             *((_DWORD *)v5 - 1) = v4;
-            v6 = getCaptionString(0xC3u);
+            v6 = GetStringWithIndex(0xC3u);
             result = sprintf(v5, v6, v4);
         }
         v5 += 36;

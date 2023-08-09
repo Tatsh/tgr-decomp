@@ -14,7 +14,7 @@ int np_sub_100053F0() {
         if (v2 == result)
             result = sub_10004760(&unk,
                                   dword_10094294,
-                                  g_chosenCar,
+                                  gChosenCar,
                                   byte_10AD0854[0],
                                   byte_10AD0855[0],
                                   byte_10AD0856[0],

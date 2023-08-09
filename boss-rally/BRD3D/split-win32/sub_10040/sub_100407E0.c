@@ -4,9 +4,9 @@ int __cdecl sub_100407E0(int a1) {
     int v2; // eax
     int v3; // ecx
 
-    if (g_unkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8)
+    if (gUnkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8)
         return -2;
-    if (g_GameMode) {
+    if (gGameMode) {
         v3 = dword_10AA2A00;
     } else {
         if (byte_10AA28A8)

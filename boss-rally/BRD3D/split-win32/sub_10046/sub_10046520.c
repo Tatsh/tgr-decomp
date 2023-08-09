@@ -2,9 +2,9 @@
 //----- (10046520) --------------------------------------------------------
 int __cdecl sub_10046520(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (g_unkC8Ptr1)
-        g_unkC8Ptr1->lpVtbl->field_0(g_unkC8Ptr1, 1);
-    dword_10AA2918 = 0;
-    g_unkC8Ptr1 = g_unkC8Ptr2;
+    if (gUnkC8Ptr1)
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr4 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }

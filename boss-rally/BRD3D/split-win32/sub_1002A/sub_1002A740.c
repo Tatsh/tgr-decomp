@@ -5,7 +5,7 @@ int sub_1002A740() {
     char *v1;   // eax
     int result; // eax
 
-    if (g_ChosenWeather == 2 || (v0 = 0x80, g_ChosenWeather == 3))
+    if (gChosenWeather0 == 2 || (v0 = 0x80, gChosenWeather0 == 3))
         v0 = 32;
     v1 = (char *)&unk_104D51C1;
     do {

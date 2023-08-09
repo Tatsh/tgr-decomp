@@ -10,7 +10,7 @@ void __cdecl sub_10061660(int a1) {
         if ((v2 & 0x8000) == 0 && (v2 & 1) == 0) {
             v3 = *(_BYTE *)(i + 17);
             *(_WORD *)(i + 22) |= 0x8000u;
-            if (v3 == 2 && (g_chosenTrack == 3 || g_chosenTrack == 9))
+            if (v3 == 2 && (gChosenTrack == 3 || gChosenTrack == 9))
                 *(_BYTE *)(i + 17) = 0;
             sub_10061660(*(_DWORD *)i);
         }

@@ -6,7 +6,7 @@ void __cdecl sub_10068210(int a1, int *a2, int a3) {
 
     v3 = -1;
     v4 = 128;
-    if (g_chosenTrack == 4 || g_chosenTrack == 10) {
+    if (gChosenTrack == 4 || gChosenTrack == 10) {
         v3 = 15;
         v4 = 384;
     }

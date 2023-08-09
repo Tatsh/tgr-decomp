@@ -92,7 +92,7 @@ void __thiscall meth_10035CE0(int *this) {
             *this |= 0x200000u;
         if ((*this & 0x2000) != 0)
             *this |= 0x100000u;
-        if (*((char *)g_ConfigJoystickPtr + 1) < 0 || *((char *)g_ConfigJoystickPtr + 7) < 0) {
+        if ((gConfigJoystickPtr->field_0 & 0x8000) != 0 || gConfigJoystickPtr->field_7 < 0) {
             *((_BYTE *)this + 36) = *(_BYTE *)(this[86] + 2);
             goto LABEL_46;
         }

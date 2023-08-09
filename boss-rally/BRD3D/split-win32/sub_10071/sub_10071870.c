@@ -1,138 +1,136 @@
 #include "types-win32.h"
 //----- (10071870) --------------------------------------------------------
 int *sub_10071870() {
-    size_t v0;            // ebp
-    int v1;               // ebx
-    float *v2;            // edi
-    unsigned int *v3;     // esi
-    HANDLE v4;            // ecx
-    unsigned int v5;      // eax
-    _DWORD *v6;           // edi
-    size_t v7;            // ebx
-    int v8;               // edx
-    HANDLE *v9;           // esi
-    int v10;              // edi
-    float *v11;           // ebp
-    int *v12;             // ebx
-    char *v13;            // esi
-    void *v14;            // eax
-    int v15;              // eax
-    double v16;           // st7
-    int v17;              // eax
-    int v18;              // ecx
+    _DWORD ebp1;          // ebp
+    _DWORD ebx1;          // ebx
+    _DWORD edi1;          // edi
+    _DWORD esi1;          // esi
+    _DWORD ecx2;          // ecx
+    _DWORD eax6;          // eax
+    _DWORD edi11;         // edi
+    _DWORD ebx11;         // ebx
+    _DWORD edx12;         // edx
+    _DWORD esi12;         // esi
+    _DWORD edi19;         // edi
+    _DWORD ebp19;         // ebp
+    _DWORD ebx19;         // ebx
+    _DWORD esi19;         // esi
+    _DWORD eax20;         // eax
+    _DWORD eax25;         // eax
+    double st7_27;        // st7
+    _DWORD eax29;         // eax
+    _DWORD ecx32;         // ecx
     int *result;          // eax
-    int v20;              // edx
-    size_t NumOfElements; // [esp+10h] [ebp-20h]
-    char *v22;            // [esp+14h] [ebp-1Ch]
-    int v23;              // [esp+18h] [ebp-18h]
-    HANDLE Handles;       // [esp+20h] [ebp-10h] BYREF
-    HANDLE v25;           // [esp+24h] [ebp-Ch]
-    HANDLE v26[2];        // [esp+28h] [ebp-8h] BYREF
+    _DWORD edx33;         // edx
+    _DWORD NumOfElements; // [esp+10h] [ebp-20h]
+    _DWORD var1C;         // [esp+14h] [ebp-1Ch]
+    _DWORD var18;         // [esp+18h] [ebp-18h]
+    HANDLE Handles;       // [esp+20h] [ebp-10h]
+    int varC;             // [esp+24h] [ebp-Ch]
+    HANDLE var8[2];       // [esp+28h] [ebp-8h]
 
-    v0 = 0;
-    v1 = 15;
-    v2 = (float *)&unk_11826B54;
-    v3 = (unsigned int *)&unk_1178FEE4;
+    ebp1 = 0;
+    ebx1 = 15;
+    edi1 = (float *)&unk_11826B54;
+    esi1 = (unsigned int *)&unk_1178FEE4;
     do {
-        v4 = (HANDLE) * (v3 - 602);
+        ecx2 = (HANDLE) * (esi1 - 602);
         Handles = dword_11826B00;
-        v25 = v4;
+        varC = ecx2;
         if (!WaitForMultipleObjects(2u, &Handles, 0, 0xFFFFFFFF))
             ExitThread(0);
-        if ((*(v3 - 591) & 0x3F) >= 2 && (*(v3 - 591) & 0x3F) < 5) {
-            v5 = *v3;
-            if (*v3) {
-                *((_DWORD *)v2 - 1) = v1;
-                ++v0;
-                *v2 = (float)v5;
-                v2 += 2;
+        if ((*(esi1 - 591) & 0x3F) >= 2 && (*(esi1 - 591) & 0x3F) < 5) {
+            eax6 = *esi1;
+            if (*esi1) {
+                *((_DWORD *)edi1 - 1) = ebx1;
+                ++ebp1;
+                *edi1 = (float)eax6;
+                edi1 += 2;
             }
         }
-        ReleaseMutex((HANDLE) * (v3 - 602));
-        v3 -= 603;
-        --v1;
-    } while ((int)v3 >= (int)dword_11787190);
-    if (v0) {
-        qsort(&unk_11826B50, v0, 8u, sub_10071B60);
-        if ((int)(v0 - 1) >= 0) {
-            v6 = (_DWORD *)((char *)&unk_11826B50 + 8 * v0 - 8);
-            v7 = v0;
+        ReleaseMutex((HANDLE) * (esi1 - 602));
+        esi1 -= 603;
+        --ebx1;
+    } while ((int)esi1 >= (int)dword_11787190);
+    if (ebp1) {
+        qsort(&unk_11826B50, ebp1, 8u, sub_10071B60);
+        if ((int)(ebp1 - 1) >= 0) {
+            edi11 = (_DWORD *)((char *)&unk_11826B50 + 8 * ebp1 - 8);
+            ebx11 = ebp1;
             do {
-                v8 = 603 * *v6;
+                edx12 = 603 * *edi11;
                 Handles = dword_11826B00;
-                v9 = &dword_11786828 + v8;
-                v25 = *v9;
+                esi12 = &dword_11786828 + edx12;
+                varC = *esi12;
                 if (!WaitForMultipleObjects(2u, &Handles, 0, 0xFFFFFFFF))
                     ExitThread(0);
-                if (((unsigned int)v9[11] & 0x3F) >= 2 && ((unsigned int)v9[11] & 0x3F) < 5 &&
-                    v9[602]) {
-                    sub_1003DB50((_DWORD *)dword_10A9D008, (int)v9[1], dword_11826AF8);
-                    v9[11] = (HANDLE)(dword_11826AF8 + 5);
+                if (((unsigned int)esi12[11] & 0x3F) >= 2 && ((unsigned int)esi12[11] & 0x3F) < 5 &&
+                    esi12[602]) {
+                    sub_1003DB50((_DWORD *)dword_10A9D008, (int)esi12[1], dword_11826AF8);
+                    esi12[11] = (HANDLE)(dword_11826AF8 + 5);
                     ++dword_11826AF8;
                 }
-                ReleaseMutex(*v9);
-                v6 -= 2;
-                --v7;
-            } while (v7);
+                ReleaseMutex(*esi12);
+                edi11 -= 2;
+                --ebx11;
+            } while (ebx11);
         }
     }
-    v10 = 15;
+    edi19 = 15;
     NumOfElements = 0;
-    v23 = 15;
-    v22 = (char *)&unk_11826BCC;
-    v11 = (float *)&unk_11826B54;
-    v12 = (int *)&unk_11826B50;
-    v13 = (char *)&unk_1178F5A8;
+    var18 = 15;
+    var1C = (char *)&unk_11826BCC;
+    ebp19 = (float *)&unk_11826B54;
+    ebx19 = (int *)&unk_11826B50;
+    esi19 = (char *)&unk_1178F5A8;
     do {
-        v14 = (void *)*((_DWORD *)v13 - 11);
-        v26[0] = dword_11826B00;
-        v26[1] = v14;
-        if (!WaitForMultipleObjects(2u, v26, 0, 0xFFFFFFFF))
+        eax20 = (void *)*((_DWORD *)esi19 - 11);
+        var8[0] = dword_11826B00;
+        var8[1] = eax20;
+        if (!WaitForMultipleObjects(2u, var8, 0, 0xFFFFFFFF))
             ExitThread(0);
-        if ((*(_DWORD *)v13 & 0x3Fu) >= 2 && (*(_DWORD *)v13 & 0x3Fu) < 5 &&
-            *(float *)&v13[160 * *((_DWORD *)v13 + 331) + 164] >= 4188888.0) {
-            sub_1003DB50((_DWORD *)dword_10A9D008, *((_DWORD *)v13 - 10), dword_11826AF8);
-            v15 = dword_11826AF8 + 1;
-            *(_DWORD *)v13 = dword_11826AF8 + 5;
-            dword_11826AF8 = v15;
+        if ((*(_DWORD *)esi19 & 0x3Fu) >= 2 && (*(_DWORD *)esi19 & 0x3Fu) < 5 &&
+            *(float *)&esi19[160 * *((_DWORD *)esi19 + 331) + 164] >= 4188888.0) {
+            sub_1003DB50((_DWORD *)dword_10A9D008, *((_DWORD *)esi19 - 10), dword_11826AF8);
+            eax25 = dword_11826AF8 + 1;
+            *(_DWORD *)esi19 = dword_11826AF8 + 5;
+            dword_11826AF8 = eax25;
         }
-        Handles = *(HANDLE *)v13;
+        Handles = *(HANDLE *)esi19;
         if (((unsigned __int8)Handles & 0x3Fu) < 5) {
             if (((unsigned __int8)Handles & 0x3Fu) < 2) {
-                *((_DWORD *)v22 - 1) = v10;
-                v22 -= 8;
-                *((float *)v22 + 2) = -10000000.0 - (double)v23;
+                *((_DWORD *)var1C - 1) = edi19;
+                var1C -= 8;
+                *((float *)var1C + 2) = -10000000.0 - (double)var18;
             } else {
-                v17 = *((_DWORD *)v13 + 331);
-                *v12 = v10;
-                v12 += 2;
-                *v11 = *(float *)&v13[160 * v17 + 164];
+                eax29 = *((_DWORD *)esi19 + 331);
+                *ebx19 = edi19;
+                ebx19 += 2;
+                *ebp19 = *(float *)&esi19[160 * eax29 + 164];
                 ++NumOfElements;
-                v11 += 2;
+                ebp19 += 2;
             }
         } else {
-            v16 = (double)(int)Handles;
-            *v12 = v10;
-            v12 += 2;
+            st7_27 = (double)(int)Handles;
+            *ebx19 = edi19;
+            ebx19 += 2;
             ++NumOfElements;
-            v11 += 2;
-            *(v11 - 2) = 10000000.0 - v16;
+            ebp19 += 2;
+            *(ebp19 - 2) = 10000000.0 - st7_27;
         }
-        ReleaseMutex(*((HANDLE *)v13 - 11));
-        v13 -= 2412;
-        v23 = --v10;
-    } while ((int)v13 >= (int)dword_11786854);
+        ReleaseMutex(*((HANDLE *)esi19 - 11));
+        esi19 -= 2412;
+        var18 = --edi19;
+    } while ((int)esi19 >= (int)dword_11786854);
     qsort(&unk_11826B50, NumOfElements, 8u, sub_10071B60);
-    v18 = 0;
+    ecx32 = 0;
     result = (int *)&unk_11826B50;
     do {
-        v20 = *result;
+        edx33 = *result;
         result += 2;
-        dword_11826B08[v20] = v18++;
+        dword_11826B08[edx33] = ecx32++;
     } while ((int)result < (int)&dword_11826BD0);
     return result;
 }
-// 11786854: using guessed type int dword_11786854[];
-// 11787190: using guessed type int dword_11787190[];
+// 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
 // 11826AF8: using guessed type int dword_11826AF8;
-// 11826B08: using guessed type int dword_11826B08[];

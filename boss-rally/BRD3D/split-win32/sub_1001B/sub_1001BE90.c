@@ -14,8 +14,8 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
     IDirect3DDevice2Vtbl *v14; // edx
     IDirect3DDevice2Vtbl *v15; // edx
     HRESULT result;            // eax
-    unk5C *v17;                // eax
-    unk5C *v18;                // esi
+    unk0005C *v17;             // eax
+    unk0005C *v18;             // esi
     IDirect3DViewport2 *v19;   // edi
     unsigned __int8 v20;       // [esp+D4h] [ebp-A0h]
     float v21;                 // [esp+D4h] [ebp-A0h]
@@ -201,7 +201,7 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
         v33[3] = 1065353216;
         v33[4] = v13;
         v33[5] = -16776961;
-        v21 = (float)(g_Height - v6);
+        v21 = (float)(gHeight - v6);
         v35 = v21;
         *(float *)&v33[1] = v21;
         v22 = (float)a1;
@@ -212,7 +212,7 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
         v33[4] = v13;
         v33[5] = -16776961;
         v33[6] = 1065353216;
-        v26 = (float)(g_Height - a2);
+        v26 = (float)(gHeight - a2);
         v33[7] = 1065353216;
         *(float *)&v33[1] = v26;
         v31 = (float)a3;
@@ -232,7 +232,7 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
         *(float *)v33 = v22;
         v33[2] = 0;
         v33[3] = 1065353216;
-        v27 = (float)(g_Height - a4);
+        v27 = (float)(gHeight - a4);
         v33[4] = v13;
         *(float *)&v33[1] = v27;
         v33[5] = -16776961;
@@ -251,7 +251,7 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
         *(float *)v33 = v31;
         v33[2] = 0;
         v33[3] = 1065353216;
-        v23 = (float)(g_Height - a2);
+        v23 = (float)(gHeight - a2);
         v35 = v23;
         v15 = g_D3DDevice2->lpVtbl;
         *(float *)&v33[1] = v23;
@@ -274,25 +274,25 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
                                                        12);
             sub_1001C640();
         }
-        LODWORD(v35) = g_Height - v6;
+        LODWORD(v35) = gHeight - v6;
         v32 = (float)v30;
-        v37 = g_Height - a2;
+        v37 = gHeight - a2;
         v34 = v4;
         v36 = v5;
-        v17 = g_gsu0->? ;
+        v17 = gUnk8C->height;
         v17->d3dMaterial.diffuse.r = v32 * 0.0039215689;
         v17->field_58 = 1;
         v28 = (float)v25;
         v17->d3dMaterial.diffuse.g = v28 * 0.0039215689;
         v24 = (float)v20;
         v17->d3dMaterial.diffuse.b = v24 * 0.0039215689;
-        v18 = g_gsu0->? ;
-        v19 = g_gsu0->? ;
+        v18 = gUnk8C->height;
+        v19 = gUnk8C->gap64;
         v18->d3dMaterial.dwRampSize = 1;
         v18->field_58 = 1;
         meth_1001C620(v18);
         v19->lpVtbl->SetBackground(v19, v18->lpD3DMaterialHandle);
-        result = g_gsu0->?->lpVtbl->Clear(g_gsu0->?, 1, (LPD3DRECT)&v34, 3);
+        result = gUnk8C->gap64->lpVtbl->Clear(gUnk8C->gap64, 1, (LPD3DRECT)&v34, 3);
     }
     return result;
 }

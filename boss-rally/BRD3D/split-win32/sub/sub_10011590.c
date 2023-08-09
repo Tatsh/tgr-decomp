@@ -273,14 +273,14 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
         dword_10363FF8 = 0;
         if (v224)
             dword_10363FF8 = 2048;
-        if (g_GameMode != 1 && g_GameMode != 6 &&
-            (g_GameMode != 5 || *(_BYTE *)(*(_DWORD *)(a4 + 3724) + 4))) {
+        if (gGameMode != 1 && gGameMode != 6 &&
+            (gGameMode != 5 || *(_BYTE *)(*(_DWORD *)(a4 + 3724) + 4))) {
             v7 = dword_10363FF8;
             BYTE1(v7) = BYTE1(dword_10363FF8) | 0x40;
             dword_10363FF8 = v7;
         }
         if (dword_106C6618 && (dword_106C6620 || dword_106C6624 || dword_106C661C) &&
-            g_chosenTrack != 2 && g_chosenTrack != 8) {
+            gChosenTrack != 2 && gChosenTrack != 8) {
             v8 = dword_10363FF8;
             LOBYTE(v8) = dword_10363FF8 | 0x20;
             dword_10363FF8 = v8;
@@ -289,7 +289,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
         dword_102E5ED4 = 4096;
         dword_102E54B8 = 4096;
     }
-    debugPrint(v4);
+    meth_DebugPrint(v4);
     dword_1036439C = -939524096;
     if (!dword_106C6618)
         dword_1036439C = 201850880;
@@ -711,7 +711,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
                 if (v215 == 1) {
                     if (dword_106C7CA4)
                         v87 = v225;
-                    debugPrint((void *)LODWORD(v87));
+                    meth_DebugPrint((void *)LODWORD(v87));
                 }
                 if (v211 <= -v208)
                     v89 = -32767.0 / v208;
@@ -919,7 +919,7 @@ LABEL_119:
         v209 = a4 + 10720;
         v125 = (_DWORD *)(a4 + 10720);
         while (1) {
-            if (g_D3ddrawcarshadow && *(v125 - 1) && *v125 && v125[1] && v125[2]) {
+            if (gD3dDrawCarShadow && *(v125 - 1) && *v125 && v125[1] && v125[2]) {
                 v126 = dword_11829110 & 0xFFFFFF | 0xDC000000;
                 v124[1] = 1;
                 *v124 = v126;
@@ -957,7 +957,7 @@ LABEL_119:
         v132 = 0;
         v216 = 0;
         while (1) {
-            if (g_ChosenWeather == 2 || g_ChosenWeather == 3) {
+            if (gChosenWeather0 == 2 || gChosenWeather0 == 3) {
                 if (!v132 && (v138 = *(_DWORD *)(v209 - 10360)) != 0 && *(_DWORD *)(v138 + 436) ||
                     v132 == 1 && (v139 = *(_DWORD *)(v209 - 10352)) != 0 &&
                         *(_DWORD *)(v139 + 436) ||
@@ -1248,7 +1248,7 @@ LABEL_237:
     v197 = (void *)dword_106C0680;
     *v196 = -419430400;
     v196[1] = 0;
-    debugPrint(v197);
+    meth_DebugPrint(v197);
     result = v236;
     dword_1036438C = v236;
     return result;

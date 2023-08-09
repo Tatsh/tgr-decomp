@@ -3,7 +3,7 @@
 int sub_1002A5A0() {
     int result; // eax
 
-    if (dword_11829844 <= (unsigned int)dword_11829848 || g_D3dalwayssquar) {
+    if (dword_11829844 <= (unsigned int)dword_11829848 || gD3DAlwaysSquareTextures) {
         dword_100B8C90 = 2;
         dword_100A7DFC = 64;
         dword_100A7E00 = 64;

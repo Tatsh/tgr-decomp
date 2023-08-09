@@ -4,7 +4,7 @@ void __cdecl sub_1006A9C0(int a1, int a2, int a3, int a4, int a5) {
     void *v5; // ecx
 
     if (dword_10B502E4) {
-        debugPrint(v5);
+        meth_DebugPrint(v5);
         dword_10B501CC();
         dword_118AA0D0();
         dword_10690A28();

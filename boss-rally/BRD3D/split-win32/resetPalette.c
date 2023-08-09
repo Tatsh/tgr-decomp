@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1000AB20) --------------------------------------------------------
-int __thiscall resetPalette(unk8C *this) {
+int __thiscall resetPalette(unk0008C *this) {
     IDirectDrawPalette *ddrawPalette; // eax
 
     ddrawPalette = this->lpDirectDrawPalette;

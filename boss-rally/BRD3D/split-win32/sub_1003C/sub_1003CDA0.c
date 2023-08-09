@@ -14,8 +14,8 @@ int sub_1003CDA0() {
         return -2005467006;
     v1 = sub_1003D0B0(unk, (LPDWORD)&pMem);
     if (v1 >= 0 &&
-        (*((_DWORD *)pMem + 16) = g_chosenTrack,
-         *((_DWORD *)pMem + 17) = g_ChosenWeather,
+        (*((_DWORD *)pMem + 16) = gChosenTrack,
+         *((_DWORD *)pMem + 17) = gChosenWeather0,
          *((_DWORD *)pMem + 18) = dword_10AA2A18,
          *((_DWORD *)pMem + 19) = dword_100AC658,
          sub_10044540(),

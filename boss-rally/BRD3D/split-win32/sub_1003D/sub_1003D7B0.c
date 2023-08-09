@@ -14,7 +14,7 @@ int __cdecl sub_1003D7B0(_DWORD *a1) {
          v1 >= 0)) {
         (*(void(__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3);
         v3 = 0;
-        sub_1003D8A0((int)g_HWND, v4);
+        sub_1003D8A0((int)gHwnd, v4);
         result = 0;
         *a1 = v4;
     } else {

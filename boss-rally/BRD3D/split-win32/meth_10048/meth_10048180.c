@@ -60,7 +60,7 @@ LABEL_9:
         goto LABEL_44;
     }
     v6 = *((_DWORD *)this + 7);
-    if ((v6 & 0x400000) != 0 && (g_unk54Ptr->width || g_unk54Ptr->field_30))
+    if ((v6 & 0x400000) != 0 && (gUnk54Ptr->field_2C || gUnk54Ptr->field_30))
         *((_WORD *)this + 61702) = *((_WORD *)this + 5409);
     if ((v6 & 2) == 0) {
         v9 = (void(__cdecl *)(char *)) * ((_DWORD *)this + 3);

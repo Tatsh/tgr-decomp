@@ -112,8 +112,8 @@ void __cdecl sub_1006C1F0(int a1, int a2, int a3, int a4, float a5) {
             *(float *)a3 = *(float *)a3 - *(float *)&v68 * -0.5;
             *(float *)&v69 = v27;
             if (*(_BYTE *)a4) {
-                v28 = dword_104BBE08 - 1;
-                if ((__int16)(dword_104BBE08 - 1) > 2 || v28 < 0)
+                v28 = gChosenWeather1 - 1;
+                if ((__int16)(gChosenWeather1 - 1) > 2 || v28 < 0)
                     v28 = 0;
                 *(float *)&v68 =
                     *(float *)(dword_11750330 +

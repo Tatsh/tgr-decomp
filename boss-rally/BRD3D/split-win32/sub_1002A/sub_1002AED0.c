@@ -3,9 +3,9 @@
 int sub_1002AED0() {
     int result; // eax
 
-    result = g_Width;
-    dword_10575500 = g_Width;
-    dword_105754FC = g_Height;
+    result = gWidth;
+    dword_10575500 = gWidth;
+    dword_105754FC = gHeight;
     return result;
 }
 // 100A81C0: using guessed type int g_Width;

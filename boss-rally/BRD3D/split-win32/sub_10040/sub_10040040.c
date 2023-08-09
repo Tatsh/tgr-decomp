@@ -24,7 +24,7 @@ int __cdecl sub_10040040(int a1, int a2) {
         while (*v6 != a2) {
             v6 += 9;
             ++result;
-            if ((int)v6 >= (int)g_bossRallyCfgPath)
+            if ((int)v6 >= (int)gBossRallyCfgPath)
                 goto LABEL_17;
         }
         break;
@@ -34,7 +34,7 @@ int __cdecl sub_10040040(int a1, int a2) {
         while (*v5 != a2) {
             v5 += 9;
             ++result;
-            if ((int)v5 >= (int)g_bossRallyCfgPath)
+            if ((int)v5 >= (int)gBossRallyCfgPath)
                 return 0;
         }
         break;

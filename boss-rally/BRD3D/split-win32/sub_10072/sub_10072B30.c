@@ -3,7 +3,7 @@
 BOOL __cdecl sub_10072B30(int a1, int a2, unsigned int a3) {
     BOOL result; // eax
 
-    if (g_Playsfx && g_DSound && dword_118290FC)
+    if (gPlaysfx && g_DSound && dword_118290FC)
         result = sub_10072820(dword_100B5DF0[18 * a1 + a2], a3) != 0;
     else
         result = 1;

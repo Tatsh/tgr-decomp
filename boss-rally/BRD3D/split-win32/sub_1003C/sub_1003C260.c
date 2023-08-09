@@ -20,7 +20,7 @@ int sub_1003C260() {
             GetUserNameA(Buffer, &pcbBuffer);
             v1 = sub_1003C740(unk, (int)v3, (int)Buffer, dword_10A9D008);
             if (v1 == -2005465056) {
-                result = sub_10042AF0();
+                result = meth_unk1A5E0_10042AF0();
                 if (!result)
                     return result;
                 v1 = sub_1003C740(unk, (int)v3, (int)Buffer, dword_10A9D008);
@@ -28,12 +28,12 @@ int sub_1003C260() {
             if (v1 < 0) {
             LABEL_11:
                 sub_1003BF60();
-                sub_1003C020();
+                np_sub_1003C020();
                 sprintf(v5, "Could not join session because of error 0x%08X", v1);
                 return 0;
             }
         }
-        g_NetworkPlay = 1;
+        gNetworkPlay = 1;
         sub_10005B10();
         sub_1003CE80();
     }

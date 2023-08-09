@@ -14,10 +14,10 @@ int __cdecl sub_10046FD0(int a1) {
         dword_10AA293C = 0;
     }
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (g_unkC8Ptr1)
-        g_unkC8Ptr1->lpVtbl->field_0(g_unkC8Ptr1, 1);
+    if (gUnkC8Ptr1)
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     dword_10AA2974 = 0;
-    g_unkC8Ptr1 = g_unkC8Ptr2;
+    gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }
 // 10AA2934: using guessed type int dword_10AA2934;

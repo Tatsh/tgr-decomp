@@ -31,12 +31,12 @@ void __cdecl sub_100322E6(_DWORD *a1, void *a2) {
         dword_106C65E0 = 1;
         dword_106C65E4 = (int)a2;
     }
-    debugPrint(a2);
+    meth_DebugPrint(a2);
     if (dword_100AA8B4 == 1) {
         *a1 = 0;
         a1[1] = 0;
-        a1[2] = g_Width;
-        a1[3] = g_Height;
+        a1[2] = gWidth;
+        a1[3] = gHeight;
     } else if (dword_100AA8B4 == 2) {
         a1[22] = 8;
         a1[23] = (g_Height1 >> 1) + 1;
@@ -147,9 +147,9 @@ void __cdecl sub_100322E6(_DWORD *a1, void *a2) {
     dword_106C0680 += 8;
     *v6 = -1157627904;
     v6[1] = 0;
-    debugPrint(v6);
-    debugPrint(v3);
-    debugPrint(v4);
+    meth_DebugPrint(v6);
+    meth_DebugPrint(v3);
+    meth_DebugPrint(v4);
 }
 // 1003231C: variable 'a2' is possibly undefined
 // 10032852: variable 'v3' is possibly undefined

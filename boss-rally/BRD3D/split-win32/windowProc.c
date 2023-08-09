@@ -4,16 +4,16 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
     LONG result; // eax
     LONG v5;     // eax
 
-    if (g_unkC8Ptr1) {
-        if (*((_DWORD *)g_unkC8Ptr1 + 26)) {
-            sub_10060060((int)dword_10AA2900, hWnd, Msg, wParam, lParam);
+    if (gUnkC8Ptr1) {
+        if (*((_DWORD *)gUnkC8Ptr1 + 26)) {
+            sub_10060060((int)gIostreamInit, hWnd, Msg, wParam, lParam);
             if (dword_10A9CFFC)
                 sub_1003C3A0((int)hWnd, Msg, wParam, (LPCVOID)lParam);
         }
     }
-    if (g_Playmusic == 2) {
+    if (gPlayMusic == 2) {
         if (Msg == aEarInteractiveMessageID) {
-            if (lParam == g_Playmusic && wParam == getWPARAM()) {
+            if (lParam == gPlayMusic && wParam == getWPARAM()) {
                 pm_sub_100029B0();
                 return 0;
             }
@@ -95,7 +95,7 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
     }
     if (Msg <= 0x3B9) {
         if (Msg == 0x3B9) {
-            if (g_Playmusic == 1) {
+            if (gPlayMusic == 1) {
                 if (lParam == mciId && wParam == 1 && !dword_106909B4) {
                     pm_sub_10002510();
                     return 0;

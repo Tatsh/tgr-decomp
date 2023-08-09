@@ -7,19 +7,19 @@ int sub_10038EC0() {
     SIZE_T pMetric;             // [esp+10h] [ebp-18h] BYREF
     DSBUFFERDESC1 dsBufferDesc; // [esp+14h] [ebp-14h] BYREF
 
-    setPodFilename(&gPod, aBossrallyPod);
+    setPodFilename(&gPod, kBossRallyPod);
     readPodFile(&gPod);
     sub_1006AA20(1);
     sub_10061400();
     sub_10078CD0();
     sub_100770F0();
-    if (g_Playmusic) {
-        pm_sub_100025C0(g_HWND);
+    if (gPlayMusic) {
+        pm_sub_100025C0(gHwnd);
         sub_10060D90();
         pm_sub_100027C0(2);
     }
-    result = g_Playsfx;
-    if (g_Playsfx) {
+    result = gPlaysfx;
+    if (gPlaysfx) {
         if (++dword_118290FC != 1)
             return 1;
         memset(dword_11828F08, 0, sizeof(dword_11828F08));
@@ -43,7 +43,7 @@ int sub_10038EC0() {
                 return hr >= 0;
             hr = g_DSound->lpVtbl->Initialize(g_DSound, 0);
             if (hr >= 0) {
-                hr = g_DSound->lpVtbl->SetCooperativeLevel(g_DSound, g_HWND, 2);
+                hr = g_DSound->lpVtbl->SetCooperativeLevel(g_DSound, gHwnd, 2);
                 if (hr >= 0) {
                     dsBufferDesc.dwSize = 20;
                     dsBufferDesc.dwBufferBytes = 0;

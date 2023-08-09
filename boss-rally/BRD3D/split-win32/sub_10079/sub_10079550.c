@@ -7,19 +7,19 @@ int sub_10079550() {
     if (dword_118ABE00 >= 0) {
         result = dword_118ABE00;
         if (!dword_118ABE00) {
-            if (g_DirectInputEffect) {
-                g_DirectInputEffect->lpVtbl->Release(g_DirectInputEffect);
-                g_DirectInputEffect = 0;
+            if (gDirectInputEffect) {
+                gDirectInputEffect->lpVtbl->Release(gDirectInputEffect);
+                gDirectInputEffect = 0;
             }
-            if (g_DirectInputEffect_0) {
-                g_DirectInputEffect_0->lpVtbl->Release(g_DirectInputEffect_0);
-                g_DirectInputEffect_0 = 0;
+            if (gDirectInputEffect0) {
+                gDirectInputEffect0->lpVtbl->Release(gDirectInputEffect0);
+                gDirectInputEffect0 = 0;
             }
-            result = (int)g_DirectInputDevice2A;
-            if (g_DirectInputDevice2A) {
-                g_DirectInputDevice2A->lpVtbl->Unacquire(g_DirectInputDevice2A);
-                result = g_DirectInputDevice2A->lpVtbl->Release(g_DirectInputDevice2A);
-                g_DirectInputDevice2A = 0;
+            result = (int)gDirectInputDevice2A;
+            if (gDirectInputDevice2A) {
+                gDirectInputDevice2A->lpVtbl->Unacquire(gDirectInputDevice2A);
+                result = gDirectInputDevice2A->lpVtbl->Release(gDirectInputDevice2A);
+                gDirectInputDevice2A = 0;
             }
         }
     } else {

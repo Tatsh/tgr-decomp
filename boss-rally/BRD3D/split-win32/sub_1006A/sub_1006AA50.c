@@ -5,7 +5,7 @@ int sub_1006AA50() {
     int result; // eax
 
     v0 = 8;
-    if (g_GameMode == 2 || g_GameMode == 4)
+    if (gGameMode == 2 || gGameMode == 4)
         v0 = 1;
     result = 0;
     memset(dword_10B502E8, 0, 4 * v0);

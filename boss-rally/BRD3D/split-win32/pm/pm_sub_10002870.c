@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10002870) --------------------------------------------------------
 int __cdecl pm_sub_10002870(int a1) {
-    if (g_Playmusic) {
+    if (gPlayMusic) {
         if (dword_10220CD0) {
             dword_10220CD8 = 1;
             dword_10220CD4 = a1;

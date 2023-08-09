@@ -13,7 +13,7 @@ char __cdecl sub_100786E0(int a1) {
     int v10;             // ecx
 
     result = 0;
-    v2 = (unsigned __int8 *)(g_ConfigJoystickPtr + 6 * a1);
+    v2 = (unsigned __int8 *)(gConfigJoystickPtr + 6 * a1);
     v3 = *(_WORD *)v2 & 0xFF00;
     if (v3 <= 0x100) {
         if (v3 == 256) {

@@ -1,54 +1,54 @@
 #include "types-win32.h"
 //----- (1003FA00) --------------------------------------------------------
 int __cdecl sub_1003FA00(int a1) {
-    int v1;          // ebx
-    const char *v2;  // edi
-    char *v3;        // edx
-    const char *v4;  // edi
-    int v5;          // edx
-    int v6;          // eax
-    const char *v7;  // edi
-    int v8;          // edx
-    unsigned int v9; // kr14_4
-    const char *v10; // esi
-    char *v11;       // edi
-    int v12;         // edx
-    int v14;         // [esp+Ch] [ebp-84h]
-    char v15[128];   // [esp+10h] [ebp-80h] BYREF
+    int v1;           // ebx
+    const char *v2;   // edi
+    char *v3;         // edx
+    const char *v4;   // edi
+    int v5;           // edx
+    int trackIndex;   // eax
+    const char *v7;   // edi
+    int v8;           // edx
+    unsigned int v9;  // kr14_4
+    const char *v10;  // esi
+    char *v11;        // edi
+    int v12;          // edx
+    int v14;          // [esp+Ch] [ebp-84h]
+    char buffer[128]; // [esp+10h] [ebp-80h] BYREF
 
-    if (g_unkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
-        if (g_GameMode) {
-            strcpy(v15, getCaptionString(dword_100AC308[dword_100AC648]));
-            v6 = dword_100AC648;
+    if (gUnkC8Ptr1 != (unk000C8 *)dword_10AA2964 || dword_10AA28E8) {
+        if (gGameMode) {
+            strcpy(buffer, GetStringWithIndex(dword_100AC308[dword_100AC648]));
+            trackIndex = dword_100AC648;
         } else {
             if (byte_10AA28A8) {
-                v4 = getCaptionString(dword_100AC308[(
+                v4 = GetStringWithIndex(dword_100AC308[(
                     unsigned __int8)byte_100B3820[24 * (char)dword_10AA28B8 + 2 * dword_10AA28AC]]);
                 v5 = dword_10AA28AC;
             } else {
-                v4 = getCaptionString(dword_100AC308[(
+                v4 = GetStringWithIndex(dword_100AC308[(
                     unsigned __int8)byte_100B3820[24 * (char)dword_10AA28B8 + 2 * dword_10AA28A4]]);
                 v5 = dword_10AA28A4;
             }
-            strcpy(v15, v4);
-            v6 = (unsigned __int8)byte_100B3820[24 * (char)dword_10AA28B8 + 2 * v5];
+            strcpy(buffer, v4);
+            trackIndex = (unsigned __int8)byte_100B3820[24 * (char)dword_10AA28B8 + 2 * v5];
         }
         v1 = a1;
-        if (((_BYTE)stringOffsets[v6][1] & 0x10) != 0) {
+        if (((_BYTE)gTrackDataOffsets[trackIndex][1] & 0x10) != 0) {
             v14 = *(_DWORD *)(a1 + 64);
             *(_DWORD *)(a1 + 12144) = 1124204544;
-            v7 = getCaptionString(0xB0u);
+            v7 = GetStringWithIndex(0xB0u);
             v8 = *(_DWORD *)(a1 + 11100);
             strcpy((char *)(a1 + 11109), v7);
             (*(void(__thiscall **)(int))(v8 + 4))(a1 + 11100);
             sub_1003EE50(a1, 0);
             *(_DWORD *)(a1 + 12144) = v14;
         }
-        v2 = v15;
+        v2 = buffer;
         v3 = (char *)(a1 + 11109);
     } else {
         v1 = a1;
-        v2 = getCaptionString(0x1Bu);
+        v2 = GetStringWithIndex(0x1Bu);
         v3 = (char *)(a1 + 11109);
     }
     v9 = strlen(v2) + 1;
@@ -61,9 +61,8 @@ int __cdecl sub_1003FA00(int a1) {
     return 1;
 }
 // 1003FA00: using guessed type int __cdecl sub_1003FA00(int);
-// 100AA010: using guessed type int g_GameMode;
 // 100AC648: using guessed type int dword_100AC648;
-// 100BD2A8: using guessed type char **stringOffsets[16];
+// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
 // 10AA28A4: using guessed type int dword_10AA28A4;
 // 10AA28A8: using guessed type char byte_10AA28A8;
 // 10AA28AC: using guessed type int dword_10AA28AC;

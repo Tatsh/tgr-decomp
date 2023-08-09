@@ -38,7 +38,7 @@ int __cdecl sub_1004A260(int a1) {
     v3[207] = 1124204544;
     v4 = (_DWORD *)malloc(0x1E214u);
     if (v4)
-        v5 = meth_100476C0(v4);
+        v5 = meth_unk1E214_init(v4);
     else
         v5 = 0;
     v3[*((unsigned __int16 *)v3 + 10) + 6] = v5;
@@ -49,7 +49,7 @@ int __cdecl sub_1004A260(int a1) {
     ++*((_WORD *)v3 + 10);
     v6 = (_DWORD *)malloc(0x1E214u);
     if (v6)
-        v7 = meth_100476C0(v6);
+        v7 = meth_unk1E214_init(v6);
     else
         v7 = 0;
     v3[*((unsigned __int16 *)v3 + 10) + 6] = v7;
@@ -59,13 +59,13 @@ int __cdecl sub_1004A260(int a1) {
     (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(
         *(_DWORD *)v7 + 56))(v7, a1, v3[206], 1092616192, 1048585, 2, 5, 1, -1);
     v7[61702] = 3;
-    v9 = getCaptionString(0x10u);
+    v9 = GetStringWithIndex(0x10u);
     (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v8 + 52))(
         v7, v9, 1, 1, &unk_100AB438);
     ++*((_WORD *)v3 + 10);
     v10 = (_DWORD *)malloc(0x1E214u);
     if (v10)
-        v11 = meth_100476C0(v10);
+        v11 = meth_unk1E214_init(v10);
     else
         v11 = 0;
     v3[*((unsigned __int16 *)v3 + 10) + 6] = v11;
@@ -77,7 +77,7 @@ int __cdecl sub_1004A260(int a1) {
     v11[3] = sub_10047360;
     v11[2] = sub_10046FD0;
     *((_WORD *)v11 + 61702) = 3;
-    v13 = getCaptionString(0x11u);
+    v13 = GetStringWithIndex(0x11u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v12 + 52))(
         v11, v13, 1, 1, &dword_100AB448);
     dword_10AA29B0 = (int)v11;
@@ -85,7 +85,7 @@ int __cdecl sub_1004A260(int a1) {
     ++*((_WORD *)v3 + 418);
     v14 = (_DWORD *)malloc(0x1E214u);
     if (v14)
-        v15 = meth_100476C0(v14);
+        v15 = meth_unk1E214_init(v14);
     else
         v15 = 0;
     v3[*((unsigned __int16 *)v3 + 10) + 6] = v15;
@@ -98,7 +98,7 @@ int __cdecl sub_1004A260(int a1) {
     v15[3] = sub_10047360;
     v15[2] = sub_10047050;
     *((_WORD *)v15 + 61702) = 3;
-    v17 = getCaptionString(0x12u);
+    v17 = GetStringWithIndex(0x12u);
     (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v16 + 52))(
         v15, v17, 1, 1, &dword_100AB448);
     ++*((_WORD *)v3 + 10);

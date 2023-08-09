@@ -15,7 +15,7 @@ void __thiscall meth_10061720(_DWORD *this) {
     void *v13;  // ecx
     int v14;    // [esp-10h] [ebp-20h]
 
-    debugPrint(this);
+    meth_DebugPrint(this);
     v2 = this[90];
     this[95] = this + 744;
     *(_DWORD *)(v2 + 24) = this + 840;
@@ -133,6 +133,6 @@ void __thiscall meth_10061720(_DWORD *this) {
     sub_10074450((float *)(this[91] + 188), (float *)(this[91] + 120));
     sub_10074450((float *)(this[92] + 188), (float *)(this[92] + 120));
     sub_10074450((float *)(this[93] + 188), (float *)(this[93] + 120));
-    debugPrint(v13);
+    meth_DebugPrint(v13);
 }
 // 10061BC9: variable 'v13' is possibly undefined

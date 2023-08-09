@@ -53,14 +53,14 @@ int sub_10042B30() {
             goto LABEL_18;
     }
 LABEL_19:
-    g_chosenCar = dword_100AC420[v2];
+    gChosenCar = dword_100AC420[v2];
     if (unk) {
         if (v2 > 15)
             v2 -= 16;
-        v7 = getCaptionString(dword_100AC368[v2]);
-        v5 = getCaptionString(0xB7u);
+        v7 = GetStringWithIndex(dword_100AC368[v2]);
+        v5 = GetStringWithIndex(0xB7u);
         sprintf(byte_10A9DD28, v5, v7);
-        sub_1003D210(g_HWND, dword_10A9D008, 1);
+        sub_1003D210(gHwnd, dword_10A9D008, 1);
         strcpy(byte_10A9DD28, String2);
     }
     return 1;

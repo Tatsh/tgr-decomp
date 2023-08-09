@@ -10,7 +10,7 @@ void __thiscall meth_100758A0(_DWORD *this) {
             sub_1003AC90((float *)this + 997, (float *)this) >= 0.0) {
             this[2670] = 0;
         } else {
-            v2 = getCaptionString(0xF3u);
+            v2 = GetStringWithIndex(0xF3u);
             v3 = this[2670] + 1;
             v4 = this[2670] - 30 < 0;
             this[2670] = v3;

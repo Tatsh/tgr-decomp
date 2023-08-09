@@ -90,9 +90,9 @@ int __cdecl sub_1003C740(SIZE_T dwBytes, int a2, int a3, int a4) {
             v17 = pMem;
             *(_DWORD *)(a4 + 8) = v27;
             dword_100AC648 = *((_DWORD *)v17 + 16);
-            g_chosenTrack = dword_100AC648;
+            gChosenTrack = dword_100AC648;
             dword_10AA2A00 = *((_DWORD *)v17 + 17);
-            g_ChosenWeather = dword_10AA2A00;
+            gChosenWeather0 = dword_10AA2A00;
             dword_10AA2A18 = *((_DWORD *)v17 + 18);
             dword_100BD3E0 = *((_DWORD *)v17 + 19);
             dword_100AC658 = dword_100BD3E0;

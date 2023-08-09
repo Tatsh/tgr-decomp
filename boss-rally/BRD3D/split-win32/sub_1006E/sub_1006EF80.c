@@ -20,7 +20,7 @@ void __cdecl sub_1006EF80(int a1, float *a2) {
     v6 = *(char *)(*(_DWORD *)(a1 + 4) + 416);
     v10 = *(char *)(*(_DWORD *)(a1 + 12) + 416);
     v11 = v5;
-    if (sqrt_(v9) > 4.0 && dword_104BBE08 != 3 && (v6 == 4 || v4 == 4 || v10 == 4 || v11 == 4)) {
+    if (sqrt_(v9) > 4.0 && gChosenWeather1 != 3 && (v6 == 4 || v4 == 4 || v10 == 4 || v11 == 4)) {
         v7 = *(float *)(a1 + 140) * -220.0 + a2[4];
         v8 = *(float *)(a1 + 132) * -220.0 + a2[2];
         a2[3] = *(float *)(a1 + 136) * -220.0 + a2[3];

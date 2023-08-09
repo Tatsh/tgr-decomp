@@ -2,14 +2,14 @@
 //----- (10044AE0) --------------------------------------------------------
 int __cdecl sub_10044AE0(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
-    if (g_unkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))g_unkC8Ptr1)(g_unkC8Ptr1, 1);
-    dword_10AA2948 = 0;
+    if (gUnkC8Ptr1)
+        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+    gUnkC8Ptr10 = 0;
     dword_10AA29B8 = 0;
     dword_10AA29D8 = 0;
     dword_10AA29D4 = 0;
     dword_10AA2880 = 0;
-    g_unkC8Ptr1 = (void *)dword_10AA2940;
+    gUnkC8Ptr1 = (void *)dword_10AA2940;
     sub_1003BF60();
     return 0;
 }

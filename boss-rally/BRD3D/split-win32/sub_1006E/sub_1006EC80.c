@@ -32,13 +32,13 @@ int __cdecl sub_1006EC80(int a1, int a2) {
     dword_11754E48 = 0;
     dword_1175549C = 0;
     dword_11754E3C = 0;
-    debugPrint(v2);
+    meth_DebugPrint(v2);
     v17 = 0.1;
     v16 = 0.1;
     v15 = 0.1;
     sub_10074B70((float *)(a2 + 188), (int)v18, (int)&v15);
     sub_1006DB20(a2, v18);
-    debugPrint(v4);
+    meth_DebugPrint(v4);
     v20 = 0.033333335;
     v5 = (const void *)(a2 + 344);
     v15 = 1.0 / *(float *)(a2 + 476);
@@ -46,7 +46,7 @@ int __cdecl sub_1006EC80(int a1, int a2) {
     v17 = 1.0 / *(float *)(a2 + 484);
     do {
         if (sub_1006DDC0(a2))
-            debugPrint(v6);
+            meth_DebugPrint(v6);
         sub_1006FFD0();
         sub_100745F0(a2 + 344, a2 + 276, 0.0083333338);
         sub_10074450((float *)(a2 + 188), (float *)(a2 + 344));
@@ -61,7 +61,7 @@ int __cdecl sub_1006EC80(int a1, int a2) {
         v20 = v7;
     } while (v7 > 0.0020000001);
     sub_10074450((float *)(a2 + 188), (float *)(a2 + 344));
-    debugPrint(v8);
+    meth_DebugPrint(v8);
     v9 = *(float *)(a2 + 228);
     qmemcpy((void *)(a2 + 276), v5, 0x44u);
     if (*(void(__cdecl **)(int))(a1 + 3848) == sub_10065620) {

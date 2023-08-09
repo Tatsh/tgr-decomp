@@ -1,30 +1,30 @@
 #include "types-win32.h"
 //----- (100489A0) --------------------------------------------------------
 int __thiscall meth_100489A0(char *this) {
-    int v2;    // eax
-    unkC8 *v4; // edi
-    int v5;    // ebx
-    bool v6;   // zf
-    char *v7;  // edi
-    int v8;    // eax
-    int v9;    // edi
+    int v2;       // eax
+    unk000C8 *v4; // edi
+    int v5;       // ebx
+    bool v6;      // zf
+    char *v7;     // edi
+    int v8;       // eax
+    int v9;       // edi
 
     if (!*((_DWORD *)this + 26)) {
         sub_1003E310();
-        WriteConfigFile(&g_Config, g_bossRallyCfgPath);
+        WriteConfigFile(&gConfig, gBossRallyCfgPath);
         v2 = *(_DWORD *)this;
         *((_WORD *)this + 9) = 0;
         (*(void(__thiscall **)(char *, _DWORD))(v2 + 24))(this, 0);
         return 0;
     }
     (*(void(__thiscall **)(char *))(*(_DWORD *)this + 4))(this);
-    v4 = g_unkC8Ptr1;
-    g_unkC8Ptr1 = g_unkC8Ptr2;
+    v4 = gUnkC8Ptr1;
+    gUnkC8Ptr1 = gUnkC8Ptr6;
     sub_10060260();
-    g_unkC8Ptr1 = v4;
+    gUnkC8Ptr1 = v4;
     sub_1005FFB0();
     v5 = 0;
-    g_unkC8AreSamePtr = g_unkC8Ptr1 == g_unkC8Ptr2;
+    g_unkC8AreSamePtr = gUnkC8Ptr1 == gUnkC8Ptr6;
     v6 = *((_WORD *)this + 8) == 0;
     *((_WORD *)this + 9) = 0;
     if (!v6) {
@@ -48,7 +48,7 @@ int __thiscall meth_100489A0(char *this) {
     (*(void(__thiscall **)(char *))(*(_DWORD *)this + 8))(this);
     if (!*((_DWORD *)this + 26)) {
         sub_1003E310();
-        WriteConfigFile(&g_Config, g_bossRallyCfgPath);
+        WriteConfigFile(&gConfig, gBossRallyCfgPath);
         *((_WORD *)this + 9) = 0;
         (*(void(__thiscall **)(char *, _DWORD))(v9 + 24))(this, 0);
         return 0;

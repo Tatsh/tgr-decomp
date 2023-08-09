@@ -10,7 +10,7 @@ int sub_10033498() {
     unsigned int v6; // [esp+1Ch] [ebp-8h]
     int v7;          // [esp+20h] [ebp-4h]
 
-    v1 = dword_106C6620 && g_chosenTrack != 2 && g_chosenTrack != 8;
+    v1 = dword_106C6620 && gChosenTrack != 2 && gChosenTrack != 8;
     for (i = 0; i < dword_106C7C60; ++i) {
         if (!*(_DWORD *)(dword_106C7C64 + 36 * i))
             continue;
@@ -49,7 +49,7 @@ int sub_10033498() {
             if (*(_DWORD *)(dword_106C7C64 + 36 * i + 4)) {
                 if (v7 != -1) {
                     sub_10031190();
-                    sub_10042AF0();
+                    meth_unk1A5E0_10042AF0();
                 }
             }
             continue;

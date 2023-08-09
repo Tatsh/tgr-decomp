@@ -37,9 +37,9 @@ FILE *__thiscall WriteConfigFile(BossRallyConfig *this, char *FileName) {
             fwriteLock(this->field_830, 0x40u, 1u, fp) == 1 &&
             fwriteLock(&this->field_870, 4u, 1u, fp) == 1 &&
             fwriteLock(&this->field_2A0, 4u, 1u, fp) == 1 && fwriteLock(this, 0xA8u, 1u, fp) == 1 &&
-            fwriteLock(this->joystick1, 0xA8u, 1u, fp) == 1 &&
-            fwriteLock(this->joystick2, 0xA8u, 1u, fp) == 1 &&
-            fwriteLock(this->joystick3, 0xA8u, 1u, fp) == 1) {
+            fwriteLock(&this->joystick1, 0xA8u, 1u, fp) == 1 &&
+            fwriteLock(&this->joystick2, 0xA8u, 1u, fp) == 1 &&
+            fwriteLock(&this->joystick3, 0xA8u, 1u, fp) == 1) {
             fclose(fp);
             result = (FILE *)1;
         } else {

@@ -9,7 +9,7 @@ DDPIXELFORMAT *__cdecl GetDDPixelFormatPtr(int a1) {
     while (a1 != *v2) {
         v2 += 10;
         ++v1;
-        if ((int)v2 >= (int)&g_D3dwaitcanflip)
+        if ((int)v2 >= (int)&gD3DWaitCanFlip)
             return 0;
     }
     return (DDPIXELFORMAT *)((char *)&unk_100A6238 + 40 * v1);

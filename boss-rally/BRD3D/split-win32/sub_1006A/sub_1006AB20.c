@@ -10,9 +10,9 @@ int *sub_1006AB20() {
     if (dword_11750308) {
         result = (int *)dword_106909B4;
         if (!dword_106909B4) {
-            v1 = g_GameMode;
+            v1 = gGameMode;
             v2 = 8;
-            if (g_GameMode == 2 || g_GameMode == 4)
+            if (gGameMode == 2 || gGameMode == 4)
                 v2 = 1;
             result = dword_10B502E8;
             v3 = v2;

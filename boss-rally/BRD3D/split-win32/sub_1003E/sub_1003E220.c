@@ -7,7 +7,7 @@ int sub_1003E220() {
     int v4;           // [esp+10h] [ebp-8h] BYREF
     char v5[4];       // [esp+14h] [ebp-4h] BYREF
 
-    v0 = *(IUnknown **)(*(_DWORD *)dword_118ABE08 + 60);
+    v0 = *(IUnknown **)(*(_DWORD *)gUnk334 + 60);
     v1 = v0->lpVtbl;
     v3 = 4096;
     ((void(__stdcall *)(IUnknown *, int *, char *, int *))v1[7].Release)(v0, &v3, v5, &v4);

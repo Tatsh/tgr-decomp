@@ -222,20 +222,21 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
                     v45 += 603;
                 } while ((int)v45 < (int)&unk_1178FF14);
             }
-            if (a4 != (void *)1 && ((*(_BYTE *)(meth_10073F50(v67) + 3) & 0xE0) == 64 ||
-                                    (*(_BYTE *)(meth_10073F50(v67) + 3) & 0xE0) == 0x80 ||
-                                    (*(_BYTE *)(meth_10073F50(v67) + 3) & 0xE0) == 96)) {
+            if (a4 != (void *)1 &&
+                ((*(_BYTE *)(meth_unk00214_GetField10(v67) + 3) & 0xE0) == 64 ||
+                 (*(_BYTE *)(meth_unk00214_GetField10(v67) + 3) & 0xE0) == 0x80 ||
+                 (*(_BYTE *)(meth_unk00214_GetField10(v67) + 3) & 0xE0) == 96)) {
                 np_sub_10003580(a1, a2, a3, (int)a4);
             }
         LABEL_105:
             v72 = -1;
-            debugPrint(v67);
+            meth_DebugPrint(v67);
             return;
         case 0x60:
             Concurrency::details::StructuredWorkStealingQueue<
                 Concurrency::details::_UnrealizedChore,
                 Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v67);
-            v32 = meth_10073F40(v67);
+            v32 = meth_unk00214_10073F40(v67);
             meth_10073BA0(v67, v32);
             goto LABEL_86;
         case 0x80:

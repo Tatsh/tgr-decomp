@@ -217,7 +217,7 @@ LABEL_11:
         if (v31 >= 0.0) {
             v49 = *((float *)this + 989) * 22050.0;
             sub_10072750(24, this[80], v49);
-            debugPrint(v33);
+            meth_DebugPrint(v33);
             v32 = v51;
         }
         if (*((_BYTE *)this + 875) > 0x7Fu)
@@ -241,7 +241,7 @@ LABEL_11:
         goto LABEL_105;
     }
     this[987] = v36;
-    if (dword_104BBE08 != 3) {
+    if (gChosenWeather1 != 3) {
         switch (v35) {
         case 0:
         case 3:
@@ -312,7 +312,7 @@ LABEL_102:
 LABEL_105:
     v41 = this[986];
     if (!v41 || v41 >= 8 && v41 <= 12) {
-        if (dword_104BBE08 != 3) {
+        if (gChosenWeather1 != 3) {
             switch (v35) {
             case 0:
             case 3:
