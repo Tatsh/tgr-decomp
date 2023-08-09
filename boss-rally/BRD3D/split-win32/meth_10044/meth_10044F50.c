@@ -8,8 +8,8 @@ int __thiscall meth_10044F50(void *this) {
     sub_100419D0(asc_100AD300);
     gGameMode = GAME_MODE_1;
     sub_1003E680();
-    if (dword_10AA290C) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA290C;
+    if (gUnkC8Ptr12) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr12;
         result = 1;
     } else {
         v1 = (unk000C8 *)malloc(0xC8u);
@@ -17,11 +17,11 @@ int __thiscall meth_10044F50(void *this) {
             result = (int)meth_unk000C8_10048710(v1);
         else
             result = 0;
-        dword_10AA290C = result;
+        gUnkC8Ptr12 = result;
         gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004B430;
-            (*(void(__cdecl **)(int))(dword_10AA290C + 4))(dword_10AA290C);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr12 + 4))(gUnkC8Ptr12);
             gUnkC8Ptr1->field_C = 1;
             v3 = gUnkC8Ptr1;
             gUnkC8Ptr1->field_68 = 1;

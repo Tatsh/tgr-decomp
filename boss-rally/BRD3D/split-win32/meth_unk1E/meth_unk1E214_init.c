@@ -37,7 +37,7 @@ unk1E214 *__thiscall meth_unk1E214_init(unk1E214 *this) {
   this->field_3836 = 0;
   meth_unk1A5E0_init(&this->field_3838);
   this->field_3838.field_1A99C[28] = 0;
-  this->lpVtbl = &unk1E214Vtbl1;
+  this->lpVtbl = &gUnk1E214Vtbl1;
   this->field_4 = 0;
   this->field_8 = 0;
   this->field_C = 0;

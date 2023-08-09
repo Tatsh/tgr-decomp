@@ -23,7 +23,7 @@ int __cdecl sub_1003E680() {
     dword_10AA26E8 = 0;
     dword_10A9D06C = 0;
     dword_10AA28C4 = 0;
-    dword_10AA28C8 = 0;
+    *(_DWORD *)&dword_10AA28C8 = 0;
     dword_10AA28D0 = 0;
     dword_10AA289C = 0;
     sprintf(byte_10AA2518, "%d", 1);
@@ -57,7 +57,6 @@ int __cdecl sub_1003E680() {
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA28BC: using guessed type int dword_10AA28BC;
 // 10AA28C0: using guessed type int dword_10AA28C0;
-// 10AA28C8: using guessed type int dword_10AA28C8;
 // 10AA28D0: using guessed type int dword_10AA28D0;
 // 10AA2A00: using guessed type int dword_10AA2A00;
 // 10AA2A04: using guessed type int dword_10AA2A04;

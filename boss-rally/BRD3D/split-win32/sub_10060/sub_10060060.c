@@ -1,9 +1,10 @@
 #include "types-win32.h"
 //----- (10060060) --------------------------------------------------------
-LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam) {
-    LRESULT v5; // edi
-# 492 * v7;     // ecx
-    BOOL v8;    // eax
+LRESULT __stdcall sub_10060060(
+    Iostream_init *iostreamInit, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam) {
+    LRESULT v5;   // edi
+    unk00054 *v7; // ecx
+    BOOL v8;      // eax
 
     v5 = 1;
     if ((unsigned int)a3 > 0x102) {

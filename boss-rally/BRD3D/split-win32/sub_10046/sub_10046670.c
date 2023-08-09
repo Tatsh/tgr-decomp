@@ -1,14 +1,12 @@
 #include "types-win32.h"
 //----- (10046670) --------------------------------------------------------
-int __cdecl sub_10046670(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046670(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2994 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr37 = 0;
     dword_10AA29EC = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr2;
+    gUnkC8Ptr1 = gUnkC8Ptr2;
     return 0;
 }
-// 10AA2980: using guessed type int dword_10AA2980;
-// 10AA2994: using guessed type int dword_10AA2994;
 // 10AA29EC: using guessed type int dword_10AA29EC;

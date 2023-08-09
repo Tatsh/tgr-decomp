@@ -32,5 +32,4 @@ int __usercall sub_10047660 @<eax>(int result @<eax>) {
     return result;
 }
 // 100AC6AC: using guessed type char *off_100AC6AC;
-// 10A9E150: using guessed type int dword_10A9E150[];
 // 10AA2A48: using guessed type int dword_10AA2A48;

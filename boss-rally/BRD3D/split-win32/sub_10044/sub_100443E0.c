@@ -7,8 +7,8 @@ int sub_100443E0() {
     dword_10AA2884 = 1;
     gNetworkPlay = 2;
     dword_10AA2898 = 0;
-    if (dword_10AA2950) {
-        gUnkC8Ptr1 = (void *)dword_10AA2950;
+    if (gUnkC8Ptr26) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr26;
         goto LABEL_8;
     }
     v0 = (_DWORD *)malloc(0xC8u);
@@ -16,11 +16,11 @@ int sub_100443E0() {
         result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
-    dword_10AA2950 = result;
+    gUnkC8Ptr26 = result;
     gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_10057C10;
-        (*(void(__cdecl **)(int))(dword_10AA2950 + 4))(dword_10AA2950);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr26 + 4))(gUnkC8Ptr26);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_8:

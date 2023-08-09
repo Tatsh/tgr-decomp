@@ -19,9 +19,9 @@ int __cdecl sub_10043810(LPCVOID pMem) {
             cleanUpAndExitWithCode(0);
         }
         sub_10046400((int)pMem);
-        if (dword_10AA2950) {
-            (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
-            dword_10AA2950 = 0;
+        if (gUnkC8Ptr26) {
+            (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr26 + 28))(gUnkC8Ptr26);
+            gUnkC8Ptr26 = 0;
         }
         gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
         sub_1003BF60();
@@ -39,9 +39,9 @@ int __cdecl sub_10043810(LPCVOID pMem) {
         result = 0;
     } else if (dword_10AA2890) {
         sub_10046400((int)pMem);
-        if (dword_10AA2950) {
-            (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
-            dword_10AA2950 = 0;
+        if (gUnkC8Ptr26) {
+            (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr26 + 28))(gUnkC8Ptr26);
+            gUnkC8Ptr26 = 0;
         }
         sub_100440D0();
         sub_100443E0();

@@ -1,87 +1,87 @@
 #include "types-win32.h"
 //----- (100491B0) --------------------------------------------------------
 int __cdecl sub_100491B0(unk000C8 *a1) {
-    unsigned __int16 v1; // ax
-    unk00348 *v2;        // eax
-    unk00348 *v3;        // esi
-    unk1E214 *v4;        // eax
-    unk1E214 *v5;        // ebp
-    unk1E214 *v6;        // eax
-    unk1E214 *v7;        // ebp
-    unk1E214 *v8;        // eax
-    unk1E214 *v9;        // ebp
-    unk1E214Vtbl *v10;   // ebx
-    LPCSTR v11;          // eax
-    unk1E214 *v12;       // eax
-    unk1E214 *v13;       // ebp
-    unk1E214Vtbl *v14;   // ebx
-    LPCSTR v15;          // eax
-    WORD v16;            // dx
-    unk1E214 *v17;       // eax
-    unk1E214 *v18;       // ebp
-    unk1E214 *v19;       // eax
-    unk1E214 *v20;       // ebp
-    unk1E214Vtbl *v21;   // ebx
-    LPCSTR v22;          // eax
-    WORD v23;            // dx
-    unk1E214 *v24;       // eax
-    unk1E214 *v25;       // ebp
-    unk1E214 *v26;       // eax
-    unk1E214 *v27;       // ebp
-    unk1E214Vtbl *v28;   // ebx
-    LPCSTR v29;          // eax
-    WORD v30;            // dx
-    unk1E214 *v31;       // eax
-    unk1E214 *v32;       // ebp
-    unk1E214 *v33;       // eax
-    unk1E214 *v34;       // ebp
-    unk1E214Vtbl *v35;   // ebx
-    LPCSTR v36;          // eax
-    WORD v37;            // dx
-    unk1E214 *v38;       // eax
-    unk1E214 *v39;       // ebp
-    unk1E214 *v40;       // eax
-    unk1E214 *v41;       // ebp
-    unk1E214Vtbl *v42;   // ebx
-    LPCSTR v43;          // eax
-    WORD v44;            // dx
-    unk1E214 *v45;       // eax
-    unk1E214 *v46;       // ebp
-    unk1E214 *v47;       // eax
-    unk1E214 *v48;       // ebp
-    unk1E214Vtbl *v49;   // ebx
-    LPCSTR v50;          // eax
-    WORD v51;            // dx
-    unk1E214 *v52;       // eax
-    unk1E214 *v53;       // ebp
-    unk1E214Vtbl *v54;   // ebx
-    LPCSTR v55;          // eax
-    unk1E214 *v56;       // eax
-    unk1E214 *v57;       // ebp
-    unk1E214Vtbl *v58;   // ebx
-    int result;          // eax
-    float v60;           // [esp+268h] [ebp-34h]
-    float v61;           // [esp+268h] [ebp-34h]
-    float v62;           // [esp+268h] [ebp-34h]
-    float v63;           // [esp+268h] [ebp-34h]
-    float v64;           // [esp+268h] [ebp-34h]
-    float v65;           // [esp+268h] [ebp-34h]
+    WORD v1;           // ax
+    unk00348 *v2;      // eax
+    unk00348 *v3;      // esi
+    unk1E214 *v4;      // eax
+    unk1E214 *v5;      // ebp
+    unk1E214 *v6;      // eax
+    unk1E214 *v7;      // ebp
+    unk1E214 *v8;      // eax
+    unk1E214 *v9;      // ebp
+    unk1E214Vtbl *v10; // ebx
+    LPCSTR v11;        // eax
+    unk1E214 *v12;     // eax
+    unk1E214 *v13;     // ebp
+    unk1E214Vtbl *v14; // ebx
+    LPCSTR v15;        // eax
+    WORD v16;          // dx
+    unk1E214 *v17;     // eax
+    unk1E214 *v18;     // ebp
+    unk1E214 *v19;     // eax
+    unk1E214 *v20;     // ebp
+    unk1E214Vtbl *v21; // ebx
+    LPCSTR v22;        // eax
+    WORD v23;          // dx
+    unk1E214 *v24;     // eax
+    unk1E214 *v25;     // ebp
+    unk1E214 *v26;     // eax
+    unk1E214 *v27;     // ebp
+    unk1E214Vtbl *v28; // ebx
+    LPCSTR v29;        // eax
+    WORD v30;          // dx
+    unk1E214 *v31;     // eax
+    unk1E214 *v32;     // ebp
+    unk1E214 *v33;     // eax
+    unk1E214 *v34;     // ebp
+    unk1E214Vtbl *v35; // ebx
+    LPCSTR v36;        // eax
+    WORD v37;          // dx
+    unk1E214 *v38;     // eax
+    unk1E214 *v39;     // ebp
+    unk1E214 *v40;     // eax
+    unk1E214 *v41;     // ebp
+    unk1E214Vtbl *v42; // ebx
+    LPCSTR v43;        // eax
+    WORD v44;          // dx
+    unk1E214 *v45;     // eax
+    unk1E214 *v46;     // ebp
+    unk1E214 *v47;     // eax
+    unk1E214 *v48;     // ebp
+    unk1E214Vtbl *v49; // ebx
+    LPCSTR v50;        // eax
+    WORD v51;          // dx
+    unk1E214 *v52;     // eax
+    unk1E214 *v53;     // ebp
+    unk1E214Vtbl *v54; // ebx
+    LPCSTR v55;        // eax
+    unk1E214 *v56;     // eax
+    unk1E214 *v57;     // ebp
+    unk1E214Vtbl *v58; // ebx
+    int result;        // eax
+    float v60;         // [esp+268h] [ebp-34h]
+    float v61;         // [esp+268h] [ebp-34h]
+    float v62;         // [esp+268h] [ebp-34h]
+    float v63;         // [esp+268h] [ebp-34h]
+    float v64;         // [esp+268h] [ebp-34h]
+    float v65;         // [esp+268h] [ebp-34h]
 
     v1 = a1->field_10;
-    HIWORD(a1->field_10) = 0;
+    *(&a1->field_10 + 1) = 0;
     *(&a1->field_6C + v1) = 1;
     v2 = (unk00348 *)malloc(0x348u);
     if (v2)
         v3 = meth_10048470(v2);
     else
         v3 = 0;
-    a1->field_14[LOWORD(a1->field_10)] = v3;
+    a1->field_14[a1->field_10] = v3;
     if (!v3)
         sub_1003E260(4);
-    ++LOWORD(a1->field_10);
+    ++a1->field_10;
     v3->field_340 = a1;
     v3->field_10 = 0;
-    v3->mask_338 = 1128464384;
+    v3->flags_338 = 1128464384;
     v3->field_33C = 125.0;
     v4 = (unk1E214 *)malloc(0x1E214u);
     if (v4)
@@ -111,7 +111,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
     if (!v9)
         sub_1003E260(4);
     v10 = v9->lpVtbl;
-    v9->lpVtbl->field_38(v9, a1, v3->mask_338, 10.0, 1048585, 2, 5, 1, -1);
+    v9->lpVtbl->field_38(v9, a1, v3->flags_338, 10.0, 0x100009, 2, 5, 1, -1);
     v9->field_3838.field_1A99C[28] = 3;
     v11 = GetStringWithIndex(1u);
     v10->field_34(v9, v11, 1, 1, &unk_100AB508);
@@ -125,7 +125,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
     if (!v13)
         sub_1003E260(4);
     v14 = v13->lpVtbl;
-    v13->lpVtbl->field_38(v13, a1, v3->mask_338, v3->field_33C, 1056769, 2, 5, 1, -1);
+    v13->lpVtbl->field_38(v13, a1, v3->flags_338, v3->field_33C, 0x102001, 2, 5, 1, -1);
     v13->field_C = sub_10047360;
     v13->field_8 = (int(__cdecl *)())meth_10045900;
     v13->field_3838.field_1A99C[28] = 3;
@@ -156,7 +156,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
         sub_1003E260(4);
     v21 = v20->lpVtbl;
     v60 = v3->field_33C - -19.0;
-    v20->lpVtbl->field_38(v20, a1, v3->mask_338, v60, 1056769, 2, 5, 1, -1);
+    v20->lpVtbl->field_38(v20, a1, v3->flags_338, v60, 1056769, 2, 5, 1, -1);
     v20->field_C = sub_100474B0;
     v20->field_8 = sub_10043BF0;
     v20->field_3838.field_1A99C[28] = 3;
@@ -187,7 +187,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
         sub_1003E260(4);
     v28 = v27->lpVtbl;
     v61 = v3->field_33C - -38.0;
-    v27->lpVtbl->field_38(v27, a1, v3->mask_338, v61, 1056769, 2, 5, 1, -1);
+    v27->lpVtbl->field_38(v27, a1, v3->flags_338, v61, 1056769, 2, 5, 1, -1);
     v27->field_C = sub_100474B0;
     v27->field_8 = sub_10044B90;
     v27->field_3838.field_1A99C[28] = 3;
@@ -218,7 +218,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
         sub_1003E260(4);
     v35 = v34->lpVtbl;
     v62 = v3->field_33C - -57.0;
-    v34->lpVtbl->field_38(v34, a1, v3->mask_338, v62, 1056769, 2, 5, 1, -1);
+    v34->lpVtbl->field_38(v34, a1, v3->flags_338, v62, 1056769, 2, 5, 1, -1);
     v34->field_C = sub_10047360;
     v34->field_8 = (int(__cdecl *)())meth_10044F50;
     v34->field_3838.field_1A99C[28] = 3;
@@ -249,7 +249,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
         sub_1003E260(4);
     v42 = v41->lpVtbl;
     v63 = v3->field_33C - -76.0;
-    v41->lpVtbl->field_38(v41, a1, v3->mask_338, v63, 1056769, 2, 5, 1, -1);
+    v41->lpVtbl->field_38(v41, a1, v3->flags_338, v63, 1056769, 2, 5, 1, -1);
     v41->field_C = sub_100474B0;
     v41->field_8 = sub_100451E0;
     v41->field_3838.field_1A99C[28] = 3;
@@ -280,7 +280,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
         sub_1003E260(4);
     v49 = v48->lpVtbl;
     v64 = v3->field_33C - -95.0;
-    v48->lpVtbl->field_38(v48, a1, v3->mask_338, v64, 1056769, 2, 5, 1, -1);
+    v48->lpVtbl->field_38(v48, a1, v3->flags_338, v64, 1056769, 2, 5, 1, -1);
     v48->field_C = sub_100475F0;
     v48->field_8 = (int(__cdecl *)())sub_10041970;
     v48->field_3838.field_1A99C[28] = 3;
@@ -301,9 +301,9 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
         sub_1003E260(4);
     v54 = v53->lpVtbl;
     v65 = v3->field_33C - -114.0;
-    v53->lpVtbl->field_38(v53, a1, v3->mask_338, v65, 1056769, 2, 5, 1, -1);
+    v53->lpVtbl->field_38(v53, a1, v3->flags_338, v65, 1056769, 2, 5, 1, -1);
     v53->field_C = sub_100474B0;
-    v53->field_8 = sub_10046170;
+    v53->field_8 = (int(__cdecl *)())sub_10046170;
     v53->field_3838.field_1A99C[28] = 3;
     v55 = GetStringWithIndex(8u);
     v54->field_34(v53, v55, 1, 1, &dword_100AB448);
@@ -318,7 +318,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
     if (!v57)
         sub_1003E260(4);
     v58 = v57->lpVtbl;
-    v57->lpVtbl->field_38(v57, a1, v3->mask_338, 29.0, 1048585, 2, 5, 1, -1);
+    v57->lpVtbl->field_38(v57, a1, v3->flags_338, 29.0, 1048585, 2, 5, 1, -1);
     v57->field_3838.field_1A99C[28] = 3;
     v58->field_34(v57, asc_100AD300, 1, 1, &unk_100AB558);
     result = 1;

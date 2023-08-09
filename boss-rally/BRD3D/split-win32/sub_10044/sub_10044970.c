@@ -11,7 +11,7 @@ int __cdecl sub_10044970(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2950 = 0;
+    gUnkC8Ptr26 = 0;
     gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
     if (dword_10AA29D8)
         *(_DWORD *)(dword_10AA29D8 + 28) &= 0xFFFFFFEF;

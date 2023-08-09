@@ -4,8 +4,8 @@ int __thiscall meth_100446D0(void *this) {
     unk000C8 *v1; // eax
     int result;   // eax
 
-    if (dword_10AA2954) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2954;
+    if (gUnkC8Ptr27) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr27;
     LABEL_8:
         gGameMode = GAME_MODE_6;
         if (dword_10AA2884) {
@@ -29,11 +29,11 @@ int __thiscall meth_100446D0(void *this) {
         result = (int)meth_unk000C8_10048710(v1);
     else
         result = 0;
-    dword_10AA2954 = result;
+    gUnkC8Ptr27 = result;
     gUnkC8Ptr1 = (unk000C8 *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_10058750;
-        (*(void(__cdecl **)(int))(dword_10AA2954 + 4))(dword_10AA2954);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr27 + 4))(gUnkC8Ptr27);
         gUnkC8Ptr1->field_C = 1;
         gUnkC8Ptr1->field_68 = 1;
         goto LABEL_8;

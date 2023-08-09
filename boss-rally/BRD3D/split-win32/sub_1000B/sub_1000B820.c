@@ -1,18 +1,19 @@
 #include "types-win32.h"
 //----- (1000B820) --------------------------------------------------------
-int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc) {
-    int v6;      // edi
-    HDC hDC;     // ebx
-    int wSrc_1;  // ebp
-    HDC hdcDest; // [esp+18h] [ebp-8Ch] BYREF
-    int v11;     // [esp+1Ch] [ebp-88h]
-    BITMAP pv;   // [esp+20h] [ebp-84h] BYREF
-    int v13[27]; // [esp+38h] [ebp-6Ch] BYREF
+HRESULT __cdecl sub_1000B820(
+    IDirectDrawSurface *ddSurface, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc) {
+    IDirectDrawSurfaceVtbl *ddSurfaceVtbl; // edi
+    HDC hDC;                               // ebx
+    int wSrc_1;                            // ebp
+    HDC hdcDest;                           // [esp+18h] [ebp-8Ch] BYREF
+    HRESULT hr;                            // [esp+1Ch] [ebp-88h]
+    BITMAP pv;                             // [esp+20h] [ebp-84h] BYREF
+    DDSURFACEDESC ddSurfaceDesc;           // [esp+38h] [ebp-6Ch] BYREF
 
-    if (!hGDIOBJ || !a1)
-        return -2147467259;
-    v6 = *(_DWORD *)a1;
-    (*(void(__stdcall **)(int))(*(_DWORD *)a1 + 108))(a1);
+    if (!hGDIOBJ || !ddSurface)
+        return 0x80004005;
+    ddSurfaceVtbl = ddSurface->lpVtbl;
+    ddSurface->lpVtbl->Restore(ddSurface);
     hDC = CreateCompatibleDC(0);
     if (!hDC)
         OutputDebugStringA(aCreatecompatib);
@@ -23,14 +24,24 @@ int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, 
         wSrc_1 = pv.bmWidth;
     if (!hSrc)
         hSrc = pv.bmHeight;
-    v13[0] = 108;
-    v13[1] = 6;
-    (*(void(__stdcall **)(int, int *))(v6 + 88))(a1, v13);
-    v11 = (*(int(__stdcall **)(int, HDC *))(v6 + 68))(a1, &hdcDest);
-    if (!v11) {
-        StretchBlt(hdcDest, 0, 0, v13[3], v13[2], hDC, xSrc, ySrc, wSrc_1, hSrc, SRCCOPY);
-        (*(void(__stdcall **)(int, HDC))(v6 + 104))(a1, hdcDest);
+    ddSurfaceDesc.dwSize = 108;
+    ddSurfaceDesc.dwFlags = 6;
+    ddSurfaceVtbl->GetSurfaceDesc(ddSurface, &ddSurfaceDesc);
+    hr = ddSurfaceVtbl->GetDC(ddSurface, &hdcDest);
+    if (!hr) {
+        StretchBlt(hdcDest,
+                   0,
+                   0,
+                   ddSurfaceDesc.dwWidth,
+                   ddSurfaceDesc.dwHeight,
+                   hDC,
+                   xSrc,
+                   ySrc,
+                   wSrc_1,
+                   hSrc,
+                   SRCCOPY);
+        ddSurfaceVtbl->ReleaseDC(ddSurface, hdcDest);
     }
     DeleteDC(hDC);
-    return v11;
+    return hr;
 }

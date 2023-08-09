@@ -4,8 +4,8 @@ int sub_10045520() {
     _DWORD *v0; // eax
     int result; // eax
 
-    if (dword_10AA2994) {
-        gUnkC8Ptr1 = (void *)dword_10AA2994;
+    if (gUnkC8Ptr37) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr37;
         goto LABEL_8;
     }
     v0 = (_DWORD *)malloc(0xC8u);
@@ -13,11 +13,11 @@ int sub_10045520() {
         result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
-    dword_10AA2994 = result;
+    gUnkC8Ptr37 = result;
     gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_1004DB00;
-        (*(void(__cdecl **)(int))(dword_10AA2994 + 4))(dword_10AA2994);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr37 + 4))(gUnkC8Ptr37);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_8:

@@ -36,21 +36,21 @@ int __thiscall meth_10065740(_DWORD *this) {
         v14 = (float)(v2 >> 1);
         v15 = (float)((v2 & 1) == 0);
     }
-    v20 = cos_(*(float *)&stru_106C3380.gap1C8[18252]);
-    v18 = sin_(*(float *)&stru_106C3380.gap1C8[18252]);
-    v11 = *(float *)&stru_106C3380.gap1C8[18252] - -1.5707964;
+    v20 = cos_(*(float *)&gUnk06594.gap1C8[18252]);
+    v18 = sin_(*(float *)&gUnk06594.gap1C8[18252]);
+    v11 = *(float *)&gUnk06594.gap1C8[18252] - -1.5707964;
     v19 = cos_(v11);
-    v12 = *(float *)&stru_106C3380.gap1C8[18252] - -1.5707964;
+    v12 = *(float *)&gUnk06594.gap1C8[18252] - -1.5707964;
     v16 = v15 - 0.5;
     v3 = sin_(v12) * v16;
     v4 = v19 * v16;
     v17 = v14 - -1.0;
-    *(float *)&v13 = *(float *)&stru_106C3380.gap1C8[18248] - -0.1;
-    *(float *)&v10 = *(float *)&stru_106C3380.gap1C8[18244] - v3 * 3.0 - v18 * v17 * 8.0;
-    *(float *)&v9 = *(float *)&stru_106C3380.gap1C8[18240] - v4 * 3.0 - v20 * v17 * 8.0;
+    *(float *)&v13 = *(float *)&gUnk06594.gap1C8[18248] - -0.1;
+    *(float *)&v10 = *(float *)&gUnk06594.gap1C8[18244] - v3 * 3.0 - v18 * v17 * 8.0;
+    *(float *)&v9 = *(float *)&gUnk06594.gap1C8[18240] - v4 * 3.0 - v20 * v17 * 8.0;
     meth_10076420((float *)this, v9, v10, v13);
     *((float *)this + 1021) = (v14 - -0.5) * -8.0;
-    meth_100764C0((float *)this, *(float *)&stru_106C3380.gap1C8[18252]);
+    meth_100764C0((float *)this, *(float *)&gUnk06594.gap1C8[18252]);
     this[992] = this[12];
     this[993] = this[13];
     this[994] = this[14];
@@ -63,7 +63,7 @@ int __thiscall meth_10065740(_DWORD *this) {
     this[938] = 0;
     this[939] = -180;
     meth_100767A0(this, 0, 0, 0);
-    if (*(_DWORD *)&stru_106C3380.gap1C8[18288]) {
+    if (*(_DWORD *)&gUnk06594.gap1C8[18288]) {
         this[1004] = 0;
         this[1019] = 0;
         this[1017] = 0;
@@ -71,11 +71,11 @@ int __thiscall meth_10065740(_DWORD *this) {
         if ((__int16)(gChosenWeather1 - 1) > 2 || v5 < 0)
             v5 = 0;
         this[1020] = *(_DWORD *)&gTrackData[gChosenTrack]->last[84 * this[921] + 24 + 28 * v5];
-        this[995] = *(_DWORD *)&stru_106C3380.gap1C8[18288];
+        this[995] = *(_DWORD *)&gUnk06594.gap1C8[18288];
         this[996] = 0;
         sub_1003ADA0((float *)this + 997,
-                     (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18288] + 76),
-                     (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18288] + 116));
+                     (float *)(*(_DWORD *)&gUnk06594.gap1C8[18288] + 76),
+                     (float *)(*(_DWORD *)&gUnk06594.gap1C8[18288] + 116));
     } else {
         this[997] = 1065353216;
         this[998] = 0;

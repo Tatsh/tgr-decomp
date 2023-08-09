@@ -6,8 +6,8 @@ int sub_10044D00() {
 
     dword_10AA28C8 = 0;
     dword_10AA28CC = 0;
-    if (dword_10AA2964) {
-        gUnkC8Ptr1 = (void *)dword_10AA2964;
+    if (gUnkC8Ptr32) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr32;
         result = 1;
     } else {
         v0 = (_DWORD *)malloc(0xC8u);
@@ -15,11 +15,11 @@ int sub_10044D00() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2964 = result;
+        gUnkC8Ptr32 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10059BB0;
-            (*(void(__cdecl **)(int))(dword_10AA2964 + 4))(dword_10AA2964);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr32 + 4))(gUnkC8Ptr32);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
             *((_DWORD *)gUnkC8Ptr1 + 26) = 1;

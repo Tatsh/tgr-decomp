@@ -33,7 +33,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
     ++LOWORD(a1->field_10);
     v3->field_340 = a1;
     v3->field_10 = 0;
-    v3->mask_338 = 1128464384;
+    v3->flags_338 = 1128464384;
     v3->field_33C = 130.0;
     v4 = (unk1E214 *)malloc(0x1E214u);
     if (v4)
@@ -96,7 +96,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
     if (!v15)
         sub_1003E260(4);
     v16 = v15->lpVtbl;
-    v15->lpVtbl->field_38(v15, a1, v3->mask_338, 460.0, 1056769, 2, 5, 0, -1);
+    v15->lpVtbl->field_38(v15, a1, v3->flags_338, 460.0, 1056769, 2, 5, 0, -1);
     v15->field_C = sub_10047360;
     v15->field_8 = (int(__cdecl *)())sub_10047120;
     v15->field_4 = sub_100471F0;

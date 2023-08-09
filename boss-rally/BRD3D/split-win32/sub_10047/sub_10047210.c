@@ -8,7 +8,7 @@ int __cdecl sub_10047210(int a1) {
         return -1;
     }
     if (sub_1003E0E0()) {
-        sub_10041AC0(a1);
+        sub_10041AC0((unk1E214 *)a1);
         goto LABEL_5;
     }
     return 1;

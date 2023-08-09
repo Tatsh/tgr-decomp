@@ -8,7 +8,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
     int v6;          // esi
     int v7;          // edi
     int v8;          // eax
-    char *v9;        // ecx
+    void *v9;        // ecx
     int v10;         // edx
     void *v11;       // ecx
     int v12;         // edx
@@ -53,8 +53,8 @@ void __thiscall meth_10066E90(_DWORD *this) {
     int v51;         // [esp+24h] [ebp-8h]
     int v52;         // [esp+28h] [ebp-4h]
 
-    v2 = (int)MEMORY[0x106C7DA8];
-    if (MEMORY[0x106C7DA8]) {
+    v2 = gUnk06594.field_4A28;
+    if (gUnk06594.field_4A28) {
         v3 = this[24];
         v52 = v3;
         if (v3) {
@@ -71,7 +71,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
             this[12] = *(_DWORD *)(v3 + 4016);
             this[13] = *(_DWORD *)(v3 + 4068);
             this[20] = *(_DWORD *)(v3 + 4084);
-            v2 = (int)MEMORY[0x106C7DA8];
+            v2 = gUnk06594.field_4A28;
         }
         v4 = this[19];
         if (v4 >= 0)
@@ -84,32 +84,32 @@ void __thiscall meth_10066E90(_DWORD *this) {
         v51 = v7;
         LODWORD(v49) = sub_1002B920(v41);
         v45 = (double)SLODWORD(v49) * 0.0099999998;
-        if (sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v6,
-                         (float *)&MEMORY[0x106C7CE0] + 5 * v6,
+        if (sub_1003BA70((float *)&gUnk06594.gap4968[20 * v6],
+                         (float *)&gUnk06594.gap4960[20 * v6],
                          (float *)this + 3,
                          (float *)this)) {
             meth_DebugPrint((void *)(this[19] - 1));
             if (!v6)
                 --this[17];
-            meth_DebugPrint(MEMORY[0x106C7DA8]);
-            if (v6 == this[18] % (int)MEMORY[0x106C7DA8]) {
+            meth_DebugPrint((void *)gUnk06594.field_4A28);
+            if (v6 == this[18] % gUnk06594.field_4A28) {
                 v8 = this[19];
                 if (v8 < 0) {
-                    v9 = (char *)MEMORY[0x106C7DA8] + v8;
+                    v9 = (void *)(v8 + gUnk06594.field_4A28);
                     v10 = this[17] + 1;
-                    this[19] = (char *)MEMORY[0x106C7DA8] + v8;
+                    this[19] = v8 + gUnk06594.field_4A28;
                     this[17] = v10;
-                    if (MEMORY[0x106C7CB8])
+                    if (gUnk06594.field_4938)
                         *((float *)this + 20) =
-                            *(float *)(MEMORY[0x106C7CB8] + 100) + *((float *)this + 20);
+                            *(float *)(gUnk06594.field_4938 + 100) + *((float *)this + 20);
                     meth_DebugPrint(v9);
                 }
             }
             --this[19];
             goto LABEL_111;
         }
-        if (!sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v7,
-                          (float *)&MEMORY[0x106C7CE0] + 5 * v7,
+        if (!sub_1003BA70((float *)&gUnk06594.gap4968[20 * v7],
+                          (float *)&gUnk06594.gap4960[20 * v7],
                           (float *)this + 3,
                           (float *)this))
             goto LABEL_111;
@@ -134,8 +134,9 @@ void __thiscall meth_10066E90(_DWORD *this) {
                         this[12] = 0;
                         *(_DWORD *)(v3 + 4088) = dword_118AB470;
                         *(_DWORD *)(v3 + 4092) =
-                            gGameMode == 6 ? String2 :
-                                             GetStringWithIndex(dword_100B3960[dword_118AB470]);
+                            gGameMode == GAME_MODE_6 ?
+                                String2 :
+                                GetStringWithIndex(dword_100B3960[dword_118AB470]);
                         *(_DWORD *)(v3 + 4096) = 1084227584;
                         if (this[25] < dword_100B4050 && dword_100BD3E0 == 3 &&
                             (*((float *)dword_10ACED34 + gChosenTrack + 67) == 0.0 ||
@@ -143,20 +144,21 @@ void __thiscall meth_10066E90(_DWORD *this) {
                                  (double)*((float *)dword_10ACED34 + gChosenTrack + 67))) {
                             *((_DWORD *)dword_10ACED34 + gChosenTrack + 67) =
                                 *(_DWORD *)(v3 + 4076);
-                            *(_DWORD *)(v3 + 4096) = 1069547520;
+                            *(_DWORD *)(v3 + 4096) = 0x3FC00000;
                             *(_DWORD *)(v3 + 4100) = GetStringWithIndex(0x121u);
-                            *(_DWORD *)(v3 + 4104) = 1080033280;
+                            *(_DWORD *)(v3 + 4104) = 0x40600000;
                         }
                     }
                     ++dword_118AB470;
                     goto LABEL_111;
                 }
             LABEL_52:
-                if ((gGameMode == 1 || gGameMode == 6 || gGameMode == 2) &&
+                if ((gGameMode == GAME_MODE_1 || gGameMode == GAME_MODE_6 ||
+                     gGameMode == GAME_MODE_2) &&
                     this[25] < dword_100B4050) {
                     if (!dword_106909E0)
                         sub_10067D80();
-                    if (gGameMode == 1) {
+                    if (gGameMode == GAME_MODE_1) {
                         v24 = flt_10ACEE9C - flt_10AD1A04;
                     } else {
                         v25 = 255;
@@ -196,15 +198,14 @@ void __thiscall meth_10066E90(_DWORD *this) {
                                 *(_DWORD *)(v29 + 4092) = v29 + 10940;
                             } else {
                                 *(_DWORD *)(v29 + 4092) = GetStringWithIndex(0x122u);
-                                *(_DWORD *)(v29 + 4096) = 1053609165;
+                                *(_DWORD *)(v29 + 4096) = 0x3ECCCCCD;
                             }
                             v30 = gChosenWeather1 - 1;
                             if ((__int16)(gChosenWeather1 - 1) > 2 || v30 < 0)
                                 v30 = 0;
                             *(float *)(v29 + 4080) =
-                                *(float *)&(&(
-                                    &gTrackData[gChosenTrack][21 * dword_10ACED0C])[7 * v30])[v51 +
-                                                                                              11] +
+                                *(float *)&gTrackData[gChosenTrack]
+                                     ->last[84 * dword_10ACED0C + 28 * v30 + 4 * v51] +
                                 *(float *)(v29 + 4080);
                             if (*(float *)(v29 + 4076) != 0.0 && dword_100B36FC > 1) {
                                 sprintf((char *const)(v29 + 4108), aRy);
@@ -262,7 +263,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
             this[16] = v17;
             this[17] = v17;
             *((float *)this + 12) = v16;
-            if (gGameMode == 3) {
+            if (gGameMode == GAME_MODE_3) {
                 if (v17 == 1) {
                     meth_DebugPrint(v13);
                     v18 = this[18];
@@ -270,11 +271,11 @@ void __thiscall meth_10066E90(_DWORD *this) {
                     v20 = this[19];
                     --this[16];
                     this[17] = v19;
-                    this[18] = v18 - (_DWORD)MEMORY[0x106C7DA8];
-                    this[19] = v20 - (_DWORD)MEMORY[0x106C7DA8];
-                    if (MEMORY[0x106C7CB8])
+                    this[18] = v18 - gUnk06594.field_4A28;
+                    this[19] = v20 - gUnk06594.field_4A28;
+                    if (gUnk06594.field_4938)
                         *((float *)this + 20) =
-                            *((float *)this + 20) - *(float *)(MEMORY[0x106C7CB8] + 100);
+                            *((float *)this + 20) - *(float *)(gUnk06594.field_4938 + 100);
                 }
             } else if (v3) {
                 meth_DebugPrint(v13);
@@ -315,18 +316,18 @@ void __thiscall meth_10066E90(_DWORD *this) {
         if (v32 <= (int)v31) {
         LABEL_107:
             meth_DebugPrint((void *)this[16]);
-            if (gGameMode == 3 && this[16] == 1) {
+            if (gGameMode == GAME_MODE_3 && this[16] == 1) {
                 meth_DebugPrint(v37);
                 v38 = this[18];
                 v39 = this[17] - 1;
                 v40 = this[19];
                 --this[16];
                 this[17] = v39;
-                this[18] = v38 - (_DWORD)MEMORY[0x106C7DA8];
-                this[19] = v40 - (_DWORD)MEMORY[0x106C7DA8];
-                if (MEMORY[0x106C7CB8])
+                this[18] = v38 - gUnk06594.field_4A28;
+                this[19] = v40 - gUnk06594.field_4A28;
+                if (gUnk06594.field_4938)
                     *((float *)this + 20) =
-                        *((float *)this + 20) - *(float *)(MEMORY[0x106C7CB8] + 100);
+                        *((float *)this + 20) - *(float *)(gUnk06594.field_4938 + 100);
             }
             goto LABEL_111;
         }
@@ -378,12 +379,10 @@ void __thiscall meth_10066E90(_DWORD *this) {
 // 100671DD: variable 'v13' is possibly undefined
 // 1006773A: variable 'v31' is possibly undefined
 // 100677E7: variable 'v37' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 100B36FC: using guessed type int dword_100B36FC;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 100BD2A8: using guessed type char **stringOffsets[16];
-// 104BBE08: using guessed type int dword_104BBE08;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 106909E0: using guessed type int dword_106909E0;
 // 10ACD4F8: using guessed type int dword_10ACD4F8;
 // 10ACED0C: using guessed type int dword_10ACED0C;

@@ -77,7 +77,7 @@ int __cdecl sub_10057C10(int a1) {
     ++*(_WORD *)(a1 + 16);
     v3->field_340 = (unk000C8 *)a1;
     v3->field_10 = 0;
-    v3->mask_338 = 1128464384;
+    v3->flags_338 = 1128464384;
     v3->field_33C = 130.0;
     v4 = (unk1E214 *)malloc(0x1E214u);
     if (v4)
@@ -98,7 +98,7 @@ int __cdecl sub_10057C10(int a1) {
     if (!v7)
         sub_1003E260(4);
     v8 = v7->lpVtbl;
-    v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+    v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x64u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -114,7 +114,7 @@ int __cdecl sub_10057C10(int a1) {
           sub_1003E260(4);
       v12 = v11->lpVtbl;
       v11->lpVtbl->field_38(
-          v11, (unk000C8 *)a1, v3->mask_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+          v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
       v11->field_C = sub_100474B0;
       v11->field_8 = sub_10042EE0;
     LOWORD(v11->?) = 3;
@@ -132,7 +132,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v16 = v15->lpVtbl;
     v58 = v3->field_33C - -19.0;
-    v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->mask_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
+    v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->flags_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
     v15->field_C = sub_10047360;
     v15->field_8 = sub_10043180;
     LOWORD(v15->?) = 3;
@@ -150,7 +150,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v20 = v19->lpVtbl;
     v59 = v3->field_33C - -38.0;
-    v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->mask_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
+    v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->flags_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
     v19->field_C = sub_10047360;
     v19->field_8 = sub_100430B0;
     LOWORD(v19->?) = 3;
@@ -168,7 +168,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v24 = v23->lpVtbl;
     v60 = v3->field_33C - -57.0;
-    v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->mask_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
+    v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->flags_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
     v23->field_C = sub_10047360;
     v23->field_8 = sub_10044600;
     LOWORD(v23->?) = 3;
@@ -187,7 +187,7 @@ int __cdecl sub_10057C10(int a1) {
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v61 = v3->field_33C - -95.0;
-  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->mask_338, LODWORD(v61), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->flags_338, LODWORD(v61), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())meth_100446D0;
   *(_DWORD *)&v27->field_10[8] = sub_100437D0;
@@ -211,7 +211,7 @@ int __cdecl sub_10057C10(int a1) {
   v62 = v3->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int, int, int, int *))
        v31->lpVtbl->field_38)(
-      v31, a1, v3->mask_338, LODWORD(v62), 1056769, 2, 5, 1, -1, 1, 1, &dword_100AB448);
+      v31, a1, v3->flags_338, LODWORD(v62), 1056769, 2, 5, 1, -1, 1, 1, &dword_100AB448);
   v31->field_C = sub_10047360;
   LOWORD(v31->?) = 3;
   if (dword_10A9D000)
@@ -245,7 +245,7 @@ int __cdecl sub_10057C10(int a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v3->mask_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v3->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_1003FE80;
   LOWORD(v38->?) = 3;
   v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -273,7 +273,7 @@ int __cdecl sub_10057C10(int a1) {
   if (!v44)
     sub_1003E260(4);
   v45 = v44->lpVtbl;
-  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, v3->mask_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, v3->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v44->field_4 = sub_1003FA00;
   LOWORD(v44->?) = 3;
   v45->field_34(v44, asc_100AD300, 1, 1, &unk_100AB4A8);

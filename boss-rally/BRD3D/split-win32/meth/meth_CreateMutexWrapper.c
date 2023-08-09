@@ -30,7 +30,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     meth_DebugPrint(v7);
     meth_DebugPrint(dword_10B02434);
     meth_DebugPrint(v8);
-    *(_DWORD *)&stru_106C3380.gap1C8[8600] = 1194793728;
+    *(_DWORD *)&gUnk06594.gap1C8[8600] = 1194793728;
     meth_DebugPrint(v9);
     meth_DebugPrint(v15);
     meth_unk1A5E0_10042AF0(v10);
@@ -50,7 +50,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
         }
     }
     result = CreateMutexA(0, 0, 0);
-    *(_DWORD *)&stru_106C3380.gap1C8[12552] = result;
+    *(_DWORD *)&gUnk06594.gap1C8[12552] = result;
     return result;
 }
 // 10034842: variable 'v1' is possibly undefined

@@ -8,13 +8,13 @@ int __cdecl sub_1005FBC0(int a1) {
     int result;          // eax
 
     LOBYTE(dword_10AA28B8) = dword_10AA26F4[0];
-    gTransmissionType = dword_10AA27EC;
-    gSuspensionType = dword_10AA27F4;
+    gTransmissionType = gTransmissionType0;
+    gSuspensionType = gSuspensionType0;
     dword_10AA28A4 = BYTE1(dword_10AA26F4[0]);
-    gConfigJoystickIndex = dword_10AA27F8;
+    gConfigJoystickIndex = gConfigJoystickIndex0;
     dword_10AA28A0 = dword_10AA26F0;
     gTireType = (void *)dword_10AA27F0;
-    switch (dword_10AA27F8) {
+    switch (gConfigJoystickIndex0) {
     case 1:
         gConfigJoystickPtr = gConfig.joystick1;
         break;

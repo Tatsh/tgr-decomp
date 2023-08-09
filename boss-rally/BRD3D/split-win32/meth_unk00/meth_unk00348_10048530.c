@@ -21,10 +21,10 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
     int v19;                        // [esp+14h] [ebp-4h]
 
     v2 = 0;
-    v3 = *(void (**)(void))this->gap4;
+    v3 = *(void (**)(void))this->field_4;
     if (v3)
         v3();
-    v4 = *(void (**)(void)) & this->gap4[8];
+    v4 = *(void (**)(void)) & this->field_4[8];
     if (v4)
         v4();
     word_10AA2870 = 0;
@@ -99,7 +99,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
         result = 0;
     } else {
     LABEL_36:
-        v16 = *(void (**)(void)) & this->gap4[4];
+        v16 = *(void (**)(void)) & this->field_4[4];
         if (v16)
             v16();
         result = 1;

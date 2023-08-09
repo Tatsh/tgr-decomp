@@ -5,7 +5,7 @@ int __cdecl sub_10044F00(int a1) {
     if (g_unkC8Ptr0)
         (**(void(__thiscall ***)(int, int))g_unkC8Ptr0)(g_unkC8Ptr0, 1);
     g_unkC8Ptr0 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA295C;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr30;
     gGameMode = 2;
     return 0;
 }

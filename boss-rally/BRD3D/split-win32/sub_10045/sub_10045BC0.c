@@ -1,29 +1,27 @@
 #include "types-win32.h"
 //----- (10045BC0) --------------------------------------------------------
 int sub_10045BC0() {
-    _DWORD *v0; // eax
-    int result; // eax
+    unk000C8 *v0; // eax
+    int result;   // eax
 
-    if (dword_10AA2928) {
-        gUnkC8Ptr1 = (void *)dword_10AA2928;
+    if (gUnkC8Ptr17) {
+        gUnkC8Ptr1 = gUnkC8Ptr17;
         result = 1;
     } else {
-        v0 = (_DWORD *)malloc(0xC8u);
+        v0 = (unk000C8 *)malloc(0xC8u);
         if (v0)
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2928 = result;
-        gUnkC8Ptr1 = (void *)result;
+        gUnkC8Ptr17 = (unk000C8 *)result;
+        gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10050060;
-            (*(void(__cdecl **)(int))(dword_10AA2928 + 4))(dword_10AA2928);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
+            gUnkC8Ptr17->lpFn0(gUnkC8Ptr17);
+            gUnkC8Ptr1->field_C = 1;
             result = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
+            gUnkC8Ptr1->field_68 = 1;
         }
     }
     return result;
 }
-// 10050060: using guessed type int __cdecl sub_10050060(int);
-// 10AA2928: using guessed type int dword_10AA2928;

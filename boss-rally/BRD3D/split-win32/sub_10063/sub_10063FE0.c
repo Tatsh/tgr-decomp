@@ -93,10 +93,10 @@ void __cdecl sub_10063FE0(int a1) {
                 goto LABEL_47;
             }
         LABEL_25:
-            v10 = MEMORY[0x106C7CD0];
+            v10 = *(_DWORD *)&gUnk06594.gap493C[20];
             v50 = 16777216.0;
-            if (MEMORY[0x106C7CD0] > 0) {
-                v11 = (float *)(MEMORY[0x106C7CCC] + 8);
+            if (*(int *)&gUnk06594.gap493C[20] > 0) {
+                v11 = (float *)(*(_DWORD *)&gUnk06594.gap493C[16] + 8);
                 do {
                     v13 = *(float *)(a1 + 48) - *(v11 - 2);
                     v51 = v13;
@@ -309,8 +309,6 @@ LABEL_47:
 // 106C1638: using guessed type int dword_106C1638;
 // 106C1690: using guessed type int dword_106C1690;
 // 106C3364: using guessed type int dword_106C3364;
-// 106C7CCC: using guessed type int dword_106C7CCC;
-// 106C7CD0: using guessed type int dword_106C7CD0;
 // 10AF9BB0: using guessed type int dword_10AF9BB0;
 // 10AF9BB4: using guessed type int dword_10AF9BB4;
 // 10AF9BB8: using guessed type int dword_10AF9BB8;

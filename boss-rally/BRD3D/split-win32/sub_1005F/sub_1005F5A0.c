@@ -13,7 +13,7 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
     int v14[2]; // [esp+14h] [ebp-10h] BYREF
     int v15;    // [esp+1Ch] [ebp-8h]
     int v16;    // [esp+20h] [ebp-4h]
-    int v17;    // [esp+38h] [ebp+14h]
+    DWORD v17;  // [esp+38h] [ebp+14h]
 
     v5 = a5;
     LOBYTE(v5) = a5 | 0x10;
@@ -44,9 +44,8 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
         }
         v7 = a2;
         v6 = a1;
-        result = (*(int(__stdcall **)(_DWORD, int, int, int, int *, int))(
-            **(_DWORD **)(*(_DWORD *)gUnk334 + 88) + 28))(
-            *(_DWORD *)(*(_DWORD *)gUnk334 + 88), a1, a2, dword_10A9E360[29 * a3], v14, v17);
+        result = gUnk334->u8c->lpDirectDrawSurface1->lpVtbl->BltFast(
+            gUnk334->u8c->lpDirectDrawSurface1, a1, a2, (&gDDSurface)[29 * a3], (LPRECT)v14, v17);
         if (!result)
             break;
         if (result == -2005532222) {
@@ -57,5 +56,3 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
     } while (result == -2005532132);
     return result;
 }
-// 10A9E360: using guessed type int dword_10A9E360[];
-// 118ABE08: using guessed type int dword_118ABE08;

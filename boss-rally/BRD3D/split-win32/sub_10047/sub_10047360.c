@@ -11,8 +11,8 @@ int __cdecl sub_10047360(int a1) {
         return 0;
     if ((*(_DWORD *)(a1 + 14416) & 0x1000000) != 0)
         return 0;
-    if (dword_10AA284C && (*(_DWORD *)&gUnk54Ptr->gap4[40] || *(_DWORD *)&gUnk54Ptr->gap4[44] ||
-                           *(_DWORD *)&gUnk54Ptr->gap4[48] || *(_DWORD *)&gUnk54Ptr->gap4[52])) {
+    if (dword_10AA284C && (gUnk54Ptr->field_2C || gUnk54Ptr->field_30 || gUnk54Ptr->field_34 ||
+                           gUnk54Ptr->field_38)) {
         *(_BYTE *)(a1 + 11108) = 4;
         result = 1;
     } else if ((v1 & 0x100) != 0) {

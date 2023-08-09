@@ -8,7 +8,7 @@ int sub_10045A00() {
 
     v0 = 0;
     v1 = _getdrive();
-    sub_1007F3C0(Path, 260);
+    sub_1007F3C0((int)Path, 260);
     v2 = 3;
     while (_chdrive(v2) || GetDriveTypeA(0) != 5 || _chdir(kBackslash) || !sub_1003E100(v2)) {
         if (++v2 > 26)
@@ -20,4 +20,3 @@ LABEL_9:
     _chdir(Path);
     return v0;
 }
-// 1007F3C0: using guessed type _DWORD __cdecl sub_1007F3C0(_DWORD, _DWORD);

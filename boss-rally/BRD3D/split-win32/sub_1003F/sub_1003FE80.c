@@ -8,7 +8,7 @@ int __cdecl sub_1003FE80(int a1) {
     int v5;         // ecx
     int v6;         // edx
 
-    if (gUnkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8) {
+    if (gUnkC8Ptr1 == (void *)gUnkC8Ptr32 && !dword_10AA28E8) {
         *(float *)(a1 + 12144) = *(float *)(a1 + 12144) - 8.0;
         v1 = GetStringWithIndex(0x1Cu);
         v2 = *(_DWORD *)(a1 + 11100);

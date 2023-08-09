@@ -1,27 +1,26 @@
 #include "types-win32.h"
 //----- (1005F530) --------------------------------------------------------
-int sub_1005F530() {
-    int result; // eax
-    int v1;     // edi
-    int *v2;    // esi
+IDirectDraw2 *sub_1005F530() {
+    IDirectDraw2 *result;          // eax
+    int i;                         // edi
+    IDirectDrawSurface *ddSurface; // esi
 
-    result = dword_10A9D070;
-    if (dword_10A9D070) {
-        v1 = 0;
-        if ((_WORD)dword_10AA28D4) {
-            v2 = dword_10A9E360;
+    result = gDDraw2;
+    if (gDDraw2) {
+        i = 0;
+        if (gSurfaceCount) {
+            ddSurface = (IDirectDrawSurface *)&gDDSurface;
             do {
-                result = *v2;
-                if (*v2) {
-                    result = (*(int(__stdcall **)(int))(*(_DWORD *)result + 8))(*v2);
-                    *v2 = 0;
+                result = (IDirectDraw2 *)ddSurface->lpVtbl;
+                if (ddSurface->lpVtbl) {
+                    result =
+                        (IDirectDraw2 *)result->lpVtbl->Release((IDirectDraw2 *)ddSurface->lpVtbl);
+                    ddSurface->lpVtbl = 0;
                 }
-                ++v1;
-                v2 += 29;
-            } while (v1 < (unsigned __int16)dword_10AA28D4);
+                ++i;
+                ddSurface += 0x1D;
+            } while (i < gSurfaceCount);
         }
     }
     return result;
 }
-// 10A9E360: using guessed type int dword_10A9E360[];
-// 10AA28D4: using guessed type int dword_10AA28D4;

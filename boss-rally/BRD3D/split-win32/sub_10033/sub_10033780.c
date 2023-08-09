@@ -3,8 +3,8 @@
 int __thiscall sub_10033780(unk06594 *this) {
     int result; // eax
 
-    if (!*(_DWORD *)&stru_106C3380.gap1C8[8608]) {
-        *(_DWORD *)&stru_106C3380.gap1C8[8608] = 1;
+    if (!*(_DWORD *)&gUnk06594.gap1C8[8608]) {
+        *(_DWORD *)&gUnk06594.gap1C8[8608] = 1;
         word_100B5D90 = 0;
         result = meth_unk1A5E0_10042AF0(this);
     }

@@ -7483,10 +7483,11 @@ struct PodHeader {
 /* 681 */
 struct Pod {
     PodVtbl *lpVtbl;
-    __declspec(align(8)) PodHeader header;
+    Iostream_init *field_4;
+    PodHeader header;
     void *unkInstance;
     FILE *fp;
-    char filename[4];
+    void *filename;
     _BYTE gap24[7];
     __unaligned __declspec(align(1)) int field_2B;
     _BYTE gap2F[1009];
@@ -7611,14 +7612,15 @@ struct unk000C8 {
     int(__cdecl *lpFn0)(unk000C8 *);
     void *field_8;
     int field_C;
-    int field_10;
+    WORD field_10;
     unk00348 *field_14[2];
     int field_1C;
     _BYTE gap20[68];
     int field_64;
     int field_68;
     int field_6C;
-    _BYTE gap70[76];
+    int field_70;
+    _BYTE gap74[72];
     WORD field_BC;
     unk06594 *field_C0;
     unk06594 *last;
@@ -7640,12 +7642,13 @@ struct unk000C8Vtbl {
 /* 696 */
 struct unk00348 {
     unk00348Vtbl *lpVtbl;
-    _BYTE gap4[12];
-    int field_10;
+    int(__stdcall *field_4)();
+    int(__stdcall *field_8)();
+    __declspec(align(8)) int field_10;
     WORD field_14;
     unk1E214 *field_18[2];
     _BYTE gap20[792];
-    int mask_338;
+    int flags_338;
     float field_33C;
     unk000C8 *field_340;
     int last;
@@ -7658,7 +7661,17 @@ struct unk06594 {
     int field_8;
     _BYTE gapC[440];
     int field_1C4;
-    _BYTE gap1C8[25544];
+    _BYTE gap1C8[18232];
+    float field_4900;
+    _BYTE gap4904[52];
+    int field_4938;
+    _BYTE gap493C[32];
+    int field_495C;
+    _BYTE gap4960[4];
+    int field_4964;
+    _BYTE gap4968[192];
+    int field_4A28;
+    _BYTE gap4A2C[7012];
     unk06594 *last;
 };
 
@@ -7752,7 +7765,7 @@ struct unk1E214 {
     _BYTE gap2AAE[6];
     WORD field_2AB4[25];
     __int16 field_2AE6;
-    int field_2AE8;
+    unk000C8 *field_2AE8;
     int field_2AEC;
     char field_2AF0[100];
     int field_2B54;
@@ -7852,7 +7865,9 @@ struct unk00054 {
     _BYTE gap4[40];
     int field_2C;
     int field_30;
-    _BYTE gap34[28];
+    int field_34;
+    int field_38;
+    _BYTE gap3C[20];
     LPDIRECTINPUTDEVICEA lpDIDeviceA;
 };
 
@@ -7951,4 +7966,9 @@ struct TrackData {
     char *skytexnLut4Name;
     void *field_28;
     char last[336];
+};
+
+/* 714 */
+enum MACRO_MAX_PATH {
+    MAX_PATH = 260,
 };

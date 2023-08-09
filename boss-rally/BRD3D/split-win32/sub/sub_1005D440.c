@@ -7,13 +7,13 @@ int sub_1005D440() {
     Iostream_init *iostreamInit;    // eax
     Iostream_init *ioStreamInitRes; // eax
 
-    memset(dword_10A9E360, 0, sizeof(dword_10A9E360));
-    LOWORD(dword_10AA28D4) = 0;
+    memset(&gDDSurface, 0, 0x41B4u);
+    gSurfaceCount = 0;
     word_10AA29F8 = 0;
     word_10AA29FC = 0;
     sub_1005FF30();
-    g_aImagesWork1aBmFilepath = (unk00104 *)malloc(0x104u);
-    strcpy((char *)g_aImagesWork1aBmFilepath, aImagesWork1aBm);
+    gImagesWork1aBmFilepath = (char *)malloc(MAX_PATH);
+    strcpy(gImagesWork1aBmFilepath, aImagesWork1aBm);
     g_aImagesCursorBmFilepath = malloc(0x104u);
     strcpy((char *)g_aImagesCursorBmFilepath, aImagesCursorBm);
     g_aImagesTypeGryBFilepath = malloc(0x104u);
@@ -475,6 +475,5 @@ int sub_1005D440() {
 // 10AA2428: using guessed type int dword_10AA2428;
 // 10AA249C: using guessed type int dword_10AA249C;
 // 10AA2510: using guessed type int dword_10AA2510;
-// 10AA28D4: using guessed type int dword_10AA28D4;
 // 10AA29F8: using guessed type __int16 word_10AA29F8;
 // 10AA29FC: using guessed type __int16 word_10AA29FC;

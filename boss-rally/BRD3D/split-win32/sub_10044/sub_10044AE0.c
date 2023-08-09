@@ -9,7 +9,7 @@ int __cdecl sub_10044AE0(int a1) {
     dword_10AA29D8 = 0;
     dword_10AA29D4 = 0;
     dword_10AA2880 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2940;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr11;
     sub_1003BF60();
     return 0;
 }

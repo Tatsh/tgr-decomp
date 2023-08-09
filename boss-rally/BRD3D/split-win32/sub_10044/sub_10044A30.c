@@ -11,8 +11,8 @@ int __cdecl sub_10044A30(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2950 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA294C;
+    gUnkC8Ptr26 = 0;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr25;
     sub_1003BF60();
     v1 = dword_10AA287C;
     if ((!dword_10AA287C || dword_10AA287C == 1) && !dword_10A9D000) {

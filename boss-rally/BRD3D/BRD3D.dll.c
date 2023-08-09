@@ -246,11 +246,13 @@ int __thiscall meth_unk0008C_1000B2C0(unk0008C *this);                          
 int __thiscall meth_unk00334_1000B350(unk00334 *this, _DWORD *a2);                         // idb
 HRESULT __thiscall meth_unk0008C_1000B390(unk0008C *this, int a1, unk00334 *a3, int a4);   // idb
 HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4, int a5); // idb
-HANDLE __cdecl sub_1000B680(int a1, LPCSTR filepath, int cx_, int cy, int a5);             // idb
-int __cdecl sub_1000B790(int, LPCSTR name);                                                // idb
-int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc); // idb
-int __cdecl sub_1000B940(_DWORD *a1, COLORREF color);                                      // idb
-int __cdecl sub_1000BA40(int, COLORREF color);                                             // idb
+IDirectDrawSurface *__cdecl DDrawCreateSurface(
+    IDirectDraw2 *ddraw2, LPCSTR filepath, int cx_, int cy, LPDDSURFACEDESC a5);
+int __cdecl sub_1000B790(int, LPCSTR name); // idb
+HRESULT __cdecl sub_1000B820(
+    IDirectDrawSurface *ddSurface, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc); // idb
+int __cdecl CalcColorSpaceValue(LPDIRECTDRAWSURFACE surface, COLORREF color);                // idb
+HRESULT __cdecl sub_1000BA40(LPDIRECTDRAWSURFACE surface, COLORREF color);                   // idb
 void sub_1000BA70();
 void __cdecl np_sub_1000BAF0(SIZE_T *a1, int a2, int a3, int a4);
 void __cdecl sub_1000BEA0(int a1, int *a2);
@@ -661,7 +663,7 @@ _BYTE *__cdecl sub_1002C1B0(_BYTE *a1);
 int __cdecl sub_1002C1F0(int a1);
 _DWORD *__thiscall meth_1002C210(void *this);
 int sub_1002C290();
-// int unknown_libname_3(void); weak
+// LARGE_INTEGER *unknown_libname_3();
 // void __cdecl unknown_libname_4(); idb
 int __thiscall meth_1002C2D0(void *this);
 void __thiscall meth_1002C320(void *this);
@@ -794,6 +796,7 @@ int __cdecl LoadCar(int a1, int carIndex, int a3); // idb
 int __cdecl sub_10035585(int a1, __int16 a2, int a3);
 // int __cdecl _ismbbkprint(unsigned int C);
 void __cdecl sub_1003563A(int a1);
+// int unknown_libname_6();
 void __noreturn sub_10035BA7();
 void __cdecl __noreturn sub_10035BBA(int a1);
 Car *sub_10035BD1();
@@ -893,7 +896,7 @@ int sub_1003C150();
 int sub_1003C1E0();
 int sub_1003C230();
 int sub_1003C260();
-int __stdcall sub_1003C3A0(int, int, int, LPCVOID pMem);                              // idb
+int __stdcall sub_1003C3A0(HWND a1, int a2, int a3, char *pMem);                      // idb
 int __stdcall sub_1003C430(IID *iid, int a2, SIZE_T dwBytes, int a4, int a5, int a6); // idb
 HRESULT __cdecl sub_1003C520(LPVOID *a1);
 int sub_1003C550();
@@ -1048,14 +1051,14 @@ int sub_10041930();
 int __cdecl sub_10041970(int a1);
 void __cdecl sub_100419D0(LPCSTR a1);
 int __cdecl sub_10041A00(int a1);
-int __cdecl sub_10041AC0(int a1);
+int __cdecl sub_10041AC0(unk1E214 *a1); // idb
 void sub_10041B50();
 FILE *sub_10041BD0();
 int __cdecl sub_10041DF0(char *a1, int a2); // idb
 int __cdecl sub_10042020(int a1, int *a2);
 int __cdecl sub_10042170(int a1, int *a2);
-int __cdecl sub_10042410(int a1);
-int __cdecl sub_100424D0(int a1);
+int __cdecl sub_10042410(unk1E214 *a1);     // idb
+int __cdecl sub_100424D0(unk1E214 *a1);     // idb
 int __cdecl sub_10042560(char *a1, int a2); // idb
 int __cdecl sub_10042740(int a1, int *a2);
 int __cdecl sub_10042880(int a1, int *a2);
@@ -1088,7 +1091,7 @@ int __cdecl sub_100437D0(int a1);
 int __cdecl sub_10043810(LPCVOID pMem); // idb
 int sub_10043A00();
 int __stdcall sub_10043BF0();
-int sub_10043CD0();
+int __stdcall sub_10043CD0();
 int sub_10043DA0();
 unk000C8 *sub_10043E70();
 int __cdecl sub_10043F50(int a1);
@@ -1148,62 +1151,62 @@ int sub_100458E0();
 int __thiscall meth_10045900(void *this);
 int sub_10045A00();
 int sub_10045AA0();
-int sub_10045AF0();
+unk000C8 *sub_10045AF0();
 int sub_10045BC0();
-int sub_10045C90();
+unk000C8 *sub_10045C90();
 int sub_10045DC0();
 int sub_10045EA0();
-int sub_10045F70();
-int sub_100460A0(); // weak
-int sub_10046170();
+unk000C8 *sub_10045F70();
+int __stdcall sub_100460A0();
+unk000C8 *sub_10046170();
 int sub_10046260();
 int sub_10046380();
-int __cdecl sub_100463C0(int a1);
-int __cdecl sub_10046400(int a1);
-int __cdecl sub_10046450(int a1);
-int __cdecl sub_100464A0(int a1);
-int __cdecl sub_100464E0(int); // weak
-int __cdecl sub_10046520(int a1);
-int __cdecl sub_10046560(int a1);
-int __cdecl sub_100465A0(int a1);
-int __cdecl sub_100465E0(int a1);
-int __cdecl sub_10046620(int a1);
-int __cdecl sub_10046670(int a1);
-int __cdecl sub_100466C0(int a1);
-int __cdecl sub_10046710(int a1);
-int __cdecl sub_10046750(int a1);
-int __cdecl sub_10046790(int a1);
-int __cdecl sub_10046830(int a1);
-int __cdecl sub_10046870(int a1);
-int __cdecl sub_10046910(int a1);
-int __cdecl sub_10046950(int a1);
-int __cdecl sub_100469F0(int a1);
-int __cdecl sub_10046A30(int a1);
-int __cdecl sub_10046AD0(int a1);
-int __cdecl sub_10046B10(int a1);
-int __cdecl sub_10046BB0(int a1);
-int __cdecl sub_10046BF0(int a1);
-int __cdecl sub_10046C90(int a1);
-int __cdecl sub_10046CD0(int); // weak
-int __cdecl sub_10046D20(int a1);
-int __cdecl sub_10046D70(int a1);
-int __cdecl sub_10046DC0(int a1);
-int __cdecl sub_10046E10(int a1);
-int __cdecl sub_10046EB0(int a1);
+int __cdecl sub_100463C0(unk1E214 *a1); // idb
+int __cdecl sub_10046400(unk1E214 *a1); // idb
+int __cdecl sub_10046450(unk1E214 *a1); // idb
+int __cdecl sub_100464A0(unk1E214 *a1); // idb
+int __cdecl sub_100464E0(unk1E214 *a1); // idb
+int __cdecl sub_10046520(unk1E214 *a1); // idb
+int __cdecl sub_10046560(unk1E214 *a1); // idb
+int __cdecl sub_100465A0(unk1E214 *a1); // idb
+int __cdecl sub_100465E0(unk1E214 *a1); // idb
+int __cdecl sub_10046620(unk1E214 *a1); // idb
+int __cdecl sub_10046670(unk1E214 *a1); // idb
+int __cdecl sub_100466C0(unk1E214 *a1); // idb
+int __cdecl sub_10046710(unk1E214 *a1); // idb
+int __cdecl sub_10046750(unk1E214 *a1); // idb
+int __cdecl sub_10046790(unk1E214 *a1); // idb
+int __cdecl sub_10046830(unk1E214 *a1); // idb
+int __cdecl sub_10046870(unk1E214 *a1); // idb
+int __cdecl sub_10046910(unk1E214 *a1); // idb
+int __cdecl sub_10046950(unk1E214 *a1); // idb
+int __cdecl sub_100469F0(unk1E214 *a1); // idb
+int __cdecl sub_10046A30(unk1E214 *a1); // idb
+int __cdecl sub_10046AD0(unk1E214 *a1); // idb
+int __cdecl sub_10046B10(unk1E214 *a1); // idb
+int __cdecl sub_10046BB0(unk1E214 *a1); // idb
+int __cdecl sub_10046BF0(unk1E214 *a1); // idb
+int __cdecl sub_10046C90(unk1E214 *a1); // idb
+int __cdecl sub_10046CD0(unk1E214 *a1); // idb
+int __cdecl sub_10046D20(unk1E214 *a1); // idb
+int __cdecl sub_10046D70(unk1E214 *a1); // idb
+int __cdecl sub_10046DC0(unk1E214 *a1); // idb
+int __cdecl sub_10046E10(unk1E214 *a1); // idb
+int __cdecl sub_10046EB0(unk1E214 *a1); // idb
 int sub_10046F50();
-int __cdecl sub_10046F60(int a1);
+int __cdecl sub_10046F60(unk1E214 *a1); // idb
 int sub_10046FC0();
-int __cdecl sub_10046FD0(int a1);
+int __cdecl sub_10046FD0(unk1E214 *a1); // idb
 int sub_10047050();
-int __cdecl sub_10047060(int a1);
-int __cdecl sub_100470A0(int); // weak
-int __cdecl sub_100470E0(int a1);
-int __cdecl sub_10047120(int); // weak
-int __cdecl sub_100471B0(int); // weak
-int __cdecl sub_100471F0(int); // weak
+int __cdecl sub_10047060(unk1E214 *a1); // idb
+int __cdecl sub_100470A0(unk1E214 *a1); // idb
+int __cdecl sub_100470E0(unk1E214 *a1); // idb
+int __cdecl sub_10047120(unk1E214 *a1); // idb
+int __cdecl sub_100471B0(unk1E214 *a1); // idb
+int __cdecl sub_100471F0(unk1E214 *a1);
 int __cdecl sub_10047210(int a1);
-int __cdecl sub_10047250(int a1);
-int __cdecl sub_10047290(int a1);
+int __cdecl sub_10047250(unk1E214 *a1); // idb
+int __cdecl sub_10047290(unk1E214 *a1); // idb
 int sub_10047340();
 int __cdecl sub_10047360(int a1);
 int __cdecl sub_100474B0(int a1);
@@ -1222,7 +1225,7 @@ void __thiscall meth_100478C0(unk1E214 *this);                     // idb
 int __thiscall meth_unk1E214_10047930(unk1E214 *this);             // idb
 int __thiscall meth_unk1E214_10047980(unk1E214 *this, int *a2);    // idb
 int __thiscall meth_unk1E214_100479D0(unk1E214 *this, int a2, int a3);
-int __thiscall meth_unk1E214_10047A10(__int16 *this);
+int __thiscall meth_unk1E214_10047A10(unk1E214 *this);            // idb
 int __thiscall meth_unk1E214_10047A60(unk1E214 *this);            // idb
 int __thiscall meth_unk1E214_10047CB0(unk1E214 *this, int a2);    // idb
 double __thiscall meth_unk1E214_10047CE0(unk1E214 *this, int a2); // idb
@@ -1230,11 +1233,11 @@ int __thiscall meth_unk1E214_10047D10(unk1E214 *this);            // idb
 int __thiscall meth_unk1E214_10047D30(unk1E214 *this);            // idb
 __int16 __thiscall meth_unk1E214_10047EB0(int this, const char *a2, int a3, char a4, _DWORD *a5);
 __int16 __thiscall meth_unk1E214_10047FB0(
-    int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, __int16 a9);
-int __thiscall meth_unk1E214_10048010(unk1E214 *this); // idb
-int __thiscall meth_unk1E214_10048060(unk1E214 *this); // idb
-int __thiscall meth_unk1E214_100480A0(unk1E214 *this); // idb
-int __thiscall meth_unk1E214_10048180(unk1E214 *this); // idb
+    unk1E214 *this, int a2, int flags, int a4, int a5, int a6, int a7, int a8, __int16 a9); // idb
+int __thiscall meth_unk1E214_10048010(unk1E214 *this);                                      // idb
+int __thiscall meth_unk1E214_10048060(unk1E214 *this);                                      // idb
+int __thiscall meth_unk1E214_100480A0(unk1E214 *this);                                      // idb
+int __thiscall meth_unk1E214_10048180(unk1E214 *this);                                      // idb
 unk00348 *__thiscall meth_10048470(unk00348 *this);
 unk00348 *__thiscall meth_unk00348_100484C0(unk00348 *this, char a2); // idb
 void __thiscall meth_100484E0(unk00348 *this);                        // idb
@@ -1251,8 +1254,8 @@ int __thiscall meth_unk000C8_10048AA0(unsigned __int16 *this);
 void __stdcall meth_unk000C8_10048B20(int a1);
 int __cdecl sub_100491B0(unk000C8 *a1); // idb
 int __cdecl sub_10049C20(unk000C8 *a1); // idb
-int __cdecl sub_10049F40(int);          // weak
-int __cdecl sub_1004A260(int);          // weak
+int __cdecl sub_10049F40(unk000C8 *a1); // idb
+int __cdecl sub_1004A260(unk000C8 *a1); // idb
 int __cdecl sub_1004A580(int a1);
 int __cdecl sub_1004B430(int);          // weak
 int __cdecl sub_1004BDC0(unk000C8 *a1); // idb
@@ -1272,9 +1275,9 @@ int __cdecl sub_10051990(unk000C8 *a1); // idb
 int __cdecl sub_10051D30(unk000C8 *a1); // idb
 int __cdecl sub_10052030(int);          // weak
 int __cdecl sub_10052F50(int);          // weak
-int __cdecl sub_10053CF0(int a1);
-int __cdecl sub_10054B50(int);          // weak
-int __cdecl sub_100558A0(int);          // weak
+int __cdecl sub_10053CF0(unk000C8 *a1); // idb
+int __cdecl sub_10054B50(unk000C8 *a1); // idb
+int __cdecl sub_100558A0(unk000C8 *a1); // idb
 int __cdecl sub_100563E0(unk000C8 *a1); // idb
 int __cdecl sub_10056A10(int);          // weak
 int __cdecl sub_10056FF0(unk000C8 *a1); // idb
@@ -1331,7 +1334,7 @@ int __thiscall meth_unk06594_1005D0A0(unk06594 *, LPCSTR lpFileName);
 int __thiscall meth_unk06594_1005D110(unk06594 *this, char *Str1, int a3); // idb
 int sub_1005D440();
 int sub_1005F4E0();
-int sub_1005F530();
+IDirectDraw2 *sub_1005F530();
 void __noreturn sub_1005F580();
 int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5);
 int DDraw_DoInit();
@@ -1346,14 +1349,15 @@ HRESULT sub_1005FFB0();
 int sub_1005FFD0();
 int sub_1005FFF0();
 int __cdecl showMessageBox_0(HWND hWnd, HRESULT hr, LPCSTR lpText); // idb
-LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam);
-int __stdcall sub_10060210(HWND a1); // idb
+LRESULT __stdcall sub_10060060(
+    Iostream_init *iostreamInit, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam); // idb
+int __stdcall sub_10060210(HWND a1);                                               // idb
 LPDIRECTINPUTDEVICEA sub_10060260();
 unk00054 *__thiscall meth_unk00054_init(unk00054 *this);
 LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(#492 * this);
 int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd); // idb
 LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd);       // idb
-LPDIRECTINPUTDEVICEA __thiscall meth_10060750(#492 * this, int a2);
+LPDIRECTINPUTDEVICEA __thiscall meth_10060750(unk00054 *this, int a2);       // idb
 // __int16 __usercall sub_10060780@<ax>(int a1@<ebx>, char *a2, unsigned int a3, char a4);
 int __cdecl sub_100607B0(int a1, int a2);
 int __cdecl sub_100609E0(int a1);
@@ -1397,7 +1401,7 @@ void __thiscall meth_10062C50(_DWORD *this); // idb
 void j_nullsub_2_1();
 void **sub_100633E0();
 enum MACRO_GAME_MODE __thiscall meth_10063420(_DWORD *this);
-unsigned int __thiscall meth_100634F0(_DWORD *this);
+enum MACRO_GAME_MODE __thiscall meth_100634F0(_DWORD *this);
 void __thiscall meth_10063660(_DWORD *this); // idb
 void __cdecl sub_10063FE0(int a1);
 int __thiscall meth_10063FF0(_DWORD *this, int a2, int a3, int a4); // idb
@@ -1683,7 +1687,7 @@ int __thiscall meth_100769A0(_DWORD *this, int a2, int a3, int a4);
 void __thiscall meth_10076A00(int this);
 void __thiscall meth_10076A40(_DWORD *this, int a2);
 void __thiscall meth_10076A70(unsigned __int8 *this, int a2, int a3);
-int __thiscall meth_10076AE0(_DWORD *this, int chosenCar); // idb
+int __thiscall meth_10076AE0(_DWORD *this, int carIndex); // idb
 int __thiscall meth_10076B20(_DWORD *this);
 _DWORD *__thiscall meth_10076C90(char *this);
 MMRESULT __cdecl sub_10076CE0(LPSTR pszFileName, int a2, int a3, LPMMCKINFO pmmcki);
@@ -1720,7 +1724,7 @@ HRESULT __cdecl DICreateEffects(int a1, int unusedA2); // idb
 int sub_10079550();
 int sub_100795D0();
 int sub_10079670();
-// int unknown_libname_11();
+// _DWORD *unknown_libname_11();
 // void __cdecl unknown_libname_12(); idb
 HINSTANCE sub_100796B0();
 BOOL UnregisterClass();
@@ -1949,10 +1953,14 @@ int __cdecl sub_100875C0(int a1, int a2);
 // BOOL __cdecl _isindst(_DWORD *a1);
 BOOL __cdecl sub_10089B40(_DWORD *a1);
 // _DWORD __cdecl cvtdate(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
-// int __usercall unknown_libname_26@<eax>(double@<st0>); weak
+// double __cdecl unknown_libname_13(_TBYTE a1, _TBYTE a2);
+// int __usercall unknown_libname_15@<eax>(double a1@<st1>, double a2@<st0>);
+// int __usercall unknown_libname_16@<eax>(double a1@<st1>, double a2@<st0>);
+// void __usercall __spoils<edx,ecx,st0> unknown_libname_26(double a1@<st1>, double a2@<st0>);
 // unsigned int __usercall unknown_libname_27@<eax>(char a1@<dl>, __int128 a2, int a3, int a4, __int128 a5);
+// unsigned int __usercall __spoils<ecx,st0> unknown_libname_28@<eax>(double a1@<st1>, double a2@<st0>);
 // unsigned int __usercall unknown_libname_29@<eax>(char a1@<dl>, __int128 a2, int a3, int a4, __int128 a5);
-// int __usercall __spoils<ecx,st0> unknown_libname_30@<eax>(unsigned __int64 a1@<st0>);
+// int __spoils<ecx> unknown_libname_30();
 // _DWORD __cdecl __crtMessageBoxA(_DWORD, _DWORD, _DWORD); weak
 // _DWORD __cdecl __addl(_DWORD, _DWORD, _DWORD); weak
 // _DWORD __cdecl __add_12(_DWORD, _DWORD); weak
@@ -2091,6 +2099,7 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // MMRESULT __stdcall mmioAscend(HMMIO hmmio, LPMMCKINFO pmmcki, UINT fuAscend);
 // MMRESULT __stdcall mmioClose(HMMIO hmmio, UINT fuClose);
 // MMRESULT __stdcall timeEndPeriod(UINT uPeriod);
+// MMRESULT __stdcall timeBeginPeriod(UINT uPeriod);
 // DWORD __stdcall timeGetTime();
 // MCIERROR __stdcall mciSendCommandA(MCIDEVICEID mciId, UINT uMsg, DWORD_PTR dwParam1, DWORD_PTR dwParam2);
 // MMRESULT __stdcall mmioGetInfo(HMMIO hmmio, LPMMIOINFO pmmioinfo, UINT fuInfo);
@@ -2120,22 +2129,22 @@ PodVtbl gPodVtbl = {&meth_Pod_100085C0,
                     &meth_Pod_10008AA0,
                     &meth_Pod_CleanUpPod};
 int dword_1008F538 = -1363573792; // weak
-unk1E214Vtbl unk1E214Vtbl1 = {&meth_1E214_100478A0,
-                              &meth_unk1E214_100480A0,
-                              &meth_unk1E214_10048010,
-                              &meth_unk1E214_10048180,
-                              &meth_unk1E214_10047A10,
-                              &meth_unk1E214_100479D0,
-                              &meth_unk1E214_10047980,
-                              &meth_unk1E214_10047930,
-                              &meth_unk1E214_10047A60,
-                              &meth_unk1E214_10047CB0,
-                              &meth_unk1E214_10047CE0,
-                              &meth_unk1E214_10047D10,
-                              &meth_unk1E214_10047D30,
-                              &meth_unk1E214_10047EB0,
-                              &meth_unk1E214_10047FB0,
-                              &meth_unk1E214_10048060};
+unk1E214Vtbl gUnk1E214Vtbl1 = {&meth_1E214_100478A0,
+                               &meth_unk1E214_100480A0,
+                               &meth_unk1E214_10048010,
+                               &meth_unk1E214_10048180,
+                               &meth_unk1E214_10047A10,
+                               &meth_unk1E214_100479D0,
+                               &meth_unk1E214_10047980,
+                               &meth_unk1E214_10047930,
+                               &meth_unk1E214_10047A60,
+                               &meth_unk1E214_10047CB0,
+                               &meth_unk1E214_10047CE0,
+                               &meth_unk1E214_10047D10,
+                               &meth_unk1E214_10047D30,
+                               &meth_unk1E214_10047EB0,
+                               &meth_unk1E214_10047FB0,
+                               &meth_unk1E214_10048060};
 unk00348Vtbl gUnk00348Vtbl = {&meth_unk00348_100484C0, &meth_unk00348_10048530};
 unk000C8Vtbl gUnkC8Vtbl = {&meth_unk000C8_10048850,
                            &meth_unk000C8_100488B0,
@@ -2574,6 +2583,7 @@ char aDperrUnsupport[18] = "DPERR_UNSUPPORTED";                                 
 char aDperrPending[14] = "DPERR_PENDING";                                                   // weak
 char aE_0[2] = "Ê";                                                                         // weak
 int dword_100AB334[] = {0};                                                                 // weak
+_UNKNOWN unk_100AB338;                                                                      // weak
 int dword_100AB3D8 = 1;                                                                     // weak
 __int16 word_100AB3DC = 1;                                                                  // weak
 int dword_100AB3E0 = -1;                                                                    // weak
@@ -2591,10 +2601,23 @@ int dword_100AB428 = 0;                                                         
 int dword_100AB42C = 380;                                                                   // weak
 int dword_100AB430 = 200;                                                                   // weak
 int dword_100AB434 = 480;                                                                   // weak
+_UNKNOWN unk_100AB438;                                                                      // weak
 int dword_100AB448 = 148;                                                                   // weak
 int dword_100AB44C = 110;                                                                   // weak
 int dword_100AB450 = 358;                                                                   // weak
 int dword_100AB454 = 260;                                                                   // weak
+_UNKNOWN unk_100AB458;                                                                      // weak
+_UNKNOWN unk_100AB468;                                                                      // weak
+_UNKNOWN unk_100AB478;                                                                      // weak
+_UNKNOWN unk_100AB488;                                                                      // weak
+_UNKNOWN unk_100AB498;                                                                      // weak
+_UNKNOWN unk_100AB4A8;                                                                      // weak
+_UNKNOWN unk_100AB4B8;                                                                      // weak
+_UNKNOWN unk_100AB4C8;                                                                      // weak
+int dword_100AB4D8[4] = {188, 130, 300, 225};                                               // idb
+_UNKNOWN unk_100AB4F8;                                                                      // weak
+_UNKNOWN unk_100AB508;                                                                      // weak
+_UNKNOWN unk_100AB558;                                                                      // weak
 __int16 word_100AB568[] = {0};                                                              // weak
 int dword_100AB56C[4] = {0, 0, 640, 480};                                                   // idb
 int dword_100AB57C[30] = {0, 1,   0,   0, 28, 30, 1, 2,   0,   0, 128, 144, 1, 3,   0,
@@ -2862,7 +2885,7 @@ char aImagesTypeGryB[20] = "images\\type_gry.bmp";                              
 char aImagesCursorBm[18] = "images\\cursor.bmp";                                 // weak
 char aImagesWork1aBm[18] = "images\\work1a.bmp";                                 // weak
 char aDdrawDoinitLoa[] = "DDraw_DoInit: loading.bmp failed to load!";            // idb
-CHAR name[] = "images\\loading.bmp";                                             // idb
+CHAR filepath[] = "images\\loading.bmp";                                         // idb
 int dword_100ADF58 = 9;                                                          // weak
 int dword_100ADF5C = 9;                                                          // weak
 int dword_100ADF60 = 1;                                                          // weak
@@ -3517,6 +3540,7 @@ int dword_100C0CE8 = -1;                                                        
 int dword_100C0CEC = 0;                                                                  // weak
 int dword_100C0CF0 = 0;                                                                  // weak
 int dword_100C129C = 0;                                                                  // weak
+_UNKNOWN unk_100C12A0;                                                                   // weak
 char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
@@ -3528,6 +3552,7 @@ char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
 
 };                           // idb
+_UNKNOWN unk_1020AB98;       // weak
 int dword_10220B20;          // weak
 int dword_10220B24;          // weak
 int dword_10220B28;          // weak
@@ -3794,6 +3819,7 @@ float flt_1039B73C;                           // weak
 char Buffer[28];                              // idb
 int dword_1039B75C;                           // weak
 int dword_1039B760[];                         // weak
+_UNKNOWN unk_1039B7C4;                        // weak
 float flt_1039C168[];                         // weak
 float flt_1039C16C;                           // weak
 float flt_1039C170;                           // weak
@@ -3854,6 +3880,8 @@ float flt_1039E9A0;                           // weak
 float flt_1039E9A4;                           // weak
 float flt_1039E9A8;                           // weak
 float flt_1039E9B0;                           // weak
+_UNKNOWN unk_1039E9F8;                        // weak
+_UNKNOWN unk_103C77E8;                        // weak
 int dword_103C7840[];                         // weak
 _WORD word_103C7844[381414];                  // idb
 int dword_104ADCF0;                           // weak
@@ -4173,6 +4201,7 @@ int dword_1068093C;          // weak
 int dword_10680940;          // weak
 unsigned int C;              // idb
 int dword_10680948;          // weak
+_UNKNOWN unk_10680950;       // weak
 int dword_106909B0;          // weak
 int dword_106909B4;          // weak
 int dword_106909B8;          // weak
@@ -4282,6 +4311,7 @@ int dword_106C161C;          // weak
 int dword_106C1620;          // weak
 _DWORD dword_106C1628[4];    // idb
 int dword_106C1638;          // weak
+_UNKNOWN unk_106C163C;       // weak
 int dword_106C1690;          // weak
 __int16 word_106C1788[];     // weak
 __int16 word_106C178A[];     // weak
@@ -4339,9 +4369,9 @@ char byte_106C335B;          // weak
 char byte_106C335C;          // weak
 float dword_106C3360;        // idb
 int dword_106C3364;          // weak
-unk06594 stru_106C3380;      // idb
-int dword_10A99778;          // weak
-int dword_10A9977C;          // weak
+unk06594 gUnk06594;
+int dword_10A99778; // weak
+int dword_10A9977C; // weak
 Pod gPod;
 int dword_10A99BA8;               // weak
 int dword_10A99BAC;               // weak
@@ -4383,16 +4413,21 @@ int dword_10A9D010;               // weak
 char g_lpSessionDesc_dwUser3[80]; // idb
 int dword_10A9D068;               // weak
 int dword_10A9D06C;               // weak
-int dword_10A9D070;               // idb
-char byte_10A9D078[264];          // idb
-int dword_10A9D5C0[];             // weak
-char byte_10A9D618[36];           // idb
-int dword_10A9DBD0;               // weak
-char byte_10A9DBDC;               // weak
-char byte_10A9DD28[1064];         // idb
-int dword_10A9E150[32];           // idb
-char dword_10A9E360[16820];
-unk00104 *g_aImagesWork1aBmFilepath;
+IDirectDraw2 *gDDraw2;
+char byte_10A9D078[264];  // idb
+int dword_10A9D5C0[];     // weak
+char byte_10A9D618[36];   // idb
+_UNKNOWN unk_10A9D778;    // weak
+_UNKNOWN unk_10A9D780;    // weak
+_UNKNOWN unk_10A9DA50;    // weak
+int dword_10A9DBD0;       // weak
+_UNKNOWN unk_10A9DBD8;    // weak
+char byte_10A9DBDC;       // weak
+char byte_10A9DD28[1064]; // idb
+int dword_10A9E150[32];   // idb
+_UNKNOWN unk_10A9E1D0;    // weak
+IDirectDrawSurface *gDDSurface;
+char *gImagesWork1aBmFilepath;
 int g_aImagesCursorBmFilepath; // weak
 int g_aImagesTypeGryBFilepath; // weak
 int g_aImagesTypeWitBFilepath; // weak
@@ -4486,79 +4521,80 @@ int dword_10AA0C98;            // weak
 int dword_10AA0D0C;            // weak
 int dword_10AA0D80;            // weak
 char *dword_10AA0DF4;
-int dword_10AA0E68;      // weak
-int dword_10AA0EDC;      // weak
-int dword_10AA0F50;      // weak
-int dword_10AA0FC4;      // weak
-int dword_10AA1038;      // weak
-int dword_10AA10AC;      // weak
-int dword_10AA1120;      // weak
-int dword_10AA1194;      // weak
-int dword_10AA1208;      // weak
-int dword_10AA127C;      // weak
-int dword_10AA12F0;      // weak
-int dword_10AA1364;      // weak
-int dword_10AA13D8;      // weak
-int dword_10AA144C;      // weak
-int dword_10AA14C0;      // weak
-int dword_10AA1534;      // weak
-int dword_10AA15A8;      // weak
-int dword_10AA161C;      // weak
-int dword_10AA1690;      // weak
-int dword_10AA1704;      // weak
-int dword_10AA1778;      // weak
-int dword_10AA17EC;      // weak
-int dword_10AA1860;      // weak
-int dword_10AA18D4;      // weak
-int dword_10AA1948;      // weak
-int dword_10AA19BC;      // weak
-int dword_10AA1A30;      // weak
-int dword_10AA1AA4;      // weak
-int dword_10AA1B18;      // weak
-int dword_10AA1B8C;      // weak
-int dword_10AA1C00;      // weak
-int dword_10AA1C74;      // weak
-int dword_10AA1CE8;      // weak
-int dword_10AA1D5C;      // weak
-int dword_10AA1DD0;      // weak
-int dword_10AA1E44;      // weak
-int dword_10AA1EB8;      // weak
-int dword_10AA1F2C;      // weak
-int dword_10AA1FA0;      // weak
-int dword_10AA2014;      // weak
-int dword_10AA2088;      // weak
-int dword_10AA20FC;      // weak
-int dword_10AA2170;      // weak
-int dword_10AA21E4;      // weak
-int dword_10AA2258;      // weak
-int dword_10AA22CC;      // weak
-int dword_10AA2340;      // weak
-int dword_10AA23B4;      // weak
-int dword_10AA2428;      // weak
-int dword_10AA249C;      // weak
-int dword_10AA2510;      // weak
-char byte_10AA2518[32];  // idb
-int dword_10AA2538[];    // weak
-int dword_10AA253C[];    // weak
-int dword_10AA2540[17];  // idb
-int dword_10AA2598;      // weak
-float flt_10AA25A0[12];  // idb
-char byte_10AA25D4;      // weak
-int dword_10AA25D8;      // weak
-int dword_10AA25DC;      // weak
-int dword_10AA26E8;      // weak
-int dword_10AA26F0;      // weak
-int dword_10AA26F4[];    // weak
-__int16 word_10AA270E[]; // weak
-int dword_10AA2740[24];  // idb
-float flt_10AA27A0[16];  // idb
-int dword_10AA27E0;      // weak
-int dword_10AA27EC;      // weak
-int dword_10AA27F0;      // weak
-int dword_10AA27F4;      // weak
-int dword_10AA27F8;      // weak
-float flt_10AA27FC[17];  // idb
-int dword_10AA2840;      // weak
+int dword_10AA0E68;        // weak
+int dword_10AA0EDC;        // weak
+int dword_10AA0F50;        // weak
+int dword_10AA0FC4;        // weak
+int dword_10AA1038;        // weak
+int dword_10AA10AC;        // weak
+int dword_10AA1120;        // weak
+int dword_10AA1194;        // weak
+int dword_10AA1208;        // weak
+int dword_10AA127C;        // weak
+int dword_10AA12F0;        // weak
+int dword_10AA1364;        // weak
+int dword_10AA13D8;        // weak
+int dword_10AA144C;        // weak
+int dword_10AA14C0;        // weak
+int dword_10AA1534;        // weak
+int dword_10AA15A8;        // weak
+int dword_10AA161C;        // weak
+int dword_10AA1690;        // weak
+int dword_10AA1704;        // weak
+int dword_10AA1778;        // weak
+int dword_10AA17EC;        // weak
+int dword_10AA1860;        // weak
+int dword_10AA18D4;        // weak
+int dword_10AA1948;        // weak
+int dword_10AA19BC;        // weak
+int dword_10AA1A30;        // weak
+int dword_10AA1AA4;        // weak
+int dword_10AA1B18;        // weak
+int dword_10AA1B8C;        // weak
+int dword_10AA1C00;        // weak
+int dword_10AA1C74;        // weak
+int dword_10AA1CE8;        // weak
+int dword_10AA1D5C;        // weak
+int dword_10AA1DD0;        // weak
+int dword_10AA1E44;        // weak
+int dword_10AA1EB8;        // weak
+int dword_10AA1F2C;        // weak
+int dword_10AA1FA0;        // weak
+int dword_10AA2014;        // weak
+int dword_10AA2088;        // weak
+int dword_10AA20FC;        // weak
+int dword_10AA2170;        // weak
+int dword_10AA21E4;        // weak
+int dword_10AA2258;        // weak
+int dword_10AA22CC;        // weak
+int dword_10AA2340;        // weak
+int dword_10AA23B4;        // weak
+int dword_10AA2428;        // weak
+int dword_10AA249C;        // weak
+int dword_10AA2510;        // weak
+char byte_10AA2518[32];    // idb
+int dword_10AA2538[];      // weak
+int dword_10AA253C[];      // weak
+int dword_10AA2540[17];    // idb
+_UNKNOWN unk_10AA2584;     // weak
+int dword_10AA2598;        // weak
+float flt_10AA25A0[12];    // idb
+char byte_10AA25D4;        // weak
+int dword_10AA25D8;        // weak
+int dword_10AA25DC;        // weak
+int dword_10AA26E8;        // weak
+int dword_10AA26F0;        // weak
+int dword_10AA26F4[];      // weak
+__int16 word_10AA270E[];   // weak
+int dword_10AA2740[24];    // idb
+float flt_10AA27A0[16];    // idb
+int dword_10AA27E0;        // weak
+int gTransmissionType0;    // weak
+int dword_10AA27F0;        // weak
+int gSuspensionType0;      // weak
+int gConfigJoystickIndex0; // weak
+float flt_10AA27FC[17];    // idb
+int dword_10AA2840;        // weak
 LPDIRECTINPUTDEVICEA dword_10AA2844;
 int dword_10AA2848;             // weak
 int dword_10AA284C;             // weak
@@ -4595,69 +4631,69 @@ int dword_10AA28C4;             // idb
 unsigned __int8 dword_10AA28C8; // idb
 unsigned __int8 dword_10AA28CC; // idb
 int dword_10AA28D0;             // weak
-int dword_10AA28D4;             // weak
-int dword_10AA28D8;             // weak
-int dword_10AA28E0;             // weak
-int dword_10AA28E4;             // weak
-int dword_10AA28E8;             // weak
-int dword_10AA28EC;             // weak
-int dword_10AA28F0;             // weak
-int dword_10AA28F4;             // weak
-int dword_10AA28F8;             // weak
-int dword_10AA28FC;             // weak
-void *gIostreamInit;            // idb
+WORD gSurfaceCount;
+int dword_10AA28D8; // weak
+int dword_10AA28E0; // weak
+int dword_10AA28E4; // weak
+int dword_10AA28E8; // weak
+int dword_10AA28EC; // weak
+int dword_10AA28F0; // weak
+int dword_10AA28F4; // weak
+int dword_10AA28F8; // weak
+int dword_10AA28FC; // weak
+Iostream_init *gIostreamInit;
 unk000C8 *gUnkC8Ptr1;
 unk000C8 *gUnkC8Ptr6;
-int dword_10AA290C; // weak
-int dword_10AA2910; // weak
-int dword_10AA2914; // weak
+unk000C8 *gUnkC8Ptr12;
+unk000C8 *gUnkC8Ptr13;
+unk000C8 *gUnkC8Ptr14;
 unk000C8 *gUnkC8Ptr4;
 unk000C8 *gUnkC8Ptr5;
-int dword_10AA2920; // weak
-int dword_10AA2924; // weak
-int dword_10AA2928; // weak
-int dword_10AA292C; // weak
-int dword_10AA2930; // weak
-int dword_10AA2934; // weak
-int dword_10AA2938; // weak
-int dword_10AA293C; // weak
-int dword_10AA2940; // weak
-int dword_10AA2944; // weak
+unk000C8 *gUnkC8Ptr15;
+unk000C8 *gUnkC8Ptr16;
+unk000C8 *gUnkC8Ptr17;
+unk000C8 *gUnkC8Ptr18;
+unk000C8 *gUnkC8Ptr19;
+unk000C8 *gUnkC8Ptr20;
+unk000C8 *gUnkC8Ptr21;
+unk000C8 *gUnkC8Ptr22;
+unk000C8 *gUnkC8Ptr11;
+unk000C8 *gUnkC8Ptr24;
 unk000C8 *gUnkC8Ptr10;
-int dword_10AA294C; // weak
-int dword_10AA2950; // weak
-int dword_10AA2954; // weak
-int dword_10AA2958; // weak
-int dword_10AA295C; // weak
-int dword_10AA2960; // weak
-int dword_10AA2964; // weak
+unk000C8 *gUnkC8Ptr25;
+unk000C8 *gUnkC8Ptr26;
+unk000C8 *gUnkC8Ptr27;
+unk000C8 *gUnkC8Ptr28;
+unk000C8 *gUnkC8Ptr30;
+unk000C8 *gUnkC8Ptr31;
+unk000C8 *gUnkC8Ptr32;
 unk000C8 *g_unkC8Ptr0;
 unk000C8 *gUnkC8Ptr7;
 unk000C8 *gUnkC8Ptr8;
-int dword_10AA2974; // weak
-int dword_10AA2978; // weak
+unk000C8 *gUnkC8Ptr33;
+unk000C8 *gUnkC8Ptr38;
 unk000C8 *gUnkC8Ptr3;
 unk000C8 *gUnkC8Ptr2;
-int dword_10AA2984; // weak
-int dword_10AA2988; // weak
-int dword_10AA298C; // weak
-int dword_10AA2990; // weak
-int dword_10AA2994; // weak
+unk000C8 *gUnkC8Ptr34;
+unk000C8 *gUnkC8Ptr35;
+unk000C8 *gUnkC8Ptr29;
+unk000C8 *gUnkC8Ptr36;
+unk000C8 *gUnkC8Ptr37;
 unk000C8 *gUnkC8Ptr9;
-int dword_10AA29A8;    // weak
-int dword_10AA29AC;    // weak
-int dword_10AA29B0;    // weak
-int dword_10AA29B4;    // weak
-int dword_10AA29B8;    // weak
-int dword_10AA29BC;    // weak
-int dword_10AA29C0;    // weak
-int dword_10AA29C4;    // weak
-int dword_10AA29C8;    // weak
-int dword_10AA29CC;    // weak
-int dword_10AA29D0;    // weak
-int dword_10AA29D4;    // weak
-int dword_10AA29D8;    // weak
-int dword_10AA29E0;    // weak
+int dword_10AA29A8; // weak
+int dword_10AA29AC; // weak
+int dword_10AA29B0; // weak
+int dword_10AA29B4; // weak
+int dword_10AA29B8; // weak
+int dword_10AA29BC; // weak
+int dword_10AA29C0; // weak
+int dword_10AA29C4; // weak
+int dword_10AA29C8; // weak
+int dword_10AA29CC; // weak
+int dword_10AA29D0; // weak
+int dword_10AA29D4; // weak
+int dword_10AA29D8; // weak
+unk1E214 *gUnk1E214;
 int dword_10AA29E4;    // weak
 int dword_10AA29E8;    // weak
 int dword_10AA29EC;    // weak
@@ -4694,22 +4730,21 @@ float flt_10AA2A64;    // weak
 float flt_10AA2A68;    // weak
 int dword_10AA2A6C;    // weak
 CHAR SrcStr[16];       // idb
-int dword_10AA2A80[];  // weak
-int dword_10AA2A84;    // weak
-int dword_10AA2AD4;    // weak
-int dword_10AA2AF0;    // weak
-int dword_10AA2B6C;    // weak
-int dword_10AA2B70;    // weak
-int dword_10AA2B74;    // weak
-int dword_10AA2B78;    // weak
-int dword_10AA2BDC;    // weak
-int dword_10AA2BE0;    // weak
-int dword_10AA2CF0;    // weak
-int dword_10AA2DAC;    // weak
-int dword_10AA2DB4;    // weak
+char *dword_10AA2A80[256];
+int dword_10AA2AD4; // weak
+int dword_10AA2AF0; // weak
+int dword_10AA2B6C; // weak
+int dword_10AA2B70; // weak
+int dword_10AA2B74; // weak
+int dword_10AA2B78; // weak
+int dword_10AA2BDC; // weak
+int dword_10AA2BE0; // weak
+int dword_10AA2CF0; // weak
+int dword_10AA2DAC; // weak
+int dword_10AA2DB4; // weak
 unk00054 *gUnk54Ptr;
-int dword_10AA2E88[256];   // idb
-char byte_10AA3288[200];   // idb
+char *dword_10AA2E88[256];
+char byte_10AA3288[256];
 char byte_10AA3350;        // weak
 char byte_10AA3353;        // weak
 char byte_10AA3355;        // weak
@@ -4748,6 +4783,7 @@ int dword_10AA3470;        // weak
 int dword_10AA3474;        // weak
 int dword_10AA34AC;        // weak
 int dword_10ACD490;        // weak
+_UNKNOWN unk_10ACD498;     // weak
 int dword_10ACD4EC;        // weak
 int dword_10ACD4F8;        // weak
 char byte_10ACD500[2456];  // idb
@@ -4768,6 +4804,7 @@ int dword_10ACED3C[];       // weak
 int dword_10ACED40;         // weak
 int dword_10ACED44;         // weak
 int dword_10ACEDA8[];       // weak
+_UNKNOWN unk_10ACEDB0;      // weak
 int dword_10ACEE20[];       // weak
 int dword_10ACEE50;         // weak
 int dword_10ACEE8C;         // weak
@@ -4781,8 +4818,14 @@ int dword_10ACEEB0;         // weak
 char byte_10ACEEB4[24];     // idb
 int dword_10AD05DC[];       // weak
 int dword_10AD05E0[];       // weak
+_UNKNOWN unk_10AD05E4;      // weak
 float flt_10AD061C;         // weak
+_UNKNOWN unk_10AD0628;      // weak
+_UNKNOWN unk_10AD066C;      // weak
+_UNKNOWN unk_10AD06B0;      // weak
+_UNKNOWN unk_10AD0738;      // weak
 __int16 word_10AD07B4[32];  // idb
+_UNKNOWN unk_10AD07F4;      // weak
 int dword_10AD084C[];       // weak
 int dword_10AD0850[];       // weak
 char byte_10AD0854[];       // weak
@@ -4805,6 +4848,7 @@ int dword_10AD18A4;         // weak
 int dword_10AD18A8;         // weak
 int dword_10AD18AC;         // weak
 float flt_10AD1A04;         // weak
+_UNKNOWN unk_10AD1A08;      // weak
 int dword_10AD33C4;         // weak
 int dword_10AD33D0;         // weak
 char byte_10AD34F8[128];
@@ -4822,6 +4866,7 @@ float flt_10AF97F4[21]; // idb
 char byte_10AF9848[64]; // idb
 int dword_10AF9888;     // weak
 int dword_10AF988C;     // weak
+_UNKNOWN unk_10AF9890;  // weak
 int dword_10AF9B28;     // weak
 int dword_10AF9B2C;     // weak
 int dword_10AF9B30;     // weak
@@ -4854,6 +4899,7 @@ int dword_10AF9BAC;     // weak
 int dword_10AF9BB0;     // weak
 int dword_10AF9BB4;     // weak
 int dword_10AF9BB8;     // weak
+_UNKNOWN unk_10AFBEE8;  // weak
 int dword_10B01C40;     // weak
 int dword_10B01C44;     // weak
 int dword_10B01C48;     // weak
@@ -4910,6 +4956,7 @@ int dword_11750308;                     // weak
 int dword_11750310[];                   // weak
 int dword_11750314;                     // weak
 int dword_11750330;                     // weak
+_UNKNOWN unk_11750338;                  // weak
 int dword_11754E38;                     // weak
 int dword_11754E3C;                     // idb
 int dword_11754E40;                     // weak
@@ -4932,6 +4979,8 @@ int dword_117554DC;                     // weak
 int dword_117554E0;                     // weak
 int dword_117554E4;                     // weak
 int dword_117554E8;                     // weak
+_UNKNOWN unk_117554F0;                  // weak
+_UNKNOWN unk_117644F0;                  // weak
 __int16 word_11782BA8[];                // weak
 __int16 word_11782BAC[];                // weak
 __int16 word_11782BB0[];                // weak
@@ -5164,6 +5213,7 @@ void *Base;                                        // idb
 int dword_118AC2D0;                                // weak
 int dword_118AC608;                                // weak
 struct _TIME_ZONE_INFORMATION TimeZoneInformation; // idb
+_UNKNOWN unk_118AC70C;                             // weak
 int dword_118AC720[];                              // weak
 int dword_118AC728[];                              // weak
 int dword_118AC72C[];                              // weak
@@ -5180,6 +5230,7 @@ int dword_118AC77C;                                // weak
 int dword_118AC788;                                // weak
 int dword_118AC78C;                                // weak
 int dword_118AC794;                                // weak
+_UNKNOWN unk_118AC898;                             // weak
 
 //----- (10001000) --------------------------------------------------------
 unsigned int __cdecl CalculateChecksum(unsigned int seed,
@@ -12049,36 +12100,37 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
 }
 
 //----- (1000B680) --------------------------------------------------------
-HANDLE __cdecl sub_1000B680(int a1, LPCSTR filepath, int cx_, int cy, int a5) {
-    HINSTANCE hInst; // eax
-    HANDLE result_1; // ebx
-    HANDLE result;   // eax
-    int v8;          // ecx
-    int v9;          // [esp-18h] [ebp-B0h]
-    int a1a;         // [esp+10h] [ebp-88h] BYREF
-    BITMAP bitmap;   // [esp+14h] [ebp-84h] BYREF
-    int v12[27];     // [esp+2Ch] [ebp-6Ch] BYREF
+IDirectDrawSurface *__cdecl DDrawCreateSurface(
+    IDirectDraw2 *ddraw2, LPCSTR filepath, int cx_, int cy, LPDDSURFACEDESC a5) {
+    HINSTANCE hInst;                   // eax
+    void *result_1;                    // ebx
+    IDirectDrawSurface *result;        // eax
+    IDirectDraw2Vtbl *ddrawVtbl;       // ecx
+    IDirectDrawSurface *ddrawSurface0; // [esp-18h] [ebp-B0h]
+    IDirectDrawSurface *ddrawSurface1; // [esp+10h] [ebp-88h] BYREF
+    BITMAP bitmap;                     // [esp+14h] [ebp-84h] BYREF
+    DDSURFACEDESC surfaceDesc;         // [esp+2Ch] [ebp-6Ch] BYREF
 
     hInst = GetModuleHandleA(0);
     result_1 = LoadImageA(hInst, filepath, 0, cx_, cy, LR_CREATEDIBSECTION);
-    if (result_1 ||
-        (result = LoadImageA(0, filepath, 0, cx_, cy, 0x2010u), (result_1 = result) != 0)) {
+    if (result_1 || (result = (IDirectDrawSurface *)LoadImageA(0, filepath, 0, cx_, cy, 0x2010u),
+                     (result_1 = result) != 0)) {
         GetObjectA(result_1, 24, &bitmap);
-        memset(v12, 0, sizeof(v12));
-        v12[2] = bitmap.bmHeight;
-        v12[3] = bitmap.bmWidth;
-        v8 = *(_DWORD *)a1;
-        v12[0] = 108;
-        v12[1] = 7;
-        v12[26] = 64;
-        if ((*(int(__stdcall **)(int, int *, int *, _DWORD))(v8 + 24))(a1, v12, &a1a, 0)) {
+        memset(&surfaceDesc, 0, sizeof(surfaceDesc));
+        surfaceDesc.dwHeight = bitmap.bmHeight;
+        surfaceDesc.dwWidth = bitmap.bmWidth;
+        ddrawVtbl = ddraw2->lpVtbl;
+        surfaceDesc.dwSize = 108;
+        surfaceDesc.dwFlags = 7;
+        surfaceDesc.ddsCaps.dwCaps = 64;
+        if (ddrawVtbl->CreateSurface(ddraw2, &surfaceDesc, &ddrawSurface1, 0)) {
             result = 0;
         } else {
-            v9 = a1a;
-            qmemcpy((void *)a5, v12, 0x6Cu);
-            sub_1000B820(v9, result_1, 0, 0, 0, 0);
+            ddrawSurface0 = ddrawSurface1;
+            qmemcpy(a5, &surfaceDesc, sizeof(_DDSURFACEDESC));
+            sub_1000B820(ddrawSurface0, result_1, 0, 0, 0, 0);
             DeleteObject(result_1);
-            result = (HANDLE)a1a;
+            result = ddrawSurface1;
         }
     }
     return result;
@@ -12107,19 +12159,20 @@ int __cdecl sub_1000B790(int a1, LPCSTR name) {
 }
 
 //----- (1000B820) --------------------------------------------------------
-int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc) {
-    int v6;      // edi
-    HDC hDC;     // ebx
-    int wSrc_1;  // ebp
-    HDC hdcDest; // [esp+18h] [ebp-8Ch] BYREF
-    int v11;     // [esp+1Ch] [ebp-88h]
-    BITMAP pv;   // [esp+20h] [ebp-84h] BYREF
-    int v13[27]; // [esp+38h] [ebp-6Ch] BYREF
+HRESULT __cdecl sub_1000B820(
+    IDirectDrawSurface *ddSurface, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc) {
+    IDirectDrawSurfaceVtbl *ddSurfaceVtbl; // edi
+    HDC hDC;                               // ebx
+    int wSrc_1;                            // ebp
+    HDC hdcDest;                           // [esp+18h] [ebp-8Ch] BYREF
+    HRESULT hr;                            // [esp+1Ch] [ebp-88h]
+    BITMAP pv;                             // [esp+20h] [ebp-84h] BYREF
+    DDSURFACEDESC ddSurfaceDesc;           // [esp+38h] [ebp-6Ch] BYREF
 
-    if (!hGDIOBJ || !a1)
-        return -2147467259;
-    v6 = *(_DWORD *)a1;
-    (*(void(__stdcall **)(int))(*(_DWORD *)a1 + 108))(a1);
+    if (!hGDIOBJ || !ddSurface)
+        return 0x80004005;
+    ddSurfaceVtbl = ddSurface->lpVtbl;
+    ddSurface->lpVtbl->Restore(ddSurface);
     hDC = CreateCompatibleDC(0);
     if (!hDC)
         OutputDebugStringA(aCreatecompatib);
@@ -12130,71 +12183,83 @@ int __cdecl sub_1000B820(int a1, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, 
         wSrc_1 = pv.bmWidth;
     if (!hSrc)
         hSrc = pv.bmHeight;
-    v13[0] = 108;
-    v13[1] = 6;
-    (*(void(__stdcall **)(int, int *))(v6 + 88))(a1, v13);
-    v11 = (*(int(__stdcall **)(int, HDC *))(v6 + 68))(a1, &hdcDest);
-    if (!v11) {
-        StretchBlt(hdcDest, 0, 0, v13[3], v13[2], hDC, xSrc, ySrc, wSrc_1, hSrc, SRCCOPY);
-        (*(void(__stdcall **)(int, HDC))(v6 + 104))(a1, hdcDest);
+    ddSurfaceDesc.dwSize = 108;
+    ddSurfaceDesc.dwFlags = 6;
+    ddSurfaceVtbl->GetSurfaceDesc(ddSurface, &ddSurfaceDesc);
+    hr = ddSurfaceVtbl->GetDC(ddSurface, &hdcDest);
+    if (!hr) {
+        StretchBlt(hdcDest,
+                   0,
+                   0,
+                   ddSurfaceDesc.dwWidth,
+                   ddSurfaceDesc.dwHeight,
+                   hDC,
+                   xSrc,
+                   ySrc,
+                   wSrc_1,
+                   hSrc,
+                   SRCCOPY);
+        ddSurfaceVtbl->ReleaseDC(ddSurface, hdcDest);
     }
     DeleteDC(hDC);
-    return v11;
+    return hr;
 }
 
 //----- (1000B940) --------------------------------------------------------
-int __cdecl sub_1000B940(_DWORD *a1, COLORREF color) {
-# 463 * v2;                                                       // edi
-# 464 * v3;                                                       // ebx
-    int(__stdcall * v4)(_DWORD *, _DWORD, int *, _DWORD, _DWORD); // edi
-    int i;                                                        // eax
-    int v6;                                                       // edi
-    HDC hdc;                                                      // [esp+40h] [ebp-78h] BYREF
-    int v9;                                                       // [esp+44h] [ebp-74h]
-    COLORREF v10;                                                 // [esp+48h] [ebp-70h]
-    int v11[27];                                                  // [esp+4Ch] [ebp-6Ch] BYREF
+int __cdecl CalcColorSpaceValue(LPDIRECTDRAWSURFACE surface, COLORREF color) {
+    IDirectDrawSurfaceVtbl *surfaceVtbl2; // edi
+    IDirectDrawSurfaceVtbl *surfaceVtbl;  // ebx
+    HRESULT(__stdcall * surfaceLock)
+    (IDirectDrawSurface *, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE); // edi
+    int i;                                                          // eax
+    int ret;                                                        // edi
+    HDC hdc;                                                        // [esp+40h] [ebp-78h] BYREF
+    int negative1;                                                  // [esp+44h] [ebp-74h]
+    COLORREF colorRef;                                              // [esp+48h] [ebp-70h]
+    DDSURFACEDESC surfaceDesc;                                      // [esp+4Ch] [ebp-6Ch] BYREF
 
-    v9 = -1;
+    negative1 = -1;
     if (color != -1) {
-        v2 = (#463 *)*a1;
-        if (!(*(int(__stdcall **)(_DWORD *, HDC *))(*a1 + 68))(a1, &hdc)) {
-            v10 = GetPixel(hdc, 0, 0);
+        surfaceVtbl2 = surface->lpVtbl;
+        if (!surface->lpVtbl->GetDC(surface, &hdc)) {
+            colorRef = GetPixel(hdc, 0, 0);
             SetPixel(hdc, 0, 0, color);
-            (*((void(__stdcall **)(_DWORD *, HDC))v2 + 26))(a1, hdc);
+            surfaceVtbl2->ReleaseDC(surface, hdc);
         }
     }
-    v3 = (#464 *)*a1;
-    memset(v11, 0, sizeof(v11));
-    v4 = (int(__stdcall *)(_DWORD *, _DWORD, int *, _DWORD, _DWORD)) * ((_DWORD *)v3 + 25);
-    v11[0] = 108;
-    for (i = v4(a1, 0, v11, 0, 0); i == -2005532132; i = v4(a1, 0, v11, 0, 0))
+    surfaceVtbl = surface->lpVtbl;
+    memset(&surfaceDesc, 0, sizeof(surfaceDesc));
+    surfaceLock = surfaceVtbl->Lock;
+    surfaceDesc.dwSize = 108;
+    for (i = surfaceLock(surface, 0, &surfaceDesc, 0, 0); i == 2289435164;
+         i = surfaceLock(surface, 0, &surfaceDesc, 0, 0))
         ;
     if (i) {
-        v6 = v9;
+        ret = negative1;
     } else {
-        v6 = *(_DWORD *)v11[9];
-        if (v11[21] < 0x20u)
-            v6 &= (1 << SLOBYTE(v11[21])) - 1;
-        (*((void(__stdcall **)(_DWORD *, _DWORD))v3 + 32))(a1, 0);
+        ret = *(_DWORD *)surfaceDesc.lpSurface; // ?
+        if (surfaceDesc.ddpfPixelFormat.dwRGBBitCount < 0x20)
+            ret &= (1 << SLOBYTE(surfaceDesc.ddpfPixelFormat.dwRGBBitCount)) - 1;
+        surfaceVtbl->Unlock(surface, 0);
     }
-    if (color != -1 && !(*((int(__stdcall **)(_DWORD *, HDC *))v3 + 17))(a1, &hdc)) {
-        SetPixel(hdc, 0, 0, v10);
-        (*((void(__stdcall **)(_DWORD *, HDC))v3 + 26))(a1, hdc);
+    if (color != -1 && !surfaceVtbl->GetDC(surface, &hdc)) {
+        SetPixel(hdc, 0, 0, colorRef);
+        surfaceVtbl->ReleaseDC(surface, hdc);
     }
-    return v6;
+    return ret;
 }
 
 //----- (1000BA40) --------------------------------------------------------
-int __cdecl sub_1000BA40(int a1, COLORREF color) {
-    int v2;    // eax
-    int v3;    // ecx
-    int v5[2]; // [esp+4h] [ebp-8h] BYREF
+HRESULT __cdecl sub_1000BA40(LPDIRECTDRAWSURFACE surface, COLORREF color) {
+    DWORD colorSpaceValue;               // eax
+    IDirectDrawSurfaceVtbl *surfaceVtbl; // ecx
+    DDCOLORKEY v5;                       // [esp+4h] [ebp-8h] BYREF
 
-    v2 = sub_1000B940((_DWORD *)a1, color);
-    v3 = *(_DWORD *)a1;
-    v5[0] = v2;
-    v5[1] = v2;
-    return (*(int(__stdcall **)(int, int, int *))(v3 + 116))(a1, 8, v5);
+    colorSpaceValue = CalcColorSpaceValue(surface, color);
+    surfaceVtbl = surface->lpVtbl;
+    v5.dwColorSpaceLowValue = colorSpaceValue;
+    v5.dwColorSpaceHighValue = colorSpaceValue;
+    return surfaceVtbl->SetColorKey(surface, 8, &v5);
 }
 
 //----- (1000BA70) --------------------------------------------------------
@@ -15728,7 +15793,7 @@ int __cdecl sub_10010DC0(int a1, int a2, int a3) {
         dword_102E5ED0 = 1;
     }
 LABEL_9:
-    v9 = *(_DWORD *)&stru_106C3380.gap1C8[12104];
+    v9 = *(_DWORD *)&gUnk06594.gap1C8[12104];
     LOBYTE(dword_10364000[v5]) = -1;
     BYTE1(dword_10364000[v5]) = -1;
     v10 = (__int64)(*(float *)(v9 + 48) * 0.03125);
@@ -15751,15 +15816,14 @@ LABEL_9:
         } while (v15 != 1);
     }
     qsort(dword_10364000, v5, 4, QsortCompareFunction);
-    sub_10060780(v4, byte_1038B4C0, *(unsigned int *)&stru_106C3380.gap1C8[18276], -1);
+    sub_10060780(v4, byte_1038B4C0, *(unsigned int *)&gUnk06594.gap1C8[18276], -1);
     v16 = 0;
     dword_103643A4 = 0;
     dword_10363FEC = -1;
     dword_102E5F24 = -1;
     dword_102E5EC0 = -1;
     v17 = (-3 - (__int64)(flt_106C0210 * -0.03125)) * (-3 - (__int64)(flt_106C0210 * -0.03125));
-    if (!dword_106909E0 ||
-        (v70 = 9, *(_DWORD *)&stru_106C3380.gap1C8[12104] != dword_106C2CF8 + 10248))
+    if (!dword_106909E0 || (v70 = 9, *(_DWORD *)&gUnk06594.gap1C8[12104] != dword_106C2CF8 + 10248))
         v70 = 1;
     v18 = LOBYTE(dword_10364000[0]);
     if (LOBYTE(dword_10364000[0]) != 255) {
@@ -15774,9 +15838,9 @@ LABEL_9:
                 dword_102E5F24 = v16;
             v21 = *((unsigned __int8 *)v19 - 1);
             if (dword_10680618 && byte_1038B4C0[(_DWORD)dword_10680618] &&
-                sub_1003A950(*(float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                sub_1003A950(*(float *)(*(_DWORD *)&gUnk06594.gap1C8[18272] +
                                         84 * (_DWORD)dword_10680618 + 48),
-                             *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                             *(float *)(*(_DWORD *)&gUnk06594.gap1C8[18272] +
                                         84 * (_DWORD)dword_10680618 + 52))) {
                 v22 = dword_103643A4;
                 v23 = dword_10680618;
@@ -15814,8 +15878,8 @@ LABEL_9:
                 if (*v28) {
                     sub_1003AEE0(flt_102E54A8,
                                  (float *)v29,
-                                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 48));
-                    v30 = sub_1003AC90(*(float **)&stru_106C3380.gap1C8[12104], flt_102E54A8);
+                                 (float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 48));
+                    v30 = sub_1003AC90(*(float **)&gUnk06594.gap1C8[12104], flt_102E54A8);
                     if (v30 >= 2.0) {
                         v31 = dword_102E5ED8 - 1;
                         if (dword_102E5ED8 - 1 >= 0) {
@@ -15868,17 +15932,17 @@ LABEL_9:
     v41 = 0;
     LOWORD(dword_1039B6CC) = 0;
     if (dword_106C1988 > 0) {
-        v42 = (unsigned __int16 *)&stru_106C3380.gap1C8[12112];
+        v42 = (unsigned __int16 *)&gUnk06594.gap1C8[12112];
         do {
             v43 = *v42++;
-            v41 |= *(_WORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] + 84 * v43 + 74);
+            v41 |= *(_WORD *)(*(_DWORD *)&gUnk06594.gap1C8[18272] + 84 * v43 + 74);
             --v40;
             LOWORD(dword_1039B6CC) = v41;
         } while (v40);
     }
-    v44 = **(float **)&stru_106C3380.gap1C8[12104];
-    v45 = *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 4);
-    v70 = **(int **)&stru_106C3380.gap1C8[12104];
+    v44 = **(float **)&gUnk06594.gap1C8[12104];
+    v45 = *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 4);
+    v70 = **(int **)&gUnk06594.gap1C8[12104];
     v72 = v45;
     if (v44 == 0.0 && v45 == 0.0)
         *(float *)&v70 = 0.000099999997;
@@ -15886,7 +15950,7 @@ LABEL_9:
     v68 = v72 * 50.0;
     v67 = *(float *)&v70 * 50.0;
     sub_10030E20((int)&flt_106C0860, dword_103643B8, v67, v68, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-    if (*(_DWORD *)&stru_106C3380.gap1C8[12500]) {
+    if (*(_DWORD *)&gUnk06594.gap1C8[12500]) {
         flt_103643A8 = *(float *)(dword_106C2CF8 + 32) - *(float *)dword_106C2CF8 * 4.0;
         flt_103643AC = *(float *)(dword_106C2CF8 + 36) - *(float *)(dword_106C2CF8 + 4) * 4.0;
         flt_103643B0 = *(float *)(dword_106C2CF8 + 40) - *(float *)(dword_106C2CF8 + 8) * 4.0;
@@ -15923,39 +15987,39 @@ LABEL_9:
                 v71[0] = v54;
                 v71[1] = v55;
                 sub_1000F480(a1, (int)v71, 8, (_WORD *)(v53 + 10652), (_WORD *)(v53 + 10656));
-                v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 if (*(__int16 *)(v53 + 10652) <
-                    *(_DWORD *)(a1 + 88 * *(_DWORD *)&stru_106C3380.gap1C8[8640])) {
-                    *v57 = *(_WORD *)(a1 + 88 * *(_DWORD *)&stru_106C3380.gap1C8[8640]);
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640])) {
+                    *v57 = *(_WORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]);
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 v59 = (__int16 *)(a1 + 88 * v58);
                 if (*v56 < *(_DWORD *)v59) {
                     *v56 = *v59;
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 if (*(__int16 *)(v53 + 10654) < *(_DWORD *)(a1 + 88 * v58 + 4)) {
                     *(_WORD *)(v53 + 10654) = *(_WORD *)(a1 + 88 * v58 + 4);
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 if (*(__int16 *)(v53 + 10658) < *(_DWORD *)(a1 + 88 * v58 + 4)) {
                     *(_WORD *)(v53 + 10658) = *(_WORD *)(a1 + 88 * v58 + 4);
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 v60 = (_WORD *)(a1 + 88 * v58);
                 if (*v57 > *((_DWORD *)v60 + 2) + *(_DWORD *)v60) {
                     *v57 = v60[4] + *v60;
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 v61 = (_WORD *)(a1 + 88 * v58);
                 if (*(__int16 *)(v53 + 10656) > *((_DWORD *)v61 + 2) + *(_DWORD *)v61) {
                     *(_WORD *)(v53 + 10656) = v61[4] + *v61;
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 v62 = a1 + 88 * v58;
                 if (*(__int16 *)(v53 + 10654) > *(_DWORD *)(v62 + 4) + *(_DWORD *)(v62 + 12)) {
                     *(_WORD *)(v53 + 10654) = *(_WORD *)(v62 + 4) + *(_WORD *)(v62 + 12);
-                    v58 = *(_DWORD *)&stru_106C3380.gap1C8[8640];
+                    v58 = *(_DWORD *)&gUnk06594.gap1C8[8640];
                 }
                 v63 = *(_DWORD *)(a1 + 88 * v58 + 12);
                 v64 = *(_DWORD *)(a1 + 88 * v58 + 4);
@@ -18170,7 +18234,7 @@ int __cdecl sub_10014A30(int a1) {
     meth_DebugPrint(v2);
     sub_1000F5C0();
     meth_DebugPrint(v3);
-    if (dword_100A6CF8 || *(_DWORD *)&stru_106C3380.gap1C8[12480]) {
+    if (dword_100A6CF8 || *(_DWORD *)&gUnk06594.gap1C8[12480]) {
         sub_100314E8(0, 0, 0);
         if (dword_100A6CF8)
             --dword_100A6CF8;
@@ -18192,42 +18256,42 @@ int __cdecl sub_10014A30(int a1) {
             v7 = &v1[22 * v6];
             dword_106C2CF8 = (int)&v112[2778 * v7[4]];
             v8 = *(_DWORD *)(dword_106C2CF8 + 10036);
-            *(_DWORD *)&stru_106C3380.gap1C8[8640] = v6;
-            *(_DWORD *)&stru_106C3380.gap1C8[12104] = v8;
+            *(_DWORD *)&gUnk06594.gap1C8[8640] = v6;
+            *(_DWORD *)&gUnk06594.gap1C8[12104] = v8;
             sub_100759D0(0,
                          0,
                          v8 + 48,
-                         (int)&stru_106C3380.gap1C8[12112],
+                         (int)&gUnk06594.gap1C8[12112],
                          (int)&dword_106C1988,
-                         COERCE_FLOAT((unk06594 *)&stru_106C3380.gap1C8[12216]),
+                         COERCE_FLOAT((unk06594 *)&gUnk06594.gap1C8[12216]),
                          (int)&unk_10690A34,
                          (int)&unk_106C01FC,
-                         (int)&stru_106C3380.gap1C8[8616]);
+                         (int)&gUnk06594.gap1C8[8616]);
             sub_10032A42(*v7, v7[1], v7[2], v7[3], 1);
             v101 = (float)v7[3];
             v93 = (float)v7[2];
             if (dword_100AA8B4 <= 1) {
-                sub_10033CB1(*(int *)&stru_106C3380.gap1C8[12104],
-                             *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 64),
+                sub_10033CB1(*(int *)&gUnk06594.gap1C8[12104],
+                             *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 64),
                              flt_100AA8B0,
                              v93,
                              v101);
                 v103 = (float)v7[3];
                 v95 = (float)v7[2];
-                sub_10033E83(*(int *)&stru_106C3380.gap1C8[12104],
-                             *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 64),
+                sub_10033E83(*(int *)&gUnk06594.gap1C8[12104],
+                             *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 64),
                              flt_100AA8B0,
                              v95,
                              v103);
             } else {
                 v89 = flt_100AA8B0 * 0.64999998;
-                v87 = *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 64) * 0.69999999;
-                sub_10033CB1(*(int *)&stru_106C3380.gap1C8[12104], v87, v89, v93, v101);
+                v87 = *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 64) * 0.69999999;
+                sub_10033CB1(*(int *)&gUnk06594.gap1C8[12104], v87, v89, v93, v101);
                 v102 = (float)v7[3];
                 v94 = (float)v7[2];
                 v90 = flt_100AA8B0 * 0.64999998;
-                v88 = *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 64) * 0.69999999;
-                sub_10033E83(*(int *)&stru_106C3380.gap1C8[12104], v88, v90, v94, v102);
+                v88 = *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 64) * 0.69999999;
+                sub_10033E83(*(int *)&gUnk06594.gap1C8[12104], v88, v90, v94, v102);
             }
             sub_10031866();
             sub_10031DCF();
@@ -18236,7 +18300,7 @@ int __cdecl sub_10014A30(int a1) {
             sub_1002AEF0();
             sub_1003A990();
             v10 = 0;
-            dword_10277EA0 = (*(_DWORD *)&stru_106C3380.gap1C8[12500] != 0) + 1;
+            dword_10277EA0 = (*(_DWORD *)&gUnk06594.gap1C8[12500] != 0) + 1;
             if (dword_100B36FC > 0) {
                 v11 = (int)v112;
                 do {
@@ -18246,8 +18310,7 @@ int __cdecl sub_10014A30(int a1) {
                 } while (v10 < dword_100B36FC);
             }
             sub_10011590((int)v1, 0, (int)v124, (int)v112);
-            if (!*(_DWORD *)&stru_106C3380.gap1C8[12504] || gChosenTrack == 2 ||
-                gChosenTrack == 8) {
+            if (!*(_DWORD *)&gUnk06594.gap1C8[12504] || gChosenTrack == 2 || gChosenTrack == 8) {
                 sub_10031866();
                 sub_10031DCF();
                 meth_DebugPrint(v13);
@@ -18269,7 +18332,7 @@ int __cdecl sub_10014A30(int a1) {
             meth_DebugPrint(v12);
             sub_100147B0();
             sub_10011590((int)v1, 1, (int)v124, (int)v112);
-            if (*(_DWORD *)&stru_106C3380.gap1C8[12504] && gChosenTrack != 2 && gChosenTrack != 8) {
+            if (*(_DWORD *)&gUnk06594.gap1C8[12504] && gChosenTrack != 2 && gChosenTrack != 8) {
                 sub_10031866();
                 sub_10031DCF();
                 meth_DebugPrint(v19);
@@ -18323,7 +18386,7 @@ int __cdecl sub_10014A30(int a1) {
             v96 = (float)v7[2];
             sub_1003407D(v96, v105);
             sub_10032C38(*v7, v7[1], v7[2], v7[3], 1);
-            if (*(_DWORD *)&stru_106C3380.gap1C8[12104] == dword_106C2CF8 + 10180 &&
+            if (*(_DWORD *)&gUnk06594.gap1C8[12104] == dword_106C2CF8 + 10180 &&
                 dword_100AA8B4 == 1 && dword_100AA888) {
                 if (dword_100AA888 == 1) {
                     v33 = v7[2];
@@ -18337,23 +18400,23 @@ int __cdecl sub_10014A30(int a1) {
                 }
                 v35 = *v7 + ((v33 - v34) >> 1);
                 v36 = v7[1] + v7[3] / 16;
-                v123 = *(_DWORD *)&stru_106C3380.gap1C8[12104];
+                v123 = *(_DWORD *)&gUnk06594.gap1C8[12104];
                 *(_DWORD *)(dword_106C2CF8 + 10036) = dword_106C2CF8 + 10384;
                 v120 = v35;
-                *(_DWORD *)&stru_106C3380.gap1C8[12104] = *(_DWORD *)(dword_106C2CF8 + 10036);
+                *(_DWORD *)&gUnk06594.gap1C8[12104] = *(_DWORD *)(dword_106C2CF8 + 10036);
                 sub_10032A42(v35, v36, -v34, v34 >> 2, 1);
                 sub_100314E3();
                 v122 = (float)(v34 >> 2);
                 v114 = (float)v34;
                 v91 = flt_100AA8B0 * 0.2;
-                sub_10033CB1(*(int *)&stru_106C3380.gap1C8[12104],
-                             *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 64),
+                sub_10033CB1(*(int *)&gUnk06594.gap1C8[12104],
+                             *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 64),
                              v91,
                              v114,
                              v122);
                 v92 = flt_100AA8B0 * 0.30000001;
-                sub_10033E83(*(int *)&stru_106C3380.gap1C8[12104],
-                             *(float *)(*(_DWORD *)&stru_106C3380.gap1C8[12104] + 64),
+                sub_10033E83(*(int *)&gUnk06594.gap1C8[12104],
+                             *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 64),
                              v92,
                              v114,
                              v122);
@@ -18374,7 +18437,7 @@ int __cdecl sub_10014A30(int a1) {
                     } while (v39 < dword_100B36FC);
                 }
                 sub_10011590(v113, 0, (int)v124, (int)v112);
-                if (!*(_DWORD *)&stru_106C3380.gap1C8[12504] || gChosenTrack == 2 ||
+                if (!*(_DWORD *)&gUnk06594.gap1C8[12504] || gChosenTrack == 2 ||
                     gChosenTrack == 8) {
                     sub_10031866();
                     sub_10031DCF();
@@ -18396,7 +18459,7 @@ int __cdecl sub_10014A30(int a1) {
                     sub_100140E0(v113);
                 }
                 sub_10011590(v113, 1, (int)v124, (int)v112);
-                if (*(_DWORD *)&stru_106C3380.gap1C8[12504]) {
+                if (*(_DWORD *)&gUnk06594.gap1C8[12504]) {
                     if (gChosenTrack != 2 && gChosenTrack != 8) {
                         sub_10031866();
                         sub_10031DCF();
@@ -18443,7 +18506,7 @@ int __cdecl sub_10014A30(int a1) {
                 sub_1002AF10(v113, v106);
                 meth_DebugPrint(v52);
                 *(_DWORD *)(dword_106C2CF8 + 10036) = v123;
-                *(_DWORD *)&stru_106C3380.gap1C8[12104] = v123;
+                *(_DWORD *)&gUnk06594.gap1C8[12104] = v123;
                 sub_10032A42(*v7, v7[1], v7[2], v7[3], 1);
                 sub_10032E5D(v120, v36, v34, v34 >> 2);
                 v1 = (int *)v113;
@@ -18459,7 +18522,7 @@ int __cdecl sub_10014A30(int a1) {
                     sub_100192F0(15);
                 } else {
                     if (!dword_106909E0) {
-                        if (*(_DWORD *)&stru_106C3380.gap1C8[12104] == dword_106C2CF8 + 10248) {
+                        if (*(_DWORD *)&gUnk06594.gap1C8[12104] == dword_106C2CF8 + 10248) {
                             if ((*(_BYTE *)(*(_DWORD *)(dword_106C2CF8 + 3840) + 104) & 2) != 0)
                                 sub_10017790((int)v1);
                         } else {
@@ -18468,8 +18531,8 @@ int __cdecl sub_10014A30(int a1) {
                             sub_10017D90((int)v1);
                             sub_10017890(v1, (int)v112);
                             meth_DebugPrint(v55);
-                            if (*(_DWORD *)&stru_106C3380.gap1C8[12104] != dword_106C2CF8 + 10180)
-                                meth_DebugPrint(*(void **)&stru_106C3380.gap1C8[12104]);
+                            if (*(_DWORD *)&gUnk06594.gap1C8[12104] != dword_106C2CF8 + 10180)
+                                meth_DebugPrint(*(void **)&gUnk06594.gap1C8[12104]);
                         }
                         goto LABEL_109;
                     }
@@ -18641,7 +18704,7 @@ LABEL_141:
         text_sub_10019300((char *)(&off_100AA018)[8 * dword_106805C0], g_Width1 / 2, v80 - 20);
     }
     sub_1002B340();
-    if (*(int *)&stru_106C3380.gap1C8[12516] >= 2) {
+    if (*(int *)&gUnk06594.gap1C8[12516] >= 2) {
         sub_10032A42(0, 0, g_Width1, g_Height1, 1);
         meth_DebugPrint(v84);
     }
@@ -21229,7 +21292,7 @@ void __thiscall meth_10019620(void *this) {
             dword_100A79CC = 3;
             flt_104B0378 = (float)(sub_1003BD50() & 0x7FF);
             v1 = sub_1003BD50() & 0x7FF;
-            dword_104B0380 = *(_DWORD *)&stru_106C3380.gap1C8[18232];
+            dword_104B0380 = *(_DWORD *)&gUnk06594.gap1C8[18232];
             flt_104B037C = (float)v1;
         }
     } else {
@@ -35932,7 +35995,7 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
         }
         goto LABEL_177;
     }
-    *(_DWORD *)&stru_106C3380.gap1C8[12460] = 1;
+    *(_DWORD *)&gUnk06594.gap1C8[12460] = 1;
     meth_DebugPrint(v7);
     sub_1000F620();
     if (!dword_106909E0) {
@@ -36108,8 +36171,8 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
                 meth_DebugPrint(v34);
                 v36 = 0;
                 dword_10680940 = 0;
-                if (*(int *)&stru_106C3380.gap1C8[18724] > 0) {
-                    v37 = &stru_106C3380.gap1C8[18532];
+                if (*(int *)&gUnk06594.gap4A2C[192] > 0) {
+                    v37 = gUnk06594.gap4A2C;
                     do {
                         switch (v37[8]) {
                         case 3:
@@ -36138,7 +36201,7 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
                         }
                         ++v36;
                         v37 += 12;
-                    } while (v36 < *(int *)&stru_106C3380.gap1C8[18724]);
+                    } while (v36 < *(int *)&gUnk06594.gap4A2C[192]);
                 }
                 if (dword_1068061C && dword_10680634 && dword_10680638) {
                     v39 = dword_10680618;
@@ -36150,10 +36213,9 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
                     v191[0] = 1065353216;
                     v191[1] = 0;
                     v191[2] = 0;
-                    sub_1003B1F0(
-                        (float *)v191,
-                        (float *)v191,
-                        (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] + 84 * (_DWORD)v39));
+                    sub_1003B1F0((float *)v191,
+                                 (float *)v191,
+                                 (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)v39));
                     flt_10680630 = sub_1003B170((float *)v191);
                 }
                 v31 = dword_106909E0;
@@ -36442,7 +36504,7 @@ LABEL_108:
         }
     }
     sub_100697C0(gChosenWeather1);
-    if (!*(_DWORD *)&stru_106C3380.gap1C8[12500] && (!gChosenTrack || gChosenTrack == 6))
+    if (!*(_DWORD *)&gUnk06594.gap1C8[12500] && (!gChosenTrack || gChosenTrack == 6))
         dword_10680618 = 0;
     sub_1002B130(1.0, 0.2);
     sub_1002B1C0(1.0, 0.2);
@@ -36460,12 +36522,12 @@ LABEL_108:
     dword_106806E0 = -1;
     dword_106806DC = 0;
     dword_106805C0 = 0;
-    *(_DWORD *)&stru_106C3380.gap1C8[12544] = 1;
+    *(_DWORD *)&gUnk06594.gap1C8[12544] = 1;
     if (!dword_106909E0) {
         _cfltcvt_init();
         sub_10067DC0();
     }
-    *(_DWORD *)&stru_106C3380.gap1C8[12460] = 0;
+    *(_DWORD *)&gUnk06594.gap1C8[12460] = 0;
     if (dword_106909E0) {
         sub_1006ABB0();
     } else {
@@ -36785,8 +36847,8 @@ LABEL_272:
         meth_DebugPrint(v105);
         meth_100196D0(v106);
         if (dword_10680618 && !dword_10680624 &&
-            (!*(_DWORD *)&stru_106C3380.gap1C8[12508] && !*(_DWORD *)&stru_106C3380.gap1C8[12504] &&
-                 !*(_DWORD *)&stru_106C3380.gap1C8[12500] ||
+            (!*(_DWORD *)&gUnk06594.gap1C8[12508] && !*(_DWORD *)&gUnk06594.gap1C8[12504] &&
+                 !*(_DWORD *)&gUnk06594.gap1C8[12500] ||
              gChosenTrack != 2 && gChosenTrack != 8) &&
             dword_100B4050 > 0) {
             v107 = 0;
@@ -36809,9 +36871,9 @@ LABEL_272:
             } while (v186);
         }
         v110 = 0;
-        if (*(int *)&stru_106C3380.gap1C8[18724] > 0) {
+        if (*(int *)&gUnk06594.gap4A2C[192] > 0) {
             v111 = dword_10680628;
-            v112 = (float *)&stru_106C3380.gap1C8[18532];
+            v112 = (float *)gUnk06594.gap4A2C;
             do {
                 switch (*((_BYTE *)v112 + 8)) {
                 case 0:
@@ -36825,10 +36887,10 @@ LABEL_272:
                 LABEL_314:
                     sub_100306C0(
                         flt_106C08E0,
-                        (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] + 84 * *(_DWORD *)v112),
-                        (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] + 84 * *(_DWORD *)v112));
-                    *(_WORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] + 84 * *(_DWORD *)v112 +
-                               76) &= 0xDFFFu;
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *(_DWORD *)v112),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *(_DWORD *)v112));
+                    *(_WORD *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *(_DWORD *)v112 + 76) &=
+                        0xDFFFu;
                     goto LABEL_337;
                 case 3:
                     if (!dword_10680618 || !dword_10680624)
@@ -36899,57 +36961,55 @@ LABEL_272:
                                  dword_10680638 + 12 * dword_10680628,
                                  dword_10680638 + 12 * dword_10680628 - 12,
                                  v180);
-                    sub_1003B050((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                    sub_1003B050((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
                                            84 * (_DWORD)dword_10680618 + 48),
                                  (float *)v191,
                                  (float *)v190);
                     v115 = v180;
                     if (v116 | v117) {
                         v174 = v115 - -0.5;
-                        sub_1003AFA0(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                        sub_1003AFA0(*(_DWORD *)&gUnk06594.gap4904[36] +
                                          84 * (_DWORD)dword_10680618,
                                      (int)&dword_10680650,
                                      (int)&dword_10680644,
                                      v174);
                     } else {
                         v173 = v115 - 0.5;
-                        sub_1003AFA0(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                        sub_1003AFA0(*(_DWORD *)&gUnk06594.gap4904[36] +
                                          84 * (_DWORD)dword_10680618,
                                      (int)&dword_1068065C,
                                      (int)&dword_10680650,
                                      v173);
                     }
-                    sub_1003AE50((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618));
-                    sub_1003AEE0((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                    sub_1003AE50(
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618));
+                    sub_1003AEE0((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
                                            84 * (_DWORD)dword_10680618 + 32),
                                  (float *)v191,
                                  (float *)v190);
-                    sub_1003AC30((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618 + 16),
-                                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618),
-                                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618 + 32));
-                    sub_1003AE50((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                    sub_1003AC30(
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                                  16),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                                  32));
+                    sub_1003AE50((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
                                            84 * (_DWORD)dword_10680618 + 16));
-                    sub_1003AC30((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618 + 32),
-                                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618 + 16),
-                                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                           84 * (_DWORD)dword_10680618));
-                    sub_1003AE50((float *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
+                    sub_1003AC30(
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                                  32),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                                  16),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618));
+                    sub_1003AE50((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
                                            84 * (_DWORD)dword_10680618 + 32));
-                    sub_1003AD10(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                     84 * (_DWORD)dword_10680618,
+                    sub_1003AD10(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618,
                                  flt_10680630);
                     v175 = -flt_10680630;
-                    sub_1003AD10(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                     84 * (_DWORD)dword_10680618 + 32,
-                                 v175);
-                    sub_1003AD10(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                     84 * (_DWORD)dword_10680618 + 16,
+                    sub_1003AD10(
+                        *(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 + 32, v175);
+                    sub_1003AD10(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                                     16,
                                  flt_10680630);
                 LABEL_337:
                     v111 = dword_10680628;
@@ -36957,7 +37017,7 @@ LABEL_272:
             LABEL_338:
                 ++v110;
                 v112 += 3;
-            } while (v110 < *(int *)&stru_106C3380.gap1C8[18724]);
+            } while (v110 < *(int *)&gUnk06594.gap4A2C[192]);
         }
     }
     v118 = 0;
@@ -36977,10 +37037,10 @@ LABEL_272:
             v121 = dword_10680618;
             v122 = dword_10AD05DC[2778 * *v120];
             if (dword_10680618 && dword_10680624) {
-                sub_10068180((int)dword_10680618,
-                             (int *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] +
-                                     84 * (_DWORD)dword_10680618 + 48),
-                             dword_10AD05DC[2778 * *v120]);
+                sub_10068180(
+                    (int)dword_10680618,
+                    (int *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 + 48),
+                    dword_10AD05DC[2778 * *v120]);
                 v121 = dword_10680618;
             }
             v123 = 0;
@@ -36988,7 +37048,7 @@ LABEL_272:
                 v124 = dword_106805D0;
                 while (v123 < dword_10680940) {
                     sub_10068210((int)v121,
-                                 (int *)(*(_DWORD *)&stru_106C3380.gap1C8[18272] + 84 * *v124 + 48),
+                                 (int *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *v124 + 48),
                                  v122);
                     v121 = dword_10680618;
                     ++v123;
@@ -37118,7 +37178,7 @@ LABEL_272:
         if (!dword_106909B4) {
             if (gGameMode == GAME_MODE_4 || gGameMode == GAME_MODE_5) {
                 if (!sub_1002B2A0()) {
-                    v141 = (int *)&stru_106C3380.gap1C8[12592];
+                    v141 = (int *)&gUnk06594.gap1C8[12592];
                     do {
                         if ((dword_118ABAD0 & 0x4000) != 0) {
                             meth_10035FA0(v141, 49168);
@@ -37129,7 +37189,7 @@ LABEL_272:
                             sub_1002B130(0.0, 0.2);
                         }
                         v141 += 87;
-                    } while ((int)v141 < (int)&stru_106C3380.gap1C8[13288]);
+                    } while ((int)v141 < (int)&gUnk06594.gap1C8[13288]);
                 }
             } else {
                 v140 = 0;
@@ -37358,7 +37418,7 @@ LABEL_469:
         v148 += 6;
         ++v147;
     } while ((int)v148 < (int)&unk_118AC898);
-    *(_DWORD *)&stru_106C3380.gap1C8[12544] = 0;
+    *(_DWORD *)&gUnk06594.gap1C8[12544] = 0;
     if (!dword_106909F0)
         goto LABEL_531;
     if (!dword_106909E4) {
@@ -37387,7 +37447,7 @@ LABEL_469:
             if ((gGameMode != GAME_MODE_4 ||
                  dword_106805B8 != 1 && (dword_106805B8 || dword_10680938)) &&
                 dword_106909F0 == 2) {
-                if (*(_DWORD *)&stru_106C3380.gap1C8[8584] != dword_10B4E708 ||
+                if (*(_DWORD *)&gUnk06594.gap1C8[8584] != dword_10B4E708 ||
                     dword_106C29A4 != dword_10B4E70C)
                     WriteConfigFile(&gConfig, gBossRallyCfgPath);
                 cleanUpAndExitWithCode(0);
@@ -39183,12 +39243,12 @@ _DWORD *__cdecl sub_10031140(_DWORD *a1, int a2, int a3, int a4) {
 
 //----- (10031190) --------------------------------------------------------
 char *__thiscall sub_10031190(unk06594 *this) {
-    if (*(_DWORD *)&stru_106C3380.gap1C8[12436] == 32)
+    if (*(_DWORD *)&gUnk06594.gap1C8[12436] == 32)
         meth_unk1A5E0_10042AF0(this);
     else
-        ++*(_DWORD *)&stru_106C3380.gap1C8[12436];
-    *(_DWORD *)&stru_106C3380.gap1C8[12432] = (*(_DWORD *)&stru_106C3380.gap1C8[12432] + 1) % 32;
-    return (char *)&unk_106C29F0 + 24 * *(_DWORD *)&stru_106C3380.gap1C8[12432];
+        ++*(_DWORD *)&gUnk06594.gap1C8[12436];
+    *(_DWORD *)&gUnk06594.gap1C8[12432] = (*(_DWORD *)&gUnk06594.gap1C8[12432] + 1) % 32;
+    return (char *)&unk_106C29F0 + 24 * *(_DWORD *)&gUnk06594.gap1C8[12432];
 }
 
 //----- (10031227) --------------------------------------------------------
@@ -40212,62 +40272,55 @@ int sub_10033498() {
     unsigned int v7; // [esp+1Ch] [ebp-8h]
     int v8;          // [esp+20h] [ebp-4h]
 
-    v2 = *(_DWORD *)&stru_106C3380.gap1C8[12504] && gChosenTrack != 2 && gChosenTrack != 8;
-    for (i = 0; i < *(int *)&stru_106C3380.gap1C8[18200]; ++i) {
-        if (!*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i))
+    v2 = *(_DWORD *)&gUnk06594.gap1C8[12504] && gChosenTrack != 2 && gChosenTrack != 8;
+    for (i = 0; i < *(int *)&gUnk06594.gap1C8[18200]; ++i) {
+        if (!*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i))
             continue;
-        if ((*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 32) & 0x100000) == 0) {
-            if (dword_100AA8A0 == *(_DWORD *)&stru_106C3380.gap1C8[12504])
+        if ((*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 32) & 0x100000) == 0) {
+            if (dword_100AA8A0 == *(_DWORD *)&gUnk06594.gap1C8[12504])
                 continue;
-            v8 = 32 * (*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 8) & 0xFFF);
+            v8 = 32 * (*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) & 0xFFF);
             goto LABEL_26;
         }
-        if ((*(_WORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 8) + 2) !=
-                 2 ||
-             *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 8) + 8) !=
+        if ((*(_WORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) + 2) != 2 ||
+             *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) + 8) !=
                  -1) &&
             !dword_106909B4 && dword_106909E0 != 2) {
-            if (v2 && (HIBYTE(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 32)) &
+            if (v2 && (HIBYTE(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 32)) &
                        0xF) == 11) {
                 j = 1;
             } else {
                 for (j = 1;
-                     j < *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] +
+                     j < *(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] +
                                                            36 * i + 8) +
                                                2);
                      ++j) {
-                    v7 =
-                        *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i +
-                                                8) +
-                                    12 *
-                                        (*(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380
-                                                                                .gap1C8[18204] +
-                                                                           36 * i + 8) +
-                                                               2) -
-                                         1) +
-                                    8) -
-                        *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i +
-                                                8) +
-                                    8);
-                    if (*(_DWORD *)&stru_106C3380.gap1C8[8592] -
-                            v7 * (*(_DWORD *)&stru_106C3380.gap1C8[8592] / v7) <
-                        *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i +
-                                                8) +
+                    v7 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) +
+                                     12 * (*(unsigned __int16 *)(*(_DWORD *)(*(_DWORD *)&gUnk06594
+                                                                                  .gap1C8[18204] +
+                                                                             36 * i + 8) +
+                                                                 2) -
+                                           1) +
+                                     8) -
+                         *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) +
+                                     8);
+                    if (*(_DWORD *)&gUnk06594.gap1C8[8592] -
+                            v7 * (*(_DWORD *)&gUnk06594.gap1C8[8592] / v7) <
+                        *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) +
                                     12 * j + 8))
                         break;
                 }
             }
             v6 = j - 1;
-            v4 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 8) +
+            v4 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) +
                              12 * v6 + 12);
-            v8 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 8) +
+            v8 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 8) +
                              12 * v6 + 16);
-            if ((*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 32) & 0x3FFFF) !=
-                    0 &&
+            if ((*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 32) & 0x3FFFF) != 0 &&
                 v4 != -1)
                 dword_118AA0A4(HIWORD(v4), (unsigned __int16)v4);
         LABEL_26:
-            if (*(_DWORD *)(*(_DWORD *)&stru_106C3380.gap1C8[18204] + 36 * i + 4)) {
+            if (*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 4)) {
                 if (v8 != -1) {
                     sub_10031190((unk06594 *)(v8 + dword_10690BEC));
                     meth_unk1A5E0_10042AF0(v0);
@@ -40276,8 +40329,8 @@ int sub_10033498() {
             continue;
         }
     }
-    result = *(_DWORD *)&stru_106C3380.gap1C8[12504];
-    dword_100AA8A0 = *(_DWORD *)&stru_106C3380.gap1C8[12504];
+    result = *(_DWORD *)&gUnk06594.gap1C8[12504];
+    dword_100AA8A0 = *(_DWORD *)&gUnk06594.gap1C8[12504];
     return result;
 }
 // 10033733: variable 'v0' is possibly undefined
@@ -40292,8 +40345,8 @@ int sub_10033498() {
 int __thiscall sub_10033780(unk06594 *this) {
     int result; // eax
 
-    if (!*(_DWORD *)&stru_106C3380.gap1C8[8608]) {
-        *(_DWORD *)&stru_106C3380.gap1C8[8608] = 1;
+    if (!*(_DWORD *)&gUnk06594.gap1C8[8608]) {
+        *(_DWORD *)&gUnk06594.gap1C8[8608] = 1;
         word_100B5D90 = 0;
         result = meth_unk1A5E0_10042AF0(this);
     }
@@ -40308,9 +40361,9 @@ int __thiscall sub_100337AE(unk06594 *this) {
 
     sub_10033780(this);
     meth_unk1A5E0_10042AF0(v1);
-    result = sub_10060E00((int)&stru_106C3380.gap1C8[12376]);
+    result = sub_10060E00((int)&gUnk06594.gap1C8[12376]);
     word_100B5D90 = 1;
-    *(_DWORD *)&stru_106C3380.gap1C8[8608] = 0;
+    *(_DWORD *)&gUnk06594.gap1C8[8608] = 0;
     return result;
 }
 // 100337BF: variable 'v1' is possibly undefined
@@ -40360,39 +40413,39 @@ int sub_10033838() {
     dword_106C0680 += 8;
     *v16 = -1207959552;
     v16[1] = 0;
-    v18 = (_DWORD *)((char *)&unk_106C1588 + 64 * *(_DWORD *)&stru_106C3380.gap1C8[12452]);
+    v18 = (_DWORD *)((char *)&unk_106C1588 + 64 * *(_DWORD *)&gUnk06594.gap1C8[12452]);
     *v18 = 1;
     v18[4] = &unk_118AB150;
     v18[6] = &unk_118AB160;
     v18[1] = 2;
     v18[1] |= 4u;
     v18[10] = dword_100AA728;
-    v18[11] = dword_100AA72C - 8 * *(_DWORD *)&stru_106C3380.gap1C8[12576];
+    v18[11] = dword_100AA72C - 8 * *(_DWORD *)&gUnk06594.gap1C8[12576];
     v18[5] = 4096;
     v18[7] = 2048;
     v18[8] = (unsigned int)&unk_106C2D0F & 0xFFFFFFF0;
     v18[9] = 1024;
-    v18[12] = dword_106C0944 + 96000 * *(_DWORD *)&stru_106C3380.gap1C8[12452] + 512;
-    v18[13] = 8 * ((dword_106C0680 -
-                    (dword_106C0944 + 96000 * *(_DWORD *)&stru_106C3380.gap1C8[12452] + 512)) >>
-                   3);
-    if ((dword_106C0680 -
-         (dword_106C0944 + 96000 * *(_DWORD *)&stru_106C3380.gap1C8[12452] + 512)) >>
-        3 > *(int *)&stru_106C3380.gap1C8[12568])
-        *(_DWORD *)&stru_106C3380.gap1C8[12568] =
+    v18[12] = dword_106C0944 + 96000 * *(_DWORD *)&gUnk06594.gap1C8[12452] + 512;
+    v18[13] =
+        8 *
+        ((dword_106C0680 - (dword_106C0944 + 96000 * *(_DWORD *)&gUnk06594.gap1C8[12452] + 512)) >>
+         3);
+    if ((dword_106C0680 - (dword_106C0944 + 96000 * *(_DWORD *)&gUnk06594.gap1C8[12452] + 512)) >>
+        3 > *(int *)&gUnk06594.gap1C8[12568])
+        *(_DWORD *)&gUnk06594.gap1C8[12568] =
             (dword_106C0680 -
-             (dword_106C0944 + 96000 * *(_DWORD *)&stru_106C3380.gap1C8[12452] + 512)) >>
+             (dword_106C0944 + 96000 * *(_DWORD *)&gUnk06594.gap1C8[12452] + 512)) >>
             3;
-    if ((dword_10363FF0 - dword_102E5EC8) >> 3 > *(int *)&stru_106C3380.gap1C8[12560])
-        *(_DWORD *)&stru_106C3380.gap1C8[12560] = (dword_10363FF0 - dword_102E5EC8) >> 3;
-    if ((dword_10364304 - dword_103643BC) >> 5 > *(int *)&stru_106C3380.gap1C8[12564])
-        *(_DWORD *)&stru_106C3380.gap1C8[12564] = (dword_10364304 - dword_103643BC) >> 5;
-    v0 = (void *)(dword_106C0944 + 96000 * *(_DWORD *)&stru_106C3380.gap1C8[12452] + 512);
+    if ((dword_10363FF0 - dword_102E5EC8) >> 3 > *(int *)&gUnk06594.gap1C8[12560])
+        *(_DWORD *)&gUnk06594.gap1C8[12560] = (dword_10363FF0 - dword_102E5EC8) >> 3;
+    if ((dword_10364304 - dword_103643BC) >> 5 > *(int *)&gUnk06594.gap1C8[12564])
+        *(_DWORD *)&gUnk06594.gap1C8[12564] = (dword_10364304 - dword_103643BC) >> 5;
+    v0 = (void *)(dword_106C0944 + 96000 * *(_DWORD *)&gUnk06594.gap1C8[12452] + 512);
     dword_106C1170 = (dword_106C0680 - (int)v0) >> 3;
     if (dword_106C1170 > 12000)
         sub_10035BBA((int)aHugeGlistError);
     meth_DebugPrint(v0);
-    if (*(_DWORD *)&stru_106C3380.gap1C8[12572]) {
+    if (*(_DWORD *)&gUnk06594.gap1C8[12572]) {
         meth_DebugPrint(v1);
         meth_unk1A5E0_10042AF0(v2);
         meth_DebugPrint(v3);
@@ -40409,33 +40462,33 @@ int sub_10033838() {
         meth_DebugPrint(v6);
         dword_106C020C = sub_10060E90();
         dword_106C1620 = dword_106C020C - dword_106C0208;
-        if (*(_DWORD *)&stru_106C3380.gap1C8[12440]) {
-            v7 = (void *)--*(_DWORD *)&stru_106C3380.gap1C8[12440];
-            if (!*(_DWORD *)&stru_106C3380.gap1C8[12440]) {
+        if (*(_DWORD *)&gUnk06594.gap1C8[12440]) {
+            v7 = (void *)--*(_DWORD *)&gUnk06594.gap1C8[12440];
+            if (!*(_DWORD *)&gUnk06594.gap1C8[12440]) {
                 meth_DebugPrint(v7);
                 meth_DebugPrint(v8);
-                *(_DWORD *)&stru_106C3380.gap1C8[12448] = *(_DWORD *)&stru_106C3380.gap1C8[12444];
+                *(_DWORD *)&gUnk06594.gap1C8[12448] = *(_DWORD *)&gUnk06594.gap1C8[12444];
             }
         }
         meth_DebugPrint(v7);
         meth_DebugPrint(v9);
         meth_DebugPrint(v10);
-        if (!*(_DWORD *)&stru_106C3380.gap1C8[12460] && !*(_DWORD *)&stru_106C3380.gap1C8[12464])
+        if (!*(_DWORD *)&gUnk06594.gap1C8[12460] && !*(_DWORD *)&gUnk06594.gap1C8[12464])
             meth_DebugPrint(v11);
-        if (*(_DWORD *)&stru_106C3380.gap1C8[12464])
-            --*(_DWORD *)&stru_106C3380.gap1C8[12464];
+        if (*(_DWORD *)&gUnk06594.gap1C8[12464])
+            --*(_DWORD *)&gUnk06594.gap1C8[12464];
         meth_1002C210(v11);
         dword_106C0208 = sub_10060E90();
         dword_106C020C = sub_10060E90() - dword_106C020C;
     } else {
-        v12 = (void *)++*(_DWORD *)&stru_106C3380.gap1C8[12572];
+        v12 = (void *)++*(_DWORD *)&gUnk06594.gap1C8[12572];
     }
     meth_DebugPrint(v12);
-    *(_DWORD *)&stru_106C3380.gap1C8[8604] = *(_DWORD *)&stru_106C3380.gap1C8[12368];
+    *(_DWORD *)&gUnk06594.gap1C8[8604] = *(_DWORD *)&gUnk06594.gap1C8[12368];
     meth_DebugPrint(v13);
     meth_DebugPrint(v14);
     result = dword_10B501D0(v18[12]);
-    *(_DWORD *)&stru_106C3380.gap1C8[12452] ^= 1u;
+    *(_DWORD *)&gUnk06594.gap1C8[12452] ^= 1u;
     return result;
 }
 // 10033A5B: variable 'v1' is possibly undefined
@@ -40515,7 +40568,7 @@ _DWORD *__cdecl sub_10033E83(int a1, float a2, float a3, float a4, float a5) {
     a4a = *(float *)(a1 + 56) + *(float *)(a1 + 8);
     a3a = *(float *)(a1 + 52) + *(float *)(a1 + 4);
     v6 = *(float *)(a1 + 48) + *(float *)a1;
-    sub_100309A0((int)&stru_106C3380.gap1C8[9080],
+    sub_100309A0((int)&gUnk06594.gap1C8[9080],
                  *(float *)(a1 + 48),
                  *(float *)(a1 + 52),
                  *(float *)(a1 + 56),
@@ -40525,12 +40578,12 @@ _DWORD *__cdecl sub_10033E83(int a1, float a2, float a3, float a4, float a5) {
                  *(float *)(a1 + 32),
                  *(float *)(a1 + 36),
                  *(float *)(a1 + 40));
-    *(float *)&stru_106C3380.gap1C8[9580] = a3;
+    *(float *)&gUnk06594.gap1C8[9580] = a3;
     dword_106C3360 = 0.80000001;
     a4b = a4 / a5;
     a3b = a2 * 1.3333334 * (a5 / a4) * 57.295776;
     sub_10030930(flt_106C0218, &word_106C067C, a3b, a4b, 0.80000001, a3);
-    sub_100306C0((float *)&stru_106C3380.gap1C8[9080], flt_106C0218, &flt_106C29A8);
+    sub_100306C0((float *)&gUnk06594.gap1C8[9080], flt_106C0218, &flt_106C29A8);
     dword_106C32D0 = (int)sub_10069490();
     return sub_100307A0(&flt_106C29A8, (_DWORD *)dword_106C32D0);
 }
@@ -40809,7 +40862,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     meth_DebugPrint(v7);
     meth_DebugPrint(dword_10B02434);
     meth_DebugPrint(v8);
-    *(_DWORD *)&stru_106C3380.gap1C8[8600] = 1194793728;
+    *(_DWORD *)&gUnk06594.gap1C8[8600] = 1194793728;
     meth_DebugPrint(v9);
     meth_DebugPrint(v15);
     meth_unk1A5E0_10042AF0(v10);
@@ -40829,7 +40882,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
         }
     }
     result = CreateMutexA(0, 0, 0);
-    *(_DWORD *)&stru_106C3380.gap1C8[12552] = result;
+    *(_DWORD *)&gUnk06594.gap1C8[12552] = result;
     return result;
 }
 // 10034842: variable 'v1' is possibly undefined
@@ -46069,7 +46122,7 @@ int sub_1003C260() {
 // 10AA29D8: using guessed type int dword_10AA29D8;
 
 //----- (1003C3A0) --------------------------------------------------------
-int __stdcall sub_1003C3A0(int a1, int a2, int a3, LPCVOID pMem) {
+int __stdcall sub_1003C3A0(HWND a1, int a2, int a3, char *pMem) {
     HGLOBAL v4; // eax
     HGLOBAL v5; // eax
 
@@ -46082,10 +46135,9 @@ int __stdcall sub_1003C3A0(int a1, int a2, int a3, LPCVOID pMem) {
     }
     if (a2 != 1281)
         return 0;
-    if (dword_10AA29E0)
-        (*(void(__thiscall **)(int, LPCVOID, _DWORD, int, void *, int))(
-            *(_DWORD *)(dword_10AA29E0 + 14392) + 16))(
-            dword_10AA29E0 + 14392, pMem, 0, 1, &dword_100AB408, 1);
+    if (gUnk1E214)
+        gUnk1E214->field_3838.lpVtbl->field_10(
+            &gUnk1E214->field_3838, pMem, 0, 1, (int)dword_100AB408, 1);
     v4 = GlobalHandle(pMem);
     GlobalUnlock(v4);
     v5 = GlobalHandle(pMem);
@@ -46094,7 +46146,6 @@ int __stdcall sub_1003C3A0(int a1, int a2, int a3, LPCVOID pMem) {
 }
 // 10AA2884: using guessed type int dword_10AA2884;
 // 10AA29D4: using guessed type int dword_10AA29D4;
-// 10AA29E0: using guessed type int dword_10AA29E0;
 
 //----- (1003C430) --------------------------------------------------------
 int __stdcall sub_1003C430(IID *iid, int a2, SIZE_T dwBytes, int a4, int a5, int a6) {
@@ -47955,7 +48006,7 @@ int __cdecl sub_1003E680() {
     dword_10AA26E8 = 0;
     dword_10A9D06C = 0;
     dword_10AA28C4 = 0;
-    dword_10AA28C8 = 0;
+    *(_DWORD *)&dword_10AA28C8 = 0;
     dword_10AA28D0 = 0;
     dword_10AA289C = 0;
     sprintf(byte_10AA2518, "%d", 1);
@@ -47989,7 +48040,6 @@ int __cdecl sub_1003E680() {
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA28BC: using guessed type int dword_10AA28BC;
 // 10AA28C0: using guessed type int dword_10AA28C0;
-// 10AA28C8: using guessed type int dword_10AA28C8;
 // 10AA28D0: using guessed type int dword_10AA28D0;
 // 10AA2A00: using guessed type int dword_10AA2A00;
 // 10AA2A04: using guessed type int dword_10AA2A04;
@@ -48775,7 +48825,7 @@ int __cdecl sub_1003F680(int a1) {
 
 //----- (1003F720) --------------------------------------------------------
 int __cdecl sub_1003F720(int a1) {
-    if (gUnkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8)
+    if (gUnkC8Ptr1 == (void *)gUnkC8Ptr32 && !dword_10AA28E8)
         return -2;
     *(_WORD *)(a1 + 123404) = word_100AC5A8[2 * dword_100AC654];
     return 1;
@@ -48792,7 +48842,7 @@ int __cdecl sub_1003F760(int a1) {
     int v2;         // eax
     int v3;         // edx
 
-    if (gUnkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
+    if (gUnkC8Ptr1 != (void *)gUnkC8Ptr32 || dword_10AA28E8) {
         v2 = dword_100AC654;
         if (dword_100AC654 > 15)
             v2 = dword_100AC654 - 16;
@@ -48897,7 +48947,7 @@ int __cdecl sub_1003FA00(int a1) {
     int v14;          // [esp+Ch] [ebp-84h]
     char buffer[128]; // [esp+10h] [ebp-80h] BYREF
 
-    if (gUnkC8Ptr1 != (unk000C8 *)dword_10AA2964 || dword_10AA28E8) {
+    if (gUnkC8Ptr1 != (unk000C8 *)gUnkC8Ptr32 || dword_10AA28E8) {
         if (gGameMode) {
             strcpy(buffer, GetStringWithIndex(dword_100AC308[dword_100AC648]));
             trackIndex = dword_100AC648;
@@ -49034,7 +49084,7 @@ int __cdecl sub_1003FE80(int a1) {
     int v5;         // ecx
     int v6;         // edx
 
-    if (gUnkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8) {
+    if (gUnkC8Ptr1 == (void *)gUnkC8Ptr32 && !dword_10AA28E8) {
         *(float *)(a1 + 12144) = *(float *)(a1 + 12144) - 8.0;
         v1 = GetStringWithIndex(0x1Cu);
         v2 = *(_DWORD *)(a1 + 11100);
@@ -49385,7 +49435,7 @@ int sub_10040450() {
 int sub_10040680() {
     if (!dword_10AA2844) {
         dword_10AA28D8 = 1;
-        dword_10AA2844 = 1;
+        dword_10AA2844 = (LPDIRECTINPUTDEVICEA)1;
         dword_10AA33E4 = 0;
         sub_1005FF30();
         sub_1005FF60();
@@ -49393,7 +49443,6 @@ int sub_10040680() {
     }
     return 1;
 }
-// 10AA2844: using guessed type int dword_10AA2844;
 // 10AA28D8: using guessed type int dword_10AA28D8;
 // 10AA33E4: using guessed type int dword_10AA33E4;
 
@@ -49457,7 +49506,7 @@ int __cdecl sub_10040730(int a1) {
 
 //----- (100407A0) --------------------------------------------------------
 int __cdecl sub_100407A0(int a1) {
-    if (gUnkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8)
+    if (gUnkC8Ptr1 == (void *)gUnkC8Ptr32 && !dword_10AA28E8)
         return -2;
     *(_WORD *)(a1 + 123404) = word_100AC570[dword_100AC648];
     return 1;
@@ -49471,7 +49520,7 @@ int __cdecl sub_100407E0(int a1) {
     int v2; // eax
     int v3; // ecx
 
-    if (gUnkC8Ptr1 == (void *)dword_10AA2964 && !dword_10AA28E8)
+    if (gUnkC8Ptr1 == (void *)gUnkC8Ptr32 && !dword_10AA28E8)
         return -2;
     if (gGameMode) {
         v3 = dword_10AA2A00;
@@ -49523,7 +49572,7 @@ int __cdecl sub_100408B0(int a1) {
 int __cdecl sub_100408D0(int a1) {
     int v1; // ebx
 
-    if (gUnkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
+    if (gUnkC8Ptr1 != (void *)gUnkC8Ptr32 || dword_10AA28E8) {
         _itoa(dword_100BD3E0, (char *)(a1 + 11109), 10);
         v1 = *(_DWORD *)(a1 + 11100);
         (*(void(__thiscall **)(int))(v1 + 8))(a1 + 11100);
@@ -50187,8 +50236,8 @@ int __cdecl sub_10041A00(int a1) {
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10041AC0) --------------------------------------------------------
-int __cdecl sub_10041AC0(int a1) {
-    *(_DWORD *)(*(_DWORD *)(a1 + 10984) + 112) = 0;
+int __cdecl sub_10041AC0(unk1E214 *a1) {
+    a1->field_2AE8->field_70 = 0;
     dword_10AA28E4 = 0;
     if (dword_10AA28D8 && byte_10A9D078) {
         strcpy((char *)(dword_10AA29CC + 1080 * Value + 53), byte_10A9D078);
@@ -50480,10 +50529,10 @@ int __cdecl sub_10042170(int a1, int *a2) {
 // 10AD0988: using guessed type int dword_10AD0988;
 
 //----- (10042410) --------------------------------------------------------
-int __cdecl sub_10042410(int a1) {
+int __cdecl sub_10042410(unk1E214 *a1) {
     int v1; // eax
 
-    *(_DWORD *)(*(_DWORD *)(a1 + 10984) + 112) = 0;
+    a1->field_2AE8->field_70 = 0;
     *(_DWORD *)(dword_10AA29D0 + 1080 * Value + 1100) =
         *(_DWORD *)(dword_10AA29D0 + 1080 * Value + 1100) == 0;
     v1 = dword_10AA29D0 + 1080 * Value;
@@ -50498,8 +50547,8 @@ int __cdecl sub_10042410(int a1) {
 // 10AA29D0: using guessed type int dword_10AA29D0;
 
 //----- (100424D0) --------------------------------------------------------
-int __cdecl sub_100424D0(int a1) {
-    *(_DWORD *)(*(_DWORD *)(a1 + 10984) + 112) = 0;
+int __cdecl sub_100424D0(unk1E214 *a1) {
+    a1->field_2AE8->field_70 = 0;
     dword_10AA28EC = 0;
     if (dword_10AA28D8 && byte_10A9D078) {
         strcpy((char *)(dword_10AA29D0 + 1080 * Value + 53), byte_10A9D078);
@@ -51322,9 +51371,9 @@ int __cdecl sub_10043810(LPCVOID pMem) {
             cleanUpAndExitWithCode(0);
         }
         sub_10046400((int)pMem);
-        if (dword_10AA2950) {
-            (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
-            dword_10AA2950 = 0;
+        if (gUnkC8Ptr26) {
+            (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr26 + 28))(gUnkC8Ptr26);
+            gUnkC8Ptr26 = 0;
         }
         gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
         sub_1003BF60();
@@ -51342,9 +51391,9 @@ int __cdecl sub_10043810(LPCVOID pMem) {
         result = 0;
     } else if (dword_10AA2890) {
         sub_10046400((int)pMem);
-        if (dword_10AA2950) {
-            (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
-            dword_10AA2950 = 0;
+        if (gUnkC8Ptr26) {
+            (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr26 + 28))(gUnkC8Ptr26);
+            gUnkC8Ptr26 = 0;
         }
         sub_100440D0();
         sub_100443E0();
@@ -51487,8 +51536,8 @@ int __stdcall sub_10043BF0() {
 
     sub_100419D0(asc_100AD300);
     sub_1003E510();
-    if (dword_10AA2958) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2958;
+    if (gUnkC8Ptr28) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr28;
         result = (unk000C8 *)1;
     } else {
         v0 = (unk000C8 *)operator new(0xC8u);
@@ -51496,11 +51545,11 @@ int __stdcall sub_10043BF0() {
             result = meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2958 = (int)result;
+        gUnkC8Ptr28 = (int)result;
         gUnkC8Ptr1 = result;
         if (result) {
             result->lpFn0 = sub_100563E0;
-            (*(void(__cdecl **)(int))(dword_10AA2958 + 4))(dword_10AA2958);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr28 + 4))(gUnkC8Ptr28);
             gUnkC8Ptr1->field_C = 1;
             result = (unk000C8 *)1;
             gUnkC8Ptr1->field_68 = 1;
@@ -51511,41 +51560,39 @@ int __stdcall sub_10043BF0() {
 // 10AA2958: using guessed type int dword_10AA2958;
 
 //----- (10043CD0) --------------------------------------------------------
-int sub_10043CD0() {
-    unk000C8 *v0; // eax
-    int result;   // eax
+int __stdcall sub_10043CD0() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
 
-    if (dword_10AA2940) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2940;
-        result = 1;
+    if (gUnkC8Ptr11) {
+        gUnkC8Ptr1 = gUnkC8Ptr11;
+        result = (unk000C8 *)1;
     } else {
         v0 = (unk000C8 *)operator new(0xC8u);
         if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
+            result = meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2940 = result;
-        gUnkC8Ptr1 = (unk000C8 *)result;
+        gUnkC8Ptr11 = result;
+        gUnkC8Ptr1 = result;
         if (result) {
-            *(_DWORD *)(result + 4) = sub_100558A0;
-            (*(void(__cdecl **)(int))(dword_10AA2940 + 4))(dword_10AA2940);
+            result->lpFn0 = sub_100558A0;
+            gUnkC8Ptr11->lpFn0(gUnkC8Ptr11);
             gUnkC8Ptr1->field_C = 1;
-            result = 1;
+            result = (unk000C8 *)1;
             gUnkC8Ptr1->field_68 = 1;
         }
     }
-    return result;
+    return (int)result;
 }
-// 100558A0: using guessed type int __cdecl sub_100558A0(int);
-// 10AA2940: using guessed type int dword_10AA2940;
 
 //----- (10043DA0) --------------------------------------------------------
 int sub_10043DA0() {
     unk000C8 *v0; // eax
     int result;   // eax
 
-    if (dword_10AA298C) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA298C;
+    if (gUnkC8Ptr29) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr29;
         result = 1;
     } else {
         v0 = (unk000C8 *)operator new(0xC8u);
@@ -51553,11 +51600,11 @@ int sub_10043DA0() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA298C = result;
+        gUnkC8Ptr29 = result;
         gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10056A10;
-            (*(void(__cdecl **)(int))(dword_10AA298C + 4))(dword_10AA298C);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr29 + 4))(gUnkC8Ptr29);
             gUnkC8Ptr1->field_C = 1;
             result = 1;
             gUnkC8Ptr1->field_68 = 1;
@@ -51604,7 +51651,7 @@ int __cdecl sub_10043F50(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA298C = 0;
+    gUnkC8Ptr29 = 0;
     gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
     return 0;
 }
@@ -51626,7 +51673,7 @@ int __cdecl sub_10043FC0(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
-    dword_10AA2958 = 0;
+    gUnkC8Ptr28 = 0;
     dword_10AA29A8 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
@@ -51687,8 +51734,8 @@ int sub_100440D0() {
     _DWORD *v0; // eax
     int result; // eax
 
-    if (dword_10AA294C) {
-        gUnkC8Ptr1 = (void *)dword_10AA294C;
+    if (gUnkC8Ptr25) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr25;
         result = 1;
     } else {
         v0 = (_DWORD *)operator new(0xC8u);
@@ -51696,11 +51743,11 @@ int sub_100440D0() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA294C = result;
+        gUnkC8Ptr25 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_100575F0;
-            (*(void(__cdecl **)(int))(dword_10AA294C + 4))(dword_10AA294C);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr25 + 4))(gUnkC8Ptr25);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
             *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
@@ -51780,8 +51827,8 @@ int sub_10044280() {
             return 1;
         }
     }
-    if (dword_10AA2950) {
-        gUnkC8Ptr1 = (void *)dword_10AA2950;
+    if (gUnkC8Ptr26) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr26;
         goto LABEL_20;
     }
     v0 = (_DWORD *)operator new(0xC8u);
@@ -51789,11 +51836,11 @@ int sub_10044280() {
         result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
-    dword_10AA2950 = result;
+    gUnkC8Ptr26 = result;
     gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_10057C10;
-        (*(void(__cdecl **)(int))(dword_10AA2950 + 4))(dword_10AA2950);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr26 + 4))(gUnkC8Ptr26);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_20:
@@ -51821,8 +51868,8 @@ int sub_100443E0() {
     dword_10AA2884 = 1;
     gNetworkPlay = 2;
     dword_10AA2898 = 0;
-    if (dword_10AA2950) {
-        gUnkC8Ptr1 = (void *)dword_10AA2950;
+    if (gUnkC8Ptr26) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr26;
         goto LABEL_8;
     }
     v0 = (_DWORD *)operator new(0xC8u);
@@ -51830,11 +51877,11 @@ int sub_100443E0() {
         result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
-    dword_10AA2950 = result;
+    gUnkC8Ptr26 = result;
     gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_10057C10;
-        (*(void(__cdecl **)(int))(dword_10AA2950 + 4))(dword_10AA2950);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr26 + 4))(gUnkC8Ptr26);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_8:
@@ -51856,7 +51903,7 @@ int __cdecl sub_100444C0(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA294C = 0;
+    gUnkC8Ptr25 = 0;
     dword_10AA29B8 = 0;
     gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
     if (dword_10AA29D8)
@@ -51952,8 +51999,8 @@ int __thiscall meth_100446D0(void *this) {
     unk000C8 *v1; // eax
     int result;   // eax
 
-    if (dword_10AA2954) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2954;
+    if (gUnkC8Ptr27) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr27;
     LABEL_8:
         gGameMode = GAME_MODE_6;
         if (dword_10AA2884) {
@@ -51977,11 +52024,11 @@ int __thiscall meth_100446D0(void *this) {
         result = (int)meth_unk000C8_10048710(v1);
     else
         result = 0;
-    dword_10AA2954 = result;
+    gUnkC8Ptr27 = result;
     gUnkC8Ptr1 = (unk000C8 *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_10058750;
-        (*(void(__cdecl **)(int))(dword_10AA2954 + 4))(dword_10AA2954);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr27 + 4))(gUnkC8Ptr27);
         gUnkC8Ptr1->field_C = 1;
         gUnkC8Ptr1->field_68 = 1;
         goto LABEL_8;
@@ -52024,8 +52071,8 @@ int sub_100447D0() {
     } else {
         sub_10044280();
     }
-    if (dword_10AA2954) {
-        gUnkC8Ptr1 = (void *)dword_10AA2954;
+    if (gUnkC8Ptr27) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr27;
     } else {
         v1 = (_DWORD *)operator new(0xC8u);
         v3[1] = (int)v1;
@@ -52035,12 +52082,12 @@ int sub_100447D0() {
         else
             result = 0;
         v4 = -1;
-        dword_10AA2954 = result;
+        gUnkC8Ptr27 = result;
         gUnkC8Ptr1 = (void *)result;
         if (!result)
             return result;
         *(_DWORD *)(result + 4) = sub_10058750;
-        (*(void(__cdecl **)(int))(dword_10AA2954 + 4))(dword_10AA2954);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr27 + 4))(gUnkC8Ptr27);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     }
@@ -52079,7 +52126,7 @@ int __cdecl sub_10044970(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2950 = 0;
+    gUnkC8Ptr26 = 0;
     gUnkC8Ptr1 = (void *)gUnkC8Ptr10;
     if (dword_10AA29D8)
         *(_DWORD *)(dword_10AA29D8 + 28) &= 0xFFFFFFEF;
@@ -52117,8 +52164,8 @@ int __cdecl sub_10044A30(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2950 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA294C;
+    gUnkC8Ptr26 = 0;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr25;
     sub_1003BF60();
     v1 = dword_10AA287C;
     if ((!dword_10AA287C || dword_10AA287C == 1) && !dword_10A9D000) {
@@ -52151,7 +52198,7 @@ int __cdecl sub_10044AE0(int a1) {
     dword_10AA29D8 = 0;
     dword_10AA29D4 = 0;
     dword_10AA2880 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2940;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr11;
     sub_1003BF60();
     return 0;
 }
@@ -52167,9 +52214,9 @@ int __cdecl sub_10044B40(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA298C = 0;
+    gUnkC8Ptr29 = 0;
     dword_10AA29E8 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2940;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr11;
     return 0;
 }
 // 10AA2940: using guessed type int dword_10AA2940;
@@ -52182,8 +52229,8 @@ int sub_10044B90() {
     int result; // eax
 
     sub_100419D0((int)asc_100AD300);
-    if (dword_10AA295C) {
-        gUnkC8Ptr1 = (void *)dword_10AA295C;
+    if (gUnkC8Ptr30) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr30;
         result = 1;
     } else {
         v0 = (_DWORD *)operator new(0xC8u);
@@ -52191,11 +52238,11 @@ int sub_10044B90() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA295C = result;
+        gUnkC8Ptr30 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10059760;
-            (*(void(__cdecl **)(int))(dword_10AA295C + 4))(dword_10AA295C);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr30 + 4))(gUnkC8Ptr30);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
             *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
@@ -52211,7 +52258,7 @@ int __cdecl sub_10044C70(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
-    dword_10AA295C = 0;
+    gUnkC8Ptr30 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }
@@ -52222,9 +52269,9 @@ int __cdecl sub_10044CB0(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA290C = 0;
+    gUnkC8Ptr12 = 0;
     dword_10AA29AC = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA295C;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr30;
     return 0;
 }
 // 10AA290C: using guessed type int dword_10AA290C;
@@ -52238,8 +52285,8 @@ int sub_10044D00() {
 
     dword_10AA28C8 = 0;
     dword_10AA28CC = 0;
-    if (dword_10AA2964) {
-        gUnkC8Ptr1 = (void *)dword_10AA2964;
+    if (gUnkC8Ptr32) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr32;
         result = 1;
     } else {
         v0 = (_DWORD *)operator new(0xC8u);
@@ -52247,11 +52294,11 @@ int sub_10044D00() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2964 = result;
+        gUnkC8Ptr32 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_10059BB0;
-            (*(void(__cdecl **)(int))(dword_10AA2964 + 4))(dword_10AA2964);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr32 + 4))(gUnkC8Ptr32);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
             *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
@@ -52269,8 +52316,8 @@ int __cdecl sub_10044DE0(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
         (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2964 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA295C;
+    gUnkC8Ptr32 = 0;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr30;
     return 0;
 }
 // 10AA295C: using guessed type int dword_10AA295C;
@@ -52314,7 +52361,7 @@ int __cdecl sub_10044F00(int a1) {
     if (g_unkC8Ptr0)
         (**(void(__thiscall ***)(int, int))g_unkC8Ptr0)(g_unkC8Ptr0, 1);
     g_unkC8Ptr0 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA295C;
+    gUnkC8Ptr1 = (void *)gUnkC8Ptr30;
     gGameMode = 2;
     return 0;
 }
@@ -52331,8 +52378,8 @@ int __thiscall meth_10044F50(void *this) {
     sub_100419D0(asc_100AD300);
     gGameMode = GAME_MODE_1;
     sub_1003E680();
-    if (dword_10AA290C) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA290C;
+    if (gUnkC8Ptr12) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr12;
         result = 1;
     } else {
         v1 = (unk000C8 *)operator new(0xC8u);
@@ -52340,11 +52387,11 @@ int __thiscall meth_10044F50(void *this) {
             result = (int)meth_unk000C8_10048710(v1);
         else
             result = 0;
-        dword_10AA290C = result;
+        gUnkC8Ptr12 = result;
         gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004B430;
-            (*(void(__cdecl **)(int))(dword_10AA290C + 4))(dword_10AA290C);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr12 + 4))(gUnkC8Ptr12);
             gUnkC8Ptr1->field_C = 1;
             v3 = gUnkC8Ptr1;
             gUnkC8Ptr1->field_68 = 1;
@@ -52417,8 +52464,8 @@ int sub_10045110() {
     unk000C8 *v0; // eax
     int result;   // eax
 
-    if (dword_10AA2914) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2914;
+    if (gUnkC8Ptr14) {
+        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr14;
         result = 1;
     } else {
         v0 = (unk000C8 *)operator new(0xC8u);
@@ -52426,11 +52473,11 @@ int sub_10045110() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2914 = result;
+        gUnkC8Ptr14 = result;
         gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004A580;
-            (*(void(__cdecl **)(int))(dword_10AA2914 + 4))(dword_10AA2914);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr14 + 4))(gUnkC8Ptr14);
             gUnkC8Ptr1->field_C = 1;
             result = 1;
             gUnkC8Ptr1->field_68 = 1;
@@ -52527,8 +52574,8 @@ int sub_10045460() {
     _DWORD *v0; // eax
     int result; // eax
 
-    if (dword_10AA2990) {
-        gUnkC8Ptr1 = (void *)dword_10AA2990;
+    if (gUnkC8Ptr36) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr36;
         goto LABEL_8;
     }
     v0 = (_DWORD *)operator new(0xC8u);
@@ -52536,11 +52583,11 @@ int sub_10045460() {
         result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
-    dword_10AA2990 = result;
+    gUnkC8Ptr36 = result;
     gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_1004D640;
-        (*(void(__cdecl **)(int))(dword_10AA2990 + 4))(dword_10AA2990);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr36 + 4))(gUnkC8Ptr36);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_8:
@@ -52557,8 +52604,8 @@ int sub_10045520() {
     _DWORD *v0; // eax
     int result; // eax
 
-    if (dword_10AA2994) {
-        gUnkC8Ptr1 = (void *)dword_10AA2994;
+    if (gUnkC8Ptr37) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr37;
         goto LABEL_8;
     }
     v0 = (_DWORD *)operator new(0xC8u);
@@ -52566,11 +52613,11 @@ int sub_10045520() {
         result = (int)meth_unk000C8_10048710(v0);
     else
         result = 0;
-    dword_10AA2994 = result;
+    gUnkC8Ptr37 = result;
     gUnkC8Ptr1 = (void *)result;
     if (result) {
         *(_DWORD *)(result + 4) = sub_1004DB00;
-        (*(void(__cdecl **)(int))(dword_10AA2994 + 4))(dword_10AA2994);
+        (*(void(__cdecl **)(int))(gUnkC8Ptr37 + 4))(gUnkC8Ptr37);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_8:
@@ -52587,8 +52634,8 @@ int sub_100455E0() {
     _DWORD *v0; // eax
     int result; // eax
 
-    if (dword_10AA2984) {
-        gUnkC8Ptr1 = (void *)dword_10AA2984;
+    if (gUnkC8Ptr34) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr34;
         result = 1;
     } else {
         v0 = (_DWORD *)operator new(0xC8u);
@@ -52596,11 +52643,11 @@ int sub_100455E0() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2984 = result;
+        gUnkC8Ptr34 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004DFC0;
-            (*(void(__cdecl **)(int))(dword_10AA2984 + 4))(dword_10AA2984);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr34 + 4))(gUnkC8Ptr34);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
             *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
@@ -52616,8 +52663,8 @@ int sub_100456B0() {
     _DWORD *v0; // eax
     int result; // eax
 
-    if (dword_10AA2988) {
-        gUnkC8Ptr1 = (void *)dword_10AA2988;
+    if (gUnkC8Ptr35) {
+        gUnkC8Ptr1 = (void *)gUnkC8Ptr35;
         result = 1;
     } else {
         v0 = (_DWORD *)operator new(0xC8u);
@@ -52625,11 +52672,11 @@ int sub_100456B0() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2988 = result;
+        gUnkC8Ptr35 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004E830;
-            (*(void(__cdecl **)(int))(dword_10AA2988 + 4))(dword_10AA2988);
+            (*(void(__cdecl **)(int))(gUnkC8Ptr35 + 4))(gUnkC8Ptr35);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;
             *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
@@ -52820,7 +52867,7 @@ int sub_10045A00() {
 
     v0 = 0;
     v1 = _getdrive();
-    sub_1007F3C0(Path, 260);
+    sub_1007F3C0((int)Path, 260);
     v2 = 3;
     while (_chdrive(v2) || GetDriveTypeA(0) != 5 || _chdir(kBackslash) || !sub_1003E100(v2)) {
         if (++v2 > 26)
@@ -52832,266 +52879,54 @@ LABEL_9:
     _chdir(Path);
     return v0;
 }
-// 1007F3C0: using guessed type _DWORD __cdecl sub_1007F3C0(_DWORD, _DWORD);
 
 //----- (10045AA0) --------------------------------------------------------
 int sub_10045AA0() {
-    gGameMode = 0;
+    gGameMode = GAME_MODE_0;
     sub_1003E680();
     dword_10ACED34 = 0;
     sub_10045C90();
     *(_DWORD *)(dword_10AA29B0 + 8) = sub_10046D70;
-    gGameMode = 0;
+    gGameMode = GAME_MODE_0;
     sub_1003E510();
     return 1;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 10AA29B0: using guessed type int dword_10AA29B0;
 
 //----- (10045AF0) --------------------------------------------------------
-int sub_10045AF0() {
-    _DWORD *v0; // eax
-    int result; // eax
+unk000C8 *sub_10045AF0() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
 
-    if (dword_10AA2924) {
-        gUnkC8Ptr1 = (void *)dword_10AA2924;
-        result = 1;
+    if (gUnkC8Ptr16) {
+        gUnkC8Ptr1 = gUnkC8Ptr16;
+        result = (unk000C8 *)1;
     } else {
-        v0 = (_DWORD *)operator new(0xC8u);
+        v0 = (unk000C8 *)operator new(0xC8u);
         if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
+            result = meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2924 = result;
-        gUnkC8Ptr1 = (void *)result;
+        gUnkC8Ptr16 = result;
+        gUnkC8Ptr1 = result;
         if (result) {
-            *(_DWORD *)(result + 4) = sub_1004F700;
-            (*(void(__cdecl **)(int))(dword_10AA2924 + 4))(dword_10AA2924);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            result = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
+            result->lpFn0 = sub_1004F700;
+            gUnkC8Ptr16->lpFn0(gUnkC8Ptr16);
+            gUnkC8Ptr1->field_C = 1;
+            result = (unk000C8 *)1;
+            gUnkC8Ptr1->field_68 = 1;
         }
     }
     return result;
 }
-// 1004F700: using guessed type int __cdecl sub_1004F700(int);
-// 10AA2924: using guessed type int dword_10AA2924;
 
 //----- (10045BC0) --------------------------------------------------------
 int sub_10045BC0() {
-    _DWORD *v0; // eax
-    int result; // eax
-
-    if (dword_10AA2928) {
-        gUnkC8Ptr1 = (void *)dword_10AA2928;
-        result = 1;
-    } else {
-        v0 = (_DWORD *)operator new(0xC8u);
-        if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
-        else
-            result = 0;
-        dword_10AA2928 = result;
-        gUnkC8Ptr1 = (void *)result;
-        if (result) {
-            *(_DWORD *)(result + 4) = sub_10050060;
-            (*(void(__cdecl **)(int))(dword_10AA2928 + 4))(dword_10AA2928);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            result = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-        }
-    }
-    return result;
-}
-// 10050060: using guessed type int __cdecl sub_10050060(int);
-// 10AA2928: using guessed type int dword_10AA2928;
-
-//----- (10045C90) --------------------------------------------------------
-int sub_10045C90() {
-    _DWORD *v0; // eax
-    int result; // eax
-    _DWORD *v2; // eax
-
-    if (dword_10AA292C) {
-        gUnkC8Ptr1 = (void *)dword_10AA292C;
-        result = 1;
-    } else {
-        v0 = (_DWORD *)operator new(0xC8u);
-        if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
-        else
-            result = 0;
-        dword_10AA292C = result;
-        gUnkC8Ptr1 = (void *)result;
-        if (result) {
-            *(_DWORD *)(result + 4) = sub_100509F0;
-            (*(void(__cdecl **)(int))(dword_10AA292C + 4))(dword_10AA292C);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-            v2 = (_DWORD *)operator new(0xC8u);
-            if (v2)
-                result = (int)meth_unk000C8_10048710(v2);
-            else
-                result = 0;
-            dword_10AA2974 = result;
-            if (result) {
-                *(_DWORD *)(result + 4) = sub_10049F40;
-                (*(void(__cdecl **)(int))(dword_10AA2974 + 4))(dword_10AA2974);
-                result = 1;
-                *(_DWORD *)(dword_10AA2974 + 12) = 1;
-            }
-        }
-    }
-    return result;
-}
-// 10049F40: using guessed type int __cdecl sub_10049F40(int);
-// 100509F0: using guessed type int __cdecl sub_100509F0(int);
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2974: using guessed type int dword_10AA2974;
-
-//----- (10045DC0) --------------------------------------------------------
-int sub_10045DC0() {
-    _DWORD *v0; // eax
-    int result; // eax
-
-    dword_10AA28AC = dword_10AA28A4;
-    if (dword_10AA2930) {
-        gUnkC8Ptr1 = (void *)dword_10AA2930;
-        result = 1;
-    } else {
-        v0 = (_DWORD *)operator new(0xC8u);
-        if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
-        else
-            result = 0;
-        dword_10AA2930 = result;
-        gUnkC8Ptr1 = (void *)result;
-        if (result) {
-            *(_DWORD *)(result + 4) = sub_10052030;
-            (*(void(__cdecl **)(int))(dword_10AA2930 + 4))(dword_10AA2930);
-            result = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-        }
-    }
-    return result;
-}
-// 10052030: using guessed type int __cdecl sub_10052030(int);
-// 10AA28A4: using guessed type int dword_10AA28A4;
-// 10AA28AC: using guessed type int dword_10AA28AC;
-// 10AA2930: using guessed type int dword_10AA2930;
-
-//----- (10045EA0) --------------------------------------------------------
-int sub_10045EA0() {
-    _DWORD *v0; // eax
-    int result; // eax
-
-    if (dword_10AA2934) {
-        gUnkC8Ptr1 = (void *)dword_10AA2934;
-        result = 1;
-    } else {
-        v0 = (_DWORD *)operator new(0xC8u);
-        if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
-        else
-            result = 0;
-        dword_10AA2934 = result;
-        gUnkC8Ptr1 = (void *)result;
-        if (result) {
-            *(_DWORD *)(result + 4) = sub_10052F50;
-            (*(void(__cdecl **)(int))(dword_10AA2934 + 4))(dword_10AA2934);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            result = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-        }
-    }
-    return result;
-}
-// 10052F50: using guessed type int __cdecl sub_10052F50(int);
-// 10AA2934: using guessed type int dword_10AA2934;
-
-//----- (10045F70) --------------------------------------------------------
-int sub_10045F70() {
-    _DWORD *v0; // eax
-    int result; // eax
-    _DWORD *v2; // eax
-
-    if (dword_10AA2938) {
-        gUnkC8Ptr1 = (void *)dword_10AA2938;
-        result = 1;
-    } else {
-        v0 = (_DWORD *)operator new(0xC8u);
-        if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
-        else
-            result = 0;
-        dword_10AA2938 = result;
-        gUnkC8Ptr1 = (void *)result;
-        if (result) {
-            *(_DWORD *)(result + 4) = sub_10053CF0;
-            (*(void(__cdecl **)(int))(dword_10AA2938 + 4))(dword_10AA2938);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-            v2 = (_DWORD *)operator new(0xC8u);
-            if (v2)
-                result = (int)meth_unk000C8_10048710(v2);
-            else
-                result = 0;
-            dword_10AA2978 = result;
-            if (result) {
-                *(_DWORD *)(result + 4) = sub_1004A260;
-                (*(void(__cdecl **)(int))(dword_10AA2978 + 4))(dword_10AA2978);
-                result = 1;
-                *(_DWORD *)(dword_10AA2978 + 12) = 1;
-            }
-        }
-    }
-    return result;
-}
-// 1004A260: using guessed type int __cdecl sub_1004A260(int);
-// 10AA2938: using guessed type int dword_10AA2938;
-// 10AA2978: using guessed type int dword_10AA2978;
-
-//----- (100460A0) --------------------------------------------------------
-int sub_100460A0() {
-    _DWORD *v0; // eax
-    int result; // eax
-
-    if (dword_10AA293C) {
-        gUnkC8Ptr1 = (void *)dword_10AA293C;
-        result = 1;
-    } else {
-        v0 = (_DWORD *)operator new(0xC8u);
-        if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
-        else
-            result = 0;
-        dword_10AA293C = result;
-        gUnkC8Ptr1 = (void *)result;
-        if (result) {
-            *(_DWORD *)(result + 4) = sub_10054B50;
-            (*(void(__cdecl **)(int))(dword_10AA293C + 4))(dword_10AA293C);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            result = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-        }
-    }
-    return result;
-}
-// 100460A0: using guessed type int sub_100460A0();
-// 10054B50: using guessed type int __cdecl sub_10054B50(int);
-// 10AA293C: using guessed type int dword_10AA293C;
-
-//----- (10046170) --------------------------------------------------------
-int sub_10046170() {
     unk000C8 *v0; // eax
     int result;   // eax
 
-    sub_100419D0(asc_100AD300);
-    sub_10072AF0(3, 0x200020u);
-    dword_10AA2854 = 3;
-    if (dword_10AA2910) {
-        gUnkC8Ptr1 = (unk000C8 *)dword_10AA2910;
+    if (gUnkC8Ptr17) {
+        gUnkC8Ptr1 = gUnkC8Ptr17;
         result = 1;
     } else {
         v0 = (unk000C8 *)operator new(0xC8u);
@@ -53099,11 +52934,11 @@ int sub_10046170() {
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA2910 = result;
+        gUnkC8Ptr17 = (unk000C8 *)result;
         gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
-            *(_DWORD *)(result + 4) = sub_10049C20;
-            (*(void(__cdecl **)(int))(dword_10AA2910 + 4))(dword_10AA2910);
+            *(_DWORD *)(result + 4) = sub_10050060;
+            gUnkC8Ptr17->lpFn0(gUnkC8Ptr17);
             gUnkC8Ptr1->field_C = 1;
             result = 1;
             gUnkC8Ptr1->field_68 = 1;
@@ -53111,40 +52946,233 @@ int sub_10046170() {
     }
     return result;
 }
-// 10AA2854: using guessed type int dword_10AA2854;
-// 10AA2910: using guessed type int dword_10AA2910;
 
-//----- (10046260) --------------------------------------------------------
-int sub_10046260() {
-    _DWORD *v0; // eax
-    int result; // eax
-    void *v2;   // ecx
+//----- (10045C90) --------------------------------------------------------
+unk000C8 *sub_10045C90() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
+    unk000C8 *v2;     // eax
 
-    gGameMode = 2;
-    sub_1003E680();
-    dword_10ACED34 = 0;
-    dword_10AD0984 = 1;
-    gGameMode = 2;
-    dword_100AC304 = 1;
-    LOBYTE(dword_10680738) = -1;
-    if (dword_10AA290C) {
-        gUnkC8Ptr1 = (void *)dword_10AA290C;
+    if (gUnkC8Ptr18) {
+        gUnkC8Ptr1 = gUnkC8Ptr18;
+        result = (unk000C8 *)1;
+    } else {
+        v0 = (unk000C8 *)operator new(0xC8u);
+        if (v0)
+            result = meth_unk000C8_10048710(v0);
+        else
+            result = 0;
+        gUnkC8Ptr18 = result;
+        gUnkC8Ptr1 = result;
+        if (result) {
+            result->lpFn0 = sub_100509F0;
+            gUnkC8Ptr18->lpFn0(gUnkC8Ptr18);
+            gUnkC8Ptr1->field_C = 1;
+            gUnkC8Ptr1->field_68 = 1;
+            v2 = (unk000C8 *)operator new(0xC8u);
+            if (v2)
+                result = meth_unk000C8_10048710(v2);
+            else
+                result = 0;
+            gUnkC8Ptr33 = result;
+            if (result) {
+                result->lpFn0 = sub_10049F40;
+                gUnkC8Ptr33->lpFn0(gUnkC8Ptr33);
+                result = (unk000C8 *)1;
+                gUnkC8Ptr33->field_C = 1;
+            }
+        }
+    }
+    return result;
+}
+
+//----- (10045DC0) --------------------------------------------------------
+int sub_10045DC0() {
+    unk000C8 *v0; // eax
+    int result;   // eax
+
+    dword_10AA28AC = dword_10AA28A4;
+    if (gUnkC8Ptr19) {
+        gUnkC8Ptr1 = gUnkC8Ptr19;
         result = 1;
     } else {
-        dword_100AC304 = 1;
-        v0 = (_DWORD *)operator new(0xC8u);
+        v0 = (unk000C8 *)operator new(0xC8u);
         if (v0)
             result = (int)meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA290C = result;
-        gUnkC8Ptr1 = (void *)result;
+        gUnkC8Ptr19 = (unk000C8 *)result;
+        gUnkC8Ptr1 = (unk000C8 *)result;
+        if (result) {
+            *(_DWORD *)(result + 4) = sub_10052030;
+            gUnkC8Ptr19->lpFn0(gUnkC8Ptr19);
+            result = 1;
+            gUnkC8Ptr1->field_C = 1;
+            gUnkC8Ptr1->field_68 = 1;
+        }
+    }
+    return result;
+}
+// 10052030: using guessed type int __cdecl sub_10052030(int);
+// 10AA28A4: using guessed type int dword_10AA28A4;
+// 10AA28AC: using guessed type int dword_10AA28AC;
+
+//----- (10045EA0) --------------------------------------------------------
+int sub_10045EA0() {
+    unk000C8 *v0; // eax
+    int result;   // eax
+
+    if (gUnkC8Ptr20) {
+        gUnkC8Ptr1 = gUnkC8Ptr20;
+        result = 1;
+    } else {
+        v0 = (unk000C8 *)operator new(0xC8u);
+        if (v0)
+            result = (int)meth_unk000C8_10048710(v0);
+        else
+            result = 0;
+        gUnkC8Ptr20 = (unk000C8 *)result;
+        gUnkC8Ptr1 = (unk000C8 *)result;
+        if (result) {
+            *(_DWORD *)(result + 4) = sub_10052F50;
+            gUnkC8Ptr20->lpFn0(gUnkC8Ptr20);
+            gUnkC8Ptr1->field_C = 1;
+            result = 1;
+            gUnkC8Ptr1->field_68 = 1;
+        }
+    }
+    return result;
+}
+// 10052F50: using guessed type int __cdecl sub_10052F50(int);
+
+//----- (10045F70) --------------------------------------------------------
+unk000C8 *sub_10045F70() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
+    unk000C8 *v2;     // eax
+
+    if (gUnkC8Ptr21) {
+        gUnkC8Ptr1 = gUnkC8Ptr21;
+        result = (unk000C8 *)1;
+    } else {
+        v0 = (unk000C8 *)operator new(0xC8u);
+        if (v0)
+            result = meth_unk000C8_10048710(v0);
+        else
+            result = 0;
+        gUnkC8Ptr21 = result;
+        gUnkC8Ptr1 = result;
+        if (result) {
+            result->lpFn0 = sub_10053CF0;
+            gUnkC8Ptr21->lpFn0(gUnkC8Ptr21);
+            gUnkC8Ptr1->field_C = 1;
+            gUnkC8Ptr1->field_68 = 1;
+            v2 = (unk000C8 *)operator new(0xC8u);
+            if (v2)
+                result = meth_unk000C8_10048710(v2);
+            else
+                result = 0;
+            gUnkC8Ptr38 = result;
+            if (result) {
+                result->lpFn0 = sub_1004A260;
+                gUnkC8Ptr38->lpFn0(gUnkC8Ptr38);
+                result = (unk000C8 *)1;
+                gUnkC8Ptr38->field_C = 1;
+            }
+        }
+    }
+    return result;
+}
+
+//----- (100460A0) --------------------------------------------------------
+int __stdcall sub_100460A0() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
+
+    if (gUnkC8Ptr22) {
+        gUnkC8Ptr1 = gUnkC8Ptr22;
+        result = (unk000C8 *)1;
+    } else {
+        v0 = (unk000C8 *)operator new(0xC8u);
+        if (v0)
+            result = meth_unk000C8_10048710(v0);
+        else
+            result = 0;
+        gUnkC8Ptr22 = result;
+        gUnkC8Ptr1 = result;
+        if (result) {
+            result->lpFn0 = sub_10054B50;
+            gUnkC8Ptr22->lpFn0(gUnkC8Ptr22);
+            gUnkC8Ptr1->field_C = 1;
+            result = (unk000C8 *)1;
+            gUnkC8Ptr1->field_68 = 1;
+        }
+    }
+    return (int)result;
+}
+
+//----- (10046170) --------------------------------------------------------
+unk000C8 *sub_10046170() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
+
+    sub_100419D0(asc_100AD300);
+    sub_10072AF0(3, 0x200020u);
+    dword_10AA2854 = 3;
+    if (gUnkC8Ptr13) {
+        gUnkC8Ptr1 = gUnkC8Ptr13;
+        result = (unk000C8 *)1;
+    } else {
+        v0 = (unk000C8 *)operator new(0xC8u);
+        if (v0)
+            result = meth_unk000C8_10048710(v0);
+        else
+            result = 0;
+        gUnkC8Ptr13 = result;
+        gUnkC8Ptr1 = result;
+        if (result) {
+            result->lpFn0 = sub_10049C20;
+            gUnkC8Ptr13->lpFn0(gUnkC8Ptr13);
+            gUnkC8Ptr1->field_C = 1;
+            result = (unk000C8 *)1;
+            gUnkC8Ptr1->field_68 = 1;
+        }
+    }
+    return result;
+}
+// 10AA2854: using guessed type int dword_10AA2854;
+
+//----- (10046260) --------------------------------------------------------
+int sub_10046260() {
+    unk000C8 *v0; // eax
+    int result;   // eax
+    unk000C8 *v2; // ecx
+
+    gGameMode = GAME_MODE_2;
+    sub_1003E680();
+    dword_10ACED34 = 0;
+    dword_10AD0984 = 1;
+    gGameMode = GAME_MODE_2;
+    dword_100AC304 = 1;
+    LOBYTE(dword_10680738[0]) = -1;
+    if (gUnkC8Ptr12) {
+        gUnkC8Ptr1 = gUnkC8Ptr12;
+        result = 1;
+    } else {
+        dword_100AC304 = 1;
+        v0 = (unk000C8 *)operator new(0xC8u);
+        if (v0)
+            result = (int)meth_unk000C8_10048710(v0);
+        else
+            result = 0;
+        gUnkC8Ptr12 = (unk000C8 *)result;
+        gUnkC8Ptr1 = (unk000C8 *)result;
         if (result) {
             *(_DWORD *)(result + 4) = sub_1004B430;
-            (*(void(__cdecl **)(int))(dword_10AA290C + 4))(dword_10AA290C);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
+            gUnkC8Ptr12->lpFn0(gUnkC8Ptr12);
+            gUnkC8Ptr1->field_C = 1;
             v2 = gUnkC8Ptr1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
+            gUnkC8Ptr1->field_68 = 1;
             meth_DebugPrint(v2);
             sub_1003DFC0();
             sub_1003E510();
@@ -53155,10 +53183,7 @@ int sub_10046260() {
     return result;
 }
 // 1004B430: using guessed type int __cdecl sub_1004B430(int);
-// 100AA010: using guessed type int g_GameMode;
 // 100AC304: using guessed type int dword_100AC304;
-// 10680738: using guessed type int dword_10680738;
-// 10AA290C: using guessed type int dword_10AA290C;
 // 10AA29AC: using guessed type int dword_10AA29AC;
 // 10AD0984: using guessed type int dword_10AD0984;
 
@@ -53171,83 +53196,73 @@ int sub_10046380() {
     result = 1;
     dword_100AC304 = 1;
     *(_DWORD *)(dword_10AA29B4 + 8) = sub_10046D20;
-    gGameMode = 2;
+    gGameMode = GAME_MODE_2;
     return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100AC304: using guessed type int dword_100AC304;
 // 10AA29B4: using guessed type int dword_10AA29B4;
 
 //----- (100463C0) --------------------------------------------------------
-int __cdecl sub_100463C0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100463C0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2940 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2958;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr11 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr28;
     return 0;
 }
-// 10AA2940: using guessed type int dword_10AA2940;
-// 10AA2958: using guessed type int dword_10AA2958;
 
 //----- (10046400) --------------------------------------------------------
-int __cdecl sub_10046400(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046400(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2954 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr27 = 0;
     dword_10AA29E4 = 0;
-    dword_10AA29E0 = 0;
+    gUnk1E214 = 0;
     dword_10AA285C = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2950;
+    gUnkC8Ptr1 = gUnkC8Ptr26;
     return 0;
 }
 // 10AA285C: using guessed type int dword_10AA285C;
-// 10AA2950: using guessed type int dword_10AA2950;
-// 10AA2954: using guessed type int dword_10AA2954;
 // 10AA29E0: using guessed type int dword_10AA29E0;
 // 10AA29E4: using guessed type int dword_10AA29E4;
 
 //----- (10046450) --------------------------------------------------------
-int __cdecl sub_10046450(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046450(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
-    dword_10AA290C = 0;
+    gUnkC8Ptr12 = 0;
     dword_10AA29AC = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }
-// 10AA290C: using guessed type int dword_10AA290C;
 // 10AA29AC: using guessed type int dword_10AA29AC;
 
 //----- (100464A0) --------------------------------------------------------
-int __cdecl sub_100464A0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100464A0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
-    dword_10AA2910 = 0;
+    gUnkC8Ptr13 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }
-// 10AA2910: using guessed type int dword_10AA2910;
 
 //----- (100464E0) --------------------------------------------------------
-int __cdecl sub_100464E0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100464E0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2914 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA290C;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr14 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr12;
     return 0;
 }
-// 100464E0: using guessed type int __cdecl sub_100464E0(int);
-// 10AA290C: using guessed type int dword_10AA290C;
-// 10AA2914: using guessed type int dword_10AA2914;
 
 //----- (10046520) --------------------------------------------------------
-int __cdecl sub_10046520(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046520(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
@@ -53256,116 +53271,100 @@ int __cdecl sub_10046520(int a1) {
 }
 
 //----- (10046560) --------------------------------------------------------
-int __cdecl sub_10046560(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046560(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr9 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr3;
+    gUnkC8Ptr1 = gUnkC8Ptr3;
     sub_10079550();
     return 0;
 }
-// 10AA297C: using guessed type int dword_10AA297C;
-// 10AA2998: using guessed type int dword_10AA2998;
 
 //----- (100465A0) --------------------------------------------------------
-int __cdecl sub_100465A0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100465A0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr3 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr4;
+    gUnkC8Ptr1 = gUnkC8Ptr4;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA297C: using guessed type int dword_10AA297C;
 
 //----- (100465E0) --------------------------------------------------------
-int __cdecl sub_100465E0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100465E0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr2 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr4;
+    gUnkC8Ptr1 = gUnkC8Ptr4;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA2980: using guessed type int dword_10AA2980;
 
 //----- (10046620) --------------------------------------------------------
-int __cdecl sub_10046620(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046620(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2990 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr36 = 0;
     dword_10AA29F0 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr2;
+    gUnkC8Ptr1 = gUnkC8Ptr2;
     return 0;
 }
-// 10AA2980: using guessed type int dword_10AA2980;
-// 10AA2990: using guessed type int dword_10AA2990;
 // 10AA29F0: using guessed type int dword_10AA29F0;
 
 //----- (10046670) --------------------------------------------------------
-int __cdecl sub_10046670(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046670(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2994 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr37 = 0;
     dword_10AA29EC = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr2;
+    gUnkC8Ptr1 = gUnkC8Ptr2;
     return 0;
 }
-// 10AA2980: using guessed type int dword_10AA2980;
-// 10AA2994: using guessed type int dword_10AA2994;
 // 10AA29EC: using guessed type int dword_10AA29EC;
 
 //----- (100466C0) --------------------------------------------------------
-int __cdecl sub_100466C0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100466C0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2984 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr4;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr34 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr4;
     sub_1003E310();
-    WriteConfigFile((#483 *)gConfig, gBossRallyCfgPath);
+    WriteConfigFile(&gConfig, gBossRallyCfgPath);
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA2984: using guessed type int dword_10AA2984;
 
 //----- (10046710) --------------------------------------------------------
-int __cdecl sub_10046710(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046710(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2988 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr4;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr35 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr4;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA2988: using guessed type int dword_10AA2988;
 
 //----- (10046750) --------------------------------------------------------
-int __cdecl sub_10046750(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046750(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA292C;
+    gUnkC8Ptr1 = gUnkC8Ptr18;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA292C: using guessed type int dword_10AA292C;
 
 //----- (10046790) --------------------------------------------------------
-int __cdecl sub_10046790(int a1) {
+int __cdecl sub_10046790(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53373,35 +53372,31 @@ int __cdecl sub_10046790(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA292C;
+    gUnkC8Ptr1 = gUnkC8Ptr18;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA292C: using guessed type int dword_10AA292C;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10046830) --------------------------------------------------------
-int __cdecl sub_10046830(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046830(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2930;
+    gUnkC8Ptr1 = gUnkC8Ptr19;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA2930: using guessed type int dword_10AA2930;
 
 //----- (10046870) --------------------------------------------------------
-int __cdecl sub_10046870(int a1) {
+int __cdecl sub_10046870(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53409,35 +53404,31 @@ int __cdecl sub_10046870(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2930;
+    gUnkC8Ptr1 = gUnkC8Ptr19;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA2930: using guessed type int dword_10AA2930;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10046910) --------------------------------------------------------
-int __cdecl sub_10046910(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046910(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2934;
+    gUnkC8Ptr1 = gUnkC8Ptr20;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA2934: using guessed type int dword_10AA2934;
 
 //----- (10046950) --------------------------------------------------------
-int __cdecl sub_10046950(int a1) {
+int __cdecl sub_10046950(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53445,35 +53436,31 @@ int __cdecl sub_10046950(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2934;
+    gUnkC8Ptr1 = gUnkC8Ptr20;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA2934: using guessed type int dword_10AA2934;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (100469F0) --------------------------------------------------------
-int __cdecl sub_100469F0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100469F0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2938;
+    gUnkC8Ptr1 = gUnkC8Ptr21;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA2938: using guessed type int dword_10AA2938;
 
 //----- (10046A30) --------------------------------------------------------
-int __cdecl sub_10046A30(int a1) {
+int __cdecl sub_10046A30(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53481,35 +53468,31 @@ int __cdecl sub_10046A30(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2938;
+    gUnkC8Ptr1 = gUnkC8Ptr21;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA2938: using guessed type int dword_10AA2938;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10046AD0) --------------------------------------------------------
-int __cdecl sub_10046AD0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046AD0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA293C;
+    gUnkC8Ptr1 = gUnkC8Ptr22;
     return 0;
 }
-// 10AA2918: using guessed type int dword_10AA2918;
-// 10AA293C: using guessed type int dword_10AA293C;
 
 //----- (10046B10) --------------------------------------------------------
-int __cdecl sub_10046B10(int a1) {
+int __cdecl sub_10046B10(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53517,35 +53500,31 @@ int __cdecl sub_10046B10(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA293C;
+    gUnkC8Ptr1 = gUnkC8Ptr22;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA293C: using guessed type int dword_10AA293C;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10046BB0) --------------------------------------------------------
-int __cdecl sub_10046BB0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046BB0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2914;
+    gUnkC8Ptr1 = gUnkC8Ptr14;
     return 0;
 }
-// 10AA2914: using guessed type int dword_10AA2914;
-// 10AA2918: using guessed type int dword_10AA2918;
 
 //----- (10046BF0) --------------------------------------------------------
-int __cdecl sub_10046BF0(int a1) {
+int __cdecl sub_10046BF0(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53553,18 +53532,16 @@ int __cdecl sub_10046BF0(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2914;
+    gUnkC8Ptr1 = gUnkC8Ptr14;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2914: using guessed type int dword_10AA2914;
-// 10AA2928: using guessed type int dword_10AA2928;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10046C90) --------------------------------------------------------
-int __cdecl sub_10046C90(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046C90(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr5 = 0;
@@ -53573,74 +53550,63 @@ int __cdecl sub_10046C90(int a1) {
 }
 
 //----- (10046CD0) --------------------------------------------------------
-int __cdecl sub_10046CD0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046CD0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2914 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr14 = 0;
     dword_10AA29B4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2930;
+    gUnkC8Ptr1 = gUnkC8Ptr19;
     return 0;
 }
-// 10046CD0: using guessed type int __cdecl sub_10046CD0(int);
-// 10AA2914: using guessed type int dword_10AA2914;
-// 10AA2930: using guessed type int dword_10AA2930;
 // 10AA29B4: using guessed type int dword_10AA29B4;
 
 //----- (10046D20) --------------------------------------------------------
-int __cdecl sub_10046D20(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046D20(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2914 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr14 = 0;
     dword_10AA29B4 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA295C;
+    gUnkC8Ptr1 = gUnkC8Ptr30;
     return 0;
 }
-// 10AA2914: using guessed type int dword_10AA2914;
-// 10AA295C: using guessed type int dword_10AA295C;
 // 10AA29B4: using guessed type int dword_10AA29B4;
 
 //----- (10046D70) --------------------------------------------------------
-int __cdecl sub_10046D70(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046D70(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA292C = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr18 = 0;
     dword_10AA29B0 = 0;
-    dword_10AA2974 = 0;
-    gUnkC8Ptr1 = (void *)gUnkC8Ptr5;
+    gUnkC8Ptr33 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr5;
     return 0;
 }
-// 10AA291C: using guessed type int dword_10AA291C;
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2974: using guessed type int dword_10AA2974;
 // 10AA29B0: using guessed type int dword_10AA29B0;
 
 //----- (10046DC0) --------------------------------------------------------
-int __cdecl sub_10046DC0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046DC0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA292C = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr18 = 0;
     dword_10AA29B0 = 0;
-    dword_10AA2974 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2924;
+    gUnkC8Ptr33 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr16;
     return 0;
 }
-// 10AA2924: using guessed type int dword_10AA2924;
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2974: using guessed type int dword_10AA2974;
 // 10AA29B0: using guessed type int dword_10AA29B0;
 
 //----- (10046E10) --------------------------------------------------------
-int __cdecl sub_10046E10(int a1) {
+int __cdecl sub_10046E10(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
-    dword_10AA2924 = 0;
+    gUnkC8Ptr16 = 0;
     dword_10AA28E0 = 0;
     Value = -1;
     strcpy(byte_10AA2518, String2);
@@ -53650,16 +53616,15 @@ int __cdecl sub_10046E10(int a1) {
     return result;
 }
 // 10AA28E0: using guessed type int dword_10AA28E0;
-// 10AA2924: using guessed type int dword_10AA2924;
 
 //----- (10046EB0) --------------------------------------------------------
-int __cdecl sub_10046EB0(int a1) {
+int __cdecl sub_10046EB0(unk1E214 *a1) {
     int result; // eax
 
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2928 = 0;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
     dword_10AA28E4 = 0;
@@ -53667,118 +53632,100 @@ int __cdecl sub_10046EB0(int a1) {
     strcpy(byte_10AA2518, String2);
     strcpy(byte_10A9D618, String2);
     result = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2934;
+    gUnkC8Ptr1 = gUnkC8Ptr20;
     return result;
 }
 // 10AA28E4: using guessed type int dword_10AA28E4;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA2934: using guessed type int dword_10AA2934;
 // 10AA29C0: using guessed type int dword_10AA29C0;
 // 10AA29CC: using guessed type int dword_10AA29CC;
 
 //----- (10046F50) --------------------------------------------------------
 int sub_10046F50() {
-    gUnkC8Ptr1 = (void *)dword_10AA2974;
+    gUnkC8Ptr1 = gUnkC8Ptr33;
     return 0;
 }
-// 10AA2974: using guessed type int dword_10AA2974;
 
 //----- (10046F60) --------------------------------------------------------
-int __cdecl sub_10046F60(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10046F60(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
     gUnkC8Ptr1 = 0;
-    dword_10AA2974 = 0;
-    if (dword_10AA292C) {
-        (**(void(__thiscall ***)(int, int))dword_10AA292C)(dword_10AA292C, 1);
-        dword_10AA292C = 0;
+    gUnkC8Ptr33 = 0;
+    if (gUnkC8Ptr18) {
+        gUnkC8Ptr18->lpVtbl->field_0(gUnkC8Ptr18, 1);
+        gUnkC8Ptr18 = 0;
     }
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2974: using guessed type int dword_10AA2974;
 
 //----- (10046FC0) --------------------------------------------------------
 int sub_10046FC0() {
-    gUnkC8Ptr1 = (void *)dword_10AA292C;
+    gUnkC8Ptr1 = gUnkC8Ptr18;
     return 0;
 }
-// 10AA292C: using guessed type int dword_10AA292C;
 
 //----- (10046FD0) --------------------------------------------------------
-int __cdecl sub_10046FD0(int a1) {
-    if (dword_10AA2934) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2934 + 28))(dword_10AA2934);
-        dword_10AA2934 = 0;
+int __cdecl sub_10046FD0(unk1E214 *a1) {
+    if (gUnkC8Ptr20) {
+        gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+        gUnkC8Ptr20 = 0;
     }
-    if (dword_10AA2938) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2938 + 28))(dword_10AA2938);
-        dword_10AA2938 = 0;
+    if (gUnkC8Ptr21) {
+        gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+        gUnkC8Ptr21 = 0;
     }
-    if (dword_10AA293C) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA293C + 28))(dword_10AA293C);
-        dword_10AA293C = 0;
+    if (gUnkC8Ptr22) {
+        gUnkC8Ptr22->lpVtbl->field_1C(gUnkC8Ptr22);
+        gUnkC8Ptr22 = 0;
     }
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
-    dword_10AA2974 = 0;
+    gUnkC8Ptr33 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
 }
-// 10AA2934: using guessed type int dword_10AA2934;
-// 10AA2938: using guessed type int dword_10AA2938;
-// 10AA293C: using guessed type int dword_10AA293C;
-// 10AA2974: using guessed type int dword_10AA2974;
 
 //----- (10047050) --------------------------------------------------------
 int sub_10047050() {
-    gUnkC8Ptr1 = (void *)dword_10AA293C;
+    gUnkC8Ptr1 = gUnkC8Ptr22;
     return 0;
 }
-// 10AA293C: using guessed type int dword_10AA293C;
 
 //----- (10047060) --------------------------------------------------------
-int __cdecl sub_10047060(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_10047060(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2930 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA292C;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr19 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr18;
     return 0;
 }
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2930: using guessed type int dword_10AA2930;
 
 //----- (100470A0) --------------------------------------------------------
-int __cdecl sub_100470A0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100470A0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA2938 = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2934;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr21 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr20;
     return 0;
 }
-// 100470A0: using guessed type int __cdecl sub_100470A0(int);
-// 10AA2934: using guessed type int dword_10AA2934;
-// 10AA2938: using guessed type int dword_10AA2938;
 
 //----- (100470E0) --------------------------------------------------------
-int __cdecl sub_100470E0(int a1) {
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+int __cdecl sub_100470E0(unk1E214 *a1) {
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        (**(void(__thiscall ***)(void *, int))gUnkC8Ptr1)(gUnkC8Ptr1, 1);
-    dword_10AA293C = 0;
-    gUnkC8Ptr1 = (void *)dword_10AA2938;
+        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+    gUnkC8Ptr22 = 0;
+    gUnkC8Ptr1 = gUnkC8Ptr21;
     return 0;
 }
-// 10AA2938: using guessed type int dword_10AA2938;
-// 10AA293C: using guessed type int dword_10AA293C;
 
 //----- (10047120) --------------------------------------------------------
-int __cdecl sub_10047120(int a1) {
+int __cdecl sub_10047120(unk1E214 *a1) {
     sub_10045C90();
     if (dword_10AA26F0 > 0 && !LOWORD(dword_10AA26F4[0])) {
         memset((char *)dword_10AA26F4 + 2, 0, 0x18u);
@@ -53786,39 +53733,33 @@ int __cdecl sub_10047120(int a1) {
         memset(dword_10AA2740, 0, sizeof(dword_10AA2740));
     }
     dword_10AA28C4 = 0;
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr7)
-        (**(void(__thiscall ***)(int, int))gUnkC8Ptr7)(gUnkC8Ptr7, 1);
+        gUnkC8Ptr7->lpVtbl->field_0(gUnkC8Ptr7, 1);
     gUnkC8Ptr7 = 0;
     return 0;
 }
-// 10047120: using guessed type int __cdecl sub_10047120(int);
 // 10AA26F0: using guessed type int dword_10AA26F0;
 // 10AA26F4: using guessed type int dword_10AA26F4[];
 // 10AA270E: using guessed type __int16 word_10AA270E[];
-// 10AA296C: using guessed type int dword_10AA296C;
 
 //----- (100471B0) --------------------------------------------------------
-int __cdecl sub_100471B0(int a1) {
+int __cdecl sub_100471B0(unk1E214 *a1) {
     sub_10045C90();
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
+    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
     if (gUnkC8Ptr8)
-        (**(void(__thiscall ***)(int, int))gUnkC8Ptr8)(gUnkC8Ptr8, 1);
+        gUnkC8Ptr8->lpVtbl->field_0(gUnkC8Ptr8, 1);
     gUnkC8Ptr8 = 0;
     return 0;
 }
-// 100471B0: using guessed type int __cdecl sub_100471B0(int);
-// 10AA2970: using guessed type int dword_10AA2970;
 
 //----- (100471F0) --------------------------------------------------------
-int __cdecl sub_100471F0(int a1) {
+int __cdecl sub_100471F0(unk1E214 *a1) {
     if (!sub_1003E0E0())
         return 1;
     sub_10047120(a1);
     return -1;
 }
-// 10047120: using guessed type int __cdecl sub_10047120(int);
-// 100471F0: using guessed type int __cdecl sub_100471F0(int);
 
 //----- (10047210) --------------------------------------------------------
 int __cdecl sub_10047210(int a1) {
@@ -53829,7 +53770,7 @@ int __cdecl sub_10047210(int a1) {
         return -1;
     }
     if (sub_1003E0E0()) {
-        sub_10041AC0(a1);
+        sub_10041AC0((unk1E214 *)a1);
         goto LABEL_5;
     }
     return 1;
@@ -53838,7 +53779,7 @@ int __cdecl sub_10047210(int a1) {
 // 10AA33E4: using guessed type int dword_10AA33E4;
 
 //----- (10047250) --------------------------------------------------------
-int __cdecl sub_10047250(int a1) {
+int __cdecl sub_10047250(unk1E214 *a1) {
     if (dword_10AA2AD4) {
         sub_10042410(a1);
     LABEL_5:
@@ -53855,24 +53796,24 @@ int __cdecl sub_10047250(int a1) {
 // 10AA33E4: using guessed type int dword_10AA33E4;
 
 //----- (10047290) --------------------------------------------------------
-int __cdecl sub_10047290(int a1) {
-    int v1; // esi
+int __cdecl sub_10047290(unk1E214 *a1) {
+    unk1E214 *u1E214; // esi
 
     sub_1005FBC0(1);
-    if (dword_10AA2934) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2934 + 28))(dword_10AA2934);
-        dword_10AA2934 = 0;
+    if (gUnkC8Ptr20) {
+        gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+        gUnkC8Ptr20 = 0;
     }
-    if (dword_10AA2938) {
-        (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2938 + 28))(dword_10AA2938);
-        dword_10AA2938 = 0;
+    if (gUnkC8Ptr21) {
+        gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+        gUnkC8Ptr21 = 0;
     }
     if (dword_10AA28B0) {
-        v1 = a1;
+        u1E214 = a1;
         sub_10043260();
         dword_10AA28B0 = 0;
     } else {
-        v1 = a1;
+        u1E214 = a1;
         if (dword_10AA28B4) {
             sub_10043330();
             dword_10AA28B4 = 0;
@@ -53880,17 +53821,14 @@ int __cdecl sub_10047290(int a1) {
             sub_10045C90();
         }
     }
-    (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(v1 + 10984) + 28))(*(_DWORD *)(v1 + 10984));
-    if (dword_10AA293C)
-        (**(void(__thiscall ***)(int, int))dword_10AA293C)(dword_10AA293C, 1);
-    dword_10AA293C = 0;
+    u1E214->field_2AE8->lpVtbl->field_1C(u1E214->field_2AE8);
+    if (gUnkC8Ptr22)
+        gUnkC8Ptr22->lpVtbl->field_0(gUnkC8Ptr22, 1);
+    gUnkC8Ptr22 = 0;
     return 0;
 }
 // 10AA28B0: using guessed type int dword_10AA28B0;
 // 10AA28B4: using guessed type int dword_10AA28B4;
-// 10AA2934: using guessed type int dword_10AA2934;
-// 10AA2938: using guessed type int dword_10AA2938;
-// 10AA293C: using guessed type int dword_10AA293C;
 
 //----- (10047340) --------------------------------------------------------
 int sub_10047340() {
@@ -53914,8 +53852,8 @@ int __cdecl sub_10047360(int a1) {
         return 0;
     if ((*(_DWORD *)(a1 + 14416) & 0x1000000) != 0)
         return 0;
-    if (dword_10AA284C && (*(_DWORD *)&gUnk54Ptr->gap4[40] || *(_DWORD *)&gUnk54Ptr->gap4[44] ||
-                           *(_DWORD *)&gUnk54Ptr->gap4[48] || *(_DWORD *)&gUnk54Ptr->gap4[52])) {
+    if (dword_10AA284C && (gUnk54Ptr->field_2C || gUnk54Ptr->field_30 || gUnk54Ptr->field_34 ||
+                           gUnk54Ptr->field_38)) {
         *(_BYTE *)(a1 + 11108) = 4;
         result = 1;
     } else if ((v1 & 0x100) != 0) {
@@ -54102,7 +54040,6 @@ int __usercall sub_10047660 @<eax>(int result @<eax>) {
     return result;
 }
 // 100AC6AC: using guessed type char *off_100AC6AC;
-// 10A9E150: using guessed type int dword_10A9E150[];
 // 10AA2A48: using guessed type int dword_10AA2A48;
 
 //----- (100476C0) --------------------------------------------------------
@@ -54143,7 +54080,7 @@ unk1E214 *__thiscall meth_unk1E214_init(unk1E214 *this) {
   this->field_3836 = 0;
   meth_unk1A5E0_init(&this->field_3838);
   this->field_3838.field_1A99C[28] = 0;
-  this->lpVtbl = &unk1E214Vtbl1;
+  this->lpVtbl = &gUnk1E214Vtbl1;
   this->field_4 = 0;
   this->field_8 = 0;
   this->field_C = 0;
@@ -54185,7 +54122,7 @@ unk1E214 *__thiscall meth_1E214_100478A0(unk1E214 *this, char a2) {
 
 //----- (100478C0) --------------------------------------------------------
 void __thiscall meth_100478C0(unk1E214 *this) {
-  this->lpVtbl = &unk1E214Vtbl1;
+  this->lpVtbl = &gUnk1E214Vtbl1;
   meth_1005B8F0(&this->field_3838);
   `eh vector destructor iterator'(this->vectorUnk, 0x438u, 3, (void (__thiscall *)(void *))meth_unk00438_deinit);
 }
@@ -54224,17 +54161,17 @@ int __thiscall meth_unk1E214_100479D0(unk1E214 *this, int a2, int a3) {
 }
 
 //----- (10047A10) --------------------------------------------------------
-int __thiscall meth_10047A10(__int16 *this) {
+int __thiscall meth_unk1E214_10047A10(unk1E214 *this) {
   int v2; // eax
   int v3; // esi
 
-  if (*((_DWORD *)this + 2651)) {
-      v2 = this[148];
-      v3 = *((_DWORD *)this + 30852);
-      this[61702] = this[v2 + 5408];
-      (*(void(__thiscall **)(__int16 *, int))(*(_DWORD *)this + 24))(this, 16 * v2 + v3);
+  if (this->field_296C) {
+      v2 = this->field_128;
+      v3 = this->last;
+      this->field_3838.field_1A99C[28] = *(_WORD *)&this->field_2A40[2 * v2];
+      this->lpVtbl->field_18(this, (int *)(16 * v2 + v3));
   } else {
-      (*(void(__thiscall **)(__int16 *))(*(_DWORD *)this + 28))(this);
+      this->lpVtbl->field_1C(this);
   }
   return 1;
 }
@@ -54523,24 +54460,24 @@ __int16 __thiscall meth_10047EB0(int this, const char *a2, int a3, char a4, _DWO
 }
 
 //----- (10047FB0) --------------------------------------------------------
-__int16 __thiscall meth_10047FB0(
-    int this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, __int16 a9) {
+__int16 __thiscall meth_unk1E214_10047FB0(
+    unk1E214 *this, int a2, int flags, int a4, int a5, int a6, int a7, int a8, __int16 a9) {
   int v9;         // edx
   int v10;        // eax
   __int16 result; // ax
 
-  *(_DWORD *)(this + 10984) = a2;
-  v9 = *(_DWORD *)(this + 36);
-  *(_DWORD *)(this + 28) |= a5;
-  v10 = *(_DWORD *)(this + 40);
-  *(_DWORD *)(this + 36) = a6 | v9;
-  *(_DWORD *)(this + 40) = a7 | v10;
-  *(_DWORD *)(this + 10600) = a8;
-  *(_DWORD *)(this + 64) = a4;
+  this->field_2AE8 = (unk000C8 *)a2;
+  v9 = this->field_24;
+  this->field_1C |= a5;
+  v10 = this->field_28;
+  this->field_24 = a6 | v9;
+  this->field_28 = a7 | v10;
+  this->field_2968 = a8;
+  this->field_40 = a4;
   result = a9;
-  *(_DWORD *)(this + 60) = a3;
-  *(_WORD *)(this + 10816) = a9;
-  *(_WORD *)(this + 123404) = a9;
+  this->field_3C = flags;
+  *(_WORD *)this->field_2A40 = a9;
+  this->field_3838.field_1A99C[28] = a9;
   return result;
 }
 
@@ -54764,12 +54701,12 @@ LABEL_9:
 unk00348 *__thiscall meth_10048470(unk00348 *this) {
   this->field_10 = 0;
   this->field_14 = 0;
-  this->mask_338 = 0;
+  this->flags_338 = 0;
   this->field_33C = 0.0;
   this->lpVtbl = &gUnk00348Vtbl;
-  *(_DWORD *)this->gap4 = 0;
-  *(_DWORD *)&this->gap4[4] = 0;
-  *(_DWORD *)&this->gap4[8] = 0;
+  *(_DWORD *)this->field_4 = 0;
+  *(_DWORD *)&this->field_4[4] = 0;
+  *(_DWORD *)&this->field_4[8] = 0;
   memset(this->field_18, 0, 0x320u);
   this->field_340 = 0;
   this->last = 0;
@@ -54832,10 +54769,10 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
   int v19;                        // [esp+14h] [ebp-4h]
 
   v2 = 0;
-  v3 = *(void (**)(void))this->gap4;
+  v3 = *(void (**)(void))this->field_4;
   if (v3)
       v3();
-  v4 = *(void (**)(void)) & this->gap4[8];
+  v4 = *(void (**)(void)) & this->field_4[8];
   if (v4)
       v4();
   word_10AA2870 = 0;
@@ -54910,7 +54847,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
       result = 0;
   } else {
   LABEL_36:
-      v16 = *(void (**)(void)) & this->gap4[4];
+      v16 = *(void (**)(void)) & this->field_4[4];
       if (v16)
           v16();
       result = 1;
@@ -55150,11 +55087,11 @@ int __thiscall meth_10048AA0(unsigned __int16 *this) {
 // 10AA286C: using guessed type __int16 word_10AA286C;
 
 //----- (10048B20) --------------------------------------------------------
-void __stdcall sub_10048B20(int a1) {
+void __stdcall meth_unk000C8_10048B20(int a1) {
   int waitTicksAdd;  // esi
   DWORD waitTicks;   // esi
   char **ppFilepath; // esi
-  void *v4;          // esi
+  Iostream_init *v4; // esi
 
   waitTicksAdd = 0;
   if (dword_10AA2854 == 2) {
@@ -55169,39 +55106,39 @@ void __stdcall sub_10048B20(int a1) {
       dword_100AC300 = 0;
       gUnkC8Ptr1 = 0;
       sub_1005F530();
-      ppFilepath = &g_aImagesWork1aBmFilepath;
+      ppFilepath = &gImagesWork1aBmFilepath;
       do {
           if (*ppFilepath)
               operator delete(*ppFilepath);
           *ppFilepath = 0;
-          ppFilepath += 29;
+          ppFilepath += 0x1D;
       } while ((int)ppFilepath < (int)&unk_10AA2584);
   }
-  if (dword_10AA2940) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2940 + 28))(dword_10AA2940);
-      if (dword_10AA2940)
-          (**(void(__thiscall ***)(int, int))dword_10AA2940)(dword_10AA2940, 1);
-      dword_10AA2940 = 0;
+  if (gUnkC8Ptr11) {
+      gUnkC8Ptr11->lpVtbl->field_1C(gUnkC8Ptr11);
+      if (gUnkC8Ptr11)
+          gUnkC8Ptr11->lpVtbl->field_0(gUnkC8Ptr11, 1);
+      gUnkC8Ptr11 = 0;
       dword_10A9CFFC = 0;
   }
-  if (dword_10AA290C) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA290C + 28))(dword_10AA290C);
-      if (dword_10AA290C)
-          (**(void(__thiscall ***)(int, int))dword_10AA290C)(dword_10AA290C, 1);
-      dword_10AA290C = 0;
+  if (gUnkC8Ptr12) {
+      gUnkC8Ptr12->lpVtbl->field_1C(gUnkC8Ptr12);
+      if (gUnkC8Ptr12)
+          gUnkC8Ptr12->lpVtbl->field_0(gUnkC8Ptr12, 1);
+      gUnkC8Ptr12 = 0;
       dword_10AA29AC = 0;
   }
-  if (dword_10AA2910) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2910 + 28))(dword_10AA2910);
-      if (dword_10AA2910)
-          (**(void(__thiscall ***)(int, int))dword_10AA2910)(dword_10AA2910, 1);
-      dword_10AA2910 = 0;
+  if (gUnkC8Ptr13) {
+      gUnkC8Ptr13->lpVtbl->field_1C(gUnkC8Ptr13);
+      if (gUnkC8Ptr13)
+          gUnkC8Ptr13->lpVtbl->field_0(gUnkC8Ptr13, 1);
+      gUnkC8Ptr13 = 0;
   }
-  if (dword_10AA2914) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2914 + 28))(dword_10AA2914);
-      if (dword_10AA2914)
-          (**(void(__thiscall ***)(int, int))dword_10AA2914)(dword_10AA2914, 1);
-      dword_10AA2914 = 0;
+  if (gUnkC8Ptr14) {
+      gUnkC8Ptr14->lpVtbl->field_1C(gUnkC8Ptr14);
+      if (gUnkC8Ptr14)
+          gUnkC8Ptr14->lpVtbl->field_0(gUnkC8Ptr14, 1);
+      gUnkC8Ptr14 = 0;
       dword_10AA29B4 = 0;
   }
   if (gUnkC8Ptr4) {
@@ -55216,133 +55153,133 @@ void __stdcall sub_10048B20(int a1) {
           gUnkC8Ptr5->lpVtbl->field_0(gUnkC8Ptr5, 1);
       gUnkC8Ptr5 = 0;
   }
-  if (dword_10AA2920) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2920 + 28))(dword_10AA2920);
-      if (dword_10AA2920)
-          (**(void(__thiscall ***)(int, int))dword_10AA2920)(dword_10AA2920, 1);
-      dword_10AA2920 = 0;
+  if (gUnkC8Ptr15) {
+      gUnkC8Ptr15->lpVtbl->field_1C(gUnkC8Ptr15);
+      if (gUnkC8Ptr15)
+          gUnkC8Ptr15->lpVtbl->field_0(gUnkC8Ptr15, 1);
+      gUnkC8Ptr15 = 0;
       dword_10AA29A8 = 0;
   }
-  if (dword_10AA2924) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2924 + 28))(dword_10AA2924);
-      if (dword_10AA2924)
-          (**(void(__thiscall ***)(int, int))dword_10AA2924)(dword_10AA2924, 1);
-      dword_10AA2924 = 0;
+  if (gUnkC8Ptr16) {
+      gUnkC8Ptr16->lpVtbl->field_1C(gUnkC8Ptr16);
+      if (gUnkC8Ptr16)
+          gUnkC8Ptr16->lpVtbl->field_0(gUnkC8Ptr16, 1);
+      gUnkC8Ptr16 = 0;
   }
-  if (dword_10AA2928) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2928 + 28))(dword_10AA2928);
-      if (dword_10AA2928)
-          (**(void(__thiscall ***)(int, int))dword_10AA2928)(dword_10AA2928, 1);
-      dword_10AA2928 = 0;
+  if (gUnkC8Ptr17) {
+      gUnkC8Ptr17->lpVtbl->field_1C(gUnkC8Ptr17);
+      if (gUnkC8Ptr17)
+          gUnkC8Ptr17->lpVtbl->field_0(gUnkC8Ptr17, 1);
+      gUnkC8Ptr17 = 0;
       dword_10AA29C0 = 0;
       dword_10AA29CC = 0;
       dword_10AA29F4 = 0;
   }
-  if (dword_10AA292C) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA292C + 28))(dword_10AA292C);
-      if (dword_10AA292C)
-          (**(void(__thiscall ***)(int, int))dword_10AA292C)(dword_10AA292C, 1);
-      dword_10AA292C = 0;
+  if (gUnkC8Ptr18) {
+      gUnkC8Ptr18->lpVtbl->field_1C(gUnkC8Ptr18);
+      if (gUnkC8Ptr18)
+          gUnkC8Ptr18->lpVtbl->field_0(gUnkC8Ptr18, 1);
+      gUnkC8Ptr18 = 0;
       dword_10AA29B0 = 0;
   }
-  if (dword_10AA2930) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2930 + 28))(dword_10AA2930);
-      if (dword_10AA2930)
-          (**(void(__thiscall ***)(int, int))dword_10AA2930)(dword_10AA2930, 1);
-      dword_10AA2930 = 0;
+  if (gUnkC8Ptr19) {
+      gUnkC8Ptr19->lpVtbl->field_1C(gUnkC8Ptr19);
+      if (gUnkC8Ptr19)
+          gUnkC8Ptr19->lpVtbl->field_0(gUnkC8Ptr19, 1);
+      gUnkC8Ptr19 = 0;
   }
-  if (dword_10AA2934) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2934 + 28))(dword_10AA2934);
-      if (dword_10AA2934)
-          (**(void(__thiscall ***)(int, int))dword_10AA2934)(dword_10AA2934, 1);
-      dword_10AA2934 = 0;
+  if (gUnkC8Ptr20) {
+      gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+      if (gUnkC8Ptr20)
+          gUnkC8Ptr20->lpVtbl->field_0(gUnkC8Ptr20, 1);
+      gUnkC8Ptr20 = 0;
   }
-  if (dword_10AA2938) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2938 + 28))(dword_10AA2938);
-      if (dword_10AA2938)
-          (**(void(__thiscall ***)(int, int))dword_10AA2938)(dword_10AA2938, 1);
-      dword_10AA2938 = 0;
+  if (gUnkC8Ptr21) {
+      gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+      if (gUnkC8Ptr21)
+          gUnkC8Ptr21->lpVtbl->field_0(gUnkC8Ptr21, 1);
+      gUnkC8Ptr21 = 0;
   }
-  if (dword_10AA293C) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA293C + 28))(dword_10AA293C);
-      if (dword_10AA293C)
-          (**(void(__thiscall ***)(int, int))dword_10AA293C)(dword_10AA293C, 1);
-      dword_10AA293C = 0;
+  if (gUnkC8Ptr22) {
+      gUnkC8Ptr22->lpVtbl->field_1C(gUnkC8Ptr22);
+      if (gUnkC8Ptr22)
+          gUnkC8Ptr22->lpVtbl->field_0(gUnkC8Ptr22, 1);
+      gUnkC8Ptr22 = 0;
   }
-  if (dword_10AA2940) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2940 + 28))(dword_10AA2940);
-      if (dword_10AA2940)
-          (**(void(__thiscall ***)(int, int))dword_10AA2940)(dword_10AA2940, 1);
-      dword_10AA2940 = 0;
+  if (gUnkC8Ptr11) {
+      gUnkC8Ptr11->lpVtbl->field_1C(gUnkC8Ptr11);
+      if (gUnkC8Ptr11)
+          gUnkC8Ptr11->lpVtbl->field_0(gUnkC8Ptr11, 1);
+      gUnkC8Ptr11 = 0;
   }
-  if (dword_10AA2944) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2944 + 28))(dword_10AA2944);
-      if (dword_10AA2944)
-          (**(void(__thiscall ***)(int, int))dword_10AA2944)(dword_10AA2944, 1);
-      dword_10AA2944 = 0;
+  if (gUnkC8Ptr24) {
+      gUnkC8Ptr24->lpVtbl->field_1C(gUnkC8Ptr24);
+      if (gUnkC8Ptr24)
+          gUnkC8Ptr24->lpVtbl->field_0(gUnkC8Ptr24, 1);
+      gUnkC8Ptr24 = 0;
   }
   if (gUnkC8Ptr10) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr10 + 28))(gUnkC8Ptr10);
+      gUnkC8Ptr10->lpVtbl->field_1C(gUnkC8Ptr10);
       if (gUnkC8Ptr10)
-          (**(void(__thiscall ***)(int, int))gUnkC8Ptr10)(gUnkC8Ptr10, 1);
+          gUnkC8Ptr10->lpVtbl->field_0(gUnkC8Ptr10, 1);
       gUnkC8Ptr10 = 0;
       dword_10AA29B8 = 0;
       dword_10AA29D8 = 0;
       dword_10AA29D4 = 0;
       dword_10AA2880 = 0;
   }
-  if (dword_10AA294C) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA294C + 28))(dword_10AA294C);
-      if (dword_10AA294C)
-          (**(void(__thiscall ***)(int, int))dword_10AA294C)(dword_10AA294C, 1);
-      dword_10AA294C = 0;
+  if (gUnkC8Ptr25) {
+      gUnkC8Ptr25->lpVtbl->field_1C(gUnkC8Ptr25);
+      if (gUnkC8Ptr25)
+          gUnkC8Ptr25->lpVtbl->field_0(gUnkC8Ptr25, 1);
+      gUnkC8Ptr25 = 0;
       dword_10AA29B8 = 0;
   }
-  if (dword_10AA2950) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2950 + 28))(dword_10AA2950);
-      if (dword_10AA2950)
-          (**(void(__thiscall ***)(int, int))dword_10AA2950)(dword_10AA2950, 1);
-      dword_10AA2950 = 0;
+  if (gUnkC8Ptr26) {
+      gUnkC8Ptr26->lpVtbl->field_1C(gUnkC8Ptr26);
+      if (gUnkC8Ptr26)
+          gUnkC8Ptr26->lpVtbl->field_0(gUnkC8Ptr26, 1);
+      gUnkC8Ptr26 = 0;
   }
-  if (dword_10AA2954) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2954 + 28))(dword_10AA2954);
-      if (dword_10AA2954)
-          (**(void(__thiscall ***)(int, int))dword_10AA2954)(dword_10AA2954, 1);
-      dword_10AA2954 = 0;
+  if (gUnkC8Ptr27) {
+      gUnkC8Ptr27->lpVtbl->field_1C(gUnkC8Ptr27);
+      if (gUnkC8Ptr27)
+          gUnkC8Ptr27->lpVtbl->field_0(gUnkC8Ptr27, 1);
+      gUnkC8Ptr27 = 0;
       dword_10AA29E4 = 0;
-      dword_10AA29E0 = 0;
+      gUnk1E214 = 0;
   }
-  if (dword_10AA2958) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2958 + 28))(dword_10AA2958);
-      if (dword_10AA2958)
-          (**(void(__thiscall ***)(int, int))dword_10AA2958)(dword_10AA2958, 1);
-      dword_10AA2958 = 0;
+  if (gUnkC8Ptr28) {
+      gUnkC8Ptr28->lpVtbl->field_1C(gUnkC8Ptr28);
+      if (gUnkC8Ptr28)
+          gUnkC8Ptr28->lpVtbl->field_0(gUnkC8Ptr28, 1);
+      gUnkC8Ptr28 = 0;
       dword_10AA29A8 = 0;
   }
-  if (dword_10AA298C) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA298C + 28))(dword_10AA298C);
-      if (dword_10AA298C)
-          (**(void(__thiscall ***)(int, int))dword_10AA298C)(dword_10AA298C, 1);
-      dword_10AA298C = 0;
+  if (gUnkC8Ptr29) {
+      gUnkC8Ptr29->lpVtbl->field_1C(gUnkC8Ptr29);
+      if (gUnkC8Ptr29)
+          gUnkC8Ptr29->lpVtbl->field_0(gUnkC8Ptr29, 1);
+      gUnkC8Ptr29 = 0;
       dword_10AA29E8 = 0;
   }
-  if (dword_10AA295C) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA295C + 28))(dword_10AA295C);
-      if (dword_10AA295C)
-          (**(void(__thiscall ***)(int, int))dword_10AA295C)(dword_10AA295C, 1);
-      dword_10AA295C = 0;
+  if (gUnkC8Ptr30) {
+      gUnkC8Ptr30->lpVtbl->field_1C(gUnkC8Ptr30);
+      if (gUnkC8Ptr30)
+          gUnkC8Ptr30->lpVtbl->field_0(gUnkC8Ptr30, 1);
+      gUnkC8Ptr30 = 0;
   }
-  if (dword_10AA2960) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2960 + 28))(dword_10AA2960);
-      if (dword_10AA2960)
-          (**(void(__thiscall ***)(int, int))dword_10AA2960)(dword_10AA2960, 1);
-      dword_10AA2960 = 0;
+  if (gUnkC8Ptr31) {
+      gUnkC8Ptr31->lpVtbl->field_1C(gUnkC8Ptr31);
+      if (gUnkC8Ptr31)
+          gUnkC8Ptr31->lpVtbl->field_0(gUnkC8Ptr31, 1);
+      gUnkC8Ptr31 = 0;
   }
-  if (dword_10AA2964) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2964 + 28))(dword_10AA2964);
-      if (dword_10AA2964)
-          (**(void(__thiscall ***)(int, int))dword_10AA2964)(dword_10AA2964, 1);
-      dword_10AA2964 = 0;
+  if (gUnkC8Ptr32) {
+      gUnkC8Ptr32->lpVtbl->field_1C(gUnkC8Ptr32);
+      if (gUnkC8Ptr32)
+          gUnkC8Ptr32->lpVtbl->field_0(gUnkC8Ptr32, 1);
+      gUnkC8Ptr32 = 0;
   }
   if (g_unkC8Ptr0) {
       g_unkC8Ptr0->lpVtbl->field_1C(g_unkC8Ptr0);
@@ -55353,65 +55290,65 @@ void __stdcall sub_10048B20(int a1) {
       dword_10AA29D0 = 0;
   }
   if (gUnkC8Ptr7) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr7 + 28))(gUnkC8Ptr7);
+      gUnkC8Ptr7->lpVtbl->field_1C(gUnkC8Ptr7);
       if (gUnkC8Ptr7)
-          (**(void(__thiscall ***)(int, int))gUnkC8Ptr7)(gUnkC8Ptr7, 1);
+          gUnkC8Ptr7->lpVtbl->field_0(gUnkC8Ptr7, 1);
       gUnkC8Ptr7 = 0;
   }
   if (gUnkC8Ptr8) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr8 + 28))(gUnkC8Ptr8);
+      gUnkC8Ptr8->lpVtbl->field_1C(gUnkC8Ptr8);
       if (gUnkC8Ptr8)
-          (**(void(__thiscall ***)(int, int))gUnkC8Ptr8)(gUnkC8Ptr8, 1);
+          gUnkC8Ptr8->lpVtbl->field_0(gUnkC8Ptr8, 1);
       gUnkC8Ptr8 = 0;
   }
-  if (dword_10AA2974) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2974 + 28))(dword_10AA2974);
-      if (dword_10AA2974)
-          (**(void(__thiscall ***)(int, int))dword_10AA2974)(dword_10AA2974, 1);
-      dword_10AA2974 = 0;
+  if (gUnkC8Ptr33) {
+      gUnkC8Ptr33->lpVtbl->field_1C(gUnkC8Ptr33);
+      if (gUnkC8Ptr33)
+          gUnkC8Ptr33->lpVtbl->field_0(gUnkC8Ptr33, 1);
+      gUnkC8Ptr33 = 0;
   }
   if (gUnkC8Ptr3) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr3 + 28))(gUnkC8Ptr3);
+      gUnkC8Ptr3->lpVtbl->field_1C(gUnkC8Ptr3);
       if (gUnkC8Ptr3)
-          (**(void(__thiscall ***)(int, int))gUnkC8Ptr3)(gUnkC8Ptr3, 1);
+          gUnkC8Ptr3->lpVtbl->field_0(gUnkC8Ptr3, 1);
       gUnkC8Ptr3 = 0;
   }
   if (gUnkC8Ptr2) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr2 + 28))(gUnkC8Ptr2);
+      gUnkC8Ptr2->lpVtbl->field_1C(gUnkC8Ptr2);
       if (gUnkC8Ptr2)
-          (**(void(__thiscall ***)(int, int))gUnkC8Ptr2)(gUnkC8Ptr2, 1);
+          gUnkC8Ptr2->lpVtbl->field_0(gUnkC8Ptr2, 1);
       gUnkC8Ptr2 = 0;
   }
-  if (dword_10AA2984) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2984 + 28))(dword_10AA2984);
-      if (dword_10AA2984)
-          (**(void(__thiscall ***)(int, int))dword_10AA2984)(dword_10AA2984, 1);
-      dword_10AA2984 = 0;
+  if (gUnkC8Ptr34) {
+      gUnkC8Ptr34->lpVtbl->field_1C(gUnkC8Ptr34);
+      if (gUnkC8Ptr34)
+          gUnkC8Ptr34->lpVtbl->field_0(gUnkC8Ptr34, 1);
+      gUnkC8Ptr34 = 0;
   }
-  if (dword_10AA2988) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2988 + 28))(dword_10AA2988);
-      if (dword_10AA2988)
-          (**(void(__thiscall ***)(int, int))dword_10AA2988)(dword_10AA2988, 1);
-      dword_10AA2988 = 0;
+  if (gUnkC8Ptr35) {
+      gUnkC8Ptr35->lpVtbl->field_1C(gUnkC8Ptr35);
+      if (gUnkC8Ptr35)
+          gUnkC8Ptr35->lpVtbl->field_0(gUnkC8Ptr35, 1);
+      gUnkC8Ptr35 = 0;
   }
-  if (dword_10AA2990) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2990 + 28))(dword_10AA2990);
-      if (dword_10AA2990)
-          (**(void(__thiscall ***)(int, int))dword_10AA2990)(dword_10AA2990, 1);
-      dword_10AA2990 = 0;
+  if (gUnkC8Ptr36) {
+      gUnkC8Ptr36->lpVtbl->field_1C(gUnkC8Ptr36);
+      if (gUnkC8Ptr36)
+          gUnkC8Ptr36->lpVtbl->field_0(gUnkC8Ptr36, 1);
+      gUnkC8Ptr36 = 0;
       dword_10AA29F0 = 0;
   }
-  if (dword_10AA2994) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)dword_10AA2994 + 28))(dword_10AA2994);
-      if (dword_10AA2994)
-          (**(void(__thiscall ***)(int, int))dword_10AA2994)(dword_10AA2994, 1);
-      dword_10AA2994 = 0;
+  if (gUnkC8Ptr37) {
+      gUnkC8Ptr37->lpVtbl->field_1C(gUnkC8Ptr37);
+      if (gUnkC8Ptr37)
+          gUnkC8Ptr37->lpVtbl->field_0(gUnkC8Ptr37, 1);
+      gUnkC8Ptr37 = 0;
       dword_10AA29EC = 0;
   }
   if (gUnkC8Ptr9) {
-      (*(void(__thiscall **)(int))(*(_DWORD *)gUnkC8Ptr9 + 28))(gUnkC8Ptr9);
+      gUnkC8Ptr9->lpVtbl->field_1C(gUnkC8Ptr9);
       if (gUnkC8Ptr9)
-          (**(void(__thiscall ***)(int, int))gUnkC8Ptr9)(gUnkC8Ptr9, 1);
+          gUnkC8Ptr9->lpVtbl->field_0(gUnkC8Ptr9, 1);
       gUnkC8Ptr9 = 0;
   }
   if (!a1) {
@@ -55434,38 +55371,6 @@ void __stdcall sub_10048B20(int a1) {
 // 10A9CFFC: using guessed type int dword_10A9CFFC;
 // 10AA2854: using guessed type int dword_10AA2854;
 // 10AA2880: using guessed type int dword_10AA2880;
-// 10AA290C: using guessed type int dword_10AA290C;
-// 10AA2910: using guessed type int dword_10AA2910;
-// 10AA2914: using guessed type int dword_10AA2914;
-// 10AA2920: using guessed type int dword_10AA2920;
-// 10AA2924: using guessed type int dword_10AA2924;
-// 10AA2928: using guessed type int dword_10AA2928;
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2930: using guessed type int dword_10AA2930;
-// 10AA2934: using guessed type int dword_10AA2934;
-// 10AA2938: using guessed type int dword_10AA2938;
-// 10AA293C: using guessed type int dword_10AA293C;
-// 10AA2940: using guessed type int dword_10AA2940;
-// 10AA2944: using guessed type int dword_10AA2944;
-// 10AA2948: using guessed type int dword_10AA2948;
-// 10AA294C: using guessed type int dword_10AA294C;
-// 10AA2950: using guessed type int dword_10AA2950;
-// 10AA2954: using guessed type int dword_10AA2954;
-// 10AA2958: using guessed type int dword_10AA2958;
-// 10AA295C: using guessed type int dword_10AA295C;
-// 10AA2960: using guessed type int dword_10AA2960;
-// 10AA2964: using guessed type int dword_10AA2964;
-// 10AA296C: using guessed type int dword_10AA296C;
-// 10AA2970: using guessed type int dword_10AA2970;
-// 10AA2974: using guessed type int dword_10AA2974;
-// 10AA297C: using guessed type int dword_10AA297C;
-// 10AA2980: using guessed type int dword_10AA2980;
-// 10AA2984: using guessed type int dword_10AA2984;
-// 10AA2988: using guessed type int dword_10AA2988;
-// 10AA298C: using guessed type int dword_10AA298C;
-// 10AA2990: using guessed type int dword_10AA2990;
-// 10AA2994: using guessed type int dword_10AA2994;
-// 10AA2998: using guessed type int dword_10AA2998;
 // 10AA29A8: using guessed type int dword_10AA29A8;
 // 10AA29AC: using guessed type int dword_10AA29AC;
 // 10AA29B0: using guessed type int dword_10AA29B0;
@@ -55486,87 +55391,87 @@ void __stdcall sub_10048B20(int a1) {
 
 //----- (100491B0) --------------------------------------------------------
 int __cdecl sub_100491B0(unk000C8 *a1) {
-  unsigned __int16 v1; // ax
-  unk00348 *v2;        // eax
-  unk00348 *v3;        // esi
-  unk1E214 *v4;        // eax
-  unk1E214 *v5;        // ebp
-  unk1E214 *v6;        // eax
-  unk1E214 *v7;        // ebp
-  unk1E214 *v8;        // eax
-  unk1E214 *v9;        // ebp
-  unk1E214Vtbl *v10;   // ebx
-  LPCSTR v11;          // eax
-  unk1E214 *v12;       // eax
-  unk1E214 *v13;       // ebp
-  unk1E214Vtbl *v14;   // ebx
-  LPCSTR v15;          // eax
-  WORD v16;            // dx
-  unk1E214 *v17;       // eax
-  unk1E214 *v18;       // ebp
-  unk1E214 *v19;       // eax
-  unk1E214 *v20;       // ebp
-  unk1E214Vtbl *v21;   // ebx
-  LPCSTR v22;          // eax
-  WORD v23;            // dx
-  unk1E214 *v24;       // eax
-  unk1E214 *v25;       // ebp
-  unk1E214 *v26;       // eax
-  unk1E214 *v27;       // ebp
-  unk1E214Vtbl *v28;   // ebx
-  LPCSTR v29;          // eax
-  WORD v30;            // dx
-  unk1E214 *v31;       // eax
-  unk1E214 *v32;       // ebp
-  unk1E214 *v33;       // eax
-  unk1E214 *v34;       // ebp
-  unk1E214Vtbl *v35;   // ebx
-  LPCSTR v36;          // eax
-  WORD v37;            // dx
-  unk1E214 *v38;       // eax
-  unk1E214 *v39;       // ebp
-  unk1E214 *v40;       // eax
-  unk1E214 *v41;       // ebp
-  unk1E214Vtbl *v42;   // ebx
-  LPCSTR v43;          // eax
-  WORD v44;            // dx
-  unk1E214 *v45;       // eax
-  unk1E214 *v46;       // ebp
-  unk1E214 *v47;       // eax
-  unk1E214 *v48;       // ebp
-  unk1E214Vtbl *v49;   // ebx
-  LPCSTR v50;          // eax
-  WORD v51;            // dx
-  unk1E214 *v52;       // eax
-  unk1E214 *v53;       // ebp
-  unk1E214Vtbl *v54;   // ebx
-  LPCSTR v55;          // eax
-  unk1E214 *v56;       // eax
-  unk1E214 *v57;       // ebp
-  unk1E214Vtbl *v58;   // ebx
-  int result;          // eax
-  float v60;           // [esp+268h] [ebp-34h]
-  float v61;           // [esp+268h] [ebp-34h]
-  float v62;           // [esp+268h] [ebp-34h]
-  float v63;           // [esp+268h] [ebp-34h]
-  float v64;           // [esp+268h] [ebp-34h]
-  float v65;           // [esp+268h] [ebp-34h]
+  WORD v1;           // ax
+  unk00348 *v2;      // eax
+  unk00348 *v3;      // esi
+  unk1E214 *v4;      // eax
+  unk1E214 *v5;      // ebp
+  unk1E214 *v6;      // eax
+  unk1E214 *v7;      // ebp
+  unk1E214 *v8;      // eax
+  unk1E214 *v9;      // ebp
+  unk1E214Vtbl *v10; // ebx
+  LPCSTR v11;        // eax
+  unk1E214 *v12;     // eax
+  unk1E214 *v13;     // ebp
+  unk1E214Vtbl *v14; // ebx
+  LPCSTR v15;        // eax
+  WORD v16;          // dx
+  unk1E214 *v17;     // eax
+  unk1E214 *v18;     // ebp
+  unk1E214 *v19;     // eax
+  unk1E214 *v20;     // ebp
+  unk1E214Vtbl *v21; // ebx
+  LPCSTR v22;        // eax
+  WORD v23;          // dx
+  unk1E214 *v24;     // eax
+  unk1E214 *v25;     // ebp
+  unk1E214 *v26;     // eax
+  unk1E214 *v27;     // ebp
+  unk1E214Vtbl *v28; // ebx
+  LPCSTR v29;        // eax
+  WORD v30;          // dx
+  unk1E214 *v31;     // eax
+  unk1E214 *v32;     // ebp
+  unk1E214 *v33;     // eax
+  unk1E214 *v34;     // ebp
+  unk1E214Vtbl *v35; // ebx
+  LPCSTR v36;        // eax
+  WORD v37;          // dx
+  unk1E214 *v38;     // eax
+  unk1E214 *v39;     // ebp
+  unk1E214 *v40;     // eax
+  unk1E214 *v41;     // ebp
+  unk1E214Vtbl *v42; // ebx
+  LPCSTR v43;        // eax
+  WORD v44;          // dx
+  unk1E214 *v45;     // eax
+  unk1E214 *v46;     // ebp
+  unk1E214 *v47;     // eax
+  unk1E214 *v48;     // ebp
+  unk1E214Vtbl *v49; // ebx
+  LPCSTR v50;        // eax
+  WORD v51;          // dx
+  unk1E214 *v52;     // eax
+  unk1E214 *v53;     // ebp
+  unk1E214Vtbl *v54; // ebx
+  LPCSTR v55;        // eax
+  unk1E214 *v56;     // eax
+  unk1E214 *v57;     // ebp
+  unk1E214Vtbl *v58; // ebx
+  int result;        // eax
+  float v60;         // [esp+268h] [ebp-34h]
+  float v61;         // [esp+268h] [ebp-34h]
+  float v62;         // [esp+268h] [ebp-34h]
+  float v63;         // [esp+268h] [ebp-34h]
+  float v64;         // [esp+268h] [ebp-34h]
+  float v65;         // [esp+268h] [ebp-34h]
 
   v1 = a1->field_10;
-  HIWORD(a1->field_10) = 0;
+  *(&a1->field_10 + 1) = 0;
   *(&a1->field_6C + v1) = 1;
   v2 = (unk00348 *)operator new(0x348u);
   if (v2)
       v3 = meth_10048470(v2);
   else
       v3 = 0;
-  a1->field_14[LOWORD(a1->field_10)] = v3;
+  a1->field_14[a1->field_10] = v3;
   if (!v3)
       sub_1003E260(4);
-  ++LOWORD(a1->field_10);
+  ++a1->field_10;
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 125.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -55596,7 +55501,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   if (!v9)
       sub_1003E260(4);
   v10 = v9->lpVtbl;
-  v9->lpVtbl->field_38(v9, a1, v3->mask_338, 10.0, 1048585, 2, 5, 1, -1);
+  v9->lpVtbl->field_38(v9, a1, v3->flags_338, 10.0, 0x100009, 2, 5, 1, -1);
   v9->field_3838.field_1A99C[28] = 3;
   v11 = GetStringWithIndex(1u);
   v10->field_34(v9, v11, 1, 1, &unk_100AB508);
@@ -55610,7 +55515,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   if (!v13)
       sub_1003E260(4);
   v14 = v13->lpVtbl;
-  v13->lpVtbl->field_38(v13, a1, v3->mask_338, v3->field_33C, 1056769, 2, 5, 1, -1);
+  v13->lpVtbl->field_38(v13, a1, v3->flags_338, v3->field_33C, 0x102001, 2, 5, 1, -1);
   v13->field_C = sub_10047360;
   v13->field_8 = (int(__cdecl *)())meth_10045900;
   v13->field_3838.field_1A99C[28] = 3;
@@ -55641,7 +55546,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v21 = v20->lpVtbl;
   v60 = v3->field_33C - -19.0;
-  v20->lpVtbl->field_38(v20, a1, v3->mask_338, v60, 1056769, 2, 5, 1, -1);
+  v20->lpVtbl->field_38(v20, a1, v3->flags_338, v60, 1056769, 2, 5, 1, -1);
   v20->field_C = sub_100474B0;
   v20->field_8 = sub_10043BF0;
   v20->field_3838.field_1A99C[28] = 3;
@@ -55672,7 +55577,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v28 = v27->lpVtbl;
   v61 = v3->field_33C - -38.0;
-  v27->lpVtbl->field_38(v27, a1, v3->mask_338, v61, 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, a1, v3->flags_338, v61, 1056769, 2, 5, 1, -1);
   v27->field_C = sub_100474B0;
   v27->field_8 = sub_10044B90;
   v27->field_3838.field_1A99C[28] = 3;
@@ -55703,7 +55608,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v35 = v34->lpVtbl;
   v62 = v3->field_33C - -57.0;
-  v34->lpVtbl->field_38(v34, a1, v3->mask_338, v62, 1056769, 2, 5, 1, -1);
+  v34->lpVtbl->field_38(v34, a1, v3->flags_338, v62, 1056769, 2, 5, 1, -1);
   v34->field_C = sub_10047360;
   v34->field_8 = (int(__cdecl *)())meth_10044F50;
   v34->field_3838.field_1A99C[28] = 3;
@@ -55734,7 +55639,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v42 = v41->lpVtbl;
   v63 = v3->field_33C - -76.0;
-  v41->lpVtbl->field_38(v41, a1, v3->mask_338, v63, 1056769, 2, 5, 1, -1);
+  v41->lpVtbl->field_38(v41, a1, v3->flags_338, v63, 1056769, 2, 5, 1, -1);
   v41->field_C = sub_100474B0;
   v41->field_8 = sub_100451E0;
   v41->field_3838.field_1A99C[28] = 3;
@@ -55765,7 +55670,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v49 = v48->lpVtbl;
   v64 = v3->field_33C - -95.0;
-  v48->lpVtbl->field_38(v48, a1, v3->mask_338, v64, 1056769, 2, 5, 1, -1);
+  v48->lpVtbl->field_38(v48, a1, v3->flags_338, v64, 1056769, 2, 5, 1, -1);
   v48->field_C = sub_100475F0;
   v48->field_8 = (int(__cdecl *)())sub_10041970;
   v48->field_3838.field_1A99C[28] = 3;
@@ -55786,9 +55691,9 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v54 = v53->lpVtbl;
   v65 = v3->field_33C - -114.0;
-  v53->lpVtbl->field_38(v53, a1, v3->mask_338, v65, 1056769, 2, 5, 1, -1);
+  v53->lpVtbl->field_38(v53, a1, v3->flags_338, v65, 1056769, 2, 5, 1, -1);
   v53->field_C = sub_100474B0;
-  v53->field_8 = sub_10046170;
+  v53->field_8 = (int(__cdecl *)())sub_10046170;
   v53->field_3838.field_1A99C[28] = 3;
   v55 = GetStringWithIndex(8u);
   v54->field_34(v53, v55, 1, 1, &dword_100AB448);
@@ -55803,7 +55708,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   if (!v57)
       sub_1003E260(4);
   v58 = v57->lpVtbl;
-  v57->lpVtbl->field_38(v57, a1, v3->mask_338, 29.0, 1048585, 2, 5, 1, -1);
+  v57->lpVtbl->field_38(v57, a1, v3->flags_338, 29.0, 1048585, 2, 5, 1, -1);
   v57->field_3838.field_1A99C[28] = 3;
   v58->field_34(v57, asc_100AD300, 1, 1, &unk_100AB558);
   result = 1;
@@ -55848,7 +55753,7 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -55871,7 +55776,7 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
       sub_1003E260(4);
   v8 = v7->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v7->lpVtbl->field_38)(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+       v7->lpVtbl->field_38)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0xEu);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -55886,7 +55791,7 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
       sub_1003E260(4);
   v12 = v11->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v11->lpVtbl->field_38)(v11, a1, v3->mask_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+       v11->lpVtbl->field_38)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = (int(__cdecl *)())sub_10043710;
   v11->field_3838.field_1A99C[28] = 3;
@@ -55905,7 +55810,7 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
   v16 = v15->lpVtbl;
   v19 = v3->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v15->lpVtbl->field_38)(v15, a1, v3->mask_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
+       v15->lpVtbl->field_38)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_100464A0;
   v15->field_3838.field_1A99C[28] = 3;
@@ -55918,220 +55823,214 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
 // 100AB448: using guessed type int dword_100AB448;
 
 //----- (10049F40) --------------------------------------------------------
-int __cdecl sub_10049F40(int a1) {
-  unsigned __int16 v1; // ax
-  _DWORD *v2;          // eax
-  _DWORD *v3;          // esi
-  _DWORD *v4;          // eax
-  _DWORD *v5;          // edi
-  _DWORD *v6;          // eax
-  _WORD *v7;           // edi
-  int v8;              // ebx
-  LPCSTR v9;           // eax
-  _DWORD *v10;         // eax
-  _DWORD *v11;         // edi
-  int v12;             // ebx
-  LPCSTR v13;          // eax
-  _DWORD *v14;         // eax
-  _DWORD *v15;         // edi
-  int v16;             // ebx
-  LPCSTR v17;          // eax
-  float v19;           // [esp+88h] [ebp-34h]
+int __cdecl sub_10049F40(unk000C8 *a1) {
+  WORD v1;           // ax
+  unk00348 *v2;      // eax
+  unk00348 *v3;      // esi
+  unk1E214 *v4;      // eax
+  unk1E214 *v5;      // edi
+  unk1E214 *v6;      // eax
+  unk1E214 *v7;      // edi
+  unk1E214Vtbl *v8;  // ebx
+  LPCSTR v9;         // eax
+  unk1E214 *v10;     // eax
+  unk1E214 *v11;     // edi
+  unk1E214Vtbl *v12; // ebx
+  LPCSTR v13;        // eax
+  unk1E214 *v14;     // eax
+  unk1E214 *v15;     // edi
+  unk1E214Vtbl *v16; // ebx
+  LPCSTR v17;        // eax
+  float v19;         // [esp+88h] [ebp-34h]
 
-  v1 = *(_WORD *)(a1 + 16);
-  *(_WORD *)(a1 + 18) = 0;
-  *(_DWORD *)(a1 + 4 * v1 + 108) = 1;
-  v2 = (_DWORD *)operator new(0x348u);
+  v1 = a1->field_10;
+  *(&a1->field_10 + 1) = 0;
+  *(&a1->field_6C + v1) = 1;
+  v2 = (unk00348 *)operator new(0x348u);
   if (v2)
       v3 = meth_10048470(v2);
   else
       v3 = 0;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v3;
+  a1->field_14[a1->field_10] = v3;
   if (!v3)
       sub_1003E260(4);
-  ++*(_WORD *)(a1 + 16);
-  v3[208] = a1;
-  v3[4] = 0;
-  v3[206] = 1128464384;
-  v3[207] = 1124204544;
-  v4 = (_DWORD *)operator new(0x1E214u);
+  ++a1->field_10;
+  v3->field_340 = a1;
+  v3->field_10 = 0;
+  v3->flags_338 = 1128464384;
+  v3->field_33C = 130.0;
+  v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
       v5 = meth_unk1E214_init(v4);
   else
       v5 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v5;
+  v3->field_18[v3->field_14] = v5;
   if (!v5)
       sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))(*v5 + 56))(
-      v5, a1, 0, 0, 9, 2, 5, 0, 0);
-  ++*((_WORD *)v3 + 10);
-  v6 = (_DWORD *)operator new(0x1E214u);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
+       v5->lpVtbl->field_38)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  ++v3->field_14;
+  v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
       v7 = meth_unk1E214_init(v6);
   else
       v7 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v7;
+  v3->field_18[v3->field_14] = v7;
   if (!v7)
       sub_1003E260(4);
-  v8 = *(_DWORD *)v7;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v7 + 56))(
-      v7, a1, v3[206], 1092616192, 1048585, 2, 5, 1, -1);
-  v7[61702] = 3;
+  v8 = v7->lpVtbl;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v7->lpVtbl->field_38)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x10u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v8 + 52))(v7, v9, 1, 1, &unk_100AB438);
-  ++*((_WORD *)v3 + 10);
-  v10 = (_DWORD *)operator new(0x1E214u);
+  v8->field_34(v7, v9, 1, 1, &unk_100AB438);
+  ++v3->field_14;
+  v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
       v11 = meth_unk1E214_init(v10);
   else
       v11 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v11;
+  v3->field_18[v3->field_14] = v11;
   if (!v11)
       sub_1003E260(4);
-  v12 = *v11;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v11 + 56))(
-      v11, a1, v3[206], v3[207], 1056769, 2, 5, 1, -1);
-  v11[3] = sub_10047360;
-  v11[2] = sub_10046F60;
-  *((_WORD *)v11 + 61702) = 3;
+  v12 = v11->lpVtbl;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v11->lpVtbl->field_38)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+  v11->field_C = sub_10047360;
+  v11->field_8 = (int(__cdecl *)())sub_10046F60;
+  v11->field_3838.field_1A99C[28] = 3;
   v13 = GetStringWithIndex(0x11u);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v12 + 52))(
-      v11, v13, 1, 1, &dword_100AB448);
+  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
   dword_10AA29B0 = (int)v11;
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
-  v14 = (_DWORD *)operator new(0x1E214u);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
+  v14 = (unk1E214 *)operator new(0x1E214u);
   if (v14)
       v15 = meth_unk1E214_init(v14);
   else
       v15 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v15;
+  v3->field_18[v3->field_14] = v15;
   if (!v15)
       sub_1003E260(4);
-  v16 = *v15;
-  v19 = *((float *)v3 + 207) - -19.0;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v15 + 56))(
-      v15, a1, v3[206], LODWORD(v19), 1056769, 2, 5, 1, -1);
-  v15[3] = sub_10047360;
-  v15[2] = sub_10046FC0;
-  *((_WORD *)v15 + 61702) = 3;
+  v16 = v15->lpVtbl;
+  v19 = v3->field_33C - -19.0;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v15->lpVtbl->field_38)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
+  v15->field_C = sub_10047360;
+  v15->field_8 = sub_10046FC0;
+  v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0x12u);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v16 + 52))(
-      v15, v17, 1, 1, &dword_100AB448);
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
+  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
   return 1;
 }
-// 10049F40: using guessed type int __cdecl sub_10049F40(int);
 // 100AB448: using guessed type int dword_100AB448;
 // 10AA29B0: using guessed type int dword_10AA29B0;
 
 //----- (1004A260) --------------------------------------------------------
-int __cdecl sub_1004A260(int a1) {
-  unsigned __int16 v1; // ax
-  _DWORD *v2;          // eax
-  _DWORD *v3;          // esi
-  _DWORD *v4;          // eax
-  _DWORD *v5;          // edi
-  _DWORD *v6;          // eax
-  _WORD *v7;           // edi
-  int v8;              // ebx
-  LPCSTR v9;           // eax
-  _DWORD *v10;         // eax
-  _DWORD *v11;         // edi
-  int v12;             // ebx
-  LPCSTR v13;          // eax
-  _DWORD *v14;         // eax
-  _DWORD *v15;         // edi
-  int v16;             // ebx
-  LPCSTR v17;          // eax
-  float v19;           // [esp+88h] [ebp-34h]
+int __cdecl sub_1004A260(unk000C8 *a1) {
+  WORD v1;           // ax
+  unk00348 *v2;      // eax
+  unk00348 *v3;      // esi
+  unk1E214 *v4;      // eax
+  unk1E214 *v5;      // edi
+  unk1E214 *v6;      // eax
+  unk1E214 *v7;      // edi
+  unk1E214Vtbl *v8;  // ebx
+  LPCSTR v9;         // eax
+  unk1E214 *v10;     // eax
+  unk1E214 *v11;     // edi
+  unk1E214Vtbl *v12; // ebx
+  LPCSTR v13;        // eax
+  unk1E214 *v14;     // eax
+  unk1E214 *v15;     // edi
+  unk1E214Vtbl *v16; // ebx
+  LPCSTR v17;        // eax
+  float v19;         // [esp+88h] [ebp-34h]
 
-  v1 = *(_WORD *)(a1 + 16);
-  *(_WORD *)(a1 + 18) = 0;
-  *(_DWORD *)(a1 + 4 * v1 + 108) = 1;
-  v2 = (_DWORD *)operator new(0x348u);
+  v1 = a1->field_10;
+  *(&a1->field_10 + 1) = 0;
+  *(&a1->field_6C + v1) = 1;
+  v2 = (unk00348 *)operator new(0x348u);
   if (v2)
       v3 = meth_10048470(v2);
   else
       v3 = 0;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v3;
+  a1->field_14[a1->field_10] = v3;
   if (!v3)
       sub_1003E260(4);
-  ++*(_WORD *)(a1 + 16);
-  v3[208] = a1;
-  v3[4] = 0;
-  v3[206] = 1128464384;
-  v3[207] = 1124204544;
-  v4 = (_DWORD *)operator new(0x1E214u);
+  ++a1->field_10;
+  v3->field_340 = a1;
+  v3->field_10 = 0;
+  v3->flags_338 = 1128464384;
+  v3->field_33C = 130.0;
+  v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
       v5 = meth_unk1E214_init(v4);
   else
       v5 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v5;
+  v3->field_18[v3->field_14] = v5;
   if (!v5)
       sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))(*v5 + 56))(
-      v5, a1, 0, 0, 9, 2, 5, 0, 0);
-  ++*((_WORD *)v3 + 10);
-  v6 = (_DWORD *)operator new(0x1E214u);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
+       v5->lpVtbl->field_38)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  ++v3->field_14;
+  v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
       v7 = meth_unk1E214_init(v6);
   else
       v7 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v7;
+  v3->field_18[v3->field_14] = v7;
   if (!v7)
       sub_1003E260(4);
-  v8 = *(_DWORD *)v7;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v7 + 56))(
-      v7, a1, v3[206], 1092616192, 1048585, 2, 5, 1, -1);
-  v7[61702] = 3;
+  v8 = v7->lpVtbl;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v7->lpVtbl->field_38)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x10u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v8 + 52))(v7, v9, 1, 1, &unk_100AB438);
-  ++*((_WORD *)v3 + 10);
-  v10 = (_DWORD *)operator new(0x1E214u);
+  v8->field_34(v7, v9, 1, 1, &unk_100AB438);
+  ++v3->field_14;
+  v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
       v11 = meth_unk1E214_init(v10);
   else
       v11 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v11;
+  v3->field_18[v3->field_14] = v11;
   if (!v11)
       sub_1003E260(4);
-  v12 = *v11;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v11 + 56))(
-      v11, a1, v3[206], v3[207], 1056769, 2, 5, 1, -1);
-  v11[3] = sub_10047360;
-  v11[2] = sub_10046FD0;
-  *((_WORD *)v11 + 61702) = 3;
+  v12 = v11->lpVtbl;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v11->lpVtbl->field_38)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+  v11->field_C = sub_10047360;
+  v11->field_8 = (int(__cdecl *)())sub_10046FD0;
+  v11->field_3838.field_1A99C[28] = 3;
   v13 = GetStringWithIndex(0x11u);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v12 + 52))(
-      v11, v13, 1, 1, &dword_100AB448);
+  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
   dword_10AA29B0 = (int)v11;
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
-  v14 = (_DWORD *)operator new(0x1E214u);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
+  v14 = (unk1E214 *)operator new(0x1E214u);
   if (v14)
       v15 = meth_unk1E214_init(v14);
   else
       v15 = 0;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v15;
+  v3->field_18[v3->field_14] = v15;
   if (!v15)
       sub_1003E260(4);
-  v16 = *v15;
-  v19 = *((float *)v3 + 207) - -19.0;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v15 + 56))(
-      v15, a1, v3[206], LODWORD(v19), 1056769, 2, 5, 1, -1);
-  v15[3] = sub_10047360;
-  v15[2] = sub_10047050;
-  *((_WORD *)v15 + 61702) = 3;
+  v16 = v15->lpVtbl;
+  v19 = v3->field_33C - -19.0;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v15->lpVtbl->field_38)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
+  v15->field_C = sub_10047360;
+  v15->field_8 = sub_10047050;
+  v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0x12u);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v16 + 52))(
-      v15, v17, 1, 1, &dword_100AB448);
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
+  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
   return 1;
 }
-// 1004A260: using guessed type int __cdecl sub_1004A260(int);
 // 100AB448: using guessed type int dword_100AB448;
 // 10AA29B0: using guessed type int dword_10AA29B0;
 
@@ -57033,7 +56932,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -57054,7 +56953,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 10.0, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(6u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -57068,7 +56967,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   if (!v11)
       sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->mask_338, v3->field_33C, 1056769, 2, 5, 1, -1);
+  v11->lpVtbl->field_38(v11, a1, v3->flags_338, v3->field_33C, 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_100452C0;
   v11->field_3838.field_1A99C[28] = 3;
@@ -57086,7 +56985,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v16 = v15->lpVtbl;
   v39 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, v39, 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, v39, 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10045390;
   v15->field_3838.field_1A99C[28] = 3;
@@ -57104,7 +57003,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v20 = v19->lpVtbl;
   v40 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, a1, v3->mask_338, v40, 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, a1, v3->flags_338, v40, 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100455E0;
   v19->field_3838.field_1A99C[28] = 3;
@@ -57122,7 +57021,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v24 = v23->lpVtbl;
   v41 = v3->field_33C - -57.0;
-  v23->lpVtbl->field_38(v23, a1, v3->mask_338, v41, 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->field_38(v23, a1, v3->flags_338, v41, 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_100456B0;
   v23->field_3838.field_1A99C[28] = 3;
@@ -57140,7 +57039,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v28 = v27->lpVtbl;
   v42 = v3->field_33C - -114.0;
-  v27->lpVtbl->field_38(v27, a1, v3->mask_338, v42, 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, a1, v3->flags_338, v42, 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10046520;
   v27->field_3838.field_1A99C[28] = 3;
@@ -57182,7 +57081,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   if (!v36)
       sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, v3->mask_338, 155.0, 1052673, 2, 5, 1, -1);
+  v36->lpVtbl->field_38(v36, a1, v3->flags_338, 155.0, 1052673, 2, 5, 1, -1);
   v36->field_4 = sub_1003FFD0;
   v36->field_3838.field_1A99C[28] = 3;
   v37->field_34(v36, asc_100AD300, 1, 1, &unk_100AB4C8);
@@ -57245,7 +57144,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -57266,7 +57165,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x1Fu);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -57280,7 +57179,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   if (!v11)
       sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->mask_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10043400;
   LOWORD(v11->?) = 3;
@@ -57298,7 +57197,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
       sub_1003E260(4);
   v16 = v15->lpVtbl;
   v35 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_100434C0;
   LOWORD(v15->?) = 3;
@@ -57316,7 +57215,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
       sub_1003E260(4);
   v20 = v19->lpVtbl;
   v36 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, a1, v3->mask_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100406C0;
   LOWORD(v19->?) = 3;
@@ -57334,7 +57233,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
       sub_1003E260(4);
   v24 = v23->lpVtbl;
   v37 = v3->field_33C - -114.0;
-  v23->lpVtbl->field_38(v23, a1, v3->mask_338, LODWORD(v37), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->field_38(v23, a1, v3->flags_338, LODWORD(v37), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = (int(__cdecl *)())sub_100465A0;
   LOWORD(v23->?) = 3;
@@ -57376,7 +57275,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   if (!v32)
       sub_1003E260(4);
   v33 = v32->lpVtbl;
-  v32->lpVtbl->field_38(v32, a1, v3->mask_338, 1125842944, 1052673, 2, 5, 1, -1);
+  v32->lpVtbl->field_38(v32, a1, v3->flags_338, 1125842944, 1052673, 2, 5, 1, -1);
   v32->field_4 = sub_1003FFD0;
   LOWORD(v32->?) = 3;
   v33->field_34(v32, asc_100AD300, 1, 1, &unk_100AB4C8);
@@ -57388,104 +57287,108 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
 
 //----- (1004CAC0) --------------------------------------------------------
 int __cdecl sub_1004CAC0(unk000C8 *a1) {
-  unsigned __int16 v2; // ax
-  unk00348 *v3;        // eax
-  unk00348 *v4;        // esi
-  unk1E214 *v5;        // eax
-  unk1E214 *v6;        // edi
-  unk1E214 *v7;        // eax
-  unk1E214 *v8;        // edi
-  unk1E214Vtbl *v9;    // ebx
-  LPCSTR v10;          // eax
-  unk1E214 *v11;       // eax
-  unk1E214 *v12;       // edi
-  int v13;             // eax
-  char *v14;           // edi
-  int v15;             // ebx
-  LPCSTR v16;          // eax
-  unk1E214 *v17;       // eax
-  unk1E214 *v18;       // edi
-  unk1E214Vtbl *v19;   // ebx
-  LPCSTR v20;          // eax
-  unk1E214 *v21;       // eax
-  unk1E214 *v22;       // edi
-  unk1E214Vtbl *v23;   // ebx
-  LPCSTR v24;          // eax
-  unk1E214 *v25;       // eax
-  unk1E214 *v26;       // edi
-  unk1E214 *v27;       // eax
-  unk1E214 *v28;       // edi
-  unk1E214Vtbl *v29;   // ebx
-  unk1E214 *v30;       // eax
-  unk1E214 *v31;       // edi
-  __int16 v32;         // cx
-  unk1E214 *v33;       // eax
-  unk1E214 *v34;       // edi
-  unk1E214Vtbl *v35;   // ebx
-  LPCSTR v36;          // eax
-  unk1E214 *v37;       // eax
-  unk1E214 *v38;       // edi
-  unk1E214Vtbl *v39;   // ebx
-  float v41;           // [esp+19Ch] [ebp-38h]
-  float v42;           // [esp+19Ch] [ebp-38h]
-  int v43;             // [esp+1C4h] [ebp-10h]
-  unk000C8 *v44;       // [esp+1D8h] [ebp+4h]
+  WORD v2;           // ax
+  unk00348 *v3;      // eax
+  unk00348 *v4;      // esi
+  unk1E214 *v5;      // eax
+  unk1E214 *v6;      // edi
+  unk1E214 *v7;      // eax
+  unk1E214 *v8;      // edi
+  unk1E214Vtbl *v9;  // ebx
+  LPCSTR v10;        // eax
+  unk1E214 *v11;     // eax
+  unk1E214 *v12;     // edi
+  unk1A5E0Vtbl *v13; // eax
+  char *v14;         // edi
+  int v15;           // ebx
+  LPCSTR v16;        // eax
+  unk1E214 *v17;     // eax
+  unk1E214 *v18;     // edi
+  unk1E214Vtbl *v19; // ebx
+  LPCSTR v20;        // eax
+  unk1E214 *v21;     // eax
+  unk1E214 *v22;     // edi
+  unk1E214Vtbl *v23; // ebx
+  LPCSTR v24;        // eax
+  unk1E214 *v25;     // eax
+  unk1E214 *v26;     // edi
+  unk1E214 *v27;     // eax
+  unk1E214 *v28;     // edi
+  unk1E214Vtbl *v29; // ebx
+  unk1E214 *v30;     // eax
+  unk1E214 *v31;     // edi
+  WORD v32;          // cx
+  unk1E214 *v33;     // eax
+  unk1E214 *v34;     // edi
+  unk1E214Vtbl *v35; // ebx
+  LPCSTR v36;        // eax
+  unk1E214 *v37;     // eax
+  unk1E214 *v38;     // edi
+  unk1E214Vtbl *v39; // ebx
+  float v41;         // [esp+19Ch] [ebp-38h]
+  float v42;         // [esp+19Ch] [ebp-38h]
+  unk1A5E0Vtbl *v43; // [esp+1C4h] [ebp-10h]
+  unk000C8 *v44;     // [esp+1D8h] [ebp+4h]
 
   v2 = a1->field_10;
-  HIWORD(a1->field_10) = 0;
+  *(&a1->field_10 + 1) = 0;
   *(&a1->field_6C + v2) = 1;
   v3 = (unk00348 *)operator new(0x348u);
   if (v3)
       v4 = meth_10048470(v3);
   else
       v4 = 0;
-  a1->field_14[LOWORD(a1->field_10)] = v4;
+  a1->field_14[a1->field_10] = v4;
   if (!v4)
       sub_1003E260(4);
-  ++LOWORD(a1->field_10);
+  ++a1->field_10;
   v4->field_340 = a1;
   v4->field_10 = 0;
-  v4->mask_338 = 1128464384;
+  v4->flags_338 = 1128464384;
   v4->field_33C = 130.0;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
       v6 = meth_unk1E214_init(v5);
   else
       v6 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v6;
+  v4->field_18[v4->field_14] = v6;
   if (!v6)
       sub_1003E260(4);
-  v6->lpVtbl->field_38(v6, a1, 0, 0, 9, 2, 5, 0, 0);
-  ++LOWORD(v4->field_14);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
+       v6->lpVtbl->field_38)(v6, a1, 0, 0, 9, 2, 5, 0, 0);
+  ++v4->field_14;
   v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
       v8 = meth_unk1E214_init(v7);
   else
       v8 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v8;
+  v4->field_18[v4->field_14] = v8;
   if (!v8)
       sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, a1, v4->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
-  LOWORD(v8->?) = 3;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v8->lpVtbl->field_38)(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x26u);
   v9->field_34(v8, v10, 1, 1, &unk_100AB508);
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   v11 = (unk1E214 *)operator new(0x1E214u);
   if (v11)
       v12 = meth_unk1E214_init(v11);
   else
       v12 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v12;
+  v4->field_18[v4->field_14] = v12;
   if (!v12)
       sub_1003E260(4);
-  v12->lpVtbl->field_38(v12, a1, v4->mask_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
-  v13 = v12->field_3838;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v12->lpVtbl->field_38)(v12, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
+  v13 = v12->field_3838.lpVtbl;
   v12->field_4 = sub_1003EC80;
-  v12->? = 1;
+  *(_DWORD *)&v12->field_3838.field_1A99C[16] = 1;
   v44 = (unk000C8 *)&v12->field_3838;
   v43 = v13;
-  (*(void(__stdcall **)(int, void *, int, _DWORD, int))(v13 + 20))(262145, &unk_100AB4D8, 5, 0, -1);
+  ((void(__stdcall *)(int, int *, int, _DWORD, int))v13->field_14)(
+      262145, dword_100AB4D8, 5, 0, -1);
   v14 = aE_0;
   do {
       v15 = 0;
@@ -57495,117 +57398,123 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
       }
       if (GetStringWithIndex(*(_DWORD *)v14)) {
           v16 = GetStringWithIndex(*(_DWORD *)v14);
-          (*(void(__thiscall **)(unk000C8 *, LPCSTR, int, int, void *, _DWORD))(v43 + 16))(
-              v44, v16, v15, 1, &unk_100AB4D8, 0);
+          v43->field_10((unk1A5E0 *)v44, (char *)v16, v15, 1, (int)dword_100AB4D8, 0);
       }
       v14 += 8;
   } while ((int)v14 < (int)&dword_100AB3D8);
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   ++LOWORD(v4->last);
   v17 = (unk1E214 *)operator new(0x1E214u);
   if (v17)
       v18 = meth_unk1E214_init(v17);
   else
       v18 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v18;
+  v4->field_18[v4->field_14] = v18;
   if (!v18)
       sub_1003E260(4);
   v19 = v18->lpVtbl;
   v41 = v4->field_33C - -95.0;
-  v18->lpVtbl->field_38(v18, a1, v4->mask_338, LODWORD(v41), 1056769, 2, 5, 1, -1);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v18->lpVtbl->field_38)(v18, a1, v4->flags_338, LODWORD(v41), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
   v18->field_8 = sub_10040680;
-  *(_DWORD *)&v18->field_10[8] = sub_10040450;
-  LOWORD(v18->?) = 3;
+  v18->field_18 = (int)sub_10040450;
+  v18->field_3838.field_1A99C[28] = 3;
   v20 = GetStringWithIndex(0x27u);
   v19->field_34(v18, v20, 1, 1, &dword_100AB448);
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   ++LOWORD(v4->last);
   v21 = (unk1E214 *)operator new(0x1E214u);
   if (v21)
       v22 = meth_unk1E214_init(v21);
   else
       v22 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v22;
+  v4->field_18[v4->field_14] = v22;
   if (!v22)
       sub_1003E260(4);
   v23 = v22->lpVtbl;
   v42 = v4->field_33C - -114.0;
-  v22->lpVtbl->field_38(v22, a1, v4->mask_338, LODWORD(v42), 1056769, 2, 5, 1, -1);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+       v22->lpVtbl->field_38)(v22, a1, v4->flags_338, LODWORD(v42), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_10046560;
-  LOWORD(v22->?) = 3;
+  v22->field_3838.field_1A99C[28] = 3;
   v24 = GetStringWithIndex(0xCu);
   v23->field_34(v22, v24, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v22;
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   ++LOWORD(v4->last);
   v25 = (unk1E214 *)operator new(0x1E214u);
   if (v25)
       v26 = meth_unk1E214_init(v25);
   else
       v26 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v26;
+  v4->field_18[v4->field_14] = v26;
   if (!v26)
       sub_1003E260(4);
-  v26->lpVtbl->field_38(v26, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
-  ++LOWORD(v4->field_14);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, _DWORD, int))
+       v26->lpVtbl->field_38)(v26, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+  ++v4->field_14;
   v27 = (unk1E214 *)operator new(0x1E214u);
   if (v27)
       v28 = meth_unk1E214_init(v27);
   else
       v28 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v28;
+  v4->field_18[v4->field_14] = v28;
   if (!v28)
       sub_1003E260(4);
   v29 = v28->lpVtbl;
-  v28->lpVtbl->field_38(v28, a1, v4->mask_338, 1124532224, 1052673, 2, 5, 1, -1);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v28->lpVtbl->field_38)(v28, a1, v4->flags_338, 1124532224, 1052673, 2, 5, 1, -1);
   v28->field_4 = sub_1003F8D0;
-  LOWORD(v28->?) = 3;
+  v28->field_3838.field_1A99C[28] = 3;
   v29->field_34(v28, asc_100AD300, 1, 1, &unk_100AB488);
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   v30 = (unk1E214 *)operator new(0x1E214u);
   if (v30)
       v31 = meth_unk1E214_init(v30);
   else
       v31 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v31;
+  v4->field_18[v4->field_14] = v31;
   if (!v31)
       sub_1003E260(4);
-  v31->lpVtbl->field_38(v31, a1, 1134690304, 1110966272, 1, 2, 5, 1, 22);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v31->lpVtbl->field_38)(v31, a1, 1134690304, 1110966272, 1, 2, 5, 1, 22);
   v31->field_4 = sub_10041870;
-  v32 = LOWORD(v4->field_14) + 1;
-  ++*(_WORD *)&v31->gap5C[10840];
-  *(_WORD *)&v31->gap5C[10842] = v32;
-  ++LOWORD(v4->field_14);
+  v32 = v4->field_14 + 1;
+  ++v31->field_2AB4[0];
+  v31->field_2AB4[1] = v32;
+  ++v4->field_14;
   v33 = (unk1E214 *)operator new(0x1E214u);
   if (v33)
       v34 = meth_unk1E214_init(v33);
   else
       v34 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v34;
+  v4->field_18[v4->field_14] = v34;
   if (!v34)
       sub_1003E260(4);
   v35 = v34->lpVtbl;
-  v34->lpVtbl->field_38(v34, a1, v4->mask_338, 1125842944, 1048577, 2, 5, 1, -1);
-  LOWORD(v34->?) = 3;
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v34->lpVtbl->field_38)(v34, a1, v4->flags_338, 1125842944, 1048577, 2, 5, 1, -1);
+  v34->field_3838.field_1A99C[28] = 3;
   v36 = GetStringWithIndex(0x28u);
   v35->field_34(v34, v36, 1, 1, &unk_100AB4C8);
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   v37 = (unk1E214 *)operator new(0x1E214u);
   if (v37)
       v38 = meth_unk1E214_init(v37);
   else
       v38 = 0;
-  v4->field_18[LOWORD(v4->field_14)] = v38;
+  v4->field_18[v4->field_14] = v38;
   if (!v38)
       sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, a1, v4->mask_338, 1120403456, 1052673, 2, 5, 1, -1);
+  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
+       v38->lpVtbl->field_38)(v38, a1, v4->flags_338, 1120403456, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_100400E0;
-  LOWORD(v38->?) = 3;
+  v38->field_3838.field_1A99C[28] = 3;
   v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4C8);
-  ++LOWORD(v4->field_14);
+  ++v4->field_14;
   dword_10AA2850 = sub_10040330(dword_100AC520[dword_10AA2A0C]);
   return 1;
 }
@@ -57658,7 +57567,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   u348->field_340 = a1;
   u348->field_10 = 0;
-  u348->mask_338 = 1128464384;
+  u348->flags_338 = 1128464384;
   u348->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -57679,7 +57588,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, u348->mask_338, 10.0, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, u348->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x20u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -57703,7 +57612,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   if (!v13)
       sub_1003E260(4);
   v14 = v13->lpVtbl;
-  v13->lpVtbl->field_38(v13, a1, u348->mask_338, u348->field_33C, 1056769, 2, 5, 1, -1);
+  v13->lpVtbl->field_38(v13, a1, u348->flags_338, u348->field_33C, 1056769, 2, 5, 1, -1);
   v13->field_C = sub_10047360;
   v13->field_8 = sub_10045460;
   v13->field_3838.field_1A99C[28] = 3;
@@ -57721,7 +57630,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
       sub_1003E260(4);
   v18 = v17->lpVtbl;
   v25 = u348->field_33C - -19.0;
-  v17->lpVtbl->field_38(v17, a1, u348->mask_338, v25, 1056769, 2, 5, 1, -1);
+  v17->lpVtbl->field_38(v17, a1, u348->flags_338, v25, 1056769, 2, 5, 1, -1);
   v17->field_C = sub_10047360;
   v17->field_8 = sub_10045520;
   v17->field_3838.field_1A99C[28] = 3;
@@ -57739,7 +57648,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
       sub_1003E260(4);
   v22 = v21->lpVtbl;
   v26 = u348->field_33C - -114.0;
-  v21->lpVtbl->field_38(v21, a1, u348->mask_338, v26, 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->field_38(v21, a1, u348->flags_338, v26, 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = (int(__cdecl *)())sub_100465E0;
   v21->field_3838.field_1A99C[28] = 3;
@@ -57796,7 +57705,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -57817,7 +57726,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x2Bu);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -57850,7 +57759,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
       sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
   v16 = v15->field_3838;
   v15->field_4 = sub_1003ED10;
   v15->? = 1;
@@ -57869,7 +57778,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
       sub_1003E260(4);
   v19 = v18->lpVtbl;
   v26 = v3->field_33C - -95.0;
-  v18->lpVtbl->field_38(v18, a1, v3->mask_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
+  v18->lpVtbl->field_38(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
   v18->field_8 = (int(__cdecl *)())sub_1003ECB0;
   LOWORD(v18->?) = 3;
@@ -57888,7 +57797,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
       sub_1003E260(4);
   v23 = v22->lpVtbl;
   v27 = v3->field_33C - -114.0;
-  v22->lpVtbl->field_38(v22, a1, v3->mask_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
+  v22->lpVtbl->field_38(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_10046620;
   LOWORD(v22->?) = 3;
@@ -57946,7 +57855,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -57967,7 +57876,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x2Au);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -58000,7 +57909,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
       sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
   v16 = v15->field_3838;
   v15->field_4 = sub_1003EDF0;
   v15->? = 1;
@@ -58019,7 +57928,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
       sub_1003E260(4);
   v19 = v18->lpVtbl;
   v26 = v3->field_33C - -95.0;
-  v18->lpVtbl->field_38(v18, a1, v3->mask_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
+  v18->lpVtbl->field_38(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
   v18->field_8 = (int(__cdecl *)())sub_1003ED40;
   LOWORD(v18->?) = 3;
@@ -58038,7 +57947,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
       sub_1003E260(4);
   v23 = v22->lpVtbl;
   v27 = v3->field_33C - -114.0;
-  v22->lpVtbl->field_38(v22, a1, v3->mask_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
+  v22->lpVtbl->field_38(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_10046670;
   LOWORD(v22->?) = 3;
@@ -58118,7 +58027,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v4->field_340 = a1;
   v4->field_10 = 0;
-  v4->mask_338 = 1128464384;
+  v4->flags_338 = 1128464384;
   v4->field_33C = 130.0;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -58139,7 +58048,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   if (!v8)
       sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, a1, v4->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v8->lpVtbl->field_38(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v8->?) = 3;
   v10 = GetStringWithIndex(0x21u);
   v9->field_34(v8, v10, 1, 1, &unk_100AB508);
@@ -58162,7 +58071,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v14;
   if (!v14)
       sub_1003E260(4);
-  v14->lpVtbl->field_38(v14, a1, v4->mask_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
+  v14->lpVtbl->field_38(v14, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
   v14->field_4 = sub_1003EE20;
   v14->? = 1;
   v15 = dword_10AA2A34;
@@ -58180,7 +58089,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v18 = off_100B89C8;
   do
       ((void(__thiscall *)(int *, _DWORD, _DWORD, int, void *, int))v50)(
-          &v14->field_3838, *v18++, 0, 1, &unk_100AB4D8, 1);
+          &v14->field_3838, *v18++, 0, 1, &dword_100AB4D8, 1);
   while ((int)v18 < (int)aFancyCar);
   if (dword_10AA2A34 >= 0) {
       if (dword_10AA2A34 <= 11)
@@ -58207,7 +58116,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
       sub_1003E260(4);
   v22 = v21->lpVtbl;
   v47 = v4->field_33C - -76.0;
-  v21->lpVtbl->field_38(v21, a1, v4->mask_338, LODWORD(v47), 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->field_38(v21, a1, v4->flags_338, LODWORD(v47), 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = sub_10042CF0;
   LOWORD(v21->?) = 3;
@@ -58225,7 +58134,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
       sub_1003E260(4);
   v26 = v25->lpVtbl;
   v48 = v4->field_33C - -95.0;
-  v25->lpVtbl->field_38(v25, a1, v4->mask_338, LODWORD(v48), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->field_38(v25, a1, v4->flags_338, LODWORD(v48), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = sub_10042D60;
   LOWORD(v25->?) = 3;
@@ -58243,7 +58152,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
       sub_1003E260(4);
   v30 = v29->lpVtbl;
   v49 = v4->field_33C - -114.0;
-  v29->lpVtbl->field_38(v29, a1, v4->mask_338, LODWORD(v49), 1056769, 2, 5, 1, -1);
+  v29->lpVtbl->field_38(v29, a1, v4->flags_338, LODWORD(v49), 1056769, 2, 5, 1, -1);
   v29->field_C = sub_10047360;
   v29->field_8 = (int(__cdecl *)())sub_100466C0;
   LOWORD(v29->?) = 3;
@@ -58404,7 +58313,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -58425,7 +58334,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x22u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -58442,7 +58351,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v12 = v11->lpVtbl;
   v11->lpVtbl->field_38(v11,
                         a1,
-                        v3->mask_338,
+                        v3->flags_338,
                         LODWORD(v3->field_33C),
                         gDIEffectSquare.dwStartDelay != 0 ? 1056769 : 1056785,
                         2,
@@ -58472,7 +58381,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v57 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, LODWORD(v57), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v57), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_100435F0;
   LOWORD(v15->?) = 3;
@@ -58490,7 +58399,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v58 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, a1, v3->mask_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100436B0;
   LOWORD(v19->?) = 3;
@@ -58508,7 +58417,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v24 = v23->lpVtbl;
   v59 = v3->field_33C - -57.0;
-  v23->lpVtbl->field_38(v23, a1, v3->mask_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->field_38(v23, a1, v3->flags_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_10043650;
   LOWORD(v23->?) = 3;
@@ -58526,7 +58435,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v60 = v3->field_33C - -114.0;
-  v27->lpVtbl->field_38(v27, a1, v3->mask_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, a1, v3->flags_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10046710;
   LOWORD(v27->?) = 3;
@@ -58568,7 +58477,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, v3->mask_338, 1126563840, 1052673, 2, 5, 1, -1);
+  v36->lpVtbl->field_38(v36, a1, v3->flags_338, 1126563840, 1052673, 2, 5, 1, -1);
   v36->field_4 = sub_1003FCB0;
   LOWORD(v36->?) = 3;
   v37->field_34(v36, asc_100AD300, 1, 1, &unk_100AB4C8);
@@ -58596,7 +58505,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v42)
     sub_1003E260(4);
   v43 = v42->lpVtbl;
-  v42->lpVtbl->field_38(v42, a1, v3->mask_338, 1133215744, 1052673, 2, 5, 1, -1);
+  v42->lpVtbl->field_38(v42, a1, v3->flags_338, 1133215744, 1052673, 2, 5, 1, -1);
   v42->field_4 = sub_1003FD30;
   LOWORD(v42->?) = 3;
   v43->field_34(v42, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -58624,7 +58533,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v48)
     sub_1003E260(4);
   v49 = v48->lpVtbl;
-  v48->lpVtbl->field_38(v48, a1, v3->mask_338, 1128529920, 1052673, 2, 5, 1, -1);
+  v48->lpVtbl->field_38(v48, a1, v3->flags_338, 1128529920, 1052673, 2, 5, 1, -1);
   v48->field_4 = sub_1003FE10;
   LOWORD(v48->?) = 3;
   v49->field_34(v48, asc_100AD300, 1, 1, &unk_100AB488);
@@ -58652,7 +58561,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v54)
     sub_1003E260(4);
   v55 = v54->lpVtbl;
-  v54->lpVtbl->field_38(v54, a1, v3->mask_338, 1133019136, 1052673, 2, 5, 1, -1);
+  v54->lpVtbl->field_38(v54, a1, v3->flags_338, 1133019136, 1052673, 2, 5, 1, -1);
   v54->field_4 = sub_1003FDA0;
   LOWORD(v54->?) = 3;
   v55->field_34(v54, asc_100AD300, 1, 1, &unk_100AB478);
@@ -58704,7 +58613,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 0x43430000;
+  v3->flags_338 = 0x43430000;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -58725,7 +58634,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(9u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -58739,7 +58648,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->mask_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10045AF0;
   LOWORD(v11->?) = 3;
@@ -58757,7 +58666,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v25 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, LODWORD(v25), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v25), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10045AA0;
   LOWORD(v15->?) = 3;
@@ -58775,7 +58684,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v26 = v3->field_33C - -114.0;
-  v19->lpVtbl->field_38(v19, a1, v3->mask_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10046C90;
   LOWORD(v19->?) = 3;
@@ -58872,7 +58781,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -58893,7 +58802,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 0x41200000, 0x100009, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x34u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -58906,7 +58815,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v11;
   if (!v11)
     sub_1003E260(4);
-  v11->lpVtbl->field_38(v11, a1, v3->mask_338, LODWORD(v3->field_33C), 0x3001, 2, 5, 1, -1);
+  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 0x3001, 2, 5, 1, -1);
   v12 = v11->field_3838;
   v13 = &v11->field_3838;
   v11->field_4 = sub_1003EAE0;
@@ -58917,7 +58826,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   for (i = 0; i < 0x6590; i += 0x104) {
     if (&gUnkC8Ptr6->field_C0[i] != (char *)-4)
         (*(void(__thiscall **)(int *, char *, _DWORD, int, void *, int))(*v13 + 16))(
-            v13, &gUnkC8Ptr6->field_C0[i + 4], 0, 1, &unk_100AB4D8, 1);
+            v13, &gUnkC8Ptr6->field_C0[i + 4], 0, 1, &dword_100AB4D8, 1);
   }
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -58931,7 +58840,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
     sub_1003E260(4);
   v17 = v16->lpVtbl;
   v52 = v3->field_33C - -76.0;
-  v16->lpVtbl->field_38(v16, a1, v3->mask_338, LODWORD(v52), 0x103011, 2, 5, 1, -1);
+  v16->lpVtbl->field_38(v16, a1, v3->flags_338, LODWORD(v52), 0x103011, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = sub_10045090;
   v16->field_4 = sub_10041890;
@@ -58957,7 +58866,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   v22 = v21->lpVtbl;
   v53 = v3->field_33C - -95.0;
   v21->lpVtbl->field_38(
-      v21, a1, v3->mask_338, LODWORD(v53), v56 != 0 ? 1056769 : 1056785, 2, 5, 1, -1);
+      v21, a1, v3->flags_338, LODWORD(v53), v56 != 0 ? 1056769 : 1056785, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = sub_100450C0;
   if (v56) {
@@ -58981,7 +58890,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
     sub_1003E260(4);
   v26 = v25->lpVtbl;
   v54 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, a1, v3->mask_338, LODWORD(v54), 0x102001, 2, 5, 1, -1);
+  v25->lpVtbl->field_38(v25, a1, v3->flags_338, LODWORD(v54), 0x102001, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10046E10;
   LOWORD(v25->?) = 3;
@@ -59162,7 +59071,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v2->field_340 = a1;
   v2->field_10 = 0;
-  v2->mask_338 = 1128464384;
+  v2->flags_338 = 1128464384;
   v2->field_33C = 130.0;
   v3 = (unk1E214 *)operator new(0x1E214u);
   if (v3)
@@ -59183,7 +59092,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, a1, v2->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->field_38(v6, a1, v2->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v6->?) = 3;
   v8 = GetStringWithIndex(0x39u);
   v7->field_34(v6, v8, 1, 1, &unk_100AB508);
@@ -59196,19 +59105,19 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   v2->field_18[LOWORD(v2->field_14)] = v10;
   if (!v10)
     sub_1003E260(4);
-  v10->lpVtbl->field_38(v10, a1, v2->mask_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
+  v10->lpVtbl->field_38(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
   v11 = v10->field_3838;
   v12 = &v10->field_3838;
   v10->field_4 = sub_1003EB10;
   v10->? = 1;
   (*(void(__thiscall **)(int *, int, void *, int, _DWORD, int))(v11 + 20))(
-      &v10->field_3838, 262145, &unk_100AB4D8, 5, 0, -1);
+      &v10->field_3838, 262145, &dword_100AB4D8, 5, 0, -1);
   *(_DWORD *)v10-> ? = sub_10042020;
   *(_DWORD *)&v10->? [16] = sub_10041DF0;
   for (i = 0; i < 26000; i += 260) {
     if (&gUnkC8Ptr6->field_C0[i] != (char *)-4)
         (*(void(__thiscall **)(int *, char *, _DWORD, int, void *, _DWORD))(*v12 + 16))(
-            v12, &gUnkC8Ptr6->field_C0[i + 4], 0, 1, &unk_100AB4D8, 0);
+            v12, &gUnkC8Ptr6->field_C0[i + 4], 0, 1, &dword_100AB4D8, 0);
   }
   ++LOWORD(v2->field_14);
   ++LOWORD(v2->last);
@@ -59222,7 +59131,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v52 = v2->field_33C - -95.0;
-  v15->lpVtbl->field_38(v15, a1, v2->mask_338, LODWORD(v52), 1060881, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v2->flags_338, LODWORD(v52), 1060881, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_100450F0;
   v15->field_4 = sub_100418D0;
@@ -59241,7 +59150,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v53 = v2->field_33C - -114.0;
-  v19->lpVtbl->field_38(v19, a1, v2->mask_338, LODWORD(v53), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, a1, v2->flags_338, LODWORD(v53), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10046EB0;
   LOWORD(v19->?) = 3;
@@ -59356,7 +59265,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v46->field_340 = a1;
   v46->field_10 = 0;
-  v46->mask_338 = 1128464384;
+  v46->flags_338 = 1128464384;
   v46->field_33C = 130.0;
   v47 = (unk1E214 *)operator new(0x1E214u);
   if (v47)
@@ -59517,7 +59426,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v4->field_340 = a1;
   v4->field_10 = 0;
-  v4->mask_338 = 1128464384;
+  v4->flags_338 = 1128464384;
   v4->field_33C = 130.0;
   v6 = (unk1E214 *)operator new(0x1E214u);
   v111 = 1;
@@ -59544,7 +59453,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   v12 = v10->lpVtbl;
-  v10->lpVtbl->field_38(v10, a1, v4->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v10->lpVtbl->field_38(v10, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v10->?) = 3;
   v13 = GetStringWithIndex(0x3Du);
   v12->field_34(v10, v13, 1, 1, &unk_100AB508);
@@ -59559,13 +59468,13 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v15;
   if (!v15)
     sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, v4->mask_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
   v16 = v15->field_3838;
   v17 = &v15->field_3838;
   v15->field_4 = sub_1003EB60;
   v15->? = 1;
   (*(void(__thiscall **)(int *, int, void *, int, _DWORD, int))(v16 + 20))(
-      &v15->field_3838, 2359296, &unk_100AB4D8, 5, 0, -1);
+      &v15->field_3838, 2359296, &dword_100AB4D8, 5, 0, -1);
   *(_DWORD *)&v15->field_10[4] = sub_1003E8B0;
   *(_DWORD *)&v15->field_10[8] = sub_1003E8C0;
   v18 = 0;
@@ -59595,7 +59504,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
     sub_1003E260(4);
   v24 = v23->lpVtbl;
   v103 = v4->field_33C - -95.0;
-  v23->lpVtbl->field_38(v23, a1, v4->mask_338, LODWORD(v103), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->field_38(v23, a1, v4->flags_338, LODWORD(v103), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_10045DC0;
   LOWORD(v23->?) = 2;
@@ -59616,7 +59525,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
     sub_1003E260(4);
   v29 = v27->lpVtbl;
   v104 = v4->field_33C - -114.0;
-  v27->lpVtbl->field_38(v27, a1, v4->mask_338, LODWORD(v104), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, a1, v4->flags_338, LODWORD(v104), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = sub_10046F50;
   *(_DWORD *)&v27->field_10[4] = sub_1003E840;
@@ -59730,7 +59639,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v46)
     sub_1003E260(4);
   v48 = v46->lpVtbl;
-  v46->lpVtbl->field_38(v46, a1, v4->mask_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v46->lpVtbl->field_38(v46, a1, v4->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v46->field_4 = sub_1003FE80;
   LOWORD(v46->?) = 3;
   v48->field_34(v46, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -59764,7 +59673,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v54)
     sub_1003E260(4);
   v56 = v54->lpVtbl;
-  v54->lpVtbl->field_38(v54, a1, v4->mask_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v54->lpVtbl->field_38(v54, a1, v4->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v54->field_4 = sub_1003FA00;
   LOWORD(v54->?) = 3;
   v56->field_34(v54, asc_100AD300, 1, 1, &unk_100AB4A8);
@@ -59847,7 +59756,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v74)
     sub_1003E260(4);
   v76 = v74->lpVtbl;
-  v74->lpVtbl->field_38(v74, a1, v4->mask_338, 1128988672, 1048585, 2, 5, 1, -1);
+  v74->lpVtbl->field_38(v74, a1, v4->flags_338, 1128988672, 1048585, 2, 5, 1, -1);
   LOWORD(v74->?) = 3;
   v77 = GetStringWithIndex(0x40u);
   v76->field_34(v74, v77, 1, 1, &unk_100AB478);
@@ -59863,7 +59772,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v79)
     sub_1003E260(4);
   v80 = v79->lpVtbl;
-  v79->lpVtbl->field_38(v79, a1, v4->mask_338, 1132756992, 1048585, 2, 5, 1, -1);
+  v79->lpVtbl->field_38(v79, a1, v4->flags_338, 1132756992, 1048585, 2, 5, 1, -1);
   LOWORD(v79->?) = 3;
   v81 = GetStringWithIndex(0x41u);
   v80->field_34(v79, v81, 1, 1, &unk_100AB478);
@@ -60003,7 +59912,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -60066,7 +59975,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   if (!v15)
     sub_1003E260(4);
   v16 = v15->lpVtbl;
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, 460.0, 1056769, 2, 5, 0, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, 460.0, 1056769, 2, 5, 0, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_10047120;
   v15->field_4 = sub_100471F0;
@@ -60118,7 +60027,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -60139,7 +60048,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x43u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB438);
@@ -60153,7 +60062,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v20 = v3->field_33C - 12.0;
-  v19 = *(float *)&v3->mask_338 - 8.0;
+  v19 = *(float *)&v3->flags_338 - 8.0;
   v11->lpVtbl->field_38(v11, a1, LODWORD(v19), LODWORD(v20), 139265, 2, 5, 0, 80);
   v11->last = (int)&unk_10A9DA50;
   *(_DWORD *)&v11->gap5C[10508] = 1;
@@ -60181,8 +60090,8 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
   v11->field_8 = (int(__cdecl *)())sub_100471B0;
   LOWORD(v11->?) = 80;
   *(_DWORD *)v11->gap54 = (__int64)v3->field_33C;
-  v11->field_50 = (__int64)*(float *)&v3->mask_338;
-  v11->field_58 = (__int64)*(float *)&v3->mask_338 + 128;
+  v11->field_50 = (__int64)*(float *)&v3->flags_338;
+  v11->field_58 = (__int64)*(float *)&v3->flags_338 + 128;
   *(_DWORD *)v11->gap5C = (__int64)v3->field_33C + 128;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -60298,7 +60207,7 @@ int __cdecl sub_10052030(int a1) {
   ++*(_WORD *)(a1 + 16);
   v4->field_340 = (unk000C8 *)a1;
   v4->field_10 = 0;
-  v4->mask_338 = 1128464384;
+  v4->flags_338 = 1128464384;
   v4->field_33C = 130.0;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -60319,7 +60228,7 @@ int __cdecl sub_10052030(int a1) {
   if (!v8)
     sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, (unk000C8 *)a1, v4->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v8->lpVtbl->field_38(v8, (unk000C8 *)a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v8->?) = 3;
   v10 = GetStringWithIndex(0x44u);
   v9->field_34(v8, v10, 1, 1, &unk_100AB508);
@@ -60334,7 +60243,7 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v13 = v12->lpVtbl;
   v84 = v4->field_33C - -19.0;
-  v12->lpVtbl->field_38(v12, (unk000C8 *)a1, v4->mask_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
+  v12->lpVtbl->field_38(v12, (unk000C8 *)a1, v4->flags_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
   v12->field_C = sub_10047360;
   v12->field_8 = sub_10047340;
   LOWORD(v12->?) = 3;
@@ -60352,7 +60261,7 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v17 = v16->lpVtbl;
   v85 = v4->field_33C - -95.0;
-  v16->lpVtbl->field_38(v16, (unk000C8 *)a1, v4->mask_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
+  v16->lpVtbl->field_38(v16, (unk000C8 *)a1, v4->flags_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = sub_10045050;
   LOWORD(v16->?) = 2;
@@ -60370,7 +60279,7 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v21 = v20->lpVtbl;
   v86 = v4->field_33C - -114.0;
-  v20->lpVtbl->field_38(v20, (unk000C8 *)a1, v4->mask_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
+  v20->lpVtbl->field_38(v20, (unk000C8 *)a1, v4->flags_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
   v20->field_C = sub_10047360;
   v20->field_8 = (int(__cdecl *)())sub_10047060;
   LOWORD(v20->?) = 3;
@@ -60470,7 +60379,7 @@ int __cdecl sub_10052030(int a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, (unk000C8 *)a1, v4->mask_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v36->lpVtbl->field_38(v36, (unk000C8 *)a1, v4->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v36->field_4 = sub_1003FE80;
   LOWORD(v36->?) = 3;
   v37->field_34(v36, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -60498,7 +60407,7 @@ int __cdecl sub_10052030(int a1) {
   if (!v42)
     sub_1003E260(4);
   v43 = v42->lpVtbl;
-  v42->lpVtbl->field_38(v42, (unk000C8 *)a1, v4->mask_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v42->lpVtbl->field_38(v42, (unk000C8 *)a1, v4->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v42->field_4 = sub_1003FA00;
   LOWORD(v42->?) = 3;
   v43->field_34(v42, asc_100AD300, 1, 1, &unk_100AB4A8);
@@ -60554,7 +60463,7 @@ int __cdecl sub_10052030(int a1) {
   if (!v56)
     sub_1003E260(4);
   v57 = v56->lpVtbl;
-  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, v4->mask_338, 1128988672, 1048585, 2, 5, 1, -1);
+  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, v4->flags_338, 1128988672, 1048585, 2, 5, 1, -1);
   LOWORD(v56->?) = 3;
   v58 = GetStringWithIndex(0x40u);
   v57->field_34(v56, v58, 1, 1, &unk_100AB478);
@@ -60568,7 +60477,7 @@ int __cdecl sub_10052030(int a1) {
   if (!v60)
     sub_1003E260(4);
   v61 = v60->lpVtbl;
-  v60->lpVtbl->field_38(v60, (unk000C8 *)a1, v4->mask_338, 1132756992, 1048585, 2, 5, 1, -1);
+  v60->lpVtbl->field_38(v60, (unk000C8 *)a1, v4->flags_338, 1132756992, 1048585, 2, 5, 1, -1);
   LOWORD(v60->?) = 3;
   v62 = GetStringWithIndex(0x41u);
   v61->field_34(v60, v62, 1, 1, &unk_100AB478);
@@ -60653,7 +60562,7 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v82 = v81->lpVtbl;
   v87 = v4->field_33C - 19.0;
-  v81->lpVtbl->field_38(v81, (unk000C8 *)a1, v4->mask_338, LODWORD(v87), 20481, 2, 5, 1, -1);
+  v81->lpVtbl->field_38(v81, (unk000C8 *)a1, v4->flags_338, LODWORD(v87), 20481, 2, 5, 1, -1);
   v81->field_4 = sub_10040B30;
   LOWORD(v81->?) = 52;
   v82->field_34(v81, String2, 1, 4, &dword_100AB448);
@@ -60769,10 +60678,10 @@ int __cdecl sub_10052F50(int a1) {
   ++*(_WORD *)(a1 + 16);
   v3->field_340 = (unk000C8 *)a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
-  *(_DWORD *)v3->gap4 = sub_100409F0;
-  *(_DWORD *)&v3->gap4[4] = sub_10040A20;
+  *(_DWORD *)v3->field_4 = sub_100409F0;
+  *(_DWORD *)&v3->field_4[4] = sub_10040A20;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
     v5 = meth_unk1E214_init(v4);
@@ -60792,7 +60701,7 @@ int __cdecl sub_10052F50(int a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x47u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -60807,7 +60716,7 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v12 = v11->lpVtbl;
   v11->lpVtbl->field_38(
-      v11, (unk000C8 *)a1, v3->mask_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+      v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_100412C0;
   LOWORD(v11->?) = 3;
@@ -60825,7 +60734,7 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v73 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->mask_338, LODWORD(v73), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->flags_338, LODWORD(v73), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_100412D0;
   LOWORD(v15->?) = 3;
@@ -60843,7 +60752,7 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v74 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->mask_338, LODWORD(v74), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->flags_338, LODWORD(v74), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100412E0;
   LOWORD(v19->?) = 3;
@@ -60861,7 +60770,7 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v24 = v23->lpVtbl;
   v75 = v3->field_33C - -57.0;
-  v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->mask_338, LODWORD(v75), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->flags_338, LODWORD(v75), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_100412F0;
   LOWORD(v23->?) = 3;
@@ -60879,7 +60788,7 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v76 = v3->field_33C - -95.0;
-  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->mask_338, LODWORD(v76), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->flags_338, LODWORD(v76), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = sub_10045F70;
   LOWORD(v27->?) = 3;
@@ -61007,7 +60916,7 @@ int __cdecl sub_10052F50(int a1) {
   if (!v50)
     sub_1003E260(4);
   v51 = v50->lpVtbl;
-  v50->lpVtbl->field_38(v50, (unk000C8 *)a1, v3->mask_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v50->lpVtbl->field_38(v50, (unk000C8 *)a1, v3->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v50->field_4 = sub_1003FE80;
   LOWORD(v50->?) = 3;
   v51->field_34(v50, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -61035,7 +60944,7 @@ int __cdecl sub_10052F50(int a1) {
   if (!v56)
     sub_1003E260(4);
   v57 = v56->lpVtbl;
-  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, v3->mask_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, v3->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v56->field_4 = sub_1003FA00;
   LOWORD(v56->?) = 3;
   v57->field_34(v56, asc_100AD300, 1, 1, &unk_100AB4A8);
@@ -61077,7 +60986,7 @@ int __cdecl sub_10052F50(int a1) {
   if (!v66)
     sub_1003E260(4);
   v67 = v66->lpVtbl;
-  v66->lpVtbl->field_38(v66, (unk000C8 *)a1, v3->mask_338, 1132527616, 1048585, 2, 5, 1, -1);
+  v66->lpVtbl->field_38(v66, (unk000C8 *)a1, v3->flags_338, 1132527616, 1048585, 2, 5, 1, -1);
   LOWORD(v66->?) = 3;
   v68 = GetStringWithIndex(0x40u);
   v67->field_34(v66, v68, 1, 1, &unk_100AB478);
@@ -61115,529 +61024,496 @@ int __cdecl sub_10052F50(int a1) {
 // 10AA28AC: using guessed type int dword_10AA28AC;
 
 //----- (10053CF0) --------------------------------------------------------
-int __cdecl sub_10053CF0(int a1) {
-  _DWORD *v2;                                                     // eax
-  _DWORD *v3;                                                     // ebp
-  unsigned __int16 v4;                                            // dx
-  _DWORD *v5;                                                     // eax
-  _DWORD *v6;                                                     // esi
-  _DWORD *v7;                                                     // eax
-  _WORD *v8;                                                      // esi
-  int v9;                                                         // edi
-  LPCSTR v10;                                                     // eax
-  _DWORD *v11;                                                    // eax
-  _DWORD *v12;                                                    // esi
-  unsigned __int16 v13;                                           // dx
-  int v14;                                                        // edi
-  char *v15;                                                      // eax
-  _DWORD *v16;                                                    // eax
-  _DWORD *v17;                                                    // esi
-  int v18;                                                        // edi
-  LPCSTR v19;                                                     // eax
-  _DWORD *v20;                                                    // eax
-  _DWORD *v21;                                                    // esi
-  unsigned __int16 v22;                                           // dx
-  int v23;                                                        // edi
-  LPCSTR v24;                                                     // eax
-  _DWORD *v25;                                                    // eax
-  _DWORD *v26;                                                    // esi
-  unsigned __int16 v27;                                           // cx
-  int v28;                                                        // edi
-  _DWORD *v29;                                                    // eax
-  _DWORD *v30;                                                    // esi
-  __int64 v31;                                                    // rax
-  _DWORD *v32;                                                    // eax
-  _DWORD *v33;                                                    // esi
-  __int64 v34;                                                    // rax
-  _DWORD *v35;                                                    // eax
-  _WORD *v36;                                                     // esi
-  int v37;                                                        // edi
-  LPCSTR v38;                                                     // eax
-  _DWORD *v39;                                                    // eax
-  _DWORD *v40;                                                    // esi
-  unsigned __int16 v41;                                           // cx
-  int v42;                                                        // edi
-  _DWORD *v43;                                                    // eax
-  _WORD *v44;                                                     // esi
-  unsigned __int16 v45;                                           // dx
-  int v46;                                                        // edi
-  LPCSTR v47;                                                     // eax
-  _DWORD *v48;                                                    // eax
-  _DWORD *v49;                                                    // esi
-  int v50;                                                        // edi
-  _DWORD *v51;                                                    // eax
-  _WORD *v52;                                                     // esi
-  unsigned __int16 v53;                                           // cx
-  int v54;                                                        // edi
-  LPCSTR v55;                                                     // eax
-  _DWORD *v56;                                                    // eax
-  _DWORD *v57;                                                    // esi
-  unsigned __int16 v58;                                           // dx
-  int v59;                                                        // edi
-  _DWORD *v60;                                                    // eax
-  _DWORD *v61;                                                    // esi
-  unsigned __int16 v62;                                           // ax
-  __int16 v63;                                                    // ax
-  _DWORD *v64;                                                    // eax
-  _DWORD *v65;                                                    // esi
-  unsigned __int16 v66;                                           // cx
-  int v67;                                                        // edi
-  _DWORD *v68;                                                    // eax
-  _DWORD *v69;                                                    // esi
-  unsigned __int16 v70;                                           // ax
-  __int16 v71;                                                    // ax
-  _DWORD *v72;                                                    // eax
-  _DWORD *v73;                                                    // esi
-  unsigned __int16 v74;                                           // cx
-  int v75;                                                        // edi
-  _DWORD *v76;                                                    // eax
-  _WORD *v77;                                                     // esi
-  int v78;                                                        // edi
-  LPCSTR v79;                                                     // eax
-  _DWORD *v80;                                                    // eax
-  _DWORD *v81;                                                    // esi
-  unsigned __int16 v82;                                           // dx
-  int v83;                                                        // edi
-  float v85;                                                      // [esp+304h] [ebp-80h]
-  float v86;                                                      // [esp+304h] [ebp-80h]
-  void(__thiscall * v87)(_DWORD *, char *, int, int, int *, int); // [esp+32Ch] [ebp-58h]
-  float v88;                                                      // [esp+32Ch] [ebp-58h]
-  int v89;                                                        // [esp+330h] [ebp-54h]
-  int v90;                                                        // [esp+334h] [ebp-50h]
-  char v91[32];                                                   // [esp+338h] [ebp-4Ch] BYREF
-  char Buffer[32];                                                // [esp+358h] [ebp-2Ch] BYREF
-  int v93;                                                        // [esp+380h] [ebp-4h]
-  int v94;                                                        // [esp+388h] [ebp+4h]
-  float v95;                                                      // [esp+388h] [ebp+4h]
-  float v96;                                                      // [esp+388h] [ebp+4h]
-  float v97;                                                      // [esp+388h] [ebp+4h]
+int __cdecl sub_10053CF0(unk000C8 *a1) {
+  unk00348 *v2;                                                  // eax
+  unk00348 *v3;                                                  // ebp
+  WORD v4;                                                       // dx
+  unk1E214 *v5;                                                  // eax
+  unk1E214 *v6;                                                  // esi
+  unk1E214 *v7;                                                  // eax
+  unk1E214 *v8;                                                  // esi
+  unk1E214Vtbl *v9;                                              // edi
+  LPCSTR v10;                                                    // eax
+  unk1E214 *v11;                                                 // eax
+  unk1E214 *v12;                                                 // esi
+  WORD v13;                                                      // dx
+  unk1A5E0Vtbl *v14;                                             // edi
+  char *v15;                                                     // eax
+  unk1E214 *v16;                                                 // eax
+  unk1E214 *v17;                                                 // esi
+  unk1E214Vtbl *v18;                                             // edi
+  LPCSTR v19;                                                    // eax
+  unk1E214 *v20;                                                 // eax
+  unk1E214 *v21;                                                 // esi
+  WORD v22;                                                      // dx
+  unk1E214Vtbl *v23;                                             // edi
+  LPCSTR v24;                                                    // eax
+  unk1E214 *v25;                                                 // eax
+  unk1E214 *v26;                                                 // esi
+  WORD v27;                                                      // cx
+  int v28;                                                       // edi
+  unk1E214 *v29;                                                 // eax
+  unk1E214 *v30;                                                 // esi
+  __int64 v31;                                                   // rax
+  unk1E214 *v32;                                                 // eax
+  unk1E214 *v33;                                                 // esi
+  __int64 v34;                                                   // rax
+  unk1E214 *v35;                                                 // eax
+  unk1E214 *v36;                                                 // esi
+  unk1E214Vtbl *v37;                                             // edi
+  LPCSTR v38;                                                    // eax
+  unk1E214 *v39;                                                 // eax
+  unk1E214 *v40;                                                 // esi
+  WORD v41;                                                      // cx
+  unk1E214Vtbl *v42;                                             // edi
+  unk1E214 *v43;                                                 // eax
+  unk1E214 *v44;                                                 // esi
+  WORD v45;                                                      // dx
+  unk1E214Vtbl *v46;                                             // edi
+  LPCSTR v47;                                                    // eax
+  unk1E214 *v48;                                                 // eax
+  unk1E214 *v49;                                                 // esi
+  unk1E214Vtbl *v50;                                             // edi
+  unk1E214 *v51;                                                 // eax
+  unk1E214 *u1E214;                                              // esi
+  WORD v53;                                                      // cx
+  unk1E214Vtbl *v54;                                             // edi
+  LPCSTR v55;                                                    // eax
+  unk1E214 *v56;                                                 // eax
+  unk1E214 *v57;                                                 // esi
+  WORD v58;                                                      // dx
+  unk1E214Vtbl *v59;                                             // edi
+  unk1E214 *v60;                                                 // eax
+  unk1E214 *v61;                                                 // esi
+  WORD v62;                                                      // ax
+  WORD v63;                                                      // ax
+  unk1E214 *v64;                                                 // eax
+  unk1E214 *v65;                                                 // esi
+  WORD v66;                                                      // cx
+  unk1E214Vtbl *v67;                                             // edi
+  unk1E214 *v68;                                                 // eax
+  unk1E214 *v69;                                                 // esi
+  WORD v70;                                                      // ax
+  WORD v71;                                                      // ax
+  unk1E214 *v72;                                                 // eax
+  unk1E214 *v73;                                                 // esi
+  WORD v74;                                                      // cx
+  unk1E214Vtbl *v75;                                             // edi
+  unk1E214 *v76;                                                 // eax
+  unk1E214 *v77;                                                 // esi
+  unk1E214Vtbl *v78;                                             // edi
+  LPCSTR v79;                                                    // eax
+  unk1E214 *v80;                                                 // eax
+  unk1E214 *v81;                                                 // esi
+  WORD v82;                                                      // dx
+  unk1E214Vtbl *v83;                                             // edi
+  float v85;                                                     // [esp+304h] [ebp-80h]
+  float v86;                                                     // [esp+304h] [ebp-80h]
+  int(__thiscall * v87)(unk1A5E0 *, char *, int, int, int, int); // [esp+32Ch] [ebp-58h]
+  float v88;                                                     // [esp+32Ch] [ebp-58h]
+  int v89;                                                       // [esp+330h] [ebp-54h]
+  int v90;                                                       // [esp+334h] [ebp-50h]
+  char v91[32];                                                  // [esp+338h] [ebp-4Ch] BYREF
+  char Buffer[32];                                               // [esp+358h] [ebp-2Ch] BYREF
+  int v93;                                                       // [esp+380h] [ebp-4h]
+  unk000C8 *v94;                                                 // [esp+388h] [ebp+4h]
+  float v95;                                                     // [esp+388h] [ebp+4h]
+  float v96;                                                     // [esp+388h] [ebp+4h]
+  float v97;                                                     // [esp+388h] [ebp+4h]
 
-  *(_WORD *)(a1 + 18) = 0;
+  *(&a1->field_10 + 1) = 0;
   dword_10AA28AC = dword_10AA28A4;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 108) = 1;
-  v2 = (_DWORD *)operator new(0x348u);
+  *(&a1->field_6C + a1->field_10) = 1;
+  v2 = (unk00348 *)operator new(0x348u);
   v93 = 0;
   if (v2)
     v3 = meth_10048470(v2);
   else
     v3 = 0;
-  v4 = *(_WORD *)(a1 + 16);
+  v4 = a1->field_10;
   v93 = -1;
-  *(_DWORD *)(a1 + 4 * v4 + 20) = v3;
+  a1->field_14[v4] = v3;
   if (!v3)
     sub_1003E260(4);
-  ++*(_WORD *)(a1 + 16);
-  v3[208] = a1;
-  v3[1] = sub_100409F0;
-  v3[2] = sub_10040A20;
-  v3[4] = 0;
-  v3[206] = 1128464384;
-  v3[207] = 1124204544;
-  v5 = (_DWORD *)operator new(0x1E214u);
+  ++a1->field_10;
+  v3->field_340 = a1;
+  v3->field_4 = sub_100409F0;
+  v3->field_8 = sub_10040A20;
+  v3->field_10 = 0;
+  v3->flags_338 = 0x43430000;
+  v3->field_33C = 130.0;
+  v5 = (unk1E214 *)operator new(0x1E214u);
   v93 = 1;
   if (v5)
     v6 = meth_unk1E214_init(v5);
   else
     v6 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v6;
+  v3->field_18[v3->field_14] = v6;
   if (!v6)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))(*v6 + 56))(
-      v6, a1, 0, 0, 9, 2, 5, 0, 0);
-  ++*((_WORD *)v3 + 10);
-  v7 = (_DWORD *)operator new(0x1E214u);
+  v6->lpVtbl->field_38(v6, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  ++v3->field_14;
+  v7 = (unk1E214 *)operator new(0x1E214u);
   v93 = 2;
   if (v7)
     v8 = meth_unk1E214_init(v7);
   else
     v8 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v8;
+  v3->field_18[v3->field_14] = v8;
   if (!v8)
     sub_1003E260(4);
-  v9 = *(_DWORD *)v8;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v8 + 56))(
-      v8, a1, v3[206], 1092616192, 1048585, 2, 5, 1, -1);
-  v8[61702] = 3;
+  v9 = v8->lpVtbl;
+  v8->lpVtbl->field_38(v8, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x4Eu);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v9 + 52))(
-      v8, v10, 1, 1, &unk_100AB508);
-  ++*((_WORD *)v3 + 10);
-  v11 = (_DWORD *)operator new(0x1E214u);
+  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  ++v3->field_14;
+  v11 = (unk1E214 *)operator new(0x1E214u);
   v93 = 3;
   if (v11)
     v12 = meth_unk1E214_init(v11);
   else
     v12 = 0;
-  v13 = *((_WORD *)v3 + 10);
+  v13 = v3->field_14;
   v93 = -1;
-  v3[v13 + 6] = v12;
+  v3->field_18[v13] = v12;
   if (!v12)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v12 + 56))(
-      v12, a1, v3[206], v3[207], 12289, 2, 5, 1, -1);
-  v14 = v12[3598];
-  v12[1] = sub_1003EB60;
-  v12[30845] = 1;
-  (*(void(__stdcall **)(int, void *, int, _DWORD, int))(v14 + 20))(
-      0x200000, &unk_100AB4D8, 5, 0, -1);
-  v12[5] = sub_1003E8B0;
-  v12[6] = sub_1003E8C0;
+  v12->lpVtbl->field_38(v12, a1, v3->flags_338, v3->field_33C, 12289, 2, 5, 1, -1);
+  v14 = v12->field_3838.lpVtbl;
+  v12->field_4 = sub_1003EB60;
+  *(_DWORD *)&v12->field_3838.field_1A99C[16] = 1;
+  v14->field_14(&v12->field_3838, 0x200000, dword_100AB4D8, 5, 0, -1);
+  v12->field_14 = (int)sub_1003E8B0;
+  v12->field_18 = (int)sub_1003E8C0;
   v94 = 0;
   if (dword_100B3814[6 * (char)dword_10AA28B8] > 0) {
-    v87 = *(void(__thiscall **)(_DWORD *, char *, int, int, int *, int))(v14 + 16);
+    v87 = v14->field_10;
     do {
         strcpy(v91, GetStringWithIndex(0x37u));
         strcat(v91, asc_100AD300);
-        v15 = _itoa(++v94, Buffer, 10);
+        v94 = (unk000C8 *)((char *)v94 + 1);
+        v15 = _itoa((int)v94, Buffer, 10);
         strcat(v91, _strupr(v15));
-        v87(v12 + 3598, v91, 1, 1, &dword_100AB448, 1);
-    } while (v94 < dword_100B3814[6 * (char)dword_10AA28B8]);
+        v87(&v12->field_3838, v91, 1, 1, (int)&dword_100AB448, 1);
+    } while ((int)v94 < dword_100B3814[6 * (char)dword_10AA28B8]);
   }
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
-  v16 = (_DWORD *)operator new(0x1E214u);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
+  v16 = (unk1E214 *)operator new(0x1E214u);
   v93 = 4;
   if (v16)
     v17 = meth_unk1E214_init(v16);
   else
     v17 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v17;
+  v3->field_18[v3->field_14] = v17;
   if (!v17)
     sub_1003E260(4);
-  v18 = *v17;
-  v85 = *((float *)v3 + 207) - -95.0;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v17 + 56))(
-      v17, a1, v3[206], LODWORD(v85), 1056769, 2, 5, 1, -1);
-  v17[3] = sub_10047360;
-  v17[2] = sub_100460A0;
-  *((_WORD *)v17 + 61702) = 3;
+  v18 = v17->lpVtbl;
+  v85 = v3->field_33C - -95.0;
+  v17->lpVtbl->field_38(v17, a1, v3->flags_338, v85, 1056769, 2, 5, 1, -1);
+  v17->field_C = sub_10047360;
+  v17->field_8 = sub_100460A0;
+  v17->field_3838.field_1A99C[28] = 3;
   v19 = GetStringWithIndex(0x1Eu);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v18 + 52))(
-      v17, v19, 1, 1, &dword_100AB448);
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
-  v20 = (_DWORD *)operator new(0x1E214u);
+  v18->field_34(v17, v19, 1, 1, &dword_100AB448);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
+  v20 = (unk1E214 *)operator new(0x1E214u);
   v93 = 5;
   if (v20)
     v21 = meth_unk1E214_init(v20);
   else
     v21 = 0;
-  v22 = *((_WORD *)v3 + 10);
+  v22 = v3->field_14;
   v93 = -1;
-  v3[v22 + 6] = v21;
+  v3->field_18[v22] = v21;
   if (!v21)
     sub_1003E260(4);
-  v23 = *v21;
-  v86 = *((float *)v3 + 207) - -114.0;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v21 + 56))(
-      v21, a1, v3[206], LODWORD(v86), 1056769, 2, 5, 1, -1);
-  v21[3] = sub_10047360;
-  v21[2] = sub_100470A0;
-  *((_WORD *)v21 + 61702) = 3;
+  v23 = v21->lpVtbl;
+  v86 = v3->field_33C - -114.0;
+  v21->lpVtbl->field_38(v21, a1, v3->flags_338, v86, 1056769, 2, 5, 1, -1);
+  v21->field_C = sub_10047360;
+  v21->field_8 = (int(__cdecl *)())sub_100470A0;
+  v21->field_3838.field_1A99C[28] = 3;
   v24 = GetStringWithIndex(0xCu);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v23 + 52))(
-      v21, v24, 1, 1, &dword_100AB448);
-  ++*((_WORD *)v3 + 10);
-  ++*((_WORD *)v3 + 418);
+  v23->field_34(v21, v24, 1, 1, &dword_100AB448);
+  ++v3->field_14;
+  ++LOWORD(v3->last);
   v88 = (float)dword_100AB428;
   v95 = (float)dword_100AB42C;
-  v25 = (_DWORD *)operator new(0x1E214u);
+  v25 = (unk1E214 *)operator new(0x1E214u);
   v93 = 6;
   if (v25)
     v26 = meth_unk1E214_init(v25);
   else
     v26 = 0;
-  v27 = *((_WORD *)v3 + 10);
+  v27 = v3->field_14;
   v93 = -1;
-  v3[v27 + 6] = v26;
+  v3->field_18[v27] = v26;
   if (!v26)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, float, float, int, int, int, int, int))(*v26 + 56))(
-      v26, a1, COERCE_FLOAT(LODWORD(v88)), COERCE_FLOAT(LODWORD(v95)), 4202497, 2, 5, 1, 120);
-  v26[3] = sub_10047360;
-  v26[2] = sub_10045860;
+  v26->lpVtbl->field_38(v26, a1, LODWORD(v88), v95, 4202497, 2, 5, 1, 120);
+  v26->field_C = sub_10047360;
+  v26->field_8 = sub_10045860;
   v90 = (__int64)v95;
-  v26[21] = v90;
+  *(_DWORD *)v26->gap54 = v90;
   v28 = (__int64)v88;
-  v26[20] = v28;
-  v26[22] = v28 + 127;
-  v26[23] = v90 + 33;
-  v26[2650] = 0;
+  v26->field_50 = v28;
+  v26->field_58 = v28 + 127;
+  *(_DWORD *)v26->gap5C = v90 + 33;
+  v26->field_2968 = 0;
   v96 = v95 - -33.0;
-  *((_WORD *)v26 + 5409) = 121;
-  ++*((_WORD *)v3 + 10);
+  *(_WORD *)&v26->field_2A40[2] = 121;
+  ++v3->field_14;
   v89 = v28 + 127;
-  v29 = (_DWORD *)operator new(0x1E214u);
+  v29 = (unk1E214 *)operator new(0x1E214u);
   v93 = 7;
   if (v29)
     v30 = meth_unk1E214_init(v29);
   else
     v30 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v30;
+  v3->field_18[v3->field_14] = v30;
   if (!v30)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, float, float, int, int, int, int, int))(*v30 + 56))(
-      v30, a1, COERCE_FLOAT(LODWORD(v88)), COERCE_FLOAT(LODWORD(v96)), 4202497, 2, 5, 1, 82);
-  v30[3] = sub_10047360;
-  v30[2] = sub_10043FA0;
+  v30->lpVtbl->field_38(v30, a1, LODWORD(v88), v96, 4202497, 2, 5, 1, 82);
+  v30->field_C = sub_10047360;
+  v30->field_8 = (int(__cdecl *)())sub_10043FA0;
   v31 = (__int64)v96;
-  v30[21] = v31;
-  v30[20] = v28;
-  v30[22] = v89;
-  v30[23] = v31 + 33;
+  *(_DWORD *)v30->gap54 = v31;
+  v30->field_50 = v28;
+  v30->field_58 = v89;
+  *(_DWORD *)v30->gap5C = v31 + 33;
   v97 = v96 - -33.0;
-  v30[2650] = 0;
-  *((_WORD *)v30 + 5409) = 83;
-  ++*((_WORD *)v3 + 10);
-  v32 = (_DWORD *)operator new(0x1E214u);
+  v30->field_2968 = 0;
+  *(_WORD *)&v30->field_2A40[2] = 83;
+  ++v3->field_14;
+  v32 = (unk1E214 *)operator new(0x1E214u);
   v93 = 8;
   if (v32)
     v33 = meth_unk1E214_init(v32);
   else
     v33 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v33;
+  v3->field_18[v3->field_14] = v33;
   if (!v33)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, float, float, int, int, int, int, int))(*v33 + 56))(
-      v33, a1, COERCE_FLOAT(LODWORD(v88)), COERCE_FLOAT(LODWORD(v97)), 4202497, 2, 5, 1, 84);
-  v33[3] = sub_10047360;
-  v33[2] = sub_10045840;
+  v33->lpVtbl->field_38(v33, a1, LODWORD(v88), v97, 4202497, 2, 5, 1, 84);
+  v33->field_C = sub_10047360;
+  v33->field_8 = sub_10045840;
   v34 = (__int64)v97;
-  v33[21] = v34;
-  v33[20] = v28;
-  v33[22] = v89;
-  v33[23] = v34 + 33;
-  v33[2650] = 0;
-  *((_WORD *)v33 + 5409) = 85;
-  ++*((_WORD *)v3 + 10);
-  v35 = (_DWORD *)operator new(0x1E214u);
+  *(_DWORD *)v33->gap54 = v34;
+  v33->field_50 = v28;
+  v33->field_58 = v89;
+  *(_DWORD *)v33->gap5C = v34 + 33;
+  v33->field_2968 = 0;
+  *(_WORD *)&v33->field_2A40[2] = 85;
+  ++v3->field_14;
+  v35 = (unk1E214 *)operator new(0x1E214u);
   v93 = 9;
   if (v35)
     v36 = meth_unk1E214_init(v35);
   else
     v36 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v36;
+  v3->field_18[v3->field_14] = v36;
   if (!v36)
     sub_1003E260(4);
-  v37 = *(_DWORD *)v36;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v36 + 56))(
-      v36, a1, 1121189888, 1118437376, 1048577, 2, 5, 1, -1);
-  v36[61702] = 3;
+  v37 = v36->lpVtbl;
+  v36->lpVtbl->field_38(v36, a1, 0x42D40000, 85.0, 1048577, 2, 5, 1, -1);
+  v36->field_3838.field_1A99C[28] = 3;
   v38 = GetStringWithIndex(0x38u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v37 + 52))(
-      v36, v38, 1, 1, &unk_100AB458);
-  ++*((_WORD *)v3 + 10);
-  v39 = (_DWORD *)operator new(0x1E214u);
+  v37->field_34(v36, v38, 1, 1, &unk_100AB458);
+  ++v3->field_14;
+  v39 = (unk1E214 *)operator new(0x1E214u);
   v93 = 10;
   if (v39)
     v40 = meth_unk1E214_init(v39);
   else
     v40 = 0;
-  v41 = *((_WORD *)v3 + 10);
+  v41 = v3->field_14;
   v93 = -1;
-  v3[v41 + 6] = v40;
+  v3->field_18[v41] = v40;
   if (!v40)
     sub_1003E260(4);
-  v42 = *v40;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v40 + 56))(
-      v40, a1, 1138491392, 1115947008, 20481, 2, 5, 1, -1);
-  v40[1] = sub_10041300;
-  *((_WORD *)v40 + 61702) = 52;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v42 + 52))(
-      v40, String2, 1, 4, &unk_100AB458);
-  ++*((_WORD *)v3 + 10);
-  v43 = (_DWORD *)operator new(0x1E214u);
+  v42 = v40->lpVtbl;
+  v40->lpVtbl->field_38(v40, a1, 0x43DC0000, 66.0, 20481, 2, 5, 1, -1);
+  v40->field_4 = sub_10041300;
+  v40->field_3838.field_1A99C[28] = 52;
+  v42->field_34(v40, String2, 1, 4, &unk_100AB458);
+  ++v3->field_14;
+  v43 = (unk1E214 *)operator new(0x1E214u);
   v93 = 11;
   if (v43)
     v44 = meth_unk1E214_init(v43);
   else
     v44 = 0;
-  v45 = *((_WORD *)v3 + 10);
+  v45 = v3->field_14;
   v93 = -1;
-  v3[v45 + 6] = v44;
+  v3->field_18[v45] = v44;
   if (!v44)
     sub_1003E260(4);
-  v46 = *(_DWORD *)v44;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v44 + 56))(
-      v44, a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
-  v44[61702] = 3;
+  v46 = v44->lpVtbl;
+  v44->lpVtbl->field_38(v44, a1, 0x42D40000, 123.0, 1048577, 2, 5, 1, -1);
+  v44->field_3838.field_1A99C[28] = 3;
   v47 = GetStringWithIndex(0x36u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v46 + 52))(
-      v44, v47, 1, 1, &unk_100AB458);
-  ++*((_WORD *)v3 + 10);
-  v48 = (_DWORD *)operator new(0x1E214u);
+  v46->field_34(v44, v47, 1, 1, &unk_100AB458);
+  ++v3->field_14;
+  v48 = (unk1E214 *)operator new(0x1E214u);
   v93 = 12;
   if (v48)
     v49 = meth_unk1E214_init(v48);
   else
     v49 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v49;
+  v3->field_18[v3->field_14] = v49;
   if (!v49)
     sub_1003E260(4);
-  v50 = *v49;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v49 + 56))(
-      v49, a1, 1138491392, 1120927744, 20481, 2, 5, 1, -1);
-  v49[1] = sub_100413B0;
-  *((_WORD *)v49 + 61702) = 52;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v50 + 52))(
-      v49, String2, 1, 4, &unk_100AB458);
-  ++*((_WORD *)v3 + 10);
-  v51 = (_DWORD *)operator new(0x1E214u);
+  v50 = v49->lpVtbl;
+  v49->lpVtbl->field_38(v49, a1, 0x43DC0000, 104.0, 20481, 2, 5, 1, -1);
+  v49->field_4 = sub_100413B0;
+  v49->field_3838.field_1A99C[28] = 52;
+  v50->field_34(v49, String2, 1, 4, &unk_100AB458);
+  ++v3->field_14;
+  v51 = (unk1E214 *)operator new(0x1E214u);
   v93 = 13;
   if (v51)
-    v52 = meth_unk1E214_init(v51);
+    u1E214 = meth_unk1E214_init(v51);
   else
-    v52 = 0;
-  v53 = *((_WORD *)v3 + 10);
+    u1E214 = 0;
+  v53 = v3->field_14;
   v93 = -1;
-  v3[v53 + 6] = v52;
-  if (!v52)
+  v3->field_18[v53] = u1E214;
+  if (!u1E214)
     sub_1003E260(4);
-  v54 = *(_DWORD *)v52;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v52 + 56))(
-      v52, a1, 1121189888, 1127809024, 1048577, 2, 5, 1, -1);
-  v52[61702] = 3;
+  v54 = u1E214->lpVtbl;
+  u1E214->lpVtbl->field_38(u1E214, a1, 0x42D40000, 185.0, 1048577, 2, 5, 1, -1);
+  u1E214->field_3838.field_1A99C[28] = 3;
   v55 = GetStringWithIndex(0x4Cu);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v54 + 52))(
-      v52, v55, 1, 1, &unk_100AB4F8);
-  ++*((_WORD *)v3 + 10);
-  v56 = (_DWORD *)operator new(0x1E214u);
+  v54->field_34(u1E214, v55, 1, 1, &unk_100AB4F8);
+  ++v3->field_14;
+  v56 = (unk1E214 *)operator new(0x1E214u);
   v93 = 14;
   if (v56)
     v57 = meth_unk1E214_init(v56);
   else
     v57 = 0;
-  v58 = *((_WORD *)v3 + 10);
+  v58 = v3->field_14;
   v93 = -1;
-  v3[v58 + 6] = v57;
+  v3->field_18[v58] = v57;
   if (!v57)
     sub_1003E260(4);
-  v59 = *v57;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v57 + 56))(
-      v57, a1, 1138491392, 1124925440, 20481, 2, 5, 1, -1);
-  v57[1] = sub_1003E8D0;
-  *((_WORD *)v57 + 61702) = 5;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v59 + 52))(
-      v57, String2, 1, 3, &unk_100AB4F8);
-  ++*((_WORD *)v3 + 10);
-  v60 = (_DWORD *)operator new(0x1E214u);
+  v59 = v57->lpVtbl;
+  v57->lpVtbl->field_38(v57, a1, 0x43DC0000, 141.0, 20481, 2, 5, 1, -1);
+  v57->field_4 = sub_1003E8D0;
+  v57->field_3838.field_1A99C[28] = 5;
+  v59->field_34(v57, String2, 1, 3, &unk_100AB4F8);
+  ++v3->field_14;
+  v60 = (unk1E214 *)operator new(0x1E214u);
   v93 = 15;
   if (v60)
     v61 = meth_unk1E214_init(v60);
   else
     v61 = 0;
-  v62 = *((_WORD *)v3 + 10);
+  v62 = v3->field_14;
   v93 = -1;
-  v3[v62 + 6] = v61;
+  v3->field_18[v62] = v61;
   if (!v61)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v61 + 56))(
-      v61, a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
-  v61[1] = sub_100407E0;
-  v63 = *((_WORD *)v3 + 10) + 1;
-  ++*((_WORD *)v61 + 5466);
-  *((_WORD *)v61 + 5467) = v63;
-  ++*((_WORD *)v3 + 10);
-  v64 = (_DWORD *)operator new(0x1E214u);
+  v61->lpVtbl->field_38(v61, a1, 0x42920000, 212.0, 1, 2, 5, 1, 22);
+  v61->field_4 = sub_100407E0;
+  v63 = v3->field_14 + 1;
+  ++v61->field_2AB4[0];
+  v61->field_2AB4[1] = v63;
+  ++v3->field_14;
+  v64 = (unk1E214 *)operator new(0x1E214u);
   v93 = 16;
   if (v64)
     v65 = meth_unk1E214_init(v64);
   else
     v65 = 0;
-  v66 = *((_WORD *)v3 + 10);
+  v66 = v3->field_14;
   v93 = -1;
-  v3[v66 + 6] = v65;
+  v3->field_18[v66] = v65;
   if (!v65)
     sub_1003E260(4);
-  v67 = *v65;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v65 + 56))(
-      v65, a1, v3[206], 1133084672, 1052673, 2, 5, 1, -1);
-  v65[1] = sub_1003FE80;
-  *((_WORD *)v65 + 61702) = 3;
-  (*(void(__thiscall **)(_DWORD *, char *, int, int, void *))(v67 + 52))(
-      v65, asc_100AD300, 1, 1, &unk_100AB4B8);
-  ++*((_WORD *)v3 + 10);
-  v68 = (_DWORD *)operator new(0x1E214u);
+  v67 = v65->lpVtbl;
+  v65->lpVtbl->field_38(v65, a1, v3->flags_338, 275.0, 1052673, 2, 5, 1, -1);
+  v65->field_4 = sub_1003FE80;
+  v65->field_3838.field_1A99C[28] = 3;
+  v67->field_34(v65, asc_100AD300, 1, 1, &unk_100AB4B8);
+  ++v3->field_14;
+  v68 = (unk1E214 *)operator new(0x1E214u);
   v93 = 17;
   if (v68)
     v69 = meth_unk1E214_init(v68);
   else
     v69 = 0;
-  v70 = *((_WORD *)v3 + 10);
+  v70 = v3->field_14;
   v93 = -1;
-  v3[v70 + 6] = v69;
+  v3->field_18[v70] = v69;
   if (!v69)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v69 + 56))(
-      v69, a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
-  v69[1] = sub_10040730;
-  v71 = *((_WORD *)v3 + 10) + 1;
-  ++*((_WORD *)v69 + 5466);
-  *((_WORD *)v69 + 5467) = v71;
-  ++*((_WORD *)v3 + 10);
-  v72 = (_DWORD *)operator new(0x1E214u);
+  v69->lpVtbl->field_38(v69, a1, 0x43A28000, 72.0, 1, 2, 5, 1, 17);
+  v69->field_4 = sub_10040730;
+  v71 = v3->field_14 + 1;
+  ++v69->field_2AB4[0];
+  v69->field_2AB4[1] = v71;
+  ++v3->field_14;
+  v72 = (unk1E214 *)operator new(0x1E214u);
   v93 = 18;
   if (v72)
     v73 = meth_unk1E214_init(v72);
   else
     v73 = 0;
-  v74 = *((_WORD *)v3 + 10);
+  v74 = v3->field_14;
   v93 = -1;
-  v3[v74 + 6] = v73;
+  v3->field_18[v74] = v73;
   if (!v73)
     sub_1003E260(4);
-  v75 = *v73;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, int, int, int, int, int, int))(*v73 + 56))(
-      v73, a1, v3[206], 1125646336, 1052673, 2, 5, 1, -1);
-  v73[1] = sub_1003FA00;
-  *((_WORD *)v73 + 61702) = 3;
-  (*(void(__thiscall **)(_DWORD *, char *, int, int, void *))(v75 + 52))(
-      v73, asc_100AD300, 1, 1, &unk_100AB4A8);
-  ++*((_WORD *)v3 + 10);
-  v76 = (_DWORD *)operator new(0x1E214u);
+  v75 = v73->lpVtbl;
+  v73->lpVtbl->field_38(v73, a1, v3->flags_338, 152.0, 1052673, 2, 5, 1, -1);
+  v73->field_4 = sub_1003FA00;
+  v73->field_3838.field_1A99C[28] = 3;
+  v75->field_34(v73, asc_100AD300, 1, 1, &unk_100AB4A8);
+  ++v3->field_14;
+  v76 = (unk1E214 *)operator new(0x1E214u);
   v93 = 19;
   if (v76)
     v77 = meth_unk1E214_init(v76);
   else
     v77 = 0;
   v93 = -1;
-  v3[*((unsigned __int16 *)v3 + 10) + 6] = v77;
+  v3->field_18[v3->field_14] = v77;
   if (!v77)
     sub_1003E260(4);
-  v78 = *(_DWORD *)v77;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v77 + 56))(
-      v77, a1, v3[206], 1132527616, 1048585, 2, 5, 1, -1);
-  v77[61702] = 3;
+  v78 = v77->lpVtbl;
+  v77->lpVtbl->field_38(v77, a1, v3->flags_338, 258.0, 1048585, 2, 5, 1, -1);
+  v77->field_3838.field_1A99C[28] = 3;
   v79 = GetStringWithIndex(0x40u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v78 + 52))(
-      v77, v79, 1, 1, &unk_100AB478);
-  ++*((_WORD *)v3 + 10);
-  v80 = (_DWORD *)operator new(0x1E214u);
+  v78->field_34(v77, v79, 1, 1, &unk_100AB478);
+  ++v3->field_14;
+  v80 = (unk1E214 *)operator new(0x1E214u);
   v93 = 20;
   if (v80)
     v81 = meth_unk1E214_init(v80);
   else
     v81 = 0;
-  v82 = *((_WORD *)v3 + 10);
+  v82 = v3->field_14;
   v93 = -1;
-  v3[v82 + 6] = v81;
+  v3->field_18[v82] = v81;
   if (!v81)
     sub_1003E260(4);
-  v83 = *v81;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v81 + 56))(
-      v81, a1, 1138819072, 1129512960, 20481, 2, 5, 1, -1);
-  v81[1] = sub_1003EA90;
-  *((_WORD *)v81 + 61702) = 5;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v83 + 52))(
-      v81, String2, 1, 3, &unk_100AB478);
-  ++*((_WORD *)v3 + 10);
+  v83 = v81->lpVtbl;
+  v81->lpVtbl->field_38(v81, a1, 0x43E10000, 211.0, 20481, 2, 5, 1, -1);
+  v81->field_4 = sub_1003EA90;
+  v81->field_3838.field_1A99C[28] = 5;
+  v83->field_34(v81, String2, 1, 3, &unk_100AB478);
+  ++v3->field_14;
   return 1;
 }
 // 1003E8B0: using guessed type int sub_1003E8B0();
@@ -61654,8 +61530,6 @@ int __cdecl sub_10053CF0(int a1) {
 // 10041300: using guessed type int __cdecl sub_10041300(int);
 // 100413B0: using guessed type int __cdecl sub_100413B0(int);
 // 10043FA0: using guessed type int __cdecl sub_10043FA0(int);
-// 100460A0: using guessed type int sub_100460A0();
-// 100470A0: using guessed type int __cdecl sub_100470A0(int);
 // 100AB428: using guessed type int dword_100AB428;
 // 100AB42C: using guessed type int dword_100AB42C;
 // 100AB448: using guessed type int dword_100AB448;
@@ -61665,448 +61539,412 @@ int __cdecl sub_10053CF0(int a1) {
 // 10AA28B8: using guessed type int dword_10AA28B8;
 
 //----- (10054B50) --------------------------------------------------------
-int __cdecl sub_10054B50(int a1) {
-  unsigned __int16 v2; // ax
-  _DWORD *v3;          // eax
-  _DWORD *v4;          // esi
-  _DWORD *v5;          // eax
-  _DWORD *v6;          // ebp
-  _DWORD *v7;          // eax
-  _WORD *v8;           // ebp
-  int v9;              // ebx
-  LPCSTR v10;          // eax
-  _DWORD *v11;         // eax
-  _DWORD *v12;         // ebp
-  int v13;             // ebx
-  LPCSTR v14;          // eax
-  _DWORD *v15;         // eax
-  _DWORD *v16;         // ebp
-  int v17;             // ebx
-  LPCSTR v18;          // eax
-  _DWORD *v19;         // eax
-  _DWORD *v20;         // ebp
-  int v21;             // ebx
-  _DWORD *v22;         // eax
-  _DWORD *v23;         // ebp
-  __int64 v24;         // rax
-  _DWORD *v25;         // eax
-  _DWORD *v26;         // ebp
-  __int64 v27;         // rax
-  _DWORD *v28;         // eax
-  _WORD *v29;          // ebp
-  int v30;             // ebx
-  LPCSTR v31;          // eax
-  _DWORD *v32;         // eax
-  _DWORD *v33;         // ebp
-  int v34;             // ebx
-  _DWORD *v35;         // eax
-  _WORD *v36;          // ebp
-  int v37;             // ebx
-  LPCSTR v38;          // eax
-  _DWORD *v39;         // eax
-  _DWORD *v40;         // ebp
-  int v41;             // ebx
-  _DWORD *v42;         // eax
-  _WORD *v43;          // ebp
-  int v44;             // ebx
-  LPCSTR v45;          // eax
-  _DWORD *v46;         // eax
-  _DWORD *v47;         // ebp
-  int v48;             // ebx
-  _DWORD *v49;         // eax
-  _WORD *v50;          // ebp
-  int v51;             // ebx
-  LPCSTR v52;          // eax
-  _DWORD *v53;         // eax
-  _WORD *v54;          // ebp
-  int v55;             // ebx
-  LPCSTR v56;          // eax
-  _DWORD *v57;         // eax
-  _WORD *v58;          // ebp
-  int v59;             // ebx
-  LPCSTR v60;          // eax
-  _DWORD *v61;         // eax
-  _DWORD *v62;         // ebp
-  int v63;             // ebx
-  _DWORD *v64;         // eax
-  _WORD *v65;          // ebp
-  int v66;             // ebx
-  LPCSTR v67;          // eax
-  _DWORD *v68;         // eax
-  _WORD *v69;          // ebp
-  int v70;             // ebx
-  LPCSTR v71;          // eax
-  _DWORD *v72;         // eax
-  _DWORD *v73;         // ebp
-  int v74;             // ebx
-  float v76;           // [esp+34Ch] [ebp-40h]
-  float v77;           // [esp+34Ch] [ebp-40h]
-  float v78;           // [esp+374h] [ebp-18h]
-  int v79;             // [esp+378h] [ebp-14h]
-  int v80;             // [esp+37Ch] [ebp-10h]
-  float v81;           // [esp+390h] [ebp+4h]
-  float v82;           // [esp+390h] [ebp+4h]
-  float v83;           // [esp+390h] [ebp+4h]
+int __cdecl sub_10054B50(unk000C8 *a1) {
+  WORD v2;           // ax
+  unk00348 *v3;      // eax
+  unk00348 *v4;      // esi
+  unk1E214 *v5;      // eax
+  unk1E214 *v6;      // ebp
+  unk1E214 *v7;      // eax
+  unk1E214 *v8;      // ebp
+  unk1E214Vtbl *v9;  // ebx
+  LPCSTR v10;        // eax
+  unk1E214 *v11;     // eax
+  unk1E214 *v12;     // ebp
+  unk1E214Vtbl *v13; // ebx
+  LPCSTR v14;        // eax
+  unk1E214 *v15;     // eax
+  unk1E214 *v16;     // ebp
+  unk1E214Vtbl *v17; // ebx
+  LPCSTR v18;        // eax
+  unk1E214 *v19;     // eax
+  unk1E214 *v20;     // ebp
+  int v21;           // ebx
+  unk1E214 *v22;     // eax
+  unk1E214 *v23;     // ebp
+  __int64 v24;       // rax
+  unk1E214 *v25;     // eax
+  unk1E214 *v26;     // ebp
+  __int64 v27;       // rax
+  unk1E214 *v28;     // eax
+  unk1E214 *v29;     // ebp
+  unk1E214Vtbl *v30; // ebx
+  LPCSTR v31;        // eax
+  unk1E214 *v32;     // eax
+  unk1E214 *v33;     // ebp
+  unk1E214Vtbl *v34; // ebx
+  unk1E214 *v35;     // eax
+  unk1E214 *v36;     // ebp
+  unk1E214Vtbl *v37; // ebx
+  LPCSTR v38;        // eax
+  unk1E214 *v39;     // eax
+  unk1E214 *v40;     // ebp
+  unk1E214Vtbl *v41; // ebx
+  unk1E214 *v42;     // eax
+  unk1E214 *v43;     // ebp
+  unk1E214Vtbl *v44; // ebx
+  LPCSTR v45;        // eax
+  unk1E214 *v46;     // eax
+  unk1E214 *v47;     // ebp
+  unk1E214Vtbl *v48; // ebx
+  unk1E214 *v49;     // eax
+  unk1E214 *v50;     // ebp
+  unk1E214Vtbl *v51; // ebx
+  LPCSTR v52;        // eax
+  unk1E214 *v53;     // eax
+  unk1E214 *v54;     // ebp
+  unk1E214Vtbl *v55; // ebx
+  LPCSTR v56;        // eax
+  unk1E214 *v57;     // eax
+  unk1E214 *v58;     // ebp
+  unk1E214Vtbl *v59; // ebx
+  LPCSTR v60;        // eax
+  unk1E214 *v61;     // eax
+  unk1E214 *v62;     // ebp
+  unk1E214Vtbl *v63; // ebx
+  unk1E214 *v64;     // eax
+  unk1E214 *v65;     // ebp
+  unk1E214Vtbl *v66; // ebx
+  LPCSTR v67;        // eax
+  unk1E214 *v68;     // eax
+  unk1E214 *v69;     // ebp
+  unk1E214Vtbl *v70; // ebx
+  LPCSTR v71;        // eax
+  unk1E214 *v72;     // eax
+  unk1E214 *v73;     // ebp
+  unk1E214Vtbl *v74; // ebx
+  float v76;         // [esp+34Ch] [ebp-40h]
+  float v77;         // [esp+34Ch] [ebp-40h]
+  float v78;         // [esp+374h] [ebp-18h]
+  int v79;           // [esp+378h] [ebp-14h]
+  int v80;           // [esp+37Ch] [ebp-10h]
+  float v81;         // [esp+390h] [ebp+4h]
+  float v82;         // [esp+390h] [ebp+4h]
+  float v83;         // [esp+390h] [ebp+4h]
 
-  v2 = *(_WORD *)(a1 + 16);
-  *(_WORD *)(a1 + 18) = 0;
-  *(_DWORD *)(a1 + 4 * v2 + 108) = 1;
-  v3 = (_DWORD *)operator new(0x348u);
+  v2 = a1->field_10;
+  *(&a1->field_10 + 1) = 0;
+  *(&a1->field_6C + v2) = 1;
+  v3 = (unk00348 *)operator new(0x348u);
   if (v3)
     v4 = meth_10048470(v3);
   else
     v4 = 0;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v4;
+  a1->field_14[a1->field_10] = v4;
   if (!v4)
     sub_1003E260(4);
-  ++*(_WORD *)(a1 + 16);
-  v4[208] = a1;
-  v4[1] = sub_100409F0;
-  v4[2] = sub_10040A20;
-  v4[4] = 0;
-  v4[206] = 1128464384;
-  v4[207] = 1124204544;
-  v5 = (_DWORD *)operator new(0x1E214u);
+  ++a1->field_10;
+  v4->field_340 = a1;
+  v4->field_4 = sub_100409F0;
+  v4->field_8 = sub_10040A20;
+  v4->field_10 = 0;
+  v4->flags_338 = 1128464384;
+  v4->field_33C = 130.0;
+  v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
     v6 = meth_unk1E214_init(v5);
   else
     v6 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v6;
+  v4->field_18[v4->field_14] = v6;
   if (!v6)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))(*v6 + 56))(
-      v6, a1, 0, 0, 9, 2, 5, 0, 0);
-  ++*((_WORD *)v4 + 10);
-  v7 = (_DWORD *)operator new(0x1E214u);
+  v6->lpVtbl->field_38(v6, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  ++v4->field_14;
+  v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
     v8 = meth_unk1E214_init(v7);
   else
     v8 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v8;
+  v4->field_18[v4->field_14] = v8;
   if (!v8)
     sub_1003E260(4);
-  v9 = *(_DWORD *)v8;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v8 + 56))(
-      v8, a1, v4[206], 1092616192, 1048585, 2, 5, 1, -1);
-  v8[61702] = 3;
+  v9 = v8->lpVtbl;
+  v8->lpVtbl->field_38(v8, a1, v4->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x4Fu);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v9 + 52))(
-      v8, v10, 1, 1, &unk_100AB508);
-  ++*((_WORD *)v4 + 10);
-  v11 = (_DWORD *)operator new(0x1E214u);
+  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  ++v4->field_14;
+  v11 = (unk1E214 *)operator new(0x1E214u);
   if (v11)
     v12 = meth_unk1E214_init(v11);
   else
     v12 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v12;
+  v4->field_18[v4->field_14] = v12;
   if (!v12)
     sub_1003E260(4);
-  v13 = *v12;
-  v76 = *((float *)v4 + 207) - -95.0;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v12 + 56))(
-      v12, a1, v4[206], LODWORD(v76), 1056769, 2, 5, 1, -1);
-  v12[3] = sub_10047360;
-  v12[2] = sub_10047290;
-  *((_WORD *)v12 + 61702) = 3;
+  v13 = v12->lpVtbl;
+  v76 = v4->field_33C - -95.0;
+  v12->lpVtbl->field_38(v12, a1, v4->flags_338, v76, 1056769, 2, 5, 1, -1);
+  v12->field_C = sub_10047360;
+  v12->field_8 = (int(__cdecl *)())sub_10047290;
+  v12->field_3838.field_1A99C[28] = 3;
   v14 = GetStringWithIndex(0x50u);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v13 + 52))(
-      v12, v14, 1, 1, &dword_100AB448);
-  ++*((_WORD *)v4 + 10);
-  ++*((_WORD *)v4 + 418);
-  v15 = (_DWORD *)operator new(0x1E214u);
+  v13->field_34(v12, v14, 1, 1, &dword_100AB448);
+  ++v4->field_14;
+  ++LOWORD(v4->last);
+  v15 = (unk1E214 *)operator new(0x1E214u);
   if (v15)
     v16 = meth_unk1E214_init(v15);
   else
     v16 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v16;
+  v4->field_18[v4->field_14] = v16;
   if (!v16)
     sub_1003E260(4);
-  v17 = *v16;
-  v77 = *((float *)v4 + 207) - -114.0;
-  (*(void(__thiscall **)(_DWORD *, int, _DWORD, _DWORD, int, int, int, int, int))(*v16 + 56))(
-      v16, a1, v4[206], LODWORD(v77), 1056769, 2, 5, 1, -1);
-  v16[3] = sub_10047360;
-  v16[2] = sub_100470E0;
-  *((_WORD *)v16 + 61702) = 3;
+  v17 = v16->lpVtbl;
+  v77 = v4->field_33C - -114.0;
+  v16->lpVtbl->field_38(v16, a1, v4->flags_338, v77, 1056769, 2, 5, 1, -1);
+  v16->field_C = sub_10047360;
+  v16->field_8 = (int(__cdecl *)())sub_100470E0;
+  v16->field_3838.field_1A99C[28] = 3;
   v18 = GetStringWithIndex(0xCu);
-  (*(void(__thiscall **)(_DWORD *, LPCSTR, int, int, int *))(v17 + 52))(
-      v16, v18, 1, 1, &dword_100AB448);
-  ++*((_WORD *)v4 + 10);
-  ++*((_WORD *)v4 + 418);
+  v17->field_34(v16, v18, 1, 1, &dword_100AB448);
+  ++v4->field_14;
+  ++LOWORD(v4->last);
   v78 = (float)dword_100AB428;
   v81 = (float)dword_100AB42C;
-  v19 = (_DWORD *)operator new(0x1E214u);
+  v19 = (unk1E214 *)operator new(0x1E214u);
   if (v19)
     v20 = meth_unk1E214_init(v19);
   else
     v20 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v20;
+  v4->field_18[v4->field_14] = v20;
   if (!v20)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, float, float, int, int, int, int, int))(*v20 + 56))(
-      v20, a1, COERCE_FLOAT(LODWORD(v78)), COERCE_FLOAT(LODWORD(v81)), 4202497, 2, 5, 1, 120);
-  v20[3] = sub_10047360;
-  v20[2] = sub_100458A0;
+  v20->lpVtbl->field_38(v20, a1, LODWORD(v78), v81, 0x402001, 2, 5, 1, 120);
+  v20->field_C = sub_10047360;
+  v20->field_8 = sub_100458A0;
   v80 = (__int64)v81;
-  v20[21] = v80;
+  *(_DWORD *)v20->gap54 = v80;
   v21 = (__int64)v78;
-  v20[20] = v21;
-  v20[22] = v21 + 127;
-  v20[23] = v80 + 33;
-  v20[2650] = 0;
+  v20->field_50 = v21;
+  v20->field_58 = v21 + 127;
+  *(_DWORD *)v20->gap5C = v80 + 33;
+  v20->field_2968 = 0;
   v82 = v81 - -33.0;
-  *((_WORD *)v20 + 5409) = 121;
-  ++*((_WORD *)v4 + 10);
+  *(_WORD *)&v20->field_2A40[2] = 121;
+  ++v4->field_14;
   v79 = v21 + 127;
-  v22 = (_DWORD *)operator new(0x1E214u);
+  v22 = (unk1E214 *)operator new(0x1E214u);
   if (v22)
     v23 = meth_unk1E214_init(v22);
   else
     v23 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v23;
+  v4->field_18[v4->field_14] = v23;
   if (!v23)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, float, float, int, int, int, int, int))(*v23 + 56))(
-      v23, a1, COERCE_FLOAT(LODWORD(v78)), COERCE_FLOAT(LODWORD(v82)), 4202497, 2, 5, 1, 82);
-  v23[3] = sub_10047360;
-  v23[2] = sub_10043FA0;
+  v23->lpVtbl->field_38(v23, a1, LODWORD(v78), v82, 0x402001, 2, 5, 1, 82);
+  v23->field_C = sub_10047360;
+  v23->field_8 = (int(__cdecl *)())sub_10043FA0;
   v24 = (__int64)v82;
-  v23[21] = v24;
-  v23[20] = v21;
-  v23[22] = v79;
-  v23[23] = v24 + 33;
+  *(_DWORD *)v23->gap54 = v24;
+  v23->field_50 = v21;
+  v23->field_58 = v79;
+  *(_DWORD *)v23->gap5C = v24 + 33;
   v83 = v82 - -33.0;
-  v23[2650] = 0;
-  *((_WORD *)v23 + 5409) = 83;
-  ++*((_WORD *)v4 + 10);
-  v25 = (_DWORD *)operator new(0x1E214u);
+  v23->field_2968 = 0;
+  *(_WORD *)&v23->field_2A40[2] = 83;
+  ++v4->field_14;
+  v25 = (unk1E214 *)operator new(0x1E214u);
   if (v25)
     v26 = meth_unk1E214_init(v25);
   else
     v26 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v26;
+  v4->field_18[v4->field_14] = v26;
   if (!v26)
     sub_1003E260(4);
-  (*(void(__thiscall **)(_DWORD *, int, float, float, int, int, int, int, int))(*v26 + 56))(
-      v26, a1, COERCE_FLOAT(LODWORD(v78)), COERCE_FLOAT(LODWORD(v83)), 4202497, 2, 5, 1, 84);
-  v26[3] = sub_10047360;
-  v26[2] = sub_10045880;
+  v26->lpVtbl->field_38(v26, a1, LODWORD(v78), v83, 4202497, 2, 5, 1, 84);
+  v26->field_C = sub_10047360;
+  v26->field_8 = sub_10045880;
   v27 = (__int64)v83;
-  v26[21] = v27;
-  v26[20] = v21;
-  v26[22] = v79;
-  v26[23] = v27 + 33;
-  v26[2650] = 0;
-  *((_WORD *)v26 + 5409) = 85;
-  ++*((_WORD *)v4 + 10);
-  v28 = (_DWORD *)operator new(0x1E214u);
+  *(_DWORD *)v26->gap54 = v27;
+  v26->field_50 = v21;
+  v26->field_58 = v79;
+  *(_DWORD *)v26->gap5C = v27 + 33;
+  v26->field_2968 = 0;
+  *(_WORD *)&v26->field_2A40[2] = 85;
+  ++v4->field_14;
+  v28 = (unk1E214 *)operator new(0x1E214u);
   if (v28)
     v29 = meth_unk1E214_init(v28);
   else
     v29 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v29;
+  v4->field_18[v4->field_14] = v29;
   if (!v29)
     sub_1003E260(4);
-  v30 = *(_DWORD *)v29;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v29 + 56))(
-      v29, a1, 1121189888, 1118437376, 1048577, 2, 5, 1, -1);
-  v29[61702] = 3;
+  v30 = v29->lpVtbl;
+  v29->lpVtbl->field_38(v29, a1, 1121189888, 85.0, 1048577, 2, 5, 1, -1);
+  v29->field_3838.field_1A99C[28] = 3;
   v31 = GetStringWithIndex(0x38u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v30 + 52))(
-      v29, v31, 1, 1, &unk_100AB458);
-  ++*((_WORD *)v4 + 10);
-  v32 = (_DWORD *)operator new(0x1E214u);
+  v30->field_34(v29, v31, 1, 1, &unk_100AB458);
+  ++v4->field_14;
+  v32 = (unk1E214 *)operator new(0x1E214u);
   if (v32)
     v33 = meth_unk1E214_init(v32);
   else
     v33 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v33;
+  v4->field_18[v4->field_14] = v33;
   if (!v33)
     sub_1003E260(4);
-  v34 = *v33;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v33 + 56))(
-      v33, a1, 1138491392, 1115947008, 20481, 2, 5, 1, -1);
-  v33[1] = sub_10041300;
-  *((_WORD *)v33 + 61702) = 52;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v34 + 52))(
-      v33, String2, 1, 4, &unk_100AB458);
-  ++*((_WORD *)v4 + 10);
-  v35 = (_DWORD *)operator new(0x1E214u);
+  v34 = v33->lpVtbl;
+  v33->lpVtbl->field_38(v33, a1, 1138491392, 66.0, 20481, 2, 5, 1, -1);
+  v33->field_4 = sub_10041300;
+  v33->field_3838.field_1A99C[28] = 52;
+  v34->field_34(v33, String2, 1, 4, &unk_100AB458);
+  ++v4->field_14;
+  v35 = (unk1E214 *)operator new(0x1E214u);
   if (v35)
     v36 = meth_unk1E214_init(v35);
   else
     v36 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v36;
+  v4->field_18[v4->field_14] = v36;
   if (!v36)
     sub_1003E260(4);
-  v37 = *(_DWORD *)v36;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v36 + 56))(
-      v36, a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
-  v36[61702] = 3;
+  v37 = v36->lpVtbl;
+  v36->lpVtbl->field_38(v36, a1, 1121189888, 123.0, 1048577, 2, 5, 1, -1);
+  v36->field_3838.field_1A99C[28] = 3;
   v38 = GetStringWithIndex(0x36u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v37 + 52))(
-      v36, v38, 1, 1, &unk_100AB458);
-  ++*((_WORD *)v4 + 10);
-  v39 = (_DWORD *)operator new(0x1E214u);
+  v37->field_34(v36, v38, 1, 1, &unk_100AB458);
+  ++v4->field_14;
+  v39 = (unk1E214 *)operator new(0x1E214u);
   if (v39)
     v40 = meth_unk1E214_init(v39);
   else
     v40 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v40;
+  v4->field_18[v4->field_14] = v40;
   if (!v40)
     sub_1003E260(4);
-  v41 = *v40;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v40 + 56))(
-      v40, a1, 1138491392, 1120927744, 20481, 2, 5, 1, -1);
-  v40[1] = sub_100413B0;
-  *((_WORD *)v40 + 61702) = 52;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v41 + 52))(
-      v40, String2, 1, 4, &unk_100AB458);
-  ++*((_WORD *)v4 + 10);
-  v42 = (_DWORD *)operator new(0x1E214u);
+  v41 = v40->lpVtbl;
+  v40->lpVtbl->field_38(v40, a1, 1138491392, 104.0, 20481, 2, 5, 1, -1);
+  v40->field_4 = sub_100413B0;
+  v40->field_3838.field_1A99C[28] = 52;
+  v41->field_34(v40, String2, 1, 4, &unk_100AB458);
+  ++v4->field_14;
+  v42 = (unk1E214 *)operator new(0x1E214u);
   if (v42)
     v43 = meth_unk1E214_init(v42);
   else
     v43 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v43;
+  v4->field_18[v4->field_14] = v43;
   if (!v43)
     sub_1003E260(4);
-  v44 = *(_DWORD *)v43;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v43 + 56))(
-      v43, a1, 0, 1116471296, 1048585, 2, 5, 1, -1);
-  v43[61702] = 3;
+  v44 = v43->lpVtbl;
+  v43->lpVtbl->field_38(v43, a1, 0, 70.0, 1048585, 2, 5, 1, -1);
+  v43->field_3838.field_1A99C[28] = 3;
   v45 = GetStringWithIndex(0x52u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v44 + 52))(
-      v43, v45, 1, 1, &unk_100AB468);
-  ++*((_WORD *)v4 + 10);
-  v46 = (_DWORD *)operator new(0x1E214u);
+  v44->field_34(v43, v45, 1, 1, &unk_100AB468);
+  ++v4->field_14;
+  v46 = (unk1E214 *)operator new(0x1E214u);
   if (v46)
     v47 = meth_unk1E214_init(v46);
   else
     v47 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v47;
+  v4->field_18[v4->field_14] = v47;
   if (!v47)
     sub_1003E260(4);
-  v48 = *v47;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v47 + 56))(
-      v47, a1, 1134886912, 1120010240, 20481, 2, 5, 1, -1);
-  v47[1] = sub_10041670;
-  *((_WORD *)v47 + 61702) = 5;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v48 + 52))(
-      v47, String2, 1, 3, &unk_100AB468);
-  ++*((_WORD *)v4 + 10);
-  v49 = (_DWORD *)operator new(0x1E214u);
+  v48 = v47->lpVtbl;
+  v47->lpVtbl->field_38(v47, a1, 1134886912, 97.0, 20481, 2, 5, 1, -1);
+  v47->field_4 = sub_10041670;
+  v47->field_3838.field_1A99C[28] = 5;
+  v48->field_34(v47, String2, 1, 3, &unk_100AB468);
+  ++v4->field_14;
+  v49 = (unk1E214 *)operator new(0x1E214u);
   if (v49)
     v50 = meth_unk1E214_init(v49);
   else
     v50 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v50;
+  v4->field_18[v4->field_14] = v50;
   if (!v50)
     sub_1003E260(4);
-  v51 = *(_DWORD *)v50;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v50 + 56))(
-      v50, a1, 0, 1125515264, 1048585, 2, 5, 1, -1);
-  v50[61702] = 3;
+  v51 = v50->lpVtbl;
+  v50->lpVtbl->field_38(v50, a1, 0, 150.0, 1048585, 2, 5, 1, -1);
+  v50->field_3838.field_1A99C[28] = 3;
   v52 = GetStringWithIndex(0x53u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v51 + 52))(
-      v50, v52, 1, 1, &unk_100AB468);
-  ++*((_WORD *)v4 + 10);
-  v53 = (_DWORD *)operator new(0x1E214u);
+  v51->field_34(v50, v52, 1, 1, &unk_100AB468);
+  ++v4->field_14;
+  v53 = (unk1E214 *)operator new(0x1E214u);
   if (v53)
     v54 = meth_unk1E214_init(v53);
   else
     v54 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v54;
+  v4->field_18[v4->field_14] = v54;
   if (!v54)
     sub_1003E260(4);
-  v55 = *(_DWORD *)v54;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v54 + 56))(
-      v54, a1, 1138819072, 1123680256, 1048585, 2, 5, 1, -1);
-  v54[61702] = 3;
+  v55 = v54->lpVtbl;
+  v54->lpVtbl->field_38(v54, a1, 1138819072, 125.0, 1048585, 2, 5, 1, -1);
+  v54->field_3838.field_1A99C[28] = 3;
   v56 = GetStringWithIndex(0x40u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v55 + 52))(
-      v54, v56, 1, 1, &unk_100AB4F8);
-  ++*((_WORD *)v4 + 10);
-  v57 = (_DWORD *)operator new(0x1E214u);
+  v55->field_34(v54, v56, 1, 1, &unk_100AB4F8);
+  ++v4->field_14;
+  v57 = (unk1E214 *)operator new(0x1E214u);
   if (v57)
     v58 = meth_unk1E214_init(v57);
   else
     v58 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v58;
+  v4->field_18[v4->field_14] = v58;
   if (!v58)
     sub_1003E260(4);
-  v59 = *(_DWORD *)v58;
-  (*(void(__thiscall **)(_WORD *, int, int, int, int, int, int, int, int))(*(_DWORD *)v58 + 56))(
-      v58, a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
-  v58[61702] = 3;
+  v59 = v58->lpVtbl;
+  v58->lpVtbl->field_38(v58, a1, 1138819072, 185.0, 1048585, 2, 5, 1, -1);
+  v58->field_3838.field_1A99C[28] = 3;
   v60 = GetStringWithIndex(0x46u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v59 + 52))(
-      v58, v60, 1, 1, &unk_100AB4F8);
-  ++*((_WORD *)v4 + 10);
-  v61 = (_DWORD *)operator new(0x1E214u);
+  v59->field_34(v58, v60, 1, 1, &unk_100AB4F8);
+  ++v4->field_14;
+  v61 = (unk1E214 *)operator new(0x1E214u);
   if (v61)
     v62 = meth_unk1E214_init(v61);
   else
     v62 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v62;
+  v4->field_18[v4->field_14] = v62;
   if (!v62)
     sub_1003E260(4);
-  v63 = *v62;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v62 + 56))(
-      v62, a1, 1138819072, 1124925440, 20481, 2, 5, 1, -1);
-  v62[1] = sub_100417B0;
-  *((_WORD *)v62 + 61702) = 5;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v63 + 52))(
-      v62, String2, 1, 3, &unk_100AB4F8);
-  ++*((_WORD *)v4 + 10);
-  v64 = (_DWORD *)operator new(0x1E214u);
+  v63 = v62->lpVtbl;
+  v62->lpVtbl->field_38(v62, a1, 1138819072, 141.0, 20481, 2, 5, 1, -1);
+  v62->field_4 = sub_100417B0;
+  v62->field_3838.field_1A99C[28] = 5;
+  v63->field_34(v62, String2, 1, 3, &unk_100AB4F8);
+  ++v4->field_14;
+  v64 = (unk1E214 *)operator new(0x1E214u);
   if (v64)
     v65 = meth_unk1E214_init(v64);
   else
     v65 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v65;
+  v4->field_18[v4->field_14] = v65;
   if (!v65)
     sub_1003E260(4);
-  v66 = *(_DWORD *)v65;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v65 + 56))(
-      v65, a1, v4[206], 1128988672, 1048585, 2, 5, 1, -1);
-  v65[61702] = 3;
+  v66 = v65->lpVtbl;
+  v65->lpVtbl->field_38(v65, a1, v4->flags_338, 203.0, 1048585, 2, 5, 1, -1);
+  v65->field_3838.field_1A99C[28] = 3;
   v67 = GetStringWithIndex(0x40u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v66 + 52))(
-      v65, v67, 1, 1, &unk_100AB478);
-  ++*((_WORD *)v4 + 10);
-  v68 = (_DWORD *)operator new(0x1E214u);
+  v66->field_34(v65, v67, 1, 1, &unk_100AB478);
+  ++v4->field_14;
+  v68 = (unk1E214 *)operator new(0x1E214u);
   if (v68)
     v69 = meth_unk1E214_init(v68);
   else
     v69 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v69;
+  v4->field_18[v4->field_14] = v69;
   if (!v69)
     sub_1003E260(4);
-  v70 = *(_DWORD *)v69;
-  (*(void(__thiscall **)(_WORD *, int, _DWORD, int, int, int, int, int, int))(*(_DWORD *)v69 + 56))(
-      v69, a1, v4[206], 1132756992, 1048585, 2, 5, 1, -1);
-  v69[61702] = 3;
+  v70 = v69->lpVtbl;
+  v69->lpVtbl->field_38(v69, a1, v4->flags_338, 265.0, 1048585, 2, 5, 1, -1);
+  v69->field_3838.field_1A99C[28] = 3;
   v71 = GetStringWithIndex(0x41u);
-  (*(void(__thiscall **)(_WORD *, LPCSTR, int, int, void *))(v70 + 52))(
-      v69, v71, 1, 1, &unk_100AB478);
-  ++*((_WORD *)v4 + 10);
-  v72 = (_DWORD *)operator new(0x1E214u);
+  v70->field_34(v69, v71, 1, 1, &unk_100AB478);
+  ++v4->field_14;
+  v72 = (unk1E214 *)operator new(0x1E214u);
   if (v72)
     v73 = meth_unk1E214_init(v72);
   else
     v73 = 0;
-  v4[*((unsigned __int16 *)v4 + 10) + 6] = v73;
+  v4->field_18[v4->field_14] = v73;
   if (!v73)
     sub_1003E260(4);
-  v74 = *v73;
-  (*(void(__thiscall **)(_DWORD *, int, int, int, int, int, int, int, int))(*v73 + 56))(
-      v73, a1, 1138819072, 1129906176, 20481, 2, 5, 1, -1);
-  v73[1] = sub_10041710;
-  *((_WORD *)v73 + 61702) = 5;
-  (*(void(__thiscall **)(_DWORD *, CHAR *, int, int, void *))(v74 + 52))(
-      v73, String2, 1, 3, &unk_100AB478);
-  ++*((_WORD *)v4 + 10);
+  v74 = v73->lpVtbl;
+  v73->lpVtbl->field_38(v73, a1, 1138819072, 217.0, 20481, 2, 5, 1, -1);
+  v73->field_4 = sub_10041710;
+  v73->field_3838.field_1A99C[28] = 5;
+  v74->field_34(v73, String2, 1, 3, &unk_100AB478);
+  ++v4->field_14;
   return 1;
 }
 // 100409F0: using guessed type int sub_100409F0();
@@ -62114,13 +61952,12 @@ int __cdecl sub_10054B50(int a1) {
 // 10041300: using guessed type int __cdecl sub_10041300(int);
 // 100413B0: using guessed type int __cdecl sub_100413B0(int);
 // 10043FA0: using guessed type int __cdecl sub_10043FA0(int);
-// 10054B50: using guessed type int __cdecl sub_10054B50(int);
 // 100AB428: using guessed type int dword_100AB428;
 // 100AB42C: using guessed type int dword_100AB42C;
 // 100AB448: using guessed type int dword_100AB448;
 
 //----- (100558A0) --------------------------------------------------------
-int __cdecl sub_100558A0(int a1) {
+int __cdecl sub_100558A0(unk000C8 *a1) {
   unk00348 *v1;      // eax
   unk00348 *v2;      // esi
   unk1E214 *v3;      // eax
@@ -62181,21 +62018,21 @@ int __cdecl sub_100558A0(int a1) {
   float v59;         // [esp+2A8h] [ebp-34h]
   float v60;         // [esp+2A8h] [ebp-34h]
 
-  *(_WORD *)(a1 + 18) = 0;
+  *(&a1->field_10 + 1) = 0;
   gGameMode = GAME_MODE_6;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 108) = 1;
+  *(&a1->field_6C + a1->field_10) = 1;
   v1 = (unk00348 *)operator new(0x348u);
   if (v1)
     v2 = meth_10048470(v1);
   else
     v2 = 0;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v2;
+  a1->field_14[a1->field_10] = v2;
   if (!v2)
     sub_1003E260(4);
-  ++*(_WORD *)(a1 + 16);
-  v2->field_340 = (unk000C8 *)a1;
+  ++a1->field_10;
+  v2->field_340 = a1;
   v2->field_10 = 0;
-  v2->mask_338 = 1128464384;
+  v2->flags_338 = 1128464384;
   v2->field_33C = 130.0;
   v3 = (unk1E214 *)operator new(0x1E214u);
   if (v3)
@@ -62205,8 +62042,7 @@ int __cdecl sub_100558A0(int a1) {
   v2->field_18[v2->field_14] = v4;
   if (!v4)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, int, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v4->lpVtbl->field_38)(v4, a1, 0, 0, 9, 2, 5, 0, 0);
+  v4->lpVtbl->field_38(v4, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v2->field_14;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -62217,8 +62053,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v6->lpVtbl->field_38)(
-      v6, a1, v2->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->field_38(v6, a1, v2->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v6->field_3838.field_1A99C[28] = 3;
   v8 = GetStringWithIndex(0x54u);
   v7->field_34(v6, v8, 1, 1, &unk_100AB508);
@@ -62232,8 +62067,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v10)
     sub_1003E260(4);
   v11 = v10->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int))
-       v10->lpVtbl->field_38)(v10, a1, v2->mask_338, LODWORD(v2->field_33C), 1056769, 2, 5, 1, -1);
+  v10->lpVtbl->field_38(v10, a1, v2->flags_338, v2->field_33C, 1056769, 2, 5, 1, -1);
   v10->field_C = sub_10044030;
   v10->field_8 = sub_10044010;
   v10->field_3838.field_1A99C[28] = 3;
@@ -62251,8 +62085,7 @@ int __cdecl sub_100558A0(int a1) {
     sub_1003E260(4);
   v15 = v14->lpVtbl;
   v58 = v2->field_33C - -19.0;
-  ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int))
-       v14->lpVtbl->field_38)(v14, a1, v2->mask_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
+  v14->lpVtbl->field_38(v14, a1, v2->flags_338, v58, 1056769, 2, 5, 1, -1);
   v14->field_C = sub_10044070;
   v14->field_8 = sub_10044050;
   v14->field_3838.field_1A99C[28] = 3;
@@ -62270,8 +62103,7 @@ int __cdecl sub_100558A0(int a1) {
     sub_1003E260(4);
   v19 = v18->lpVtbl;
   v59 = v2->field_33C - -38.0;
-  ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int))
-       v18->lpVtbl->field_38)(v18, a1, v2->mask_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
+  v18->lpVtbl->field_38(v18, a1, v2->flags_338, v59, 1056769, 2, 5, 1, -1);
   v18->field_C = sub_100440B0;
   v18->field_8 = sub_10044090;
   v18->field_3838.field_1A99C[28] = 3;
@@ -62289,8 +62121,7 @@ int __cdecl sub_100558A0(int a1) {
     sub_1003E260(4);
   v23 = v22->lpVtbl;
   v60 = v2->field_33C - -114.0;
-  ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int))
-       v22->lpVtbl->field_38)(v22, a1, v2->mask_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
+  v22->lpVtbl->field_38(v22, a1, v2->flags_338, v60, 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_100463C0;
   v22->field_3838.field_1A99C[28] = 3;
@@ -62306,8 +62137,7 @@ int __cdecl sub_100558A0(int a1) {
   v2->field_18[v2->field_14] = v26;
   if (!v26)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, _DWORD, int))
-       v26->lpVtbl->field_38)(v26, a1, 1119748096, 1134460928, 9, 2, 5, 0, 103);
+  v26->lpVtbl->field_38(v26, a1, 1119748096, 317.0, 9, 2, 5, 0, 103);
   ++v2->field_14;
   v27 = (unk1E214 *)operator new(0x1E214u);
   if (v27)
@@ -62318,8 +62148,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v28)
     sub_1003E260(4);
   v29 = v28->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v28->lpVtbl->field_38)(
-      v28, a1, 1124204544, 1135083520, 1048585, 2, 5, 1, -1);
+  v28->lpVtbl->field_38(v28, a1, 1124204544, 336.0, 1048585, 2, 5, 1, -1);
   v28->field_3838.field_1A99C[28] = 52;
   v30 = GetStringWithIndex(0x59u);
   v29->field_34(v28, v30, 1, 4, &dword_100AB448);
@@ -62333,8 +62162,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v32)
     sub_1003E260(4);
   v33 = v32->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v32->lpVtbl->field_38)(
-      v32, a1, 1124204544, 1136328704, 1048585, 2, 5, 1, -1);
+  v32->lpVtbl->field_38(v32, a1, 1124204544, 374.0, 1048585, 2, 5, 1, -1);
   v32->field_3838.field_1A99C[28] = 3;
   v34 = GetStringWithIndex(0x5Au);
   v33->field_34(v32, v34, 1, 1, &dword_100AB448);
@@ -62347,8 +62175,7 @@ int __cdecl sub_100558A0(int a1) {
   v2->field_18[v2->field_14] = v36;
   if (!v36)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, _DWORD, int))
-       v36->lpVtbl->field_38)(v36, a1, 1125842944, 1136951296, 9, 2, 5, 0, 57);
+  v36->lpVtbl->field_38(v36, a1, 1125842944, 393.0, 9, 2, 5, 0, 57);
   ++v2->field_14;
   v37 = (unk1E214 *)operator new(0x1E214u);
   if (v37)
@@ -62359,8 +62186,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v38->lpVtbl->field_38)(
-      v38, a1, 1125842944, 1136951296, 2097153, 2, 5, 1, -1);
+  v38->lpVtbl->field_38(v38, a1, 1125842944, 393.0, 2097153, 2, 5, 1, -1);
   v38->field_8 = (int(__cdecl *)())sub_10042AC0;
   v38->field_4 = sub_1003F050;
   v38->field_10 = (int)meth_unk1A5E0_10042AF0;
@@ -62388,8 +62214,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v41)
     sub_1003E260(4);
   v42 = v41->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v41->lpVtbl->field_38)(
-      v41, a1, 1124204544, 1137573888, 1048585, 2, 5, 1, -1);
+  v41->lpVtbl->field_38(v41, a1, 1124204544, 412.0, 1048585, 2, 5, 1, -1);
   v41->field_3838.field_1A99C[28] = 3;
   v43 = GetStringWithIndex(0x5Bu);
   v42->field_34(v41, v43, 1, 1, &dword_100AB448);
@@ -62402,8 +62227,7 @@ int __cdecl sub_100558A0(int a1) {
   v2->field_18[v2->field_14] = v45;
   if (!v45)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, _DWORD, int))
-       v45->lpVtbl->field_38)(v45, a1, 1125842944, 1138196480, 9, 2, 5, 0, 57);
+  v45->lpVtbl->field_38(v45, a1, 1125842944, 431.0, 9, 2, 5, 0, 57);
   ++v2->field_14;
   v46 = (unk1E214 *)operator new(0x1E214u);
   if (v46)
@@ -62414,8 +62238,7 @@ int __cdecl sub_100558A0(int a1) {
   if (!v47)
     sub_1003E260(4);
   v48 = v47->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v47->lpVtbl->field_38)(
-      v47, a1, 1125842944, 1138196480, 2097153, 2, 5, 1, -1);
+  v47->lpVtbl->field_38(v47, a1, 1125842944, 431.0, 2097153, 2, 5, 1, -1);
   v47->field_8 = (int(__cdecl *)())sub_10042AC0;
   v47->field_4 = sub_1003F0B0;
   v47->field_10 = (int)meth_unk1A5E0_10042AF0;
@@ -62442,8 +62265,7 @@ int __cdecl sub_100558A0(int a1) {
   v2->field_18[v2->field_14] = v50;
   if (!v50)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, _DWORD, int))
-       v50->lpVtbl->field_38)(v50, a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+  v50->lpVtbl->field_38(v50, a1, 1117782016, 46.0, 9, 2, 5, 0, 7);
   ++v2->field_14;
   v51 = (unk1E214 *)operator new(0x1E214u);
   if (v51)
@@ -62453,8 +62275,7 @@ int __cdecl sub_100558A0(int a1) {
   v2->field_18[v2->field_14] = v52;
   if (!v52)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v52->lpVtbl->field_38)(
-      v52, a1, 1135181824, 1114898432, 1, 2, 5, 1, 69);
+  v52->lpVtbl->field_38(v52, a1, 1135181824, 61.0, 1, 2, 5, 1, 69);
   v52->field_4 = sub_10040930;
   v53 = v2->field_14 + 1;
   ++v52->field_2AB4[0];
@@ -62469,15 +62290,13 @@ int __cdecl sub_100558A0(int a1) {
   if (!v55)
     sub_1003E260(4);
   v56 = v55->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, int, int, int, int, int, int, int, int))v55->lpVtbl->field_38)(
-      v55, a1, v2->mask_338, 1126170624, 1052673, 2, 5, 1, -1);
+  v55->lpVtbl->field_38(v55, a1, v2->flags_338, 160.0, 1052673, 2, 5, 1, -1);
   v55->field_4 = sub_1003FC40;
   v55->field_3838.field_1A99C[28] = 3;
   v56->field_34(v55, asc_100AD300, 1, 1, &unk_100AB4A8);
   ++v2->field_14;
   return 1;
 }
-// 100558A0: using guessed type int __cdecl sub_100558A0(int);
 // 100AB448: using guessed type int dword_100AB448;
 
 //----- (100563E0) --------------------------------------------------------
@@ -62528,7 +62347,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128136704;
+  v3->flags_338 = 1128136704;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -62549,7 +62368,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x5Cu);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -62563,7 +62382,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->mask_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
+  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
   LOWORD(v11->?) = 52;
   v13 = GetStringWithIndex(0x3Cu);
   v12->field_34(v11, v13, 1, 4, &dword_100AB448);
@@ -62587,7 +62406,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   if (!v17)
     sub_1003E260(4);
   v18 = v17->lpVtbl;
-  v17->lpVtbl->field_38(v17, a1, v3->mask_338, 1127088128, 2097153, 2, 5, 1, -1);
+  v17->lpVtbl->field_38(v17, a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
   v17->field_8 = (int(__cdecl *)())sub_10042A90;
   v17->field_4 = sub_1003EEF0;
   *(_DWORD *)v17->field_10 = sub_1003EF60;
@@ -62619,7 +62438,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
     sub_1003E260(4);
   v22 = v21->lpVtbl;
   v31 = v3->field_33C - -95.0;
-  v21->lpVtbl->field_38(v21, a1, v3->mask_338, LODWORD(v31), 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->field_38(v21, a1, v3->flags_338, LODWORD(v31), 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = sub_10043CD0;
   LOWORD(v21->?) = 3;
@@ -62638,7 +62457,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
     sub_1003E260(4);
   v26 = v25->lpVtbl;
   v32 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, a1, v3->mask_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->field_38(v25, a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10043FC0;
   LOWORD(v25->?) = 3;
@@ -62709,7 +62528,7 @@ int __cdecl sub_10056A10(int a1) {
   ++*(_WORD *)(a1 + 16);
   v3->field_340 = (unk000C8 *)a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128136704;
+  v3->flags_338 = 1128136704;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -62730,7 +62549,7 @@ int __cdecl sub_10056A10(int a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x5Du);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -62745,7 +62564,7 @@ int __cdecl sub_10056A10(int a1) {
     sub_1003E260(4);
   v12 = v11->lpVtbl;
   v11->lpVtbl->field_38(
-      v11, (unk000C8 *)a1, v3->mask_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
+      v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
   LOWORD(v11->?) = 52;
   v13 = GetStringWithIndex(0x5Eu);
   v12->field_34(v11, v13, 1, 4, &dword_100AB448);
@@ -62769,7 +62588,7 @@ int __cdecl sub_10056A10(int a1) {
   if (!v17)
     sub_1003E260(4);
   v18 = v17->lpVtbl;
-  v17->lpVtbl->field_38(v17, (unk000C8 *)a1, v3->mask_338, 1127088128, 2097153, 2, 5, 1, -1);
+  v17->lpVtbl->field_38(v17, (unk000C8 *)a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
   v17->field_8 = (int(__cdecl *)())sub_10042AC0;
   v17->field_4 = sub_1003EF90;
   *(_DWORD *)v17->field_10 = sub_1003F020;
@@ -62799,7 +62618,7 @@ int __cdecl sub_10056A10(int a1) {
     sub_1003E260(4);
   v22 = v21->lpVtbl;
   v31 = v3->field_33C - -95.0;
-  v21->lpVtbl->field_38(v21, (unk000C8 *)a1, v3->mask_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
+  v21->lpVtbl->field_38(v21, (unk000C8 *)a1, v3->flags_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = (int(__cdecl *)())sub_10043F50;
   LOWORD(v21->?) = 2;
@@ -62818,7 +62637,7 @@ int __cdecl sub_10056A10(int a1) {
     sub_1003E260(4);
   v26 = v25->lpVtbl;
   v32 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, (unk000C8 *)a1, v3->mask_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->field_38(v25, (unk000C8 *)a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10044B40;
   LOWORD(v25->?) = 3;
@@ -62896,7 +62715,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v2->field_340 = a1;
   v2->field_10 = 0;
-  v2->mask_338 = 1128464384;
+  v2->flags_338 = 1128464384;
   v2->field_33C = 130.0;
   v3 = (unk1E214 *)operator new(0x1E214u);
   if (v3)
@@ -62917,7 +62736,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, a1, v2->mask_338, 10.0, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->field_38(v6, a1, v2->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v6->field_3838.field_1A99C[28] = 3;
   v8 = GetStringWithIndex(0x5Fu);
   v7->field_34(v6, v8, 1, 1, &unk_100AB508);
@@ -62931,7 +62750,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v10->lpVtbl->field_38)(v10, a1, v2->mask_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
+       v10->lpVtbl->field_38)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
   v11 = v10->field_3838.lpVtbl;
   v10->field_4 = sub_1003EB90;
   *(_DWORD *)&v10->field_3838.field_1A99C[16] = 1;
@@ -62952,7 +62771,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
     v14 = v13->lpVtbl;
     v33 = v2->field_33C - -57.0;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-         v13->lpVtbl->field_38)(v13, a1, v2->mask_338, LODWORD(v33), 1056769, 2, 5, 1, -1);
+         v13->lpVtbl->field_38)(v13, a1, v2->flags_338, LODWORD(v33), 1056769, 2, 5, 1, -1);
     v13->field_C = sub_10047360;
     v13->field_8 = sub_10043DA0;
     v13->field_3838.field_1A99C[28] = 3;
@@ -62974,7 +62793,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v19 = v17->lpVtbl;
   v34 = v2->field_33C - -76.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v17->lpVtbl->field_38)(v17, a1, v2->mask_338, LODWORD(v34), v18, 2, 5, 1, -1);
+       v17->lpVtbl->field_38)(v17, a1, v2->flags_338, LODWORD(v34), v18, 2, 5, 1, -1);
   v17->field_C = sub_10047360;
   v17->field_8 = sub_10044280;
   v17->field_3838.field_1A99C[28] = 2;
@@ -62996,7 +62815,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v24 = v23->lpVtbl;
   v35 = v2->field_33C - -95.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v23->lpVtbl->field_38)(v23, a1, v2->mask_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
+       v23->lpVtbl->field_38)(v23, a1, v2->flags_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_100440D0;
   v23->field_3838.field_1A99C[28] = 3;
@@ -63015,7 +62834,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v28 = v27->lpVtbl;
   v36 = v2->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v27->lpVtbl->field_38)(v27, a1, v2->mask_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
+       v27->lpVtbl->field_38)(v27, a1, v2->flags_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10044AE0;
   v27->field_3838.field_1A99C[28] = 3;
@@ -63329,7 +63148,7 @@ int __cdecl sub_10057C10(int a1) {
   ++*(_WORD *)(a1 + 16);
   v3->field_340 = (unk000C8 *)a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -63350,7 +63169,7 @@ int __cdecl sub_10057C10(int a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x64u);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -63366,7 +63185,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v12 = v11->lpVtbl;
     v11->lpVtbl->field_38(
-        v11, (unk000C8 *)a1, v3->mask_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+        v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
     v11->field_C = sub_100474B0;
     v11->field_8 = sub_10042EE0;
     LOWORD(v11->?) = 3;
@@ -63384,7 +63203,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v16 = v15->lpVtbl;
     v58 = v3->field_33C - -19.0;
-    v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->mask_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
+    v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->flags_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
     v15->field_C = sub_10047360;
     v15->field_8 = sub_10043180;
     LOWORD(v15->?) = 3;
@@ -63402,7 +63221,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v20 = v19->lpVtbl;
     v59 = v3->field_33C - -38.0;
-    v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->mask_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
+    v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->flags_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
     v19->field_C = sub_10047360;
     v19->field_8 = sub_100430B0;
     LOWORD(v19->?) = 3;
@@ -63420,7 +63239,7 @@ int __cdecl sub_10057C10(int a1) {
         sub_1003E260(4);
     v24 = v23->lpVtbl;
     v60 = v3->field_33C - -57.0;
-    v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->mask_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
+    v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->flags_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
     v23->field_C = sub_10047360;
     v23->field_8 = sub_10044600;
     LOWORD(v23->?) = 3;
@@ -63439,7 +63258,7 @@ int __cdecl sub_10057C10(int a1) {
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v61 = v3->field_33C - -95.0;
-  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->mask_338, LODWORD(v61), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->flags_338, LODWORD(v61), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())meth_100446D0;
   *(_DWORD *)&v27->field_10[8] = sub_100437D0;
@@ -63463,7 +63282,7 @@ int __cdecl sub_10057C10(int a1) {
   v62 = v3->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int, int, int, int *))
        v31->lpVtbl->field_38)(
-      v31, a1, v3->mask_338, LODWORD(v62), 1056769, 2, 5, 1, -1, 1, 1, &dword_100AB448);
+      v31, a1, v3->flags_338, LODWORD(v62), 1056769, 2, 5, 1, -1, 1, 1, &dword_100AB448);
   v31->field_C = sub_10047360;
   LOWORD(v31->?) = 3;
   if (dword_10A9D000)
@@ -63497,7 +63316,7 @@ int __cdecl sub_10057C10(int a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v3->mask_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v3->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_1003FE80;
   LOWORD(v38->?) = 3;
   v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -63525,7 +63344,7 @@ int __cdecl sub_10057C10(int a1) {
   if (!v44)
     sub_1003E260(4);
   v45 = v44->lpVtbl;
-  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, v3->mask_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, v3->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v44->field_4 = sub_1003FA00;
   LOWORD(v44->?) = 3;
   v45->field_34(v44, asc_100AD300, 1, 1, &unk_100AB4A8);
@@ -63741,23 +63560,23 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   float v87;         // [esp+3E0h] [ebp-34h]
   float v88;         // [esp+3E0h] [ebp-34h]
 
-  HIWORD(a1->field_10) = 0;
+  *(&a1->field_10 + 1) = 0;
   gGameMode = GAME_MODE_6;
   sub_1003E310();
   sub_1003E510();
-  *(&a1->field_6C + LOWORD(a1->field_10)) = 1;
+  *(&a1->field_6C + a1->field_10) = 1;
   v1 = (unk00348 *)operator new(0x348u);
   if (v1)
     v2 = meth_10048470(v1);
   else
     v2 = 0;
-  a1->field_14[LOWORD(a1->field_10)] = v2;
+  a1->field_14[a1->field_10] = v2;
   if (!v2)
     sub_1003E260(4);
-  ++LOWORD(a1->field_10);
+  ++a1->field_10;
   v2->field_340 = a1;
   v2->field_10 = 0;
-  v2->mask_338 = 1128464384;
+  v2->flags_338 = 1128464384;
   v2->field_33C = 111.0;
   v3 = (unk1E214 *)operator new(0x1E214u);
   if (v3)
@@ -63791,7 +63610,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v9 = v8->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v8->lpVtbl->field_38)(v8, a1, v2->mask_338, LODWORD(v2->field_33C), 1056769, 2, 5, 1, -1);
+       v8->lpVtbl->field_38)(v8, a1, v2->flags_338, LODWORD(v2->field_33C), 1056769, 2, 5, 1, -1);
   v8->field_C = sub_10047360;
   v8->field_8 = sub_10042B30;
   v8->field_3838.field_1A99C[28] = 3;
@@ -63810,7 +63629,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v13 = v12->lpVtbl;
   v82 = v2->field_33C - -19.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v12->lpVtbl->field_38)(v12, a1, v2->mask_338, LODWORD(v82), 1056769, 2, 5, 1, -1);
+       v12->lpVtbl->field_38)(v12, a1, v2->flags_338, LODWORD(v82), 1056769, 2, 5, 1, -1);
   v12->field_C = sub_10047360;
   v12->field_8 = sub_10042DC0;
   v12->field_3838.field_1A99C[28] = 3;
@@ -63829,7 +63648,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v17 = v16->lpVtbl;
   v83 = v2->field_33C - -38.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v16->lpVtbl->field_38)(v16, a1, v2->mask_338, LODWORD(v83), 1056769, 2, 5, 1, -1);
+       v16->lpVtbl->field_38)(v16, a1, v2->flags_338, LODWORD(v83), 1056769, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = sub_10042E20;
   v16->field_3838.field_1A99C[28] = 3;
@@ -63848,7 +63667,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v21 = v20->lpVtbl;
   v84 = v2->field_33C - -57.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v20->lpVtbl->field_38)(v20, a1, v2->mask_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
+       v20->lpVtbl->field_38)(v20, a1, v2->flags_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
   v20->field_C = sub_10047360;
   v20->field_8 = sub_10042C80;
   v20->field_3838.field_1A99C[28] = 3;
@@ -63867,7 +63686,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v25 = v24->lpVtbl;
   v85 = v2->field_33C - -76.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v24->lpVtbl->field_38)(v24, a1, v2->mask_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
+       v24->lpVtbl->field_38)(v24, a1, v2->flags_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
   v24->field_C = sub_10047360;
   v24->field_8 = sub_10042E80;
   v24->field_3838.field_1A99C[28] = 3;
@@ -63887,7 +63706,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     v29 = v28->lpVtbl;
     v86 = v2->field_33C - -95.0;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-         v28->lpVtbl->field_38)(v28, a1, v2->mask_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
+         v28->lpVtbl->field_38)(v28, a1, v2->flags_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
     v28->field_C = sub_10047360;
     v28->field_8 = sub_100437B0;
     v28->field_3838.field_1A99C[28] = 3;
@@ -63907,7 +63726,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v33 = v32->lpVtbl;
   v87 = v2->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v32->lpVtbl->field_38)(v32, a1, v2->mask_338, LODWORD(v87), 1056769, 2, 5, 1, -1);
+       v32->lpVtbl->field_38)(v32, a1, v2->flags_338, LODWORD(v87), 1056769, 2, 5, 1, -1);
   v32->field_C = sub_10047360;
   v32->field_8 = sub_10043A00;
   v32->field_18 = (int)sub_10043810;
@@ -63930,7 +63749,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v37 = v36->lpVtbl;
   v88 = v2->field_33C - -133.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v36->lpVtbl->field_38)(v36, a1, v2->mask_338, LODWORD(v88), 1056769, 2, 5, 1, -1);
+       v36->lpVtbl->field_38)(v36, a1, v2->flags_338, LODWORD(v88), 1056769, 2, 5, 1, -1);
   v36->field_C = sub_10047360;
   v36->field_8 = (int(__cdecl *)())sub_10046400;
   v36->field_3838.field_1A99C[28] = 3;
@@ -63952,7 +63771,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v40->field_4 = sub_1003EBC0;
   *(_DWORD *)&v40->field_3838.field_1A99C[16] = 1;
   v41->field_14(&v40->field_3838, 25427969, dword_100AB408, 5, 0, -1);
-  dword_10AA29E0 = (int)v40;
+  gUnk1E214 = v40;
   ++v2->field_14;
   v42 = (unk1E214 *)operator new(0x1E214u);
   if (v42)
@@ -64051,7 +63870,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v58 = v57->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v57->lpVtbl->field_38)(v57, a1, v2->mask_338, 1124663296, 1052673, 2, 5, 1, -1);
+       v57->lpVtbl->field_38)(v57, a1, v2->flags_338, 1124663296, 1052673, 2, 5, 1, -1);
   v57->field_4 = sub_1003F760;
   v57->field_3838.field_1A99C[28] = 3;
   v58->field_34(v57, asc_100AD300, 1, 1, &unk_100AB468);
@@ -64081,7 +63900,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v64 = v63->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v63->lpVtbl->field_38)(v63, a1, v2->mask_338, 1123418112, 1052673, 2, 5, 1, -1);
+       v63->lpVtbl->field_38)(v63, a1, v2->flags_338, 1123418112, 1052673, 2, 5, 1, -1);
   v63->field_4 = sub_1003F7F0;
   v63->field_3838.field_1A99C[28] = 3;
   v64->field_34(v63, asc_100AD300, 1, 1, &unk_100AB498);
@@ -64111,7 +63930,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v70 = v69->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v69->lpVtbl->field_38)(v69, a1, v2->mask_338, 1127546880, 1052673, 2, 5, 1, -1);
+       v69->lpVtbl->field_38)(v69, a1, v2->flags_338, 1127546880, 1052673, 2, 5, 1, -1);
   v69->field_4 = sub_1003F990;
   v69->field_3838.field_1A99C[28] = 3;
   v70->field_34(v69, asc_100AD300, 1, 1, &unk_100AB488);
@@ -64141,7 +63960,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v76 = v75->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v75->lpVtbl->field_38)(v75, a1, v2->mask_338, 1132658688, 1052673, 2, 5, 1, -1);
+       v75->lpVtbl->field_38)(v75, a1, v2->flags_338, 1132658688, 1052673, 2, 5, 1, -1);
   v75->field_4 = sub_1003F860;
   v75->field_3838.field_1A99C[28] = 3;
   v76->field_34(v75, asc_100AD300, 1, 1, &unk_100AB478);
@@ -64188,7 +64007,6 @@ int __cdecl sub_10058750(unk000C8 *a1) {
 // 10AA285C: using guessed type int dword_10AA285C;
 // 10AA2884: using guessed type int dword_10AA2884;
 // 10AA28D8: using guessed type int dword_10AA28D8;
-// 10AA29E0: using guessed type int dword_10AA29E0;
 // 10AA29E4: using guessed type int dword_10AA29E4;
 
 //----- (10059760) --------------------------------------------------------
@@ -64233,7 +64051,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v3->field_340 = a1;
   v3->field_10 = 0;
-  v3->mask_338 = 1128464384;
+  v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
   v4 = (unk1E214 *)operator new(0x1E214u);
   if (v4)
@@ -64254,7 +64072,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x6Au);
   v8->field_34(v7, v9, 1, 1, &unk_100AB508);
@@ -64268,7 +64086,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->mask_338, LODWORD(v3->field_33C), 0x102001, 2, 5, 1, -1);
+  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 0x102001, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10046260;
   LOWORD(v11->?) = 3;
@@ -64286,7 +64104,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v25 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->mask_338, LODWORD(v25), 0x102001, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v25), 0x102001, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10044D00;
   LOWORD(v15->?) = 3;
@@ -64304,7 +64122,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v26 = v3->field_33C - -114.0;
-  v19->lpVtbl->field_38(v19, a1, v3->mask_338, LODWORD(v26), 0x102001, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v26), 0x102001, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10044C70;
   LOWORD(v19->?) = 3;
@@ -64406,7 +64224,7 @@ int __cdecl sub_10059BB0(int a1) {
   ++*(_WORD *)(a1 + 16);
   v2->field_340 = (unk000C8 *)a1;
   v2->field_10 = 0;
-  v2->mask_338 = 1128464384;
+  v2->flags_338 = 1128464384;
   v2->field_33C = 111.0;
   v3 = (unk1E214 *)operator new(0x1E214u);
   if (v3)
@@ -64427,7 +64245,7 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, (unk000C8 *)a1, v2->mask_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->field_38(v6, (unk000C8 *)a1, v2->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v6->?) = 3;
   v8 = GetStringWithIndex(0x6Eu);
   v7->field_34(v6, v8, 1, 1, &unk_100AB508);
@@ -64441,18 +64259,18 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v10)
     sub_1003E260(4);
   v10->lpVtbl->field_38(
-      v10, (unk000C8 *)a1, v2->mask_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
+      v10, (unk000C8 *)a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
   v11 = v10->field_3838;
   v12 = &v10->field_3838;
   v10->field_4 = sub_1003EAE0;
   v10->? = 1;
   (*(void(__thiscall **)(int *, int, void *, int, _DWORD, int))(v11 + 20))(
-      &v10->field_3838, 262145, &unk_100AB4D8, 5, 0, -1);
+      &v10->field_3838, 262145, &dword_100AB4D8, 5, 0, -1);
   *(_DWORD *)v10->? = sub_10042880;
   for (i = 0; i < 26000; i += 260) {
     if ((unk06594 *)((char *)gUnkC8Ptr6->last + i) != (unk06594 *)-4)
         (*(void(__thiscall **)(int *, char *, _DWORD, int, void *, int))(*v12 + 16))(
-            v12, (char *)&gUnkC8Ptr6->last->field_4 + i, 0, 1, &unk_100AB4D8, 1);
+            v12, (char *)&gUnkC8Ptr6->last->field_4 + i, 0, 1, &dword_100AB4D8, 1);
   }
   ++LOWORD(v2->field_14);
   ++LOWORD(v2->last);
@@ -64466,7 +64284,7 @@ int __cdecl sub_10059BB0(int a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v62 = v2->field_33C - -114.0;
-  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v2->mask_338, LODWORD(v62), 1060881, 2, 5, 1, -1);
+  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v2->flags_338, LODWORD(v62), 1060881, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10046380;
   v15->field_4 = sub_100418F0;
@@ -64485,7 +64303,7 @@ int __cdecl sub_10059BB0(int a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v63 = v2->field_33C - -133.0;
-  v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v2->mask_338, LODWORD(v63), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v2->flags_338, LODWORD(v63), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10044DE0;
   LOWORD(v19->?) = 3;
@@ -64516,7 +64334,7 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v26)
     sub_1003E260(4);
   v27 = v26->lpVtbl;
-  v26->lpVtbl->field_38(v26, (unk000C8 *)a1, v2->mask_338, 1127546880, 1052673, 2, 5, 1, -1);
+  v26->lpVtbl->field_38(v26, (unk000C8 *)a1, v2->flags_338, 1127546880, 1052673, 2, 5, 1, -1);
   v26->field_4 = sub_1003FA00;
   LOWORD(v26->?) = 3;
   v27->field_34(v26, asc_100AD300, 1, 1, &unk_100AB488);
@@ -64544,7 +64362,7 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v32)
     sub_1003E260(4);
   v33 = v32->lpVtbl;
-  v32->lpVtbl->field_38(v32, (unk000C8 *)a1, v2->mask_338, 1124663296, 1052673, 2, 5, 1, -1);
+  v32->lpVtbl->field_38(v32, (unk000C8 *)a1, v2->flags_338, 1124663296, 1052673, 2, 5, 1, -1);
   v32->field_4 = sub_1003F760;
   LOWORD(v32->?) = 3;
   v33->field_34(v32, asc_100AD300, 1, 1, &unk_100AB468);
@@ -64572,7 +64390,7 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v2->mask_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v2->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_1003FE80;
   LOWORD(v38->?) = 3;
   v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
@@ -64731,7 +64549,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v2->field_340 = a1;
   v2->field_10 = 0;
-  v2->mask_338 = 0x43430000;
+  v2->flags_338 = 0x43430000;
   v2->field_33C = 130.0;
   v3 = (unk1E214 *)operator new(0x1E214u);
   if (v3)
@@ -64754,7 +64572,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v7 = v6->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v6->lpVtbl->field_38)(v6, a1, v2->mask_338, 0x41200000, 0x100009, 2, 5, 1, -1);
+       v6->lpVtbl->field_38)(v6, a1, v2->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
   v6->field_3838.field_1A99C[28] = 3;
   v8 = GetStringWithIndex(0xC2u);
   v7->field_34(v6, v8, 1, 1, &unk_100AB508);
@@ -64768,20 +64586,20 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v10->lpVtbl->field_38)(v10, a1, v2->mask_338, LODWORD(v2->field_33C), 0x3001, 2, 5, 1, -1);
+       v10->lpVtbl->field_38)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 0x3001, 2, 5, 1, -1);
   v11 = v10->field_3838.lpVtbl;
   v12 = &v10->field_3838;
   v10->field_4 = sub_1003EC30;
   *(_DWORD *)&v10->field_3838.field_1A99C[16] = 1;
   ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->field_14)(
-      &v10->field_3838, 262145, &unk_100AB4D8, 5, 0, -1);
+      &v10->field_3838, 262145, &dword_100AB4D8, 5, 0, -1);
   v10->field_3838.field_4[0] = (DWORD)sub_10042740;
   v10->field_3838.field_4[4] = (DWORD)sub_10042560;
   for (i = 0; i < 26000; i += 260) {
     if ((unk06594 *)((char *)gUnkC8Ptr6->last + i) != (unk06594 *)-4)
         ((void(__thiscall *)(
             unk1A5E0 *, char *, _DWORD, int, void *, _DWORD))v12->lpVtbl->field_10)(
-            v12, (char *)&gUnkC8Ptr6->last->field_4 + i, 0, 1, &unk_100AB4D8, 0);
+            v12, (char *)&gUnkC8Ptr6->last->field_4 + i, 0, 1, &dword_100AB4D8, 0);
   }
   ++v2->field_14;
   ++LOWORD(v2->last);
@@ -64796,7 +64614,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   v16 = v15->lpVtbl;
   v41 = v2->field_33C - -95.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v15->lpVtbl->field_38)(v15, a1, v2->mask_338, LODWORD(v41), 0x102001, 2, 5, 1, -1);
+       v15->lpVtbl->field_38)(v15, a1, v2->flags_338, LODWORD(v41), 0x102001, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_10044F00;
   v15->field_3838.field_1A99C[28] = 3;
@@ -64887,7 +64705,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   ++LOWORD(a1->field_10);
   v35->field_340 = a1;
   v35->field_10 = 0;
-  v35->mask_338 = 1128464384;
+  v35->flags_338 = 1128464384;
   v35->field_33C = 130.0;
   v36 = (unk1E214 *)operator new(0x1E214u);
   if (v36)
@@ -66533,13 +66351,13 @@ int sub_1005D440() {
   Iostream_init *iostreamInit;    // eax
   Iostream_init *ioStreamInitRes; // eax
 
-  memset(dword_10A9E360, 0, sizeof(dword_10A9E360));
-  LOWORD(dword_10AA28D4) = 0;
+  memset(&gDDSurface, 0, 0x41B4u);
+  gSurfaceCount = 0;
   word_10AA29F8 = 0;
   word_10AA29FC = 0;
   sub_1005FF30();
-  g_aImagesWork1aBmFilepath = (unk00104 *)operator new(0x104u);
-  strcpy((char *)g_aImagesWork1aBmFilepath, aImagesWork1aBm);
+  gImagesWork1aBmFilepath = (char *)operator new(MAX_PATH);
+  strcpy(gImagesWork1aBmFilepath, aImagesWork1aBm);
   g_aImagesCursorBmFilepath = operator new(0x104u);
   strcpy((char *)g_aImagesCursorBmFilepath, aImagesCursorBm);
   g_aImagesTypeGryBFilepath = operator new(0x104u);
@@ -67001,7 +66819,6 @@ int sub_1005D440() {
 // 10AA2428: using guessed type int dword_10AA2428;
 // 10AA249C: using guessed type int dword_10AA249C;
 // 10AA2510: using guessed type int dword_10AA2510;
-// 10AA28D4: using guessed type int dword_10AA28D4;
 // 10AA29F8: using guessed type __int16 word_10AA29F8;
 // 10AA29FC: using guessed type __int16 word_10AA29FC;
 
@@ -67011,14 +66828,14 @@ int sub_1005F4E0() {
   int *v1; // esi
 
   v0 = 0;
-  if ((_WORD)dword_10AA28D4) {
-    v1 = dword_10A9E360;
+  if ((_WORD)gSurfaceCount) {
+    v1 = gDDSurface;
     do {
         if (!(*(int(__stdcall **)(int))(*(_DWORD *)*v1 + 108))(*v1))
             sub_1000B790(*v1, (LPCSTR)v1[28]);
         ++v0;
         v1 += 29;
-    } while (v0 < (unsigned __int16)dword_10AA28D4);
+    } while (v0 < (unsigned __int16)gSurfaceCount);
   }
   return 1;
 }
@@ -67026,31 +66843,29 @@ int sub_1005F4E0() {
 // 10AA28D4: using guessed type int dword_10AA28D4;
 
 //----- (1005F530) --------------------------------------------------------
-int sub_1005F530() {
-  int result; // eax
-  int v1;     // edi
-  int *v2;    // esi
+IDirectDraw2 *sub_1005F530() {
+  IDirectDraw2 *result;          // eax
+  int i;                         // edi
+  IDirectDrawSurface *ddSurface; // esi
 
-  result = dword_10A9D070;
-  if (dword_10A9D070) {
-    v1 = 0;
-    if ((_WORD)dword_10AA28D4) {
-        v2 = dword_10A9E360;
+  result = gDDraw2;
+  if (gDDraw2) {
+    i = 0;
+    if (gSurfaceCount) {
+        ddSurface = (IDirectDrawSurface *)&gDDSurface;
         do {
-            result = *v2;
-            if (*v2) {
-                result = (*(int(__stdcall **)(int))(*(_DWORD *)result + 8))(*v2);
-                *v2 = 0;
+            result = (IDirectDraw2 *)ddSurface->lpVtbl;
+            if (ddSurface->lpVtbl) {
+                result = (IDirectDraw2 *)result->lpVtbl->Release((IDirectDraw2 *)ddSurface->lpVtbl);
+                ddSurface->lpVtbl = 0;
             }
-            ++v1;
-            v2 += 29;
-        } while (v1 < (unsigned __int16)dword_10AA28D4);
+            ++i;
+            ddSurface += 0x1D;
+        } while (i < gSurfaceCount);
     }
   }
   return result;
 }
-// 10A9E360: using guessed type int dword_10A9E360[];
-// 10AA28D4: using guessed type int dword_10AA28D4;
 
 //----- (1005F580) --------------------------------------------------------
 void __noreturn sub_1005F580() {
@@ -67072,7 +66887,7 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
   int v14[2]; // [esp+14h] [ebp-10h] BYREF
   int v15;    // [esp+1Ch] [ebp-8h]
   int v16;    // [esp+20h] [ebp-4h]
-  int v17;    // [esp+38h] [ebp+14h]
+  DWORD v17;  // [esp+38h] [ebp+14h]
 
   v5 = a5;
   LOBYTE(v5) = a5 | 0x10;
@@ -67103,9 +66918,8 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
     }
     v7 = a2;
     v6 = a1;
-    result = (*(int(__stdcall **)(_DWORD, int, int, int, int *, int))(
-        **(_DWORD **)(*(_DWORD *)gUnk334 + 88) + 28))(
-        *(_DWORD *)(*(_DWORD *)gUnk334 + 88), a1, a2, dword_10A9E360[29 * a3], v14, v17);
+    result = gUnk334->u8c->lpDirectDrawSurface1->lpVtbl->BltFast(
+        gUnk334->u8c->lpDirectDrawSurface1, a1, a2, (&gDDSurface)[29 * a3], (LPRECT)v14, v17);
     if (!result)
         break;
     if (result == -2005532222) {
@@ -67116,58 +66930,54 @@ int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5) {
   } while (result == -2005532132);
   return result;
 }
-// 10A9E360: using guessed type int dword_10A9E360[];
-// 118ABE08: using guessed type int dword_118ABE08;
 
 //----- (1005F690) --------------------------------------------------------
 int DDraw_DoInit() {
-  int v0;                            // ebp
-  IDirectDraw2 *v1;                  // eax
-  HANDLE v2;                         // eax
-  unk00104 **imagesWork1aBmFilepath; // ebx
-  unk00104 *v4;                      // eax
-  int v6[27];                        // [esp+10h] [ebp-16Ch] BYREF
-  char Buffer[256];                  // [esp+7Ch] [ebp-100h] BYREF
+  int v0;                        // ebp
+  IDirectDraw2 *lpDDraw2;        // eax
+  IDirectDrawSurface *lpSurface; // eax
+  char **imagesWork1aBmFilepath; // ebx
+  IDirectDrawSurface *surface;   // eax
+  DDSURFACEDESC a5;              // [esp+10h] [ebp-16Ch] BYREF
+  char Buffer[256];              // [esp+7Ch] [ebp-100h] BYREF
 
   v0 = 0;
-  v1 = gUnk334->u8c->lpDirectDraw2;
-  dword_10A9D070 = (int)v1;
+  lpDDraw2 = gUnk334->u8c->lpDirectDraw2;
+  gDDraw2 = lpDDraw2;
   if (dword_10AA2A6C) {
-    v2 = sub_1000B680((int)v1, name, 0, 0, (int)v6);
-    *(_DWORD *)dword_10A9E360 = v2;
-    if (g_aImagesWork1aBmFilepath && !v2) {
+    lpSurface = DDrawCreateSurface(lpDDraw2, filepath, 0, 0, &a5);
+    gDDSurface = lpSurface;
+    if (gImagesWork1aBmFilepath && !lpSurface) {
         sprintf(Buffer, aDdrawDoinitLoa);
         sub_1005F580();
     }
     gUnkC8Ptr1->lpVtbl->field_20(gUnkC8Ptr1);
     sub_1005F5A0(0, 0, 0, dword_100AB56C, dword_100AB57C[0]);
-    ((void(__thiscall *)(unk000C8 *))gUnkC8Ptr1->lpVtbl->field_14)(gUnkC8Ptr1);
-    if (*(_DWORD *)dword_10A9E360) {
-        (*(void(__stdcall **)(_DWORD))(**(_DWORD **)dword_10A9E360 + 8))(*(_DWORD *)dword_10A9E360);
-        *(_DWORD *)dword_10A9E360 = 0;
+    gUnkC8Ptr1->lpVtbl->field_14(gUnkC8Ptr1);
+    if (gDDSurface) {
+        gDDSurface->lpVtbl->Release(gDDSurface);
+        gDDSurface = 0;
     }
   }
-  imagesWork1aBmFilepath = &g_aImagesWork1aBmFilepath;
+  imagesWork1aBmFilepath = &gImagesWork1aBmFilepath;
   ++dword_10AA2A6C;
   do {
     if (*imagesWork1aBmFilepath) {
-        v4 = (unk00104 *)sub_1000B680(
-            dword_10A9D070, (LPCSTR)*imagesWork1aBmFilepath, 0, 0, (int)v6);
-        *(imagesWork1aBmFilepath - 28) = v4;
-        if (*imagesWork1aBmFilepath && !v4) {
+        surface = DDrawCreateSurface(gDDraw2, *imagesWork1aBmFilepath, 0, 0, &a5);
+        *(imagesWork1aBmFilepath - 28) = (char *)surface;
+        if (*imagesWork1aBmFilepath && !surface) {
             sprintf(Buffer, "DDraw_DoInit: Bitmap %d failed to load!", v0);
             sub_1005F580();
         }
-        LOWORD(dword_10AA28D4) = dword_10AA28D4 + 1;
-        qmemcpy(imagesWork1aBmFilepath - 27, v6, 0x6Cu);
-        sub_1000BA40((int)*(imagesWork1aBmFilepath - 28), 0xFF00u);
+        ++gSurfaceCount;
+        qmemcpy(imagesWork1aBmFilepath - 27, &a5, 0x6Cu);
+        sub_1000BA40((LPDIRECTDRAWSURFACE) * (imagesWork1aBmFilepath - 28), 0xFF00u);
     }
     imagesWork1aBmFilepath += 29;
     ++v0;
   } while ((int)imagesWork1aBmFilepath < (int)&unk_10AA2584);
   return 1;
 }
-// 10AA28D4: using guessed type int dword_10AA28D4;
 // 10AA2A6C: using guessed type int dword_10AA2A6C;
 
 //----- (1005F800) --------------------------------------------------------
@@ -67365,13 +67175,13 @@ int __cdecl sub_1005FBC0(int a1) {
   int result;          // eax
 
   LOBYTE(dword_10AA28B8) = dword_10AA26F4[0];
-  gTransmissionType = dword_10AA27EC;
-  gSuspensionType = dword_10AA27F4;
+  gTransmissionType = gTransmissionType0;
+  gSuspensionType = gSuspensionType0;
   dword_10AA28A4 = BYTE1(dword_10AA26F4[0]);
-  gConfigJoystickIndex = dword_10AA27F8;
+  gConfigJoystickIndex = gConfigJoystickIndex0;
   dword_10AA28A0 = dword_10AA26F0;
   gTireType = (void *)dword_10AA27F0;
-  switch (dword_10AA27F8) {
+  switch (gConfigJoystickIndex0) {
   case 1:
     gConfigJoystickPtr = gConfig.joystick1;
     break;
@@ -67428,14 +67238,14 @@ int sub_1005FCF0() {
   int v1;     // edx
   int result; // eax
 
-  dword_10AA27EC = gTransmissionType;
-  dword_10AA27F0 = (int)gTireType;
+  gTransmissionType0 = gTransmissionType;
+  dword_10AA27F0 = gTireType;
   dword_10AA26F0 = dword_10AA28A0;
-  dword_10AA27F4 = gSuspensionType;
+  gSuspensionType0 = gSuspensionType;
   LOBYTE(dword_10AA26F4[0]) = dword_10AA28B8;
-  dword_10AA27F8 = gConfigJoystickIndex;
+  gConfigJoystickIndex0 = gConfigJoystickIndex;
   BYTE1(dword_10AA26F4[0]) = dword_10AA28A4;
-  if (!gGameMode) {
+  if (gGameMode == GAME_MODE_0) {
     v0 = 2 * ((unsigned __int8)dword_10AA28A4 + 12 * (unsigned __int8)dword_10AA28B8);
     v1 = (unsigned __int8)byte_100B3821[v0];
     gChosenTrack = (unsigned __int8)byte_100B3820[v0];
@@ -67446,24 +67256,23 @@ int sub_1005FCF0() {
   dword_10AA2A14 = result;
   return result;
 }
-// 10094354: using guessed type int g_TransmissionType;
-// 10094358: using guessed type int g_SuspensionType;
-// 100AA010: using guessed type int g_GameMode;
-// 100B380C: using guessed type int g_chosenTrack;
-// 1022B350: using guessed type int g_ChosenWeather;
+// 10094354: using guessed type int gTransmissionType;
+// 10094358: using guessed type int gSuspensionType;
+// 100B380C: using guessed type int gChosenTrack;
+// 1022B350: using guessed type int gChosenWeather0;
 // 10AA26F0: using guessed type int dword_10AA26F0;
 // 10AA26F4: using guessed type int dword_10AA26F4[];
 // 10AA27E0: using guessed type int dword_10AA27E0;
-// 10AA27EC: using guessed type int dword_10AA27EC;
+// 10AA27EC: using guessed type int gTransmissionType0;
 // 10AA27F0: using guessed type int dword_10AA27F0;
-// 10AA27F4: using guessed type int dword_10AA27F4;
-// 10AA27F8: using guessed type int dword_10AA27F8;
+// 10AA27F4: using guessed type int gSuspensionType0;
+// 10AA27F8: using guessed type int gConfigJoystickIndex0;
 // 10AA28A0: using guessed type int dword_10AA28A0;
 // 10AA28A4: using guessed type int dword_10AA28A4;
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA2A10: using guessed type int dword_10AA2A10;
 // 10AA2A14: using guessed type int dword_10AA2A14;
-// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
+// 10B4E1D0: using guessed type int gConfigJoystickIndex;
 
 //----- (1005FDB0) --------------------------------------------------------
 int sub_1005FDB0() {
@@ -67562,29 +67371,27 @@ int sub_1005FF30() {
   int result; // eax
 
   result = 0;
-  memset(byte_10AA3288, 0, 0x100u);
+  memset(byte_10AA3288, 0, sizeof(byte_10AA3288));
   memset(dword_10AA2A80, 0, 0x100u);
   memset(dword_10AA2E88, 0, 0x100u);
   return result;
 }
-// 10AA2A80: using guessed type int dword_10AA2A80[];
 
 //----- (1005FF60) --------------------------------------------------------
 int sub_1005FF60() {
   int result; // eax
   int v1;     // ecx
-  int v2;     // edx
+  char *v2;   // edx
 
   for (result = 0; result < 256; ++result) {
-    dword_10AA2A80[result] = dword_10AA2E88[result] == 0;
+    dword_10AA2A80[result] = (char *)(dword_10AA2E88[result] == 0);
     v1 = ((unsigned __int8)byte_10AA3288[result] >> 7) & 1;
-    v2 = v1 & dword_10AA2A80[result];
-    dword_10AA2E88[result] = v1;
+    v2 = (char *)(v1 & (unsigned int)dword_10AA2A80[result]);
+    dword_10AA2E88[result] = (char *)v1;
     dword_10AA2A80[result] = v2;
   }
   return result;
 }
-// 10AA2A80: using guessed type int dword_10AA2A80[];
 
 //----- (1005FFB0) --------------------------------------------------------
 HRESULT sub_1005FFB0() {
@@ -67641,10 +67448,11 @@ int __cdecl showMessageBox_0(HWND hWnd, HRESULT hr, LPCSTR lpText) {
 }
 
 //----- (10060060) --------------------------------------------------------
-LRESULT __stdcall sub_10060060(int a1, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam) {
-  LRESULT v5; // edi
-# 492 * v7;   // ecx
-  BOOL v8;    // eax
+LRESULT __stdcall sub_10060060(
+    Iostream_init *iostreamInit, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam) {
+  LRESULT v5;   // edi
+  unk00054 *v7; // ecx
+  BOOL v8;      // eax
 
   v5 = 1;
   if ((unsigned int)a3 > 0x102) {
@@ -67746,13 +67554,13 @@ unk00054 *__thiscall meth_unk00054_init(unk00054 *this) {
   this->lpDIDeviceA = 0;
   this->field_2C = 0;
   this->field_30 = 0;
-  *(_DWORD *)this->gap34 = 0;
-  *(_DWORD *)&this->gap34[4] = 0;
-  *(_DWORD *)&this->gap34[8] = 0;
-  *(_DWORD *)&this->gap34[12] = 0;
-  *(_DWORD *)&this->gap34[16] = 0;
-  *(_DWORD *)&this->gap34[20] = 0;
-  *(_DWORD *)&this->gap34[24] = 0;
+  *(_DWORD *)this->field_34 = 0;
+  *(_DWORD *)&this->field_34[4] = 0;
+  *(_DWORD *)&this->field_34[8] = 0;
+  *(_DWORD *)&this->field_34[12] = 0;
+  *(_DWORD *)&this->field_34[16] = 0;
+  *(_DWORD *)&this->field_34[20] = 0;
+  *(_DWORD *)&this->field_34[24] = 0;
   return result;
 }
 
@@ -68045,10 +67853,10 @@ LABEL_72:
 // 10AA33E8: using guessed type int g_TickCount;
 
 //----- (10060750) --------------------------------------------------------
-LPDIRECTINPUTDEVICEA __thiscall meth_10060750(#492 * this, int a2) {
+LPDIRECTINPUTDEVICEA __thiscall meth_10060750(unk00054 *this, int a2) {
   LPDIRECTINPUTDEVICEA result; // eax
 
-  result = (LPDIRECTINPUTDEVICEA) * ((_DWORD *)this + 20);
+  result = this->lpDIDeviceA;
   if (result && gUnkC8Ptr1->field_C) {
     if (dword_10AA33E0)
         result = (LPDIRECTINPUTDEVICEA)result->lpVtbl->Unacquire(result);
@@ -69741,19 +69549,19 @@ enum MACRO_GAME_MODE __thiscall meth_10063420(_DWORD *this) {
 // 10AD0850: using guessed type int dword_10AD0850[];
 
 //----- (100634F0) --------------------------------------------------------
-unsigned int __thiscall meth_100634F0(_DWORD *this) {
-  int v2;              // eax
-  char v3;             // cl
-  char v4;             // bl
-  _DWORD *v5;          // eax
-  int v6;              // ecx
-  int v7;              // eax
-  unsigned int result; // eax
+enum MACRO_GAME_MODE __thiscall meth_100634F0(_DWORD *this) {
+  int v2;                      // eax
+  char v3;                     // cl
+  char v4;                     // bl
+  _DWORD *v5;                  // eax
+  int v6;                      // ecx
+  int v7;                      // eax
+  enum MACRO_GAME_MODE result; // eax
 
   meth_10076C90((char *)this);
   v2 = ((char *)this - (char *)dword_10ACDEA8) / 11112;
   this[80] = v2;
-  if (gGameMode != 6) {
+  if (gGameMode != GAME_MODE_6) {
     v3 = byte_100B37D2[3 * v2];
     v4 = byte_100B37D0[3 * v2];
     *((_BYTE *)this + 10669) = byte_100B37D1[3 * v2];
@@ -69792,7 +69600,6 @@ unsigned int __thiscall meth_100634F0(_DWORD *this) {
   this[930] = 0;
   return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100AAB18: using guessed type int dword_100AAB18;
 
 //----- (10063660) --------------------------------------------------------
@@ -69804,7 +69611,7 @@ void __thiscall meth_10063660(_DWORD *this) {
   int v6;   // [esp+8h] [ebp-10h]
   float v7; // [esp+8h] [ebp-10h]
 
-  if ((int)this[215] < 0 || MEMORY[0x106C7C80] - 10.0 > *((float *)this + 14)) {
+  if ((int)this[215] < 0 || gUnk06594.field_4900 - 10.0 > *((float *)this + 14)) {
     meth_10065630(this);
     meth_10062C50(this);
     v2 = this[995];
@@ -69847,7 +69654,6 @@ void __thiscall meth_10063660(_DWORD *this) {
     this[990] = 1;
   }
 }
-// 106C7C80: using guessed type float flt_106C7C80;
 
 //----- (10063FE0) --------------------------------------------------------
 void __cdecl sub_10063FE0(int a1) {
@@ -69943,10 +69749,10 @@ void __cdecl sub_10063FE0(int a1) {
             goto LABEL_47;
         }
     LABEL_25:
-        v10 = MEMORY[0x106C7CD0];
+        v10 = *(_DWORD *)&gUnk06594.gap493C[20];
         v50 = 16777216.0;
-        if (MEMORY[0x106C7CD0] > 0) {
-            v11 = (float *)(MEMORY[0x106C7CCC] + 8);
+        if (*(int *)&gUnk06594.gap493C[20] > 0) {
+            v11 = (float *)(*(_DWORD *)&gUnk06594.gap493C[16] + 8);
             do {
                 v13 = *(float *)(a1 + 48) - *(v11 - 2);
                 v51 = v13;
@@ -70158,8 +69964,6 @@ LABEL_47:
 // 106C1638: using guessed type int dword_106C1638;
 // 106C1690: using guessed type int dword_106C1690;
 // 106C3364: using guessed type int dword_106C3364;
-// 106C7CCC: using guessed type int dword_106C7CCC;
-// 106C7CD0: using guessed type int dword_106C7CD0;
 // 10AF9BB0: using guessed type int dword_10AF9BB0;
 // 10AF9BB4: using guessed type int dword_10AF9BB4;
 // 10AF9BB8: using guessed type int dword_10AF9BB8;
@@ -71074,21 +70878,21 @@ int __thiscall meth_10065740(_DWORD *this) {
     v14 = (float)(v2 >> 1);
     v15 = (float)((v2 & 1) == 0);
   }
-  v20 = cos_(*(float *)&stru_106C3380.gap1C8[18252]);
-  v18 = sin_(*(float *)&stru_106C3380.gap1C8[18252]);
-  v11 = *(float *)&stru_106C3380.gap1C8[18252] - -1.5707964;
+  v20 = cos_(*(float *)&gUnk06594.gap1C8[18252]);
+  v18 = sin_(*(float *)&gUnk06594.gap1C8[18252]);
+  v11 = *(float *)&gUnk06594.gap1C8[18252] - -1.5707964;
   v19 = cos_(v11);
-  v12 = *(float *)&stru_106C3380.gap1C8[18252] - -1.5707964;
+  v12 = *(float *)&gUnk06594.gap1C8[18252] - -1.5707964;
   v16 = v15 - 0.5;
   v3 = sin_(v12) * v16;
   v4 = v19 * v16;
   v17 = v14 - -1.0;
-  *(float *)&v13 = *(float *)&stru_106C3380.gap1C8[18248] - -0.1;
-  *(float *)&v10 = *(float *)&stru_106C3380.gap1C8[18244] - v3 * 3.0 - v18 * v17 * 8.0;
-  *(float *)&v9 = *(float *)&stru_106C3380.gap1C8[18240] - v4 * 3.0 - v20 * v17 * 8.0;
+  *(float *)&v13 = *(float *)&gUnk06594.gap1C8[18248] - -0.1;
+  *(float *)&v10 = *(float *)&gUnk06594.gap1C8[18244] - v3 * 3.0 - v18 * v17 * 8.0;
+  *(float *)&v9 = *(float *)&gUnk06594.gap1C8[18240] - v4 * 3.0 - v20 * v17 * 8.0;
   meth_10076420((float *)this, v9, v10, v13);
   *((float *)this + 1021) = (v14 - -0.5) * -8.0;
-  meth_100764C0((float *)this, *(float *)&stru_106C3380.gap1C8[18252]);
+  meth_100764C0((float *)this, *(float *)&gUnk06594.gap1C8[18252]);
   this[992] = this[12];
   this[993] = this[13];
   this[994] = this[14];
@@ -71101,7 +70905,7 @@ int __thiscall meth_10065740(_DWORD *this) {
   this[938] = 0;
   this[939] = -180;
   meth_100767A0(this, 0, 0, 0);
-  if (*(_DWORD *)&stru_106C3380.gap1C8[18288]) {
+  if (*(_DWORD *)&gUnk06594.gap1C8[18288]) {
     this[1004] = 0;
     this[1019] = 0;
     this[1017] = 0;
@@ -71109,11 +70913,11 @@ int __thiscall meth_10065740(_DWORD *this) {
     if ((__int16)(gChosenWeather1 - 1) > 2 || v5 < 0)
         v5 = 0;
     this[1020] = *(_DWORD *)&gTrackData[gChosenTrack]->last[84 * this[921] + 24 + 28 * v5];
-    this[995] = *(_DWORD *)&stru_106C3380.gap1C8[18288];
+    this[995] = *(_DWORD *)&gUnk06594.gap1C8[18288];
     this[996] = 0;
     sub_1003ADA0((float *)this + 997,
-                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18288] + 76),
-                 (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18288] + 116));
+                 (float *)(*(_DWORD *)&gUnk06594.gap1C8[18288] + 76),
+                 (float *)(*(_DWORD *)&gUnk06594.gap1C8[18288] + 116));
   } else {
     this[997] = 1065353216;
     this[998] = 0;
@@ -71506,7 +71310,7 @@ int __thiscall meth_100662A0(_DWORD *this) {
         v6 = (double)(550 * v3);
     }
     *((float *)this + 20) = v6;
-    sub_10065B20(MEMORY[0x106C7CB8], *((float *)this + 20));
+    sub_10065B20(gUnk06594.field_4938, *((float *)this + 20));
     *this = dword_10AF9B38;
     this[1] = dword_10AF9B3C;
     this[2] = dword_10AF9B40;
@@ -71526,7 +71330,7 @@ int __thiscall meth_100662A0(_DWORD *this) {
     v7 = gChosenWeather1 - 1;
     if ((__int16)(gChosenWeather1 - 1) > 2 || v7 < 0)
         v7 = 0;
-    this[15] = (&gTrackData[gChosenTrack][21 * dword_10ACED0C])[7 * v7 + 17];
+    this[15] = *(_DWORD *)&gTrackData[gChosenTrack]->last[84 * dword_10ACED0C + 24 + 28 * v7];
     this[21] = dword_100B36F8 - this[25] - 1;
   } else {
     v4 = &dword_10ACDEA8[2778 * v3];
@@ -71544,7 +71348,6 @@ int __thiscall meth_100662A0(_DWORD *this) {
 // 100B36FC: using guessed type int dword_100B36FC;
 // 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
 // 104BBE08: using guessed type int gChosenWeather1;
 // 10ACD490: using guessed type int dword_10ACD490;
 // 10ACED0C: using guessed type int dword_10ACED0C;
@@ -71985,7 +71788,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
   int v6;          // esi
   int v7;          // edi
   int v8;          // eax
-  char *v9;        // ecx
+  void *v9;        // ecx
   int v10;         // edx
   void *v11;       // ecx
   int v12;         // edx
@@ -72030,8 +71833,8 @@ void __thiscall meth_10066E90(_DWORD *this) {
   int v51;         // [esp+24h] [ebp-8h]
   int v52;         // [esp+28h] [ebp-4h]
 
-  v2 = (int)MEMORY[0x106C7DA8];
-  if (MEMORY[0x106C7DA8]) {
+  v2 = gUnk06594.field_4A28;
+  if (gUnk06594.field_4A28) {
     v3 = this[24];
     v52 = v3;
     if (v3) {
@@ -72048,7 +71851,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
         this[12] = *(_DWORD *)(v3 + 4016);
         this[13] = *(_DWORD *)(v3 + 4068);
         this[20] = *(_DWORD *)(v3 + 4084);
-        v2 = (int)MEMORY[0x106C7DA8];
+        v2 = gUnk06594.field_4A28;
     }
     v4 = this[19];
     if (v4 >= 0)
@@ -72061,32 +71864,32 @@ void __thiscall meth_10066E90(_DWORD *this) {
     v51 = v7;
     LODWORD(v49) = sub_1002B920(v41);
     v45 = (double)SLODWORD(v49) * 0.0099999998;
-    if (sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v6,
-                     (float *)&MEMORY[0x106C7CE0] + 5 * v6,
+    if (sub_1003BA70((float *)&gUnk06594.gap4968[20 * v6],
+                     (float *)&gUnk06594.gap4960[20 * v6],
                      (float *)this + 3,
                      (float *)this)) {
         meth_DebugPrint((void *)(this[19] - 1));
         if (!v6)
             --this[17];
-        meth_DebugPrint(MEMORY[0x106C7DA8]);
-        if (v6 == this[18] % (int)MEMORY[0x106C7DA8]) {
+        meth_DebugPrint((void *)gUnk06594.field_4A28);
+        if (v6 == this[18] % gUnk06594.field_4A28) {
             v8 = this[19];
             if (v8 < 0) {
-                v9 = (char *)MEMORY[0x106C7DA8] + v8;
+                v9 = (void *)(v8 + gUnk06594.field_4A28);
                 v10 = this[17] + 1;
-                this[19] = (char *)MEMORY[0x106C7DA8] + v8;
+                this[19] = v8 + gUnk06594.field_4A28;
                 this[17] = v10;
-                if (MEMORY[0x106C7CB8])
+                if (gUnk06594.field_4938)
                     *((float *)this + 20) =
-                        *(float *)(MEMORY[0x106C7CB8] + 100) + *((float *)this + 20);
+                        *(float *)(gUnk06594.field_4938 + 100) + *((float *)this + 20);
                 meth_DebugPrint(v9);
             }
         }
         --this[19];
         goto LABEL_111;
     }
-    if (!sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v7,
-                      (float *)&MEMORY[0x106C7CE0] + 5 * v7,
+    if (!sub_1003BA70((float *)&gUnk06594.gap4968[20 * v7],
+                      (float *)&gUnk06594.gap4960[20 * v7],
                       (float *)this + 3,
                       (float *)this))
         goto LABEL_111;
@@ -72110,7 +71913,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
                     *(float *)(v3 + 4076) = v23 - *((float *)this + 12);
                     this[12] = 0;
                     *(_DWORD *)(v3 + 4088) = dword_118AB470;
-                    *(_DWORD *)(v3 + 4092) = gGameMode == 6 ?
+                    *(_DWORD *)(v3 + 4092) = gGameMode == GAME_MODE_6 ?
                                                  String2 :
                                                  GetStringWithIndex(dword_100B3960[dword_118AB470]);
                     *(_DWORD *)(v3 + 4096) = 1084227584;
@@ -72119,19 +71922,21 @@ void __thiscall meth_10066E90(_DWORD *this) {
                          *(float *)(v3 + 4076) <
                              (double)*((float *)dword_10ACED34 + gChosenTrack + 67))) {
                         *((_DWORD *)dword_10ACED34 + gChosenTrack + 67) = *(_DWORD *)(v3 + 4076);
-                        *(_DWORD *)(v3 + 4096) = 1069547520;
+                        *(_DWORD *)(v3 + 4096) = 0x3FC00000;
                         *(_DWORD *)(v3 + 4100) = GetStringWithIndex(0x121u);
-                        *(_DWORD *)(v3 + 4104) = 1080033280;
+                        *(_DWORD *)(v3 + 4104) = 0x40600000;
                     }
                 }
                 ++dword_118AB470;
                 goto LABEL_111;
             }
         LABEL_52:
-            if ((gGameMode == 1 || gGameMode == 6 || gGameMode == 2) && this[25] < dword_100B4050) {
+            if ((gGameMode == GAME_MODE_1 || gGameMode == GAME_MODE_6 ||
+                 gGameMode == GAME_MODE_2) &&
+                this[25] < dword_100B4050) {
                 if (!dword_106909E0)
                     sub_10067D80();
-                if (gGameMode == 1) {
+                if (gGameMode == GAME_MODE_1) {
                     v24 = flt_10ACEE9C - flt_10AD1A04;
                 } else {
                     v25 = 255;
@@ -72171,14 +71976,14 @@ void __thiscall meth_10066E90(_DWORD *this) {
                             *(_DWORD *)(v29 + 4092) = v29 + 10940;
                         } else {
                             *(_DWORD *)(v29 + 4092) = GetStringWithIndex(0x122u);
-                            *(_DWORD *)(v29 + 4096) = 1053609165;
+                            *(_DWORD *)(v29 + 4096) = 0x3ECCCCCD;
                         }
                         v30 = gChosenWeather1 - 1;
                         if ((__int16)(gChosenWeather1 - 1) > 2 || v30 < 0)
                             v30 = 0;
                         *(float *)(v29 + 4080) =
-                            *(float *)&(&(&gTrackData[gChosenTrack]
-                                                     [21 * dword_10ACED0C])[7 * v30])[v51 + 11] +
+                            *(float *)&gTrackData[gChosenTrack]
+                                 ->last[84 * dword_10ACED0C + 28 * v30 + 4 * v51] +
                             *(float *)(v29 + 4080);
                         if (*(float *)(v29 + 4076) != 0.0 && dword_100B36FC > 1) {
                             sprintf((char *const)(v29 + 4108), aRy);
@@ -72236,7 +72041,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
         this[16] = v17;
         this[17] = v17;
         *((float *)this + 12) = v16;
-        if (gGameMode == 3) {
+        if (gGameMode == GAME_MODE_3) {
             if (v17 == 1) {
                 meth_DebugPrint(v13);
                 v18 = this[18];
@@ -72244,11 +72049,11 @@ void __thiscall meth_10066E90(_DWORD *this) {
                 v20 = this[19];
                 --this[16];
                 this[17] = v19;
-                this[18] = v18 - (_DWORD)MEMORY[0x106C7DA8];
-                this[19] = v20 - (_DWORD)MEMORY[0x106C7DA8];
-                if (MEMORY[0x106C7CB8])
+                this[18] = v18 - gUnk06594.field_4A28;
+                this[19] = v20 - gUnk06594.field_4A28;
+                if (gUnk06594.field_4938)
                     *((float *)this + 20) =
-                        *((float *)this + 20) - *(float *)(MEMORY[0x106C7CB8] + 100);
+                        *((float *)this + 20) - *(float *)(gUnk06594.field_4938 + 100);
             }
         } else if (v3) {
             meth_DebugPrint(v13);
@@ -72289,18 +72094,18 @@ void __thiscall meth_10066E90(_DWORD *this) {
     if (v32 <= (int)v31) {
     LABEL_107:
         meth_DebugPrint((void *)this[16]);
-        if (gGameMode == 3 && this[16] == 1) {
+        if (gGameMode == GAME_MODE_3 && this[16] == 1) {
             meth_DebugPrint(v37);
             v38 = this[18];
             v39 = this[17] - 1;
             v40 = this[19];
             --this[16];
             this[17] = v39;
-            this[18] = v38 - (_DWORD)MEMORY[0x106C7DA8];
-            this[19] = v40 - (_DWORD)MEMORY[0x106C7DA8];
-            if (MEMORY[0x106C7CB8])
+            this[18] = v38 - gUnk06594.field_4A28;
+            this[19] = v40 - gUnk06594.field_4A28;
+            if (gUnk06594.field_4938)
                 *((float *)this + 20) =
-                    *((float *)this + 20) - *(float *)(MEMORY[0x106C7CB8] + 100);
+                    *((float *)this + 20) - *(float *)(gUnk06594.field_4938 + 100);
         }
         goto LABEL_111;
     }
@@ -72351,12 +72156,10 @@ void __thiscall meth_10066E90(_DWORD *this) {
 // 100671DD: variable 'v13' is possibly undefined
 // 1006773A: variable 'v31' is possibly undefined
 // 100677E7: variable 'v37' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 100B36FC: using guessed type int dword_100B36FC;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 100BD2A8: using guessed type char **stringOffsets[16];
-// 104BBE08: using guessed type int dword_104BBE08;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 106909E0: using guessed type int dword_106909E0;
 // 10ACD4F8: using guessed type int dword_10ACD4F8;
 // 10ACED0C: using guessed type int dword_10ACED0C;
@@ -73566,11 +73369,10 @@ int __thiscall meth_10069370(_DWORD *this) {
 //----- (10069490) --------------------------------------------------------
 char *sub_10069490() {
   if (dword_10B01C40 < 256)
-    return (char *)&unk_10AF9BC0 +
-           64 * ((*(_DWORD *)&stru_106C3380.gap1C8[12452] << 8) + dword_10B01C40++ +
-                 *(_DWORD *)&stru_106C3380.gap1C8[12452]);
+    return (char *)&unk_10AF9BC0 + 64 * ((*(_DWORD *)&gUnk06594.gap1C8[12452] << 8) +
+                                         dword_10B01C40++ + *(_DWORD *)&gUnk06594.gap1C8[12452]);
   ++dword_10B01C40;
-  return (char *)&unk_10AFDBC0 + 16448 * *(_DWORD *)&stru_106C3380.gap1C8[12452];
+  return (char *)&unk_10AFDBC0 + 16448 * *(_DWORD *)&gUnk06594.gap1C8[12452];
 }
 // 10B01C40: using guessed type int dword_10B01C40;
 
@@ -82447,14 +82249,14 @@ void __thiscall meth_10076A70(unsigned __int8 *this, int a2, int a3) {
 }
 
 //----- (10076AE0) --------------------------------------------------------
-int __thiscall meth_10076AE0(_DWORD *this, int chosenCar) {
+int __thiscall meth_10076AE0(_DWORD *this, int carIndex) {
   int result; // eax
 
-  result = chosenCar;
-  if (chosenCar < 16) {
+  result = carIndex;
+  if (carIndex < 16) {
     this[0xA6D] = 0;
   } else {
-    result = chosenCar - 16;
+    result = carIndex - 16;
     this[0xA6D] = 1;
   }
   this[0xA6A] = result;
@@ -84641,10 +84443,10 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
   LONG v5;     // eax
 
   if (gUnkC8Ptr1) {
-    if (*((_DWORD *)gUnkC8Ptr1 + 26)) {
-        sub_10060060((int)gIostreamInit, hWnd, Msg, wParam, lParam);
+    if (gUnkC8Ptr1->field_68) {
+        sub_10060060(gIostreamInit, hWnd, Msg, wParam, lParam);
         if (dword_10A9CFFC)
-            sub_1003C3A0((int)hWnd, Msg, wParam, (LPCVOID)lParam);
+            sub_1003C3A0(hWnd, Msg, wParam, (char *)lParam);
     }
   }
   if (gPlayMusic == 2) {
@@ -84669,18 +84471,17 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
     }
   }
   if (Msg <= WM_CLOSE) {
-    if (Msg != WM_CLOSE) // != WM_CLOSE
-    {
+    if (Msg != WM_CLOSE) {
         switch (Msg) {
-        case 1u: // WM_CREATE
+        case WM_CREATE:
             goto exit0;
-        case 2u:
+        case WM_DESTROY:
             sub_1007A1D0(); // WM_DESTROY
-        case 3u:            // WM_MOVE
+        case WM_MOVE:       // WM_MOVE
             return handle_WM_MOVE(hWnd, wParam, lParam);
-        case 5u: // WM_SIZE
+        case WM_SIZE: // WM_SIZE
             return handle_WM_SIZE(hWnd, wParam, lParam);
-        case 6u: // WM_ACTIVATE
+        case WM_ACTIVATE: // WM_ACTIVATE
             sub_10077090(wParam);
             return handle_WM_ACTIVATE_justReturn(hWnd, wParam, lParam);
         default:
@@ -84781,7 +84582,7 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
   }
   return result;
 }
-// 100940A4: using guessed type int g_Playmusic;
+// 100940A4: using guessed type int gPlayMusic;
 // 10575478: using guessed type int aEarInteractiveMessageID;
 // 106909B4: using guessed type int dword_106909B4;
 // 10A9CFFC: using guessed type int dword_10A9CFFC;

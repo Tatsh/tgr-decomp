@@ -5,14 +5,14 @@ int sub_1005F4E0() {
     int *v1; // esi
 
     v0 = 0;
-    if ((_WORD)dword_10AA28D4) {
-        v1 = dword_10A9E360;
+    if ((_WORD)gSurfaceCount) {
+        v1 = gDDSurface;
         do {
             if (!(*(int(__stdcall **)(int))(*(_DWORD *)*v1 + 108))(*v1))
                 sub_1000B790(*v1, (LPCSTR)v1[28]);
             ++v0;
             v1 += 29;
-        } while (v0 < (unsigned __int16)dword_10AA28D4);
+        } while (v0 < (unsigned __int16)gSurfaceCount);
     }
     return 1;
 }

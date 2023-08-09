@@ -5,10 +5,10 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
     LONG v5;     // eax
 
     if (gUnkC8Ptr1) {
-        if (*((_DWORD *)gUnkC8Ptr1 + 26)) {
-            sub_10060060((int)gIostreamInit, hWnd, Msg, wParam, lParam);
+        if (gUnkC8Ptr1->field_68) {
+            sub_10060060(gIostreamInit, hWnd, Msg, wParam, lParam);
             if (dword_10A9CFFC)
-                sub_1003C3A0((int)hWnd, Msg, wParam, (LPCVOID)lParam);
+                sub_1003C3A0(hWnd, Msg, wParam, (char *)lParam);
         }
     }
     if (gPlayMusic == 2) {
@@ -33,18 +33,17 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
         }
     }
     if (Msg <= WM_CLOSE) {
-        if (Msg != WM_CLOSE) // != WM_CLOSE
-        {
+        if (Msg != WM_CLOSE) {
             switch (Msg) {
-            case 1u: // WM_CREATE
+            case WM_CREATE:
                 goto exit0;
-            case 2u:
+            case WM_DESTROY:
                 sub_1007A1D0(); // WM_DESTROY
-            case 3u:            // WM_MOVE
+            case WM_MOVE:       // WM_MOVE
                 return handle_WM_MOVE(hWnd, wParam, lParam);
-            case 5u: // WM_SIZE
+            case WM_SIZE: // WM_SIZE
                 return handle_WM_SIZE(hWnd, wParam, lParam);
-            case 6u: // WM_ACTIVATE
+            case WM_ACTIVATE: // WM_ACTIVATE
                 sub_10077090(wParam);
                 return handle_WM_ACTIVATE_justReturn(hWnd, wParam, lParam);
             default:
@@ -145,7 +144,7 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
     }
     return result;
 }
-// 100940A4: using guessed type int g_Playmusic;
+// 100940A4: using guessed type int gPlayMusic;
 // 10575478: using guessed type int aEarInteractiveMessageID;
 // 106909B4: using guessed type int dword_106909B4;
 // 10A9CFFC: using guessed type int dword_10A9CFFC;

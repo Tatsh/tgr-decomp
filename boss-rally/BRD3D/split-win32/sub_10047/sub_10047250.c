@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10047250) --------------------------------------------------------
-int __cdecl sub_10047250(int a1) {
+int __cdecl sub_10047250(unk1E214 *a1) {
     if (dword_10AA2AD4) {
         sub_10042410(a1);
     LABEL_5:

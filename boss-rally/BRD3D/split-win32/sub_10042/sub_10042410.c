@@ -1,9 +1,9 @@
 #include "types-win32.h"
 //----- (10042410) --------------------------------------------------------
-int __cdecl sub_10042410(int a1) {
+int __cdecl sub_10042410(unk1E214 *a1) {
     int v1; // eax
 
-    *(_DWORD *)(*(_DWORD *)(a1 + 10984) + 112) = 0;
+    a1->field_2AE8->field_70 = 0;
     *(_DWORD *)(dword_10AA29D0 + 1080 * Value + 1100) =
         *(_DWORD *)(dword_10AA29D0 + 1080 * Value + 1100) == 0;
     v1 = dword_10AA29D0 + 1080 * Value;

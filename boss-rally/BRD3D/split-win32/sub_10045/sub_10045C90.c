@@ -1,43 +1,39 @@
 #include "types-win32.h"
 //----- (10045C90) --------------------------------------------------------
-int sub_10045C90() {
-    _DWORD *v0; // eax
-    int result; // eax
-    _DWORD *v2; // eax
+unk000C8 *sub_10045C90() {
+    unk000C8 *v0;     // eax
+    unk000C8 *result; // eax
+    unk000C8 *v2;     // eax
 
-    if (dword_10AA292C) {
-        gUnkC8Ptr1 = (void *)dword_10AA292C;
-        result = 1;
+    if (gUnkC8Ptr18) {
+        gUnkC8Ptr1 = gUnkC8Ptr18;
+        result = (unk000C8 *)1;
     } else {
-        v0 = (_DWORD *)malloc(0xC8u);
+        v0 = (unk000C8 *)malloc(0xC8u);
         if (v0)
-            result = (int)meth_unk000C8_10048710(v0);
+            result = meth_unk000C8_10048710(v0);
         else
             result = 0;
-        dword_10AA292C = result;
-        gUnkC8Ptr1 = (void *)result;
+        gUnkC8Ptr18 = result;
+        gUnkC8Ptr1 = result;
         if (result) {
-            *(_DWORD *)(result + 4) = sub_100509F0;
-            (*(void(__cdecl **)(int))(dword_10AA292C + 4))(dword_10AA292C);
-            *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
-            *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
-            v2 = (_DWORD *)malloc(0xC8u);
+            result->lpFn0 = sub_100509F0;
+            gUnkC8Ptr18->lpFn0(gUnkC8Ptr18);
+            gUnkC8Ptr1->field_C = 1;
+            gUnkC8Ptr1->field_68 = 1;
+            v2 = (unk000C8 *)malloc(0xC8u);
             if (v2)
-                result = (int)meth_unk000C8_10048710(v2);
+                result = meth_unk000C8_10048710(v2);
             else
                 result = 0;
-            dword_10AA2974 = result;
+            gUnkC8Ptr33 = result;
             if (result) {
-                *(_DWORD *)(result + 4) = sub_10049F40;
-                (*(void(__cdecl **)(int))(dword_10AA2974 + 4))(dword_10AA2974);
-                result = 1;
-                *(_DWORD *)(dword_10AA2974 + 12) = 1;
+                result->lpFn0 = sub_10049F40;
+                gUnkC8Ptr33->lpFn0(gUnkC8Ptr33);
+                result = (unk000C8 *)1;
+                gUnkC8Ptr33->field_C = 1;
             }
         }
     }
     return result;
 }
-// 10049F40: using guessed type int __cdecl sub_10049F40(int);
-// 100509F0: using guessed type int __cdecl sub_100509F0(int);
-// 10AA292C: using guessed type int dword_10AA292C;
-// 10AA2974: using guessed type int dword_10AA2974;

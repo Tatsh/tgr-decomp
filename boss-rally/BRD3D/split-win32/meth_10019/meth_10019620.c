@@ -9,7 +9,7 @@ void __thiscall meth_10019620(void *this) {
             dword_100A79CC = 3;
             flt_104B0378 = (float)(sub_1003BD50() & 0x7FF);
             v1 = sub_1003BD50() & 0x7FF;
-            dword_104B0380 = *(_DWORD *)&stru_106C3380.gap1C8[18232];
+            dword_104B0380 = *(_DWORD *)&gUnk06594.gap1C8[18232];
             flt_104B037C = (float)v1;
         }
     } else {

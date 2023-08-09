@@ -16,7 +16,7 @@ int __cdecl sub_1003FA00(int a1) {
     int v14;          // [esp+Ch] [ebp-84h]
     char buffer[128]; // [esp+10h] [ebp-80h] BYREF
 
-    if (gUnkC8Ptr1 != (unk000C8 *)dword_10AA2964 || dword_10AA28E8) {
+    if (gUnkC8Ptr1 != (unk000C8 *)gUnkC8Ptr32 || dword_10AA28E8) {
         if (gGameMode) {
             strcpy(buffer, GetStringWithIndex(dword_100AC308[dword_100AC648]));
             trackIndex = dword_100AC648;

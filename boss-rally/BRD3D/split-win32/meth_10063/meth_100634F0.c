@@ -1,18 +1,18 @@
 #include "types-win32.h"
 //----- (100634F0) --------------------------------------------------------
-unsigned int __thiscall meth_100634F0(_DWORD *this) {
-    int v2;              // eax
-    char v3;             // cl
-    char v4;             // bl
-    _DWORD *v5;          // eax
-    int v6;              // ecx
-    int v7;              // eax
-    unsigned int result; // eax
+enum MACRO_GAME_MODE __thiscall meth_100634F0(_DWORD *this) {
+    int v2;                      // eax
+    char v3;                     // cl
+    char v4;                     // bl
+    _DWORD *v5;                  // eax
+    int v6;                      // ecx
+    int v7;                      // eax
+    enum MACRO_GAME_MODE result; // eax
 
     meth_10076C90((char *)this);
     v2 = ((char *)this - (char *)dword_10ACDEA8) / 11112;
     this[80] = v2;
-    if (gGameMode != 6) {
+    if (gGameMode != GAME_MODE_6) {
         v3 = byte_100B37D2[3 * v2];
         v4 = byte_100B37D0[3 * v2];
         *((_BYTE *)this + 10669) = byte_100B37D1[3 * v2];
@@ -51,5 +51,4 @@ unsigned int __thiscall meth_100634F0(_DWORD *this) {
     this[930] = 0;
     return result;
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100AAB18: using guessed type int dword_100AAB18;

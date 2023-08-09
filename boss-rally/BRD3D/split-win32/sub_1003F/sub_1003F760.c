@@ -5,7 +5,7 @@ int __cdecl sub_1003F760(int a1) {
     int v2;         // eax
     int v3;         // edx
 
-    if (gUnkC8Ptr1 != (void *)dword_10AA2964 || dword_10AA28E8) {
+    if (gUnkC8Ptr1 != (void *)gUnkC8Ptr32 || dword_10AA28E8) {
         v2 = dword_100AC654;
         if (dword_100AC654 > 15)
             v2 = dword_100AC654 - 16;
