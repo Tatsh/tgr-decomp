@@ -70,7 +70,7 @@ HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4) {
     v29 = v7;
     if (dword_104C1694 == 5260096) {
         off_100A79EC = sub_1001C690;
-        if (!dword_106C6618)
+        if (!MEMORY[0x106C6618])
             off_100A79EC = sub_1001BC90;
         dword_10277380 = 5;
         v8 = dword_10277370;

@@ -11,7 +11,7 @@ int __thiscall meth_unk00438_1005B2B0(unk00438 *this) {
     int v9;     // [esp+10h] [ebp-8h]
 
     if ((this->field_4 & 1) != 0)
-        *(float *)&v9 = ((double(__thiscall *)(unk00438 *))this->lpVtbl->field_28)(this);
+        *(float *)&v9 = this->lpVtbl->field_28(this);
     else
         v9 = this->field_410;
     v2 = this->field_9[0];

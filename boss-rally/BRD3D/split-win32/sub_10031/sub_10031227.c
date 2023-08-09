@@ -4,11 +4,11 @@ int sub_10031227() {
     int result; // eax
 
     dword_106C32CC = 0;
-    dword_106C56DC = 0;
+    MEMORY[0x106C56DC] = 0;
     dword_106C1178 = 0;
     dword_106C161C = 0;
     dword_106C1610 = 0;
-    dword_106C33B8 = 0;
+    MEMORY[0x106C33B8] = 0;
     result = 0;
     dword_106C06A4 = 0;
     dword_106C069C = 0;

@@ -114,7 +114,7 @@ void __cdecl np_sub_1000BAF0(SIZE_T *a1, int a2, int a3, int a4) {
             if (a4 == 1) {
                 v9 = *(_DWORD *)(a2 + 8);
                 if (v9 >= 0 && v9 < 8) {
-                    sprintf(buffer, " finished %s", gPositionStringOffsets[v9]);
+                    sprintf(buffer, " finished %s", gPositionStrings[v9]);
                     sub_1003D3A0(*a1, *(_DWORD *)(a2 + 4), buffer, (int)&lParam, 1);
                 }
             }

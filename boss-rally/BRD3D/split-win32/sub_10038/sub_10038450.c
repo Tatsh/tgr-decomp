@@ -24,12 +24,13 @@ void __cdecl sub_10038450(int a1, int a2) {
                             qmemcpy(v4, (const void *)(dword_10690BEC + *(_DWORD *)(v6 + 12)), v7);
                             v8 = (void *)*(v2 - 1);
                             if (v8)
-                                qmemcpy(v8,
-                                        (const void *)(dword_10690BEC + *(_DWORD *)(*v2 + 16)),
-                                        (*(_DWORD *)((char *)v2 + -8 - a1 + dword_106C7C64 + 32) &
-                                         0xF000000) != 0x1000000 ?
-                                            512 :
-                                            32);
+                                qmemcpy(
+                                    v8,
+                                    (const void *)(dword_10690BEC + *(_DWORD *)(*v2 + 16)),
+                                    (*(_DWORD *)((char *)v2 + -8 - a1 + MEMORY[0x106C7C64] + 32) &
+                                     0xF000000) != 0x1000000 ?
+                                        512 :
+                                        32);
                         }
                     }
                 }

@@ -38,8 +38,8 @@ void sub_1002B340() {
         v3 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v3 = -503316480;
-        v3[1] = (((__int64)(double)(g_Width1 << dword_106C65E4) & 0xFFF) << 12) |
-                (__int64)(double)(g_Height1 << dword_106C65E4) & 0xFFF;
+        v3[1] = (((__int64)(double)(g_Width1 << MEMORY[0x106C65E4]) & 0xFFF) << 12) |
+                (__int64)(double)(g_Height1 << MEMORY[0x106C65E4]) & 0xFFF;
         v4 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v4 = -100597761;
@@ -61,8 +61,8 @@ void sub_1002B340() {
             v7[1] = 255;
             v8 = (unsigned int *)dword_106C0680;
             dword_106C0680 += 8;
-            v9 = v5 << dword_106C65E4;
-            v10 = g_Height1 << dword_106C65E4;
+            v9 = v5 << MEMORY[0x106C65E4];
+            v10 = g_Height1 << MEMORY[0x106C65E4];
             v8[1] = 0;
             *v8 = ((_WORD)v10 - 1) & 0xFFF | ((v9 + 0xFFFFF) << 12) & 0xFFF000 | 0xE1000000;
         }
@@ -72,17 +72,17 @@ void sub_1002B340() {
                 v13 = (unsigned int *)dword_106C0680;
                 dword_106C0680 += 8;
                 --dword_100A81BC;
-                *v13 = ((unsigned __int16)(g_Height1 << dword_106C65E4) - 1) & 0xFFF |
-                       (((g_Width1 << dword_106C65E4) + 0xFFFFF) << 12) & 0xFFF000 | 0xE1000000;
+                *v13 = ((unsigned __int16)(g_Height1 << MEMORY[0x106C65E4]) - 1) & 0xFFF |
+                       (((g_Width1 << MEMORY[0x106C65E4]) + 0xFFFFF) << 12) & 0xFFF000 | 0xE1000000;
                 v13[1] = 0;
             }
         } else if (dword_100A81BC) {
             v12 = (unsigned int *)dword_106C0680;
             dword_106C0680 += 8;
             --dword_100A81BC;
-            *v12 = ((unsigned __int16)(g_Height1 << dword_106C65E4) - 1) & 0xFFF |
-                   (((g_Width1 << dword_106C65E4) + 0xFFFFF) << 12) & 0xFFF000 | 0xE1000000;
-            v12[1] = ((v11 << dword_106C65E4) & 0xFFF) << 12;
+            *v12 = ((unsigned __int16)(g_Height1 << MEMORY[0x106C65E4]) - 1) & 0xFFF |
+                   (((g_Width1 << MEMORY[0x106C65E4]) + 0xFFFFF) << 12) & 0xFFF000 | 0xE1000000;
+            v12[1] = ((v11 << MEMORY[0x106C65E4]) & 0xFFF) << 12;
         }
         v14 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;

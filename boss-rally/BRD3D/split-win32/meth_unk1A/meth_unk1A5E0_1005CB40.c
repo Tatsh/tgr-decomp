@@ -1,14 +1,14 @@
 #include "types-win32.h"
 //----- (1005CB40) --------------------------------------------------------
-int __thiscall meth_unk1A5E0_1005CB40(unk1A5E0 *this, int a2) {
+int __thiscall meth_unk1A5E0_1005CB40(unk1A5E0 *this, int index) {
     unk1A5E0Vtbl *v3; // edi
     int v5;           // [esp+8h] [ebp-4h] BYREF
 
     v5 = -1;
     v3 = this->lpVtbl;
-    ((void(__thiscall *)(unk1A5E0 *, int))this->lpVtbl->field_8)(this, a2);
+    this->lpVtbl->field_8(this, index);
     if (!dword_10AA28D8 && !dword_10AA2858)
-        ((void(__thiscall *)(unk1A5E0 *, int *))v3->field_1C)(this, &v5);
+        v3->field_1C(this, &v5);
     ++word_10AA2870;
     return v5;
 }

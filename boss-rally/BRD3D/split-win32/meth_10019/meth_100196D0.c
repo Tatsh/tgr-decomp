@@ -43,7 +43,7 @@ int __thiscall meth_100196D0(void *this) {
 
     meth_100194E0(this);
     v2 = 0;
-    if (dword_106C6624)
+    if (MEMORY[0x106C6624])
         meth_10019620(v1);
     result = 512 / dword_100AA8B4;
     v33 = 0;
@@ -64,10 +64,10 @@ int __thiscall meth_100196D0(void *this) {
                 dword_104B069C = v38;
                 dword_104BBE14 = 1;
             }
-            v4 = dword_106C6620;
-            if (!dword_106C6620) {
-                result = dword_106C6624;
-                if (!dword_106C6624)
+            v4 = MEMORY[0x106C6620];
+            if (!MEMORY[0x106C6620]) {
+                result = MEMORY[0x106C6624];
+                if (!MEMORY[0x106C6624])
                     break;
             }
             v5 = *(float *)&v37 - *(float *)((char *)&dword_104B068C + v2);
@@ -88,7 +88,7 @@ int __thiscall meth_100196D0(void *this) {
                 v25 = v25 * flt_104B1F00;
                 v20 = v20 * flt_104B1F00;
             }
-            if (dword_106C6620) {
+            if (MEMORY[0x106C6620]) {
                 v21 = v20 - *(float *)&dword_106C2CFC * -0.5;
             } else {
                 *(float *)v39 = v23;
@@ -107,7 +107,7 @@ int __thiscall meth_100196D0(void *this) {
                 v21 = v20 + v29;
                 sub_1003AD10((int)v39, v19);
                 sub_1003AF70((float *)((char *)&unk_104BBDF0 + v2), (float *)v39);
-                v4 = dword_106C6620;
+                v4 = MEMORY[0x106C6620];
             }
             if (v4) {
                 v31 = ((double)(unsigned __int16)sub_1003BD50() * 0.000030518044 - 1.0) *

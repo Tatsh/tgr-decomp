@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10008AA0) --------------------------------------------------------
-int __thiscall meth_10008AA0(Pod *this) {
+int __thiscall meth_Pod_10008AA0(Pod *this) {
     int v1;        // edi
     char magic[4]; // [esp+8h] [ebp-10h] BYREF
     int v4;        // [esp+Ch] [ebp-Ch]

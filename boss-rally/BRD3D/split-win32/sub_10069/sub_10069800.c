@@ -5,7 +5,7 @@ char *sub_10069800() {
     _DWORD *v1;   // esi
     char *result; // eax
 
-    v0 = (char *)&unk_106C6678;
+    v0 = (char *)&MEMORY[0x106C6678];
     v1 = dword_10ACDEA8;
     do {
         meth_100634F0((int)v1);

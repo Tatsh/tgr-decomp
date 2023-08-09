@@ -197,7 +197,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                         v168 = 0;
                         if (dword_10277B68[result]) {
                             v5 = sub_1003B0E0((float *)(LODWORD(a1) + 48),
-                                              (float *)dword_106C6490 + 12);
+                                              (float *)MEMORY[0x106C6490] + 12);
                             v170 = v5;
                             if (*(_BYTE *)(LODWORD(a1) + 10671) == 2) {
                                 dword_10277E14 = (__int64)(*(float *)(LODWORD(a1) + 10672) * 255.0);
@@ -212,7 +212,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                             v8 = *(_DWORD *)(LODWORD(a1) + 10572);
                             *(_DWORD *)(LODWORD(a1) + 10004) = 0;
                             if (v8 &&
-                                (*(_BYTE *)(dword_106C7CA8 +
+                                (*(_BYTE *)(MEMORY[0x106C7CA8] +
                                             84 * *(unsigned __int16 *)(LODWORD(a1) + 10508) + 76) &
                                  0x10) != 0) {
                                 v4 = 1;
@@ -228,10 +228,10 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 } else {
                                     v9 = 0;
                                 }
-                                if (v9 < dword_106C6630)
-                                    v9 = dword_106C6630;
+                                if (v9 < MEMORY[0x106C6630])
+                                    v9 = MEMORY[0x106C6630];
                             } else {
-                                v9 = dword_106C6630;
+                                v9 = MEMORY[0x106C6630];
                             }
                             v10 = a2 + v9;
                             v185 = v10;
@@ -255,10 +255,10 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                             result = *(_DWORD *)(LODWORD(a1) + 10036);
                             if (result != LODWORD(a1) + 10044 && result != LODWORD(a1) + 10384)
                                 goto LABEL_26;
-                            if (dword_106C6614) {
+                            if (MEMORY[0x106C6614]) {
                             LABEL_26:
                                 dword_10277D38[*(_DWORD *)(LODWORD(a1) + 320)] = v10;
-                                if (dword_106C661C) {
+                                if (MEMORY[0x106C661C]) {
                                     v11 = v170 * 0.1;
                                     if (v11 < 1.0)
                                         v11 = 1.0;
@@ -276,7 +276,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                     LOBYTE(v14) = 0;
                                     HIBYTE(v14) = byte_10690BF0;
                                     v167 = v13;
-                                    v15 = ((unsigned __int8)byte_106C65BC |
+                                    v15 = ((unsigned __int8)MEMORY[0x106C65BC] |
                                            (((unsigned __int8)byte_106C0960 | v14) << 8))
                                           << 8;
                                 } else {
@@ -284,7 +284,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                         v13 = 0;
                                         v167 = 0;
                                         v175 = (char)(4 * byte_106C0960) / 5;
-                                        v176 = (char)(4 * byte_106C65BC) / 5;
+                                        v176 = (char)(4 * MEMORY[0x106C65BC]) / 5;
                                         v16 = 0;
                                         BYTE1(v16) = 4 * (unsigned __int8)byte_10690BF0 / 5;
                                     } else {
@@ -296,7 +296,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                         v175 = byte_106C0960;
                                         v16 = 0;
                                         v167 = v13;
-                                        v176 = byte_106C65BC;
+                                        v176 = MEMORY[0x106C65BC];
                                         BYTE1(v16) = byte_10690BF0;
                                     }
                                     v15 = (v176 | ((v175 | v16) << 8)) << 8;
@@ -309,10 +309,10 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 dword_106C0680 += 8;
                                 *v19 = 16973888;
                                 v19[1] = dword_106C32D0;
-                                if (dword_106C661C) {
-                                    if (dword_106C6490 == (void *)(dword_106C2CF8 + 10248))
+                                if (MEMORY[0x106C661C]) {
+                                    if (MEMORY[0x106C6490] == (void *)(dword_106C2CF8 + 10248))
                                         sub_1003ACC0((float *)&dword_10277BA8,
-                                                     (float *)dword_106C6490);
+                                                     (float *)MEMORY[0x106C6490]);
                                     else
                                         sub_1003ACC0((float *)&dword_10277BA8,
                                                      (float *)dword_106C2CF8);
@@ -326,11 +326,11 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 dword_10277D80 = flt_10277BB0;
                                 dword_10277D7C = flt_10277BAC;
                                 sub_1003AEE0((float *)v179,
-                                             (float *)dword_106C6490 + 12,
+                                             (float *)MEMORY[0x106C6490] + 12,
                                              (float *)(LODWORD(a1) + 48));
                                 v20 = sub_1003B170((float *)v179);
                                 if (v20 == 0.0) {
-                                    sub_1003ACC0((float *)v179, (float *)dword_106C6490);
+                                    sub_1003ACC0((float *)v179, (float *)MEMORY[0x106C6490]);
                                 } else {
                                     v181 = v20;
                                     sub_1003AD70((int)v179, v181);
@@ -338,9 +338,9 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 sub_1003B050(&dword_10277D78, (float *)v179, &dword_10277D78);
                                 v21 = sub_1003B170(&dword_10277D78);
                                 if (v21 == 0.0) {
-                                    dword_10277D78 = *((float *)dword_106C6490 + 8);
-                                    dword_10277D7C = *((float *)dword_106C6490 + 9);
-                                    dword_10277D80 = *((float *)dword_106C6490 + 10);
+                                    dword_10277D78 = *((float *)MEMORY[0x106C6490] + 8);
+                                    dword_10277D7C = *((float *)MEMORY[0x106C6490] + 9);
+                                    dword_10277D80 = *((float *)MEMORY[0x106C6490] + 10);
                                 } else {
                                     v182 = v21;
                                     sub_1003AD70((int)&dword_10277D78, v182);
@@ -351,18 +351,18 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 v172 = sub_10069530();
                                 v183 = 0.0;
                                 v169 = 0.0;
-                                if (*((float *)dword_106C6490 + 12) ==
+                                if (*((float *)MEMORY[0x106C6490] + 12) ==
                                         *(float *)(LODWORD(a1) + 48) &&
-                                    *((float *)dword_106C6490 + 13) ==
+                                    *((float *)MEMORY[0x106C6490] + 13) ==
                                         *(float *)(LODWORD(a1) + 52)) {
-                                    if (*((float *)dword_106C6490 + 14) ==
+                                    if (*((float *)MEMORY[0x106C6490] + 14) ==
                                         *(float *)(LODWORD(a1) + 56))
                                         v183 = 1.0;
                                     else
                                         v169 = 0.1;
                                 }
-                                v177 = *(float *)dword_106C6490;
-                                v178 = *((float *)dword_106C6490 + 1);
+                                v177 = *(float *)MEMORY[0x106C6490];
+                                v178 = *((float *)MEMORY[0x106C6490] + 1);
                                 if (v177 == 0.0 && v178 == 0.0)
                                     v177 = 0.000099999997;
                                 sub_10030E20((int)&flt_106C0860,
@@ -381,9 +381,9 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 sub_10030B50((int)&flt_106C0860,
                                              (int)v172,
                                              (int)v173,
-                                             *((float *)dword_106C6490 + 12),
-                                             *((float *)dword_106C6490 + 13),
-                                             *((float *)dword_106C6490 + 14),
+                                             *((float *)MEMORY[0x106C6490] + 12),
+                                             *((float *)MEMORY[0x106C6490] + 13),
+                                             *((float *)MEMORY[0x106C6490] + 14),
                                              v165,
                                              *(float *)(LODWORD(a1) + 52),
                                              v166,
@@ -405,7 +405,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                     v22[1] = &unk_100AA770;
                                 else
                                     v22[1] = &unk_100AA838;
-                                if (dword_106C661C || dword_106C6624) {
+                                if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
                                     qmemcpy((char *)&unk_10277BB8 +
                                                 24 * *(_DWORD *)(LODWORD(a1) + 320),
                                             &unk_100AA860,
@@ -458,7 +458,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 dword_106C0680 += 8;
                                 *v30 = -1224736768;
                                 v30[1] = 131589;
-                                if (dword_106C6618) {
+                                if (MEMORY[0x106C6618]) {
                                     v31 = (_DWORD *)dword_106C0680;
                                     dword_106C0680 += 8;
                                     *v31 = -1224736768;
@@ -762,7 +762,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                 v83[1] = 83886080;
                                 sub_1003AEE0(v180,
                                              (float *)(LODWORD(a1) + 48),
-                                             (float *)dword_106C6490 + 12);
+                                             (float *)MEMORY[0x106C6490] + 12);
                                 if (sub_1003AC90((float *)(LODWORD(a1) + 32), v180) > 0.0) {
                                     sub_10031481(6, *(_DWORD *)(dword_106C3308 + 32788));
                                     v84 = (_DWORD *)dword_106C0680;
@@ -906,9 +906,9 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                     *v107 = 100663296;
                                     v107[1] = *(_DWORD *)(dword_106C3308 + v184 + 32804);
                                 }
-                                if (dword_10B4E1DC && !dword_106C6620 && !dword_106C6624 &&
-                                    (!v168 || dword_106C661C) &&
-                                    (!dword_106C661C || LODWORD(a1) != dword_106C2CF8) &&
+                                if (dword_10B4E1DC && !MEMORY[0x106C6620] && !MEMORY[0x106C6624] &&
+                                    (!v168 || MEMORY[0x106C661C]) &&
+                                    (!MEMORY[0x106C661C] || LODWORD(a1) != dword_106C2CF8) &&
                                     !dword_10277B1C && !*(_DWORD *)(LODWORD(a1) + 10676)) {
                                     v108 = (_DWORD *)dword_106C0680;
                                     dword_106C0680 += 8;
@@ -968,7 +968,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                     v117 = (unsigned int *)dword_106C0680;
                                     dword_106C0680 += 8;
                                     v118 = dword_11829314;
-                                    if (!dword_106C661C)
+                                    if (!MEMORY[0x106C661C])
                                         v118 = dword_11829324;
                                     v117[1] = 1;
                                     *v117 = v118 & 0xFFFFFF | 0xDC000000;
@@ -1033,7 +1033,7 @@ int __cdecl sub_1000CBE0(float a1, int a2) {
                                              0,
                                              0,
                                              1001);
-                                if (dword_106C6618) {
+                                if (MEMORY[0x106C6618]) {
                                     v127 = (_DWORD *)dword_106C0680;
                                     dword_106C0680 += 8;
                                     *v127 = -83886080;

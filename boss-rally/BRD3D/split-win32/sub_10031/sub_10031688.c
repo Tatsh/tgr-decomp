@@ -11,7 +11,7 @@ _DWORD *__cdecl sub_10031688(int a1, int a2, int a3, int a4, __int16 a5, __int16
     _DWORD *v14;          // [esp+18h] [ebp-8h]
     unsigned __int16 v15; // [esp+1Ch] [ebp-4h]
 
-    if (dword_106C65E4) {
+    if (MEMORY[0x106C65E4]) {
         a1 *= 2;
         a2 *= 2;
         a3 *= 2;
@@ -36,8 +36,8 @@ _DWORD *__cdecl sub_10031688(int a1, int a2, int a3, int a4, __int16 a5, __int16
     v11[1] = (v15 << 16) | v15;
     v10 = (unsigned int *)dword_106C0680;
     dword_106C0680 += 8;
-    *v10 = ((unsigned __int16)((a4 + a2) << dword_106C65E4) - 1) & 0xFFF |
-           ((((unsigned __int16)((a3 + a1) << dword_106C65E4) - 1) & 0xFFF) << 12) | 0xE1000000;
+    *v10 = ((unsigned __int16)((a4 + a2) << MEMORY[0x106C65E4]) - 1) & 0xFFF |
+           ((((unsigned __int16)((a3 + a1) << MEMORY[0x106C65E4]) - 1) & 0xFFF) << 12) | 0xE1000000;
     v10[1] = a2 & 0xFFF | ((a1 & 0xFFF) << 12);
     v9 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;

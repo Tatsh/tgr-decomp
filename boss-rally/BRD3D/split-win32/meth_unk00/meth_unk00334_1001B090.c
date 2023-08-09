@@ -60,7 +60,7 @@ HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *So
     if (hr >= 0) {
         hr = lpDD->lpVtbl->QueryInterface(lpDD, &CLSID_IDirectDraw2, (LPVOID *)&ppvDDraw2);
         if (hr >= 0) {
-            hr = lpDD->lpVtbl->QueryInterface(lpDD, &IID_IDirect3D2, (LPVOID *)&ppvD3D2);
+            hr = lpDD->lpVtbl->QueryInterface(lpDD, &CLSID_IDirect3D2, (LPVOID *)&ppvD3D2);
             if (hr >= 0) {
                 g_pD3D2 = ppvD3D2;
                 ppvDDraw2_vtbl = ppvDDraw2->lpVtbl;

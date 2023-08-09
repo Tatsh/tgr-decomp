@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100085F0) --------------------------------------------------------
-char __stdcall CleanupName(const char *a1, char *buff) {
+char __thiscall meth_Pod_CleanupName(Pod *this, const char *a1, char *buff) {
     unsigned int i; // esi
     char result;    // al
 

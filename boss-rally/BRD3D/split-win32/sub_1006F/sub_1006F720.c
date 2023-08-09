@@ -59,13 +59,13 @@ __int16 __cdecl sub_1006F720(float a1, float a2) {
         for (i = sub_10002EF0((unsigned __int16 *)&a2); i;
              i = sub_10002EF0((unsigned __int16 *)&a2)) {
             *((_DWORD *)v10 + 4) =
-                dword_106C7C5C + 12 * *(unsigned __int16 *)(dword_106C7C54 + 8 * i);
+                MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i);
             *((_DWORD *)v10 + 5) =
-                dword_106C7C5C + 12 * *(unsigned __int16 *)(dword_106C7C54 + 8 * i + 2);
+                MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i + 2);
             *((_DWORD *)v10 + 6) =
-                dword_106C7C5C + 12 * *(unsigned __int16 *)(dword_106C7C54 + 8 * i + 4);
+                MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i + 4);
             v12 = (float *)*((_DWORD *)v10 + 5);
-            v13 = *(_BYTE *)(dword_106C7CDC + i) & 7;
+            v13 = *(_BYTE *)(MEMORY[0x106C7CDC] + i) & 7;
             *((_WORD *)v10 + 14) = i;
             v14 = (float *)*((_DWORD *)v10 + 4);
             v10[30] = v13;

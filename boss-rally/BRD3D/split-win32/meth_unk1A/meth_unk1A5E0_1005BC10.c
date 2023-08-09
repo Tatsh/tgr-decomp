@@ -23,7 +23,7 @@ int __thiscall meth_unk1A5E0_1005BC10(
     if (!Source)
         return 0;
     if (this->field_1A92C[0] >= 0x64u) {
-        ((void(__thiscall *)(unk1A5E0 *, _DWORD))this->lpVtbl->last)(this, 0);
+        this->lpVtbl->field_2C(this, 0);
         this->field_1A92C[0] = 99;
     }
     if (a6) {

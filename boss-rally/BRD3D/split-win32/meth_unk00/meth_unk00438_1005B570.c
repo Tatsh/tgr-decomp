@@ -2,6 +2,7 @@
 //----- (1005B570) --------------------------------------------------------
 char __thiscall meth_unk00438_1005B570(unk00438 *this) {
     char v3; // bl
+    int v4;  // [esp+0h] [ebp-10h]
 
     if (dword_10AA285C) {
         if (dword_10AA2B6C) {
@@ -43,7 +44,7 @@ char __thiscall meth_unk00438_1005B570(unk00438 *this) {
     }
     v3 = sub_1005B540(dword_10AA33E4);
     if (v3) {
-        ((void(__thiscall *)(unk00438 *))this->lpVtbl->field_4)(this);
+        this->lpVtbl->field_4(this, v4);
         if (this->field_40A < this->field_41C)
             sprintf(this->field_9, "%s%c", this->field_9, v3);
     LABEL_25:
@@ -51,6 +52,7 @@ char __thiscall meth_unk00438_1005B570(unk00438 *this) {
     }
     return 1;
 }
+// 1005B6F3: variable 'v4' is possibly undefined
 // 10AA2854: using guessed type int dword_10AA2854;
 // 10AA285C: using guessed type int dword_10AA285C;
 // 10AA2A84: using guessed type int dword_10AA2A84;

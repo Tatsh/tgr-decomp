@@ -8,7 +8,7 @@ void __thiscall meth_10063660(_DWORD *this) {
     int v6;   // [esp+8h] [ebp-10h]
     float v7; // [esp+8h] [ebp-10h]
 
-    if ((int)this[215] < 0 || flt_106C7C80 - 10.0 > *((float *)this + 14)) {
+    if ((int)this[215] < 0 || MEMORY[0x106C7C80] - 10.0 > *((float *)this + 14)) {
         meth_10065630(this);
         meth_10062C50(this);
         v2 = this[995];

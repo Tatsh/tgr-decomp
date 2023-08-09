@@ -8,7 +8,7 @@ int sub_100344D7() {
     int n; // [esp+4h] [ebp-8h]
     int i; // [esp+8h] [ebp-4h]
 
-    dword_106C666C = 0;
+    MEMORY[0x106C666C] = 0;
     for (i = 0; i < dword_100B36FC; ++i) {
         for (j = 0; j < 3; ++j) {
             if (byte_10AD0857[11112 * i] == 2) {

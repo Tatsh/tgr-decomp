@@ -20,7 +20,7 @@ _DWORD *__cdecl sub_10017290(int a1) {
     if (dword_100BD3EC) {
         v2 = gWidth - 16;
         v3 = dword_100AA8B4 != 1 ? 0 : 30;
-        v4 = *(_DWORD *)(a1 + 88 * dword_106C5708 + 4) + 20;
+        v4 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4) + 20;
         sub_10019260();
         Set_byte_104B035C_To1();
         sub_100192F0(15);

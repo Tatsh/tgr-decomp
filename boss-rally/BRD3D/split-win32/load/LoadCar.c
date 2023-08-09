@@ -8,6 +8,6 @@ int __cdecl LoadCar(int a1, int carIndex, int a3) {
     ReadCarFileIntoBuffer((char *)&unk_100C12A0 + 89992 * a1, carIndex);
     sub_1003551B();
     result = a1;
-    dword_106C6558[a1] = carIndex;
+    MEMORY[0x106C6558][a1] = carIndex;
     return result;
 }

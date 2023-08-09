@@ -97,8 +97,8 @@ LABEL_11:
         v9 = 0.0;
     if (!this[80])
         dword_118290F4 =
-            (*(_BYTE *)(dword_106C7CA8 + 84 * *((unsigned __int16 *)this + 5254) + 76) & 0x10) !=
-                    0 ?
+            (*(_BYTE *)(MEMORY[0x106C7CA8] + 84 * *((unsigned __int16 *)this + 5254) + 76) &
+             0x10) != 0 ?
                 0x2AF8 :
                 0;
     if (!v52) {

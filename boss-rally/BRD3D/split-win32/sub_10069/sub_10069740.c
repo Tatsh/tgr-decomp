@@ -4,30 +4,30 @@ int __cdecl sub_10069740(int a1) {
     int result; // eax
 
     result = a1;
-    dword_106C6620 = 0;
-    dword_106C6624 = 0;
-    dword_106C661C = 0;
+    MEMORY[0x106C6620] = 0;
+    MEMORY[0x106C6624] = 0;
+    MEMORY[0x106C661C] = 0;
     switch (a1) {
     case 0:
-        dword_106C6618 = 0;
+        MEMORY[0x106C6618] = 0;
         break;
     case 1:
-        dword_106C6618 = 1;
+        MEMORY[0x106C6618] = 1;
         break;
     case 2:
         result = 1;
-        dword_106C6618 = 1;
-        dword_106C6624 = 1;
+        MEMORY[0x106C6618] = 1;
+        MEMORY[0x106C6624] = 1;
         break;
     case 3:
         result = 1;
-        dword_106C6618 = 1;
-        dword_106C6620 = 1;
+        MEMORY[0x106C6618] = 1;
+        MEMORY[0x106C6620] = 1;
         break;
     case 4:
         result = 1;
-        dword_106C6618 = 1;
-        dword_106C661C = 1;
+        MEMORY[0x106C6618] = 1;
+        MEMORY[0x106C661C] = 1;
         break;
     default:
         return result;

@@ -34,7 +34,7 @@ int __cdecl sub_1003FA00(int a1) {
             trackIndex = (unsigned __int8)byte_100B3820[24 * (char)dword_10AA28B8 + 2 * v5];
         }
         v1 = a1;
-        if (((_BYTE)gTrackDataOffsets[trackIndex][1] & 0x10) != 0) {
+        if ((gTrackData[trackIndex]->field_4 & 0x10) != 0) {
             v14 = *(_DWORD *)(a1 + 64);
             *(_DWORD *)(a1 + 12144) = 1124204544;
             v7 = GetStringWithIndex(0xB0u);
@@ -62,7 +62,6 @@ int __cdecl sub_1003FA00(int a1) {
 }
 // 1003FA00: using guessed type int __cdecl sub_1003FA00(int);
 // 100AC648: using guessed type int dword_100AC648;
-// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
 // 10AA28A4: using guessed type int dword_10AA28A4;
 // 10AA28A8: using guessed type char byte_10AA28A8;
 // 10AA28AC: using guessed type int dword_10AA28AC;

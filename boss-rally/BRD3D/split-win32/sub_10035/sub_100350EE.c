@@ -30,7 +30,7 @@ _WORD *__usercall sub_100350EE
         if (result) {
             if (!dword_100AC300) {
                 if (*(_DWORD *)(a2 + 132)) {
-                    if (dword_106C661C || dword_106C6624) {
+                    if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
                         result[15] = 112;
                         result[10] = -32112;
                     } else {

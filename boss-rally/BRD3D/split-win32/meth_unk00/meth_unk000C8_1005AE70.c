@@ -1,23 +1,23 @@
 #include "types-win32.h"
 //----- (1005AE70) --------------------------------------------------------
-int __thiscall meth_1005AE70(int this) {
-    void *v2;       // ecx
-    const CHAR *v3; // eax
-    int v4;         // edx
-    int v5;         // eax
-    int result;     // eax
+int __thiscall meth_unk000C8_1005AE70(unk000C8 *this) {
+    void *v2;                // ecx
+    const CHAR *v3;          // eax
+    int v4;                  // edx
+    enum MACRO_GAME_MODE v5; // eax
+    int result;              // eax
 
     sub_1003E3A0();
-    if (!*(_DWORD *)(this + 12)) {
+    if (!this->field_C) {
         DDraw_DoInit();
-        if (!sub_10060210((int)gHwnd)) {
+        if (!sub_10060210(gHwnd)) {
             v3 = GetStringWithIndex(0xABu);
             showMessageBox_0(gHwnd, 0, v3);
             exit(1);
         }
-        (*(void(__cdecl **)(int))(this + 4))(this);
-        *(_DWORD *)(this + 12) = 1;
-        *(_DWORD *)(this + 104) = 1;
+        this->lpFn0(this);
+        this->field_C = 1;
+        this->field_68 = 1;
     }
     v4 = dword_10220B20;
     if (dword_10220B20 == 5) {
@@ -27,18 +27,18 @@ int __thiscall meth_1005AE70(int this) {
         BYTE1(dword_10AA26F4[0]) = 0;
     }
     v5 = gGameMode;
-    if (gGameMode == 4 && dword_106805B8 == 2 && dword_10AA289C) {
+    if (gGameMode == GAME_MODE_4 && dword_106805B8 == 2 && dword_10AA289C) {
         sub_10045EA0();
         v4 = dword_10220B20;
-        v5 = 0;
-        gGameMode = 0;
+        v5 = GAME_MODE_0;
+        gGameMode = GAME_MODE_0;
     }
     if (v5 || v4 && v4 != 5) {
-        if (v5 == 6) {
+        if (v5 == GAME_MODE_6) {
             dword_10AA2878 = 1;
             sub_100447D0();
         } else {
-            if (v5 != 2)
+            if (v5 != GAME_MODE_2)
                 goto LABEL_21;
             dword_10AA2878 = 1;
             sub_10041930();
@@ -62,7 +62,6 @@ LABEL_21:
     return 1;
 }
 // 1005AF94: variable 'v2' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
 // 10220B20: using guessed type int dword_10220B20;
 // 106805B8: using guessed type int dword_106805B8;
 // 10A9D000: using guessed type int dword_10A9D000;

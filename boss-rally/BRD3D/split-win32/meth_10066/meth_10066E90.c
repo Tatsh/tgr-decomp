@@ -53,8 +53,8 @@ void __thiscall meth_10066E90(_DWORD *this) {
     int v51;         // [esp+24h] [ebp-8h]
     int v52;         // [esp+28h] [ebp-4h]
 
-    v2 = (int)dword_106C7DA8;
-    if (dword_106C7DA8) {
+    v2 = (int)MEMORY[0x106C7DA8];
+    if (MEMORY[0x106C7DA8]) {
         v3 = this[24];
         v52 = v3;
         if (v3) {
@@ -71,7 +71,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
             this[12] = *(_DWORD *)(v3 + 4016);
             this[13] = *(_DWORD *)(v3 + 4068);
             this[20] = *(_DWORD *)(v3 + 4084);
-            v2 = (int)dword_106C7DA8;
+            v2 = (int)MEMORY[0x106C7DA8];
         }
         v4 = this[19];
         if (v4 >= 0)
@@ -84,32 +84,32 @@ void __thiscall meth_10066E90(_DWORD *this) {
         v51 = v7;
         LODWORD(v49) = sub_1002B920(v41);
         v45 = (double)SLODWORD(v49) * 0.0099999998;
-        if (sub_1003BA70((float *)&unk_106C7CE8 + 5 * v6,
-                         (float *)&unk_106C7CE0 + 5 * v6,
+        if (sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v6,
+                         (float *)&MEMORY[0x106C7CE0] + 5 * v6,
                          (float *)this + 3,
                          (float *)this)) {
             meth_DebugPrint((void *)(this[19] - 1));
             if (!v6)
                 --this[17];
-            meth_DebugPrint(dword_106C7DA8);
-            if (v6 == this[18] % (int)dword_106C7DA8) {
+            meth_DebugPrint(MEMORY[0x106C7DA8]);
+            if (v6 == this[18] % (int)MEMORY[0x106C7DA8]) {
                 v8 = this[19];
                 if (v8 < 0) {
-                    v9 = (char *)dword_106C7DA8 + v8;
+                    v9 = (char *)MEMORY[0x106C7DA8] + v8;
                     v10 = this[17] + 1;
-                    this[19] = (char *)dword_106C7DA8 + v8;
+                    this[19] = (char *)MEMORY[0x106C7DA8] + v8;
                     this[17] = v10;
-                    if (dword_106C7CB8)
+                    if (MEMORY[0x106C7CB8])
                         *((float *)this + 20) =
-                            *(float *)(dword_106C7CB8 + 100) + *((float *)this + 20);
+                            *(float *)(MEMORY[0x106C7CB8] + 100) + *((float *)this + 20);
                     meth_DebugPrint(v9);
                 }
             }
             --this[19];
             goto LABEL_111;
         }
-        if (!sub_1003BA70((float *)&unk_106C7CE8 + 5 * v7,
-                          (float *)&unk_106C7CE0 + 5 * v7,
+        if (!sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v7,
+                          (float *)&MEMORY[0x106C7CE0] + 5 * v7,
                           (float *)this + 3,
                           (float *)this))
             goto LABEL_111;
@@ -202,9 +202,9 @@ void __thiscall meth_10066E90(_DWORD *this) {
                             if ((__int16)(gChosenWeather1 - 1) > 2 || v30 < 0)
                                 v30 = 0;
                             *(float *)(v29 + 4080) =
-                                *(float *)&(
-                                    &(&gTrackDataOffsets[gChosenTrack]
-                                                        [21 * dword_10ACED0C])[7 * v30])[v51 + 11] +
+                                *(float *)&(&(
+                                    &gTrackData[gChosenTrack][21 * dword_10ACED0C])[7 * v30])[v51 +
+                                                                                              11] +
                                 *(float *)(v29 + 4080);
                             if (*(float *)(v29 + 4076) != 0.0 && dword_100B36FC > 1) {
                                 sprintf((char *const)(v29 + 4108), aRy);
@@ -270,11 +270,11 @@ void __thiscall meth_10066E90(_DWORD *this) {
                     v20 = this[19];
                     --this[16];
                     this[17] = v19;
-                    this[18] = v18 - (_DWORD)dword_106C7DA8;
-                    this[19] = v20 - (_DWORD)dword_106C7DA8;
-                    if (dword_106C7CB8)
+                    this[18] = v18 - (_DWORD)MEMORY[0x106C7DA8];
+                    this[19] = v20 - (_DWORD)MEMORY[0x106C7DA8];
+                    if (MEMORY[0x106C7CB8])
                         *((float *)this + 20) =
-                            *((float *)this + 20) - *(float *)(dword_106C7CB8 + 100);
+                            *((float *)this + 20) - *(float *)(MEMORY[0x106C7CB8] + 100);
                 }
             } else if (v3) {
                 meth_DebugPrint(v13);
@@ -322,11 +322,11 @@ void __thiscall meth_10066E90(_DWORD *this) {
                 v40 = this[19];
                 --this[16];
                 this[17] = v39;
-                this[18] = v38 - (_DWORD)dword_106C7DA8;
-                this[19] = v40 - (_DWORD)dword_106C7DA8;
-                if (dword_106C7CB8)
+                this[18] = v38 - (_DWORD)MEMORY[0x106C7DA8];
+                this[19] = v40 - (_DWORD)MEMORY[0x106C7DA8];
+                if (MEMORY[0x106C7CB8])
                     *((float *)this + 20) =
-                        *((float *)this + 20) - *(float *)(dword_106C7CB8 + 100);
+                        *((float *)this + 20) - *(float *)(MEMORY[0x106C7CB8] + 100);
             }
             goto LABEL_111;
         }

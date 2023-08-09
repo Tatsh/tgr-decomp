@@ -9,7 +9,7 @@ void sub_10069840() {
     void *vehicle;        // ecx
     void *enemy;          // ecx
 
-    dword_106C56D0 = dword_10B4E708;
+    MEMORY[0x106C56D0] = dword_10B4E708;
     dword_106C29A4 = dword_10B4E70C;
     sub_100770C0();
     gIsGameMode4 = gGameMode == GAME_MODE_4;
@@ -28,7 +28,7 @@ void sub_10069840() {
     }
     sub_100697E0(1);
     sub_10034C66((int)meth_DebugPrint);
-    dword_106C664C = 0;
+    MEMORY[0x106C664C] = 0;
     dword_10B4DF28 = 0;
     dword_100B36FC = 2;
     dword_100B4050 = 1;

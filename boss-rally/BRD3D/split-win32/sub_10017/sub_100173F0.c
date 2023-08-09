@@ -21,7 +21,7 @@ void __cdecl sub_100173F0(_DWORD *a1) {
             v2 = dword_100BD3E0;
             v3 = *(_DWORD *)(dword_106C2CF8 + 4008);
             if (v3 < dword_100BD3E0 || dword_100AA8B4 == 1) {
-                v4 = a1[22 * dword_106C5708 + 1] + 5;
+                v4 = a1[22 * MEMORY[0x106C5708] + 1] + 5;
                 if (v3 >= dword_100BD3E0) {
                     v6 = GetStringWithIndex(0xE6u);
                     sprintf(Buffer, v6);
@@ -42,7 +42,7 @@ void __cdecl sub_100173F0(_DWORD *a1) {
         }
         if (dword_100BD3F8 && !dword_1022AF1C) {
             v7 = v1 - 2;
-            v8 = a1[22 * dword_106C5708 + 1] + a1[22 * dword_106C5708 + 3] - 12;
+            v8 = a1[22 * MEMORY[0x106C5708] + 1] + a1[22 * MEMORY[0x106C5708] + 3] - 12;
             sub_10019240();
             Set_byte_104B035C_To0();
             sub_100192A0(255, 240, 125, 255, 120, 0);

@@ -66,7 +66,8 @@ int __thiscall meth_10075360(int this) {
         v28 = 25;
         v33 = 0;
     }
-    v36 = *(float *)(v1 + 4084) - (double)*(int *)(v1 + 4012) * *(float *)(dword_106C7CB8 + 100);
+    v36 =
+        *(float *)(v1 + 4084) - (double)*(int *)(v1 + 4012) * *(float *)(MEMORY[0x106C7CB8] + 100);
     if (!v33 ||
         (v5 = *(_DWORD *)(v1 + 3980) + 40 * *(_DWORD *)(v1 + 3984),
          sub_1003BC90(
@@ -76,13 +77,13 @@ int __thiscall meth_10075360(int this) {
         sub_1003B0E0(v2, (float *)(*(_DWORD *)(v1 + 3980) + 40 * *(_DWORD *)(v1 + 3984) + 76)) >=
             64.0) {
         v9 = 0;
-        v37 = (flt_106C7C74 - flt_106C7C70) * (flt_106C7C74 - flt_106C7C70);
-        if (dword_106C7CC4 > 0) {
-            v10 = dword_106C7CB8;
+        v37 = (MEMORY[0x106C7C74] - MEMORY[0x106C7C70]) * (MEMORY[0x106C7C74] - MEMORY[0x106C7C70]);
+        if (MEMORY[0x106C7CC4] > 0) {
+            v10 = MEMORY[0x106C7CB8];
             do {
                 if (*(_DWORD *)(v1 + 320) < dword_100B4050 || gGameMode == GAME_MODE_2 ||
-                    (*(_BYTE *)(*(_DWORD *)(dword_106C7CC0 + 4 * v9) + 22) & 1) == 0) {
-                    v11 = *(_DWORD *)(dword_106C7CC0 + 4 * v9);
+                    (*(_BYTE *)(*(_DWORD *)(MEMORY[0x106C7CC0] + 4 * v9) + 22) & 1) == 0) {
+                    v11 = *(_DWORD *)(MEMORY[0x106C7CC0] + 4 * v9);
                     if (v27 >= *(_BYTE *)(v11 + 16) && v27 <= *(_BYTE *)(v11 + 18) &&
                         v28 >= *(_BYTE *)(v11 + 17) && v28 <= *(_BYTE *)(v11 + 19) &&
                         (!v33 ||
@@ -121,18 +122,18 @@ int __thiscall meth_10075360(int this) {
                                 ++v12;
                                 v14 += 10;
                             } while (v12 < v13);
-                            v10 = dword_106C7CB8;
+                            v10 = MEMORY[0x106C7CB8];
                         }
                         v1 = this;
                     }
                 }
                 ++v9;
-            } while (v9 < dword_106C7CC4);
+            } while (v9 < MEMORY[0x106C7CC4]);
         }
         if (v34 == -1)
             return 0;
         v8 = v34;
-        v7 = *(_DWORD *)(dword_106C7CC0 + 4 * v38);
+        v7 = *(_DWORD *)(MEMORY[0x106C7CC0] + 4 * v38);
     } else {
         v7 = *(_DWORD *)(v1 + 3980);
         v8 = *(_DWORD *)(v1 + 3984);
@@ -144,7 +145,7 @@ int __thiscall meth_10075360(int this) {
     v45 = v24;
     sub_1003AE50(&v44);
     sub_1003AEE0(v47, v39, v23 + 19);
-    v35 = (double)(*(_DWORD *)(this + 4012) + 1) * *(float *)(dword_106C7CB8 + 100) - v23[25] +
+    v35 = (double)(*(_DWORD *)(this + 4012) + 1) * *(float *)(MEMORY[0x106C7CB8] + 100) - v23[25] +
           sub_1003AC90(&v44, v47) - *(float *)(this + 4084);
     if (!v33 || v35 > -1000.0 && v35 < 1000.0)
         *(float *)(this + 4084) = v35 + *(float *)(this + 4084);

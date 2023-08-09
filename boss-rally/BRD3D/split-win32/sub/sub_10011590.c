@@ -241,7 +241,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
     char v242[160];       // [esp+1D0h] [ebp-A0h] BYREF
 
     v228 = 0;
-    if (dword_106C661C || (v224 = 1, dword_106C6624))
+    if (MEMORY[0x106C661C] || (v224 = 1, MEMORY[0x106C6624]))
         v224 = 0;
     if (!a2) {
         v5 = 0;
@@ -279,8 +279,9 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
             BYTE1(v7) = BYTE1(dword_10363FF8) | 0x40;
             dword_10363FF8 = v7;
         }
-        if (dword_106C6618 && (dword_106C6620 || dword_106C6624 || dword_106C661C) &&
-            gChosenTrack != 2 && gChosenTrack != 8) {
+        if (MEMORY[0x106C6618] &&
+            (MEMORY[0x106C6620] || MEMORY[0x106C6624] || MEMORY[0x106C661C]) && gChosenTrack != 2 &&
+            gChosenTrack != 8) {
             v8 = dword_10363FF8;
             LOBYTE(v8) = dword_10363FF8 | 0x20;
             dword_10363FF8 = v8;
@@ -291,7 +292,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
     }
     meth_DebugPrint(v4);
     dword_1036439C = -939524096;
-    if (!dword_106C6618)
+    if (!MEMORY[0x106C6618])
         dword_1036439C = 201850880;
     dword_103643A0 = 1122360;
     v9 = (_DWORD *)dword_106C0680;
@@ -329,11 +330,11 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
     v17 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v17 = -1140850678;
-    v17[1] = dword_106C5AB0;
+    v17[1] = MEMORY[0x106C5AB0];
     v18 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v18 = -1140849654;
-    v18[1] = dword_106C5AB0;
+    v18[1] = MEMORY[0x106C5AB0];
     v19 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v19 = -1140842486;
@@ -417,7 +418,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
     v38 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v38 = -1224736768;
-    v38[1] = (dword_106C6618 != 0 ? 0x10000 : 0) | (dword_100AA880 != 0 ? 0x200 : 0) |
+    v38[1] = (MEMORY[0x106C6618] != 0 ? 0x10000 : 0) | (dword_100AA880 != 0 ? 0x200 : 0) |
              (dword_106C1174 != dword_106C3364 ? 4096 : 0x2000) | 0xA0005;
     sub_10032DF2();
     v39 = (_DWORD *)dword_106C0680;
@@ -447,11 +448,11 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
     v45 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v45 = -1140850678;
-    v45[1] = dword_106C5AB0;
+    v45[1] = MEMORY[0x106C5AB0];
     v46 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v46 = -1140849654;
-    v46[1] = dword_106C5AB0;
+    v46[1] = MEMORY[0x106C5AB0];
     v47 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v47 = -1140842486;
@@ -473,7 +474,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
     v51 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v51 = -1224736768;
-    v51[1] = (dword_106C6618 != 0 ? 0x10000 : 0) | (dword_100AA880 != 0 ? 0x200 : 0) |
+    v51[1] = (MEMORY[0x106C6618] != 0 ? 0x10000 : 0) | (dword_100AA880 != 0 ? 0x200 : 0) |
              (dword_106C1174 != dword_106C3364 ? 4096 : 0x2000) | 0xA0005;
     v52 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
@@ -628,7 +629,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
             v82 = word_10362F28[v215];
             v83 = v82;
             LODWORD(v225) = v82;
-            v84 = dword_106C7CA8 + 84 * v82;
+            v84 = MEMORY[0x106C7CA8] + 84 * v82;
             if (((unsigned __int16)dword_1039B6CC & *(_WORD *)(v84 + 72)) == 0 &&
                 (!dword_1039B6C4 || v82 != dword_1039B6C0)) {
                 v85 = *(_WORD *)(v84 + 76);
@@ -647,7 +648,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
         }
         v83 = (unsigned __int16)word_10362F28[v239 + v236 - v215];
         v225 = *(float *)&v83;
-        v84 = dword_106C7CA8 + 84 * v83;
+        v84 = MEMORY[0x106C7CA8] + 84 * v83;
     LABEL_51:
         if ((*(_BYTE *)(v84 + 77) & 0x20) != 0) {
             if (!v228) {
@@ -709,7 +710,7 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
                 v208 = *(float *)&flt_106C089C;
             if (v211 > 32767.0 || v208 < -32767.0) {
                 if (v215 == 1) {
-                    if (dword_106C7CA4)
+                    if (MEMORY[0x106C7CA4])
                         v87 = v225;
                     meth_DebugPrint((void *)LODWORD(v87));
                 }
@@ -765,15 +766,15 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
         v95 = *(_WORD *)(v84 + 76);
         if ((v95 & 0x4A4) != 0) {
             if ((v95 & 0x400) != 0) {
-                if (dword_106C661C && (v95 & 0x100) != 0) {
+                if (MEMORY[0x106C661C] && (v95 & 0x100) != 0) {
                     v96 = (_DWORD *)dword_106C0680;
                     dword_106C0680 += 8;
                     *v96 = -1140850678;
-                    v96[1] = ((unsigned int)dword_106C5AB0 >> 1) & 0x7F7F7F00;
+                    v96[1] = ((unsigned int)MEMORY[0x106C5AB0] >> 1) & 0x7F7F7F00;
                     v97 = (_DWORD *)dword_106C0680;
                     dword_106C0680 += 8;
                     *v97 = -1140849654;
-                    v97[1] = ((unsigned int)dword_106C5AB0 >> 1) & 0x7F7F7F00;
+                    v97[1] = ((unsigned int)MEMORY[0x106C5AB0] >> 1) & 0x7F7F7F00;
                 } else {
                     v98 = (_DWORD *)dword_106C0680;
                     dword_106C0680 += 8;
@@ -799,8 +800,8 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
                 *v102 = -1241513984;
                 v102[1] = 12288;
             }
-            if ((*(_BYTE *)(v84 + 76) & 0x20) != 0 && dword_106C6618 && !dword_106C661C &&
-                !dword_106C6620 && !dword_106C6624) {
+            if ((*(_BYTE *)(v84 + 76) & 0x20) != 0 && MEMORY[0x106C6618] && !MEMORY[0x106C661C] &&
+                !MEMORY[0x106C6620] && !MEMORY[0x106C6624]) {
                 v103 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v103 = -1241513984;
@@ -844,11 +845,11 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
                 v110 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v110 = -1140850678;
-                v110[1] = dword_106C5AB0;
+                v110[1] = MEMORY[0x106C5AB0];
                 v111 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v111 = -1140849654;
-                v111[1] = dword_106C5AB0;
+                v111[1] = MEMORY[0x106C5AB0];
                 v112 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v112 = -1140842486;
@@ -864,8 +865,8 @@ int __cdecl sub_10011590(int a1, int a2, int a3, int a4) {
                 *v114 = -1224736768;
                 v114[1] = dword_106C1174 != dword_106C3364 ? 4096 : 0x2000;
             }
-            if (dword_106C6618 && !dword_106C661C && !dword_106C6620 && !dword_106C6624 &&
-                (*(_BYTE *)(v84 + 76) & 0x20) != 0) {
+            if (MEMORY[0x106C6618] && !MEMORY[0x106C661C] && !MEMORY[0x106C6620] &&
+                !MEMORY[0x106C6624] && (*(_BYTE *)(v84 + 76) & 0x20) != 0) {
                 v115 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v115 = -1224736768;
@@ -894,7 +895,7 @@ LABEL_119:
     v120 = dword_11829110 & 0xFFFFFF | 0xDC000000;
     v118[1] = 1;
     *v118 = v120;
-    if (dword_106C661C || dword_106C6624) {
+    if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
         v123 = v119;
         v122 = v119 + 2;
         *v123 = -1191181539;

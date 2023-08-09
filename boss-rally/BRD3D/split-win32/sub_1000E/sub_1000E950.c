@@ -40,14 +40,14 @@ int __cdecl sub_1000E950(float a1) {
     int v38[3];        // [esp+18h] [ebp-Ch] BYREF
     float v39;         // [esp+28h] [ebp+4h]
 
-    result = dword_106C661C;
-    if (dword_106C661C || dword_106C6624) {
+    result = MEMORY[0x106C661C];
+    if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
         result = *(_DWORD *)(LODWORD(a1) + 320);
         if (dword_10277E60[result]) {
             result = dword_106C2CF8;
             if (LODWORD(a1) != dword_106C2CF8 ||
                 (result = dword_106C2CF8 + 10180,
-                 dword_106C6490 != (void *)(dword_106C2CF8 + 10180))) {
+                 MEMORY[0x106C6490] != (void *)(dword_106C2CF8 + 10180))) {
                 if (*(_BYTE *)(LODWORD(a1) + 10671) != 2) {
                     dword_106C3308 = *(_DWORD *)(LODWORD(a1) + 10692);
                     v3 = (_DWORD *)dword_106C0680;
@@ -131,26 +131,28 @@ int __cdecl sub_1000E950(float a1) {
                     if (LODWORD(a1) != dword_106C2CF8) {
                         sub_1003AF40(
                             (float *)v37, (float *)(LODWORD(a1) + 48), (float *)LODWORD(a1));
-                        sub_1003AEE0((float *)v37, (float *)dword_106C6490 + 12, (float *)v37);
+                        sub_1003AEE0((float *)v37, (float *)MEMORY[0x106C6490] + 12, (float *)v37);
                         v21 = sub_1003B170((float *)v37);
                         v39 = v21;
                         if (v21 != 0.0) {
                             sub_1003AD70((int)v37, v39);
-                            if (sub_1003AC90((float *)v37, (float *)dword_106C6490) < 0.0) {
+                            if (sub_1003AC90((float *)v37, (float *)MEMORY[0x106C6490]) < 0.0) {
                                 sub_1003ACE0((int)v38, SLODWORD(a1), 1.0);
                                 sub_1003B020((int)v38, LODWORD(a1) + 32, 0.0);
                                 v35 = sub_1003AC90((float *)v37, (float *)v38);
-                                v22 = -(sub_1003AC90((float *)v37, (float *)dword_106C6490) * v35);
+                                v22 = -(sub_1003AC90((float *)v37, (float *)MEMORY[0x106C6490]) *
+                                        v35);
                                 if (v22 > 0.94999999) {
                                     v39 = v39 * v39;
                                     flt_10575504 = (v22 - 0.94999999) * 750.0 / v39 + flt_10575504;
                                 }
                             }
-                            if (sub_1003AC90((float *)v37, (float *)dword_106C6490) > 0.94999999) {
+                            if (sub_1003AC90((float *)v37, (float *)MEMORY[0x106C6490]) >
+                                0.94999999) {
                                 sub_1003ACE0((int)v38, SLODWORD(a1), 1.0);
                                 sub_1003B020((int)v38, LODWORD(a1) + 32, 0.0);
                                 v36 = sub_1003AC90((float *)v37, (float *)v38);
-                                v23 = sub_1003AC90((float *)v37, (float *)dword_106C6490) * v36;
+                                v23 = sub_1003AC90((float *)v37, (float *)MEMORY[0x106C6490]) * v36;
                                 if (v23 > 0.94999999)
                                     flt_105754F8 =
                                         (v23 - 0.94999999) * 750.0 / (v39 * v39) + flt_105754F8;

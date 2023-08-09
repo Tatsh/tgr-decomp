@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10047A60) --------------------------------------------------------
-int __thiscall meth_10047A60(_DWORD *this) {
+int __thiscall meth_unk1E214_10047A60(unk1E214 *this) {
     int v2;  // eax
     int v4;  // eax
     int v5;  // ecx
@@ -13,19 +13,19 @@ int __thiscall meth_10047A60(_DWORD *this) {
     int v12; // eax
     int v13; // eax
 
-    v2 = this[7];
+    v2 = this->field_1C;
     if ((v2 & 8) != 0)
         return 0;
     if ((v2 & 0x10) == 0) {
         if ((v2 & 0x80000) == 0 || sub_1003E080()) {
-            if ((this[7] & 0x80000) != 0 && sub_1003E080()) {
-                v13 = this[7];
+            if ((this->field_1C & 0x80000) != 0 && sub_1003E080()) {
+                v13 = this->field_1C;
                 LOBYTE(v13) = v13 | 0x22;
-                this[7] = v13;
+                this->field_1C = v13;
                 return 1;
             }
         } else {
-            this[7] &= 0xFFF7FFFD;
+            this->field_1C &= 0xFFF7FFFD;
         }
         v4 = **(_DWORD **)&SrcStr[8];
         if (dword_100AB448 > **(_DWORD **)&SrcStr[8] || dword_100AB450 < v4 ||
@@ -54,9 +54,10 @@ int __thiscall meth_10047A60(_DWORD *this) {
         }
         ++word_10AA2870;
         dword_10AA284C = v6;
-        if (this[20] <= **(_DWORD **)&SrcStr[8] && this[22] >= **(_DWORD **)&SrcStr[8] &&
-                (v10 = *(_DWORD *)(*(_DWORD *)&SrcStr[8] + 4), this[21] <= v10) &&
-                this[23] >= v10 ||
+        if (this->field_50 <= **(_DWORD **)&SrcStr[8] &&
+                this->field_58 >= **(_DWORD **)&SrcStr[8] &&
+                (v10 = *(_DWORD *)(*(_DWORD *)&SrcStr[8] + 4), *(_DWORD *)this->gap54 <= v10) &&
+                *(_DWORD *)this->gap5C >= v10 ||
             v7) {
             if (v7) {
                 if (dword_10AA33D0[0] || dword_10AA33D4 || dword_10AA33D8)
@@ -64,35 +65,35 @@ int __thiscall meth_10047A60(_DWORD *this) {
                 if (dword_10AA33DC)
                     return 1;
             }
-            v11 = this[7];
+            v11 = this->field_1C;
             if ((v11 & 0x40000) != 0) {
                 if (gUnk54Ptr->field_2C || gUnk54Ptr->field_30) {
                     v11 |= 0x80002u;
                 LABEL_47:
-                    this[7] = v11;
+                    this->field_1C = v11;
                     LOBYTE(v11) = v11 | 0x20;
-                    this[7] = v11;
+                    this->field_1C = v11;
                     return 1;
                 }
             } else {
                 if (!dword_10AA285C && (dword_10AA2AF0 || dword_10AA2CF0) || sub_1003E080()) {
-                    v11 = this[7];
+                    v11 = this->field_1C;
                     LOBYTE(v11) = v11 | 2;
                     goto LABEL_47;
                 }
-                v11 = this[7];
+                v11 = this->field_1C;
             }
             LOBYTE(v11) = v11 & 0xFD;
             goto LABEL_47;
         }
-        v12 = this[7];
+        v12 = this->field_1C;
         LOBYTE(v12) = v12 & 0xDD;
-        this[7] = v12;
+        this->field_1C = v12;
         return 0;
     }
     if (word_10AA286C == word_10AA2870) {
         word_10AA286C += word_100AB3DC;
-        meth_100484F0(*(unsigned __int16 **)(this[2746] + 100));
+        meth_100484F0(*(unsigned __int16 **)(this->field_2AE8 + 100));
     }
     ++word_10AA2870;
     return 0;

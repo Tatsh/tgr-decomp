@@ -27,9 +27,9 @@ void __cdecl sub_100322E6(_DWORD *a1, void *a2) {
     _DWORD *v26;      // [esp+58h] [ebp-8h]
     _DWORD *v27;      // [esp+5Ch] [ebp-4h]
 
-    if (dword_106C65E4 != (unsigned int)a2) {
-        dword_106C65E0 = 1;
-        dword_106C65E4 = (int)a2;
+    if (MEMORY[0x106C65E4] != (unsigned int)a2) {
+        MEMORY[0x106C65E0] = 1;
+        MEMORY[0x106C65E4] = (int)a2;
     }
     meth_DebugPrint(a2);
     if (dword_100AA8B4 == 1) {
@@ -52,8 +52,8 @@ void __cdecl sub_100322E6(_DWORD *a1, void *a2) {
     dword_106C0258 = dword_100AA890 != 0 ? 0x2000 : 0;
     dword_106C0688 = 64;
     dword_106C0920 = 0;
-    v27 = (_DWORD *)(dword_106C0944 + 96000 * dword_106C65EC + 512);
-    dword_106C0680 = dword_106C0944 + 96000 * dword_106C65EC + 520;
+    v27 = (_DWORD *)(dword_106C0944 + 96000 * MEMORY[0x106C65EC] + 512);
+    dword_106C0680 = dword_106C0944 + 96000 * MEMORY[0x106C65EC] + 520;
     *v27 = -1140850682;
     v27[1] = 0;
     v26 = (_DWORD *)dword_106C0680;
@@ -142,7 +142,7 @@ void __cdecl sub_100322E6(_DWORD *a1, void *a2) {
     v7 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v7 = 100663296;
-    v7[1] = (char *)&unk_100AA770 + 40 * dword_106C65FC;
+    v7[1] = (char *)&unk_100AA770 + 40 * MEMORY[0x106C65FC];
     v6 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v6 = -1157627904;

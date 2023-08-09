@@ -25,7 +25,7 @@ int __cdecl sub_1003289F(int a1, int a2, int a3, int a4) {
         a4 = dword_105754FC - a2;
     if (a4 < 0)
         a4 = 0;
-    if (dword_106C65E4) {
+    if (MEMORY[0x106C65E4]) {
         a1 *= 2;
         a2 *= 2;
         a3 *= 2;

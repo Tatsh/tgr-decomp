@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1005D110) --------------------------------------------------------
-int __thiscall meth_unk06594_1005D110(char *this, char *Str1, int a3) {
+int __thiscall meth_unk06594_1005D110(unk06594 *this, char *Str1, int a3) {
     int v3;           // ebx
     unsigned int v4;  // esi
     char *v5;         // edx
@@ -18,7 +18,7 @@ int __thiscall meth_unk06594_1005D110(char *this, char *Str1, int a3) {
     int result;       // eax
     __int16 v18;      // [esp+10h] [ebp-41Ch]
     int v19;          // [esp+10h] [ebp-41Ch]
-    char *v20;        // [esp+18h] [ebp-414h] BYREF
+    unk06594 *v20;    // [esp+18h] [ebp-414h] BYREF
     char v21[260];    // [esp+1Ch] [ebp-410h] BYREF
     char String[260]; // [esp+120h] [ebp-30Ch] BYREF
     char v23[260];    // [esp+224h] [ebp-208h] BYREF
@@ -57,7 +57,7 @@ int __thiscall meth_unk06594_1005D110(char *this, char *Str1, int a3) {
         }
     }
     v8 = v18;
-    v9 = v20 + 4;
+    v9 = (const char *)&v20->field_4;
     v19 = 100;
     do {
         if (!strncmp(Str1, v9, v8) && strcmp(Str1, v9) < 0)

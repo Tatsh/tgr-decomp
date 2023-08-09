@@ -16,7 +16,7 @@ int __stdcall sub_1003C3A0(int a1, int a2, int a3, LPCVOID pMem) {
     if (dword_10AA29E0)
         (*(void(__thiscall **)(int, LPCVOID, _DWORD, int, void *, int))(
             *(_DWORD *)(dword_10AA29E0 + 14392) + 16))(
-            dword_10AA29E0 + 14392, pMem, 0, 1, &unk_100AB408, 1);
+            dword_10AA29E0 + 14392, pMem, 0, 1, &dword_100AB408, 1);
     v4 = GlobalHandle(pMem);
     GlobalUnlock(v4);
     v5 = GlobalHandle(pMem);

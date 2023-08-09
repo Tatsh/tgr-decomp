@@ -8,7 +8,7 @@ double __cdecl sub_10031D3F(float *a1) {
     float v6;    // [esp+14h] [ebp-8h]
     float v7;    // [esp+18h] [ebp-4h]
 
-    if (!dword_106C6618)
+    if (!MEMORY[0x106C6618])
         return 0.0;
     sub_1003B2A0(v5, a1, &flt_106C29A8);
     v6 = v6 / v7;

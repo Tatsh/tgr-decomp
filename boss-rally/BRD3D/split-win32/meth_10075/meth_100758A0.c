@@ -5,7 +5,7 @@ void __thiscall meth_100758A0(_DWORD *this) {
     int v3;    // ecx
     bool v4;   // sf
 
-    if (dword_106C7CB8) {
+    if (MEMORY[0x106C7CB8]) {
         if (this[1002] >= dword_100BD3E0 || this[991] ||
             sub_1003AC90((float *)this + 997, (float *)this) >= 0.0) {
             this[2670] = 0;

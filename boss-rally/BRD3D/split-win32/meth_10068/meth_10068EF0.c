@@ -97,7 +97,7 @@ void __thiscall meth_10068EF0(_DWORD *this) {
                         v17 = this[11];
                         v18 = this[10];
                         v19 = 2778 * (this[29] + dword_100B4050);
-                        v23 = ((double)(this[17] + 1) * *(float *)(dword_106C7CB8 + 100) -
+                        v23 = ((double)(this[17] + 1) * *(float *)(MEMORY[0x106C7CB8] + 100) -
                                *((float *)this + 20) - *(float *)(v18 + 40 * v17 + 140)) /
                               (*(float *)(v18 + 40 * v17 + 100) - *(float *)(v18 + 40 * v17 + 140));
                         if (dword_10ACEDA8[v19]) {

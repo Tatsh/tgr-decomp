@@ -19,7 +19,7 @@ _DWORD *__cdecl sub_10017790(int a1) {
                 v2 = 20;
                 v3 = 15;
             }
-            v4 = (_DWORD *)(a1 + 88 * dword_106C5708);
+            v4 = (_DWORD *)(a1 + 88 * MEMORY[0x106C5708]);
             v5 = *v4 + v4[2] / 2;
             v6 = v4[3] / 3 + v4[1];
             Set_byte_104B035C_To2();

@@ -26,7 +26,7 @@ int __thiscall meth_unk0008C_1000A480(unk0008C *this) {
         return v6;
     }
     v5 = this->lpDirectDraw2->lpVtbl->QueryInterface(
-        this->lpDirectDraw2, &IID_IDirect3D2, (LPVOID *)&this->lpDirect3D2);
+        this->lpDirectDraw2, &CLSID_IDirect3D2, (LPVOID *)&this->lpDirect3D2);
     if (v5 >= 0) {
         g_pD3D2 = this->lpDirect3D2;
         v7 = this->field_1C;

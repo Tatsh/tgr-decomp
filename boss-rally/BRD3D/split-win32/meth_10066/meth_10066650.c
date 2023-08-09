@@ -57,7 +57,7 @@ int *__thiscall meth_10066650(_DWORD *this) {
     int var9C;      // [esp+58h] [ebp-9Ch]
     char Base[152]; // [esp+5Ch] [ebp-98h]
 
-    varD4 = *(float *)(dword_106C7CB8 + 100);
+    varD4 = *(float *)(MEMORY[0x106C7CB8] + 100);
     ecx1 = dword_100B36F8;
     varBC = this;
     varD0 = 0;

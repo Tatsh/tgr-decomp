@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1005B0D0) --------------------------------------------------------
-void __thiscall meth_unk00438_1005B0D0(unk00438 *this, int a2) {
+void __thiscall meth_unk00438_1005B0D0(unk00438 *this, int unusedA2) {
     int v2;     // esi
     char v3;    // dl
     __int16 v4; // bp

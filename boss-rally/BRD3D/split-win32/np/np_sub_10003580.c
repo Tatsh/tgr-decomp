@@ -518,7 +518,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
             }
             v63 = *(_DWORD *)(v59 + 8);
             if (v63 >= 0 && v63 < 8) {
-                v66 = gPositionStringOffsets[v63];
+                v66 = gPositionStrings[v63];
                 v64 = sub_10005E70(v62);
                 sprintf(Buffer, "%s finished %s", v64, v66);
                 sub_10003530(Buffer);

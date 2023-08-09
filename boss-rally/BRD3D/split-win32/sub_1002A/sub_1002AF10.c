@@ -40,15 +40,16 @@ void __cdecl sub_1002AF10(int a1, float a2) {
         v6[1] = 192;
         v7 = (unsigned int *)dword_106C0680;
         dword_106C0680 += 8;
-        *v7 = ((*(_DWORD *)(a1 + 88 * dword_106C5708) + *(_DWORD *)(a1 + 88 * dword_106C5708 + 8))
+        *v7 = ((*(_DWORD *)(a1 + 88 * MEMORY[0x106C5708]) +
+                *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 8))
                << 12) &
                   0xFFF000 |
-              ((unsigned __int16)*(_DWORD *)(a1 + 88 * dword_106C5708 + 4) +
-               (unsigned __int16)*(_DWORD *)(a1 + 88 * dword_106C5708 + 12)) &
+              ((unsigned __int16)*(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4) +
+               (unsigned __int16)*(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 12)) &
                   0xFFF |
               0xE1000000;
-        v7[1] = ((*(_DWORD *)(a1 + 88 * dword_106C5708) & 0xFFF) << 12) |
-                *(_DWORD *)(a1 + 88 * dword_106C5708 + 4) & 0xFFF;
+        v7[1] = ((*(_DWORD *)(a1 + 88 * MEMORY[0x106C5708]) & 0xFFF) << 12) |
+                *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4) & 0xFFF;
         v11 = (unsigned int *)dword_106C0680;
         dword_106C0680 += 8;
         sub_1002F900(v11, 0, 0, 0, 1003, 0, 0, 0, 1003, 0, 0, 0, 1000, 0, 0, 0, 1000);

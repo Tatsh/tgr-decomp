@@ -12,9 +12,9 @@ _DWORD *__cdecl sub_10017D90(int a1) {
 
     v8 = *(float *)(dword_106C2CF8 + 4144);
     sub_1003289F(0,
-                 *(_DWORD *)(a1 + 88 * dword_106C5708 + 4),
+                 *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4),
                  gWidth,
-                 *(_DWORD *)(a1 + 88 * dword_106C5708 + 12));
+                 *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 12));
     if (v8 < 0.0)
         v8 = 0.0;
     sub_10016B40(a1);
@@ -29,10 +29,10 @@ _DWORD *__cdecl sub_10017D90(int a1) {
     else
         v1 = v8;
     sprintf(byte_104B0320, "%%yw%.0f", v1);
-    result = (_DWORD *)(a1 + 88 * dword_106C5708);
+    result = (_DWORD *)(a1 + 88 * MEMORY[0x106C5708]);
     if (!dword_1022AF1C && dword_100BD3F4) {
         v3 = gWidth - 46;
-        v4 = *(_DWORD *)(a1 + 88 * dword_106C5708 + 12) + result[1] - 4 -
+        v4 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 12) + result[1] - 4 -
              byte_100C1385[89992 * result[4]];
         sub_100192F0(20);
         v5 = v4 - 3;

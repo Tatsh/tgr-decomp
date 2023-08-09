@@ -13,7 +13,7 @@ int sub_1003A530() {
         sub_1003A4D0();
         dword_10A9BBB8 = 1;
     }
-    if (dword_106C6620) {
+    if (MEMORY[0x106C6620]) {
         sub_1003A200();
         result = dword_100B36F8;
         v1 = 0;
@@ -29,7 +29,7 @@ int sub_1003A530() {
                 v2 += 32;
             } while (v1 < dword_100B36F8);
         }
-    } else if (dword_106C661C || dword_106C6624) {
+    } else if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
         result = dword_100B36F8;
         v5 = 0;
         if (dword_100B36F8 > 0) {

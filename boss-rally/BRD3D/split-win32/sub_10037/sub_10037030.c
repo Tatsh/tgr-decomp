@@ -3,14 +3,14 @@
 int __cdecl sub_10037030(int a1) {
     int result; // eax
 
-    result = *(_DWORD *)(dword_106C7C3C + 124);
+    result = *(_DWORD *)(MEMORY[0x106C7C3C] + 124);
     if (result >= 30) {
-        ++dword_106C7C40;
-        result = *(_DWORD *)(dword_106C7C3C + 124) + 1;
-        *(_DWORD *)(dword_106C7C3C + 124) = result;
+        ++MEMORY[0x106C7C40];
+        result = *(_DWORD *)(MEMORY[0x106C7C3C] + 124) + 1;
+        *(_DWORD *)(MEMORY[0x106C7C3C] + 124) = result;
     } else {
-        *(_DWORD *)(dword_106C7C3C + 4 * result + 4) = a1;
-        ++*(_DWORD *)(dword_106C7C3C + 124);
+        *(_DWORD *)(MEMORY[0x106C7C3C] + 4 * result + 4) = a1;
+        ++*(_DWORD *)(MEMORY[0x106C7C3C] + 124);
     }
     return result;
 }

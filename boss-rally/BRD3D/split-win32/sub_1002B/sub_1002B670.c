@@ -33,11 +33,11 @@ __int64 sub_1002B670() {
     }
     v2 = flt_10575514 < 0.0;
     v3 = flt_10575514 == 0.0;
-    v4 = dword_106C65EC;
+    v4 = MEMORY[0x106C65EC];
     v5 = dword_10575508;
     v6 = dword_10575500;
     v7 = g_Height1;
-    dword_105754F0[dword_106C65EC] = dword_10575508;
+    dword_105754F0[MEMORY[0x106C65EC]] = dword_10575508;
     dword_105754E8[v4] = v6;
     dword_1057550C = 0;
     dword_105754FC = v7;

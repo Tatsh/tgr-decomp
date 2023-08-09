@@ -38,7 +38,7 @@ int __thiscall meth_100662A0(_DWORD *this) {
             v6 = (double)(550 * v3);
         }
         *((float *)this + 20) = v6;
-        sub_10065B20(dword_106C7CB8, *((float *)this + 20));
+        sub_10065B20(MEMORY[0x106C7CB8], *((float *)this + 20));
         *this = dword_10AF9B38;
         this[1] = dword_10AF9B3C;
         this[2] = dword_10AF9B40;
@@ -58,7 +58,7 @@ int __thiscall meth_100662A0(_DWORD *this) {
         v7 = gChosenWeather1 - 1;
         if ((__int16)(gChosenWeather1 - 1) > 2 || v7 < 0)
             v7 = 0;
-        this[15] = (&gTrackDataOffsets[gChosenTrack][21 * dword_10ACED0C])[7 * v7 + 17];
+        this[15] = (&gTrackData[gChosenTrack][21 * dword_10ACED0C])[7 * v7 + 17];
         this[21] = dword_100B36F8 - this[25] - 1;
     } else {
         v4 = &dword_10ACDEA8[2778 * v3];

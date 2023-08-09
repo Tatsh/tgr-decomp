@@ -3,11 +3,11 @@
 char *sub_1000F5C0() {
     char *result; // eax
 
-    dword_10363FF0 = (int)&unk_103643C0 + 80000 * dword_106C65EC;
-    dword_102E5EC8 = (int)&unk_103643C0 + 80000 * dword_106C65EC;
-    result = (char *)&unk_102E5F28 + 256000 * dword_106C65EC;
-    dword_10364304 = (int)&unk_1038BCC0 + 32000 * dword_106C65EC;
-    dword_103643BC = (int)&unk_1038BCC0 + 32000 * dword_106C65EC;
+    dword_10363FF0 = (int)&unk_103643C0 + 80000 * MEMORY[0x106C65EC];
+    dword_102E5EC8 = (int)&unk_103643C0 + 80000 * MEMORY[0x106C65EC];
+    result = (char *)&unk_102E5F28 + 256000 * MEMORY[0x106C65EC];
+    dword_10364304 = (int)&unk_1038BCC0 + 32000 * MEMORY[0x106C65EC];
+    dword_103643BC = (int)&unk_1038BCC0 + 32000 * MEMORY[0x106C65EC];
     dword_102E5EC4 = (int)result;
     dword_10363FF4 = (int)result;
     return result;

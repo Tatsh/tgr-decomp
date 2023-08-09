@@ -26,7 +26,7 @@ _DWORD *__cdecl sub_100140E0(int a1) {
     v3 = dword_11829328 & 0xFFFFFF;
     v2[1] = 1;
     *v2 = v3 | 0xDC000000;
-    sub_1003B4F0((int)&flt_106C0860, (float *)dword_106C6490);
+    sub_1003B4F0((int)&flt_106C0860, (float *)MEMORY[0x106C6490]);
     flt_106C08A0 = 0.0;
     flt_106C08A4 = 0.0;
     dword_106C08A8 = -1082130432;
@@ -54,7 +54,7 @@ _DWORD *__cdecl sub_100140E0(int a1) {
     dword_106C0680 += 8;
     *v5 = -1174403582;
     v5[1] = 192;
-    if (!dword_106C661C) {
+    if (!MEMORY[0x106C661C]) {
         switch (gChosenTrack) {
         case 1:
         case 7:

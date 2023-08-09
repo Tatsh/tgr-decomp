@@ -10,7 +10,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
     int result; // eax
 
     if ((this->field_4 & 1) != 0)
-        a2 = ((double(__thiscall *)(unk00438 *))this->lpVtbl->field_28)(this);
+        a2 = this->lpVtbl->field_28(this);
     v4 = this->field_9[0];
     for (i = 0; v4; v4 = this->field_9[(__int16)++i]) {
         v6 = v4 - 32;

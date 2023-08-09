@@ -8,7 +8,7 @@ int sub_10038EC0() {
     DSBUFFERDESC1 dsBufferDesc; // [esp+14h] [ebp-14h] BYREF
 
     setPodFilename(&gPod, kBossRallyPod);
-    readPodFile(&gPod);
+    meth_Pod_ReadPodFile(&gPod);
     sub_1006AA20(1);
     sub_10061400();
     sub_10078CD0();

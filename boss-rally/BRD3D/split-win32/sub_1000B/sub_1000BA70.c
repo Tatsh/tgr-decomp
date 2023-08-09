@@ -12,15 +12,15 @@ void sub_1000BA70() {
         LABEL_3:
             v0 += dword_10277B20;
             dword_1039B6C0 = v0;
-            if (v0 >= g_TrackInstances) {
+            if (v0 >= MEMORY[0x106C7CAC]) {
                 v0 = 0;
                 dword_1039B6C0 = 0;
             }
             v1 = v0 == 0;
             if (v0 < 0) {
-                v0 = g_TrackInstances - 1;
-                dword_1039B6C0 = g_TrackInstances - 1;
-                v1 = g_TrackInstances == 1;
+                v0 = MEMORY[0x106C7CAC] - 1;
+                dword_1039B6C0 = MEMORY[0x106C7CAC] - 1;
+                v1 = MEMORY[0x106C7CAC] == 1;
             }
             if (v1)
                 break;

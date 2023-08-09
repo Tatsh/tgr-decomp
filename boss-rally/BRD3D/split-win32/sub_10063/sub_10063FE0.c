@@ -93,10 +93,10 @@ void __cdecl sub_10063FE0(int a1) {
                 goto LABEL_47;
             }
         LABEL_25:
-            v10 = dword_106C7CD0;
+            v10 = MEMORY[0x106C7CD0];
             v50 = 16777216.0;
-            if (dword_106C7CD0 > 0) {
-                v11 = (float *)(dword_106C7CCC + 8);
+            if (MEMORY[0x106C7CD0] > 0) {
+                v11 = (float *)(MEMORY[0x106C7CCC] + 8);
                 do {
                     v13 = *(float *)(a1 + 48) - *(v11 - 2);
                     v51 = v13;

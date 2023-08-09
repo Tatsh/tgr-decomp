@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100307A0) --------------------------------------------------------
-_DWORD *__cdecl sub_100307A0(int a1, _DWORD *a2) {
+_DWORD *__cdecl sub_100307A0(float *a1, _DWORD *a2) {
     _DWORD *result; // eax
     int v3;         // ebx
     int v4;         // edx
@@ -10,7 +10,7 @@ _DWORD *__cdecl sub_100307A0(int a1, _DWORD *a2) {
     do {
         v4 = 4;
         do {
-            *result = *(_DWORD *)((char *)result + a1 - (_DWORD)a2);
+            *result = *(_DWORD *)((char *)result + (char *)a1 - (char *)a2);
             ++result;
             --v4;
         } while (v4);

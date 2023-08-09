@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10018070) --------------------------------------------------------
 BOOL sub_10018070() {
-    return dword_106C661C || dword_106C6620 || dword_106C6624 || !dword_106C7C98 ||
+    return MEMORY[0x106C661C] || MEMORY[0x106C6620] || MEMORY[0x106C6624] || !MEMORY[0x106C7C98] ||
            dword_100B4050 == 2;
 }
 // 100B4050: using guessed type int dword_100B4050;

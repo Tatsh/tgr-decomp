@@ -36,21 +36,21 @@ int __thiscall meth_10065740(_DWORD *this) {
         v14 = (float)(v2 >> 1);
         v15 = (float)((v2 & 1) == 0);
     }
-    v20 = cos_(dword_106C7C94);
-    v18 = sin_(dword_106C7C94);
-    v11 = dword_106C7C94 - -1.5707964;
+    v20 = cos_(*(float *)&stru_106C3380.gap1C8[18252]);
+    v18 = sin_(*(float *)&stru_106C3380.gap1C8[18252]);
+    v11 = *(float *)&stru_106C3380.gap1C8[18252] - -1.5707964;
     v19 = cos_(v11);
-    v12 = dword_106C7C94 - -1.5707964;
+    v12 = *(float *)&stru_106C3380.gap1C8[18252] - -1.5707964;
     v16 = v15 - 0.5;
     v3 = sin_(v12) * v16;
     v4 = v19 * v16;
     v17 = v14 - -1.0;
-    *(float *)&v13 = flt_106C7C90 - -0.1;
-    *(float *)&v10 = flt_106C7C8C - v3 * 3.0 - v18 * v17 * 8.0;
-    *(float *)&v9 = flt_106C7C88 - v4 * 3.0 - v20 * v17 * 8.0;
+    *(float *)&v13 = *(float *)&stru_106C3380.gap1C8[18248] - -0.1;
+    *(float *)&v10 = *(float *)&stru_106C3380.gap1C8[18244] - v3 * 3.0 - v18 * v17 * 8.0;
+    *(float *)&v9 = *(float *)&stru_106C3380.gap1C8[18240] - v4 * 3.0 - v20 * v17 * 8.0;
     meth_10076420((float *)this, v9, v10, v13);
     *((float *)this + 1021) = (v14 - -0.5) * -8.0;
-    meth_100764C0((float *)this, dword_106C7C94);
+    meth_100764C0((float *)this, *(float *)&stru_106C3380.gap1C8[18252]);
     this[992] = this[12];
     this[993] = this[13];
     this[994] = this[14];
@@ -63,18 +63,19 @@ int __thiscall meth_10065740(_DWORD *this) {
     this[938] = 0;
     this[939] = -180;
     meth_100767A0(this, 0, 0, 0);
-    if (dword_106C7CB8) {
+    if (*(_DWORD *)&stru_106C3380.gap1C8[18288]) {
         this[1004] = 0;
         this[1019] = 0;
         this[1017] = 0;
         v5 = gChosenWeather1 - 1;
         if ((__int16)(gChosenWeather1 - 1) > 2 || v5 < 0)
             v5 = 0;
-        this[1020] = (&gTrackDataOffsets[gChosenTrack][21 * this[921]])[7 * v5 + 17];
-        this[995] = dword_106C7CB8;
+        this[1020] = *(_DWORD *)&gTrackData[gChosenTrack]->last[84 * this[921] + 24 + 28 * v5];
+        this[995] = *(_DWORD *)&stru_106C3380.gap1C8[18288];
         this[996] = 0;
-        sub_1003ADA0(
-            (float *)this + 997, (float *)(dword_106C7CB8 + 76), (float *)(dword_106C7CB8 + 116));
+        sub_1003ADA0((float *)this + 997,
+                     (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18288] + 76),
+                     (float *)(*(_DWORD *)&stru_106C3380.gap1C8[18288] + 116));
     } else {
         this[997] = 1065353216;
         this[998] = 0;
@@ -122,9 +123,5 @@ int __thiscall meth_10065740(_DWORD *this) {
 // 100B36F8: using guessed type int dword_100B36F8;
 // 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 100BD2A8: using guessed type char **gTrackDataOffsets[16];
 // 1022AF18: using guessed type int gNetworkPlay;
 // 104BBE08: using guessed type int gChosenWeather1;
-// 106C7C88: using guessed type float flt_106C7C88;
-// 106C7C8C: using guessed type float flt_106C7C8C;
-// 106C7C90: using guessed type float flt_106C7C90;

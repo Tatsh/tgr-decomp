@@ -3,9 +3,9 @@
 HRESULT sub_100243E0() {
     IDirect3DDevice2Vtbl *v0; // ecx
 
-    if (!dword_106C6618)
+    if (!MEMORY[0x106C6618])
         return g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_FOGENABLE, 0);
-    if (dword_106C6624 || dword_106C6620 || (flt_104C15C8 = 16384.0, !dword_106C661C))
+    if (MEMORY[0x106C6624] || MEMORY[0x106C6620] || (flt_104C15C8 = 16384.0, !MEMORY[0x106C661C]))
         flt_104C15C8 = 8192.0;
     v0 = g_D3DDevice2->lpVtbl;
     dword_104BBE30 = 8;

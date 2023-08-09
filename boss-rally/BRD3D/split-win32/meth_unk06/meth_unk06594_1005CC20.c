@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1005CC20) --------------------------------------------------------
-int __thiscall meth_unk06594_1005CC20(unk06594 *a1) {
+int __thiscall meth_unk06594_1005CC20(unk06594 *this) {
     FILE *v1;         // ebp
     int i;            // ebx
     char Buffer[100]; // [esp+10h] [ebp-64h] BYREF

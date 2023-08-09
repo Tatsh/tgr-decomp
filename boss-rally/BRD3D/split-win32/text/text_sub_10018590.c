@@ -94,7 +94,7 @@ _DWORD *__cdecl text_sub_10018590(char *message) {
     messageX = gMessageX;
     v82 = dword_104B0348;
     v86 = gMessageY - 30 * dword_104B0348 / 40;
-    if (dword_106C65E4) {
+    if (MEMORY[0x106C65E4]) {
         messageX = 2 * gMessageX;
         v86 = 2 * (gMessageY - 30 * dword_104B0348 / 40);
         v82 = 2 * dword_104B0348;

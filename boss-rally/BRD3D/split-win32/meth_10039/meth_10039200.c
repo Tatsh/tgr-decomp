@@ -53,10 +53,11 @@ int __thiscall meth_10039200(int this) {
 
     v38 = 0;
     if (*(_DWORD *)(this + 10572) &&
-        (*(_BYTE *)(dword_106C7CA8 + 84 * *(unsigned __int16 *)(this + 10508) + 76) & 0x10) != 0) {
+        (*(_BYTE *)(MEMORY[0x106C7CA8] + 84 * *(unsigned __int16 *)(this + 10508) + 76) & 0x10) !=
+            0) {
         v38 = 1;
     }
-    if (!dword_106C6620 || (result = gChosenTrack, gChosenTrack == 2) || gChosenTrack == 8) {
+    if (!MEMORY[0x106C6620] || (result = gChosenTrack, gChosenTrack == 2) || gChosenTrack == 8) {
         v3 = *(float *)(this + 4144) - -50.0;
         v51[1] = this + 1404;
         v51[0] = this + 2452;
@@ -116,7 +117,7 @@ int __thiscall meth_10039200(int this) {
             } else if (v13 == 4) {
                 v28 = 2.5;
             } else {
-                if (v13 != 3 || !dword_106C6624 || v38)
+                if (v13 != 3 || !MEMORY[0x106C6624] || v38)
                     goto LABEL_52;
                 v28 = 1.5;
                 *(_DWORD *)(v6 + 32) = 1089994752;
@@ -175,7 +176,7 @@ int __thiscall meth_10039200(int this) {
                 v22 = v47 * 127.0;
                 v5[1] = v21;
                 v5[2] = (__int64)v22;
-                if (v13 == 3 && dword_106C6624) {
+                if (v13 == 3 && MEMORY[0x106C6624]) {
                     *(v5 - 3) = *v5;
                     *(v5 - 2) = v5[1];
                 } else {

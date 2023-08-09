@@ -32,7 +32,7 @@ _DWORD *__cdecl sub_10013A40(int a1) {
     int v29;             // [esp+24h] [ebp-4h]
     _WORD *v30;          // [esp+2Ch] [ebp+4h]
 
-    if (!dword_106C6620 || (result = (_DWORD *)gChosenTrack, gChosenTrack == 2) ||
+    if (!MEMORY[0x106C6620] || (result = (_DWORD *)gChosenTrack, gChosenTrack == 2) ||
         gChosenTrack == 8) {
         v2 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;

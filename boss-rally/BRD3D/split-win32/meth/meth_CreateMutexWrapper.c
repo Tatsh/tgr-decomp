@@ -10,14 +10,15 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     void *v7;      // ecx
     void *v8;      // ecx
     void *v9;      // ecx
-    void *v10;     // ecx
+    unk06594 *v10; // ecx
     void *v11;     // ecx
+    void *v12;     // ecx
     HANDLE result; // eax
-    int v13;       // [esp+0h] [ebp-28h]
-    char v14[28];  // [esp+4h] [ebp-24h] BYREF
+    int v14;       // [esp+0h] [ebp-28h]
+    char v15[28];  // [esp+4h] [ebp-24h] BYREF
     int i;         // [esp+20h] [ebp-8h]
 
-    dword_106C0944 = (int)&unk_10691018;
+    dword_106C0944 = (int)&stru_10691000.gapC[12];
     meth_DebugPrint(this);
     meth_DebugPrint(v1);
     meth_DebugPrint(v2);
@@ -29,19 +30,19 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     meth_DebugPrint(v7);
     meth_DebugPrint(dword_10B02434);
     meth_DebugPrint(v8);
-    dword_106C56E0 = 1194793728;
+    *(_DWORD *)&stru_106C3380.gap1C8[8600] = 1194793728;
     meth_DebugPrint(v9);
-    meth_DebugPrint(v14);
-    meth_unk1A5E0_10042AF0();
-    meth_DebugPrint(v10);
+    meth_DebugPrint(v15);
+    meth_unk1A5E0_10042AF0(v10);
     meth_DebugPrint(v11);
+    meth_DebugPrint(v12);
     for (i = 0; i < 4; ++i) {
         byte_106C06A0[i] = 0;
-        if ((((int)(unsigned __int8)v14[24] >> i) & 1) != 0 && (byte_106C092B[4 * i] & 8) == 0 &&
+        if ((((int)(unsigned __int8)v15[24] >> i) & 1) != 0 && (byte_106C092B[4 * i] & 8) == 0 &&
             (word_106C0928[2 * i] & 4) != 0 && (byte_106C092A[4 * i] & 1) != 0) {
-            v13 = returnZero();
-            if (v13) {
-                if (v13 > 9 && v13 <= 11 && !returnZero()) {
+            v14 = returnZero();
+            if (v14) {
+                if (v14 > 9 && v14 <= 11 && !returnZero()) {
                     byte_106C06A0[i] = 1;
                     returnZero();
                 }
@@ -49,7 +50,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
         }
     }
     result = CreateMutexA(0, 0, 0);
-    dword_106C6650 = result;
+    *(_DWORD *)&stru_106C3380.gap1C8[12552] = result;
     return result;
 }
 // 10034842: variable 'v1' is possibly undefined
@@ -61,8 +62,8 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
 // 100348D9: variable 'v7' is possibly undefined
 // 10034908: variable 'v8' is possibly undefined
 // 10034924: variable 'v9' is possibly undefined
-// 1003495D: variable 'v10' is possibly undefined
-// 1003496E: variable 'v11' is possibly undefined
+// 10034949: variable 'v10' is possibly undefined
+// 1003495D: variable 'v11' is possibly undefined
+// 1003496E: variable 'v12' is possibly undefined
 // 106C0928: using guessed type __int16 word_106C0928[];
 // 106C0944: using guessed type int dword_106C0944;
-// 106C56E0: using guessed type int dword_106C56E0;

@@ -112,7 +112,7 @@ int __cdecl sub_1000C6E0(int a1) {
             dword_106C0680 += 8;
             *v20 = -184549120;
             v20[1] = 83886080;
-            if (dword_106C6620) {
+            if (MEMORY[0x106C6620]) {
                 if (*(_DWORD *)(dword_106C3308 + 32964)) {
                     v21 = (_DWORD *)dword_106C0680;
                     dword_106C0680 += 8;

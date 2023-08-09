@@ -27,7 +27,7 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
     if (dword_10690A28)
         dword_10690A28();
     sub_10061620();
-    cleanUpPod(&gPod);
+    meth_Pod_CleanUpPod(&gPod);
     sub_1002AEA0();
     sub_10074050();
     CoUninitialize();

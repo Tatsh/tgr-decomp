@@ -1,12 +1,12 @@
 #include "types-win32.h"
 //----- (100488C0) --------------------------------------------------------
-int __thiscall meth_100488C0(_BYTE *this) {
+int __thiscall meth_unk000C8_100488C0(unk000C8 *this) {
     int v3;       // ecx
     unk000C8 *v4; // esi
     float *v5;    // ecx
     float v6;     // edx
 
-    if ((this[8] & 0x10) != 0)
+    if (((int)this->field_8 & 0x10) != 0)
         return 0;
     v3 = 0;
     if (gPlayMusic == 2) {
@@ -27,10 +27,10 @@ int __thiscall meth_100488C0(_BYTE *this) {
     (*(void (**)(void))(LODWORD(v6) + 12))();
     gUnkC8Ptr1 = v4;
     if (!dword_10AA2874)
-        (*(void(__thiscall **)(_BYTE *))(*(_DWORD *)this + 20))(this);
+        this->lpVtbl->field_14(this);
     return 1;
 }
-// 100940A4: using guessed type int g_Playmusic;
+// 100940A4: using guessed type int gPlayMusic;
 // 10AA2874: using guessed type int dword_10AA2874;
 // 10AA2A34: using guessed type int dword_10AA2A34;
 // 10AA2A4C: using guessed type int dword_10AA2A4C;

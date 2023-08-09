@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100087B0) --------------------------------------------------------
-size_t __thiscall ReadPod(Pod *this, unsigned int argList, void *buffer) {
+size_t __thiscall meth_Pod_ReadPod(Pod *this, unsigned int argList, void *buffer) {
     unsigned int *offsetAndElementCount; // edi
 
     if (argList >= this->header.m_cNumPods)

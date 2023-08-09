@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10010D90) --------------------------------------------------------
-int __cdecl CompareFunction(const void *a1, const void *a2) {
+int __cdecl QsortCompareFunction(const void *a1, const void *a2) {
     __int16 v2; // ax
     __int16 v3; // cx
     int result; // eax

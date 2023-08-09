@@ -51,7 +51,7 @@ int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a
     float v58;            // [esp+84h] [ebp+18h]
 
     v9 = *(float *)(a3 + 4);
-    v10 = flt_106C7C84 - flt_106C7C80;
+    v10 = MEMORY[0x106C7C84] - MEMORY[0x106C7C80];
     v11 = *(float *)a3;
     v36 = v10;
     v12 = 0;
@@ -101,18 +101,20 @@ int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a
                         if (v57 >= (double)v35) {
                             if (v33 < 32) {
                                 *(_WORD *)(a4 + 2 * v33++) =
-                                    *(_WORD *)(dword_106C7C54 + 8 * *((__int16 *)v16 + 14) + 6) + 1;
+                                    *(_WORD *)(MEMORY[0x106C7C54] + 8 * *((__int16 *)v16 + 14) +
+                                               6) +
+                                    1;
                                 if (v57 < 5.0) {
-                                    v21 = dword_106C7CD4;
-                                    v22 = 2 * *(unsigned __int16 *)(dword_106C7CD8 +
+                                    v21 = MEMORY[0x106C7CD4];
+                                    v22 = 2 * *(unsigned __int16 *)(MEMORY[0x106C7CD8] +
                                                                     2 * *((__int16 *)v16 + 14));
-                                    if (*(_WORD *)(dword_106C7CD4 + v22)) {
+                                    if (*(_WORD *)(MEMORY[0x106C7CD4] + v22)) {
                                         v23 = (_WORD *)(LODWORD(a6) + 2 * v12);
                                         do {
                                             if (v12 < 32) {
                                                 ++v12;
                                                 *v23 = *(_WORD *)(v21 + v22);
-                                                v21 = dword_106C7CD4;
+                                                v21 = MEMORY[0x106C7CD4];
                                                 ++v23;
                                             }
                                             v22 += 2;
@@ -134,12 +136,13 @@ int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a
                             if (v33 < 32)
                                 *(_WORD *)(a4 + 2 * v33++) = *(_WORD *)a4;
                             *(_WORD *)a4 =
-                                *(_WORD *)(dword_106C7C54 + 8 * *((__int16 *)v16 + 14) + 6) + 1;
+                                *(_WORD *)(MEMORY[0x106C7C54] + 8 * *((__int16 *)v16 + 14) + 6) + 1;
                             if (v57 < 5.0) {
-                                for (j = 2 * *(unsigned __int16 *)(dword_106C7CD8 +
+                                for (j = 2 * *(unsigned __int16 *)(MEMORY[0x106C7CD8] +
                                                                    2 * *((__int16 *)v16 + 14));
-                                     *(_WORD *)(dword_106C7CD4 + j);
-                                     *(_WORD *)LODWORD(a6) = *(_WORD *)(dword_106C7CD4 + j - 2)) {
+                                     *(_WORD *)(MEMORY[0x106C7CD4] + j);
+                                     *(_WORD *)LODWORD(a6) =
+                                         *(_WORD *)(MEMORY[0x106C7CD4] + j - 2)) {
                                     if (v12 < 32)
                                         *(_WORD *)(LODWORD(a6) + 2 * v12++) = *(_WORD *)LODWORD(a6);
                                     j += 2;
@@ -150,7 +153,7 @@ int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a
                     v24 = v57 - 1.5;
                     v58 = v24;
                     if (v24 <= 0.0 && v58 < (double)v38) {
-                        v37 = *(_WORD *)(dword_106C7C54 + 8 * *((__int16 *)v16 + 14) + 6) + 1;
+                        v37 = *(_WORD *)(MEMORY[0x106C7C54] + 8 * *((__int16 *)v16 + 14) + 6) + 1;
                         if (v58 > -1.0) {
                             v38 = v24;
                             v41 = v53;
@@ -183,17 +186,17 @@ int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a
             goto LABEL_51;
         }
     } else {
-        v27 = *(unsigned __int16 *)(dword_106C7CD8 + 2 * v40);
-        v28 = dword_106C7CD4;
-        if (*(_WORD *)(dword_106C7CD4 + 2 * (unsigned __int16)v27)) {
+        v27 = *(unsigned __int16 *)(MEMORY[0x106C7CD8] + 2 * v40);
+        v28 = MEMORY[0x106C7CD4];
+        if (*(_WORD *)(MEMORY[0x106C7CD4] + 2 * (unsigned __int16)v27)) {
             v29 = (_WORD *)(LODWORD(a6) + 2 * v12);
             while (v12 < 32) {
                 ++v12;
                 *v29 = *(_WORD *)(v28 + 2 * v27);
-                v28 = dword_106C7CD4;
+                v28 = MEMORY[0x106C7CD4];
                 ++v29;
                 ++v27;
-                if (!*(_WORD *)(dword_106C7CD4 + 2 * v27))
+                if (!*(_WORD *)(MEMORY[0x106C7CD4] + 2 * v27))
                     goto LABEL_43;
             }
             *(_WORD *)(LODWORD(a6) + 62) = *(_WORD *)(v28 + 2 * v27);

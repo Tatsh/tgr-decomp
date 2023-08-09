@@ -94,7 +94,7 @@ _DWORD *__cdecl sub_10014450(int a1, int a2) {
     dword_106C0680 += 8;
     *v17 = -1174403582;
     v17[1] = 192;
-    if (dword_106C6620) {
+    if (MEMORY[0x106C6620]) {
         v18 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v18 = -1174404094;

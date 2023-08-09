@@ -7,10 +7,10 @@ int sub_10032DF2() {
     v1 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
     *v1 = 58720272;
-    v1[1] = &word_106C1788[8 * dword_106C6654];
-    result = word_106C178C[8 * dword_106C6654];
-    dword_106C62D8 = result;
-    dword_106C65B8 = word_106C1794[8 * dword_106C6654];
+    v1[1] = &word_106C1788[8 * MEMORY[0x106C6654]];
+    result = word_106C178C[8 * MEMORY[0x106C6654]];
+    MEMORY[0x106C62D8] = result;
+    MEMORY[0x106C65B8] = word_106C1794[8 * MEMORY[0x106C6654]];
     return result;
 }
 // 106C0680: using guessed type int dword_106C0680;

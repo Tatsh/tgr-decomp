@@ -3,7 +3,7 @@
 void __cdecl sub_100347BA(int a1, float a2) {
     if (a2 > 2.5)
         a2 = 2.5;
-    flt_106C5468[a1] = flt_106C5468[a1] + a2;
-    if (flt_106C5468[a1] > 5.0)
-        flt_106C5468[a1] = 5.0;
+    MEMORY[0x106C5468][a1] = MEMORY[0x106C5468][a1] + a2;
+    if (MEMORY[0x106C5468][a1] > 5.0)
+        MEMORY[0x106C5468][a1] = 5.0;
 }

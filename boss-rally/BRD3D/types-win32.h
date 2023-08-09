@@ -7497,7 +7497,7 @@ struct Pod {
 
 /* 683 */
 struct PodVtbl {
-    Pod *(__thiscall *CleanupName)(Pod *, char);
+    char(__thiscall *CleanupName)(Pod *, char *, char *);
     void(__thiscall *meth4)(Pod *, int, int *);
     int(__thiscall *GetNumForName)(Pod *, char *);
     int(__thiscall *methC)(Pod *, int, int);
@@ -7510,7 +7510,7 @@ struct PodVtbl {
     int(__thiscall *field_28)(Pod *, char *);
     int(__thiscall *field_2C)(Pod *, char *);
     int(__thiscall *field_30)(Pod *, char *);
-    int field_34;
+    int(__thiscall *field_34)(Pod *this);
     int(__thiscall *last)(Pod *, int);
 };
 
@@ -7627,14 +7627,14 @@ struct unk000C8 {
 /* 700 */
 struct unk000C8Vtbl {
     void(__thiscall *field_0)(unk000C8 *, int);
-    int field_4;
-    int field_8;
+    int(__thiscall *field_4)(unk000C8 *this);
+    int(__thiscall *field_8)(unk000C8 *);
     void(__thiscall *field_C)(unk000C8 *this);
-    int field_10;
-    int field_14;
+    int(__thiscall *field_10)(unk000C8 *);
+    HRESULT(__thiscall *field_14)(unk000C8 *);
     void(__thiscall *field_18)(unk000C8 *this, int);
     void(__thiscall *field_1C)(unk000C8 *);
-    void(__thiscall *last)(unk000C8 *);
+    void(__thiscall *field_20)(unk000C8 *);
 };
 
 /* 696 */
@@ -7664,8 +7664,8 @@ struct unk06594 {
 
 /* 712 */
 struct unk00348Vtbl {
-    int field_0;
-    int last;
+    unk00348 *(__thiscall *field_0)(unk00348 *Block, char a2);
+    int(__thiscall *last)(unk00348 *Block);
 };
 
 /* 707 */
@@ -7780,54 +7780,63 @@ struct unk1E214 {
 struct unk06594Vtbl {
     unk06594 *(__thiscall *field_0)(unk06594 *Block, char a2);
     void(__thiscall *field_4)(unk06594 *, char *);
-    int field_8;
-    int field_C;
-    int field_10;
-    int field_14;
+    int(__thiscall *field_8)(unk06594 *this, LPCSTR lpFileName);
+    int(__thiscall *field_C)(unk06594 *this, char *Str1, int a3);
+    int(__thiscall *field_10)(unk06594 *this);
+    int(__thiscall *field_14)(unk06594 *this, __int16 a1);
     void(__thiscall *last)(unk06594 *, char *, char *);
 };
 
 /* 699 */
 struct unk1E214Vtbl {
-    int field_0;
-    int field_4;
-    _BYTE gap8[40];
-    int field_30;
+    unk1E214 *(__thiscall *field_0)(unk1E214 *this, char a2);
+    int(__thiscall *field_4)(unk1E214 *this);
+    int(__thiscall *field_8)(unk1E214 *this);
+    int(__thiscall *field_C)(unk1E214 *this);
+    int(__thiscall *field_10)(unk1E214 *this);
+    int(__thiscall *field_14)(unk1E214 *this, int a2, int a3);
+    int(__thiscall *field_18)(unk1E214 *this, int *a2);
+    int(__thiscall *field_1C)(unk1E214 *this);
+    int(__thiscall *field_20)(unk1E214 *this);
+    int(__thiscall *field_24)(unk1E214 *this, int a2);
+    double(__thiscall *field_28)(unk1E214 *this, int a2);
+    int(__thiscall *field_2C)(unk1E214 *this);
+    int(__thiscall *field_30)(unk1E214 *this);
     void(__thiscall *field_34)(unk1E214 *, LPCSTR, int, int, void *);
     void(__thiscall *field_38)(unk1E214 *, unk000C8 *, _DWORD, float, int, int, int, int, int);
-    int last;
+    int(__thiscall *field_3C)(unk1E214 *this);
 };
 
 /* 710 */
 struct unk1A5E0Vtbl {
-    int field_0;
-    int field_4;
-    int field_8;
-    int field_C;
-    int field_10;
-    int field_14;
-    int field_18;
-    int field_1C;
-    int field_20;
-    int field_24;
+    unk1A5E0 *(__thiscall *field_0)(unk1A5E0 *this, char a2);
+    unk1A5E0 *(__thiscall *field_4)(unk1A5E0 *this, float, float);
+    int(__thiscall *field_8)(unk1A5E0 *this, int index);
+    int(__thiscall *field_C)(unk06594 *this);
+    int(__thiscall *field_10)(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);
+    int(__thiscall *field_14)(unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);
+    int(__thiscall *field_18)(unk1A5E0 *this, _DWORD *a2);
+    int(__thiscall *field_1C)(unk1A5E0 *this, int *a2);
+    int(__thiscall *field_20)(unk1A5E0 *this, int a2);
+    int(__thiscall *field_24)(unk1A5E0 *this, int a2);
     void(__thiscall *field_28)(unk1A5E0 *, _DWORD, int, int);
-    int last;
+    int(__thiscall *field_2C)(unk1A5E0 *this, int a2);
 };
 
 /* 708 */
 struct unk00438Vtbl {
-    int field_0;
-    int field_4;
-    int field_8;
-    int field_C;
-    int field_10;
-    int field_14;
-    int field_18;
-    int field_1C;
-    int field_20;
-    int field_24;
-    int field_28;
-    int last;
+    unk00438 *(__thiscall *field_0)(unk00438 *Block, char a2);
+    void(__thiscall *field_4)(unk00438 *this, int a2);
+    void(__thiscall *field_8)(unk00438 *this, int a2);
+    int(__thiscall *field_C)(unk00438 *this, float a2, int a3);
+    int(__thiscall *field_10)(unk00438 *);
+    char(__thiscall *field_14)(unk00438 *);
+    int(__thiscall *field_18)(unk00438 *this, __int16 a2, float a3, float a4, int a5);
+    int(__thiscall *field_1C)(unk00438 *this, int a2, int a3);
+    int(__thiscall *field_20)(unk00438 *this, float a2, float a3, int a4);
+    DWORD(__thiscall *field_24)(unk00438 *this, float a2, float a3);
+    double(__thiscall *field_28)(unk00438 *);
+    int(__thiscall *field_2C)(unk00438 *);
 };
 
 /* 694 */
@@ -7926,4 +7935,20 @@ struct unk00214 {
     int field_14;
     _BYTE gap18[504];
     int last;
+};
+
+/* 713 */
+struct TrackData {
+    char *name;
+    int field_4;
+    int field_8;
+    void *field_C;
+    void *field_10;
+    void *field_14;
+    void *field_18;
+    char *skytexLut4Name;
+    char *field_20;
+    char *skytexnLut4Name;
+    void *field_28;
+    char last[336];
 };

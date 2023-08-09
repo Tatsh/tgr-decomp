@@ -1,14 +1,15 @@
 #include "types-win32.h"
 //----- (100337AE) --------------------------------------------------------
-int sub_100337AE() {
-    int result; // eax
+int __thiscall sub_100337AE(unk06594 *this) {
+    unk06594 *v1; // ecx
+    int result;   // eax
 
-    sub_10033780();
-    meth_unk1A5E0_10042AF0();
-    result = sub_10060E00((int)&unk_106C65A0);
+    sub_10033780(this);
+    meth_unk1A5E0_10042AF0(v1);
+    result = sub_10060E00((int)&stru_106C3380.gap1C8[12376]);
     word_100B5D90 = 1;
-    dword_106C56E8 = 0;
+    *(_DWORD *)&stru_106C3380.gap1C8[8608] = 0;
     return result;
 }
+// 100337BF: variable 'v1' is possibly undefined
 // 100B5D90: using guessed type __int16 word_100B5D90;
-// 106C56E8: using guessed type int dword_106C56E8;

@@ -15,65 +15,65 @@ int __cdecl LoadTrack(int trackIndex) {
     int v13;             // [esp+1Ch] [ebp-3FCh]
 
     ParseHNDFileFromIndex(trackIndex);
-    dword_10A9977C = -2147329024 - (_DWORD)&unk_106C8E78;
-    sub_1002B9A0(-2147329024, (int)&unk_106C8E78);
+    dword_10A9977C = -2147329024 - (_DWORD)&MEMORY[0x106C8E78];
+    sub_1002B9A0(-2147329024, (int)&MEMORY[0x106C8E78]);
     sub_1002B9D0(1);
     strcpy((char *)&trackFilepath, kTracksSlash);
     strcat((char *)&trackFilepath, gTrackFilenames[trackIndex]);
     cFile = CHK_FReadOpen((const char *)&trackFilepath);
     filesize = CHK_GetFileSize(cFile, _);
-    ParseTrackHeader((int)&g_TrackHeader, cFile);
+    ParseTrackHeader((int)&MEMORY[0x106C7C48], cFile);
     if (filesize > 0x3D0900) // ~3.81 MiB
     {
         printf("Track %d is too big (%d vs. %d)\n", trackIndex, filesize, 0x3D0900);
         exit(1);
     }
-    CHK_FReadReportError(&g_TrackBuffer, 1u, filesize - 560, cFile);
+    CHK_FReadReportError(&MEMORY[0x106C90A8], 1u, filesize - 560, cFile);
     CHK_FClose(cFile);
-    sub_10038B20(&g_TrackHeader);
-    ReadFilenameToBuffer(&lutBuffer, (&pLutsArray)[95 * trackIndex], 32);
-    ReadFilenameToBuffer(&lutBuffer_0, (&pLutsArray)[95 * trackIndex] + 32, -1);
-    ReadFilenameToBuffer(&ciBuffer, (&ciArray)[95 * trackIndex], 32);
-    ReadFilenameToBuffer(&ciBuffer_0, (&ciArray)[95 * trackIndex] + 32, -1);
+    sub_10038B20(&MEMORY[0x106C7C48]);
+    ReadFilenameToBuffer(&lutBuffer, (&MEMORY[0x100BBB04])[95 * trackIndex], 32);
+    ReadFilenameToBuffer(&lutBuffer_0, (&MEMORY[0x100BBB04])[95 * trackIndex] + 32, -1);
+    ReadFilenameToBuffer(&ciBuffer, (&MEMORY[0x100BBB0C])[95 * trackIndex], 32);
+    ReadFilenameToBuffer(&ciBuffer_0, (&MEMORY[0x100BBB0C])[95 * trackIndex] + 32, -1);
     sub_10073AC0();
     sub_10073B00();
-    dword_106C56EC = (int)&unk_106C8E78 - g_TrackHeaderSize;
-    dword_10690BEC = (int)&unk_106C8E78 + g_TrackHeader;
-    sub_10037E10(&g_TrackHeader);
-    trackInstances = g_TrackInstances;
+    MEMORY[0x106C56EC] = (int)&MEMORY[0x106C8E78] - MEMORY[0x106C7C4C];
+    dword_10690BEC = (int)&MEMORY[0x106C8E78] + MEMORY[0x106C7C48];
+    sub_10037E10(&MEMORY[0x106C7C48]);
+    trackInstances = MEMORY[0x106C7CAC];
     v4 = 0;
     dword_100AA89C = -1;
     dword_100AA8A0 = -1;
-    if (g_TrackInstances > 0) {
+    if (MEMORY[0x106C7CAC] > 0) {
         v5 = 0;
         do {
             v11 = 1065353216;
             trackFilepath = 0;
             v13 = 0;
-            sub_1003B3F0((float *)&v11, (float *)&v11, (float *)(v5 + dword_106C7CA8));
+            sub_1003B3F0((float *)&v11, (float *)&v11, (float *)(v5 + MEMORY[0x106C7CA8]));
             v6 = sub_1003B170((float *)&v11);
             if (v6 != 0.0) {
                 v7 = 1.0 / v6;
-                v8 = dword_106C7CA8;
-                if (v7 * *(float *)(dword_106C7CA8 + v5) == 1.0 &&
-                    *(float *)(dword_106C7CA8 + v5 + 20) * v7 == 1.0 &&
-                    *(float *)(dword_106C7CA8 + v5 + 40) * v7 == 1.0) {
-                    *(_BYTE *)(dword_106C7CA8 + v5 + 77) |= 0x20u;
-                    v8 = dword_106C7CA8;
+                v8 = MEMORY[0x106C7CA8];
+                if (v7 * *(float *)(MEMORY[0x106C7CA8] + v5) == 1.0 &&
+                    *(float *)(MEMORY[0x106C7CA8] + v5 + 20) * v7 == 1.0 &&
+                    *(float *)(MEMORY[0x106C7CA8] + v5 + 40) * v7 == 1.0) {
+                    *(_BYTE *)(MEMORY[0x106C7CA8] + v5 + 77) |= 0x20u;
+                    v8 = MEMORY[0x106C7CA8];
                 }
                 *(float *)(v8 + v5 + 64) = v7;
             }
-            trackInstances = g_TrackInstances;
+            trackInstances = MEMORY[0x106C7CAC];
             ++v4;
             v5 += 84;
-        } while (v4 < g_TrackInstances);
+        } while (v4 < MEMORY[0x106C7CAC]);
     }
     if (trackInstances > 2048) {
         printf("ERROR: instances (%d) > MAX_INSTANCES (%d)\n", trackInstances, 2048);
         exit(1);
     }
-    if (g_TrackHeaderSize != 560) {
-        printf("Error: Track header size mismatch(%d != %d)\n", g_TrackHeaderSize, 560);
+    if (MEMORY[0x106C7C4C] != 560) {
+        printf("Error: Track header size mismatch(%d != %d)\n", MEMORY[0x106C7C4C], 560);
         exit(1);
     }
     sub_10061700();

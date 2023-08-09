@@ -63,7 +63,7 @@ int __cdecl MakeEnemyCarColorPanels_0(size_t size) {
     v13 = *(_WORD **)(*(_DWORD *)(result + 32788) + 36 * *(unsigned __int8 *)(result + 33051) + 4);
     if (v13 && !dword_100AC300) {
         if (*(_DWORD *)(result + 132)) {
-            if (dword_106C661C || dword_106C6624) {
+            if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
                 v13[15] = 112;
                 v13[10] = -32112;
             } else {

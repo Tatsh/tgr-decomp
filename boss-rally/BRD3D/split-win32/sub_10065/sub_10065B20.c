@@ -30,10 +30,10 @@ __int16 __cdecl sub_10065B20(int a1, float a2) {
                 if (a2 <= v6)
                     break;
                 a2 = a2 - v6;
-                if (dword_106C7DA8) {
-                    v7 = (dword_10AF96C0 + 1) % (int)dword_106C7DA8;
-                    if (sub_1003BA70((float *)&unk_106C7CE8 + 5 * v7,
-                                     (float *)&unk_106C7CE0 + 5 * v7,
+                if (MEMORY[0x106C7DA8]) {
+                    v7 = (dword_10AF96C0 + 1) % (int)MEMORY[0x106C7DA8];
+                    if (sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v7,
+                                     (float *)&MEMORY[0x106C7CE0] + 5 * v7,
                                      v5 - 16,
                                      v5 - 6)) {
                         ++dword_10AF96C0;
@@ -51,10 +51,10 @@ __int16 __cdecl sub_10065B20(int a1, float a2) {
             v9 = (float *)(v8 + 76);
             v12 = a2 / v6;
             LOWORD(v3) = sub_1003AFA0((int)&dword_10AF9B38, v8 + 116, v8 + 76, v12);
-            if (dword_106C7DA8) {
-                v10 = (dword_10AF96C0 + 1) % (int)dword_106C7DA8;
-                v3 = sub_1003BA70((float *)&unk_106C7CE8 + 5 * v10,
-                                  (float *)&unk_106C7CE0 + 5 * v10,
+            if (MEMORY[0x106C7DA8]) {
+                v10 = (dword_10AF96C0 + 1) % (int)MEMORY[0x106C7DA8];
+                v3 = sub_1003BA70((float *)&MEMORY[0x106C7CE8] + 5 * v10,
+                                  (float *)&MEMORY[0x106C7CE0] + 5 * v10,
                                   v9,
                                   (float *)&dword_10AF9B38);
                 if (v3) {

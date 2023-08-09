@@ -14,10 +14,10 @@ int __cdecl ParseHNDFile(char *hndFilepath) {
                 do {
                     sscanf(Buffer,
                            "%u %x %d %d",
-                           (char *)&unk_106C7E78 + 16 * dword_10A99778,
-                           (char *)&unk_106C7E7C + 16 * dword_10A99778,
-                           &dword_106C7E80[4 * dword_10A99778],
-                           &dword_106C7E84[4 * dword_10A99778]);
+                           (char *)&MEMORY[0x106C7E78] + 16 * dword_10A99778,
+                           (char *)&MEMORY[0x106C7E7C] + 16 * dword_10A99778,
+                           &MEMORY[0x106C7E80][4 * dword_10A99778],
+                           &MEMORY[0x106C7E84][4 * dword_10A99778]);
                     ++dword_10A99778;
                 } while (dword_10A99778 < 256 && readLineFromFile(Buffer, 1024, &v1->pfil));
             }

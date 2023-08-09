@@ -9,7 +9,7 @@ void __thiscall meth_10019620(void *this) {
             dword_100A79CC = 3;
             flt_104B0378 = (float)(sub_1003BD50() & 0x7FF);
             v1 = sub_1003BD50() & 0x7FF;
-            dword_104B0380 = LODWORD(flt_106C7C80);
+            dword_104B0380 = *(_DWORD *)&stru_106C3380.gap1C8[18232];
             flt_104B037C = (float)v1;
         }
     } else {
@@ -28,4 +28,3 @@ void __thiscall meth_10019620(void *this) {
 // 104B0380: using guessed type int dword_104B0380;
 // 104B255C: using guessed type float flt_104B255C;
 // 106C2CFC: using guessed type int dword_106C2CFC;
-// 106C7C80: using guessed type float flt_106C7C80;

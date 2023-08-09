@@ -31,8 +31,8 @@ _DWORD *__cdecl sub_100314E8(__int16 a1, __int16 a2, int a3) {
     v8[1] = (v3 << 16) | v3;
     v7 = (unsigned int *)dword_106C0680;
     dword_106C0680 += 8;
-    *v7 = ((unsigned __int16)(g_Height1 << dword_106C65E4) - 1) & 0xFFF |
-          ((((unsigned __int16)(g_Width1 << dword_106C65E4) - 1) & 0xFFF) << 12) | 0xE1000000;
+    *v7 = ((unsigned __int16)(g_Height1 << MEMORY[0x106C65E4]) - 1) & 0xFFF |
+          ((((unsigned __int16)(g_Width1 << MEMORY[0x106C65E4]) - 1) & 0xFFF) << 12) | 0xE1000000;
     v7[1] = 0;
     v6 = (_DWORD *)dword_106C0680;
     dword_106C0680 += 8;
