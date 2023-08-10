@@ -42,7 +42,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     LPCSTR v39;        // eax
     float v41;         // [esp+1B4h] [ebp-34h]
 
-    gUnkC8Ptr6->last->lpVtbl->field_4(gUnkC8Ptr6->last, aTimeattackGrf);
+    gUnkC8Ptr6->last->lpVtbl->meth1(gUnkC8Ptr6->last, aTimeattackGrf);
     HIWORD(a1->field_10) = 0;
     Value = -1;
     dword_10AA28E8 = 0;
@@ -69,7 +69,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     if (!v4)
         sub_1003E260(4);
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-         v4->lpVtbl->field_38)(v4, a1, 0, 0, 9, 2, 5, 0, 0);
+         v4->lpVtbl->meth14)(v4, a1, 0, 0, 9, 2, 5, 0, 0);
     ++v2->field_14;
     v5 = (unk1E214 *)malloc(0x1E214u);
     if (v5)
@@ -81,10 +81,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
         sub_1003E260(4);
     v7 = v6->lpVtbl;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-         v6->lpVtbl->field_38)(v6, a1, v2->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
+         v6->lpVtbl->meth14)(v6, a1, v2->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
     v6->field_3838.field_1A99C[28] = 3;
     v8 = GetStringWithIndex(0xC2u);
-    v7->field_34(v6, v8, 1, 1, &unk_100AB508);
+    v7->meth13(v6, v8, 1, 1, &unk_100AB508);
     ++v2->field_14;
     v9 = (unk1E214 *)malloc(0x1E214u);
     if (v9)
@@ -94,21 +94,20 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     v2->field_18[v2->field_14] = v10;
     if (!v10)
         sub_1003E260(4);
-    ((void(__thiscall *)(
-        unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))v10->lpVtbl->field_38)(
-        v10, a1, v2->flags_338, LODWORD(v2->field_33C), 0x3001, 2, 5, 1, -1);
+    ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
+         v10->lpVtbl->meth14)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 0x3001, 2, 5, 1, -1);
     v11 = v10->field_3838.lpVtbl;
     v12 = &v10->field_3838;
     v10->field_4 = sub_1003EC30;
     *(_DWORD *)&v10->field_3838.field_1A99C[16] = 1;
-    ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->field_14)(
+    ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->meth5)(
         &v10->field_3838, 262145, &dword_100AB4D8, 5, 0, -1);
     v10->field_3838.field_4[0] = (DWORD)sub_10042740;
     v10->field_3838.field_4[4] = (DWORD)sub_10042560;
     for (i = 0; i < 26000; i += 260) {
         if ((unk06594 *)((char *)gUnkC8Ptr6->last + i) != (unk06594 *)-4)
             ((void(__thiscall *)(
-                unk1A5E0 *, char *, _DWORD, int, void *, _DWORD))v12->lpVtbl->field_10)(
+                unk1A5E0 *, char *, _DWORD, int, void *, _DWORD))v12->lpVtbl->meth4)(
                 v12, (char *)&gUnkC8Ptr6->last->field_4 + i, 0, 1, &dword_100AB4D8, 0);
     }
     ++v2->field_14;
@@ -124,12 +123,12 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     v16 = v15->lpVtbl;
     v41 = v2->field_33C - -95.0;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-         v15->lpVtbl->field_38)(v15, a1, v2->flags_338, LODWORD(v41), 0x102001, 2, 5, 1, -1);
+         v15->lpVtbl->meth14)(v15, a1, v2->flags_338, LODWORD(v41), 0x102001, 2, 5, 1, -1);
     v15->field_C = sub_10047360;
     v15->field_8 = (int(__cdecl *)())sub_10044F00;
     v15->field_3838.field_1A99C[28] = 3;
     v17 = GetStringWithIndex(0x1Eu);
-    v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+    v16->meth13(v15, v17, 1, 1, &dword_100AB448);
     ++v2->field_14;
     ++LOWORD(v2->last);
     v18 = (unk1E214 *)malloc(0x1E214u);
@@ -142,10 +141,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
         sub_1003E260(4);
     v20 = v19->lpVtbl;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-         v19->lpVtbl->field_38)(v19, a1, 1138491392, 1129316352, 1052673, 2, 5, 1, -1);
+         v19->lpVtbl->meth14)(v19, a1, 1138491392, 1129316352, 1052673, 2, 5, 1, -1);
     v19->field_4 = sub_10041040;
     v19->field_3838.field_1A99C[28] = 52;
-    v20->field_34(v19, asc_100AD300, 1, 4, &unk_100AB478);
+    v20->meth13(v19, asc_100AD300, 1, 4, &unk_100AB478);
     ++v2->field_14;
     v21 = (unk1E214 *)malloc(0x1E214u);
     if (v21)
@@ -157,10 +156,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
         sub_1003E260(4);
     v23 = v22->lpVtbl;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-         v22->lpVtbl->field_38)(v22, a1, 1138491392, 1130364928, 1048577, 2, 5, 1, -1);
+         v22->lpVtbl->meth14)(v22, a1, 1138491392, 1130364928, 1048577, 2, 5, 1, -1);
     v22->field_3838.field_1A99C[28] = 3;
     v24 = GetStringWithIndex(0x6Fu);
-    v23->field_34(v22, v24, 1, 1, &unk_100AB478);
+    v23->meth13(v22, v24, 1, 1, &unk_100AB478);
     ++v2->field_14;
     v25 = (unk1E214 *)malloc(0x1E214u);
     if (v25)
@@ -172,10 +171,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
         sub_1003E260(4);
     v27 = v26->lpVtbl;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-         v26->lpVtbl->field_38)(v26, a1, 1138491392, 1131413504, 1052673, 2, 5, 1, -1);
+         v26->lpVtbl->meth14)(v26, a1, 1138491392, 1131413504, 1052673, 2, 5, 1, -1);
     v26->field_4 = sub_10041180;
     v26->field_3838.field_1A99C[28] = 52;
-    v27->field_34(v26, asc_100AD300, 1, 4, &unk_100AB478);
+    v27->meth13(v26, asc_100AD300, 1, 4, &unk_100AB478);
     ++v2->field_14;
     v28 = (unk1E214 *)malloc(0x1E214u);
     if (v28)
@@ -187,10 +186,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
         sub_1003E260(4);
     v30 = v29->lpVtbl;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-         v29->lpVtbl->field_38)(v29, a1, 1138491392, 1132462080, 1048577, 2, 5, 1, -1);
+         v29->lpVtbl->meth14)(v29, a1, 1138491392, 1132462080, 1048577, 2, 5, 1, -1);
     v29->field_3838.field_1A99C[28] = 3;
     v31 = GetStringWithIndex(0x3Fu);
-    v30->field_34(v29, v31, 1, 1, &unk_100AB478);
+    v30->meth13(v29, v31, 1, 1, &unk_100AB478);
     ++v2->field_14;
     v32 = (unk1E214 *)malloc(0x1E214u);
     if (v32)
@@ -201,7 +200,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     if (!v33)
         sub_1003E260(4);
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, _DWORD, int))
-         v33->lpVtbl->field_38)(v33, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
+         v33->lpVtbl->meth14)(v33, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
     ++v2->field_14;
     *(&a1->field_6C + LOWORD(a1->field_10)) = 0;
     v34 = (unk00348 *)malloc(0x348u);
@@ -227,13 +226,13 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
         sub_1003E260(4);
     v38 = v37->lpVtbl;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, int, int, int, int, int, int))
-         v37->lpVtbl->field_38)(v37, a1, 0, 1130889216, 1048585, 2, 5, 1, -1);
+         v37->lpVtbl->meth14)(v37, a1, 0, 1130889216, 1048585, 2, 5, 1, -1);
     v37->field_C = sub_10047360;
     v37->field_4 = sub_10047250;
     v37->field_14 = (int)sub_1003E7A0;
     v37->field_3838.field_1A99C[28] = 3;
     v39 = GetStringWithIndex(0x70u);
-    v38->field_34(v37, v39, 1, 1, &unk_100AB438);
+    v38->meth13(v37, v39, 1, 1, &unk_100AB438);
     dword_10AA29C4 = (int)v37;
     ++v35->field_14;
     return 1;

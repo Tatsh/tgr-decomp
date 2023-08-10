@@ -27,8 +27,8 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
         v3 = v12;
         if (!v12)
             return (_BYTE)Stream != 0;
-        if (freadLock(gBuffer, 1u, 4u, v12) == 4) {
-            v13 = strncmp(gBuffer, aRsea, 4u);
+        if (freadLock(gBuffer0, 1u, 4u, v12) == 4) {
+            v13 = strncmp(gBuffer0, aRsea, 4u);
             v17 = v3;
             if (v13)
                 goto LABEL_22;
@@ -36,9 +36,9 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
             v17 = v3;
             if (v14 != 4)
                 goto LABEL_22;
-            if (freadLock(gBuffer, 1u, 0x200u, v3) == 512) {
+            if (freadLock(gBuffer0, 1u, 0x200u, v3) == 512) {
                 v15 = CalculateChecksum(0, 0, 0);
-                v16 = CalculateChecksum(v15, (unsigned __int8 *)gBuffer, 0x200u);
+                v16 = CalculateChecksum(v15, (unsigned __int8 *)gBuffer0, 0x200u);
                 if (Buffer[0] == v16)
                     goto LABEL_3;
             }
@@ -49,15 +49,15 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
         return (_BYTE)Stream != 0;
     }
     v3 = Stream;
-    qmemcpy(gBuffer, &dword_10AA26F0, 0x14Cu);
+    qmemcpy(gBuffer0, &dword_10AA26F0, 0x14Cu);
 LABEL_3:
     if (a1 == UNK10071130_4) {
         if (!sub_1003E1D0())
             return 0;
         if (!dword_10ACED34 || !dword_10AD189C)
             return 0;
-        qmemcpy(dword_10ACED34, gBuffer, 0x14Cu);
-        qmemcpy((void *)dword_10AD189C, gBuffer, 0x14Cu);
+        qmemcpy(dword_10ACED34, gBuffer0, 0x14Cu);
+        qmemcpy((void *)dword_10AD189C, gBuffer0, 0x14Cu);
         fseek(v3, 0, 2);
         v5 = ftell(v3);
         fseek(v3, v5 - 148, 0);
@@ -79,9 +79,9 @@ LABEL_3:
         v10 = v7[65];
         v11 = v7[66];
         v20 = v10;
-        qmemcpy(dword_10ACED34, gBuffer, 0x14Cu);
+        qmemcpy(dword_10ACED34, gBuffer0, 0x14Cu);
         v21 = v11;
-        qmemcpy((void *)dword_10AD189C, gBuffer, 0x14Cu);
+        qmemcpy((void *)dword_10AD189C, gBuffer0, 0x14Cu);
         *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 62) = v8;
         *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 63) = v9;
         *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 64) = v19;

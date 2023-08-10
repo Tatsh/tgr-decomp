@@ -6,7 +6,7 @@ int np_sub_10004FC0() {
     int result; // eax
     char v3;    // al
 
-    WaitForSingleObject(g_hMutex_5, INFINITE);
+    WaitForSingleObject(gMutex5, INFINITE);
     v0 = dword_1022AAF4;
     if (dword_1022AAF4) {
         v0 = dword_1022AAF4 + 1;
@@ -18,7 +18,7 @@ int np_sub_10004FC0() {
         }
     }
     v1 = v0;
-    result = ReleaseMutex(g_hMutex_5);
+    result = ReleaseMutex(gMutex5);
     if (v1) {
         result = gNetworkPlay;
         if (gNetworkPlay) {

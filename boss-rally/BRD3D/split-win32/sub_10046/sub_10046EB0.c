@@ -3,9 +3,9 @@
 int __cdecl sub_10046EB0(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;

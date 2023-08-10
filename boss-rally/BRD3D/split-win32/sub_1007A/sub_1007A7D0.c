@@ -19,8 +19,8 @@
         if (!v3)
             return gameSpecificUnk1_instance0;
     }
-    dword_118AC238 = sub_1001A550((#485 *)a1);
-    if (!dword_118AC238)
+    gUnk00334Ptr1 = sub_1001A550((#485 *)a1);
+    if (!gUnk00334Ptr1)
         return gameSpecificUnk1_instance0;
     dword_10AA2860 = v2;
     dword_10AA2A2C = v2;

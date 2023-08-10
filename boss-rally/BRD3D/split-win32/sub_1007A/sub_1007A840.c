@@ -8,12 +8,12 @@ int sub_1007A840() {
 # 485 * v4;      // ebx
     CHAR v5[80]; // [esp+10h] [ebp-50h] BYREF
 
-    if (dword_118AC238)
-        v0 = getDirectDrawLPGUID((#485 *)dword_118AC238);
+    if (gUnk00334Ptr1)
+        v0 = getDirectDrawLPGUID((#485 *)gUnk00334Ptr1);
     else
         v0 = 0;
     result = (int)sub_1001A550((#485 *)v0);
-    dword_118AC238 = (_BYTE *)result;
+    gUnk00334Ptr1 = (_BYTE *)result;
     if (result) {
         v2 = gameSpecificUnk1_instance0;
         v3 = 0;
@@ -39,7 +39,7 @@ int sub_1007A840() {
                 v2 = v4;
             } while (v4);
         }
-        dword_118AC238 = sub_1007A7D0(&dword_10B4E6F8);
+        gUnk00334Ptr1 = sub_1007A7D0(&dword_10B4E6F8);
         result = 1;
     }
     return result;

@@ -17,7 +17,7 @@ int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD 
     v9 = a8;
     if (!a8)
         return 0;
-    v10 = meth_1001B690((_DWORD *)a1, a2, &a1, 0);
+    v10 = meth_unk00334_1001B690((_DWORD *)a1, a2, &a1, 0);
     if (!v10) {
         v10 = (unk00334 *)a1;
         if (!a1)

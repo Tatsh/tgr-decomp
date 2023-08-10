@@ -43,7 +43,7 @@ HRESULT __thiscall meth_unk0008C_1000AB70(unk0008C *this) {
     result = iSurface->GetAttachedSurface(lpSurface, &ddsCaps, &this->lpDirectDrawSurface1);
     if (result < 0)
         return result;
-    v5 = meth_unk00334_1001AD90(this->u334);
+    v5 = meth_unk00228_Field24IsNotNull(this->u334);
     v6 = this->u334;
     if (v5) {
         v7 = &v6->field_1C;

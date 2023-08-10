@@ -6,39 +6,38 @@ int __cdecl sub_10004760(
     unsigned int v11; // ebp
     int i;            // esi
     int v13;          // esi
-    _DWORD v15[133];  // [esp+10h] [ebp-220h] BYREF
+    unk00214 u214;    // [esp+10h] [ebp-220h] BYREF
     int v16;          // [esp+22Ch] [ebp-4h]
 
-    meth_unk00214_10073B40_init((unk00214 *)v15);
+    meth_unk00214_10073B40_init(&u214);
     v10 = 0;
     v16 = 0;
-    sub_100048D0((int)v15);
-    meth_unk00214_10073D60((unk00214 *)v15, dword_10094294 | a10);
-    meth_unk00214_10073D60((unk00214 *)v15, a2);
-    meth_unk00214_10073D60((unk00214 *)v15, a9);
-    meth_unk00214_10073D60((unk00214 *)v15, a3);
-    meth_unk00214_10073D60((unk00214 *)v15, a4);
-    meth_unk00214_10073D60((unk00214 *)v15, a5);
-    meth_unk00214_10073D60((unk00214 *)v15, a6);
-    meth_unk00214_10073E10((unk00214 *)v15, a7);
+    sub_100048D0(&u214);
+    meth_unk00214_10073D60(&u214, dword_10094294 | a10);
+    meth_unk00214_10073D60(&u214, a2);
+    meth_unk00214_10073D60(&u214, a9);
+    meth_unk00214_10073D60(&u214, a3);
+    meth_unk00214_10073D60(&u214, a4);
+    meth_unk00214_10073D60(&u214, a5);
+    meth_unk00214_10073D60(&u214, a6);
+    meth_unk00214_10073E10(&u214, a7);
     v11 = a9 & 0x3F;
     if (v11 <= 2) {
         for (i = 0; i < 24; ++i) {
             if (v10) {
-                meth_unk00214_10073D60((unk00214 *)v15, 0);
+                meth_unk00214_10073D60(&u214, 0);
             } else {
-                meth_unk00214_10073D60((unk00214 *)v15, *(_BYTE *)(i + a8));
+                meth_unk00214_10073D60(&u214, *(_BYTE *)(i + a8));
                 if (!*(_BYTE *)(i + a8))
                     v10 = 1;
             }
         }
     }
     if (v11 == 4)
-        meth_unk00214_10073DC0((unk00214 *)v15, dword_1022AEFC);
-    v13 = sub_100046D0(a1, (unk00214 *)v15);
+        meth_unk00214_10073DC0(&u214, dword_1022AEFC);
+    v13 = sub_100046D0(a1, &u214);
     v16 = -1;
-    meth_DebugPrint(v15);
+    meth_DebugPrint(&u214);
     return v13;
 }
 // 10094294: using guessed type int dword_10094294;
-// 1022AEFC: using guessed type int dword_1022AEFC;

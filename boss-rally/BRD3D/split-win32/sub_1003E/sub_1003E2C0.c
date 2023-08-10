@@ -10,9 +10,9 @@
     v0 = dword_10B4E6F0;
     v1 = dword_10B4E6E8;
     v2 = dword_10B4E6EC;
-    dword_118AC238 = sub_1001A550((#485 *)&dword_10B4E6F8);
-    result = meth_unk00334_1001A570(dword_118AC238, v1, v2, v0, 0, (IID *)dword_118AC23C);
-    dword_118AC240 = (int)result;
+    gUnk00334Ptr1 = sub_1001A550((#485 *)&dword_10B4E6F8);
+    result = meth_unk00334_1001A570(gUnk00334Ptr1, v1, v2, v0, 0, (IID *)dword_118AC23C);
+    gUnk00334Ptr0 = (int)result;
     return result;
 }
 // 10B4E6E8: using guessed type int dword_10B4E6E8;

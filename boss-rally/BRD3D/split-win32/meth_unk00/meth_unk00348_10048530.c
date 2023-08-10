@@ -44,7 +44,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
             v7 = v5->field_1C;
             if ((v7 & 0x1000) == 0)
                 goto LABEL_18;
-            v5->lpVtbl->field_4(v5);
+            v5->lpVtbl->meth1(v5);
             v8 = v5->field_4;
             if (v8)
                 v8((int)v5);
@@ -59,7 +59,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
             if ((v7 & 0x10) != 0) {
             LABEL_18:
                 if ((v7 & 0x800) == 0) {
-                    if (!v5->lpVtbl->field_C(v5)) {
+                    if (!v5->lpVtbl->meth3(v5)) {
                         byte_10AA28A8 = 0;
                         break;
                     }
@@ -71,7 +71,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
                         v11 = &v5->field_2AB4[1];
                         do {
                             v12 = this->field_18[(__int16)*v11];
-                            v12->lpVtbl->field_C(v12);
+                            v12->lpVtbl->meth3(v12);
                             ++v10;
                             ++v11;
                         } while (v10 < (__int16)v5->field_2AB4[0]);

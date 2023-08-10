@@ -5,11 +5,11 @@ int __cdecl sub_10047290(unk1E214 *a1) {
 
     sub_1005FBC0(1);
     if (gUnkC8Ptr20) {
-        gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+        gUnkC8Ptr20->lpVtbl->meth7(gUnkC8Ptr20);
         gUnkC8Ptr20 = 0;
     }
     if (gUnkC8Ptr21) {
-        gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+        gUnkC8Ptr21->lpVtbl->meth7(gUnkC8Ptr21);
         gUnkC8Ptr21 = 0;
     }
     if (dword_10AA28B0) {
@@ -25,9 +25,9 @@ int __cdecl sub_10047290(unk1E214 *a1) {
             sub_10045C90();
         }
     }
-    u1E214->field_2AE8->lpVtbl->field_1C(u1E214->field_2AE8);
+    u1E214->field_2AE8->lpVtbl->meth7(u1E214->field_2AE8);
     if (gUnkC8Ptr22)
-        gUnkC8Ptr22->lpVtbl->field_0(gUnkC8Ptr22, 1);
+        gUnkC8Ptr22->lpVtbl->meth0(gUnkC8Ptr22, 1);
     gUnkC8Ptr22 = 0;
     return 0;
 }

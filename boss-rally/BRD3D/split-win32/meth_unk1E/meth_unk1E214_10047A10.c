@@ -8,9 +8,9 @@ int __thiscall meth_unk1E214_10047A10(unk1E214 *this) {
         v2 = this->field_128;
         v3 = this->last;
         this->field_3838.field_1A99C[28] = *(_WORD *)&this->field_2A40[2 * v2];
-        this->lpVtbl->field_18(this, (int *)(16 * v2 + v3));
+        this->lpVtbl->meth6(this, (int *)(16 * v2 + v3));
     } else {
-        this->lpVtbl->field_1C(this);
+        this->lpVtbl->meth7(this);
     }
     return 1;
 }

@@ -422,7 +422,7 @@ LABEL_92:
             if (!*v38 || this == v1)
                 goto LABEL_109;
             v39 = *((float *)this + 1021) - *((float *)v1 + 1021);
-            for (j = *(float *)(MEMORY[0x106C7CB8] + 100); v39 > j; v39 = v39 - j)
+            for (j = *(float *)(gUnk06594.field_4938 + 100); v39 > j; v39 = v39 - j)
                 ;
             for (k = -j; v39 < k; v39 = v39 + j)
                 ;

@@ -10,7 +10,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
     int result; // eax
 
     if ((this->field_4 & 1) != 0)
-        a2 = this->lpVtbl->field_28(this);
+        a2 = this->lpVtbl->meth10(this);
     v4 = this->field_9[0];
     for (i = 0; v4; v4 = this->field_9[(__int16)++i]) {
         v6 = v4 - 32;
@@ -26,7 +26,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
             v7 = 6 * v6;
             LOWORD(v8) = word_100AC6E8[v7];
             if ((_WORD)v8 != 0xFFFF) {
-                ((void(__thiscall *)(unk00438 *, int, _DWORD, int, _DWORD))this->lpVtbl->field_18)(
+                ((void(__thiscall *)(unk00438 *, int, _DWORD, int, _DWORD))this->lpVtbl->meth6)(
                     this, v8, LODWORD(a2), a3, this->field_8);
                 v9 = (double)word_100AC6E4[v7] + a2;
             LABEL_13:
@@ -37,7 +37,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
     }
     result = this->field_420;
     if (result)
-        result = ((int(__thiscall *)(unk00438 *, _DWORD, int))this->lpVtbl->field_24)(
+        result = ((int(__thiscall *)(unk00438 *, _DWORD, int))this->lpVtbl->meth9)(
             this, LODWORD(a2), a3);
     return result;
 }

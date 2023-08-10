@@ -18,7 +18,7 @@ int __cdecl sub_1002A350(int a1, unsigned __int8 *a2, int a3) {
         v5[155] = 0;
     }
     v3 = sub_10028860((#506 *)v5);
-    result = TIDFromTexture(v5, (int)v3);
+    result = TIDFromTextureAppend(v5, (int)v3);
     dword_118AA09C = 0;
     return result;
 }

@@ -44,7 +44,7 @@ char __thiscall meth_unk00438_1005B570(unk00438 *this) {
     }
     v3 = sub_1005B540(dword_10AA33E4);
     if (v3) {
-        this->lpVtbl->field_4(this, v4);
+        this->lpVtbl->meth1(this, v4);
         if (this->field_40A < this->field_41C)
             sprintf(this->field_9, "%s%c", this->field_9, v3);
     LABEL_25:

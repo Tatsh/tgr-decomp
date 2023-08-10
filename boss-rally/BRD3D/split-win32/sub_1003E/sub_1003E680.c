@@ -32,9 +32,9 @@ int __cdecl sub_1003E680() {
     dword_10AA289C = 0;
     memset(&dword_10AA26F0, 0, 0x14Cu);
     memset(&unk_10A9DBD8, 0, 0x14Cu);
-    memset(&dword_10220B20, 0, 0x118u);
+    memset(&gGameMode1, 0, 0x118u);
     LOWORD(dword_10AA27E0) = 258;
-    dword_10220B20 = -1;
+    gGameMode1 = -1;
     return sub_1003E510();
 }
 // 100AC648: using guessed type int dword_100AC648;

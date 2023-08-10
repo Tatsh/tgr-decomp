@@ -19,9 +19,9 @@ int DDraw_DoInit() {
             sprintf(Buffer, aDdrawDoinitLoa);
             sub_1005F580();
         }
-        gUnkC8Ptr1->lpVtbl->field_20(gUnkC8Ptr1);
+        gUnkC8Ptr1->lpVtbl->meth8(gUnkC8Ptr1);
         sub_1005F5A0(0, 0, 0, dword_100AB56C, dword_100AB57C[0]);
-        gUnkC8Ptr1->lpVtbl->field_14(gUnkC8Ptr1);
+        gUnkC8Ptr1->lpVtbl->meth5(gUnkC8Ptr1);
         if (gDDSurface) {
             gDDSurface->lpVtbl->Release(gDDSurface);
             gDDSurface = 0;

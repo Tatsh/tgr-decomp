@@ -10,7 +10,7 @@ int sub_10078DB0() {
         if (g_DirectInputA) {
             v1 = gUnk54Ptr;
             if (gUnk54Ptr) {
-                meth_100602B0(gUnk54Ptr);
+                meth_unk00054_100602B0(gUnk54Ptr);
                 free(v1);
                 dida = g_DirectInputA;
             }

@@ -57,7 +57,7 @@ int __cdecl sub_10056A10(int a1) {
     v3->field_18[LOWORD(v3->field_14)] = v5;
     if (!v5)
         sub_1003E260(4);
-    v5->lpVtbl->field_38(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+    v5->lpVtbl->meth14(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
     ++LOWORD(v3->field_14);
     v6 = (unk1E214 *)malloc(0x1E214u);
     if (v6)
@@ -68,10 +68,10 @@ int __cdecl sub_10056A10(int a1) {
     if (!v7)
         sub_1003E260(4);
     v8 = v7->lpVtbl;
-    v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+    v7->lpVtbl->meth14(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x5Du);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)malloc(0x1E214u);
   if (v10)
@@ -82,11 +82,11 @@ int __cdecl sub_10056A10(int a1) {
   if (!v11)
       sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(
+  v11->lpVtbl->meth14(
       v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
   LOWORD(v11->?) = 52;
   v13 = GetStringWithIndex(0x5Eu);
-  v12->field_34(v11, v13, 1, 4, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 4, &dword_100AB448);
   ++LOWORD(v3->field_14);
   v14 = (unk1E214 *)malloc(0x1E214u);
   if (v14)
@@ -96,7 +96,7 @@ int __cdecl sub_10056A10(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
       sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
+  v15->lpVtbl->meth14(v15, (unk000C8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
   ++LOWORD(v3->field_14);
   v16 = (unk1E214 *)malloc(0x1E214u);
   if (v16)
@@ -107,12 +107,12 @@ int __cdecl sub_10056A10(int a1) {
   if (!v17)
       sub_1003E260(4);
   v18 = v17->lpVtbl;
-  v17->lpVtbl->field_38(v17, (unk000C8 *)a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
+  v17->lpVtbl->meth14(v17, (unk000C8 *)a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
   v17->field_8 = (int(__cdecl *)())sub_10042AC0;
   v17->field_4 = sub_1003EF90;
   *(_DWORD *)v17->field_10 = sub_1003F020;
   LOWORD(v17->?) = 3;
-  v18->field_34(v17, String2, 1, 1, &dword_100AB448);
+  v18->meth13(v17, String2, 1, 1, &dword_100AB448);
   v19 = *(_DWORD *)&v17->gap5C[11008];
   strcpy(&v17->gap5C[11017], String1);
   (*(void(__thiscall **)(_BYTE *))(v19 + 4))(&v17->gap5C[11008]);
@@ -137,12 +137,12 @@ int __cdecl sub_10056A10(int a1) {
       sub_1003E260(4);
   v22 = v21->lpVtbl;
   v31 = v3->field_33C - -95.0;
-  v21->lpVtbl->field_38(v21, (unk000C8 *)a1, v3->flags_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
+  v21->lpVtbl->meth14(v21, (unk000C8 *)a1, v3->flags_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = (int(__cdecl *)())sub_10043F50;
   LOWORD(v21->?) = 2;
   v23 = GetStringWithIndex(0x1Eu);
-  v22->field_34(v21, v23, 1, 0, &dword_100AB448);
+  v22->meth13(v21, v23, 1, 0, &dword_100AB448);
   dword_10AA29E8 = (int)v21;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -156,12 +156,12 @@ int __cdecl sub_10056A10(int a1) {
       sub_1003E260(4);
   v26 = v25->lpVtbl;
   v32 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, (unk000C8 *)a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->meth14(v25, (unk000C8 *)a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10044B40;
   LOWORD(v25->?) = 3;
   v27 = GetStringWithIndex(0xCu);
-  v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+  v26->meth13(v25, v27, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v28 = (unk1E214 *)malloc(0x1E214u);
@@ -172,7 +172,7 @@ int __cdecl sub_10056A10(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v29;
   if (!v29)
       sub_1003E260(4);
-  v29->lpVtbl->field_38(v29, (unk000C8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+  v29->lpVtbl->meth14(v29, (unk000C8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
   ++LOWORD(v3->field_14);
   return 1;
 }

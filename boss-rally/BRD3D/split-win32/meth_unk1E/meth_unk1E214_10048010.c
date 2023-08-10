@@ -16,7 +16,7 @@ int __thiscall meth_unk1E214_10048010(unk1E214 *this) {
     }
     if ((v1 & 0x200000) != 0)
         return 1;
-    result = this->lpVtbl->field_10(this);
+    result = this->lpVtbl->meth4(this);
     if (result)
         return 1;
     return result;

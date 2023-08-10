@@ -10,7 +10,7 @@ DWORD __thiscall meth_unk00438_1005B250(unk00438 *this, float a2, float a3) {
     dword_10AA2A54 = v5;
     if (v5 >= 120) {
         dword_10AA2A54 = 0;
-        result = this->lpVtbl->field_18(this, word_100AC9DC, a2, a3, this->field_8);
+        result = this->lpVtbl->meth6(this, word_100AC9DC, a2, a3, this->field_8);
     }
     return result;
 }

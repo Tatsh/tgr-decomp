@@ -1,25 +1,25 @@
 #include "types-win32.h"
 //----- (10002140) --------------------------------------------------------
-int sub_10002140() {
-    int v0;         // eax
-# 505 * v1;         // ebp
-    char *v2;       // eax
-# 505 ** v3;        // edx
-    void *v4;       // edi
-    const void *v5; // esi
-    int v6;         // ecx
+Car *sub_10002140() {
+    enum MACRO_GAME_MODE v0; // eax
+# 505 * v1;                  // ebp
+    char *v2;                // eax
+# 505 ** v3;                 // edx
+    void *v4;                // edi
+    const void *v5;          // esi
+    int v6;                  // ecx
 
-    memset(&dword_10220B20, 0, 0x118u);
+    memset(&gGameMode1, 0, 0x118u);
     v0 = gGameMode;
-    dword_10220B20 = gGameMode;
-    if (!gGameMode) {
+    gGameMode1 = gGameMode;
+    if (gGameMode == GAME_MODE_0) {
         v1 = dword_10ACED34;
         LOBYTE(v0) = *((_BYTE *)dword_10ACED34 + 4);
         dword_10220B24 = v0;
         dword_10220B28 = *((unsigned __int8 *)dword_10ACED34 + 5);
         dword_10220B2C = *(_DWORD *)dword_10ACED34;
-        dword_10220B30 = gChosenTrack;
-        dword_10220B34 = gChosenWeather1;
+        gChosenTrack1 = gChosenTrack;
+        gChosenWeather2 = gChosenWeather1;
         v2 = &byte_10220B3C;
         v3 = &dword_10ACED34;
         do {
@@ -42,15 +42,14 @@ int sub_10002140() {
     }
     return sub_10035BD1();
 }
-// 100AA010: using guessed type int g_GameMode;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 10220B20: using guessed type int dword_10220B20;
+// 10220B20: using guessed type int gGameMode1;
 // 10220B24: using guessed type int dword_10220B24;
 // 10220B28: using guessed type int dword_10220B28;
 // 10220B2C: using guessed type int dword_10220B2C;
-// 10220B30: using guessed type int dword_10220B30;
-// 10220B34: using guessed type int dword_10220B34;
+// 10220B30: using guessed type int gChosenTrack1;
+// 10220B34: using guessed type int gChosenWeather2;
 // 10220B3C: using guessed type char byte_10220B3C;
-// 104BBE08: using guessed type int dword_104BBE08;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 10AA26F0: using guessed type int dword_10AA26F0;

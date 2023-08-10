@@ -6,7 +6,7 @@ int __thiscall sub_10033780(unk06594 *this) {
     if (!*(_DWORD *)&gUnk06594.gap1C8[8608]) {
         *(_DWORD *)&gUnk06594.gap1C8[8608] = 1;
         word_100B5D90 = 0;
-        result = meth_unk1A5E0_10042AF0(this);
+        result = meth_unk1A5E0_3(this);
     }
     return result;
 }

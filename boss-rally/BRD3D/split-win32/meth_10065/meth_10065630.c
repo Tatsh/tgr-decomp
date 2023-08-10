@@ -46,6 +46,6 @@ int __thiscall meth_10065630(_DWORD *this) {
         v5 += 8;
     }
     result = 131074;
-    memset32(this + 2464, 131074, 0x12u);
+    memset32(this + 0x9A0, 131074, 0x12u);
     return result;
 }

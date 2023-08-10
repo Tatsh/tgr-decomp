@@ -202,7 +202,7 @@ LABEL_48:
     v44[128] = dword_118AA088;
     v54 = v35;
     v22 = sub_10028860((#506 *)&v26);
-    return TIDFromTexture(&v26, (int)v22);
+    return TIDFromTextureAppend(&v26, (int)v22);
 }
 // 100280A2: conditional instruction was optimized away because of '%arg_34.4!=0'
 // 100A7DFC: using guessed type int dword_100A7DFC;

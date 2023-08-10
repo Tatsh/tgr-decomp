@@ -1,17 +1,17 @@
 #include "types-win32.h"
 //----- (1001ACF0) --------------------------------------------------------
-BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00334 *a2) {
-    int v3;   // eax
-    int v4;   // edi
-    DWORD v5; // eax
+BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00228 *u228) {
+    int bitDepth;   // eax
+    int bitDepthTo; // edi
+    int v5;         // eax
 
-    if (!a2)
+    if (!u228)
         return 0;
-    v3 = meth_unk00334_1001AC60(this);
-    v4 = sub_1001A8C0(v3);
-    if (meth_unk00334_1001AD90(a2))
-        v5 = v4 & a2->field_B8;
+    bitDepth = meth_unk00334_GetBitDepth(this);
+    bitDepthTo = BitDepthTo(bitDepth);
+    if (meth_unk00228_Field24IsNotNull(u228))
+        v5 = bitDepthTo & u228->field_B8;
     else
-        v5 = v4 & a2->ddCaps0.dwSVCaps;
+        v5 = bitDepthTo & u228->field_1B4;
     return v5 != 0;
 }

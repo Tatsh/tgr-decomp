@@ -27,7 +27,7 @@ int __thiscall meth_unk000C8_100488C0(unk000C8 *this) {
     (*(void (**)(void))(LODWORD(v6) + 12))();
     gUnkC8Ptr1 = v4;
     if (!dword_10AA2874)
-        this->lpVtbl->field_14(this);
+        this->lpVtbl->meth5(this);
     return 1;
 }
 // 100940A4: using guessed type int gPlayMusic;

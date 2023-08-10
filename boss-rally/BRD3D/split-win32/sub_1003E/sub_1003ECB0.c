@@ -2,11 +2,11 @@
 //----- (1003ECB0) --------------------------------------------------------
 int __cdecl sub_1003ECB0(int a1) {
     dword_10AA2860 = dword_10AA2A2C;
-    dword_118AC238 = sub_1007A7D0(*(const void **)(dword_10AA29F0 + 8 * dword_10AA2A2C + 122440));
-    dword_10B4E6F8 = *((_DWORD *)dword_118AC238 + 1);
-    dword_10B4E6FC = *((_DWORD *)dword_118AC238 + 2);
-    dword_10B4E700 = *((_DWORD *)dword_118AC238 + 3);
-    dword_10B4E704 = *((_DWORD *)dword_118AC238 + 4);
+    gUnk00334Ptr1 = sub_1007A7D0(*(const void **)(dword_10AA29F0 + 8 * dword_10AA2A2C + 122440));
+    dword_10B4E6F8 = *((_DWORD *)gUnk00334Ptr1 + 1);
+    dword_10B4E6FC = *((_DWORD *)gUnk00334Ptr1 + 2);
+    dword_10B4E700 = *((_DWORD *)gUnk00334Ptr1 + 3);
+    dword_10B4E704 = *((_DWORD *)gUnk00334Ptr1 + 4);
     sub_10046620(a1);
     return 0;
 }

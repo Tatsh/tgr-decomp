@@ -4,7 +4,7 @@ int sub_10005960() {
     int *unkObjInstance; // esi
     int *v1;             // eax
 
-    unkObjInstance = dword_10221334;
+    unkObjInstance = unk_10221334;
     do {
         WaitForSingleObject((HANDLE) * (unkObjInstance - 3), INFINITE);
         *(unkObjInstance - 1) = 0;
@@ -21,35 +21,35 @@ int sub_10005960() {
         ReleaseMutex((HANDLE) * (unkObjInstance - 3));
         unkObjInstance += 606;
     } while ((int)unkObjInstance < (int)dword_1022AAB4);
-    WaitForSingleObject(hMutex, INFINITE);
+    WaitForSingleObject(gMutex9, INFINITE);
     dword_1022AEF8 = -1;
     dword_1022AF08 = 0;
     byte_10220E80 = 0;
-    ReleaseMutex(hMutex);
-    WaitForSingleObject(g_hMutex_0, INFINITE);
+    ReleaseMutex(gMutex9);
+    WaitForSingleObject(gMutex0, INFINITE);
     memset(dword_102212D0, 0, sizeof(dword_102212D0));
-    ReleaseMutex(g_hMutex_0);
-    WaitForSingleObject(g_hMutex_1, INFINITE);
+    ReleaseMutex(gMutex0);
+    WaitForSingleObject(gMutex1, INFINITE);
     dword_10220DD4 = INFINITE;
-    ReleaseMutex(g_hMutex_1);
-    WaitForSingleObject(g_hMutex_2, INFINITE);
+    ReleaseMutex(gMutex1);
+    WaitForSingleObject(gMutex2, INFINITE);
     dword_10221318 = INFINITE;
-    ReleaseMutex(g_hMutex_2);
-    WaitForSingleObject(g_hMutex_4, INFINITE);
-    dword_1022AAA8 = 0;
-    ReleaseMutex(g_hMutex_4);
-    WaitForSingleObject(g_hMutex_5, INFINITE);
+    ReleaseMutex(gMutex2);
+    WaitForSingleObject(gMutex3, INFINITE);
+    gMutexesEnd = 0;
+    ReleaseMutex(gMutex3);
+    WaitForSingleObject(gMutex5, INFINITE);
     dword_1022AAF4 = 0;
-    ReleaseMutex(g_hMutex_5);
-    WaitForSingleObject(g_hMutex_6, INFINITE);
+    ReleaseMutex(gMutex5);
+    WaitForSingleObject(gMutex6, INFINITE);
     dword_10221314 = 0;
-    ReleaseMutex(g_hMutex_6);
-    WaitForSingleObject(g_hMutex_7, INFINITE);
+    ReleaseMutex(gMutex6);
+    WaitForSingleObject(gMutex7, INFINITE);
     dword_10220DD0 = 0;
-    ReleaseMutex(g_hMutex_7);
-    WaitForSingleObject(g_hMutex_8, INFINITE);
+    ReleaseMutex(gMutex7);
+    WaitForSingleObject(gMutex8, INFINITE);
     dword_1022AF00 = INFINITE;
-    ReleaseMutex(g_hMutex_8);
+    ReleaseMutex(gMutex8);
     dword_10220DD8 = 0;
     dword_1022AF3C = INFINITE;
     v1 = dword_1022AAB4;
@@ -68,7 +68,6 @@ int sub_10005960() {
 // 10220E80: using guessed type char byte_10220E80;
 // 10221314: using guessed type int dword_10221314;
 // 10221318: using guessed type int dword_10221318;
-// 1022AAA8: using guessed type int dword_1022AAA8;
 // 1022AAF4: using guessed type int dword_1022AAF4;
 // 1022AEF8: using guessed type int dword_1022AEF8;
 // 1022AF00: using guessed type int dword_1022AF00;

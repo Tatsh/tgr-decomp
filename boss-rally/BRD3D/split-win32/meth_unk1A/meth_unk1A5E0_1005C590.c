@@ -71,7 +71,7 @@ int __thiscall meth_unk1A5E0_1005C590(unk1A5E0 *this, int *a2) {
         this->field_18 = v4 & 0xFFF7FFFD;
     }
     v9 = &this->gap1A93A[82];
-    v10 = (int(__thiscall *)(unk1A5E0 *, char *))this->lpVtbl->field_18;
+    v10 = (int(__thiscall *)(unk1A5E0 *, char *))this->lpVtbl->meth6;
     v50 = v10;
     if (((int(__fastcall *)(unk1A5E0 *, unk00054 *, _BYTE *))v10)(this, v6, &this->gap1A93A[82]) ||
         *(_DWORD *)&this->field_1A99C[12]) {

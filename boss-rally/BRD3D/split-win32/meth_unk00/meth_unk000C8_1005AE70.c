@@ -19,8 +19,8 @@ int __thiscall meth_unk000C8_1005AE70(unk000C8 *this) {
         this->field_C = 1;
         this->field_68 = 1;
     }
-    v4 = dword_10220B20;
-    if (dword_10220B20 == 5) {
+    v4 = gGameMode1;
+    if (gGameMode1 == 5) {
         dword_10AA28A4 = 0;
         memset(byte_10A9D618, 0, 0x20u);
         v2 = 0;
@@ -29,7 +29,7 @@ int __thiscall meth_unk000C8_1005AE70(unk000C8 *this) {
     v5 = gGameMode;
     if (gGameMode == GAME_MODE_4 && dword_106805B8 == 2 && dword_10AA289C) {
         sub_10045EA0();
-        v4 = dword_10220B20;
+        v4 = gGameMode1;
         v5 = GAME_MODE_0;
         gGameMode = GAME_MODE_0;
     }

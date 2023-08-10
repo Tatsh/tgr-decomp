@@ -1,7 +1,6 @@
 #include "types-win32.h"
 //----- (1005BC10) --------------------------------------------------------
-int __thiscall meth_unk1A5E0_1005BC10(
-    unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6) {
+int __thiscall meth_unk1A5E0_4(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6) {
     int result;           // eax
     char *v8;             // edx
     unsigned int v9;      // eax
@@ -23,7 +22,7 @@ int __thiscall meth_unk1A5E0_1005BC10(
     if (!Source)
         return 0;
     if (this->field_1A92C[0] >= 0x64u) {
-        this->lpVtbl->field_2C(this, 0);
+        this->lpVtbl->meth11(this, 0);
         this->field_1A92C[0] = 99;
     }
     if (a6) {
@@ -63,10 +62,10 @@ int __thiscall meth_unk1A5E0_1005BC10(
     this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]].field_420 = 0;
     if ((_BYTE)a4 == 3)
         ((void(__thiscall *)(unk00438 *))this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]
-             .lpVtbl->field_8)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
+             .lpVtbl->meth2)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
     else
         ((void(__thiscall *)(unk00438 *))this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]
-             .lpVtbl->field_4)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
+             .lpVtbl->meth1)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
     v16 = (_WORD *)((char *)this + 1080 * (unsigned __int16)this->field_1A92C[0]);
     v16[548] = v16[556] - v16[552] - 16;
     v17 = this->field_18;

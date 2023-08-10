@@ -4299,20 +4299,25 @@ typedef _D3DDeviceDesc D3DDEVICEDESC;
 
 /* 689 */
 struct unk00228 {
-    int field_0;
+    unk00228 *field_0;
     GUID guid;
     char *sourceString0;
     char *sourceString1;
     D3DDEVICEDESC *deviceDesc0;
-    _BYTE gap20[8];
+    _BYTE gap20[4];
+    void *field_24;
     int field_28;
     int field_2C;
     int field_30;
     _BYTE gap34[8];
     char field_3C;
-    _BYTE gap3D[219];
+    _BYTE gap3D[123];
+    int field_B8;
+    _BYTE gapBC[92];
     D3DDEVICEDESC *deviceDesc1;
-    _BYTE gap11C[248];
+    _BYTE gap11C[152];
+    int field_1B4;
+    _BYTE gap1B8[92];
     int field_214;
     _BYTE gap218[8];
     void *field_220;
@@ -7499,20 +7504,20 @@ struct Pod {
 /* 683 */
 struct PodVtbl {
     char(__thiscall *CleanupName)(Pod *, char *, char *);
-    void(__thiscall *meth4)(Pod *, int, int *);
+    void(__thiscall *meth1)(Pod *, int, int *);
     int(__thiscall *GetNumForName)(Pod *, char *);
-    int(__thiscall *methC)(Pod *, int, int);
-    int(__thiscall *field_10)(Pod *, unsigned int);
-    int(__thiscall *meth14)(Pod *, unsigned int, int);
-    Pod *(__thiscall *field_18)(Pod *, char);
-    int(__thiscall *meth1C)(Pod *, int);
-    int(__thiscall *field_20)(Pod *, char *);
-    int(__thiscall *field_24)(Pod *, char *);
-    int(__thiscall *field_28)(Pod *, char *);
-    int(__thiscall *field_2C)(Pod *, char *);
-    int(__thiscall *field_30)(Pod *, char *);
-    int(__thiscall *field_34)(Pod *this);
-    int(__thiscall *last)(Pod *, int);
+    int(__thiscall *meth4)(Pod *, int, int);
+    int(__thiscall *meth5)(Pod *, unsigned int);
+    int(__thiscall *meth6)(Pod *, unsigned int, int);
+    Pod *(__thiscall *meth7)(Pod *, char);
+    int(__thiscall *meth8)(Pod *, int);
+    int(__thiscall *meth9)(Pod *, char *);
+    int(__thiscall *meth10)(Pod *, char *);
+    int(__thiscall *meth11)(Pod *, char *);
+    int(__thiscall *meth12)(Pod *, char *);
+    int(__thiscall *meth13)(Pod *, char *);
+    int(__thiscall *meth14)(Pod *this);
+    int(__thiscall *meth15)(Pod *, int);
 };
 
 /* 684 */
@@ -7628,15 +7633,15 @@ struct unk000C8 {
 
 /* 700 */
 struct unk000C8Vtbl {
-    void(__thiscall *field_0)(unk000C8 *, int);
-    int(__thiscall *field_4)(unk000C8 *this);
-    int(__thiscall *field_8)(unk000C8 *);
-    void(__thiscall *field_C)(unk000C8 *this);
-    int(__thiscall *field_10)(unk000C8 *);
-    HRESULT(__thiscall *field_14)(unk000C8 *);
-    void(__thiscall *field_18)(unk000C8 *this, int);
-    void(__thiscall *field_1C)(unk000C8 *);
-    void(__thiscall *field_20)(unk000C8 *);
+    void(__thiscall *meth0)(unk000C8 *, int);
+    int(__thiscall *meth1)(unk000C8 *this);
+    int(__thiscall *meth2)(unk000C8 *);
+    void(__thiscall *meth3)(unk000C8 *this);
+    int(__thiscall *meth4)(unk000C8 *);
+    HRESULT(__thiscall *meth5)(unk000C8 *);
+    void(__thiscall *meth6)(unk000C8 *this, int);
+    void(__thiscall *meth7)(unk000C8 *);
+    void(__thiscall *meth8)(unk000C8 *);
 };
 
 /* 696 */
@@ -7661,9 +7666,19 @@ struct unk06594 {
     int field_8;
     _BYTE gapC[440];
     int field_1C4;
-    _BYTE gap1C8[18232];
+    _BYTE gap1C8[18208];
+    int field_48E8;
+    int field_48EC;
+    _BYTE gap48F0[16];
     float field_4900;
-    _BYTE gap4904[52];
+    _BYTE gap4904[4];
+    int field_4908;
+    int field_490C;
+    int field_4910;
+    int field_4914;
+    _BYTE gap4918[24];
+    int field_4930;
+    int field_4934;
     int field_4938;
     _BYTE gap493C[32];
     int field_495C;
@@ -7677,8 +7692,8 @@ struct unk06594 {
 
 /* 712 */
 struct unk00348Vtbl {
-    unk00348 *(__thiscall *field_0)(unk00348 *Block, char a2);
-    int(__thiscall *last)(unk00348 *Block);
+    unk00348 *(__thiscall *meth0)(unk00348 *Block, char a2);
+    int(__thiscall *meth1)(unk00348 *Block);
 };
 
 /* 707 */
@@ -7791,65 +7806,65 @@ struct unk1E214 {
 
 /* 698 */
 struct unk06594Vtbl {
-    unk06594 *(__thiscall *field_0)(unk06594 *Block, char a2);
-    void(__thiscall *field_4)(unk06594 *, char *);
-    int(__thiscall *field_8)(unk06594 *this, LPCSTR lpFileName);
-    int(__thiscall *field_C)(unk06594 *this, char *Str1, int a3);
-    int(__thiscall *field_10)(unk06594 *this);
-    int(__thiscall *field_14)(unk06594 *this, __int16 a1);
-    void(__thiscall *last)(unk06594 *, char *, char *);
+    unk06594 *(__thiscall *meth0)(unk06594 *Block, char a2);
+    void(__thiscall *meth1)(unk06594 *, char *);
+    int(__thiscall *meth2)(unk06594 *this, LPCSTR lpFileName);
+    int(__thiscall *meth3)(unk06594 *this, char *Str1, int a3);
+    int(__thiscall *meth4)(unk06594 *this);
+    int(__thiscall *meth5)(unk06594 *this, __int16 a1);
+    void(__thiscall *meth6)(unk06594 *, char *, char *);
 };
 
 /* 699 */
 struct unk1E214Vtbl {
-    unk1E214 *(__thiscall *field_0)(unk1E214 *this, char a2);
-    int(__thiscall *field_4)(unk1E214 *this);
-    int(__thiscall *field_8)(unk1E214 *this);
-    int(__thiscall *field_C)(unk1E214 *this);
-    int(__thiscall *field_10)(unk1E214 *this);
-    int(__thiscall *field_14)(unk1E214 *this, int a2, int a3);
-    int(__thiscall *field_18)(unk1E214 *this, int *a2);
-    int(__thiscall *field_1C)(unk1E214 *this);
-    int(__thiscall *field_20)(unk1E214 *this);
-    int(__thiscall *field_24)(unk1E214 *this, int a2);
-    double(__thiscall *field_28)(unk1E214 *this, int a2);
-    int(__thiscall *field_2C)(unk1E214 *this);
-    int(__thiscall *field_30)(unk1E214 *this);
-    void(__thiscall *field_34)(unk1E214 *, LPCSTR, int, int, void *);
-    void(__thiscall *field_38)(unk1E214 *, unk000C8 *, _DWORD, float, int, int, int, int, int);
-    int(__thiscall *field_3C)(unk1E214 *this);
+    unk1E214 *(__thiscall *meth0)(unk1E214 *this, char a2);
+    int(__thiscall *meth1)(unk1E214 *this);
+    int(__thiscall *meth2)(unk1E214 *this);
+    int(__thiscall *meth3)(unk1E214 *this);
+    int(__thiscall *meth4)(unk1E214 *this);
+    int(__thiscall *meth5)(unk1E214 *this, int a2, int a3);
+    int(__thiscall *meth6)(unk1E214 *this, int *a2);
+    int(__thiscall *meth7)(unk1E214 *this);
+    int(__thiscall *meth8)(unk1E214 *this);
+    int(__thiscall *meth9)(unk1E214 *this, int a2);
+    double(__thiscall *meth10)(unk1E214 *this, int a2);
+    int(__thiscall *meth11)(unk1E214 *this);
+    int(__thiscall *meth12)(unk1E214 *this);
+    void(__thiscall *meth13)(unk1E214 *, LPCSTR, int, int, void *);
+    void(__thiscall *meth14)(unk1E214 *, unk000C8 *, _DWORD, float, int, int, int, int, int);
+    int(__thiscall *meth15)(unk1E214 *this);
 };
 
 /* 710 */
 struct unk1A5E0Vtbl {
-    unk1A5E0 *(__thiscall *field_0)(unk1A5E0 *this, char a2);
-    unk1A5E0 *(__thiscall *field_4)(unk1A5E0 *this, float, float);
-    int(__thiscall *field_8)(unk1A5E0 *this, int index);
-    int(__thiscall *field_C)(unk06594 *this);
-    int(__thiscall *field_10)(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);
-    int(__thiscall *field_14)(unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);
-    int(__thiscall *field_18)(unk1A5E0 *this, _DWORD *a2);
-    int(__thiscall *field_1C)(unk1A5E0 *this, int *a2);
-    int(__thiscall *field_20)(unk1A5E0 *this, int a2);
-    int(__thiscall *field_24)(unk1A5E0 *this, int a2);
-    void(__thiscall *field_28)(unk1A5E0 *, _DWORD, int, int);
-    int(__thiscall *field_2C)(unk1A5E0 *this, int a2);
+    unk1A5E0 *(__thiscall *meth0)(unk1A5E0 *this, char a2);
+    unk1A5E0 *(__thiscall *meth1)(unk1A5E0 *this, float, float);
+    int(__thiscall *meth2)(unk1A5E0 *this, int index);
+    int(__thiscall *meth3)(unk06594 *this);
+    int(__thiscall *meth4)(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);
+    int(__thiscall *meth5)(unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);
+    int(__thiscall *meth6)(unk1A5E0 *this, _DWORD *a2);
+    int(__thiscall *meth7)(unk1A5E0 *this, int *a2);
+    int(__thiscall *meth8)(unk1A5E0 *this, int a2);
+    int(__thiscall *meth9)(unk1A5E0 *this, int a2);
+    void(__thiscall *meth10)(unk1A5E0 *, _DWORD, int, int);
+    int(__thiscall *meth11)(unk1A5E0 *this, int a2);
 };
 
 /* 708 */
 struct unk00438Vtbl {
-    unk00438 *(__thiscall *field_0)(unk00438 *Block, char a2);
-    void(__thiscall *field_4)(unk00438 *this, int a2);
-    void(__thiscall *field_8)(unk00438 *this, int a2);
-    int(__thiscall *field_C)(unk00438 *this, float a2, int a3);
-    int(__thiscall *field_10)(unk00438 *);
-    char(__thiscall *field_14)(unk00438 *);
-    int(__thiscall *field_18)(unk00438 *this, __int16 a2, float a3, float a4, int a5);
-    int(__thiscall *field_1C)(unk00438 *this, int a2, int a3);
-    int(__thiscall *field_20)(unk00438 *this, float a2, float a3, int a4);
-    DWORD(__thiscall *field_24)(unk00438 *this, float a2, float a3);
-    double(__thiscall *field_28)(unk00438 *);
-    int(__thiscall *field_2C)(unk00438 *);
+    unk00438 *(__thiscall *meth0)(unk00438 *Block, char a2);
+    void(__thiscall *meth1)(unk00438 *this, int a2);
+    void(__thiscall *meth2)(unk00438 *this, int a2);
+    int(__thiscall *meth3)(unk00438 *this, float a2, int a3);
+    int(__thiscall *meth4)(unk00438 *);
+    char(__thiscall *meth5)(unk00438 *);
+    int(__thiscall *meth6)(unk00438 *this, __int16 a2, float a3, float a4, int a5);
+    int(__thiscall *meth7)(unk00438 *this, int a2, int a3);
+    int(__thiscall *meth8)(unk00438 *this, float a2, float a3, int a4);
+    DWORD(__thiscall *meth9)(unk00438 *this, float a2, float a3);
+    double(__thiscall *meth10)(unk00438 *);
+    int(__thiscall *meth11)(unk00438 *);
 };
 
 /* 694 */
@@ -7971,4 +7986,12 @@ struct TrackData {
 /* 714 */
 enum MACRO_MAX_PATH {
     MAX_PATH = 260,
+};
+
+/* 715 */
+struct __unaligned __declspec(align(2)) unk0025E {
+    int field_0;
+    char field_4;
+    _BYTE gap5[597];
+    int last;
 };

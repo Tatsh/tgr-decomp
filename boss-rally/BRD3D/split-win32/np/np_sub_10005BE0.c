@@ -7,56 +7,54 @@ BOOL np_sub_10005BE0() {
     if (gNetworkPlay > 1)
         sub_10072270();
     v0 = sub_1000C510((HANDLE *)&unk) == 0;
-    if (g_hMutex_8) {
-        CloseHandle(g_hMutex_8);
-        g_hMutex_8 = 0;
+    if (gMutex8) {
+        CloseHandle(gMutex8);
+        gMutex8 = 0;
     }
-    if (g_hMutex_7) {
-        CloseHandle(g_hMutex_7);
-        g_hMutex_7 = 0;
+    if (gMutex7) {
+        CloseHandle(gMutex7);
+        gMutex7 = 0;
     }
-    if (g_hMutex_5) {
-        CloseHandle(g_hMutex_5);
-        g_hMutex_5 = 0;
+    if (gMutex5) {
+        CloseHandle(gMutex5);
+        gMutex5 = 0;
     }
-    if (g_hMutex_6) {
-        CloseHandle(g_hMutex_6);
-        g_hMutex_6 = 0;
+    if (gMutex6) {
+        CloseHandle(gMutex6);
+        gMutex6 = 0;
     }
-    if (g_hMutex_4) {
-        CloseHandle(g_hMutex_4);
-        g_hMutex_4 = 0;
+    if (gMutex3) {
+        CloseHandle(gMutex3);
+        gMutex3 = 0;
     }
-    if (hMutex_3) {
-        CloseHandle(hMutex_3);
-        hMutex_3 = 0;
+    if (gMutex4) {
+        CloseHandle(gMutex4);
+        gMutex4 = 0;
     }
-    if (g_hMutex_1) {
-        CloseHandle(g_hMutex_1);
-        g_hMutex_1 = 0;
+    if (gMutex1) {
+        CloseHandle(gMutex1);
+        gMutex1 = 0;
     }
-    if (g_hMutex_2) {
-        CloseHandle(g_hMutex_2);
-        g_hMutex_2 = 0;
+    if (gMutex2) {
+        CloseHandle(gMutex2);
+        gMutex2 = 0;
     }
-    if (g_hMutex_0) {
-        CloseHandle(g_hMutex_0);
-        g_hMutex_0 = 0;
+    if (gMutex0) {
+        CloseHandle(gMutex0);
+        gMutex0 = 0;
     }
-    if (hMutex) {
-        CloseHandle(hMutex);
-        hMutex = 0;
+    if (gMutex9) {
+        CloseHandle(gMutex9);
+        gMutex9 = 0;
     }
-    v1 = (HANDLE *)dword_10221328;
+    v1 = gMutexes;
     do {
         if (*v1) {
             CloseHandle(*v1);
             *v1 = 0;
         }
         v1 += 606;
-    } while ((int)v1 < (int)&dword_1022AAA8);
+    } while ((int)v1 < (int)&gMutexesEnd);
     return v0;
 }
-// 10221328: using guessed type int dword_10221328[];
-// 1022AAA8: using guessed type int dword_1022AAA8;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF18: using guessed type int gNetworkPlay;

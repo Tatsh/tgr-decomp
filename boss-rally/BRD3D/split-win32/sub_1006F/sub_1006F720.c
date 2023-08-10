@@ -59,13 +59,16 @@ __int16 __cdecl sub_1006F720(float a1, float a2) {
         for (i = sub_10002EF0((unsigned __int16 *)&a2); i;
              i = sub_10002EF0((unsigned __int16 *)&a2)) {
             *((_DWORD *)v10 + 4) =
-                MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i);
+                *(_DWORD *)&gUnk06594.gap1C8[18196] +
+                12 * *(unsigned __int16 *)(*(_DWORD *)&gUnk06594.gap1C8[18188] + 8 * i);
             *((_DWORD *)v10 + 5) =
-                MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i + 2);
+                *(_DWORD *)&gUnk06594.gap1C8[18196] +
+                12 * *(unsigned __int16 *)(*(_DWORD *)&gUnk06594.gap1C8[18188] + 8 * i + 2);
             *((_DWORD *)v10 + 6) =
-                MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i + 4);
+                *(_DWORD *)&gUnk06594.gap1C8[18196] +
+                12 * *(unsigned __int16 *)(*(_DWORD *)&gUnk06594.gap1C8[18188] + 8 * i + 4);
             v12 = (float *)*((_DWORD *)v10 + 5);
-            v13 = *(_BYTE *)(MEMORY[0x106C7CDC] + i) & 7;
+            v13 = *(_BYTE *)(gUnk06594.field_495C + i) & 7;
             *((_WORD *)v10 + 14) = i;
             v14 = (float *)*((_DWORD *)v10 + 4);
             v10[30] = v13;
@@ -94,9 +97,6 @@ __int16 __cdecl sub_1006F720(float a1, float a2) {
     return v5;
 }
 // 1006F789: variable 'v25' is possibly undefined
-// 106C7C54: using guessed type int dword_106C7C54;
-// 106C7C5C: using guessed type int dword_106C7C5C;
-// 106C7CDC: using guessed type int dword_106C7CDC;
 // 117554A0: using guessed type int dword_117554A0;
 // 117554C8: using guessed type int dword_117554C8[];
 // 117554D8: using guessed type int dword_117554D8;

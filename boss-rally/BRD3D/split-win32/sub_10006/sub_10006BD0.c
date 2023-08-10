@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10006BD0) --------------------------------------------------------
-char __cdecl sub_10006BD0(int a1, float *a2) {
+char __cdecl sub_10006BD0(int a1, float a2[40]) {
     _BOOL2 v3;   // di
     _BOOL2 v4;   // bx
     _BOOL2 v5;   // bx
@@ -17,28 +17,28 @@ char __cdecl sub_10006BD0(int a1, float *a2) {
     char v16;    // al
     char v17;    // bl
     char result; // al
-    int v19;     // [esp+18h] [ebp+8h]
+    int a2a;     // [esp+18h] [ebp+8h]
 
     v3 = a2[35] != 0.0;
-    *(_WORD *)a1 = v3 | sub_100065E0(*a2) & 0xFFFE;
+    *(_WORD *)a1 = v3 | ClampFloor32768Int(*a2) & 0xFFFE;
     v4 = a2[36] != 0.0;
-    *(_WORD *)(a1 + 2) = v4 | sub_100065E0(a2[1]) & 0xFFFE;
+    *(_WORD *)(a1 + 2) = v4 | ClampFloor32768Int(a2[1]) & 0xFFFE;
     v5 = a2[37] != 0.0;
-    *(_WORD *)(a1 + 4) = v5 | sub_100065E0(a2[2]) & 0xFFFE;
-    v19 = 1;
+    *(_WORD *)(a1 + 4) = v5 | ClampFloor32768Int(a2[2]) & 0xFFFE;
+    a2a = 1;
     v6 = a2[38] != 0.0;
-    *(_WORD *)(a1 + 6) = v6 | sub_100065E0(a2[3]) & 0xFFFE;
+    *(_WORD *)(a1 + 6) = v6 | ClampFloor32768Int(a2[3]) & 0xFFFE;
     if (a2[27] == 0.0)
-        v19 = 0;
+        a2a = 0;
     v8 = a2[39] != 0.0;
     v7 = a2[34] != 0.0;
-    *(_DWORD *)(a1 + 8) = v19 | (2 * (v7 | (2 * v8))) | sub_100066E0(a2[4]) & 0xFFFFF8;
+    *(_DWORD *)(a1 + 8) = a2a | (2 * (v7 | (2 * v8))) | sub_100066E0(a2[4]) & 0xFFFFF8;
     v10 = a2[29] != 0.0;
     v9 = a2[28] != 0.0;
     *(_DWORD *)(a1 + 12) = v10 | (2 * v9) | sub_100066E0(a2[5]) & 0xFFFFFC;
-    *(_WORD *)(a1 + 16) = sub_10006770(a2[6]);
+    *(_WORD *)(a1 + 16) = Clamp32768_FloorNeg128(a2[6]);
     *(_BYTE *)(a1 + 18) = sub_100067F0(a2[13]);
-    LOBYTE(v10) = sub_100065A0(a2[14]) & 0x3F;
+    LOBYTE(v10) = ClampFloor32Int(a2[14]) & 0x3F;
     *(_BYTE *)(a1 + 19) = (sub_100066A0(a2[32]) << 6) | v10;
     *(_BYTE *)(a1 + 11) = sub_10006620(a2[15]);
     if (a2[19] == 0.0)

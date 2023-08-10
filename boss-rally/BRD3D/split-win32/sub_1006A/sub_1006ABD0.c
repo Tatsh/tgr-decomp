@@ -11,7 +11,7 @@ int __cdecl sub_1006ABD0(int a1, int a2) {
     float v9;    // [esp+24h] [ebp-88h]
     int v10;     // [esp+84h] [ebp-28h]
 
-    v2 = (char *)&unk_10B50308 + 1572864 * a2 + 24 * dword_11750310[a2];
+    v2 = (char *)&dword_10B50308 + 1572864 * a2 + 24 * dword_11750310[a2];
     sub_10007730((int)v6, (int)v2);
     v10 = *(_DWORD *)(a1 + 4084);
     sub_10060A10(a1, (int)v6);

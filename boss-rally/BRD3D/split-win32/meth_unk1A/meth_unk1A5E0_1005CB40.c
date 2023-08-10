@@ -6,9 +6,9 @@ int __thiscall meth_unk1A5E0_1005CB40(unk1A5E0 *this, int index) {
 
     v5 = -1;
     v3 = this->lpVtbl;
-    this->lpVtbl->field_8(this, index);
+    this->lpVtbl->meth2(this, index);
     if (!dword_10AA28D8 && !dword_10AA2858)
-        v3->field_1C(this, &v5);
+        v3->meth7(this, &v5);
     ++word_10AA2870;
     return v5;
 }

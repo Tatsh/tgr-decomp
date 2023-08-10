@@ -62,7 +62,7 @@ int sub_10033498() {
             if (*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 4)) {
                 if (v8 != -1) {
                     sub_10031190((unk06594 *)(v8 + dword_10690BEC));
-                    meth_unk1A5E0_10042AF0(v0);
+                    meth_unk1A5E0_3(v0);
                 }
             }
             continue;

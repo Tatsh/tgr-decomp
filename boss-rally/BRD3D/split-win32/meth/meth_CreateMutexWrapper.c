@@ -33,7 +33,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     *(_DWORD *)&gUnk06594.gap1C8[8600] = 1194793728;
     meth_DebugPrint(v9);
     meth_DebugPrint(v15);
-    meth_unk1A5E0_10042AF0(v10);
+    meth_unk1A5E0_3(v10);
     meth_DebugPrint(v11);
     meth_DebugPrint(v12);
     for (i = 0; i < 4; ++i) {

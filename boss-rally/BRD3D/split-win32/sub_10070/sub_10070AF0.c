@@ -25,9 +25,9 @@ bool __cdecl sub_10070AF0(char *filename, BOOL b) {
     fp1 = fp0;
     if (!fp0)
         goto LABEL_20;
-    if (freadLock(gBuffer, 1u, 4u, fp0) != 4)
+    if (freadLock(gBuffer0, 1u, 4u, fp0) != 4)
         goto LABEL_18;
-    strcmpResult = strncmp(gBuffer, aRgho, 4u);
+    strcmpResult = strncmp(gBuffer0, aRgho, 4u);
     fp2 = fp1;
     if (strcmpResult)
         goto LABEL_19;

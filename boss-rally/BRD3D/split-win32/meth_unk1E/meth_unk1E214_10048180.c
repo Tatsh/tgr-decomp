@@ -23,13 +23,13 @@ int __thiscall meth_unk1E214_10048180(unk1E214 *this) {
 
     v19 = this->field_128;
     if ((this->field_1C & 0x10) != 0 ||
-        (v2 = this->lpVtbl, v20 = this->lpVtbl, this->lpVtbl->field_3C(this))) {
-        this->lpVtbl->field_8(this);
+        (v2 = this->lpVtbl, v20 = this->lpVtbl, this->lpVtbl->meth15(this))) {
+        this->lpVtbl->meth2(this);
         return 1;
     }
     if (this->field_3818)
-        v2->field_30(this);
-    v2->field_4(this);
+        v2->meth12(this);
+    v2->meth1(this);
     v3 = this->field_4;
     if (!v3)
         goto LABEL_9;
@@ -39,7 +39,7 @@ int __thiscall meth_unk1E214_10048180(unk1E214 *this) {
     if (v4 == -1)
         return 0;
 LABEL_9:
-    if (!v2->field_20(this) || dword_10AA28D8) {
+    if (!v2->meth8(this) || dword_10AA28D8) {
         v17 = this->field_1C;
         if ((v17 & 0x400000) != 0)
             this->field_3838.field_1A99C[28] = *(_WORD *)this->field_2A40;
@@ -52,7 +52,7 @@ LABEL_9:
             if ((v17 & 0x100000) != 0 && (v17 & 0x10) == 0 && this->field_C) {
                 this->field_3838.field_1A99C[28] = 3;
                 this->vectorUnk[8] = 1;
-                v2->field_8(this);
+                v2->meth2(this);
                 return 1;
             }
         }
@@ -91,11 +91,11 @@ LABEL_9:
                 ++v10;
                 *(_DWORD *)(v16 + 28) &= 0xFFFDFFFF;
             } while (v10 < (__int16)this->field_2AB4[0]);
-            v20->field_8(this);
+            v20->meth2(this);
             return 1;
         }
     LABEL_44:
-        v2->field_8(this);
+        v2->meth2(this);
         return 1;
     }
     v7 = this->field_8;

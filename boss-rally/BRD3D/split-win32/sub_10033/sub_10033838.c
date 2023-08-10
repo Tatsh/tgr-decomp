@@ -63,14 +63,14 @@ int sub_10033838() {
     meth_DebugPrint(v0);
     if (*(_DWORD *)&gUnk06594.gap1C8[12572]) {
         meth_DebugPrint(v1);
-        meth_unk1A5E0_10042AF0(v2);
+        meth_unk1A5E0_3(v2);
         meth_DebugPrint(v3);
         if (dword_106C198C) {
             dword_106C198C();
             dword_106C198C = 0;
         }
         meth_DebugPrint(v4);
-        meth_unk1A5E0_10042AF0(v5);
+        meth_unk1A5E0_3(v5);
         if (dword_106C1608) {
             dword_106C198C();
             dword_106C198C = 0;

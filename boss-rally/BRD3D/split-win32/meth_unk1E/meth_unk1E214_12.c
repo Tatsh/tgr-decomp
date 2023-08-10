@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10047D30) --------------------------------------------------------
-int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
+int __thiscall meth_unk1E214_12(unk1E214 *this) {
     int v2;     // edi
     int v3;     // ebp
     int v4;     // eax
@@ -30,7 +30,7 @@ int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
         goto LABEL_12;
     v8 = this->field_380C;
     if (v8 == -1) {
-        v10 = *(float *)&this->field_30 - this->lpVtbl->field_28(this, this->field_382C);
+        v10 = *(float *)&this->field_30 - this->lpVtbl->meth10(this, this->field_382C);
         *(float *)&this->field_3C = v10;
         if (v10 <= *(float *)&this->field_3810) {
             v2 = 1;
@@ -40,7 +40,7 @@ int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
     }
     if (v8) {
         if (v8 == 1) {
-            v9 = this->lpVtbl->field_28(this, this->field_382C) + *(float *)&this->field_30;
+            v9 = this->lpVtbl->meth10(this, this->field_382C) + *(float *)&this->field_30;
             *(float *)&this->field_3C = v9;
             if (v9 >= *(float *)&this->field_3810) {
                 v2 = 1;
@@ -56,7 +56,7 @@ int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
 LABEL_13:
     v11 = HIBYTE(this->field_380C);
     if (v11 == -1) {
-        v13 = *(float *)&this->field_34 - this->lpVtbl->field_28(this, this->field_382C);
+        v13 = *(float *)&this->field_34 - this->lpVtbl->meth10(this, this->field_382C);
         *(float *)&this->field_40 = v13;
         if (v13 <= *(float *)&this->field_3814) {
             v3 = 1;
@@ -66,7 +66,7 @@ LABEL_13:
     }
     if (v11) {
         if (v11 == 1) {
-            v12 = this->lpVtbl->field_28(this, this->field_382C) + *(float *)&this->field_34;
+            v12 = this->lpVtbl->meth10(this, this->field_382C) + *(float *)&this->field_34;
             *(float *)&this->field_40 = v12;
             if (v12 >= *(float *)&this->field_3814) {
                 v3 = 1;

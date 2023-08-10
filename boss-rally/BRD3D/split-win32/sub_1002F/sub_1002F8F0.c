@@ -58,21 +58,21 @@ int sub_1002F8F0() {
             return result;
         }
         if (v1->field_C) {
-            v1->lpVtbl->field_C(v1);
+            v1->lpVtbl->meth3(v1);
         } else {
             v3 = (unk00334 *)gUnk8C->field_30;
             if (v3) {
                 meth_unk00334_1001AC80(v3, &width, &height, &bitDepth, &dword_10690A04);
                 v1 = gUnkC8Ptr1;
             }
-            ((void(__thiscall *)(unk000C8 *))v1->lpVtbl->field_10)(v1);
+            ((void(__thiscall *)(unk000C8 *))v1->lpVtbl->meth4)(v1);
         }
         if (!gUnkC8Ptr1 || !dword_100AC300)
             return 1;
         if (g_unkC8AreSamePtr) {
             if (g_TickCount + 90000 < getTicks()) {
                 gUnkC8Ptr1->field_68 = 0;
-                gUnkC8Ptr1->lpVtbl->field_18(gUnkC8Ptr1, 0);
+                gUnkC8Ptr1->lpVtbl->meth6(gUnkC8Ptr1, 0);
                 gGameMode = GAME_MODE_4;
                 dword_106805B8 = 0;
                 return 1;

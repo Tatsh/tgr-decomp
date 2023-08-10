@@ -45,7 +45,7 @@ int __cdecl sub_10043810(LPCVOID pMem) {
         }
         sub_100440D0();
         sub_100443E0();
-        meth_100446D0(v2);
+        meth_unk000C8_100446D0(v2);
         dword_10AA2890 = 0;
         result = 0;
     } else {

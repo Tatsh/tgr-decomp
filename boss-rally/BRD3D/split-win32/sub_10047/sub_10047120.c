@@ -8,9 +8,9 @@ int __cdecl sub_10047120(unk1E214 *a1) {
         memset(dword_10AA2740, 0, sizeof(dword_10AA2740));
     }
     dword_10AA28C4 = 0;
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr7)
-        gUnkC8Ptr7->lpVtbl->field_0(gUnkC8Ptr7, 1);
+        gUnkC8Ptr7->lpVtbl->meth0(gUnkC8Ptr7, 1);
     gUnkC8Ptr7 = 0;
     return 0;
 }

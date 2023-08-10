@@ -11,8 +11,8 @@ int __cdecl sub_10007730(int a1, int a2) {
     *(float *)(a1 + 4) = mult_neg_1_32_32_32(*(_WORD *)(a2 + 2));
     *(float *)(a1 + 8) = mult_neg_1_32_32_32(*(_WORD *)(a2 + 4));
     *(float *)(a1 + 12) = mult_neg_1_32_32_32(*(_WORD *)(a2 + 6));
-    *(float *)(a1 + 16) = sub_10007310(*(_DWORD *)(a2 + 8) & 0xFFFFFF);
-    *(float *)(a1 + 20) = sub_10007310(*(_DWORD *)(a2 + 12) & 0xFFFFFF);
+    *(float *)(a1 + 16) = mult_1_32_32_8(*(_DWORD *)(a2 + 8) & 0xFFFFFF);
+    *(float *)(a1 + 20) = mult_1_32_32_8(*(_DWORD *)(a2 + 12) & 0xFFFFFF);
     *(float *)(a1 + 24) = mult_1_128(*(_WORD *)(a2 + 16));
     *(float *)(a1 + 52) = mult_1_8(*(_BYTE *)(a2 + 18));
     *(float *)(a1 + 56) = sub_10007250(*(_BYTE *)(a2 + 19) & 0x3F);

@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1005D0A0) --------------------------------------------------------
-int __thiscall meth_unk06594_1005D0A0(unk06594 *this, LPCSTR lpFileName) {
+int __thiscall meth_unk06594_2(unk06594 *this, LPCSTR lpFileName) {
     int result; // eax
     void *v3;   // ebx
     int v4;     // edi

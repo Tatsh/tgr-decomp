@@ -7,7 +7,7 @@ int __thiscall meth_10008670(Pod *this, int a2) {
     _DWORD *i;       // ecx
     int v7[16];      // [esp+10h] [ebp-40h] BYREF
 
-    this->lpVtbl->meth4(this, a2, v7);
+    this->lpVtbl->meth1(this, a2, v7);
     v3 = (char *)this->unkInstance;
     v4 = this->header.m_cNumPods;
     result = 0;

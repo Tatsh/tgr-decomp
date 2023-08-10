@@ -53,9 +53,9 @@ unsigned int __cdecl sub_10006EC0(int a1, int *a2) {
     HIBYTE(v9) = v8;
     *(float *)(a1 + 12) = mult_neg_1_32_32_32(v9);
     v10 = meth_10073C90(a2, 17);
-    *(float *)(a1 + 16) = sub_10007310(v10 << 7);
+    *(float *)(a1 + 16) = mult_1_32_32_8(v10 << 7);
     v11 = meth_10073C90(a2, 17);
-    *(float *)(a1 + 20) = sub_10007310(v11 << 7);
+    *(float *)(a1 + 20) = mult_1_32_32_8(v11 << 7);
     v12 = meth_10073C90(a2, 15);
     *(float *)(a1 + 24) = mult_1_128(2 * v12);
     v13 = meth_10073C90(a2, 16);

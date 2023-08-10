@@ -65,7 +65,7 @@ unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3) {
     } else {
         v14 = v11 & 0x1F000;
     }
-    a1[4] = sub_10007310((v12 & 0xFFF | (unsigned int)v14) << 7);
+    a1[4] = mult_1_32_32_8((v12 & 0xFFF | (unsigned int)v14) << 7);
     v15 = (unsigned int)sub_100066E0(a2[5]) >> 7;
     v16 = meth_10073C90(a3, 14);
     v17 = v16 & 0x3000;
@@ -80,8 +80,8 @@ unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3) {
     } else {
         v18 = v15 & 0x1F000;
     }
-    a1[5] = sub_10007310((v16 & 0xFFF | (unsigned int)v18) << 7);
-    v19 = (__int16)sub_10006770(a2[6]) >> 1;
+    a1[5] = mult_1_32_32_8((v16 & 0xFFF | (unsigned int)v18) << 7);
+    v19 = (__int16)Clamp32768_FloorNeg128(a2[6]) >> 1;
     v20 = meth_10073C90(a3, 11);
     v21 = v20 & 0x600;
     if ((v20 & 0x600) != 0) {

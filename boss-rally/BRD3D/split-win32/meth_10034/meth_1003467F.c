@@ -8,9 +8,9 @@ void __thiscall __noreturn meth_1003467F(void *this) {
     meth_DebugPrint(this);
     meth_DebugPrint(v1);
     while (1) {
-        meth_unk1A5E0_10042AF0(v2);
+        meth_unk1A5E0_3(v2);
         meth_DebugPrint(v3);
-        meth_unk1A5E0_10042AF0(dword_106C06A8);
+        meth_unk1A5E0_3(dword_106C06A8);
     }
 }
 // 100346A3: variable 'v1' is possibly undefined

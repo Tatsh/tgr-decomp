@@ -17,8 +17,8 @@ int __usercall sub_1003ED40 @<eax>(int a1 @<edi>, int a2) {
     dword_10B4E6E8 = v3;
     dword_10B4E6EC = v4;
     dword_10B4E6F0 = v5;
-    dword_118AC240 =
-        (int)meth_unk00334_1001A570(a1, dword_118AC238, v3, v4, v5, 0, (IID *)dword_118AC23C);
+    gUnk00334Ptr0 =
+        (int)meth_unk00334_1001A570(a1, gUnk00334Ptr1, v3, v4, v5, 0, (IID *)dword_118AC23C);
     sub_10046670(a2);
     return 0;
 }

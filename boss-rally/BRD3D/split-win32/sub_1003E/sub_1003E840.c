@@ -3,7 +3,7 @@
 int __cdecl sub_1003E840(int a1) {
     const char *v1; // eax
 
-    if (gGameMode || dword_10220B20)
+    if (gGameMode || gGameMode1)
         v1 = GetStringWithIndex(0xCu);
     else
         v1 = GetStringWithIndex(0x51u);

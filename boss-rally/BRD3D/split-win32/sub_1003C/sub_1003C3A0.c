@@ -14,7 +14,7 @@ int __stdcall sub_1003C3A0(HWND a1, int a2, int a3, char *pMem) {
     if (a2 != 1281)
         return 0;
     if (gUnk1E214)
-        gUnk1E214->field_3838.lpVtbl->field_10(
+        gUnk1E214->field_3838.lpVtbl->meth4(
             &gUnk1E214->field_3838, pMem, 0, 1, (int)dword_100AB408, 1);
     v4 = GlobalHandle(pMem);
     GlobalUnlock(v4);

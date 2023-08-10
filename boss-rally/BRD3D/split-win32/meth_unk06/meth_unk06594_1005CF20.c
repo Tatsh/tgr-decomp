@@ -24,7 +24,7 @@ int __thiscall meth_unk06594_1005CF20(unk06594 *this, char *lpFileName) {
     fseek(fp, v6 - 128, 0);
     freadLock(Buffer, 1u, 0x80u, fp);
     fclose(fp);
-    v11 = this->lpVtbl->last;
+    v11 = this->lpVtbl->meth6;
     v11(this, FileName, Buffer);
     for (i = 1; i < 100; ++i) {
         memset(Buffer, 0, sizeof(Buffer));

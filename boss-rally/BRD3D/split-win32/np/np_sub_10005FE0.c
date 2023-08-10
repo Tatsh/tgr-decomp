@@ -14,13 +14,13 @@ int __cdecl np_sub_10005FE0(int a1) {
         if (result == a1) {
             result = atomic_sub_10004A10(v1);
             if ((result & 0x3F) != 0) {
-                WaitForSingleObject(g_hMutex_2, 0xFFFFFFFF);
-                v4 = g_hMutex_2;
+                WaitForSingleObject(gMutex2, 0xFFFFFFFF);
+                v4 = gMutex2;
                 dword_10221288[++dword_10221318] = v1;
                 ReleaseMutex(v4);
                 atomic_sub_10004A50(v1, 0);
                 sprintf(Buffer, "%%15%s left the game.", v2);
-                result = sub_10003530(Buffer);
+                result = np_sub_10003530(Buffer);
             }
         }
         v2 += 2424;

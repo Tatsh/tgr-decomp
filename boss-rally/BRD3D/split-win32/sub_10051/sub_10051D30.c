@@ -45,7 +45,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
     v3->field_18[LOWORD(v3->field_14)] = v5;
     if (!v5)
         sub_1003E260(4);
-    v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+    v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
     ++LOWORD(v3->field_14);
     v6 = (unk1E214 *)malloc(0x1E214u);
     if (v6)
@@ -56,10 +56,10 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
     if (!v7)
         sub_1003E260(4);
     v8 = v7->lpVtbl;
-    v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+    v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x43u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB438);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB438);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)malloc(0x1E214u);
   if (v10)
@@ -71,7 +71,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
       sub_1003E260(4);
   v20 = v3->field_33C - 12.0;
   v19 = *(float *)&v3->flags_338 - 8.0;
-  v11->lpVtbl->field_38(v11, a1, LODWORD(v19), LODWORD(v20), 139265, 2, 5, 0, 80);
+  v11->lpVtbl->meth14(v11, a1, LODWORD(v19), LODWORD(v20), 139265, 2, 5, 0, 80);
   v11->last = (int)&unk_10A9DA50;
   *(_DWORD *)&v11->gap5C[10508] = 1;
   *(_DWORD *)&v11->gap5C[10512] = 1;

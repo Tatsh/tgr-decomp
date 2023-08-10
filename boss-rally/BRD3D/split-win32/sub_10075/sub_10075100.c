@@ -1,9 +1,9 @@
 #include "types-win32.h"
 //----- (10075100) --------------------------------------------------------
-unsigned int sub_10075100() {
-    DWORD v0;            // eax
-    unsigned int v1;     // esi
-    unsigned int result; // eax
+DWORD sub_10075100() {
+    DWORD v0;        // eax
+    unsigned int v1; // esi
+    DWORD result;    // eax
 
     v0 = getTicks();
     dword_118AB12C = 0;

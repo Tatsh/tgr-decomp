@@ -30,7 +30,7 @@ int __thiscall meth_100019D0(#479 * this); // idb
 int __thiscall meth_10001FF0(#482 * this); // idb
 long double __cdecl cos_(float a1);
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds); // idb
-int sub_10002140();
+Car *sub_10002140();
 long double __cdecl sin_(float a1);
 long double __cdecl sqrt_(float a1);
 int pm_sub_10002260();
@@ -79,23 +79,23 @@ void *__cdecl CHK_AllocateMemory(size_t size, const char *debugName);
 void *__cdecl CHK_ReAllocateMemory_0(void *ptr, size_t size, char *debugName); // idb
 unsigned int sub_10003460();
 int __cdecl sub_100034A0(int a1, int a2, int a3, unsigned int a4);
-BOOL __cdecl sub_10003530(const char *a1);
+BOOL __cdecl np_sub_10003530(const char *a1);
 void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4);
 int __cdecl sub_10004590(int a1, char a2, char a3, char a4, char a5, int a6, char a7);
-int __cdecl sub_100046D0(_DWORD *a1, unk00214 *a2); // idb
+int __cdecl sub_100046D0(_DWORD *a1, unk00214 *u214); // idb
 int __cdecl sub_10004760(
     _DWORD *a1, char a2, char a3, char a4, char a5, char a6, int a7, int a8, char a9, char a10);
-BOOL __cdecl sub_100048D0(int a1);
+BOOL __cdecl sub_100048D0(unk00214 *a1); // idb
 int __cdecl sub_10004910(_DWORD *a1, int a2);
 int sub_100049C0();
-int __cdecl atomic_sub_10004A10(int a1);
+int __cdecl atomic_sub_10004A10(int mutexIndex); // idb
 BOOL __cdecl atomic_sub_10004A50(int a1, int a2);
 BOOL np_sub_10004A90();
 int atomic_sub_10004BB0();
 int atomic_sub_10004BE0();
 int atomic_sub_10004C20();
 int __cdecl sub_10004C60(void *a1);
-int __cdecl sub_10004DD0(_DWORD *a1, int a2);
+int __cdecl sub_10004DD0(_DWORD *a1, unk00214 *a2); // idb
 int __cdecl sub_10004E50(void *a1, float *a2);
 int np_sub_10004FC0();
 int np_sub_10005090();
@@ -104,46 +104,46 @@ int np_sub_100053F0();
 int sub_10005470();
 int __cdecl sub_100054A0(float *a1, int a2);
 void __cdecl sub_100058D0(float *a1);
-void __cdecl sub_10005900(float *a1);
-void __cdecl sub_10005930(float *a1);
+void __cdecl Clamp0To2048(float *a1);
+void __cdecl Clamp256(float *a1);
 int sub_10005960();
 int sub_10005B10();
 BOOL np_sub_10005BE0();
-int __cdecl sub_10005CF0(int a1);
+int __cdecl sub_10005CF0(int mutexMult); // idb
 int sub_10005D30();
 int sub_10005D40();
 int sub_10005D90();
-int __cdecl sub_10005DE0(int a1, _BYTE *a2, _BYTE *a3, _BYTE *a4);
+int __cdecl sub_10005DE0(int mutexMult, _BYTE *a2, _BYTE *a3, _BYTE *a4); // idb
 int __cdecl sub_10005E40(int a1);
-char *__cdecl sub_10005E70(int a1);
+char *__cdecl sub_10005E70(int mutexMult); // idb
 BOOL __cdecl np_sub_10005EE0(int a1, const char *a2);
-int __cdecl sub_10005F40(int a1);
-int __cdecl sub_10005F90(int offsetX606); // idb
+int __cdecl sub_10005F40(int mutexMult); // idb
+int __cdecl sub_10005F90(int mutexMult); // idb
 int __cdecl np_sub_10005FE0(int a1);
 BOOL atomic_sub_10006090();
 BOOL sub_100060C0();
 BOOL sub_100060F0();
 BOOL np_sub_10006160();
-int __cdecl sub_100061A0(int a1, float *a2);
-int __cdecl sub_100065A0(float); // idb
-int __cdecl sub_100065E0(float); // idb
-int __cdecl sub_10006620(float); // idb
-int __cdecl sub_10006660(float); // idb
+int __cdecl sub_100061A0(unk00214 *u214, float a2[40]);
+int __cdecl ClampFloor32Int(float);      // idb
+int __cdecl ClampFloor32768Int(float x); // idb
+int __cdecl sub_10006620(float);         // idb
+int __cdecl sub_10006660(float);         // idb
 char __cdecl sub_100066A0(float a1);
 __int64 __cdecl sub_100066E0(float a1);
-int __cdecl sub_10006730(float); // idb
-int __cdecl sub_10006770(float); // idb
-int __cdecl sub_100067B0(float); // idb
-int __cdecl sub_100067F0(float); // idb
-int __cdecl sub_10006830(int a1, float *a2, float *a3);
-char __cdecl sub_10006BD0(int a1, float *a2);
+int __cdecl sub_10006730(float);                              // idb
+int __cdecl Clamp32768_FloorNeg128(float);                    // idb
+int __cdecl sub_100067B0(float);                              // idb
+int __cdecl sub_100067F0(float);                              // idb
+int __cdecl sub_10006830(unk00214 *a1, float *a2, float *a3); // idb
+char __cdecl sub_10006BD0(int a1, float a2[40]);
 unsigned int __cdecl sub_10006EC0(int a1, int *a2);
 double __cdecl sub_10007250(char a1);
 double __cdecl mult_neg_1_32_32_32(__int16 a1);
 double __cdecl sub_100072A0(unsigned __int8 a1);
 double __cdecl sub_100072C0(unsigned __int8 a1);
 double __cdecl sub_100072E0(char); // weak
-double __cdecl sub_10007310(unsigned int a1);
+double __cdecl mult_1_32_32_8(unsigned int a1);
 double __cdecl sub_10007340(int a1);
 double __cdecl mult_1_128(__int16 a1);
 double __cdecl mult_1_256(__int16 a1);
@@ -157,21 +157,20 @@ void __cdecl ReadSettingsParseCmdLine(char *cmdLine); // idb
 Pod *__thiscall meth_Pod_100085C0(Pod *this, char a2);
 void __thiscall meth_Pod_SetVtbl(Pod *this); // idb
 char __thiscall meth_Pod_CleanupName(Pod *this, const char *a1, char *buff);
-int __thiscall meth_Pod_10008670(Pod *this, int a2);                               // idb
-int __thiscall meth_Pod_GetNumForNameWrapper(Pod *this, char *ArgList);            // idb
-int __thiscall meth_Pod_GetPodLength(Pod *this, unsigned int argList);             // idb
-size_t __thiscall meth_Pod_ReadPod(Pod *this, unsigned int argList, void *buffer); // idb
-int __thiscall meth_Pod_LoadPod(Pod *this, unsigned int ArgList);                  // idb
-int __thiscall meth_Pod_LoadPod0(Pod *this, unsigned int argList, int a3);         // idb
-int __thiscall meth_Pod_10008890(Pod *this, int a2);                               // idb
-int __thiscall meth_Pod_100088B0(Pod *this, int a2, int a3);                       // idb
-size_t __thiscall meth_Pod_ReadPodFile(Pod *this);                                 // idb
-int __thiscall meth_Pod_CleanUpPod(Pod *this);                                     // idb
-int __stdcall meth_Pod_100089C0(char *FileName);                                   // idb
-size_t __thiscall meth_Pod_10008A00(
-    Pod *this, const char *a2, int a3, int a4, char a5, char a6); // idb
-int __thiscall meth_Pod_10008AA0(Pod *this);                      // idb
-void __thiscall setPodFilename(Pod *this, const char *a2);        // idb
+int __thiscall meth_Pod_10008670(Pod *this, int a2);                                         // idb
+int __thiscall meth_Pod_GetNumForNameWrapper(Pod *this, char *ArgList);                      // idb
+int __thiscall meth_Pod_GetPodLength(Pod *this, unsigned int argList);                       // idb
+size_t __thiscall meth_Pod_ReadPod(Pod *this, unsigned int argList, void *buffer);           // idb
+int __thiscall meth_Pod_LoadPod(Pod *this, unsigned int ArgList);                            // idb
+int __thiscall meth_Pod_LoadPod0(Pod *this, unsigned int argList, int a3);                   // idb
+int __thiscall meth_Pod_10008890(Pod *this, int a2);                                         // idb
+int __thiscall meth_Pod_100088B0(Pod *this, int a2, int a3);                                 // idb
+size_t __thiscall meth_Pod_ReadPodFile(Pod *this);                                           // idb
+int __thiscall meth_Pod_CleanUpPod(Pod *this);                                               // idb
+int __stdcall meth_Pod_100089C0(char *FileName);                                             // idb
+size_t __thiscall meth_Pod_Add(Pod *this, const char *a2, int a3, int a4, char a5, char a6); // idb
+int __thiscall meth_Pod_10008AA0(Pod *this);                                                 // idb
+void __thiscall setPodFilename(Pod *this, const char *a2);                                   // idb
 // Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this);
 void __thiscall meth_DebugPrint(void *);                      // idb
 unsigned int __stdcall basename(const char *path, char *out); // idb
@@ -248,7 +247,7 @@ HRESULT __thiscall meth_unk0008C_1000B390(unk0008C *this, int a1, unk00334 *a3, 
 HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4, int a5); // idb
 IDirectDrawSurface *__cdecl DDrawCreateSurface(
     IDirectDraw2 *ddraw2, LPCSTR filepath, int cx_, int cy, LPDDSURFACEDESC a5);
-int __cdecl sub_1000B790(int, LPCSTR name); // idb
+HRESULT __cdecl DDCopyBitmap(IDirectDrawSurface *ddSurface, LPCSTR name); // idb
 HRESULT __cdecl sub_1000B820(
     IDirectDrawSurface *ddSurface, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc); // idb
 int __cdecl CalcColorSpaceValue(LPDIRECTDRAWSURFACE surface, COLORREF color);                // idb
@@ -340,7 +339,7 @@ int __cdecl sub_1001A4D0(int a1, int a2, int a3, int a4);
 # 485 * __cdecl sub_1001A550(#485 * a1); // idb
 unk00334 *__cdecl meth_unk00334_1001A570(
     unk00334 *a1, int width, int height, int bitDepth, unk00334 *a5, int a6);
-IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, #492 * a3);
+CLSID *__cdecl sub_1001A5D0(unk00334 *a1, CLSID *clsid, unk00334 *a3);
 int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4);
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8);
 HRESULT __cdecl sub_1001A790(int a1,
@@ -354,7 +353,7 @@ HRESULT __cdecl sub_1001A790(int a1,
                              int **a9,
                              int ***a10); // idb
 unsigned int __cdecl sub_1001A870(unsigned int a1);
-int __cdecl sub_1001A8C0(int a1);
+int __cdecl BitDepthTo(int bitDepth); // idb
 HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat);
 BOOL __stdcall ddrawEnumerateCallback(GUID *, LPSTR, LPSTR, LPVOID); // idb
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2);
@@ -365,13 +364,16 @@ int __stdcall d3d2enumDevicesCallback(GUID *a2,
                                       LPD3DDEVICEDESC desc,
                                       LPD3DDEVICEDESC a6,
                                       LPVOID userArg); // idb
-int __thiscall meth_unk00334_1001AC60(unk00334 *this);
+int __thiscall meth_unk00334_GetBitDepth(unk00334 *this);
 int __thiscall meth_unk00334_1001AC80(
     unk00334 *this, int *width, int *height, int *bitDepth, int *a5);
-BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00334 *a2);                        // idb
-BOOL __thiscall meth_unk00334_1001AD50(unk00334 *this, int width, int height, int bitDepth); // idb
-BOOL __thiscall meth_unk00334_1001AD90(unk00334 *this);
-bool __thiscall meth_unk00334_1001ADA0(unk00334 *this, const void *a2); // idb
+BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00228 *u228); // idb
+BOOL __thiscall meth_unk00334_MatchesWidthHeightBitDepth(unk00334 *this,
+                                                         int width,
+                                                         int height,
+                                                         int bitDepth); // idb
+BOOL __thiscall meth_unk00228_Field24IsNotNull(unk00228 *this);
+int __thiscall meth_unk00228_MatchesGUID(unk00228 *this, CLSID *clsid);
 int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
                                       GUID *guid,
                                       char *source,
@@ -401,14 +403,15 @@ unk00334 *__thiscall meth_unk00334_1001B490(unk00334 *this,
 HRESULT __thiscall meth_unk00334_1001B510(unk00334 *this, IDirect3D2 *a2);
 int __thiscall meth_unk00334_1001B5A0(unk00334 *this);               // idb
 int __thiscall meth_unk00334_1001B630(unk00334 *this, unk00228 *a2); // idb
-unk00334 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4);
-int __thiscall meth_unk00334_1001B7C0(unk00334 *this, const void *a2, unk00334 *a3, int a4, int a5);
+int __thiscall meth_unk00334_1001B690(unk00334 *this, CLSID *a2, _DWORD *a3, unk00334 *a4);
+int __thiscall meth_unk00334_1001B7C0(
+    unk00334 *this, CLSID *clsid, unk00334 *a3, unk00228 *a4, unk00228 *a5);
 unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
                                             int width,
                                             int height,
                                             int bitDepth,
                                             int a5,
-                                            int a2,
+                                            unk00228 *a2,
                                             _DWORD *a7,
                                             unk00334 *u0_1); // idb
 GUID *__thiscall getDirectDrawLPGUID(#485 * this);
@@ -570,7 +573,7 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
                              int a14,
                              int a15);
 int __cdecl sub_10028200(_DWORD *a1, int a2, int a3);
-int __cdecl TIDFromTexture(_DWORD *a1, int a2); // idb
+int __cdecl TIDFromTextureAppend(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
 int __cdecl sub_10028630(int a1);
 int *__cdecl sub_10028720(int *a1, int *a2, int a3, int a4);
@@ -670,7 +673,7 @@ void __thiscall meth_1002C320(void *this);
 int sub_1002C390();
 char (*sub_1002C3C0())[8];
 char (*sub_1002C410())[8];
-int __cdecl sub_1002C430(int); // weak
+void __cdecl sub_1002C430(int a1);
 int sub_1002C4A0();
 unsigned int sub_1002C4D0();
 // int __usercall sub_1002C500@<eax>(double a1@<st0>);
@@ -1064,7 +1067,7 @@ int __cdecl sub_10042740(int a1, int *a2);
 int __cdecl sub_10042880(int a1, int *a2);
 int __cdecl sub_10042A90(int a1);
 int __cdecl sub_10042AC0(int a1);
-int __thiscall meth_unk1A5E0_10042AF0(unk06594 *this);
+int __thiscall meth_unk1A5E0_3(unk06594 *this);
 int __cdecl sub_10042B00(int a1);
 int sub_10042B30(); // weak
 int sub_10042C80(); // weak
@@ -1110,7 +1113,7 @@ int sub_100443E0();
 int __cdecl sub_100444C0(int a1);
 int sub_10044540();
 int sub_10044600();
-int __thiscall meth_100446D0(void *this);
+unk000C8 *__thiscall meth_unk000C8_100446D0(unk000C8 *this); // idb
 int sub_100447D0();
 int __cdecl sub_10044970(int); // weak
 int __cdecl sub_10044A30(int); // weak
@@ -1220,38 +1223,38 @@ int __cdecl sub_100475F0(int a1);
 int sub_10047610();
 // int __usercall sub_10047660@<eax>(int result@<eax>);
 unk1E214 *__thiscall meth_unk1E214_init(unk1E214 *this);
-unk1E214 *__thiscall meth_1E214_100478A0(unk1E214 *this, char a2); // idb
-void __thiscall meth_100478C0(unk1E214 *this);                     // idb
-int __thiscall meth_unk1E214_10047930(unk1E214 *this);             // idb
-int __thiscall meth_unk1E214_10047980(unk1E214 *this, int *a2);    // idb
-int __thiscall meth_unk1E214_100479D0(unk1E214 *this, int a2, int a3);
-int __thiscall meth_unk1E214_10047A10(unk1E214 *this);            // idb
-int __thiscall meth_unk1E214_10047A60(unk1E214 *this);            // idb
-int __thiscall meth_unk1E214_10047CB0(unk1E214 *this, int a2);    // idb
-double __thiscall meth_unk1E214_10047CE0(unk1E214 *this, int a2); // idb
-int __thiscall meth_unk1E214_10047D10(unk1E214 *this);            // idb
-int __thiscall meth_unk1E214_10047D30(unk1E214 *this);            // idb
-__int16 __thiscall meth_unk1E214_10047EB0(int this, const char *a2, int a3, char a4, _DWORD *a5);
-__int16 __thiscall meth_unk1E214_10047FB0(
+unk1E214 *__thiscall meth_1E214_0(unk1E214 *this, char a2); // idb
+void __thiscall meth_100478C0(unk1E214 *this);              // idb
+int __thiscall meth_unk1E214_7(unk1E214 *this);             // idb
+int __thiscall meth_unk1E214_6(unk1E214 *this, int *a2);    // idb
+int __thiscall meth_unk1E214_5(unk1E214 *this, int a2, int a3);
+int __thiscall meth_unk1E214_4(unk1E214 *this);             // idb
+int __thiscall meth_unk1E214_8(unk1E214 *this);             // idb
+int __thiscall meth_unk1E214_9(unk1E214 *this, int a2);     // idb
+double __thiscall meth_unk1E214_10(unk1E214 *this, int a2); // idb
+int __thiscall meth_unk1E214_11(unk1E214 *this);            // idb
+int __thiscall meth_unk1E214_12(unk1E214 *this);            // idb
+__int16 __thiscall meth_unk1E214_13(int this, const char *a2, int a3, char a4, _DWORD *a5);
+__int16 __thiscall meth_unk1E214_14(
     unk1E214 *this, int a2, int flags, int a4, int a5, int a6, int a7, int a8, __int16 a9); // idb
-int __thiscall meth_unk1E214_10048010(unk1E214 *this);                                      // idb
-int __thiscall meth_unk1E214_10048060(unk1E214 *this);                                      // idb
-int __thiscall meth_unk1E214_100480A0(unk1E214 *this);                                      // idb
-int __thiscall meth_unk1E214_10048180(unk1E214 *this);                                      // idb
+int __thiscall meth_unk1E214_2(unk1E214 *this);                                             // idb
+int __thiscall meth_unk1E214_15(unk1E214 *this);                                            // idb
+int __thiscall meth_unk1E214_1(unk1E214 *this);                                             // idb
+int __thiscall meth_unk1E214_3(unk1E214 *this);                                             // idb
 unk00348 *__thiscall meth_10048470(unk00348 *this);
-unk00348 *__thiscall meth_unk00348_100484C0(unk00348 *this, char a2); // idb
-void __thiscall meth_100484E0(unk00348 *this);                        // idb
+unk00348 *__thiscall meth_unk00348_0(unk00348 *this, char a2); // idb
+void __thiscall meth_100484E0(unk00348 *this);                 // idb
 int __thiscall meth_100484F0(unsigned __int16 *this);
-int __thiscall meth_unk00348_10048530(unk00348 *this); // idb
+int __thiscall meth_unk00348_1(unk00348 *this); // idb
 unk000C8 *__thiscall meth_unk000C8_10048710(unk000C8 *this);
-void *__thiscall meth_unk000C8_10048850(void *Block, char a2);
+void *__thiscall meth_unk000C8_0(void *Block, char a2);
 int __thiscall meth_10048870(_DWORD *this);
-int __thiscall meth_unk000C8_100488B0(unk000C8 *this); // idb
-int __thiscall meth_unk000C8_100488C0(unk000C8 *this); // idb
-HRESULT __thiscall meth_unk000C8_10048960(unk000C8 *);
-int __thiscall meth_unk000C8_100489A0(char *this);
-int __thiscall meth_unk000C8_10048AA0(unsigned __int16 *this);
-void __stdcall meth_unk000C8_10048B20(int a1);
+int __thiscall meth_unk000C8_1(unk000C8 *this); // idb
+int __thiscall meth_unk000C8_2(unk000C8 *this); // idb
+HRESULT __thiscall meth_unk000C8_5(unk000C8 *);
+int __thiscall meth_unk000C8_3(char *this);
+int __thiscall meth_unk000C8_7(unk000C8 *this); // idb
+void __thiscall meth_unk000C8_6(unk000C8 *this, int a1);
 int __cdecl sub_100491B0(unk000C8 *a1); // idb
 int __cdecl sub_10049C20(unk000C8 *a1); // idb
 int __cdecl sub_10049F40(unk000C8 *a1); // idb
@@ -1282,56 +1285,54 @@ int __cdecl sub_100563E0(unk000C8 *a1); // idb
 int __cdecl sub_10056A10(int);          // weak
 int __cdecl sub_10056FF0(unk000C8 *a1); // idb
 int __cdecl sub_100575F0(int);          // weak
-int __cdecl sub_10057C10(int);          // weak
+int __cdecl sub_10057C10(unk000C8 *a1); // idb
 int *__cdecl sub_100586A0();
 int __cdecl sub_100586D0(int a1);
 int sub_10058700();
-int __cdecl sub_10058750(unk000C8 *a1);                // idb
-int __cdecl sub_10059760(unk000C8 *a1);                // idb
-int __cdecl sub_10059BB0(int);                         // weak
-int __cdecl sub_1005A6E0(unk000C8 *a1);                // idb
-int __thiscall meth_unk000C8_1005AE70(unk000C8 *this); // idb
-int meth_unk000C8_1005AFA0();
+int __cdecl sub_10058750(unk000C8 *a1);         // idb
+int __cdecl sub_10059760(unk000C8 *a1);         // idb
+int __cdecl sub_10059BB0(int);                  // weak
+int __cdecl sub_1005A6E0(unk000C8 *a1);         // idb
+int __thiscall meth_unk000C8_4(unk000C8 *this); // idb
+int meth_unk000C8_8();
 void __thiscall meth_unk00438_init(unk00438 *this); // idb
-unk00438 *__thiscall meth_unk00438_1005B0A0(unk00438 *Block, char a2);
+unk00438 *__thiscall meth_unk00438_0(unk00438 *Block, char a2);
 void __thiscall meth_unk00438_deinit(unk00438 *this); // idb
-void __thiscall meth_unk00438_1005B0D0(unk00438 *this, int unusedA2);
-void __thiscall meth_unk00438_1005B160(unk00438 *this, int a2);
-double __thiscall meth_unk00438_1005B200(unk00438 *this);                    // idb
-DWORD __thiscall meth_unk00438_1005B250(unk00438 *this, float a2, float a3); // idb
-int __thiscall meth_unk00438_1005B2B0(unk00438 *this);                       // idb
-int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3);     // idb
-int __thiscall meth_unk00438_1005B460(unk00438 *this);                       // idb
+void __thiscall meth_unk00438_1(unk00438 *this, int unusedA2);
+void __thiscall meth_unk00438_2(unk00438 *this, int a2);
+double __thiscall meth_unk00438_10(unk00438 *this);                   // idb
+DWORD __thiscall meth_unk00438_9(unk00438 *this, float a2, float a3); // idb
+int __thiscall meth_unk00438_4(unk00438 *this);                       // idb
+int __thiscall meth_unk00438_3(unk00438 *this, float a2, int a3);     // idb
+int __thiscall meth_unk00438_11(unk00438 *this);                      // idb
 char __cdecl sub_1005B540(int a1);
-char __thiscall meth_unk00438_1005B570(unk00438 *this); // idb
-int __thiscall meth_unk00438_1005B730(
-    unk00438 *this, __int16 a2, float a3, float a4, int a5); // idb
-int __thiscall meth_unk00438_1005B7A0(unk00438 *this, float a2, float a3, int a4);
-int __thiscall meth_unk00438_1005B7E0(unk00438 *this, int a2, int a3);
+char __thiscall meth_unk00438_5(unk00438 *this);                                        // idb
+int __thiscall meth_unk00438_6(unk00438 *this, __int16 a2, float a3, float a4, int a5); // idb
+int __thiscall meth_unk00438_8(unk00438 *this, float a2, float a3, int a4);
+int __thiscall meth_unk00438_7(unk00438 *this, int a2, int a3);
 unk1A5E0 *__thiscall meth_unk1A5E0_init(unk1A5E0 *this);
-unk1A5E0 *__thiscall meth_unk1A5E0_1005B8D0(unk1A5E0 *this, char a2); // idb
-void __thiscall meth_1005B8F0(unk1A5E0 *this);                        // idb
-int __thiscall meth_unk1A5E0_1005B910(
-    unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6); // idb
-int __thiscall meth_unk1A5E0_1005BB80(unk1A5E0 *this, int a2);            // idb
-int __thiscall meth_unk1A5E0_1005BC10(
-    unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);                    // idb
-int __thiscall meth_unk1A5E0_1005C000(unk1A5E0 *this, int a2);                        // idb
-int __thiscall meth_unk1A5E0_1005C200(unk1A5E0 *this, char *a2, size_t Size, int a4); // idb
-int __thiscall meth_unk1A5E0_1005C270(unk1A5E0 *this, float a2, float a3);
-int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index);  // idb
-int __thiscall meth_unk1A5E0_1005C510(unk1A5E0 *this, _DWORD *a2); // idb
-int __thiscall meth_unk1A5E0_1005C590(unk1A5E0 *this, int *a2);    // idb
-int __thiscall meth_unk1A5E0_1005CB40(unk1A5E0 *this, int index);  // idb
+unk1A5E0 *__thiscall meth_unk1A5E0_0(unk1A5E0 *this, char a2); // idb
+void __thiscall meth_unk1A5E0_1005B8F0(unk1A5E0 *this);        // idb
+int __thiscall meth_unk1A5E0_5(
+    unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);                     // idb
+int __thiscall meth_unk1A5E0_9(unk1A5E0 *this, int a2);                                       // idb
+int __thiscall meth_unk1A5E0_4(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6); // idb
+int __thiscall meth_unk1A5E0_11(unk1A5E0 *this, int a2);                                      // idb
+int __thiscall meth_unk1A5E0_10(unk1A5E0 *this, char *a2, size_t Size, int a4);               // idb
+int __thiscall meth_unk1A5E0_1(unk1A5E0 *this, float a2, float a3);
+int __thiscall meth_unk1A5E0_2(unk1A5E0 *this, int index);  // idb
+int __thiscall meth_unk1A5E0_6(unk1A5E0 *this, _DWORD *a2); // idb
+int __thiscall meth_unk1A5E0_7(unk1A5E0 *this, int *a2);    // idb
+int __thiscall meth_unk1A5E0_8(unk1A5E0 *this, int index);  // idb
 unk06594 *__thiscall meth_unk06594_init(unk06594 *this);
-unk06594 *__thiscall meth_unk06594_1005CBF0(unk06594 *Block, char a2);
+unk06594 *__thiscall meth_unk06594_0(unk06594 *Block, char a2);
 void __thiscall meth_unk06594_SetVtbl(unk06594 *this); // idb
-int __thiscall meth_unk06594_1005CC20(unk06594 *this);
-int __thiscall meth_unk06594_1005CCD0(unk06594 *this, __int16 a1);
-int __thiscall meth_unk06594_1005CE30(unk06594 *this, const char *a2);
-int __thiscall meth_unk06594_1005CF20(unk06594 *this, char *lpFileName); // idb
-int __thiscall meth_unk06594_1005D0A0(unk06594 *, LPCSTR lpFileName);
-int __thiscall meth_unk06594_1005D110(unk06594 *this, char *Str1, int a3); // idb
+int __thiscall meth_unk06594_4(unk06594 *this);
+int __thiscall meth_unk06594_5(unk06594 *this, __int16 a1);
+int __thiscall meth_unk06594_6(unk06594 *this, const char *a2);
+int __thiscall meth_unk06594_1(unk06594 *this, char *lpFileName); // idb
+int __thiscall meth_unk06594_2(unk06594 *, LPCSTR lpFileName);
+int __thiscall meth_unk06594_3(unk06594 *this, char *Str1, int a3); // idb
 int sub_1005D440();
 int sub_1005F4E0();
 IDirectDraw2 *sub_1005F530();
@@ -1354,10 +1355,10 @@ LRESULT __stdcall sub_10060060(
 int __stdcall sub_10060210(HWND a1);                                               // idb
 LPDIRECTINPUTDEVICEA sub_10060260();
 unk00054 *__thiscall meth_unk00054_init(unk00054 *this);
-LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(#492 * this);
-int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd); // idb
-LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd);       // idb
-LPDIRECTINPUTDEVICEA __thiscall meth_10060750(unk00054 *this, int a2);       // idb
+LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_100602B0(unk00054 *this);            // idb
+int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd);       // idb
+LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_100603A0(unk00054 *this, HWND hwnd); // idb
+LPDIRECTINPUTDEVICEA __thiscall meth_10060750(unk00054 *this, int a2);             // idb
 // __int16 __usercall sub_10060780@<ax>(int a1@<ebx>, char *a2, unsigned int a3, char a4);
 int __cdecl sub_100607B0(int a1, int a2);
 int __cdecl sub_100609E0(int a1);
@@ -1617,11 +1618,11 @@ int __thiscall meth_10073C40(_DWORD *this);
 unsigned int __thiscall meth_10073C90(int *this, int a2);
 int __thiscall meth_10073D20(_DWORD *this);
 BOOL __thiscall meth_10073D40(_DWORD *this);
-int __thiscall meth_unk00214_10073D60(unk00214 *this, char a2);    // idb
+int __thiscall meth_unk00214_10073D60(unk00214 *this, char a2);
 int __thiscall meth_unk00214_10073D80(unk00214 *this, __int16 a2); // idb
 int __thiscall meth_unk00214_10073DC0(unk00214 *this, int a2);     // idb
 int __thiscall meth_unk00214_10073E10(unk00214 *this, int a2);     // idb
-int __thiscall meth_10073E70(_DWORD *this, int a2, int a3);
+int __thiscall meth_unk00214_10073E70(_DWORD *this, int a2, int a3);
 int __thiscall meth_unk00214_10073F20(unk00214 *this); // idb
 int __thiscall meth_unk00214_10073F40(unk00214 *this); // idb
 int *__thiscall meth_unk00214_GetField10(unk00214 *this);
@@ -1661,7 +1662,7 @@ BOOL __cdecl sub_10074F70(int a1, int a2);
 BOOL sub_10074FC0();
 DWORD getTicks();
 int sub_100750F0();
-unsigned int sub_10075100();
+DWORD sub_10075100();
 int sub_10075150();
 DWORD __thiscall meth_10075190(int this);
 int __cdecl sub_10075260(__int16 a1, int a2, int a3, int a4, int a5);
@@ -2125,67 +2126,73 @@ PodVtbl gPodVtbl = {&meth_Pod_100085C0,
                     &meth_Pod_LoadPod,
                     &meth_Pod_ReadPodFile,
                     &meth_Pod_100089C0,
-                    &meth_Pod_10008A00,
+                    &meth_Pod_Add,
                     &meth_Pod_10008AA0,
                     &meth_Pod_CleanUpPod};
 int dword_1008F538 = -1363573792; // weak
-unk1E214Vtbl gUnk1E214Vtbl1 = {&meth_1E214_100478A0,
-                               &meth_unk1E214_100480A0,
-                               &meth_unk1E214_10048010,
-                               &meth_unk1E214_10048180,
-                               &meth_unk1E214_10047A10,
-                               &meth_unk1E214_100479D0,
-                               &meth_unk1E214_10047980,
-                               &meth_unk1E214_10047930,
-                               &meth_unk1E214_10047A60,
-                               &meth_unk1E214_10047CB0,
-                               &meth_unk1E214_10047CE0,
-                               &meth_unk1E214_10047D10,
-                               &meth_unk1E214_10047D30,
-                               &meth_unk1E214_10047EB0,
-                               &meth_unk1E214_10047FB0,
-                               &meth_unk1E214_10048060};
-unk00348Vtbl gUnk00348Vtbl = {&meth_unk00348_100484C0, &meth_unk00348_10048530};
-unk000C8Vtbl gUnkC8Vtbl = {&meth_unk000C8_10048850,
-                           &meth_unk000C8_100488B0,
-                           &meth_unk000C8_100488C0,
-                           &meth_unk000C8_100489A0,
-                           &meth_unk000C8_1005AE70,
-                           &meth_unk000C8_10048960,
-                           &meth_unk000C8_10048B20,
-                           &meth_unk000C8_10048AA0,
-                           &meth_unk000C8_1005AFA0};
-unk00438Vtbl gUnk00438Vtbl = {&meth_unk00438_1005B0A0,
-                              &meth_unk00438_1005B0D0,
-                              &meth_unk00438_1005B160,
-                              &meth_unk00438_1005B390,
-                              &meth_unk00438_1005B2B0,
-                              &meth_unk00438_1005B570,
-                              &meth_unk00438_1005B730,
-                              &meth_unk00438_1005B7E0,
-                              &meth_unk00438_1005B7A0,
-                              &meth_unk00438_1005B250,
-                              &meth_unk00438_1005B200,
-                              &meth_unk00438_1005B460};
-unk1A5E0Vtbl gUnk1A5E0Vtbl = {&meth_unk1A5E0_1005B8D0,
-                              &meth_unk1A5E0_1005C270,
-                              &meth_unk1A5E0_1005C2C0,
-                              &meth_unk1A5E0_10042AF0,
-                              &meth_unk1A5E0_1005BC10,
-                              &meth_unk1A5E0_1005B910,
-                              &meth_unk1A5E0_1005C510,
-                              &meth_unk1A5E0_1005C590,
-                              &meth_unk1A5E0_1005CB40,
-                              &meth_unk1A5E0_1005BB80,
-                              &meth_unk1A5E0_1005C200,
-                              &meth_unk1A5E0_1005C000};
-unk06594Vtbl gUnk06594Vtbl = {&meth_unk06594_1005CBF0,
-                              &meth_unk06594_1005CF20,
-                              &meth_unk06594_1005D0A0,
-                              &meth_unk06594_1005D110,
-                              &meth_unk06594_1005CC20,
-                              &meth_unk06594_1005CCD0,
-                              &meth_unk06594_1005CE30};
+unk1E214Vtbl gUnk1E214Vtbl1 = {&meth_1E214_0,
+                               &meth_unk1E214_1,
+                               &meth_unk1E214_2,
+                               &meth_unk1E214_3,
+                               &meth_unk1E214_4,
+                               &meth_unk1E214_5,
+                               &meth_unk1E214_6,
+                               &meth_unk1E214_7,
+                               &meth_unk1E214_8,
+                               &meth_unk1E214_9,
+                               &meth_unk1E214_10,
+                               &meth_unk1E214_11,
+                               &meth_unk1E214_12,
+                               &meth_unk1E214_13,
+                               &meth_unk1E214_14,
+                               &meth_unk1E214_15};
+unk00348Vtbl gUnk00348Vtbl = {&meth_unk00348_0, &meth_unk00348_1};
+unk000C8Vtbl gUnkC8Vtbl = {&meth_unk000C8_0,
+                           &meth_unk000C8_1,
+                           &meth_unk000C8_2,
+                           &meth_unk000C8_3,
+                           &meth_unk000C8_4,
+                           &meth_unk000C8_5,
+                           &meth_unk000C8_6,
+                           &meth_unk000C8_7,
+                           &meth_unk000C8_8};
+unk00438Vtbl gUnk00438Vtbl = {&meth_unk00438_0,
+                              &meth_unk00438_1,
+                              &meth_unk00438_2,
+                              &meth_unk00438_3,
+                              &meth_unk00438_4,
+                              &meth_unk00438_5,
+                              &meth_unk00438_6,
+                              &meth_unk00438_7,
+                              &meth_unk00438_8,
+                              &meth_unk00438_9,
+                              &meth_unk00438_10,
+                              &meth_unk00438_11};
+unk1A5E0Vtbl gUnk1A5E0Vtbl = {&meth_unk1A5E0_0,
+                              &meth_unk1A5E0_1,
+                              &meth_unk1A5E0_2,
+                              &meth_unk1A5E0_3,
+                              &meth_unk1A5E0_4,
+                              &meth_unk1A5E0_5,
+                              &meth_unk1A5E0_6,
+                              &meth_unk1A5E0_7,
+                              &meth_unk1A5E0_8,
+                              &meth_unk1A5E0_9,
+                              &meth_unk1A5E0_10,
+                              &meth_unk1A5E0_11};
+unk06594Vtbl gUnk06594Vtbl = {&meth_unk06594_0,
+                              &meth_unk06594_1,
+                              &meth_unk06594_2,
+                              &meth_unk06594_3,
+                              &meth_unk06594_4,
+                              &meth_unk06594_5,
+                              &meth_unk06594_6};
+GUID CLSID_IDirect3DRGBDevice = {
+    2758171744u, 9843u, 4559u, {163u, 26u, 0u, 170u, 0u, 185u, 51u, 86u}}; // idb
+GUID CLSID_IDirect3DMMXDevice = {
+    2283358625u, 55027u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
+GUID CLSID_IDirect3DTexture2 = {
+    2468877570u, 36088u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
 const IID IID_IDirectPlay3A = {
     322895425u, 13020u, 4560u, {156u, 251u, 0u, 160u, 201u, 10u, 67u, 203u}}; // idb
 IID IID_IDirectPlay4A = {
@@ -2583,7 +2590,6 @@ char aDperrUnsupport[18] = "DPERR_UNSUPPORTED";                                 
 char aDperrPending[14] = "DPERR_PENDING";                                                   // weak
 char aE_0[2] = "Ê";                                                                         // weak
 int dword_100AB334[] = {0};                                                                 // weak
-_UNKNOWN unk_100AB338;                                                                      // weak
 int dword_100AB3D8 = 1;                                                                     // weak
 __int16 word_100AB3DC = 1;                                                                  // weak
 int dword_100AB3E0 = -1;                                                                    // weak
@@ -2613,11 +2619,9 @@ _UNKNOWN unk_100AB488;                                                          
 _UNKNOWN unk_100AB498;                                                                      // weak
 _UNKNOWN unk_100AB4A8;                                                                      // weak
 _UNKNOWN unk_100AB4B8;                                                                      // weak
-_UNKNOWN unk_100AB4C8;                                                                      // weak
 int dword_100AB4D8[4] = {188, 130, 300, 225};                                               // idb
-_UNKNOWN unk_100AB4F8;                                                                      // weak
 _UNKNOWN unk_100AB508;                                                                      // weak
-_UNKNOWN unk_100AB558;                                                                      // weak
+_UNKNOWN unk_100AB528;                                                                      // weak
 __int16 word_100AB568[] = {0};                                                              // weak
 int dword_100AB56C[4] = {0, 0, 640, 480};                                                   // idb
 int dword_100AB57C[30] = {0, 1,   0,   0, 28, 30, 1, 2,   0,   0, 128, 144, 1, 3,   0,
@@ -3540,7 +3544,6 @@ int dword_100C0CE8 = -1;                                                        
 int dword_100C0CEC = 0;                                                                  // weak
 int dword_100C0CF0 = 0;                                                                  // weak
 int dword_100C129C = 0;                                                                  // weak
-_UNKNOWN unk_100C12A0;                                                                   // weak
 char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
@@ -3551,127 +3554,128 @@ char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
 
-};                           // idb
-_UNKNOWN unk_1020AB98;       // weak
-int dword_10220B20;          // weak
-int dword_10220B24;          // weak
-int dword_10220B28;          // weak
-int dword_10220B2C;          // weak
-int dword_10220B30;          // weak
-int dword_10220B34;          // weak
-int dword_10220B38;          // weak
-char byte_10220B3C;          // weak
-__int16 word_10220B40;       // weak
-int dword_10220B44;          // weak
-int playParmsPlayTo;         // weak
-int dword_10220C3C;          // weak
-MCIDEVICEID mciId;           // idb
-int dword_10220C44;          // weak
-int dword_10220C48;          // weak
-HWND hWnd;                   // idb
-__int16 word_10220C50;       // weak
-__int16 word_10220C52;       // weak
-int dword_10220C54;          // weak
-int g_WPARAM;                // weak
-__int16 word_10220C5C;       // weak
-__int16 word_10220C5E;       // weak
-__int16 word_10220C60;       // weak
-__int16 word_10220C62;       // weak
-int dword_10220C64;          // weak
-int dword_10220C68;          // weak
-int dword_10220C6C;          // weak
-int dword_10220C70;          // weak
-int dword_10220C74;          // weak
-__int16 word_10220C78;       // weak
-__int16 word_10220C7A;       // weak
-int dword_10220C7C;          // weak
-int dword_10220C80;          // weak
-int dword_10220C84;          // weak
-int dword_10220C88;          // weak
-__int16 word_10220C8C;       // weak
-__int16 word_10220C8E;       // weak
-__int16 word_10220C90;       // weak
-__int16 word_10220C92;       // weak
-__int16 word_10220C94;       // weak
-__int16 word_10220C96;       // weak
-int dword_10220C98;          // weak
-__int16 word_10220C9C;       // weak
-__int16 word_10220C9E;       // weak
-int dword_10220CA0;          // weak
-int dword_10220CA4;          // weak
-int dword_10220CA8;          // weak
-int dword_10220CAC;          // weak
-int dword_10220CB0;          // weak
-int dword_10220CB4;          // weak
-int dword_10220CB8;          // weak
-int dword_10220CBC;          // weak
-__int16 word_10220CC0;       // weak
-__int16 word_10220CC2;       // weak
-__int16 word_10220CC4;       // weak
-__int16 word_10220CC6;       // weak
-__int16 word_10220CC8;       // weak
-__int16 word_10220CCA;       // weak
-__int16 word_10220CCC;       // weak
-int dword_10220CD0;          // weak
-int dword_10220CD4;          // weak
-int dword_10220CD8;          // weak
-char byte_10220CDC;          // weak
-int debugOutput;             // weak
-HANDLE g_hMutex_8;           // idb
-float flt_10220CF0[30];      // idb
-float flt_10220D68;          // weak
-int dword_10220D90[16];      // idb
-int dword_10220DD0;          // weak
-int dword_10220DD4;          // weak
-int dword_10220DD8;          // weak
-HANDLE g_hMutex_6;           // idb
-float flt_10220E60;          // weak
-float flt_10220E64;          // weak
-float flt_10220E68;          // weak
-float flt_10220E6C;          // weak
-float flt_10220E70;          // weak
-float flt_10220E74;          // weak
-float flt_10220E78;          // weak
-char byte_10220E80;          // weak
-int dword_10221280;          // weak
-int dword_10221288[16];      // idb
-int gCPlayers;               // weak
-int dword_102212D0[16];      // idb
-int dword_10221310;          // weak
-int dword_10221314;          // weak
-int dword_10221318;          // weak
-HANDLE g_hMutex_7;           // idb
-int gBcar;                   // weak
-HANDLE g_hMutex_4;           // idb
-int dword_10221328[];        // weak
-int dword_1022132C[];        // weak
-int dword_10221330[];        // weak
-int dword_10221334[8];       // idb
-int dword_10221354[];        // weak
-int dword_10221358[];        // weak
-char byte_1022135C[];        // weak
-char byte_1022135D[];        // weak
-char byte_1022135E[];        // weak
-int dword_10221360[];        // weak
-float flt_10221380[320];     // idb
-int dword_10221880[];        // weak
-int dword_10221884[];        // weak
-int dword_10221888[];        // weak
-int dword_1022188C[];        // weak
-int dword_10221890[];        // weak
-int dword_10221894[];        // weak
-char byte_10221898[1024];    // idb
-int dword_10221C98[];        // weak
-int dword_10221C9C[9091];    // idb
-int dword_1022AAA8;          // weak
+};                      // idb
+int gGameMode1;         // weak
+int dword_10220B24;     // weak
+int dword_10220B28;     // weak
+int dword_10220B2C;     // weak
+int gChosenTrack1;      // weak
+int gChosenWeather2;    // weak
+int dword_10220B38;     // weak
+char byte_10220B3C;     // weak
+__int16 word_10220B40;  // weak
+int dword_10220B44;     // weak
+_UNKNOWN unk_10220B7C;  // weak
+int playParmsPlayTo;    // weak
+int dword_10220C3C;     // weak
+MCIDEVICEID mciId;      // idb
+int dword_10220C44;     // weak
+int dword_10220C48;     // weak
+HWND hWnd;              // idb
+__int16 word_10220C50;  // weak
+__int16 word_10220C52;  // weak
+int dword_10220C54;     // weak
+int g_WPARAM;           // weak
+__int16 word_10220C5C;  // weak
+__int16 word_10220C5E;  // weak
+__int16 word_10220C60;  // weak
+__int16 word_10220C62;  // weak
+int dword_10220C64;     // weak
+int dword_10220C68;     // weak
+int dword_10220C6C;     // weak
+int dword_10220C70;     // weak
+int dword_10220C74;     // weak
+__int16 word_10220C78;  // weak
+__int16 word_10220C7A;  // weak
+int dword_10220C7C;     // weak
+int dword_10220C80;     // weak
+int dword_10220C84;     // weak
+int dword_10220C88;     // weak
+__int16 word_10220C8C;  // weak
+__int16 word_10220C8E;  // weak
+__int16 word_10220C90;  // weak
+__int16 word_10220C92;  // weak
+__int16 word_10220C94;  // weak
+__int16 word_10220C96;  // weak
+int dword_10220C98;     // weak
+__int16 word_10220C9C;  // weak
+__int16 word_10220C9E;  // weak
+int dword_10220CA0;     // weak
+int dword_10220CA4;     // weak
+int dword_10220CA8;     // weak
+int dword_10220CAC;     // weak
+int dword_10220CB0;     // weak
+int dword_10220CB4;     // weak
+int dword_10220CB8;     // weak
+int dword_10220CBC;     // weak
+__int16 word_10220CC0;  // weak
+__int16 word_10220CC2;  // weak
+__int16 word_10220CC4;  // weak
+__int16 word_10220CC6;  // weak
+__int16 word_10220CC8;  // weak
+__int16 word_10220CCA;  // weak
+__int16 word_10220CCC;  // weak
+int dword_10220CD0;     // weak
+int dword_10220CD4;     // weak
+int dword_10220CD8;     // weak
+char byte_10220CDC;     // weak
+int debugOutput;        // weak
+HANDLE gMutex8;         // idb
+float flt_10220CF0[30]; // idb
+float flt_10220D68;     // weak
+int dword_10220D90[16]; // idb
+int dword_10220DD0;     // weak
+int dword_10220DD4;     // weak
+int dword_10220DD8;     // weak
+HANDLE gMutex6;         // idb
+float flt_10220E60;     // weak
+float flt_10220E64;     // weak
+float flt_10220E68;     // weak
+float flt_10220E6C;     // weak
+float flt_10220E70;     // weak
+float flt_10220E74;     // weak
+float flt_10220E78;     // weak
+char byte_10220E80;     // weak
+int dword_10221280;     // weak
+int dword_10221288[16]; // idb
+int gCPlayers;          // weak
+int dword_102212D0[16]; // idb
+int dword_10221310;     // weak
+int dword_10221314;     // weak
+int dword_10221318;     // weak
+HANDLE gMutex7;         // idb
+int gBcar;              // weak
+HANDLE gMutex3;         // idb
+HANDLE gMutexes[];
+int unk_1022132C[];       // idb
+int unk_10221330[];       // idb
+int unk_10221334[8];      // idb
+int unk_10221354[];       // idb
+int unk_10221358[];       // idb
+char unk_1022135C[];      // idb
+char unk_1022135D[];      // idb
+char unk_1022135E[];      // idb
+int dword_10221360[8];    // idb
+float unk_10221380[320];  // idb
+int dword_10221880[];     // weak
+int dword_10221884[];     // weak
+int dword_10221888[];     // weak
+int dword_1022188C[];     // weak
+int dword_10221890[];     // weak
+int dword_10221894[];     // weak
+char byte_10221898[1024]; // idb
+int dword_10221C98[];     // weak
+int dword_10221C9C[9091]; // idb
+HANDLE gMutexesEnd;
 int dword_1022AAB0[];        // weak
 int dword_1022AAB4[15];      // idb
+_UNKNOWN unk_1022AAF0;       // weak
 int dword_1022AAF4;          // weak
 char byte_1022AAF8[1024];    // idb
 int dword_1022AEF8;          // weak
-int dword_1022AEFC;          // weak
+int dword_1022AEFC;          // idb
 int dword_1022AF00;          // weak
-HANDLE g_hMutex_5;           // idb
+HANDLE gMutex5;              // idb
 int dword_1022AF08;          // weak
 int gBsuspension;            // weak
 int gBtire;                  // weak
@@ -3679,11 +3683,11 @@ int gIsGameMode4;            // weak
 int gNetworkPlay;            // weak
 int dword_1022AF1C;          // weak
 int dword_1022AF20;          // weak
-HANDLE hMutex;               // idb
-HANDLE g_hMutex_0;           // idb
-HANDLE g_hMutex_1;           // idb
-HANDLE g_hMutex_2;           // idb
-HANDLE hMutex_3;             // idb
+HANDLE gMutex9;              // idb
+HANDLE gMutex0;              // idb
+HANDLE gMutex1;              // idb
+HANDLE gMutex2;              // idb
+HANDLE gMutex4;              // idb
 int dword_1022AF38;          // weak
 int dword_1022AF3C;          // weak
 int dword_1022AF40;          // weak
@@ -3691,6 +3695,7 @@ char gBossRallyIniPath[208]; // idb
 int g_dwTotalPhys;           // weak
 int gChosenCar;              // weak
 int gChosenWeather0;         // weak
+_UNKNOWN unk_1022B358;       // weak
 int dword_10277358;          // weak
 FILE *dword_1027735C;        // idb
 IDirect3DDevice2 *g_D3DDevice2;
@@ -3819,7 +3824,6 @@ float flt_1039B73C;                           // weak
 char Buffer[28];                              // idb
 int dword_1039B75C;                           // weak
 int dword_1039B760[];                         // weak
-_UNKNOWN unk_1039B7C4;                        // weak
 float flt_1039C168[];                         // weak
 float flt_1039C16C;                           // weak
 float flt_1039C170;                           // weak
@@ -3880,8 +3884,6 @@ float flt_1039E9A0;                           // weak
 float flt_1039E9A4;                           // weak
 float flt_1039E9A8;                           // weak
 float flt_1039E9B0;                           // weak
-_UNKNOWN unk_1039E9F8;                        // weak
-_UNKNOWN unk_103C77E8;                        // weak
 int dword_103C7840[];                         // weak
 _WORD word_103C7844[381414];                  // idb
 int dword_104ADCF0;                           // weak
@@ -4201,7 +4203,6 @@ int dword_1068093C;          // weak
 int dword_10680940;          // weak
 unsigned int C;              // idb
 int dword_10680948;          // weak
-_UNKNOWN unk_10680950;       // weak
 int dword_106909B0;          // weak
 int dword_106909B4;          // weak
 int dword_106909B8;          // weak
@@ -4303,6 +4304,7 @@ int dword_106C1170;          // weak
 int dword_106C1174;          // weak
 int dword_106C1178;          // weak
 char byte_106C1580;          // weak
+_UNKNOWN unk_106C1588;       // weak
 int dword_106C1608;          // weak
 int dword_106C1610;          // weak
 char byte_106C1614;          // weak
@@ -4311,7 +4313,6 @@ int dword_106C161C;          // weak
 int dword_106C1620;          // weak
 _DWORD dword_106C1628[4];    // idb
 int dword_106C1638;          // weak
-_UNKNOWN unk_106C163C;       // weak
 int dword_106C1690;          // weak
 __int16 word_106C1788[];     // weak
 __int16 word_106C178A[];     // weak
@@ -4347,6 +4348,7 @@ int dword_106C2CF0;          // weak
 int dword_106C2CF4;          // weak
 int dword_106C2CF8;          // weak
 int dword_106C2CFC;          // weak
+_UNKNOWN unk_106C2D0F;       // weak
 int dword_106C32CC;          // weak
 int dword_106C32D0;          // weak
 int dword_106C3308;          // weak
@@ -4818,14 +4820,8 @@ int dword_10ACEEB0;         // weak
 char byte_10ACEEB4[24];     // idb
 int dword_10AD05DC[];       // weak
 int dword_10AD05E0[];       // weak
-_UNKNOWN unk_10AD05E4;      // weak
 float flt_10AD061C;         // weak
-_UNKNOWN unk_10AD0628;      // weak
-_UNKNOWN unk_10AD066C;      // weak
-_UNKNOWN unk_10AD06B0;      // weak
-_UNKNOWN unk_10AD0738;      // weak
 __int16 word_10AD07B4[32];  // idb
-_UNKNOWN unk_10AD07F4;      // weak
 int dword_10AD084C[];       // weak
 int dword_10AD0850[];       // weak
 char byte_10AD0854[];       // weak
@@ -4848,16 +4844,18 @@ int dword_10AD18A4;         // weak
 int dword_10AD18A8;         // weak
 int dword_10AD18AC;         // weak
 float flt_10AD1A04;         // weak
-_UNKNOWN unk_10AD1A08;      // weak
 int dword_10AD33C4;         // weak
 int dword_10AD33D0;         // weak
 char byte_10AD34F8[128];
 int dword_10AF9528;     // weak
 float flt_10AF953C[18]; // idb
 float flt_10AF959C[23]; // idb
+_UNKNOWN unk_10AF9658;  // weak
 int dword_10AF96B8;     // weak
 int dword_10AF96BC;     // weak
 int dword_10AF96C0;     // weak
+_UNKNOWN unk_10AF96C8;  // weak
+_UNKNOWN unk_10AF96D4;  // weak
 int dword_10AF9728[];   // weak
 float flt_10AF9740[15]; // idb
 float flt_10AF9794[18]; // idb
@@ -4866,7 +4864,6 @@ float flt_10AF97F4[21]; // idb
 char byte_10AF9848[64]; // idb
 int dword_10AF9888;     // weak
 int dword_10AF988C;     // weak
-_UNKNOWN unk_10AF9890;  // weak
 int dword_10AF9B28;     // weak
 int dword_10AF9B2C;     // weak
 int dword_10AF9B30;     // weak
@@ -4899,7 +4896,6 @@ int dword_10AF9BAC;     // weak
 int dword_10AF9BB0;     // weak
 int dword_10AF9BB4;     // weak
 int dword_10AF9BB8;     // weak
-_UNKNOWN unk_10AFBEE8;  // weak
 int dword_10B01C40;     // weak
 int dword_10B01C44;     // weak
 int dword_10B01C48;     // weak
@@ -4979,8 +4975,6 @@ int dword_117554DC;                     // weak
 int dword_117554E0;                     // weak
 int dword_117554E4;                     // weak
 int dword_117554E8;                     // weak
-_UNKNOWN unk_117554F0;                  // weak
-_UNKNOWN unk_117644F0;                  // weak
 __int16 word_11782BA8[];                // weak
 __int16 word_11782BAC[];                // weak
 __int16 word_11782BB0[];                // weak
@@ -4991,7 +4985,7 @@ __int16 word_11782BC0;                  // weak
 char aCRallyghostDatFilepath[264];      // idb
 char aCRallyseasonDatFilepath_ptr[268]; // idb
 char byte_11782DDC;                     // weak
-char gBuffer[];                         // idb
+char gBuffer0[];                        // idb
 void *dword_11782E2C;                   // idb
 int dword_11782E30;                     // weak
 HANDLE dword_11786828;                  // idb
@@ -5003,8 +4997,10 @@ char byte_1178685C[];                   // weak
 char byte_1178685D[];                   // weak
 char byte_1178685E[];                   // weak
 int dword_11786860[];                   // weak
+_UNKNOWN unk_11786880;                  // weak
 float flt_117868F8[290];                // idb
 int dword_11786D80[];                   // weak
+_UNKNOWN unk_11786D84;                  // weak
 int dword_11787184[];                   // weak
 int dword_11787188[];                   // weak
 int dword_1178718C[];                   // weak
@@ -5015,6 +5011,7 @@ int dword_1178FEF0;                     // weak
 int dword_1178FEF8[];                   // weak
 int dword_1178FEFC[];                   // weak
 int dword_1178FF00[];                   // weak
+_UNKNOWN unk_1178FF14;                  // weak
 int dword_1178FF24[];                   // weak
 int dword_1178FF28[];                   // weak
 char byte_1178FF2C[];                   // weak
@@ -5132,6 +5129,8 @@ int dword_118AB12C;                           // weak
 int performanceSomething;                     // weak
 int dword_118AB134;                           // weak
 int dword_118AB144;                           // weak
+_UNKNOWN unk_118AB150;                        // weak
+_UNKNOWN unk_118AB160;                        // weak
 int dword_118AB470;                           // weak
 DIEFFECT gDIEffectSpring;
 char byte_118AB8B8[];             // weak
@@ -5200,20 +5199,19 @@ int gDirectInputEffect0Stopped; // weak
 IDirectInputEffect *gDirectInputEffect;
 int dword_118ABE00; // weak
 unk00334 *gUnk334;
-HINSTANCE hInstance;                               // idb
-HACCEL hAccTable;                                  // idb
-HCURSOR hCursor;                                   // idb
-int dword_118ABE2C;                                // weak
-int dword_118AC230;                                // weak
-int dword_118AC234;                                // weak
-_BYTE *dword_118AC238;                             // idb
-int dword_118AC23C;                                // weak
-int dword_118AC240;                                // weak
+HINSTANCE hInstance; // idb
+HACCEL hAccTable;    // idb
+HCURSOR hCursor;     // idb
+int dword_118ABE2C;  // weak
+int dword_118AC230;  // weak
+int dword_118AC234;  // weak
+unk00334 *gUnk00334Ptr1;
+CLSID *dword_118AC23C;
+unk00334 *gUnk00334Ptr0;
 void *Base;                                        // idb
 int dword_118AC2D0;                                // weak
 int dword_118AC608;                                // weak
 struct _TIME_ZONE_INFORMATION TimeZoneInformation; // idb
-_UNKNOWN unk_118AC70C;                             // weak
 int dword_118AC720[];                              // weak
 int dword_118AC728[];                              // weak
 int dword_118AC72C[];                              // weak
@@ -5230,7 +5228,6 @@ int dword_118AC77C;                                // weak
 int dword_118AC788;                                // weak
 int dword_118AC78C;                                // weak
 int dword_118AC794;                                // weak
-_UNKNOWN unk_118AC898;                             // weak
 
 //----- (10001000) --------------------------------------------------------
 unsigned int __cdecl CalculateChecksum(unsigned int seed,
@@ -5943,26 +5940,26 @@ int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds) {
 }
 
 //----- (10002140) --------------------------------------------------------
-int sub_10002140() {
-    int v0;         // eax
-# 505 * v1;         // ebp
-    char *v2;       // eax
-# 505 ** v3;        // edx
-    void *v4;       // edi
-    const void *v5; // esi
-    int v6;         // ecx
+Car *sub_10002140() {
+    enum MACRO_GAME_MODE v0; // eax
+# 505 * v1;                  // ebp
+    char *v2;                // eax
+# 505 ** v3;                 // edx
+    void *v4;                // edi
+    const void *v5;          // esi
+    int v6;                  // ecx
 
-    memset(&dword_10220B20, 0, 0x118u);
+    memset(&gGameMode1, 0, 0x118u);
     v0 = gGameMode;
-    dword_10220B20 = gGameMode;
-    if (!gGameMode) {
+    gGameMode1 = gGameMode;
+    if (gGameMode == GAME_MODE_0) {
         v1 = dword_10ACED34;
         LOBYTE(v0) = *((_BYTE *)dword_10ACED34 + 4);
         dword_10220B24 = v0;
         dword_10220B28 = *((unsigned __int8 *)dword_10ACED34 + 5);
         dword_10220B2C = *(_DWORD *)dword_10ACED34;
-        dword_10220B30 = gChosenTrack;
-        dword_10220B34 = gChosenWeather1;
+        gChosenTrack1 = gChosenTrack;
+        gChosenWeather2 = gChosenWeather1;
         v2 = &byte_10220B3C;
         v3 = &dword_10ACED34;
         do {
@@ -5985,17 +5982,16 @@ int sub_10002140() {
     }
     return sub_10035BD1();
 }
-// 100AA010: using guessed type int g_GameMode;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 100B4050: using guessed type int dword_100B4050;
-// 10220B20: using guessed type int dword_10220B20;
+// 10220B20: using guessed type int gGameMode1;
 // 10220B24: using guessed type int dword_10220B24;
 // 10220B28: using guessed type int dword_10220B28;
 // 10220B2C: using guessed type int dword_10220B2C;
-// 10220B30: using guessed type int dword_10220B30;
-// 10220B34: using guessed type int dword_10220B34;
+// 10220B30: using guessed type int gChosenTrack1;
+// 10220B34: using guessed type int gChosenWeather2;
 // 10220B3C: using guessed type char byte_10220B3C;
-// 104BBE08: using guessed type int dword_104BBE08;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 10AA26F0: using guessed type int dword_10AA26F0;
 
 //----- (10002240) --------------------------------------------------------
@@ -6599,12 +6595,11 @@ int __cdecl sub_10002DE0(float a1, float a2) {
     if (a1 < 0.0 || a1 >= 2048.0 || a2 < 0.0 || a2 >= 2048.0)
         return 0;
     v2 = (unsigned __int8)(__int64)(a1 * 0.03125) + ((unsigned __int8)(__int64)(a2 * 0.03125) << 6);
-    return *(unsigned __int16 *)(MEMORY[0x106C7C6C] + 2 * v2) |
-           ((0xFFFF * *(unsigned __int16 *)(MEMORY[0x106C7C6C] + 2 * v2) +
-             *(unsigned __int16 *)(MEMORY[0x106C7C6C] + 2 * (unsigned __int16)(v2 + 1)))
+    return *(unsigned __int16 *)(gUnk06594.field_48EC + 2 * v2) |
+           ((0xFFFF * *(unsigned __int16 *)(gUnk06594.field_48EC + 2 * v2) +
+             *(unsigned __int16 *)(gUnk06594.field_48EC + 2 * (unsigned __int16)(v2 + 1)))
             << 16);
 }
-// 106C7C6C: using guessed type int dword_106C7C6C;
 
 //----- (10002E90) --------------------------------------------------------
 int __cdecl sub_10002E90(int a1, int a2) {
@@ -6613,12 +6608,11 @@ int __cdecl sub_10002E90(int a1, int a2) {
     if (a1 < 0 || a1 >= 64 || a2 < 0 || a2 >= 64)
         return 0;
     v2 = (unsigned __int16)((unsigned __int8)a1 + ((unsigned __int8)a2 << 6));
-    return *(unsigned __int16 *)(MEMORY[0x106C7CB4] + 2 * v2) |
-           ((0xFFFF * *(unsigned __int16 *)(MEMORY[0x106C7CB4] + 2 * v2) +
-             *(unsigned __int16 *)(MEMORY[0x106C7CB4] + 2 * (unsigned __int16)(v2 + 1)))
+    return *(unsigned __int16 *)(gUnk06594.field_4934 + 2 * v2) |
+           ((0xFFFF * *(unsigned __int16 *)(gUnk06594.field_4934 + 2 * v2) +
+             *(unsigned __int16 *)(gUnk06594.field_4934 + 2 * (unsigned __int16)(v2 + 1)))
             << 16);
 }
-// 106C7CB4: using guessed type int dword_106C7CB4;
 
 //----- (10002EF0) --------------------------------------------------------
 __int16 __cdecl sub_10002EF0(unsigned __int16 *a1) {
@@ -6628,9 +6622,8 @@ __int16 __cdecl sub_10002EF0(unsigned __int16 *a1) {
         return 0;
     v1 = *a1;
     *(_DWORD *)a1 = (v1 + 1) | ((a1[1] + 0xFFFF) << 16);
-    return *(_WORD *)(MEMORY[0x106C7C68] + 2 * v1);
+    return *(_WORD *)(gUnk06594.field_48E8 + 2 * v1);
 }
-// 106C7C68: using guessed type int dword_106C7C68;
 
 //----- (10002F40) --------------------------------------------------------
 __int16 __cdecl sub_10002F40(unsigned __int16 *a1) {
@@ -6640,9 +6633,8 @@ __int16 __cdecl sub_10002F40(unsigned __int16 *a1) {
         return 0;
     v1 = *a1;
     *(_DWORD *)a1 = (v1 + 1) | ((a1[1] + 0xFFFF) << 16);
-    return *(_WORD *)(MEMORY[0x106C7CB0] + 2 * v1);
+    return *(_WORD *)(gUnk06594.field_4930 + 2 * v1);
 }
-// 106C7CB0: using guessed type int dword_106C7CB0;
 
 //----- (10002F90) --------------------------------------------------------
 DWORD __stdcall CHK_GetFileSize(CHK_File *cFile, void *_unused) {
@@ -6888,14 +6880,14 @@ int __cdecl sub_100034A0(int a1, int a2, int a3, unsigned int a4) {
 // 1022AF3C: using guessed type int dword_1022AF3C;
 
 //----- (10003530) --------------------------------------------------------
-BOOL __cdecl sub_10003530(const char *a1) {
-    HANDLE v2; // [esp-4h] [ebp-Ch]
+BOOL __cdecl np_sub_10003530(const char *a1) {
+    HANDLE mutex; // [esp-4h] [ebp-Ch]
 
-    WaitForSingleObject(hMutex, INFINITE);
-    v2 = hMutex;
+    WaitForSingleObject(gMutex9, INFINITE);
+    mutex = gMutex9;
     strcpy(&byte_10220E80, a1);
     dword_1022AF08 = 1;
-    return ReleaseMutex(v2);
+    return ReleaseMutex(mutex);
 }
 // 10220E80: using guessed type char byte_10220E80;
 // 1022AF08: using guessed type int dword_1022AF08;
@@ -6946,8 +6938,8 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
     const char *v45;                                          // esi
     unsigned int v46;                                         // ebx
     char *v47;                                                // edi
-    int v48;                                                  // esi
-    int v49;                                                  // esi
+    int *v48;                                                 // esi
+    int *v49;                                                 // esi
     int v50;                                                  // ebx
     int *v51;                                                 // edi
     int v52;                                                  // esi
@@ -6957,12 +6949,12 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
     int v56;                                                  // ebx
     int *v57;                                                 // edi
     int v58;                                                  // esi
-    int v59;                                                  // ebp
+    int *v59;                                                 // ebp
     int v60;                                                  // ebx
     int *v61;                                                 // esi
     int v62;                                                  // edi
     int v63;                                                  // eax
-    char *v64;                                                // eax
+    const char *v64;                                          // eax
     HANDLE v65;                                               // [esp-4h] [ebp-7B4h]
     const char *v66;                                          // [esp-4h] [ebp-7B4h]
     int v67;                                                  // [esp+10h] [ebp-7A0h]
@@ -6986,17 +6978,17 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
 
     meth_10073B60(v80, a2, a3);
     v84 = 0;
-    WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);
+    WaitForSingleObject(gMutex7, 0xFFFFFFFF);
     v4 = dword_10220DD0;
-    ReleaseMutex(g_hMutex_7);
+    ReleaseMutex(gMutex7);
     if (v4) {
         Concurrency::details::StructuredWorkStealingQueue<
             Concurrency::details::_UnrealizedChore,
             Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v80);
         v67 = meth_10073C10(v80);
-        WaitForSingleObject(hMutex_3, 0xFFFFFFFF);
+        WaitForSingleObject(gMutex4, 0xFFFFFFFF);
         dword_10221310 = sub_10003460();
-        ReleaseMutex(hMutex_3);
+        ReleaseMutex(gMutex4);
         if (!meth_10073D40(v80)) {
             while (2) {
                 v5 = meth_10073BC0(v80);
@@ -7026,17 +7018,17 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         dword_1022AEFC = meth_10073C10(v80);
                     waitForSingleObjectRef = WaitForSingleObject;
                     v11 = 606 * v7;
-                    WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
+                    WaitForSingleObject(gMutexes[606 * v7], INFINITE);
                     if (v7 == dword_10094294)
                         goto LABEL_17;
-                    if (dword_10221354[606 * v7] != v68 && v9 == 2) {
-                        WaitForSingleObject(g_hMutex_1, INFINITE);
+                    if (unk_10221354[606 * v7] != v68 && v9 == 2) {
+                        WaitForSingleObject(gMutex1, INFINITE);
                         dword_10220D90[++dword_10220DD4] = v7;
-                        ReleaseMutex(g_hMutex_1);
-                        dword_10221330[606 * v7] = 0;
-                        v12 = &flt_10221380[v11];
-                        memset(&dword_10221334[v11], 0, 0x20u);
-                        dword_10221354[606 * v7] = 0;
+                        ReleaseMutex(gMutex1);
+                        unk_10221330[606 * v7] = 0;
+                        v12 = &unk_10221380[v11];
+                        memset(&unk_10221334[v11], 0, 0x20u);
+                        unk_10221354[606 * v7] = 0;
                         v13 = &dword_10221360[v11];
                         v75 = 8;
                         do {
@@ -7059,15 +7051,15 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                     if (v7 == dword_10094294) {
                     LABEL_17:
                         if (v9 == 3) {
-                            waitForSingleObjectRef(g_hMutex_4, INFINITE);
-                            dword_1022AAA8 = 0;
-                            ReleaseMutex(g_hMutex_4);
+                            waitForSingleObjectRef(gMutex3, INFINITE);
+                            gMutexesEnd = 0;
+                            ReleaseMutex(gMutex3);
                         }
                         if (v7 == dword_10094294) {
                             if ((v68 & 0x80u) != 0) {
-                                waitForSingleObjectRef(g_hMutex_5, INFINITE);
+                                waitForSingleObjectRef(gMutex5, INFINITE);
                                 dword_1022AAF4 = 0;
-                                ReleaseMutex(g_hMutex_5);
+                                ReleaseMutex(gMutex5);
                                 dword_1022AF20 = 1;
                             }
                             if ((v68 & 0x40) != 0) {
@@ -7075,37 +7067,37 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                                     dword_1022AF20 = 0;
                                 if (dword_106909B4)
                                     dword_106909D8 = 1;
-                                waitForSingleObjectRef(g_hMutex_6, INFINITE);
+                                waitForSingleObjectRef(gMutex6, INFINITE);
                                 dword_10221314 = 0;
-                                ReleaseMutex(g_hMutex_6);
+                                ReleaseMutex(gMutex6);
                             }
                             if (v7 == dword_10094294 && v9 == 4) {
-                                WaitForSingleObject(g_hMutex_8, INFINITE);
+                                WaitForSingleObject(gMutex8, INFINITE);
                                 v14 = sub_10003460() + 90;
                                 dword_1022AF00 =
                                     3 * (dword_1022AEFC / 0x64u) + dword_1022AEFC % 0x64u / 0x21;
                                 if (dword_1022AF00 > v14)
                                     dword_1022AF00 = v14;
-                                ReleaseMutex(g_hMutex_8);
+                                ReleaseMutex(gMutex8);
                             }
                         }
                     }
-                    dword_10221330[606 * v7] = v67;
-                    dword_10221354[606 * v7] = v68;
-                    dword_10221358[606 * v7] = v69;
-                    byte_1022135C[2424 * v7] = v74;
-                    byte_1022135D[2424 * v7] = v76;
-                    byte_1022135E[2424 * v7] = v78;
-                    dword_1022132C[606 * v7] = v71;
+                    unk_10221330[606 * v7] = v67;
+                    unk_10221354[606 * v7] = v68;
+                    unk_10221358[606 * v7] = v69;
+                    unk_1022135C[2424 * v7] = v74;
+                    unk_1022135D[2424 * v7] = v76;
+                    unk_1022135E[2424 * v7] = v78;
+                    unk_1022132C[606 * v7] = v71;
                     if (v79)
                         strcpy(&byte_10221898[v11 * 4], Buffer);
                     sub_10004760((_DWORD *)a1, v7, v69, v74, v76, v78, v71, (int)Buffer, v68, 16);
-                    ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
+                    ReleaseMutex(gMutexes[606 * v7]);
                     goto LABEL_73;
                 case 32:
                     if (a4 != 1)
                         goto LABEL_122;
-                    WaitForSingleObject(g_hMutex_0, INFINITE);
+                    WaitForSingleObject(gMutex0, INFINITE);
                     v15 = dword_102212D0;
                     do {
                         v16 = meth_10073BC0(v80);
@@ -7113,19 +7105,19 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         *(v15 - 1) = v16 >> 4;
                         *(v15 - 2) = v16 & 0xF;
                     } while ((int)v15 < (int)&dword_10221310);
-                    ReleaseMutex(g_hMutex_0);
+                    ReleaseMutex(gMutex0);
                     goto LABEL_73;
                 case 64:
                     v17 = 606 * v7;
-                    WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
-                    if ((dword_10221354[606 * v7] & 0x3Fu) < 2) {
+                    WaitForSingleObject(gMutexes[606 * v7], INFINITE);
+                    if ((unk_10221354[606 * v7] & 0x3Fu) < 2) {
                         sub_10006EC0((int)v83, v80);
-                        ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
+                        ReleaseMutex(gMutexes[606 * v7]);
                     } else {
                         v18 = 0;
                         v19 = -1;
                         v20 = 0;
-                        v21 = &dword_10221334[v17];
+                        v21 = &unk_10221334[v17];
                         do {
                             if (*v21 <= v19) {
                                 v18 = v20;
@@ -7137,12 +7129,12 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v22 = dword_10221880[v17] + 1;
                         dword_10221884[v17] = v18;
                         dword_10221880[v17] = v22;
-                        dword_10221334[v18 + v17] = v67;
+                        unk_10221334[v18 + v17] = v67;
                         dword_10221360[dword_10221884[v17] + v17] = 64;
-                        sub_10006EC0((int)&flt_10221380[40 * dword_10221884[v17] + v17], v80);
+                        sub_10006EC0((int)&unk_10221380[40 * dword_10221884[v17] + v17], v80);
                         dword_10221C9C[v17] = 33 * (2 * (dword_10221310 - v67) % 3) +
                                               100 * (2 * (dword_10221310 - v67) / 3);
-                        ReleaseMutex((HANDLE)dword_10221328[v17]);
+                        ReleaseMutex(gMutexes[v17]);
                     }
                     goto LABEL_73;
                 case 96:
@@ -7170,13 +7162,13 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         strcpy(Buffer, sub_10005E70(v44));
                         strcat(Buffer, asc_10094334);
                     LABEL_82:
-                        v45 = (const char *)(meth_unk00214_GetField10(v80) + 4);
+                        v45 = (const char *)(meth_unk00214_GetField10((unk00214 *)v80) + 1);
                         v46 = strlen(v45) + 1;
                         v47 = &Buffer[strlen(Buffer) + 1];
                         goto LABEL_111;
                     case 0x60000004:
-                        v49 = meth_unk00214_GetField10(v80);
-                        if (*(_DWORD *)(v49 + 4) != sub_10005CF0(dword_10094294))
+                        v49 = meth_unk00214_GetField10((unk00214 *)v80);
+                        if (v49[1] != sub_10005CF0(dword_10094294))
                             goto LABEL_122;
                         sub_1000C4A0();
                         v50 = 0;
@@ -7199,32 +7191,32 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v47 = &Buffer[strlen(Buffer) + 1];
                         goto LABEL_111;
                     case 0x60000005:
-                        v48 = meth_unk00214_GetField10(v80);
-                        WaitForSingleObject(hMutex, INFINITE);
-                        switch (*(_DWORD *)(v48 + 4)) {
+                        v48 = meth_unk00214_GetField10((unk00214 *)v80);
+                        WaitForSingleObject(gMutex9, INFINITE);
+                        switch (v48[1]) {
                         case 4:
                             dword_1022AEF8 = 20;
-                            ReleaseMutex(hMutex);
+                            ReleaseMutex(gMutex9);
                             break;
                         case 5:
                             dword_1022AEF8 = 21;
-                            ReleaseMutex(hMutex);
+                            ReleaseMutex(gMutex9);
                             break;
                         case 6:
                             dword_1022AEF8 = 22;
-                            ReleaseMutex(hMutex);
+                            ReleaseMutex(gMutex9);
                             break;
                         case 7:
                             dword_1022AEF8 = 23;
                             goto LABEL_88;
                         default:
                         LABEL_88:
-                            ReleaseMutex(hMutex);
+                            ReleaseMutex(gMutex9);
                             break;
                         }
                         goto LABEL_122;
                     case 0x60000006:
-                        if (*(_DWORD *)(meth_unk00214_GetField10(v80) + 4) != a4)
+                        if (meth_unk00214_GetField10((unk00214 *)v80)[1] != a4)
                             goto LABEL_122;
                         v53 = 0;
                         if (dword_100B36FC <= 0)
@@ -7241,8 +7233,8 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         }
                         if ((atomic_sub_10004A10(v55) & 0x3F) == 0)
                             goto LABEL_122;
-                        WaitForSingleObject(g_hMutex_2, INFINITE);
-                        v65 = g_hMutex_2;
+                        WaitForSingleObject(gMutex2, INFINITE);
+                        v65 = gMutex2;
                         dword_10221288[++dword_10221318] = v55;
                         ReleaseMutex(v65);
                         atomic_sub_10004A50(v53, 0);
@@ -7252,7 +7244,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v47 = &Buffer[strlen(Buffer) + 1];
                         goto LABEL_111;
                     case 0x60000007:
-                        if (*(_DWORD *)(meth_unk00214_GetField10(v80) + 4) != a4)
+                        if (meth_unk00214_GetField10((unk00214 *)v80)[1] != a4)
                             goto LABEL_122;
                         v56 = 0;
                         if (dword_100B36FC <= 0)
@@ -7273,10 +7265,10 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v47 = &Buffer[strlen(Buffer) + 1];
                     LABEL_111:
                         qmemcpy(v47 - 1, v45, v46);
-                        sub_10003530(Buffer);
+                        np_sub_10003530(Buffer);
                         goto LABEL_122;
                     case 0x60000008:
-                        v59 = meth_unk00214_GetField10(v80);
+                        v59 = meth_unk00214_GetField10((unk00214 *)v80);
                         if (a4 != 1)
                             goto LABEL_122;
                         v60 = 0;
@@ -7290,15 +7282,15 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                     break;
                 case 128:
                     v23 = 606 * v7;
-                    WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
-                    if ((dword_10221354[606 * v7] & 0x3Fu) < 2) {
+                    WaitForSingleObject(gMutexes[606 * v7], INFINITE);
+                    if ((unk_10221354[606 * v7] & 0x3Fu) < 2) {
                         sub_100073E0(v82, v82, v80);
-                        ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
+                        ReleaseMutex(gMutexes[606 * v7]);
                     } else {
                         v24 = 0;
                         v72 = 0;
                         v25 = -1;
-                        v26 = &dword_10221334[v23];
+                        v26 = &unk_10221334[v23];
                         do {
                             if (*v26 <= v25) {
                                 v72 = v24;
@@ -7310,7 +7302,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v27 = 0;
                         v28 = 0;
                         v29 = 0;
-                        v30 = &dword_10221334[v23];
+                        v30 = &unk_10221334[v23];
                         do {
                             if (v30[11] == 64 && *v30 > v28) {
                                 v27 = v29;
@@ -7322,7 +7314,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v31 = 0;
                         v32 = 0;
                         v70 = 0;
-                        v33 = &dword_10221334[v23];
+                        v33 = &unk_10221334[v23];
                         do {
                             if (v33[11] == 64 && *v33 > v70 && v31 != v27) {
                                 v32 = v31;
@@ -7331,8 +7323,8 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                             ++v31;
                             ++v33;
                         } while (v31 < 8);
-                        v34 = dword_10221334[v32 + v23];
-                        v35 = dword_10221334[v27 + v23] - v34;
+                        v34 = unk_10221334[v32 + v23];
+                        v35 = unk_10221334[v27 + v23] - v34;
                         if (v35)
                             v77 = (double)(unsigned int)(v67 - v34) / (double)v35;
                         else
@@ -7340,17 +7332,17 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v36 = dword_10221880[v23] + 1;
                         dword_10221884[v23] = v72;
                         dword_10221880[v23] = v36;
-                        dword_10221334[v72 + v23] = v67;
+                        unk_10221334[v72 + v23] = v67;
                         dword_10221360[dword_10221884[v23] + v23] = 128;
-                        v37 = &flt_10221380[40 * v27 + v23];
-                        sub_100079E0((int)&flt_10221380[40 * dword_10221884[v23] + v23],
+                        v37 = &unk_10221380[40 * v27 + v23];
+                        sub_100079E0((int)&unk_10221380[40 * dword_10221884[v23] + v23],
                                      v77,
-                                     (int)&flt_10221380[40 * v32 + v23],
+                                     (int)&unk_10221380[40 * v32 + v23],
                                      (int)v37);
-                        sub_100073E0(&flt_10221380[40 * dword_10221884[v23] + v23], v37, v80);
+                        sub_100073E0(&unk_10221380[40 * dword_10221884[v23] + v23], v37, v80);
                         dword_10221C9C[v23] = 33 * (2 * (dword_10221310 - v67) % 3) +
                                               100 * (2 * (dword_10221310 - v67) / 3);
-                        ReleaseMutex((HANDLE)dword_10221328[v23]);
+                        ReleaseMutex(gMutexes[v23]);
                     }
                     goto LABEL_73;
                 case 192:
@@ -7359,10 +7351,10 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                     v73 = getTicks();
                     v38 = meth_10073C10(v80);
                     v39 = (unsigned __int16)meth_10073BE0(v80);
-                    WaitForSingleObject((HANDLE)dword_10221328[606 * v7], INFINITE);
-                    dword_10221C98[606 * v7] = v38;
-                    dword_10221C9C[606 * v7] = v39;
-                    ReleaseMutex((HANDLE)dword_10221328[606 * v7]);
+                    WaitForSingleObject(gMutexes[0x25E * v7], INFINITE);
+                    dword_10221C98[0x25E * v7] = v38;
+                    dword_10221C9C[0x25E * v7] = v39;
+                    ReleaseMutex(gMutexes[0x25E * v7]);
                     if (v7 == dword_10094294) {
                         sub_10004910((_DWORD *)a1, v67);
                         sub_100034A0(v67, v73, v38, v39);
@@ -7410,19 +7402,19 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
             }
             while (1) {
                 v62 = *v61;
-                if (*(_DWORD *)(v59 + 4) == sub_10005CF0(*v61))
+                if (v59[1] == sub_10005CF0(*v61))
                     break;
                 ++v60;
                 v61 += 2778;
                 if (v60 >= dword_100B36FC)
                     goto LABEL_122;
             }
-            v63 = *(_DWORD *)(v59 + 8);
+            v63 = v59[2];
             if (v63 >= 0 && v63 < 8) {
                 v66 = gPositionStrings[v63];
                 v64 = sub_10005E70(v62);
                 sprintf(Buffer, "%s finished %s", v64, v66);
-                sub_10003530(Buffer);
+                np_sub_10003530(Buffer);
             }
         }
     }
@@ -7432,23 +7424,17 @@ LABEL_122:
 }
 // 10073B90: using guessed type int __thiscall Concurrency::details::StructuredWorkStealingQueue<Concurrency::details::_UnrealizedChore,Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(_DWORD);
 // 10094294: using guessed type int dword_10094294;
-// 100AAC48: using guessed type char *off_100AAC48[20];
+// 100AAC48: using guessed type char *gPositionStrings[20];
 // 100B36FC: using guessed type int dword_100B36FC;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 10220DD0: using guessed type int dword_10220DD0;
 // 10220DD4: using guessed type int dword_10220DD4;
 // 10221280: using guessed type int dword_10221280;
-// 102212C8: using guessed type int g_cPlayers;
+// 102212C8: using guessed type int gCPlayers;
 // 10221310: using guessed type int dword_10221310;
 // 10221314: using guessed type int dword_10221314;
 // 10221318: using guessed type int dword_10221318;
-// 10221320: using guessed type int g_bcar;
-// 10221328: using guessed type int dword_10221328[];
-// 1022132C: using guessed type int dword_1022132C[];
-// 10221330: using guessed type int dword_10221330[];
-// 10221354: using guessed type int dword_10221354[];
-// 10221358: using guessed type int dword_10221358[];
-// 10221360: using guessed type int dword_10221360[];
+// 10221320: using guessed type int gBcar;
 // 10221880: using guessed type int dword_10221880[];
 // 10221884: using guessed type int dword_10221884[];
 // 10221888: using guessed type int dword_10221888[];
@@ -7456,15 +7442,13 @@ LABEL_122:
 // 10221890: using guessed type int dword_10221890[];
 // 10221894: using guessed type int dword_10221894[];
 // 10221C98: using guessed type int dword_10221C98[];
-// 1022AAA8: using guessed type int dword_1022AAA8;
 // 1022AAF4: using guessed type int dword_1022AAF4;
 // 1022AEF8: using guessed type int dword_1022AEF8;
-// 1022AEFC: using guessed type int dword_1022AEFC;
 // 1022AF00: using guessed type int dword_1022AF00;
-// 1022AF0C: using guessed type int g_bsuspension;
-// 1022AF10: using guessed type int g_btire;
+// 1022AF0C: using guessed type int gBsuspension;
+// 1022AF10: using guessed type int gBtire;
 // 1022AF20: using guessed type int dword_1022AF20;
-// 1022B350: using guessed type int g_ChosenWeather;
+// 1022B350: using guessed type int gChosenWeather0;
 // 106909B4: using guessed type int dword_106909B4;
 // 106909D8: using guessed type int dword_106909D8;
 // 10AA2894: using guessed type int dword_10AA2894;
@@ -7507,7 +7491,7 @@ int __cdecl sub_10004590(int a1, char a2, char a3, char a4, char a5, int a6, cha
 // 1022B34C: using guessed type int gChosenCar;
 
 //----- (100046D0) --------------------------------------------------------
-int __cdecl sub_100046D0(_DWORD *a1, unk00214 *a2) {
+int __cdecl sub_100046D0(_DWORD *a1, unk00214 *u214) {
     int result; // eax
     int *v3;    // eax
     int *v4;    // eax
@@ -7515,17 +7499,17 @@ int __cdecl sub_100046D0(_DWORD *a1, unk00214 *a2) {
     int v6;     // [esp-4h] [ebp-Ch]
 
     if (dword_10AA2894)
-        return meth_unk00214_10073F40(a2);
+        return meth_unk00214_10073F40(u214);
     if (a1[3]) {
-        v5 = meth_unk00214_10073F40(a2);
-        v3 = meth_unk00214_GetField10(a2);
+        v5 = meth_unk00214_10073F40(u214);
+        v3 = meth_unk00214_GetField10(u214);
         sub_100360F0((int)a1, (int)v3, v5, (void *)1);
-        result = meth_unk00214_10073F40(a2);
+        result = meth_unk00214_10073F40(u214);
     } else {
-        v6 = meth_unk00214_10073F40(a2);
-        v4 = meth_unk00214_GetField10(a2);
+        v6 = meth_unk00214_10073F40(u214);
+        v4 = meth_unk00214_GetField10(u214);
         if (!sub_1000C4D0(*a1, a1[2], 1, 0, (int)v4, v6))
-            return meth_unk00214_10073F40(a2);
+            return meth_unk00214_10073F40(u214);
         result = -1;
     }
     return result;
@@ -7539,50 +7523,49 @@ int __cdecl sub_10004760(
     unsigned int v11; // ebp
     int i;            // esi
     int v13;          // esi
-    _DWORD v15[133];  // [esp+10h] [ebp-220h] BYREF
+    unk00214 u214;    // [esp+10h] [ebp-220h] BYREF
     int v16;          // [esp+22Ch] [ebp-4h]
 
-    meth_unk00214_10073B40_init((unk00214 *)v15);
+    meth_unk00214_10073B40_init(&u214);
     v10 = 0;
     v16 = 0;
-    sub_100048D0((int)v15);
-    meth_unk00214_10073D60((unk00214 *)v15, dword_10094294 | a10);
-    meth_unk00214_10073D60((unk00214 *)v15, a2);
-    meth_unk00214_10073D60((unk00214 *)v15, a9);
-    meth_unk00214_10073D60((unk00214 *)v15, a3);
-    meth_unk00214_10073D60((unk00214 *)v15, a4);
-    meth_unk00214_10073D60((unk00214 *)v15, a5);
-    meth_unk00214_10073D60((unk00214 *)v15, a6);
-    meth_unk00214_10073E10((unk00214 *)v15, a7);
+    sub_100048D0(&u214);
+    meth_unk00214_10073D60(&u214, dword_10094294 | a10);
+    meth_unk00214_10073D60(&u214, a2);
+    meth_unk00214_10073D60(&u214, a9);
+    meth_unk00214_10073D60(&u214, a3);
+    meth_unk00214_10073D60(&u214, a4);
+    meth_unk00214_10073D60(&u214, a5);
+    meth_unk00214_10073D60(&u214, a6);
+    meth_unk00214_10073E10(&u214, a7);
     v11 = a9 & 0x3F;
     if (v11 <= 2) {
         for (i = 0; i < 24; ++i) {
             if (v10) {
-                meth_unk00214_10073D60((unk00214 *)v15, 0);
+                meth_unk00214_10073D60(&u214, 0);
             } else {
-                meth_unk00214_10073D60((unk00214 *)v15, *(_BYTE *)(i + a8));
+                meth_unk00214_10073D60(&u214, *(_BYTE *)(i + a8));
                 if (!*(_BYTE *)(i + a8))
                     v10 = 1;
             }
         }
     }
     if (v11 == 4)
-        meth_unk00214_10073DC0((unk00214 *)v15, dword_1022AEFC);
-    v13 = sub_100046D0(a1, (unk00214 *)v15);
+        meth_unk00214_10073DC0(&u214, dword_1022AEFC);
+    v13 = sub_100046D0(a1, &u214);
     v16 = -1;
-    meth_DebugPrint(v15);
+    meth_DebugPrint(&u214);
     return v13;
 }
 // 10094294: using guessed type int dword_10094294;
-// 1022AEFC: using guessed type int dword_1022AEFC;
 
 //----- (100048D0) --------------------------------------------------------
-BOOL __cdecl sub_100048D0(int a1) {
-    meth_unk00214_10073B80((_DWORD *)a1);
-    WaitForSingleObject(hMutex_3, INFINITE);
+BOOL __cdecl sub_100048D0(unk00214 *a1) {
+    meth_unk00214_10073B80(a1);
+    WaitForSingleObject(gMutex4, INFINITE);
     dword_10221310 = sub_10003460();
-    meth_unk00214_10073DC0((_DWORD *)a1, dword_10221310);
-    return ReleaseMutex(hMutex_3);
+    meth_unk00214_10073DC0(a1, dword_10221310);
+    return ReleaseMutex(gMutex4);
 }
 // 10221310: using guessed type int dword_10221310;
 
@@ -7592,12 +7575,12 @@ int __cdecl sub_10004910(_DWORD *a1, int a2) {
     _DWORD v4[133]; // [esp+4h] [ebp-220h] BYREF
     int v5;         // [esp+220h] [ebp-4h]
 
-    meth_unk00214_10073B40_init(v4);
+    meth_unk00214_10073B40_init((unk00214 *)v4);
     v5 = 0;
-    sub_100048D0((int)v4);
-    meth_unk00214_10073D60(v4, dword_10094294 & 0xF | 0xD0);
-    meth_unk00214_10073DC0(v4, a2);
-    v2 = sub_100046D0(a1, (int)v4);
+    sub_100048D0((unk00214 *)v4);
+    meth_unk00214_10073D60((unk00214 *)v4, dword_10094294 & 0xF | 0xD0);
+    meth_unk00214_10073DC0((unk00214 *)v4, a2);
+    v2 = sub_100046D0(a1, (unk00214 *)v4);
     v5 = -1;
     meth_DebugPrint(v4);
     return v2;
@@ -7619,22 +7602,20 @@ int sub_100049C0() {
 // 10094294: using guessed type int dword_10094294;
 
 //----- (10004A10) --------------------------------------------------------
-int __cdecl atomic_sub_10004A10(int a1) {
+int __cdecl atomic_sub_10004A10(int mutexIndex) {
     int v1; // edi
 
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    v1 = dword_10221354[606 * a1];
-    ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    WaitForSingleObject(gMutexes[606 * mutexIndex], INFINITE);
+    v1 = unk_10221354[606 * mutexIndex];
+    ReleaseMutex(gMutexes[606 * mutexIndex]);
     return v1;
 }
-// 10221328: using guessed type int dword_10221328[];
-// 10221354: using guessed type int dword_10221354[];
 
 //----- (10004A50) --------------------------------------------------------
 BOOL __cdecl atomic_sub_10004A50(int a1, int a2) {
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    dword_10221354[606 * a1] = a2;
-    return ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    WaitForSingleObject((HANDLE)gMutexes[606 * a1], INFINITE);
+    unk_10221354[606 * a1] = a2;
+    return ReleaseMutex((HANDLE)gMutexes[606 * a1]);
 }
 // 10221328: using guessed type int dword_10221328[];
 // 10221354: using guessed type int dword_10221354[];
@@ -7694,97 +7675,96 @@ BOOL np_sub_10004A90() {
 
 //----- (10004BB0) --------------------------------------------------------
 int atomic_sub_10004BB0() {
-    WaitForSingleObject(g_hMutex_4, INFINITE);
-    dword_1022AAA8 = 1;
-    ReleaseMutex(g_hMutex_4);
+    WaitForSingleObject(gMutex3, INFINITE);
+    gMutexesEnd = 1;
+    ReleaseMutex(gMutex3);
     return 1;
 }
 // 1022AAA8: using guessed type int dword_1022AAA8;
 
 //----- (10004BE0) --------------------------------------------------------
 int atomic_sub_10004BE0() {
-    WaitForSingleObject(g_hMutex_5, INFINITE);
+    WaitForSingleObject(gMutex5, INFINITE);
     if (!dword_1022AAF4)
         dword_1022AAF4 = 1;
-    ReleaseMutex(g_hMutex_5);
+    ReleaseMutex(gMutex5);
     return 1;
 }
 // 1022AAF4: using guessed type int dword_1022AAF4;
 
 //----- (10004C20) --------------------------------------------------------
 int atomic_sub_10004C20() {
-    WaitForSingleObject(g_hMutex_6, INFINITE);
+    WaitForSingleObject(gMutex6, INFINITE);
     if (!dword_10221314)
         dword_10221314 = 1;
-    ReleaseMutex(g_hMutex_6);
+    ReleaseMutex(gMutex6);
     return 1;
 }
 // 10221314: using guessed type int dword_10221314;
 
 //----- (10004C60) --------------------------------------------------------
 int __cdecl sub_10004C60(void *a1) {
-    int *v1;           // ebx
+    HANDLE *v1;        // ebx
     int v2;            // eax
     int v3;            // eax
     int result;        // eax
     HANDLE Handles[2]; // [esp+10h] [ebp-228h] BYREF
-    _DWORD v6[133];    // [esp+18h] [ebp-220h] BYREF
+    unk00214 a1a;      // [esp+18h] [ebp-220h] BYREF
     int v7;            // [esp+234h] [ebp-4h]
 
-    Handles[0] = hMutex_3;
-    v1 = &dword_10221328[606 * dword_10094294];
-    Handles[1] = (HANDLE)*v1;
+    Handles[0] = gMutex4;
+    v1 = &gMutexes[606 * dword_10094294];
+    Handles[1] = *v1;
     WaitForMultipleObjects(2u, Handles, 1, INFINITE);
     dword_10221310 = sub_10003460();
-    v2 = v1[343] + 1;
-    v1[343] = v2;
+    v2 = (int)v1[343] + 1;
+    v1[343] = (HANDLE)v2;
     if (v2 >= 8)
         v1[343] = 0;
-    v1[v1[343] + 3] = dword_10221310;
-    v1[v1[343] + 14] = 64;
-    qmemcpy(&v1[40 * v1[343] + 22], a1, 0xA0u);
-    ReleaseMutex((HANDLE)*v1);
-    ReleaseMutex(hMutex_3);
-    meth_unk00214_10073B40_init(v6);
+    v1[(_DWORD)v1[343] + 3] = (HANDLE)dword_10221310;
+    v1[(_DWORD)v1[343] + 14] = (HANDLE)64;
+    qmemcpy(&v1[40 * (_DWORD)v1[343] + 22], a1, 0xA0u);
+    ReleaseMutex(*v1);
+    ReleaseMutex(gMutex4);
+    meth_unk00214_10073B40_init(&a1a);
     v7 = 0;
-    sub_100048D0((int)v6);
-    meth_unk00214_10073D60(v6, dword_10094294 | 0x40);
-    sub_100061A0((int)v6, (float *)a1);
-    v3 = sub_10004DD0(&unk, (int)v6);
+    sub_100048D0(&a1a);
+    meth_unk00214_10073D60(&a1a, dword_10094294 | 0x40);
+    sub_100061A0(&a1a, (float *)a1);
+    v3 = sub_10004DD0(&unk, &a1a);
     v7 = -1;
     if (v3 == -1) {
-        meth_DebugPrint(v6);
+        meth_DebugPrint(&a1a);
         result = 0;
     } else {
-        meth_DebugPrint(v6);
+        meth_DebugPrint(&a1a);
         result = 1;
     }
     return result;
 }
 // 10094294: using guessed type int dword_10094294;
 // 10221310: using guessed type int dword_10221310;
-// 10221328: using guessed type int dword_10221328[];
 
 //----- (10004DD0) --------------------------------------------------------
-int __cdecl sub_10004DD0(_DWORD *a1, int a2) {
+int __cdecl sub_10004DD0(_DWORD *a1, unk00214 *a2) {
     int result; // eax
-    int v3;     // eax
-    int v4;     // eax
+    int *v3;    // eax
+    int *v4;    // eax
     int v5;     // [esp-Ch] [ebp-14h]
     int v6;     // [esp-4h] [ebp-Ch]
 
     if (dword_10AA2894)
         goto LABEL_2;
     if (a1[3]) {
-        v5 = meth_unk00214_10073F40((_DWORD *)a2);
-        v3 = meth_unk00214_GetField10((_DWORD *)a2);
-        sub_100360F0((int)a1, v3, v5, (void *)1);
+        v5 = meth_unk00214_10073F40(a2);
+        v3 = meth_unk00214_GetField10(a2);
+        sub_100360F0((int)a1, (int)v3, v5, (void *)1);
     }
-    v6 = meth_unk00214_10073F40((_DWORD *)a2);
-    v4 = meth_unk00214_GetField10((_DWORD *)a2);
-    if (!sub_1000C4D0(*a1, a1[2], 0, 0, v4, v6))
+    v6 = meth_unk00214_10073F40(a2);
+    v4 = meth_unk00214_GetField10(a2);
+    if (!sub_1000C4D0(*a1, a1[2], 0, 0, (int)v4, v6))
     LABEL_2:
-        result = meth_unk00214_10073F40((_DWORD *)a2);
+        result = meth_unk00214_10073F40(a2);
     else
         result = -1;
     return result;
@@ -7793,47 +7773,46 @@ int __cdecl sub_10004DD0(_DWORD *a1, int a2) {
 
 //----- (10004E50) --------------------------------------------------------
 int __cdecl sub_10004E50(void *a1, float *a2) {
-    int *v2;           // ebx
+    HANDLE *v2;        // ebx
     int v3;            // eax
     int v4;            // eax
     int result;        // eax
     HANDLE Handles[2]; // [esp+10h] [ebp-228h] BYREF
-    _DWORD v7[133];    // [esp+18h] [ebp-220h] BYREF
+    unk00214 u214;     // [esp+18h] [ebp-220h] BYREF
     int v8;            // [esp+234h] [ebp-4h]
 
-    Handles[0] = hMutex_3;
-    v2 = &dword_10221328[606 * dword_10094294];
-    Handles[1] = (HANDLE)*v2;
+    Handles[0] = gMutex4;
+    v2 = &gMutexes[606 * dword_10094294];
+    Handles[1] = *v2;
     WaitForMultipleObjects(2u, Handles, 1, INFINITE);
     dword_10221310 = sub_10003460();
-    v3 = v2[343] + 1;
-    v2[343] = v3;
+    v3 = (int)v2[343] + 1;
+    v2[343] = (HANDLE)v3;
     if (v3 >= 8)
         v2[343] = 0;
-    v2[v2[343] + 3] = dword_10221310;
-    v2[v2[343] + 14] = 128;
-    qmemcpy(&v2[40 * v2[343] + 22], a1, 0xA0u);
-    ReleaseMutex((HANDLE)*v2);
-    ReleaseMutex(hMutex_3);
-    meth_unk00214_10073B40_init(v7);
+    v2[(_DWORD)v2[343] + 3] = (HANDLE)dword_10221310;
+    v2[(_DWORD)v2[343] + 14] = (HANDLE)128;
+    qmemcpy(&v2[40 * (_DWORD)v2[343] + 22], a1, 0xA0u);
+    ReleaseMutex(*v2);
+    ReleaseMutex(gMutex4);
+    meth_unk00214_10073B40_init(&u214);
     v8 = 0;
-    sub_100048D0((int)v7);
-    meth_unk00214_10073D60(v7, dword_10094294 | 0x80);
-    sub_10006830((int)v7, (float *)a1, a2);
-    v4 = sub_10004DD0(&unk, (int)v7);
+    sub_100048D0(&u214);
+    meth_unk00214_10073D60(&u214, dword_10094294 | 0x80);
+    sub_10006830(&u214, (float *)a1, a2);
+    v4 = sub_10004DD0(&unk, &u214);
     v8 = -1;
     if (v4 == -1) {
-        meth_DebugPrint(v7);
+        meth_DebugPrint(&u214);
         result = 0;
     } else {
-        meth_DebugPrint(v7);
+        meth_DebugPrint(&u214);
         result = 1;
     }
     return result;
 }
 // 10094294: using guessed type int dword_10094294;
 // 10221310: using guessed type int dword_10221310;
-// 10221328: using guessed type int dword_10221328[];
 
 //----- (10004FC0) --------------------------------------------------------
 int np_sub_10004FC0() {
@@ -7842,7 +7821,7 @@ int np_sub_10004FC0() {
     int result; // eax
     char v3;    // al
 
-    WaitForSingleObject(g_hMutex_5, INFINITE);
+    WaitForSingleObject(gMutex5, INFINITE);
     v0 = dword_1022AAF4;
     if (dword_1022AAF4) {
         v0 = dword_1022AAF4 + 1;
@@ -7854,7 +7833,7 @@ int np_sub_10004FC0() {
         }
     }
     v1 = v0;
-    result = ReleaseMutex(g_hMutex_5);
+    result = ReleaseMutex(gMutex5);
     if (v1) {
         result = gNetworkPlay;
         if (gNetworkPlay) {
@@ -7899,7 +7878,7 @@ int np_sub_10005090() {
     int result; // eax
     char v3;    // al
 
-    WaitForSingleObject(g_hMutex_6, INFINITE);
+    WaitForSingleObject(gMutex6, INFINITE);
     v0 = dword_10221314;
     if (dword_10221314) {
         v0 = dword_10221314 + 1;
@@ -7911,7 +7890,7 @@ int np_sub_10005090() {
         }
     }
     v1 = v0;
-    result = ReleaseMutex(g_hMutex_6);
+    result = ReleaseMutex(gMutex6);
     if (v1) {
         v3 = atomic_sub_10004A10(dword_10094294);
         result = sub_10004760(&unk,
@@ -8009,9 +7988,9 @@ int np_sub_100053F0() {
     int result; // eax
     int v2;     // esi
 
-    WaitForSingleObject(g_hMutex_4, INFINITE);
-    v0 = dword_1022AAA8;
-    result = ReleaseMutex(g_hMutex_4);
+    WaitForSingleObject(gMutex3, INFINITE);
+    v0 = gMutexesEnd;
+    result = ReleaseMutex(gMutex3);
     if (v0) {
         v2 = sub_10005470();
         result = sub_1000C670();
@@ -8057,7 +8036,7 @@ int sub_10005470() {
 
 //----- (100054A0) --------------------------------------------------------
 int __cdecl sub_100054A0(float *a1, int a2) {
-    int *v2;           // ebx
+    HANDLE *v2;        // ebx
     int v4;            // eax
     int v5;            // esi
     unsigned int *v6;  // edx
@@ -8065,14 +8044,14 @@ int __cdecl sub_100054A0(float *a1, int a2) {
     int v8;            // edi
     unsigned int *v9;  // edx
     int v10;           // eax
-    int v11;           // ecx
+    HANDLE v11;        // ecx
     int v12;           // edx
     signed int v13;    // eax
-    int v14;           // ecx
-    unsigned int v15;  // ecx
+    char *v14;         // ecx
+    HANDLE v15;        // ecx
     int v16;           // edx
     signed int v17;    // eax
-    int *v18;          // esi
+    HANDLE *v18;       // esi
     int v19;           // eax
     int v20;           // ecx
     double v21;        // st7
@@ -8080,7 +8059,7 @@ int __cdecl sub_100054A0(float *a1, int a2) {
     int v23;           // edx
     double v24;        // st7
     double v25;        // st6
-    int *v26;          // esi
+    HANDLE *v26;       // esi
     int v27;           // ecx
     int v28;           // edx
     double v29;        // st7
@@ -8089,7 +8068,7 @@ int __cdecl sub_100054A0(float *a1, int a2) {
     float v33;         // [esp+0h] [ebp-30h]
     float v34;         // [esp+0h] [ebp-30h]
     HANDLE Handles[2]; // [esp+1Ch] [ebp-14h] BYREF
-    int v36;           // [esp+24h] [ebp-Ch] BYREF
+    HANDLE v36;        // [esp+24h] [ebp-Ch] BYREF
     int v37;           // [esp+28h] [ebp-8h]
     int v38;           // [esp+2Ch] [ebp-4h]
     unsigned int v39;  // [esp+34h] [ebp+4h]
@@ -8099,15 +8078,15 @@ int __cdecl sub_100054A0(float *a1, int a2) {
     float v43;         // [esp+34h] [ebp+4h]
     int v44;           // [esp+38h] [ebp+8h]
 
-    Handles[0] = hMutex_3;
-    Handles[1] = (HANDLE)dword_10221328[606 * a2];
-    v2 = &dword_10221328[606 * a2];
+    Handles[0] = gMutex4;
+    Handles[1] = gMutexes[606 * a2];
+    v2 = &gMutexes[606 * a2];
     WaitForMultipleObjects(2u, Handles, TRUE, INFINITE);
     if (a2 != dword_10094294) {
-        if (v2[342] < 2) {
+        if ((int)v2[342] < 2) {
             a1[31] = 400.0;
-            ReleaseMutex((HANDLE)*v2);
-            ReleaseMutex(hMutex_3);
+            ReleaseMutex(*v2);
+            ReleaseMutex(gMutex4);
             return 0;
         }
         v4 = 0;
@@ -8140,28 +8119,28 @@ int __cdecl sub_100054A0(float *a1, int a2) {
             ++v7;
             ++v9;
         } while (v7 < 8);
-        v10 = v2[v5 + 3] - v2[v8 + 3];
+        v10 = (_BYTE *)v2[v5 + 3] - (_BYTE *)v2[v8 + 3];
         v11 = v2[344];
         v41 = v10;
-        if (v11 != v5) {
-            v14 = v2[345];
-            v2[344] = v5;
+        if (v11 != (HANDLE)v5) {
+            v14 = (char *)v2[345];
+            v2[344] = (HANDLE)v5;
             v15 = v14 + 1;
             if (v2[v5 + 3] < v15) {
-                v16 = v2[347];
+                v16 = (int)v2[347];
                 if (v16 < 20) {
                     if (v10) {
-                        v2[346] = 1;
-                        v2[347] = v16 + 1;
+                        v2[346] = HANDLE_FLAG_INHERIT;
+                        v2[347] = (HANDLE)(v16 + 1);
                         v2[345] = v15;
-                        v17 = sub_10003460() - v2[v5 + 3];
+                        v17 = sub_10003460() - (_DWORD)v2[v5 + 3];
                         if (v17 > 6)
                             v17 = 6;
                         v18 = &v2[40 * v5];
                         v33 = (double)(v41 + v17) / (double)v41;
                         sub_100079E0((int)a1, v33, (int)&v2[40 * v8 + 22], (int)(v18 + 22));
-                        v19 = v18[27];
-                        v20 = v18[28];
+                        v19 = (int)v18[27];
+                        v20 = (int)v18[28];
                         v36 = v18[26];
                         v37 = v19;
                         v38 = v20;
@@ -8169,7 +8148,7 @@ int __cdecl sub_100054A0(float *a1, int a2) {
                         v22 = *((_DWORD *)a1 + 5);
                         v23 = *((_DWORD *)a1 + 6);
                         v42 = v21;
-                        v36 = *((_DWORD *)a1 + 4);
+                        v36 = (HANDLE) * ((_DWORD *)a1 + 4);
                         v37 = v22;
                         v38 = v23;
                         v24 = sub_1006F310((float *)&v36);
@@ -8181,15 +8160,15 @@ int __cdecl sub_100054A0(float *a1, int a2) {
             v2[346] = 0;
             v2[347] = 0;
             v2[345] = v2[v5 + 3];
-            v13 = sub_10003460() - v2[v5 + 3];
+            v13 = sub_10003460() - (_DWORD)v2[v5 + 3];
             if (v13 > 6)
                 v13 = 6;
         LABEL_31:
             v26 = &v2[40 * v5];
             v34 = (double)(v41 + v13) / (double)v41;
             sub_100079E0((int)a1, v34, (int)&v2[40 * v8 + 22], (int)(v26 + 22));
-            v27 = v26[27];
-            v28 = v26[28];
+            v27 = (int)v26[27];
+            v28 = (int)v26[28];
             v36 = v26[26];
             v37 = v27;
             v38 = v28;
@@ -8197,7 +8176,7 @@ int __cdecl sub_100054A0(float *a1, int a2) {
             v30 = *((_DWORD *)a1 + 5);
             v31 = *((_DWORD *)a1 + 6);
             v43 = v29;
-            v36 = *((_DWORD *)a1 + 4);
+            v36 = (HANDLE) * ((_DWORD *)a1 + 4);
             v37 = v30;
             v38 = v31;
             v24 = sub_1006F310((float *)&v36);
@@ -8206,22 +8185,22 @@ int __cdecl sub_100054A0(float *a1, int a2) {
             a1[6] = v25 - v24 + a1[6];
             goto LABEL_33;
         }
-        v12 = v2[346];
+        v12 = (int)v2[346];
         if (v12 < 15) {
-            v2[346] = v12 + 1;
-            ++v2[345];
+            v2[346] = (HANDLE)(v12 + 1);
+            v2[345] = (char *)v2[345] + 1;
         }
         if (v10) {
-            v13 = sub_10003460() - v2[v5 + 3];
+            v13 = sub_10003460() - (_DWORD)v2[v5 + 3];
             if (v13 > 6)
                 v13 = 6;
             goto LABEL_31;
         }
-        qmemcpy(a1, &v2[40 * v11 + 22], 0xA0u);
+        qmemcpy(a1, &v2[40 * (_DWORD)v11 + 22], 0xA0u);
     }
 LABEL_33:
-    ReleaseMutex((HANDLE)*v2);
-    ReleaseMutex(hMutex_3);
+    ReleaseMutex(*v2);
+    ReleaseMutex(gMutex4);
     sub_100058D0(a1);
     sub_100058D0(a1 + 1);
     sub_100058D0(a1 + 2);
@@ -8234,13 +8213,12 @@ LABEL_33:
     } else {
         sub_100741B0(a1);
     }
-    sub_10005900(a1 + 4);
-    sub_10005900(a1 + 5);
-    sub_10005930(a1 + 6);
+    Clamp0To2048(a1 + 4);
+    Clamp0To2048(a1 + 5);
+    Clamp256(a1 + 6);
     return 1;
 }
 // 10094294: using guessed type int dword_10094294;
-// 10221328: using guessed type int dword_10221328[];
 
 //----- (100058D0) --------------------------------------------------------
 void __cdecl sub_100058D0(float *a1) {
@@ -8251,7 +8229,7 @@ void __cdecl sub_100058D0(float *a1) {
 }
 
 //----- (10005900) --------------------------------------------------------
-void __cdecl sub_10005900(float *a1) {
+void __cdecl Clamp0To2048(float *a1) {
     if (*a1 < 0.0)
         *a1 = 0.0;
     if (*a1 > 2048.0)
@@ -8259,7 +8237,7 @@ void __cdecl sub_10005900(float *a1) {
 }
 
 //----- (10005930) --------------------------------------------------------
-void __cdecl sub_10005930(float *a1) {
+void __cdecl Clamp256(float *a1) {
     if (*a1 < -256.0)
         *a1 = -256.0;
     if (*a1 > 256.0)
@@ -8271,7 +8249,7 @@ int sub_10005960() {
     int *unkObjInstance; // esi
     int *v1;             // eax
 
-    unkObjInstance = dword_10221334;
+    unkObjInstance = unk_10221334;
     do {
         WaitForSingleObject((HANDLE) * (unkObjInstance - 3), INFINITE);
         *(unkObjInstance - 1) = 0;
@@ -8288,35 +8266,35 @@ int sub_10005960() {
         ReleaseMutex((HANDLE) * (unkObjInstance - 3));
         unkObjInstance += 606;
     } while ((int)unkObjInstance < (int)dword_1022AAB4);
-    WaitForSingleObject(hMutex, INFINITE);
+    WaitForSingleObject(gMutex9, INFINITE);
     dword_1022AEF8 = -1;
     dword_1022AF08 = 0;
     byte_10220E80 = 0;
-    ReleaseMutex(hMutex);
-    WaitForSingleObject(g_hMutex_0, INFINITE);
+    ReleaseMutex(gMutex9);
+    WaitForSingleObject(gMutex0, INFINITE);
     memset(dword_102212D0, 0, sizeof(dword_102212D0));
-    ReleaseMutex(g_hMutex_0);
-    WaitForSingleObject(g_hMutex_1, INFINITE);
+    ReleaseMutex(gMutex0);
+    WaitForSingleObject(gMutex1, INFINITE);
     dword_10220DD4 = INFINITE;
-    ReleaseMutex(g_hMutex_1);
-    WaitForSingleObject(g_hMutex_2, INFINITE);
+    ReleaseMutex(gMutex1);
+    WaitForSingleObject(gMutex2, INFINITE);
     dword_10221318 = INFINITE;
-    ReleaseMutex(g_hMutex_2);
-    WaitForSingleObject(g_hMutex_4, INFINITE);
-    dword_1022AAA8 = 0;
-    ReleaseMutex(g_hMutex_4);
-    WaitForSingleObject(g_hMutex_5, INFINITE);
+    ReleaseMutex(gMutex2);
+    WaitForSingleObject(gMutex3, INFINITE);
+    gMutexesEnd = 0;
+    ReleaseMutex(gMutex3);
+    WaitForSingleObject(gMutex5, INFINITE);
     dword_1022AAF4 = 0;
-    ReleaseMutex(g_hMutex_5);
-    WaitForSingleObject(g_hMutex_6, INFINITE);
+    ReleaseMutex(gMutex5);
+    WaitForSingleObject(gMutex6, INFINITE);
     dword_10221314 = 0;
-    ReleaseMutex(g_hMutex_6);
-    WaitForSingleObject(g_hMutex_7, INFINITE);
+    ReleaseMutex(gMutex6);
+    WaitForSingleObject(gMutex7, INFINITE);
     dword_10220DD0 = 0;
-    ReleaseMutex(g_hMutex_7);
-    WaitForSingleObject(g_hMutex_8, INFINITE);
+    ReleaseMutex(gMutex7);
+    WaitForSingleObject(gMutex8, INFINITE);
     dword_1022AF00 = INFINITE;
-    ReleaseMutex(g_hMutex_8);
+    ReleaseMutex(gMutex8);
     dword_10220DD8 = 0;
     dword_1022AF3C = INFINITE;
     v1 = dword_1022AAB4;
@@ -8335,7 +8313,6 @@ int sub_10005960() {
 // 10220E80: using guessed type char byte_10220E80;
 // 10221314: using guessed type int dword_10221314;
 // 10221318: using guessed type int dword_10221318;
-// 1022AAA8: using guessed type int dword_1022AAA8;
 // 1022AAF4: using guessed type int dword_1022AAF4;
 // 1022AEF8: using guessed type int dword_1022AEF8;
 // 1022AF00: using guessed type int dword_1022AF00;
@@ -8346,33 +8323,31 @@ int sub_10005960() {
 
 //----- (10005B10) --------------------------------------------------------
 int sub_10005B10() {
-    int *mutex; // esi
+    HANDLE *mutex; // esi
 
-    mutex = dword_10221328;
+    mutex = gMutexes;
     do {
-        *mutex = (int)CreateMutexA(0, 0, 0);
-        mutex += 606;
-    } while ((int)mutex < (int)&dword_1022AAA8);
-    hMutex = CreateMutexA(0, 0, 0);
-    g_hMutex_0 = CreateMutexA(0, 0, 0);
-    g_hMutex_1 = CreateMutexA(0, 0, 0);
-    g_hMutex_2 = CreateMutexA(0, 0, 0);
+        *mutex = CreateMutexA(0, 0, 0);
+        mutex += 0x25E;
+    } while ((int)mutex < (int)&gMutexesEnd);
+    gMutex9 = CreateMutexA(0, 0, 0);
+    gMutex0 = CreateMutexA(0, 0, 0);
+    gMutex1 = CreateMutexA(0, 0, 0);
+    gMutex2 = CreateMutexA(0, 0, 0);
     dword_10221310 = 0;
     dword_10220DD8 = 0;
     sub_10075100();
-    hMutex_3 = CreateMutexA(0, 0, 0);
-    g_hMutex_4 = CreateMutexA(0, 0, 0);
-    g_hMutex_5 = CreateMutexA(0, 0, 0);
-    g_hMutex_6 = CreateMutexA(0, 0, 0);
-    g_hMutex_7 = CreateMutexA(0, 0, 0);
-    g_hMutex_8 = CreateMutexA(0, 0, 0);
+    gMutex4 = CreateMutexA(0, 0, 0);
+    gMutex3 = CreateMutexA(0, 0, 0);
+    gMutex5 = CreateMutexA(0, 0, 0);
+    gMutex6 = CreateMutexA(0, 0, 0);
+    gMutex7 = CreateMutexA(0, 0, 0);
+    gMutex8 = CreateMutexA(0, 0, 0);
     sub_10005960();
     return 1;
 }
 // 10220DD8: using guessed type int dword_10220DD8;
 // 10221310: using guessed type int dword_10221310;
-// 10221328: using guessed type int dword_10221328[];
-// 1022AAA8: using guessed type int dword_1022AAA8;
 
 //----- (10005BE0) --------------------------------------------------------
 BOOL np_sub_10005BE0() {
@@ -8382,71 +8357,67 @@ BOOL np_sub_10005BE0() {
     if (gNetworkPlay > 1)
         sub_10072270();
     v0 = sub_1000C510((HANDLE *)&unk) == 0;
-    if (g_hMutex_8) {
-        CloseHandle(g_hMutex_8);
-        g_hMutex_8 = 0;
+    if (gMutex8) {
+        CloseHandle(gMutex8);
+        gMutex8 = 0;
     }
-    if (g_hMutex_7) {
-        CloseHandle(g_hMutex_7);
-        g_hMutex_7 = 0;
+    if (gMutex7) {
+        CloseHandle(gMutex7);
+        gMutex7 = 0;
     }
-    if (g_hMutex_5) {
-        CloseHandle(g_hMutex_5);
-        g_hMutex_5 = 0;
+    if (gMutex5) {
+        CloseHandle(gMutex5);
+        gMutex5 = 0;
     }
-    if (g_hMutex_6) {
-        CloseHandle(g_hMutex_6);
-        g_hMutex_6 = 0;
+    if (gMutex6) {
+        CloseHandle(gMutex6);
+        gMutex6 = 0;
     }
-    if (g_hMutex_4) {
-        CloseHandle(g_hMutex_4);
-        g_hMutex_4 = 0;
+    if (gMutex3) {
+        CloseHandle(gMutex3);
+        gMutex3 = 0;
     }
-    if (hMutex_3) {
-        CloseHandle(hMutex_3);
-        hMutex_3 = 0;
+    if (gMutex4) {
+        CloseHandle(gMutex4);
+        gMutex4 = 0;
     }
-    if (g_hMutex_1) {
-        CloseHandle(g_hMutex_1);
-        g_hMutex_1 = 0;
+    if (gMutex1) {
+        CloseHandle(gMutex1);
+        gMutex1 = 0;
     }
-    if (g_hMutex_2) {
-        CloseHandle(g_hMutex_2);
-        g_hMutex_2 = 0;
+    if (gMutex2) {
+        CloseHandle(gMutex2);
+        gMutex2 = 0;
     }
-    if (g_hMutex_0) {
-        CloseHandle(g_hMutex_0);
-        g_hMutex_0 = 0;
+    if (gMutex0) {
+        CloseHandle(gMutex0);
+        gMutex0 = 0;
     }
-    if (hMutex) {
-        CloseHandle(hMutex);
-        hMutex = 0;
+    if (gMutex9) {
+        CloseHandle(gMutex9);
+        gMutex9 = 0;
     }
-    v1 = (HANDLE *)dword_10221328;
+    v1 = gMutexes;
     do {
         if (*v1) {
             CloseHandle(*v1);
             *v1 = 0;
         }
         v1 += 606;
-    } while ((int)v1 < (int)&dword_1022AAA8);
+    } while ((int)v1 < (int)&gMutexesEnd);
     return v0;
 }
-// 10221328: using guessed type int dword_10221328[];
-// 1022AAA8: using guessed type int dword_1022AAA8;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF18: using guessed type int gNetworkPlay;
 
 //----- (10005CF0) --------------------------------------------------------
-int __cdecl sub_10005CF0(int a1) {
+int __cdecl sub_10005CF0(int mutexMult) {
     int v1; // edi
 
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    v1 = dword_1022132C[606 * a1];
-    ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    WaitForSingleObject(gMutexes[606 * mutexMult], INFINITE);
+    v1 = unk_1022132C[606 * mutexMult];
+    ReleaseMutex(gMutexes[606 * mutexMult]);
     return v1;
 }
-// 10221328: using guessed type int dword_10221328[];
-// 1022132C: using guessed type int dword_1022132C[];
 
 //----- (10005D30) --------------------------------------------------------
 int sub_10005D30() {
@@ -8459,13 +8430,13 @@ int sub_10005D40() {
     int v0;     // esi
     int result; // eax
 
-    WaitForSingleObject(g_hMutex_1, INFINITE);
+    WaitForSingleObject(gMutex1, INFINITE);
     if (dword_10220DD4 < 0) {
-        ReleaseMutex(g_hMutex_1);
+        ReleaseMutex(gMutex1);
         result = -1;
     } else {
         v0 = dword_10220D90[dword_10220DD4--];
-        ReleaseMutex(g_hMutex_1);
+        ReleaseMutex(gMutex1);
         result = v0;
     }
     return result;
@@ -8477,13 +8448,13 @@ int sub_10005D90() {
     int v0;     // esi
     int result; // eax
 
-    WaitForSingleObject(g_hMutex_2, INFINITE);
+    WaitForSingleObject(gMutex2, INFINITE);
     if (dword_10221318 < 0) {
-        ReleaseMutex(g_hMutex_2);
+        ReleaseMutex(gMutex2);
         result = -1;
     } else {
         v0 = dword_10221288[dword_10221318--];
-        ReleaseMutex(g_hMutex_2);
+        ReleaseMutex(gMutex2);
         result = v0;
     }
     return result;
@@ -8491,70 +8462,65 @@ int sub_10005D90() {
 // 10221318: using guessed type int dword_10221318;
 
 //----- (10005DE0) --------------------------------------------------------
-int __cdecl sub_10005DE0(int a1, _BYTE *a2, _BYTE *a3, _BYTE *a4) {
+int __cdecl sub_10005DE0(int mutexMult, _BYTE *a2, _BYTE *a3, _BYTE *a4) {
     int v4; // edi
 
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    v4 = dword_10221358[606 * a1];
-    *a2 = byte_1022135C[2424 * a1];
-    *a3 = byte_1022135D[2424 * a1];
-    *a4 = byte_1022135E[2424 * a1];
-    ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    WaitForSingleObject(gMutexes[606 * mutexMult], INFINITE);
+    v4 = unk_10221358[606 * mutexMult];
+    *a2 = unk_1022135C[2424 * mutexMult];
+    *a3 = unk_1022135D[2424 * mutexMult];
+    *a4 = unk_1022135E[2424 * mutexMult];
+    ReleaseMutex(gMutexes[606 * mutexMult]);
     return v4;
 }
-// 10221328: using guessed type int dword_10221328[];
-// 10221358: using guessed type int dword_10221358[];
 
 //----- (10005E40) --------------------------------------------------------
 int __cdecl sub_10005E40(int a1) {
     int v1; // esi
 
-    WaitForSingleObject(g_hMutex_0, INFINITE);
+    WaitForSingleObject(gMutex0, INFINITE);
     v1 = dword_102212D0[a1];
-    ReleaseMutex(g_hMutex_0);
+    ReleaseMutex(gMutex0);
     return v1;
 }
 
 //----- (10005E70) --------------------------------------------------------
-char *__cdecl sub_10005E70(int a1) {
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    strcpy(byte_1022AAF8, &byte_10221898[2424 * a1]);
-    ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+char *__cdecl sub_10005E70(int mutexMult) {
+    WaitForSingleObject(gMutexes[606 * mutexMult], INFINITE);
+    strcpy(byte_1022AAF8, &byte_10221898[2424 * mutexMult]);
+    ReleaseMutex(gMutexes[606 * mutexMult]);
     return byte_1022AAF8;
 }
-// 10221328: using guessed type int dword_10221328[];
 
 //----- (10005EE0) --------------------------------------------------------
 BOOL __cdecl np_sub_10005EE0(int a1, const char *a2) {
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
+    WaitForSingleObject((HANDLE)gMutexes[606 * a1], INFINITE);
     strcpy(&byte_10221898[2424 * a1], a2);
-    return ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    return ReleaseMutex((HANDLE)gMutexes[606 * a1]);
 }
 // 10221328: using guessed type int dword_10221328[];
 
 //----- (10005F40) --------------------------------------------------------
-int __cdecl sub_10005F40(int a1) {
+int __cdecl sub_10005F40(int mutexMult) {
     int v1; // esi
 
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    v1 = (atomic_sub_10004A10(a1) & 0x3F) - 4;
-    ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    WaitForSingleObject(gMutexes[606 * mutexMult], INFINITE);
+    v1 = (atomic_sub_10004A10(mutexMult) & 0x3F) - 4;
+    ReleaseMutex(gMutexes[606 * mutexMult]);
     return v1 <= 0 ? 0 : v1;
 }
-// 10221328: using guessed type int dword_10221328[];
 
 //----- (10005F90) --------------------------------------------------------
-int __cdecl sub_10005F90(int offsetX606) {
+int __cdecl sub_10005F90(int mutexMult) {
     int v1; // edi
 
-    WaitForSingleObject((HANDLE)dword_10221328[606 * offsetX606], INFINITE);
-    v1 = dword_10221C9C[606 * offsetX606];
-    ReleaseMutex((HANDLE)dword_10221328[606 * offsetX606]);
+    WaitForSingleObject(gMutexes[606 * mutexMult], INFINITE);
+    v1 = dword_10221C9C[606 * mutexMult];
+    ReleaseMutex(gMutexes[606 * mutexMult]);
     if (v1 < 0)
         v1 = 0;
     return v1;
 }
-// 10221328: using guessed type int dword_10221328[];
 
 //----- (10005FE0) --------------------------------------------------------
 int __cdecl np_sub_10005FE0(int a1) {
@@ -8571,13 +8537,13 @@ int __cdecl np_sub_10005FE0(int a1) {
         if (result == a1) {
             result = atomic_sub_10004A10(v1);
             if ((result & 0x3F) != 0) {
-                WaitForSingleObject(g_hMutex_2, 0xFFFFFFFF);
-                v4 = g_hMutex_2;
+                WaitForSingleObject(gMutex2, 0xFFFFFFFF);
+                v4 = gMutex2;
                 dword_10221288[++dword_10221318] = v1;
                 ReleaseMutex(v4);
                 atomic_sub_10004A50(v1, 0);
                 sprintf(Buffer, "%%15%s left the game.", v2);
-                result = sub_10003530(Buffer);
+                result = np_sub_10003530(Buffer);
             }
         }
         v2 += 2424;
@@ -8589,33 +8555,33 @@ int __cdecl np_sub_10005FE0(int a1) {
 
 //----- (10006090) --------------------------------------------------------
 BOOL atomic_sub_10006090() {
-    WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);
+    WaitForSingleObject(gMutex7, 0xFFFFFFFF);
     dword_10220DD0 = 1;
-    return ReleaseMutex(g_hMutex_7);
+    return ReleaseMutex(gMutex7);
 }
 // 10220DD0: using guessed type int dword_10220DD0;
 
 //----- (100060C0) --------------------------------------------------------
 BOOL sub_100060C0() {
-    WaitForSingleObject(g_hMutex_7, 0xFFFFFFFF);
+    WaitForSingleObject(gMutex7, 0xFFFFFFFF);
     dword_10220DD0 = 0;
-    return ReleaseMutex(g_hMutex_7);
+    return ReleaseMutex(gMutex7);
 }
 // 10220DD0: using guessed type int dword_10220DD0;
 
 //----- (100060F0) --------------------------------------------------------
 BOOL sub_100060F0() {
-    WaitForSingleObject(hMutex, INFINITE);
+    WaitForSingleObject(gMutex9, INFINITE);
     if (dword_1022AEF8 >= 0) {
         sub_10072AF0(dword_1022AEF8, 0x200020u);
         dword_1022AEF8 = -1;
     }
     if (dword_1022AF08) {
         dword_104B0338 = (int)&byte_10220E80;
-        dword_104B033C = 1077936128;
+        dword_104B033C = 0x40400000;
         dword_1022AF08 = 0;
     }
-    return ReleaseMutex(hMutex);
+    return ReleaseMutex(gMutex9);
 }
 // 10220E80: using guessed type char byte_10220E80;
 // 1022AEF8: using guessed type int dword_1022AEF8;
@@ -8625,16 +8591,16 @@ BOOL sub_100060F0() {
 
 //----- (10006160) --------------------------------------------------------
 BOOL np_sub_10006160() {
-    WaitForSingleObject(g_hMutex_8, 0xFFFFFFFF);
+    WaitForSingleObject(gMutex8, 0xFFFFFFFF);
     if (sub_10003460() >= dword_1022AF00)
         gIsGameMode4 = 1;
-    return ReleaseMutex(g_hMutex_8);
+    return ReleaseMutex(gMutex8);
 }
 // 1022AF00: using guessed type int dword_1022AF00;
 // 1022AF14: using guessed type int g_usingGameMode4;
 
 //----- (100061A0) --------------------------------------------------------
-int __cdecl sub_100061A0(int a1, float *a2) {
+int __cdecl sub_100061A0(unk00214 *u214, float a2[40]) {
     __int16 v2;          // ax
     __int16 v3;          // ax
     __int16 v4;          // ax
@@ -8656,85 +8622,85 @@ int __cdecl sub_100061A0(int a1, float *a2) {
     unsigned __int8 v20; // al
     int result;          // eax
 
-    v2 = sub_100065E0(*a2);
-    meth_10073E70((_DWORD *)a1, v2 >> 8, 8);
-    v3 = sub_100065E0(a2[1]);
-    meth_10073E70((_DWORD *)a1, v3 >> 8, 8);
-    v4 = sub_100065E0(a2[2]);
-    meth_10073E70((_DWORD *)a1, v4 >> 8, 8);
-    v5 = sub_100065E0(a2[3]);
-    meth_10073E70((_DWORD *)a1, v5 >> 8, 8);
+    v2 = ClampFloor32768Int(*a2);
+    meth_unk00214_10073E70(u214, v2 >> 8, 8);
+    v3 = ClampFloor32768Int(a2[1]);
+    meth_unk00214_10073E70(u214, v3 >> 8, 8);
+    v4 = ClampFloor32768Int(a2[2]);
+    meth_unk00214_10073E70(u214, v4 >> 8, 8);
+    v5 = ClampFloor32768Int(a2[3]);
+    meth_unk00214_10073E70(u214, v5 >> 8, 8);
     v6 = sub_100066E0(a2[4]);
-    meth_10073E70((_DWORD *)a1, v6 >> 7, 17);
+    meth_unk00214_10073E70(u214, v6 >> 7, 17);
     v7 = sub_100066E0(a2[5]);
-    meth_10073E70((_DWORD *)a1, v7 >> 7, 17);
-    v8 = sub_10006770(a2[6]);
-    meth_10073E70((_DWORD *)a1, v8 >> 1, 15);
+    meth_unk00214_10073E70(u214, v7 >> 7, 17);
+    v8 = Clamp32768_FloorNeg128(a2[6]);
+    meth_unk00214_10073E70(u214, v8 >> 1, 15);
     v9 = sub_100067B0(a2[7]);
-    meth_10073E70((_DWORD *)a1, v9, 16);
+    meth_unk00214_10073E70(u214, v9, 16);
     v10 = sub_100067B0(a2[8]);
-    meth_10073E70((_DWORD *)a1, v10, 16);
+    meth_unk00214_10073E70(u214, v10, 16);
     v11 = sub_100067F0(a2[10]);
-    meth_10073E70((_DWORD *)a1, v11 >> 3, 5);
+    meth_unk00214_10073E70(u214, v11 >> 3, 5);
     v12 = sub_100067F0(a2[11]);
-    meth_10073E70((_DWORD *)a1, v12 >> 3, 5);
+    meth_unk00214_10073E70(u214, v12 >> 3, 5);
     v13 = sub_100067F0(a2[12]);
-    meth_10073E70((_DWORD *)a1, v13 >> 3, 5);
+    meth_unk00214_10073E70(u214, v13 >> 3, 5);
     v14 = sub_100067F0(a2[13]);
-    meth_10073E70((_DWORD *)a1, v14 >> 4, 4);
-    v15 = sub_100065A0(a2[14]);
-    meth_10073E70((_DWORD *)a1, v15 >> 2, 4);
+    meth_unk00214_10073E70(u214, v14 >> 4, 4);
+    v15 = ClampFloor32Int(a2[14]);
+    meth_unk00214_10073E70(u214, v15 >> 2, 4);
     v16 = sub_10006620(a2[15]);
-    meth_10073E70((_DWORD *)a1, v16 >> 4, 4);
-    meth_10073E70((_DWORD *)a1, a2[19] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[20] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[21] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[22] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[27] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[28] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[29] != 0.0, 1);
+    meth_unk00214_10073E70(u214, v16 >> 4, 4);
+    meth_unk00214_10073E70(u214, a2[19] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[20] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[21] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[22] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[27] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[28] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[29] != 0.0, 1);
     v17 = sub_10006730(a2[30]);
-    meth_10073E70((_DWORD *)a1, v17, 24);
+    meth_unk00214_10073E70(u214, v17, 24);
     v18 = sub_10006660(a2[31]);
-    meth_10073E70((_DWORD *)a1, v18, 6);
+    meth_unk00214_10073E70(u214, v18, 6);
     v19 = sub_100066A0(a2[32]);
-    meth_10073E70((_DWORD *)a1, v19, 2);
+    meth_unk00214_10073E70(u214, v19, 2);
     v20 = sub_100066A0(a2[33]);
-    meth_10073E70((_DWORD *)a1, v20, 2);
-    meth_10073E70((_DWORD *)a1, a2[34] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[35] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[36] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[37] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[38] != 0.0, 1);
+    meth_unk00214_10073E70(u214, v20, 2);
+    meth_unk00214_10073E70(u214, a2[34] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[35] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[36] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[37] != 0.0, 1);
+    meth_unk00214_10073E70(u214, a2[38] != 0.0, 1);
     if (a2[39] == 0.0)
-        result = meth_10073E70((_DWORD *)a1, 0, 1);
+        result = meth_unk00214_10073E70(u214, 0, 1);
     else
-        result = meth_10073E70((_DWORD *)a1, 1, 1);
+        result = meth_unk00214_10073E70(u214, 1, 1);
     return result;
 }
 
 //----- (100065A0) --------------------------------------------------------
-int __cdecl sub_100065A0(float a1) {
-    __int64 v1; // rax
+int __cdecl ClampFloor32Int(float a1) {
+    int v1; // eax
 
-    v1 = (__int64)floor(0.5 - a1 * 128.0);
-    if ((int)v1 < -32)
-        LODWORD(v1) = -32;
-    if ((int)v1 > 31)
-        LODWORD(v1) = 31;
+    *(_QWORD *)&v1 = (__int64)floor(0.5 - a1 * 128.0);
+    if (v1 < -32)
+        v1 = -32;
+    if (v1 > 31)
+        v1 = 31;
     return v1;
 }
 
 //----- (100065E0) --------------------------------------------------------
-int __cdecl sub_100065E0(float a1) {
-    __int64 v1; // rax
+int __cdecl ClampFloor32768Int(float x) {
+    int res; // eax
 
-    v1 = (__int64)floor(0.5 - a1 * 32768.0);
-    if ((int)v1 < -32768)
-        LODWORD(v1) = -32768;
-    if ((int)v1 > 0x7FFF)
-        LODWORD(v1) = 0x7FFF;
-    return v1;
+    *(_QWORD *)&res = (__int64)floor(0.5 - x * 32768.0);
+    if (res < -32768)
+        res = -32768;
+    if (res > 32767)
+        res = 32767;
+    return res;
 }
 
 //----- (10006620) --------------------------------------------------------
@@ -8800,7 +8766,7 @@ int __cdecl sub_10006730(float a1) {
 }
 
 //----- (10006770) --------------------------------------------------------
-int __cdecl sub_10006770(float a1) {
+int __cdecl Clamp32768_FloorNeg128(float a1) {
     __int64 v1; // rax
 
     v1 = (__int64)floor(0.5 - a1 * -128.0);
@@ -8836,7 +8802,7 @@ int __cdecl sub_100067F0(float a1) {
 }
 
 //----- (10006830) --------------------------------------------------------
-int __cdecl sub_10006830(int a1, float *a2, float *a3) {
+int __cdecl sub_10006830(unk00214 *a1, float *a2, float *a3) {
     __int16 v3;           // ax
     __int16 v4;           // ax
     __int16 v5;           // ax
@@ -8863,14 +8829,14 @@ int __cdecl sub_10006830(int a1, float *a2, float *a3) {
     unsigned __int8 v26;  // al
     int result;           // eax
 
-    v3 = sub_100065E0(*a2);
-    meth_10073E70((_DWORD *)a1, v3 >> 8, 8);
-    v4 = sub_100065E0(a2[1]);
-    meth_10073E70((_DWORD *)a1, v4 >> 8, 8);
-    v5 = sub_100065E0(a2[2]);
-    meth_10073E70((_DWORD *)a1, v5 >> 8, 8);
-    v6 = sub_100065E0(a2[3]);
-    meth_10073E70((_DWORD *)a1, v6 >> 8, 8);
+    v3 = ClampFloor32768Int(*a2);
+    meth_unk00214_10073E70(a1, v3 >> 8, 8);
+    v4 = ClampFloor32768Int(a2[1]);
+    meth_unk00214_10073E70(a1, v4 >> 8, 8);
+    v5 = ClampFloor32768Int(a2[2]);
+    meth_unk00214_10073E70(a1, v5 >> 8, 8);
+    v6 = ClampFloor32768Int(a2[3]);
+    meth_unk00214_10073E70(a1, v6 >> 8, 8);
     v7 = (unsigned int)sub_100066E0(a3[4]) >> 7;
     v8 = (unsigned int)sub_100066E0(a2[4]) >> 7;
     if (((v7 ^ v8) & 0x1F000) != 0) {
@@ -8882,7 +8848,7 @@ int __cdecl sub_10006830(int a1, float *a2, float *a3) {
     } else {
         v9 = 0;
     }
-    meth_10073E70((_DWORD *)a1, v8 & 0xFFF | v9 & 0x3000, 14);
+    meth_unk00214_10073E70(a1, v8 & 0xFFF | v9 & 0x3000, 14);
     v11 = (unsigned int)sub_100066E0(a3[5]) >> 7;
     v12 = (unsigned int)sub_100066E0(a2[5]) >> 7;
     if (((v11 ^ v12) & 0x1F000) != 0) {
@@ -8894,9 +8860,9 @@ int __cdecl sub_10006830(int a1, float *a2, float *a3) {
     } else {
         v13 = 0;
     }
-    meth_10073E70((_DWORD *)a1, v12 & 0xFFF | v13 & 0x3000, 14);
-    v15 = (__int16)sub_10006770(a3[6]) >> 1;
-    v16 = (__int16)sub_10006770(a2[6]) >> 1;
+    meth_unk00214_10073E70(a1, v12 & 0xFFF | v13 & 0x3000, 14);
+    v15 = (__int16)Clamp32768_FloorNeg128(a3[6]) >> 1;
+    v16 = (__int16)Clamp32768_FloorNeg128(a2[6]) >> 1;
     if (((v15 ^ v16) & 0x7E00) != 0) {
         v18 = v15 & 0x7E00;
         v19 = v16 & 0x7E00;
@@ -8907,7 +8873,7 @@ int __cdecl sub_10006830(int a1, float *a2, float *a3) {
     } else {
         v17 = 0;
     }
-    meth_10073E70((_DWORD *)a1, v17 & 0x600 | v16 & 0x1FF, 11);
+    meth_unk00214_10073E70(a1, v17 & 0x600 | v16 & 0x1FF, 11);
     v20 = sub_10006730(a3[30]);
     v21 = sub_10006730(a2[30]);
     if (((v20 ^ v21) & 0xFFFF80) != 0) {
@@ -8919,27 +8885,27 @@ int __cdecl sub_10006830(int a1, float *a2, float *a3) {
     } else {
         v22 = 0;
     }
-    meth_10073E70((_DWORD *)a1, v22 & 0x180 | v21 & 0x7F, 9);
+    meth_unk00214_10073E70(a1, v22 & 0x180 | v21 & 0x7F, 9);
     v24 = sub_10006660(a2[31]);
-    meth_10073E70((_DWORD *)a1, v24, 6);
+    meth_unk00214_10073E70(a1, v24, 6);
     v25 = sub_100066A0(a2[32]);
-    meth_10073E70((_DWORD *)a1, v25, 2);
+    meth_unk00214_10073E70(a1, v25, 2);
     v26 = sub_100066A0(a2[33]);
-    meth_10073E70((_DWORD *)a1, v26, 2);
-    meth_10073E70((_DWORD *)a1, a2[34] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[35] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[36] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[37] != 0.0, 1);
-    meth_10073E70((_DWORD *)a1, a2[38] != 0.0, 1);
+    meth_unk00214_10073E70(a1, v26, 2);
+    meth_unk00214_10073E70(a1, a2[34] != 0.0, 1);
+    meth_unk00214_10073E70(a1, a2[35] != 0.0, 1);
+    meth_unk00214_10073E70(a1, a2[36] != 0.0, 1);
+    meth_unk00214_10073E70(a1, a2[37] != 0.0, 1);
+    meth_unk00214_10073E70(a1, a2[38] != 0.0, 1);
     if (a2[39] == 0.0)
-        result = meth_10073E70((_DWORD *)a1, 0, 1);
+        result = meth_unk00214_10073E70(a1, 0, 1);
     else
-        result = meth_10073E70((_DWORD *)a1, 1, 1);
+        result = meth_unk00214_10073E70(a1, 1, 1);
     return result;
 }
 
 //----- (10006BD0) --------------------------------------------------------
-char __cdecl sub_10006BD0(int a1, float *a2) {
+char __cdecl sub_10006BD0(int a1, float a2[40]) {
     _BOOL2 v3;   // di
     _BOOL2 v4;   // bx
     _BOOL2 v5;   // bx
@@ -8956,28 +8922,28 @@ char __cdecl sub_10006BD0(int a1, float *a2) {
     char v16;    // al
     char v17;    // bl
     char result; // al
-    int v19;     // [esp+18h] [ebp+8h]
+    int a2a;     // [esp+18h] [ebp+8h]
 
     v3 = a2[35] != 0.0;
-    *(_WORD *)a1 = v3 | sub_100065E0(*a2) & 0xFFFE;
+    *(_WORD *)a1 = v3 | ClampFloor32768Int(*a2) & 0xFFFE;
     v4 = a2[36] != 0.0;
-    *(_WORD *)(a1 + 2) = v4 | sub_100065E0(a2[1]) & 0xFFFE;
+    *(_WORD *)(a1 + 2) = v4 | ClampFloor32768Int(a2[1]) & 0xFFFE;
     v5 = a2[37] != 0.0;
-    *(_WORD *)(a1 + 4) = v5 | sub_100065E0(a2[2]) & 0xFFFE;
-    v19 = 1;
+    *(_WORD *)(a1 + 4) = v5 | ClampFloor32768Int(a2[2]) & 0xFFFE;
+    a2a = 1;
     v6 = a2[38] != 0.0;
-    *(_WORD *)(a1 + 6) = v6 | sub_100065E0(a2[3]) & 0xFFFE;
+    *(_WORD *)(a1 + 6) = v6 | ClampFloor32768Int(a2[3]) & 0xFFFE;
     if (a2[27] == 0.0)
-        v19 = 0;
+        a2a = 0;
     v8 = a2[39] != 0.0;
     v7 = a2[34] != 0.0;
-    *(_DWORD *)(a1 + 8) = v19 | (2 * (v7 | (2 * v8))) | sub_100066E0(a2[4]) & 0xFFFFF8;
+    *(_DWORD *)(a1 + 8) = a2a | (2 * (v7 | (2 * v8))) | sub_100066E0(a2[4]) & 0xFFFFF8;
     v10 = a2[29] != 0.0;
     v9 = a2[28] != 0.0;
     *(_DWORD *)(a1 + 12) = v10 | (2 * v9) | sub_100066E0(a2[5]) & 0xFFFFFC;
-    *(_WORD *)(a1 + 16) = sub_10006770(a2[6]);
+    *(_WORD *)(a1 + 16) = Clamp32768_FloorNeg128(a2[6]);
     *(_BYTE *)(a1 + 18) = sub_100067F0(a2[13]);
-    LOBYTE(v10) = sub_100065A0(a2[14]) & 0x3F;
+    LOBYTE(v10) = ClampFloor32Int(a2[14]) & 0x3F;
     *(_BYTE *)(a1 + 19) = (sub_100066A0(a2[32]) << 6) | v10;
     *(_BYTE *)(a1 + 11) = sub_10006620(a2[15]);
     if (a2[19] == 0.0)
@@ -9066,9 +9032,9 @@ unsigned int __cdecl sub_10006EC0(int a1, int *a2) {
     HIBYTE(v9) = v8;
     *(float *)(a1 + 12) = mult_neg_1_32_32_32(v9);
     v10 = meth_10073C90(a2, 17);
-    *(float *)(a1 + 16) = sub_10007310(v10 << 7);
+    *(float *)(a1 + 16) = mult_1_32_32_8(v10 << 7);
     v11 = meth_10073C90(a2, 17);
-    *(float *)(a1 + 20) = sub_10007310(v11 << 7);
+    *(float *)(a1 + 20) = mult_1_32_32_8(v11 << 7);
     v12 = meth_10073C90(a2, 15);
     *(float *)(a1 + 24) = mult_1_128(2 * v12);
     v13 = meth_10073C90(a2, 16);
@@ -9157,6 +9123,7 @@ unsigned int __cdecl sub_10006EC0(int a1, int *a2) {
 // 100072E0: using guessed type double __cdecl sub_100072E0(char);
 
 //----- (10007250) --------------------------------------------------------
+// -1/64/2 = -0.0078125
 double __cdecl sub_10007250(char a1) {
     double result; // st7
 
@@ -9197,7 +9164,7 @@ double __cdecl sub_100072E0(char a1) {
 // 100072E0: using guessed type double __cdecl sub_100072E0(char);
 
 //----- (10007310) --------------------------------------------------------
-double __cdecl sub_10007310(unsigned int a1) {
+double __cdecl mult_1_32_32_8(unsigned int a1) {
     return (double)a1 * 0.00012207031;
 }
 
@@ -9293,7 +9260,7 @@ unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3) {
     } else {
         v14 = v11 & 0x1F000;
     }
-    a1[4] = sub_10007310((v12 & 0xFFF | (unsigned int)v14) << 7);
+    a1[4] = mult_1_32_32_8((v12 & 0xFFF | (unsigned int)v14) << 7);
     v15 = (unsigned int)sub_100066E0(a2[5]) >> 7;
     v16 = meth_10073C90(a3, 14);
     v17 = v16 & 0x3000;
@@ -9308,8 +9275,8 @@ unsigned int __cdecl sub_100073E0(float *a1, float *a2, int *a3) {
     } else {
         v18 = v15 & 0x1F000;
     }
-    a1[5] = sub_10007310((v16 & 0xFFF | (unsigned int)v18) << 7);
-    v19 = (__int16)sub_10006770(a2[6]) >> 1;
+    a1[5] = mult_1_32_32_8((v16 & 0xFFF | (unsigned int)v18) << 7);
+    v19 = (__int16)Clamp32768_FloorNeg128(a2[6]) >> 1;
     v20 = meth_10073C90(a3, 11);
     v21 = v20 & 0x600;
     if ((v20 & 0x600) != 0) {
@@ -9391,8 +9358,8 @@ int __cdecl sub_10007730(int a1, int a2) {
     *(float *)(a1 + 4) = mult_neg_1_32_32_32(*(_WORD *)(a2 + 2));
     *(float *)(a1 + 8) = mult_neg_1_32_32_32(*(_WORD *)(a2 + 4));
     *(float *)(a1 + 12) = mult_neg_1_32_32_32(*(_WORD *)(a2 + 6));
-    *(float *)(a1 + 16) = sub_10007310(*(_DWORD *)(a2 + 8) & 0xFFFFFF);
-    *(float *)(a1 + 20) = sub_10007310(*(_DWORD *)(a2 + 12) & 0xFFFFFF);
+    *(float *)(a1 + 16) = mult_1_32_32_8(*(_DWORD *)(a2 + 8) & 0xFFFFFF);
+    *(float *)(a1 + 20) = mult_1_32_32_8(*(_DWORD *)(a2 + 12) & 0xFFFFFF);
     *(float *)(a1 + 24) = mult_1_128(*(_WORD *)(a2 + 16));
     *(float *)(a1 + 52) = mult_1_8(*(_BYTE *)(a2 + 18));
     *(float *)(a1 + 56) = sub_10007250(*(_BYTE *)(a2 + 19) & 0x3F);
@@ -9796,7 +9763,7 @@ int __thiscall meth_10008670(Pod *this, int a2) {
     _DWORD *i;       // ecx
     int v7[16];      // [esp+10h] [ebp-40h] BYREF
 
-    this->lpVtbl->meth4(this, a2, v7);
+    this->lpVtbl->meth1(this, a2, v7);
     v3 = (char *)this->unkInstance;
     v4 = this->header.m_cNumPods;
     result = 0;
@@ -9850,9 +9817,9 @@ int __thiscall LoadPod(Pod *this, unsigned int ArgList) {
     if (ArgList >= this->header.m_cNumPods)
         writeToRandomBufferAndExit("LoadPod: %i >= m_cNumPods", ArgList);
     v3 = this->lpVtbl;
-    v4 = this->lpVtbl->field_10(this, ArgList);
+    v4 = this->lpVtbl->meth5(this, ArgList);
     v5 = operator new(v4);
-    v3->meth14(this, ArgList, v5);
+    v3->meth6(this, ArgList, v5);
     return v5;
 }
 
@@ -9860,7 +9827,7 @@ int __thiscall LoadPod(Pod *this, unsigned int ArgList) {
 int __thiscall LoadPod_0(Pod *this, unsigned int argList, int a3) {
     if (argList >= this->header.m_cNumPods)
         writeToRandomBufferAndExit("LoadPod: %i >= m_cNumPods", argList);
-    this->lpVtbl->meth14(this, argList, a3);
+    this->lpVtbl->meth6(this, argList, a3);
     return a3;
 }
 
@@ -9870,8 +9837,8 @@ int __thiscall pod_meth_10008890(Pod *this, int a2) {
     int v4;      // eax
 
     v3 = this->lpVtbl;
-    v4 = ((int(__thiscall *)(Pod *, int))this->lpVtbl->methC)(this, a2);
-    return v3->field_24(this, (char *)v4);
+    v4 = ((int(__thiscall *)(Pod *, int))this->lpVtbl->meth4)(this, a2);
+    return v3->meth10(this, (char *)v4);
 }
 
 //----- (100088B0) --------------------------------------------------------
@@ -9880,8 +9847,8 @@ int __thiscall pod_meth_100088B0(Pod *this, int a2, int a3) {
     int v5;      // eax
 
     v4 = this->lpVtbl;
-    v5 = this->lpVtbl->methC(this, a2, a3);
-    return v4->meth1C(this, v5);
+    v5 = this->lpVtbl->meth4(this, a2, a3);
+    return v4->meth8(this, v5);
 }
 
 //----- (100088D0) --------------------------------------------------------
@@ -9941,7 +9908,7 @@ int __stdcall sub_100089C0(char *FileName) {
 // 10277358: using guessed type int dword_10277358;
 
 //----- (10008A00) --------------------------------------------------------
-size_t __thiscall meth_10008A00(Pod *this, const char *a2, int a3, int a4, char a5, char a6) {
+size_t __thiscall meth_Pod_Add(Pod *this, const char *a2, int a3, int a4, char a5, char a6) {
     int v6;   // edx
     char *v7; // esi
 
@@ -11567,7 +11534,7 @@ HRESULT __thiscall meth_unk0008C_1000AB70(unk0008C *this) {
     result = iSurface->GetAttachedSurface(lpSurface, &ddsCaps, &this->lpDirectDrawSurface1);
     if (result < 0)
         return result;
-    v5 = meth_unk00334_1001AD90(this->u334);
+    v5 = meth_unk00228_Field24IsNotNull(this->u334);
     v6 = this->u334;
     if (v5) {
         v7 = &v6->field_1C;
@@ -12043,7 +12010,7 @@ HRESULT __thiscall meth_unk0008C_1000B390(unk0008C *this, int a1, unk00334 *a3, 
 //----- (1000B4D0) --------------------------------------------------------
 HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4, int a5) {
     unk00334 *v6;   // edi
-    unk00334 *v7;   // ebp
+    unk00228 *v7;   // ebp
     unk00334 *v8;   // eax
     unk00334 *v9;   // ebx
     HRESULT result; // eax
@@ -12054,16 +12021,16 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
     if (!this->hwnd || !IsWindow(this->hwnd))
         return -2005522669;
     v6 = this->field_2C;
-    v7 = this->u334;
+    v7 = (unk00228 *)this->u334;
     v13 = this->field_30;
     v8 = meth_unk00334_1001B490(v6, a2, a3, a4, 0, 0, 0);
     v9 = v8;
     if (!v8)
-        return -2005522670;
+        return 2289444626;
     if (meth_unk00334_1001ACF0(v8, v7)) {
         v11 = 0;
     } else {
-        v11 = (unk00334 *)meth_unk00334_1001B7C0(v6, &v7->lpGUID, v9, (int)&a4, 0);
+        v11 = (unk00334 *)meth_unk00334_1001B7C0(v6, &v7->guid, v9, (unk00228 *)&a4, 0);
         if (!v11) {
             v11 = (unk00334 *)a4;
             if (!a4)
@@ -12081,7 +12048,7 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
         if (v12 < 0) {
             this->field_30 = v13;
         LABEL_17:
-            this->u334 = v7;
+            this->u334 = (unk00334 *)v7;
             meth_unk0008C_1000A5D0(this);
             meth_unk0008C_1000A820(this);
             meth_unk0008C_1000AB70(this);
@@ -12137,16 +12104,16 @@ IDirectDrawSurface *__cdecl DDrawCreateSurface(
 }
 
 //----- (1000B790) --------------------------------------------------------
-int __cdecl sub_1000B790(int a1, LPCSTR name) {
-    HMODULE v2; // eax
-    HANDLE v3;  // esi
-    int result; // eax
-    int v5;     // edi
+HRESULT __cdecl DDCopyBitmap(IDirectDrawSurface *ddSurface, LPCSTR name) {
+    HMODULE v2;     // eax
+    HANDLE v3;      // esi
+    HRESULT result; // eax
+    HRESULT v5;     // edi
 
     v2 = GetModuleHandleA(0);
     v3 = LoadImageA(v2, name, 0, 0, 0, 0x2000u);
     if (v3 || (v3 = LoadImageA(0, name, 0, 0, 0, 0x2010u)) != 0) {
-        v5 = sub_1000B820(a1, v3, 0, 0, 0, 0);
+        v5 = sub_1000B820(ddSurface, v3, 0, 0, 0, 0);
         if (v5)
             OutputDebugStringA(aDdcopybitmapFa);
         DeleteObject(v3);
@@ -21892,17 +21859,17 @@ unk00334 *__cdecl meth_unk00334_1001A570(
 }
 
 //----- (1001A5D0) --------------------------------------------------------
-IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, #492 * a3) {
-    IID **__attribute__((__org_arrdim(0, 3))) result; // eax
+CLSID *__cdecl sub_1001A5D0(unk00334 *a1, CLSID *clsid, unk00334 *a3) {
+    CLSID *result; // eax
 
     if (!a1)
         return 0;
     if (a3)
-        result = (IID **)meth_unk00334_1001B7C0((unk00334 *)a1, a2, (unk00334 *)a3, (int)&a2, 0);
+        result = (CLSID *)meth_unk00334_1001B7C0(a1, clsid, a3, (unk00228 *)&clsid, 0);
     else
-        result = (IID **)meth_1001B690(a1, (int)a2, &a2, 0);
+        result = (CLSID *)meth_unk00334_1001B690(a1, clsid, &clsid, 0);
     if (!result)
-        result = (IID **)a2;
+        result = clsid;
     return result;
 }
 
@@ -21963,7 +21930,7 @@ int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD 
     v9 = a8;
     if (!a8)
         return 0;
-    v10 = meth_1001B690((_DWORD *)a1, a2, &a1, 0);
+    v10 = meth_unk00334_1001B690((_DWORD *)a1, a2, &a1, 0);
     if (!v10) {
         v10 = (unk00334 *)a1;
         if (!a1)
@@ -22047,10 +22014,11 @@ unsigned int __cdecl sub_1001A870(unsigned int a1) {
 }
 
 //----- (1001A8C0) --------------------------------------------------------
-int __cdecl sub_1001A8C0(int a1) {
+// 32768 / (2 ^ bitDepth)
+int __cdecl BitDepthTo(int bitDepth) {
     int result; // eax
 
-    switch (a1) {
+    switch (bitDepth) {
     case 1:
         result = 0x4000;
         break;
@@ -22255,8 +22223,8 @@ int __stdcall d3d2enumDevicesCallback(GUID *a2,
 }
 
 //----- (1001AC60) --------------------------------------------------------
-int __thiscall meth_unk00334_1001AC60(unk00334 *this) {
-    if (this->u8c != (unk0008C *)108)
+int __thiscall meth_unk00334_GetBitDepth(unk00334 *this) {
+    if (this->u8c != (unk0008C *)0x6C)
         return 0;
     if (((int)this->lpGUID & 0x1000) == 0)
         return 0;
@@ -22289,39 +22257,42 @@ int __thiscall meth_unk00334_1001AC80(
 }
 
 //----- (1001ACF0) --------------------------------------------------------
-BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00334 *a2) {
-    int v3;   // eax
-    int v4;   // edi
-    DWORD v5; // eax
+BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00228 *u228) {
+    int bitDepth;   // eax
+    int bitDepthTo; // edi
+    int v5;         // eax
 
-    if (!a2)
+    if (!u228)
         return 0;
-    v3 = meth_unk00334_1001AC60(this);
-    v4 = sub_1001A8C0(v3);
-    if (meth_unk00334_1001AD90(a2))
-        v5 = v4 & a2->field_B8;
+    bitDepth = meth_unk00334_GetBitDepth(this);
+    bitDepthTo = BitDepthTo(bitDepth);
+    if (meth_unk00228_Field24IsNotNull(u228))
+        v5 = bitDepthTo & u228->field_B8;
     else
-        v5 = v4 & a2->ddCaps0.dwSVCaps;
+        v5 = bitDepthTo & u228->field_1B4;
     return v5 != 0;
 }
 
 //----- (1001AD50) --------------------------------------------------------
-BOOL __thiscall meth_unk00334_1001AD50(unk00334 *this, int width, int height, int bitDepth) {
+BOOL __thiscall meth_unk00334_MatchesWidthHeightBitDepth(unk00334 *this,
+                                                         int width,
+                                                         int height,
+                                                         int bitDepth) {
     return this->u8c == (unk0008C *)0x6C && this->width == width && this->height == height &&
            this->bitDepth == bitDepth;
 }
 
 //----- (1001AD90) --------------------------------------------------------
-BOOL __thiscall meth_unk00334_1001AD90(unk00334 *this) {
+BOOL __thiscall meth_unk00228_Field24IsNotNull(unk00228 *this) {
     return this->field_24 != 0;
 }
 
 //----- (1001ADA0) --------------------------------------------------------
-bool __thiscall meth_unk00334_1001ADA0(unk00334 *this, const void *a2) {
-    if (!a2)
+int __thiscall meth_unk00228_MatchesGUID(unk00228 *this, CLSID *clsid) {
+    if (!clsid)
         return 0;
-    if (((int)this->u8c & 1) != 0)
-        return memcmp(&this->lpGUID, a2, 0x10u) == 0;
+    if (((int)this->field_0 & 1) != 0)
+        return memcmp(&this->guid, clsid, 0x10u) == 0;
     return 0;
 }
 
@@ -22742,9 +22713,9 @@ unk00334 *__thiscall meth_unk00334_1001B490(
         return 0;
     while (1) {
         v8 = v7->field_70;
-        if (meth_unk00334_1001AD50(v7, width, height, bitDepth))
+        if (meth_unk00334_MatchesWidthHeightBitDepth(v7, width, height, bitDepth))
             break;
-        if (meth_unk00334_1001AD50(v7, 640, 480, 8)) {
+        if (meth_unk00334_MatchesWidthHeightBitDepth(v7, 640, 480, 8)) {
             if (a6)
                 *a6 = v7;
         }
@@ -22847,59 +22818,57 @@ int __thiscall meth_unk00334_1001B630(unk00334 *this, unk00228 *a2) {
 }
 
 //----- (1001B690) --------------------------------------------------------
-unk00334 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4) {
-    _DWORD *v4;                                    // eax
-    unk00334 *v5;                                  // esi
-    unk00334 *v6;                                  // edi
-    unk00334 *v7;                                  // edx
-    unk00334 *v8;                                  // ebx
-    void *v9;                                      // ecx
-    unk00334 *v10;                                 // ebp
-    int v11;                                       // eax
-    unk00334 *result;                              // eax
-    unk00334 *v13;                                 // [esp+10h] [ebp-Ch]
-    unk00334 *v14;                                 // [esp+14h] [ebp-8h]
-    unk00334 *v15;                                 // [esp+18h] [ebp-4h]
-    IID **__attribute__((__org_arrdim(0, 3))) iid; // [esp+28h] [ebp+Ch]
+int __thiscall meth_unk00334_1001B690(unk00334 *this, CLSID *a2, _DWORD *a3, unk00334 *a4) {
+    _DWORD *v4;    // eax
+    unk00228 *v5;  // esi
+    unk00228 *v6;  // edi
+    unk00228 *v7;  // edx
+    unk00228 *v8;  // ebx
+    void *v9;      // ecx
+    unk00228 *v10; // ebp
+    int result;    // eax
+    unk00228 *v12; // [esp+10h] [ebp-Ch]
+    unk00228 *v13; // [esp+14h] [ebp-8h]
+    unk00228 *v14; // [esp+18h] [ebp-4h]
+    unk00334 *v15; // [esp+28h] [ebp+Ch]
 
     v4 = a3;
     v5 = 0;
     v6 = 0;
     v7 = 0;
+    v12 = 0;
     v13 = 0;
     v14 = 0;
-    v15 = 0;
     if (a3)
         *a3 = 0;
-    v8 = (unk00334 *)a4;
+    v8 = (unk00228 *)a4;
     if (!a4)
-        v8 = (unk00334 *)this[0xC9];
+        v8 = this->field_324;
     v9 = v8;
-    iid = (IID **)v8;
+    v15 = (unk00334 *)v8;
     if (v8) {
         while (1) {
-            v10 = (unk00334 *)v8->ddCaps0.dwMaxOverlayStretch;
-            LOBYTE(v11) = meth_unk00334_1001ADA0(v8, (const void *)a2);
-            if (v11)
+            v10 = v8->last;
+            if (meth_unk00228_MatchesGUID(v8, a2))
                 break;
-            if (meth_unk00334_1001AD90(v8) && !v5)
-                v13 = v8;
-            if (!memcmp(&v8->lpGUID, &CLSID_IDirect3DRGBDevice, 0x10u) && !v15)
-                v15 = v8;
-            if (!memcmp(&v8->lpGUID, &CLSID_IDirect3DMMXDevice, 0x10u) && !v14)
+            if (meth_unk00228_Field24IsNotNull(v8) && !v5)
+                v12 = v8;
+            if (!memcmp(&v8->guid, &CLSID_IDirect3DRGBDevice, 0x10u) && !v14)
                 v14 = v8;
+            if (!memcmp(&v8->guid, &CLSID_IDirect3DMMXDevice, 0x10u) && !v13)
+                v13 = v8;
             v8 = v10;
             if (!v10) {
                 v4 = a3;
-                v5 = v13;
-                v6 = v14;
-                v7 = v15;
-                v9 = iid;
+                v5 = v12;
+                v6 = v13;
+                v7 = v14;
+                v9 = v15;
                 goto LABEL_20;
             }
-            v5 = v13;
+            v5 = v12;
         }
-        result = v8;
+        result = (int)v8;
     } else {
     LABEL_20:
         if (v4) {
@@ -22922,42 +22891,39 @@ unk00334 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4) {
     }
     return result;
 }
-// 1001B6E9: variable 'v11' is possibly undefined
 
 //----- (1001B7C0) --------------------------------------------------------
 int __thiscall meth_unk00334_1001B7C0(
-    unk00334 *this, const void *a2, unk00334 *a3, int a4, int a5) {
+    unk00334 *this, CLSID *clsid, unk00334 *a3, unk00228 *a4, unk00228 *a5) {
     unk00228 *v6; // esi
     unk00228 *v7; // ebx
-    int v8;       // eax
 
     if (!a3) {
         if (a4) {
-            *(_DWORD *)a4 = 0;
+            a4->field_0 = 0;
             return 0;
         }
         return 0;
     }
-    v6 = (unk00228 *)a5;
+    v6 = a5;
     if (!a5)
         v6 = this->field_324;
-    if (a4 && meth_unk00334_1001ACF0(a3, (unk00334 *)v6))
-        *(_DWORD *)a4 = v6;
+    if (a4 && meth_unk00334_1001ACF0(a3, v6))
+        a4->field_0 = v6;
     if (v6) {
         while (1) {
             v7 = v6->last;
-            LOBYTE(v8) = meth_unk00334_1001ADA0((unk00334 *)v6, a2);
-            if (v8) {
-                if (meth_unk00334_1001ACF0(a3, (unk00334 *)v6))
+            if (meth_unk00228_MatchesGUID(v6, clsid)) {
+                if (meth_unk00334_1001ACF0(a3, v6))
                     return (int)v6;
             } else {
-                if (meth_unk00334_1001AD90((unk00334 *)v6)) {
-                    if (!a4 || !meth_unk00334_1001ACF0(a3, (unk00334 *)v6))
+                if (meth_unk00228_Field24IsNotNull(v6)) {
+                    if (!a4 || !meth_unk00334_1001ACF0(a3, v6))
                         goto LABEL_20;
-                } else if (!meth_unk00334_1001ACF0(a3, (unk00334 *)v6) || !a4) {
+                } else if (!meth_unk00334_1001ACF0(a3, v6) || !a4) {
                     goto LABEL_20;
                 }
-                *(_DWORD *)a4 = v6;
+                a4->field_0 = v6;
             }
         LABEL_20:
             v6 = v7;
@@ -22967,7 +22933,6 @@ int __thiscall meth_unk00334_1001B7C0(
     }
     return 0;
 }
-// 1001B81F: variable 'v8' is possibly undefined
 
 //----- (1001B880) --------------------------------------------------------
 unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
@@ -22975,11 +22940,11 @@ unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
                                             int height,
                                             int bitDepth,
                                             int a5,
-                                            int a2,
+                                            unk00228 *a2,
                                             _DWORD *a7,
                                             unk00334 *u0_1) {
-    unk00334 *u0;           // esi
-    unk00334 *ddrawSurface; // edi
+    unk00334 *u334a; // esi
+    unk00334 *u334b; // edi
 
     if (!a2) {
         if (a7) {
@@ -22988,29 +22953,29 @@ unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
         }
         return 0;
     }
-    u0 = u0_1;
+    u334a = u0_1;
     if (!u0_1)
-        u0 = this->field_318;
-    if (a7 && meth_unk00334_1001ACF0(u0, (unk00334 *)a2))
-        *a7 = u0;
-    if (u0) {
+        u334a = this->field_318;
+    if (a7 && meth_unk00334_1001ACF0(u334a, a2))
+        *a7 = u334a;
+    if (u334a) {
         while (1) {
-            ddrawSurface = u0->field_70;
-            if (meth_unk00334_1001AD50(u0, width, height, bitDepth)) {
-                if (meth_unk00334_1001ACF0(u0, (unk00334 *)a2))
-                    return u0;
+            u334b = u334a->field_70;
+            if (meth_unk00334_MatchesWidthHeightBitDepth(u334a, width, height, bitDepth)) {
+                if (meth_unk00334_1001ACF0(u334a, a2))
+                    return u334a;
             } else {
-                if (meth_unk00334_1001AD50(u0, 640, 480, 16)) {
-                    if (!a7 || !meth_unk00334_1001ACF0(u0, (unk00334 *)a2))
+                if (meth_unk00334_MatchesWidthHeightBitDepth(u334a, 640, 480, 16)) {
+                    if (!a7 || !meth_unk00334_1001ACF0(u334a, a2))
                         goto LABEL_20;
-                } else if (!meth_unk00334_1001ACF0(u0, (unk00334 *)a2) || !a7) {
+                } else if (!meth_unk00334_1001ACF0(u334a, a2) || !a7) {
                     goto LABEL_20;
                 }
-                *a7 = u0;
+                *a7 = u334a;
             }
         LABEL_20:
-            u0 = ddrawSurface;
-            if (!ddrawSurface)
+            u334a = u334b;
+            if (!u334b)
                 return 0;
         }
     }
@@ -32640,7 +32605,7 @@ LABEL_48:
     v44[128] = dword_118AA088;
     v54 = v35;
     v22 = sub_10028860((#506 *)&v26);
-    return TIDFromTexture(&v26, (int)v22);
+    return TIDFromTextureAppend(&v26, (int)v22);
 }
 // 100280A2: conditional instruction was optimized away because of '%arg_34.4!=0'
 // 100A7DFC: using guessed type int dword_100A7DFC;
@@ -32739,7 +32704,7 @@ int __cdecl sub_10028200(_DWORD *a1, int a2, int a3) {
 }
 
 //----- (10028350) --------------------------------------------------------
-int __cdecl TIDFromTexture(_DWORD *a1, int a2) {
+int __cdecl TIDFromTextureAppend(_DWORD *a1, int a2) {
     _DWORD *v2;   // esi
     int result;   // eax
     int v4;       // ecx
@@ -33809,7 +33774,7 @@ LABEL_12:
         v64 = v26;
     }
     v27 = sub_10028860((#506 *)&a1);
-    v28 = TIDFromTexture(&a1, (int)v27);
+    v28 = TIDFromTextureAppend(&a1, (int)v27);
     if (*((_DWORD *)dword_1057543C + 174 * v28 + 156)) {
         v29 = sub_10061000();
         if (v29 >= 0 && v29 < 8)
@@ -34215,7 +34180,7 @@ int __cdecl sub_1002A350(int a1, unsigned __int8 *a2, int a3) {
         v5[155] = 0;
     }
     v3 = sub_10028860((#506 *)v5);
-    result = TIDFromTexture(v5, (int)v3);
+    result = TIDFromTextureAppend(v5, (int)v3);
     dword_118AA09C = 0;
     return result;
 }
@@ -34281,7 +34246,7 @@ int __cdecl sub_1002A430(int a1, int a2) {
                                 dword_10575444 = 0;
                                 dword_10575440 = 0;
                                 v13 = sub_10028860((#506 *)v18);
-                                *(_DWORD *)(v9 + *v4) = v17 | TIDFromTexture(v18, (int)v13);
+                                *(_DWORD *)(v9 + *v4) = v17 | TIDFromTextureAppend(v18, (int)v13);
                                 v9 += 12;
                                 if (++v14 >= *(unsigned __int16 *)(*v4 + 2))
                                     break;
@@ -35723,18 +35688,17 @@ char (*sub_1002C410())[8] {
 // 100A66FC: using guessed type char (*off_100A66FC)[8];
 
 //----- (1002C430) --------------------------------------------------------
-int __cdecl sub_1002C430(int a1) {
-    float v2; // [esp+0h] [ebp-Ch]
+void __cdecl sub_1002C430(int a1) {
+    float v1; // [esp+0h] [ebp-Ch]
 
     if (*(_DWORD *)(a1 + 1840)) {
-        v2 = *(float *)(a1 + 488) * *(float *)(a1 + 488) +
+        v1 = *(float *)(a1 + 488) * *(float *)(a1 + 488) +
              *(float *)(a1 + 492) * *(float *)(a1 + 492) +
              *(float *)(a1 + 496) * *(float *)(a1 + 496);
-        *(float *)(a1 + 4144) = sqrt_(v2) * 2.24;
+        *(float *)(a1 + 4144) = sqrt_(v1) * 2.24;
     }
-    return meth_10075F10(a1);
+    meth_10075F10(a1);
 }
-// 1002C430: using guessed type int __cdecl sub_1002C430(int);
 
 //----- (1002C4A0) --------------------------------------------------------
 int sub_1002C4A0() {
@@ -35786,7 +35750,7 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
     int v15;                   // ecx
     void **v16;                // eax
     _DWORD *v17;               // edx
-    int v18;                   // ecx
+    int savedRecordingLength;  // ecx
     int v19;                   // eax
     int v20;                   // ecx
     char *v21;                 // ecx
@@ -36039,9 +36003,9 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
         dword_10680610 = 1;
         dword_100B36F8 = dword_100B4050 + 1;
         dword_100B36FC = dword_100B4050 + 1;
-        v18 = 1389 * dword_100B4050;
+        savedRecordingLength = 1389 * dword_100B4050;
         *((_DWORD *)*(&dword_10AD0868 + 2778 * dword_100B4050) + 17) = &unk_117554F0;
-        meth_DebugPrint((void *)v18);
+        meth_DebugPrint((void *)savedRecordingLength);
         qmemcpy(*((void **)*(&dword_10AD0868 + 2778 * dword_100B4050) + 17),
                 dword_10680738,
                 ElementCount);
@@ -36215,7 +36179,7 @@ int __usercall sub_1002C500 @<eax>(double a1 @<st0>) {
                     v191[2] = 0;
                     sub_1003B1F0((float *)v191,
                                  (float *)v191,
-                                 (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)v39));
+                                 (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)v39));
                     flt_10680630 = sub_1003B170((float *)v191);
                 }
                 v31 = dword_106909E0;
@@ -36887,9 +36851,9 @@ LABEL_272:
                 LABEL_314:
                     sub_100306C0(
                         flt_106C08E0,
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *(_DWORD *)v112),
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *(_DWORD *)v112));
-                    *(_WORD *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *(_DWORD *)v112 + 76) &=
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * *(_DWORD *)v112),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * *(_DWORD *)v112));
+                    *(_WORD *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * *(_DWORD *)v112 + 76) &=
                         0xDFFFu;
                     goto LABEL_337;
                 case 3:
@@ -36961,54 +36925,54 @@ LABEL_272:
                                  dword_10680638 + 12 * dword_10680628,
                                  dword_10680638 + 12 * dword_10680628 - 12,
                                  v180);
-                    sub_1003B050((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
+                    sub_1003B050((float *)(*(_DWORD *)&gUnk06594.gap4918[16] +
                                            84 * (_DWORD)dword_10680618 + 48),
                                  (float *)v191,
                                  (float *)v190);
                     v115 = v180;
                     if (v116 | v117) {
                         v174 = v115 - -0.5;
-                        sub_1003AFA0(*(_DWORD *)&gUnk06594.gap4904[36] +
+                        sub_1003AFA0(*(_DWORD *)&gUnk06594.gap4918[16] +
                                          84 * (_DWORD)dword_10680618,
                                      (int)&dword_10680650,
                                      (int)&dword_10680644,
                                      v174);
                     } else {
                         v173 = v115 - 0.5;
-                        sub_1003AFA0(*(_DWORD *)&gUnk06594.gap4904[36] +
+                        sub_1003AFA0(*(_DWORD *)&gUnk06594.gap4918[16] +
                                          84 * (_DWORD)dword_10680618,
                                      (int)&dword_1068065C,
                                      (int)&dword_10680650,
                                      v173);
                     }
                     sub_1003AE50(
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618));
-                    sub_1003AEE0((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618));
+                    sub_1003AEE0((float *)(*(_DWORD *)&gUnk06594.gap4918[16] +
                                            84 * (_DWORD)dword_10680618 + 32),
                                  (float *)v191,
                                  (float *)v190);
                     sub_1003AC30(
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 +
                                   16),
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618),
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618),
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 +
                                   32));
-                    sub_1003AE50((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
+                    sub_1003AE50((float *)(*(_DWORD *)&gUnk06594.gap4918[16] +
                                            84 * (_DWORD)dword_10680618 + 16));
                     sub_1003AC30(
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 +
                                   32),
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 +
                                   16),
-                        (float *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618));
-                    sub_1003AE50((float *)(*(_DWORD *)&gUnk06594.gap4904[36] +
+                        (float *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618));
+                    sub_1003AE50((float *)(*(_DWORD *)&gUnk06594.gap4918[16] +
                                            84 * (_DWORD)dword_10680618 + 32));
-                    sub_1003AD10(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618,
+                    sub_1003AD10(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618,
                                  flt_10680630);
                     v175 = -flt_10680630;
                     sub_1003AD10(
-                        *(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 + 32, v175);
-                    sub_1003AD10(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 +
+                        *(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 + 32, v175);
+                    sub_1003AD10(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 +
                                      16,
                                  flt_10680630);
                 LABEL_337:
@@ -37039,7 +37003,7 @@ LABEL_272:
             if (dword_10680618 && dword_10680624) {
                 sub_10068180(
                     (int)dword_10680618,
-                    (int *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * (_DWORD)dword_10680618 + 48),
+                    (int *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * (_DWORD)dword_10680618 + 48),
                     dword_10AD05DC[2778 * *v120]);
                 v121 = dword_10680618;
             }
@@ -37048,7 +37012,7 @@ LABEL_272:
                 v124 = dword_106805D0;
                 while (v123 < dword_10680940) {
                     sub_10068210((int)v121,
-                                 (int *)(*(_DWORD *)&gUnk06594.gap4904[36] + 84 * *v124 + 48),
+                                 (int *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * *v124 + 48),
                                  v122);
                     v121 = dword_10680618;
                     ++v123;
@@ -38099,21 +38063,21 @@ int sub_1002F8F0() {
             return result;
         }
         if (v1->field_C) {
-            v1->lpVtbl->field_C(v1);
+            v1->lpVtbl->meth3(v1);
         } else {
             v3 = (unk00334 *)gUnk8C->field_30;
             if (v3) {
                 meth_unk00334_1001AC80(v3, &width, &height, &bitDepth, &dword_10690A04);
                 v1 = gUnkC8Ptr1;
             }
-            ((void(__thiscall *)(unk000C8 *))v1->lpVtbl->field_10)(v1);
+            ((void(__thiscall *)(unk000C8 *))v1->lpVtbl->meth4)(v1);
         }
         if (!gUnkC8Ptr1 || !dword_100AC300)
             return 1;
         if (g_unkC8AreSamePtr) {
             if (g_TickCount + 90000 < getTicks()) {
                 gUnkC8Ptr1->field_68 = 0;
-                gUnkC8Ptr1->lpVtbl->field_18(gUnkC8Ptr1, 0);
+                gUnkC8Ptr1->lpVtbl->meth6(gUnkC8Ptr1, 0);
                 gGameMode = GAME_MODE_4;
                 dword_106805B8 = 0;
                 return 1;
@@ -39244,7 +39208,7 @@ _DWORD *__cdecl sub_10031140(_DWORD *a1, int a2, int a3, int a4) {
 //----- (10031190) --------------------------------------------------------
 char *__thiscall sub_10031190(unk06594 *this) {
     if (*(_DWORD *)&gUnk06594.gap1C8[12436] == 32)
-        meth_unk1A5E0_10042AF0(this);
+        meth_unk1A5E0_3(this);
     else
         ++*(_DWORD *)&gUnk06594.gap1C8[12436];
     *(_DWORD *)&gUnk06594.gap1C8[12432] = (*(_DWORD *)&gUnk06594.gap1C8[12432] + 1) % 32;
@@ -40323,7 +40287,7 @@ int sub_10033498() {
             if (*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18204] + 36 * i + 4)) {
                 if (v8 != -1) {
                     sub_10031190((unk06594 *)(v8 + dword_10690BEC));
-                    meth_unk1A5E0_10042AF0(v0);
+                    meth_unk1A5E0_3(v0);
                 }
             }
             continue;
@@ -40348,7 +40312,7 @@ int __thiscall sub_10033780(unk06594 *this) {
     if (!*(_DWORD *)&gUnk06594.gap1C8[8608]) {
         *(_DWORD *)&gUnk06594.gap1C8[8608] = 1;
         word_100B5D90 = 0;
-        result = meth_unk1A5E0_10042AF0(this);
+        result = meth_unk1A5E0_3(this);
     }
     return result;
 }
@@ -40360,7 +40324,7 @@ int __thiscall sub_100337AE(unk06594 *this) {
     int result;   // eax
 
     sub_10033780(this);
-    meth_unk1A5E0_10042AF0(v1);
+    meth_unk1A5E0_3(v1);
     result = sub_10060E00((int)&gUnk06594.gap1C8[12376]);
     word_100B5D90 = 1;
     *(_DWORD *)&gUnk06594.gap1C8[8608] = 0;
@@ -40447,14 +40411,14 @@ int sub_10033838() {
     meth_DebugPrint(v0);
     if (*(_DWORD *)&gUnk06594.gap1C8[12572]) {
         meth_DebugPrint(v1);
-        meth_unk1A5E0_10042AF0(v2);
+        meth_unk1A5E0_3(v2);
         meth_DebugPrint(v3);
         if (dword_106C198C) {
             dword_106C198C();
             dword_106C198C = 0;
         }
         meth_DebugPrint(v4);
-        meth_unk1A5E0_10042AF0(v5);
+        meth_unk1A5E0_3(v5);
         if (dword_106C1608) {
             dword_106C198C();
             dword_106C198C = 0;
@@ -40795,9 +40759,9 @@ void __thiscall __noreturn meth_1003467F(void *this) {
     meth_DebugPrint(this);
     meth_DebugPrint(v1);
     while (1) {
-        meth_unk1A5E0_10042AF0(v2);
+        meth_unk1A5E0_3(v2);
         meth_DebugPrint(v3);
-        meth_unk1A5E0_10042AF0(dword_106C06A8);
+        meth_unk1A5E0_3(dword_106C06A8);
     }
 }
 // 100346A3: variable 'v1' is possibly undefined
@@ -40813,9 +40777,9 @@ void __thiscall __noreturn meth_100346E9(void *this) {
     meth_DebugPrint(this);
     meth_DebugPrint(v1);
     while (1) {
-        meth_unk1A5E0_10042AF0(v2);
+        meth_unk1A5E0_3(v2);
         meth_DebugPrint(v3);
-        meth_unk1A5E0_10042AF0(dword_106C06A8);
+        meth_unk1A5E0_3(dword_106C06A8);
     }
 }
 // 1003470D: variable 'v1' is possibly undefined
@@ -40865,7 +40829,7 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
     *(_DWORD *)&gUnk06594.gap1C8[8600] = 1194793728;
     meth_DebugPrint(v9);
     meth_DebugPrint(v15);
-    meth_unk1A5E0_10042AF0(v10);
+    meth_unk1A5E0_3(v10);
     meth_DebugPrint(v11);
     meth_DebugPrint(v12);
     for (i = 0; i < 4; ++i) {
@@ -41759,9 +41723,9 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
                 } while ((int)v45 < (int)&unk_1178FF14);
             }
             if (a4 != (void *)1 &&
-                ((*(_BYTE *)(meth_unk00214_GetField10(v67) + 3) & 0xE0) == 64 ||
-                 (*(_BYTE *)(meth_unk00214_GetField10(v67) + 3) & 0xE0) == 0x80 ||
-                 (*(_BYTE *)(meth_unk00214_GetField10(v67) + 3) & 0xE0) == 96)) {
+                ((*((_BYTE *)meth_unk00214_GetField10((unk00214 *)v67) + 3) & 0xE0) == 64 ||
+                 (*((_BYTE *)meth_unk00214_GetField10((unk00214 *)v67) + 3) & 0xE0) == 0x80 ||
+                 (*((_BYTE *)meth_unk00214_GetField10((unk00214 *)v67) + 3) & 0xE0) == 96)) {
                 np_sub_10003580(a1, a2, a3, (int)a4);
             }
         LABEL_105:
@@ -41772,7 +41736,7 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
             Concurrency::details::StructuredWorkStealingQueue<
                 Concurrency::details::_UnrealizedChore,
                 Concurrency::details::_CriticalNonReentrantLock>::Reinitialize(v67);
-            v32 = meth_unk00214_10073F40(v67);
+            v32 = meth_unk00214_10073F40((unk00214 *)v67);
             meth_10073BA0(v67, v32);
             goto LABEL_86;
         case 0x80:
@@ -43919,8 +43883,8 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
 
 //----- (10039000) --------------------------------------------------------
 int sub_10039000() {
-    memset(&dword_10220B20, 0, 0x118u);
-    dword_10220B20 = 8;
+    memset(&gGameMode1, 0, 0x118u);
+    gGameMode1 = 8;
     return sub_10035BD1();
 }
 // 10039000: using guessed type int sub_10039000();
@@ -46096,7 +46060,7 @@ int sub_1003C260() {
             GetUserNameA(Buffer, &pcbBuffer);
             v1 = sub_1003C740(unk, (int)&v4, (int)Buffer, dword_10A9D008);
             if (v1 == -2005465056) {
-                result = meth_unk1A5E0_10042AF0(v2);
+                result = meth_unk1A5E0_3(v2);
                 if (!result)
                     return result;
                 v1 = sub_1003C740(unk, (int)&v4, (int)Buffer, dword_10A9D008);
@@ -46136,7 +46100,7 @@ int __stdcall sub_1003C3A0(HWND a1, int a2, int a3, char *pMem) {
     if (a2 != 1281)
         return 0;
     if (gUnk1E214)
-        gUnk1E214->field_3838.lpVtbl->field_10(
+        gUnk1E214->field_3838.lpVtbl->meth4(
             &gUnk1E214->field_3838, pMem, 0, 1, (int)dword_100AB408, 1);
     v4 = GlobalHandle(pMem);
     GlobalUnlock(v4);
@@ -47758,9 +47722,9 @@ void __cdecl sub_1003E260(int a1) {
     v0 = dword_10B4E6F0;
     v1 = dword_10B4E6E8;
     v2 = dword_10B4E6EC;
-    dword_118AC238 = sub_1001A550((#485 *)&dword_10B4E6F8);
-    result = meth_unk00334_1001A570(dword_118AC238, v1, v2, v0, 0, (IID *)dword_118AC23C);
-    dword_118AC240 = (int)result;
+    gUnk00334Ptr1 = sub_1001A550((#485 *)&dword_10B4E6F8);
+    result = meth_unk00334_1001A570(gUnk00334Ptr1, v1, v2, v0, 0, (IID *)dword_118AC23C);
+    gUnk00334Ptr0 = (int)result;
     return result;
 }
 // 10B4E6E8: using guessed type int dword_10B4E6E8;
@@ -48015,9 +47979,9 @@ int __cdecl sub_1003E680() {
     dword_10AA289C = 0;
     memset(&dword_10AA26F0, 0, 0x14Cu);
     memset(&unk_10A9DBD8, 0, 0x14Cu);
-    memset(&dword_10220B20, 0, 0x118u);
+    memset(&gGameMode1, 0, 0x118u);
     LOWORD(dword_10AA27E0) = 258;
-    dword_10220B20 = -1;
+    gGameMode1 = -1;
     return sub_1003E510();
 }
 // 100AC648: using guessed type int dword_100AC648;
@@ -48084,7 +48048,7 @@ int __cdecl sub_1003E7A0(int a1) {
 int __cdecl sub_1003E840(int a1) {
     const char *v1; // eax
 
-    if (gGameMode || dword_10220B20)
+    if (gGameMode || gGameMode1)
         v1 = GetStringWithIndex(0xCu);
     else
         v1 = GetStringWithIndex(0x51u);
@@ -48341,11 +48305,11 @@ int __cdecl sub_1003EC80(int a1) {
 //----- (1003ECB0) --------------------------------------------------------
 int __cdecl sub_1003ECB0(int a1) {
     dword_10AA2860 = dword_10AA2A2C;
-    dword_118AC238 = sub_1007A7D0(*(const void **)(dword_10AA29F0 + 8 * dword_10AA2A2C + 122440));
-    dword_10B4E6F8 = *((_DWORD *)dword_118AC238 + 1);
-    dword_10B4E6FC = *((_DWORD *)dword_118AC238 + 2);
-    dword_10B4E700 = *((_DWORD *)dword_118AC238 + 3);
-    dword_10B4E704 = *((_DWORD *)dword_118AC238 + 4);
+    gUnk00334Ptr1 = sub_1007A7D0(*(const void **)(dword_10AA29F0 + 8 * dword_10AA2A2C + 122440));
+    dword_10B4E6F8 = *((_DWORD *)gUnk00334Ptr1 + 1);
+    dword_10B4E6FC = *((_DWORD *)gUnk00334Ptr1 + 2);
+    dword_10B4E700 = *((_DWORD *)gUnk00334Ptr1 + 3);
+    dword_10B4E704 = *((_DWORD *)gUnk00334Ptr1 + 4);
     sub_10046620(a1);
     return 0;
 }
@@ -48387,8 +48351,8 @@ int __usercall sub_1003ED40 @<eax>(int a1 @<edi>, int a2) {
     dword_10B4E6E8 = v3;
     dword_10B4E6EC = v4;
     dword_10B4E6F0 = v5;
-    dword_118AC240 =
-        (int)meth_unk00334_1001A570(a1, dword_118AC238, v3, v4, v5, 0, (IID *)dword_118AC23C);
+    gUnk00334Ptr0 =
+        (int)meth_unk00334_1001A570(a1, gUnk00334Ptr1, v3, v4, v5, 0, (IID *)dword_118AC23C);
     sub_10046670(a2);
     return 0;
 }
@@ -50213,7 +50177,7 @@ void __cdecl sub_100419D0(LPCSTR a1) {
 
     v1 = gUnkC8Ptr1->field_14[0]->field_18[dword_10A9DBD0];
     if (v1)
-        v1->lpVtbl->field_34(v1, a1, 1, 1, &unk_100AB558);
+        v1->lpVtbl->meth13(v1, a1, 1, 1, &unk_100AB558);
 }
 // 10A9DBD0: using guessed type int dword_10A9DBD0;
 
@@ -51397,7 +51361,7 @@ int __cdecl sub_10043810(LPCVOID pMem) {
         }
         sub_100440D0();
         sub_100443E0();
-        meth_100446D0(v2);
+        meth_unk000C8_100446D0(v2);
         dword_10AA2890 = 0;
         result = 0;
     } else {
@@ -51672,7 +51636,7 @@ int __cdecl sub_10043FA0(int a1) {
 int __cdecl sub_10043FC0(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr28 = 0;
     dword_10AA29A8 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
@@ -51995,12 +51959,12 @@ LABEL_8:
 // 10AA33D4: using guessed type int dword_10AA33D4;
 
 //----- (100446D0) --------------------------------------------------------
-int __thiscall meth_100446D0(void *this) {
-    unk000C8 *v1; // eax
-    int result;   // eax
+unk000C8 *__thiscall meth_unk000C8_100446D0(unk000C8 *this) {
+    unk000C8 *v1;     // eax
+    unk000C8 *result; // eax
 
     if (gUnkC8Ptr27) {
-        gUnkC8Ptr1 = (unk000C8 *)gUnkC8Ptr27;
+        gUnkC8Ptr1 = gUnkC8Ptr27;
     LABEL_8:
         gGameMode = GAME_MODE_6;
         if (dword_10AA2884) {
@@ -52014,21 +51978,21 @@ int __thiscall meth_100446D0(void *this) {
             if (dword_10AA2884) {
             LABEL_15:
                 sub_1003CDA0();
-                return 1;
+                return (unk000C8 *)1;
             }
         }
-        return 1;
+        return (unk000C8 *)1;
     }
     v1 = (unk000C8 *)operator new(0xC8u);
     if (v1)
-        result = (int)meth_unk000C8_10048710(v1);
+        result = meth_unk000C8_10048710(v1);
     else
         result = 0;
     gUnkC8Ptr27 = result;
-    gUnkC8Ptr1 = (unk000C8 *)result;
+    gUnkC8Ptr1 = result;
     if (result) {
-        *(_DWORD *)(result + 4) = sub_10058750;
-        (*(void(__cdecl **)(int))(gUnkC8Ptr27 + 4))(gUnkC8Ptr27);
+        result->lpFn0 = sub_10058750;
+        gUnkC8Ptr27->lpFn0(gUnkC8Ptr27);
         gUnkC8Ptr1->field_C = 1;
         gUnkC8Ptr1->field_68 = 1;
         goto LABEL_8;
@@ -52038,7 +52002,6 @@ int __thiscall meth_100446D0(void *this) {
 // 10AA287C: using guessed type int dword_10AA287C;
 // 10AA2884: using guessed type int dword_10AA2884;
 // 10AA2888: using guessed type int dword_10AA2888;
-// 10AA2954: using guessed type int dword_10AA2954;
 
 //----- (100447D0) --------------------------------------------------------
 int sub_100447D0() {
@@ -52257,7 +52220,7 @@ int sub_10044B90() {
 int __cdecl sub_10044C70(int a1) {
     (*(void(__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 10984) + 28))(*(_DWORD *)(a1 + 10984));
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr30 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
@@ -53204,9 +53167,9 @@ int sub_10046380() {
 
 //----- (100463C0) --------------------------------------------------------
 int __cdecl sub_100463C0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr11 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr28;
     return 0;
@@ -53214,9 +53177,9 @@ int __cdecl sub_100463C0(unk1E214 *a1) {
 
 //----- (10046400) --------------------------------------------------------
 int __cdecl sub_10046400(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr27 = 0;
     dword_10AA29E4 = 0;
     gUnk1E214 = 0;
@@ -53230,9 +53193,9 @@ int __cdecl sub_10046400(unk1E214 *a1) {
 
 //----- (10046450) --------------------------------------------------------
 int __cdecl sub_10046450(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr12 = 0;
     dword_10AA29AC = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
@@ -53242,9 +53205,9 @@ int __cdecl sub_10046450(unk1E214 *a1) {
 
 //----- (100464A0) --------------------------------------------------------
 int __cdecl sub_100464A0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr13 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
@@ -53252,9 +53215,9 @@ int __cdecl sub_100464A0(unk1E214 *a1) {
 
 //----- (100464E0) --------------------------------------------------------
 int __cdecl sub_100464E0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr14 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr12;
     return 0;
@@ -53262,9 +53225,9 @@ int __cdecl sub_100464E0(unk1E214 *a1) {
 
 //----- (10046520) --------------------------------------------------------
 int __cdecl sub_10046520(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
@@ -53272,9 +53235,9 @@ int __cdecl sub_10046520(unk1E214 *a1) {
 
 //----- (10046560) --------------------------------------------------------
 int __cdecl sub_10046560(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr9 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr3;
     sub_10079550();
@@ -53283,9 +53246,9 @@ int __cdecl sub_10046560(unk1E214 *a1) {
 
 //----- (100465A0) --------------------------------------------------------
 int __cdecl sub_100465A0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr3 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr4;
     return 0;
@@ -53293,9 +53256,9 @@ int __cdecl sub_100465A0(unk1E214 *a1) {
 
 //----- (100465E0) --------------------------------------------------------
 int __cdecl sub_100465E0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr2 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr4;
     return 0;
@@ -53303,9 +53266,9 @@ int __cdecl sub_100465E0(unk1E214 *a1) {
 
 //----- (10046620) --------------------------------------------------------
 int __cdecl sub_10046620(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr36 = 0;
     dword_10AA29F0 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr2;
@@ -53315,9 +53278,9 @@ int __cdecl sub_10046620(unk1E214 *a1) {
 
 //----- (10046670) --------------------------------------------------------
 int __cdecl sub_10046670(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr37 = 0;
     dword_10AA29EC = 0;
     gUnkC8Ptr1 = gUnkC8Ptr2;
@@ -53327,9 +53290,9 @@ int __cdecl sub_10046670(unk1E214 *a1) {
 
 //----- (100466C0) --------------------------------------------------------
 int __cdecl sub_100466C0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr34 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr4;
     sub_1003E310();
@@ -53339,9 +53302,9 @@ int __cdecl sub_100466C0(unk1E214 *a1) {
 
 //----- (10046710) --------------------------------------------------------
 int __cdecl sub_10046710(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr35 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr4;
     return 0;
@@ -53349,9 +53312,9 @@ int __cdecl sub_10046710(unk1E214 *a1) {
 
 //----- (10046750) --------------------------------------------------------
 int __cdecl sub_10046750(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr18;
     return 0;
@@ -53361,9 +53324,9 @@ int __cdecl sub_10046750(unk1E214 *a1) {
 int __cdecl sub_10046790(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53381,9 +53344,9 @@ int __cdecl sub_10046790(unk1E214 *a1) {
 
 //----- (10046830) --------------------------------------------------------
 int __cdecl sub_10046830(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr19;
     return 0;
@@ -53393,9 +53356,9 @@ int __cdecl sub_10046830(unk1E214 *a1) {
 int __cdecl sub_10046870(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53413,9 +53376,9 @@ int __cdecl sub_10046870(unk1E214 *a1) {
 
 //----- (10046910) --------------------------------------------------------
 int __cdecl sub_10046910(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr20;
     return 0;
@@ -53425,9 +53388,9 @@ int __cdecl sub_10046910(unk1E214 *a1) {
 int __cdecl sub_10046950(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53445,9 +53408,9 @@ int __cdecl sub_10046950(unk1E214 *a1) {
 
 //----- (100469F0) --------------------------------------------------------
 int __cdecl sub_100469F0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr21;
     return 0;
@@ -53457,9 +53420,9 @@ int __cdecl sub_100469F0(unk1E214 *a1) {
 int __cdecl sub_10046A30(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53477,9 +53440,9 @@ int __cdecl sub_10046A30(unk1E214 *a1) {
 
 //----- (10046AD0) --------------------------------------------------------
 int __cdecl sub_10046AD0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr22;
     return 0;
@@ -53489,9 +53452,9 @@ int __cdecl sub_10046AD0(unk1E214 *a1) {
 int __cdecl sub_10046B10(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53509,9 +53472,9 @@ int __cdecl sub_10046B10(unk1E214 *a1) {
 
 //----- (10046BB0) --------------------------------------------------------
 int __cdecl sub_10046BB0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr14;
     return 0;
@@ -53521,9 +53484,9 @@ int __cdecl sub_10046BB0(unk1E214 *a1) {
 int __cdecl sub_10046BF0(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53541,9 +53504,9 @@ int __cdecl sub_10046BF0(unk1E214 *a1) {
 
 //----- (10046C90) --------------------------------------------------------
 int __cdecl sub_10046C90(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr5 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
@@ -53551,9 +53514,9 @@ int __cdecl sub_10046C90(unk1E214 *a1) {
 
 //----- (10046CD0) --------------------------------------------------------
 int __cdecl sub_10046CD0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr14 = 0;
     dword_10AA29B4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr19;
@@ -53563,9 +53526,9 @@ int __cdecl sub_10046CD0(unk1E214 *a1) {
 
 //----- (10046D20) --------------------------------------------------------
 int __cdecl sub_10046D20(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr14 = 0;
     dword_10AA29B4 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr30;
@@ -53575,9 +53538,9 @@ int __cdecl sub_10046D20(unk1E214 *a1) {
 
 //----- (10046D70) --------------------------------------------------------
 int __cdecl sub_10046D70(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr18 = 0;
     dword_10AA29B0 = 0;
     gUnkC8Ptr33 = 0;
@@ -53588,9 +53551,9 @@ int __cdecl sub_10046D70(unk1E214 *a1) {
 
 //----- (10046DC0) --------------------------------------------------------
 int __cdecl sub_10046DC0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr18 = 0;
     dword_10AA29B0 = 0;
     gUnkC8Ptr33 = 0;
@@ -53603,9 +53566,9 @@ int __cdecl sub_10046DC0(unk1E214 *a1) {
 int __cdecl sub_10046E10(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr16 = 0;
     dword_10AA28E0 = 0;
     Value = -1;
@@ -53621,9 +53584,9 @@ int __cdecl sub_10046E10(unk1E214 *a1) {
 int __cdecl sub_10046EB0(unk1E214 *a1) {
     int result; // eax
 
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr17 = 0;
     dword_10AA29C0 = 0;
     dword_10AA29CC = 0;
@@ -53647,13 +53610,13 @@ int sub_10046F50() {
 
 //----- (10046F60) --------------------------------------------------------
 int __cdecl sub_10046F60(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr1 = 0;
     gUnkC8Ptr33 = 0;
     if (gUnkC8Ptr18) {
-        gUnkC8Ptr18->lpVtbl->field_0(gUnkC8Ptr18, 1);
+        gUnkC8Ptr18->lpVtbl->meth0(gUnkC8Ptr18, 1);
         gUnkC8Ptr18 = 0;
     }
     gUnkC8Ptr1 = gUnkC8Ptr6;
@@ -53669,20 +53632,20 @@ int sub_10046FC0() {
 //----- (10046FD0) --------------------------------------------------------
 int __cdecl sub_10046FD0(unk1E214 *a1) {
     if (gUnkC8Ptr20) {
-        gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+        gUnkC8Ptr20->lpVtbl->meth7(gUnkC8Ptr20);
         gUnkC8Ptr20 = 0;
     }
     if (gUnkC8Ptr21) {
-        gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+        gUnkC8Ptr21->lpVtbl->meth7(gUnkC8Ptr21);
         gUnkC8Ptr21 = 0;
     }
     if (gUnkC8Ptr22) {
-        gUnkC8Ptr22->lpVtbl->field_1C(gUnkC8Ptr22);
+        gUnkC8Ptr22->lpVtbl->meth7(gUnkC8Ptr22);
         gUnkC8Ptr22 = 0;
     }
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr33 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr6;
     return 0;
@@ -53696,9 +53659,9 @@ int sub_10047050() {
 
 //----- (10047060) --------------------------------------------------------
 int __cdecl sub_10047060(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr19 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr18;
     return 0;
@@ -53706,9 +53669,9 @@ int __cdecl sub_10047060(unk1E214 *a1) {
 
 //----- (100470A0) --------------------------------------------------------
 int __cdecl sub_100470A0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr21 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr20;
     return 0;
@@ -53716,9 +53679,9 @@ int __cdecl sub_100470A0(unk1E214 *a1) {
 
 //----- (100470E0) --------------------------------------------------------
 int __cdecl sub_100470E0(unk1E214 *a1) {
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr1)
-        gUnkC8Ptr1->lpVtbl->field_0(gUnkC8Ptr1, 1);
+        gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr22 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr21;
     return 0;
@@ -53733,9 +53696,9 @@ int __cdecl sub_10047120(unk1E214 *a1) {
         memset(dword_10AA2740, 0, sizeof(dword_10AA2740));
     }
     dword_10AA28C4 = 0;
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr7)
-        gUnkC8Ptr7->lpVtbl->field_0(gUnkC8Ptr7, 1);
+        gUnkC8Ptr7->lpVtbl->meth0(gUnkC8Ptr7, 1);
     gUnkC8Ptr7 = 0;
     return 0;
 }
@@ -53746,9 +53709,9 @@ int __cdecl sub_10047120(unk1E214 *a1) {
 //----- (100471B0) --------------------------------------------------------
 int __cdecl sub_100471B0(unk1E214 *a1) {
     sub_10045C90();
-    a1->field_2AE8->lpVtbl->field_1C(a1->field_2AE8);
+    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
     if (gUnkC8Ptr8)
-        gUnkC8Ptr8->lpVtbl->field_0(gUnkC8Ptr8, 1);
+        gUnkC8Ptr8->lpVtbl->meth0(gUnkC8Ptr8, 1);
     gUnkC8Ptr8 = 0;
     return 0;
 }
@@ -53801,11 +53764,11 @@ int __cdecl sub_10047290(unk1E214 *a1) {
 
     sub_1005FBC0(1);
     if (gUnkC8Ptr20) {
-        gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+        gUnkC8Ptr20->lpVtbl->meth7(gUnkC8Ptr20);
         gUnkC8Ptr20 = 0;
     }
     if (gUnkC8Ptr21) {
-        gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+        gUnkC8Ptr21->lpVtbl->meth7(gUnkC8Ptr21);
         gUnkC8Ptr21 = 0;
     }
     if (dword_10AA28B0) {
@@ -53821,9 +53784,9 @@ int __cdecl sub_10047290(unk1E214 *a1) {
             sub_10045C90();
         }
     }
-    u1E214->field_2AE8->lpVtbl->field_1C(u1E214->field_2AE8);
+    u1E214->field_2AE8->lpVtbl->meth7(u1E214->field_2AE8);
     if (gUnkC8Ptr22)
-        gUnkC8Ptr22->lpVtbl->field_0(gUnkC8Ptr22, 1);
+        gUnkC8Ptr22->lpVtbl->meth0(gUnkC8Ptr22, 1);
     gUnkC8Ptr22 = 0;
     return 0;
 }
@@ -54123,7 +54086,7 @@ unk1E214 *__thiscall meth_1E214_100478A0(unk1E214 *this, char a2) {
 //----- (100478C0) --------------------------------------------------------
 void __thiscall meth_100478C0(unk1E214 *this) {
   this->lpVtbl = &gUnk1E214Vtbl1;
-  meth_1005B8F0(&this->field_3838);
+  meth_unk1A5E0_1005B8F0(&this->field_3838);
   `eh vector destructor iterator'(this->vectorUnk, 0x438u, 3, (void (__thiscall *)(void *))meth_unk00438_deinit);
 }
 
@@ -54143,7 +54106,7 @@ int __thiscall meth_unk1E214_10047930(unk1E214 *this) {
 // 100AB568: using guessed type __int16 word_100AB568[];
 
 //----- (10047980) --------------------------------------------------------
-int __thiscall meth_unk1E214_10047980(unk1E214 *this, int *a2) {
+int __thiscall meth_unk1E214_6(unk1E214 *this, int *a2) {
   sub_1005F5A0((__int64)*(float *)&this->field_3C,
                (__int64)*(float *)&this->field_40,
                this->field_3838.field_1A99C[28],
@@ -54169,9 +54132,9 @@ int __thiscall meth_unk1E214_10047A10(unk1E214 *this) {
       v2 = this->field_128;
       v3 = this->last;
       this->field_3838.field_1A99C[28] = *(_WORD *)&this->field_2A40[2 * v2];
-      this->lpVtbl->field_18(this, (int *)(16 * v2 + v3));
+      this->lpVtbl->meth6(this, (int *)(16 * v2 + v3));
   } else {
-      this->lpVtbl->field_1C(this);
+      this->lpVtbl->meth7(this);
   }
   return 1;
 }
@@ -54334,7 +54297,7 @@ int __thiscall meth_unk1E214_10047D10(unk1E214 *this) {
 }
 
 //----- (10047D30) --------------------------------------------------------
-int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
+int __thiscall meth_unk1E214_12(unk1E214 *this) {
   int v2;     // edi
   int v3;     // ebp
   int v4;     // eax
@@ -54364,7 +54327,7 @@ int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
       goto LABEL_12;
   v8 = this->field_380C;
   if (v8 == -1) {
-      v10 = *(float *)&this->field_30 - this->lpVtbl->field_28(this, this->field_382C);
+      v10 = *(float *)&this->field_30 - this->lpVtbl->meth10(this, this->field_382C);
       *(float *)&this->field_3C = v10;
       if (v10 <= *(float *)&this->field_3810) {
           v2 = 1;
@@ -54374,7 +54337,7 @@ int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
   }
   if (v8) {
       if (v8 == 1) {
-          v9 = this->lpVtbl->field_28(this, this->field_382C) + *(float *)&this->field_30;
+          v9 = this->lpVtbl->meth10(this, this->field_382C) + *(float *)&this->field_30;
           *(float *)&this->field_3C = v9;
           if (v9 >= *(float *)&this->field_3810) {
               v2 = 1;
@@ -54390,7 +54353,7 @@ int __thiscall meth_unk1E214_10047D30(unk1E214 *this) {
 LABEL_13:
   v11 = HIBYTE(this->field_380C);
   if (v11 == -1) {
-      v13 = *(float *)&this->field_34 - this->lpVtbl->field_28(this, this->field_382C);
+      v13 = *(float *)&this->field_34 - this->lpVtbl->meth10(this, this->field_382C);
       *(float *)&this->field_40 = v13;
       if (v13 <= *(float *)&this->field_3814) {
           v3 = 1;
@@ -54400,7 +54363,7 @@ LABEL_13:
   }
   if (v11) {
       if (v11 == 1) {
-          v12 = this->lpVtbl->field_28(this, this->field_382C) + *(float *)&this->field_34;
+          v12 = this->lpVtbl->meth10(this, this->field_382C) + *(float *)&this->field_34;
           *(float *)&this->field_40 = v12;
           if (v12 >= *(float *)&this->field_3814) {
               v3 = 1;
@@ -54498,7 +54461,7 @@ int __thiscall meth_unk1E214_10048010(unk1E214 *this) {
   }
   if ((v1 & 0x200000) != 0)
       return 1;
-  result = this->lpVtbl->field_10(this);
+  result = this->lpVtbl->meth4(this);
   if (result)
       return 1;
   return result;
@@ -54591,13 +54554,13 @@ int __thiscall meth_unk1E214_10048180(unk1E214 *this) {
 
   v19 = this->field_128;
   if ((this->field_1C & 0x10) != 0 ||
-      (v2 = this->lpVtbl, v20 = this->lpVtbl, this->lpVtbl->field_3C(this))) {
-      this->lpVtbl->field_8(this);
+      (v2 = this->lpVtbl, v20 = this->lpVtbl, this->lpVtbl->meth15(this))) {
+      this->lpVtbl->meth2(this);
       return 1;
   }
   if (this->field_3818)
-      v2->field_30(this);
-  v2->field_4(this);
+      v2->meth12(this);
+  v2->meth1(this);
   v3 = this->field_4;
   if (!v3)
       goto LABEL_9;
@@ -54607,7 +54570,7 @@ int __thiscall meth_unk1E214_10048180(unk1E214 *this) {
   if (v4 == -1)
       return 0;
 LABEL_9:
-  if (!v2->field_20(this) || dword_10AA28D8) {
+  if (!v2->meth8(this) || dword_10AA28D8) {
       v17 = this->field_1C;
       if ((v17 & 0x400000) != 0)
           this->field_3838.field_1A99C[28] = *(_WORD *)this->field_2A40;
@@ -54620,7 +54583,7 @@ LABEL_9:
           if ((v17 & 0x100000) != 0 && (v17 & 0x10) == 0 && this->field_C) {
               this->field_3838.field_1A99C[28] = 3;
               this->vectorUnk[8] = 1;
-              v2->field_8(this);
+              v2->meth2(this);
               return 1;
           }
       }
@@ -54658,11 +54621,11 @@ LABEL_9:
               ++v10;
               *(_DWORD *)(v16 + 28) &= 0xFFFDFFFF;
           } while (v10 < (__int16)this->field_2AB4[0]);
-          v20->field_8(this);
+          v20->meth2(this);
           return 1;
       }
   LABEL_44:
-      v2->field_8(this);
+      v2->meth2(this);
       return 1;
   }
   v7 = this->field_8;
@@ -54792,7 +54755,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
           v7 = v5->field_1C;
           if ((v7 & 0x1000) == 0)
               goto LABEL_18;
-          v5->lpVtbl->field_4(v5);
+          v5->lpVtbl->meth1(v5);
           v8 = v5->field_4;
           if (v8)
               v8((int)v5);
@@ -54807,7 +54770,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
           if ((v7 & 0x10) != 0) {
           LABEL_18:
               if ((v7 & 0x800) == 0) {
-                  if (!v5->lpVtbl->field_C(v5)) {
+                  if (!v5->lpVtbl->meth3(v5)) {
                       byte_10AA28A8 = 0;
                       break;
                   }
@@ -54819,7 +54782,7 @@ int __thiscall meth_unk00348_10048530(unk00348 *this) {
                       v11 = &v5->field_2AB4[1];
                       do {
                           v12 = this->field_18[(__int16)*v11];
-                          v12->lpVtbl->field_C(v12);
+                          v12->lpVtbl->meth3(v12);
                           ++v10;
                           ++v11;
                       } while (v10 < (__int16)v5->field_2AB4[0]);
@@ -54938,7 +54901,7 @@ int __thiscall meth_10048870(_DWORD *this) {
 
 //----- (100488B0) --------------------------------------------------------
 int __thiscall meth_unk000C8_100488B0(unk000C8 *this) {
-  this->lpVtbl->field_20(this);
+  this->lpVtbl->meth8(this);
   return 1;
 }
 
@@ -54970,7 +54933,7 @@ int __thiscall meth_unk000C8_100488C0(unk000C8 *this) {
   (*(void (**)(void))(LODWORD(v6) + 12))();
   gUnkC8Ptr1 = v4;
   if (!dword_10AA2874)
-      this->lpVtbl->field_14(this);
+      this->lpVtbl->meth5(this);
   return 1;
 }
 // 100940A4: using guessed type int gPlayMusic;
@@ -55053,33 +55016,33 @@ int __thiscall meth_100489A0(char *this) {
 // 10AA2868: using guessed type int g_unkC8AreSamePtr;
 
 //----- (10048AA0) --------------------------------------------------------
-int __thiscall meth_10048AA0(unsigned __int16 *this) {
-  unsigned __int16 *v1;                 // ebp
-  void(__thiscall * **v2)(_DWORD, int); // ebx
-  int v3;                               // edi
-  _DWORD *v4;                           // esi
-  int result;                           // eax
-  int v6;                               // [esp+8h] [ebp-8h]
+int __thiscall meth_unk000C8_7(unk000C8 *this) {
+  unk00348 **v1; // ebp
+  unk00348 *v2;  // ebx
+  int v3;        // edi
+  unk1E214 **v4; // esi
+  int result;    // eax
+  int v6;        // [esp+8h] [ebp-8h]
 
   v6 = 0;
-  if (this[8]) {
-      v1 = this + 10;
+  if (this->field_10) {
+      v1 = this->field_14;
       do {
-          v2 = *(void(__thiscall ****)(_DWORD, int))v1;
+          v2 = *v1;
           v3 = 200;
-          v4 = (_DWORD *)(*(_DWORD *)v1 + 24);
+          v4 = (*v1)->field_18;
           do {
               if (*v4)
-                  (**(void(__thiscall ***)(_DWORD, int)) * v4)(*v4, 1);
+                  (*v4)->lpVtbl->meth0(*v4, 1);
               *v4++ = 0;
               --v3;
           } while (v3);
           if (v2)
-              (**v2)(v2, 1);
+              v2->lpVtbl->meth0(v2, 1);
           result = v6 + 1;
-          v1 += 2;
+          ++v1;
           ++v6;
-      } while (v6 < this[8]);
+      } while (v6 < this->field_10);
   }
   word_10AA286C = 0;
   return result;
@@ -55087,11 +55050,11 @@ int __thiscall meth_10048AA0(unsigned __int16 *this) {
 // 10AA286C: using guessed type __int16 word_10AA286C;
 
 //----- (10048B20) --------------------------------------------------------
-void __stdcall meth_unk000C8_10048B20(int a1) {
-  int waitTicksAdd;  // esi
-  DWORD waitTicks;   // esi
-  char **ppFilepath; // esi
-  Iostream_init *v4; // esi
+void __thiscall meth_unk000C8_6(unk000C8 *this, int a1) {
+  int waitTicksAdd;            // esi
+  DWORD waitTicks;             // esi
+  char **ppFilepath;           // esi
+  Iostream_init *iostreamInit; // esi
 
   waitTicksAdd = 0;
   if (dword_10AA2854 == 2) {
@@ -55115,113 +55078,113 @@ void __stdcall meth_unk000C8_10048B20(int a1) {
       } while ((int)ppFilepath < (int)&unk_10AA2584);
   }
   if (gUnkC8Ptr11) {
-      gUnkC8Ptr11->lpVtbl->field_1C(gUnkC8Ptr11);
+      gUnkC8Ptr11->lpVtbl->meth7(gUnkC8Ptr11);
       if (gUnkC8Ptr11)
-          gUnkC8Ptr11->lpVtbl->field_0(gUnkC8Ptr11, 1);
+          gUnkC8Ptr11->lpVtbl->meth0(gUnkC8Ptr11, 1);
       gUnkC8Ptr11 = 0;
       dword_10A9CFFC = 0;
   }
   if (gUnkC8Ptr12) {
-      gUnkC8Ptr12->lpVtbl->field_1C(gUnkC8Ptr12);
+      gUnkC8Ptr12->lpVtbl->meth7(gUnkC8Ptr12);
       if (gUnkC8Ptr12)
-          gUnkC8Ptr12->lpVtbl->field_0(gUnkC8Ptr12, 1);
+          gUnkC8Ptr12->lpVtbl->meth0(gUnkC8Ptr12, 1);
       gUnkC8Ptr12 = 0;
       dword_10AA29AC = 0;
   }
   if (gUnkC8Ptr13) {
-      gUnkC8Ptr13->lpVtbl->field_1C(gUnkC8Ptr13);
+      gUnkC8Ptr13->lpVtbl->meth7(gUnkC8Ptr13);
       if (gUnkC8Ptr13)
-          gUnkC8Ptr13->lpVtbl->field_0(gUnkC8Ptr13, 1);
+          gUnkC8Ptr13->lpVtbl->meth0(gUnkC8Ptr13, 1);
       gUnkC8Ptr13 = 0;
   }
   if (gUnkC8Ptr14) {
-      gUnkC8Ptr14->lpVtbl->field_1C(gUnkC8Ptr14);
+      gUnkC8Ptr14->lpVtbl->meth7(gUnkC8Ptr14);
       if (gUnkC8Ptr14)
-          gUnkC8Ptr14->lpVtbl->field_0(gUnkC8Ptr14, 1);
+          gUnkC8Ptr14->lpVtbl->meth0(gUnkC8Ptr14, 1);
       gUnkC8Ptr14 = 0;
       dword_10AA29B4 = 0;
   }
   if (gUnkC8Ptr4) {
-      gUnkC8Ptr4->lpVtbl->field_1C(gUnkC8Ptr4);
+      gUnkC8Ptr4->lpVtbl->meth7(gUnkC8Ptr4);
       if (gUnkC8Ptr4)
-          gUnkC8Ptr4->lpVtbl->field_0(gUnkC8Ptr4, 1);
+          gUnkC8Ptr4->lpVtbl->meth0(gUnkC8Ptr4, 1);
       gUnkC8Ptr4 = 0;
   }
   if (gUnkC8Ptr5) {
-      gUnkC8Ptr5->lpVtbl->field_1C(gUnkC8Ptr5);
+      gUnkC8Ptr5->lpVtbl->meth7(gUnkC8Ptr5);
       if (gUnkC8Ptr5)
-          gUnkC8Ptr5->lpVtbl->field_0(gUnkC8Ptr5, 1);
+          gUnkC8Ptr5->lpVtbl->meth0(gUnkC8Ptr5, 1);
       gUnkC8Ptr5 = 0;
   }
   if (gUnkC8Ptr15) {
-      gUnkC8Ptr15->lpVtbl->field_1C(gUnkC8Ptr15);
+      gUnkC8Ptr15->lpVtbl->meth7(gUnkC8Ptr15);
       if (gUnkC8Ptr15)
-          gUnkC8Ptr15->lpVtbl->field_0(gUnkC8Ptr15, 1);
+          gUnkC8Ptr15->lpVtbl->meth0(gUnkC8Ptr15, 1);
       gUnkC8Ptr15 = 0;
       dword_10AA29A8 = 0;
   }
   if (gUnkC8Ptr16) {
-      gUnkC8Ptr16->lpVtbl->field_1C(gUnkC8Ptr16);
+      gUnkC8Ptr16->lpVtbl->meth7(gUnkC8Ptr16);
       if (gUnkC8Ptr16)
-          gUnkC8Ptr16->lpVtbl->field_0(gUnkC8Ptr16, 1);
+          gUnkC8Ptr16->lpVtbl->meth0(gUnkC8Ptr16, 1);
       gUnkC8Ptr16 = 0;
   }
   if (gUnkC8Ptr17) {
-      gUnkC8Ptr17->lpVtbl->field_1C(gUnkC8Ptr17);
+      gUnkC8Ptr17->lpVtbl->meth7(gUnkC8Ptr17);
       if (gUnkC8Ptr17)
-          gUnkC8Ptr17->lpVtbl->field_0(gUnkC8Ptr17, 1);
+          gUnkC8Ptr17->lpVtbl->meth0(gUnkC8Ptr17, 1);
       gUnkC8Ptr17 = 0;
       dword_10AA29C0 = 0;
       dword_10AA29CC = 0;
       dword_10AA29F4 = 0;
   }
   if (gUnkC8Ptr18) {
-      gUnkC8Ptr18->lpVtbl->field_1C(gUnkC8Ptr18);
+      gUnkC8Ptr18->lpVtbl->meth7(gUnkC8Ptr18);
       if (gUnkC8Ptr18)
-          gUnkC8Ptr18->lpVtbl->field_0(gUnkC8Ptr18, 1);
+          gUnkC8Ptr18->lpVtbl->meth0(gUnkC8Ptr18, 1);
       gUnkC8Ptr18 = 0;
       dword_10AA29B0 = 0;
   }
   if (gUnkC8Ptr19) {
-      gUnkC8Ptr19->lpVtbl->field_1C(gUnkC8Ptr19);
+      gUnkC8Ptr19->lpVtbl->meth7(gUnkC8Ptr19);
       if (gUnkC8Ptr19)
-          gUnkC8Ptr19->lpVtbl->field_0(gUnkC8Ptr19, 1);
+          gUnkC8Ptr19->lpVtbl->meth0(gUnkC8Ptr19, 1);
       gUnkC8Ptr19 = 0;
   }
   if (gUnkC8Ptr20) {
-      gUnkC8Ptr20->lpVtbl->field_1C(gUnkC8Ptr20);
+      gUnkC8Ptr20->lpVtbl->meth7(gUnkC8Ptr20);
       if (gUnkC8Ptr20)
-          gUnkC8Ptr20->lpVtbl->field_0(gUnkC8Ptr20, 1);
+          gUnkC8Ptr20->lpVtbl->meth0(gUnkC8Ptr20, 1);
       gUnkC8Ptr20 = 0;
   }
   if (gUnkC8Ptr21) {
-      gUnkC8Ptr21->lpVtbl->field_1C(gUnkC8Ptr21);
+      gUnkC8Ptr21->lpVtbl->meth7(gUnkC8Ptr21);
       if (gUnkC8Ptr21)
-          gUnkC8Ptr21->lpVtbl->field_0(gUnkC8Ptr21, 1);
+          gUnkC8Ptr21->lpVtbl->meth0(gUnkC8Ptr21, 1);
       gUnkC8Ptr21 = 0;
   }
   if (gUnkC8Ptr22) {
-      gUnkC8Ptr22->lpVtbl->field_1C(gUnkC8Ptr22);
+      gUnkC8Ptr22->lpVtbl->meth7(gUnkC8Ptr22);
       if (gUnkC8Ptr22)
-          gUnkC8Ptr22->lpVtbl->field_0(gUnkC8Ptr22, 1);
+          gUnkC8Ptr22->lpVtbl->meth0(gUnkC8Ptr22, 1);
       gUnkC8Ptr22 = 0;
   }
   if (gUnkC8Ptr11) {
-      gUnkC8Ptr11->lpVtbl->field_1C(gUnkC8Ptr11);
+      gUnkC8Ptr11->lpVtbl->meth7(gUnkC8Ptr11);
       if (gUnkC8Ptr11)
-          gUnkC8Ptr11->lpVtbl->field_0(gUnkC8Ptr11, 1);
+          gUnkC8Ptr11->lpVtbl->meth0(gUnkC8Ptr11, 1);
       gUnkC8Ptr11 = 0;
   }
   if (gUnkC8Ptr24) {
-      gUnkC8Ptr24->lpVtbl->field_1C(gUnkC8Ptr24);
+      gUnkC8Ptr24->lpVtbl->meth7(gUnkC8Ptr24);
       if (gUnkC8Ptr24)
-          gUnkC8Ptr24->lpVtbl->field_0(gUnkC8Ptr24, 1);
+          gUnkC8Ptr24->lpVtbl->meth0(gUnkC8Ptr24, 1);
       gUnkC8Ptr24 = 0;
   }
   if (gUnkC8Ptr10) {
-      gUnkC8Ptr10->lpVtbl->field_1C(gUnkC8Ptr10);
+      gUnkC8Ptr10->lpVtbl->meth7(gUnkC8Ptr10);
       if (gUnkC8Ptr10)
-          gUnkC8Ptr10->lpVtbl->field_0(gUnkC8Ptr10, 1);
+          gUnkC8Ptr10->lpVtbl->meth0(gUnkC8Ptr10, 1);
       gUnkC8Ptr10 = 0;
       dword_10AA29B8 = 0;
       dword_10AA29D8 = 0;
@@ -55229,139 +55192,139 @@ void __stdcall meth_unk000C8_10048B20(int a1) {
       dword_10AA2880 = 0;
   }
   if (gUnkC8Ptr25) {
-      gUnkC8Ptr25->lpVtbl->field_1C(gUnkC8Ptr25);
+      gUnkC8Ptr25->lpVtbl->meth7(gUnkC8Ptr25);
       if (gUnkC8Ptr25)
-          gUnkC8Ptr25->lpVtbl->field_0(gUnkC8Ptr25, 1);
+          gUnkC8Ptr25->lpVtbl->meth0(gUnkC8Ptr25, 1);
       gUnkC8Ptr25 = 0;
       dword_10AA29B8 = 0;
   }
   if (gUnkC8Ptr26) {
-      gUnkC8Ptr26->lpVtbl->field_1C(gUnkC8Ptr26);
+      gUnkC8Ptr26->lpVtbl->meth7(gUnkC8Ptr26);
       if (gUnkC8Ptr26)
-          gUnkC8Ptr26->lpVtbl->field_0(gUnkC8Ptr26, 1);
+          gUnkC8Ptr26->lpVtbl->meth0(gUnkC8Ptr26, 1);
       gUnkC8Ptr26 = 0;
   }
   if (gUnkC8Ptr27) {
-      gUnkC8Ptr27->lpVtbl->field_1C(gUnkC8Ptr27);
+      gUnkC8Ptr27->lpVtbl->meth7(gUnkC8Ptr27);
       if (gUnkC8Ptr27)
-          gUnkC8Ptr27->lpVtbl->field_0(gUnkC8Ptr27, 1);
+          gUnkC8Ptr27->lpVtbl->meth0(gUnkC8Ptr27, 1);
       gUnkC8Ptr27 = 0;
       dword_10AA29E4 = 0;
       gUnk1E214 = 0;
   }
   if (gUnkC8Ptr28) {
-      gUnkC8Ptr28->lpVtbl->field_1C(gUnkC8Ptr28);
+      gUnkC8Ptr28->lpVtbl->meth7(gUnkC8Ptr28);
       if (gUnkC8Ptr28)
-          gUnkC8Ptr28->lpVtbl->field_0(gUnkC8Ptr28, 1);
+          gUnkC8Ptr28->lpVtbl->meth0(gUnkC8Ptr28, 1);
       gUnkC8Ptr28 = 0;
       dword_10AA29A8 = 0;
   }
   if (gUnkC8Ptr29) {
-      gUnkC8Ptr29->lpVtbl->field_1C(gUnkC8Ptr29);
+      gUnkC8Ptr29->lpVtbl->meth7(gUnkC8Ptr29);
       if (gUnkC8Ptr29)
-          gUnkC8Ptr29->lpVtbl->field_0(gUnkC8Ptr29, 1);
+          gUnkC8Ptr29->lpVtbl->meth0(gUnkC8Ptr29, 1);
       gUnkC8Ptr29 = 0;
       dword_10AA29E8 = 0;
   }
   if (gUnkC8Ptr30) {
-      gUnkC8Ptr30->lpVtbl->field_1C(gUnkC8Ptr30);
+      gUnkC8Ptr30->lpVtbl->meth7(gUnkC8Ptr30);
       if (gUnkC8Ptr30)
-          gUnkC8Ptr30->lpVtbl->field_0(gUnkC8Ptr30, 1);
+          gUnkC8Ptr30->lpVtbl->meth0(gUnkC8Ptr30, 1);
       gUnkC8Ptr30 = 0;
   }
   if (gUnkC8Ptr31) {
-      gUnkC8Ptr31->lpVtbl->field_1C(gUnkC8Ptr31);
+      gUnkC8Ptr31->lpVtbl->meth7(gUnkC8Ptr31);
       if (gUnkC8Ptr31)
-          gUnkC8Ptr31->lpVtbl->field_0(gUnkC8Ptr31, 1);
+          gUnkC8Ptr31->lpVtbl->meth0(gUnkC8Ptr31, 1);
       gUnkC8Ptr31 = 0;
   }
   if (gUnkC8Ptr32) {
-      gUnkC8Ptr32->lpVtbl->field_1C(gUnkC8Ptr32);
+      gUnkC8Ptr32->lpVtbl->meth7(gUnkC8Ptr32);
       if (gUnkC8Ptr32)
-          gUnkC8Ptr32->lpVtbl->field_0(gUnkC8Ptr32, 1);
+          gUnkC8Ptr32->lpVtbl->meth0(gUnkC8Ptr32, 1);
       gUnkC8Ptr32 = 0;
   }
   if (g_unkC8Ptr0) {
-      g_unkC8Ptr0->lpVtbl->field_1C(g_unkC8Ptr0);
+      g_unkC8Ptr0->lpVtbl->meth7(g_unkC8Ptr0);
       if (g_unkC8Ptr0)
-          g_unkC8Ptr0->lpVtbl->field_0(g_unkC8Ptr0, 1);
+          g_unkC8Ptr0->lpVtbl->meth0(g_unkC8Ptr0, 1);
       g_unkC8Ptr0 = 0;
       dword_10AA29C4 = 0;
       dword_10AA29D0 = 0;
   }
   if (gUnkC8Ptr7) {
-      gUnkC8Ptr7->lpVtbl->field_1C(gUnkC8Ptr7);
+      gUnkC8Ptr7->lpVtbl->meth7(gUnkC8Ptr7);
       if (gUnkC8Ptr7)
-          gUnkC8Ptr7->lpVtbl->field_0(gUnkC8Ptr7, 1);
+          gUnkC8Ptr7->lpVtbl->meth0(gUnkC8Ptr7, 1);
       gUnkC8Ptr7 = 0;
   }
   if (gUnkC8Ptr8) {
-      gUnkC8Ptr8->lpVtbl->field_1C(gUnkC8Ptr8);
+      gUnkC8Ptr8->lpVtbl->meth7(gUnkC8Ptr8);
       if (gUnkC8Ptr8)
-          gUnkC8Ptr8->lpVtbl->field_0(gUnkC8Ptr8, 1);
+          gUnkC8Ptr8->lpVtbl->meth0(gUnkC8Ptr8, 1);
       gUnkC8Ptr8 = 0;
   }
   if (gUnkC8Ptr33) {
-      gUnkC8Ptr33->lpVtbl->field_1C(gUnkC8Ptr33);
+      gUnkC8Ptr33->lpVtbl->meth7(gUnkC8Ptr33);
       if (gUnkC8Ptr33)
-          gUnkC8Ptr33->lpVtbl->field_0(gUnkC8Ptr33, 1);
+          gUnkC8Ptr33->lpVtbl->meth0(gUnkC8Ptr33, 1);
       gUnkC8Ptr33 = 0;
   }
   if (gUnkC8Ptr3) {
-      gUnkC8Ptr3->lpVtbl->field_1C(gUnkC8Ptr3);
+      gUnkC8Ptr3->lpVtbl->meth7(gUnkC8Ptr3);
       if (gUnkC8Ptr3)
-          gUnkC8Ptr3->lpVtbl->field_0(gUnkC8Ptr3, 1);
+          gUnkC8Ptr3->lpVtbl->meth0(gUnkC8Ptr3, 1);
       gUnkC8Ptr3 = 0;
   }
   if (gUnkC8Ptr2) {
-      gUnkC8Ptr2->lpVtbl->field_1C(gUnkC8Ptr2);
+      gUnkC8Ptr2->lpVtbl->meth7(gUnkC8Ptr2);
       if (gUnkC8Ptr2)
-          gUnkC8Ptr2->lpVtbl->field_0(gUnkC8Ptr2, 1);
+          gUnkC8Ptr2->lpVtbl->meth0(gUnkC8Ptr2, 1);
       gUnkC8Ptr2 = 0;
   }
   if (gUnkC8Ptr34) {
-      gUnkC8Ptr34->lpVtbl->field_1C(gUnkC8Ptr34);
+      gUnkC8Ptr34->lpVtbl->meth7(gUnkC8Ptr34);
       if (gUnkC8Ptr34)
-          gUnkC8Ptr34->lpVtbl->field_0(gUnkC8Ptr34, 1);
+          gUnkC8Ptr34->lpVtbl->meth0(gUnkC8Ptr34, 1);
       gUnkC8Ptr34 = 0;
   }
   if (gUnkC8Ptr35) {
-      gUnkC8Ptr35->lpVtbl->field_1C(gUnkC8Ptr35);
+      gUnkC8Ptr35->lpVtbl->meth7(gUnkC8Ptr35);
       if (gUnkC8Ptr35)
-          gUnkC8Ptr35->lpVtbl->field_0(gUnkC8Ptr35, 1);
+          gUnkC8Ptr35->lpVtbl->meth0(gUnkC8Ptr35, 1);
       gUnkC8Ptr35 = 0;
   }
   if (gUnkC8Ptr36) {
-      gUnkC8Ptr36->lpVtbl->field_1C(gUnkC8Ptr36);
+      gUnkC8Ptr36->lpVtbl->meth7(gUnkC8Ptr36);
       if (gUnkC8Ptr36)
-          gUnkC8Ptr36->lpVtbl->field_0(gUnkC8Ptr36, 1);
+          gUnkC8Ptr36->lpVtbl->meth0(gUnkC8Ptr36, 1);
       gUnkC8Ptr36 = 0;
       dword_10AA29F0 = 0;
   }
   if (gUnkC8Ptr37) {
-      gUnkC8Ptr37->lpVtbl->field_1C(gUnkC8Ptr37);
+      gUnkC8Ptr37->lpVtbl->meth7(gUnkC8Ptr37);
       if (gUnkC8Ptr37)
-          gUnkC8Ptr37->lpVtbl->field_0(gUnkC8Ptr37, 1);
+          gUnkC8Ptr37->lpVtbl->meth0(gUnkC8Ptr37, 1);
       gUnkC8Ptr37 = 0;
       dword_10AA29EC = 0;
   }
   if (gUnkC8Ptr9) {
-      gUnkC8Ptr9->lpVtbl->field_1C(gUnkC8Ptr9);
+      gUnkC8Ptr9->lpVtbl->meth7(gUnkC8Ptr9);
       if (gUnkC8Ptr9)
-          gUnkC8Ptr9->lpVtbl->field_0(gUnkC8Ptr9, 1);
+          gUnkC8Ptr9->lpVtbl->meth0(gUnkC8Ptr9, 1);
       gUnkC8Ptr9 = 0;
   }
   if (!a1) {
       if (gUnkC8Ptr6) {
-          gUnkC8Ptr6->lpVtbl->field_1C(gUnkC8Ptr6);
+          gUnkC8Ptr6->lpVtbl->meth7(gUnkC8Ptr6);
           if (gUnkC8Ptr6)
-              gUnkC8Ptr6->lpVtbl->field_0(gUnkC8Ptr6, 1);
+              gUnkC8Ptr6->lpVtbl->meth0(gUnkC8Ptr6, 1);
           gUnkC8Ptr6 = 0;
       }
-      v4 = gIostreamInit;
+      iostreamInit = gIostreamInit;
       if (gIostreamInit) {
           meth_DebugPrint(gIostreamInit);
-          operator delete(v4);
+          operator delete(iostreamInit);
           gIostreamInit = 0;
       }
       sub_1005FCF0();
@@ -55382,7 +55345,6 @@ void __stdcall meth_unk000C8_10048B20(int a1) {
 // 10AA29D0: using guessed type int dword_10AA29D0;
 // 10AA29D4: using guessed type int dword_10AA29D4;
 // 10AA29D8: using guessed type int dword_10AA29D8;
-// 10AA29E0: using guessed type int dword_10AA29E0;
 // 10AA29E4: using guessed type int dword_10AA29E4;
 // 10AA29E8: using guessed type int dword_10AA29E8;
 // 10AA29EC: using guessed type int dword_10AA29EC;
@@ -55481,7 +55443,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -55491,7 +55453,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   *(_DWORD *)&v3->gap20[788] = v7;
   if (!v7)
       sub_1003E260(4);
-  v7->lpVtbl->field_38(v7, a1, 0, 0.0, 9, 2, 5, 0, 1);
+  v7->lpVtbl->meth14(v7, a1, 0, 0.0, 9, 2, 5, 0, 1);
   v8 = (unk1E214 *)operator new(0x1E214u);
   if (v8)
       v9 = meth_unk1E214_init(v8);
@@ -55501,10 +55463,10 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   if (!v9)
       sub_1003E260(4);
   v10 = v9->lpVtbl;
-  v9->lpVtbl->field_38(v9, a1, v3->flags_338, 10.0, 0x100009, 2, 5, 1, -1);
+  v9->lpVtbl->meth14(v9, a1, v3->flags_338, 10.0, 0x100009, 2, 5, 1, -1);
   v9->field_3838.field_1A99C[28] = 3;
   v11 = GetStringWithIndex(1u);
-  v10->field_34(v9, v11, 1, 1, &unk_100AB508);
+  v10->meth13(v9, v11, 1, 1, &unk_100AB508);
   ++v3->field_14;
   v12 = (unk1E214 *)operator new(0x1E214u);
   if (v12)
@@ -55515,12 +55477,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   if (!v13)
       sub_1003E260(4);
   v14 = v13->lpVtbl;
-  v13->lpVtbl->field_38(v13, a1, v3->flags_338, v3->field_33C, 0x102001, 2, 5, 1, -1);
+  v13->lpVtbl->meth14(v13, a1, v3->flags_338, v3->field_33C, 0x102001, 2, 5, 1, -1);
   v13->field_C = sub_10047360;
   v13->field_8 = (int(__cdecl *)())meth_10045900;
   v13->field_3838.field_1A99C[28] = 3;
   v15 = GetStringWithIndex(2u);
-  v14->field_34(v13, v15, 1, 1, &dword_100AB448);
+  v14->meth13(v13, v15, 1, 1, &dword_100AB448);
   v16 = v3->field_14;
   ++v13->field_2AB4[0];
   v13->field_2AB4[1] = v16 + 1;
@@ -55534,7 +55496,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v18;
   if (!v18)
       sub_1003E260(4);
-  v18->lpVtbl->field_38(v18, a1, 1117782016, 46.0, 2057, 2, 5, 0, 6);
+  v18->lpVtbl->meth14(v18, a1, 1117782016, 46.0, 2057, 2, 5, 0, 6);
   ++v3->field_14;
   v19 = (unk1E214 *)operator new(0x1E214u);
   if (v19)
@@ -55546,12 +55508,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v21 = v20->lpVtbl;
   v60 = v3->field_33C - -19.0;
-  v20->lpVtbl->field_38(v20, a1, v3->flags_338, v60, 1056769, 2, 5, 1, -1);
+  v20->lpVtbl->meth14(v20, a1, v3->flags_338, v60, 1056769, 2, 5, 1, -1);
   v20->field_C = sub_100474B0;
   v20->field_8 = sub_10043BF0;
   v20->field_3838.field_1A99C[28] = 3;
   v22 = GetStringWithIndex(3u);
-  v21->field_34(v20, v22, 1, 1, &dword_100AB448);
+  v21->meth13(v20, v22, 1, 1, &dword_100AB448);
   v23 = v3->field_14;
   ++v20->field_2AB4[0];
   v20->field_2AB4[1] = v23 + 1;
@@ -55565,7 +55527,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v25;
   if (!v25)
       sub_1003E260(4);
-  v25->lpVtbl->field_38(v25, a1, 1117782016, 46.0, 2057, 2, 5, 0, 7);
+  v25->lpVtbl->meth14(v25, a1, 1117782016, 46.0, 2057, 2, 5, 0, 7);
   ++v3->field_14;
   v26 = (unk1E214 *)operator new(0x1E214u);
   if (v26)
@@ -55577,12 +55539,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v28 = v27->lpVtbl;
   v61 = v3->field_33C - -38.0;
-  v27->lpVtbl->field_38(v27, a1, v3->flags_338, v61, 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->meth14(v27, a1, v3->flags_338, v61, 1056769, 2, 5, 1, -1);
   v27->field_C = sub_100474B0;
   v27->field_8 = sub_10044B90;
   v27->field_3838.field_1A99C[28] = 3;
   v29 = GetStringWithIndex(4u);
-  v28->field_34(v27, v29, 1, 1, &dword_100AB448);
+  v28->meth13(v27, v29, 1, 1, &dword_100AB448);
   v30 = v3->field_14;
   ++v27->field_2AB4[0];
   v27->field_2AB4[1] = v30 + 1;
@@ -55596,7 +55558,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v32;
   if (!v32)
       sub_1003E260(4);
-  v32->lpVtbl->field_38(v32, a1, 1117782016, 46.0, 2057, 2, 5, 0, 8);
+  v32->lpVtbl->meth14(v32, a1, 1117782016, 46.0, 2057, 2, 5, 0, 8);
   ++v3->field_14;
   v33 = (unk1E214 *)operator new(0x1E214u);
   if (v33)
@@ -55608,12 +55570,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v35 = v34->lpVtbl;
   v62 = v3->field_33C - -57.0;
-  v34->lpVtbl->field_38(v34, a1, v3->flags_338, v62, 1056769, 2, 5, 1, -1);
+  v34->lpVtbl->meth14(v34, a1, v3->flags_338, v62, 1056769, 2, 5, 1, -1);
   v34->field_C = sub_10047360;
   v34->field_8 = (int(__cdecl *)())meth_10044F50;
   v34->field_3838.field_1A99C[28] = 3;
   v36 = GetStringWithIndex(5u);
-  v35->field_34(v34, v36, 1, 1, &dword_100AB448);
+  v35->meth13(v34, v36, 1, 1, &dword_100AB448);
   v37 = v3->field_14;
   ++v34->field_2AB4[0];
   v34->field_2AB4[1] = v37 + 1;
@@ -55627,7 +55589,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v39;
   if (!v39)
       sub_1003E260(4);
-  v39->lpVtbl->field_38(v39, a1, 1117782016, 46.0, 2057, 2, 5, 0, 10);
+  v39->lpVtbl->meth14(v39, a1, 1117782016, 46.0, 2057, 2, 5, 0, 10);
   ++v3->field_14;
   v40 = (unk1E214 *)operator new(0x1E214u);
   if (v40)
@@ -55639,12 +55601,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v42 = v41->lpVtbl;
   v63 = v3->field_33C - -76.0;
-  v41->lpVtbl->field_38(v41, a1, v3->flags_338, v63, 1056769, 2, 5, 1, -1);
+  v41->lpVtbl->meth14(v41, a1, v3->flags_338, v63, 1056769, 2, 5, 1, -1);
   v41->field_C = sub_100474B0;
   v41->field_8 = sub_100451E0;
   v41->field_3838.field_1A99C[28] = 3;
   v43 = GetStringWithIndex(6u);
-  v42->field_34(v41, v43, 1, 1, &dword_100AB448);
+  v42->meth13(v41, v43, 1, 1, &dword_100AB448);
   v44 = v3->field_14;
   ++v41->field_2AB4[0];
   v41->field_2AB4[1] = v44 + 1;
@@ -55658,7 +55620,7 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v46;
   if (!v46)
       sub_1003E260(4);
-  v46->lpVtbl->field_38(v46, a1, 1117782016, 46.0, 2057, 2, 5, 0, 9);
+  v46->lpVtbl->meth14(v46, a1, 1117782016, 46.0, 2057, 2, 5, 0, 9);
   ++v3->field_14;
   v47 = (unk1E214 *)operator new(0x1E214u);
   if (v47)
@@ -55670,12 +55632,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v49 = v48->lpVtbl;
   v64 = v3->field_33C - -95.0;
-  v48->lpVtbl->field_38(v48, a1, v3->flags_338, v64, 1056769, 2, 5, 1, -1);
+  v48->lpVtbl->meth14(v48, a1, v3->flags_338, v64, 1056769, 2, 5, 1, -1);
   v48->field_C = sub_100475F0;
   v48->field_8 = (int(__cdecl *)())sub_10041970;
   v48->field_3838.field_1A99C[28] = 3;
   v50 = GetStringWithIndex(7u);
-  v49->field_34(v48, v50, 1, 1, &dword_100AB448);
+  v49->meth13(v48, v50, 1, 1, &dword_100AB448);
   v51 = v3->field_14;
   ++v48->field_2AB4[0];
   v48->field_2AB4[1] = v51 + 1;
@@ -55691,12 +55653,12 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
       sub_1003E260(4);
   v54 = v53->lpVtbl;
   v65 = v3->field_33C - -114.0;
-  v53->lpVtbl->field_38(v53, a1, v3->flags_338, v65, 1056769, 2, 5, 1, -1);
+  v53->lpVtbl->meth14(v53, a1, v3->flags_338, v65, 1056769, 2, 5, 1, -1);
   v53->field_C = sub_100474B0;
   v53->field_8 = (int(__cdecl *)())sub_10046170;
   v53->field_3838.field_1A99C[28] = 3;
   v55 = GetStringWithIndex(8u);
-  v54->field_34(v53, v55, 1, 1, &dword_100AB448);
+  v54->meth13(v53, v55, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v56 = (unk1E214 *)operator new(0x1E214u);
@@ -55708,9 +55670,9 @@ int __cdecl sub_100491B0(unk000C8 *a1) {
   if (!v57)
       sub_1003E260(4);
   v58 = v57->lpVtbl;
-  v57->lpVtbl->field_38(v57, a1, v3->flags_338, 29.0, 1048585, 2, 5, 1, -1);
+  v57->lpVtbl->meth14(v57, a1, v3->flags_338, 29.0, 1048585, 2, 5, 1, -1);
   v57->field_3838.field_1A99C[28] = 3;
-  v58->field_34(v57, asc_100AD300, 1, 1, &unk_100AB558);
+  v58->meth13(v57, asc_100AD300, 1, 1, &unk_100AB558);
   result = 1;
   dword_10A9DBD0 = v3->field_14++;
   return result;
@@ -55764,7 +55726,7 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
   if (!v5)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v5->lpVtbl->field_38)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+       v5->lpVtbl->meth14)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -55776,10 +55738,10 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
       sub_1003E260(4);
   v8 = v7->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v7->lpVtbl->field_38)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+       v7->lpVtbl->meth14)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0xEu);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++v3->field_14;
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -55791,12 +55753,12 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
       sub_1003E260(4);
   v12 = v11->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v11->lpVtbl->field_38)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+       v11->lpVtbl->meth14)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = (int(__cdecl *)())sub_10043710;
   v11->field_3838.field_1A99C[28] = 3;
   v13 = GetStringWithIndex(0xFu);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -55810,12 +55772,12 @@ int __cdecl sub_10049C20(unk000C8 *a1) {
   v16 = v15->lpVtbl;
   v19 = v3->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v15->lpVtbl->field_38)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
+       v15->lpVtbl->meth14)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_100464A0;
   v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0xCu);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   return 1;
@@ -55868,7 +55830,7 @@ int __cdecl sub_10049F40(unk000C8 *a1) {
   if (!v5)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v5->lpVtbl->field_38)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+       v5->lpVtbl->meth14)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -55880,10 +55842,10 @@ int __cdecl sub_10049F40(unk000C8 *a1) {
       sub_1003E260(4);
   v8 = v7->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v7->lpVtbl->field_38)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+       v7->lpVtbl->meth14)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x10u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB438);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB438);
   ++v3->field_14;
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -55895,12 +55857,12 @@ int __cdecl sub_10049F40(unk000C8 *a1) {
       sub_1003E260(4);
   v12 = v11->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v11->lpVtbl->field_38)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+       v11->lpVtbl->meth14)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = (int(__cdecl *)())sub_10046F60;
   v11->field_3838.field_1A99C[28] = 3;
   v13 = GetStringWithIndex(0x11u);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   dword_10AA29B0 = (int)v11;
   ++v3->field_14;
   ++LOWORD(v3->last);
@@ -55915,12 +55877,12 @@ int __cdecl sub_10049F40(unk000C8 *a1) {
   v16 = v15->lpVtbl;
   v19 = v3->field_33C - -19.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v15->lpVtbl->field_38)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
+       v15->lpVtbl->meth14)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10046FC0;
   v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0x12u);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   return 1;
@@ -55974,7 +55936,7 @@ int __cdecl sub_1004A260(unk000C8 *a1) {
   if (!v5)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v5->lpVtbl->field_38)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+       v5->lpVtbl->meth14)(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -55986,10 +55948,10 @@ int __cdecl sub_1004A260(unk000C8 *a1) {
       sub_1003E260(4);
   v8 = v7->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v7->lpVtbl->field_38)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+       v7->lpVtbl->meth14)(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x10u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB438);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB438);
   ++v3->field_14;
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -56001,12 +55963,12 @@ int __cdecl sub_1004A260(unk000C8 *a1) {
       sub_1003E260(4);
   v12 = v11->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v11->lpVtbl->field_38)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+       v11->lpVtbl->meth14)(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = (int(__cdecl *)())sub_10046FD0;
   v11->field_3838.field_1A99C[28] = 3;
   v13 = GetStringWithIndex(0x11u);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   dword_10AA29B0 = (int)v11;
   ++v3->field_14;
   ++LOWORD(v3->last);
@@ -56021,12 +55983,12 @@ int __cdecl sub_1004A260(unk000C8 *a1) {
   v16 = v15->lpVtbl;
   v19 = v3->field_33C - -19.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v15->lpVtbl->field_38)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
+       v15->lpVtbl->meth14)(v15, a1, v3->flags_338, LODWORD(v19), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10047050;
   v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0x12u);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   return 1;
@@ -56942,7 +56904,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -56953,10 +56915,10 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(6u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++v3->field_14;
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -56967,12 +56929,12 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   if (!v11)
       sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->flags_338, v3->field_33C, 1056769, 2, 5, 1, -1);
+  v11->lpVtbl->meth14(v11, a1, v3->flags_338, v3->field_33C, 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_100452C0;
   v11->field_3838.field_1A99C[28] = 3;
   v13 = GetStringWithIndex(0x1Fu);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -56985,12 +56947,12 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v16 = v15->lpVtbl;
   v39 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, v39, 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, v39, 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10045390;
   v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0x20u);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -57003,12 +56965,12 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v20 = v19->lpVtbl;
   v40 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, a1, v3->flags_338, v40, 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, a1, v3->flags_338, v40, 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100455E0;
   v19->field_3838.field_1A99C[28] = 3;
   v21 = GetStringWithIndex(0x21u);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -57021,12 +56983,12 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v24 = v23->lpVtbl;
   v41 = v3->field_33C - -57.0;
-  v23->lpVtbl->field_38(v23, a1, v3->flags_338, v41, 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->meth14(v23, a1, v3->flags_338, v41, 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_100456B0;
   v23->field_3838.field_1A99C[28] = 3;
   v25 = GetStringWithIndex(0x22u);
-  v24->field_34(v23, v25, 1, 1, &dword_100AB448);
+  v24->meth13(v23, v25, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v26 = (unk1E214 *)operator new(0x1E214u);
@@ -57039,12 +57001,12 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
       sub_1003E260(4);
   v28 = v27->lpVtbl;
   v42 = v3->field_33C - -114.0;
-  v27->lpVtbl->field_38(v27, a1, v3->flags_338, v42, 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->meth14(v27, a1, v3->flags_338, v42, 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10046520;
   v27->field_3838.field_1A99C[28] = 3;
   v29 = GetStringWithIndex(0xCu);
-  v28->field_34(v27, v29, 1, 1, &dword_100AB448);
+  v28->meth13(v27, v29, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v27;
   ++v3->field_14;
   ++LOWORD(v3->last);
@@ -57056,7 +57018,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v31;
   if (!v31)
       sub_1003E260(4);
-  v31->lpVtbl->field_38(v31, a1, 1117782016, 46.0, 9, 2, 5, 0, 9);
+  v31->lpVtbl->meth14(v31, a1, 1117782016, 46.0, 9, 2, 5, 0, 9);
   ++v3->field_14;
   v32 = (unk1E214 *)operator new(0x1E214u);
   if (v32)
@@ -57066,7 +57028,7 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v33;
   if (!v33)
       sub_1003E260(4);
-  v33->lpVtbl->field_38(v33, a1, 1134690304, 46.0, 1, 2, 5, 1, 22);
+  v33->lpVtbl->meth14(v33, a1, 1134690304, 46.0, 1, 2, 5, 1, 22);
   v33->field_4 = sub_10041870;
   v34 = v3->field_14 + 1;
   ++v33->field_2AB4[0];
@@ -57081,10 +57043,10 @@ int __cdecl sub_1004BDC0(unk000C8 *a1) {
   if (!v36)
       sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, v3->flags_338, 155.0, 1052673, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, a1, v3->flags_338, 155.0, 1052673, 2, 5, 1, -1);
   v36->field_4 = sub_1003FFD0;
   v36->field_3838.field_1A99C[28] = 3;
-  v37->field_34(v36, asc_100AD300, 1, 1, &unk_100AB4C8);
+  v37->meth13(v36, asc_100AD300, 1, 1, &unk_100AB4C8);
   ++v3->field_14;
   return 1;
 }
@@ -57154,7 +57116,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -57165,10 +57127,10 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x1Fu);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -57179,12 +57141,12 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   if (!v11)
       sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+  v11->lpVtbl->meth14(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10043400;
   LOWORD(v11->?) = 3;
   v13 = GetStringWithIndex(0x23u);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -57197,12 +57159,12 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
       sub_1003E260(4);
   v16 = v15->lpVtbl;
   v35 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_100434C0;
   LOWORD(v15->?) = 3;
   v17 = GetStringWithIndex(0x24u);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -57215,12 +57177,12 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
       sub_1003E260(4);
   v20 = v19->lpVtbl;
   v36 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, a1, v3->flags_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100406C0;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0x25u);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -57233,12 +57195,12 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
       sub_1003E260(4);
   v24 = v23->lpVtbl;
   v37 = v3->field_33C - -114.0;
-  v23->lpVtbl->field_38(v23, a1, v3->flags_338, LODWORD(v37), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->meth14(v23, a1, v3->flags_338, LODWORD(v37), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = (int(__cdecl *)())sub_100465A0;
   LOWORD(v23->?) = 3;
   v25 = GetStringWithIndex(0xCu);
-  v24->field_34(v23, v25, 1, 1, &dword_100AB448);
+  v24->meth13(v23, v25, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v23;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -57250,7 +57212,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v27;
   if (!v27)
       sub_1003E260(4);
-  v27->lpVtbl->field_38(v27, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+  v27->lpVtbl->meth14(v27, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
   ++LOWORD(v3->field_14);
   v28 = (unk1E214 *)operator new(0x1E214u);
   if (v28)
@@ -57260,7 +57222,7 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v29;
   if (!v29)
       sub_1003E260(4);
-  v29->lpVtbl->field_38(v29, a1, 1134690304, 1110966272, 1, 2, 5, 1, 22);
+  v29->lpVtbl->meth14(v29, a1, 1134690304, 1110966272, 1, 2, 5, 1, 22);
   v29->field_4 = sub_10041870;
   v30 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v29->gap5C[10840];
@@ -57275,10 +57237,10 @@ int __cdecl sub_1004C4A0(unk000C8 *a1) {
   if (!v32)
       sub_1003E260(4);
   v33 = v32->lpVtbl;
-  v32->lpVtbl->field_38(v32, a1, v3->flags_338, 1125842944, 1052673, 2, 5, 1, -1);
+  v32->lpVtbl->meth14(v32, a1, v3->flags_338, 1125842944, 1052673, 2, 5, 1, -1);
   v32->field_4 = sub_1003FFD0;
   LOWORD(v32->?) = 3;
-  v33->field_34(v32, asc_100AD300, 1, 1, &unk_100AB4C8);
+  v33->meth13(v32, asc_100AD300, 1, 1, &unk_100AB4C8);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -57355,7 +57317,7 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
   if (!v6)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v6->lpVtbl->field_38)(v6, a1, 0, 0, 9, 2, 5, 0, 0);
+       v6->lpVtbl->meth14)(v6, a1, 0, 0, 9, 2, 5, 0, 0);
   ++v4->field_14;
   v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
@@ -57367,10 +57329,10 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
       sub_1003E260(4);
   v9 = v8->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v8->lpVtbl->field_38)(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+       v8->lpVtbl->meth14)(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x26u);
-  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  v9->meth13(v8, v10, 1, 1, &unk_100AB508);
   ++v4->field_14;
   v11 = (unk1E214 *)operator new(0x1E214u);
   if (v11)
@@ -57381,14 +57343,13 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
   if (!v12)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v12->lpVtbl->field_38)(v12, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
+       v12->lpVtbl->meth14)(v12, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
   v13 = v12->field_3838.lpVtbl;
   v12->field_4 = sub_1003EC80;
   *(_DWORD *)&v12->field_3838.field_1A99C[16] = 1;
   v44 = (unk000C8 *)&v12->field_3838;
   v43 = v13;
-  ((void(__stdcall *)(int, int *, int, _DWORD, int))v13->field_14)(
-      262145, dword_100AB4D8, 5, 0, -1);
+  ((void(__stdcall *)(int, int *, int, _DWORD, int))v13->meth5)(262145, dword_100AB4D8, 5, 0, -1);
   v14 = aE_0;
   do {
       v15 = 0;
@@ -57398,7 +57359,7 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
       }
       if (GetStringWithIndex(*(_DWORD *)v14)) {
           v16 = GetStringWithIndex(*(_DWORD *)v14);
-          v43->field_10((unk1A5E0 *)v44, (char *)v16, v15, 1, (int)dword_100AB4D8, 0);
+          v43->meth4((unk1A5E0 *)v44, (char *)v16, v15, 1, (int)dword_100AB4D8, 0);
       }
       v14 += 8;
   } while ((int)v14 < (int)&dword_100AB3D8);
@@ -57415,13 +57376,13 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
   v19 = v18->lpVtbl;
   v41 = v4->field_33C - -95.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v18->lpVtbl->field_38)(v18, a1, v4->flags_338, LODWORD(v41), 1056769, 2, 5, 1, -1);
+       v18->lpVtbl->meth14)(v18, a1, v4->flags_338, LODWORD(v41), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
   v18->field_8 = sub_10040680;
   v18->field_18 = (int)sub_10040450;
   v18->field_3838.field_1A99C[28] = 3;
   v20 = GetStringWithIndex(0x27u);
-  v19->field_34(v18, v20, 1, 1, &dword_100AB448);
+  v19->meth13(v18, v20, 1, 1, &dword_100AB448);
   ++v4->field_14;
   ++LOWORD(v4->last);
   v21 = (unk1E214 *)operator new(0x1E214u);
@@ -57435,12 +57396,12 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
   v23 = v22->lpVtbl;
   v42 = v4->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v22->lpVtbl->field_38)(v22, a1, v4->flags_338, LODWORD(v42), 1056769, 2, 5, 1, -1);
+       v22->lpVtbl->meth14)(v22, a1, v4->flags_338, LODWORD(v42), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_10046560;
   v22->field_3838.field_1A99C[28] = 3;
   v24 = GetStringWithIndex(0xCu);
-  v23->field_34(v22, v24, 1, 1, &dword_100AB448);
+  v23->meth13(v22, v24, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v22;
   ++v4->field_14;
   ++LOWORD(v4->last);
@@ -57453,7 +57414,7 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
   if (!v26)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, _DWORD, int))
-       v26->lpVtbl->field_38)(v26, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+       v26->lpVtbl->meth14)(v26, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
   ++v4->field_14;
   v27 = (unk1E214 *)operator new(0x1E214u);
   if (v27)
@@ -57465,10 +57426,10 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
       sub_1003E260(4);
   v29 = v28->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v28->lpVtbl->field_38)(v28, a1, v4->flags_338, 1124532224, 1052673, 2, 5, 1, -1);
+       v28->lpVtbl->meth14)(v28, a1, v4->flags_338, 1124532224, 1052673, 2, 5, 1, -1);
   v28->field_4 = sub_1003F8D0;
   v28->field_3838.field_1A99C[28] = 3;
-  v29->field_34(v28, asc_100AD300, 1, 1, &unk_100AB488);
+  v29->meth13(v28, asc_100AD300, 1, 1, &unk_100AB488);
   ++v4->field_14;
   v30 = (unk1E214 *)operator new(0x1E214u);
   if (v30)
@@ -57479,7 +57440,7 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
   if (!v31)
       sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v31->lpVtbl->field_38)(v31, a1, 1134690304, 1110966272, 1, 2, 5, 1, 22);
+       v31->lpVtbl->meth14)(v31, a1, 1134690304, 1110966272, 1, 2, 5, 1, 22);
   v31->field_4 = sub_10041870;
   v32 = v4->field_14 + 1;
   ++v31->field_2AB4[0];
@@ -57495,10 +57456,10 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
       sub_1003E260(4);
   v35 = v34->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v34->lpVtbl->field_38)(v34, a1, v4->flags_338, 1125842944, 1048577, 2, 5, 1, -1);
+       v34->lpVtbl->meth14)(v34, a1, v4->flags_338, 1125842944, 1048577, 2, 5, 1, -1);
   v34->field_3838.field_1A99C[28] = 3;
   v36 = GetStringWithIndex(0x28u);
-  v35->field_34(v34, v36, 1, 1, &unk_100AB4C8);
+  v35->meth13(v34, v36, 1, 1, &unk_100AB4C8);
   ++v4->field_14;
   v37 = (unk1E214 *)operator new(0x1E214u);
   if (v37)
@@ -57510,10 +57471,10 @@ int __cdecl sub_1004CAC0(unk000C8 *a1) {
       sub_1003E260(4);
   v39 = v38->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v38->lpVtbl->field_38)(v38, a1, v4->flags_338, 1120403456, 1052673, 2, 5, 1, -1);
+       v38->lpVtbl->meth14)(v38, a1, v4->flags_338, 1120403456, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_100400E0;
   v38->field_3838.field_1A99C[28] = 3;
-  v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4C8);
+  v39->meth13(v38, asc_100AD300, 1, 1, &unk_100AB4C8);
   ++v4->field_14;
   dword_10AA2850 = sub_10040330(dword_100AC520[dword_10AA2A0C]);
   return 1;
@@ -57577,7 +57538,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   u348->field_18[u348->field_14] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++u348->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -57588,10 +57549,10 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, u348->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, u348->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x20u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++u348->field_14;
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -57601,7 +57562,7 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   u348->field_18[u348->field_14] = v11;
   if (!v11)
       sub_1003E260(4);
-  v11->lpVtbl->field_38(v11, a1, 0x42A00000, 46.0, 9, 2, 5, 0, 9);
+  v11->lpVtbl->meth14(v11, a1, 0x42A00000, 46.0, 9, 2, 5, 0, 9);
   ++u348->field_14;
   v12 = (unk1E214 *)operator new(0x1E214u);
   if (v12)
@@ -57612,12 +57573,12 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
   if (!v13)
       sub_1003E260(4);
   v14 = v13->lpVtbl;
-  v13->lpVtbl->field_38(v13, a1, u348->flags_338, u348->field_33C, 1056769, 2, 5, 1, -1);
+  v13->lpVtbl->meth14(v13, a1, u348->flags_338, u348->field_33C, 1056769, 2, 5, 1, -1);
   v13->field_C = sub_10047360;
   v13->field_8 = sub_10045460;
   v13->field_3838.field_1A99C[28] = 3;
   v15 = GetStringWithIndex(0x29u);
-  v14->field_34(v13, v15, 1, 1, &dword_100AB448);
+  v14->meth13(v13, v15, 1, 1, &dword_100AB448);
   ++u348->field_14;
   ++LOWORD(u348->last);
   v16 = (unk1E214 *)operator new(0x1E214u);
@@ -57630,12 +57591,12 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
       sub_1003E260(4);
   v18 = v17->lpVtbl;
   v25 = u348->field_33C - -19.0;
-  v17->lpVtbl->field_38(v17, a1, u348->flags_338, v25, 1056769, 2, 5, 1, -1);
+  v17->lpVtbl->meth14(v17, a1, u348->flags_338, v25, 1056769, 2, 5, 1, -1);
   v17->field_C = sub_10047360;
   v17->field_8 = sub_10045520;
   v17->field_3838.field_1A99C[28] = 3;
   v19 = GetStringWithIndex(0x2Au);
-  v18->field_34(v17, v19, 1, 1, &dword_100AB448);
+  v18->meth13(v17, v19, 1, 1, &dword_100AB448);
   ++u348->field_14;
   ++LOWORD(u348->last);
   v20 = (unk1E214 *)operator new(0x1E214u);
@@ -57648,12 +57609,12 @@ int __cdecl sub_1004D1F0(unk000C8 *a1) {
       sub_1003E260(4);
   v22 = v21->lpVtbl;
   v26 = u348->field_33C - -114.0;
-  v21->lpVtbl->field_38(v21, a1, u348->flags_338, v26, 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->meth14(v21, a1, u348->flags_338, v26, 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = (int(__cdecl *)())sub_100465E0;
   v21->field_3838.field_1A99C[28] = 3;
   v23 = GetStringWithIndex(0xCu);
-  v22->field_34(v21, v23, 1, 1, &dword_100AB448);
+  v22->meth13(v21, v23, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v21;
   ++u348->field_14;
   ++LOWORD(u348->last);
@@ -57715,7 +57676,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -57726,10 +57687,10 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x2Bu);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -57739,7 +57700,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v11;
   if (!v11)
       sub_1003E260(4);
-  v11->lpVtbl->field_38(v11, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+  v11->lpVtbl->meth14(v11, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
   ++LOWORD(v3->field_14);
   v12 = (unk1E214 *)operator new(0x1E214u);
   if (v12)
@@ -57749,7 +57710,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v13;
   if (!v13)
       sub_1003E260(4);
-  v13->lpVtbl->field_38(v13, a1, 1119879168, 1114898432, 9, 2, 5, 0, 142);
+  v13->lpVtbl->meth14(v13, a1, 1119879168, 1114898432, 9, 2, 5, 0, 142);
   ++LOWORD(v3->field_14);
   v14 = (unk1E214 *)operator new(0x1E214u);
   if (v14)
@@ -57759,7 +57720,7 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
       sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
   v16 = v15->field_3838;
   v15->field_4 = sub_1003ED10;
   v15->? = 1;
@@ -57778,12 +57739,12 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
       sub_1003E260(4);
   v19 = v18->lpVtbl;
   v26 = v3->field_33C - -95.0;
-  v18->lpVtbl->field_38(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
+  v18->lpVtbl->meth14(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
   v18->field_8 = (int(__cdecl *)())sub_1003ECB0;
   LOWORD(v18->?) = 3;
   v20 = GetStringWithIndex(0x2Cu);
-  v19->field_34(v18, v20, 1, 1, &dword_100AB448);
+  v19->meth13(v18, v20, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v18;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -57797,12 +57758,12 @@ int __cdecl sub_1004D640(unk000C8 *a1) {
       sub_1003E260(4);
   v23 = v22->lpVtbl;
   v27 = v3->field_33C - -114.0;
-  v22->lpVtbl->field_38(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
+  v22->lpVtbl->meth14(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_10046620;
   LOWORD(v22->?) = 3;
   v24 = GetStringWithIndex(0xCu);
-  v23->field_34(v22, v24, 1, 1, &dword_100AB448);
+  v23->meth13(v22, v24, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v22;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -57865,7 +57826,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -57876,10 +57837,10 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x2Au);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -57889,7 +57850,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v11;
   if (!v11)
       sub_1003E260(4);
-  v11->lpVtbl->field_38(v11, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+  v11->lpVtbl->meth14(v11, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
   ++LOWORD(v3->field_14);
   v12 = (unk1E214 *)operator new(0x1E214u);
   if (v12)
@@ -57899,7 +57860,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v13;
   if (!v13)
       sub_1003E260(4);
-  v13->lpVtbl->field_38(v13, a1, 1119879168, 1114898432, 9, 2, 5, 0, 142);
+  v13->lpVtbl->meth14(v13, a1, 1119879168, 1114898432, 9, 2, 5, 0, 142);
   ++LOWORD(v3->field_14);
   v14 = (unk1E214 *)operator new(0x1E214u);
   if (v14)
@@ -57909,7 +57870,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
       sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, LODWORD(v3->field_33C), 12289, 2, 5, 1, -1);
   v16 = v15->field_3838;
   v15->field_4 = sub_1003EDF0;
   v15->? = 1;
@@ -57928,12 +57889,12 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
       sub_1003E260(4);
   v19 = v18->lpVtbl;
   v26 = v3->field_33C - -95.0;
-  v18->lpVtbl->field_38(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
+  v18->lpVtbl->meth14(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
   v18->field_8 = (int(__cdecl *)())sub_1003ED40;
   LOWORD(v18->?) = 3;
   v20 = GetStringWithIndex(0x2Du);
-  v19->field_34(v18, v20, 1, 1, &dword_100AB448);
+  v19->meth13(v18, v20, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v18;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -57947,12 +57908,12 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
       sub_1003E260(4);
   v23 = v22->lpVtbl;
   v27 = v3->field_33C - -114.0;
-  v22->lpVtbl->field_38(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
+  v22->lpVtbl->meth14(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_10046670;
   LOWORD(v22->?) = 3;
   v24 = GetStringWithIndex(0xCu);
-  v23->field_34(v22, v24, 1, 1, &dword_100AB448);
+  v23->meth13(v22, v24, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v22;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -58037,7 +57998,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v6;
   if (!v6)
       sub_1003E260(4);
-  v6->lpVtbl->field_38(v6, a1, 0, 0, 9, 2, 5, 0, 0);
+  v6->lpVtbl->meth14(v6, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v4->field_14);
   v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
@@ -58048,10 +58009,10 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   if (!v8)
       sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v8->lpVtbl->meth14(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v8->?) = 3;
   v10 = GetStringWithIndex(0x21u);
-  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  v9->meth13(v8, v10, 1, 1, &unk_100AB508);
   ++LOWORD(v4->field_14);
   v11 = (unk1E214 *)operator new(0x1E214u);
   if (v11)
@@ -58061,7 +58022,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v12;
   if (!v12)
       sub_1003E260(4);
-  v12->lpVtbl->field_38(v12, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+  v12->lpVtbl->meth14(v12, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
   ++LOWORD(v4->field_14);
   v13 = (unk1E214 *)operator new(0x1E214u);
   if (v13)
@@ -58071,7 +58032,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v14;
   if (!v14)
       sub_1003E260(4);
-  v14->lpVtbl->field_38(v14, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
+  v14->lpVtbl->meth14(v14, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
   v14->field_4 = sub_1003EE20;
   v14->? = 1;
   v15 = dword_10AA2A34;
@@ -58116,12 +58077,12 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
       sub_1003E260(4);
   v22 = v21->lpVtbl;
   v47 = v4->field_33C - -76.0;
-  v21->lpVtbl->field_38(v21, a1, v4->flags_338, LODWORD(v47), 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->meth14(v21, a1, v4->flags_338, LODWORD(v47), 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = sub_10042CF0;
   LOWORD(v21->?) = 3;
   v23 = GetStringWithIndex(0x2Eu);
-  v22->field_34(v21, v23, 1, 1, &dword_100AB448);
+  v22->meth13(v21, v23, 1, 1, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v24 = (unk1E214 *)operator new(0x1E214u);
@@ -58134,12 +58095,12 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
       sub_1003E260(4);
   v26 = v25->lpVtbl;
   v48 = v4->field_33C - -95.0;
-  v25->lpVtbl->field_38(v25, a1, v4->flags_338, LODWORD(v48), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->meth14(v25, a1, v4->flags_338, LODWORD(v48), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = sub_10042D60;
   LOWORD(v25->?) = 3;
   v27 = GetStringWithIndex(0x2Fu);
-  v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+  v26->meth13(v25, v27, 1, 1, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v28 = (unk1E214 *)operator new(0x1E214u);
@@ -58152,12 +58113,12 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
       sub_1003E260(4);
   v30 = v29->lpVtbl;
   v49 = v4->field_33C - -114.0;
-  v29->lpVtbl->field_38(v29, a1, v4->flags_338, LODWORD(v49), 1056769, 2, 5, 1, -1);
+  v29->lpVtbl->meth14(v29, a1, v4->flags_338, LODWORD(v49), 1056769, 2, 5, 1, -1);
   v29->field_C = sub_10047360;
   v29->field_8 = (int(__cdecl *)())sub_100466C0;
   LOWORD(v29->?) = 3;
   v31 = GetStringWithIndex(0xCu);
-  v30->field_34(v29, v31, 1, 1, &dword_100AB448);
+  v30->meth13(v29, v31, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v29;
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
@@ -58169,7 +58130,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v33;
   if (!v33)
       sub_1003E260(4);
-  v33->lpVtbl->field_38(v33, a1, 1117257728, 1129512960, 1, 2, 5, 1, 104);
+  v33->lpVtbl->meth14(v33, a1, 1117257728, 1129512960, 1, 2, 5, 1, 104);
   v33->field_4 = sub_1003E950;
   ++LOWORD(v4->field_14);
   v34 = (unk1E214 *)operator new(0x1E214u);
@@ -58180,7 +58141,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v35;
   if (!v35)
       sub_1003E260(4);
-  v35->lpVtbl->field_38(v35, a1, 1117126656, 1132822528, 9, 2, 5, 1, 106);
+  v35->lpVtbl->meth14(v35, a1, 1117126656, 1132822528, 9, 2, 5, 1, 106);
   ++LOWORD(v4->field_14);
   v36 = (unk1E214 *)operator new(0x1E214u);
   if (v36)
@@ -58190,7 +58151,7 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v37;
   if (!v37)
       sub_1003E260(4);
-  v37->lpVtbl->field_38(v37, a1, 1117650944, 1132462080, 1, 2, 5, 1, 107);
+  v37->lpVtbl->meth14(v37, a1, 1117650944, 1132462080, 1, 2, 5, 1, 107);
   v37->field_4 = sub_1003EA40;
   ++LOWORD(v4->field_14);
   v38 = (unk1E214 *)operator new(0x1E214u);
@@ -58202,11 +58163,11 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   if (!v39)
       sub_1003E260(4);
   v40 = v39->lpVtbl;
-  v39->lpVtbl->field_38(v39, a1, 1135181824, 1119092736, 1056769, 2, 5, 1, -1);
+  v39->lpVtbl->meth14(v39, a1, 1135181824, 1119092736, 1056769, 2, 5, 1, -1);
   v39->field_4 = (int(__cdecl *)(int))sub_1003E980;
   LOWORD(v39->?) = 3;
   v41 = GetStringWithIndex(0x2Eu);
-  v40->field_34(v39, v41, 1, 1, &unk_100AB468);
+  v40->meth13(v39, v41, 1, 1, &unk_100AB468);
   ++LOWORD(v4->field_14);
   v42 = (unk1E214 *)operator new(0x1E214u);
   if (v42)
@@ -58217,11 +58178,11 @@ int __cdecl sub_1004DFC0(unk000C8 *a1) {
   if (!v43)
       sub_1003E260(4);
   v44 = v43->lpVtbl;
-  v43->lpVtbl->field_38(v43, a1, 1135181824, 1124073472, 1056769, 2, 5, 1, -1);
+  v43->lpVtbl->meth14(v43, a1, 1135181824, 1124073472, 1056769, 2, 5, 1, -1);
   v43->field_4 = (int(__cdecl *)(int))sub_1003E9E0;
   LOWORD(v43->?) = 3;
   v45 = GetStringWithIndex(0x2Fu);
-  v44->field_34(v43, v45, 1, 1, &unk_100AB468);
+  v44->meth13(v43, v45, 1, 1, &unk_100AB468);
   ++LOWORD(v4->field_14);
   return 1;
 }
@@ -58323,7 +58284,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
       sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -58334,10 +58295,10 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v7)
       sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x22u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   sub_100795D0();
   v10 = (unk1E214 *)operator new(0x1E214u);
@@ -58349,15 +58310,15 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v11)
       sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11,
-                        a1,
-                        v3->flags_338,
-                        LODWORD(v3->field_33C),
-                        gDIEffectSquare.dwStartDelay != 0 ? 1056769 : 1056785,
-                        2,
-                        5,
-                        1,
-                        -1);
+  v11->lpVtbl->meth14(v11,
+                      a1,
+                      v3->flags_338,
+                      LODWORD(v3->field_33C),
+                      gDIEffectSquare.dwStartDelay != 0 ? 1056769 : 1056785,
+                      2,
+                      5,
+                      1,
+                      -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10043590;
   if (gDIEffectSquare.dwStartDelay) {
@@ -58368,7 +58329,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     v61 = 0;
   }
   v13 = GetStringWithIndex(0x30u);
-  v12->field_34(v11, v13, 1, v61, &dword_100AB448);
+  v12->meth13(v11, v13, 1, v61, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -58381,12 +58342,12 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v57 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v57), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, LODWORD(v57), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_100435F0;
   LOWORD(v15->?) = 3;
   v17 = GetStringWithIndex(0x31u);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -58399,12 +58360,12 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v58 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, a1, v3->flags_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100436B0;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0x32u);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -58417,12 +58378,12 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v24 = v23->lpVtbl;
   v59 = v3->field_33C - -57.0;
-  v23->lpVtbl->field_38(v23, a1, v3->flags_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->meth14(v23, a1, v3->flags_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_10043650;
   LOWORD(v23->?) = 3;
   v25 = GetStringWithIndex(0x33u);
-  v24->field_34(v23, v25, 1, 1, &dword_100AB448);
+  v24->meth13(v23, v25, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v26 = (unk1E214 *)operator new(0x1E214u);
@@ -58435,12 +58396,12 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v60 = v3->field_33C - -114.0;
-  v27->lpVtbl->field_38(v27, a1, v3->flags_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->meth14(v27, a1, v3->flags_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10046710;
   LOWORD(v27->?) = 3;
   v29 = GetStringWithIndex(0xCu);
-  v28->field_34(v27, v29, 1, 1, &dword_100AB448);
+  v28->meth13(v27, v29, 1, 1, &dword_100AB448);
   dword_10AA29C8 = (int)v27;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -58452,7 +58413,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v31;
   if (!v31)
     sub_1003E260(4);
-  v31->lpVtbl->field_38(v31, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
+  v31->lpVtbl->meth14(v31, a1, 1117782016, 1110966272, 9, 2, 5, 0, 9);
   ++LOWORD(v3->field_14);
   v32 = (unk1E214 *)operator new(0x1E214u);
   if (v32)
@@ -58462,7 +58423,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v33;
   if (!v33)
     sub_1003E260(4);
-  v33->lpVtbl->field_38(v33, a1, 1135083520, 1111490560, 1, 2, 5, 1, 97);
+  v33->lpVtbl->meth14(v33, a1, 1135083520, 1111490560, 1, 2, 5, 1, 97);
   v33->field_4 = sub_10040950;
   v34 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v33->gap5C[10840];
@@ -58477,10 +58438,10 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, v3->flags_338, 1126563840, 1052673, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, a1, v3->flags_338, 1126563840, 1052673, 2, 5, 1, -1);
   v36->field_4 = sub_1003FCB0;
   LOWORD(v36->?) = 3;
-  v37->field_34(v36, asc_100AD300, 1, 1, &unk_100AB4C8);
+  v37->meth13(v36, asc_100AD300, 1, 1, &unk_100AB4C8);
   ++LOWORD(v3->field_14);
   v38 = (unk1E214 *)operator new(0x1E214u);
   if (v38)
@@ -58490,7 +58451,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v39;
   if (!v39)
     sub_1003E260(4);
-  v39->lpVtbl->field_38(v39, a1, 1116078080, 1128726528, 1, 2, 5, 1, 140);
+  v39->lpVtbl->meth14(v39, a1, 1116078080, 1128726528, 1, 2, 5, 1, 140);
   v39->field_4 = sub_10040990;
   v40 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v39->gap5C[10840];
@@ -58505,10 +58466,10 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v42)
     sub_1003E260(4);
   v43 = v42->lpVtbl;
-  v42->lpVtbl->field_38(v42, a1, v3->flags_338, 1133215744, 1052673, 2, 5, 1, -1);
+  v42->lpVtbl->meth14(v42, a1, v3->flags_338, 1133215744, 1052673, 2, 5, 1, -1);
   v42->field_4 = sub_1003FD30;
   LOWORD(v42->?) = 3;
-  v43->field_34(v42, asc_100AD300, 1, 1, &unk_100AB4B8);
+  v43->meth13(v42, asc_100AD300, 1, 1, &unk_100AB4B8);
   ++LOWORD(v3->field_14);
   v44 = (unk1E214 *)operator new(0x1E214u);
   if (v44)
@@ -58518,7 +58479,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v45;
   if (!v45)
     sub_1003E260(4);
-  v45->lpVtbl->field_38(v45, a1, 1138491392, 1122238464, 1, 2, 5, 1, 101);
+  v45->lpVtbl->meth14(v45, a1, 1138491392, 1122238464, 1, 2, 5, 1, 101);
   v45->field_4 = sub_100409D0;
   v46 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v45->gap5C[10840];
@@ -58533,10 +58494,10 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v48)
     sub_1003E260(4);
   v49 = v48->lpVtbl;
-  v48->lpVtbl->field_38(v48, a1, v3->flags_338, 1128529920, 1052673, 2, 5, 1, -1);
+  v48->lpVtbl->meth14(v48, a1, v3->flags_338, 1128529920, 1052673, 2, 5, 1, -1);
   v48->field_4 = sub_1003FE10;
   LOWORD(v48->?) = 3;
-  v49->field_34(v48, asc_100AD300, 1, 1, &unk_100AB488);
+  v49->meth13(v48, asc_100AD300, 1, 1, &unk_100AB488);
   ++LOWORD(v3->field_14);
   v50 = (unk1E214 *)operator new(0x1E214u);
   if (v50)
@@ -58546,7 +58507,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v51;
   if (!v51)
     sub_1003E260(4);
-  v51->lpVtbl->field_38(v51, a1, 1139933184, 1129709568, 1, 2, 5, 1, 99);
+  v51->lpVtbl->meth14(v51, a1, 1139933184, 1129709568, 1, 2, 5, 1, 99);
   v51->field_4 = sub_100409B0;
   v52 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v51->gap5C[10840];
@@ -58561,10 +58522,10 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   if (!v54)
     sub_1003E260(4);
   v55 = v54->lpVtbl;
-  v54->lpVtbl->field_38(v54, a1, v3->flags_338, 1133019136, 1052673, 2, 5, 1, -1);
+  v54->lpVtbl->meth14(v54, a1, v3->flags_338, 1133019136, 1052673, 2, 5, 1, -1);
   v54->field_4 = sub_1003FDA0;
   LOWORD(v54->?) = 3;
-  v55->field_34(v54, asc_100AD300, 1, 1, &unk_100AB478);
+  v55->meth13(v54, asc_100AD300, 1, 1, &unk_100AB478);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -58623,7 +58584,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -58634,10 +58595,10 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(9u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -58648,12 +58609,12 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+  v11->lpVtbl->meth14(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10045AF0;
   LOWORD(v11->?) = 3;
   v13 = GetStringWithIndex(0xAu);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -58666,12 +58627,12 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v25 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v25), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, LODWORD(v25), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10045AA0;
   LOWORD(v15->?) = 3;
   v17 = GetStringWithIndex(0xBu);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -58684,12 +58645,12 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v26 = v3->field_33C - -114.0;
-  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10046C90;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0xCu);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -58700,7 +58661,7 @@ int __cdecl sub_1004F2B0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v23;
   if (!v23)
     sub_1003E260(4);
-  v23->lpVtbl->field_38(v23, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
+  v23->lpVtbl->meth14(v23, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -58791,7 +58752,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -58802,10 +58763,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x34u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -58815,7 +58776,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v11;
   if (!v11)
     sub_1003E260(4);
-  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 0x3001, 2, 5, 1, -1);
+  v11->lpVtbl->meth14(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 0x3001, 2, 5, 1, -1);
   v12 = v11->field_3838;
   v13 = &v11->field_3838;
   v11->field_4 = sub_1003EAE0;
@@ -58840,13 +58801,13 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
     sub_1003E260(4);
   v17 = v16->lpVtbl;
   v52 = v3->field_33C - -76.0;
-  v16->lpVtbl->field_38(v16, a1, v3->flags_338, LODWORD(v52), 0x103011, 2, 5, 1, -1);
+  v16->lpVtbl->meth14(v16, a1, v3->flags_338, LODWORD(v52), 0x103011, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = sub_10045090;
   v16->field_4 = sub_10041890;
   LOWORD(v16->?) = 2;
   v18 = GetStringWithIndex(0x1Eu);
-  v17->field_34(v16, v18, 1, 0, &dword_100AB448);
+  v17->meth13(v16, v18, 1, 0, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v56 = 1;
@@ -58865,7 +58826,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
     sub_1003E260(4);
   v22 = v21->lpVtbl;
   v53 = v3->field_33C - -95.0;
-  v21->lpVtbl->field_38(
+  v21->lpVtbl->meth14(
       v21, a1, v3->flags_338, LODWORD(v53), v56 != 0 ? 1056769 : 1056785, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = sub_100450C0;
@@ -58877,7 +58838,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
     v55 = 0;
   }
   v23 = GetStringWithIndex(0x35u);
-  v22->field_34(v21, v23, 1, v55, &dword_100AB448);
+  v22->meth13(v21, v23, 1, v55, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v24 = (unk1E214 *)operator new(0x1E214u);
@@ -58890,12 +58851,12 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
     sub_1003E260(4);
   v26 = v25->lpVtbl;
   v54 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, a1, v3->flags_338, LODWORD(v54), 0x102001, 2, 5, 1, -1);
+  v25->lpVtbl->meth14(v25, a1, v3->flags_338, LODWORD(v54), 0x102001, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10046E10;
   LOWORD(v25->?) = 3;
   v27 = GetStringWithIndex(0xCu);
-  v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+  v26->meth13(v25, v27, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v28 = (unk1E214 *)operator new(0x1E214u);
@@ -58906,7 +58867,7 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v29;
   if (!v29)
     sub_1003E260(4);
-  v29->lpVtbl->field_38(v29, a1, 0x42A00000, 0x42380000, 9, 2, 5, 0, 6);
+  v29->lpVtbl->meth14(v29, a1, 0x42A00000, 0x42380000, 9, 2, 5, 0, 6);
   ++LOWORD(v3->field_14);
   v30 = (unk1E214 *)operator new(0x1E214u);
   if (v30)
@@ -58917,10 +58878,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v31)
     sub_1003E260(4);
   v32 = v31->lpVtbl;
-  v31->lpVtbl->field_38(v31, a1, 0x43A50000, 0x43190000, 0x100009, 2, 5, 1, -1);
+  v31->lpVtbl->meth14(v31, a1, 0x43A50000, 0x43190000, 0x100009, 2, 5, 1, -1);
   LOWORD(v31->?) = 3;
   v33 = GetStringWithIndex(0x36u);
-  v32->field_34(v31, v33, 1, 1, &unk_100AB468);
+  v32->meth13(v31, v33, 1, 1, &unk_100AB468);
   ++LOWORD(v3->field_14);
   v34 = (unk1E214 *)operator new(0x1E214u);
   if (v34)
@@ -58931,10 +58892,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v35)
     sub_1003E260(4);
   v36 = v35->lpVtbl;
-  v35->lpVtbl->field_38(v35, a1, 0x43A50000, 0x42C20000, 0x5001, 2, 5, 1, -1);
+  v35->lpVtbl->meth14(v35, a1, 0x43A50000, 0x42C20000, 0x5001, 2, 5, 1, -1);
   v35->field_4 = sub_10040A50;
   LOWORD(v35->?) = 5;
-  v36->field_34(v35, String2, 1, 3, &unk_100AB468);
+  v36->meth13(v35, String2, 1, 3, &unk_100AB468);
   ++LOWORD(v3->field_14);
   v37 = (unk1E214 *)operator new(0x1E214u);
   if (v37)
@@ -58945,10 +58906,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, a1, 1138491392, 1127546880, 1048585, 2, 5, 1, -1);
+  v38->lpVtbl->meth14(v38, a1, 1138491392, 1127546880, 1048585, 2, 5, 1, -1);
   LOWORD(v38->?) = 3;
   v40 = GetStringWithIndex(0x37u);
-  v39->field_34(v38, v40, 1, 1, &unk_100AB488);
+  v39->meth13(v38, v40, 1, 1, &unk_100AB488);
   ++LOWORD(v3->field_14);
   v41 = (unk1E214 *)operator new(0x1E214u);
   if (v41)
@@ -58959,10 +58920,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v42)
     sub_1003E260(4);
   v43 = v42->lpVtbl;
-  v42->lpVtbl->field_38(v42, a1, 1138491392, 1124139008, 20481, 2, 5, 1, -1);
+  v42->lpVtbl->meth14(v42, a1, 1138491392, 1124139008, 20481, 2, 5, 1, -1);
   v42->field_4 = sub_10040AC0;
   LOWORD(v42->?) = 5;
-  v43->field_34(v42, String2, 1, 3, &unk_100AB488);
+  v43->meth13(v42, String2, 1, 3, &unk_100AB488);
   ++LOWORD(v3->field_14);
   v44 = (unk1E214 *)operator new(0x1E214u);
   if (v44)
@@ -58973,10 +58934,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v45)
     sub_1003E260(4);
   v46 = v45->lpVtbl;
-  v45->lpVtbl->field_38(v45, a1, 1138491392, 1131610112, 1048585, 2, 5, 1, -1);
+  v45->lpVtbl->meth14(v45, a1, 1138491392, 1131610112, 1048585, 2, 5, 1, -1);
   LOWORD(v45->?) = 3;
   v47 = GetStringWithIndex(0x38u);
-  v46->field_34(v45, v47, 1, 1, &unk_100AB478);
+  v46->meth13(v45, v47, 1, 1, &unk_100AB478);
   ++LOWORD(v3->field_14);
   v48 = (unk1E214 *)operator new(0x1E214u);
   if (v48)
@@ -58987,10 +58948,10 @@ int __cdecl sub_1004F700(unk000C8 *a1) {
   if (!v49)
     sub_1003E260(4);
   v50 = v49->lpVtbl;
-  v49->lpVtbl->field_38(v49, a1, 1138491392, 1130364928, 20481, 2, 5, 1, -1);
+  v49->lpVtbl->meth14(v49, a1, 1138491392, 1130364928, 20481, 2, 5, 1, -1);
   v49->field_4 = sub_10041300;
   LOWORD(v49->?) = 0x34;
-  v50->field_34(v49, String2, 1, 4, &unk_100AB478);
+  v50->meth13(v49, String2, 1, 4, &unk_100AB478);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -59081,7 +59042,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   v2->field_18[LOWORD(v2->field_14)] = v4;
   if (!v4)
     sub_1003E260(4);
-  v4->lpVtbl->field_38(v4, a1, 0, 0, 9, 2, 5, 0, 0);
+  v4->lpVtbl->meth14(v4, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v2->field_14);
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -59092,10 +59053,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, a1, v2->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->meth14(v6, a1, v2->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v6->?) = 3;
   v8 = GetStringWithIndex(0x39u);
-  v7->field_34(v6, v8, 1, 1, &unk_100AB508);
+  v7->meth13(v6, v8, 1, 1, &unk_100AB508);
   ++LOWORD(v2->field_14);
   v9 = (unk1E214 *)operator new(0x1E214u);
   if (v9)
@@ -59105,7 +59066,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   v2->field_18[LOWORD(v2->field_14)] = v10;
   if (!v10)
     sub_1003E260(4);
-  v10->lpVtbl->field_38(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
+  v10->lpVtbl->meth14(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
   v11 = v10->field_3838;
   v12 = &v10->field_3838;
   v10->field_4 = sub_1003EB10;
@@ -59131,13 +59092,13 @@ int __cdecl sub_10050060(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v52 = v2->field_33C - -95.0;
-  v15->lpVtbl->field_38(v15, a1, v2->flags_338, LODWORD(v52), 1060881, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v2->flags_338, LODWORD(v52), 1060881, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_100450F0;
   v15->field_4 = sub_100418D0;
   LOWORD(v15->?) = 2;
   v17 = GetStringWithIndex(0x1Eu);
-  v16->field_34(v15, v17, 1, 0, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 0, &dword_100AB448);
   ++LOWORD(v2->field_14);
   ++LOWORD(v2->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -59150,12 +59111,12 @@ int __cdecl sub_10050060(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v53 = v2->field_33C - -114.0;
-  v19->lpVtbl->field_38(v19, a1, v2->flags_338, LODWORD(v53), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, a1, v2->flags_338, LODWORD(v53), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10046EB0;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0xCu);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   dword_10AA29F4 = (int)v19;
   ++LOWORD(v2->field_14);
   ++LOWORD(v2->last);
@@ -59167,7 +59128,7 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   v2->field_18[LOWORD(v2->field_14)] = v23;
   if (!v23)
     sub_1003E260(4);
-  v23->lpVtbl->field_38(v23, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
+  v23->lpVtbl->meth14(v23, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
   ++LOWORD(v2->field_14);
   v24 = (unk1E214 *)operator new(0x1E214u);
   if (v24)
@@ -59178,10 +59139,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v25)
     sub_1003E260(4);
   v26 = v25->lpVtbl;
-  v25->lpVtbl->field_38(v25, a1, 1134886912, 1125711872, 1048585, 2, 5, 1, -1);
+  v25->lpVtbl->meth14(v25, a1, 1134886912, 1125711872, 1048585, 2, 5, 1, -1);
   LOWORD(v25->?) = 3;
   v27 = GetStringWithIndex(0x36u);
-  v26->field_34(v25, v27, 1, 1, &unk_100AB468);
+  v26->meth13(v25, v27, 1, 1, &unk_100AB468);
   ++LOWORD(v2->field_14);
   v28 = (unk1E214 *)operator new(0x1E214u);
   if (v28)
@@ -59192,10 +59153,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v29)
     sub_1003E260(4);
   v30 = v29->lpVtbl;
-  v29->lpVtbl->field_38(v29, a1, 1134886912, 1120010240, 20481, 2, 5, 1, -1);
+  v29->lpVtbl->meth14(v29, a1, 1134886912, 1120010240, 20481, 2, 5, 1, -1);
   v29->field_4 = sub_10040A50;
   LOWORD(v29->?) = 5;
-  v30->field_34(v29, String2, 1, 3, &unk_100AB468);
+  v30->meth13(v29, String2, 1, 3, &unk_100AB468);
   ++LOWORD(v2->field_14);
   v31 = (unk1E214 *)operator new(0x1E214u);
   if (v31)
@@ -59206,10 +59167,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v32)
     sub_1003E260(4);
   v33 = v32->lpVtbl;
-  v32->lpVtbl->field_38(v32, a1, 1138491392, 1127546880, 1048585, 2, 5, 1, -1);
+  v32->lpVtbl->meth14(v32, a1, 1138491392, 1127546880, 1048585, 2, 5, 1, -1);
   LOWORD(v32->?) = 3;
   v34 = GetStringWithIndex(0x37u);
-  v33->field_34(v32, v34, 1, 1, &unk_100AB488);
+  v33->meth13(v32, v34, 1, 1, &unk_100AB488);
   ++LOWORD(v2->field_14);
   v35 = (unk1E214 *)operator new(0x1E214u);
   if (v35)
@@ -59220,10 +59181,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, 1138491392, 1124139008, 20481, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, a1, 1138491392, 1124139008, 20481, 2, 5, 1, -1);
   v36->field_4 = sub_10040AC0;
   LOWORD(v36->?) = 5;
-  v37->field_34(v36, String2, 1, 3, &unk_100AB488);
+  v37->meth13(v36, String2, 1, 3, &unk_100AB488);
   ++LOWORD(v2->field_14);
   v38 = (unk1E214 *)operator new(0x1E214u);
   if (v38)
@@ -59234,10 +59195,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v39)
     sub_1003E260(4);
   v40 = v39->lpVtbl;
-  v39->lpVtbl->field_38(v39, a1, 1138491392, 1131610112, 1048585, 2, 5, 1, -1);
+  v39->lpVtbl->meth14(v39, a1, 1138491392, 1131610112, 1048585, 2, 5, 1, -1);
   LOWORD(v39->?) = 3;
   v41 = GetStringWithIndex(0x38u);
-  v40->field_34(v39, v41, 1, 1, &unk_100AB478);
+  v40->meth13(v39, v41, 1, 1, &unk_100AB478);
   ++LOWORD(v2->field_14);
   v42 = (unk1E214 *)operator new(0x1E214u);
   if (v42)
@@ -59248,10 +59209,10 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v43)
     sub_1003E260(4);
   v44 = v43->lpVtbl;
-  v43->lpVtbl->field_38(v43, a1, 1138491392, 1130364928, 20481, 2, 5, 1, -1);
+  v43->lpVtbl->meth14(v43, a1, 1138491392, 1130364928, 20481, 2, 5, 1, -1);
   v43->field_4 = sub_10041300;
   LOWORD(v43->?) = 52;
-  v44->field_34(v43, String2, 1, 4, &unk_100AB478);
+  v44->meth13(v43, String2, 1, 4, &unk_100AB478);
   ++LOWORD(v2->field_14);
   *(&a1->field_6C + LOWORD(a1->field_10)) = 0;
   v45 = (unk00348 *)operator new(0x348u);
@@ -59276,13 +59237,13 @@ int __cdecl sub_10050060(unk000C8 *a1) {
   if (!v48)
     sub_1003E260(4);
   v49 = v48->lpVtbl;
-  v48->lpVtbl->field_38(v48, a1, 0, 1130889216, 1048585, 2, 5, 1, -1);
+  v48->lpVtbl->meth14(v48, a1, 0, 1130889216, 1048585, 2, 5, 1, -1);
   v48->field_C = sub_10047360;
   v48->field_4 = sub_10047210;
   *(_DWORD *)&v48->field_10[4] = sub_1003E7A0;
   LOWORD(v48->?) = 3;
   v50 = GetStringWithIndex(0x3Au);
-  v49->field_34(v48, v50, 1, 1, &unk_100AB438);
+  v49->meth13(v48, v50, 1, 1, &unk_100AB438);
   dword_10AA29C0 = (int)v48;
   ++LOWORD(v46->field_14);
   return 1;
@@ -59439,7 +59400,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   v4->field_18[v8] = v7;
   if (!v7)
     sub_1003E260(4);
-  v7->lpVtbl->field_38(v7, a1, 0, 0, 9, 2, 5, 0, 0);
+  v7->lpVtbl->meth14(v7, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v4->field_14);
   v9 = (unk1E214 *)operator new(0x1E214u);
   v111 = 2;
@@ -59453,10 +59414,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   v12 = v10->lpVtbl;
-  v10->lpVtbl->field_38(v10, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v10->lpVtbl->meth14(v10, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v10->?) = 3;
   v13 = GetStringWithIndex(0x3Du);
-  v12->field_34(v10, v13, 1, 1, &unk_100AB508);
+  v12->meth13(v10, v13, 1, 1, &unk_100AB508);
   ++LOWORD(v4->field_14);
   v14 = (unk1E214 *)operator new(0x1E214u);
   v111 = 3;
@@ -59468,7 +59429,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   v4->field_18[LOWORD(v4->field_14)] = v15;
   if (!v15)
     sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v4->flags_338, LODWORD(v4->field_33C), 12289, 2, 5, 1, -1);
   v16 = v15->field_3838;
   v17 = &v15->field_3838;
   v15->field_4 = sub_1003EB60;
@@ -59504,12 +59465,12 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
     sub_1003E260(4);
   v24 = v23->lpVtbl;
   v103 = v4->field_33C - -95.0;
-  v23->lpVtbl->field_38(v23, a1, v4->flags_338, LODWORD(v103), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->meth14(v23, a1, v4->flags_338, LODWORD(v103), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_10045DC0;
   LOWORD(v23->?) = 2;
   v25 = GetStringWithIndex(0x1Eu);
-  v24->field_34(v23, v25, 1, 0, &dword_100AB448);
+  v24->meth13(v23, v25, 1, 0, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v26 = (unk1E214 *)operator new(0x1E214u);
@@ -59525,13 +59486,13 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
     sub_1003E260(4);
   v29 = v27->lpVtbl;
   v104 = v4->field_33C - -114.0;
-  v27->lpVtbl->field_38(v27, a1, v4->flags_338, LODWORD(v104), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->meth14(v27, a1, v4->flags_338, LODWORD(v104), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = sub_10046F50;
   *(_DWORD *)&v27->field_10[4] = sub_1003E840;
   LOWORD(v27->?) = 3;
   v30 = GetStringWithIndex(0xCu);
-  v29->field_34(v27, v30, 1, 1, &dword_100AB448);
+  v29->meth13(v27, v30, 1, 1, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v106 = (float)dword_100AB428;
@@ -59548,7 +59509,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v32)
     sub_1003E260(4);
   ((void(__thiscall *)(
-      unk1E214 *, unk000C8 *, float, float, int, int, int, int, int))v32->lpVtbl->field_38)(
+      unk1E214 *, unk000C8 *, float, float, int, int, int, int, int))v32->lpVtbl->meth14)(
       v32, a1, COERCE_FLOAT(LODWORD(v106)), COERCE_FLOAT(LODWORD(v113)), 4202497, 2, 5, 1, 120);
   v32->field_C = sub_10047360;
   v32->field_8 = sub_100457A0;
@@ -59574,7 +59535,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v36)
     sub_1003E260(4);
   ((void(__thiscall *)(
-      unk1E214 *, unk000C8 *, float, float, int, int, int, int, int))v36->lpVtbl->field_38)(
+      unk1E214 *, unk000C8 *, float, float, int, int, int, int, int))v36->lpVtbl->meth14)(
       v36, a1, COERCE_FLOAT(LODWORD(v106)), COERCE_FLOAT(LODWORD(v114)), 4202497, 2, 5, 1, 82);
   v36->field_C = sub_10047360;
   v36->field_8 = (int(__cdecl *)())sub_10043FA0;
@@ -59598,7 +59559,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v39)
     sub_1003E260(4);
   ((void(__thiscall *)(
-      unk1E214 *, unk000C8 *, float, float, int, int, int, int, int))v39->lpVtbl->field_38)(
+      unk1E214 *, unk000C8 *, float, float, int, int, int, int, int))v39->lpVtbl->meth14)(
       v39, a1, COERCE_FLOAT(LODWORD(v106)), COERCE_FLOAT(LODWORD(v115)), 4202497, 2, 5, 1, 84);
   v39->field_C = sub_10047360;
   v39->field_8 = sub_10045780;
@@ -59621,7 +59582,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   v4->field_18[v43] = v42;
   if (!v42)
     sub_1003E260(4);
-  v42->lpVtbl->field_38(v42, a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
+  v42->lpVtbl->meth14(v42, a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
   v42->field_4 = sub_100407E0;
   v44 = LOWORD(v4->field_14) + 1;
   ++*(_WORD *)&v42->gap5C[10840];
@@ -59639,10 +59600,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v46)
     sub_1003E260(4);
   v48 = v46->lpVtbl;
-  v46->lpVtbl->field_38(v46, a1, v4->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v46->lpVtbl->meth14(v46, a1, v4->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v46->field_4 = sub_1003FE80;
   LOWORD(v46->?) = 3;
-  v48->field_34(v46, asc_100AD300, 1, 1, &unk_100AB4B8);
+  v48->meth13(v46, asc_100AD300, 1, 1, &unk_100AB4B8);
   ++LOWORD(v4->field_14);
   v49 = (unk1E214 *)operator new(0x1E214u);
   v111 = 11;
@@ -59655,7 +59616,7 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   v4->field_18[v51] = v50;
   if (!v50)
     sub_1003E260(4);
-  v50->lpVtbl->field_38(v50, a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
+  v50->lpVtbl->meth14(v50, a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
   v50->field_4 = sub_10040730;
   v52 = LOWORD(v4->field_14) + 1;
   ++*(_WORD *)&v50->gap5C[10840];
@@ -59673,10 +59634,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v54)
     sub_1003E260(4);
   v56 = v54->lpVtbl;
-  v54->lpVtbl->field_38(v54, a1, v4->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v54->lpVtbl->meth14(v54, a1, v4->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v54->field_4 = sub_1003FA00;
   LOWORD(v54->?) = 3;
-  v56->field_34(v54, asc_100AD300, 1, 1, &unk_100AB4A8);
+  v56->meth13(v54, asc_100AD300, 1, 1, &unk_100AB4A8);
   ++LOWORD(v4->field_14);
   v57 = (unk1E214 *)operator new(0x1E214u);
   v111 = 13;
@@ -59689,10 +59650,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v58)
     sub_1003E260(4);
   v59 = v58->lpVtbl;
-  v58->lpVtbl->field_38(v58, a1, 1138819072, 1125318656, 1048585, 2, 5, 1, -1);
+  v58->lpVtbl->meth14(v58, a1, 1138819072, 1125318656, 1048585, 2, 5, 1, -1);
   LOWORD(v58->?) = 3;
   v60 = GetStringWithIndex(0x3Eu);
-  v59->field_34(v58, v60, 1, 1, &unk_100AB4F8);
+  v59->meth13(v58, v60, 1, 1, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v61 = (unk1E214 *)operator new(0x1E214u);
   v111 = 14;
@@ -59706,10 +59667,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v62)
     sub_1003E260(4);
   v64 = v62->lpVtbl;
-  v62->lpVtbl->field_38(v62, a1, 1138819072, 1124073472, 20481, 2, 5, 1, -1);
+  v62->lpVtbl->meth14(v62, a1, 1138819072, 1124073472, 20481, 2, 5, 1, -1);
   v62->field_4 = sub_10040C00;
   LOWORD(v62->?) = 52;
-  v64->field_34(v62, String2, 1, 4, &unk_100AB4F8);
+  v64->meth13(v62, String2, 1, 4, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v65 = (unk1E214 *)operator new(0x1E214u);
   v111 = 15;
@@ -59723,10 +59684,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v66)
     sub_1003E260(4);
   v68 = v66->lpVtbl;
-  v66->lpVtbl->field_38(v66, a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
+  v66->lpVtbl->meth14(v66, a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
   LOWORD(v66->?) = 3;
   v69 = GetStringWithIndex(0x3Fu);
-  v68->field_34(v66, v69, 1, 1, &unk_100AB4F8);
+  v68->meth13(v66, v69, 1, 1, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v70 = (unk1E214 *)operator new(0x1E214u);
   v111 = 16;
@@ -59739,10 +59700,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v71)
     sub_1003E260(4);
   v72 = v71->lpVtbl;
-  v71->lpVtbl->field_38(v71, a1, 1138819072, 1126563840, 20481, 2, 5, 1, -1);
+  v71->lpVtbl->meth14(v71, a1, 1138819072, 1126563840, 20481, 2, 5, 1, -1);
   v71->field_4 = sub_10040D70;
   LOWORD(v71->?) = 52;
-  v72->field_34(v71, String2, 1, 4, &unk_100AB4F8);
+  v72->meth13(v71, String2, 1, 4, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v73 = (unk1E214 *)operator new(0x1E214u);
   v111 = 17;
@@ -59756,10 +59717,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v74)
     sub_1003E260(4);
   v76 = v74->lpVtbl;
-  v74->lpVtbl->field_38(v74, a1, v4->flags_338, 1128988672, 1048585, 2, 5, 1, -1);
+  v74->lpVtbl->meth14(v74, a1, v4->flags_338, 1128988672, 1048585, 2, 5, 1, -1);
   LOWORD(v74->?) = 3;
   v77 = GetStringWithIndex(0x40u);
-  v76->field_34(v74, v77, 1, 1, &unk_100AB478);
+  v76->meth13(v74, v77, 1, 1, &unk_100AB478);
   ++LOWORD(v4->field_14);
   v78 = (unk1E214 *)operator new(0x1E214u);
   v111 = 18;
@@ -59772,10 +59733,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v79)
     sub_1003E260(4);
   v80 = v79->lpVtbl;
-  v79->lpVtbl->field_38(v79, a1, v4->flags_338, 1132756992, 1048585, 2, 5, 1, -1);
+  v79->lpVtbl->meth14(v79, a1, v4->flags_338, 1132756992, 1048585, 2, 5, 1, -1);
   LOWORD(v79->?) = 3;
   v81 = GetStringWithIndex(0x41u);
-  v80->field_34(v79, v81, 1, 1, &unk_100AB478);
+  v80->meth13(v79, v81, 1, 1, &unk_100AB478);
   ++LOWORD(v4->field_14);
   v82 = (unk1E214 *)operator new(0x1E214u);
   v111 = 19;
@@ -59789,10 +59750,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v83)
     sub_1003E260(4);
   v85 = v83->lpVtbl;
-  v83->lpVtbl->field_38(v83, a1, 1138819072, 1129906176, 20481, 2, 5, 1, -1);
+  v83->lpVtbl->meth14(v83, a1, 1138819072, 1129906176, 20481, 2, 5, 1, -1);
   v83->field_4 = sub_100414B0;
   LOWORD(v83->?) = 5;
-  v85->field_34(v83, String2, 1, 3, &unk_100AB478);
+  v85->meth13(v83, String2, 1, 3, &unk_100AB478);
   ++LOWORD(v4->field_14);
   v86 = (unk1E214 *)operator new(0x1E214u);
   v111 = 20;
@@ -59805,10 +59766,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v87)
     sub_1003E260(4);
   v88 = v87->lpVtbl;
-  v87->lpVtbl->field_38(v87, a1, 1121189888, 1118437376, 1048577, 2, 5, 1, -1);
+  v87->lpVtbl->meth14(v87, a1, 1121189888, 1118437376, 1048577, 2, 5, 1, -1);
   LOWORD(v87->?) = 3;
   v89 = GetStringWithIndex(0x38u);
-  v88->field_34(v87, v89, 1, 1, &unk_100AB458);
+  v88->meth13(v87, v89, 1, 1, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v90 = (unk1E214 *)operator new(0x1E214u);
   v111 = 21;
@@ -59822,10 +59783,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v91)
     sub_1003E260(4);
   v93 = v91->lpVtbl;
-  v91->lpVtbl->field_38(v91, a1, 1138491392, 1115947008, 20481, 2, 5, 1, -1);
+  v91->lpVtbl->meth14(v91, a1, 1138491392, 1115947008, 20481, 2, 5, 1, -1);
   v91->field_4 = sub_10041300;
   LOWORD(v91->?) = 52;
-  v93->field_34(v91, String2, 1, 4, &unk_100AB458);
+  v93->meth13(v91, String2, 1, 4, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v94 = (unk1E214 *)operator new(0x1E214u);
   v111 = 22;
@@ -59839,10 +59800,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v95)
     sub_1003E260(4);
   v97 = v95->lpVtbl;
-  v95->lpVtbl->field_38(v95, a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
+  v95->lpVtbl->meth14(v95, a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
   LOWORD(v95->?) = 3;
   v98 = GetStringWithIndex(0x36u);
-  v97->field_34(v95, v98, 1, 1, &unk_100AB458);
+  v97->meth13(v95, v98, 1, 1, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v99 = (unk1E214 *)operator new(0x1E214u);
   v111 = 23;
@@ -59855,10 +59816,10 @@ int __cdecl sub_100509F0(unk000C8 *a1) {
   if (!v100)
     sub_1003E260(4);
   v101 = v100->lpVtbl;
-  v100->lpVtbl->field_38(v100, a1, 1138491392, 1120927744, 20481, 2, 5, 1, -1);
+  v100->lpVtbl->meth14(v100, a1, 1138491392, 1120927744, 20481, 2, 5, 1, -1);
   v100->field_4 = sub_100413B0;
   LOWORD(v100->?) = 52;
-  v101->field_34(v100, String2, 1, 4, &unk_100AB458);
+  v101->meth13(v100, String2, 1, 4, &unk_100AB458);
   ++LOWORD(v4->field_14);
   return 1;
 }
@@ -59922,7 +59883,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -59932,7 +59893,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v7;
   if (!v7)
     sub_1003E260(4);
-  v7->lpVtbl->field_38(v7, a1, 0, 29.0, 9, 2, 5, 0, 78);
+  v7->lpVtbl->meth14(v7, a1, 0, 29.0, 9, 2, 5, 0, 78);
   ++v3->field_14;
   v8 = (unk1E214 *)operator new(0x1E214u);
   if (v8)
@@ -59942,7 +59903,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v9;
   if (!v9)
     sub_1003E260(4);
-  v9->lpVtbl->field_38(v9, a1, 1095761920, 7.0, 9, 2, 5, 0, 79);
+  v9->lpVtbl->meth14(v9, a1, 1095761920, 7.0, 9, 2, 5, 0, 79);
   ++v3->field_14;
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -59952,7 +59913,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v11;
   if (!v11)
     sub_1003E260(4);
-  v11->lpVtbl->field_38(v11, a1, 1098907648, 153.0, 9, 2, 5, 1, 71);
+  v11->lpVtbl->meth14(v11, a1, 1098907648, 153.0, 9, 2, 5, 1, 71);
   v11->field_4 = sub_1003F440;
   ++v3->field_14;
   v12 = (unk1E214 *)operator new(0x1E214u);
@@ -59963,7 +59924,7 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v13;
   if (!v13)
     sub_1003E260(4);
-  v13->lpVtbl->field_38(v13, a1, 1136918528, 181.0, 9, 2, 5, 1, 72);
+  v13->lpVtbl->meth14(v13, a1, 1136918528, 181.0, 9, 2, 5, 1, 72);
   v13->field_4 = sub_1003F540;
   ++v3->field_14;
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -59975,13 +59936,13 @@ int __cdecl sub_10051990(unk000C8 *a1) {
   if (!v15)
     sub_1003E260(4);
   v16 = v15->lpVtbl;
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, 460.0, 1056769, 2, 5, 0, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, 460.0, 1056769, 2, 5, 0, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_10047120;
   v15->field_4 = sub_100471F0;
   v15->field_3838.field_1A99C[28] = 2;
   v17 = GetStringWithIndex(0x42u);
-  v16->field_34(v15, v17, 1, 0, &unk_100AB438);
+  v16->meth13(v15, v17, 1, 0, &unk_100AB438);
   ++v3->field_14;
   ++LOWORD(v3->last);
   return 1;
@@ -60037,7 +59998,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -60048,10 +60009,10 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x43u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB438);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB438);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -60063,7 +60024,7 @@ int __cdecl sub_10051D30(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v3->field_33C - 12.0;
   v19 = *(float *)&v3->flags_338 - 8.0;
-  v11->lpVtbl->field_38(v11, a1, LODWORD(v19), LODWORD(v20), 139265, 2, 5, 0, 80);
+  v11->lpVtbl->meth14(v11, a1, LODWORD(v19), LODWORD(v20), 139265, 2, 5, 0, 80);
   v11->last = (int)&unk_10A9DA50;
   *(_DWORD *)&v11->gap5C[10508] = 1;
   *(_DWORD *)&v11->gap5C[10512] = 1;
@@ -60217,7 +60178,7 @@ int __cdecl sub_10052030(int a1) {
   v4->field_18[LOWORD(v4->field_14)] = v6;
   if (!v6)
     sub_1003E260(4);
-  v6->lpVtbl->field_38(v6, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+  v6->lpVtbl->meth14(v6, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v4->field_14);
   v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
@@ -60228,10 +60189,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v8)
     sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, (unk000C8 *)a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v8->lpVtbl->meth14(v8, (unk000C8 *)a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v8->?) = 3;
   v10 = GetStringWithIndex(0x44u);
-  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  v9->meth13(v8, v10, 1, 1, &unk_100AB508);
   ++LOWORD(v4->field_14);
   v11 = (unk1E214 *)operator new(0x1E214u);
   if (v11)
@@ -60243,12 +60204,12 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v13 = v12->lpVtbl;
   v84 = v4->field_33C - -19.0;
-  v12->lpVtbl->field_38(v12, (unk000C8 *)a1, v4->flags_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
+  v12->lpVtbl->meth14(v12, (unk000C8 *)a1, v4->flags_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
   v12->field_C = sub_10047360;
   v12->field_8 = sub_10047340;
   LOWORD(v12->?) = 3;
   v14 = GetStringWithIndex(0x45u);
-  v13->field_34(v12, v14, 1, 1, &dword_100AB448);
+  v13->meth13(v12, v14, 1, 1, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v15 = (unk1E214 *)operator new(0x1E214u);
@@ -60261,12 +60222,12 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v17 = v16->lpVtbl;
   v85 = v4->field_33C - -95.0;
-  v16->lpVtbl->field_38(v16, (unk000C8 *)a1, v4->flags_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
+  v16->lpVtbl->meth14(v16, (unk000C8 *)a1, v4->flags_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = sub_10045050;
   LOWORD(v16->?) = 2;
   v18 = GetStringWithIndex(0x1Eu);
-  v17->field_34(v16, v18, 1, 0, &dword_100AB448);
+  v17->meth13(v16, v18, 1, 0, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v19 = (unk1E214 *)operator new(0x1E214u);
@@ -60279,12 +60240,12 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v21 = v20->lpVtbl;
   v86 = v4->field_33C - -114.0;
-  v20->lpVtbl->field_38(v20, (unk000C8 *)a1, v4->flags_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
+  v20->lpVtbl->meth14(v20, (unk000C8 *)a1, v4->flags_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
   v20->field_C = sub_10047360;
   v20->field_8 = (int(__cdecl *)())sub_10047060;
   LOWORD(v20->?) = 3;
   v22 = GetStringWithIndex(0xCu);
-  v21->field_34(v20, v22, 1, 1, &dword_100AB448);
+  v21->meth13(v20, v22, 1, 1, &dword_100AB448);
   ++LOWORD(v4->field_14);
   ++LOWORD(v4->last);
   v88 = (float)dword_100AB428;
@@ -60297,8 +60258,7 @@ int __cdecl sub_10052030(int a1) {
   v4->field_18[LOWORD(v4->field_14)] = v24;
   if (!v24)
     sub_1003E260(4);
-  ((void(__thiscall *)(
-      unk1E214 *, int, float, float, int, int, int, int, int))v24->lpVtbl->field_38)(
+  ((void(__thiscall *)(unk1E214 *, int, float, float, int, int, int, int, int))v24->lpVtbl->meth14)(
       v24, a1, COERCE_FLOAT(LODWORD(v88)), COERCE_FLOAT(LODWORD(v91)), 4202497, 2, 5, 1, 120);
   v24->field_C = sub_10047360;
   v24->field_8 = sub_100457E0;
@@ -60321,8 +60281,7 @@ int __cdecl sub_10052030(int a1) {
   v4->field_18[LOWORD(v4->field_14)] = v27;
   if (!v27)
     sub_1003E260(4);
-  ((void(__thiscall *)(
-      unk1E214 *, int, float, float, int, int, int, int, int))v27->lpVtbl->field_38)(
+  ((void(__thiscall *)(unk1E214 *, int, float, float, int, int, int, int, int))v27->lpVtbl->meth14)(
       v27, a1, COERCE_FLOAT(LODWORD(v88)), COERCE_FLOAT(LODWORD(v92)), 4202497, 2, 5, 1, 82);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10043FA0;
@@ -60343,8 +60302,7 @@ int __cdecl sub_10052030(int a1) {
   v4->field_18[LOWORD(v4->field_14)] = v30;
   if (!v30)
     sub_1003E260(4);
-  ((void(__thiscall *)(
-      unk1E214 *, int, float, float, int, int, int, int, int))v30->lpVtbl->field_38)(
+  ((void(__thiscall *)(unk1E214 *, int, float, float, int, int, int, int, int))v30->lpVtbl->meth14)(
       v30, a1, COERCE_FLOAT(LODWORD(v88)), COERCE_FLOAT(LODWORD(v93)), 4202497, 2, 5, 1, 84);
   v30->field_C = sub_10047360;
   v30->field_8 = sub_100457C0;
@@ -60364,7 +60322,7 @@ int __cdecl sub_10052030(int a1) {
   v4->field_18[LOWORD(v4->field_14)] = v33;
   if (!v33)
     sub_1003E260(4);
-  v33->lpVtbl->field_38(v33, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
+  v33->lpVtbl->meth14(v33, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
   v33->field_4 = sub_100407E0;
   v34 = LOWORD(v4->field_14) + 1;
   ++*(_WORD *)&v33->gap5C[10840];
@@ -60379,10 +60337,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, (unk000C8 *)a1, v4->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, (unk000C8 *)a1, v4->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v36->field_4 = sub_1003FE80;
   LOWORD(v36->?) = 3;
-  v37->field_34(v36, asc_100AD300, 1, 1, &unk_100AB4B8);
+  v37->meth13(v36, asc_100AD300, 1, 1, &unk_100AB4B8);
   ++LOWORD(v4->field_14);
   v38 = (unk1E214 *)operator new(0x1E214u);
   if (v38)
@@ -60392,7 +60350,7 @@ int __cdecl sub_10052030(int a1) {
   v4->field_18[LOWORD(v4->field_14)] = v39;
   if (!v39)
     sub_1003E260(4);
-  v39->lpVtbl->field_38(v39, (unk000C8 *)a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
+  v39->lpVtbl->meth14(v39, (unk000C8 *)a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
   v39->field_4 = sub_10040730;
   v40 = LOWORD(v4->field_14) + 1;
   ++*(_WORD *)&v39->gap5C[10840];
@@ -60407,10 +60365,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v42)
     sub_1003E260(4);
   v43 = v42->lpVtbl;
-  v42->lpVtbl->field_38(v42, (unk000C8 *)a1, v4->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v42->lpVtbl->meth14(v42, (unk000C8 *)a1, v4->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v42->field_4 = sub_1003FA00;
   LOWORD(v42->?) = 3;
-  v43->field_34(v42, asc_100AD300, 1, 1, &unk_100AB4A8);
+  v43->meth13(v42, asc_100AD300, 1, 1, &unk_100AB4A8);
   ++LOWORD(v4->field_14);
   v44 = (unk1E214 *)operator new(0x1E214u);
   if (v44)
@@ -60421,10 +60379,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v45)
     sub_1003E260(4);
   v46 = v45->lpVtbl;
-  v45->lpVtbl->field_38(v45, (unk000C8 *)a1, 1138819072, 1123680256, 1048585, 2, 5, 1, -1);
+  v45->lpVtbl->meth14(v45, (unk000C8 *)a1, 1138819072, 1123680256, 1048585, 2, 5, 1, -1);
   LOWORD(v45->?) = 3;
   v47 = GetStringWithIndex(0x40u);
-  v46->field_34(v45, v47, 1, 1, &unk_100AB4F8);
+  v46->meth13(v45, v47, 1, 1, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v48 = (unk1E214 *)operator new(0x1E214u);
   if (v48)
@@ -60435,10 +60393,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v49)
     sub_1003E260(4);
   v50 = v49->lpVtbl;
-  v49->lpVtbl->field_38(v49, (unk000C8 *)a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
+  v49->lpVtbl->meth14(v49, (unk000C8 *)a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
   LOWORD(v49->?) = 3;
   v51 = GetStringWithIndex(0x46u);
-  v50->field_34(v49, v51, 1, 1, &unk_100AB4F8);
+  v50->meth13(v49, v51, 1, 1, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v52 = (unk1E214 *)operator new(0x1E214u);
   if (v52)
@@ -60449,10 +60407,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v53)
     sub_1003E260(4);
   v54 = v53->lpVtbl;
-  v53->lpVtbl->field_38(v53, (unk000C8 *)a1, 1138819072, 1124925440, 20481, 2, 5, 1, -1);
+  v53->lpVtbl->meth14(v53, (unk000C8 *)a1, 1138819072, 1124925440, 20481, 2, 5, 1, -1);
   v53->field_4 = sub_100415A0;
   LOWORD(v53->?) = 5;
-  v54->field_34(v53, String2, 1, 3, &unk_100AB4F8);
+  v54->meth13(v53, String2, 1, 3, &unk_100AB4F8);
   ++LOWORD(v4->field_14);
   v55 = (unk1E214 *)operator new(0x1E214u);
   if (v55)
@@ -60463,10 +60421,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v56)
     sub_1003E260(4);
   v57 = v56->lpVtbl;
-  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, v4->flags_338, 1128988672, 1048585, 2, 5, 1, -1);
+  v56->lpVtbl->meth14(v56, (unk000C8 *)a1, v4->flags_338, 1128988672, 1048585, 2, 5, 1, -1);
   LOWORD(v56->?) = 3;
   v58 = GetStringWithIndex(0x40u);
-  v57->field_34(v56, v58, 1, 1, &unk_100AB478);
+  v57->meth13(v56, v58, 1, 1, &unk_100AB478);
   ++LOWORD(v4->field_14);
   v59 = (unk1E214 *)operator new(0x1E214u);
   if (v59)
@@ -60477,10 +60435,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v60)
     sub_1003E260(4);
   v61 = v60->lpVtbl;
-  v60->lpVtbl->field_38(v60, (unk000C8 *)a1, v4->flags_338, 1132756992, 1048585, 2, 5, 1, -1);
+  v60->lpVtbl->meth14(v60, (unk000C8 *)a1, v4->flags_338, 1132756992, 1048585, 2, 5, 1, -1);
   LOWORD(v60->?) = 3;
   v62 = GetStringWithIndex(0x41u);
-  v61->field_34(v60, v62, 1, 1, &unk_100AB478);
+  v61->meth13(v60, v62, 1, 1, &unk_100AB478);
   ++LOWORD(v4->field_14);
   v63 = (unk1E214 *)operator new(0x1E214u);
   if (v63)
@@ -60491,10 +60449,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v64)
     sub_1003E260(4);
   v65 = v64->lpVtbl;
-  v64->lpVtbl->field_38(v64, (unk000C8 *)a1, 1138819072, 1129906176, 20481, 2, 5, 1, -1);
+  v64->lpVtbl->meth14(v64, (unk000C8 *)a1, 1138819072, 1129906176, 20481, 2, 5, 1, -1);
   v64->field_4 = sub_100414B0;
   LOWORD(v64->?) = 5;
-  v65->field_34(v64, String2, 1, 3, &unk_100AB478);
+  v65->meth13(v64, String2, 1, 3, &unk_100AB478);
   ++LOWORD(v4->field_14);
   v66 = (unk1E214 *)operator new(0x1E214u);
   if (v66)
@@ -60505,10 +60463,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v67)
     sub_1003E260(4);
   v68 = v67->lpVtbl;
-  v67->lpVtbl->field_38(v67, (unk000C8 *)a1, 1121189888, 1118437376, 1048577, 2, 5, 1, -1);
+  v67->lpVtbl->meth14(v67, (unk000C8 *)a1, 1121189888, 1118437376, 1048577, 2, 5, 1, -1);
   LOWORD(v67->?) = 3;
   v69 = GetStringWithIndex(0x38u);
-  v68->field_34(v67, v69, 1, 1, &unk_100AB458);
+  v68->meth13(v67, v69, 1, 1, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v70 = (unk1E214 *)operator new(0x1E214u);
   if (v70)
@@ -60519,10 +60477,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v71)
     sub_1003E260(4);
   v72 = v71->lpVtbl;
-  v71->lpVtbl->field_38(v71, (unk000C8 *)a1, 1138491392, 1115947008, 20481, 2, 5, 1, -1);
+  v71->lpVtbl->meth14(v71, (unk000C8 *)a1, 1138491392, 1115947008, 20481, 2, 5, 1, -1);
   v71->field_4 = sub_10041300;
   LOWORD(v71->?) = 52;
-  v72->field_34(v71, String2, 1, 4, &unk_100AB458);
+  v72->meth13(v71, String2, 1, 4, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v73 = (unk1E214 *)operator new(0x1E214u);
   if (v73)
@@ -60533,10 +60491,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v74)
     sub_1003E260(4);
   v75 = v74->lpVtbl;
-  v74->lpVtbl->field_38(v74, (unk000C8 *)a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
+  v74->lpVtbl->meth14(v74, (unk000C8 *)a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
   LOWORD(v74->?) = 3;
   v76 = GetStringWithIndex(0x36u);
-  v75->field_34(v74, v76, 1, 1, &unk_100AB458);
+  v75->meth13(v74, v76, 1, 1, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v77 = (unk1E214 *)operator new(0x1E214u);
   if (v77)
@@ -60547,10 +60505,10 @@ int __cdecl sub_10052030(int a1) {
   if (!v78)
     sub_1003E260(4);
   v79 = v78->lpVtbl;
-  v78->lpVtbl->field_38(v78, (unk000C8 *)a1, 1138491392, 1120927744, 20481, 2, 5, 1, -1);
+  v78->lpVtbl->meth14(v78, (unk000C8 *)a1, 1138491392, 1120927744, 20481, 2, 5, 1, -1);
   v78->field_4 = sub_100413B0;
   LOWORD(v78->?) = 52;
-  v79->field_34(v78, String2, 1, 4, &unk_100AB458);
+  v79->meth13(v78, String2, 1, 4, &unk_100AB458);
   ++LOWORD(v4->field_14);
   v80 = (unk1E214 *)operator new(0x1E214u);
   if (v80)
@@ -60562,10 +60520,10 @@ int __cdecl sub_10052030(int a1) {
     sub_1003E260(4);
   v82 = v81->lpVtbl;
   v87 = v4->field_33C - 19.0;
-  v81->lpVtbl->field_38(v81, (unk000C8 *)a1, v4->flags_338, LODWORD(v87), 20481, 2, 5, 1, -1);
+  v81->lpVtbl->meth14(v81, (unk000C8 *)a1, v4->flags_338, LODWORD(v87), 20481, 2, 5, 1, -1);
   v81->field_4 = sub_10040B30;
   LOWORD(v81->?) = 52;
-  v82->field_34(v81, String2, 1, 4, &dword_100AB448);
+  v82->meth13(v81, String2, 1, 4, &dword_100AB448);
   ++LOWORD(v4->field_14);
   return 1;
 }
@@ -60690,7 +60648,7 @@ int __cdecl sub_10052F50(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -60701,10 +60659,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x47u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -60715,13 +60673,13 @@ int __cdecl sub_10052F50(int a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(
+  v11->lpVtbl->meth14(
       v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_100412C0;
   LOWORD(v11->?) = 3;
   v13 = GetStringWithIndex(0x48u);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -60734,12 +60692,12 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v73 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->flags_338, LODWORD(v73), 1056769, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, (unk000C8 *)a1, v3->flags_338, LODWORD(v73), 1056769, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_100412D0;
   LOWORD(v15->?) = 3;
   v17 = GetStringWithIndex(0x49u);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -60752,12 +60710,12 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v74 = v3->field_33C - -38.0;
-  v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->flags_338, LODWORD(v74), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, (unk000C8 *)a1, v3->flags_338, LODWORD(v74), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = sub_100412E0;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0x4Au);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -60770,12 +60728,12 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v24 = v23->lpVtbl;
   v75 = v3->field_33C - -57.0;
-  v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->flags_338, LODWORD(v75), 1056769, 2, 5, 1, -1);
+  v23->lpVtbl->meth14(v23, (unk000C8 *)a1, v3->flags_338, LODWORD(v75), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_100412F0;
   LOWORD(v23->?) = 3;
   v25 = GetStringWithIndex(0x4Bu);
-  v24->field_34(v23, v25, 1, 1, &dword_100AB448);
+  v24->meth13(v23, v25, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v26 = (unk1E214 *)operator new(0x1E214u);
@@ -60788,12 +60746,12 @@ int __cdecl sub_10052F50(int a1) {
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v76 = v3->field_33C - -95.0;
-  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->flags_338, LODWORD(v76), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->meth14(v27, (unk000C8 *)a1, v3->flags_338, LODWORD(v76), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = sub_10045F70;
   LOWORD(v27->?) = 3;
   v29 = GetStringWithIndex(0x1Eu);
-  v28->field_34(v27, v29, 1, 1, &dword_100AB448);
+  v28->meth13(v27, v29, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v77 = (float)dword_100AB428;
@@ -60806,8 +60764,7 @@ int __cdecl sub_10052F50(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v31;
   if (!v31)
     sub_1003E260(4);
-  ((void(__thiscall *)(
-      unk1E214 *, int, float, float, int, int, int, int, int))v31->lpVtbl->field_38)(
+  ((void(__thiscall *)(unk1E214 *, int, float, float, int, int, int, int, int))v31->lpVtbl->meth14)(
       v31, a1, COERCE_FLOAT(LODWORD(v77)), COERCE_FLOAT(LODWORD(v80)), 4202497, 2, 5, 1, 120);
   v31->field_C = sub_10047360;
   v31->field_8 = sub_10045820;
@@ -60830,8 +60787,7 @@ int __cdecl sub_10052F50(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v34;
   if (!v34)
     sub_1003E260(4);
-  ((void(__thiscall *)(
-      unk1E214 *, int, float, float, int, int, int, int, int))v34->lpVtbl->field_38)(
+  ((void(__thiscall *)(unk1E214 *, int, float, float, int, int, int, int, int))v34->lpVtbl->meth14)(
       v34, a1, COERCE_FLOAT(LODWORD(v77)), COERCE_FLOAT(LODWORD(v81)), 4202497, 2, 5, 1, 82);
   v34->field_C = sub_10047360;
   v34->field_8 = (int(__cdecl *)())sub_10043FA0;
@@ -60852,8 +60808,7 @@ int __cdecl sub_10052F50(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v37;
   if (!v37)
     sub_1003E260(4);
-  ((void(__thiscall *)(
-      unk1E214 *, int, float, float, int, int, int, int, int))v37->lpVtbl->field_38)(
+  ((void(__thiscall *)(unk1E214 *, int, float, float, int, int, int, int, int))v37->lpVtbl->meth14)(
       v37, a1, COERCE_FLOAT(LODWORD(v77)), COERCE_FLOAT(LODWORD(v82)), 4202497, 2, 5, 1, 84);
   v37->field_C = sub_10047360;
   v37->field_8 = sub_10045800;
@@ -60874,10 +60829,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v40)
     sub_1003E260(4);
   v41 = v40->lpVtbl;
-  v40->lpVtbl->field_38(v40, (unk000C8 *)a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
+  v40->lpVtbl->meth14(v40, (unk000C8 *)a1, 1121189888, 1123418112, 1048577, 2, 5, 1, -1);
   LOWORD(v40->?) = 3;
   v42 = GetStringWithIndex(0x4Cu);
-  v41->field_34(v40, v42, 1, 1, &unk_100AB458);
+  v41->meth13(v40, v42, 1, 1, &unk_100AB458);
   ++LOWORD(v3->field_14);
   v43 = (unk1E214 *)operator new(0x1E214u);
   if (v43)
@@ -60888,10 +60843,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v44)
     sub_1003E260(4);
   v45 = v44->lpVtbl;
-  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, 1138491392, 1117650944, 20481, 2, 5, 1, -1);
+  v44->lpVtbl->meth14(v44, (unk000C8 *)a1, 1138491392, 1117650944, 20481, 2, 5, 1, -1);
   v44->field_4 = sub_1003E8D0;
   LOWORD(v44->?) = 5;
-  v45->field_34(v44, String2, 1, 3, &unk_100AB458);
+  v45->meth13(v44, String2, 1, 3, &unk_100AB458);
   ++LOWORD(v3->field_14);
   v46 = (unk1E214 *)operator new(0x1E214u);
   if (v46)
@@ -60901,7 +60856,7 @@ int __cdecl sub_10052F50(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v47;
   if (!v47)
     sub_1003E260(4);
-  v47->lpVtbl->field_38(v47, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
+  v47->lpVtbl->meth14(v47, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
   v47->field_4 = sub_100407E0;
   v48 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v47->gap5C[10840];
@@ -60916,10 +60871,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v50)
     sub_1003E260(4);
   v51 = v50->lpVtbl;
-  v50->lpVtbl->field_38(v50, (unk000C8 *)a1, v3->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v50->lpVtbl->meth14(v50, (unk000C8 *)a1, v3->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v50->field_4 = sub_1003FE80;
   LOWORD(v50->?) = 3;
-  v51->field_34(v50, asc_100AD300, 1, 1, &unk_100AB4B8);
+  v51->meth13(v50, asc_100AD300, 1, 1, &unk_100AB4B8);
   ++LOWORD(v3->field_14);
   v52 = (unk1E214 *)operator new(0x1E214u);
   if (v52)
@@ -60929,7 +60884,7 @@ int __cdecl sub_10052F50(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v53;
   if (!v53)
     sub_1003E260(4);
-  v53->lpVtbl->field_38(v53, (unk000C8 *)a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
+  v53->lpVtbl->meth14(v53, (unk000C8 *)a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
   v53->field_4 = sub_10040730;
   v54 = LOWORD(v3->field_14) + 1;
   ++*(_WORD *)&v53->gap5C[10840];
@@ -60944,10 +60899,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v56)
     sub_1003E260(4);
   v57 = v56->lpVtbl;
-  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, v3->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v56->lpVtbl->meth14(v56, (unk000C8 *)a1, v3->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
   v56->field_4 = sub_1003FA00;
   LOWORD(v56->?) = 3;
-  v57->field_34(v56, asc_100AD300, 1, 1, &unk_100AB4A8);
+  v57->meth13(v56, asc_100AD300, 1, 1, &unk_100AB4A8);
   ++LOWORD(v3->field_14);
   v58 = (unk1E214 *)operator new(0x1E214u);
   if (v58)
@@ -60958,10 +60913,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v59)
     sub_1003E260(4);
   v60 = v59->lpVtbl;
-  v59->lpVtbl->field_38(v59, (unk000C8 *)a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
+  v59->lpVtbl->meth14(v59, (unk000C8 *)a1, 1138819072, 1127809024, 1048585, 2, 5, 1, -1);
   LOWORD(v59->?) = 3;
   v61 = GetStringWithIndex(0x4Du);
-  v60->field_34(v59, v61, 1, 1, &unk_100AB4F8);
+  v60->meth13(v59, v61, 1, 1, &unk_100AB4F8);
   ++LOWORD(v3->field_14);
   v62 = (unk1E214 *)operator new(0x1E214u);
   if (v62)
@@ -60972,10 +60927,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v63)
     sub_1003E260(4);
   v64 = v63->lpVtbl;
-  v63->lpVtbl->field_38(v63, (unk000C8 *)a1, 1138819072, 1126563840, 20481, 2, 5, 1, -1);
+  v63->lpVtbl->meth14(v63, (unk000C8 *)a1, 1138819072, 1126563840, 20481, 2, 5, 1, -1);
   v63->field_4 = sub_10040EE0;
   LOWORD(v63->?) = 52;
-  v64->field_34(v63, String2, 1, 4, &unk_100AB4F8);
+  v64->meth13(v63, String2, 1, 4, &unk_100AB4F8);
   ++LOWORD(v3->field_14);
   v65 = (unk1E214 *)operator new(0x1E214u);
   if (v65)
@@ -60986,10 +60941,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v66)
     sub_1003E260(4);
   v67 = v66->lpVtbl;
-  v66->lpVtbl->field_38(v66, (unk000C8 *)a1, v3->flags_338, 1132527616, 1048585, 2, 5, 1, -1);
+  v66->lpVtbl->meth14(v66, (unk000C8 *)a1, v3->flags_338, 1132527616, 1048585, 2, 5, 1, -1);
   LOWORD(v66->?) = 3;
   v68 = GetStringWithIndex(0x40u);
-  v67->field_34(v66, v68, 1, 1, &unk_100AB478);
+  v67->meth13(v66, v68, 1, 1, &unk_100AB478);
   ++LOWORD(v3->field_14);
   v69 = (unk1E214 *)operator new(0x1E214u);
   if (v69)
@@ -61000,10 +60955,10 @@ int __cdecl sub_10052F50(int a1) {
   if (!v70)
     sub_1003E260(4);
   v71 = v70->lpVtbl;
-  v70->lpVtbl->field_38(v70, (unk000C8 *)a1, 1138819072, 1129512960, 20481, 2, 5, 1, -1);
+  v70->lpVtbl->meth14(v70, (unk000C8 *)a1, 1138819072, 1129512960, 20481, 2, 5, 1, -1);
   v70->field_4 = sub_1003EA90;
   LOWORD(v70->?) = 5;
-  v71->field_34(v70, String2, 1, 3, &unk_100AB478);
+  v71->meth13(v70, String2, 1, 3, &unk_100AB478);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -61152,7 +61107,7 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v6;
   if (!v6)
     sub_1003E260(4);
-  v6->lpVtbl->field_38(v6, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v6->lpVtbl->meth14(v6, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v3->field_14;
   v7 = (unk1E214 *)operator new(0x1E214u);
   v93 = 2;
@@ -61165,10 +61120,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v8)
     sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v8->lpVtbl->meth14(v8, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x4Eu);
-  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  v9->meth13(v8, v10, 1, 1, &unk_100AB508);
   ++v3->field_14;
   v11 = (unk1E214 *)operator new(0x1E214u);
   v93 = 3;
@@ -61181,16 +61136,16 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v13] = v12;
   if (!v12)
     sub_1003E260(4);
-  v12->lpVtbl->field_38(v12, a1, v3->flags_338, v3->field_33C, 12289, 2, 5, 1, -1);
+  v12->lpVtbl->meth14(v12, a1, v3->flags_338, v3->field_33C, 12289, 2, 5, 1, -1);
   v14 = v12->field_3838.lpVtbl;
   v12->field_4 = sub_1003EB60;
   *(_DWORD *)&v12->field_3838.field_1A99C[16] = 1;
-  v14->field_14(&v12->field_3838, 0x200000, dword_100AB4D8, 5, 0, -1);
+  v14->meth5(&v12->field_3838, 0x200000, dword_100AB4D8, 5, 0, -1);
   v12->field_14 = (int)sub_1003E8B0;
   v12->field_18 = (int)sub_1003E8C0;
   v94 = 0;
   if (dword_100B3814[6 * (char)dword_10AA28B8] > 0) {
-    v87 = v14->field_10;
+    v87 = v14->meth4;
     do {
         strcpy(v91, GetStringWithIndex(0x37u));
         strcat(v91, asc_100AD300);
@@ -61214,12 +61169,12 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
     sub_1003E260(4);
   v18 = v17->lpVtbl;
   v85 = v3->field_33C - -95.0;
-  v17->lpVtbl->field_38(v17, a1, v3->flags_338, v85, 1056769, 2, 5, 1, -1);
+  v17->lpVtbl->meth14(v17, a1, v3->flags_338, v85, 1056769, 2, 5, 1, -1);
   v17->field_C = sub_10047360;
   v17->field_8 = sub_100460A0;
   v17->field_3838.field_1A99C[28] = 3;
   v19 = GetStringWithIndex(0x1Eu);
-  v18->field_34(v17, v19, 1, 1, &dword_100AB448);
+  v18->meth13(v17, v19, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v20 = (unk1E214 *)operator new(0x1E214u);
@@ -61235,12 +61190,12 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
     sub_1003E260(4);
   v23 = v21->lpVtbl;
   v86 = v3->field_33C - -114.0;
-  v21->lpVtbl->field_38(v21, a1, v3->flags_338, v86, 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->meth14(v21, a1, v3->flags_338, v86, 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = (int(__cdecl *)())sub_100470A0;
   v21->field_3838.field_1A99C[28] = 3;
   v24 = GetStringWithIndex(0xCu);
-  v23->field_34(v21, v24, 1, 1, &dword_100AB448);
+  v23->meth13(v21, v24, 1, 1, &dword_100AB448);
   ++v3->field_14;
   ++LOWORD(v3->last);
   v88 = (float)dword_100AB428;
@@ -61256,7 +61211,7 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v27] = v26;
   if (!v26)
     sub_1003E260(4);
-  v26->lpVtbl->field_38(v26, a1, LODWORD(v88), v95, 4202497, 2, 5, 1, 120);
+  v26->lpVtbl->meth14(v26, a1, LODWORD(v88), v95, 4202497, 2, 5, 1, 120);
   v26->field_C = sub_10047360;
   v26->field_8 = sub_10045860;
   v90 = (__int64)v95;
@@ -61280,7 +61235,7 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v30;
   if (!v30)
     sub_1003E260(4);
-  v30->lpVtbl->field_38(v30, a1, LODWORD(v88), v96, 4202497, 2, 5, 1, 82);
+  v30->lpVtbl->meth14(v30, a1, LODWORD(v88), v96, 4202497, 2, 5, 1, 82);
   v30->field_C = sub_10047360;
   v30->field_8 = (int(__cdecl *)())sub_10043FA0;
   v31 = (__int64)v96;
@@ -61302,7 +61257,7 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v3->field_14] = v33;
   if (!v33)
     sub_1003E260(4);
-  v33->lpVtbl->field_38(v33, a1, LODWORD(v88), v97, 4202497, 2, 5, 1, 84);
+  v33->lpVtbl->meth14(v33, a1, LODWORD(v88), v97, 4202497, 2, 5, 1, 84);
   v33->field_C = sub_10047360;
   v33->field_8 = sub_10045840;
   v34 = (__int64)v97;
@@ -61324,10 +61279,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, 0x42D40000, 85.0, 1048577, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, a1, 0x42D40000, 85.0, 1048577, 2, 5, 1, -1);
   v36->field_3838.field_1A99C[28] = 3;
   v38 = GetStringWithIndex(0x38u);
-  v37->field_34(v36, v38, 1, 1, &unk_100AB458);
+  v37->meth13(v36, v38, 1, 1, &unk_100AB458);
   ++v3->field_14;
   v39 = (unk1E214 *)operator new(0x1E214u);
   v93 = 10;
@@ -61341,10 +61296,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v40)
     sub_1003E260(4);
   v42 = v40->lpVtbl;
-  v40->lpVtbl->field_38(v40, a1, 0x43DC0000, 66.0, 20481, 2, 5, 1, -1);
+  v40->lpVtbl->meth14(v40, a1, 0x43DC0000, 66.0, 20481, 2, 5, 1, -1);
   v40->field_4 = sub_10041300;
   v40->field_3838.field_1A99C[28] = 52;
-  v42->field_34(v40, String2, 1, 4, &unk_100AB458);
+  v42->meth13(v40, String2, 1, 4, &unk_100AB458);
   ++v3->field_14;
   v43 = (unk1E214 *)operator new(0x1E214u);
   v93 = 11;
@@ -61358,10 +61313,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v44)
     sub_1003E260(4);
   v46 = v44->lpVtbl;
-  v44->lpVtbl->field_38(v44, a1, 0x42D40000, 123.0, 1048577, 2, 5, 1, -1);
+  v44->lpVtbl->meth14(v44, a1, 0x42D40000, 123.0, 1048577, 2, 5, 1, -1);
   v44->field_3838.field_1A99C[28] = 3;
   v47 = GetStringWithIndex(0x36u);
-  v46->field_34(v44, v47, 1, 1, &unk_100AB458);
+  v46->meth13(v44, v47, 1, 1, &unk_100AB458);
   ++v3->field_14;
   v48 = (unk1E214 *)operator new(0x1E214u);
   v93 = 12;
@@ -61374,10 +61329,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v49)
     sub_1003E260(4);
   v50 = v49->lpVtbl;
-  v49->lpVtbl->field_38(v49, a1, 0x43DC0000, 104.0, 20481, 2, 5, 1, -1);
+  v49->lpVtbl->meth14(v49, a1, 0x43DC0000, 104.0, 20481, 2, 5, 1, -1);
   v49->field_4 = sub_100413B0;
   v49->field_3838.field_1A99C[28] = 52;
-  v50->field_34(v49, String2, 1, 4, &unk_100AB458);
+  v50->meth13(v49, String2, 1, 4, &unk_100AB458);
   ++v3->field_14;
   v51 = (unk1E214 *)operator new(0x1E214u);
   v93 = 13;
@@ -61391,10 +61346,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!u1E214)
     sub_1003E260(4);
   v54 = u1E214->lpVtbl;
-  u1E214->lpVtbl->field_38(u1E214, a1, 0x42D40000, 185.0, 1048577, 2, 5, 1, -1);
+  u1E214->lpVtbl->meth14(u1E214, a1, 0x42D40000, 185.0, 1048577, 2, 5, 1, -1);
   u1E214->field_3838.field_1A99C[28] = 3;
   v55 = GetStringWithIndex(0x4Cu);
-  v54->field_34(u1E214, v55, 1, 1, &unk_100AB4F8);
+  v54->meth13(u1E214, v55, 1, 1, &unk_100AB4F8);
   ++v3->field_14;
   v56 = (unk1E214 *)operator new(0x1E214u);
   v93 = 14;
@@ -61408,10 +61363,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v57)
     sub_1003E260(4);
   v59 = v57->lpVtbl;
-  v57->lpVtbl->field_38(v57, a1, 0x43DC0000, 141.0, 20481, 2, 5, 1, -1);
+  v57->lpVtbl->meth14(v57, a1, 0x43DC0000, 141.0, 20481, 2, 5, 1, -1);
   v57->field_4 = sub_1003E8D0;
   v57->field_3838.field_1A99C[28] = 5;
-  v59->field_34(v57, String2, 1, 3, &unk_100AB4F8);
+  v59->meth13(v57, String2, 1, 3, &unk_100AB4F8);
   ++v3->field_14;
   v60 = (unk1E214 *)operator new(0x1E214u);
   v93 = 15;
@@ -61424,7 +61379,7 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v62] = v61;
   if (!v61)
     sub_1003E260(4);
-  v61->lpVtbl->field_38(v61, a1, 0x42920000, 212.0, 1, 2, 5, 1, 22);
+  v61->lpVtbl->meth14(v61, a1, 0x42920000, 212.0, 1, 2, 5, 1, 22);
   v61->field_4 = sub_100407E0;
   v63 = v3->field_14 + 1;
   ++v61->field_2AB4[0];
@@ -61442,10 +61397,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v65)
     sub_1003E260(4);
   v67 = v65->lpVtbl;
-  v65->lpVtbl->field_38(v65, a1, v3->flags_338, 275.0, 1052673, 2, 5, 1, -1);
+  v65->lpVtbl->meth14(v65, a1, v3->flags_338, 275.0, 1052673, 2, 5, 1, -1);
   v65->field_4 = sub_1003FE80;
   v65->field_3838.field_1A99C[28] = 3;
-  v67->field_34(v65, asc_100AD300, 1, 1, &unk_100AB4B8);
+  v67->meth13(v65, asc_100AD300, 1, 1, &unk_100AB4B8);
   ++v3->field_14;
   v68 = (unk1E214 *)operator new(0x1E214u);
   v93 = 17;
@@ -61458,7 +61413,7 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   v3->field_18[v70] = v69;
   if (!v69)
     sub_1003E260(4);
-  v69->lpVtbl->field_38(v69, a1, 0x43A28000, 72.0, 1, 2, 5, 1, 17);
+  v69->lpVtbl->meth14(v69, a1, 0x43A28000, 72.0, 1, 2, 5, 1, 17);
   v69->field_4 = sub_10040730;
   v71 = v3->field_14 + 1;
   ++v69->field_2AB4[0];
@@ -61476,10 +61431,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v73)
     sub_1003E260(4);
   v75 = v73->lpVtbl;
-  v73->lpVtbl->field_38(v73, a1, v3->flags_338, 152.0, 1052673, 2, 5, 1, -1);
+  v73->lpVtbl->meth14(v73, a1, v3->flags_338, 152.0, 1052673, 2, 5, 1, -1);
   v73->field_4 = sub_1003FA00;
   v73->field_3838.field_1A99C[28] = 3;
-  v75->field_34(v73, asc_100AD300, 1, 1, &unk_100AB4A8);
+  v75->meth13(v73, asc_100AD300, 1, 1, &unk_100AB4A8);
   ++v3->field_14;
   v76 = (unk1E214 *)operator new(0x1E214u);
   v93 = 19;
@@ -61492,10 +61447,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v77)
     sub_1003E260(4);
   v78 = v77->lpVtbl;
-  v77->lpVtbl->field_38(v77, a1, v3->flags_338, 258.0, 1048585, 2, 5, 1, -1);
+  v77->lpVtbl->meth14(v77, a1, v3->flags_338, 258.0, 1048585, 2, 5, 1, -1);
   v77->field_3838.field_1A99C[28] = 3;
   v79 = GetStringWithIndex(0x40u);
-  v78->field_34(v77, v79, 1, 1, &unk_100AB478);
+  v78->meth13(v77, v79, 1, 1, &unk_100AB478);
   ++v3->field_14;
   v80 = (unk1E214 *)operator new(0x1E214u);
   v93 = 20;
@@ -61509,10 +61464,10 @@ int __cdecl sub_10053CF0(unk000C8 *a1) {
   if (!v81)
     sub_1003E260(4);
   v83 = v81->lpVtbl;
-  v81->lpVtbl->field_38(v81, a1, 0x43E10000, 211.0, 20481, 2, 5, 1, -1);
+  v81->lpVtbl->meth14(v81, a1, 0x43E10000, 211.0, 20481, 2, 5, 1, -1);
   v81->field_4 = sub_1003EA90;
   v81->field_3838.field_1A99C[28] = 5;
-  v83->field_34(v81, String2, 1, 3, &unk_100AB478);
+  v83->meth13(v81, String2, 1, 3, &unk_100AB478);
   ++v3->field_14;
   return 1;
 }
@@ -61648,7 +61603,7 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   v4->field_18[v4->field_14] = v6;
   if (!v6)
     sub_1003E260(4);
-  v6->lpVtbl->field_38(v6, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v6->lpVtbl->meth14(v6, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v4->field_14;
   v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
@@ -61659,10 +61614,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v8)
     sub_1003E260(4);
   v9 = v8->lpVtbl;
-  v8->lpVtbl->field_38(v8, a1, v4->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v8->lpVtbl->meth14(v8, a1, v4->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x4Fu);
-  v9->field_34(v8, v10, 1, 1, &unk_100AB508);
+  v9->meth13(v8, v10, 1, 1, &unk_100AB508);
   ++v4->field_14;
   v11 = (unk1E214 *)operator new(0x1E214u);
   if (v11)
@@ -61674,12 +61629,12 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
     sub_1003E260(4);
   v13 = v12->lpVtbl;
   v76 = v4->field_33C - -95.0;
-  v12->lpVtbl->field_38(v12, a1, v4->flags_338, v76, 1056769, 2, 5, 1, -1);
+  v12->lpVtbl->meth14(v12, a1, v4->flags_338, v76, 1056769, 2, 5, 1, -1);
   v12->field_C = sub_10047360;
   v12->field_8 = (int(__cdecl *)())sub_10047290;
   v12->field_3838.field_1A99C[28] = 3;
   v14 = GetStringWithIndex(0x50u);
-  v13->field_34(v12, v14, 1, 1, &dword_100AB448);
+  v13->meth13(v12, v14, 1, 1, &dword_100AB448);
   ++v4->field_14;
   ++LOWORD(v4->last);
   v15 = (unk1E214 *)operator new(0x1E214u);
@@ -61692,12 +61647,12 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
     sub_1003E260(4);
   v17 = v16->lpVtbl;
   v77 = v4->field_33C - -114.0;
-  v16->lpVtbl->field_38(v16, a1, v4->flags_338, v77, 1056769, 2, 5, 1, -1);
+  v16->lpVtbl->meth14(v16, a1, v4->flags_338, v77, 1056769, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = (int(__cdecl *)())sub_100470E0;
   v16->field_3838.field_1A99C[28] = 3;
   v18 = GetStringWithIndex(0xCu);
-  v17->field_34(v16, v18, 1, 1, &dword_100AB448);
+  v17->meth13(v16, v18, 1, 1, &dword_100AB448);
   ++v4->field_14;
   ++LOWORD(v4->last);
   v78 = (float)dword_100AB428;
@@ -61710,7 +61665,7 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   v4->field_18[v4->field_14] = v20;
   if (!v20)
     sub_1003E260(4);
-  v20->lpVtbl->field_38(v20, a1, LODWORD(v78), v81, 0x402001, 2, 5, 1, 120);
+  v20->lpVtbl->meth14(v20, a1, LODWORD(v78), v81, 0x402001, 2, 5, 1, 120);
   v20->field_C = sub_10047360;
   v20->field_8 = sub_100458A0;
   v80 = (__int64)v81;
@@ -61732,7 +61687,7 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   v4->field_18[v4->field_14] = v23;
   if (!v23)
     sub_1003E260(4);
-  v23->lpVtbl->field_38(v23, a1, LODWORD(v78), v82, 0x402001, 2, 5, 1, 82);
+  v23->lpVtbl->meth14(v23, a1, LODWORD(v78), v82, 0x402001, 2, 5, 1, 82);
   v23->field_C = sub_10047360;
   v23->field_8 = (int(__cdecl *)())sub_10043FA0;
   v24 = (__int64)v82;
@@ -61752,7 +61707,7 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   v4->field_18[v4->field_14] = v26;
   if (!v26)
     sub_1003E260(4);
-  v26->lpVtbl->field_38(v26, a1, LODWORD(v78), v83, 4202497, 2, 5, 1, 84);
+  v26->lpVtbl->meth14(v26, a1, LODWORD(v78), v83, 4202497, 2, 5, 1, 84);
   v26->field_C = sub_10047360;
   v26->field_8 = sub_10045880;
   v27 = (__int64)v83;
@@ -61772,10 +61727,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v29)
     sub_1003E260(4);
   v30 = v29->lpVtbl;
-  v29->lpVtbl->field_38(v29, a1, 1121189888, 85.0, 1048577, 2, 5, 1, -1);
+  v29->lpVtbl->meth14(v29, a1, 1121189888, 85.0, 1048577, 2, 5, 1, -1);
   v29->field_3838.field_1A99C[28] = 3;
   v31 = GetStringWithIndex(0x38u);
-  v30->field_34(v29, v31, 1, 1, &unk_100AB458);
+  v30->meth13(v29, v31, 1, 1, &unk_100AB458);
   ++v4->field_14;
   v32 = (unk1E214 *)operator new(0x1E214u);
   if (v32)
@@ -61786,10 +61741,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v33)
     sub_1003E260(4);
   v34 = v33->lpVtbl;
-  v33->lpVtbl->field_38(v33, a1, 1138491392, 66.0, 20481, 2, 5, 1, -1);
+  v33->lpVtbl->meth14(v33, a1, 1138491392, 66.0, 20481, 2, 5, 1, -1);
   v33->field_4 = sub_10041300;
   v33->field_3838.field_1A99C[28] = 52;
-  v34->field_34(v33, String2, 1, 4, &unk_100AB458);
+  v34->meth13(v33, String2, 1, 4, &unk_100AB458);
   ++v4->field_14;
   v35 = (unk1E214 *)operator new(0x1E214u);
   if (v35)
@@ -61800,10 +61755,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v36)
     sub_1003E260(4);
   v37 = v36->lpVtbl;
-  v36->lpVtbl->field_38(v36, a1, 1121189888, 123.0, 1048577, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, a1, 1121189888, 123.0, 1048577, 2, 5, 1, -1);
   v36->field_3838.field_1A99C[28] = 3;
   v38 = GetStringWithIndex(0x36u);
-  v37->field_34(v36, v38, 1, 1, &unk_100AB458);
+  v37->meth13(v36, v38, 1, 1, &unk_100AB458);
   ++v4->field_14;
   v39 = (unk1E214 *)operator new(0x1E214u);
   if (v39)
@@ -61814,10 +61769,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v40)
     sub_1003E260(4);
   v41 = v40->lpVtbl;
-  v40->lpVtbl->field_38(v40, a1, 1138491392, 104.0, 20481, 2, 5, 1, -1);
+  v40->lpVtbl->meth14(v40, a1, 1138491392, 104.0, 20481, 2, 5, 1, -1);
   v40->field_4 = sub_100413B0;
   v40->field_3838.field_1A99C[28] = 52;
-  v41->field_34(v40, String2, 1, 4, &unk_100AB458);
+  v41->meth13(v40, String2, 1, 4, &unk_100AB458);
   ++v4->field_14;
   v42 = (unk1E214 *)operator new(0x1E214u);
   if (v42)
@@ -61828,10 +61783,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v43)
     sub_1003E260(4);
   v44 = v43->lpVtbl;
-  v43->lpVtbl->field_38(v43, a1, 0, 70.0, 1048585, 2, 5, 1, -1);
+  v43->lpVtbl->meth14(v43, a1, 0, 70.0, 1048585, 2, 5, 1, -1);
   v43->field_3838.field_1A99C[28] = 3;
   v45 = GetStringWithIndex(0x52u);
-  v44->field_34(v43, v45, 1, 1, &unk_100AB468);
+  v44->meth13(v43, v45, 1, 1, &unk_100AB468);
   ++v4->field_14;
   v46 = (unk1E214 *)operator new(0x1E214u);
   if (v46)
@@ -61842,10 +61797,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v47)
     sub_1003E260(4);
   v48 = v47->lpVtbl;
-  v47->lpVtbl->field_38(v47, a1, 1134886912, 97.0, 20481, 2, 5, 1, -1);
+  v47->lpVtbl->meth14(v47, a1, 1134886912, 97.0, 20481, 2, 5, 1, -1);
   v47->field_4 = sub_10041670;
   v47->field_3838.field_1A99C[28] = 5;
-  v48->field_34(v47, String2, 1, 3, &unk_100AB468);
+  v48->meth13(v47, String2, 1, 3, &unk_100AB468);
   ++v4->field_14;
   v49 = (unk1E214 *)operator new(0x1E214u);
   if (v49)
@@ -61856,10 +61811,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v50)
     sub_1003E260(4);
   v51 = v50->lpVtbl;
-  v50->lpVtbl->field_38(v50, a1, 0, 150.0, 1048585, 2, 5, 1, -1);
+  v50->lpVtbl->meth14(v50, a1, 0, 150.0, 1048585, 2, 5, 1, -1);
   v50->field_3838.field_1A99C[28] = 3;
   v52 = GetStringWithIndex(0x53u);
-  v51->field_34(v50, v52, 1, 1, &unk_100AB468);
+  v51->meth13(v50, v52, 1, 1, &unk_100AB468);
   ++v4->field_14;
   v53 = (unk1E214 *)operator new(0x1E214u);
   if (v53)
@@ -61870,10 +61825,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v54)
     sub_1003E260(4);
   v55 = v54->lpVtbl;
-  v54->lpVtbl->field_38(v54, a1, 1138819072, 125.0, 1048585, 2, 5, 1, -1);
+  v54->lpVtbl->meth14(v54, a1, 1138819072, 125.0, 1048585, 2, 5, 1, -1);
   v54->field_3838.field_1A99C[28] = 3;
   v56 = GetStringWithIndex(0x40u);
-  v55->field_34(v54, v56, 1, 1, &unk_100AB4F8);
+  v55->meth13(v54, v56, 1, 1, &unk_100AB4F8);
   ++v4->field_14;
   v57 = (unk1E214 *)operator new(0x1E214u);
   if (v57)
@@ -61884,10 +61839,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v58)
     sub_1003E260(4);
   v59 = v58->lpVtbl;
-  v58->lpVtbl->field_38(v58, a1, 1138819072, 185.0, 1048585, 2, 5, 1, -1);
+  v58->lpVtbl->meth14(v58, a1, 1138819072, 185.0, 1048585, 2, 5, 1, -1);
   v58->field_3838.field_1A99C[28] = 3;
   v60 = GetStringWithIndex(0x46u);
-  v59->field_34(v58, v60, 1, 1, &unk_100AB4F8);
+  v59->meth13(v58, v60, 1, 1, &unk_100AB4F8);
   ++v4->field_14;
   v61 = (unk1E214 *)operator new(0x1E214u);
   if (v61)
@@ -61898,10 +61853,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v62)
     sub_1003E260(4);
   v63 = v62->lpVtbl;
-  v62->lpVtbl->field_38(v62, a1, 1138819072, 141.0, 20481, 2, 5, 1, -1);
+  v62->lpVtbl->meth14(v62, a1, 1138819072, 141.0, 20481, 2, 5, 1, -1);
   v62->field_4 = sub_100417B0;
   v62->field_3838.field_1A99C[28] = 5;
-  v63->field_34(v62, String2, 1, 3, &unk_100AB4F8);
+  v63->meth13(v62, String2, 1, 3, &unk_100AB4F8);
   ++v4->field_14;
   v64 = (unk1E214 *)operator new(0x1E214u);
   if (v64)
@@ -61912,10 +61867,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v65)
     sub_1003E260(4);
   v66 = v65->lpVtbl;
-  v65->lpVtbl->field_38(v65, a1, v4->flags_338, 203.0, 1048585, 2, 5, 1, -1);
+  v65->lpVtbl->meth14(v65, a1, v4->flags_338, 203.0, 1048585, 2, 5, 1, -1);
   v65->field_3838.field_1A99C[28] = 3;
   v67 = GetStringWithIndex(0x40u);
-  v66->field_34(v65, v67, 1, 1, &unk_100AB478);
+  v66->meth13(v65, v67, 1, 1, &unk_100AB478);
   ++v4->field_14;
   v68 = (unk1E214 *)operator new(0x1E214u);
   if (v68)
@@ -61926,10 +61881,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v69)
     sub_1003E260(4);
   v70 = v69->lpVtbl;
-  v69->lpVtbl->field_38(v69, a1, v4->flags_338, 265.0, 1048585, 2, 5, 1, -1);
+  v69->lpVtbl->meth14(v69, a1, v4->flags_338, 265.0, 1048585, 2, 5, 1, -1);
   v69->field_3838.field_1A99C[28] = 3;
   v71 = GetStringWithIndex(0x41u);
-  v70->field_34(v69, v71, 1, 1, &unk_100AB478);
+  v70->meth13(v69, v71, 1, 1, &unk_100AB478);
   ++v4->field_14;
   v72 = (unk1E214 *)operator new(0x1E214u);
   if (v72)
@@ -61940,10 +61895,10 @@ int __cdecl sub_10054B50(unk000C8 *a1) {
   if (!v73)
     sub_1003E260(4);
   v74 = v73->lpVtbl;
-  v73->lpVtbl->field_38(v73, a1, 1138819072, 217.0, 20481, 2, 5, 1, -1);
+  v73->lpVtbl->meth14(v73, a1, 1138819072, 217.0, 20481, 2, 5, 1, -1);
   v73->field_4 = sub_10041710;
   v73->field_3838.field_1A99C[28] = 5;
-  v74->field_34(v73, String2, 1, 3, &unk_100AB478);
+  v74->meth13(v73, String2, 1, 3, &unk_100AB478);
   ++v4->field_14;
   return 1;
 }
@@ -62042,7 +61997,7 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v4;
   if (!v4)
     sub_1003E260(4);
-  v4->lpVtbl->field_38(v4, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v4->lpVtbl->meth14(v4, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v2->field_14;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -62053,10 +62008,10 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, a1, v2->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->meth14(v6, a1, v2->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v6->field_3838.field_1A99C[28] = 3;
   v8 = GetStringWithIndex(0x54u);
-  v7->field_34(v6, v8, 1, 1, &unk_100AB508);
+  v7->meth13(v6, v8, 1, 1, &unk_100AB508);
   ++v2->field_14;
   v9 = (unk1E214 *)operator new(0x1E214u);
   if (v9)
@@ -62067,12 +62022,12 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   v11 = v10->lpVtbl;
-  v10->lpVtbl->field_38(v10, a1, v2->flags_338, v2->field_33C, 1056769, 2, 5, 1, -1);
+  v10->lpVtbl->meth14(v10, a1, v2->flags_338, v2->field_33C, 1056769, 2, 5, 1, -1);
   v10->field_C = sub_10044030;
   v10->field_8 = sub_10044010;
   v10->field_3838.field_1A99C[28] = 3;
   v12 = GetStringWithIndex(0x55u);
-  v11->field_34(v10, v12, 1, 1, &dword_100AB448);
+  v11->meth13(v10, v12, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v13 = (unk1E214 *)operator new(0x1E214u);
@@ -62085,12 +62040,12 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
     sub_1003E260(4);
   v15 = v14->lpVtbl;
   v58 = v2->field_33C - -19.0;
-  v14->lpVtbl->field_38(v14, a1, v2->flags_338, v58, 1056769, 2, 5, 1, -1);
+  v14->lpVtbl->meth14(v14, a1, v2->flags_338, v58, 1056769, 2, 5, 1, -1);
   v14->field_C = sub_10044070;
   v14->field_8 = sub_10044050;
   v14->field_3838.field_1A99C[28] = 3;
   v16 = GetStringWithIndex(0x56u);
-  v15->field_34(v14, v16, 1, 1, &dword_100AB448);
+  v15->meth13(v14, v16, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v17 = (unk1E214 *)operator new(0x1E214u);
@@ -62103,12 +62058,12 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
     sub_1003E260(4);
   v19 = v18->lpVtbl;
   v59 = v2->field_33C - -38.0;
-  v18->lpVtbl->field_38(v18, a1, v2->flags_338, v59, 1056769, 2, 5, 1, -1);
+  v18->lpVtbl->meth14(v18, a1, v2->flags_338, v59, 1056769, 2, 5, 1, -1);
   v18->field_C = sub_100440B0;
   v18->field_8 = sub_10044090;
   v18->field_3838.field_1A99C[28] = 3;
   v20 = GetStringWithIndex(0x57u);
-  v19->field_34(v18, v20, 1, 1, &dword_100AB448);
+  v19->meth13(v18, v20, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v21 = (unk1E214 *)operator new(0x1E214u);
@@ -62121,12 +62076,12 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
     sub_1003E260(4);
   v23 = v22->lpVtbl;
   v60 = v2->field_33C - -114.0;
-  v22->lpVtbl->field_38(v22, a1, v2->flags_338, v60, 1056769, 2, 5, 1, -1);
+  v22->lpVtbl->meth14(v22, a1, v2->flags_338, v60, 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
   v22->field_8 = (int(__cdecl *)())sub_100463C0;
   v22->field_3838.field_1A99C[28] = 3;
   v24 = GetStringWithIndex(0xCu);
-  v23->field_34(v22, v24, 1, 1, &dword_100AB448);
+  v23->meth13(v22, v24, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v25 = (unk1E214 *)operator new(0x1E214u);
@@ -62137,7 +62092,7 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v26;
   if (!v26)
     sub_1003E260(4);
-  v26->lpVtbl->field_38(v26, a1, 1119748096, 317.0, 9, 2, 5, 0, 103);
+  v26->lpVtbl->meth14(v26, a1, 1119748096, 317.0, 9, 2, 5, 0, 103);
   ++v2->field_14;
   v27 = (unk1E214 *)operator new(0x1E214u);
   if (v27)
@@ -62148,10 +62103,10 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v28)
     sub_1003E260(4);
   v29 = v28->lpVtbl;
-  v28->lpVtbl->field_38(v28, a1, 1124204544, 336.0, 1048585, 2, 5, 1, -1);
+  v28->lpVtbl->meth14(v28, a1, 1124204544, 336.0, 1048585, 2, 5, 1, -1);
   v28->field_3838.field_1A99C[28] = 52;
   v30 = GetStringWithIndex(0x59u);
-  v29->field_34(v28, v30, 1, 4, &dword_100AB448);
+  v29->meth13(v28, v30, 1, 4, &dword_100AB448);
   ++v2->field_14;
   v31 = (unk1E214 *)operator new(0x1E214u);
   if (v31)
@@ -62162,10 +62117,10 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v32)
     sub_1003E260(4);
   v33 = v32->lpVtbl;
-  v32->lpVtbl->field_38(v32, a1, 1124204544, 374.0, 1048585, 2, 5, 1, -1);
+  v32->lpVtbl->meth14(v32, a1, 1124204544, 374.0, 1048585, 2, 5, 1, -1);
   v32->field_3838.field_1A99C[28] = 3;
   v34 = GetStringWithIndex(0x5Au);
-  v33->field_34(v32, v34, 1, 1, &dword_100AB448);
+  v33->meth13(v32, v34, 1, 1, &dword_100AB448);
   ++v2->field_14;
   v35 = (unk1E214 *)operator new(0x1E214u);
   if (v35)
@@ -62175,7 +62130,7 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v36;
   if (!v36)
     sub_1003E260(4);
-  v36->lpVtbl->field_38(v36, a1, 1125842944, 393.0, 9, 2, 5, 0, 57);
+  v36->lpVtbl->meth14(v36, a1, 1125842944, 393.0, 9, 2, 5, 0, 57);
   ++v2->field_14;
   v37 = (unk1E214 *)operator new(0x1E214u);
   if (v37)
@@ -62186,12 +62141,12 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, a1, 1125842944, 393.0, 2097153, 2, 5, 1, -1);
+  v38->lpVtbl->meth14(v38, a1, 1125842944, 393.0, 2097153, 2, 5, 1, -1);
   v38->field_8 = (int(__cdecl *)())sub_10042AC0;
   v38->field_4 = sub_1003F050;
-  v38->field_10 = (int)meth_unk1A5E0_10042AF0;
+  v38->field_10 = (int)meth_unk1A5E0_3;
   v38->field_3838.field_1A99C[28] = 3;
-  v39->field_34(v38, String2, 1, 1, &dword_100AB448);
+  v39->meth13(v38, String2, 1, 1, &dword_100AB448);
   (*(void(__thiscall **)(char *))(*(_DWORD *)v38->vectorUnk + 4))(v38->vectorUnk);
   v38->field_50 = 155;
   *(_DWORD *)&v38->vectorUnk[1060] = 155;
@@ -62214,10 +62169,10 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v41)
     sub_1003E260(4);
   v42 = v41->lpVtbl;
-  v41->lpVtbl->field_38(v41, a1, 1124204544, 412.0, 1048585, 2, 5, 1, -1);
+  v41->lpVtbl->meth14(v41, a1, 1124204544, 412.0, 1048585, 2, 5, 1, -1);
   v41->field_3838.field_1A99C[28] = 3;
   v43 = GetStringWithIndex(0x5Bu);
-  v42->field_34(v41, v43, 1, 1, &dword_100AB448);
+  v42->meth13(v41, v43, 1, 1, &dword_100AB448);
   ++v2->field_14;
   v44 = (unk1E214 *)operator new(0x1E214u);
   if (v44)
@@ -62227,7 +62182,7 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v45;
   if (!v45)
     sub_1003E260(4);
-  v45->lpVtbl->field_38(v45, a1, 1125842944, 431.0, 9, 2, 5, 0, 57);
+  v45->lpVtbl->meth14(v45, a1, 1125842944, 431.0, 9, 2, 5, 0, 57);
   ++v2->field_14;
   v46 = (unk1E214 *)operator new(0x1E214u);
   if (v46)
@@ -62238,12 +62193,12 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v47)
     sub_1003E260(4);
   v48 = v47->lpVtbl;
-  v47->lpVtbl->field_38(v47, a1, 1125842944, 431.0, 2097153, 2, 5, 1, -1);
+  v47->lpVtbl->meth14(v47, a1, 1125842944, 431.0, 2097153, 2, 5, 1, -1);
   v47->field_8 = (int(__cdecl *)())sub_10042AC0;
   v47->field_4 = sub_1003F0B0;
-  v47->field_10 = (int)meth_unk1A5E0_10042AF0;
+  v47->field_10 = (int)meth_unk1A5E0_3;
   v47->field_3838.field_1A99C[28] = 3;
-  v48->field_34(v47, String2, 1, 1, &dword_100AB448);
+  v48->meth13(v47, String2, 1, 1, &dword_100AB448);
   (*(void(__thiscall **)(char *))(*(_DWORD *)v47->vectorUnk + 4))(v47->vectorUnk);
   v47->field_50 = 155;
   *(_DWORD *)&v47->vectorUnk[1060] = 155;
@@ -62265,7 +62220,7 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v50;
   if (!v50)
     sub_1003E260(4);
-  v50->lpVtbl->field_38(v50, a1, 1117782016, 46.0, 9, 2, 5, 0, 7);
+  v50->lpVtbl->meth14(v50, a1, 1117782016, 46.0, 9, 2, 5, 0, 7);
   ++v2->field_14;
   v51 = (unk1E214 *)operator new(0x1E214u);
   if (v51)
@@ -62275,7 +62230,7 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v52;
   if (!v52)
     sub_1003E260(4);
-  v52->lpVtbl->field_38(v52, a1, 1135181824, 61.0, 1, 2, 5, 1, 69);
+  v52->lpVtbl->meth14(v52, a1, 1135181824, 61.0, 1, 2, 5, 1, 69);
   v52->field_4 = sub_10040930;
   v53 = v2->field_14 + 1;
   ++v52->field_2AB4[0];
@@ -62290,10 +62245,10 @@ int __cdecl sub_100558A0(unk000C8 *a1) {
   if (!v55)
     sub_1003E260(4);
   v56 = v55->lpVtbl;
-  v55->lpVtbl->field_38(v55, a1, v2->flags_338, 160.0, 1052673, 2, 5, 1, -1);
+  v55->lpVtbl->meth14(v55, a1, v2->flags_338, 160.0, 1052673, 2, 5, 1, -1);
   v55->field_4 = sub_1003FC40;
   v55->field_3838.field_1A99C[28] = 3;
-  v56->field_34(v55, asc_100AD300, 1, 1, &unk_100AB4A8);
+  v56->meth13(v55, asc_100AD300, 1, 1, &unk_100AB4A8);
   ++v2->field_14;
   return 1;
 }
@@ -62357,7 +62312,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -62368,10 +62323,10 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x5Cu);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -62382,10 +62337,10 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
+  v11->lpVtbl->meth14(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
   LOWORD(v11->?) = 52;
   v13 = GetStringWithIndex(0x3Cu);
-  v12->field_34(v11, v13, 1, 4, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 4, &dword_100AB448);
   ++LOWORD(v3->field_14);
   v14 = (unk1E214 *)operator new(0x1E214u);
   if (v14)
@@ -62395,7 +62350,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
     sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
+  v15->lpVtbl->meth14(v15, a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
   ++LOWORD(v3->field_14);
   v16 = (unk1E214 *)operator new(0x1E214u);
   if (v16)
@@ -62406,12 +62361,12 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   if (!v17)
     sub_1003E260(4);
   v18 = v17->lpVtbl;
-  v17->lpVtbl->field_38(v17, a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
+  v17->lpVtbl->meth14(v17, a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
   v17->field_8 = (int(__cdecl *)())sub_10042A90;
   v17->field_4 = sub_1003EEF0;
   *(_DWORD *)v17->field_10 = sub_1003EF60;
   LOWORD(v17->?) = 3;
-  v18->field_34(v17, String2, 1, 1, &dword_100AB448);
+  v18->meth13(v17, String2, 1, 1, &dword_100AB448);
   if (strlen(dplay4aShortName) <= 1)
     strcpy(dplay4aShortName, GetStringWithIndex(0xC0u));
   v19 = *(_DWORD *)&v17->gap5C[11008];
@@ -62438,12 +62393,12 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
     sub_1003E260(4);
   v22 = v21->lpVtbl;
   v31 = v3->field_33C - -95.0;
-  v21->lpVtbl->field_38(v21, a1, v3->flags_338, LODWORD(v31), 1056769, 2, 5, 1, -1);
+  v21->lpVtbl->meth14(v21, a1, v3->flags_338, LODWORD(v31), 1056769, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = sub_10043CD0;
   LOWORD(v21->?) = 3;
   v23 = GetStringWithIndex(0x1Eu);
-  v22->field_34(v21, v23, 1, 1, &dword_100AB448);
+  v22->meth13(v21, v23, 1, 1, &dword_100AB448);
   dword_10AA29A8 = (int)v21;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -62457,12 +62412,12 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
     sub_1003E260(4);
   v26 = v25->lpVtbl;
   v32 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->meth14(v25, a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10043FC0;
   LOWORD(v25->?) = 3;
   v27 = GetStringWithIndex(0xCu);
-  v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+  v26->meth13(v25, v27, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v28 = (unk1E214 *)operator new(0x1E214u);
@@ -62473,7 +62428,7 @@ int __cdecl sub_100563E0(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v29;
   if (!v29)
     sub_1003E260(4);
-  v29->lpVtbl->field_38(v29, a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+  v29->lpVtbl->meth14(v29, a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -62538,7 +62493,7 @@ int __cdecl sub_10056A10(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -62549,10 +62504,10 @@ int __cdecl sub_10056A10(int a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x5Du);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -62563,11 +62518,11 @@ int __cdecl sub_10056A10(int a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(
+  v11->lpVtbl->meth14(
       v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1048585, 2, 5, 1, -1);
   LOWORD(v11->?) = 52;
   v13 = GetStringWithIndex(0x5Eu);
-  v12->field_34(v11, v13, 1, 4, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 4, &dword_100AB448);
   ++LOWORD(v3->field_14);
   v14 = (unk1E214 *)operator new(0x1E214u);
   if (v14)
@@ -62577,7 +62532,7 @@ int __cdecl sub_10056A10(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v15;
   if (!v15)
     sub_1003E260(4);
-  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
+  v15->lpVtbl->meth14(v15, (unk000C8 *)a1, 1125908480, 1126957056, 9, 2, 5, 0, 57);
   ++LOWORD(v3->field_14);
   v16 = (unk1E214 *)operator new(0x1E214u);
   if (v16)
@@ -62588,12 +62543,12 @@ int __cdecl sub_10056A10(int a1) {
   if (!v17)
     sub_1003E260(4);
   v18 = v17->lpVtbl;
-  v17->lpVtbl->field_38(v17, (unk000C8 *)a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
+  v17->lpVtbl->meth14(v17, (unk000C8 *)a1, v3->flags_338, 1127088128, 2097153, 2, 5, 1, -1);
   v17->field_8 = (int(__cdecl *)())sub_10042AC0;
   v17->field_4 = sub_1003EF90;
   *(_DWORD *)v17->field_10 = sub_1003F020;
   LOWORD(v17->?) = 3;
-  v18->field_34(v17, String2, 1, 1, &dword_100AB448);
+  v18->meth13(v17, String2, 1, 1, &dword_100AB448);
   v19 = *(_DWORD *)&v17->gap5C[11008];
   strcpy(&v17->gap5C[11017], String1);
   (*(void(__thiscall **)(_BYTE *))(v19 + 4))(&v17->gap5C[11008]);
@@ -62618,12 +62573,12 @@ int __cdecl sub_10056A10(int a1) {
     sub_1003E260(4);
   v22 = v21->lpVtbl;
   v31 = v3->field_33C - -95.0;
-  v21->lpVtbl->field_38(v21, (unk000C8 *)a1, v3->flags_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
+  v21->lpVtbl->meth14(v21, (unk000C8 *)a1, v3->flags_338, LODWORD(v31), 1056785, 2, 5, 1, -1);
   v21->field_C = sub_10047360;
   v21->field_8 = (int(__cdecl *)())sub_10043F50;
   LOWORD(v21->?) = 2;
   v23 = GetStringWithIndex(0x1Eu);
-  v22->field_34(v21, v23, 1, 0, &dword_100AB448);
+  v22->meth13(v21, v23, 1, 0, &dword_100AB448);
   dword_10AA29E8 = (int)v21;
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
@@ -62637,12 +62592,12 @@ int __cdecl sub_10056A10(int a1) {
     sub_1003E260(4);
   v26 = v25->lpVtbl;
   v32 = v3->field_33C - -114.0;
-  v25->lpVtbl->field_38(v25, (unk000C8 *)a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
+  v25->lpVtbl->meth14(v25, (unk000C8 *)a1, v3->flags_338, LODWORD(v32), 1056769, 2, 5, 1, -1);
   v25->field_C = sub_10047360;
   v25->field_8 = (int(__cdecl *)())sub_10044B40;
   LOWORD(v25->?) = 3;
   v27 = GetStringWithIndex(0xCu);
-  v26->field_34(v25, v27, 1, 1, &dword_100AB448);
+  v26->meth13(v25, v27, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v28 = (unk1E214 *)operator new(0x1E214u);
@@ -62653,7 +62608,7 @@ int __cdecl sub_10056A10(int a1) {
   v3->field_18[LOWORD(v3->field_14)] = v29;
   if (!v29)
     sub_1003E260(4);
-  v29->lpVtbl->field_38(v29, (unk000C8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+  v29->lpVtbl->meth14(v29, (unk000C8 *)a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -62725,7 +62680,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v4;
   if (!v4)
     sub_1003E260(4);
-  v4->lpVtbl->field_38(v4, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  v4->lpVtbl->meth14(v4, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v2->field_14;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -62736,10 +62691,10 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, a1, v2->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->meth14(v6, a1, v2->flags_338, 10.0, 1048585, 2, 5, 1, -1);
   v6->field_3838.field_1A99C[28] = 3;
   v8 = GetStringWithIndex(0x5Fu);
-  v7->field_34(v6, v8, 1, 1, &unk_100AB508);
+  v7->meth13(v6, v8, 1, 1, &unk_100AB508);
   ++v2->field_14;
   v9 = (unk1E214 *)operator new(0x1E214u);
   if (v9)
@@ -62750,11 +62705,11 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v10->lpVtbl->field_38)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
+       v10->lpVtbl->meth14)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
   v11 = v10->field_3838.lpVtbl;
   v10->field_4 = sub_1003EB90;
   *(_DWORD *)&v10->field_3838.field_1A99C[16] = 1;
-  ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->field_14)(
+  ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->meth5)(
       &v10->field_3838, 262145, &unk_100AB4E8, 3, 0, -1);
   dword_10AA29D4 = (int)v10;
   ++v2->field_14;
@@ -62771,12 +62726,12 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
     v14 = v13->lpVtbl;
     v33 = v2->field_33C - -57.0;
     ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-         v13->lpVtbl->field_38)(v13, a1, v2->flags_338, LODWORD(v33), 1056769, 2, 5, 1, -1);
+         v13->lpVtbl->meth14)(v13, a1, v2->flags_338, LODWORD(v33), 1056769, 2, 5, 1, -1);
     v13->field_C = sub_10047360;
     v13->field_8 = sub_10043DA0;
     v13->field_3838.field_1A99C[28] = 3;
     v15 = GetStringWithIndex(0x5Eu);
-    v14->field_34(v13, v15, 1, 1, &dword_100AB448);
+    v14->meth13(v13, v15, 1, 1, &dword_100AB448);
     ++v2->field_14;
     ++LOWORD(v2->last);
   }
@@ -62793,14 +62748,14 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v19 = v17->lpVtbl;
   v34 = v2->field_33C - -76.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v17->lpVtbl->field_38)(v17, a1, v2->flags_338, LODWORD(v34), v18, 2, 5, 1, -1);
+       v17->lpVtbl->meth14)(v17, a1, v2->flags_338, LODWORD(v34), v18, 2, 5, 1, -1);
   v17->field_C = sub_10047360;
   v17->field_8 = sub_10044280;
   v17->field_3838.field_1A99C[28] = 2;
   v20 = dword_10AA287C == 2 || dword_10AA287C == 3;
   v37 = v20;
   v21 = GetStringWithIndex(0x60u);
-  v19->field_34(v17, v21, 1, v37, &dword_100AB448);
+  v19->meth13(v17, v21, 1, v37, &dword_100AB448);
   dword_10AA29D8 = (int)v17;
   ++v2->field_14;
   ++LOWORD(v2->last);
@@ -62815,12 +62770,12 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v24 = v23->lpVtbl;
   v35 = v2->field_33C - -95.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v23->lpVtbl->field_38)(v23, a1, v2->flags_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
+       v23->lpVtbl->meth14)(v23, a1, v2->flags_338, LODWORD(v35), 1056769, 2, 5, 1, -1);
   v23->field_C = sub_10047360;
   v23->field_8 = sub_100440D0;
   v23->field_3838.field_1A99C[28] = 3;
   v25 = GetStringWithIndex(0x61u);
-  v24->field_34(v23, v25, 1, 1, &dword_100AB448);
+  v24->meth13(v23, v25, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v26 = (unk1E214 *)operator new(0x1E214u);
@@ -62834,12 +62789,12 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   v28 = v27->lpVtbl;
   v36 = v2->field_33C - -114.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v27->lpVtbl->field_38)(v27, a1, v2->flags_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
+       v27->lpVtbl->meth14)(v27, a1, v2->flags_338, LODWORD(v36), 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
   v27->field_8 = (int(__cdecl *)())sub_10044AE0;
   v27->field_3838.field_1A99C[28] = 3;
   v29 = GetStringWithIndex(0xCu);
-  v28->field_34(v27, v29, 1, 1, &dword_100AB448);
+  v28->meth13(v27, v29, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v30 = (unk1E214 *)operator new(0x1E214u);
@@ -62851,7 +62806,7 @@ int __cdecl sub_10056FF0(unk000C8 *a1) {
   if (!v31)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, _DWORD, int))
-       v31->lpVtbl->field_38)(v31, a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
+       v31->lpVtbl->meth14)(v31, a1, 1117782016, 1110966272, 9, 2, 5, 0, 7);
   ++v2->field_14;
   return 1;
 }
@@ -63071,82 +63026,82 @@ int __cdecl sub_100575F0(int a1) {
 // 10AA29BC: using guessed type int dword_10AA29BC;
 
 //----- (10057C10) --------------------------------------------------------
-int __cdecl sub_10057C10(int a1) {
-  unsigned __int16 v1; // ax
-  unk00348 *v2;        // eax
-  unk00348 *v3;        // esi
-  unk1E214 *v4;        // eax
-  unk1E214 *v5;        // ebp
-  unk1E214 *v6;        // eax
-  unk1E214 *v7;        // ebp
-  unk1E214Vtbl *v8;    // ebx
-  LPCSTR v9;           // eax
-  unk1E214 *v10;       // eax
-  unk1E214 *v11;       // ebp
-  unk1E214Vtbl *v12;   // ebx
-  LPCSTR v13;          // eax
-  unk1E214 *v14;       // eax
-  unk1E214 *v15;       // ebp
-  unk1E214Vtbl *v16;   // ebx
-  LPCSTR v17;          // eax
-  unk1E214 *v18;       // eax
-  unk1E214 *v19;       // ebp
-  unk1E214Vtbl *v20;   // ebx
-  LPCSTR v21;          // eax
-  unk1E214 *v22;       // eax
-  unk1E214 *v23;       // ebp
-  unk1E214Vtbl *v24;   // ebx
-  LPCSTR v25;          // eax
-  unk1E214 *v26;       // eax
-  unk1E214 *v27;       // ebp
-  unk1E214Vtbl *v28;   // ebx
-  LPCSTR v29;          // eax
-  unk1E214 *v30;       // eax
-  unk1E214 *v31;       // ebp
-  unk1E214Vtbl *v32;   // ebx
-  LPCSTR v33;          // eax
-  unk1E214 *v34;       // eax
-  unk1E214 *v35;       // ebp
-  __int16 v36;         // ax
-  unk1E214 *v37;       // eax
-  unk1E214 *v38;       // ebp
-  unk1E214Vtbl *v39;   // ebx
-  unk1E214 *v40;       // eax
-  unk1E214 *v41;       // ebp
-  __int16 v42;         // ax
-  unk1E214 *v43;       // eax
-  unk1E214 *v44;       // ebp
-  unk1E214Vtbl *v45;   // ebx
-  unk1E214 *v46;       // eax
-  unk1E214 *v47;       // ebp
-  unk1E214Vtbl *v48;   // ebx
-  unk1E214 *v49;       // eax
-  unk1E214 *v50;       // ebp
-  unk1E214Vtbl *v51;   // ebx
-  LPCSTR v52;          // eax
-  unk1E214 *v53;       // eax
-  unk1E214 *v54;       // ebx
-  unk1E214 *v55;       // eax
-  unk1E214 *v56;       // ebx
-  float v58;           // [esp+288h] [ebp-34h]
-  float v59;           // [esp+288h] [ebp-34h]
-  float v60;           // [esp+288h] [ebp-34h]
-  float v61;           // [esp+288h] [ebp-34h]
-  float v62;           // [esp+288h] [ebp-34h]
+int __cdecl sub_10057C10(unk000C8 *a1) {
+  WORD v1;           // ax
+  unk00348 *u348;    // eax
+  unk00348 *v3;      // esi
+  unk1E214 *v4;      // eax
+  unk1E214 *v5;      // ebp
+  unk1E214 *v6;      // eax
+  unk1E214 *v7;      // ebp
+  unk1E214Vtbl *v8;  // ebx
+  LPCSTR v9;         // eax
+  unk1E214 *v10;     // eax
+  unk1E214 *v11;     // ebp
+  unk1E214Vtbl *v12; // ebx
+  LPCSTR v13;        // eax
+  unk1E214 *v14;     // eax
+  unk1E214 *v15;     // ebp
+  unk1E214Vtbl *v16; // ebx
+  LPCSTR v17;        // eax
+  unk1E214 *v18;     // eax
+  unk1E214 *v19;     // ebp
+  unk1E214Vtbl *v20; // ebx
+  LPCSTR v21;        // eax
+  unk1E214 *v22;     // eax
+  unk1E214 *v23;     // ebp
+  unk1E214Vtbl *v24; // ebx
+  LPCSTR v25;        // eax
+  unk1E214 *v26;     // eax
+  unk1E214 *v27;     // ebp
+  unk1E214Vtbl *v28; // ebx
+  LPCSTR v29;        // eax
+  unk1E214 *v30;     // eax
+  unk1E214 *v31;     // ebp
+  unk1E214Vtbl *v32; // ebx
+  LPCSTR v33;        // eax
+  unk1E214 *v34;     // eax
+  unk1E214 *v35;     // ebp
+  WORD v36;          // ax
+  unk1E214 *v37;     // eax
+  unk1E214 *v38;     // ebp
+  unk1E214Vtbl *v39; // ebx
+  unk1E214 *v40;     // eax
+  unk1E214 *v41;     // ebp
+  WORD v42;          // ax
+  unk1E214 *v43;     // eax
+  unk1E214 *v44;     // ebp
+  unk1E214Vtbl *v45; // ebx
+  unk1E214 *v46;     // eax
+  unk1E214 *v47;     // ebp
+  unk1E214Vtbl *v48; // ebx
+  unk1E214 *v49;     // eax
+  unk1E214 *v50;     // ebp
+  unk1E214Vtbl *v51; // ebx
+  LPCSTR v52;        // eax
+  unk1E214 *v53;     // eax
+  unk1E214 *v54;     // ebx
+  unk1E214 *v55;     // eax
+  unk1E214 *v56;     // ebx
+  float v58;         // [esp+288h] [ebp-34h]
+  float v59;         // [esp+288h] [ebp-34h]
+  float v60;         // [esp+288h] [ebp-34h]
+  float v61;         // [esp+288h] [ebp-34h]
+  float v62;         // [esp+288h] [ebp-34h]
 
-  v1 = *(_WORD *)(a1 + 16);
-  *(_WORD *)(a1 + 18) = 0;
-  *(_DWORD *)(a1 + 4 * v1 + 108) = 1;
-  v2 = (unk00348 *)operator new(0x348u);
-  if (v2)
-    v3 = meth_10048470(v2);
+  v1 = a1->field_10;
+  *(&a1->field_10 + 1) = 0;
+  *(&a1->field_6C + v1) = 1;
+  u348 = (unk00348 *)operator new(0x348u);
+  if (u348)
+    v3 = meth_10048470(u348);
   else
     v3 = 0;
-  *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 20) = v3;
+  a1->field_14[a1->field_10] = v3;
   if (!v3)
     sub_1003E260(4);
-  ++*(_WORD *)(a1 + 16);
-  v3->field_340 = (unk000C8 *)a1;
+  ++a1->field_10;
+  v3->field_340 = a1;
   v3->field_10 = 0;
   v3->flags_338 = 1128464384;
   v3->field_33C = 130.0;
@@ -63155,97 +63110,96 @@ int __cdecl sub_10057C10(int a1) {
     v5 = meth_unk1E214_init(v4);
   else
     v5 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v5;
+  v3->field_18[v3->field_14] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
-  ++LOWORD(v3->field_14);
+  v5->lpVtbl->meth14(v5, a1, 0, 0.0, 9, 2, 5, 0, 0);
+  ++v3->field_14;
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
     v7 = meth_unk1E214_init(v6);
   else
     v7 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v7;
+  v3->field_18[v3->field_14] = v7;
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, (unk000C8 *)a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
-  LOWORD(v7->?) = 3;
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 10.0, 1048585, 2, 5, 1, -1);
+  v7->field_3838.field_1A99C[28] = 3;
   v9 = GetStringWithIndex(0x64u);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
-  ++LOWORD(v3->field_14);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
+  ++v3->field_14;
   if (gNetworkPlay == 2) {
     v10 = (unk1E214 *)operator new(0x1E214u);
     if (v10)
         v11 = meth_unk1E214_init(v10);
     else
         v11 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v11;
+    v3->field_18[v3->field_14] = v11;
     if (!v11)
         sub_1003E260(4);
     v12 = v11->lpVtbl;
-    v11->lpVtbl->field_38(
-        v11, (unk000C8 *)a1, v3->flags_338, LODWORD(v3->field_33C), 1056769, 2, 5, 1, -1);
+    v11->lpVtbl->meth14(v11, a1, v3->flags_338, v3->field_33C, 1056769, 2, 5, 1, -1);
     v11->field_C = sub_100474B0;
     v11->field_8 = sub_10042EE0;
-    LOWORD(v11->?) = 3;
+    v11->field_3838.field_1A99C[28] = 3;
     v13 = GetStringWithIndex(0x1Bu);
-    v12->field_34(v11, v13, 1, 1, &dword_100AB448);
-    ++LOWORD(v3->field_14);
+    v12->meth13(v11, v13, 1, 1, &dword_100AB448);
+    ++v3->field_14;
     ++LOWORD(v3->last);
     v14 = (unk1E214 *)operator new(0x1E214u);
     if (v14)
         v15 = meth_unk1E214_init(v14);
     else
         v15 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v15;
+    v3->field_18[v3->field_14] = v15;
     if (!v15)
         sub_1003E260(4);
     v16 = v15->lpVtbl;
     v58 = v3->field_33C - -19.0;
-    v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v3->flags_338, LODWORD(v58), 1056769, 2, 5, 1, -1);
+    v15->lpVtbl->meth14(v15, a1, v3->flags_338, v58, 0x102001, 2, 5, 1, -1);
     v15->field_C = sub_10047360;
     v15->field_8 = sub_10043180;
-    LOWORD(v15->?) = 3;
+    v15->field_3838.field_1A99C[28] = 3;
     v17 = GetStringWithIndex(0x1Cu);
-    v16->field_34(v15, v17, 1, 1, &dword_100AB448);
-    ++LOWORD(v3->field_14);
+    v16->meth13(v15, v17, 1, 1, &dword_100AB448);
+    ++v3->field_14;
     ++LOWORD(v3->last);
     v18 = (unk1E214 *)operator new(0x1E214u);
     if (v18)
         v19 = meth_unk1E214_init(v18);
     else
         v19 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v19;
+    v3->field_18[v3->field_14] = v19;
     if (!v19)
         sub_1003E260(4);
     v20 = v19->lpVtbl;
     v59 = v3->field_33C - -38.0;
-    v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v3->flags_338, LODWORD(v59), 1056769, 2, 5, 1, -1);
+    v19->lpVtbl->meth14(v19, a1, v3->flags_338, v59, 1056769, 2, 5, 1, -1);
     v19->field_C = sub_10047360;
     v19->field_8 = sub_100430B0;
-    LOWORD(v19->?) = 3;
+    v19->field_3838.field_1A99C[28] = 3;
     v21 = GetStringWithIndex(0x1Du);
-    v20->field_34(v19, v21, 1, 1, &dword_100AB448);
-    ++LOWORD(v3->field_14);
+    v20->meth13(v19, v21, 1, 1, &dword_100AB448);
+    ++v3->field_14;
     ++LOWORD(v3->last);
     v22 = (unk1E214 *)operator new(0x1E214u);
     if (v22)
         v23 = meth_unk1E214_init(v22);
     else
         v23 = 0;
-    v3->field_18[LOWORD(v3->field_14)] = v23;
+    v3->field_18[v3->field_14] = v23;
     if (!v23)
         sub_1003E260(4);
     v24 = v23->lpVtbl;
     v60 = v3->field_33C - -57.0;
-    v23->lpVtbl->field_38(v23, (unk000C8 *)a1, v3->flags_338, LODWORD(v60), 1056769, 2, 5, 1, -1);
+    v23->lpVtbl->meth14(v23, a1, v3->flags_338, v60, 1056769, 2, 5, 1, -1);
     v23->field_C = sub_10047360;
     v23->field_8 = sub_10044600;
-    LOWORD(v23->?) = 3;
+    v23->field_3838.field_1A99C[28] = 3;
     v25 = GetStringWithIndex(0x65u);
-    v24->field_34(v23, v25, 1, 1, &dword_100AB448);
-    ++LOWORD(v3->field_14);
+    v24->meth13(v23, v25, 1, 1, &dword_100AB448);
+    ++v3->field_14;
     ++LOWORD(v3->last);
   }
   v26 = (unk1E214 *)operator new(0x1E214u);
@@ -63253,161 +63207,158 @@ int __cdecl sub_10057C10(int a1) {
     v27 = meth_unk1E214_init(v26);
   else
     v27 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v27;
+  v3->field_18[v3->field_14] = v27;
   if (!v27)
     sub_1003E260(4);
   v28 = v27->lpVtbl;
   v61 = v3->field_33C - -95.0;
-  v27->lpVtbl->field_38(v27, (unk000C8 *)a1, v3->flags_338, LODWORD(v61), 1056769, 2, 5, 1, -1);
+  v27->lpVtbl->meth14(v27, a1, v3->flags_338, v61, 1056769, 2, 5, 1, -1);
   v27->field_C = sub_10047360;
-  v27->field_8 = (int(__cdecl *)())meth_100446D0;
-  *(_DWORD *)&v27->field_10[8] = sub_100437D0;
-  LOWORD(v27->?) = 3;
+  v27->field_8 = (int(__cdecl *)())meth_unk000C8_100446D0;
+  v27->field_18 = (int)sub_100437D0;
+  v27->field_3838.field_1A99C[28] = 3;
   if (dword_10AA2884)
     v29 = GetStringWithIndex(0x66u);
   else
     v29 = GetStringWithIndex(0x1Eu);
-  ((void(__thiscall *)(unk1E214 *, LPCSTR))v28->field_34)(v27, v29);
-  ++LOWORD(v3->field_14);
+  ((void(__thiscall *)(unk1E214 *, LPCSTR))v28->meth13)(v27, v29);
+  ++v3->field_14;
   ++LOWORD(v3->last);
   v30 = (unk1E214 *)operator new(0x1E214u);
   if (v30)
     v31 = meth_unk1E214_init(v30);
   else
     v31 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v31;
+  v3->field_18[v3->field_14] = v31;
   if (!v31)
     sub_1003E260(4);
   v32 = v31->lpVtbl;
   v62 = v3->field_33C - -114.0;
-  ((void(__thiscall *)(unk1E214 *, int, int, _DWORD, int, int, int, int, int, int, int, int *))
-       v31->lpVtbl->field_38)(
-      v31, a1, v3->flags_338, LODWORD(v62), 1056769, 2, 5, 1, -1, 1, 1, &dword_100AB448);
+  v31->lpVtbl->meth14(v31, a1, v3->flags_338, v62, 1056769, 2, 5, 1, -1);
   v31->field_C = sub_10047360;
-  LOWORD(v31->?) = 3;
+  v31->field_3838.field_1A99C[28] = 3;
   if (dword_10A9D000)
     v33 = GetStringWithIndex(0x67u);
   else
     v33 = GetStringWithIndex(0xCu);
-  ((void(__thiscall *)(unk1E214 *, LPCSTR))v32->field_34)(v31, v33);
+  ((void(__thiscall *)(unk1E214 *, LPCSTR))v32->meth13)(v31, v33);
   dword_10AA29B8 = (int)v31;
-  ++LOWORD(v3->field_14);
+  ++v3->field_14;
   ++LOWORD(v3->last);
   v34 = (unk1E214 *)operator new(0x1E214u);
   if (v34)
     v35 = meth_unk1E214_init(v34);
   else
     v35 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v35;
+  v3->field_18[v3->field_14] = v35;
   if (!v35)
     sub_1003E260(4);
-  v35->lpVtbl->field_38(v35, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
+  v35->lpVtbl->meth14(v35, a1, 1116864512, 212.0, 1, 2, 5, 1, 22);
   v35->field_4 = sub_100407E0;
-  v36 = LOWORD(v3->field_14) + 1;
-  ++*(_WORD *)&v35->gap5C[10840];
-  *(_WORD *)&v35->gap5C[10842] = v36;
-  ++LOWORD(v3->field_14);
+  v36 = v3->field_14 + 1;
+  ++v35->field_2AB4[0];
+  v35->field_2AB4[1] = v36;
+  ++v3->field_14;
   v37 = (unk1E214 *)operator new(0x1E214u);
   if (v37)
     v38 = meth_unk1E214_init(v37);
   else
     v38 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v38;
+  v3->field_18[v3->field_14] = v38;
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v3->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v38->lpVtbl->meth14(v38, a1, v3->flags_338, 275.0, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_1003FE80;
-  LOWORD(v38->?) = 3;
-  v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
-  ++LOWORD(v3->field_14);
+  v38->field_3838.field_1A99C[28] = 3;
+  v39->meth13(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
+  ++v3->field_14;
   v40 = (unk1E214 *)operator new(0x1E214u);
   if (v40)
     v41 = meth_unk1E214_init(v40);
   else
     v41 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v41;
+  v3->field_18[v3->field_14] = v41;
   if (!v41)
     sub_1003E260(4);
-  v41->lpVtbl->field_38(v41, (unk000C8 *)a1, 1134723072, 1116733440, 1, 2, 5, 1, 17);
+  v41->lpVtbl->meth14(v41, a1, 1134723072, 72.0, 1, 2, 5, 1, 17);
   v41->field_4 = sub_10040730;
-  v42 = LOWORD(v3->field_14) + 1;
-  ++*(_WORD *)&v41->gap5C[10840];
-  *(_WORD *)&v41->gap5C[10842] = v42;
-  ++LOWORD(v3->field_14);
+  v42 = v3->field_14 + 1;
+  ++v41->field_2AB4[0];
+  v41->field_2AB4[1] = v42;
+  ++v3->field_14;
   v43 = (unk1E214 *)operator new(0x1E214u);
   if (v43)
     v44 = meth_unk1E214_init(v43);
   else
     v44 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v44;
+  v3->field_18[v3->field_14] = v44;
   if (!v44)
     sub_1003E260(4);
   v45 = v44->lpVtbl;
-  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, v3->flags_338, 1125646336, 1052673, 2, 5, 1, -1);
+  v44->lpVtbl->meth14(v44, a1, v3->flags_338, 152.0, 1052673, 2, 5, 1, -1);
   v44->field_4 = sub_1003FA00;
-  LOWORD(v44->?) = 3;
-  v45->field_34(v44, asc_100AD300, 1, 1, &unk_100AB4A8);
-  ++LOWORD(v3->field_14);
+  v44->field_3838.field_1A99C[28] = 3;
+  v45->meth13(v44, asc_100AD300, 1, 1, &unk_100AB4A8);
+  ++v3->field_14;
   v46 = (unk1E214 *)operator new(0x1E214u);
   if (v46)
     v47 = meth_unk1E214_init(v46);
   else
     v47 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v47;
+  v3->field_18[v3->field_14] = v47;
   if (!v47)
     sub_1003E260(4);
   v48 = v47->lpVtbl;
-  v47->lpVtbl->field_38(v47, (unk000C8 *)a1, 1121189888, 1116209152, 20481, 2, 5, 1, -1);
+  v47->lpVtbl->meth14(v47, a1, 1121189888, 68.0, 20481, 2, 5, 1, -1);
   v47->field_4 = sub_100408D0;
-  LOWORD(v47->?) = 5;
-  v48->field_34(v47, ::a1, 1, 3, &unk_100AB458);
-  ++LOWORD(v3->field_14);
+  v47->field_3838.field_1A99C[28] = 5;
+  v48->meth13(v47, ::a1, 1, 3, &unk_100AB458);
+  ++v3->field_14;
   v49 = (unk1E214 *)operator new(0x1E214u);
   if (v49)
     v50 = meth_unk1E214_init(v49);
   else
     v50 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v50;
+  v3->field_18[v3->field_14] = v50;
   if (!v50)
     sub_1003E260(4);
   v51 = v50->lpVtbl;
-  v50->lpVtbl->field_38(v50, (unk000C8 *)a1, 1121189888, 1122369536, 1048577, 2, 5, 1, -1);
-  LOWORD(v50->?) = 3;
+  v50->lpVtbl->meth14(v50, a1, 1121189888, 115.0, 1048577, 2, 5, 1, -1);
+  v50->field_3838.field_1A99C[28] = 3;
   v52 = GetStringWithIndex(0x1Du);
-  v51->field_34(v50, v52, 1, 1, &unk_100AB458);
-  ++LOWORD(v3->field_14);
+  v51->meth13(v50, v52, 1, 1, &unk_100AB458);
+  ++v3->field_14;
   v53 = (unk1E214 *)operator new(0x1E214u);
   if (v53)
     v54 = meth_unk1E214_init(v53);
   else
     v54 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v54;
+  v3->field_18[v3->field_14] = v54;
   if (!v54)
     sub_1003E260(4);
-  v54->lpVtbl->field_38(v54, (unk000C8 *)a1, 1138393088, 1124925440, 1, 2, 5, 1, 86);
+  v54->lpVtbl->meth14(v54, a1, 1138393088, 141.0, 1, 2, 5, 1, 86);
   v54->field_4 = sub_1003F5E0;
-  ++LOWORD(v3->field_14);
+  ++v3->field_14;
   v55 = (unk1E214 *)operator new(0x1E214u);
   if (v55)
     v56 = meth_unk1E214_init(v55);
   else
     v56 = 0;
-  v3->field_18[LOWORD(v3->field_14)] = v56;
+  v3->field_18[v3->field_14] = v56;
   if (!v56)
     sub_1003E260(4);
-  v56->lpVtbl->field_38(v56, (unk000C8 *)a1, 1139671040, 1130364928, 1, 2, 5, 1, -1);
+  v56->lpVtbl->meth14(v56, a1, 1139671040, 224.0, 1, 2, 5, 1, -1);
   v56->field_4 = sub_1003F680;
-  ++LOWORD(v3->field_14);
+  ++v3->field_14;
   return 1;
 }
 // 1003FA00: using guessed type int __cdecl sub_1003FA00(int);
 // 1003FE80: using guessed type int __cdecl sub_1003FE80(int);
 // 10040730: using guessed type int __cdecl sub_10040730(int);
 // 100407E0: using guessed type int __cdecl sub_100407E0(int);
-// 10057C10: using guessed type int __cdecl sub_10057C10(int);
 // 100AB448: using guessed type int dword_100AB448;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 10A9D000: using guessed type int dword_10A9D000;
 // 10AA2884: using guessed type int dword_10AA2884;
 // 10AA29B8: using guessed type int dword_10AA29B8;
@@ -63472,93 +63423,93 @@ int sub_10058700() {
 
 //----- (10058750) --------------------------------------------------------
 int __cdecl sub_10058750(unk000C8 *a1) {
-  unk00348 *v1;      // eax
-  unk00348 *v2;      // ebp
-  unk1E214 *v3;      // eax
-  unk1E214 *v4;      // esi
-  unk1E214 *v5;      // eax
-  unk1E214 *v6;      // esi
-  unk1E214 *v7;      // eax
-  unk1E214 *v8;      // esi
-  unk1E214Vtbl *v9;  // ebx
-  LPCSTR v10;        // eax
-  unk1E214 *v11;     // eax
-  unk1E214 *v12;     // esi
-  unk1E214Vtbl *v13; // ebx
-  LPCSTR v14;        // eax
-  unk1E214 *v15;     // eax
-  unk1E214 *v16;     // esi
-  unk1E214Vtbl *v17; // ebx
-  LPCSTR v18;        // eax
-  unk1E214 *v19;     // eax
-  unk1E214 *v20;     // esi
-  unk1E214Vtbl *v21; // ebx
-  LPCSTR v22;        // eax
-  unk1E214 *v23;     // eax
-  unk1E214 *v24;     // esi
-  unk1E214Vtbl *v25; // ebx
-  LPCSTR v26;        // eax
-  unk1E214 *v27;     // eax
-  unk1E214 *v28;     // esi
-  unk1E214Vtbl *v29; // ebx
-  LPCSTR v30;        // eax
-  unk1E214 *v31;     // eax
-  unk1E214 *v32;     // esi
-  unk1E214Vtbl *v33; // ebx
-  LPCSTR v34;        // eax
-  unk1E214 *v35;     // eax
-  unk1E214 *v36;     // esi
-  unk1E214Vtbl *v37; // ebx
-  LPCSTR v38;        // eax
-  unk1E214 *v39;     // eax
-  unk1E214 *v40;     // esi
-  unk1A5E0Vtbl *v41; // edx
-  unk1E214 *v42;     // eax
-  unk1E214 *v43;     // esi
-  unk1E214Vtbl *v44; // ebx
-  __int16 v45;       // cx
-  unk1E214 *v46;     // eax
-  unk1E214 *v47;     // esi
-  unk1A5E0 *v48;     // ecx
-  unk1E214 *v49;     // eax
-  unk1E214 *v50;     // esi
-  unk1E214 *v51;     // eax
-  unk1E214 *v52;     // esi
-  unk1E214 *v53;     // eax
-  unk1E214 *v54;     // esi
-  WORD v55;          // ax
-  unk1E214 *v56;     // eax
-  unk1E214 *v57;     // esi
-  unk1E214Vtbl *v58; // ebx
-  unk1E214 *v59;     // eax
-  unk1E214 *v60;     // esi
-  WORD v61;          // ax
-  unk1E214 *v62;     // eax
-  unk1E214 *v63;     // esi
-  unk1E214Vtbl *v64; // ebx
-  unk1E214 *v65;     // eax
-  unk1E214 *v66;     // esi
-  WORD v67;          // ax
-  unk1E214 *v68;     // eax
-  unk1E214 *v69;     // esi
-  unk1E214Vtbl *v70; // ebx
-  unk1E214 *v71;     // eax
-  unk1E214 *v72;     // esi
-  WORD v73;          // ax
-  unk1E214 *v74;     // eax
-  unk1E214 *v75;     // esi
-  unk1E214Vtbl *v76; // ebx
-  unk1E214 *v77;     // eax
-  unk1E214 *v78;     // ebx
-  unk1E214Vtbl *v79; // esi
-  int v80;           // edx
-  float v82;         // [esp+3E0h] [ebp-34h]
-  float v83;         // [esp+3E0h] [ebp-34h]
-  float v84;         // [esp+3E0h] [ebp-34h]
-  float v85;         // [esp+3E0h] [ebp-34h]
-  float v86;         // [esp+3E0h] [ebp-34h]
-  float v87;         // [esp+3E0h] [ebp-34h]
-  float v88;         // [esp+3E0h] [ebp-34h]
+  unk00348 *v1;         // eax
+  unk00348 *v2;         // ebp
+  unk1E214 *v3;         // eax
+  unk1E214 *v4;         // esi
+  unk1E214 *v5;         // eax
+  unk1E214 *v6;         // esi
+  unk1E214 *v7;         // eax
+  unk1E214 *v8;         // esi
+  unk1E214Vtbl *v9;     // ebx
+  LPCSTR v10;           // eax
+  unk1E214 *v11;        // eax
+  unk1E214 *v12;        // esi
+  unk1E214Vtbl *v13;    // ebx
+  LPCSTR v14;           // eax
+  unk1E214 *v15;        // eax
+  unk1E214 *v16;        // esi
+  unk1E214Vtbl *v17;    // ebx
+  LPCSTR v18;           // eax
+  unk1E214 *v19;        // eax
+  unk1E214 *v20;        // esi
+  unk1E214Vtbl *v21;    // ebx
+  LPCSTR v22;           // eax
+  unk1E214 *v23;        // eax
+  unk1E214 *v24;        // esi
+  unk1E214Vtbl *v25;    // ebx
+  LPCSTR v26;           // eax
+  unk1E214 *v27;        // eax
+  unk1E214 *v28;        // esi
+  unk1E214Vtbl *v29;    // ebx
+  LPCSTR v30;           // eax
+  unk1E214 *v31;        // eax
+  unk1E214 *v32;        // esi
+  unk1E214Vtbl *v33;    // ebx
+  LPCSTR v34;           // eax
+  unk1E214 *v35;        // eax
+  unk1E214 *v36;        // esi
+  unk1E214Vtbl *v37;    // ebx
+  LPCSTR v38;           // eax
+  unk1E214 *v39;        // eax
+  unk1E214 *v40;        // esi
+  unk1A5E0Vtbl *u1A5E0; // edx
+  unk1E214 *v42;        // eax
+  unk1E214 *v43;        // esi
+  unk1E214Vtbl *v44;    // ebx
+  __int16 v45;          // cx
+  unk1E214 *v46;        // eax
+  unk1E214 *v47;        // esi
+  unk1A5E0 *v48;        // ecx
+  unk1E214 *v49;        // eax
+  unk1E214 *v50;        // esi
+  unk1E214 *v51;        // eax
+  unk1E214 *v52;        // esi
+  unk1E214 *v53;        // eax
+  unk1E214 *v54;        // esi
+  WORD v55;             // ax
+  unk1E214 *v56;        // eax
+  unk1E214 *v57;        // esi
+  unk1E214Vtbl *v58;    // ebx
+  unk1E214 *v59;        // eax
+  unk1E214 *v60;        // esi
+  WORD v61;             // ax
+  unk1E214 *v62;        // eax
+  unk1E214 *v63;        // esi
+  unk1E214Vtbl *v64;    // ebx
+  unk1E214 *v65;        // eax
+  unk1E214 *v66;        // esi
+  WORD v67;             // ax
+  unk1E214 *v68;        // eax
+  unk1E214 *v69;        // esi
+  unk1E214Vtbl *v70;    // ebx
+  unk1E214 *v71;        // eax
+  unk1E214 *v72;        // esi
+  WORD v73;             // ax
+  unk1E214 *v74;        // eax
+  unk1E214 *v75;        // esi
+  unk1E214Vtbl *v76;    // ebx
+  unk1E214 *v77;        // eax
+  unk1E214 *v78;        // ebx
+  unk1E214Vtbl *v79;    // esi
+  int v80;              // edx
+  float v82;            // [esp+3E0h] [ebp-34h]
+  float v83;            // [esp+3E0h] [ebp-34h]
+  float v84;            // [esp+3E0h] [ebp-34h]
+  float v85;            // [esp+3E0h] [ebp-34h]
+  float v86;            // [esp+3E0h] [ebp-34h]
+  float v87;            // [esp+3E0h] [ebp-34h]
+  float v88;            // [esp+3E0h] [ebp-34h]
 
   *(&a1->field_10 + 1) = 0;
   gGameMode = GAME_MODE_6;
@@ -63586,8 +63537,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v4;
   if (!v4)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v4->lpVtbl->field_38)(v4, a1, 0, 0, 9, 2, 5, 0, 0);
+  v4->lpVtbl->meth14(v4, a1, 0, 0.0, 9, 2, 5, 0, 0);
   ++v2->field_14;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -63597,8 +63547,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v6;
   if (!v6)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, int, int, int, int, _DWORD, int))
-       v6->lpVtbl->field_38)(v6, a1, 0, 0x43A00000, 9, 2, 5, 0, 95);
+  v6->lpVtbl->meth14(v6, a1, 0, 320.0, 9, 2, 5, 0, 95);
   ++v2->field_14;
   v7 = (unk1E214 *)operator new(0x1E214u);
   if (v7)
@@ -63609,13 +63558,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v8)
     sub_1003E260(4);
   v9 = v8->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v8->lpVtbl->field_38)(v8, a1, v2->flags_338, LODWORD(v2->field_33C), 1056769, 2, 5, 1, -1);
+  v8->lpVtbl->meth14(v8, a1, v2->flags_338, v2->field_33C, 1056769, 2, 5, 1, -1);
   v8->field_C = sub_10047360;
   v8->field_8 = sub_10042B30;
   v8->field_3838.field_1A99C[28] = 3;
   v10 = GetStringWithIndex(0x14u);
-  v9->field_34(v8, v10, 1, 1, &dword_100AB448);
+  v9->meth13(v8, v10, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v11 = (unk1E214 *)operator new(0x1E214u);
@@ -63628,13 +63576,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v13 = v12->lpVtbl;
   v82 = v2->field_33C - -19.0;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v12->lpVtbl->field_38)(v12, a1, v2->flags_338, LODWORD(v82), 1056769, 2, 5, 1, -1);
+  v12->lpVtbl->meth14(v12, a1, v2->flags_338, v82, 1056769, 2, 5, 1, -1);
   v12->field_C = sub_10047360;
   v12->field_8 = sub_10042DC0;
   v12->field_3838.field_1A99C[28] = 3;
   v14 = GetStringWithIndex(0x15u);
-  v13->field_34(v12, v14, 1, 1, &dword_100AB448);
+  v13->meth13(v12, v14, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v15 = (unk1E214 *)operator new(0x1E214u);
@@ -63647,13 +63594,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v17 = v16->lpVtbl;
   v83 = v2->field_33C - -38.0;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v16->lpVtbl->field_38)(v16, a1, v2->flags_338, LODWORD(v83), 1056769, 2, 5, 1, -1);
+  v16->lpVtbl->meth14(v16, a1, v2->flags_338, v83, 1056769, 2, 5, 1, -1);
   v16->field_C = sub_10047360;
   v16->field_8 = sub_10042E20;
   v16->field_3838.field_1A99C[28] = 3;
   v18 = GetStringWithIndex(0x16u);
-  v17->field_34(v16, v18, 1, 1, &dword_100AB448);
+  v17->meth13(v16, v18, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v19 = (unk1E214 *)operator new(0x1E214u);
@@ -63666,13 +63612,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v21 = v20->lpVtbl;
   v84 = v2->field_33C - -57.0;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v20->lpVtbl->field_38)(v20, a1, v2->flags_338, LODWORD(v84), 1056769, 2, 5, 1, -1);
+  v20->lpVtbl->meth14(v20, a1, v2->flags_338, v84, 1056769, 2, 5, 1, -1);
   v20->field_C = sub_10047360;
   v20->field_8 = sub_10042C80;
   v20->field_3838.field_1A99C[28] = 3;
   v22 = GetStringWithIndex(0x17u);
-  v21->field_34(v20, v22, 1, 1, &dword_100AB448);
+  v21->meth13(v20, v22, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v23 = (unk1E214 *)operator new(0x1E214u);
@@ -63685,13 +63630,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v25 = v24->lpVtbl;
   v85 = v2->field_33C - -76.0;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v24->lpVtbl->field_38)(v24, a1, v2->flags_338, LODWORD(v85), 1056769, 2, 5, 1, -1);
+  v24->lpVtbl->meth14(v24, a1, v2->flags_338, v85, 1056769, 2, 5, 1, -1);
   v24->field_C = sub_10047360;
   v24->field_8 = sub_10042E80;
   v24->field_3838.field_1A99C[28] = 3;
   v26 = GetStringWithIndex(0x18u);
-  v25->field_34(v24, v26, 1, 1, &dword_100AB448);
+  v25->meth13(v24, v26, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   if (gNetworkPlay == 2) {
@@ -63705,13 +63649,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
         sub_1003E260(4);
     v29 = v28->lpVtbl;
     v86 = v2->field_33C - -95.0;
-    ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-         v28->lpVtbl->field_38)(v28, a1, v2->flags_338, LODWORD(v86), 1056769, 2, 5, 1, -1);
+    v28->lpVtbl->meth14(v28, a1, v2->flags_338, v86, 1056769, 2, 5, 1, -1);
     v28->field_C = sub_10047360;
     v28->field_8 = sub_100437B0;
     v28->field_3838.field_1A99C[28] = 3;
     v30 = GetStringWithIndex(0x68u);
-    v29->field_34(v28, v30, 1, 1, &dword_100AB448);
+    v29->meth13(v28, v30, 1, 1, &dword_100AB448);
     ++v2->field_14;
     ++LOWORD(v2->last);
   }
@@ -63725,8 +63668,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v33 = v32->lpVtbl;
   v87 = v2->field_33C - -114.0;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v32->lpVtbl->field_38)(v32, a1, v2->flags_338, LODWORD(v87), 1056769, 2, 5, 1, -1);
+  v32->lpVtbl->meth14(v32, a1, v2->flags_338, v87, 1056769, 2, 5, 1, -1);
   v32->field_C = sub_10047360;
   v32->field_8 = sub_10043A00;
   v32->field_18 = (int)sub_10043810;
@@ -63735,7 +63677,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     v34 = GetStringWithIndex(0x19u);
   else
     v34 = GetStringWithIndex(0x69u);
-  ((void(__thiscall *)(unk1E214 *, LPCSTR))v33->field_34)(v32, v34);
+  ((void(__thiscall *)(unk1E214 *, LPCSTR))v33->meth13)(v32, v34);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v35 = (unk1E214 *)operator new(0x1E214u);
@@ -63748,13 +63690,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
     sub_1003E260(4);
   v37 = v36->lpVtbl;
   v88 = v2->field_33C - -133.0;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v36->lpVtbl->field_38)(v36, a1, v2->flags_338, LODWORD(v88), 1056769, 2, 5, 1, -1);
+  v36->lpVtbl->meth14(v36, a1, v2->flags_338, v88, 1056769, 2, 5, 1, -1);
   v36->field_C = sub_10047360;
   v36->field_8 = (int(__cdecl *)())sub_10046400;
   v36->field_3838.field_1A99C[28] = 3;
   v38 = GetStringWithIndex(0xCu);
-  v37->field_34(v36, v38, 1, 1, &dword_100AB448);
+  v37->meth13(v36, v38, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v39 = (unk1E214 *)operator new(0x1E214u);
@@ -63765,12 +63706,11 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v40;
   if (!v40)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v40->lpVtbl->field_38)(v40, a1, 1107296256, 1134886912, 12289, 2, 5, 1, -1);
-  v41 = v40->field_3838.lpVtbl;
+  v40->lpVtbl->meth14(v40, a1, 1107296256, 330.0, 12289, 2, 5, 1, -1);
+  u1A5E0 = v40->field_3838.lpVtbl;
   v40->field_4 = sub_1003EBC0;
   *(_DWORD *)&v40->field_3838.field_1A99C[16] = 1;
-  v41->field_14(&v40->field_3838, 25427969, dword_100AB408, 5, 0, -1);
+  u1A5E0->meth5(&v40->field_3838, 25427969, dword_100AB408, 5, 0, -1);
   gUnk1E214 = v40;
   ++v2->field_14;
   v42 = (unk1E214 *)operator new(0x1E214u);
@@ -63782,13 +63722,12 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v43)
     sub_1003E260(4);
   v44 = v43->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v43->lpVtbl->field_38)(v43, a1, 1107296256, 1134886912, 2097153, 2, 5, 1, -1);
-  v43->field_8 = (int(__cdecl *)())meth_unk1A5E0_10042AF0;
+  v43->lpVtbl->meth14(v43, a1, 1107296256, 330.0, 2097153, 2, 5, 1, -1);
+  v43->field_8 = (int(__cdecl *)())meth_unk1A5E0_3;
   v43->field_4 = sub_1003F110;
   v43->field_10 = (int)sub_1003F170;
   v43->field_3838.field_1A99C[28] = 3;
-  v44->field_34(v43, String2, 0, 1, &dword_100AB448);
+  v44->meth13(v43, String2, 0, 1, &dword_100AB448);
   v43->field_50 = 32;
   *(_DWORD *)&v43->vectorUnk[1060] = 32;
   v43->field_58 = 415;
@@ -63811,15 +63750,14 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v47;
   if (!v47)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v47->lpVtbl->field_38)(v47, a1, 1139933184, 0x40000000, 4097, 2, 5, 1, -1);
+  v47->lpVtbl->meth14(v47, a1, 1139933184, 2.0, 4097, 2, 5, 1, -1);
   v47->field_4 = sub_1003EBE0;
   *(_DWORD *)&v47->field_3838.field_1A99C[16] = 1;
   v48 = &v47->field_3838;
   if (gNetworkPlay == 2)
-    v48->lpVtbl->field_14(v48, 0x2040001, dword_100AB3F8, 4, 0, -1);
+    v48->lpVtbl->meth5(v48, 0x2040001, dword_100AB3F8, 4, 0, -1);
   else
-    v48->lpVtbl->field_14(v48, 0x3040001, dword_100AB3F8, 4, 0, -1);
+    v48->lpVtbl->meth5(v48, 0x3040001, dword_100AB3F8, 4, 0, -1);
   dword_10AA29E4 = (int)v47;
   ++v2->field_14;
   v49 = (unk1E214 *)operator new(0x1E214u);
@@ -63830,8 +63768,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v50;
   if (!v50)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v50->lpVtbl->field_38)(v50, a1, 1114898432, 1131675648, 9, 2, 5, 1, 54);
+  v50->lpVtbl->meth14(v50, a1, 1114898432, 244.0, 9, 2, 5, 1, 54);
   ++v2->field_14;
   v51 = (unk1E214 *)operator new(0x1E214u);
   if (v51)
@@ -63841,8 +63778,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v52;
   if (!v52)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v52->lpVtbl->field_38)(v52, a1, 1116864512, 1129709568, 1, 2, 5, 1, 53);
+  v52->lpVtbl->meth14(v52, a1, 1116864512, 214.0, 1, 2, 5, 1, 53);
   v52->field_4 = sub_1003E920;
   ++v2->field_14;
   v53 = (unk1E214 *)operator new(0x1E214u);
@@ -63853,8 +63789,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v54;
   if (!v54)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v54->lpVtbl->field_38)(v54, a1, 1135181824, 1116471296, 1, 2, 5, 1, 11);
+  v54->lpVtbl->meth14(v54, a1, 1135181824, 70.0, 1, 2, 5, 1, 11);
   v54->field_4 = sub_1003F720;
   v55 = v2->field_14 + 1;
   ++v54->field_2AB4[0];
@@ -63869,11 +63804,10 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v57)
     sub_1003E260(4);
   v58 = v57->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v57->lpVtbl->field_38)(v57, a1, v2->flags_338, 1124663296, 1052673, 2, 5, 1, -1);
+  v57->lpVtbl->meth14(v57, a1, v2->flags_338, 137.0, 0x101001, 2, 5, 1, -1);
   v57->field_4 = sub_1003F760;
   v57->field_3838.field_1A99C[28] = 3;
-  v58->field_34(v57, asc_100AD300, 1, 1, &unk_100AB468);
+  v58->meth13(v57, asc_100AD300, 1, 1, &unk_100AB468);
   ++v2->field_14;
   v59 = (unk1E214 *)operator new(0x1E214u);
   if (v59)
@@ -63883,8 +63817,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v60;
   if (!v60)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v60->lpVtbl->field_38)(v60, a1, 1121452032, 1115947008, 1, 2, 5, 1, 25);
+  v60->lpVtbl->meth14(v60, a1, 1121452032, 66.0, 1, 2, 5, 1, 25);
   v60->field_4 = sub_10040890;
   v61 = v2->field_14 + 1;
   ++v60->field_2AB4[0];
@@ -63899,11 +63832,10 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v63)
     sub_1003E260(4);
   v64 = v63->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v63->lpVtbl->field_38)(v63, a1, v2->flags_338, 1123418112, 1052673, 2, 5, 1, -1);
+  v63->lpVtbl->meth14(v63, a1, v2->flags_338, 123.0, 1052673, 2, 5, 1, -1);
   v63->field_4 = sub_1003F7F0;
   v63->field_3838.field_1A99C[28] = 3;
-  v64->field_34(v63, asc_100AD300, 1, 1, &unk_100AB498);
+  v64->meth13(v63, asc_100AD300, 1, 1, &unk_100AB498);
   ++v2->field_14;
   v65 = (unk1E214 *)operator new(0x1E214u);
   if (v65)
@@ -63913,8 +63845,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v66;
   if (!v66)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v66->lpVtbl->field_38)(v66, a1, 1139671040, 1124139008, 1, 2, 5, 1, 14);
+  v66->lpVtbl->meth14(v66, a1, 1139671040, 129.0, 1, 2, 5, 1, 14);
   v66->field_4 = sub_100408B0;
   v67 = v2->field_14 + 1;
   ++v66->field_2AB4[0];
@@ -63929,11 +63860,10 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v69)
     sub_1003E260(4);
   v70 = v69->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v69->lpVtbl->field_38)(v69, a1, v2->flags_338, 1127546880, 1052673, 2, 5, 1, -1);
+  v69->lpVtbl->meth14(v69, a1, v2->flags_338, 181.0, 1052673, 2, 5, 1, -1);
   v69->field_4 = sub_1003F990;
   v69->field_3838.field_1A99C[28] = 3;
-  v70->field_34(v69, asc_100AD300, 1, 1, &unk_100AB488);
+  v70->meth13(v69, asc_100AD300, 1, 1, &unk_100AB488);
   ++v2->field_14;
   v71 = (unk1E214 *)operator new(0x1E214u);
   if (v71)
@@ -63943,8 +63873,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   v2->field_18[v2->field_14] = v72;
   if (!v72)
     sub_1003E260(4);
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v72->lpVtbl->field_38)(v72, a1, 1140621312, 1128792064, 1, 2, 5, 1, 12);
+  v72->lpVtbl->meth14(v72, a1, 1140621312, 200.0, 1, 2, 5, 1, 12);
   v72->field_4 = sub_10040870;
   v73 = v2->field_14 + 1;
   ++v72->field_2AB4[0];
@@ -63959,11 +63888,10 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v75)
     sub_1003E260(4);
   v76 = v75->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v75->lpVtbl->field_38)(v75, a1, v2->flags_338, 1132658688, 1052673, 2, 5, 1, -1);
+  v75->lpVtbl->meth14(v75, a1, v2->flags_338, 262.0, 1052673, 2, 5, 1, -1);
   v75->field_4 = sub_1003F860;
   v75->field_3838.field_1A99C[28] = 3;
-  v76->field_34(v75, asc_100AD300, 1, 1, &unk_100AB478);
+  v76->meth13(v75, asc_100AD300, 1, 1, &unk_100AB478);
   ++v2->field_14;
   v77 = (unk1E214 *)operator new(0x1E214u);
   if (v77)
@@ -63974,10 +63902,9 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   if (!v78)
     sub_1003E260(4);
   v79 = v78->lpVtbl;
-  ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v78->lpVtbl->field_38)(v78, a1, 1134559232, 1092616192, 1048577, 2, 5, 1, -1);
+  v78->lpVtbl->meth14(v78, a1, 1134559232, 10.0, 1048577, 2, 5, 1, -1);
   v78->field_3838.field_1A99C[28] = 52;
-  v79->field_34(v78, asc_100AD300, 1, 4, &unk_100AB438);
+  v79->meth13(v78, asc_100AD300, 1, 4, &unk_100AB438);
   v80 = *(_DWORD *)v78->vectorUnk;
   strcpy(&v78->vectorUnk[9], g_lpSessionDesc_dwUser3);
   (*(void(__thiscall **)(char *, int, int, int *))(v80 + 4))(v78->vectorUnk, 1, 1, &dword_100AB448);
@@ -64061,7 +63988,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v5;
   if (!v5)
     sub_1003E260(4);
-  v5->lpVtbl->field_38(v5, a1, 0, 0, 9, 2, 5, 0, 0);
+  v5->lpVtbl->meth14(v5, a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v3->field_14);
   v6 = (unk1E214 *)operator new(0x1E214u);
   if (v6)
@@ -64072,10 +63999,10 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   if (!v7)
     sub_1003E260(4);
   v8 = v7->lpVtbl;
-  v7->lpVtbl->field_38(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v7->lpVtbl->meth14(v7, a1, v3->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v7->?) = 3;
   v9 = GetStringWithIndex(0x6Au);
-  v8->field_34(v7, v9, 1, 1, &unk_100AB508);
+  v8->meth13(v7, v9, 1, 1, &unk_100AB508);
   ++LOWORD(v3->field_14);
   v10 = (unk1E214 *)operator new(0x1E214u);
   if (v10)
@@ -64086,12 +64013,12 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   if (!v11)
     sub_1003E260(4);
   v12 = v11->lpVtbl;
-  v11->lpVtbl->field_38(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 0x102001, 2, 5, 1, -1);
+  v11->lpVtbl->meth14(v11, a1, v3->flags_338, LODWORD(v3->field_33C), 0x102001, 2, 5, 1, -1);
   v11->field_C = sub_10047360;
   v11->field_8 = sub_10046260;
   LOWORD(v11->?) = 3;
   v13 = GetStringWithIndex(0x6Bu);
-  v12->field_34(v11, v13, 1, 1, &dword_100AB448);
+  v12->meth13(v11, v13, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v14 = (unk1E214 *)operator new(0x1E214u);
@@ -64104,12 +64031,12 @@ int __cdecl sub_10059760(unk000C8 *a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v25 = v3->field_33C - -19.0;
-  v15->lpVtbl->field_38(v15, a1, v3->flags_338, LODWORD(v25), 0x102001, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, a1, v3->flags_338, LODWORD(v25), 0x102001, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10044D00;
   LOWORD(v15->?) = 3;
   v17 = GetStringWithIndex(0x6Cu);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -64122,12 +64049,12 @@ int __cdecl sub_10059760(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v26 = v3->field_33C - -114.0;
-  v19->lpVtbl->field_38(v19, a1, v3->flags_338, LODWORD(v26), 0x102001, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, a1, v3->flags_338, LODWORD(v26), 0x102001, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10044C70;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0xCu);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++LOWORD(v3->field_14);
   ++LOWORD(v3->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -64138,7 +64065,7 @@ int __cdecl sub_10059760(unk000C8 *a1) {
   v3->field_18[LOWORD(v3->field_14)] = v23;
   if (!v23)
     sub_1003E260(4);
-  v23->lpVtbl->field_38(v23, a1, 0x42A00000, 0x42380000, 9, 2, 5, 0, 8);
+  v23->lpVtbl->meth14(v23, a1, 0x42A00000, 0x42380000, 9, 2, 5, 0, 8);
   ++LOWORD(v3->field_14);
   return 1;
 }
@@ -64209,7 +64136,7 @@ int __cdecl sub_10059BB0(int a1) {
   float v62;         // [esp+2E4h] [ebp-34h]
   float v63;         // [esp+2E4h] [ebp-34h]
 
-  gUnkC8Ptr6->last->lpVtbl->field_4(gUnkC8Ptr6->last, aTimeattackGrf);
+  gUnkC8Ptr6->last->lpVtbl->meth1(gUnkC8Ptr6->last, aTimeattackGrf);
   *(_WORD *)(a1 + 18) = 0;
   dword_10AA28E8 = 0;
   *(_DWORD *)(a1 + 4 * *(unsigned __int16 *)(a1 + 16) + 108) = 1;
@@ -64234,7 +64161,7 @@ int __cdecl sub_10059BB0(int a1) {
   v2->field_18[LOWORD(v2->field_14)] = v4;
   if (!v4)
     sub_1003E260(4);
-  v4->lpVtbl->field_38(v4, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
+  v4->lpVtbl->meth14(v4, (unk000C8 *)a1, 0, 0, 9, 2, 5, 0, 0);
   ++LOWORD(v2->field_14);
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -64245,10 +64172,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v6)
     sub_1003E260(4);
   v7 = v6->lpVtbl;
-  v6->lpVtbl->field_38(v6, (unk000C8 *)a1, v2->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v6->lpVtbl->meth14(v6, (unk000C8 *)a1, v2->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v6->?) = 3;
   v8 = GetStringWithIndex(0x6Eu);
-  v7->field_34(v6, v8, 1, 1, &unk_100AB508);
+  v7->meth13(v6, v8, 1, 1, &unk_100AB508);
   ++LOWORD(v2->field_14);
   v9 = (unk1E214 *)operator new(0x1E214u);
   if (v9)
@@ -64258,7 +64185,7 @@ int __cdecl sub_10059BB0(int a1) {
   v2->field_18[LOWORD(v2->field_14)] = v10;
   if (!v10)
     sub_1003E260(4);
-  v10->lpVtbl->field_38(
+  v10->lpVtbl->meth14(
       v10, (unk000C8 *)a1, v2->flags_338, LODWORD(v2->field_33C), 12289, 2, 5, 1, -1);
   v11 = v10->field_3838;
   v12 = &v10->field_3838;
@@ -64284,13 +64211,13 @@ int __cdecl sub_10059BB0(int a1) {
     sub_1003E260(4);
   v16 = v15->lpVtbl;
   v62 = v2->field_33C - -114.0;
-  v15->lpVtbl->field_38(v15, (unk000C8 *)a1, v2->flags_338, LODWORD(v62), 1060881, 2, 5, 1, -1);
+  v15->lpVtbl->meth14(v15, (unk000C8 *)a1, v2->flags_338, LODWORD(v62), 1060881, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = sub_10046380;
   v15->field_4 = sub_100418F0;
   LOWORD(v15->?) = 2;
   v17 = GetStringWithIndex(0x1Eu);
-  v16->field_34(v15, v17, 1, 0, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 0, &dword_100AB448);
   ++LOWORD(v2->field_14);
   ++LOWORD(v2->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -64303,12 +64230,12 @@ int __cdecl sub_10059BB0(int a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   v63 = v2->field_33C - -133.0;
-  v19->lpVtbl->field_38(v19, (unk000C8 *)a1, v2->flags_338, LODWORD(v63), 1056769, 2, 5, 1, -1);
+  v19->lpVtbl->meth14(v19, (unk000C8 *)a1, v2->flags_338, LODWORD(v63), 1056769, 2, 5, 1, -1);
   v19->field_C = sub_10047360;
   v19->field_8 = (int(__cdecl *)())sub_10044DE0;
   LOWORD(v19->?) = 3;
   v21 = GetStringWithIndex(0xCu);
-  v20->field_34(v19, v21, 1, 1, &dword_100AB448);
+  v20->meth13(v19, v21, 1, 1, &dword_100AB448);
   ++LOWORD(v2->field_14);
   ++LOWORD(v2->last);
   v22 = (unk1E214 *)operator new(0x1E214u);
@@ -64319,7 +64246,7 @@ int __cdecl sub_10059BB0(int a1) {
   v2->field_18[LOWORD(v2->field_14)] = v23;
   if (!v23)
     sub_1003E260(4);
-  v23->lpVtbl->field_38(v23, (unk000C8 *)a1, 1138425856, 1123418112, 1, 2, 5, 1, 17);
+  v23->lpVtbl->meth14(v23, (unk000C8 *)a1, 1138425856, 1123418112, 1, 2, 5, 1, 17);
   v23->field_4 = sub_100407A0;
   v24 = LOWORD(v2->field_14) + 1;
   ++*(_WORD *)&v23->gap5C[10840];
@@ -64334,10 +64261,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v26)
     sub_1003E260(4);
   v27 = v26->lpVtbl;
-  v26->lpVtbl->field_38(v26, (unk000C8 *)a1, v2->flags_338, 1127546880, 1052673, 2, 5, 1, -1);
+  v26->lpVtbl->meth14(v26, (unk000C8 *)a1, v2->flags_338, 1127546880, 1052673, 2, 5, 1, -1);
   v26->field_4 = sub_1003FA00;
   LOWORD(v26->?) = 3;
-  v27->field_34(v26, asc_100AD300, 1, 1, &unk_100AB488);
+  v27->meth13(v26, asc_100AD300, 1, 1, &unk_100AB488);
   ++LOWORD(v2->field_14);
   v28 = (unk1E214 *)operator new(0x1E214u);
   if (v28)
@@ -64347,7 +64274,7 @@ int __cdecl sub_10059BB0(int a1) {
   v2->field_18[LOWORD(v2->field_14)] = v29;
   if (!v29)
     sub_1003E260(4);
-  v29->lpVtbl->field_38(v29, (unk000C8 *)a1, 1135181824, 1116471296, 1, 2, 5, 1, 11);
+  v29->lpVtbl->meth14(v29, (unk000C8 *)a1, 1135181824, 1116471296, 1, 2, 5, 1, 11);
   v29->field_4 = sub_1003F720;
   v30 = LOWORD(v2->field_14) + 1;
   ++*(_WORD *)&v29->gap5C[10840];
@@ -64362,10 +64289,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v32)
     sub_1003E260(4);
   v33 = v32->lpVtbl;
-  v32->lpVtbl->field_38(v32, (unk000C8 *)a1, v2->flags_338, 1124663296, 1052673, 2, 5, 1, -1);
+  v32->lpVtbl->meth14(v32, (unk000C8 *)a1, v2->flags_338, 1124663296, 1052673, 2, 5, 1, -1);
   v32->field_4 = sub_1003F760;
   LOWORD(v32->?) = 3;
-  v33->field_34(v32, asc_100AD300, 1, 1, &unk_100AB468);
+  v33->meth13(v32, asc_100AD300, 1, 1, &unk_100AB468);
   ++LOWORD(v2->field_14);
   v34 = (unk1E214 *)operator new(0x1E214u);
   if (v34)
@@ -64375,7 +64302,7 @@ int __cdecl sub_10059BB0(int a1) {
   v2->field_18[LOWORD(v2->field_14)] = v35;
   if (!v35)
     sub_1003E260(4);
-  v35->lpVtbl->field_38(v35, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
+  v35->lpVtbl->meth14(v35, (unk000C8 *)a1, 1116864512, 1129578496, 1, 2, 5, 1, 22);
   v35->field_4 = sub_100407E0;
   v36 = LOWORD(v2->field_14) + 1;
   ++*(_WORD *)&v35->gap5C[10840];
@@ -64390,10 +64317,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v38)
     sub_1003E260(4);
   v39 = v38->lpVtbl;
-  v38->lpVtbl->field_38(v38, (unk000C8 *)a1, v2->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
+  v38->lpVtbl->meth14(v38, (unk000C8 *)a1, v2->flags_338, 1133084672, 1052673, 2, 5, 1, -1);
   v38->field_4 = sub_1003FE80;
   LOWORD(v38->?) = 3;
-  v39->field_34(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
+  v39->meth13(v38, asc_100AD300, 1, 1, &unk_100AB4B8);
   ++LOWORD(v2->field_14);
   v40 = (unk1E214 *)operator new(0x1E214u);
   if (v40)
@@ -64404,10 +64331,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v41)
     sub_1003E260(4);
   v42 = v41->lpVtbl;
-  v41->lpVtbl->field_38(v41, (unk000C8 *)a1, 1121189888, 1116209152, 20481, 2, 5, 1, -1);
+  v41->lpVtbl->meth14(v41, (unk000C8 *)a1, 1121189888, 1116209152, 20481, 2, 5, 1, -1);
   v41->field_4 = sub_100408D0;
   LOWORD(v41->?) = 5;
-  v42->field_34(v41, ::a1, 1, 3, &unk_100AB458);
+  v42->meth13(v41, ::a1, 1, 3, &unk_100AB458);
   ++LOWORD(v2->field_14);
   v43 = (unk1E214 *)operator new(0x1E214u);
   if (v43)
@@ -64418,10 +64345,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v44)
     sub_1003E260(4);
   v45 = v44->lpVtbl;
-  v44->lpVtbl->field_38(v44, (unk000C8 *)a1, 1121189888, 1122369536, 1048577, 2, 5, 1, -1);
+  v44->lpVtbl->meth14(v44, (unk000C8 *)a1, 1121189888, 1122369536, 1048577, 2, 5, 1, -1);
   LOWORD(v44->?) = 3;
   v46 = GetStringWithIndex(0x1Du);
-  v45->field_34(v44, v46, 1, 1, &unk_100AB458);
+  v45->meth13(v44, v46, 1, 1, &unk_100AB458);
   ++LOWORD(v2->field_14);
   v47 = (unk1E214 *)operator new(0x1E214u);
   if (v47)
@@ -64432,10 +64359,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v48)
     sub_1003E260(4);
   v49 = v48->lpVtbl;
-  v48->lpVtbl->field_38(v48, (unk000C8 *)a1, 1138491392, 1129316352, 1052673, 2, 5, 1, -1);
+  v48->lpVtbl->meth14(v48, (unk000C8 *)a1, 1138491392, 1129316352, 1052673, 2, 5, 1, -1);
   v48->field_4 = sub_10041040;
   LOWORD(v48->?) = 52;
-  v49->field_34(v48, asc_100AD300, 1, 4, &unk_100AB478);
+  v49->meth13(v48, asc_100AD300, 1, 4, &unk_100AB478);
   ++LOWORD(v2->field_14);
   v50 = (unk1E214 *)operator new(0x1E214u);
   if (v50)
@@ -64446,10 +64373,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v51)
     sub_1003E260(4);
   v52 = v51->lpVtbl;
-  v51->lpVtbl->field_38(v51, (unk000C8 *)a1, 1138491392, 1130364928, 1048577, 2, 5, 1, -1);
+  v51->lpVtbl->meth14(v51, (unk000C8 *)a1, 1138491392, 1130364928, 1048577, 2, 5, 1, -1);
   LOWORD(v51->?) = 3;
   v53 = GetStringWithIndex(0x6Fu);
-  v52->field_34(v51, v53, 1, 1, &unk_100AB478);
+  v52->meth13(v51, v53, 1, 1, &unk_100AB478);
   ++LOWORD(v2->field_14);
   v54 = (unk1E214 *)operator new(0x1E214u);
   if (v54)
@@ -64460,10 +64387,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v55)
     sub_1003E260(4);
   v56 = v55->lpVtbl;
-  v55->lpVtbl->field_38(v55, (unk000C8 *)a1, 1138491392, 1131413504, 1052673, 2, 5, 1, -1);
+  v55->lpVtbl->meth14(v55, (unk000C8 *)a1, 1138491392, 1131413504, 1052673, 2, 5, 1, -1);
   v55->field_4 = sub_10041180;
   LOWORD(v55->?) = 52;
-  v56->field_34(v55, asc_100AD300, 1, 4, &unk_100AB478);
+  v56->meth13(v55, asc_100AD300, 1, 4, &unk_100AB478);
   ++LOWORD(v2->field_14);
   v57 = (unk1E214 *)operator new(0x1E214u);
   if (v57)
@@ -64474,10 +64401,10 @@ int __cdecl sub_10059BB0(int a1) {
   if (!v58)
     sub_1003E260(4);
   v59 = v58->lpVtbl;
-  v58->lpVtbl->field_38(v58, (unk000C8 *)a1, 1138491392, 1132462080, 1048577, 2, 5, 1, -1);
+  v58->lpVtbl->meth14(v58, (unk000C8 *)a1, 1138491392, 1132462080, 1048577, 2, 5, 1, -1);
   LOWORD(v58->?) = 3;
   v60 = GetStringWithIndex(0x3Fu);
-  v59->field_34(v58, v60, 1, 1, &unk_100AB478);
+  v59->meth13(v58, v60, 1, 1, &unk_100AB478);
   ++LOWORD(v2->field_14);
   return 1;
 }
@@ -64533,7 +64460,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   LPCSTR v39;        // eax
   float v41;         // [esp+1B4h] [ebp-34h]
 
-  gUnkC8Ptr6->last->lpVtbl->field_4(gUnkC8Ptr6->last, aTimeattackGrf);
+  gUnkC8Ptr6->last->lpVtbl->meth1(gUnkC8Ptr6->last, aTimeattackGrf);
   HIWORD(a1->field_10) = 0;
   Value = -1;
   dword_10AA28E8 = 0;
@@ -64560,7 +64487,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   if (!v4)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, _DWORD, int, int, int, _DWORD, _DWORD))
-       v4->lpVtbl->field_38)(v4, a1, 0, 0, 9, 2, 5, 0, 0);
+       v4->lpVtbl->meth14)(v4, a1, 0, 0, 9, 2, 5, 0, 0);
   ++v2->field_14;
   v5 = (unk1E214 *)operator new(0x1E214u);
   if (v5)
@@ -64572,10 +64499,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v7 = v6->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v6->lpVtbl->field_38)(v6, a1, v2->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
+       v6->lpVtbl->meth14)(v6, a1, v2->flags_338, 0x41200000, 0x100009, 2, 5, 1, -1);
   v6->field_3838.field_1A99C[28] = 3;
   v8 = GetStringWithIndex(0xC2u);
-  v7->field_34(v6, v8, 1, 1, &unk_100AB508);
+  v7->meth13(v6, v8, 1, 1, &unk_100AB508);
   ++v2->field_14;
   v9 = (unk1E214 *)operator new(0x1E214u);
   if (v9)
@@ -64586,19 +64513,18 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   if (!v10)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v10->lpVtbl->field_38)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 0x3001, 2, 5, 1, -1);
+       v10->lpVtbl->meth14)(v10, a1, v2->flags_338, LODWORD(v2->field_33C), 0x3001, 2, 5, 1, -1);
   v11 = v10->field_3838.lpVtbl;
   v12 = &v10->field_3838;
   v10->field_4 = sub_1003EC30;
   *(_DWORD *)&v10->field_3838.field_1A99C[16] = 1;
-  ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->field_14)(
+  ((void(__thiscall *)(unk1A5E0 *, int, void *, int, _DWORD, int))v11->meth5)(
       &v10->field_3838, 262145, &dword_100AB4D8, 5, 0, -1);
   v10->field_3838.field_4[0] = (DWORD)sub_10042740;
   v10->field_3838.field_4[4] = (DWORD)sub_10042560;
   for (i = 0; i < 26000; i += 260) {
     if ((unk06594 *)((char *)gUnkC8Ptr6->last + i) != (unk06594 *)-4)
-        ((void(__thiscall *)(
-            unk1A5E0 *, char *, _DWORD, int, void *, _DWORD))v12->lpVtbl->field_10)(
+        ((void(__thiscall *)(unk1A5E0 *, char *, _DWORD, int, void *, _DWORD))v12->lpVtbl->meth4)(
             v12, (char *)&gUnkC8Ptr6->last->field_4 + i, 0, 1, &dword_100AB4D8, 0);
   }
   ++v2->field_14;
@@ -64614,12 +64540,12 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   v16 = v15->lpVtbl;
   v41 = v2->field_33C - -95.0;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, _DWORD, int, int, int, int, int))
-       v15->lpVtbl->field_38)(v15, a1, v2->flags_338, LODWORD(v41), 0x102001, 2, 5, 1, -1);
+       v15->lpVtbl->meth14)(v15, a1, v2->flags_338, LODWORD(v41), 0x102001, 2, 5, 1, -1);
   v15->field_C = sub_10047360;
   v15->field_8 = (int(__cdecl *)())sub_10044F00;
   v15->field_3838.field_1A99C[28] = 3;
   v17 = GetStringWithIndex(0x1Eu);
-  v16->field_34(v15, v17, 1, 1, &dword_100AB448);
+  v16->meth13(v15, v17, 1, 1, &dword_100AB448);
   ++v2->field_14;
   ++LOWORD(v2->last);
   v18 = (unk1E214 *)operator new(0x1E214u);
@@ -64632,10 +64558,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v20 = v19->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v19->lpVtbl->field_38)(v19, a1, 1138491392, 1129316352, 1052673, 2, 5, 1, -1);
+       v19->lpVtbl->meth14)(v19, a1, 1138491392, 1129316352, 1052673, 2, 5, 1, -1);
   v19->field_4 = sub_10041040;
   v19->field_3838.field_1A99C[28] = 52;
-  v20->field_34(v19, asc_100AD300, 1, 4, &unk_100AB478);
+  v20->meth13(v19, asc_100AD300, 1, 4, &unk_100AB478);
   ++v2->field_14;
   v21 = (unk1E214 *)operator new(0x1E214u);
   if (v21)
@@ -64647,10 +64573,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v23 = v22->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v22->lpVtbl->field_38)(v22, a1, 1138491392, 1130364928, 1048577, 2, 5, 1, -1);
+       v22->lpVtbl->meth14)(v22, a1, 1138491392, 1130364928, 1048577, 2, 5, 1, -1);
   v22->field_3838.field_1A99C[28] = 3;
   v24 = GetStringWithIndex(0x6Fu);
-  v23->field_34(v22, v24, 1, 1, &unk_100AB478);
+  v23->meth13(v22, v24, 1, 1, &unk_100AB478);
   ++v2->field_14;
   v25 = (unk1E214 *)operator new(0x1E214u);
   if (v25)
@@ -64662,10 +64588,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v27 = v26->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v26->lpVtbl->field_38)(v26, a1, 1138491392, 1131413504, 1052673, 2, 5, 1, -1);
+       v26->lpVtbl->meth14)(v26, a1, 1138491392, 1131413504, 1052673, 2, 5, 1, -1);
   v26->field_4 = sub_10041180;
   v26->field_3838.field_1A99C[28] = 52;
-  v27->field_34(v26, asc_100AD300, 1, 4, &unk_100AB478);
+  v27->meth13(v26, asc_100AD300, 1, 4, &unk_100AB478);
   ++v2->field_14;
   v28 = (unk1E214 *)operator new(0x1E214u);
   if (v28)
@@ -64677,10 +64603,10 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v30 = v29->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, int, int))
-       v29->lpVtbl->field_38)(v29, a1, 1138491392, 1132462080, 1048577, 2, 5, 1, -1);
+       v29->lpVtbl->meth14)(v29, a1, 1138491392, 1132462080, 1048577, 2, 5, 1, -1);
   v29->field_3838.field_1A99C[28] = 3;
   v31 = GetStringWithIndex(0x3Fu);
-  v30->field_34(v29, v31, 1, 1, &unk_100AB478);
+  v30->meth13(v29, v31, 1, 1, &unk_100AB478);
   ++v2->field_14;
   v32 = (unk1E214 *)operator new(0x1E214u);
   if (v32)
@@ -64691,7 +64617,7 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
   if (!v33)
     sub_1003E260(4);
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, int, int, int, int, int, _DWORD, int))
-       v33->lpVtbl->field_38)(v33, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
+       v33->lpVtbl->meth14)(v33, a1, 1117782016, 1110966272, 9, 2, 5, 0, 6);
   ++v2->field_14;
   *(&a1->field_6C + LOWORD(a1->field_10)) = 0;
   v34 = (unk00348 *)operator new(0x348u);
@@ -64717,13 +64643,13 @@ int __cdecl sub_1005A6E0(unk000C8 *a1) {
     sub_1003E260(4);
   v38 = v37->lpVtbl;
   ((void(__thiscall *)(unk1E214 *, unk000C8 *, _DWORD, int, int, int, int, int, int))
-       v37->lpVtbl->field_38)(v37, a1, 0, 1130889216, 1048585, 2, 5, 1, -1);
+       v37->lpVtbl->meth14)(v37, a1, 0, 1130889216, 1048585, 2, 5, 1, -1);
   v37->field_C = sub_10047360;
   v37->field_4 = sub_10047250;
   v37->field_14 = (int)sub_1003E7A0;
   v37->field_3838.field_1A99C[28] = 3;
   v39 = GetStringWithIndex(0x70u);
-  v38->field_34(v37, v39, 1, 1, &unk_100AB438);
+  v38->meth13(v37, v39, 1, 1, &unk_100AB438);
   dword_10AA29C4 = (int)v37;
   ++v35->field_14;
   return 1;
@@ -64752,8 +64678,8 @@ int __thiscall meth_unk000C8_1005AE70(unk000C8 *this) {
     this->field_C = 1;
     this->field_68 = 1;
   }
-  v4 = dword_10220B20;
-  if (dword_10220B20 == 5) {
+  v4 = gGameMode1;
+  if (gGameMode1 == 5) {
     dword_10AA28A4 = 0;
     memset(byte_10A9D618, 0, 0x20u);
     v2 = 0;
@@ -64762,7 +64688,7 @@ int __thiscall meth_unk000C8_1005AE70(unk000C8 *this) {
   v5 = gGameMode;
   if (gGameMode == GAME_MODE_4 && dword_106805B8 == 2 && dword_10AA289C) {
     sub_10045EA0();
-    v4 = dword_10220B20;
+    v4 = gGameMode1;
     v5 = GAME_MODE_0;
     gGameMode = GAME_MODE_0;
   }
@@ -64963,7 +64889,7 @@ DWORD __thiscall meth_unk00438_1005B250(unk00438 *this, float a2, float a3) {
   dword_10AA2A54 = v5;
   if (v5 >= 120) {
     dword_10AA2A54 = 0;
-    result = this->lpVtbl->field_18(this, word_100AC9DC, a2, a3, this->field_8);
+    result = this->lpVtbl->meth6(this, word_100AC9DC, a2, a3, this->field_8);
   }
   return result;
 }
@@ -64983,7 +64909,7 @@ int __thiscall meth_unk00438_1005B2B0(unk00438 *this) {
   int v9;     // [esp+10h] [ebp-8h]
 
   if ((this->field_4 & 1) != 0)
-    *(float *)&v9 = this->lpVtbl->field_28(this);
+    *(float *)&v9 = this->lpVtbl->meth10(this);
   else
     v9 = this->field_410;
   v2 = this->field_9[0];
@@ -65001,7 +64927,7 @@ int __thiscall meth_unk00438_1005B2B0(unk00438 *this) {
         v5 = 6 * v4;
         LOWORD(v6) = word_100AC6E8[v5];
         if ((_WORD)v6 != 0xFFFF) {
-            ((void(__thiscall *)(unk00438 *, int, int, int, _DWORD))this->lpVtbl->field_18)(
+            ((void(__thiscall *)(unk00438 *, int, int, int, _DWORD))this->lpVtbl->meth6)(
                 this, v6, v9, this->field_414, this->field_8);
             v7 = (double)word_100AC6E4[v5] + *(float *)&v9;
         LABEL_14:
@@ -65012,8 +64938,8 @@ int __thiscall meth_unk00438_1005B2B0(unk00438 *this) {
   }
   result = this->field_420;
   if (result)
-    result = ((int(__thiscall *)(unk00438 *, int, int))this->lpVtbl->field_24)(
-        this, v9, this->field_414);
+    result =
+        ((int(__thiscall *)(unk00438 *, int, int))this->lpVtbl->meth9)(this, v9, this->field_414);
   return result;
 }
 // 100AC6E4: using guessed type __int16 word_100AC6E4[];
@@ -65030,7 +64956,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
   int result; // eax
 
   if ((this->field_4 & 1) != 0)
-    a2 = this->lpVtbl->field_28(this);
+    a2 = this->lpVtbl->meth10(this);
   v4 = this->field_9[0];
   for (i = 0; v4; v4 = this->field_9[(__int16)++i]) {
     v6 = v4 - 32;
@@ -65046,7 +64972,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
         v7 = 6 * v6;
         LOWORD(v8) = word_100AC6E8[v7];
         if ((_WORD)v8 != 0xFFFF) {
-            ((void(__thiscall *)(unk00438 *, int, _DWORD, int, _DWORD))this->lpVtbl->field_18)(
+            ((void(__thiscall *)(unk00438 *, int, _DWORD, int, _DWORD))this->lpVtbl->meth6)(
                 this, v8, LODWORD(a2), a3, this->field_8);
             v9 = (double)word_100AC6E4[v7] + a2;
         LABEL_13:
@@ -65058,7 +64984,7 @@ int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3) {
   result = this->field_420;
   if (result)
     result =
-        ((int(__thiscall *)(unk00438 *, _DWORD, int))this->lpVtbl->field_24)(this, LODWORD(a2), a3);
+        ((int(__thiscall *)(unk00438 *, _DWORD, int))this->lpVtbl->meth9)(this, LODWORD(a2), a3);
   return result;
 }
 // 100AC6E4: using guessed type __int16 word_100AC6E4[];
@@ -65076,7 +65002,7 @@ int __thiscall meth_unk00438_1005B460(unk00438 *this) {
   int v9;     // [esp+10h] [ebp-8h]
 
   if ((this->field_4 & 1) != 0)
-    *(float *)&v9 = this->lpVtbl->field_28(this);
+    *(float *)&v9 = this->lpVtbl->meth10(this);
   else
     v9 = this->field_410;
   v2 = this->field_9[0];
@@ -65094,7 +65020,7 @@ int __thiscall meth_unk00438_1005B460(unk00438 *this) {
         v5 = 6 * v4;
         LOWORD(v6) = word_100ACB60[v5];
         if ((_WORD)v6 != 0xFFFF) {
-            ((void(__thiscall *)(unk00438 *, int, int, int, _DWORD))this->lpVtbl->field_20)(
+            ((void(__thiscall *)(unk00438 *, int, int, int, _DWORD))this->lpVtbl->meth8)(
                 this, v6, v9, this->field_414, this->field_8);
             v7 = (double)(word_100ACB5C[v5] - 6) + *(float *)&v9;
         LABEL_14:
@@ -65105,8 +65031,8 @@ int __thiscall meth_unk00438_1005B460(unk00438 *this) {
   }
   result = this->field_420;
   if (result)
-    result = ((int(__thiscall *)(unk00438 *, int, int))this->lpVtbl->field_24)(
-        this, v9, this->field_414);
+    result =
+        ((int(__thiscall *)(unk00438 *, int, int))this->lpVtbl->meth9)(this, v9, this->field_414);
   return result;
 }
 // 100ACB5C: using guessed type __int16 word_100ACB5C[];
@@ -65173,7 +65099,7 @@ char __thiscall meth_unk00438_1005B570(unk00438 *this) {
   }
   v3 = sub_1005B540(dword_10AA33E4);
   if (v3) {
-    this->lpVtbl->field_4(this, v4);
+    this->lpVtbl->meth1(this, v4);
     if (this->field_40A < this->field_41C)
         sprintf(this->field_9, "%s%c", this->field_9, v3);
   LABEL_25:
@@ -65279,14 +65205,14 @@ unk1A5E0 *__thiscall meth_unk1A5E0_init(unk1A5E0 *this) {
 
 //----- (1005B8D0) --------------------------------------------------------
 unk1A5E0 *__thiscall meth_unk1A5E0_1005B8D0(unk1A5E0 *this, char a2) {
-  meth_1005B8F0(this);
+  meth_unk1A5E0_1005B8F0(this);
   if ((a2 & 1) != 0)
     operator delete(this);
   return this;
 }
 
 //----- (1005B8F0) --------------------------------------------------------
-void __thiscall meth_1005B8F0(unk1A5E0 *this) {
+void __thiscall meth_unk1A5E0_1005B8F0(unk1A5E0 *this) {
   this->lpVtbl = &gUnk1A5E0Vtbl;
   `eh vector destructor iterator'(this->vectorUnk438, 0x438u, 100, (void (__thiscall *)(void *))meth_unk00438_deinit);
 }
@@ -65397,7 +65323,7 @@ int __thiscall meth_unk1A5E0_1005B910(
 // 100AB9F8: using guessed type int dword_100AB9F8;
 
 //----- (1005BB80) --------------------------------------------------------
-int __thiscall meth_unk1A5E0_1005BB80(unk1A5E0 *this, int a2) {
+int __thiscall meth_unk1A5E0_9(unk1A5E0 *this, int a2) {
   char *v3;                            // edi
   int v4;                              // ebp
   char v6;                             // al
@@ -65428,8 +65354,7 @@ int __thiscall meth_unk1A5E0_1005BB80(unk1A5E0 *this, int a2) {
 // 10AA28D8: using guessed type int dword_10AA28D8;
 
 //----- (1005BC10) --------------------------------------------------------
-int __thiscall meth_unk1A5E0_1005BC10(
-    unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6) {
+int __thiscall meth_unk1A5E0_4(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6) {
   int result;           // eax
   char *v8;             // edx
   unsigned int v9;      // eax
@@ -65451,7 +65376,7 @@ int __thiscall meth_unk1A5E0_1005BC10(
   if (!Source)
     return 0;
   if (this->field_1A92C[0] >= 0x64u) {
-    this->lpVtbl->field_2C(this, 0);
+    this->lpVtbl->meth11(this, 0);
     this->field_1A92C[0] = 99;
   }
   if (a6) {
@@ -65491,10 +65416,10 @@ int __thiscall meth_unk1A5E0_1005BC10(
   this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]].field_420 = 0;
   if ((_BYTE)a4 == 3)
     ((void(__thiscall *)(unk00438 *))this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]
-         .lpVtbl->field_8)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
+         .lpVtbl->meth2)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
   else
     ((void(__thiscall *)(unk00438 *))this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]
-         .lpVtbl->field_4)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
+         .lpVtbl->meth1)(&this->vectorUnk438[(unsigned __int16)this->field_1A92C[0]]);
   v16 = (_WORD *)((char *)this + 1080 * (unsigned __int16)this->field_1A92C[0]);
   v16[548] = v16[556] - v16[552] - 16;
   v17 = this->field_18;
@@ -65584,7 +65509,7 @@ int __thiscall meth_unk1A5E0_1005C000(unk1A5E0 *this, int a2) {
             if (*v9) {
                 v11 = *(v9 - 1);
                 if (v11 > 0) {
-                    this->lpVtbl->field_28(this, *v9, v11, v8 - 1);
+                    this->lpVtbl->meth10(this, *v9, v11, v8 - 1);
                     v9 = v16;
                     v10 = v17;
                 }
@@ -65681,7 +65606,7 @@ int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index) {
   v4 = this->field_1A92C[5];
   v23 = 0;
   if (v4 >= 0)
-    ((void(__thiscall *)(unk1A5E0 *, __int16, _DWORD, _DWORD))this->lpVtbl->field_4)(
+    ((void(__thiscall *)(unk1A5E0 *, __int16, _DWORD, _DWORD))this->lpVtbl->meth1)(
         this, v4, *(_DWORD *)this->gap24, *(_DWORD *)&this->gap24[4]);
   if ((this->field_18 & 0x1000000) == 0 && index >= 0 &&
       (this->vectorUnk438[index].field_4 & 0x10) == 0)
@@ -65695,7 +65620,7 @@ int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index) {
             v6 = &this->lpVtbl + 270 * v5;
             if (v6 != (unk1A5E0Vtbl **)-53) {
                 v7 = v6[11];
-                ((void(__thiscall *)(unk1A5E0Vtbl **))v7->field_4)(v6 + 11);
+                ((void(__thiscall *)(unk1A5E0Vtbl **))v7->meth1)(v6 + 11);
                 v6[276] = *(unk1A5E0Vtbl **)&this->gap1A93A[2];
                 v6[278] = *(unk1A5E0Vtbl **)&this->gap1A93A[10];
                 v23 = indexa + *(_DWORD *)&this->gap1A93A[6];
@@ -65703,7 +65628,7 @@ int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index) {
                 v6[279] = (unk1A5E0Vtbl *)(v23 + 18);
                 v18 = (float)v23;
                 v13 = (float)*(int *)&this->gap1A93A[2];
-                ((void(__thiscall *)(unk1A5E0Vtbl **, _DWORD, _DWORD))v7->field_C)(
+                ((void(__thiscall *)(unk1A5E0Vtbl **, _DWORD, _DWORD))v7->meth3)(
                     v6 + 11, LODWORD(v13), LODWORD(v18));
                 v3 = v24;
             }
@@ -65712,12 +65637,12 @@ int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index) {
                 if (sub_100586D0((int)v6[280])) {
                     v19 = (float)v23;
                     v14 = (float)v25;
-                    ((void(__thiscall *)(unk1A5E0 *, int, _DWORD, _DWORD))this->lpVtbl->field_4)(
+                    ((void(__thiscall *)(unk1A5E0 *, int, _DWORD, _DWORD))this->lpVtbl->meth1)(
                         this, 139, LODWORD(v14), LODWORD(v19));
                 } else {
                     v20 = (float)v23;
                     v15 = (float)v25;
-                    ((void(__thiscall *)(unk1A5E0 *, int, _DWORD, _DWORD))this->lpVtbl->field_4)(
+                    ((void(__thiscall *)(unk1A5E0 *, int, _DWORD, _DWORD))this->lpVtbl->meth1)(
                         this, 138, LODWORD(v15), LODWORD(v20));
                 }
             }
@@ -65733,10 +65658,10 @@ int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index) {
         v21 = (float)*(int *)&this->gap1A93A[22];
         v16 = (float)*(int *)&this->gap1A93A[18];
         if (*(_DWORD *)this->field_1A99C)
-            ((void(__thiscall *)(unk1A5E0 *, int, float, float))v9->field_4)(
+            ((void(__thiscall *)(unk1A5E0 *, int, float, float))v9->meth1)(
                 this, 47, COERCE_FLOAT(LODWORD(v16)), COERCE_FLOAT(LODWORD(v21)));
         else
-            ((void(__thiscall *)(unk1A5E0 *, __int16, float, float))v9->field_4)(
+            ((void(__thiscall *)(unk1A5E0 *, __int16, float, float))v9->meth1)(
                 this, v8, COERCE_FLOAT(LODWORD(v16)), COERCE_FLOAT(LODWORD(v21)));
     }
     v10 = this->field_1A92C[4];
@@ -65744,15 +65669,15 @@ int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index) {
         v22 = (float)*(int *)&this->gap1A93A[38];
         v17 = (float)*(int *)&this->gap1A93A[34];
         if (*(_DWORD *)&this->field_1A99C[2])
-            ((void(__thiscall *)(unk1A5E0 *, int, _DWORD, _DWORD))this->lpVtbl->field_4)(
+            ((void(__thiscall *)(unk1A5E0 *, int, _DWORD, _DWORD))this->lpVtbl->meth1)(
                 this, 45, LODWORD(v17), LODWORD(v22));
         else
-            ((void(__thiscall *)(unk1A5E0 *, __int16, _DWORD, _DWORD))this->lpVtbl->field_4)(
+            ((void(__thiscall *)(unk1A5E0 *, __int16, _DWORD, _DWORD))this->lpVtbl->meth1)(
                 this, v10, LODWORD(v17), LODWORD(v22));
     }
     v11 = this->field_1A938;
     if (v11 > 0)
-        ((void(__thiscall *)(unk1A5E0 *, __int16, _DWORD, _DWORD))this->lpVtbl->field_4)(
+        ((void(__thiscall *)(unk1A5E0 *, __int16, _DWORD, _DWORD))this->lpVtbl->meth1)(
             this, v11, *(_DWORD *)&this->field_1A99C[8], *(_DWORD *)&this->field_1A99C[10]);
   }
   return 1;
@@ -65864,7 +65789,7 @@ int __thiscall meth_unk1A5E0_1005C590(unk1A5E0 *this, int *a2) {
     this->field_18 = v4 & 0xFFF7FFFD;
   }
   v9 = &this->gap1A93A[82];
-  v10 = (int(__thiscall *)(unk1A5E0 *, char *))this->lpVtbl->field_18;
+  v10 = (int(__thiscall *)(unk1A5E0 *, char *))this->lpVtbl->meth6;
   v50 = v10;
   if (((int(__fastcall *)(unk1A5E0 *, unk00054 *, _BYTE *))v10)(this, v6, &this->gap1A93A[82]) ||
       *(_DWORD *)&this->field_1A99C[12]) {
@@ -66064,9 +65989,9 @@ int __thiscall meth_unk1A5E0_1005CB40(unk1A5E0 *this, int index) {
 
   v5 = -1;
   v3 = this->lpVtbl;
-  this->lpVtbl->field_8(this, index);
+  this->lpVtbl->meth2(this, index);
   if (!dword_10AA28D8 && !dword_10AA2858)
-    v3->field_1C(this, &v5);
+    v3->meth7(this, &v5);
   ++word_10AA2870;
   return v5;
 }
@@ -66198,7 +66123,7 @@ int __thiscall meth_unk06594_1005CF20(unk06594 *this, char *lpFileName) {
   fseek(fp, v6 - 128, 0);
   freadLock(Buffer, 1u, 0x80u, fp);
   fclose(fp);
-  v11 = this->lpVtbl->last;
+  v11 = this->lpVtbl->meth6;
   v11(this, FileName, Buffer);
   for (i = 1; i < 100; ++i) {
     memset(Buffer, 0, sizeof(Buffer));
@@ -66218,7 +66143,7 @@ int __thiscall meth_unk06594_1005CF20(unk06594 *this, char *lpFileName) {
 }
 
 //----- (1005D0A0) --------------------------------------------------------
-int __thiscall meth_unk06594_1005D0A0(unk06594 *this, LPCSTR lpFileName) {
+int __thiscall meth_unk06594_2(unk06594 *this, LPCSTR lpFileName) {
   int result; // eax
   void *v3;   // ebx
   int v4;     // edi
@@ -66241,7 +66166,7 @@ int __thiscall meth_unk06594_1005D0A0(unk06594 *this, LPCSTR lpFileName) {
 }
 
 //----- (1005D110) --------------------------------------------------------
-int __thiscall meth_unk06594_1005D110(unk06594 *this, char *Str1, int a3) {
+int __thiscall meth_unk06594_3(unk06594 *this, char *Str1, int a3) {
   int v3;           // ebx
   unsigned int v4;  // esi
   char *v5;         // edx
@@ -66832,7 +66757,7 @@ int sub_1005F4E0() {
     v1 = gDDSurface;
     do {
         if (!(*(int(__stdcall **)(int))(*(_DWORD *)*v1 + 108))(*v1))
-            sub_1000B790(*v1, (LPCSTR)v1[28]);
+            DDCopyBitmap(*v1, (LPCSTR)v1[28]);
         ++v0;
         v1 += 29;
     } while (v0 < (unsigned __int16)gSurfaceCount);
@@ -66951,9 +66876,9 @@ int DDraw_DoInit() {
         sprintf(Buffer, aDdrawDoinitLoa);
         sub_1005F580();
     }
-    gUnkC8Ptr1->lpVtbl->field_20(gUnkC8Ptr1);
+    gUnkC8Ptr1->lpVtbl->meth8(gUnkC8Ptr1);
     sub_1005F5A0(0, 0, 0, dword_100AB56C, dword_100AB57C[0]);
-    gUnkC8Ptr1->lpVtbl->field_14(gUnkC8Ptr1);
+    gUnkC8Ptr1->lpVtbl->meth5(gUnkC8Ptr1);
     if (gDDSurface) {
         gDDSurface->lpVtbl->Release(gDDSurface);
         gDDSurface = 0;
@@ -67068,13 +66993,13 @@ int sub_1005F940() {
   int v11;             // edx
   int result;          // eax
 
-  if (!dword_10220B20)
-    qmemcpy(&unk_10AA25D0, &dword_10220B20, 0x118u);
-  gChosenWeather0 = dword_10220B34;
+  if (!gGameMode1)
+    qmemcpy(&unk_10AA25D0, &gGameMode1, 0x118u);
+  gChosenWeather0 = gChosenWeather2;
   LOBYTE(dword_10AA28B8) = dword_10220B24;
   v0 = dword_10220B28;
   dword_10AA28A0 = dword_10220B2C;
-  gChosenTrack = dword_10220B30;
+  gChosenTrack = gChosenTrack1;
   v1 = dword_10220B2C + 1;
   dword_10AA28C0 = dword_10220B38;
   v2 = word_10220B40;
@@ -67096,7 +67021,7 @@ int sub_1005F940() {
   } while (v6);
   dword_10AA28C4 = v5;
   v8 = dword_10AA26F4[0];
-  if (BYTE1(dword_10AA26F4[0]) || gGameMode == 5 || dword_10220B20)
+  if (BYTE1(dword_10AA26F4[0]) || gGameMode == 5 || gGameMode1)
     return 1;
   if (LOBYTE(dword_10AA26F4[0]) > (unsigned __int8)byte_10A9DBDC ||
       !LOBYTE(dword_10AA26F4[0]) && byte_10A9DBDC) {
@@ -67543,7 +67468,7 @@ int __stdcall sub_10060210(HWND a1) {
 
 //----- (10060260) --------------------------------------------------------
 LPDIRECTINPUTDEVICEA sub_10060260() {
-  return meth_100603A0(gUnk54Ptr, (int)gHwnd);
+  return meth_unk00054_100603A0(gUnk54Ptr, (int)gHwnd);
 }
 
 //----- (10060280) --------------------------------------------------------
@@ -67565,15 +67490,14 @@ unk00054 *__thiscall meth_unk00054_init(unk00054 *this) {
 }
 
 //----- (100602B0) --------------------------------------------------------
-LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(#492 * this) {
+LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_100602B0(unk00054 *this) {
   LPDIRECTINPUTDEVICEA result; // eax
 
-  result = (LPDIRECTINPUTDEVICEA) * ((_DWORD *)this + 20);
+  result = this->lpDIDeviceA;
   if (result) {
     result->lpVtbl->Unacquire(result);
-    result = (LPDIRECTINPUTDEVICEA)(*(int(__stdcall **)(_DWORD))(**((_DWORD **)this + 20) + 8))(
-        *((_DWORD *)this + 20));
-    *((_DWORD *)this + 20) = 0;
+    result = (LPDIRECTINPUTDEVICEA)this->lpDIDeviceA->lpVtbl->Release(this->lpDIDeviceA);
+    this->lpDIDeviceA = 0;
   }
   return result;
 }
@@ -67619,7 +67543,7 @@ int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd) {
 }
 
 //----- (100603A0) --------------------------------------------------------
-LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd) {
+LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_100603A0(unk00054 *this, HWND hwnd) {
   LPDIRECTINPUTDEVICEA result; // eax
   DWORD v4;                    // eax
   int v5;                      // ebx
@@ -67648,44 +67572,43 @@ LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd) {
   dword_10AA33B0 += v4 - v5;
   if (dword_10AA33B0 > 120)
     dword_10AA33A8 = 1;
-  result = (LPDIRECTINPUTDEVICEA) * ((_DWORD *)this + 20);
+  result = this->lpDIDeviceA;
   if (!result)
     return result;
-  result->lpVtbl->Acquire((IDirectInputDeviceA *)*((_DWORD *)this + 20));
-  while ((*(int(__stdcall **)(_DWORD, int, int *))(**((_DWORD **)this + 20) + 36))(
-             *((_DWORD *)this + 20), 16, v19) == -2147024866) {
-    if ((*(int(__stdcall **)(_DWORD))(**((_DWORD **)this + 20) + 28))(*((_DWORD *)this + 20)) < 0)
+  result->lpVtbl->Acquire(this->lpDIDeviceA);
+  while (this->lpDIDeviceA->lpVtbl->GetDeviceState(this->lpDIDeviceA, 16, v19) == -2147024866) {
+    if (this->lpDIDeviceA->lpVtbl->Acquire(this->lpDIDeviceA) < 0)
         break;
-    (*(void(__stdcall **)(_DWORD))(**((_DWORD **)this + 20) + 28))(*((_DWORD *)this + 20));
+    this->lpDIDeviceA->lpVtbl->Acquire(this->lpDIDeviceA);
   }
-  v6 = v19[0] + *(_DWORD *)this;
-  v7 = v19[1] + *((_DWORD *)this + 1);
-  v8 = v19[2] + *((_DWORD *)this + 2);
-  *(_DWORD *)this = v6;
-  *((_DWORD *)this + 1) = v7;
-  *((_DWORD *)this + 2) = v8;
+  v6 = v19[0] + this->field_0;
+  v7 = v19[1] + *(_DWORD *)this->gap4;
+  v8 = v19[2] + *(_DWORD *)&this->gap4[4];
+  this->field_0 = v6;
+  *(_DWORD *)this->gap4 = v7;
+  *(_DWORD *)&this->gap4[4] = v8;
   if (v6 >= 0) {
     if (v6 >= dword_10AA33B8)
-        *(_DWORD *)this = dword_10AA33B8;
+        this->field_0 = dword_10AA33B8;
   } else {
-    *(_DWORD *)this = 0;
+    this->field_0 = 0;
   }
   if (v7 >= 0) {
     if (v7 >= dword_10AA33B4)
-        *((_DWORD *)this + 1) = dword_10AA33B4;
+        *(_DWORD *)this->gap4 = dword_10AA33B4;
   } else {
-    *((_DWORD *)this + 1) = 0;
+    *(_DWORD *)this->gap4 = 0;
   }
   v9 = v20 & 0x80;
   v10 = BYTE1(v20) & 0x80;
   v11 = BYTE2(v20) & 0x80;
   v12 = HIBYTE(v20) & 0x80;
-  *((_BYTE *)this + 36) = v20 & 0x80;
-  *((_BYTE *)this + 37) = v10;
-  *((_BYTE *)this + 38) = v11;
-  *((_BYTE *)this + 39) = v12;
+  this->gap4[32] = v20 & 0x80;
+  this->gap4[33] = v10;
+  this->gap4[34] = v11;
+  this->gap4[35] = v12;
   if (v9 || v10 || v11 || v12)
-    *((_DWORD *)this + 19) = 1;
+    *(_DWORD *)&this->gap3C[16] = 1;
   if (dword_10AA2BDC)
     pm_sub_10002930();
   if (dword_10AA2BE0)
@@ -67717,14 +67640,14 @@ LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd) {
   }
   if (v14) {
     v13 = 0;
-    *((_BYTE *)this + 36) = 1;
-    *((_DWORD *)this + 19) = 0;
+    this->gap4[32] = 1;
+    *(_DWORD *)&this->gap3C[16] = 0;
     dword_10AA33A8 = 0;
   }
   if (dword_10AA33A4) {
     v13 = 0;
-    *((_BYTE *)this + 37) = 1;
-    *((_DWORD *)this + 19) = 0;
+    this->gap4[33] = 1;
+    *(_DWORD *)&this->gap3C[16] = 0;
     dword_10AA33A8 = 0;
   }
   if (v13) {
@@ -67741,87 +67664,86 @@ LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd) {
   dword_10AA33A0 = 0;
   dword_10AA339C = 0;
   dword_10AA3398 = 0;
-  if (*(_DWORD *)this != *((_DWORD *)this + 3) || *((_DWORD *)this + 1) != *((_DWORD *)this + 4) ||
-      *((_BYTE *)this + 36) != *((_BYTE *)this + 40) ||
-      *((_BYTE *)this + 37) != *((_BYTE *)this + 41) ||
-      *((_BYTE *)this + 38) != *((_BYTE *)this + 42) ||
-      *((_BYTE *)this + 39) != *((_BYTE *)this + 43)) {
+  if (this->field_0 != *(_DWORD *)&this->gap4[8] ||
+      *(_DWORD *)this->gap4 != *(_DWORD *)&this->gap4[12] || this->gap4[32] != this->gap4[36] ||
+      this->gap4[33] != this->gap4[37] || this->gap4[34] != this->gap4[38] ||
+      this->gap4[35] != this->gap4[39]) {
     g_TickCount = getTicks();
   }
-  v15 = *((_DWORD *)this + 1);
-  v16 = *((_BYTE *)this + 36);
-  *((_DWORD *)this + 3) = *(_DWORD *)this;
-  v17 = *((_BYTE *)this + 37);
-  *((_DWORD *)this + 4) = v15;
-  LOBYTE(v15) = *((_BYTE *)this + 38);
-  *((_BYTE *)this + 40) = v16;
-  v18 = *((_BYTE *)this + 39);
-  *((_BYTE *)this + 41) = v17;
-  *((_BYTE *)this + 42) = v15;
-  *((_BYTE *)this + 43) = v18;
+  v15 = *(_DWORD *)this->gap4;
+  v16 = this->gap4[32];
+  *(_DWORD *)&this->gap4[8] = this->field_0;
+  v17 = this->gap4[33];
+  *(_DWORD *)&this->gap4[12] = v15;
+  LOBYTE(v15) = this->gap4[34];
+  this->gap4[36] = v16;
+  v18 = this->gap4[35];
+  this->gap4[37] = v17;
+  this->gap4[38] = v15;
+  this->gap4[39] = v18;
   dword_10AA33C0[0] = 0;
   dword_10AA33C4 = 0;
   dword_10AA33C8 = 0;
   dword_10AA33CC = 0;
-  if (*((_BYTE *)this + 36)) {
-    if (!*((_DWORD *)this + 11)) {
-        *((_DWORD *)this + 11) = 1;
+  if (this->gap4[32]) {
+    if (!this->field_2C) {
+        this->field_2C = 1;
         goto LABEL_58;
     }
-  } else if (*((_DWORD *)this + 11)) {
-    *((_DWORD *)this + 11) = 0;
-    *((_DWORD *)this + 15) = 1;
-    *((_DWORD *)this + 19) = 0;
+  } else if (this->field_2C) {
+    this->field_2C = 0;
+    *(_DWORD *)this->gap3C = 1;
+    *(_DWORD *)&this->gap3C[16] = 0;
     dword_10AA33C0[0] = 1;
     goto LABEL_58;
   }
-  *((_DWORD *)this + 15) = 0;
+  *(_DWORD *)this->gap3C = 0;
 LABEL_58:
-  if (*((_BYTE *)this + 37)) {
-    if (!*((_DWORD *)this + 12)) {
-        *((_DWORD *)this + 12) = 1;
+  if (this->gap4[33]) {
+    if (!this->field_30) {
+        this->field_30 = 1;
         goto LABEL_65;
     }
-  } else if (*((_DWORD *)this + 12)) {
-    *((_DWORD *)this + 12) = 0;
-    *((_DWORD *)this + 16) = 1;
-    *((_DWORD *)this + 19) = 0;
+  } else if (this->field_30) {
+    this->field_30 = 0;
+    *(_DWORD *)&this->gap3C[4] = 1;
+    *(_DWORD *)&this->gap3C[16] = 0;
     dword_10AA33C4 = 1;
     goto LABEL_65;
   }
-  *((_DWORD *)this + 16) = 0;
+  *(_DWORD *)&this->gap3C[4] = 0;
 LABEL_65:
-  if (!*((_BYTE *)this + 38)) {
-    if (*((_DWORD *)this + 13)) {
-        *((_DWORD *)this + 13) = 0;
-        *((_DWORD *)this + 17) = 1;
-        *((_DWORD *)this + 19) = 0;
+  if (!this->gap4[34]) {
+    if (this->field_34) {
+        this->field_34 = 0;
+        *(_DWORD *)&this->gap3C[8] = 1;
+        *(_DWORD *)&this->gap3C[16] = 0;
         dword_10AA33C8 = 1;
         goto LABEL_72;
     }
   LABEL_71:
-    *((_DWORD *)this + 17) = 0;
+    *(_DWORD *)&this->gap3C[8] = 0;
     goto LABEL_72;
   }
-  if (*((_DWORD *)this + 13))
+  if (this->field_34)
     goto LABEL_71;
-  *((_DWORD *)this + 13) = 1;
+  this->field_34 = 1;
 LABEL_72:
-  if (*((_BYTE *)this + 39)) {
-    if (!*((_DWORD *)this + 14)) {
-        *((_DWORD *)this + 14) = 1;
+  if (this->gap4[35]) {
+    if (!this->field_38) {
+        this->field_38 = 1;
         *(_DWORD *)&SrcStr[8] = this;
         return (LPDIRECTINPUTDEVICEA)sub_1005FFF0();
     }
-  } else if (*((_DWORD *)this + 14)) {
-    *((_DWORD *)this + 14) = 0;
-    *((_DWORD *)this + 18) = 1;
-    *((_DWORD *)this + 19) = 0;
+  } else if (this->field_38) {
+    this->field_38 = 0;
+    *(_DWORD *)&this->gap3C[12] = 1;
+    *(_DWORD *)&this->gap3C[16] = 0;
     dword_10AA33CC = 1;
     *(_DWORD *)&SrcStr[8] = this;
     return (LPDIRECTINPUTDEVICEA)sub_1005FFF0();
   }
-  *((_DWORD *)this + 18) = 0;
+  *(_DWORD *)&this->gap3C[12] = 0;
   *(_DWORD *)&SrcStr[8] = this;
   return (LPDIRECTINPUTDEVICEA)sub_1005FFF0();
 }
@@ -70669,7 +70591,7 @@ LABEL_92:
         if (!*v38 || this == v1)
             goto LABEL_109;
         v39 = *((float *)this + 1021) - *((float *)v1 + 1021);
-        for (j = *(float *)(MEMORY[0x106C7CB8] + 100); v39 > j; v39 = v39 - j)
+        for (j = *(float *)(gUnk06594.field_4938 + 100); v39 > j; v39 = v39 - j)
             ;
         for (k = -j; v39 < k; v39 = v39 + j)
             ;
@@ -70824,7 +70746,7 @@ int __thiscall meth_10065630(_DWORD *this) {
     v5 += 8;
   }
   result = 131074;
-  memset32(this + 2464, 131074, 0x12u);
+  memset32(this + 0x9A0, 131074, 0x12u);
   return result;
 }
 
@@ -70878,21 +70800,21 @@ int __thiscall meth_10065740(_DWORD *this) {
     v14 = (float)(v2 >> 1);
     v15 = (float)((v2 & 1) == 0);
   }
-  v20 = cos_(*(float *)&gUnk06594.gap1C8[18252]);
-  v18 = sin_(*(float *)&gUnk06594.gap1C8[18252]);
-  v11 = *(float *)&gUnk06594.gap1C8[18252] - -1.5707964;
+  v20 = cos_(*(float *)&gUnk06594.field_4914);
+  v18 = sin_(*(float *)&gUnk06594.field_4914);
+  v11 = *(float *)&gUnk06594.field_4914 - -1.5707964;
   v19 = cos_(v11);
-  v12 = *(float *)&gUnk06594.gap1C8[18252] - -1.5707964;
+  v12 = *(float *)&gUnk06594.field_4914 - -1.5707964;
   v16 = v15 - 0.5;
   v3 = sin_(v12) * v16;
   v4 = v19 * v16;
   v17 = v14 - -1.0;
-  *(float *)&v13 = *(float *)&gUnk06594.gap1C8[18248] - -0.1;
-  *(float *)&v10 = *(float *)&gUnk06594.gap1C8[18244] - v3 * 3.0 - v18 * v17 * 8.0;
-  *(float *)&v9 = *(float *)&gUnk06594.gap1C8[18240] - v4 * 3.0 - v20 * v17 * 8.0;
+  *(float *)&v13 = *(float *)&gUnk06594.field_4910 - -0.1;
+  *(float *)&v10 = *(float *)&gUnk06594.field_490C - v3 * 3.0 - v18 * v17 * 8.0;
+  *(float *)&v9 = *(float *)&gUnk06594.field_4908 - v4 * 3.0 - v20 * v17 * 8.0;
   meth_10076420((float *)this, v9, v10, v13);
   *((float *)this + 1021) = (v14 - -0.5) * -8.0;
-  meth_100764C0((float *)this, *(float *)&gUnk06594.gap1C8[18252]);
+  meth_100764C0((float *)this, *(float *)&gUnk06594.field_4914);
   this[992] = this[12];
   this[993] = this[13];
   this[994] = this[14];
@@ -70905,7 +70827,7 @@ int __thiscall meth_10065740(_DWORD *this) {
   this[938] = 0;
   this[939] = -180;
   meth_100767A0(this, 0, 0, 0);
-  if (*(_DWORD *)&gUnk06594.gap1C8[18288]) {
+  if (gUnk06594.field_4938) {
     this[1004] = 0;
     this[1019] = 0;
     this[1017] = 0;
@@ -70913,11 +70835,11 @@ int __thiscall meth_10065740(_DWORD *this) {
     if ((__int16)(gChosenWeather1 - 1) > 2 || v5 < 0)
         v5 = 0;
     this[1020] = *(_DWORD *)&gTrackData[gChosenTrack]->last[84 * this[921] + 24 + 28 * v5];
-    this[995] = *(_DWORD *)&gUnk06594.gap1C8[18288];
+    this[995] = gUnk06594.field_4938;
     this[996] = 0;
     sub_1003ADA0((float *)this + 997,
-                 (float *)(*(_DWORD *)&gUnk06594.gap1C8[18288] + 76),
-                 (float *)(*(_DWORD *)&gUnk06594.gap1C8[18288] + 116));
+                 (float *)(gUnk06594.field_4938 + 76),
+                 (float *)(gUnk06594.field_4938 + 116));
   } else {
     this[997] = 1065353216;
     this[998] = 0;
@@ -71463,316 +71385,315 @@ int __cdecl sub_10066620(const void *a1, const void *a2) {
 
 //----- (10066650) --------------------------------------------------------
 int *__thiscall meth_10066650(_DWORD *this) {
-  _DWORD;         // ebp
-  _DWORD ecx1;    // ecx
-  _DWORD esi2;    // esi
-  _DWORD edi2;    // edi
-  _DWORD ecx3;    // ecx
-  double st7_13;  // st7
-  double st6_13;  // st6
-  double st7_14;  // st7
-  double st7_22;  // st7
-  double st6_22;  // st6
-  double st7_23;  // st7
-  _DWORD eax29;   // eax
-  _DWORD ebp31;   // ebp
-  _DWORD eax31;   // eax
-  double st7_31;  // st7
-  _DWORD edx32;   // edx
+  int v2;         // ecx
+  float *v3;      // esi
+  float *v4;      // edi
+  int v5;         // ecx
+  double v6;      // st7
+  double v7;      // st6
+  double v8;      // st7
+  double v9;      // st7
+  double v10;     // st6
+  double v11;     // st7
+  int v12;        // eax
+  int v13;        // ebp
+  int v14;        // eax
+  double v15;     // st7
+  int v16;        // edx
   int *result;    // eax
-  _DWORD ebp33;   // ebp
-  _DWORD ecx34;   // ecx
-  _DWORD esi35;   // esi
-  _DWORD edi38;   // edi
-  _DWORD ecx46;   // ecx
-  _DWORD eax46;   // eax
-  _BYTE cc47;     // cc
-  _DWORD ecx51;   // ecx
-  _DWORD edi53;   // edi
-  _DWORD esi57;   // esi
-  _DWORD ecx57;   // ecx
-  _BYTE al57;     // al
-  _BYTE cl57;     // cl
-  _DWORD eax57;   // eax
-  _DWORD eax57a;  // eax
-  _DWORD eax57b;  // eax
-  _DWORD esi61;   // esi
-  _DWORD edi61;   // edi
-  float varF4;    // [esp+0h] [ebp-F4h]
-  float varF0;    // [esp+4h] [ebp-F0h]
-  float varEC;    // [esp+8h] [ebp-ECh]
-  float varECa;   // [esp+8h] [ebp-ECh]
-  _DWORD varD8;   // [esp+1Ch] [ebp-D8h]
-  _DWORD varD8a;  // [esp+1Ch] [ebp-D8h]
-  _DWORD varD8b;  // [esp+1Ch] [ebp-D8h]
-  _DWORD varD4;   // [esp+20h] [ebp-D4h]
-  _DWORD varD4a;  // [esp+20h] [ebp-D4h]
-  int varD0;      // [esp+24h] [ebp-D0h]
-  int varCC;      // [esp+28h] [ebp-CCh]
-  int varC8;      // [esp+2Ch] [ebp-C8h]
-  int varC4;      // [esp+30h] [ebp-C4h]
-  int varC0;      // [esp+34h] [ebp-C0h]
-  int varBC;      // [esp+38h] [ebp-BCh]
-  float varB8[3]; // [esp+3Ch] [ebp-B8h]
-  float varAC[3]; // [esp+48h] [ebp-ACh]
-  int varA0;      // [esp+54h] [ebp-A0h]
-  int var9C;      // [esp+58h] [ebp-9Ch]
-  char Base[152]; // [esp+5Ch] [ebp-98h]
+  int v18;        // ebp
+  float *v19;     // ecx
+  char *v20;      // esi
+  int v21;        // edi
+  int v22;        // ecx
+  int *v23;       // eax
+  bool v24;       // cc
+  int *v25;       // ecx
+  char *v26;      // edi
+  int v27;        // esi
+  int v28;        // ecx
+  char v29;       // al
+  char v30;       // cl
+  int v31;        // eax
+  int v32;        // eax
+  int v33;        // eax
+  int v34;        // esi
+  char *v35;      // edi
+  int v36;        // [esp+0h] [ebp-F4h]
+  int v37;        // [esp+4h] [ebp-F0h]
+  int v38;        // [esp+8h] [ebp-ECh]
+  int v39;        // [esp+8h] [ebp-ECh]
+  float v40;      // [esp+1Ch] [ebp-D8h]
+  int v41;        // [esp+1Ch] [ebp-D8h]
+  int *v42;       // [esp+1Ch] [ebp-D8h]
+  float v43;      // [esp+20h] [ebp-D4h]
+  int v44;        // [esp+20h] [ebp-D4h]
+  int v45;        // [esp+24h] [ebp-D0h]
+  int v46;        // [esp+28h] [ebp-CCh] BYREF
+  float *v47;     // [esp+2Ch] [ebp-C8h]
+  int *v48;       // [esp+30h] [ebp-C4h]
+  int v49;        // [esp+34h] [ebp-C0h]
+  _DWORD *v50;    // [esp+38h] [ebp-BCh]
+  float v51[3];   // [esp+3Ch] [ebp-B8h] BYREF
+  float v52[3];   // [esp+48h] [ebp-ACh] BYREF
+  float v53;      // [esp+54h] [ebp-A0h] BYREF
+  int v54;        // [esp+58h] [ebp-9Ch] BYREF
+  char Base[152]; // [esp+5Ch] [ebp-98h] BYREF
 
-  varD4 = *(float *)(MEMORY[0x106C7CB8] + 100);
-  ecx1 = dword_100B36F8;
-  varBC = this;
-  varD0 = 0;
+  v43 = *(float *)(gUnk06594.field_4938 + 100);
+  v2 = dword_100B36F8;
+  v50 = this;
+  v45 = 0;
   if (dword_100B36F8 > 0) {
-    esi2 = &varA0;
-    edi2 = (float *)&unk_10ACD4FC;
+    v3 = &v53;
+    v4 = (float *)&unk_10ACD4FC;
     do {
-        ecx3 = *((_DWORD *)edi2 - 1);
-        if (ecx3) {
-            if ((_DWORD *)ecx3 == this || *(_DWORD *)(ecx3 + 320) >= dword_100B4050) {
-                if (gGameMode || *(_DWORD *)(ecx3 + 320) < dword_100B4050 ||
-                    (*(_BYTE *)(*(_DWORD *)(ecx3 + 3840) + 104) & 2) == 0 ||
-                    *(_BYTE *)(ecx3 + 10671) != 2 || *(float *)(ecx3 + 10672) != 0.0) {
-                    st7_13 = *((float *)this + 1021);
-                    varCC = *(_DWORD *)(ecx3 + 4012) - this[1003];
-                    st6_13 = (double)varCC * varD4 + st7_13 - *(float *)(ecx3 + 4084);
-                    varD8 = st6_13;
-                    if (st6_13 <= varD4 * 0.5) {
-                        if (varD4 * -0.5 > varD8)
-                            varD8 = varD4 + varD8;
-                        st7_14 = sub_1003B0E0((float *)this + 12, (float *)(ecx3 + 48));
+        v5 = *((_DWORD *)v4 - 1);
+        if (v5) {
+            if ((_DWORD *)v5 == this || *(_DWORD *)(v5 + 320) >= dword_100B4050) {
+                if (gGameMode || *(_DWORD *)(v5 + 320) < dword_100B4050 ||
+                    (*(_BYTE *)(*(_DWORD *)(v5 + 3840) + 104) & 2) == 0 ||
+                    *(_BYTE *)(v5 + 10671) != 2 || *(float *)(v5 + 10672) != 0.0) {
+                    v6 = *((float *)this + 1021);
+                    v46 = *(_DWORD *)(v5 + 4012) - this[1003];
+                    v7 = (double)v46 * v43 + v6 - *(float *)(v5 + 4084);
+                    v40 = v7;
+                    if (v7 <= v43 * 0.5) {
+                        if (v43 * -0.5 > v40)
+                            v40 = v43 + v40;
+                        v8 = sub_1003B0E0((float *)this + 12, (float *)(v5 + 48));
                     } else {
-                        varD8 = varD8 - varD4;
-                        st7_14 = sub_1003B0E0((float *)this + 12, (float *)(ecx3 + 48));
+                        v40 = v40 - v43;
+                        v8 = sub_1003B0E0((float *)this + 12, (float *)(v5 + 48));
                     }
                     goto LABEL_28;
                 }
-                *esi2 = 1000000000.0;
+                *v3 = 1000000000.0;
             } else {
-                *esi2 = 1.0e10;
+                *v3 = 1.0e10;
             }
         } else {
-            if (gGameMode || *(_DWORD *)edi2 < dword_100B4050 || ((_BYTE)edi2[1] & 2) == 0) {
-                st7_22 = *((float *)this + 1021);
-                varCC = *((_DWORD *)edi2 - 8) - this[1003];
-                st6_22 = (double)varCC * varD4 + st7_22 - *(edi2 - 5);
-                varD8 = st6_22;
-                if (st6_22 > varD4 * 0.5) {
-                    st7_23 = varD8 - varD4;
+            if (gGameMode || *(_DWORD *)v4 < dword_100B4050 || ((_BYTE)v4[1] & 2) == 0) {
+                v9 = *((float *)this + 1021);
+                v46 = *((_DWORD *)v4 - 8) - this[1003];
+                v10 = (double)v46 * v43 + v9 - *(v4 - 5);
+                v40 = v10;
+                if (v10 > v43 * 0.5) {
+                    v11 = v40 - v43;
                     goto LABEL_26;
                 }
-                if (varD4 * -0.5 > varD8) {
-                    st7_23 = varD4 + varD8;
+                if (v43 * -0.5 > v40) {
+                    v11 = v43 + v40;
                 LABEL_26:
-                    varD8 = st7_23;
+                    v40 = v11;
                 }
-                st7_14 = sub_1003B0E0((float *)this + 12, edi2 - 25);
+                v8 = sub_1003B0E0((float *)this + 12, v4 - 25);
             LABEL_28:
-                *esi2 = st7_14 + varD8 * varD8;
+                *v3 = v8 + v40 * v40;
                 goto LABEL_29;
             }
-            *esi2 = 1000000000.0;
+            *v3 = 1000000000.0;
         }
     LABEL_29:
-        eax29 = varD0;
-        ecx1 = dword_100B36F8;
-        *((_DWORD *)esi2 + 1) = varD0;
-        edi2 += 32;
-        esi2 += 2;
-        varD0 = eax29 + 1;
-    } while (eax29 + 1 < ecx1);
+        v12 = v45;
+        v2 = dword_100B36F8;
+        *((_DWORD *)v3 + 1) = v45;
+        v4 += 32;
+        v3 += 2;
+        v45 = v12 + 1;
+    } while (v12 + 1 < v2);
   }
-  if (ecx1 > 1) {
-    ebp31 = this[80];
-    eax31 = 8 * ebp31;
-    st7_31 = *(&varA0 + 2 * ebp31);
-    *(float *)((char *)&varA0 + eax31) = varA0;
-    var9C = ebp31;
-    varA0 = st7_31;
-    *(int *)((char *)&var9C + eax31) = 0;
-    qsort(Base, ecx1 - 1, 8u, sub_10066620);
+  if (v2 > 1) {
+    v13 = this[80];
+    v14 = 8 * v13;
+    v15 = *(&v53 + 2 * v13);
+    *(float *)((char *)&v53 + v14) = v53;
+    v54 = v13;
+    v53 = v15;
+    *(int *)((char *)&v54 + v14) = 0;
+    qsort(Base, v2 - 1, 8, sub_10066620);
   }
-  edx32 = 0;
-  varC0 = 0;
+  v16 = 0;
+  v49 = 0;
   do {
     result = (int *)dword_100B36F8;
-    ebp33 = 0;
-    varD8a = 1;
-    varD0 = 0;
-    varD4a = 0;
+    v18 = 0;
+    v41 = 1;
+    v45 = 0;
+    v44 = 0;
     if (dword_100B36F8 > 0) {
-        varC4 = &varCC;
-        ecx34 = &varA0;
-        varC8 = &varA0;
+        v48 = &v46;
+        v19 = &v53;
+        v47 = &v53;
         do {
-            esi35 = (char *)&unk_10ACD498 + 128 * *((_DWORD *)ecx34 + 1);
-            if (*((_DWORD *)esi35 + 29) != edx32 || *((_DWORD *)esi35 + 25) < dword_100B4050)
+            v20 = (char *)&unk_10ACD498 + 128 * *((_DWORD *)v19 + 1);
+            if (*((_DWORD *)v20 + 29) != v16 || *((_DWORD *)v20 + 25) < dword_100B4050)
                 goto LABEL_47;
-            if (varD4a >= 1) {
-                edi38 = *((_DWORD *)esi35 + 24);
-                if (!edi38)
+            if (v44 >= 1) {
+                v21 = *((_DWORD *)v20 + 24);
+                if (!v21)
                     goto LABEL_47;
-                varD8a = 0;
-                if (*(_DWORD *)(edi38 + 3844) || *ecx34 <= 80000.0)
+                v41 = 0;
+                if (*(_DWORD *)(v21 + 3844) || *v19 <= 80000.0)
                     goto LABEL_47;
             } else {
-                ++varD4a;
-                edi38 = *((_DWORD *)esi35 + 24);
-                if (!edi38)
+                ++v44;
+                v21 = *((_DWORD *)v20 + 24);
+                if (!v21)
                     goto LABEL_47;
-                varD8a = 0;
-                if ((esi35[104] & 2) == 0 || *(_BYTE *)(edi38 + 10671) != 2 ||
-                    *(float *)(edi38 + 10672) != 0.0)
+                v41 = 0;
+                if ((v20[104] & 2) == 0 || *(_BYTE *)(v21 + 10671) != 2 ||
+                    *(float *)(v21 + 10672) != 0.0)
                     goto LABEL_47;
             }
-            *(_DWORD *)esi35 = *(_DWORD *)(edi38 + 48);
-            *((_DWORD *)esi35 + 1) = *(_DWORD *)(edi38 + 52);
-            *((_DWORD *)esi35 + 2) = *(_DWORD *)(edi38 + 56);
-            *((_DWORD *)esi35 + 6) = *(_DWORD *)(edi38 + 4132);
-            *((_DWORD *)esi35 + 7) = *(_DWORD *)(edi38 + 4136);
-            *((_DWORD *)esi35 + 8) = *(_DWORD *)(edi38 + 4140);
-            *((_DWORD *)esi35 + 9) = *(_DWORD *)(edi38 + 4144);
-            *((_DWORD *)esi35 + 10) = *(_DWORD *)(edi38 + 3980);
-            *((_DWORD *)esi35 + 11) = *(_DWORD *)(edi38 + 3984);
-            *((_DWORD *)esi35 + 12) = *(_DWORD *)(edi38 + 4016);
-            *((_DWORD *)esi35 + 13) = *(_DWORD *)(edi38 + 4068);
-            *((_DWORD *)esi35 + 14) = *(_DWORD *)(edi38 + 4076);
-            *((_DWORD *)esi35 + 15) = *(_DWORD *)(edi38 + 4080);
-            *((_DWORD *)esi35 + 16) = *(_DWORD *)(edi38 + 4008);
-            *((_DWORD *)esi35 + 17) = *(_DWORD *)(edi38 + 4012);
-            *((_DWORD *)esi35 + 18) = *(_DWORD *)(edi38 + 4000);
-            *((_DWORD *)esi35 + 19) = *(_DWORD *)(edi38 + 4004);
-            meth_DebugPrint(*((void **)esi35 + 16));
-            ecx46 = *((_DWORD *)esi35 + 24);
-            *((_DWORD *)esi35 + 20) = *(_DWORD *)(edi38 + 4084);
-            edx32 = varC0;
-            *((_DWORD *)esi35 + 21) = *(_DWORD *)(edi38 + 4088);
-            eax46 = varC4;
-            ++ebp33;
-            *((_DWORD *)esi35 + 24) = 0;
-            *eax46 = ecx46;
-            ecx34 = varC8;
-            *(_DWORD *)(edi38 + 3840) = 0;
-            varC4 = eax46 + 1;
-            *(_DWORD *)(edi38 + 3844) = 60;
+            *(_DWORD *)v20 = *(_DWORD *)(v21 + 48);
+            *((_DWORD *)v20 + 1) = *(_DWORD *)(v21 + 52);
+            *((_DWORD *)v20 + 2) = *(_DWORD *)(v21 + 56);
+            *((_DWORD *)v20 + 6) = *(_DWORD *)(v21 + 4132);
+            *((_DWORD *)v20 + 7) = *(_DWORD *)(v21 + 4136);
+            *((_DWORD *)v20 + 8) = *(_DWORD *)(v21 + 4140);
+            *((_DWORD *)v20 + 9) = *(_DWORD *)(v21 + 4144);
+            *((_DWORD *)v20 + 10) = *(_DWORD *)(v21 + 3980);
+            *((_DWORD *)v20 + 11) = *(_DWORD *)(v21 + 3984);
+            *((_DWORD *)v20 + 12) = *(_DWORD *)(v21 + 4016);
+            *((_DWORD *)v20 + 13) = *(_DWORD *)(v21 + 4068);
+            *((_DWORD *)v20 + 14) = *(_DWORD *)(v21 + 4076);
+            *((_DWORD *)v20 + 15) = *(_DWORD *)(v21 + 4080);
+            *((_DWORD *)v20 + 16) = *(_DWORD *)(v21 + 4008);
+            *((_DWORD *)v20 + 17) = *(_DWORD *)(v21 + 4012);
+            *((_DWORD *)v20 + 18) = *(_DWORD *)(v21 + 4000);
+            *((_DWORD *)v20 + 19) = *(_DWORD *)(v21 + 4004);
+            meth_DebugPrint(*((void **)v20 + 16));
+            v22 = *((_DWORD *)v20 + 24);
+            *((_DWORD *)v20 + 20) = *(_DWORD *)(v21 + 4084);
+            v16 = v49;
+            *((_DWORD *)v20 + 21) = *(_DWORD *)(v21 + 4088);
+            v23 = v48;
+            ++v18;
+            *((_DWORD *)v20 + 24) = 0;
+            *v23 = v22;
+            v19 = v47;
+            *(_DWORD *)(v21 + 3840) = 0;
+            v48 = v23 + 1;
+            *(_DWORD *)(v21 + 3844) = 60;
         LABEL_47:
-            result = (int *)(varD0 + 1);
-            ecx34 += 2;
-            cc47 = ++varD0 < dword_100B36F8;
-            varC8 = ecx34;
-        } while (cc47);
+            result = (int *)(v45 + 1);
+            v19 += 2;
+            v24 = ++v45 < dword_100B36F8;
+            v47 = v19;
+        } while (v24);
     }
-    if (varD8a) {
-        ++ebp33;
-        result = &dword_10ACDEA8[2778 * edx32 + 2778 * dword_100B4050];
-        *(&varD0 + ebp33) = (int)result;
+    if (v41) {
+        ++v18;
+        result = &dword_10ACDEA8[2778 * v16 + 2778 * dword_100B4050];
+        *(&v45 + v18) = (int)result;
     }
-    varD0 = 0;
-    if (ebp33) {
-        ecx51 = &var9C;
-        varC4 = &var9C;
-        result = &varCC + ebp33;
-        varC8 = (float *)(varBC + 940);
+    v45 = 0;
+    if (v18) {
+        v25 = &v54;
+        v48 = &v54;
+        result = &v46 + v18;
+        v47 = (float *)(v50 + 940);
         do {
-            if (varD0 >= dword_100B36F8)
+            if (v45 >= dword_100B36F8)
                 break;
-            edi53 = (char *)&unk_10ACD498 + 128 * *ecx51;
-            if (*((_DWORD *)edi53 + 29) == edx32 && *((_DWORD *)edi53 + 25) >= dword_100B4050 &&
-                (edi53[104] & 2) == 0 && !*((_DWORD *)edi53 + 24)) {
-                esi57 = *(result - 1);
-                ecx57 = *((_DWORD *)edi53 + 9);
-                *((_DWORD *)edi53 + 24) = esi57;
-                *(_DWORD *)(esi57 + 4144) = ecx57;
-                varD8b = result - 1;
-                *(_DWORD *)(esi57 + 3980) = *((_DWORD *)edi53 + 10);
-                *(_DWORD *)(esi57 + 3984) = *((_DWORD *)edi53 + 11);
-                *(_DWORD *)(esi57 + 4016) = *((_DWORD *)edi53 + 12);
-                *(_DWORD *)(esi57 + 4068) = *((_DWORD *)edi53 + 13);
-                *(_DWORD *)(esi57 + 4076) = *((_DWORD *)edi53 + 14);
-                *(_DWORD *)(esi57 + 4080) = *((_DWORD *)edi53 + 15);
-                *(_DWORD *)(esi57 + 4008) = *((_DWORD *)edi53 + 16);
-                *(_DWORD *)(esi57 + 4012) = *((_DWORD *)edi53 + 17);
-                *(_DWORD *)(esi57 + 4000) = *((_DWORD *)edi53 + 18);
-                *(_DWORD *)(esi57 + 4004) = *((_DWORD *)edi53 + 19);
-                meth_DebugPrint(*(void **)(esi57 + 4008));
-                *(_DWORD *)(esi57 + 4084) = *((_DWORD *)edi53 + 20);
-                *(_DWORD *)(esi57 + 4088) = *((_DWORD *)edi53 + 21);
-                *(_DWORD *)(esi57 + 3840) = edi53;
-                *(_BYTE *)(esi57 + 10671) = 0;
-                *(_DWORD *)(esi57 + 10672) = 1065353216;
-                *(_DWORD *)(esi57 + 3960) = 1;
-                meth_10062C50((_DWORD *)esi57);
-                meth_10065630((_DWORD *)esi57);
-                *(_DWORD *)(esi57 + 3968) = *((_DWORD *)edi53 + 3);
-                *(_DWORD *)(esi57 + 3972) = *((_DWORD *)edi53 + 4);
-                *(_DWORD *)(esi57 + 3976) = *((_DWORD *)edi53 + 5);
-                *(float *)&varEC = *((float *)edi53 + 2) - -0.1;
-                meth_10076420((float *)esi57, *(_DWORD *)edi53, *((_DWORD *)edi53 + 1), varEC);
-                *(_BYTE *)(esi57 + 10671) = 0;
-                *(_DWORD *)(esi57 + 10672) = 1065353216;
-                al57 = edi53[94];
-                cl57 = edi53[93];
-                *(_BYTE *)(esi57 + 10668) = edi53[92];
-                *(_BYTE *)(esi57 + 10669) = cl57;
-                *(_BYTE *)(esi57 + 10670) = al57;
-                sub_100661B0(esi57, (int)edi53);
-                eax57 = *(_DWORD *)(esi57 + 3980) + 40 * *(_DWORD *)(esi57 + 3984);
-                sub_1003AEE0(varB8, (float *)(eax57 + 64), (float *)(eax57 + 76));
-                eax57a = *(_DWORD *)(esi57 + 3980) + 40 * *(_DWORD *)(esi57 + 3984);
-                sub_1003AEE0(varAC, (float *)(eax57a + 104), (float *)(eax57a + 116));
-                eax57b = *(_DWORD *)(esi57 + 3980) + 40 * *(_DWORD *)(esi57 + 3984);
-                sub_1003ADA0((float *)esi57, (float *)(eax57b + 76), (float *)(eax57b + 116));
-                sub_1003B050((float *)(esi57 + 16), varB8, varAC);
-                sub_1003AC30((float *)(esi57 + 32), (float *)esi57, (float *)(esi57 + 16));
-                sub_1003AE50((float *)(esi57 + 32));
-                sub_1003AC30((float *)(esi57 + 16), (float *)(esi57 + 32), (float *)esi57);
-                sub_1003AE50((float *)(esi57 + 16));
-                *(_DWORD *)(esi57 + 3988) = *(_DWORD *)esi57;
-                *(_DWORD *)(esi57 + 3992) = *(_DWORD *)(esi57 + 4);
-                *(_DWORD *)(esi57 + 3996) = *(_DWORD *)(esi57 + 8);
-                meth_10076700(esi57, (void *)esi57);
-                if ((*(_BYTE *)(*(_DWORD *)(esi57 + 3840) + 104) & 1) != 0) {
-                    meth_100767A0((_DWORD *)esi57, 0, 0, 0);
+            v26 = (char *)&unk_10ACD498 + 128 * *v25;
+            if (*((_DWORD *)v26 + 29) == v16 && *((_DWORD *)v26 + 25) >= dword_100B4050 &&
+                (v26[104] & 2) == 0 && !*((_DWORD *)v26 + 24)) {
+                v27 = *(result - 1);
+                v28 = *((_DWORD *)v26 + 9);
+                *((_DWORD *)v26 + 24) = v27;
+                *(_DWORD *)(v27 + 4144) = v28;
+                v42 = result - 1;
+                *(_DWORD *)(v27 + 3980) = *((_DWORD *)v26 + 10);
+                *(_DWORD *)(v27 + 3984) = *((_DWORD *)v26 + 11);
+                *(_DWORD *)(v27 + 4016) = *((_DWORD *)v26 + 12);
+                *(_DWORD *)(v27 + 4068) = *((_DWORD *)v26 + 13);
+                *(_DWORD *)(v27 + 4076) = *((_DWORD *)v26 + 14);
+                *(_DWORD *)(v27 + 4080) = *((_DWORD *)v26 + 15);
+                *(_DWORD *)(v27 + 4008) = *((_DWORD *)v26 + 16);
+                *(_DWORD *)(v27 + 4012) = *((_DWORD *)v26 + 17);
+                *(_DWORD *)(v27 + 4000) = *((_DWORD *)v26 + 18);
+                *(_DWORD *)(v27 + 4004) = *((_DWORD *)v26 + 19);
+                meth_DebugPrint(*(void **)(v27 + 4008));
+                *(_DWORD *)(v27 + 4084) = *((_DWORD *)v26 + 20);
+                *(_DWORD *)(v27 + 4088) = *((_DWORD *)v26 + 21);
+                *(_DWORD *)(v27 + 3840) = v26;
+                *(_BYTE *)(v27 + 10671) = 0;
+                *(_DWORD *)(v27 + 10672) = 1065353216;
+                *(_DWORD *)(v27 + 3960) = 1;
+                meth_10062C50((_DWORD *)v27);
+                meth_10065630((_DWORD *)v27);
+                *(_DWORD *)(v27 + 3968) = *((_DWORD *)v26 + 3);
+                *(_DWORD *)(v27 + 3972) = *((_DWORD *)v26 + 4);
+                *(_DWORD *)(v27 + 3976) = *((_DWORD *)v26 + 5);
+                *(float *)&v38 = *((float *)v26 + 2) - -0.1;
+                meth_10076420((float *)v27, *(_DWORD *)v26, *((_DWORD *)v26 + 1), v38);
+                *(_BYTE *)(v27 + 10671) = 0;
+                *(_DWORD *)(v27 + 10672) = 1065353216;
+                v29 = v26[94];
+                v30 = v26[93];
+                *(_BYTE *)(v27 + 10668) = v26[92];
+                *(_BYTE *)(v27 + 10669) = v30;
+                *(_BYTE *)(v27 + 10670) = v29;
+                sub_100661B0(v27, (int)v26);
+                v31 = *(_DWORD *)(v27 + 3980) + 40 * *(_DWORD *)(v27 + 3984);
+                sub_1003AEE0(v51, (float *)(v31 + 64), (float *)(v31 + 76));
+                v32 = *(_DWORD *)(v27 + 3980) + 40 * *(_DWORD *)(v27 + 3984);
+                sub_1003AEE0(v52, (float *)(v32 + 104), (float *)(v32 + 116));
+                v33 = *(_DWORD *)(v27 + 3980) + 40 * *(_DWORD *)(v27 + 3984);
+                sub_1003ADA0((float *)v27, (float *)(v33 + 76), (float *)(v33 + 116));
+                sub_1003B050((float *)(v27 + 16), v51, v52);
+                sub_1003AC30((float *)(v27 + 32), (float *)v27, (float *)(v27 + 16));
+                sub_1003AE50((float *)(v27 + 32));
+                sub_1003AC30((float *)(v27 + 16), (float *)(v27 + 32), (float *)v27);
+                sub_1003AE50((float *)(v27 + 16));
+                *(_DWORD *)(v27 + 3988) = *(_DWORD *)v27;
+                *(_DWORD *)(v27 + 3992) = *(_DWORD *)(v27 + 4);
+                *(_DWORD *)(v27 + 3996) = *(_DWORD *)(v27 + 8);
+                meth_10076700(v27, (void *)v27);
+                if ((*(_BYTE *)(*(_DWORD *)(v27 + 3840) + 104) & 1) != 0) {
+                    meth_100767A0((_DWORD *)v27, 0, 0, 0);
                 } else {
-                    *(float *)&varECa = *(float *)(esi57 + 8) * 50.0;
-                    *(float *)&varF0 = *(float *)(esi57 + 4) * 50.0;
-                    *(float *)&varF4 = *(float *)esi57 * 50.0;
-                    meth_100767A0((_DWORD *)esi57, varF4, varF0, varECa);
+                    *(float *)&v39 = *(float *)(v27 + 8) * 50.0;
+                    *(float *)&v37 = *(float *)(v27 + 4) * 50.0;
+                    *(float *)&v36 = *(float *)v27 * 50.0;
+                    meth_100767A0((_DWORD *)v27, v36, v37, v39);
                 }
-                --ebp33;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 360) + 412) = 0;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 360) + 436) = 0;
-                *(_BYTE *)(*(_DWORD *)(esi57 + 360) + 416) = 2;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 364) + 412) = 0;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 364) + 436) = 0;
-                *(_BYTE *)(*(_DWORD *)(esi57 + 364) + 416) = 2;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 372) + 412) = 0;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 372) + 436) = 0;
-                *(_BYTE *)(*(_DWORD *)(esi57 + 372) + 416) = 2;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 368) + 412) = 0;
-                result = varD8b;
-                *(_DWORD *)(*(_DWORD *)(esi57 + 368) + 436) = 0;
-                ecx51 = varC4;
-                *(_BYTE *)(*(_DWORD *)(esi57 + 368) + 416) = 2;
-                edx32 = varC0;
-                *(_DWORD *)(esi57 + 3744) = 0;
-                *(_DWORD *)(esi57 + 3748) = 0;
-                *(_DWORD *)(esi57 + 3752) = 0;
-                *(_DWORD *)(esi57 + 3756) = -180;
-                *(_DWORD *)(esi57 + 860) = 40;
-                *(_DWORD *)(esi57 + 3616) = 0;
+                --v18;
+                *(_DWORD *)(*(_DWORD *)(v27 + 360) + 412) = 0;
+                *(_DWORD *)(*(_DWORD *)(v27 + 360) + 436) = 0;
+                *(_BYTE *)(*(_DWORD *)(v27 + 360) + 416) = 2;
+                *(_DWORD *)(*(_DWORD *)(v27 + 364) + 412) = 0;
+                *(_DWORD *)(*(_DWORD *)(v27 + 364) + 436) = 0;
+                *(_BYTE *)(*(_DWORD *)(v27 + 364) + 416) = 2;
+                *(_DWORD *)(*(_DWORD *)(v27 + 372) + 412) = 0;
+                *(_DWORD *)(*(_DWORD *)(v27 + 372) + 436) = 0;
+                *(_BYTE *)(*(_DWORD *)(v27 + 372) + 416) = 2;
+                *(_DWORD *)(*(_DWORD *)(v27 + 368) + 412) = 0;
+                result = v42;
+                *(_DWORD *)(*(_DWORD *)(v27 + 368) + 436) = 0;
+                v25 = v48;
+                *(_BYTE *)(*(_DWORD *)(v27 + 368) + 416) = 2;
+                v16 = v49;
+                *(_DWORD *)(v27 + 3744) = 0;
+                *(_DWORD *)(v27 + 3748) = 0;
+                *(_DWORD *)(v27 + 3752) = 0;
+                *(_DWORD *)(v27 + 3756) = -180;
+                *(_DWORD *)(v27 + 860) = 40;
+                *(_DWORD *)(v27 + 3616) = 0;
             }
-            esi61 = (int)varC8;
-            edi61 = (char *)&unk_10ACD498 + 128 * *ecx51;
-            ecx51 += 2;
-            *(_DWORD *)varC8 = edi61;
-            ++varD0;
-            varC8 = (float *)(esi61 + 4);
-            varC4 = ecx51;
-        } while (ebp33);
+            v34 = (int)v47;
+            v35 = (char *)&unk_10ACD498 + 128 * *v25;
+            v25 += 2;
+            *(_DWORD *)v47 = v35;
+            ++v45;
+            v47 = (float *)(v34 + 4);
+            v48 = v25;
+        } while (v18);
     }
-    varC0 = ++edx32;
-  } while (edx32 < 2);
+    v49 = ++v16;
+  } while (v16 < 2);
   return result;
 }
 // 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
@@ -74116,7 +74037,7 @@ char __cdecl sub_1006AAB0(int a1) {
     if (!dword_106909B4) {
         v2 = dword_10B502E8[v1];
         if (v2 < 0x10000) {
-            v3 = (char *)&unk_10B50308 + 1572864 * v1 + 24 * v2;
+            v3 = (char *)&dword_10B50308 + 1572864 * v1 + 24 * v2;
             sub_100607B0((int)v5, a1);
             LOBYTE(v1) = sub_10006BD0((int)v3, v5);
         }
@@ -74170,7 +74091,7 @@ int *sub_1006AB20() {
 
 //----- (1006AB90) --------------------------------------------------------
 void *sub_1006AB90() {
-  return &unk_10B50308;
+  return &dword_10B50308;
 }
 
 //----- (1006ABA0) --------------------------------------------------------
@@ -74201,7 +74122,7 @@ int __cdecl sub_1006ABD0(int a1, int a2) {
   float v9;    // [esp+24h] [ebp-88h]
   int v10;     // [esp+84h] [ebp-28h]
 
-  v2 = (char *)&unk_10B50308 + 1572864 * a2 + 24 * dword_11750310[a2];
+  v2 = (char *)&dword_10B50308 + 1572864 * a2 + 24 * dword_11750310[a2];
   sub_10007730((int)v6, (int)v2);
   v10 = *(_DWORD *)(a1 + 4084);
   sub_10060A10(a1, (int)v6);
@@ -77322,13 +77243,16 @@ __int16 __cdecl sub_1006F720(float a1, float a2) {
   if (a2 != 0.0) {
     for (i = sub_10002EF0((unsigned __int16 *)&a2); i; i = sub_10002EF0((unsigned __int16 *)&a2)) {
         *((_DWORD *)v10 + 4) =
-            MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i);
+            *(_DWORD *)&gUnk06594.gap1C8[18196] +
+            12 * *(unsigned __int16 *)(*(_DWORD *)&gUnk06594.gap1C8[18188] + 8 * i);
         *((_DWORD *)v10 + 5) =
-            MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i + 2);
+            *(_DWORD *)&gUnk06594.gap1C8[18196] +
+            12 * *(unsigned __int16 *)(*(_DWORD *)&gUnk06594.gap1C8[18188] + 8 * i + 2);
         *((_DWORD *)v10 + 6) =
-            MEMORY[0x106C7C5C] + 12 * *(unsigned __int16 *)(MEMORY[0x106C7C54] + 8 * i + 4);
+            *(_DWORD *)&gUnk06594.gap1C8[18196] +
+            12 * *(unsigned __int16 *)(*(_DWORD *)&gUnk06594.gap1C8[18188] + 8 * i + 4);
         v12 = (float *)*((_DWORD *)v10 + 5);
-        v13 = *(_BYTE *)(MEMORY[0x106C7CDC] + i) & 7;
+        v13 = *(_BYTE *)(gUnk06594.field_495C + i) & 7;
         *((_WORD *)v10 + 14) = i;
         v14 = (float *)*((_DWORD *)v10 + 4);
         v10[30] = v13;
@@ -77357,9 +77281,6 @@ __int16 __cdecl sub_1006F720(float a1, float a2) {
   return v5;
 }
 // 1006F789: variable 'v25' is possibly undefined
-// 106C7C54: using guessed type int dword_106C7C54;
-// 106C7C5C: using guessed type int dword_106C7C5C;
-// 106C7CDC: using guessed type int dword_106C7CDC;
 // 117554A0: using guessed type int dword_117554A0;
 // 117554C8: using guessed type int dword_117554C8[];
 // 117554D8: using guessed type int dword_117554D8;
@@ -77813,8 +77734,8 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
     v3 = v12;
     if (!v12)
         return (_BYTE)Stream != 0;
-    if (freadLock(gBuffer, 1u, 4u, v12) == 4) {
-        v13 = strncmp(gBuffer, aRsea, 4u);
+    if (freadLock(gBuffer0, 1u, 4u, v12) == 4) {
+        v13 = strncmp(gBuffer0, aRsea, 4u);
         v17 = v3;
         if (v13)
             goto LABEL_22;
@@ -77822,9 +77743,9 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
         v17 = v3;
         if (v14 != 4)
             goto LABEL_22;
-        if (freadLock(gBuffer, 1u, 0x200u, v3) == 512) {
+        if (freadLock(gBuffer0, 1u, 0x200u, v3) == 512) {
             v15 = CalculateChecksum(0, 0, 0);
-            v16 = CalculateChecksum(v15, (unsigned __int8 *)gBuffer, 0x200u);
+            v16 = CalculateChecksum(v15, (unsigned __int8 *)gBuffer0, 0x200u);
             if (Buffer[0] == v16)
                 goto LABEL_3;
         }
@@ -77835,15 +77756,15 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
     return (_BYTE)Stream != 0;
   }
   v3 = Stream;
-  qmemcpy(gBuffer, &dword_10AA26F0, 0x14Cu);
+  qmemcpy(gBuffer0, &dword_10AA26F0, 0x14Cu);
 LABEL_3:
   if (a1 == UNK10071130_4) {
     if (!sub_1003E1D0())
         return 0;
     if (!dword_10ACED34 || !dword_10AD189C)
         return 0;
-    qmemcpy(dword_10ACED34, gBuffer, 0x14Cu);
-    qmemcpy((void *)dword_10AD189C, gBuffer, 0x14Cu);
+    qmemcpy(dword_10ACED34, gBuffer0, 0x14Cu);
+    qmemcpy((void *)dword_10AD189C, gBuffer0, 0x14Cu);
     fseek(v3, 0, 2);
     v5 = ftell(v3);
     fseek(v3, v5 - 148, 0);
@@ -77865,9 +77786,9 @@ LABEL_3:
     v10 = v7[65];
     v11 = v7[66];
     v20 = v10;
-    qmemcpy(dword_10ACED34, gBuffer, 0x14Cu);
+    qmemcpy(dword_10ACED34, gBuffer0, 0x14Cu);
     v21 = v11;
-    qmemcpy((void *)dword_10AD189C, gBuffer, 0x14Cu);
+    qmemcpy((void *)dword_10AD189C, gBuffer0, 0x14Cu);
     *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 62) = v8;
     *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 63) = v9;
     *((_DWORD *)*(&dword_10ACED34 + 2778 * (dword_10690A18 ^ 1)) + 64) = v19;
@@ -77968,9 +77889,9 @@ bool __cdecl sub_10070AF0(char *filename, BOOL b) {
   fp1 = fp0;
   if (!fp0)
     goto LABEL_20;
-  if (freadLock(gBuffer, 1u, 4u, fp0) != 4)
+  if (freadLock(gBuffer0, 1u, 4u, fp0) != 4)
     goto LABEL_18;
-  strcmpResult = strncmp(gBuffer, aRgho, 4u);
+  strcmpResult = strncmp(gBuffer0, aRgho, 4u);
   fp2 = fp1;
   if (strcmpResult)
     goto LABEL_19;
@@ -78171,74 +78092,77 @@ char sub_10070E80() {
 
 //----- (10071120) --------------------------------------------------------
 Car *sub_10071120() {
-  dword_10220B20 = 5;
+  gGameMode1 = 5;
   return sub_10035BD1();
 }
 // 10220B20: using guessed type int dword_10220B20;
 
 //----- (10071130) --------------------------------------------------------
 char __cdecl sub_10071130(enum MACRO_UNK10071130 a1, FILE *Stream) {
-  char result;            // al
+  int v2;                 // eax
   char *filename;         // eax
   size_t size;            // esi
   FILE *fp0;              // eax
   FILE *fp;               // ebx
   BOOL bufferSizeMatches; // eax
   _DWORD *v8;             // ecx
-  int v9[5];              // [esp+Ch] [ebp-14h] BYREF
+  int v10[5];             // [esp+Ch] [ebp-14h] BYREF
 
-  switch (a1) {
-  case UNK10071130_4:
-    return sub_10070610(UNK10071130_4, Stream);
-  case UNK10071130_0:
-    return sub_10070610(UNK10071130_0, Stream);
-  case UNK10071130_1:
-    return sub_10070E60((int)Stream);
-  case UNK10071130_2:
-  case UNK10071130_3:
-    filename = aCRallyconfigDa;
-    size = 256;
-    break;
-  default:
-    filename = (char *)Stream;
-    size = (size_t)Stream;
-    break;
-  }
-  fp0 = fopen(filename, kFileModeReadBinary);
-  fp = fp0;
-  if (!fp0)
-    return (_BYTE)Stream != NULL;
-  if (a1 == UNK10071130_2)
-    bufferSizeMatches = freadLock(gBuffer, 1u, 0x80u, fp0) == 0x80;
-  else
-    bufferSizeMatches = freadLock(gBuffer, 1u, size, fp0) == size;
-  if (!bufferSizeMatches)
-    goto LABEL_17;
-  if (a1 == UNK10071130_2) {
-    dword_100ADF58 = *(_DWORD *)gBuffer;
-    dword_100ADF5C = (int)dword_11782E2C;
-    dword_100ADF60 = dword_11782E30;
-    meth_DebugPrint(dword_11782E2C);
-    if (freadLock(gBuffer, 1u, 0x80u, fp) != 128) {
-    LABEL_17:
-        fclose(fp);
-        return 0;
+  if (a1 == UNK10071130_4) {
+    LOBYTE(v2) = sub_10070610(UNK10071130_4, Stream);
+  } else if (a1) {
+    if (a1 == UNK10071130_1) {
+        LOBYTE(v2) = sub_10070E60((int)Stream);
+    } else {
+        if (a1 == UNK10071130_2 || a1 == UNK10071130_3) {
+            filename = aCRallyconfigDa;
+            size = 256;
+        } else {
+            filename = (char *)Stream;
+            size = (size_t)Stream;
+        }
+        fp0 = fopen(filename, kFileModeReadBinary);
+        fp = fp0;
+        if (fp0) {
+            if (a1 == UNK10071130_2)
+                bufferSizeMatches = freadLock(gBuffer0, 1u, 0x80u, fp0) == 0x80;
+            else
+                bufferSizeMatches = freadLock(gBuffer0, 1u, size, fp0) == size;
+            if (!bufferSizeMatches)
+                goto LABEL_17;
+            if (a1 != UNK10071130_2) {
+                fclose(fp);
+                LOBYTE(v2) = 1;
+                return v2;
+            }
+            dword_100ADF58 = *(_DWORD *)gBuffer0;
+            dword_100ADF5C = (int)dword_11782E2C;
+            dword_100ADF60 = dword_11782E30;
+            meth_DebugPrint(dword_11782E2C);
+            if (freadLock(gBuffer0, 1u, 0x80u, fp) == 128) {
+                qmemcpy(v10, gBuffer0, sizeof(v10));
+                *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 62) = v10[0];
+                *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 63) = v10[1];
+                *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 64) = v10[2];
+                *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 65) = v10[3];
+                v8 = *(&dword_10ACED34 + 2778 * dword_10690A18);
+                v8[66] = v10[4];
+                meth_DebugPrint(v8);
+                fclose(fp);
+                LOBYTE(v2) = 1;
+            } else {
+            LABEL_17:
+                fclose(fp);
+                LOBYTE(v2) = 0;
+            }
+        } else {
+            v2 = (_BYTE)Stream != NULL;
+        }
     }
-    qmemcpy(v9, gBuffer, sizeof(v9));
-    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 62) = v9[0];
-    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 63) = v9[1];
-    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 64) = v9[2];
-    *((_DWORD *)*(&dword_10ACED34 + 2778 * dword_10690A18) + 65) = v9[3];
-    v8 = *(&dword_10ACED34 + 2778 * dword_10690A18);
-    v8[66] = v9[4];
-    meth_DebugPrint(v8);
-    fclose(fp);
-    result = 1;
   } else {
-    fclose(fp);
-    result = 1;
+    LOBYTE(v2) = sub_10070610(UNK10071130_0, Stream);
   }
-  return result;
+  return v2;
 }
 // 100ADF58: using guessed type int dword_100ADF58;
 // 100ADF5C: using guessed type int dword_100ADF5C;
@@ -81234,10 +81158,10 @@ int sub_100750F0() {
 // 118AB118: using guessed type int dword_118AB118;
 
 //----- (10075100) --------------------------------------------------------
-unsigned int sub_10075100() {
-  DWORD v0;            // eax
-  unsigned int v1;     // esi
-  unsigned int result; // eax
+DWORD sub_10075100() {
+  DWORD v0;        // eax
+  unsigned int v1; // esi
+  DWORD result;    // eax
 
   v0 = getTicks();
   dword_118AB12C = 0;
@@ -83732,7 +83656,7 @@ int sub_10078DB0() {
     if (g_DirectInputA) {
         v1 = gUnk54Ptr;
         if (gUnk54Ptr) {
-            meth_100602B0(gUnk54Ptr);
+            meth_unk00054_100602B0(gUnk54Ptr);
             operator delete(v1);
             dida = g_DirectInputA;
         }
@@ -84983,8 +84907,8 @@ int __cdecl sub_1007A710(const void *a1, const void *a2) {
     if (!v3)
         return gameSpecificUnk1_instance0;
   }
-  dword_118AC238 = sub_1001A550((#485 *)a1);
-  if (!dword_118AC238)
+  gUnk00334Ptr1 = sub_1001A550((#485 *)a1);
+  if (!gUnk00334Ptr1)
     return gameSpecificUnk1_instance0;
   dword_10AA2860 = v2;
   dword_10AA2A2C = v2;
@@ -85002,12 +84926,12 @@ int sub_1007A840() {
 # 485 * v4;    // ebx
   CHAR v5[80]; // [esp+10h] [ebp-50h] BYREF
 
-  if (dword_118AC238)
-    v0 = getDirectDrawLPGUID((#485 *)dword_118AC238);
+  if (gUnk00334Ptr1)
+    v0 = getDirectDrawLPGUID((#485 *)gUnk00334Ptr1);
   else
     v0 = 0;
   result = (int)sub_1001A550((#485 *)v0);
-  dword_118AC238 = (_BYTE *)result;
+  gUnk00334Ptr1 = (_BYTE *)result;
   if (result) {
     v2 = gameSpecificUnk1_instance0;
     v3 = 0;
@@ -85033,7 +84957,7 @@ int sub_1007A840() {
             v2 = v4;
         } while (v4);
     }
-    dword_118AC238 = sub_1007A7D0(&dword_10B4E6F8);
+    gUnk00334Ptr1 = sub_1007A7D0(&dword_10B4E6F8);
     result = 1;
   }
   return result;
@@ -85045,102 +84969,101 @@ int sub_1007A840() {
 
 //----- (1007A940) --------------------------------------------------------
 int sub_1007A940() {
-  _DWORD ecx1;    // ecx
-  _DWORD edi1;    // edi
-  int result;     // eax
-  _DWORD eax3;    // eax
-  _DWORD esi7;    // esi
-  _DWORD ebp9;    // ebp
-  _DWORD eax15;   // eax
-  _DWORD ecx17;   // ecx
-  _DWORD edx19;   // edx
-  _DWORD esi20;   // esi
-  _DWORD eax20;   // eax
-  _DWORD ecx21;   // ecx
-  _DWORD eax24;   // eax
-  int var64;      // [esp+20h] [ebp-64h]
-  int height;     // [esp+24h] [ebp-60h]
-  int bitDepth;   // [esp+28h] [ebp-5Ch]
-  int width;      // [esp+2Ch] [ebp-58h]
-  int a5;         // [esp+30h] [ebp-54h]
-  CHAR var50[80]; // [esp+34h] [ebp-50h]
+  unk00334 *u334;   // ecx
+  int v1;           // edi
+  CLSID *v3;        // eax
+  unk00334 *v4;     // esi
+  unsigned int v5;  // ebp
+  void *v6;         // eax
+  unk00334 *v7;     // ecx
+  unk00334 *v8;     // edx
+  int v9;           // esi
+  unsigned int v10; // eax
+  unk00334 *v11;    // ecx
+  int v12;          // eax
+  unsigned int i;   // [esp+20h] [ebp-64h] BYREF
+  int height;       // [esp+24h] [ebp-60h] BYREF
+  int bitDepth;     // [esp+28h] [ebp-5Ch] BYREF
+  int width;        // [esp+2Ch] [ebp-58h] BYREF
+  int a5;           // [esp+30h] [ebp-54h] BYREF
+  CHAR v18[80];     // [esp+34h] [ebp-50h] BYREF
 
-  ecx1 = dword_118AC238;
-  edi1 = 0;
-  if (!dword_118AC238)
+  u334 = gUnk00334Ptr1;
+  v1 = 0;
+  if (!gUnk00334Ptr1)
     return 0;
-  eax3 = (IID **)dword_118AC23C;
+  v3 = dword_118AC23C;
   if (!dword_118AC23C) {
-    eax3 = sub_1001A5D0(dword_118AC238, 0, 0);
-    dword_118AC23C = (int)eax3;
-    if (!eax3)
+    v3 = sub_1001A5D0(gUnk00334Ptr1, 0, 0);
+    dword_118AC23C = v3;
+    if (!v3)
         return 0;
-    ecx1 = dword_118AC238;
+    u334 = gUnk00334Ptr1;
   }
-  esi7 = ecx1[198];
-  if (!esi7)
+  v4 = u334->field_318;
+  if (!v4)
     return 0;
-  ebp9 = ecx1[197];
-  if (!ebp9)
+  v5 = u334->field_314;
+  if (!v5)
     return 0;
-  if (!dword_118AC240)
-    dword_118AC240 = (int)meth_unk00334_1001A570(ecx1, 640, 480, 16, 0, (IID *)eax3);
+  if (!gUnk00334Ptr0)
+    gUnk00334Ptr0 = meth_unk00334_1001A570(u334, 640, 480, 16, 0, (int)v3);
   if (Base) {
     operator delete(Base);
     Base = 0;
   }
-  eax15 = (void *)operator new(4 * ebp9);
-  Base = eax15;
-  if (!eax15)
+  v6 = (void *)operator new(4 * v5);
+  Base = v6;
+  if (!v6)
     return 0;
-  var64 = 0;
-  ecx17 = esi7;
+  i = 0;
+  v7 = v4;
   while (1) {
-    edx19 = *(_DWORD *)(ecx17 + 112);
-    *((_DWORD *)eax15 + var64++) = ecx17;
-    ecx17 = edx19;
-    if (!edx19)
+    v8 = v7->field_70;
+    *((_DWORD *)v6 + i++) = v7;
+    v7 = v8;
+    if (!v8)
         break;
-    eax15 = Base;
+    v6 = Base;
   }
-  qsort(Base, ebp9, 4u, sub_1007A710);
-  esi20 = 0;
-  eax20 = 0;
-  for (var64 = 0; var64 < ebp9; ++var64) {
-    ecx21 = (#492 *)*((_DWORD *)Base + eax20);
-    if (!ecx21 || !meth_unk00334_1001ACF0(ecx21, (IID **)dword_118AC23C))
+  qsort(Base, v5, 4, sub_1007A710);
+  v9 = 0;
+  v10 = 0;
+  for (i = 0; i < v5; ++i) {
+    v11 = (unk00334 *)*((_DWORD *)Base + v10);
+    if (!v11 || !meth_unk00334_1001ACF0(v11, (unk00228 *)dword_118AC23C))
         goto LABEL_41;
-    meth_unk00334_1001AC80(*((#492 **)Base + var64), &width, &height, &bitDepth, &a5);
+    meth_unk00334_1001AC80(*((unk00334 **)Base + i), &width, &height, &bitDepth, &a5);
     if (a5) {
-        wsprintfA(var50, "%4d x %4d x %2d (%4d Hz)", width, height, bitDepth, a5);
-        eax24 = width;
+        wsprintfA(v18, "%4d x %4d x %2d (%4d Hz)", width, height, bitDepth, a5);
+        v12 = width;
         if (dword_10B4E6E8 != width || dword_10B4E6EC != height || dword_10B4E6F0 != bitDepth ||
             dword_10B4E6F4 != a5)
             goto LABEL_33;
     } else {
-        wsprintfA(var50, "%4d x %4d x %2d", width, height, bitDepth);
-        eax24 = width;
+        wsprintfA(v18, "%4d x %4d x %2d", width, height, bitDepth);
+        v12 = width;
         if (dword_10B4E6E8 != width || dword_10B4E6EC != height || dword_10B4E6F0 != bitDepth)
             goto LABEL_33;
     }
-    dword_10AA2864 = esi20;
-    dword_10AA2A30 = esi20;
-    edi1 = 1;
+    dword_10AA2864 = v9;
+    dword_10AA2A30 = v9;
+    v1 = 1;
   LABEL_33:
-    if (!edi1 && eax24 == 640 && height == 480 && bitDepth == 16) {
-        dword_10AA2864 = esi20;
-        dword_10AA2A30 = esi20;
+    if (!v1 && v12 == 640 && height == 480 && bitDepth == 16) {
+        dword_10AA2864 = v9;
+        dword_10AA2A30 = v9;
     }
     if (dword_10AA29EC) {
         (*(void(__thiscall **)(int, CHAR *, _DWORD, int, void *, int))(
             *(_DWORD *)(dword_10AA29EC + 14392) + 16))(
-            dword_10AA29EC + 14392, var50, 0, 1, &unk_100AB528, 1);
+            dword_10AA29EC + 14392, v18, 0, 1, &unk_100AB528, 1);
         (*(void(__thiscall **)(int, unsigned int *, int, int))(
-            *(_DWORD *)(dword_10AA29EC + 14392) + 40))(dword_10AA29EC + 14392, &var64, 4, esi20);
+            *(_DWORD *)(dword_10AA29EC + 14392) + 40))(dword_10AA29EC + 14392, &i, 4, v9);
     }
-    ++esi20;
+    ++v9;
   LABEL_41:
-    eax20 = var64 + 1;
+    v10 = i + 1;
   }
   return 1;
 }
@@ -85153,8 +85076,6 @@ int sub_1007A940() {
 // 10B4E6EC: using guessed type int dword_10B4E6EC;
 // 10B4E6F0: using guessed type int dword_10B4E6F0;
 // 10B4E6F4: using guessed type int dword_10B4E6F4;
-// 118AC23C: using guessed type int dword_118AC23C;
-// 118AC240: using guessed type int dword_118AC240;
 
 //----- (1007AC00) --------------------------------------------------------
 int sub_1007AC00() {

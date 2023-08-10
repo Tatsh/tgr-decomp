@@ -6,7 +6,7 @@ int np_sub_10005090() {
     int result; // eax
     char v3;    // al
 
-    WaitForSingleObject(g_hMutex_6, INFINITE);
+    WaitForSingleObject(gMutex6, INFINITE);
     v0 = dword_10221314;
     if (dword_10221314) {
         v0 = dword_10221314 + 1;
@@ -18,7 +18,7 @@ int np_sub_10005090() {
         }
     }
     v1 = v0;
-    result = ReleaseMutex(g_hMutex_6);
+    result = ReleaseMutex(gMutex6);
     if (v1) {
         v3 = atomic_sub_10004A10(dword_10094294);
         result = sub_10004760(&unk,

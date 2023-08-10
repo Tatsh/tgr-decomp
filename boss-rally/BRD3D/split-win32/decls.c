@@ -30,7 +30,7 @@ int __thiscall meth_100019D0(#479 * this); // idb
 int __thiscall meth_10001FF0(#482 * this); // idb
 long double __cdecl cos_(float a1);
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds); // idb
-int sub_10002140();
+Car *sub_10002140();
 long double __cdecl sin_(float a1);
 long double __cdecl sqrt_(float a1);
 int pm_sub_10002260();
@@ -79,23 +79,23 @@ void *__cdecl CHK_AllocateMemory(size_t size, const char *debugName);
 void *__cdecl CHK_ReAllocateMemory_0(void *ptr, size_t size, char *debugName); // idb
 unsigned int sub_10003460();
 int __cdecl sub_100034A0(int a1, int a2, int a3, unsigned int a4);
-BOOL __cdecl sub_10003530(const char *a1);
+BOOL __cdecl np_sub_10003530(const char *a1);
 void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4);
 int __cdecl sub_10004590(int a1, char a2, char a3, char a4, char a5, int a6, char a7);
-int __cdecl sub_100046D0(_DWORD *a1, unk00214 *a2); // idb
+int __cdecl sub_100046D0(_DWORD *a1, unk00214 *u214); // idb
 int __cdecl sub_10004760(
     _DWORD *a1, char a2, char a3, char a4, char a5, char a6, int a7, int a8, char a9, char a10);
-BOOL __cdecl sub_100048D0(int a1);
+BOOL __cdecl sub_100048D0(unk00214 *a1); // idb
 int __cdecl sub_10004910(_DWORD *a1, int a2);
 int sub_100049C0();
-int __cdecl atomic_sub_10004A10(int a1);
+int __cdecl atomic_sub_10004A10(int mutexIndex); // idb
 BOOL __cdecl atomic_sub_10004A50(int a1, int a2);
 BOOL np_sub_10004A90();
 int atomic_sub_10004BB0();
 int atomic_sub_10004BE0();
 int atomic_sub_10004C20();
 int __cdecl sub_10004C60(void *a1);
-int __cdecl sub_10004DD0(_DWORD *a1, int a2);
+int __cdecl sub_10004DD0(_DWORD *a1, unk00214 *a2); // idb
 int __cdecl sub_10004E50(void *a1, float *a2);
 int np_sub_10004FC0();
 int np_sub_10005090();
@@ -104,46 +104,46 @@ int np_sub_100053F0();
 int sub_10005470();
 int __cdecl sub_100054A0(float *a1, int a2);
 void __cdecl sub_100058D0(float *a1);
-void __cdecl sub_10005900(float *a1);
-void __cdecl sub_10005930(float *a1);
+void __cdecl Clamp0To2048(float *a1);
+void __cdecl Clamp256(float *a1);
 int sub_10005960();
 int sub_10005B10();
 BOOL np_sub_10005BE0();
-int __cdecl sub_10005CF0(int a1);
+int __cdecl sub_10005CF0(int mutexMult); // idb
 int sub_10005D30();
 int sub_10005D40();
 int sub_10005D90();
-int __cdecl sub_10005DE0(int a1, _BYTE *a2, _BYTE *a3, _BYTE *a4);
+int __cdecl sub_10005DE0(int mutexMult, _BYTE *a2, _BYTE *a3, _BYTE *a4); // idb
 int __cdecl sub_10005E40(int a1);
-char *__cdecl sub_10005E70(int a1);
+char *__cdecl sub_10005E70(int mutexMult); // idb
 BOOL __cdecl np_sub_10005EE0(int a1, const char *a2);
-int __cdecl sub_10005F40(int a1);
-int __cdecl sub_10005F90(int offsetX606); // idb
+int __cdecl sub_10005F40(int mutexMult); // idb
+int __cdecl sub_10005F90(int mutexMult); // idb
 int __cdecl np_sub_10005FE0(int a1);
 BOOL atomic_sub_10006090();
 BOOL sub_100060C0();
 BOOL sub_100060F0();
 BOOL np_sub_10006160();
-int __cdecl sub_100061A0(int a1, float *a2);
-int __cdecl sub_100065A0(float); // idb
-int __cdecl sub_100065E0(float); // idb
-int __cdecl sub_10006620(float); // idb
-int __cdecl sub_10006660(float); // idb
+int __cdecl sub_100061A0(unk00214 *u214, float a2[40]);
+int __cdecl ClampFloor32Int(float);      // idb
+int __cdecl ClampFloor32768Int(float x); // idb
+int __cdecl sub_10006620(float);         // idb
+int __cdecl sub_10006660(float);         // idb
 char __cdecl sub_100066A0(float a1);
 __int64 __cdecl sub_100066E0(float a1);
-int __cdecl sub_10006730(float); // idb
-int __cdecl sub_10006770(float); // idb
-int __cdecl sub_100067B0(float); // idb
-int __cdecl sub_100067F0(float); // idb
-int __cdecl sub_10006830(int a1, float *a2, float *a3);
-char __cdecl sub_10006BD0(int a1, float *a2);
+int __cdecl sub_10006730(float);                              // idb
+int __cdecl Clamp32768_FloorNeg128(float);                    // idb
+int __cdecl sub_100067B0(float);                              // idb
+int __cdecl sub_100067F0(float);                              // idb
+int __cdecl sub_10006830(unk00214 *a1, float *a2, float *a3); // idb
+char __cdecl sub_10006BD0(int a1, float a2[40]);
 unsigned int __cdecl sub_10006EC0(int a1, int *a2);
 double __cdecl sub_10007250(char a1);
 double __cdecl mult_neg_1_32_32_32(__int16 a1);
 double __cdecl sub_100072A0(unsigned __int8 a1);
 double __cdecl sub_100072C0(unsigned __int8 a1);
 double __cdecl sub_100072E0(char); // weak
-double __cdecl sub_10007310(unsigned int a1);
+double __cdecl mult_1_32_32_8(unsigned int a1);
 double __cdecl sub_10007340(int a1);
 double __cdecl mult_1_128(__int16 a1);
 double __cdecl mult_1_256(__int16 a1);
@@ -157,21 +157,20 @@ void __cdecl ReadSettingsParseCmdLine(char *cmdLine); // idb
 Pod *__thiscall meth_Pod_100085C0(Pod *this, char a2);
 void __thiscall meth_Pod_SetVtbl(Pod *this); // idb
 char __thiscall meth_Pod_CleanupName(Pod *this, const char *a1, char *buff);
-int __thiscall meth_Pod_10008670(Pod *this, int a2);                               // idb
-int __thiscall meth_Pod_GetNumForNameWrapper(Pod *this, char *ArgList);            // idb
-int __thiscall meth_Pod_GetPodLength(Pod *this, unsigned int argList);             // idb
-size_t __thiscall meth_Pod_ReadPod(Pod *this, unsigned int argList, void *buffer); // idb
-int __thiscall meth_Pod_LoadPod(Pod *this, unsigned int ArgList);                  // idb
-int __thiscall meth_Pod_LoadPod0(Pod *this, unsigned int argList, int a3);         // idb
-int __thiscall meth_Pod_10008890(Pod *this, int a2);                               // idb
-int __thiscall meth_Pod_100088B0(Pod *this, int a2, int a3);                       // idb
-size_t __thiscall meth_Pod_ReadPodFile(Pod *this);                                 // idb
-int __thiscall meth_Pod_CleanUpPod(Pod *this);                                     // idb
-int __stdcall meth_Pod_100089C0(char *FileName);                                   // idb
-size_t __thiscall meth_Pod_10008A00(
-    Pod *this, const char *a2, int a3, int a4, char a5, char a6); // idb
-int __thiscall meth_Pod_10008AA0(Pod *this);                      // idb
-void __thiscall setPodFilename(Pod *this, const char *a2);        // idb
+int __thiscall meth_Pod_10008670(Pod *this, int a2);                                         // idb
+int __thiscall meth_Pod_GetNumForNameWrapper(Pod *this, char *ArgList);                      // idb
+int __thiscall meth_Pod_GetPodLength(Pod *this, unsigned int argList);                       // idb
+size_t __thiscall meth_Pod_ReadPod(Pod *this, unsigned int argList, void *buffer);           // idb
+int __thiscall meth_Pod_LoadPod(Pod *this, unsigned int ArgList);                            // idb
+int __thiscall meth_Pod_LoadPod0(Pod *this, unsigned int argList, int a3);                   // idb
+int __thiscall meth_Pod_10008890(Pod *this, int a2);                                         // idb
+int __thiscall meth_Pod_100088B0(Pod *this, int a2, int a3);                                 // idb
+size_t __thiscall meth_Pod_ReadPodFile(Pod *this);                                           // idb
+int __thiscall meth_Pod_CleanUpPod(Pod *this);                                               // idb
+int __stdcall meth_Pod_100089C0(char *FileName);                                             // idb
+size_t __thiscall meth_Pod_Add(Pod *this, const char *a2, int a3, int a4, char a5, char a6); // idb
+int __thiscall meth_Pod_10008AA0(Pod *this);                                                 // idb
+void __thiscall setPodFilename(Pod *this, const char *a2);                                   // idb
 // Iostream_init *__thiscall Iostream_init::Iostream_init(Iostream_init *this);
 void __thiscall meth_DebugPrint(void *);                      // idb
 unsigned int __stdcall basename(const char *path, char *out); // idb
@@ -248,7 +247,7 @@ HRESULT __thiscall meth_unk0008C_1000B390(unk0008C *this, int a1, unk00334 *a3, 
 HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4, int a5); // idb
 IDirectDrawSurface *__cdecl DDrawCreateSurface(
     IDirectDraw2 *ddraw2, LPCSTR filepath, int cx_, int cy, LPDDSURFACEDESC a5);
-int __cdecl sub_1000B790(int, LPCSTR name); // idb
+HRESULT __cdecl DDCopyBitmap(IDirectDrawSurface *ddSurface, LPCSTR name); // idb
 HRESULT __cdecl sub_1000B820(
     IDirectDrawSurface *ddSurface, HGDIOBJ hGDIOBJ, int xSrc, int ySrc, int wSrc, int hSrc); // idb
 int __cdecl CalcColorSpaceValue(LPDIRECTDRAWSURFACE surface, COLORREF color);                // idb
@@ -340,7 +339,7 @@ int __cdecl sub_1001A4D0(int a1, int a2, int a3, int a4);
 # 485 * __cdecl sub_1001A550(#485 * a1); // idb
 unk00334 *__cdecl meth_unk00334_1001A570(
     unk00334 *a1, int width, int height, int bitDepth, unk00334 *a5, int a6);
-IID *__cdecl sub_1001A5D0[3](_DWORD *a1, void *a2, #492 * a3);
+CLSID *__cdecl sub_1001A5D0(unk00334 *a1, CLSID *clsid, unk00334 *a3);
 int __cdecl sub_1001A610(int a1, int a2, _DWORD *a3, int *a4);
 int __cdecl sub_1001A6E0(int a1, int a2, int a3, int a4, int a5, int a6, _DWORD *a7, _DWORD *a8);
 HRESULT __cdecl sub_1001A790(int a1,
@@ -354,7 +353,7 @@ HRESULT __cdecl sub_1001A790(int a1,
                              int **a9,
                              int ***a10); // idb
 unsigned int __cdecl sub_1001A870(unsigned int a1);
-int __cdecl sub_1001A8C0(int a1);
+int __cdecl BitDepthTo(int bitDepth); // idb
 HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat);
 BOOL __stdcall ddrawEnumerateCallback(GUID *, LPSTR, LPSTR, LPVOID); // idb
 HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2);
@@ -365,13 +364,16 @@ int __stdcall d3d2enumDevicesCallback(GUID *a2,
                                       LPD3DDEVICEDESC desc,
                                       LPD3DDEVICEDESC a6,
                                       LPVOID userArg); // idb
-int __thiscall meth_unk00334_1001AC60(unk00334 *this);
+int __thiscall meth_unk00334_GetBitDepth(unk00334 *this);
 int __thiscall meth_unk00334_1001AC80(
     unk00334 *this, int *width, int *height, int *bitDepth, int *a5);
-BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00334 *a2);                        // idb
-BOOL __thiscall meth_unk00334_1001AD50(unk00334 *this, int width, int height, int bitDepth); // idb
-BOOL __thiscall meth_unk00334_1001AD90(unk00334 *this);
-bool __thiscall meth_unk00334_1001ADA0(unk00334 *this, const void *a2); // idb
+BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00228 *u228); // idb
+BOOL __thiscall meth_unk00334_MatchesWidthHeightBitDepth(unk00334 *this,
+                                                         int width,
+                                                         int height,
+                                                         int bitDepth); // idb
+BOOL __thiscall meth_unk00228_Field24IsNotNull(unk00228 *this);
+int __thiscall meth_unk00228_MatchesGUID(unk00228 *this, CLSID *clsid);
 int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
                                       GUID *guid,
                                       char *source,
@@ -401,14 +403,15 @@ unk00334 *__thiscall meth_unk00334_1001B490(unk00334 *this,
 HRESULT __thiscall meth_unk00334_1001B510(unk00334 *this, IDirect3D2 *a2);
 int __thiscall meth_unk00334_1001B5A0(unk00334 *this);               // idb
 int __thiscall meth_unk00334_1001B630(unk00334 *this, unk00228 *a2); // idb
-unk00334 *__thiscall meth_1001B690(_DWORD *this, int a2, _DWORD *a3, int a4);
-int __thiscall meth_unk00334_1001B7C0(unk00334 *this, const void *a2, unk00334 *a3, int a4, int a5);
+int __thiscall meth_unk00334_1001B690(unk00334 *this, CLSID *a2, _DWORD *a3, unk00334 *a4);
+int __thiscall meth_unk00334_1001B7C0(
+    unk00334 *this, CLSID *clsid, unk00334 *a3, unk00228 *a4, unk00228 *a5);
 unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
                                             int width,
                                             int height,
                                             int bitDepth,
                                             int a5,
-                                            int a2,
+                                            unk00228 *a2,
                                             _DWORD *a7,
                                             unk00334 *u0_1); // idb
 GUID *__thiscall getDirectDrawLPGUID(#485 * this);
@@ -570,7 +573,7 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
                              int a14,
                              int a15);
 int __cdecl sub_10028200(_DWORD *a1, int a2, int a3);
-int __cdecl TIDFromTexture(_DWORD *a1, int a2); // idb
+int __cdecl TIDFromTextureAppend(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
 int __cdecl sub_10028630(int a1);
 int *__cdecl sub_10028720(int *a1, int *a2, int a3, int a4);
@@ -670,7 +673,7 @@ void __thiscall meth_1002C320(void *this);
 int sub_1002C390();
 char (*sub_1002C3C0())[8];
 char (*sub_1002C410())[8];
-int __cdecl sub_1002C430(int); // weak
+void __cdecl sub_1002C430(int a1);
 int sub_1002C4A0();
 unsigned int sub_1002C4D0();
 // int __usercall sub_1002C500@<eax>(double a1@<st0>);
@@ -1064,7 +1067,7 @@ int __cdecl sub_10042740(int a1, int *a2);
 int __cdecl sub_10042880(int a1, int *a2);
 int __cdecl sub_10042A90(int a1);
 int __cdecl sub_10042AC0(int a1);
-int __thiscall meth_unk1A5E0_10042AF0(unk06594 *this);
+int __thiscall meth_unk1A5E0_3(unk06594 *this);
 int __cdecl sub_10042B00(int a1);
 int sub_10042B30(); // weak
 int sub_10042C80(); // weak
@@ -1110,7 +1113,7 @@ int sub_100443E0();
 int __cdecl sub_100444C0(int a1);
 int sub_10044540();
 int sub_10044600();
-int __thiscall meth_100446D0(void *this);
+unk000C8 *__thiscall meth_unk000C8_100446D0(unk000C8 *this); // idb
 int sub_100447D0();
 int __cdecl sub_10044970(int); // weak
 int __cdecl sub_10044A30(int); // weak
@@ -1220,38 +1223,38 @@ int __cdecl sub_100475F0(int a1);
 int sub_10047610();
 // int __usercall sub_10047660@<eax>(int result@<eax>);
 unk1E214 *__thiscall meth_unk1E214_init(unk1E214 *this);
-unk1E214 *__thiscall meth_1E214_100478A0(unk1E214 *this, char a2); // idb
-void __thiscall meth_100478C0(unk1E214 *this);                     // idb
-int __thiscall meth_unk1E214_10047930(unk1E214 *this);             // idb
-int __thiscall meth_unk1E214_10047980(unk1E214 *this, int *a2);    // idb
-int __thiscall meth_unk1E214_100479D0(unk1E214 *this, int a2, int a3);
-int __thiscall meth_unk1E214_10047A10(unk1E214 *this);            // idb
-int __thiscall meth_unk1E214_10047A60(unk1E214 *this);            // idb
-int __thiscall meth_unk1E214_10047CB0(unk1E214 *this, int a2);    // idb
-double __thiscall meth_unk1E214_10047CE0(unk1E214 *this, int a2); // idb
-int __thiscall meth_unk1E214_10047D10(unk1E214 *this);            // idb
-int __thiscall meth_unk1E214_10047D30(unk1E214 *this);            // idb
-__int16 __thiscall meth_unk1E214_10047EB0(int this, const char *a2, int a3, char a4, _DWORD *a5);
-__int16 __thiscall meth_unk1E214_10047FB0(
+unk1E214 *__thiscall meth_1E214_0(unk1E214 *this, char a2); // idb
+void __thiscall meth_100478C0(unk1E214 *this);              // idb
+int __thiscall meth_unk1E214_7(unk1E214 *this);             // idb
+int __thiscall meth_unk1E214_6(unk1E214 *this, int *a2);    // idb
+int __thiscall meth_unk1E214_5(unk1E214 *this, int a2, int a3);
+int __thiscall meth_unk1E214_4(unk1E214 *this);             // idb
+int __thiscall meth_unk1E214_8(unk1E214 *this);             // idb
+int __thiscall meth_unk1E214_9(unk1E214 *this, int a2);     // idb
+double __thiscall meth_unk1E214_10(unk1E214 *this, int a2); // idb
+int __thiscall meth_unk1E214_11(unk1E214 *this);            // idb
+int __thiscall meth_unk1E214_12(unk1E214 *this);            // idb
+__int16 __thiscall meth_unk1E214_13(int this, const char *a2, int a3, char a4, _DWORD *a5);
+__int16 __thiscall meth_unk1E214_14(
     unk1E214 *this, int a2, int flags, int a4, int a5, int a6, int a7, int a8, __int16 a9); // idb
-int __thiscall meth_unk1E214_10048010(unk1E214 *this);                                      // idb
-int __thiscall meth_unk1E214_10048060(unk1E214 *this);                                      // idb
-int __thiscall meth_unk1E214_100480A0(unk1E214 *this);                                      // idb
-int __thiscall meth_unk1E214_10048180(unk1E214 *this);                                      // idb
+int __thiscall meth_unk1E214_2(unk1E214 *this);                                             // idb
+int __thiscall meth_unk1E214_15(unk1E214 *this);                                            // idb
+int __thiscall meth_unk1E214_1(unk1E214 *this);                                             // idb
+int __thiscall meth_unk1E214_3(unk1E214 *this);                                             // idb
 unk00348 *__thiscall meth_10048470(unk00348 *this);
-unk00348 *__thiscall meth_unk00348_100484C0(unk00348 *this, char a2); // idb
-void __thiscall meth_100484E0(unk00348 *this);                        // idb
+unk00348 *__thiscall meth_unk00348_0(unk00348 *this, char a2); // idb
+void __thiscall meth_100484E0(unk00348 *this);                 // idb
 int __thiscall meth_100484F0(unsigned __int16 *this);
-int __thiscall meth_unk00348_10048530(unk00348 *this); // idb
+int __thiscall meth_unk00348_1(unk00348 *this); // idb
 unk000C8 *__thiscall meth_unk000C8_10048710(unk000C8 *this);
-void *__thiscall meth_unk000C8_10048850(void *Block, char a2);
+void *__thiscall meth_unk000C8_0(void *Block, char a2);
 int __thiscall meth_10048870(_DWORD *this);
-int __thiscall meth_unk000C8_100488B0(unk000C8 *this); // idb
-int __thiscall meth_unk000C8_100488C0(unk000C8 *this); // idb
-HRESULT __thiscall meth_unk000C8_10048960(unk000C8 *);
-int __thiscall meth_unk000C8_100489A0(char *this);
-int __thiscall meth_unk000C8_10048AA0(unsigned __int16 *this);
-void __stdcall meth_unk000C8_10048B20(int a1);
+int __thiscall meth_unk000C8_1(unk000C8 *this); // idb
+int __thiscall meth_unk000C8_2(unk000C8 *this); // idb
+HRESULT __thiscall meth_unk000C8_5(unk000C8 *);
+int __thiscall meth_unk000C8_3(char *this);
+int __thiscall meth_unk000C8_7(unk000C8 *this); // idb
+void __thiscall meth_unk000C8_6(unk000C8 *this, int a1);
 int __cdecl sub_100491B0(unk000C8 *a1); // idb
 int __cdecl sub_10049C20(unk000C8 *a1); // idb
 int __cdecl sub_10049F40(unk000C8 *a1); // idb
@@ -1282,56 +1285,54 @@ int __cdecl sub_100563E0(unk000C8 *a1); // idb
 int __cdecl sub_10056A10(int);          // weak
 int __cdecl sub_10056FF0(unk000C8 *a1); // idb
 int __cdecl sub_100575F0(int);          // weak
-int __cdecl sub_10057C10(int);          // weak
+int __cdecl sub_10057C10(unk000C8 *a1); // idb
 int *__cdecl sub_100586A0();
 int __cdecl sub_100586D0(int a1);
 int sub_10058700();
-int __cdecl sub_10058750(unk000C8 *a1);                // idb
-int __cdecl sub_10059760(unk000C8 *a1);                // idb
-int __cdecl sub_10059BB0(int);                         // weak
-int __cdecl sub_1005A6E0(unk000C8 *a1);                // idb
-int __thiscall meth_unk000C8_1005AE70(unk000C8 *this); // idb
-int meth_unk000C8_1005AFA0();
+int __cdecl sub_10058750(unk000C8 *a1);         // idb
+int __cdecl sub_10059760(unk000C8 *a1);         // idb
+int __cdecl sub_10059BB0(int);                  // weak
+int __cdecl sub_1005A6E0(unk000C8 *a1);         // idb
+int __thiscall meth_unk000C8_4(unk000C8 *this); // idb
+int meth_unk000C8_8();
 void __thiscall meth_unk00438_init(unk00438 *this); // idb
-unk00438 *__thiscall meth_unk00438_1005B0A0(unk00438 *Block, char a2);
+unk00438 *__thiscall meth_unk00438_0(unk00438 *Block, char a2);
 void __thiscall meth_unk00438_deinit(unk00438 *this); // idb
-void __thiscall meth_unk00438_1005B0D0(unk00438 *this, int unusedA2);
-void __thiscall meth_unk00438_1005B160(unk00438 *this, int a2);
-double __thiscall meth_unk00438_1005B200(unk00438 *this);                    // idb
-DWORD __thiscall meth_unk00438_1005B250(unk00438 *this, float a2, float a3); // idb
-int __thiscall meth_unk00438_1005B2B0(unk00438 *this);                       // idb
-int __thiscall meth_unk00438_1005B390(unk00438 *this, float a2, int a3);     // idb
-int __thiscall meth_unk00438_1005B460(unk00438 *this);                       // idb
+void __thiscall meth_unk00438_1(unk00438 *this, int unusedA2);
+void __thiscall meth_unk00438_2(unk00438 *this, int a2);
+double __thiscall meth_unk00438_10(unk00438 *this);                   // idb
+DWORD __thiscall meth_unk00438_9(unk00438 *this, float a2, float a3); // idb
+int __thiscall meth_unk00438_4(unk00438 *this);                       // idb
+int __thiscall meth_unk00438_3(unk00438 *this, float a2, int a3);     // idb
+int __thiscall meth_unk00438_11(unk00438 *this);                      // idb
 char __cdecl sub_1005B540(int a1);
-char __thiscall meth_unk00438_1005B570(unk00438 *this); // idb
-int __thiscall meth_unk00438_1005B730(
-    unk00438 *this, __int16 a2, float a3, float a4, int a5); // idb
-int __thiscall meth_unk00438_1005B7A0(unk00438 *this, float a2, float a3, int a4);
-int __thiscall meth_unk00438_1005B7E0(unk00438 *this, int a2, int a3);
+char __thiscall meth_unk00438_5(unk00438 *this);                                        // idb
+int __thiscall meth_unk00438_6(unk00438 *this, __int16 a2, float a3, float a4, int a5); // idb
+int __thiscall meth_unk00438_8(unk00438 *this, float a2, float a3, int a4);
+int __thiscall meth_unk00438_7(unk00438 *this, int a2, int a3);
 unk1A5E0 *__thiscall meth_unk1A5E0_init(unk1A5E0 *this);
-unk1A5E0 *__thiscall meth_unk1A5E0_1005B8D0(unk1A5E0 *this, char a2); // idb
-void __thiscall meth_1005B8F0(unk1A5E0 *this);                        // idb
-int __thiscall meth_unk1A5E0_1005B910(
-    unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6); // idb
-int __thiscall meth_unk1A5E0_1005BB80(unk1A5E0 *this, int a2);            // idb
-int __thiscall meth_unk1A5E0_1005BC10(
-    unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);                    // idb
-int __thiscall meth_unk1A5E0_1005C000(unk1A5E0 *this, int a2);                        // idb
-int __thiscall meth_unk1A5E0_1005C200(unk1A5E0 *this, char *a2, size_t Size, int a4); // idb
-int __thiscall meth_unk1A5E0_1005C270(unk1A5E0 *this, float a2, float a3);
-int __thiscall meth_unk1A5E0_1005C2C0(unk1A5E0 *this, int index);  // idb
-int __thiscall meth_unk1A5E0_1005C510(unk1A5E0 *this, _DWORD *a2); // idb
-int __thiscall meth_unk1A5E0_1005C590(unk1A5E0 *this, int *a2);    // idb
-int __thiscall meth_unk1A5E0_1005CB40(unk1A5E0 *this, int index);  // idb
+unk1A5E0 *__thiscall meth_unk1A5E0_0(unk1A5E0 *this, char a2); // idb
+void __thiscall meth_unk1A5E0_1005B8F0(unk1A5E0 *this);        // idb
+int __thiscall meth_unk1A5E0_5(
+    unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);                     // idb
+int __thiscall meth_unk1A5E0_9(unk1A5E0 *this, int a2);                                       // idb
+int __thiscall meth_unk1A5E0_4(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6); // idb
+int __thiscall meth_unk1A5E0_11(unk1A5E0 *this, int a2);                                      // idb
+int __thiscall meth_unk1A5E0_10(unk1A5E0 *this, char *a2, size_t Size, int a4);               // idb
+int __thiscall meth_unk1A5E0_1(unk1A5E0 *this, float a2, float a3);
+int __thiscall meth_unk1A5E0_2(unk1A5E0 *this, int index);  // idb
+int __thiscall meth_unk1A5E0_6(unk1A5E0 *this, _DWORD *a2); // idb
+int __thiscall meth_unk1A5E0_7(unk1A5E0 *this, int *a2);    // idb
+int __thiscall meth_unk1A5E0_8(unk1A5E0 *this, int index);  // idb
 unk06594 *__thiscall meth_unk06594_init(unk06594 *this);
-unk06594 *__thiscall meth_unk06594_1005CBF0(unk06594 *Block, char a2);
+unk06594 *__thiscall meth_unk06594_0(unk06594 *Block, char a2);
 void __thiscall meth_unk06594_SetVtbl(unk06594 *this); // idb
-int __thiscall meth_unk06594_1005CC20(unk06594 *this);
-int __thiscall meth_unk06594_1005CCD0(unk06594 *this, __int16 a1);
-int __thiscall meth_unk06594_1005CE30(unk06594 *this, const char *a2);
-int __thiscall meth_unk06594_1005CF20(unk06594 *this, char *lpFileName); // idb
-int __thiscall meth_unk06594_1005D0A0(unk06594 *, LPCSTR lpFileName);
-int __thiscall meth_unk06594_1005D110(unk06594 *this, char *Str1, int a3); // idb
+int __thiscall meth_unk06594_4(unk06594 *this);
+int __thiscall meth_unk06594_5(unk06594 *this, __int16 a1);
+int __thiscall meth_unk06594_6(unk06594 *this, const char *a2);
+int __thiscall meth_unk06594_1(unk06594 *this, char *lpFileName); // idb
+int __thiscall meth_unk06594_2(unk06594 *, LPCSTR lpFileName);
+int __thiscall meth_unk06594_3(unk06594 *this, char *Str1, int a3); // idb
 int sub_1005D440();
 int sub_1005F4E0();
 IDirectDraw2 *sub_1005F530();
@@ -1354,10 +1355,10 @@ LRESULT __stdcall sub_10060060(
 int __stdcall sub_10060210(HWND a1);                                               // idb
 LPDIRECTINPUTDEVICEA sub_10060260();
 unk00054 *__thiscall meth_unk00054_init(unk00054 *this);
-LPDIRECTINPUTDEVICEA __thiscall meth_100602B0(#492 * this);
-int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd); // idb
-LPDIRECTINPUTDEVICEA __thiscall meth_100603A0(#492 * this, HWND hwnd);       // idb
-LPDIRECTINPUTDEVICEA __thiscall meth_10060750(unk00054 *this, int a2);       // idb
+LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_100602B0(unk00054 *this);            // idb
+int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd);       // idb
+LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_100603A0(unk00054 *this, HWND hwnd); // idb
+LPDIRECTINPUTDEVICEA __thiscall meth_10060750(unk00054 *this, int a2);             // idb
 // __int16 __usercall sub_10060780@<ax>(int a1@<ebx>, char *a2, unsigned int a3, char a4);
 int __cdecl sub_100607B0(int a1, int a2);
 int __cdecl sub_100609E0(int a1);
@@ -1617,11 +1618,11 @@ int __thiscall meth_10073C40(_DWORD *this);
 unsigned int __thiscall meth_10073C90(int *this, int a2);
 int __thiscall meth_10073D20(_DWORD *this);
 BOOL __thiscall meth_10073D40(_DWORD *this);
-int __thiscall meth_unk00214_10073D60(unk00214 *this, char a2);    // idb
+int __thiscall meth_unk00214_10073D60(unk00214 *this, char a2);
 int __thiscall meth_unk00214_10073D80(unk00214 *this, __int16 a2); // idb
 int __thiscall meth_unk00214_10073DC0(unk00214 *this, int a2);     // idb
 int __thiscall meth_unk00214_10073E10(unk00214 *this, int a2);     // idb
-int __thiscall meth_10073E70(_DWORD *this, int a2, int a3);
+int __thiscall meth_unk00214_10073E70(_DWORD *this, int a2, int a3);
 int __thiscall meth_unk00214_10073F20(unk00214 *this); // idb
 int __thiscall meth_unk00214_10073F40(unk00214 *this); // idb
 int *__thiscall meth_unk00214_GetField10(unk00214 *this);
@@ -1661,7 +1662,7 @@ BOOL __cdecl sub_10074F70(int a1, int a2);
 BOOL sub_10074FC0();
 DWORD getTicks();
 int sub_100750F0();
-unsigned int sub_10075100();
+DWORD sub_10075100();
 int sub_10075150();
 DWORD __thiscall meth_10075190(int this);
 int __cdecl sub_10075260(__int16 a1, int a2, int a3, int a4, int a5);
@@ -2125,67 +2126,73 @@ PodVtbl gPodVtbl = {&meth_Pod_100085C0,
                     &meth_Pod_LoadPod,
                     &meth_Pod_ReadPodFile,
                     &meth_Pod_100089C0,
-                    &meth_Pod_10008A00,
+                    &meth_Pod_Add,
                     &meth_Pod_10008AA0,
                     &meth_Pod_CleanUpPod};
 int dword_1008F538 = -1363573792; // weak
-unk1E214Vtbl gUnk1E214Vtbl1 = {&meth_1E214_100478A0,
-                               &meth_unk1E214_100480A0,
-                               &meth_unk1E214_10048010,
-                               &meth_unk1E214_10048180,
-                               &meth_unk1E214_10047A10,
-                               &meth_unk1E214_100479D0,
-                               &meth_unk1E214_10047980,
-                               &meth_unk1E214_10047930,
-                               &meth_unk1E214_10047A60,
-                               &meth_unk1E214_10047CB0,
-                               &meth_unk1E214_10047CE0,
-                               &meth_unk1E214_10047D10,
-                               &meth_unk1E214_10047D30,
-                               &meth_unk1E214_10047EB0,
-                               &meth_unk1E214_10047FB0,
-                               &meth_unk1E214_10048060};
-unk00348Vtbl gUnk00348Vtbl = {&meth_unk00348_100484C0, &meth_unk00348_10048530};
-unk000C8Vtbl gUnkC8Vtbl = {&meth_unk000C8_10048850,
-                           &meth_unk000C8_100488B0,
-                           &meth_unk000C8_100488C0,
-                           &meth_unk000C8_100489A0,
-                           &meth_unk000C8_1005AE70,
-                           &meth_unk000C8_10048960,
-                           &meth_unk000C8_10048B20,
-                           &meth_unk000C8_10048AA0,
-                           &meth_unk000C8_1005AFA0};
-unk00438Vtbl gUnk00438Vtbl = {&meth_unk00438_1005B0A0,
-                              &meth_unk00438_1005B0D0,
-                              &meth_unk00438_1005B160,
-                              &meth_unk00438_1005B390,
-                              &meth_unk00438_1005B2B0,
-                              &meth_unk00438_1005B570,
-                              &meth_unk00438_1005B730,
-                              &meth_unk00438_1005B7E0,
-                              &meth_unk00438_1005B7A0,
-                              &meth_unk00438_1005B250,
-                              &meth_unk00438_1005B200,
-                              &meth_unk00438_1005B460};
-unk1A5E0Vtbl gUnk1A5E0Vtbl = {&meth_unk1A5E0_1005B8D0,
-                              &meth_unk1A5E0_1005C270,
-                              &meth_unk1A5E0_1005C2C0,
-                              &meth_unk1A5E0_10042AF0,
-                              &meth_unk1A5E0_1005BC10,
-                              &meth_unk1A5E0_1005B910,
-                              &meth_unk1A5E0_1005C510,
-                              &meth_unk1A5E0_1005C590,
-                              &meth_unk1A5E0_1005CB40,
-                              &meth_unk1A5E0_1005BB80,
-                              &meth_unk1A5E0_1005C200,
-                              &meth_unk1A5E0_1005C000};
-unk06594Vtbl gUnk06594Vtbl = {&meth_unk06594_1005CBF0,
-                              &meth_unk06594_1005CF20,
-                              &meth_unk06594_1005D0A0,
-                              &meth_unk06594_1005D110,
-                              &meth_unk06594_1005CC20,
-                              &meth_unk06594_1005CCD0,
-                              &meth_unk06594_1005CE30};
+unk1E214Vtbl gUnk1E214Vtbl1 = {&meth_1E214_0,
+                               &meth_unk1E214_1,
+                               &meth_unk1E214_2,
+                               &meth_unk1E214_3,
+                               &meth_unk1E214_4,
+                               &meth_unk1E214_5,
+                               &meth_unk1E214_6,
+                               &meth_unk1E214_7,
+                               &meth_unk1E214_8,
+                               &meth_unk1E214_9,
+                               &meth_unk1E214_10,
+                               &meth_unk1E214_11,
+                               &meth_unk1E214_12,
+                               &meth_unk1E214_13,
+                               &meth_unk1E214_14,
+                               &meth_unk1E214_15};
+unk00348Vtbl gUnk00348Vtbl = {&meth_unk00348_0, &meth_unk00348_1};
+unk000C8Vtbl gUnkC8Vtbl = {&meth_unk000C8_0,
+                           &meth_unk000C8_1,
+                           &meth_unk000C8_2,
+                           &meth_unk000C8_3,
+                           &meth_unk000C8_4,
+                           &meth_unk000C8_5,
+                           &meth_unk000C8_6,
+                           &meth_unk000C8_7,
+                           &meth_unk000C8_8};
+unk00438Vtbl gUnk00438Vtbl = {&meth_unk00438_0,
+                              &meth_unk00438_1,
+                              &meth_unk00438_2,
+                              &meth_unk00438_3,
+                              &meth_unk00438_4,
+                              &meth_unk00438_5,
+                              &meth_unk00438_6,
+                              &meth_unk00438_7,
+                              &meth_unk00438_8,
+                              &meth_unk00438_9,
+                              &meth_unk00438_10,
+                              &meth_unk00438_11};
+unk1A5E0Vtbl gUnk1A5E0Vtbl = {&meth_unk1A5E0_0,
+                              &meth_unk1A5E0_1,
+                              &meth_unk1A5E0_2,
+                              &meth_unk1A5E0_3,
+                              &meth_unk1A5E0_4,
+                              &meth_unk1A5E0_5,
+                              &meth_unk1A5E0_6,
+                              &meth_unk1A5E0_7,
+                              &meth_unk1A5E0_8,
+                              &meth_unk1A5E0_9,
+                              &meth_unk1A5E0_10,
+                              &meth_unk1A5E0_11};
+unk06594Vtbl gUnk06594Vtbl = {&meth_unk06594_0,
+                              &meth_unk06594_1,
+                              &meth_unk06594_2,
+                              &meth_unk06594_3,
+                              &meth_unk06594_4,
+                              &meth_unk06594_5,
+                              &meth_unk06594_6};
+GUID CLSID_IDirect3DRGBDevice = {
+    2758171744u, 9843u, 4559u, {163u, 26u, 0u, 170u, 0u, 185u, 51u, 86u}}; // idb
+GUID CLSID_IDirect3DMMXDevice = {
+    2283358625u, 55027u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
+GUID CLSID_IDirect3DTexture2 = {
+    2468877570u, 36088u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
 const IID IID_IDirectPlay3A = {
     322895425u, 13020u, 4560u, {156u, 251u, 0u, 160u, 201u, 10u, 67u, 203u}}; // idb
 IID IID_IDirectPlay4A = {
@@ -2583,7 +2590,6 @@ char aDperrUnsupport[18] = "DPERR_UNSUPPORTED";                                 
 char aDperrPending[14] = "DPERR_PENDING";                                                   // weak
 char aE_0[2] = "\xca";                                                                      // weak
 int dword_100AB334[] = {0};                                                                 // weak
-_UNKNOWN unk_100AB338;                                                                      // weak
 int dword_100AB3D8 = 1;                                                                     // weak
 __int16 word_100AB3DC = 1;                                                                  // weak
 int dword_100AB3E0 = -1;                                                                    // weak
@@ -2613,11 +2619,9 @@ _UNKNOWN unk_100AB488;                                                          
 _UNKNOWN unk_100AB498;                                                                      // weak
 _UNKNOWN unk_100AB4A8;                                                                      // weak
 _UNKNOWN unk_100AB4B8;                                                                      // weak
-_UNKNOWN unk_100AB4C8;                                                                      // weak
 int dword_100AB4D8[4] = {188, 130, 300, 225};                                               // idb
-_UNKNOWN unk_100AB4F8;                                                                      // weak
 _UNKNOWN unk_100AB508;                                                                      // weak
-_UNKNOWN unk_100AB558;                                                                      // weak
+_UNKNOWN unk_100AB528;                                                                      // weak
 __int16 word_100AB568[] = {0};                                                              // weak
 int dword_100AB56C[4] = {0, 0, 640, 480};                                                   // idb
 int dword_100AB57C[30] = {0, 1,   0,   0, 28, 30, 1, 2,   0,   0, 128, 144, 1, 3,   0,
@@ -3540,7 +3544,6 @@ int dword_100C0CE8 = -1;                                                        
 int dword_100C0CEC = 0;                                                                  // weak
 int dword_100C0CF0 = 0;                                                                  // weak
 int dword_100C129C = 0;                                                                  // weak
-_UNKNOWN unk_100C12A0;                                                                   // weak
 char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
@@ -3551,127 +3554,128 @@ char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
 
-};                           // idb
-_UNKNOWN unk_1020AB98;       // weak
-int dword_10220B20;          // weak
-int dword_10220B24;          // weak
-int dword_10220B28;          // weak
-int dword_10220B2C;          // weak
-int dword_10220B30;          // weak
-int dword_10220B34;          // weak
-int dword_10220B38;          // weak
-char byte_10220B3C;          // weak
-__int16 word_10220B40;       // weak
-int dword_10220B44;          // weak
-int playParmsPlayTo;         // weak
-int dword_10220C3C;          // weak
-MCIDEVICEID mciId;           // idb
-int dword_10220C44;          // weak
-int dword_10220C48;          // weak
-HWND hWnd;                   // idb
-__int16 word_10220C50;       // weak
-__int16 word_10220C52;       // weak
-int dword_10220C54;          // weak
-int g_WPARAM;                // weak
-__int16 word_10220C5C;       // weak
-__int16 word_10220C5E;       // weak
-__int16 word_10220C60;       // weak
-__int16 word_10220C62;       // weak
-int dword_10220C64;          // weak
-int dword_10220C68;          // weak
-int dword_10220C6C;          // weak
-int dword_10220C70;          // weak
-int dword_10220C74;          // weak
-__int16 word_10220C78;       // weak
-__int16 word_10220C7A;       // weak
-int dword_10220C7C;          // weak
-int dword_10220C80;          // weak
-int dword_10220C84;          // weak
-int dword_10220C88;          // weak
-__int16 word_10220C8C;       // weak
-__int16 word_10220C8E;       // weak
-__int16 word_10220C90;       // weak
-__int16 word_10220C92;       // weak
-__int16 word_10220C94;       // weak
-__int16 word_10220C96;       // weak
-int dword_10220C98;          // weak
-__int16 word_10220C9C;       // weak
-__int16 word_10220C9E;       // weak
-int dword_10220CA0;          // weak
-int dword_10220CA4;          // weak
-int dword_10220CA8;          // weak
-int dword_10220CAC;          // weak
-int dword_10220CB0;          // weak
-int dword_10220CB4;          // weak
-int dword_10220CB8;          // weak
-int dword_10220CBC;          // weak
-__int16 word_10220CC0;       // weak
-__int16 word_10220CC2;       // weak
-__int16 word_10220CC4;       // weak
-__int16 word_10220CC6;       // weak
-__int16 word_10220CC8;       // weak
-__int16 word_10220CCA;       // weak
-__int16 word_10220CCC;       // weak
-int dword_10220CD0;          // weak
-int dword_10220CD4;          // weak
-int dword_10220CD8;          // weak
-char byte_10220CDC;          // weak
-int debugOutput;             // weak
-HANDLE g_hMutex_8;           // idb
-float flt_10220CF0[30];      // idb
-float flt_10220D68;          // weak
-int dword_10220D90[16];      // idb
-int dword_10220DD0;          // weak
-int dword_10220DD4;          // weak
-int dword_10220DD8;          // weak
-HANDLE g_hMutex_6;           // idb
-float flt_10220E60;          // weak
-float flt_10220E64;          // weak
-float flt_10220E68;          // weak
-float flt_10220E6C;          // weak
-float flt_10220E70;          // weak
-float flt_10220E74;          // weak
-float flt_10220E78;          // weak
-char byte_10220E80;          // weak
-int dword_10221280;          // weak
-int dword_10221288[16];      // idb
-int gCPlayers;               // weak
-int dword_102212D0[16];      // idb
-int dword_10221310;          // weak
-int dword_10221314;          // weak
-int dword_10221318;          // weak
-HANDLE g_hMutex_7;           // idb
-int gBcar;                   // weak
-HANDLE g_hMutex_4;           // idb
-int dword_10221328[];        // weak
-int dword_1022132C[];        // weak
-int dword_10221330[];        // weak
-int dword_10221334[8];       // idb
-int dword_10221354[];        // weak
-int dword_10221358[];        // weak
-char byte_1022135C[];        // weak
-char byte_1022135D[];        // weak
-char byte_1022135E[];        // weak
-int dword_10221360[];        // weak
-float flt_10221380[320];     // idb
-int dword_10221880[];        // weak
-int dword_10221884[];        // weak
-int dword_10221888[];        // weak
-int dword_1022188C[];        // weak
-int dword_10221890[];        // weak
-int dword_10221894[];        // weak
-char byte_10221898[1024];    // idb
-int dword_10221C98[];        // weak
-int dword_10221C9C[9091];    // idb
-int dword_1022AAA8;          // weak
+};                      // idb
+int gGameMode1;         // weak
+int dword_10220B24;     // weak
+int dword_10220B28;     // weak
+int dword_10220B2C;     // weak
+int gChosenTrack1;      // weak
+int gChosenWeather2;    // weak
+int dword_10220B38;     // weak
+char byte_10220B3C;     // weak
+__int16 word_10220B40;  // weak
+int dword_10220B44;     // weak
+_UNKNOWN unk_10220B7C;  // weak
+int playParmsPlayTo;    // weak
+int dword_10220C3C;     // weak
+MCIDEVICEID mciId;      // idb
+int dword_10220C44;     // weak
+int dword_10220C48;     // weak
+HWND hWnd;              // idb
+__int16 word_10220C50;  // weak
+__int16 word_10220C52;  // weak
+int dword_10220C54;     // weak
+int g_WPARAM;           // weak
+__int16 word_10220C5C;  // weak
+__int16 word_10220C5E;  // weak
+__int16 word_10220C60;  // weak
+__int16 word_10220C62;  // weak
+int dword_10220C64;     // weak
+int dword_10220C68;     // weak
+int dword_10220C6C;     // weak
+int dword_10220C70;     // weak
+int dword_10220C74;     // weak
+__int16 word_10220C78;  // weak
+__int16 word_10220C7A;  // weak
+int dword_10220C7C;     // weak
+int dword_10220C80;     // weak
+int dword_10220C84;     // weak
+int dword_10220C88;     // weak
+__int16 word_10220C8C;  // weak
+__int16 word_10220C8E;  // weak
+__int16 word_10220C90;  // weak
+__int16 word_10220C92;  // weak
+__int16 word_10220C94;  // weak
+__int16 word_10220C96;  // weak
+int dword_10220C98;     // weak
+__int16 word_10220C9C;  // weak
+__int16 word_10220C9E;  // weak
+int dword_10220CA0;     // weak
+int dword_10220CA4;     // weak
+int dword_10220CA8;     // weak
+int dword_10220CAC;     // weak
+int dword_10220CB0;     // weak
+int dword_10220CB4;     // weak
+int dword_10220CB8;     // weak
+int dword_10220CBC;     // weak
+__int16 word_10220CC0;  // weak
+__int16 word_10220CC2;  // weak
+__int16 word_10220CC4;  // weak
+__int16 word_10220CC6;  // weak
+__int16 word_10220CC8;  // weak
+__int16 word_10220CCA;  // weak
+__int16 word_10220CCC;  // weak
+int dword_10220CD0;     // weak
+int dword_10220CD4;     // weak
+int dword_10220CD8;     // weak
+char byte_10220CDC;     // weak
+int debugOutput;        // weak
+HANDLE gMutex8;         // idb
+float flt_10220CF0[30]; // idb
+float flt_10220D68;     // weak
+int dword_10220D90[16]; // idb
+int dword_10220DD0;     // weak
+int dword_10220DD4;     // weak
+int dword_10220DD8;     // weak
+HANDLE gMutex6;         // idb
+float flt_10220E60;     // weak
+float flt_10220E64;     // weak
+float flt_10220E68;     // weak
+float flt_10220E6C;     // weak
+float flt_10220E70;     // weak
+float flt_10220E74;     // weak
+float flt_10220E78;     // weak
+char byte_10220E80;     // weak
+int dword_10221280;     // weak
+int dword_10221288[16]; // idb
+int gCPlayers;          // weak
+int dword_102212D0[16]; // idb
+int dword_10221310;     // weak
+int dword_10221314;     // weak
+int dword_10221318;     // weak
+HANDLE gMutex7;         // idb
+int gBcar;              // weak
+HANDLE gMutex3;         // idb
+HANDLE gMutexes[];
+int unk_1022132C[];       // idb
+int unk_10221330[];       // idb
+int unk_10221334[8];      // idb
+int unk_10221354[];       // idb
+int unk_10221358[];       // idb
+char unk_1022135C[];      // idb
+char unk_1022135D[];      // idb
+char unk_1022135E[];      // idb
+int dword_10221360[8];    // idb
+float unk_10221380[320];  // idb
+int dword_10221880[];     // weak
+int dword_10221884[];     // weak
+int dword_10221888[];     // weak
+int dword_1022188C[];     // weak
+int dword_10221890[];     // weak
+int dword_10221894[];     // weak
+char byte_10221898[1024]; // idb
+int dword_10221C98[];     // weak
+int dword_10221C9C[9091]; // idb
+HANDLE gMutexesEnd;
 int dword_1022AAB0[];        // weak
 int dword_1022AAB4[15];      // idb
+_UNKNOWN unk_1022AAF0;       // weak
 int dword_1022AAF4;          // weak
 char byte_1022AAF8[1024];    // idb
 int dword_1022AEF8;          // weak
-int dword_1022AEFC;          // weak
+int dword_1022AEFC;          // idb
 int dword_1022AF00;          // weak
-HANDLE g_hMutex_5;           // idb
+HANDLE gMutex5;              // idb
 int dword_1022AF08;          // weak
 int gBsuspension;            // weak
 int gBtire;                  // weak
@@ -3679,11 +3683,11 @@ int gIsGameMode4;            // weak
 int gNetworkPlay;            // weak
 int dword_1022AF1C;          // weak
 int dword_1022AF20;          // weak
-HANDLE hMutex;               // idb
-HANDLE g_hMutex_0;           // idb
-HANDLE g_hMutex_1;           // idb
-HANDLE g_hMutex_2;           // idb
-HANDLE hMutex_3;             // idb
+HANDLE gMutex9;              // idb
+HANDLE gMutex0;              // idb
+HANDLE gMutex1;              // idb
+HANDLE gMutex2;              // idb
+HANDLE gMutex4;              // idb
 int dword_1022AF38;          // weak
 int dword_1022AF3C;          // weak
 int dword_1022AF40;          // weak
@@ -3691,6 +3695,7 @@ char gBossRallyIniPath[208]; // idb
 int g_dwTotalPhys;           // weak
 int gChosenCar;              // weak
 int gChosenWeather0;         // weak
+_UNKNOWN unk_1022B358;       // weak
 int dword_10277358;          // weak
 FILE *dword_1027735C;        // idb
 IDirect3DDevice2 *g_D3DDevice2;
@@ -3819,7 +3824,6 @@ float flt_1039B73C;                           // weak
 char Buffer[28];                              // idb
 int dword_1039B75C;                           // weak
 int dword_1039B760[];                         // weak
-_UNKNOWN unk_1039B7C4;                        // weak
 float flt_1039C168[];                         // weak
 float flt_1039C16C;                           // weak
 float flt_1039C170;                           // weak
@@ -3880,8 +3884,6 @@ float flt_1039E9A0;                           // weak
 float flt_1039E9A4;                           // weak
 float flt_1039E9A8;                           // weak
 float flt_1039E9B0;                           // weak
-_UNKNOWN unk_1039E9F8;                        // weak
-_UNKNOWN unk_103C77E8;                        // weak
 int dword_103C7840[];                         // weak
 _WORD word_103C7844[381414];                  // idb
 int dword_104ADCF0;                           // weak
@@ -4201,7 +4203,6 @@ int dword_1068093C;          // weak
 int dword_10680940;          // weak
 unsigned int C;              // idb
 int dword_10680948;          // weak
-_UNKNOWN unk_10680950;       // weak
 int dword_106909B0;          // weak
 int dword_106909B4;          // weak
 int dword_106909B8;          // weak
@@ -4303,6 +4304,7 @@ int dword_106C1170;          // weak
 int dword_106C1174;          // weak
 int dword_106C1178;          // weak
 char byte_106C1580;          // weak
+_UNKNOWN unk_106C1588;       // weak
 int dword_106C1608;          // weak
 int dword_106C1610;          // weak
 char byte_106C1614;          // weak
@@ -4311,7 +4313,6 @@ int dword_106C161C;          // weak
 int dword_106C1620;          // weak
 _DWORD dword_106C1628[4];    // idb
 int dword_106C1638;          // weak
-_UNKNOWN unk_106C163C;       // weak
 int dword_106C1690;          // weak
 __int16 word_106C1788[];     // weak
 __int16 word_106C178A[];     // weak
@@ -4347,6 +4348,7 @@ int dword_106C2CF0;          // weak
 int dword_106C2CF4;          // weak
 int dword_106C2CF8;          // weak
 int dword_106C2CFC;          // weak
+_UNKNOWN unk_106C2D0F;       // weak
 int dword_106C32CC;          // weak
 int dword_106C32D0;          // weak
 int dword_106C3308;          // weak
@@ -4818,14 +4820,8 @@ int dword_10ACEEB0;         // weak
 char byte_10ACEEB4[24];     // idb
 int dword_10AD05DC[];       // weak
 int dword_10AD05E0[];       // weak
-_UNKNOWN unk_10AD05E4;      // weak
 float flt_10AD061C;         // weak
-_UNKNOWN unk_10AD0628;      // weak
-_UNKNOWN unk_10AD066C;      // weak
-_UNKNOWN unk_10AD06B0;      // weak
-_UNKNOWN unk_10AD0738;      // weak
 __int16 word_10AD07B4[32];  // idb
-_UNKNOWN unk_10AD07F4;      // weak
 int dword_10AD084C[];       // weak
 int dword_10AD0850[];       // weak
 char byte_10AD0854[];       // weak
@@ -4848,16 +4844,18 @@ int dword_10AD18A4;         // weak
 int dword_10AD18A8;         // weak
 int dword_10AD18AC;         // weak
 float flt_10AD1A04;         // weak
-_UNKNOWN unk_10AD1A08;      // weak
 int dword_10AD33C4;         // weak
 int dword_10AD33D0;         // weak
 char byte_10AD34F8[128];
 int dword_10AF9528;     // weak
 float flt_10AF953C[18]; // idb
 float flt_10AF959C[23]; // idb
+_UNKNOWN unk_10AF9658;  // weak
 int dword_10AF96B8;     // weak
 int dword_10AF96BC;     // weak
 int dword_10AF96C0;     // weak
+_UNKNOWN unk_10AF96C8;  // weak
+_UNKNOWN unk_10AF96D4;  // weak
 int dword_10AF9728[];   // weak
 float flt_10AF9740[15]; // idb
 float flt_10AF9794[18]; // idb
@@ -4866,7 +4864,6 @@ float flt_10AF97F4[21]; // idb
 char byte_10AF9848[64]; // idb
 int dword_10AF9888;     // weak
 int dword_10AF988C;     // weak
-_UNKNOWN unk_10AF9890;  // weak
 int dword_10AF9B28;     // weak
 int dword_10AF9B2C;     // weak
 int dword_10AF9B30;     // weak
@@ -4899,7 +4896,6 @@ int dword_10AF9BAC;     // weak
 int dword_10AF9BB0;     // weak
 int dword_10AF9BB4;     // weak
 int dword_10AF9BB8;     // weak
-_UNKNOWN unk_10AFBEE8;  // weak
 int dword_10B01C40;     // weak
 int dword_10B01C44;     // weak
 int dword_10B01C48;     // weak
@@ -4979,8 +4975,6 @@ int dword_117554DC;                     // weak
 int dword_117554E0;                     // weak
 int dword_117554E4;                     // weak
 int dword_117554E8;                     // weak
-_UNKNOWN unk_117554F0;                  // weak
-_UNKNOWN unk_117644F0;                  // weak
 __int16 word_11782BA8[];                // weak
 __int16 word_11782BAC[];                // weak
 __int16 word_11782BB0[];                // weak
@@ -4991,7 +4985,7 @@ __int16 word_11782BC0;                  // weak
 char aCRallyghostDatFilepath[264];      // idb
 char aCRallyseasonDatFilepath_ptr[268]; // idb
 char byte_11782DDC;                     // weak
-char gBuffer[];                         // idb
+char gBuffer0[];                        // idb
 void *dword_11782E2C;                   // idb
 int dword_11782E30;                     // weak
 HANDLE dword_11786828;                  // idb
@@ -5003,8 +4997,10 @@ char byte_1178685C[];                   // weak
 char byte_1178685D[];                   // weak
 char byte_1178685E[];                   // weak
 int dword_11786860[];                   // weak
+_UNKNOWN unk_11786880;                  // weak
 float flt_117868F8[290];                // idb
 int dword_11786D80[];                   // weak
+_UNKNOWN unk_11786D84;                  // weak
 int dword_11787184[];                   // weak
 int dword_11787188[];                   // weak
 int dword_1178718C[];                   // weak
@@ -5015,6 +5011,7 @@ int dword_1178FEF0;                     // weak
 int dword_1178FEF8[];                   // weak
 int dword_1178FEFC[];                   // weak
 int dword_1178FF00[];                   // weak
+_UNKNOWN unk_1178FF14;                  // weak
 int dword_1178FF24[];                   // weak
 int dword_1178FF28[];                   // weak
 char byte_1178FF2C[];                   // weak
@@ -5132,6 +5129,8 @@ int dword_118AB12C;                           // weak
 int performanceSomething;                     // weak
 int dword_118AB134;                           // weak
 int dword_118AB144;                           // weak
+_UNKNOWN unk_118AB150;                        // weak
+_UNKNOWN unk_118AB160;                        // weak
 int dword_118AB470;                           // weak
 DIEFFECT gDIEffectSpring;
 char byte_118AB8B8[];             // weak
@@ -5200,20 +5199,19 @@ int gDirectInputEffect0Stopped; // weak
 IDirectInputEffect *gDirectInputEffect;
 int dword_118ABE00; // weak
 unk00334 *gUnk334;
-HINSTANCE hInstance;                               // idb
-HACCEL hAccTable;                                  // idb
-HCURSOR hCursor;                                   // idb
-int dword_118ABE2C;                                // weak
-int dword_118AC230;                                // weak
-int dword_118AC234;                                // weak
-_BYTE *dword_118AC238;                             // idb
-int dword_118AC23C;                                // weak
-int dword_118AC240;                                // weak
+HINSTANCE hInstance; // idb
+HACCEL hAccTable;    // idb
+HCURSOR hCursor;     // idb
+int dword_118ABE2C;  // weak
+int dword_118AC230;  // weak
+int dword_118AC234;  // weak
+unk00334 *gUnk00334Ptr1;
+CLSID *dword_118AC23C;
+unk00334 *gUnk00334Ptr0;
 void *Base;                                        // idb
 int dword_118AC2D0;                                // weak
 int dword_118AC608;                                // weak
 struct _TIME_ZONE_INFORMATION TimeZoneInformation; // idb
-_UNKNOWN unk_118AC70C;                             // weak
 int dword_118AC720[];                              // weak
 int dword_118AC728[];                              // weak
 int dword_118AC72C[];                              // weak
@@ -5230,4 +5228,3 @@ int dword_118AC77C;                                // weak
 int dword_118AC788;                                // weak
 int dword_118AC78C;                                // weak
 int dword_118AC794;                                // weak
-_UNKNOWN unk_118AC898;                             // weak

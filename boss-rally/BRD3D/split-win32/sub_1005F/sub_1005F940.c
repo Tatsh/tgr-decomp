@@ -15,13 +15,13 @@ int sub_1005F940() {
     int v11;             // edx
     int result;          // eax
 
-    if (!dword_10220B20)
-        qmemcpy(&unk_10AA25D0, &dword_10220B20, 0x118u);
-    gChosenWeather0 = dword_10220B34;
+    if (!gGameMode1)
+        qmemcpy(&unk_10AA25D0, &gGameMode1, 0x118u);
+    gChosenWeather0 = gChosenWeather2;
     LOBYTE(dword_10AA28B8) = dword_10220B24;
     v0 = dword_10220B28;
     dword_10AA28A0 = dword_10220B2C;
-    gChosenTrack = dword_10220B30;
+    gChosenTrack = gChosenTrack1;
     v1 = dword_10220B2C + 1;
     dword_10AA28C0 = dword_10220B38;
     v2 = word_10220B40;
@@ -43,7 +43,7 @@ int sub_1005F940() {
     } while (v6);
     dword_10AA28C4 = v5;
     v8 = dword_10AA26F4[0];
-    if (BYTE1(dword_10AA26F4[0]) || gGameMode == 5 || dword_10220B20)
+    if (BYTE1(dword_10AA26F4[0]) || gGameMode == 5 || gGameMode1)
         return 1;
     if (LOBYTE(dword_10AA26F4[0]) > (unsigned __int8)byte_10A9DBDC ||
         !LOBYTE(dword_10AA26F4[0]) && byte_10A9DBDC) {

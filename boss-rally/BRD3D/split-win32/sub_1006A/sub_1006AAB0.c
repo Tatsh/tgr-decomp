@@ -11,7 +11,7 @@ char __cdecl sub_1006AAB0(int a1) {
         if (!dword_106909B4) {
             v2 = dword_10B502E8[v1];
             if (v2 < 0x10000) {
-                v3 = (char *)&unk_10B50308 + 1572864 * v1 + 24 * v2;
+                v3 = (char *)&dword_10B50308 + 1572864 * v1 + 24 * v2;
                 sub_100607B0((int)v5, a1);
                 LOBYTE(v1) = sub_10006BD0((int)v3, v5);
             }

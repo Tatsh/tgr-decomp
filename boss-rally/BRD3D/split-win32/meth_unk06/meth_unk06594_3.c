@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1005D110) --------------------------------------------------------
-int __thiscall meth_unk06594_1005D110(unk06594 *this, char *Str1, int a3) {
+int __thiscall meth_unk06594_3(unk06594 *this, char *Str1, int a3) {
     int v3;           // ebx
     unsigned int v4;  // esi
     char *v5;         // edx

@@ -59,7 +59,7 @@ int __cdecl sub_1002A430(int a1, int a2) {
                                 dword_10575444 = 0;
                                 dword_10575440 = 0;
                                 v13 = sub_10028860((#506 *)v18);
-                                *(_DWORD *)(v9 + *v4) = v17 | TIDFromTexture(v18, (int)v13);
+                                *(_DWORD *)(v9 + *v4) = v17 | TIDFromTextureAppend(v18, (int)v13);
                                 v9 += 12;
                                 if (++v14 >= *(unsigned __int16 *)(*v4 + 2))
                                     break;

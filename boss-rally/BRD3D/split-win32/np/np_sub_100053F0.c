@@ -5,9 +5,9 @@ int np_sub_100053F0() {
     int result; // eax
     int v2;     // esi
 
-    WaitForSingleObject(g_hMutex_4, INFINITE);
-    v0 = dword_1022AAA8;
-    result = ReleaseMutex(g_hMutex_4);
+    WaitForSingleObject(gMutex3, INFINITE);
+    v0 = gMutexesEnd;
+    result = ReleaseMutex(gMutex3);
     if (v0) {
         v2 = sub_10005470();
         result = sub_1000C670();

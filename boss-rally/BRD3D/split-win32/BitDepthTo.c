@@ -1,9 +1,10 @@
 #include "types-win32.h"
 //----- (1001A8C0) --------------------------------------------------------
-int __cdecl sub_1001A8C0(int a1) {
+// 32768 / (2 ^ bitDepth)
+int __cdecl BitDepthTo(int bitDepth) {
     int result; // eax
 
-    switch (a1) {
+    switch (bitDepth) {
     case 1:
         result = 0x4000;
         break;

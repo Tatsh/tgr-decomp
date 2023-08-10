@@ -1,103 +1,101 @@
 #include "types-win32.h"
 //----- (1007A940) --------------------------------------------------------
 int sub_1007A940() {
-    _DWORD ecx1;    // ecx
-    _DWORD edi1;    // edi
-    int result;     // eax
-    _DWORD eax3;    // eax
-    _DWORD esi7;    // esi
-    _DWORD ebp9;    // ebp
-    _DWORD eax15;   // eax
-    _DWORD ecx17;   // ecx
-    _DWORD edx19;   // edx
-    _DWORD esi20;   // esi
-    _DWORD eax20;   // eax
-    _DWORD ecx21;   // ecx
-    _DWORD eax24;   // eax
-    int var64;      // [esp+20h] [ebp-64h]
-    int height;     // [esp+24h] [ebp-60h]
-    int bitDepth;   // [esp+28h] [ebp-5Ch]
-    int width;      // [esp+2Ch] [ebp-58h]
-    int a5;         // [esp+30h] [ebp-54h]
-    CHAR var50[80]; // [esp+34h] [ebp-50h]
+    unk00334 *u334;   // ecx
+    int v1;           // edi
+    CLSID *v3;        // eax
+    unk00334 *v4;     // esi
+    unsigned int v5;  // ebp
+    void *v6;         // eax
+    unk00334 *v7;     // ecx
+    unk00334 *v8;     // edx
+    int v9;           // esi
+    unsigned int v10; // eax
+    unk00334 *v11;    // ecx
+    int v12;          // eax
+    unsigned int i;   // [esp+20h] [ebp-64h] BYREF
+    int height;       // [esp+24h] [ebp-60h] BYREF
+    int bitDepth;     // [esp+28h] [ebp-5Ch] BYREF
+    int width;        // [esp+2Ch] [ebp-58h] BYREF
+    int a5;           // [esp+30h] [ebp-54h] BYREF
+    CHAR v18[80];     // [esp+34h] [ebp-50h] BYREF
 
-    ecx1 = dword_118AC238;
-    edi1 = 0;
-    if (!dword_118AC238)
+    u334 = gUnk00334Ptr1;
+    v1 = 0;
+    if (!gUnk00334Ptr1)
         return 0;
-    eax3 = (IID **)dword_118AC23C;
+    v3 = dword_118AC23C;
     if (!dword_118AC23C) {
-        eax3 = sub_1001A5D0(dword_118AC238, 0, 0);
-        dword_118AC23C = (int)eax3;
-        if (!eax3)
+        v3 = sub_1001A5D0(gUnk00334Ptr1, 0, 0);
+        dword_118AC23C = v3;
+        if (!v3)
             return 0;
-        ecx1 = dword_118AC238;
+        u334 = gUnk00334Ptr1;
     }
-    esi7 = ecx1[198];
-    if (!esi7)
+    v4 = u334->field_318;
+    if (!v4)
         return 0;
-    ebp9 = ecx1[197];
-    if (!ebp9)
+    v5 = u334->field_314;
+    if (!v5)
         return 0;
-    if (!dword_118AC240)
-        dword_118AC240 = (int)meth_unk00334_1001A570(ecx1, 640, 480, 16, 0, (IID *)eax3);
+    if (!gUnk00334Ptr0)
+        gUnk00334Ptr0 = meth_unk00334_1001A570(u334, 640, 480, 16, 0, (int)v3);
     if (Base) {
         free(Base);
         Base = 0;
     }
-    eax15 = (void *)malloc(4 * ebp9);
-    Base = eax15;
-    if (!eax15)
+    v6 = (void *)malloc(4 * v5);
+    Base = v6;
+    if (!v6)
         return 0;
-    var64 = 0;
-    ecx17 = esi7;
+    i = 0;
+    v7 = v4;
     while (1) {
-        edx19 = *(_DWORD *)(ecx17 + 112);
-        *((_DWORD *)eax15 + var64++) = ecx17;
-        ecx17 = edx19;
-        if (!edx19)
+        v8 = v7->field_70;
+        *((_DWORD *)v6 + i++) = v7;
+        v7 = v8;
+        if (!v8)
             break;
-        eax15 = Base;
+        v6 = Base;
     }
-    qsort(Base, ebp9, 4u, sub_1007A710);
-    esi20 = 0;
-    eax20 = 0;
-    for (var64 = 0; var64 < ebp9; ++var64) {
-        ecx21 = (#492 *)*((_DWORD *)Base + eax20);
-        if (!ecx21 || !meth_unk00334_1001ACF0(ecx21, (IID **)dword_118AC23C))
+    qsort(Base, v5, 4, sub_1007A710);
+    v9 = 0;
+    v10 = 0;
+    for (i = 0; i < v5; ++i) {
+        v11 = (unk00334 *)*((_DWORD *)Base + v10);
+        if (!v11 || !meth_unk00334_1001ACF0(v11, (unk00228 *)dword_118AC23C))
             goto LABEL_41;
-        meth_unk00334_1001AC80(*((#492 **)Base + var64), &width, &height, &bitDepth, &a5);
+        meth_unk00334_1001AC80(*((unk00334 **)Base + i), &width, &height, &bitDepth, &a5);
         if (a5) {
-            wsprintfA(var50, "%4d x %4d x %2d (%4d Hz)", width, height, bitDepth, a5);
-            eax24 = width;
+            wsprintfA(v18, "%4d x %4d x %2d (%4d Hz)", width, height, bitDepth, a5);
+            v12 = width;
             if (dword_10B4E6E8 != width || dword_10B4E6EC != height || dword_10B4E6F0 != bitDepth ||
                 dword_10B4E6F4 != a5)
                 goto LABEL_33;
         } else {
-            wsprintfA(var50, "%4d x %4d x %2d", width, height, bitDepth);
-            eax24 = width;
+            wsprintfA(v18, "%4d x %4d x %2d", width, height, bitDepth);
+            v12 = width;
             if (dword_10B4E6E8 != width || dword_10B4E6EC != height || dword_10B4E6F0 != bitDepth)
                 goto LABEL_33;
         }
-        dword_10AA2864 = esi20;
-        dword_10AA2A30 = esi20;
-        edi1 = 1;
+        dword_10AA2864 = v9;
+        dword_10AA2A30 = v9;
+        v1 = 1;
     LABEL_33:
-        if (!edi1 && eax24 == 640 && height == 480 && bitDepth == 16) {
-            dword_10AA2864 = esi20;
-            dword_10AA2A30 = esi20;
+        if (!v1 && v12 == 640 && height == 480 && bitDepth == 16) {
+            dword_10AA2864 = v9;
+            dword_10AA2A30 = v9;
         }
         if (dword_10AA29EC) {
             (*(void(__thiscall **)(int, CHAR *, _DWORD, int, void *, int))(
                 *(_DWORD *)(dword_10AA29EC + 14392) + 16))(
-                dword_10AA29EC + 14392, var50, 0, 1, &unk_100AB528, 1);
+                dword_10AA29EC + 14392, v18, 0, 1, &unk_100AB528, 1);
             (*(void(__thiscall **)(int, unsigned int *, int, int))(
-                *(_DWORD *)(dword_10AA29EC + 14392) + 40))(
-                dword_10AA29EC + 14392, &var64, 4, esi20);
+                *(_DWORD *)(dword_10AA29EC + 14392) + 40))(dword_10AA29EC + 14392, &i, 4, v9);
         }
-        ++esi20;
+        ++v9;
     LABEL_41:
-        eax20 = var64 + 1;
+        v10 = i + 1;
     }
     return 1;
 }
@@ -110,5 +108,3 @@ int sub_1007A940() {
 // 10B4E6EC: using guessed type int dword_10B4E6EC;
 // 10B4E6F0: using guessed type int dword_10B4E6F0;
 // 10B4E6F4: using guessed type int dword_10B4E6F4;
-// 118AC23C: using guessed type int dword_118AC23C;
-// 118AC240: using guessed type int dword_118AC240;

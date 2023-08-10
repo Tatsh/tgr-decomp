@@ -336,7 +336,7 @@ LABEL_12:
         v64 = v26;
     }
     v27 = sub_10028860((#506 *)&a1);
-    v28 = TIDFromTexture(&a1, (int)v27);
+    v28 = TIDFromTextureAppend(&a1, (int)v27);
     if (*((_DWORD *)dword_1057543C + 174 * v28 + 156)) {
         v29 = sub_10061000();
         if (v29 >= 0 && v29 < 8)

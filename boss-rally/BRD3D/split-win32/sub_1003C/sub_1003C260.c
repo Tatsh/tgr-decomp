@@ -21,7 +21,7 @@ int sub_1003C260() {
             GetUserNameA(Buffer, &pcbBuffer);
             v1 = sub_1003C740(unk, (int)&v4, (int)Buffer, dword_10A9D008);
             if (v1 == -2005465056) {
-                result = meth_unk1A5E0_10042AF0(v2);
+                result = meth_unk1A5E0_3(v2);
                 if (!result)
                     return result;
                 v1 = sub_1003C740(unk, (int)&v4, (int)Buffer, dword_10A9D008);

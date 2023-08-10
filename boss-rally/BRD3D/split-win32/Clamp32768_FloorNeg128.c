@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10006770) --------------------------------------------------------
-int __cdecl sub_10006770(float a1) {
+int __cdecl Clamp32768_FloorNeg128(float a1) {
     __int64 v1; // rax
 
     v1 = (__int64)floor(0.5 - a1 * -128.0);

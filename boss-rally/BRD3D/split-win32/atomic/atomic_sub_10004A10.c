@@ -1,12 +1,10 @@
 #include "types-win32.h"
 //----- (10004A10) --------------------------------------------------------
-int __cdecl atomic_sub_10004A10(int a1) {
+int __cdecl atomic_sub_10004A10(int mutexIndex) {
     int v1; // edi
 
-    WaitForSingleObject((HANDLE)dword_10221328[606 * a1], INFINITE);
-    v1 = dword_10221354[606 * a1];
-    ReleaseMutex((HANDLE)dword_10221328[606 * a1]);
+    WaitForSingleObject(gMutexes[606 * mutexIndex], INFINITE);
+    v1 = unk_10221354[606 * mutexIndex];
+    ReleaseMutex(gMutexes[606 * mutexIndex]);
     return v1;
 }
-// 10221328: using guessed type int dword_10221328[];
-// 10221354: using guessed type int dword_10221354[];

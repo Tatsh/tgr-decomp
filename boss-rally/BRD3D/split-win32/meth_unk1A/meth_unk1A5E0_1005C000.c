@@ -52,7 +52,7 @@ int __thiscall meth_unk1A5E0_1005C000(unk1A5E0 *this, int a2) {
                 if (*v9) {
                     v11 = *(v9 - 1);
                     if (v11 > 0) {
-                        this->lpVtbl->field_28(this, *v9, v11, v8 - 1);
+                        this->lpVtbl->meth10(this, *v9, v11, v8 - 1);
                         v9 = v16;
                         v10 = v17;
                     }

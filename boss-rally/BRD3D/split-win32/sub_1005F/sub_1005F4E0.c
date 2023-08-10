@@ -9,7 +9,7 @@ int sub_1005F4E0() {
         v1 = gDDSurface;
         do {
             if (!(*(int(__stdcall **)(int))(*(_DWORD *)*v1 + 108))(*v1))
-                sub_1000B790(*v1, (LPCSTR)v1[28]);
+                DDCopyBitmap(*v1, (LPCSTR)v1[28]);
             ++v0;
             v1 += 29;
         } while (v0 < (unsigned __int16)gSurfaceCount);
