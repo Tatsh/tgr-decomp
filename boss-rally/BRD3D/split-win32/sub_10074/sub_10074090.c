@@ -33,4 +33,4 @@ float *__cdecl sub_10074090(float *a1, float *a2, float *a3) {
     a1[1] = v4 + v13 * v16 - v12 * v9 + v11 * v15;
     *a1 = v5 - v11 * v9 - v12 * v15;
     return result;
-}
+  }

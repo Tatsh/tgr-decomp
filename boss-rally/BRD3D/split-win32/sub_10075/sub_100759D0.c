@@ -1,6 +1,7 @@
 #include "types-win32.h"
 //----- (100759D0) --------------------------------------------------------
-int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a7, int a8, int a9) {
+int __cdecl sub_100759D0(
+      int a1, int a2, int a3, int a4, int a5, float a6, int a7, int a8, int a9) {
     double v9;            // st6
     double v10;           // st5
     double v11;           // st7
@@ -216,14 +217,14 @@ int __cdecl sub_100759D0(int a1, int a2, int a3, int a4, int a5, float a6, int a
             goto LABEL_50;
         }
     }
-LABEL_51:
+  LABEL_51:
     *(_DWORD *)a5 = 1;
     *(_DWORD *)a7 = v12;
     return v34;
-}
-// 106C7C54: using guessed type int dword_106C7C54;
-// 106C7C80: using guessed type float flt_106C7C80;
-// 106C7C84: using guessed type float flt_106C7C84;
-// 106C7CD4: using guessed type int dword_106C7CD4;
-// 106C7CD8: using guessed type int dword_106C7CD8;
-// 117554A0: using guessed type int dword_117554A0;
+  }
+  // 106C7C54: using guessed type int dword_106C7C54;
+  // 106C7C80: using guessed type float flt_106C7C80;
+  // 106C7C84: using guessed type float flt_106C7C84;
+  // 106C7CD4: using guessed type int dword_106C7CD4;
+  // 106C7CD8: using guessed type int dword_106C7CD8;
+  // 117554A0: using guessed type int dword_117554A0;

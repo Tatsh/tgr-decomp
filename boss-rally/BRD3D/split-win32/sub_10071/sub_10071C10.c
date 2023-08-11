@@ -133,12 +133,12 @@ int sub_10071C10() {
     if (!v21)
         dword_1178FEF0 = 0;
     return result;
-}
-// 11786854: using guessed type int dword_11786854[];
-// 11786858: using guessed type int dword_11786858[];
-// 11787188: using guessed type int dword_11787188[];
-// 1178718C: using guessed type int dword_1178718C[];
-// 1178FEF0: using guessed type int dword_1178FEF0;
-// 1178FEF8: using guessed type int dword_1178FEF8[];
-// 11826AF8: using guessed type int dword_11826AF8;
-// 11828D10: using guessed type int dword_11828D10;
+  }
+  // 11786854: using guessed type int dword_11786854[];
+  // 11786858: using guessed type int dword_11786858[];
+  // 11787188: using guessed type int dword_11787188[];
+  // 1178718C: using guessed type int dword_1178718C[];
+  // 1178FEF0: using guessed type int dword_1178FEF0;
+  // 1178FEF8: using guessed type int dword_1178FEF8[];
+  // 11826AF8: using guessed type int dword_11826AF8;
+  // 11828D10: using guessed type int dword_11828D10;

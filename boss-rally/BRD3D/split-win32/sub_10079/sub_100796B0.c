@@ -19,4 +19,4 @@ HINSTANCE sub_100796B0() {
         }
     }
     return result;
-}
+  }

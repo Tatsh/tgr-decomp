@@ -28,9 +28,9 @@ HINSTANCE sub_10079740() {
         dword_118ABE2C = Msg.wParam;
     }
     return result;
-}
-// 100797FE: variable 'v1' is possibly undefined
-// 10680598: using guessed type int dword_10680598;
-// 1068059C: using guessed type int dword_1068059C;
-// 106805A0: using guessed type int dword_106805A0;
-// 118ABE2C: using guessed type int dword_118ABE2C;
+  }
+  // 100797FE: variable 'v1' is possibly undefined
+  // 10680598: using guessed type int dword_10680598;
+  // 1068059C: using guessed type int dword_1068059C;
+  // 106805A0: using guessed type int dword_106805A0;
+  // 118ABE2C: using guessed type int dword_118ABE2C;

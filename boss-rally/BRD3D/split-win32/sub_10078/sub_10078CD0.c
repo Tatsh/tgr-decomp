@@ -22,5 +22,5 @@ int sub_10078CD0() {
         meth_unk00054_DICreateMouseDevice(u54, gHwnd);
     }
     return 1;
-}
-// 118ABDE8: using guessed type int mouseCreated;
+  }
+  // 118ABDE8: using guessed type int mouseCreated;

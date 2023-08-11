@@ -21,7 +21,7 @@ int sub_100734F0() {
         memset(dword_11828F08, 0, sizeof(dword_11828F08));
     }
     return 1;
-}
-// 100B5DE8: using guessed type int g_Playsfx;
-// 11828F00: using guessed type int dword_11828F00;
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 11828F00: using guessed type int dword_11828F00;
+  // 118290FC: using guessed type int dword_118290FC;

@@ -18,6 +18,6 @@ void __thiscall meth_10075780(int this) {
             }
         }
     }
-}
-// 100757F7: variable 'v3' is possibly undefined
-// 106C2CFC: using guessed type int dword_106C2CFC;
+  }
+  // 100757F7: variable 'v3' is possibly undefined
+  // 106C2CFC: using guessed type int dword_106C2CFC;

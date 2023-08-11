@@ -7,7 +7,7 @@ int sub_100737E0() {
     result = sub_10024AE0(dword_11829110);
     dword_1182931C = result;
     return result;
-}
-// 11829110: using guessed type int dword_11829110;
-// 1182931C: using guessed type int dword_1182931C;
-// 118AA0B0: using guessed type int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+  }
+  // 11829110: using guessed type int dword_11829110;
+  // 1182931C: using guessed type int dword_1182931C;
+  // 118AA0B0: using guessed type int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);

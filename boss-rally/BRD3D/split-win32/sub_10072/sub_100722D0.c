@@ -73,4 +73,4 @@ int __cdecl sub_100722D0(int *a1) {
         v1[9] = 0;
     }
     return v5;
-}
+  }

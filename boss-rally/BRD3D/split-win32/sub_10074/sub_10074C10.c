@@ -41,4 +41,4 @@ float *__cdecl sub_10074C10(float *a1, float *a2, float *a3) {
              result[3] * result[1] * a3[2]) *
             v10;
     return result;
-}
+  }

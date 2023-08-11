@@ -15,4 +15,4 @@ void __cdecl sub_10074250(float *a1) {
     *a1 = *a1 * v6;
     a1[1] = v3;
     a1[2] = v4;
-}
+  }

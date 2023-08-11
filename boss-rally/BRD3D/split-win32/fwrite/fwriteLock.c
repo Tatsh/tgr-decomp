@@ -7,4 +7,4 @@ size_t __cdecl fwriteLock(void *Buffer, size_t ElementSize, size_t ElementCount,
     v4 = fwrite(Buffer, ElementSize, ElementCount, Stream);
     _unlock_file(Stream);
     return v4;
-}
+  }

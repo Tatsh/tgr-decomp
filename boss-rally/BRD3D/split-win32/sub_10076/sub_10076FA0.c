@@ -40,8 +40,8 @@ MMRESULT __cdecl sub_10076FA0(LPSTR pszFileName, int a2, int a3, int a4, HMMIO h
         GlobalFree(*v5);
         *v5 = 0;
     }
-LABEL_11:
+  LABEL_11:
     if (hmmio)
         mmioClose(hmmio, 0);
     return v7;
-}
+  }

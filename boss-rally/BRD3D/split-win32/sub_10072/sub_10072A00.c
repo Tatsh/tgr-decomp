@@ -22,4 +22,4 @@ int __cdecl sub_10072A00(int a1) {
     if (!result)
         *(_DWORD *)(a1 + 28) = 1;
     return result;
-}
+  }

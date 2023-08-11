@@ -33,5 +33,5 @@ void __cdecl sub_100765E0(float *a1, float *a2) {
         }
     }
     sub_100741B0(a2);
-}
-// 100765F4: variable 'v4' is possibly undefined
+  }
+  // 100765F4: variable 'v4' is possibly undefined

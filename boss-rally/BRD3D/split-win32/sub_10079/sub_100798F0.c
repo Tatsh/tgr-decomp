@@ -53,5 +53,5 @@ int sub_100798F0() {
         result = meth_unk0008C_1000B280(gUnk8C, gUnk334) >= 0;
     }
     return result;
-}
-// 10B4E6F8: using guessed type int dword_10B4E6F8;
+  }
+  // 10B4E6F8: using guessed type int dword_10B4E6F8;

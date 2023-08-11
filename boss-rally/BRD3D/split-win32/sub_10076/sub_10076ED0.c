@@ -52,4 +52,4 @@ int __cdecl sub_10076ED0(HMMIO hmmio, int a2, int a3, int a4, int a5) {
     result = 57603;
     *(_DWORD *)a5 = 0;
     return result;
-}
+  }

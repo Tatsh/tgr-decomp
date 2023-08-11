@@ -18,4 +18,4 @@ void __cdecl sub_100741B0(float *a1) {
     a1[1] = v3;
     a1[2] = v4;
     a1[3] = v5;
-}
+  }

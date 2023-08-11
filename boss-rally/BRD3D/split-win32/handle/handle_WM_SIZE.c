@@ -25,6 +25,6 @@ int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam) {
         result = 0;
     }
     return result;
-}
-// 118AC230: using guessed type int dword_118AC230;
-// 118AC234: using guessed type int dword_118AC234;
+  }
+  // 118AC230: using guessed type int dword_118AC230;
+  // 118AC234: using guessed type int dword_118AC234;

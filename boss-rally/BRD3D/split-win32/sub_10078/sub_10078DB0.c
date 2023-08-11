@@ -21,6 +21,6 @@ int sub_10078DB0() {
         }
     }
     return 1;
-}
-// 100602B0: using guessed type int __thiscall sub_100602B0(_DWORD);
-// 118ABDE8: using guessed type int mouseCreated;
+  }
+  // 100602B0: using guessed type int __thiscall sub_100602B0(_DWORD);
+  // 118ABDE8: using guessed type int mouseCreated;

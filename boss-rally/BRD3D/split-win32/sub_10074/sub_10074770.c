@@ -26,4 +26,4 @@ float *__cdecl sub_10074770(float *a1, int a2, float *a3) {
         --v4;
     } while (v4);
     return result;
-}
+  }

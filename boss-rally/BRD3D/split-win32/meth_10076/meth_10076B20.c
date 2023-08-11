@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10076B20) --------------------------------------------------------
-int __thiscall meth_10076B20(_DWORD *this) {
+int __thiscall meth_10076B20(_DWORD * this) {
     int v2;     // eax
     int v3;     // ecx
     int result; // eax
@@ -39,4 +39,4 @@ int __thiscall meth_10076B20(_DWORD *this) {
     this[2673] = 0;
     this[921] = result;
     return result;
-}
+  }

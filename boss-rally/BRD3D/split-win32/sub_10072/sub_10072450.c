@@ -11,4 +11,4 @@ int __cdecl sub_10072450(int a1, int a2) {
         v2 = i;
     *(_DWORD *)(v2 + 424) = a2;
     return 0;
-}
+  }

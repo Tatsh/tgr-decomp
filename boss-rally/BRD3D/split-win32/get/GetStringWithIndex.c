@@ -8,4 +8,4 @@ LPCSTR __cdecl GetStringWithIndex(unsigned int index) {
     else
         result = NULL;
     return result;
-}
+  }

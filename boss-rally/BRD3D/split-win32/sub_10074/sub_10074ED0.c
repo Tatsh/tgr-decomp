@@ -15,5 +15,5 @@ int __cdecl sub_10074ED0(int a1, int a2, int a3) {
         }
     }
     return result;
-}
-// 118AA0C0: using guessed type int (__cdecl *dword_118AA0C0)(_DWORD);
+  }
+  // 118AA0C0: using guessed type int (__cdecl *dword_118AA0C0)(_DWORD);

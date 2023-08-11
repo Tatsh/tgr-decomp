@@ -33,4 +33,4 @@ unsigned int __thiscall meth_10073C90(int *this, int a2) {
         v3 = a2 - v5;
     }
     return result;
-}
+  }

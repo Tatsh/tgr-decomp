@@ -28,4 +28,4 @@ BOOL __cdecl sub_1007AC20(int width, int height, int bitDepth, unk00334 *a5) {
         }
     }
     return result;
-}
+  }

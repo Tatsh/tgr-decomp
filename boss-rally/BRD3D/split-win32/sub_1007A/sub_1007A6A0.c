@@ -17,4 +17,4 @@ int __cdecl sub_1007A6A0(HWND hWnd, intptr_t dwNewLong) {
         *(_DWORD *)(dwNewLong + 20) = v3;
     }
     return 0;
-}
+  }

@@ -25,4 +25,4 @@ float *__cdecl sub_10074AC0(int a1, int a2, int a3) {
         --v5;
     } while (v5);
     return result;
-}
+  }

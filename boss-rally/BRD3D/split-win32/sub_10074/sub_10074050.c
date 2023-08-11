@@ -7,5 +7,5 @@ void sub_10074050() {
         gBrStringOffset = 0;
         gBrStringFileSize = 0;
     }
-}
-// 11829830: using guessed type int gBrStringOffset;
+  }
+  // 11829830: using guessed type int gBrStringOffset;

@@ -105,7 +105,7 @@ char __cdecl sub_100786E0(int a1) {
     }
     if (dword_118ABAE0[68 * dword_118ABD7C] >= -50 && dword_118ABAE0[68 * dword_118ABAB8] < -50)
         goto LABEL_67;
-LABEL_68:
+  LABEL_68:
     if (v2[3]) {
         v8 = dword_118ABAD8;
     } else {
@@ -123,17 +123,17 @@ LABEL_68:
             result |= 1u;
     }
     return result;
-}
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
-// 118AB8B4: using guessed type int dword_118AB8B4;
-// 118ABAB8: using guessed type int dword_118ABAB8;
-// 118ABAD4: using guessed type int dword_118ABAD4;
-// 118ABAD8: using guessed type int dword_118ABAD8;
-// 118ABAE0: using guessed type int dword_118ABAE0[];
-// 118ABAE4: using guessed type int dword_118ABAE4[];
-// 118ABAE8: using guessed type int dword_118ABAE8[];
-// 118ABD38: using guessed type int dword_118ABD38[];
-// 118ABD3C: using guessed type int dword_118ABD3C[];
-// 118ABD40: using guessed type int dword_118ABD40[];
-// 118ABD7C: using guessed type int dword_118ABD7C;
-// 118ABD80: using guessed type int dword_118ABD80;
+  }
+  // 10B4E1D4: using guessed type int dword_10B4E1D4;
+  // 118AB8B4: using guessed type int dword_118AB8B4;
+  // 118ABAB8: using guessed type int dword_118ABAB8;
+  // 118ABAD4: using guessed type int dword_118ABAD4;
+  // 118ABAD8: using guessed type int dword_118ABAD8;
+  // 118ABAE0: using guessed type int dword_118ABAE0[];
+  // 118ABAE4: using guessed type int dword_118ABAE4[];
+  // 118ABAE8: using guessed type int dword_118ABAE8[];
+  // 118ABD38: using guessed type int dword_118ABD38[];
+  // 118ABD3C: using guessed type int dword_118ABD3C[];
+  // 118ABD40: using guessed type int dword_118ABD40[];
+  // 118ABD7C: using guessed type int dword_118ABD7C;
+  // 118ABD80: using guessed type int dword_118ABD80;

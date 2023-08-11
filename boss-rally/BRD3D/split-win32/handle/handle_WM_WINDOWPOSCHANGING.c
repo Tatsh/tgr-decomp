@@ -52,5 +52,5 @@ LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lPa
         }
     }
     return DefWindowProcA(v3, 0x46u, wParam, lParam);
-}
-// 118AC230: using guessed type int dword_118AC230;
+  }
+  // 118AC230: using guessed type int dword_118AC230;

@@ -13,4 +13,4 @@ HRESULT __cdecl sub_100771B0(void *a1) {
                 g_lpDirectInputDeviceA->lpVtbl->GetDeviceState(g_lpDirectInputDeviceA, 256, a1);
     }
     return result;
-}
+  }

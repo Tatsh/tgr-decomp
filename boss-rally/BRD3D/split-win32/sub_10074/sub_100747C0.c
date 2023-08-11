@@ -31,4 +31,4 @@ float *__cdecl sub_100747C0(float *a1, float *a2, float *a3) {
     a1[1] = a2[13] + a1[1];
     a1[2] = a2[14] + a1[2];
     return result;
-}
+  }

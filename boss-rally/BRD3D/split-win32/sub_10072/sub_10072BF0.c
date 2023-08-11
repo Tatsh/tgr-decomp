@@ -14,4 +14,4 @@ int __cdecl sub_10072BF0(int a1) {
         } while (*v1);
     }
     return 0;
-}
+  }

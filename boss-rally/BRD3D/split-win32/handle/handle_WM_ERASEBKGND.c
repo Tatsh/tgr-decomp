@@ -11,4 +11,4 @@ LRESULT __cdecl handle_WM_ERASEBKGND(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     else
         result = DefWindowProcA(hWnd, 0x14u, wParam, lParam);
     return result;
-}
+  }

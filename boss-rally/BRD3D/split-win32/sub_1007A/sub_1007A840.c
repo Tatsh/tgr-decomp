@@ -41,6 +41,6 @@ int __stdcall sub_1007A840() {
         result = 1;
     }
     return result;
-}
-// 10AA2860: using guessed type int dword_10AA2860;
-// 10AA2A2C: using guessed type int dword_10AA2A2C;
+  }
+  // 10AA2860: using guessed type int dword_10AA2860;
+  // 10AA2A2C: using guessed type int dword_10AA2A2C;

@@ -11,4 +11,4 @@ BOOL __cdecl sub_10073020(int a1) {
     else
         result = (v2 & 1) == 1;
     return result;
-}
+  }

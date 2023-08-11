@@ -10,6 +10,6 @@ int __cdecl sub_10072640(int a1, int a2) {
         return 0;
     *(_DWORD *)(v2 + 24) = a2;
     return 1;
-}
-// 100B5DE8: using guessed type int g_Playsfx;
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 118290FC: using guessed type int dword_118290FC;

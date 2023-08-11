@@ -7,4 +7,4 @@ void __thiscall meth_10076A00(int this) {
                  *(unsigned __int8 *)(this + 10669) >> 3,
                  *(unsigned __int8 *)(this + 10670) >> 3);
     meth_10062C50((_DWORD *)this);
-}
+  }

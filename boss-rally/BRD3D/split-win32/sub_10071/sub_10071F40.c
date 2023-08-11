@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10071F40) --------------------------------------------------------
 int __cdecl sub_10071F40(
-    _DWORD *a1, char a2, char a3, char a4, char a5, char a6, char a7, int a8, int a9) {
+      _DWORD * a1, char a2, char a3, char a4, char a5, char a6, char a7, int a8, int a9) {
     int v9;           // eax
     unsigned int v10; // ebx
     int v11;          // ebp
@@ -38,5 +38,5 @@ int __cdecl sub_10071F40(
     if (v10 == 4)
         meth_unk00214_10073DC0(a1, dword_11828D14);
     return 1;
-}
-// 11828D14: using guessed type int dword_11828D14;
+  }
+  // 11828D14: using guessed type int dword_11828D14;

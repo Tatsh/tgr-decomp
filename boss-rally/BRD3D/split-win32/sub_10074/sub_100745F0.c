@@ -37,4 +37,4 @@ int __cdecl sub_100745F0(int a1, int a2, float a3) {
     result = *(_DWORD *)(a2 + 64);
     *(_DWORD *)(a1 + 64) = result;
     return result;
-}
+  }

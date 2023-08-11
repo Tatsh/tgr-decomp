@@ -46,13 +46,13 @@ LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam) {
         sub_1002C4D0();
     }
     return DefWindowProcA(hWnd, 0x1Cu, wParam, lParam);
-}
-// 1007A108: variable 'v3' is possibly undefined
-// 1007A16B: variable 'v4' is possibly undefined
-// 1022AF14: using guessed type int gIsGameMode4;
-// 1022AF18: using guessed type int gNetworkPlay;
-// 10680598: using guessed type int dword_10680598;
-// 10680734: using guessed type int dword_10680734;
-// 106909B4: using guessed type int dword_106909B4;
-// 106909E0: using guessed type int dword_106909E0;
-// 10ACEE50: using guessed type int dword_10ACEE50;
+  }
+  // 1007A108: variable 'v3' is possibly undefined
+  // 1007A16B: variable 'v4' is possibly undefined
+  // 1022AF14: using guessed type int gIsGameMode4;
+  // 1022AF18: using guessed type int gNetworkPlay;
+  // 10680598: using guessed type int dword_10680598;
+  // 10680734: using guessed type int dword_10680734;
+  // 106909B4: using guessed type int dword_106909B4;
+  // 106909E0: using guessed type int dword_106909E0;
+  // 10ACEE50: using guessed type int dword_10ACEE50;

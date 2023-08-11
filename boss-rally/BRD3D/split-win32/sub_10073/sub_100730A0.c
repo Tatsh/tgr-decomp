@@ -37,7 +37,7 @@ int __cdecl sub_100730A0(int a1) {
         dword_100B64F8[2 * a1] = 0;
     }
     return v6;
-}
-// 100B5DE8: using guessed type int g_Playsfx;
-// 100B84F4: using guessed type int dword_100B84F4[];
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 100B84F4: using guessed type int dword_100B84F4[];
+  // 118290FC: using guessed type int dword_118290FC;

@@ -21,5 +21,5 @@ int __cdecl RallyMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
     }
     CoUninitialize();
     return dword_118ABE2C;
-}
-// 118ABE2C: using guessed type int dword_118ABE2C;
+  }
+  // 118ABE2C: using guessed type int dword_118ABE2C;

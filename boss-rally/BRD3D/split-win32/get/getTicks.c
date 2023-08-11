@@ -16,7 +16,7 @@ DWORD getTicks() {
     else
         result = timeGetTime();
     return result;
-}
-// 100BBAD4: using guessed type int needToCheckSupportHRPC;
-// 118AB128: using guessed type int supportsHRPerformanceCounter;
-// 118AB130: using guessed type int performanceSomething;
+  }
+  // 100BBAD4: using guessed type int needToCheckSupportHRPC;
+  // 118AB128: using guessed type int supportsHRPerformanceCounter;
+  // 118AB130: using guessed type int performanceSomething;

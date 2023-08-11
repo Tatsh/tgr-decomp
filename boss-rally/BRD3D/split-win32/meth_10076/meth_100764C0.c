@@ -46,4 +46,4 @@ void __thiscall meth_100764C0(float *this, float a2) {
     *((_DWORD *)this + 165) = v7;
     *((_DWORD *)this + 166) = v8;
     sub_10074450(this + 136, this + 119);
-}
+  }

@@ -23,4 +23,4 @@ int __cdecl sub_100743A0(int a1, int a2, float a3) {
     *(float *)(a1 + 44) = v6;
     *(float *)(a1 + 48) = v7;
     return result;
-}
+  }

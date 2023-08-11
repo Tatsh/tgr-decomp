@@ -21,6 +21,6 @@ BOOL sub_10071B80() {
         v0 += 603;
     } while ((int)v1 < (int)&dword_11828D10);
     return result;
-}
-// 10071BF0: using guessed type _DWORD __cdecl sub_10071BF0(_DWORD);
-// 11828D10: using guessed type int dword_11828D10;
+  }
+  // 10071BF0: using guessed type _DWORD __cdecl sub_10071BF0(_DWORD);
+  // 11828D10: using guessed type int dword_11828D10;

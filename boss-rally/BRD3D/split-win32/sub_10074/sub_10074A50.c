@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10074A50) --------------------------------------------------------
-int *__cdecl sub_10074A50(_DWORD *a1, int *a2) {
+int *__cdecl sub_10074A50(_DWORD * a1, int *a2) {
     int v4;      // ebx
     int *result; // eax
     _DWORD *v6;  // ecx
@@ -23,4 +23,4 @@ int *__cdecl sub_10074A50(_DWORD *a1, int *a2) {
         --v4;
     } while (v4);
     return result;
-}
+  }

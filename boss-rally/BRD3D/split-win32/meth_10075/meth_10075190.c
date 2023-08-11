@@ -15,5 +15,5 @@ DWORD __thiscall meth_10075190(int this) {
         *(_DWORD *)(this + 32) = result;
     }
     return result;
-}
-// 118AB144: using guessed type int dword_118AB144;
+  }
+  // 118AB144: using guessed type int dword_118AB144;

@@ -33,6 +33,6 @@ int __cdecl sub_10072820(int a1, unsigned int a2) {
         }
     }
     return !sub_100724D0(a1) && !sub_10072490(a1);
-}
-// 100B5DE8: using guessed type int g_Playsfx;
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 118290FC: using guessed type int dword_118290FC;

@@ -45,6 +45,6 @@ HMODULE LoadBrstringDll() {
         }
     }
     return hMod;
-}
-// 10073F8E: variable '_unused' is possibly undefined
-// 11829830: using guessed type int gBrStringOffset;
+  }
+  // 10073F8E: variable '_unused' is possibly undefined
+  // 11829830: using guessed type int gBrStringOffset;

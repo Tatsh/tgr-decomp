@@ -8,4 +8,4 @@ BOOL sub_100773D0() {
     else
         result = 0;
     return result;
-}
+  }

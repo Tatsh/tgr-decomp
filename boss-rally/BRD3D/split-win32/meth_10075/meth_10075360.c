@@ -156,10 +156,10 @@ int __thiscall meth_10075360(int this) {
     *(_DWORD *)(this + 3984) = v8;
     *(float *)(this + 3992) = v25;
     return 1;
-}
-// 100B380C: using guessed type int gChosenTrack;
-// 100B4050: using guessed type int dword_100B4050;
-// 106C7C70: using guessed type float flt_106C7C70;
-// 106C7C74: using guessed type float flt_106C7C74;
-// 106C7CC0: using guessed type int dword_106C7CC0;
-// 106C7CC4: using guessed type int dword_106C7CC4;
+  }
+  // 100B380C: using guessed type int gChosenTrack;
+  // 100B4050: using guessed type int dword_100B4050;
+  // 106C7C70: using guessed type float flt_106C7C70;
+  // 106C7C74: using guessed type float flt_106C7C74;
+  // 106C7CC0: using guessed type int dword_106C7CC0;
+  // 106C7CC4: using guessed type int dword_106C7CC4;

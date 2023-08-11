@@ -21,8 +21,8 @@ HRESULT sub_10078ED0() {
         }
     }
     return result;
-}
-// 100BD438: using guessed type int gDIEffectSquareDuration;
-// 106909E0: using guessed type int dword_106909E0;
-// 10B4E1D0: using guessed type int gConfigJoystickIndex;
-// 10B4E1E0: using guessed type int dword_10B4E1E0;
+  }
+  // 100BD438: using guessed type int gDIEffectSquareDuration;
+  // 106909E0: using guessed type int dword_106909E0;
+  // 10B4E1D0: using guessed type int gConfigJoystickIndex;
+  // 10B4E1E0: using guessed type int dword_10B4E1E0;

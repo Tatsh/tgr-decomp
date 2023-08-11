@@ -79,9 +79,9 @@ BOOL sub_100716E0() {
         }
     }
     return result;
-}
-// 1178FEE8: using guessed type int dword_1178FEE8;
-// 1178FEF0: using guessed type int dword_1178FEF0;
-// 1178FEF8: using guessed type int dword_1178FEF8[];
-// 11828D10: using guessed type int dword_11828D10;
-// 11828D14: using guessed type int dword_11828D14;
+  }
+  // 1178FEE8: using guessed type int dword_1178FEE8;
+  // 1178FEF0: using guessed type int dword_1178FEF0;
+  // 1178FEF8: using guessed type int dword_1178FEF8[];
+  // 11828D10: using guessed type int dword_11828D10;
+  // 11828D14: using guessed type int dword_11828D14;

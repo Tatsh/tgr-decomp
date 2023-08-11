@@ -6,4 +6,4 @@ int sub_10074E00() {
     result = 0;
     memset(dword_11829850, 0, sizeof(dword_11829850));
     return result;
-}
+  }

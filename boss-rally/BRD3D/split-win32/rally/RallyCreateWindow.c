@@ -1,21 +1,21 @@
 #include "types-win32.h"
 //----- (10079A90) --------------------------------------------------------
 HRESULT __cdecl RallyCreateWindow(DWORD dwExStyle,
-                                  LPCSTR lpClassName,
-                                  LPCSTR lpWindowName,
-                                  DWORD dwStyle,
-                                  int X,
-                                  int Y,
-                                  int nWidth,
-                                  int nHeight,
-                                  HWND hWndParent,
-                                  HMENU hMenu,
-                                  HINSTANCE hInstance,
-                                  LPVOID lpParam,
-                                  int a3,
-                                  int a14,
-                                  HWND *wnd2,
-                                  unk00334 *a16) {
+                                    LPCSTR lpClassName,
+                                    LPCSTR lpWindowName,
+                                    DWORD dwStyle,
+                                    int X,
+                                    int Y,
+                                    int nWidth,
+                                    int nHeight,
+                                    HWND hWndParent,
+                                    HMENU hMenu,
+                                    HINSTANCE hInstance,
+                                    LPVOID lpParam,
+                                    int a3,
+                                    int a14,
+                                    HWND *wnd2,
+                                    unk00334 *a16) {
     unk0008C *unk8C_0; // edi
     HRESULT result;    // eax
     HINSTANCE hInst;   // ebx
@@ -77,5 +77,5 @@ HRESULT __cdecl RallyCreateWindow(DWORD dwExStyle,
         result = 0x80004005;
     }
     return result;
-}
-// 100940A4: using guessed type int gPlayMusic;
+  }
+  // 100940A4: using guessed type int gPlayMusic;

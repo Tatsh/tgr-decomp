@@ -31,6 +31,6 @@ LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam) {
         goto LABEL_15;
     }
     return DefWindowProcA(hWnd, 0x112u, wParam, lParam);
-}
-// 118AC230: using guessed type int dword_118AC230;
-// 118AC234: using guessed type int dword_118AC234;
+  }
+  // 118AC230: using guessed type int dword_118AC230;
+  // 118AC234: using guessed type int dword_118AC234;

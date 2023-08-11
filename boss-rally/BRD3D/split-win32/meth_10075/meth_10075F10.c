@@ -119,7 +119,7 @@ void __thiscall meth_10075F10(int this) {
             goto LABEL_29;
         }
     }
-LABEL_29:
+  LABEL_29:
     if (gNetworkPlay) {
         if (*(void(__cdecl **)(int))(this + 0xF08) == sub_10063FE0 && !dword_106909E0)
             sub_100609E0(this);
@@ -142,11 +142,11 @@ LABEL_29:
             meth_100019D0((#479 *)this);
         }
     }
-}
-// 100762BC: variable 'v9' is possibly undefined
-// 100AA8B4: using guessed type int dword_100AA8B4;
-// 1022AF14: using guessed type int gIsGameMode4;
-// 1022AF18: using guessed type int gNetworkPlay;
-// 106909E0: using guessed type int dword_106909E0;
-// 106C1638: using guessed type int dword_106C1638;
-// 106C2CFC: using guessed type int dword_106C2CFC;
+  }
+  // 100762BC: variable 'v9' is possibly undefined
+  // 100AA8B4: using guessed type int dword_100AA8B4;
+  // 1022AF14: using guessed type int gIsGameMode4;
+  // 1022AF18: using guessed type int gNetworkPlay;
+  // 106909E0: using guessed type int dword_106909E0;
+  // 106C1638: using guessed type int dword_106C1638;
+  // 106C2CFC: using guessed type int dword_106C2CFC;

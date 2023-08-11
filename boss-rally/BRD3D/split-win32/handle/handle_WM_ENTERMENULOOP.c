@@ -9,4 +9,4 @@ LRESULT __cdecl handle_WM_ENTERMENULOOP(HWND hWnd, WPARAM wParam, LPARAM lParam)
         SetCursor(hCursor);
     }
     return DefWindowProcA(hWnd, WM_ENTERMENULOOP, wParam, lParam);
-}
+  }

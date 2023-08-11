@@ -7,4 +7,4 @@ size_t __cdecl freadLock(void *buffer, size_t elementSize, size_t elementCount, 
     v4 = fread(buffer, elementSize, elementCount, fp);
     _unlock_file(fp);
     return v4;
-}
+  }

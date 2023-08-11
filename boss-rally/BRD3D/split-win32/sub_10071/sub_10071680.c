@@ -17,6 +17,6 @@ void __stdcall __noreturn sub_10071680(LPVOID lpThreadParameter) {
             dword_11826B48 += 1000;
         }
     }
-}
-// 11826B48: using guessed type int dword_11826B48;
-// 11828D10: using guessed type int dword_11828D10;
+  }
+  // 11826B48: using guessed type int dword_11826B48;
+  // 11828D10: using guessed type int dword_11828D10;

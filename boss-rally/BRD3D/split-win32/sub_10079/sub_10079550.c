@@ -26,5 +26,5 @@ int sub_10079550() {
         dword_118ABE00 = 0;
     }
     return result;
-}
-// 118ABE00: using guessed type int dword_118ABE00;
+  }
+  // 118ABE00: using guessed type int dword_118ABE00;

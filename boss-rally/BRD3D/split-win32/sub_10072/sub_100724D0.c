@@ -12,5 +12,5 @@ int __cdecl sub_100724D0(int a1) {
         result = (*(int(__stdcall **)(_DWORD, int))(**(_DWORD **)(a1 + 156) + 60))(
             *(_DWORD *)(a1 + 156), -10000);
     return result;
-}
-// 100BBAE0: using guessed type char byte_100BBAE0;
+  }
+  // 100BBAE0: using guessed type char byte_100BBAE0;

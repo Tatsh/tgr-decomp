@@ -8,7 +8,7 @@ int sub_100770C0() {
     dword_118ABAD4 = 0;
     dword_118ABD80 = 1;
     return result;
-}
-// 118ABAD4: using guessed type int dword_118ABAD4;
-// 118ABD38: using guessed type int dword_118ABD38[];
-// 118ABD80: using guessed type int dword_118ABD80;
+  }
+  // 118ABAD4: using guessed type int dword_118ABAD4;
+  // 118ABD38: using guessed type int dword_118ABD38[];
+  // 118ABD80: using guessed type int dword_118ABD80;

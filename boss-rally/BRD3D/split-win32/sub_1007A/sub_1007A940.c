@@ -98,13 +98,13 @@ int sub_1007A940() {
         v10 = i + 1;
     }
     return 1;
-}
-// 1007AA5D: conditional instruction was optimized away because of 'ebp.4!=0'
-// 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
-// 10AA2864: using guessed type int dword_10AA2864;
-// 10AA29EC: using guessed type int dword_10AA29EC;
-// 10AA2A30: using guessed type int dword_10AA2A30;
-// 10B4E6E8: using guessed type int gWidth1;
-// 10B4E6EC: using guessed type int gHeight1;
-// 10B4E6F0: using guessed type int gBitDepth;
-// 10B4E6F4: using guessed type int dword_10B4E6F4;
+  }
+  // 1007AA5D: conditional instruction was optimized away because of 'ebp.4!=0'
+  // 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
+  // 10AA2864: using guessed type int dword_10AA2864;
+  // 10AA29EC: using guessed type int dword_10AA29EC;
+  // 10AA2A30: using guessed type int dword_10AA2A30;
+  // 10B4E6E8: using guessed type int gWidth1;
+  // 10B4E6EC: using guessed type int gHeight1;
+  // 10B4E6F0: using guessed type int gBitDepth;
+  // 10B4E6F4: using guessed type int dword_10B4E6F4;

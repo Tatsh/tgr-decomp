@@ -1,91 +1,91 @@
 #include "types-win32.h"
 //----- (1004DFC0) --------------------------------------------------------
 int __cdecl sub_1004DFC0(unk000C8 *a1) {
-    unsigned __int16 v2; // ax
-    unk00348 *v3;        // eax
-    unk00348 *v4;        // esi
-    unk1E214 *v5;        // eax
-    unk1E214 *v6;        // ebx
-    unk1E214 *v7;        // eax
-    unk1E214 *v8;        // ebx
-    unk1E214Vtbl *v9;    // edi
-    LPCSTR v10;          // eax
-    unk1E214 *v11;       // eax
-    unk1E214 *v12;       // ebx
-    unk1E214 *v13;       // eax
-    unk1E214 *v14;       // ebx
-    int v15;             // eax
-    int v16;             // edi
-    unk000C8 *v17;       // edx
-    char **v18;          // edi
-    __int64 v19;         // rax
-    unk1E214 *v20;       // eax
-    unk1E214 *v21;       // edi
-    unk1E214Vtbl *v22;   // ebx
-    LPCSTR v23;          // eax
-    unk1E214 *v24;       // eax
-    unk1E214 *v25;       // edi
-    unk1E214Vtbl *v26;   // ebx
-    LPCSTR v27;          // eax
-    unk1E214 *v28;       // eax
-    unk1E214 *v29;       // edi
-    unk1E214Vtbl *v30;   // ebx
-    LPCSTR v31;          // eax
-    unk1E214 *v32;       // eax
-    unk1E214 *v33;       // edi
-    unk1E214 *v34;       // eax
-    unk1E214 *v35;       // edi
-    unk1E214 *v36;       // eax
-    unk1E214 *v37;       // edi
-    unk1E214 *v38;       // eax
-    unk1E214 *v39;       // edi
-    unk1E214Vtbl *v40;   // ebx
-    LPCSTR v41;          // eax
-    unk1E214 *v42;       // eax
-    unk1E214 *v43;       // edi
-    unk1E214Vtbl *v44;   // ebx
-    LPCSTR v45;          // eax
-    float v47;           // [esp+1E0h] [ebp-34h]
-    float v48;           // [esp+1E0h] [ebp-34h]
-    float v49;           // [esp+1E0h] [ebp-34h]
-    unk000C8 *v50;       // [esp+218h] [ebp+4h]
+  unsigned __int16 v2; // ax
+  unk00348 *v3;        // eax
+  unk00348 *v4;        // esi
+  unk1E214 *v5;        // eax
+  unk1E214 *v6;        // ebx
+  unk1E214 *v7;        // eax
+  unk1E214 *v8;        // ebx
+  unk1E214Vtbl *v9;    // edi
+  LPCSTR v10;          // eax
+  unk1E214 *v11;       // eax
+  unk1E214 *v12;       // ebx
+  unk1E214 *v13;       // eax
+  unk1E214 *v14;       // ebx
+  int v15;             // eax
+  int v16;             // edi
+  unk000C8 *v17;       // edx
+  char **v18;          // edi
+  __int64 v19;         // rax
+  unk1E214 *v20;       // eax
+  unk1E214 *v21;       // edi
+  unk1E214Vtbl *v22;   // ebx
+  LPCSTR v23;          // eax
+  unk1E214 *v24;       // eax
+  unk1E214 *v25;       // edi
+  unk1E214Vtbl *v26;   // ebx
+  LPCSTR v27;          // eax
+  unk1E214 *v28;       // eax
+  unk1E214 *v29;       // edi
+  unk1E214Vtbl *v30;   // ebx
+  LPCSTR v31;          // eax
+  unk1E214 *v32;       // eax
+  unk1E214 *v33;       // edi
+  unk1E214 *v34;       // eax
+  unk1E214 *v35;       // edi
+  unk1E214 *v36;       // eax
+  unk1E214 *v37;       // edi
+  unk1E214 *v38;       // eax
+  unk1E214 *v39;       // edi
+  unk1E214Vtbl *v40;   // ebx
+  LPCSTR v41;          // eax
+  unk1E214 *v42;       // eax
+  unk1E214 *v43;       // edi
+  unk1E214Vtbl *v44;   // ebx
+  LPCSTR v45;          // eax
+  float v47;           // [esp+1E0h] [ebp-34h]
+  float v48;           // [esp+1E0h] [ebp-34h]
+  float v49;           // [esp+1E0h] [ebp-34h]
+  unk000C8 *v50;       // [esp+218h] [ebp+4h]
 
-    v2 = a1->field_10;
-    HIWORD(a1->field_10) = 0;
-    *(&a1->field_6C + v2) = 1;
-    v3 = (unk00348 *)malloc(0x348u);
-    if (v3)
-        v4 = meth_10048470(v3);
-    else
-        v4 = 0;
-    a1->field_14[LOWORD(a1->field_10)] = v4;
-    if (!v4)
-        sub_1003E260(4);
-    ++LOWORD(a1->field_10);
-    v4->field_340 = a1;
-    v4->field_10 = 0;
-    v4->flags_338 = 1128464384;
-    v4->field_33C = 130.0;
-    v5 = (unk1E214 *)malloc(0x1E214u);
-    if (v5)
-        v6 = meth_unk1E214_init(v5);
-    else
-        v6 = 0;
-    v4->field_18[LOWORD(v4->field_14)] = v6;
-    if (!v6)
-        sub_1003E260(4);
-    v6->lpVtbl->meth14(v6, a1, 0, 0, 9, 2, 5, 0, 0);
-    ++LOWORD(v4->field_14);
-    v7 = (unk1E214 *)malloc(0x1E214u);
-    if (v7)
-        v8 = meth_unk1E214_init(v7);
-    else
-        v8 = 0;
-    v4->field_18[LOWORD(v4->field_14)] = v8;
-    if (!v8)
-        sub_1003E260(4);
-    v9 = v8->lpVtbl;
-    v8->lpVtbl->meth14(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
+  v2 = a1->field_10;
+  HIWORD(a1->field_10) = 0;
+  *(&a1->field_6C + v2) = 1;
+  v3 = (unk00348 *)malloc(0x348u);
+  if (v3)
+      v4 = meth_10048470(v3);
+  else
+      v4 = 0;
+  a1->field_14[LOWORD(a1->field_10)] = v4;
+  if (!v4)
+      sub_1003E260(4);
+  ++LOWORD(a1->field_10);
+  v4->field_340 = a1;
+  v4->field_10 = 0;
+  v4->flags_338 = 1128464384;
+  v4->field_33C = 130.0;
+  v5 = (unk1E214 *)malloc(0x1E214u);
+  if (v5)
+      v6 = meth_unk1E214_init(v5);
+  else
+      v6 = 0;
+  v4->field_18[LOWORD(v4->field_14)] = v6;
+  if (!v6)
+      sub_1003E260(4);
+  v6->lpVtbl->meth14(v6, a1, 0, 0, 9, 2, 5, 0, 0);
+  ++LOWORD(v4->field_14);
+  v7 = (unk1E214 *)malloc(0x1E214u);
+  if (v7)
+      v8 = meth_unk1E214_init(v7);
+  else
+      v8 = 0;
+  v4->field_18[LOWORD(v4->field_14)] = v8;
+  if (!v8)
+      sub_1003E260(4);
+  v9 = v8->lpVtbl;
+  v8->lpVtbl->meth14(v8, a1, v4->flags_338, 1092616192, 1048585, 2, 5, 1, -1);
   LOWORD(v8->?) = 3;
   v10 = GetStringWithIndex(0x21u);
   v9->meth13(v8, v10, 1, 1, &unk_100AB508);

@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10077200) --------------------------------------------------------
-int __cdecl sub_10077200(_DWORD *a1) {
+int __cdecl sub_10077200(_DWORD * a1) {
     IDirectInputDevice2A *v1; // eax
     int result;               // eax
     HRESULT v3;               // eax
@@ -49,6 +49,6 @@ int __cdecl sub_10077200(_DWORD *a1) {
         result = 0;
     }
     return result;
-}
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
+  }
+  // 10B4E1D0: using guessed type int g_ReadJoystick;
+  // 10B4E1D4: using guessed type int dword_10B4E1D4;

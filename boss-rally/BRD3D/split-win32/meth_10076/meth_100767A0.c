@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100767A0) --------------------------------------------------------
-int __thiscall meth_100767A0(_DWORD *this, int a2, int a3, int a4) {
+int __thiscall meth_100767A0(_DWORD * this, int a2, int a3, int a4) {
     int result; // eax
 
     this[122] = a2;
@@ -17,4 +17,4 @@ int __thiscall meth_100767A0(_DWORD *this, int a2, int a3, int a4) {
     this[1034] = a3;
     this[1035] = a4;
     return result;
-}
+  }

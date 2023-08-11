@@ -33,6 +33,6 @@ int sub_100795D0() {
         gConfigJoystickPtr = &gConfig.joystick1;
     }
     return result;
-}
-// 10B4E1D0: using guessed type int gConfigJoystickIndex;
-// 10B4E1E0: using guessed type int dword_10B4E1E0;
+  }
+  // 10B4E1D0: using guessed type int gConfigJoystickIndex;
+  // 10B4E1E0: using guessed type int dword_10B4E1E0;

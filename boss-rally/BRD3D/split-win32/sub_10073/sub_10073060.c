@@ -11,4 +11,4 @@ int *sub_10073060() {
         ++result;
     } while ((int)result < (int)&unk_100B6C3C);
     return result;
-}
+  }

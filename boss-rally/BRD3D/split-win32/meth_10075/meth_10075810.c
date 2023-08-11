@@ -21,9 +21,9 @@ void __thiscall meth_10075810(int this) {
             *(_DWORD *)(this + 4092) = 0;
         }
     }
-}
-// 1007583D: variable 'v2' is possibly undefined
-// 1007583D: variable 'v3' is possibly undefined
-// 1007587E: variable 'v5' is possibly undefined
-// 1007587E: variable 'v6' is possibly undefined
-// 106C2CFC: using guessed type int dword_106C2CFC;
+  }
+  // 1007583D: variable 'v2' is possibly undefined
+  // 1007583D: variable 'v3' is possibly undefined
+  // 1007587E: variable 'v5' is possibly undefined
+  // 1007587E: variable 'v6' is possibly undefined
+  // 106C2CFC: using guessed type int dword_106C2CFC;

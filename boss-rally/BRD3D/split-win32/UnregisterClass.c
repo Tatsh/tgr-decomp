@@ -3,4 +3,4 @@
 BOOL UnregisterClass() {
     DestroyWindow_gUnk8C();
     return UnregisterClassA(lpClassName, hInstance);
-}
+  }

@@ -17,5 +17,5 @@ LRESULT __cdecl handle_WM_GETMINMAXINFO(HWND hWnd, WPARAM wParam, LPARAM lParam)
     *(_DWORD *)(lParam + 32) = v4;
     *(_DWORD *)(lParam + 24) = v4;
     return 0;
-}
-// 118AC230: using guessed type int dword_118AC230;
+  }
+  // 118AC230: using guessed type int dword_118AC230;

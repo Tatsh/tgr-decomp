@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100758A0) --------------------------------------------------------
-void __thiscall meth_100758A0(_DWORD *this) {
+void __thiscall meth_100758A0(_DWORD * this) {
     LPCSTR v2; // eax
     int v3;    // ecx
     bool v4;   // sf
@@ -26,4 +26,4 @@ void __thiscall meth_100758A0(_DWORD *this) {
             }
         }
     }
-}
+  }

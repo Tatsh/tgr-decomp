@@ -143,8 +143,8 @@ LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam) {
         }
     }
     return result;
-}
-// 100940A4: using guessed type int gPlayMusic;
-// 10575478: using guessed type int aEarInteractiveMessageID;
-// 106909B4: using guessed type int dword_106909B4;
-// 10A9CFFC: using guessed type int dword_10A9CFFC;
+  }
+  // 100940A4: using guessed type int gPlayMusic;
+  // 10575478: using guessed type int aEarInteractiveMessageID;
+  // 106909B4: using guessed type int dword_106909B4;
+  // 10A9CFFC: using guessed type int dword_10A9CFFC;

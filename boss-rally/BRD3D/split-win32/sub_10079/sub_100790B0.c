@@ -10,6 +10,6 @@ IDirectInputEffect *__cdecl sub_100790B0(int a1) {
         result = (IDirectInputEffect *)gDirectInputEffect0->lpVtbl->SetParameters(
             gDirectInputEffect0, &gDIEffectSpring, 0x100);
     return result;
-}
-// 118ABD0C: using guessed type int gUnused118ABD0C;
-// 118ABD10: using guessed type int gUnused118ABD10;
+  }
+  // 118ABD0C: using guessed type int gUnused118ABD0C;
+  // 118ABD10: using guessed type int gUnused118ABD10;

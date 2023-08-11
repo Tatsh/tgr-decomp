@@ -14,4 +14,4 @@ int __cdecl sub_100749D0(int a1, int a2) {
     *(float *)(a1 + 24) = -*(float *)(a2 + 4);
     *(_DWORD *)(a1 + 28) = *(_DWORD *)a2;
     return result;
-}
+  }

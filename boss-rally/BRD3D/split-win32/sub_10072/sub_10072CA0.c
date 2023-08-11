@@ -54,4 +54,4 @@ HMMIO __cdecl sub_10072CA0(LPSTR pszFileName) {
     v8 = GlobalHandle(v2);
     GlobalFree(v8);
     return 0;
-}
+  }

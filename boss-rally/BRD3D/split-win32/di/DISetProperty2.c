@@ -1,11 +1,11 @@
 #include "types-win32.h"
 //----- (10078C30) --------------------------------------------------------
-int __cdecl DISetProperty2(IDirectInputDevice2A *diDevice2A,
-                           GUID *guid,
-                           int dwObj,
-                           int dwHow,
-                           int unusedA5,
-                           int unusedA6) {
+int __cdecl DISetProperty2(IDirectInputDevice2A * diDevice2A,
+                             GUID * guid,
+                             int dwObj,
+                             int dwHow,
+                             int unusedA5,
+                             int unusedA6) {
     IDirectInputDevice2AVtbl *idevLPVtbl; // ecx
     DIPROPHEADER diPropHeader;            // [esp+0h] [ebp-18h] BYREF
     int unusedV9;                         // [esp+10h] [ebp-8h]
@@ -19,4 +19,4 @@ int __cdecl DISetProperty2(IDirectInputDevice2A *diDevice2A,
     diPropHeader.dwSize = 24;
     diPropHeader.dwHeaderSize = 16;
     return idevLPVtbl->SetProperty(diDevice2A, guid, &diPropHeader);
-}
+  }

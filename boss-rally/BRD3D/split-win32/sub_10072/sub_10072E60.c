@@ -55,12 +55,12 @@ int sub_10072E60() {
         v2 += 6;
     } while ((int)v1 < (int)&unk_100B6534);
     return 1;
-}
-// 11828D20: using guessed type int dword_11828D20[];
-// 11828D28: using guessed type int dword_11828D28[];
-// 11828D2C: using guessed type int dword_11828D2C[];
-// 118290F4: using guessed type int dword_118290F4;
-// 118AC720: using guessed type int dword_118AC720[];
-// 118AC728: using guessed type int dword_118AC728[];
-// 118AC72C: using guessed type int dword_118AC72C[];
-// 118AC734: using guessed type int dword_118AC734[];
+  }
+  // 11828D20: using guessed type int dword_11828D20[];
+  // 11828D28: using guessed type int dword_11828D28[];
+  // 11828D2C: using guessed type int dword_11828D2C[];
+  // 118290F4: using guessed type int dword_118290F4;
+  // 118AC720: using guessed type int dword_118AC720[];
+  // 118AC728: using guessed type int dword_118AC728[];
+  // 118AC72C: using guessed type int dword_118AC72C[];
+  // 118AC734: using guessed type int dword_118AC734[];

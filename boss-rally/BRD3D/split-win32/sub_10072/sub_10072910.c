@@ -18,11 +18,11 @@ int __cdecl sub_10072910(int a1, int a2, int a3) {
     dword_11828D28[6 * a2] = v5;
     dword_11828D2C[6 * a2] = HIDWORD(v4);
     return 1;
-}
-// 100B5DE8: using guessed type int g_Playsfx;
-// 11828D28: using guessed type int dword_11828D28[];
-// 11828D2C: using guessed type int dword_11828D2C[];
-// 11828E88: using guessed type double dbl_11828E88[];
-// 118290FC: using guessed type int dword_118290FC;
-// 118AC728: using guessed type int dword_118AC728[];
-// 118AC72C: using guessed type int dword_118AC72C[];
+  }
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 11828D28: using guessed type int dword_11828D28[];
+  // 11828D2C: using guessed type int dword_11828D2C[];
+  // 11828E88: using guessed type double dbl_11828E88[];
+  // 118290FC: using guessed type int dword_118290FC;
+  // 118AC728: using guessed type int dword_118AC728[];
+  // 118AC72C: using guessed type int dword_118AC72C[];

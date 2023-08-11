@@ -14,4 +14,4 @@ int DestroyWindow_gUnk8C() {
         gUnk8C = 0;
     }
     return 0;
-}
+  }

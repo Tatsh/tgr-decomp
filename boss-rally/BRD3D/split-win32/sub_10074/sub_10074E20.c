@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10074E20) --------------------------------------------------------
-_DWORD *__cdecl sub_10074E20(_DWORD *a1) {
+_DWORD *__cdecl sub_10074E20(_DWORD * a1) {
     _DWORD *result; // eax
     int v2;         // edx
 
@@ -12,4 +12,4 @@ _DWORD *__cdecl sub_10074E20(_DWORD *a1) {
         --v2;
     } while (v2);
     return result;
-}
+  }

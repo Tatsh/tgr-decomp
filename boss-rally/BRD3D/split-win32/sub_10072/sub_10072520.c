@@ -9,4 +9,4 @@ int __cdecl sub_10072520(int a1) {
         *(_DWORD *)(a1 + 156) = 0;
     }
     return 0;
-}
+  }

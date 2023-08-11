@@ -175,7 +175,7 @@ int __cdecl sub_100773F0(int *a1, int *a2) {
     } else {
         memset(&dword_118ABD38[7 * v9], 0, 0x1Cu);
     }
-LABEL_41:
+  LABEL_41:
     if (!sub_100786E0(15)) {
     LABEL_47:
         v23 = MEMORY[0x118AB8B4];
@@ -664,45 +664,45 @@ LABEL_41:
     dword_1022AF20 = 1;
     dword_118ABAD0 = 0x4000;
     return result;
-}
-// 1006AA90: using guessed type int __setargv_0(void);
-// 100AA010: using guessed type int g_GameMode;
-// 100BD3E8: using guessed type int dword_100BD3E8;
-// 100BD3EC: using guessed type int dword_100BD3EC;
-// 100BD3F0: using guessed type int dword_100BD3F0;
-// 100BD3F4: using guessed type int dword_100BD3F4;
-// 100BD3F8: using guessed type int dword_100BD3F8;
-// 100BD3FC: using guessed type int dword_100BD3FC;
-// 1022AF14: using guessed type int g_usingGameMode4;
-// 1022AF18: using guessed type int g_NetworkPlay;
-// 1022AF20: using guessed type int dword_1022AF20;
-// 106909B4: using guessed type int dword_106909B4;
-// 106909E0: using guessed type int dword_106909E0;
-// 10ACED40: using guessed type int dword_10ACED40;
-// 10ACEE50: using guessed type int dword_10ACEE50;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1D4: using guessed type int dword_10B4E1D4;
-// 10B501D8: using guessed type int dword_10B501D8;
-// 118AB8B4: using guessed type int dword_118AB8B4;
-// 118ABAB8: using guessed type int dword_118ABAB8;
-// 118ABAD0: using guessed type int dword_118ABAD0;
-// 118ABAD4: using guessed type int dword_118ABAD4;
-// 118ABAD8: using guessed type int dword_118ABAD8;
-// 118ABAE0: using guessed type int dword_118ABAE0[];
-// 118ABAE4: using guessed type int dword_118ABAE4[];
-// 118ABAE8: using guessed type int dword_118ABAE8[];
-// 118ABD00: using guessed type int dword_118ABD00;
-// 118ABD38: using guessed type int dword_118ABD38[];
-// 118ABD3C: using guessed type int dword_118ABD3C[];
-// 118ABD40: using guessed type int dword_118ABD40[];
-// 118ABD44: using guessed type int dword_118ABD44[];
-// 118ABD48: using guessed type int dword_118ABD48[];
-// 118ABD4C: using guessed type int dword_118ABD4C[];
-// 118ABD74: using guessed type int dword_118ABD74;
-// 118ABD7C: using guessed type int dword_118ABD7C;
-// 118ABD80: using guessed type int dword_118ABD80;
-// 118ABDC0: using guessed type int dword_118ABDC0;
-// 118ABDC4: using guessed type int g_Runbenchmark;
-// 118ABDC8: using guessed type int dword_118ABDC8;
-// 118ABDCC: using guessed type int dword_118ABDCC;
-// 118ABDDC: using guessed type int dword_118ABDDC;
+  }
+  // 1006AA90: using guessed type int __setargv_0(void);
+  // 100AA010: using guessed type int g_GameMode;
+  // 100BD3E8: using guessed type int dword_100BD3E8;
+  // 100BD3EC: using guessed type int dword_100BD3EC;
+  // 100BD3F0: using guessed type int dword_100BD3F0;
+  // 100BD3F4: using guessed type int dword_100BD3F4;
+  // 100BD3F8: using guessed type int dword_100BD3F8;
+  // 100BD3FC: using guessed type int dword_100BD3FC;
+  // 1022AF14: using guessed type int g_usingGameMode4;
+  // 1022AF18: using guessed type int g_NetworkPlay;
+  // 1022AF20: using guessed type int dword_1022AF20;
+  // 106909B4: using guessed type int dword_106909B4;
+  // 106909E0: using guessed type int dword_106909E0;
+  // 10ACED40: using guessed type int dword_10ACED40;
+  // 10ACEE50: using guessed type int dword_10ACEE50;
+  // 10B4E1D0: using guessed type int g_ReadJoystick;
+  // 10B4E1D4: using guessed type int dword_10B4E1D4;
+  // 10B501D8: using guessed type int dword_10B501D8;
+  // 118AB8B4: using guessed type int dword_118AB8B4;
+  // 118ABAB8: using guessed type int dword_118ABAB8;
+  // 118ABAD0: using guessed type int dword_118ABAD0;
+  // 118ABAD4: using guessed type int dword_118ABAD4;
+  // 118ABAD8: using guessed type int dword_118ABAD8;
+  // 118ABAE0: using guessed type int dword_118ABAE0[];
+  // 118ABAE4: using guessed type int dword_118ABAE4[];
+  // 118ABAE8: using guessed type int dword_118ABAE8[];
+  // 118ABD00: using guessed type int dword_118ABD00;
+  // 118ABD38: using guessed type int dword_118ABD38[];
+  // 118ABD3C: using guessed type int dword_118ABD3C[];
+  // 118ABD40: using guessed type int dword_118ABD40[];
+  // 118ABD44: using guessed type int dword_118ABD44[];
+  // 118ABD48: using guessed type int dword_118ABD48[];
+  // 118ABD4C: using guessed type int dword_118ABD4C[];
+  // 118ABD74: using guessed type int dword_118ABD74;
+  // 118ABD7C: using guessed type int dword_118ABD7C;
+  // 118ABD80: using guessed type int dword_118ABD80;
+  // 118ABDC0: using guessed type int dword_118ABDC0;
+  // 118ABDC4: using guessed type int g_Runbenchmark;
+  // 118ABDC8: using guessed type int dword_118ABDC8;
+  // 118ABDCC: using guessed type int dword_118ABDCC;
+  // 118ABDDC: using guessed type int dword_118ABDDC;

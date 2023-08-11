@@ -35,10 +35,10 @@ int sub_10077310() {
             return -1;
     }
     return result;
-}
-// 10AA33C0: using guessed type int dword_10AA33C0[];
-// 10AA33C4: using guessed type int dword_10AA33C4;
-// 10AA33C8: using guessed type int dword_10AA33C8;
-// 10AA33CC: using guessed type int dword_10AA33CC;
-// 10AA33D0: using guessed type int dword_10AA33D0[];
-// 10AA33E0: using guessed type int dword_10AA33E0;
+  }
+  // 10AA33C0: using guessed type int dword_10AA33C0[];
+  // 10AA33C4: using guessed type int dword_10AA33C4;
+  // 10AA33C8: using guessed type int dword_10AA33C8;
+  // 10AA33CC: using guessed type int dword_10AA33CC;
+  // 10AA33D0: using guessed type int dword_10AA33D0[];
+  // 10AA33E0: using guessed type int dword_10AA33E0;

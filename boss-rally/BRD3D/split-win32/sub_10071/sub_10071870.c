@@ -131,6 +131,6 @@ int *sub_10071870() {
         dword_11826B08[edx33] = ecx32++;
     } while ((int)result < (int)&dword_11826BD0);
     return result;
-}
-// 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
-// 11826AF8: using guessed type int dword_11826AF8;
+  }
+  // 1007E2A0: using guessed type int __cdecl qsort(_DWORD, _DWORD, _DWORD, _DWORD);
+  // 11826AF8: using guessed type int dword_11826AF8;

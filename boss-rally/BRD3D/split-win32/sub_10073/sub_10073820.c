@@ -76,14 +76,14 @@ int sub_10073820() {
         dword_118291C8[l] = result;
     }
     return result;
-}
-// 100A6070: using guessed type int dword_100A6070[];
-// 100A60E0: using guessed type int dword_100A60E0[];
-// 100A6150: using guessed type int dword_100A6150[];
-// 100A61C0: using guessed type int dword_100A61C0[];
-// 100B8C90: using guessed type int dword_100B8C90;
-// 11829158: using guessed type int dword_11829158[];
-// 118291C8: using guessed type int dword_118291C8[];
-// 11829238: using guessed type int dword_11829238[];
-// 118292A8: using guessed type int dword_118292A8[];
-// 118AA0AC: using guessed type int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+  }
+  // 100A6070: using guessed type int dword_100A6070[];
+  // 100A60E0: using guessed type int dword_100A60E0[];
+  // 100A6150: using guessed type int dword_100A6150[];
+  // 100A61C0: using guessed type int dword_100A61C0[];
+  // 100B8C90: using guessed type int dword_100B8C90;
+  // 11829158: using guessed type int dword_11829158[];
+  // 118291C8: using guessed type int dword_118291C8[];
+  // 11829238: using guessed type int dword_11829238[];
+  // 118292A8: using guessed type int dword_118292A8[];
+  // 118AA0AC: using guessed type int (__cdecl *tex_sub_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);

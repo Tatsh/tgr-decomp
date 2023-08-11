@@ -73,8 +73,8 @@ int __cdecl pm_sub_10073320(int a1) {
         } while (v12 < dword_11828F00 - 1);
     }
     return v11;
-}
-// 100733E2: variable 'v9' is possibly undefined
-// 100B5DE8: using guessed type int g_Playsfx;
-// 11828F00: using guessed type int dword_11828F00;
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 100733E2: variable 'v9' is possibly undefined
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 11828F00: using guessed type int dword_11828F00;
+  // 118290FC: using guessed type int dword_118290FC;

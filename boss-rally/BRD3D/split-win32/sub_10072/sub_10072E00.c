@@ -18,6 +18,6 @@ int sub_10072E00() {
         } while ((int)v0 < (int)&unk_11828F44);
     }
     return 1;
-}
-// 100B5DE8: using guessed type int g_Playsfx;
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 100B5DE8: using guessed type int g_Playsfx;
+  // 118290FC: using guessed type int dword_118290FC;

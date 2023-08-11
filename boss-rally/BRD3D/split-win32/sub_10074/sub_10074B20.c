@@ -19,4 +19,4 @@ float *__cdecl sub_10074B20(int a1, int a2, float *a3) {
         --v7;
     } while (v7);
     return result;
-}
+  }

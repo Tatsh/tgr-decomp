@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10072170) --------------------------------------------------------
-int __cdecl sub_10072170(_DWORD *a1) {
+int __cdecl sub_10072170(_DWORD * a1) {
     int v1;            // edi
     int v2;            // eax
     int v3;            // eax
@@ -32,6 +32,6 @@ int __cdecl sub_10072170(_DWORD *a1) {
         ReleaseMutex(*(&dword_11786828 + 603 * v1++));
     } while (v1 < 16);
     return v7;
-}
-// 1178682C: using guessed type int dword_1178682C[];
-// 11786854: using guessed type int dword_11786854[];
+  }
+  // 1178682C: using guessed type int dword_1178682C[];
+  // 11786854: using guessed type int dword_11786854[];

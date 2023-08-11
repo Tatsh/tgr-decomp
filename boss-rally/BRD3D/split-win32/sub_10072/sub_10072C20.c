@@ -32,5 +32,5 @@ int __cdecl sub_10072C20(int a1) {
         } while (v6);
     }
     return 0;
-}
-// 10072520: using guessed type _DWORD __cdecl sub_10072520(_DWORD);
+  }
+  // 10072520: using guessed type _DWORD __cdecl sub_10072520(_DWORD);

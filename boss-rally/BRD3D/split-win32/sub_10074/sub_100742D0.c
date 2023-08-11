@@ -29,4 +29,4 @@ float *__cdecl sub_100742D0(float *a1) {
     a1[15] = v6;
     a1[16] = v4 - v5;
     return result;
-}
+  }

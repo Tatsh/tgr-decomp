@@ -33,5 +33,5 @@ int ReleaseDirectSound() {
         dword_11828F48 = 0;
     }
     return 1;
-}
-// 118290FC: using guessed type int dword_118290FC;
+  }
+  // 118290FC: using guessed type int dword_118290FC;

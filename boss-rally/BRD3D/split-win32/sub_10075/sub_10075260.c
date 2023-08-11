@@ -15,7 +15,7 @@ int __cdecl sub_10075260(__int16 a1, int a2, int a3, int a4, int a5) {
         result = sub_10072910(a2, a1, a4);
     }
     return result;
-}
-// 118AC720: using guessed type int dword_118AC720[];
-// 118AC730: using guessed type int dword_118AC730[];
-// 118AC734: using guessed type int dword_118AC734[];
+  }
+  // 118AC720: using guessed type int dword_118AC720[];
+  // 118AC730: using guessed type int dword_118AC730[];
+  // 118AC734: using guessed type int dword_118AC734[];

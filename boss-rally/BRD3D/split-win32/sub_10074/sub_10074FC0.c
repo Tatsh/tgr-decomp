@@ -8,7 +8,7 @@ BOOL sub_10074FC0() {
             dword_118AA098 = 0;
     }
     return ReleaseMutex(dword_118AA0A0);
-}
-// 118A9878: using guessed type int dword_118A9878;
-// 118AA098: using guessed type int dword_118AA098;
-// 118AA0B8: using guessed type int (__cdecl *dword_118AA0B8)(_DWORD, _DWORD);
+  }
+  // 118A9878: using guessed type int dword_118A9878;
+  // 118AA098: using guessed type int dword_118AA098;
+  // 118AA0B8: using guessed type int (__cdecl *dword_118AA0B8)(_DWORD, _DWORD);

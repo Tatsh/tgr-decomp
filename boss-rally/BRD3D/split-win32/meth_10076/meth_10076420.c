@@ -22,4 +22,4 @@ void __thiscall meth_10076420(float *this, int a2, int a3, int a4) {
     *((_DWORD *)v5 + 23) = a3;
     *((_DWORD *)v5 + 24) = a4;
     sub_10074450(v5, v4);
-}
+  }

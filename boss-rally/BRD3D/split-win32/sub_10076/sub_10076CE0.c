@@ -76,7 +76,7 @@ MMRESULT __cdecl sub_10076CE0(LPSTR pszFileName, int a2, int a3, LPMMCKINFO pmmc
     } else {
         v7 = 57600;
     }
-LABEL_22:
+  LABEL_22:
     v14 = (_DWORD *)a3;
     if (*(_DWORD *)a3) {
         GlobalFree(*(HGLOBAL *)a3);
@@ -88,4 +88,4 @@ LABEL_22:
     }
     *(_DWORD *)a2 = v6;
     return v7;
-}
+  }

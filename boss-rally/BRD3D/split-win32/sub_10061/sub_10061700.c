@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10061700) --------------------------------------------------------
 int sub_10061700() {
-    sub_10061660(MEMORY[0x106C7CB8]);
-    return sub_100616C0((int *)MEMORY[0x106C7CB8]);
+  sub_10061660(MEMORY[0x106C7CB8]);
+  return sub_100616C0((int *)MEMORY[0x106C7CB8]);
 }

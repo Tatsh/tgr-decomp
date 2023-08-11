@@ -14,5 +14,5 @@ int sub_10072270() {
         dword_11828D18 = 0;
     }
     return result;
-}
-// 11828D18: using guessed type int dword_11828D18;
+  }
+  // 11828D18: using guessed type int dword_11828D18;

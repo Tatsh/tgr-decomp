@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10089B40) --------------------------------------------------------
-BOOL __cdecl sub_10089B40(_DWORD *a1) {
+BOOL __cdecl sub_10089B40(_DWORD * a1) {
     BOOL result; // eax
     int v2;      // eax
     int v3;      // ecx
@@ -78,7 +78,7 @@ BOOL __cdecl sub_10089B40(_DWORD *a1) {
         }
         cvtdate(0, 1, v5, v6, v7, v8, 0, v9, v10, v11, v12);
     }
-LABEL_14:
+  LABEL_14:
     v3 = a1[7];
     if (dword_100C0CDC < dword_100C0CEC) {
         if (v3 >= dword_100C0CDC && v3 <= dword_100C0CEC) {
@@ -92,14 +92,14 @@ LABEL_14:
         return 1;
     if (v3 > dword_100C0CEC && v3 < dword_100C0CDC)
         return 0;
-LABEL_25:
+  LABEL_25:
     v4 = 1000 * (*a1 + 60 * (a1[1] + 60 * a1[2]));
     if (v3 == dword_100C0CDC)
         result = v4 >= dword_100C0CE0;
     else
         result = v4 < dword_100C0CF0;
     return result;
-}
+  }
 // 10089DB0: using guessed type _DWORD __cdecl cvtdate(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 100C0C44: using guessed type int dword_100C0C44;
 // 100C0CD8: using guessed type int dword_100C0CD8;

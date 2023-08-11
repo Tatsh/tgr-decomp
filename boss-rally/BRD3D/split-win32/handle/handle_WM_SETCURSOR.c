@@ -15,4 +15,4 @@ LRESULT __cdecl handle_WM_SETCURSOR(HWND hWnd, WPARAM wParam, LPARAM lParam) {
         result = 1;
     }
     return result;
-}
+  }

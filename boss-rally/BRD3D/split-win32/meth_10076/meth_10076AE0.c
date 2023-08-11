@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10076AE0) --------------------------------------------------------
-int __thiscall meth_10076AE0(_DWORD *this, int carIndex) {
+int __thiscall meth_10076AE0(_DWORD * this, int carIndex) {
     int result; // eax
 
     result = carIndex;
@@ -12,4 +12,4 @@ int __thiscall meth_10076AE0(_DWORD *this, int carIndex) {
     }
     this[0xA6A] = result;
     return result;
-}
+  }

@@ -37,4 +37,4 @@ float *__cdecl sub_10074B70(float *a1, int a2, int a3) {
     v12[1] = -a1[13];
     v12[2] = -a1[14];
     return sub_10074770((float *)(a2 + 48), a2, v12);
-}
+  }

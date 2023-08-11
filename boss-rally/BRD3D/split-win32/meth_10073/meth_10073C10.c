@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10073C10) --------------------------------------------------------
-int __thiscall meth_10073C10(_DWORD *this) {
+int __thiscall meth_10073C10(_DWORD * this) {
     int v2;              // ecx
     _BYTE *v3;           // eax
     unsigned __int16 v4; // dx
@@ -14,4 +14,4 @@ int __thiscall meth_10073C10(_DWORD *this) {
     v5 = (unsigned __int8)v3[2];
     this[1] = v2 + 3;
     return (v4 << 8) | v5;
-}
+  }

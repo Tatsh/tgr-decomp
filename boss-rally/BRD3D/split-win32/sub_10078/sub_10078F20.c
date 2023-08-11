@@ -59,16 +59,16 @@ int __cdecl sub_10078F20(int a1, int a2, int a3) {
     }
     v7 = v8;
     dword_118ABD78 = v8;
-LABEL_20:
+  LABEL_20:
     if (v7 != v6)
         result = (int)sub_100790B0(v7);
     return result;
-}
-// 100BD424: using guessed type int dword_100BD424;
-// 100BD428: using guessed type int dword_100BD428;
-// 100BD42C: using guessed type int dword_100BD42C;
-// 106909E0: using guessed type int dword_106909E0;
-// 10B4E1D0: using guessed type int gConfigJoystickIndex;
-// 10B4E1E0: using guessed type int dword_10B4E1E0;
-// 118ABD78: using guessed type int dword_118ABD78;
-// 118ABDF8: using guessed type int gDirectInputEffect0Stopped;
+  }
+  // 100BD424: using guessed type int dword_100BD424;
+  // 100BD428: using guessed type int dword_100BD428;
+  // 100BD42C: using guessed type int dword_100BD42C;
+  // 106909E0: using guessed type int dword_106909E0;
+  // 10B4E1D0: using guessed type int gConfigJoystickIndex;
+  // 10B4E1E0: using guessed type int dword_10B4E1E0;
+  // 118ABD78: using guessed type int dword_118ABD78;
+  // 118ABDF8: using guessed type int gDirectInputEffect0Stopped;

@@ -65,7 +65,7 @@ int sub_100791D0() {
         }
     }
     return result;
-}
-// 10B4E1D0: using guessed type int gConfigJoystickIndex;
-// 10B4E1E0: using guessed type int dword_10B4E1E0;
-// 118ABE00: using guessed type int dword_118ABE00;
+  }
+  // 10B4E1D0: using guessed type int gConfigJoystickIndex;
+  // 10B4E1E0: using guessed type int dword_10B4E1E0;
+  // 118ABE00: using guessed type int dword_118ABE00;

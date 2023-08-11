@@ -58,23 +58,23 @@ HRESULT __cdecl DICreateEffects(int a1, int unusedA2) {
     gDIEffectSquare.lpvTypeSpecificParams = &gDIEffectTypeSpecificParams0;
     return diDevice2AVtbl->CreateEffect(
         gDirectInputDevice2A, &CLSID_GUID_Square, &gDIEffectSquare, &gDirectInputEffect, 0);
-}
-// 100BD438: using guessed type int gDIEffectSquareDuration;
-// 118ABAC0: using guessed type int gDIEffectTypeSpecificParams0;
-// 118ABAC4: using guessed type int gUnused118ABAC4;
-// 118ABAC8: using guessed type int gUnused118ABAC8;
-// 118ABACC: using guessed type int gUnused118ABACC;
-// 118ABD08: using guessed type int gDIEffectTypeSpecificParams;
-// 118ABD0C: using guessed type int gUnused118ABD0C;
-// 118ABD10: using guessed type int gUnused118ABD10;
-// 118ABD14: using guessed type int gUnused118ABD14;
-// 118ABD18: using guessed type int gUnused118ABD18;
-// 118ABD1C: using guessed type int gUnused118ABD1C;
-// 118ABD20: using guessed type int gUnused118ABD20;
-// 118ABD24: using guessed type int gUnused118ABD24;
-// 118ABD28: using guessed type int gUnused118ABD28;
-// 118ABD2C: using guessed type int gUnused118ABD2C;
-// 118ABD30: using guessed type int gUnused118ABD30;
-// 118ABD34: using guessed type int gUnused118ABD34;
-// 118ABD78: using guessed type int dword_118ABD78;
-// 118ABDF8: using guessed type int gDirectInputEffect0Stopped;
+  }
+  // 100BD438: using guessed type int gDIEffectSquareDuration;
+  // 118ABAC0: using guessed type int gDIEffectTypeSpecificParams0;
+  // 118ABAC4: using guessed type int gUnused118ABAC4;
+  // 118ABAC8: using guessed type int gUnused118ABAC8;
+  // 118ABACC: using guessed type int gUnused118ABACC;
+  // 118ABD08: using guessed type int gDIEffectTypeSpecificParams;
+  // 118ABD0C: using guessed type int gUnused118ABD0C;
+  // 118ABD10: using guessed type int gUnused118ABD10;
+  // 118ABD14: using guessed type int gUnused118ABD14;
+  // 118ABD18: using guessed type int gUnused118ABD18;
+  // 118ABD1C: using guessed type int gUnused118ABD1C;
+  // 118ABD20: using guessed type int gUnused118ABD20;
+  // 118ABD24: using guessed type int gUnused118ABD24;
+  // 118ABD28: using guessed type int gUnused118ABD28;
+  // 118ABD2C: using guessed type int gUnused118ABD2C;
+  // 118ABD30: using guessed type int gUnused118ABD30;
+  // 118ABD34: using guessed type int gUnused118ABD34;
+  // 118ABD78: using guessed type int dword_118ABD78;
+  // 118ABDF8: using guessed type int gDirectInputEffect0Stopped;

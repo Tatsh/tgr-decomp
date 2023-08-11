@@ -33,4 +33,4 @@ HRESULT __stdcall diEnumDevicesCallback(LPDIRECTINPUTDEVICEA deviceInstance, LPV
         }
     }
     return 0;
-}
+  }

@@ -3,4 +3,4 @@
 int __cdecl DestroyWindowWrapper(HWND hWnd) {
     DestroyWindow(hWnd);
     return 0;
-}
+  }

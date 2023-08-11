@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10074A90) --------------------------------------------------------
-_DWORD *__cdecl sub_10074A90(_DWORD *a1, int *a2) {
+_DWORD *__cdecl sub_10074A90(_DWORD * a1, int *a2) {
     _DWORD *result; // eax
     int v4;         // edi
     int *v5;        // ecx
@@ -21,4 +21,4 @@ _DWORD *__cdecl sub_10074A90(_DWORD *a1, int *a2) {
         --v4;
     } while (v4);
     return result;
-}
+  }

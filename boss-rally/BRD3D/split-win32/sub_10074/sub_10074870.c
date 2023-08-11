@@ -65,4 +65,4 @@ void __cdecl sub_10074870(int a1) {
     }
     *(_DWORD *)(a1 + 468) = 0;
     *(_DWORD *)(a1 + 472) = 0;
-}
+  }

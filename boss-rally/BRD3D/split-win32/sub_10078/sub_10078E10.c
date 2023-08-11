@@ -18,9 +18,9 @@ int __cdecl sub_10078E10(int a1) {
         }
     }
     return result;
-}
-// 100BD430: using guessed type int dword_100BD430;
-// 106909E0: using guessed type int dword_106909E0;
-// 10B4E1D0: using guessed type int g_ReadJoystick;
-// 10B4E1E0: using guessed type int dword_10B4E1E0;
-// 118ABDBC: using guessed type int dword_118ABDBC;
+  }
+  // 100BD430: using guessed type int dword_100BD430;
+  // 106909E0: using guessed type int dword_106909E0;
+  // 10B4E1D0: using guessed type int g_ReadJoystick;
+  // 10B4E1E0: using guessed type int dword_10B4E1E0;
+  // 118ABDBC: using guessed type int dword_118ABDBC;

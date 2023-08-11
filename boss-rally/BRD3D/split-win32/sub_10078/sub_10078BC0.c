@@ -19,5 +19,5 @@ LPDIRECTINPUTDEVICEA sub_10078BC0() {
         dword_118ABDD8 = 0;
     }
     return result;
-}
-// 118ABDD8: using guessed type int dword_118ABDD8;
+  }
+  // 118ABDD8: using guessed type int dword_118ABDD8;

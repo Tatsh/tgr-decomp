@@ -25,10 +25,10 @@ int sub_100770F0() {
             g_lpDirectInputDeviceA->lpVtbl->Acquire(g_lpDirectInputDeviceA);
     }
     return 1;
-}
-// 118AB8B4: using guessed type int dword_118AB8B4;
-// 118ABAB8: using guessed type int dword_118ABAB8;
-// 118ABAD8: using guessed type int dword_118ABAD8;
-// 118ABAE0: using guessed type int dword_118ABAE0[];
-// 118ABD7C: using guessed type int dword_118ABD7C;
-// 118ABDD8: using guessed type int dword_118ABDD8;
+  }
+  // 118AB8B4: using guessed type int dword_118AB8B4;
+  // 118ABAB8: using guessed type int dword_118ABAB8;
+  // 118ABAD8: using guessed type int dword_118ABAD8;
+  // 118ABAE0: using guessed type int dword_118ABAE0[];
+  // 118ABD7C: using guessed type int dword_118ABD7C;
+  // 118ABDD8: using guessed type int dword_118ABDD8;

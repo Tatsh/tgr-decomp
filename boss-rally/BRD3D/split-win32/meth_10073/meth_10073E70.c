@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10073E70) --------------------------------------------------------
-int __thiscall meth_10073E70(_DWORD *this, int a2, int a3) {
+int __thiscall meth_10073E70(_DWORD * this, int a2, int a3) {
     int v3;     // ebp
     int v4;     // edi
     _BYTE *v5;  // edx
@@ -31,4 +31,4 @@ int __thiscall meth_10073E70(_DWORD *this, int a2, int a3) {
         }
     }
     return result;
-}
+  }

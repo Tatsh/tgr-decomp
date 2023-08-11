@@ -12,5 +12,5 @@ LRESULT __cdecl handle_WM_NCPAINT(HWND hWnd, WPARAM wParam, LPARAM lParam) {
         result = DefWindowProcA(hWnd, 0x85u, wParam, lParam);
     }
     return result;
-}
-// 118AC230: using guessed type int dword_118AC230;
+  }
+  // 118AC230: using guessed type int dword_118AC230;

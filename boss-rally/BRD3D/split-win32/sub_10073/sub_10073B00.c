@@ -7,7 +7,7 @@ void *sub_10073B00() {
     off_100A64A0 = result;
     off_100A649C = result;
     return result;
-}
-// 100A649C: using guessed type void *off_100A649C;
-// 100A64A0: using guessed type void *off_100A64A0;
-// 118AA0B0: using guessed type int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+  }
+  // 100A649C: using guessed type void *off_100A649C;
+  // 100A64A0: using guessed type void *off_100A64A0;
+  // 118AA0B0: using guessed type int (__cdecl *dword_118AA0B0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
