@@ -2,7 +2,7 @@
 //----- (1000A5D0) --------------------------------------------------------
 int __thiscall meth_unk0008C_1000A5D0(unk0008C *this) {
     DWORD flags;       // edi
-# 492 * u0;            // ecx
+    unk00334 *u0;      // ecx
     int hr;            // edi
     int v5;            // eax
     int v6;            // ecx
@@ -24,11 +24,10 @@ int __thiscall meth_unk0008C_1000A5D0(unk0008C *this) {
     DWORD refreshRate; // [esp+3Ch] [ebp-4h] BYREF
 
     flags = 0;
-    u0 = (#492 *)this->field_30;
+    u0 = this->u334b;
     if (!u0 || !this->lpDirectDraw2)
         return -2005522669;
-    meth_unk00334_1001AC80(
-        (unk00334 *)u0, (int *)&width, (int *)&height, &bitDepth, (int *)&refreshRate);
+    meth_unk00334_1001AC80(u0, (int *)&width, (int *)&height, &bitDepth, (int *)&refreshRate);
     if (width == 320 && height == 200 && bitDepth == 8)
         flags = 1;
     hr = this->lpDirectDraw2->lpVtbl->SetDisplayMode(
@@ -36,19 +35,19 @@ int __thiscall meth_unk0008C_1000A5D0(unk0008C *this) {
     if (hr < 0 && (width == 640 && height == 480 ||
                    (iid = this->u334,
                     height = 480,
-                    v17 = this->field_2C,
+                    v17 = this->u334a,
                     width = 640,
-                    v10 = meth_unk00334_1001A570(v17, 640, 480, bitDepth, 0, (int)iid),
-                    (this->field_30 = v10) == 0) ||
+                    v10 = meth_unk00334_1001A570(v17, 640, 480, bitDepth, 0, (unk00228 *)iid),
+                    (this->u334b = v10) == 0) ||
                    (hr = this->lpDirectDraw2->lpVtbl->SetDisplayMode(
                         this->lpDirectDraw2, width, height, bitDepth, 0, 0),
                     hr < 0))) {
         if (bitDepth == 16 ||
             (iid0 = this->u334,
-             v11 = this->field_2C,
+             v11 = this->u334a,
              bitDepth = 16,
-             u0_1 = meth_unk00334_1001A570(v11, width, height, 16, 0, (int)iid0),
-             (this->field_30 = u0_1) == 0) ||
+             u0_1 = meth_unk00334_1001A570(v11, width, height, 16, 0, (unk00228 *)iid0),
+             (this->u334b = u0_1) == 0) ||
             (hr = this->lpDirectDraw2->lpVtbl->SetDisplayMode(
                  this->lpDirectDraw2, width, height, bitDepth, 0, 0),
              hr < 0)) {

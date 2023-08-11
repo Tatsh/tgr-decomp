@@ -7,7 +7,7 @@ HRESULT __thiscall meth_unk0008C_1000A820(unk0008C *this) {
     int v5;                      // eax
     DDSURFACEDESC ddSurfaceDesc; // [esp+8h] [ebp-6Ch] BYREF
 
-    if (!this->field_30)
+    if (!this->u334b)
         return -2005522669;
     dd2 = this->lpDirectDraw2;
     if (!dd2)

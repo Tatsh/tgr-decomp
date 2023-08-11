@@ -16,7 +16,7 @@ HRESULT __thiscall meth_unk00334_1001B510(unk00334 *this, IDirect3D2 *a2) {
     v6 = 1;
     v8 = this;
     v7 = 0;
-    result = v4->EnumDevices(a2, d3d2enumDevicesCallback, &v6);
+    result = v4->EnumDevices(a2, Direct3D2EnumDevicesCallback, &v6);
     if (result >= 0) {
         if (v6 && v7 && this->field_320 == v7) {
             v5 = this->u8c;

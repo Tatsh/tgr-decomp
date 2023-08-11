@@ -2,7 +2,7 @@
 //----- (1001AC80) --------------------------------------------------------
 int __thiscall meth_unk00334_1001AC80(
     unk00334 *this, int *width, int *height, int *bitDepth, int *a5) {
-    CLSID *v6; // eax
+    GUID *v6; // eax
 
     if (this->u8c != (unk0008C *)108)
         return -2147467259;

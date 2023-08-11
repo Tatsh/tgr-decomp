@@ -14,7 +14,7 @@ HINSTANCE sub_100796B0() {
             if (result)
                 result = (HINSTANCE)(sub_100798F0() != 0);
         } else {
-            MessageBoxA(0, Text, Caption, MB_ICONHAND);
+            MessageBoxA(0, gMessageBoxText, gMessageBoxCaption, MB_ICONHAND);
             result = 0;
         }
     }

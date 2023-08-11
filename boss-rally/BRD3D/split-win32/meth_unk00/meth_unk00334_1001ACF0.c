@@ -10,8 +10,8 @@ BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00228 *u228) {
     bitDepth = meth_unk00334_GetBitDepth(this);
     bitDepthTo = BitDepthTo(bitDepth);
     if (meth_unk00228_Field24IsNotNull(u228))
-        v5 = bitDepthTo & u228->field_B8;
+        v5 = bitDepthTo & u228->? ;
     else
-        v5 = bitDepthTo & u228->field_1B4;
+        v5 = bitDepthTo & u228->? ;
     return v5 != 0;
 }

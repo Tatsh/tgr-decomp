@@ -33,7 +33,7 @@ int sub_100798F0() {
                           0,
                           hInstance,
                           0,
-                          (int)&dword_10B4E6F8,
+                          (int)&gGUID,
                           1,
                           &wnd,
                           (unk00334 *)&gUnk8C) < 0)

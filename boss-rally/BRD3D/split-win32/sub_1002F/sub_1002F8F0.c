@@ -21,9 +21,9 @@ int sub_1002F8F0() {
         sub_10034C73();
         return dword_100AA5A8;
     case 3:
-        sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
+        sub_1006A9C0(1, gWidth1, gHeight1, gBitDepth, dword_10B4E6F4);
         ShowStaticImage(gUnk8C, aLoadingImg, 0);
-        sub_1006A9C0(1, dword_10B4E6E8, dword_10B4E6EC, dword_10B4E6F0, dword_10B4E6F4);
+        sub_1006A9C0(1, gWidth1, gHeight1, gBitDepth, dword_10B4E6F4);
         sub_10069840();
         dword_10690A14 = 1;
         return 1;
@@ -60,7 +60,7 @@ int sub_1002F8F0() {
         if (v1->field_C) {
             v1->lpVtbl->meth3(v1);
         } else {
-            v3 = (unk00334 *)gUnk8C->field_30;
+            v3 = (unk00334 *)gUnk8C->u334b;
             if (v3) {
                 meth_unk00334_1001AC80(v3, &width, &height, &bitDepth, &dword_10690A04);
                 v1 = gUnkC8Ptr1;

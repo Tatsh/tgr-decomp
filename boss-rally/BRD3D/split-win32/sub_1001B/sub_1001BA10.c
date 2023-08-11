@@ -11,8 +11,8 @@ int __cdecl sub_1001BA10(unk00334 *a1) {
     if (dword_104BBE24)
         *(_DWORD *)(dword_104BBE24 + 816) = a1;
     dword_104BBE24 = (int)a1;
-    if (!gameSpecificUnk1_instance0)
-        gameSpecificUnk1_instance0 = a1;
+    if (!gUnk334Ptr1)
+        gUnk334Ptr1 = a1;
     ++dword_104BBE1C;
     return 0;
 }

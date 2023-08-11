@@ -1,24 +1,23 @@
 #include "types-win32.h"
 //----- (1001BA70) --------------------------------------------------------
-# 485 * __cdecl sub_1001BA70(const void * a1, #485 ** a2, #485 * a3)
-{
-# 485 * v3; // esi
-# 485 * v4; // edi
+unk00334 *__cdecl sub_1001BA70(CLSID *a1, unk00334 *a2, unk00334 *a3) {
+    unk00334 *v3; // esi
+    unk00334 *v4; // edi
 
     v3 = a3;
     if (!a3)
-        v3 = gameSpecificUnk1_instance0;
+        v3 = gUnk334Ptr1;
     if (a2)
-        *a2 = v3;
+        a2->u8c = (unk0008C *)v3;
     if (!v3)
         return 0;
     while (1) {
-        v4 = *(#485 **)&v3[816];
-        if (meth_1001B2D0(v3, a1))
+        v4 = v3->last;
+        if (meth_unk00334_MatchesGUID(v3, a1))
             break;
-        if ((*(_BYTE *)v3 & 2) != 0) {
+        if (((int)v3->u8c & 2) != 0) {
             if (a2)
-                *a2 = v3;
+                a2->u8c = (unk0008C *)v3;
         }
         v3 = v4;
         if (!v4)

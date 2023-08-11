@@ -67,7 +67,7 @@ HRESULT __cdecl RallyCreateWindow(DWORD dwExStyle,
         } else {
             meth_unk0008C_Release(unk8C_0);
             free(unk8C_0);
-            MessageBoxA(wnd0, aUnableToInitia, Caption, MB_ICONSTOP);
+            MessageBoxA(wnd0, aUnableToInitia, gMessageBoxCaption, MB_ICONSTOP);
             DestroyWindow(wnd0);
             result = v23;
         }

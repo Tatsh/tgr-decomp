@@ -249,7 +249,7 @@ void __thiscall meth_unk000C8_6(unk000C8 *this, int a1) {
         if (gUnkC8Ptr36)
             gUnkC8Ptr36->lpVtbl->meth0(gUnkC8Ptr36, 1);
         gUnkC8Ptr36 = 0;
-        dword_10AA29F0 = 0;
+        gUnk1E214Ptr0 = 0;
     }
     if (gUnkC8Ptr37) {
         gUnkC8Ptr37->lpVtbl->meth7(gUnkC8Ptr37);

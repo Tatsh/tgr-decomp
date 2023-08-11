@@ -39,7 +39,7 @@ int sub_1007A940() {
     if (!v5)
         return 0;
     if (!gUnk00334Ptr0)
-        gUnk00334Ptr0 = meth_unk00334_1001A570(u334, 640, 480, 16, 0, (int)v3);
+        gUnk00334Ptr0 = meth_unk00334_1001A570(u334, 640, 480, 16, 0, (unk00228 *)v3);
     if (Base) {
         free(Base);
         Base = 0;
@@ -58,7 +58,7 @@ int sub_1007A940() {
             break;
         v6 = Base;
     }
-    qsort(Base, v5, 4, sub_1007A710);
+    qsort(Base, v5, 4, s_unk00334_QSortCompareFn);
     v9 = 0;
     v10 = 0;
     for (i = 0; i < v5; ++i) {
@@ -69,13 +69,13 @@ int sub_1007A940() {
         if (a5) {
             wsprintfA(v18, "%4d x %4d x %2d (%4d Hz)", width, height, bitDepth, a5);
             v12 = width;
-            if (dword_10B4E6E8 != width || dword_10B4E6EC != height || dword_10B4E6F0 != bitDepth ||
+            if (gWidth1 != width || gHeight1 != height || gBitDepth != bitDepth ||
                 dword_10B4E6F4 != a5)
                 goto LABEL_33;
         } else {
             wsprintfA(v18, "%4d x %4d x %2d", width, height, bitDepth);
             v12 = width;
-            if (dword_10B4E6E8 != width || dword_10B4E6EC != height || dword_10B4E6F0 != bitDepth)
+            if (gWidth1 != width || gHeight1 != height || gBitDepth != bitDepth)
                 goto LABEL_33;
         }
         dword_10AA2864 = v9;
@@ -104,7 +104,7 @@ int sub_1007A940() {
 // 10AA2864: using guessed type int dword_10AA2864;
 // 10AA29EC: using guessed type int dword_10AA29EC;
 // 10AA2A30: using guessed type int dword_10AA2A30;
-// 10B4E6E8: using guessed type int dword_10B4E6E8;
-// 10B4E6EC: using guessed type int dword_10B4E6EC;
-// 10B4E6F0: using guessed type int dword_10B4E6F0;
+// 10B4E6E8: using guessed type int gWidth1;
+// 10B4E6EC: using guessed type int gHeight1;
+// 10B4E6F0: using guessed type int gBitDepth;
 // 10B4E6F4: using guessed type int dword_10B4E6F4;

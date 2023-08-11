@@ -117,7 +117,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v26 = v3->field_33C - -95.0;
   v18->lpVtbl->meth14(v18, a1, v3->flags_338, LODWORD(v26), 1056769, 2, 5, 1, -1);
   v18->field_C = sub_10047360;
-  v18->field_8 = (int(__cdecl *)())sub_1003ED40;
+  v18->field_8 = (int(__cdecl *)())s_unk1E214_1003ED40;
   LOWORD(v18->?) = 3;
   v20 = GetStringWithIndex(0x2Du);
   v19->meth13(v18, v20, 1, 1, &dword_100AB448);
@@ -136,7 +136,7 @@ int __cdecl sub_1004DB00(unk000C8 *a1) {
   v27 = v3->field_33C - -114.0;
   v22->lpVtbl->meth14(v22, a1, v3->flags_338, LODWORD(v27), 1056769, 2, 5, 1, -1);
   v22->field_C = sub_10047360;
-  v22->field_8 = (int(__cdecl *)())sub_10046670;
+  v22->field_8 = (int(__cdecl *)())s_unk1E214_10046670;
   LOWORD(v22->?) = 3;
   v24 = GetStringWithIndex(0xCu);
   v23->meth13(v22, v24, 1, 1, &dword_100AB448);

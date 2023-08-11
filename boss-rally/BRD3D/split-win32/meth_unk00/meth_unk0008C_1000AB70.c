@@ -29,7 +29,7 @@ HRESULT __thiscall meth_unk0008C_1000AB70(unk0008C *this) {
         return -2005522669;
     if (!this->u334)
         return -2005522669;
-    if (!this->field_30)
+    if (!this->u334b)
         return -2005522669;
     if (!this->lpDirectDraw2)
         return -2005522669;

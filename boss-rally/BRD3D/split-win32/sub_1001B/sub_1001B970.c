@@ -4,14 +4,14 @@ HRESULT sub_1001B970() {
     HRESULT result; // eax
     int v1;         // eax
 
-    if ((g_hasCalledDDrawEnum & 1) == 0) {
+    if ((gHasCalledDDrawEnum & 1) == 0) {
         dword_104BBE1C = 0;
         result = ddrawEnum();
         if (result < 0) // failed
             return result;
-        v1 = g_hasCalledDDrawEnum;
-        LOBYTE(v1) = g_hasCalledDDrawEnum | 1;
-        g_hasCalledDDrawEnum = v1;
+        v1 = gHasCalledDDrawEnum;
+        LOBYTE(v1) = gHasCalledDDrawEnum | 1;
+        gHasCalledDDrawEnum = v1;
     }
     return 0;
 }

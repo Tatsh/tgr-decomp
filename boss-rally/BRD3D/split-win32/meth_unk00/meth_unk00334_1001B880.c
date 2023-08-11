@@ -4,7 +4,7 @@ unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
                                             int width,
                                             int height,
                                             int bitDepth,
-                                            int a5,
+                                            unk00334 *a5,
                                             unk00228 *a2,
                                             _DWORD *a7,
                                             unk00334 *u0_1) {

@@ -22,9 +22,9 @@ HRESULT __thiscall meth_unk0008C_np_1000A1E0(
                           a7,
                           a8,
                           1,
-                          (#485 **)&this->field_2C,
-                          (int **)&this->field_30,
-                          (int ***)&this->u334);
+                          (unk00334 *)&this->u334a,
+                          (unk00334 *)&this->u334b,
+                          (unk00334 *)&this->u334);
     if (result >= 0) {
         result = meth_unk0008C_1000A480(this);
         if (result >= 0) {

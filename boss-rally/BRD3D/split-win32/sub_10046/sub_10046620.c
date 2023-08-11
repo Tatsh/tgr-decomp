@@ -5,7 +5,7 @@ int __cdecl sub_10046620(unk1E214 *a1) {
     if (gUnkC8Ptr1)
         gUnkC8Ptr1->lpVtbl->meth0(gUnkC8Ptr1, 1);
     gUnkC8Ptr36 = 0;
-    dword_10AA29F0 = 0;
+    gUnk1E214Ptr0 = 0;
     gUnkC8Ptr1 = gUnkC8Ptr2;
     return 0;
 }

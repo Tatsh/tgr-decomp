@@ -12,9 +12,9 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
 
     if (!this->hwnd || !IsWindow(this->hwnd))
         return -2005522669;
-    v6 = this->field_2C;
+    v6 = this->u334a;
     v7 = (unk00228 *)this->u334;
-    v13 = this->field_30;
+    v13 = this->u334b;
     v8 = meth_unk00334_1001B490(v6, a2, a3, a4, 0, 0, 0);
     v9 = v8;
     if (!v8)
@@ -31,14 +31,14 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
     }
     meth_unk0008C_ReleaseDDrawSurface(this);
     meth_unk0008C_ReleaseDDraw2Surface(this);
-    this->field_30 = v9;
+    this->u334b = v9;
     if (v11)
         this->u334 = v11;
     result = meth_unk0008C_1000A5D0(this);
     if (result >= 0) {
         v12 = meth_unk0008C_1000A820(this);
         if (v12 < 0) {
-            this->field_30 = v13;
+            this->u334b = v13;
         LABEL_17:
             this->u334 = (unk00334 *)v7;
             meth_unk0008C_1000A5D0(this);
@@ -49,7 +49,7 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
         v12 = meth_unk0008C_1000AB70(this);
         if (v12 < 0) {
             meth_unk0008C_ReleaseDDraw2Surface(this);
-            this->field_30 = v13;
+            this->u334b = v13;
             goto LABEL_17;
         }
         SendMessageA(this->hwnd, 0xBD3u, 0, 0);
