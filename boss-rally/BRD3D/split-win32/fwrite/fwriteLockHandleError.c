@@ -5,6 +5,6 @@ size_t __stdcall fwriteLockHandleError(FILE *Stream, void *Buffer, size_t Elemen
 
     result = fwriteLock(Buffer, 1u, ElementCount, Stream);
     if (result != ElementCount)
-        writeToRandomBufferAndExit(aFileReadFailur);
+        s_noreturn_writeToBufferExit(aFileReadFailur);
     return result;
 }

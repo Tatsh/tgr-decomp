@@ -67,7 +67,7 @@ int __cdecl sub_1004E830(unk000C8 *a1) {
   *(&a1->field_6C + v1) = 1;
   v2 = (unk00348 *)malloc(0x348u);
   if (v2)
-      v3 = meth_10048470(v2);
+      v3 = meth_unk00348_10048470(v2);
   else
       v3 = 0;
   a1->field_14[LOWORD(a1->field_10)] = v3;

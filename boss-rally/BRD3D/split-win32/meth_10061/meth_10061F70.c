@@ -63,7 +63,8 @@ void __thiscall meth_10061F70(_DWORD *this) {
   float v63[3];    // [esp+1Ch] [ebp-Ch] BYREF
 
   v2 = *(float *)(this[2672] + 32);
-  if (*(__int16 *)gConfigJoystickPtr >= 0 && (*((_WORD *)gConfigJoystickPtr + 3) & 0x8000) == 0) {
+  if (SLOWORD(gConfigJoystickPtr->field_0) >= 0 &&
+      (*(_WORD *)&gConfigJoystickPtr->gap4[2] & 0x8000) == 0) {
     if (v2 <= 0.0) {
         v4 = v2 - -0.07;
         v48 = v4;
@@ -323,7 +324,7 @@ LABEL_124:
   }
   v62 = 6000.0;
   v19 = 4000.0;
-  if ((*((_WORD *)gConfigJoystickPtr + 6) & 0x8000) != 0) {
+  if ((*(_WORD *)&gConfigJoystickPtr->gap8[4] & 0x8000) != 0) {
     v51 = *(float *)(this[2672] + 28);
     if (v51 > 0.40000001) {
         v20 = 4000.0 - v51 * -2000.0;
@@ -341,7 +342,7 @@ LABEL_124:
   }
 LABEL_145:
   v26 = 0.0;
-  if (gGameMode == 1) {
+  if (gGameMode == GAME_MODE_1) {
     if (!this[1022])
         goto LABEL_161;
     v27 = 0.0;
@@ -370,7 +371,7 @@ LABEL_145:
     }
     if (v26 > 30.0)
         goto LABEL_160;
-  } else if (gGameMode == 6) {
+  } else if (gGameMode == GAME_MODE_6) {
     v47 = this[1022];
     if (v47) {
         if (v47 != 1) {
@@ -396,7 +397,7 @@ LABEL_161:
   if ((*(_DWORD *)v33 & 0x10000) == 0)
     v32 = 0.0;
   v34 = 7.0;
-  if ((*((_WORD *)gConfigJoystickPtr + 6) & 0x8000) != 0 && v33[7] > 0.0)
+  if ((*(_WORD *)&gConfigJoystickPtr->gap8[4] & 0x8000) != 0 && v33[7] > 0.0)
     v34 = v33[7] * 7.0;
   v35 = this[960];
   *((float *)this + 922) = v34 * v32;
@@ -430,7 +431,7 @@ LABEL_161:
     this[905] = 1147207680;
   if (*((float *)this + 905) > 8000.0)
     this[905] = 1174011904;
-  if ((*((_WORD *)gConfigJoystickPtr + 6) & 0x8000) != 0 && !v36) {
+  if ((*(_WORD *)&gConfigJoystickPtr->gap8[4] & 0x8000) != 0 && !v36) {
     v41 = v33[7] * 8000.0;
     if (v41 < 900.0)
         v41 = 900.0;
@@ -458,8 +459,7 @@ LABEL_161:
 }
 // 100621EE: variable 'v8' is possibly undefined
 // 10062B63: variable 'v45' is possibly undefined
-// 100AA010: using guessed type int g_GameMode;
-// 100B3664: using guessed type int g_SpeedSensitive;
+// 100B3664: using guessed type int gSpeedSensitive;
 // 100B3668: using guessed type int dword_100B3668;
 // 100B366C: using guessed type int dword_100B366C;
 // 100B3670: using guessed type float flt_100B3670;

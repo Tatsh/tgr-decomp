@@ -218,7 +218,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                     v17 = 606 * v7;
                     WaitForSingleObject(gMutexes[606 * v7], INFINITE);
                     if ((unk_10221354[606 * v7] & 0x3Fu) < 2) {
-                        sub_10006EC0((int)v83, v80);
+                        math_10006EC0((int)v83, v80);
                         ReleaseMutex(gMutexes[606 * v7]);
                     } else {
                         v18 = 0;
@@ -238,7 +238,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         dword_10221880[v17] = v22;
                         unk_10221334[v18 + v17] = v67;
                         dword_10221360[dword_10221884[v17] + v17] = 64;
-                        sub_10006EC0((int)&unk_10221380[40 * dword_10221884[v17] + v17], v80);
+                        math_10006EC0((int)&unk_10221380[40 * dword_10221884[v17] + v17], v80);
                         dword_10221C9C[v17] = 33 * (2 * (dword_10221310 - v67) % 3) +
                                               100 * (2 * (dword_10221310 - v67) / 3);
                         ReleaseMutex(gMutexes[v17]);
@@ -259,14 +259,14 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v43 = dword_10ACDFEC;
                         while (1) {
                             v44 = *v43;
-                            if (a4 == sub_10005CF0(*v43))
+                            if (a4 == atomic_sub_10005CF0(*v43))
                                 break;
                             ++v42;
                             v43 += 2778;
                             if (v42 >= dword_100B36FC)
                                 goto LABEL_82;
                         }
-                        strcpy(Buffer, sub_10005E70(v44));
+                        strcpy(Buffer, atomic_sub_10005E70(v44));
                         strcat(Buffer, asc_10094334);
                     LABEL_82:
                         v45 = (const char *)(meth_unk00214_GetField10((unk00214 *)v80) + 1);
@@ -275,7 +275,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         goto LABEL_111;
                     case 0x60000004:
                         v49 = meth_unk00214_GetField10((unk00214 *)v80);
-                        if (v49[1] != sub_10005CF0(dword_10094294))
+                        if (v49[1] != atomic_sub_10005CF0(dword_10094294))
                             goto LABEL_122;
                         sub_1000C4A0();
                         v50 = 0;
@@ -285,14 +285,14 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v51 = dword_10ACDFEC;
                         while (1) {
                             v52 = *v51;
-                            if (a4 == sub_10005CF0(*v51))
+                            if (a4 == atomic_sub_10005CF0(*v51))
                                 break;
                             ++v50;
                             v51 += 2778;
                             if (v50 >= dword_100B36FC)
                                 goto LABEL_122;
                         }
-                        strcpy(Buffer, sub_10005E70(v52));
+                        strcpy(Buffer, atomic_sub_10005E70(v52));
                         v45 = aBootedYouFromT;
                         v46 = strlen(aBootedYouFromT) + 1;
                         v47 = &Buffer[strlen(Buffer) + 1];
@@ -331,7 +331,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v54 = dword_10ACDFEC;
                         while (1) {
                             v55 = *v54;
-                            if (a4 == sub_10005CF0(*v54))
+                            if (a4 == atomic_sub_10005CF0(*v54))
                                 break;
                             ++v53;
                             v54 += 2778;
@@ -345,7 +345,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         dword_10221288[++dword_10221318] = v55;
                         ReleaseMutex(v65);
                         atomic_sub_10004A50(v53, 0);
-                        strcpy(Buffer, sub_10005E70(v55));
+                        strcpy(Buffer, atomic_sub_10005E70(v55));
                         v45 = aLeftTheRace;
                         v46 = strlen(aLeftTheRace) + 1;
                         v47 = &Buffer[strlen(Buffer) + 1];
@@ -359,14 +359,14 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         v57 = dword_10ACDFEC;
                         while (1) {
                             v58 = *v57;
-                            if (a4 == sub_10005CF0(*v57))
+                            if (a4 == atomic_sub_10005CF0(*v57))
                                 break;
                             ++v56;
                             v57 += 2778;
                             if (v56 >= dword_100B36FC)
                                 goto LABEL_122;
                         }
-                        strcpy(Buffer, sub_10005E70(v58));
+                        strcpy(Buffer, atomic_sub_10005E70(v58));
                         v45 = aReturnedToRace;
                         v46 = strlen(aReturnedToRace) + 1;
                         v47 = &Buffer[strlen(Buffer) + 1];
@@ -391,7 +391,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                     v23 = 606 * v7;
                     WaitForSingleObject(gMutexes[606 * v7], INFINITE);
                     if ((unk_10221354[606 * v7] & 0x3Fu) < 2) {
-                        sub_100073E0(v82, v82, v80);
+                        math_100073E0(v82, v82, v80);
                         ReleaseMutex(gMutexes[606 * v7]);
                     } else {
                         v24 = 0;
@@ -442,11 +442,11 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
                         unk_10221334[v72 + v23] = v67;
                         dword_10221360[dword_10221884[v23] + v23] = 128;
                         v37 = &unk_10221380[40 * v27 + v23];
-                        sub_100079E0((int)&unk_10221380[40 * dword_10221884[v23] + v23],
-                                     v77,
-                                     (int)&unk_10221380[40 * v32 + v23],
-                                     (int)v37);
-                        sub_100073E0(&unk_10221380[40 * dword_10221884[v23] + v23], v37, v80);
+                        math_100079E0((int)&unk_10221380[40 * dword_10221884[v23] + v23],
+                                      v77,
+                                      (int)&unk_10221380[40 * v32 + v23],
+                                      (int)v37);
+                        math_100073E0(&unk_10221380[40 * dword_10221884[v23] + v23], v37, v80);
                         dword_10221C9C[v23] = 33 * (2 * (dword_10221310 - v67) % 3) +
                                               100 * (2 * (dword_10221310 - v67) / 3);
                         ReleaseMutex(gMutexes[v23]);
@@ -509,7 +509,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
             }
             while (1) {
                 v62 = *v61;
-                if (v59[1] == sub_10005CF0(*v61))
+                if (v59[1] == atomic_sub_10005CF0(*v61))
                     break;
                 ++v60;
                 v61 += 2778;
@@ -519,7 +519,7 @@ void __cdecl np_sub_10003580(int a1, int a2, int a3, int a4) {
             v63 = v59[2];
             if (v63 >= 0 && v63 < 8) {
                 v66 = gPositionStrings[v63];
-                v64 = sub_10005E70(v62);
+                v64 = atomic_sub_10005E70(v62);
                 sprintf(Buffer, "%s finished %s", v64, v66);
                 np_sub_10003530(Buffer);
             }

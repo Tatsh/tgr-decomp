@@ -48,10 +48,10 @@ int np_sub_10004FC0() {
 }
 // 10094294: using guessed type int dword_10094294;
 // 1022AAF4: using guessed type int dword_1022AAF4;
-// 1022AF14: using guessed type int g_usingGameMode4;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF14: using guessed type int gIsGameMode4;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 1022AF20: using guessed type int dword_1022AF20;
-// 1022B34C: using guessed type int g_chosenCar;
+// 1022B34C: using guessed type int gChosenCar;
 // 10277B48: using guessed type int dword_10277B48;
 // 106909E0: using guessed type int dword_106909E0;
 // 10ACEE50: using guessed type int dword_10ACEE50;

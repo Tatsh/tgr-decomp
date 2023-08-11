@@ -15,4 +15,4 @@ DDPIXELFORMAT *__cdecl GetDDPixelFormatPtr(int a1) {
     return (DDPIXELFORMAT *)((char *)&unk_100A6238 + 40 * v1);
 }
 // 100A6230: using guessed type int dword_100A6230;
-// 100A62F8: using guessed type int g_D3dwaitcanflip;
+// 100A62F8: using guessed type int gD3DWaitCanFlip;

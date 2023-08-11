@@ -7481,8 +7481,7 @@ struct Pod {
     PodHeader header;
     void *unkInstance;
     FILE *fp;
-    void *filename;
-    _BYTE gap24[7];
+    char filename[11];
     __unaligned __declspec(align(1)) int field_2B;
     _BYTE gap2F[1009];
     int elementCount;
@@ -7610,7 +7609,7 @@ struct unk000C8 {
     unk00348 *field_14[2];
     int field_1C;
     _BYTE gap20[68];
-    int field_64;
+    unk00348 *field_64;
     int field_68;
     int field_6C;
     int field_70;
@@ -7830,7 +7829,7 @@ struct unk1A5E0Vtbl {
     unk1A5E0 *(__thiscall *meth1)(unk1A5E0 *this, float, float);
     int(__thiscall *meth2)(unk1A5E0 *this, int index);
     int(__thiscall *meth3)(unk06594 *this);
-    int(__thiscall *meth4)(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);
+    int(__thiscall *meth4)(unk1A5E0 *this, char *Source, int a3, int a4, int *a5, int a6);
     int(__thiscall *meth5)(unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);
     int(__thiscall *meth6)(unk1A5E0 *this, _DWORD *a2);
     int(__thiscall *meth7)(unk1A5E0 *this, int *a2);

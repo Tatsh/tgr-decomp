@@ -96,7 +96,7 @@ int __cdecl sub_10058750(unk000C8 *a1) {
   *(&a1->field_6C + a1->field_10) = 1;
   v1 = (unk00348 *)malloc(0x348u);
   if (v1)
-    v2 = meth_10048470(v1);
+    v2 = meth_unk00348_10048470(v1);
   else
     v2 = 0;
   a1->field_14[a1->field_10] = v2;

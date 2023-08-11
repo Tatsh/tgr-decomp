@@ -316,7 +316,7 @@ int sub_1005D440() {
   gUnkC8Ptr1 = uC8;
   if (!uC8)
     return 0;
-  uC8->lpFn0 = sub_100491B0;
+  uC8->lpFn0 = s_unk000C8_100491B0;
   if (!gIostreamInit) {
     iostreamInit = (Iostream_init *)malloc(0x400u);
     if (iostreamInit)

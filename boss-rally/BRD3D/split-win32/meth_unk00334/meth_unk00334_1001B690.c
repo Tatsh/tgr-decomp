@@ -33,7 +33,7 @@ int __thiscall meth_unk00334_1001B690(unk00334 *this, CLSID *a2, _DWORD *a3, unk
             v10 = v8->last;
             if (meth_unk00228_MatchesGUID(v8, a2))
                 break;
-            if (meth_unk00228_Field24IsNotNull(v8) && !v5)
+            if (meth_unk00228_DeviceDescHasDCMColorModel(v8) && !v5)
                 v12 = v8;
             if (!memcmp(&v8->guid, &CLSID_IDirect3DRGBDevice, 0x10u) && !v14)
                 v14 = v8;

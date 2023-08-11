@@ -9,7 +9,7 @@ HRESULT __cdecl DDCopyBitmap(IDirectDrawSurface *ddSurface, LPCSTR name) {
     v2 = GetModuleHandleA(0);
     v3 = LoadImageA(v2, name, 0, 0, 0, 0x2000u);
     if (v3 || (v3 = LoadImageA(0, name, 0, 0, 0, 0x2010u)) != 0) {
-        v5 = sub_1000B820(ddSurface, v3, 0, 0, 0, 0);
+        v5 = graphics_1000B820(ddSurface, v3, 0, 0, 0, 0);
         if (v5)
             OutputDebugStringA(aDdcopybitmapFa);
         DeleteObject(v3);

@@ -15,7 +15,7 @@ int __cdecl pm_sub_100027F0(int a1) {
             dword_10220C6C = 256;
             dword_10220C54 = v1;
             word_10220C92 = 0;
-            g_WPARAM = EAR_DLL_MixEvent(&word_10220C50);
+            gWPARAM = EAR_DLL_MixEvent(&word_10220C50);
         }
     }
     return 1;

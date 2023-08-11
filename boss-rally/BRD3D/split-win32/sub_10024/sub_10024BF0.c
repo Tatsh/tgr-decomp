@@ -110,7 +110,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                 if (v17)
                     v18 = sub_10009660(byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
                 else
-                    v18 = sub_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+                    v18 = graphics_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
                 v3[164] = v18;
                 if (sub_10061000() >= 0) {
                     v19 = 3;
@@ -131,7 +131,8 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                                     v22 = sub_10009660(
                                         byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
                                 else
-                                    v22 = sub_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+                                    v22 = graphics_100098A0(
+                                        byte_11829870, byte_11829870, v3[16], v3[4]);
                                 v3[164] = v22;
                             }
                             v23 = (unsigned __int8 *)malloc(v3[164]);
@@ -177,7 +178,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     if (v3[15])
         v32 = sub_10009660(byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
     else
-        v32 = sub_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+        v32 = graphics_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
     v3[164] = v32;
     if (sub_10061000() < 0) {
         v38 = v3 + 163;
@@ -210,7 +211,7 @@ int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                 if (v3[15])
                     v36 = sub_10009660(byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
                 else
-                    v36 = sub_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+                    v36 = graphics_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
                 v3[164] = v36;
             }
             v37 = (unsigned __int8 *)malloc(v3[164]);

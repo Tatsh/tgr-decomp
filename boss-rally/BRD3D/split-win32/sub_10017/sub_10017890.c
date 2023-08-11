@@ -38,7 +38,7 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                     do {
                         v6 = a2 + 11112 * LODWORD(v5);
                         if (*(_DWORD *)(v6 + 3848)) {
-                            v18 = sub_10005F40(*(_DWORD *)(v6 + 324));
+                            v18 = atomic_sub_10005F40(*(_DWORD *)(v6 + 324));
                             if (v18) {
                                 sprintf(Buffer, "%%11%d.", *(_DWORD *)(v6 + 4088) + 1);
                             } else {
@@ -51,8 +51,7 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                 }
                                 sprintf(Buffer, v15, v16);
                             }
-                            text_sub_10019300(
-                                (int)Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
+                            text_10019300(Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                             if (dword_118ABDC8) {
                                 v7 = 32;
                                 v8 = 32;
@@ -69,7 +68,7 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                     }
                                 }
                                 if (v18) {
-                                    v10 = sub_10005F90(*(_DWORD *)(v6 + 324));
+                                    v10 = atomic_sub_10005F90(*(_DWORD *)(v6 + 324));
                                     sprintf(Buffer,
                                             "%%11%s %dms %c%c",
                                             (const char *)(v6 + 328),
@@ -78,7 +77,7 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                             v7);
                                 } else if ((*(_BYTE *)(*(_DWORD *)(v6 + 3840) + 104) & 1) != 0 ||
                                            dword_106909E0) {
-                                    v12 = sub_10005F90(*(_DWORD *)(v6 + 324));
+                                    v12 = atomic_sub_10005F90(*(_DWORD *)(v6 + 324));
                                     sprintf(Buffer,
                                             "%%x%02x%02x%02x%s %dms %c%c",
                                             *(unsigned __int8 *)(v6 + 10668),
@@ -89,7 +88,7 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                             v8,
                                             v7);
                                 } else {
-                                    v14 = sub_10005F90(*(_DWORD *)(v6 + 324));
+                                    v14 = atomic_sub_10005F90(*(_DWORD *)(v6 + 324));
                                     v11 = sub_10017C80(a2, v5);
                                     sprintf(Buffer,
                                             "%%x%02x%02x%02x%s %s %dms %c%c",
@@ -102,8 +101,8 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                             v8,
                                             v7);
                                 }
-                                text_sub_10019300(
-                                    (int)Buffer, v17 + 16, 16 * *(_DWORD *)(v6 + 4088) + v19 + 20);
+                                text_10019300(
+                                    Buffer, v17 + 16, 16 * *(_DWORD *)(v6 + 4088) + v19 + 20);
                                 v4 = v19;
                                 v3 = v17;
                             } else {
@@ -127,16 +126,14 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
                                             (const char *)(v6 + 328),
                                             v13);
                                 }
-                                text_sub_10019300(
-                                    (int)Buffer, v3 + 16, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
+                                text_10019300(
+                                    Buffer, v3 + 16, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                             }
                         } else {
                             sprintf(Buffer, "%%55%d.", *(_DWORD *)(v6 + 4088) + 1);
-                            text_sub_10019300(
-                                (int)Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
+                            text_10019300(Buffer, v3, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                             sprintf(Buffer, "%%55%s", (const char *)(v6 + 328));
-                            text_sub_10019300(
-                                (int)Buffer, v3 + 16, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
+                            text_10019300(Buffer, v3 + 16, 16 * *(_DWORD *)(v6 + 4088) + v4 + 20);
                         }
                         result = dword_100B36FC;
                         ++LODWORD(v5);
@@ -149,6 +146,6 @@ int __cdecl sub_10017890(_DWORD *a1, int a2) {
 }
 // 100B36FC: using guessed type int dword_100B36FC;
 // 100BD3FC: using guessed type int dword_100BD3FC;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 106909E0: using guessed type int dword_106909E0;
 // 118ABDC8: using guessed type int dword_118ABDC8;

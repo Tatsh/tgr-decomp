@@ -13,19 +13,19 @@ int __cdecl sub_1005FBC0(int a1) {
   dword_10AA28A4 = BYTE1(dword_10AA26F4[0]);
   gConfigJoystickIndex = gConfigJoystickIndex0;
   dword_10AA28A0 = dword_10AA26F0;
-  gTireType = (void *)dword_10AA27F0;
+  gTireType = gTireType0;
   switch (gConfigJoystickIndex0) {
   case 1:
-    gConfigJoystickPtr = gConfig.joystick1;
+    gConfigJoystickPtr = &gConfig.joystick1;
     break;
   case 2:
-    gConfigJoystickPtr = gConfig.joystick2;
+    gConfigJoystickPtr = &gConfig.joystick2;
     break;
   case 3:
-    gConfigJoystickPtr = gConfig.joystick3;
+    gConfigJoystickPtr = &gConfig.joystick3;
     break;
   default:
-    gConfigJoystickPtr = &gConfig;
+    gConfigJoystickPtr = (BossRallyConfigJoystick *)&gConfig;
     break;
   }
   sprintf(byte_10AA2518, "%d", dword_10AA26F0 + 1);
@@ -47,20 +47,20 @@ int __cdecl sub_1005FBC0(int a1) {
   dword_10AA2A14 = result;
   return result;
 }
-// 10094354: using guessed type int g_TransmissionType;
-// 10094358: using guessed type int g_SuspensionType;
+// 10094354: using guessed type int gTransmissionType;
+// 10094358: using guessed type int gSuspensionType;
 // 10AA26F0: using guessed type int dword_10AA26F0;
 // 10AA26F4: using guessed type int dword_10AA26F4[];
 // 10AA270E: using guessed type __int16 word_10AA270E[];
 // 10AA27E0: using guessed type int dword_10AA27E0;
-// 10AA27EC: using guessed type int dword_10AA27EC;
-// 10AA27F0: using guessed type int dword_10AA27F0;
-// 10AA27F4: using guessed type int dword_10AA27F4;
-// 10AA27F8: using guessed type int dword_10AA27F8;
+// 10AA27EC: using guessed type int gTransmissionType0;
+// 10AA27F0: using guessed type int gTireType0;
+// 10AA27F4: using guessed type int gSuspensionType0;
+// 10AA27F8: using guessed type int gConfigJoystickIndex0;
 // 10AA28A0: using guessed type int dword_10AA28A0;
 // 10AA28A4: using guessed type int dword_10AA28A4;
 // 10AA28AC: using guessed type int dword_10AA28AC;
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA2A10: using guessed type int dword_10AA2A10;
 // 10AA2A14: using guessed type int dword_10AA2A14;
-// 10B4E1D0: using guessed type int g_ConfigJoystickIndex;
+// 10B4E1D0: using guessed type int gConfigJoystickIndex;

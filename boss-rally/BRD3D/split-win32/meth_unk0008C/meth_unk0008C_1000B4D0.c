@@ -8,7 +8,7 @@ HRESULT __thiscall meth_unk0008C_1000B4D0(unk0008C *this, int a2, int a3, int a4
     HRESULT result; // eax
     unk00334 *v11;  // edi
     int v12;        // edi
-    void *v13;      // [esp+10h] [ebp-4h]
+    unk00334 *v13;  // [esp+10h] [ebp-4h]
 
     if (!this->hwnd || !IsWindow(this->hwnd))
         return -2005522669;

@@ -26,7 +26,7 @@ void __cdecl ReadSettingsParseCmdLine(char *cmdLine) {
     strcat(gBossRallyIniPath, kBossRallyIni);
     if (CHK_FileExists(gBossRallyIniPath)) {
         chkfpBossRallyINI = CHK_FReadOpen(gBossRallyIniPath);
-        for (pfp = chkfpBossRallyINI; readLineFromFile(readBuff, 256, &pfp->pfil);
+        for (pfp = chkfpBossRallyINI; CHK_ReadLine(readBuff, 256, &pfp->pfil);
              chkfpBossRallyINI = pfp) {
             if (!strncmp(readBuff, kNetworkPlayEq, 0xCu)) {
                 gNetworkPlay = atoi(&readBuff[0xC]);

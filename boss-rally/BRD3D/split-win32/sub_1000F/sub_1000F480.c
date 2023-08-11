@@ -21,8 +21,8 @@ void __cdecl sub_1000F480(int a1, int a2, int a3, _WORD *a4, _WORD *a5) {
     int v22;     // [esp+24h] [ebp+4h]
     float v23;   // [esp+24h] [ebp+4h]
 
-    v5 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708]);
-    v6 = (_DWORD *)(a1 + 88 * MEMORY[0x106C5708]);
+    v5 = *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]);
+    v6 = (_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]);
     v22 = (int)v6[2] >> 1;
     v7 = v22 + v5;
     v8 = v6[3];
@@ -53,4 +53,3 @@ void __cdecl sub_1000F480(int a1, int a2, int a3, _WORD *a4, _WORD *a5) {
 // 106C1174: using guessed type int dword_106C1174;
 // 106C29A8: using guessed type float flt_106C29A8;
 // 106C3364: using guessed type int dword_106C3364;
-// 106C5708: using guessed type int dword_106C5708;

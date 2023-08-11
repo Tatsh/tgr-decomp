@@ -9,7 +9,7 @@ size_t __thiscall meth_Pod_Add(Pod *this, const char *a2, int a3, int a4, char a
     *(_DWORD *)v7 = 0;
     basename(a2, v7 + 12);
     if (strlen(v7 + 12) > 0x40)
-        writeToRandomBufferAndExit(aAddNameIsTooLo);
+        s_noreturn_writeToBufferExit(aAddNameIsTooLo);
     _strupr(v7 + 12);
     *(_DWORD *)v7 = ftell(dword_1027735C);
     v7[8] = a5;

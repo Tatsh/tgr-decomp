@@ -10,7 +10,7 @@ int __cdecl np_sub_10005FE0(int a1) {
     v1 = 0;
     v2 = byte_10221898;
     do {
-        result = sub_10005CF0(v1);
+        result = atomic_sub_10005CF0(v1);
         if (result == a1) {
             result = atomic_sub_10004A10(v1);
             if ((result & 0x3F) != 0) {

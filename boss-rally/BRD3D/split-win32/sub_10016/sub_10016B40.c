@@ -46,13 +46,14 @@ char __cdecl sub_10016B40(int a1) {
     if (dword_100BD3F4 && !dword_1022AF1C) {
         v32 = (float)g_Height1;
         v31 = (float)g_Width1;
-        v2 = (char *)&unk_100C12A0 + 89992 * *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 16);
+        v2 = (char *)&unk_100C12A0 +
+             89992 * *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 16);
         sub_1003407D(v31, v32);
-        v3 = MEMORY[0x106C5708];
+        v3 = *(_DWORD *)&gUnk06594.gap1C8[8640];
         v4 = gWidth - v2[228] - 16;
         v33 = v4;
-        v5 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4) +
-             *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 12) - v2[229] - 4;
+        v5 = *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 4) +
+             *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 12) - v2[229] - 4;
         if (*(float *)(dword_106C2CF8 + 3688) < 0.0)
             v38 = 0;
         else
@@ -100,27 +101,27 @@ char __cdecl sub_10016B40(int a1) {
             } else {
                 sub_10016A60(*(_DWORD *)(a1 + 20), v4, v5, v2[228], v2[229]);
             }
-            if (v38 != dword_100A73A8[MEMORY[0x106C5708]]) {
+            if (v38 != dword_100A73A8[*(_DWORD *)&gUnk06594.gap1C8[8640]]) {
                 v13 = (unsigned int *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v13 = *(_DWORD *)(a1 + 84) & 0xFFFFFF | 0xDD000000;
                 v13[1] = (unsigned int)&v2[v38 * *((_DWORD *)v2 + 63) + 1280];
-                dword_100A73A8[MEMORY[0x106C5708]] = v38;
+                dword_100A73A8[*(_DWORD *)&gUnk06594.gap1C8[8640]] = v38;
             }
             sub_10016A60(*(_DWORD *)(a1 + 84), v4 + v2[230], v5 + v2[231], v2[232], v2[233]);
-            v3 = MEMORY[0x106C5708];
+            v3 = *(_DWORD *)&gUnk06594.gap1C8[8640];
         }
         if (dword_106909B4) {
             v40 = 64;
         } else {
             v14 = sub_1003BD50();
-            v3 = MEMORY[0x106C5708];
+            v3 = *(_DWORD *)&gUnk06594.gap1C8[8640];
             v40 = v14 & 0x7F;
         }
         LOBYTE(v1) = v2[219];
         v39 = (double)v40 + *(float *)(dword_106C2CF8 + 3620);
         if (!(_BYTE)v1) {
-            v15 = (char *)&unk_104AFD20 + 128 * (v3 + 2 * MEMORY[0x106C65EC]);
+            v15 = (char *)&unk_104AFD20 + 128 * (v3 + 2 * *(_DWORD *)&gUnk06594.gap1C8[12452]);
             if (dword_100AA8B4 == 2) {
                 v16 = 5.0;
                 v41 = 15.0;
@@ -206,8 +207,8 @@ char __cdecl sub_10016B40(int a1) {
     return (char)v1;
 }
 // 100A73A8: using guessed type int dword_100A73A8[];
-// 100A81C0: using guessed type int g_Width;
-// 100A81C4: using guessed type int g_Height;
+// 100A81C0: using guessed type int gWidth;
+// 100A81C4: using guessed type int gHeight;
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 100BD3F4: using guessed type int dword_100BD3F4;
 // 1022AF1C: using guessed type int dword_1022AF1C;
@@ -216,5 +217,3 @@ char __cdecl sub_10016B40(int a1) {
 // 106C0684: using guessed type int g_Width1;
 // 106C299C: using guessed type int g_Height1;
 // 106C2CF8: using guessed type int dword_106C2CF8;
-// 106C5708: using guessed type int dword_106C5708;
-// 106C65EC: using guessed type int dword_106C65EC;

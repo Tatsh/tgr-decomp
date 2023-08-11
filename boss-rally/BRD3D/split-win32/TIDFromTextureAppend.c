@@ -16,7 +16,7 @@ int __cdecl TIDFromTextureAppend(_DWORD *a1, int a2) {
         v6 = dword_10575424;
         if (!v5) {
             dword_10575428 += 256;
-            Block = CHK_ReAllocateMemory_0(Block, 4 * (v4 + 256), aTidfromtexture);
+            Block = CHK_ReAllocateMemory0(Block, 4 * (v4 + 256), aTidfromtexture);
         }
         v7 = (unk00020 *)malloc(0x20u);
         if (v7) {

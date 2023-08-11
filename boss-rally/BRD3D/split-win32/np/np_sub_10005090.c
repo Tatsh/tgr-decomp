@@ -36,6 +36,6 @@ int np_sub_10005090() {
 }
 // 10094294: using guessed type int dword_10094294;
 // 10221314: using guessed type int dword_10221314;
-// 1022B34C: using guessed type int g_chosenCar;
+// 1022B34C: using guessed type int gChosenCar;
 // 10277B48: using guessed type int dword_10277B48;
 // 106909D8: using guessed type int dword_106909D8;

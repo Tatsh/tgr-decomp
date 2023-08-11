@@ -10,7 +10,7 @@ int sub_10024BB0() {
     if (dword_105553F0) {
         v2 = 0;
         do {
-            meth_1000A020(*((#511 **)Block + *(_DWORD *)((char *)dword_1057543C + v2)));
+            meth_graphics_1000A020(*((#511 **)Block + *(_DWORD *)((char *)dword_1057543C + v2)));
             result = dword_105553F0;
             ++v1;
             v2 += 696;

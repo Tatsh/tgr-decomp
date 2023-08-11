@@ -11,8 +11,8 @@ _DWORD *sub_100147B0() {
 
     result = (_DWORD *)dword_106909D0;
     if (dword_106909D0) {
-        result = (_DWORD *)MEMORY[0x106C7CB8];
-        if (MEMORY[0x106C7CB8]) {
+        result = (_DWORD *)gUnk06594.field_4938;
+        if (gUnk06594.field_4938) {
             v3[3] = 0;
             v4[3] = 0;
             v5[3] = 0;
@@ -21,14 +21,14 @@ _DWORD *sub_100147B0() {
             v5[1] = 0;
             v5[2] = 1065353216;
             sub_1003ADA0((float *)v4,
-                         (float *)(MEMORY[0x106C7CB8] + 76),
-                         (float *)(MEMORY[0x106C7CB8] + 88));
+                         (float *)(gUnk06594.field_4938 + 76),
+                         (float *)(gUnk06594.field_4938 + 88));
             sub_1003AC30((float *)v3, (float *)v4, (float *)v5);
             sub_1003AC30((float *)v4, (float *)v5, (float *)v3);
-            v6[0] = *(_DWORD *)(MEMORY[0x106C7CB8] + 76);
-            v6[1] = *(_DWORD *)(MEMORY[0x106C7CB8] + 80);
+            v6[0] = *(_DWORD *)(gUnk06594.field_4938 + 76);
+            v6[1] = *(_DWORD *)(gUnk06594.field_4938 + 80);
             *(float *)&v6[2] =
-                *(float *)(MEMORY[0x106C7CB8] + 84) + *(float *)&dword_106805BC - -2.0;
+                *(float *)(gUnk06594.field_4938 + 84) + *(float *)&dword_106805BC - -2.0;
             sub_1003AFE0((int)v6, (int)v6, (int)v3, -0.30000001);
             sub_1003AFE0((int)v6, (int)v6, (int)v4, -0.60000002);
             v1 = (_DWORD *)dword_106C0680;

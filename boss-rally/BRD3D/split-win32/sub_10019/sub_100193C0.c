@@ -11,7 +11,7 @@ int __cdecl sub_100193C0(char *a1, int a2) {
 
     v2 = 0;
     v3 = a2;
-    if (MEMORY[0x106C65E4])
+    if (*(_DWORD *)&gUnk06594.gap1C8[12444])
         v3 = 2 * a2;
     if (dword_100B8C90 > 1 || v3 < 25) {
         v9 = 20;
@@ -45,11 +45,10 @@ int __cdecl sub_100193C0(char *a1, int a2) {
         }
         v2 += v3 * (v4[byte_100A5FEF[i] + 1] - v4[byte_100A5FEF[i]]) / v9;
     }
-    if (MEMORY[0x106C65E4])
+    if (*(_DWORD *)&gUnk06594.gap1C8[12444])
         v2 >>= 1;
     return v2;
 }
 // 100A6070: using guessed type int dword_100A6070[];
 // 100A6150: using guessed type int dword_100A6150[];
 // 100B8C90: using guessed type int dword_100B8C90;
-// 106C65E4: using guessed type int dword_106C65E4;

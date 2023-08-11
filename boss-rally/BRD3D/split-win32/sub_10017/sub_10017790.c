@@ -19,18 +19,17 @@ _DWORD *__cdecl sub_10017790(int a1) {
                 v2 = 20;
                 v3 = 15;
             }
-            v4 = (_DWORD *)(a1 + 88 * MEMORY[0x106C5708]);
+            v4 = (_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]);
             v5 = *v4 + v4[2] / 2;
             v6 = v4[3] / 3 + v4[1];
             Set_byte_104B035C_To2();
             result = (_DWORD *)dword_106C2CF8;
             if (*(_DWORD *)(dword_106C2CF8 + 4092)) {
                 sub_100192F0(v2);
-                result = text_sub_10019300(*(_DWORD *)(dword_106C2CF8 + 4092), v5, v6 + v2 / 4);
+                result = text_10019300(*(char **)(dword_106C2CF8 + 4092), v5, v6 + v2 / 4);
             } else if (*(_DWORD *)(dword_106C2CF8 + 4100)) {
                 sub_100192F0(v3);
-                result =
-                    text_sub_10019300(*(_DWORD *)(dword_106C2CF8 + 4100), v5, v6 + 3 * v2 / 16);
+                result = text_10019300(*(char **)(dword_106C2CF8 + 4100), v5, v6 + 3 * v2 / 16);
             }
         }
     }
@@ -39,4 +38,3 @@ _DWORD *__cdecl sub_10017790(int a1) {
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 106909B4: using guessed type int dword_106909B4;
 // 106C2CF8: using guessed type int dword_106C2CF8;
-// 106C5708: using guessed type int dword_106C5708;

@@ -6,9 +6,9 @@ unsigned __int8 *__cdecl sub_10009AD0(char *filename,
                                       int *outBuff) {
     CHK_File *fp;       // ebx
     size_t elementSize; // esi
-    unsigned int cksum; // eax
+    int cksum;          // eax
     int flag_;          // edi
-    unsigned int seed;  // eax
+    int seed;           // eax
     int *v9;            // edx
     int buf;            // [esp+Ch] [ebp-4h] BYREF
 
@@ -28,7 +28,7 @@ unsigned __int8 *__cdecl sub_10009AD0(char *filename,
             exit(1);
     }
     sub_10009A50(cksum, byte_11829870, ::buf, 0x10000);
-    sub_100098A0(byte_11829870, byte_11829870, 0x40000, 11);
+    graphics_100098A0(byte_11829870, byte_11829870, 0x40000, 11);
     v9 = outBuff;
     *outFilename = filename;
     *v9 = buf;

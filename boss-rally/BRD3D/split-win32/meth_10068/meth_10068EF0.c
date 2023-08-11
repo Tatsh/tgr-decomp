@@ -26,7 +26,7 @@ void __thiscall meth_10068EF0(_DWORD *this) {
 
   if (!gNetworkPlay || this[24]) {
     v2 = this[24];
-    if (v2 && *(void(__cdecl **)(int))(v2 + 3848) == sub_10065620 && gGameMode != 5) {
+    if (v2 && *(void(__cdecl **)(int))(v2 + 3848) == sub_10065620 && gGameMode != GAME_MODE_5) {
         **(_DWORD **)(v2 + 10688) &= 0xF000000u;
         *(_DWORD *)(*(_DWORD *)(this[24] + 10688) + 32) = 0;
     }
@@ -68,7 +68,7 @@ void __thiscall meth_10068EF0(_DWORD *this) {
                     if (*(_BYTE *)(v8 + 10671) == 2) {
                         *(float *)(v8 + 10672) =
                             *(float *)(v8 + 10672) - *(float *)&dword_106C2CFC * -1.6;
-                        if (gGameMode == 2 && this[25]) {
+                        if (gGameMode == GAME_MODE_2 && this[25]) {
                             v13 = this[24];
                             if (*(float *)(v13 + 10672) > 0.375)
                                 *(_DWORD *)(v13 + 10672) = 1052770304;
@@ -97,7 +97,7 @@ void __thiscall meth_10068EF0(_DWORD *this) {
                     v17 = this[11];
                     v18 = this[10];
                     v19 = 2778 * (this[29] + dword_100B4050);
-                    v23 = ((double)(this[17] + 1) * *(float *)(MEMORY[0x106C7CB8] + 100) -
+                    v23 = ((double)(this[17] + 1) * *(float *)(gUnk06594.field_4938 + 100) -
                            *((float *)this + 20) - *(float *)(v18 + 40 * v17 + 140)) /
                           (*(float *)(v18 + 40 * v17 + 100) - *(float *)(v18 + 40 * v17 + 140));
                     if (dword_10ACEDA8[v19]) {
@@ -129,7 +129,7 @@ void __thiscall meth_10068EF0(_DWORD *this) {
                     *(_BYTE *)(*(_DWORD *)(this[24] + 10688) + 36) = -127;
                     *(_DWORD *)(*(_DWORD *)(this[24] + 10688) + 32) = -1082130432;
                 }
-                if (!gGameMode && this[25] >= dword_100B4050) {
+                if (gGameMode == GAME_MODE_0 && this[25] >= dword_100B4050) {
                     *(_BYTE *)(this[24] + 10671) = 2;
                     *(float *)(this[24] + 10672) =
                         *(float *)(this[24] + 10672) - *(float *)&dword_106C2CFC;
@@ -150,9 +150,8 @@ void __thiscall meth_10068EF0(_DWORD *this) {
     }
   }
 }
-// 100AA010: using guessed type int g_GameMode;
 // 100B4050: using guessed type int dword_100B4050;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 106909B4: using guessed type int dword_106909B4;
 // 106C2CFC: using guessed type int dword_106C2CFC;
 // 10ACD490: using guessed type int dword_10ACD490;

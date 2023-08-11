@@ -26,7 +26,7 @@ _DWORD *__cdecl sub_100140E0(int a1) {
     v3 = dword_11829328 & 0xFFFFFF;
     v2[1] = 1;
     *v2 = v3 | 0xDC000000;
-    sub_1003B4F0((int)&flt_106C0860, (float *)MEMORY[0x106C6490]);
+    sub_1003B4F0((int)&flt_106C0860, *(float **)&gUnk06594.gap1C8[12104]);
     flt_106C08A0 = 0.0;
     flt_106C08A4 = 0.0;
     dword_106C08A8 = -1082130432;
@@ -54,7 +54,7 @@ _DWORD *__cdecl sub_100140E0(int a1) {
     dword_106C0680 += 8;
     *v5 = -1174403582;
     v5[1] = 192;
-    if (!MEMORY[0x106C661C]) {
+    if (!*(_DWORD *)&gUnk06594.gap1C8[12500]) {
         switch (gChosenTrack) {
         case 1:
         case 7:
@@ -98,7 +98,7 @@ _DWORD *__cdecl sub_100140E0(int a1) {
     result[1] = 1;
     return result;
 }
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 1039B710: using guessed type int dword_1039B710;
 // 1039B718: using guessed type int dword_1039B718;
 // 106C0680: using guessed type int dword_106C0680;
@@ -121,5 +121,4 @@ _DWORD *__cdecl sub_100140E0(int a1) {
 // 106C08D8: using guessed type int dword_106C08D8;
 // 106C08DC: using guessed type int dword_106C08DC;
 // 106C0920: using guessed type int dword_106C0920;
-// 106C661C: using guessed type int dword_106C661C;
 // 11829328: using guessed type int dword_11829328;

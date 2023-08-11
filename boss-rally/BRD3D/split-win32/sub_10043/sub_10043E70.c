@@ -16,7 +16,7 @@ unk000C8 *sub_10043E70() {
         gUnkC8Ptr1 = result;
         if (!result)
             return result;
-        result->lpFn0 = sub_10056FF0;
+        result->lpFn0 = s_unk000C8_10056FF0;
         gUnkC8Ptr10->lpFn0(gUnkC8Ptr10);
         gUnkC8Ptr1->field_C = 1;
         gUnkC8Ptr1->field_68 = 1;

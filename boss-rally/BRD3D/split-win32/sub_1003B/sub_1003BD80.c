@@ -67,7 +67,7 @@ int sub_1003BD80() {
     return 1;
 }
 // 1008F538: using guessed type int dword_1008F538;
-// 1022AF18: using guessed type int g_NetworkPlay;
+// 1022AF18: using guessed type int gNetworkPlay;
 // 10277B4C: using guessed type int dword_10277B4C;
 // 10A9BFD8: using guessed type int dword_10A9BFD8;
 // 10A9C0CC: using guessed type int dword_10A9C0CC[];

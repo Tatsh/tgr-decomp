@@ -57,6 +57,18 @@ def fix_operator_calls(lines_str: str) -> str:
                   flags=re.MULTILINE)
 
 
+def eh_replacer(m: re.Match[str]) -> str:
+    gd = m.groupdict()
+    return f'eh_{gd["type"]}_{gd["con_type"]}'
+
+
+def fix_eh_calls(lines_str: str) -> str:
+    return re.sub(r'`eh (?P<type>[^ ]+) (?P<con_type>[^ ]+) iterator\'',
+                  eh_replacer,
+                  lines_str,
+                  flags=re.MULTILINE)
+
+
 def main() -> int:
     split_path = Path(sys.argv[2])
     methods_path = split_path / 'meth'
@@ -80,7 +92,7 @@ def main() -> int:
         func_name, prefix = get_function_name(lines_str)
         if not func_name or not prefix:
             continue
-        lines_str = fix_operator_calls(lines_str)
+        lines_str = fix_eh_calls(fix_operator_calls(lines_str))
         append_or_create_list(prefix, files, (f'{func_name}.c', f'{header}\n{lines_str}\n'))
     for prefix, l in list(files.items()):
         if len(l) == 1:
@@ -96,7 +108,9 @@ def main() -> int:
         for name, code in l:
             prefix_path = split_path / prefix
             prefix_path.mkdir(exist_ok=True, parents=True)
-            with (prefix_path / name).open('w+') as f:
+            out_file = prefix_path / name
+            assert not out_file.exists()
+            with out_file.open('w+') as f:
                 f.write(f'#include "{types_file.name}"\n')
                 f.write(code)
     return 0

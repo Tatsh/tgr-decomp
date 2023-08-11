@@ -28,7 +28,7 @@ IDirectDrawSurface *__cdecl DDrawCreateSurface(
         } else {
             ddrawSurface0 = ddrawSurface1;
             qmemcpy(a5, &surfaceDesc, sizeof(_DDSURFACEDESC));
-            sub_1000B820(ddrawSurface0, result_1, 0, 0, 0, 0);
+            graphics_1000B820(ddrawSurface0, result_1, 0, 0, 0, 0);
             DeleteObject(result_1);
             result = ddrawSurface1;
         }

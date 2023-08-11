@@ -482,7 +482,7 @@ int __cdecl sub_10015C70(int a1) {
 }
 // 10015D4D: variable 'v3' is possibly undefined
 // 10015D4D: variable 'v4' is possibly undefined
-// 100A66EC: using guessed type int g_Interpolate;
+// 100A66EC: using guessed type int gInterpolate;
 // 100B36F8: using guessed type int dword_100B36F8;
 // 100B36FC: using guessed type int dword_100B36FC;
 // 1039B728: using guessed type int dword_1039B728[];

@@ -11,6 +11,6 @@ _DWORD *__cdecl sub_100171F0(int a1, int a2, float a3, int a4, int a5) {
             (int)v5 / 100 / 60,
             (int)v5 / 100 % 60,
             (_DWORD)v5 + 20 * (4 * ((int)v5 / -100) - (int)v5 / 100));
-    text_sub_10019300((int)Buffer, a4, a5 + 15);
-    return text_sub_10019300(a1, a4, a5);
+    text_10019300(Buffer, a4, a5 + 15);
+    return text_10019300((char *)a1, a4, a5);
 }

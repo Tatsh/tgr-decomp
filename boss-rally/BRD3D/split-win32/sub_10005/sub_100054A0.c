@@ -103,7 +103,7 @@ int __cdecl sub_100054A0(float *a1, int a2) {
                             v17 = 6;
                         v18 = &v2[40 * v5];
                         v33 = (double)(v41 + v17) / (double)v41;
-                        sub_100079E0((int)a1, v33, (int)&v2[40 * v8 + 22], (int)(v18 + 22));
+                        math_100079E0((int)a1, v33, (int)&v2[40 * v8 + 22], (int)(v18 + 22));
                         v19 = (int)v18[27];
                         v20 = (int)v18[28];
                         v36 = v18[26];
@@ -131,7 +131,7 @@ int __cdecl sub_100054A0(float *a1, int a2) {
         LABEL_31:
             v26 = &v2[40 * v5];
             v34 = (double)(v41 + v13) / (double)v41;
-            sub_100079E0((int)a1, v34, (int)&v2[40 * v8 + 22], (int)(v26 + 22));
+            math_100079E0((int)a1, v34, (int)&v2[40 * v8 + 22], (int)(v26 + 22));
             v27 = (int)v26[27];
             v28 = (int)v26[28];
             v36 = v26[26];

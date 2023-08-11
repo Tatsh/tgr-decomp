@@ -32,7 +32,7 @@ char sub_10070E80() {
   v3 = (unsigned __int8 *)sub_1006AB90();
   v20 = CalculateChecksum(v20, v3, v17);
   Buffer = sub_1006ABA0() + ElementCount + 12;
-  v4 = fopen(aCRallyghostDatFilepath, aWb);
+  v4 = fopen(aCRallyghostDatFilepath, kFileModeWriteBinary);
   v5 = v4;
   if (!v4)
     return 0;

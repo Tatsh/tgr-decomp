@@ -23,17 +23,17 @@ int __thiscall meth_unk00054_DICreateMouseDevice(unk00054 *this, HWND hWnd) {
             result = 1;
         } else {
             v9 = GetStringWithIndex(0xAEu);
-            showMessageBox_0(hWnd, hr_1, v9);
+            ShowMessageBoxAA(hWnd, hr_1, v9);
             result = 0;
         }
     } else {
         v7 = GetStringWithIndex(0xADu);
-        showMessageBox_0(hWnd, hr_2, v7);
+        ShowMessageBoxAA(hWnd, hr_2, v7);
         result = 0;
     }
   } else {
     v4 = GetStringWithIndex(0xACu);
-    showMessageBox_0(hWnd, hr, v4);
+    ShowMessageBoxAA(hWnd, hr, v4);
     result = 0;
   }
   return result;

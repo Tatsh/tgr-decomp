@@ -2,13 +2,13 @@
 //----- (10035BD1) --------------------------------------------------------
 Car *sub_10035BD1() {
     if (MEMORY[0x106C56D0] != dword_10B4E708 || dword_106C29A4 != dword_10B4E70C)
-        WriteConfigFile(&gConfig, gBossRallyCfgPath);
+        meth_BossRallyConfig_WriteConfigFile(&gConfig, gBossRallyCfgPath);
     sub_100734F0();
     sub_10079550();
     if (gNetworkPlay) {
         if (gNetworkPlay > 1)
             sub_100713B0();
-        sub_10005960();
+        atomic_sub_10005960();
     }
     sub_1002F690();
     CloseHandle(MEMORY[0x106C6650]);

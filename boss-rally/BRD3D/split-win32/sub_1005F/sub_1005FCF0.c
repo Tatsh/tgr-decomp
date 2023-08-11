@@ -6,7 +6,7 @@ int sub_1005FCF0() {
   int result; // eax
 
   gTransmissionType0 = gTransmissionType;
-  dword_10AA27F0 = gTireType;
+  gTireType0 = gTireType;
   dword_10AA26F0 = dword_10AA28A0;
   gSuspensionType0 = gSuspensionType;
   LOBYTE(dword_10AA26F4[0]) = dword_10AA28B8;
@@ -31,7 +31,7 @@ int sub_1005FCF0() {
 // 10AA26F4: using guessed type int dword_10AA26F4[];
 // 10AA27E0: using guessed type int dword_10AA27E0;
 // 10AA27EC: using guessed type int gTransmissionType0;
-// 10AA27F0: using guessed type int dword_10AA27F0;
+// 10AA27F0: using guessed type int gTireType0;
 // 10AA27F4: using guessed type int gSuspensionType0;
 // 10AA27F8: using guessed type int gConfigJoystickIndex0;
 // 10AA28A0: using guessed type int dword_10AA28A0;

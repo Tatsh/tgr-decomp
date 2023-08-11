@@ -21,7 +21,7 @@ int sub_10005B10() {
     gMutex6 = CreateMutexA(0, 0, 0);
     gMutex7 = CreateMutexA(0, 0, 0);
     gMutex8 = CreateMutexA(0, 0, 0);
-    sub_10005960();
+    atomic_sub_10005960();
     return 1;
 }
 // 10220DD8: using guessed type int dword_10220DD8;

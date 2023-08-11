@@ -10,7 +10,7 @@ void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCo
     LOBYTE(v3) = CHK_FileExists(filename);
     if (!v3) {
         sprintf(Buffer, "File %s missing", filename);
-        sub_10008CF0((int)Buffer);
+        s_noreturn_10008CF0((int)Buffer);
     }
     cFile = CHK_FReadOpen(filename);
     filesize = elementCount;

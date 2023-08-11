@@ -14,7 +14,7 @@ int __cdecl sub_10017F30(int a1) {
     if (dword_100BD3F0) {
         v2 = gWidth - 16;
         v3 = dword_100AA8B4 != 1 ? 0 : 30;
-        v4 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4) + 20;
+        v4 = *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 4) + 20;
         sub_10019260();
         Set_byte_104B035C_To1();
         sub_100192F0(15);
@@ -25,7 +25,7 @@ int __cdecl sub_10017F30(int a1) {
             v7 = v3 + v4 + 37;
             do {
                 v8 = result + 1;
-                sub_10017FE0((int)aWw, result + 1, *(float *)(v5 + v6), v2, v7);
+                text_10017FE0((int)aWw, result + 1, *(float *)(v5 + v6), v2, v7);
                 v5 = dword_106C2CF8;
                 result = v8;
                 v6 += 4;
@@ -35,8 +35,7 @@ int __cdecl sub_10017F30(int a1) {
     }
     return result;
 }
-// 100A81C0: using guessed type int g_Width;
+// 100A81C0: using guessed type int gWidth;
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 100BD3F0: using guessed type int dword_100BD3F0;
 // 106C2CF8: using guessed type int dword_106C2CF8;
-// 106C5708: using guessed type int dword_106C5708;

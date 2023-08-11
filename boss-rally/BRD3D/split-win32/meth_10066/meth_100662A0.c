@@ -67,7 +67,7 @@ int __thiscall meth_100662A0(_DWORD *this) {
   }
   result = dword_100B4050;
   if (this[25] >= dword_100B4050)
-    return MakeEnemyCarColorPanels_0((size_t)this);
+    return MakeEnemyCarColorPanels0((size_t)this);
   this[30] = 0;
   this[31] = 0;
   return result;

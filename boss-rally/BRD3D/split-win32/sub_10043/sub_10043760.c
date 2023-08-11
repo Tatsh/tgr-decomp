@@ -7,7 +7,7 @@ int __cdecl sub_10043760(int a1) {
     if (!gGameMode)
         dword_100BD3E0 = 3;
     sub_1003E310();
-    WriteConfigFile((#483 *)&gConfig, gBossRallyCfgPath);
+    meth_BossRallyConfig_WriteConfigFile((#483 *)&gConfig, gBossRallyCfgPath);
     sub_10041B50();
     return 0;
 }

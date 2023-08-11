@@ -9,13 +9,13 @@ int __cdecl sub_1000CA90(int a1) {
     result = *(_DWORD *)(a1 + 3848);
     if (result) {
         v2 = (float *)(a1 + 48);
-        sub_1003B0E0((float *)(a1 + 48), (float *)MEMORY[0x106C6490] + 12);
+        sub_1003B0E0((float *)(a1 + 48), (float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 48));
         dword_10277E60[*(_DWORD *)(a1 + 320)] = 0;
         dword_10277B68[*(_DWORD *)(a1 + 320)] = 0;
         *(float *)(a1 + 10032) = sub_10031D3F((float *)(a1 + 48));
         if (a1 == dword_106C2CF8)
             goto LABEL_10;
-        if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
+        if (*(_DWORD *)&gUnk06594.gap1C8[12500] || *(_DWORD *)&gUnk06594.gap1C8[12508]) {
             sub_1003AFE0((int)v4, a1 + 48, a1, 6.0);
             if (!sub_1003A950(v4[0], v4[1])) {
                 result = sub_1003A950(*v2, *(float *)(a1 + 52));
@@ -30,7 +30,7 @@ int __cdecl sub_1000CA90(int a1) {
         if (a1 == dword_106C2CF8) {
         LABEL_10:
             v3 = *(_DWORD *)(a1 + 10036);
-            if ((v3 == a1 + 10044 || v3 == a1 + 10384) && !MEMORY[0x106C6614]) {
+            if ((v3 == a1 + 10044 || v3 == a1 + 10384) && !*(_DWORD *)&gUnk06594.gap1C8[12492]) {
                 result = *(_DWORD *)(a1 + 320);
                 dword_10277B68[result] = 1;
                 return result;
@@ -44,6 +44,3 @@ int __cdecl sub_1000CA90(int a1) {
     return result;
 }
 // 106C2CF8: using guessed type int dword_106C2CF8;
-// 106C6614: using guessed type int dword_106C6614;
-// 106C661C: using guessed type int dword_106C661C;
-// 106C6624: using guessed type int dword_106C6624;

@@ -5,10 +5,10 @@ char *sub_10069800() {
   _DWORD *v1;   // esi
   char *result; // eax
 
-  v0 = (char *)&MEMORY[0x106C6678];
+  v0 = &gUnk06594.gap1C8[12592];
   v1 = dword_10ACDEA8;
   do {
-    meth_100634F0((int)v1);
+    meth_100634F0(v1);
     result = meth_10035FE0(v0);
     v1 += 2778;
     v0 += 348;

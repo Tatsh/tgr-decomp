@@ -298,5 +298,4 @@ void __thiscall meth_unk000C8_6(unk000C8 *this, int a1) {
 // 10AA29E4: using guessed type int dword_10AA29E4;
 // 10AA29E8: using guessed type int dword_10AA29E8;
 // 10AA29EC: using guessed type int dword_10AA29EC;
-// 10AA29F0: using guessed type int dword_10AA29F0;
 // 10AA29F4: using guessed type int dword_10AA29F4;

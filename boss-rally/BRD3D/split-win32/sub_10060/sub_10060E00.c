@@ -5,7 +5,7 @@ int __cdecl sub_10060E00(int a1) {
   char v2[4]; // [esp+0h] [ebp-8h] BYREF
   char v3[4]; // [esp+4h] [ebp-4h] BYREF
 
-  result = sub_100773F0(v2, v3);
+  result = sub_100773F0((int *)v2, (int *)v3);
   *(_BYTE *)(a1 + 2) = v2[0];
   *(_BYTE *)(a1 + 3) = v3[0];
   *(_WORD *)a1 = 0;
@@ -33,4 +33,3 @@ int __cdecl sub_10060E00(int a1) {
     *(_BYTE *)a1 |= 0x20u;
   return result;
 }
-// 100773F0: using guessed type _DWORD __cdecl sub_100773F0(_DWORD, _DWORD);

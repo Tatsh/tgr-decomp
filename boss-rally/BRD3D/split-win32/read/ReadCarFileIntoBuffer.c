@@ -8,12 +8,12 @@ int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex) {
 
     gCarIndex = carIndex;
     if (outBuffer == (char *)&unk_100C12A0) {
-        sub_10061010(carIndex, 1);
+        LoadCarPaint(carIndex, 1);
     } else {
         v3 = dword_100B8C90;
         if (!dword_100B8C90)
             dword_100B8C90 = 1;
-        sub_10061010(carIndex, 0);
+        LoadCarPaint(carIndex, 0);
     }
     dword_10AA3460 = 0;
     strcpy(carFilepath, kCarsSlash);
@@ -22,7 +22,7 @@ int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex) {
     ReadFilenameToBuffer(outBuffer, carFilepath, -1);
     if (strncmp(outBuffer, kRCar, 4u)) {
         sprintf(buffer, "not a car file: %s", buffer);
-        sub_10008CF0(buffer);
+        s_noreturn_10008CF0(buffer);
     }
     result = sub_100370D0(outBuffer);
     if (outBuffer != (char *)&unk_100C12A0)

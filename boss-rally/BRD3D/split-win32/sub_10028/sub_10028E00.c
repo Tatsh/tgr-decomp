@@ -14,8 +14,8 @@ BOOL __cdecl sub_10028E00(LONG a1, char *a2) {
                      &a1,
                      *((_DWORD *)dword_1057543C + 174 * a1 + 8),
                      *((_DWORD *)dword_1057543C + 174 * a1 + 9));
-        result =
-            meth_10009ED0(*((void **)Block + *(_DWORD *)((char *)dword_1057543C + v4)), a2, v5, a1);
+        result = meth_graphics_10009ED0(
+            *((void **)Block + *(_DWORD *)((char *)dword_1057543C + v4)), a2, v5, a1);
     }
     return result;
 }

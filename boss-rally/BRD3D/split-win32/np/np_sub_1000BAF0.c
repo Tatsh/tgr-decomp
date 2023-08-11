@@ -124,7 +124,7 @@ void __cdecl np_sub_1000BAF0(SIZE_T *a1, int a2, int a3, int a4) {
         }
     }
 }
-// 100AAC48: using guessed type char *gPositionStringOffsets[20];
+// 100AAC48: using guessed type char *gPositionStrings[20];
 // 10AA2538: using guessed type int dword_10AA2538[];
 // 10AA253C: using guessed type int dword_10AA253C[];
 // 10AA2598: using guessed type int dword_10AA2598;

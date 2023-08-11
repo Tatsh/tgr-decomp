@@ -5,11 +5,11 @@ FILE *__stdcall fopenWriteBinary(char *FileName) {
     int *v2;      // eax
     char *v3;     // eax
 
-    result = fopen(FileName, aWb);
+    result = fopen(FileName, kFileModeWriteBinary);
     if (!result) {
         v2 = _errno();
         v3 = strerror(*v2);
-        writeToRandomBufferAndExit("Error opening %s: %s", FileName, v3);
+        s_noreturn_writeToBufferExit("Error opening %s: %s", FileName, v3);
     }
     return result;
 }

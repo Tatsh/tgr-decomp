@@ -18,7 +18,7 @@ int __stdcall sub_10043BF0() {
         gUnkC8Ptr28 = (int)result;
         gUnkC8Ptr1 = result;
         if (result) {
-            result->lpFn0 = sub_100563E0;
+            result->lpFn0 = s_unk000C8_100563E0;
             (*(void(__cdecl **)(int))(gUnkC8Ptr28 + 4))(gUnkC8Ptr28);
             gUnkC8Ptr1->field_C = 1;
             result = (unk000C8 *)1;

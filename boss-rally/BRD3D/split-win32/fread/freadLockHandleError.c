@@ -5,6 +5,6 @@ size_t __stdcall freadLockHandleError(FILE *fp, void *buffer, size_t elementCoun
 
     result = freadLock(buffer, 1u, elementCount, fp);
     if (result != elementCount)
-        writeToRandomBufferAndExit(aFileReadFailur);
+        s_noreturn_writeToBufferExit(aFileReadFailur);
     return result;
 }

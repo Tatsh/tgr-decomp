@@ -43,7 +43,7 @@ HRESULT __thiscall meth_unk0008C_1000AB70(unk0008C *this) {
     result = iSurface->GetAttachedSurface(lpSurface, &ddsCaps, &this->lpDirectDrawSurface1);
     if (result < 0)
         return result;
-    v5 = meth_unk00228_Field24IsNotNull(this->u334);
+    v5 = meth_unk00228_DeviceDescHasDCMColorModel((unk00228 *)this->u334);
     v6 = this->u334;
     if (v5) {
         v7 = &v6->field_1C;
@@ -93,7 +93,7 @@ HRESULT __thiscall meth_unk0008C_1000AB70(unk0008C *this) {
                                                      &this->lpDirect3DDevice);
     if (result >= 0) {
         g_D3DDevice2 = (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl;
-        setup_g_DevCaps(g_D3DDevice2);
+        SetupGDevCaps(g_D3DDevice2);
         meth_unk00334_1001AF20(this->u334, (IDirect3DDevice2 *)lpD3DDevice2->lpVtbl);
         this->field_1C |= 8u;
         result = meth_unk0008C_1000ADF0(this);
@@ -101,7 +101,7 @@ HRESULT __thiscall meth_unk0008C_1000AB70(unk0008C *this) {
             v17 = this->last;
             if (v17)
                 meth_unk000334_10001160(v17);
-            enumTextureFormatsSomething(g_D3DDevice2);
+            graphics_EnumTextureFormatsSomething(g_D3DDevice2);
             result = 0;
         }
     }

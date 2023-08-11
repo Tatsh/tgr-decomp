@@ -32,8 +32,8 @@ _DWORD *__cdecl sub_10013A40(int a1) {
     int v29;             // [esp+24h] [ebp-4h]
     _WORD *v30;          // [esp+2Ch] [ebp+4h]
 
-    if (!MEMORY[0x106C6620] || (result = (_DWORD *)gChosenTrack, gChosenTrack == 2) ||
-        gChosenTrack == 8) {
+    if (!*(_DWORD *)&gUnk06594.gap1C8[12504] ||
+        (result = (_DWORD *)gChosenTrack, gChosenTrack == 2) || gChosenTrack == 8) {
         v2 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v2 = -419430400;
@@ -136,8 +136,7 @@ _DWORD *__cdecl sub_10013A40(int a1) {
     return result;
 }
 // 100B36F8: using guessed type int dword_100B36F8;
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;
 // 106C0680: using guessed type int dword_106C0680;
 // 106C32D0: using guessed type int dword_106C32D0;
-// 106C6620: using guessed type int dword_106C6620;
 // 11829108: using guessed type int dword_11829108;

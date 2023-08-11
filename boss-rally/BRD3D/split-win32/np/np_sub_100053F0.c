@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (100053F0) --------------------------------------------------------
 int np_sub_100053F0() {
-    int v0;     // esi
+    HANDLE v0;  // esi
     int result; // eax
     int v2;     // esi
 
@@ -26,6 +26,5 @@ int np_sub_100053F0() {
     return result;
 }
 // 10094294: using guessed type int dword_10094294;
-// 1022AAA8: using guessed type int dword_1022AAA8;
-// 1022B34C: using guessed type int g_chosenCar;
+// 1022B34C: using guessed type int gChosenCar;
 // 10277B48: using guessed type int dword_10277B48;

@@ -17,7 +17,7 @@ HRESULT __thiscall meth_unk0008C_1000A8D0(unk0008C *this) {
     HRESULT palette;                       // esi
     DDSURFACEDESC surfaceDesc;             // [esp+10h] [ebp-6Ch] BYREF
 
-    resetPalette(this);
+    meth_unk0008C_ResetPalette(this);
     if (!this->lpDirectDraw2)
         return -2005522669;
     ddSurface = this->lpDirectDrawSurface0;
@@ -42,7 +42,7 @@ HRESULT __thiscall meth_unk0008C_1000A8D0(unk0008C *this) {
                     (tPaletteEntry2 = (IDirect3DMaterial2 *)malloc(4 * this->field_4C),
                      (this->lpDirect3DMaterial2 = tPaletteEntry2) == 0)) {
                     ReleaseDC(0, dc);
-                    resetPalette(this);
+                    meth_unk0008C_ResetPalette(this);
                     return -2005522668;
                 }
                 GetSystemPaletteEntries(dc, 0, this->field_4C, (LPPALETTEENTRY)this->field_50);
@@ -70,7 +70,7 @@ HRESULT __thiscall meth_unk0008C_1000A8D0(unk0008C *this) {
                 if ((surfaceDesc.ddpfPixelFormat.dwFlags & DDPF_PALETTEINDEXED8) == 0) {
                     palette = -2005522671;
                 LABEL_34:
-                    resetPalette(this);
+                    meth_unk0008C_ResetPalette(this);
                     return palette;
                 }
                 for (k = 0; k < 10;

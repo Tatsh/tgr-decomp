@@ -160,7 +160,7 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
             if ((dword_11786854[v15] & 0x3Fu) < 2 || a4 != (void *)dword_1178682C[v15])
                 goto LABEL_70;
             if (v56 <= dword_11786834[dword_11786D80[v15] + v15]) {
-                sub_10006EC0((int)v69, v67);
+                math_10006EC0((int)v69, v67);
                 ReleaseMutex(*(HANDLE *)((char *)&dword_11786828 + v15 * 4));
             } else {
                 v16 = 0;
@@ -178,7 +178,7 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
                 dword_11786D80[v15] = v16;
                 dword_11786834[v16 + v15] = v56;
                 dword_11786860[dword_11786D80[v15] + v15] = 64;
-                sub_10006EC0((int)&unk_11786880 + 160 * dword_11786D80[v15] + v15 * 4, v67);
+                math_10006EC0((int)&unk_11786880 + 160 * dword_11786D80[v15] + v15 * 4, v67);
                 if (dword_11787190[v15] ||
                     flt_117868F8[40 * dword_11786D80[v15] + v15] < 4188888.0) {
                 LABEL_70:
@@ -244,7 +244,7 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
             v4(*(HANDLE *)((char *)&dword_11786828 + v15 * 4), 0xFFFFFFFF);
             if ((dword_11786854[v15] & 0x3Fu) >= 2 && a4 == (void *)dword_1178682C[v15]) {
                 if (v56 <= dword_11786834[dword_11786D80[v15] + v15]) {
-                    sub_100073E0(v68, v68, v67);
+                    math_100073E0(v68, v68, v67);
                 } else {
                     v20 = 0;
                     v58 = 0;
@@ -291,11 +291,11 @@ void __cdecl sub_100360F0(int a1, int a2, int a3, void *a4) {
                     dword_11786D80[v15] = v58;
                     dword_11786834[v58 + v15] = v56;
                     dword_11786860[dword_11786D80[v15] + v15] = 128;
-                    sub_100079E0((int)&unk_11786880 + 160 * dword_11786D80[v15] + v15 * 4,
-                                 v64,
-                                 (int)&unk_11786880 + 160 * v28 + v15 * 4,
-                                 (int)&unk_11786880 + 160 * v23 + v15 * 4);
-                    sub_100073E0(
+                    math_100079E0((int)&unk_11786880 + 160 * dword_11786D80[v15] + v15 * 4,
+                                  v64,
+                                  (int)&unk_11786880 + 160 * v28 + v15 * 4,
+                                  (int)&unk_11786880 + 160 * v23 + v15 * 4);
+                    math_100073E0(
                         (float *)((char *)&unk_11786880 + 160 * dword_11786D80[v15] + v15 * 4),
                         (float *)((char *)&unk_11786880 + 160 * v23 + v15 * 4),
                         v67);

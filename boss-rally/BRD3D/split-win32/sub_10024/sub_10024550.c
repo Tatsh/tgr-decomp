@@ -61,7 +61,7 @@ int __cdecl sub_10024550(int a1) {
         sub_10024A90(a1);
         dword_106C0680 = (int)v12;
         sub_100192F0(20);
-        text_sub_10019300((int)&unk_118AB478, 0, 60);
+        text_10019300((int)&unk_118AB478, 0, 60);
         v3 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v3 = -1207959552;

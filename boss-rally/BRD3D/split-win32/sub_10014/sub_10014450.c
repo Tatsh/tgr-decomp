@@ -94,7 +94,7 @@ _DWORD *__cdecl sub_10014450(int a1, int a2) {
     dword_106C0680 += 8;
     *v17 = -1174403582;
     v17[1] = 192;
-    if (MEMORY[0x106C6620]) {
+    if (*(_DWORD *)&gUnk06594.gap1C8[12504]) {
         v18 = (_DWORD *)dword_106C0680;
         dword_106C0680 += 8;
         *v18 = -1174404094;
@@ -136,5 +136,4 @@ _DWORD *__cdecl sub_10014450(int a1, int a2) {
 // 106C0680: using guessed type int dword_106C0680;
 // 106C0688: using guessed type int dword_106C0688;
 // 106C0920: using guessed type int dword_106C0920;
-// 106C6620: using guessed type int dword_106C6620;
 // 1182931C: using guessed type int dword_1182931C;

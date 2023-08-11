@@ -64,14 +64,14 @@ int __cdecl sub_1000C6E0(int a1) {
             sub_100310F0((int)&flt_106C08A0, 0.0039215689, 998277249, 998277249);
             sub_100306C0(&flt_106C08A0, v2, flt_10277D88);
             v8 = sub_10069490();
-            sub_100307A0((int)flt_10277D88, v8);
+            sub_100307A0(flt_10277D88, v8);
             v9 = (_DWORD *)dword_106C0680;
             dword_106C0680 += 8;
             *v9 = 17170496;
             v9[1] = v8;
             sub_100306C0(flt_10277D88, &flt_106C29A8, &flt_106C0860);
             v10 = sub_10069490();
-            sub_100307A0((int)&flt_106C0860, v10);
+            sub_100307A0(&flt_106C0860, v10);
             v11 = (_DWORD *)dword_106C0680;
             dword_106C0680 += 8;
             *v11 = 60686352;
@@ -112,7 +112,7 @@ int __cdecl sub_1000C6E0(int a1) {
             dword_106C0680 += 8;
             *v20 = -184549120;
             v20[1] = 83886080;
-            if (MEMORY[0x106C6620]) {
+            if (*(_DWORD *)&gUnk06594.gap1C8[12504]) {
                 if (*(_DWORD *)(dword_106C3308 + 32964)) {
                     v21 = (_DWORD *)dword_106C0680;
                     dword_106C0680 += 8;
@@ -147,4 +147,3 @@ int __cdecl sub_1000C6E0(int a1) {
 // 106C08A0: using guessed type float flt_106C08A0;
 // 106C29A8: using guessed type float flt_106C29A8;
 // 106C3308: using guessed type int dword_106C3308;
-// 106C6620: using guessed type int dword_106C6620;

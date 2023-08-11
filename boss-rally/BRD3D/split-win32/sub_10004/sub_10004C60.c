@@ -27,7 +27,7 @@ int __cdecl sub_10004C60(void *a1) {
     v7 = 0;
     sub_100048D0(&a1a);
     meth_unk00214_10073D60(&a1a, dword_10094294 | 0x40);
-    sub_100061A0(&a1a, (float *)a1);
+    math_100061A0(&a1a, (float *)a1);
     v3 = sub_10004DD0(&unk, &a1a);
     v7 = -1;
     if (v3 == -1) {

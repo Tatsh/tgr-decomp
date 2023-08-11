@@ -14,7 +14,7 @@ int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
     size_t v13;      // kr08_4
     size_t v14;      // esi
     char *v15;       // eax
-    int v16;         // edx
+    unk00228 *v16;   // edx
 
     if (!guid)
         return -2147024809;
@@ -45,7 +45,7 @@ int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
         qmemcpy(&this->deviceDesc0, deviceDesc0, 0xFCu);
     if (deviceDesc1)
         qmemcpy(&this->deviceDesc1, deviceDesc1, 0xFCu);
-    v16 = this->field_0 & 0xFFFFFFFD | 1;
+    v16 = (unk00228 *)((int)this->field_0 & 0xFFFFFFFD | 1);
     this->field_214 = 0;
     this->field_0 = v16;
     return 0;

@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10004E50) --------------------------------------------------------
-int __cdecl sub_10004E50(void *a1, float *a2) {
+int __cdecl sub_10004E50(float *a1, float *a3) {
     HANDLE *v2;        // ebx
     int v3;            // eax
     int v4;            // eax
@@ -27,7 +27,7 @@ int __cdecl sub_10004E50(void *a1, float *a2) {
     v8 = 0;
     sub_100048D0(&u214);
     meth_unk00214_10073D60(&u214, dword_10094294 | 0x80);
-    sub_10006830(&u214, (float *)a1, a2);
+    s_unk00214_10006830(&u214, a1, a3);
     v4 = sub_10004DD0(&unk, &u214);
     v8 = -1;
     if (v4 == -1) {

@@ -26,9 +26,9 @@ int __thiscall meth_10063FF0(_DWORD *this, int a2, int a3, int a4) {
   if (a4) {
     v6 = a3;
   } else {
-    a4 = MEMORY[0x106C7CB8];
+    a4 = gUnk06594.field_4938;
     v6 = 0;
-    v4 = MEMORY[0x106C7CB8];
+    v4 = gUnk06594.field_4938;
     a3 = 0;
   }
   v7 = a2;
@@ -118,8 +118,8 @@ int __thiscall meth_10063FF0(_DWORD *this, int a2, int a3, int a4) {
     return meth_10063FF0(this, v7 + 1, v16, v4) | v5;
   v17 = *(_DWORD *)v4;
   if (!v17) {
-    v17 = MEMORY[0x106C7CB8];
-    if (!MEMORY[0x106C7CB8])
+    v17 = gUnk06594.field_4938;
+    if (!gUnk06594.field_4938)
         return v5;
   }
   do {

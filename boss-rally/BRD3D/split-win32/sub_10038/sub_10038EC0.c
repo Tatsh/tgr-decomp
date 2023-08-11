@@ -7,10 +7,10 @@ int sub_10038EC0() {
     SIZE_T pMetric;             // [esp+10h] [ebp-18h] BYREF
     DSBUFFERDESC1 dsBufferDesc; // [esp+14h] [ebp-14h] BYREF
 
-    setPodFilename(&gPod, kBossRallyPod);
+    meth_Pod_SetPodFilename(&gPod, kBossRallyPod);
     meth_Pod_ReadPodFile(&gPod);
     sub_1006AA20(1);
-    sub_10061400();
+    j_LoadDamageBitmaps();
     sub_10078CD0();
     sub_100770F0();
     if (gPlayMusic) {

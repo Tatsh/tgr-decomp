@@ -43,7 +43,7 @@ _DWORD *sub_10014930() {
         sprintf(buffer, "%6.2f FPS", flt_100A6CF4);
         sub_100192F0(15);
         Set_byte_104B035C_To2();
-        result = text_sub_10019300(buffer, gWidth / 2, gHeight - 10);
+        result = text_10019300(buffer, gWidth / 2, gHeight - 10);
     }
     return result;
 }

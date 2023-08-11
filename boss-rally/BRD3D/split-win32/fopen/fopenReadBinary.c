@@ -9,7 +9,7 @@ FILE *__stdcall fopenReadBinary(char *FileName) {
     if (!result) {
         v2 = _errno();
         v3 = strerror(*v2);
-        writeToRandomBufferAndExit("Error opening %s: %s", FileName, v3);
+        s_noreturn_writeToBufferExit("Error opening %s: %s", FileName, v3);
     }
     return result;
 }

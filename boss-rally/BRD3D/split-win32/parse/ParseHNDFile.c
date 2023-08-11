@@ -8,9 +8,9 @@ int __cdecl ParseHNDFile(char *hndFilepath) {
     dword_11829848 = 3145728;
     if (CHK_FileExists(hndFilepath)) {
         v1 = CHK_FReadOpen(hndFilepath);
-        if (readLineFromFile(Buffer, 1024, &v1->pfil)) {
+        if (CHK_ReadLine(Buffer, 1024, &v1->pfil)) {
             sscanf(Buffer, "%u", &dword_11829848);
-            if (readLineFromFile(Buffer, 1024, &v1->pfil)) {
+            if (CHK_ReadLine(Buffer, 1024, &v1->pfil)) {
                 do {
                     sscanf(Buffer,
                            "%u %x %d %d",
@@ -19,7 +19,7 @@ int __cdecl ParseHNDFile(char *hndFilepath) {
                            &MEMORY[0x106C7E80][4 * dword_10A99778],
                            &MEMORY[0x106C7E84][4 * dword_10A99778]);
                     ++dword_10A99778;
-                } while (dword_10A99778 < 256 && readLineFromFile(Buffer, 1024, &v1->pfil));
+                } while (dword_10A99778 < 256 && CHK_ReadLine(Buffer, 1024, &v1->pfil));
             }
         }
         CHK_FClose(v1);

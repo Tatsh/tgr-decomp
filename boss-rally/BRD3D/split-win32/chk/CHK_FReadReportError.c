@@ -6,7 +6,7 @@ void *__cdecl CHK_FReadReportError(void *buffer,
                                    CHK_File *fp) {
     CHAR debugMessage[1024]; // [esp+Ch] [ebp-400h] BYREF
 
-    if (!FCHK_FRead_0(buffer, elementSize, elementCount, fp)) {
+    if (!CHK_FRead0(buffer, elementSize, elementCount, fp)) {
         sprintf(debugMessage,
                 "CHK_FRead(): trying to read %u bytes, but got EOF.\n",
                 elementSize * elementCount);

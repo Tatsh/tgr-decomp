@@ -29,7 +29,7 @@ int sub_1005F940() {
   v3 = dword_10220B44;
   dword_10AA28A4 = v0;
   *((_WORD *)&dword_10A9D068 + v0) = v2;
-  dword_10AA28C8 = v3;
+  *(_DWORD *)&dword_10AA28C8 = v3;
   sprintf(byte_10AA2518, "%d", v1);
   sprintf(byte_10A9D618, "%d", dword_10AA28A4 + 1);
   qmemcpy(flt_10AA25A0, &unk_10220B48, sizeof(flt_10AA25A0));
@@ -43,11 +43,11 @@ int sub_1005F940() {
   } while (v6);
   dword_10AA28C4 = v5;
   v8 = dword_10AA26F4[0];
-  if (BYTE1(dword_10AA26F4[0]) || gGameMode == 5 || gGameMode1)
+  if (BYTE1(dword_10AA26F4[0]) || gGameMode == GAME_MODE_5 || gGameMode1)
     return 1;
   if (LOBYTE(dword_10AA26F4[0]) > (unsigned __int8)byte_10A9DBDC ||
       !LOBYTE(dword_10AA26F4[0]) && byte_10A9DBDC) {
-    gGameMode = 5;
+    gGameMode = GAME_MODE_5;
     if (LOBYTE(dword_10AA26F4[0]) || !byte_10A9DBDC) {
         sub_1005FBC0(1);
     } else {
@@ -57,11 +57,11 @@ int sub_1005F940() {
     }
     if (dword_10220B24 < 4 && dword_10220B2C < 1)
         dword_10AA28B0 = 1;
-    *((_DWORD *)gUnkC8Ptr1 + 26) = 0;
-    (*(void(__thiscall **)(void *, _DWORD))(*(_DWORD *)gUnkC8Ptr1 + 24))(gUnkC8Ptr1, 0);
+    gUnkC8Ptr1->field_68 = 0;
+    gUnkC8Ptr1->lpVtbl->meth6(gUnkC8Ptr1, 0);
     result = 0;
   } else {
-    gGameMode = 0;
+    gGameMode = GAME_MODE_0;
     dword_10AA28B4 = 1;
     v9 = 0;
     while (1) {
@@ -86,19 +86,18 @@ int sub_1005F940() {
   }
   return result;
 }
-// 100AA010: using guessed type int g_GameMode;
-// 100B380C: using guessed type int g_chosenTrack;
-// 10220B20: using guessed type int dword_10220B20;
+// 100B380C: using guessed type int gChosenTrack;
+// 10220B20: using guessed type int gGameMode1;
 // 10220B24: using guessed type int dword_10220B24;
 // 10220B28: using guessed type int dword_10220B28;
 // 10220B2C: using guessed type int dword_10220B2C;
-// 10220B30: using guessed type int dword_10220B30;
-// 10220B34: using guessed type int dword_10220B34;
+// 10220B30: using guessed type int gChosenTrack1;
+// 10220B34: using guessed type int gChosenWeather2;
 // 10220B38: using guessed type int dword_10220B38;
 // 10220B3C: using guessed type char byte_10220B3C;
 // 10220B40: using guessed type __int16 word_10220B40;
 // 10220B44: using guessed type int dword_10220B44;
-// 1022B350: using guessed type int g_ChosenWeather;
+// 1022B350: using guessed type int gChosenWeather0;
 // 10A9D068: using guessed type int dword_10A9D068;
 // 10A9DBDC: using guessed type char byte_10A9DBDC;
 // 10AA26E8: using guessed type int dword_10AA26E8;
@@ -110,5 +109,4 @@ int sub_1005F940() {
 // 10AA28B4: using guessed type int dword_10AA28B4;
 // 10AA28B8: using guessed type int dword_10AA28B8;
 // 10AA28C0: using guessed type int dword_10AA28C0;
-// 10AA28C8: using guessed type int dword_10AA28C8;
 // 10AD189C: using guessed type int dword_10AD189C;

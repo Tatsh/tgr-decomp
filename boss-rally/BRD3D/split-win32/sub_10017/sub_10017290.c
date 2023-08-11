@@ -20,16 +20,16 @@ _DWORD *__cdecl sub_10017290(int a1) {
     if (dword_100BD3EC) {
         v2 = gWidth - 16;
         v3 = dword_100AA8B4 != 1 ? 0 : 30;
-        v4 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4) + 20;
+        v4 = *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 4) + 20;
         sub_10019260();
         Set_byte_104B035C_To1();
         sub_100192F0(15);
         result = (_DWORD *)gGameMode;
         switch (gGameMode) {
-        case 0:
-        case 1:
-        case 2:
-        case 6:
+        case GAME_MODE_0:
+        case GAME_MODE_1:
+        case GAME_MODE_2:
+        case GAME_MODE_6:
             if (dword_100AA8B4 == 1) {
                 v9 = *(float *)(dword_106C2CF8 + 4076);
                 v5 = GetStringWithIndex(0xE7u);
@@ -45,7 +45,7 @@ _DWORD *__cdecl sub_10017290(int a1) {
             v6 = GetStringWithIndex(0xE8u);
             result = sub_100171F0((int)v6, (int)aWw, v10, v2, v4 + v3);
             break;
-        case 3:
+        case GAME_MODE_3:
             if (dword_100AA8B4 == 1) {
                 v12 = *(float *)(dword_106C2CF8 + 4068);
                 v7 = GetStringWithIndex(0xE8u);
@@ -64,9 +64,7 @@ _DWORD *__cdecl sub_10017290(int a1) {
     }
     return result;
 }
-// 100A81C0: using guessed type int g_Width;
-// 100AA010: using guessed type int g_GameMode;
+// 100A81C0: using guessed type int gWidth;
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 100BD3EC: using guessed type int dword_100BD3EC;
 // 106C2CF8: using guessed type int dword_106C2CF8;
-// 106C5708: using guessed type int dword_106C5708;

@@ -12,7 +12,7 @@ int __cdecl pm_sub_10002660(HWND a1) {
 
     if (gPlayMusic) {
         if (++dword_10220CD0 == 1) {
-            hWnd = a1;
+            gHwnd0 = a1;
             v1 = getTicks();
             srand(v1);
             dword_10220CD4 = 2;

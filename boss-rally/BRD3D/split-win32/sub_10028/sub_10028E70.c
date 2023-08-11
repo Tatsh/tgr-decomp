@@ -46,7 +46,7 @@ unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
             if (v2[15])
                 dword_105553F8 = (int)sub_10009660(v3, v3, v2[16], v2[4], v2 + 15);
             else
-                dword_105553F8 = (int)sub_100098A0(v3, v3, v2[16], v2[4]);
+                dword_105553F8 = (int)graphics_100098A0(v3, v3, v2[16], v2[4]);
             result = v3;
             *a2 = dword_105553F8;
         } else {

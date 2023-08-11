@@ -75,7 +75,7 @@ int __cdecl sub_10043810(LPCVOID pMem) {
         }
         if (dword_10AA288C) {
             sub_1003E310();
-            WriteConfigFile((#483 *)gConfig, gBossRallyCfgPath);
+            meth_BossRallyConfig_WriteConfigFile((#483 *)gConfig, gBossRallyCfgPath);
             v1[2746][26] = 0;
             (*(void(__thiscall **)(_DWORD *, _DWORD))(*v1[2746] + 24))(v1[2746], 0);
             dword_10AA285C = 0;

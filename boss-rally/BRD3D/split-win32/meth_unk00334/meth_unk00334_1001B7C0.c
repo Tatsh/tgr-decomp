@@ -24,7 +24,7 @@ int __thiscall meth_unk00334_1001B7C0(
                 if (meth_unk00334_1001ACF0(a3, v6))
                     return (int)v6;
             } else {
-                if (meth_unk00228_Field24IsNotNull(v6)) {
+                if (meth_unk00228_DeviceDescHasDCMColorModel(v6)) {
                     if (!a4 || !meth_unk00334_1001ACF0(a3, v6))
                         goto LABEL_20;
                 } else if (!meth_unk00334_1001ACF0(a3, v6) || !a4) {

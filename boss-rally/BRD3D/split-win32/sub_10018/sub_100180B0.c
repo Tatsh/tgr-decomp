@@ -48,32 +48,34 @@ _DWORD *__cdecl sub_100180B0(int a1) {
     dword_106C0680 += 8;
     *result = -1140843516;
     result[1] = 0xFFFF;
-    if (!MEMORY[0x106C6608]) {
+    if (!*(_DWORD *)&gUnk06594.gap1C8[12480]) {
         if (sub_10018070()) {
             if (dword_100A79CC > 0 && (dword_100A79CC & 1) != 0)
-                result = sub_10031688(*(_DWORD *)(a1 + 88 * MEMORY[0x106C5708]),
-                                      *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4),
-                                      *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 8),
-                                      *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 12),
-                                      (3 * ((unsigned __int8)byte_106C0260 + 80)) >> 2,
-                                      (3 * (unsigned __int8)byte_106C1614 + 248) >> 2,
-                                      (3 * ((unsigned __int8)byte_106C0200 + 85)) >> 2);
+                result =
+                    sub_10031688(*(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]),
+                                 *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 4),
+                                 *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 8),
+                                 *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 12),
+                                 (3 * ((unsigned __int8)byte_106C0260 + 80)) >> 2,
+                                 (3 * (unsigned __int8)byte_106C1614 + 248) >> 2,
+                                 (3 * ((unsigned __int8)byte_106C0200 + 85)) >> 2);
             else
-                result = sub_10031688(*(_DWORD *)(a1 + 88 * MEMORY[0x106C5708]),
-                                      *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 4),
-                                      *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 8),
-                                      *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 12),
-                                      (unsigned __int8)byte_106C0260,
-                                      (unsigned __int8)byte_106C1614,
-                                      (unsigned __int8)byte_106C0200);
+                result =
+                    sub_10031688(*(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]),
+                                 *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 4),
+                                 *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 8),
+                                 *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 12),
+                                 (unsigned __int8)byte_106C0260,
+                                 (unsigned __int8)byte_106C1614,
+                                 (unsigned __int8)byte_106C0200);
         } else {
-            *(float *)&v30 = *((float *)MEMORY[0x106C6490] + 14) * 0.99000001;
+            *(float *)&v30 = *(float *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 56) * 0.99000001;
             sub_10031140(&flt_106C0860,
-                         *((_DWORD *)MEMORY[0x106C6490] + 12),
-                         *((_DWORD *)MEMORY[0x106C6490] + 13),
+                         *(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 48),
+                         *(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[12104] + 52),
                          v30);
             v5 = sub_10069490();
-            sub_100307A0((int)&flt_106C0860, v5);
+            sub_100307A0(&flt_106C0860, v5);
             v6 = (_DWORD *)dword_106C0680;
             dword_106C0680 += 8;
             *v6 = 16973888;
@@ -92,7 +94,7 @@ _DWORD *__cdecl sub_100180B0(int a1) {
             v9[1] = 0;
             v29 = (unsigned int *)dword_106C0680;
             dword_106C0680 += 8;
-            if (MEMORY[0x106C6618]) {
+            if (*(_DWORD *)&gUnk06594.gap1C8[12496]) {
                 sub_1002F900(v29, 0, 0, 0, 1001, 0, 0, 0, 1004, 0, 0, 0, 1001, 0, 0, 0, 1004);
                 v10 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
@@ -116,7 +118,7 @@ _DWORD *__cdecl sub_100180B0(int a1) {
             dword_106C0680 += 8;
             *v14 = -1241513984;
             v14[1] = 983557;
-            if (MEMORY[0x106C6618]) {
+            if (*(_DWORD *)&gUnk06594.gap1C8[12496]) {
                 v15 = (_DWORD *)dword_106C0680;
                 dword_106C0680 += 8;
                 *v15 = -1224736768;
@@ -161,7 +163,7 @@ _DWORD *__cdecl sub_100180B0(int a1) {
             v25 = (_DWORD *)dword_106C0680;
             dword_106C0680 += 8;
             *v25 = 100663296;
-            v25[1] = MEMORY[0x106C7C98];
+            v25[1] = *(_DWORD *)gUnk06594.gap4918;
             v26 = (_DWORD *)dword_106C0680;
             dword_106C0680 += 8;
             *v26 = -419430400;
@@ -193,7 +195,3 @@ _DWORD *__cdecl sub_100180B0(int a1) {
 // 106C1614: using guessed type char byte_106C1614;
 // 106C32D0: using guessed type int dword_106C32D0;
 // 106C3364: using guessed type int dword_106C3364;
-// 106C5708: using guessed type int dword_106C5708;
-// 106C6608: using guessed type int dword_106C6608;
-// 106C6618: using guessed type int dword_106C6618;
-// 106C7C98: using guessed type int dword_106C7C98;

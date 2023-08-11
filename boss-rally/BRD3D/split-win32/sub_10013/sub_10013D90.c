@@ -43,13 +43,13 @@ __int16 __cdecl sub_10013D90(int a1, int a2, int a3, unsigned __int8 a4, unsigne
     float v45;         // [esp+3Ch] [ebp+8h]
     int v46;           // [esp+3Ch] [ebp+8h]
 
-    v5 = *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708] + 8);
-    v6 = a1 + 88 * MEMORY[0x106C5708];
+    v5 = *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 8);
+    v6 = a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640];
     v7 = *(_DWORD *)(v6 + 12);
     v8 = v7 + 2 * *(_DWORD *)(v6 + 4);
     v9 = a2;
     v36 = (float)(2 * v5);
-    v10 = 2 * (v5 + 2 * *(_DWORD *)(a1 + 88 * MEMORY[0x106C5708]));
+    v10 = 2 * (v5 + 2 * *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640]));
     v11 = 2 * v8;
     v37 = (float)(2 * v7);
     v39 = v10;
@@ -142,4 +142,3 @@ __int16 __cdecl sub_10013D90(int a1, int a2, int a3, unsigned __int8 a4, unsigne
 }
 // 1039B71C: using guessed type int dword_1039B71C;
 // 106C0680: using guessed type int dword_106C0680;
-// 106C5708: using guessed type int dword_106C5708;

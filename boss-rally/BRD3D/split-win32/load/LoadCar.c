@@ -4,7 +4,7 @@ int __cdecl LoadCar(int a1, int carIndex, int a3) {
     int result; // eax
 
     if (a3) // Never runs
-        sub_10008CF0((int)aLoadcar);
+        s_noreturn_10008CF0((int)aLoadcar);
     ReadCarFileIntoBuffer((char *)&unk_100C12A0 + 89992 * a1, carIndex);
     sub_1003551B();
     result = a1;

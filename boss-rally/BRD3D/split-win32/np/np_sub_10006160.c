@@ -7,4 +7,4 @@ BOOL np_sub_10006160() {
     return ReleaseMutex(gMutex8);
 }
 // 1022AF00: using guessed type int dword_1022AF00;
-// 1022AF14: using guessed type int g_usingGameMode4;
+// 1022AF14: using guessed type int gIsGameMode4;

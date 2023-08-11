@@ -16,4 +16,4 @@ void __cdecl sub_10061660(int a1) {
     }
   }
 }
-// 100B380C: using guessed type int g_chosenTrack;
+// 100B380C: using guessed type int gChosenTrack;

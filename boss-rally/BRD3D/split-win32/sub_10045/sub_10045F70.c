@@ -17,7 +17,7 @@ unk000C8 *sub_10045F70() {
         gUnkC8Ptr21 = result;
         gUnkC8Ptr1 = result;
         if (result) {
-            result->lpFn0 = sub_10053CF0;
+            result->lpFn0 = s_unk000C8_10053CF0;
             gUnkC8Ptr21->lpFn0(gUnkC8Ptr21);
             gUnkC8Ptr1->field_C = 1;
             gUnkC8Ptr1->field_68 = 1;
@@ -28,7 +28,7 @@ unk000C8 *sub_10045F70() {
                 result = 0;
             gUnkC8Ptr38 = result;
             if (result) {
-                result->lpFn0 = sub_1004A260;
+                result->lpFn0 = s_unk000C8_1004A260;
                 gUnkC8Ptr38->lpFn0(gUnkC8Ptr38);
                 result = (unk000C8 *)1;
                 gUnkC8Ptr38->field_C = 1;

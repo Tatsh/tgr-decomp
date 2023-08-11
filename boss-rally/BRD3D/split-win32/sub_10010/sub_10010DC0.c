@@ -121,8 +121,8 @@ LABEL_9:
             v69 = v15 - 1;
         } while (v15 != 1);
     }
-    qsort(dword_10364000, v5, 4, QsortCompareFunction);
-    sub_10060780(v4, byte_1038B4C0, *(unsigned int *)&gUnk06594.gap1C8[18276], -1);
+    qsort(dword_10364000, v5, 4, qsort_10010D90);
+    sub_10060780(v4, byte_1038B4C0, *(unsigned int *)&gUnk06594.gap4918[20], -1);
     v16 = 0;
     dword_103643A4 = 0;
     dword_10363FEC = -1;
@@ -144,9 +144,9 @@ LABEL_9:
                 dword_102E5F24 = v16;
             v21 = *((unsigned __int8 *)v19 - 1);
             if (dword_10680618 && byte_1038B4C0[(_DWORD)dword_10680618] &&
-                sub_1003A950(*(float *)(*(_DWORD *)&gUnk06594.gap1C8[18272] +
+                sub_1003A950(*(float *)(*(_DWORD *)&gUnk06594.gap4918[16] +
                                         84 * (_DWORD)dword_10680618 + 48),
-                             *(float *)(*(_DWORD *)&gUnk06594.gap1C8[18272] +
+                             *(float *)(*(_DWORD *)&gUnk06594.gap4918[16] +
                                         84 * (_DWORD)dword_10680618 + 52))) {
                 v22 = dword_103643A4;
                 v23 = dword_10680618;
@@ -241,7 +241,7 @@ LABEL_9:
         v42 = (unsigned __int16 *)&gUnk06594.gap1C8[12112];
         do {
             v43 = *v42++;
-            v41 |= *(_WORD *)(*(_DWORD *)&gUnk06594.gap1C8[18272] + 84 * v43 + 74);
+            v41 |= *(_WORD *)(*(_DWORD *)&gUnk06594.gap4918[16] + 84 * v43 + 74);
             --v40;
             LOWORD(dword_1039B6CC) = v41;
         } while (v40);

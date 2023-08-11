@@ -15,7 +15,7 @@ unk1E214 *__thiscall meth_unk1E214_init(unk1E214 *this) {
     this->field_48 = 0;
     this->field_4A = 0;
     this->field_4C = 0;
-  `eh vector constructor iterator'(
+  eh_vector_constructor(
     this->vectorUnk,
     0x438u,
     3,

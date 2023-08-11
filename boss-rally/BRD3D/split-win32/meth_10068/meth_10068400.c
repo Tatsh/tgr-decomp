@@ -96,11 +96,11 @@ LABEL_11:
   if (v9 > 100000.0 || v9 < 0.0)
     v9 = 0.0;
   if (!this[80])
-    dword_118290F4 =
-        (*(_BYTE *)(MEMORY[0x106C7CA8] + 84 * *((unsigned __int16 *)this + 5254) + 76) & 0x10) !=
-                0 ?
-            0x2AF8 :
-            0;
+    dword_118290F4 = (*(_BYTE *)(*(_DWORD *)&gUnk06594.gap4918[16] +
+                                 84 * *((unsigned __int16 *)this + 5254) + 76) &
+                      0x10) != 0 ?
+                         0x2AF8 :
+                         0;
   if (!v52) {
     v53 = 24 * v2;
     v10 = (__int64)(v9 * 0.000090909089 * 4294967296.0);
@@ -392,11 +392,10 @@ LABEL_122:
 // 10068957: variable 'v33' is possibly undefined
 // 100AA8B4: using guessed type int dword_100AA8B4;
 // 100B4050: using guessed type int dword_100B4050;
-// 104BBE08: using guessed type int dword_104BBE08;
+// 104BBE08: using guessed type int gChosenWeather1;
 // 106909B4: using guessed type int dword_106909B4;
 // 106C1638: using guessed type int dword_106C1638;
 // 106C1690: using guessed type int dword_106C1690;
-// 106C7CA8: using guessed type int dword_106C7CA8;
 // 10ACEE20: using guessed type int dword_10ACEE20[];
 // 10AD05DC: using guessed type int dword_10AD05DC[];
 // 11782BA8: using guessed type __int16 word_11782BA8[];

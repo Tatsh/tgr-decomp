@@ -22,7 +22,7 @@ int __thiscall meth_unk0008C_1000A480(unk0008C *this) {
         this->lpDirectDraw, &CLSID_IDirectDraw2, (LPVOID *)&this->lpDirectDraw2);
     if (v6 < 0) {
         MessageBoxA(this->hwnd, gMessageBoxText, gMessageBoxCaption, MB_ICONERROR);
-        ReleaseD3D2_DDraw2_DDraw(this);
+        meth_unk0008C_ReleaseD3D2DDraw2DDraw(this);
         return v6;
     }
     v5 = this->lpDirectDraw2->lpVtbl->QueryInterface(
@@ -35,7 +35,7 @@ int __thiscall meth_unk0008C_1000A480(unk0008C *this) {
         result = 0;
     } else {
     LABEL_8:
-        ReleaseD3D2_DDraw2_DDraw(this);
+        meth_unk0008C_ReleaseD3D2DDraw2DDraw(this);
         result = v5;
     }
     return result;

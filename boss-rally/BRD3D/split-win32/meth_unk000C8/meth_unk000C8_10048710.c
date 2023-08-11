@@ -14,6 +14,7 @@ unk000C8 *__thiscall meth_unk000C8_10048710(unk000C8 *this) {
   this->field_8 = 0;
   this->field_C = 0;
   this->field_10 = 0;
+  *(&this->field_10 + 1) = 0;
   this->field_64 = 0;
   this->field_68 = 1;
   this->field_BC = 0;

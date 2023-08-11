@@ -9,7 +9,7 @@ void sub_10069840() {
   void *vehicle;        // ecx
   void *enemy;          // ecx
 
-  MEMORY[0x106C56D0] = dword_10B4E708;
+  *(_DWORD *)&gUnk06594.gap1C8[8584] = dword_10B4E708;
   dword_106C29A4 = dword_10B4E70C;
   sub_100770C0();
   gIsGameMode4 = gGameMode == GAME_MODE_4;
@@ -28,7 +28,7 @@ void sub_10069840() {
   }
   sub_100697E0(1);
   sub_10034C66((int)meth_DebugPrint);
-  MEMORY[0x106C664C] = 0;
+  *(_DWORD *)&gUnk06594.gap1C8[12548] = 0;
   dword_10B4DF28 = 0;
   dword_100B36FC = 2;
   dword_100B4050 = 1;
@@ -85,8 +85,6 @@ LABEL_12:
 // 104BBE08: using guessed type int gChosenWeather1;
 // 106909D8: using guessed type int dword_106909D8;
 // 106C29A4: using guessed type int dword_106C29A4;
-// 106C56D0: using guessed type int dword_106C56D0;
-// 106C664C: using guessed type int dword_106C664C;
 // 10B4DF28: using guessed type int dword_10B4DF28;
 // 10B4E708: using guessed type int dword_10B4E708;
 // 10B4E70C: using guessed type int dword_10B4E70C;

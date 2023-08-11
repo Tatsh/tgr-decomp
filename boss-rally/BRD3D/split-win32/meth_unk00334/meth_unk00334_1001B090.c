@@ -5,7 +5,7 @@ HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *So
     char *src;                        // ebp
     size_t lll;                       // kr04_4
     size_t llll;                      // edi
-    void *mem;                        // eax
+    char *mem;                        // eax
     char *v11;                        // ebp
     size_t l;                         // kr08_4
     size_t ll;                        // edi
@@ -39,11 +39,11 @@ HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *So
         src = aUnknown_0;
     lll = strlen(src) + 1;
     llll = lll - 1;
-    mem = malloc(lll);
+    mem = (char *)malloc(lll);
     this->field_14 = mem;
     if (mem) {
-        strncpy((char *)mem, src, llll);
-        *((_BYTE *)this->field_14 + llll) = 0;
+        strncpy(mem, src, llll);
+        this->field_14[llll] = 0;
     }
     v11 = a4;
     if (!a4)

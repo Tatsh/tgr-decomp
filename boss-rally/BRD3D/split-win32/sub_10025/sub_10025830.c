@@ -83,7 +83,7 @@ char *__cdecl sub_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a6, in
                  v31,
                  v32,
                  v33);
-    return sub_100098A0(a1, byte_11829870, v16, v14);
+    return graphics_100098A0(a1, byte_11829870, v16, v14);
 }
 // 10575440: using guessed type int dword_10575440;
 // 10575444: using guessed type int dword_10575444;

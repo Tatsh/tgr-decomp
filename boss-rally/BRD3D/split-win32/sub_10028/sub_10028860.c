@@ -60,7 +60,7 @@ unsigned __int8 *__cdecl sub_10028860(#506 * a1) {
                     v3, v3, *((_DWORD *)a1 + 16), *((_DWORD *)a1 + 4), (int *)a1 + 15);
             else
                 dword_105553F8 =
-                    (int)sub_100098A0(v3, v3, *((_DWORD *)a1 + 16), *((_DWORD *)a1 + 4));
+                    (int)graphics_100098A0(v3, v3, *((_DWORD *)a1 + 16), *((_DWORD *)a1 + 4));
             result = v3;
         }
     }

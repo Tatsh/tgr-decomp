@@ -2,7 +2,7 @@
 //----- (1005FFD0) --------------------------------------------------------
 int sub_1005FFD0() {
   int result; // eax
-  int *v1;    // ecx
+  char **v1;  // ecx
 
   result = 0;
   v1 = dword_10AA2A80;
@@ -14,4 +14,3 @@ int sub_1005FFD0() {
   }
   return result;
 }
-// 10AA2A80: using guessed type int dword_10AA2A80[];

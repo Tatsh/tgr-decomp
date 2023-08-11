@@ -442,7 +442,7 @@ int __cdecl sub_10014A30(int a1) {
                     Set_byte_104B035C_To0();
                     sub_100192F0(15);
                     v54 = (char *)GetStringWithIndex(0xF2u);
-                    text_sub_10019300(v54, 28, 32);
+                    text_10019300(v54, 28, 32);
                     if (gGameMode == GAME_MODE_6)
                         sub_10017890(v1, (int)v112);
                 }
@@ -469,7 +469,7 @@ int __cdecl sub_10014A30(int a1) {
         else
             v53 = (char *)GetStringWithIndex(0xF1u);
     LABEL_108:
-        text_sub_10019300(v53, v97, v107);
+        text_10019300(v53, v97, v107);
         goto LABEL_109;
     }
 LABEL_110:
@@ -483,24 +483,24 @@ LABEL_110:
         sub_100192F0(40);
         v108 = 5 * g_Height1 / 16;
         v58 = (char *)GetStringWithIndex(0xF5u);
-        text_sub_10019300(v58, v57, v108);
+        text_10019300(v58, v57, v108);
         v59 = 5 * g_Height1 / 11;
         sub_100192F0(20);
         v60 = (char *)GetStringWithIndex(0xF6u);
-        text_sub_10019300(v60, v57, v59);
+        text_10019300(v60, v57, v59);
         v61 = v59 + 40;
         if (dword_10680734)
             v62 = (char *)GetStringWithIndex(0xF8u);
         else
             v62 = (char *)GetStringWithIndex(0xF7u);
-        text_sub_10019300(v62, v57, v61);
+        text_10019300(v62, v57, v61);
         v63 = v61 + 20;
         if (dword_10680734 == 1)
             v64 = (char *)GetStringWithIndex(0xF9u);
         else
             v64 = (char *)GetStringWithIndex(0xFAu);
     LABEL_140:
-        text_sub_10019300(v64, v57, v63);
+        text_10019300(v64, v57, v63);
         goto LABEL_141;
     }
     if (dword_106909B4) {
@@ -511,21 +511,21 @@ LABEL_110:
         sub_100192F0(40);
         v109 = 5 * g_Height1 / 16;
         v65 = (char *)GetStringWithIndex(0xF5u);
-        text_sub_10019300(v65, v57, v109);
+        text_10019300(v65, v57, v109);
         v66 = 5 * g_Height1 / 11;
         sub_100192F0(20);
         if (dword_10680734)
             v67 = (char *)GetStringWithIndex(0xFCu);
         else
             v67 = (char *)GetStringWithIndex(0xFBu);
-        text_sub_10019300(v67, v57, v66);
+        text_10019300(v67, v57, v66);
         v68 = v66 + 20;
         if (!gNetworkPlay) {
             if (dword_10680734 == 1)
                 v69 = (char *)GetStringWithIndex(0xFFu);
             else
                 v69 = (char *)GetStringWithIndex(0x100u);
-            text_sub_10019300(v69, v57, v68);
+            text_10019300(v69, v57, v68);
         }
         v70 = v68 + 20;
         v71 = aY1;
@@ -535,7 +535,7 @@ LABEL_110:
         v98 = v71;
         v72 = GetStringWithIndex(0x101u);
         sprintf(Buffer, v72, v98, v110);
-        text_sub_10019300(Buffer, v57, v70);
+        text_10019300(Buffer, v57, v70);
         v73 = v70 + 20;
         v74 = aY1;
         if (dword_10680734 != 3)
@@ -544,7 +544,7 @@ LABEL_110:
         v99 = v74;
         v75 = GetStringWithIndex(0x102u);
         sprintf(Buffer, v75, v99, v111);
-        text_sub_10019300(Buffer, v57, v73);
+        text_10019300(Buffer, v57, v73);
         v76 = v73 + 20;
         if (gGameMode) {
             if (dword_10680734 == 4)
@@ -556,7 +556,7 @@ LABEL_110:
         } else {
             v77 = (char *)GetStringWithIndex(0x104u);
         }
-        text_sub_10019300(v77, v57, v76);
+        text_10019300(v77, v57, v76);
         v63 = v76 + 20;
         if (dword_10680734 == 5)
             v64 = (char *)GetStringWithIndex(0x107u);
@@ -589,21 +589,21 @@ LABEL_141:
             do {
                 if ((*(&off_100AA020)[8 * dword_106805C0 + 4 * v81])[0] == 96) {
                     sub_100192F0(15);
-                    text_sub_10019300(&(*(&off_100AA020)[8 * dword_106805C0 + 4 * v81])[1],
-                                      g_Width1 / 2,
-                                      v80 + v82 / 2);
+                    text_10019300(&(*(&off_100AA020)[8 * dword_106805C0 + 4 * v81])[1],
+                                  g_Width1 / 2,
+                                  v80 + v82 / 2);
                 } else {
                     sub_100192F0(20);
-                    text_sub_10019300((char *)(&off_100AA020)[8 * dword_106805C0 + 4 * v81],
-                                      g_Width1 / 2,
-                                      v80 + v82 / 2);
+                    text_10019300((char *)(&off_100AA020)[8 * dword_106805C0 + 4 * v81],
+                                  g_Width1 / 2,
+                                  v80 + v82 / 2);
                 }
                 --v81;
                 v82 -= 40;
             } while (v81 >= 0);
         }
         sub_100192F0(15);
-        text_sub_10019300((char *)(&off_100AA018)[8 * dword_106805C0], g_Width1 / 2, v80 - 20);
+        text_10019300((char *)(&off_100AA018)[8 * dword_106805C0], g_Width1 / 2, v80 - 20);
     }
     sub_1002B340();
     if (*(int *)&gUnk06594.gap1C8[12516] >= 2) {

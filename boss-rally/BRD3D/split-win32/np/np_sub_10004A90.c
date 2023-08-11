@@ -48,6 +48,6 @@ BOOL np_sub_10004A90() {
     return v0;
 }
 // 10094294: using guessed type int dword_10094294;
-// 1022B34C: using guessed type int g_chosenCar;
+// 1022B34C: using guessed type int gChosenCar;
 // 10277B48: using guessed type int dword_10277B48;
 // 10277B4C: using guessed type int dword_10277B4C;

@@ -13,7 +13,7 @@ char __cdecl sub_1006AAB0(int a1) {
         if (v2 < 0x10000) {
             v3 = (char *)&dword_10B50308 + 1572864 * v1 + 24 * v2;
             sub_100607B0((int)v5, a1);
-            LOBYTE(v1) = sub_10006BD0((int)v3, v5);
+            LOBYTE(v1) = math_10006BD0((int)v3, v5);
         }
     }
   }

@@ -39,7 +39,7 @@ int DDraw_DoInit() {
         }
         ++gSurfaceCount;
         qmemcpy(imagesWork1aBmFilepath - 27, &a5, 0x6Cu);
-        sub_1000BA40((LPDIRECTDRAWSURFACE) * (imagesWork1aBmFilepath - 28), 0xFF00u);
+        graphics_1000BA40((LPDIRECTDRAWSURFACE) * (imagesWork1aBmFilepath - 28), 0xFF00u);
     }
     imagesWork1aBmFilepath += 29;
     ++v0;

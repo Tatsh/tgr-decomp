@@ -19,7 +19,7 @@ int pm_sub_10002260() {
     dword_10220C48 = 1;
     word_10220C50 = 128;
     dword_10220C54 = 0;
-    g_WPARAM = 0;
+    gWPARAM = 0;
     word_10220C60 = 0;
     word_10220C62 = 10000;
     dword_10220C64 = 10000;
@@ -58,7 +58,7 @@ int pm_sub_10002260() {
     dword_10220C3C = 1;
     return 1;
 }
-// 100940A4: using guessed type int g_Playmusic;
+// 100940A4: using guessed type int gPlayMusic;
 // 10220C38: using guessed type int playParmsPlayTo;
 // 10220C3C: using guessed type int dword_10220C3C;
 // 10220C44: using guessed type int dword_10220C44;
@@ -66,7 +66,7 @@ int pm_sub_10002260() {
 // 10220C50: using guessed type __int16 word_10220C50;
 // 10220C52: using guessed type __int16 word_10220C52;
 // 10220C54: using guessed type int dword_10220C54;
-// 10220C58: using guessed type int g_WPARAM;
+// 10220C58: using guessed type int gWPARAM;
 // 10220C5C: using guessed type __int16 word_10220C5C;
 // 10220C5E: using guessed type __int16 word_10220C5E;
 // 10220C60: using guessed type __int16 word_10220C60;

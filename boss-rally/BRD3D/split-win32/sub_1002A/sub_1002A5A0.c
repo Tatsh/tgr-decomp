@@ -11,7 +11,7 @@ int sub_1002A5A0() {
         dword_100A7E04 = 32;
         dword_100A7E08 = 32;
     } else {
-        if ((unsigned int)g_dwTotalPhys <= 0x2000000) {
+        if ((unsigned int)gTotalPhys <= 0x2000000) {
             result = 256;
             dword_100B8C90 = 1;
         } else {

@@ -19,7 +19,7 @@ IDirectDraw2 *__thiscall meth_10009C40(void *this,
     _D3DDeviceDesc hardwareDesc;  // [esp+C8h] [ebp-1F8h] BYREF
     _D3DDeviceDesc helDesc;       // [esp+1C4h] [ebp-FCh] BYREF
 
-    dd = GetDeviceIDirectDraw2_Released(dev);
+    dd = ReleaseDeviceDD2(dev);
     dd_1 = dd;
     if (!dd)
         return dd;
@@ -63,7 +63,7 @@ LABEL_7:
             *(_DWORD *)this, 8, &aColorSpaceValues);
         (*lpDDSurface)->lpVtbl->SetColorKey(*lpDDSurface, 8, &aColorSpaceValues);
     }
-    if (!meth_10009ED0(this, (char *)a3, dwWidth, dwHeight))
+    if (!meth_graphics_10009ED0(this, (char *)a3, dwWidth, dwHeight))
         goto LABEL_10;
     (*lpDDSurface)
         ->lpVtbl->QueryInterface(*lpDDSurface, &CLSID_IDirect3DTexture2, (LPVOID *)&d3dTex2);
