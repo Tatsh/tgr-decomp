@@ -26,6 +26,8 @@ def get_function_name(lines_str: str) -> tuple[str | None, str | None]:
         return None, None
     if '_' not in func_name:
         prefix = split_camel(func_name)[0].lower()
+    elif func_name.startswith('s_unk') or func_name.startswith('meth_unk'):
+        prefix = '_'.join(func_name.split('_')[0:2])
     else:
         prefix = (func_name.split('_')[0].lower() if '_' in func_name else func_name[0:2].lower())
         if prefix == 'meth':
@@ -94,7 +96,6 @@ def main() -> int:
         for name, code in l:
             prefix_path = split_path / prefix
             prefix_path.mkdir(exist_ok=True, parents=True)
-            path_ref = '..' if len(prefix_path.parents) == 1 else '../..'
             with (prefix_path / name).open('w+') as f:
                 f.write(f'#include "{types_file.name}"\n')
                 f.write(code)
