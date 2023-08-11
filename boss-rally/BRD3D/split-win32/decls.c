@@ -8,8 +8,6 @@
 #include <math.h>
 #include <windows.h>
 
-#include <stdarg.h>
-
 //-------------------------------------------------------------------------
 // Function declarations
 
@@ -30,7 +28,7 @@ int __thiscall meth_100019D0(#479 * this); // idb
 int __thiscall meth_10001FF0(#482 * this); // idb
 long double __cdecl cos_(float a1);
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds); // idb
-Car *sub_10002140();
+CarPart *sub_10002140();
 long double __cdecl sin_(float a1);
 long double __cdecl sqrt_(float a1);
 int pm_sub_10002260();
@@ -365,18 +363,21 @@ HRESULT __cdecl sub_1001A790(int a1,
                              unk00334 *a8,
                              unk00334 *a9,
                              unk00334 *a10); // idb
-unsigned int __cdecl sub_1001A870(unsigned int a1);
-int __cdecl BitDepthTo(int bitDepth); // idb
-HRESULT __cdecl sub_1001A950(DDPIXELFORMAT *pixelFormat);
-BOOL __stdcall ddrawEnumerateCallback(GUID *, LPSTR, LPSTR, LPVOID); // idb
-HRESULT __stdcall enumModesCallback(DDSURFACEDESC *a1, LPVOID a2);
-int __stdcall enumTextureFormatsCallback(LPDDSURFACEDESC lpSurfaceDesc, LPVOID ctx); // idb
-int __stdcall Direct3D2EnumDevicesCallback(GUID *a2,
-                                           LPSTR lpDeviceDescription,
-                                           LPSTR deviceName,
-                                           LPD3DDEVICEDESC desc,
-                                           LPD3DDEVICEDESC a6,
-                                           LPVOID userArg); // idb
+unsigned int __cdecl graphics_1001A870(unsigned int a1);
+int __cdecl graphics_BitDepthTo(int bitDepth); // idb
+HRESULT __cdecl graphics_1001A950(DDPIXELFORMAT *pixelFormat);
+BOOL __stdcall graphics_ddrawEnumerateCallback(GUID *lpGUID,
+                                               LPSTR a2,
+                                               LPSTR Source,
+                                               int *a4); // idb
+HRESULT __stdcall graphics_enumModesCallback(DDSURFACEDESC *a1, int *context);
+int __stdcall graphics_enumTextureFormatsCallback(LPDDSURFACEDESC lpSurfaceDesc, LPVOID ctx); // idb
+int __stdcall graphics_Direct3D2EnumDevicesCallback(GUID *a2,
+                                                    LPSTR lpDeviceDescription,
+                                                    LPSTR deviceName,
+                                                    LPD3DDEVICEDESC desc,
+                                                    LPD3DDEVICEDESC a6,
+                                                    LPVOID userArg); // idb
 int __thiscall meth_unk00334_GetBitDepth(unk00334 *this);
 int __thiscall meth_unk00334_1001AC80(
     unk00334 *this, int *width, int *height, int *bitDepth, int *a5);
@@ -387,12 +388,12 @@ BOOL __thiscall meth_unk00334_MatchesWidthHeightBitDepth(unk00334 *this,
                                                          int bitDepth); // idb
 BOOL __thiscall meth_unk00228_DeviceDescHasDCMColorModel(unk00228 *this);
 int __thiscall meth_unk00228_MatchesGUID(unk00228 *this, CLSID *clsid);
-int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
-                                      GUID *guid,
-                                      char *source,
-                                      char *source2,
-                                      D3DDEVICEDESC *deviceDesc0,
-                                      D3DDEVICEDESC *deviceDesc1);               // idb
+MACRO_DDERR __thiscall meth_unk00228_1001ADE0(unk00228 *this,
+                                              GUID *guid,
+                                              char *source,
+                                              char *source2,
+                                              D3DDEVICEDESC *deviceDesc0,
+                                              D3DDEVICEDESC *deviceDesc1);
 void __thiscall meth_unk00228_1001AEE0(unk00228 *this);                          // idb
 HRESULT __thiscall meth_unk00334_1001AF20(unk00334 *a1, IDirect3DDevice2 *dev2); // idb
 int __thiscall meth_unk00228_1001AFB0(unk00228 *this);                           // idb
@@ -405,7 +406,7 @@ char __thiscall meth_unk00334_1001B280(unk00334 *this); // idb
 BOOL __thiscall meth_unk00334_MatchesGUID(unk00334 *this, CLSID *a2);
 HRESULT __thiscall meth_unk00334_1001B320(unk00334 *this, IDirectDraw2 *ddraw); // idb
 int __thiscall meth_unk00334_1001B3B0(unk00334 *this);                          // idb
-int __thiscall meth_1001B430(_DWORD *this, unk00074 *a2);                       // idb
+MACRO_DDERR __thiscall meth_unk00334_1001B430(unk00334 *this, unk00074 *a2);
 unk00334 *__thiscall meth_unk00334_1001B490(unk00334 *this,
                                             int width,
                                             int height,
@@ -414,8 +415,8 @@ unk00334 *__thiscall meth_unk00334_1001B490(unk00334 *this,
                                             unk00334 **a6,
                                             unk00334 *a7); // idb
 HRESULT __thiscall meth_unk00334_1001B510(unk00334 *this, IDirect3D2 *a2);
-int __thiscall meth_unk00334_1001B5A0(unk00334 *this);               // idb
-int __thiscall meth_unk00334_1001B630(unk00334 *this, unk00228 *a2); // idb
+int __thiscall meth_unk00334_1001B5A0(unk00334 *this); // idb
+MACRO_DDERR __thiscall meth_unk00334_1001B630(unk00334 *this, unk00228 *a2);
 int __thiscall meth_unk00334_1001B690(unk00334 *this, CLSID *a2, _DWORD *a3, unk00334 *a4);
 int __thiscall meth_unk00334_1001B7C0(
     unk00334 *this, CLSID *clsid, unk00334 *a3, unk00228 *a4, unk00228 *a5);
@@ -427,53 +428,53 @@ unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
                                             unk00228 *a2,
                                             _DWORD *a7,
                                             unk00334 *u0_1); // idb
-GUID *__thiscall GetDirectDrawGUID(unk00334 *this);
-HRESULT sub_1001B970();
-HRESULT ddrawEnum();
+GUID *__thiscall meth_unk00334_GetDirectDrawGUID(unk00334 *this);
+HRESULT graphics_1001B970();
+HRESULT graphics_ddrawEnum();
 // _DWORD *__thiscall meth_unknown_libname_2(_DWORD *this);
-int __cdecl sub_1001BA10(unk00334 *a1);                                // idb
-unk00334 *__cdecl sub_1001BA70(CLSID *a1, unk00334 *a2, unk00334 *a3); // idb
-int sub_1001BAD0();                                                    // weak
-int sub_1001BAE0();
-int __cdecl sub_1001BB00(int a1, int a2, int a3, int a4); // idb
-int sub_1001BB80();
-int sub_1001BB90();
-int sub_1001BBA0();
-int sub_1001BBB0();
-int sub_1001BBC0();
-int sub_1001BBD0();
-int sub_1001BBF0();
-int sub_1001BC00();
-int sub_1001BC20();
-int sub_1001BC30();
-int sub_1001BC50();
-int sub_1001BC60();
-void j_nullsub_2_0();
-int __cdecl sub_1001BC90(unsigned int a1);
-_DWORD *__cdecl sub_1001BD70(_DWORD *a1);
+int __cdecl s_unk00334_1001BA10(unk00334 *a1);                             // idb
+unk00334 *__cdecl s_clsid_1001BA70(CLSID *a1, unk00334 *a2, unk00334 *a3); // idb
+int graphics_1001BAD0();                                                   // weak
+int graphics_1001BAE0();
+int __cdecl graphics_1001BB00(int a1, int a2, int a3, int a4); // idb
+int thunk_1001BB90();
+int graphics_1001BB90();
+int thunk_1001BBA0();
+int graphics_1001BBB0();
+int thunk_1001BBC0();
+int graphics_1001BBD0();
+int thunk_1001BBF0();
+int graphics_1001BC00();
+int thunk_1001BC20();
+int graphics_1001BC30();
+int thunk_1001BC50();
+int graphics_1001BC60();
+void thunk_j_nullsub_2_0();
+int __cdecl graphics_1001BC90(unsigned int a1);
+_DWORD *__cdecl graphics_1001BD70(_DWORD *a1);
 _DWORD *__cdecl sub_1001BE10(_DWORD *a1);
-_DWORD *__cdecl sub_1001BE30(_DWORD *a1);
-HRESULT __cdecl sub_1001BE90(int a1, int a2, int a3, int a4);
+_DWORD *__cdecl graphics_1001BE30(_DWORD *a1);
+HRESULT __cdecl graphics_1001BE90(int a1, int a2, int a3, int a4);
 int __thiscall meth_1001C620(_DWORD *this);
-int sub_1001C640();
-int __cdecl sub_1001C690(unsigned int a1);
-_DWORD *__cdecl sub_1001C7A0(_DWORD *a1);
-int *__cdecl sub_1001C7F0(int *a1);
-int(__cdecl *__cdecl sub_1001C820(int a1, int a2))(int);
-int __cdecl sub_1001CA10(float *a1);
-int __cdecl sub_1001CA90(float *a1);
+int graphics_1001C640();
+int __cdecl graphics_1001C690(unsigned int a1);
+_DWORD *__cdecl graphics_1001C7A0(_DWORD *a1);
+int *__cdecl graphics_1001C7F0(int *a1);
+int(__cdecl *__cdecl graphics_1001C820(int a1, int a2))(int);
+int __cdecl graphics_1001CA10(float *a1);
+int __cdecl graphics_1001CA90(float *a1);
 int __cdecl sub_1001CB40(int a1);
 int __cdecl sub_1001CC00(int a1);
-int __cdecl sub_1001CC70(int a1);
+int __cdecl graphics_1001CC70(int a1);
 int __cdecl sub_1001CCA0(int a1);
 int __cdecl sub_1001CD60(int a1);
 int __cdecl sub_1001CD80(int a1);
-unsigned int *__cdecl sub_1001CDA0(unsigned int *a1);
-unsigned int *__cdecl sub_1001CE70(unsigned int *a1);
+unsigned int *__cdecl graphics_1001CDA0(unsigned int *a1);
+unsigned int *__cdecl graphics_1001CE70(unsigned int *a1);
 _DWORD *__cdecl sub_1001CF30(_DWORD *a1);
-unsigned __int8 *__cdecl sub_1001CFF0(unsigned __int8 *a1);
-void sub_1001D3A0();
-int *__cdecl sub_1001D420(int a1, int a2, int a3);
+unsigned __int8 *__cdecl graphics_1001CFF0(unsigned __int8 *a1);
+void graphics_1001D3A0();
+int *__cdecl graphics_1001D420(int a1, int a2, int a3);
 int *__cdecl sub_1001D810(int a1);
 float *__cdecl sub_1001D940(int a1, int a2, float a3);
 int *__cdecl sub_1001D9F0(int a1);
@@ -482,24 +483,24 @@ int *__cdecl sub_1001DC70(int a1);
 int *__cdecl sub_1001DDB0(int a1);
 int *__cdecl sub_1001DEF0(int a1);
 int *__cdecl sub_1001E030(int a1);
-unsigned __int8 *__cdecl sub_1001E170(unsigned __int8 *a1);
+unsigned __int8 *__cdecl graphics_1001E170(unsigned __int8 *a1);
 int __cdecl sub_1001E4B0(int a1, int a2);
-int __cdecl sub_1001E4E0(int a1, int a2, int a3);
-int __cdecl sub_1001E5D0(int a1, int a2, int a3);
+int __cdecl graphics_1001E4E0(int a1, int a2, int a3);
+int __cdecl graphics_1001E5D0(int a1, int a2, int a3);
 int __cdecl sub_1001E790(int a1);
 char sub_1001E7C0();
-unsigned __int8 *__cdecl sub_1001E980(unsigned __int8 *a1);
-float *__cdecl sub_1001EC20(int a1, int a2, int a3);
-float *__cdecl sub_1001EEB0(int a1, int a2, int a3, int a4, int a5, int a6);
-unsigned __int8 *__cdecl sub_1001F2B0(unsigned __int8 *a1);
-float *__cdecl sub_1001F550(int a1, int a2, int a3);
-float *__cdecl sub_1001F7E0(int a1, int a2, int a3, int a4, int a5, int a6);
-unsigned __int8 *__cdecl sub_1001FBE0(unsigned __int8 *a1);
-int *__cdecl sub_1001FF90(int a1, int a2, int a3);
-unsigned __int8 *__cdecl sub_10020380(unsigned __int8 *a1);
-unsigned __int8 *__cdecl sub_100205F0(unsigned __int8 *a1);
-unsigned __int8 *__cdecl sub_10020860(unsigned __int8 *a1);
-int __cdecl sub_10020BA0(int a1, int a2, int a3);
+unsigned __int8 *__cdecl graphics_1001E980(unsigned __int8 *a1);
+float *__cdecl graphics_1001EC20(int a1, int a2, int a3);
+float *__cdecl graphics_1001EEB0(int a1, int a2, int a3, int a4, int a5, int a6);
+unsigned __int8 *__cdecl graphics_1001F2B0(unsigned __int8 *a1);
+float *__cdecl graphics_1001F550(int a1, int a2, int a3);
+float *__cdecl graphics_1001F7E0(int a1, int a2, int a3, int a4, int a5, int a6);
+unsigned __int8 *__cdecl graphics_1001FBE0(unsigned __int8 *a1);
+int *__cdecl graphics_1001FF90(int a1, int a2, int a3);
+unsigned __int8 *__cdecl graphics_10020380(unsigned __int8 *a1);
+unsigned __int8 *__cdecl graphics_100205F0(unsigned __int8 *a1);
+unsigned __int8 *__cdecl graphics_10020860(unsigned __int8 *a1);
+int __cdecl graphics_10020BA0(int a1, int a2, int a3);
 int __cdecl sub_10020D60(_DWORD *a1);
 int sub_10020DA0();
 int *__cdecl sub_10020DC0(int *a1);
@@ -509,7 +510,7 @@ _DWORD *__cdecl sub_10020F50(_DWORD *a1);
 int __cdecl sub_10020F80(int a1);
 char __cdecl sub_10020FA0(int a1);
 _DWORD *__cdecl sub_10021510(_DWORD *a1);
-int *__cdecl sub_10021560(unsigned int a1, unsigned int a2, int a3, int a4);
+int *__cdecl graphics_10021560(unsigned int a1, unsigned int a2, int a3, int a4);
 _DWORD *__cdecl sub_10021B80(_DWORD *a1);
 int *__cdecl sub_10021BD0(int *a1);
 _DWORD *__cdecl sub_10021E80(_DWORD *a1);
@@ -538,13 +539,13 @@ void *__cdecl sub_10024AB0(int a1, int a2);
 int __cdecl sub_10024AE0(int a1);
 int sub_10024B60();
 int sub_10024BB0();
-int __cdecl sub_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3);
-int __cdecl pow2ExponentToAdd(DWORD *outExponent, int a2, int a3); // idb
-int __cdecl sub_10025350(int a1, int a2, int a3, float a4, int a5, int a6);
-char __cdecl sub_100254F0(int a1, int a2, int a3, int a4, int a5, float a6, float a7);
+int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3);
+int __cdecl math_pow2ExponentToAdd(DWORD *outExponent, int a2, int a3); // idb
+int __cdecl math_10025350(int a1, int a2, int a3, float a4, int a5, int a6);
+char __cdecl math_100254F0(int a1, int a2, int a3, int a4, int a5, float a6, float a7);
 // int __cdecl _RTC_NumErrors();
 int __cdecl sub_10025800(int a1, int a2);
-char *__cdecl sub_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
+char *__cdecl graphics_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
 char __cdecl sub_10025AB0(_DWORD *a1,
                           int a2,
                           int a3,
@@ -586,29 +587,29 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
                              int a14,
                              int a15);
 int __cdecl sub_10028200(_DWORD *a1, int a2, int a3);
-int __cdecl TIDFromTextureAppend(_DWORD *a1, int a2); // idb
+int __cdecl graphics_TIDFromTextureAppend(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
 int __cdecl sub_10028630(int a1);
 int *__cdecl sub_10028720(int *a1, int *a2, int a3, int a4);
 unsigned __int8 *__cdecl sub_10028860(#506 * a1); // idb
 int __cdecl sub_10028A10(int a1, int *a2);
 int __cdecl sub_10028B20(int, float, int); // idb
-int __cdecl sub_10028BF0(int a1,
-                         int a2,
-                         int a3,
-                         int a4,
-                         int a5,
-                         int a6,
-                         int a7,
-                         int a8,
-                         int a9,
-                         int a10,
-                         int a11,
-                         int a12,
-                         int a13,
-                         int a14);
+int __cdecl graphics_10028BF0(int a1,
+                              int a2,
+                              int a3,
+                              int a4,
+                              int a5,
+                              int a6,
+                              int a7,
+                              int a8,
+                              int a9,
+                              int a10,
+                              int a11,
+                              int a12,
+                              int a13,
+                              int a14);
 int __cdecl sub_10028C70(int a1);
-void *__cdecl sub_10028CA0(int a1);
+void *__cdecl graphics_10028CA0(int a1);
 BOOL __cdecl sub_10028E00(LONG a1, char *a2);
 unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2);
 int __cdecl sub_10029060(int); // weak
@@ -637,8 +638,8 @@ int sub_1002A5A0();
 HANDLE sub_1002A640();
 int sub_1002A740();
 void sub_1002A7A0();
-HMODULE __cdecl loadEARDLL(int useEarpdsDll); // idb
-int __cdecl setupEAR(HWND hWnd);              // idb
+HMODULE __cdecl pm_loadEARDLL(int useEarpdsDll); // idb
+int __cdecl pm_setupEAR(HWND hWnd);              // idb
 int sub_1002AEA0();
 int sub_1002AEC0();
 int sub_1002AED0();
@@ -654,7 +655,7 @@ BOOL sub_1002B300();
 void sub_1002B340();
 __int64 sub_1002B670();
 __int64 __cdecl sub_1002B920(float a1);
-void __cdecl qmemcpy_32bytes(void *a1, const void *a2);
+void __cdecl qmemcpy32(void *a1, const void *a2);
 void sub_1002B950();
 int __cdecl sub_1002B970(int *a1);
 int __cdecl sub_1002B9A0(int a1, int a2);
@@ -815,7 +816,7 @@ void __cdecl sub_1003563A(int a1);
 // int unknown_libname_6();
 void __noreturn sub_10035BA7();
 void __cdecl __noreturn sub_10035BBA(int a1);
-Car *sub_10035BD1();
+CarPart *sub_10035BD1();
 _DWORD *__cdecl sub_10035C70(_DWORD *a1, _DWORD *a2);
 _BYTE *__thiscall meth_10035CA0(_BYTE *this, char a2, char a3, char a4);
 void __thiscall meth_10035CE0(int *this);
@@ -956,7 +957,7 @@ int sub_1003E050();
 // int unknown_libname_9();
 BOOL sub_1003E080();
 BOOL sub_1003E0E0();
-BOOL __cdecl sub_1003E100(int Drive);
+BOOL __cdecl IsBossRallyCDROM(int driveNumber); // idb
 int sub_1003E1D0();
 int sub_1003E220();
 void __cdecl sub_1003E260(int a1);
@@ -1165,7 +1166,7 @@ int sub_100458A0();
 int sub_100458C0();
 int sub_100458E0();
 int __thiscall meth_10045900(void *this);
-int sub_10045A00();
+BOOL __stdcall IsBossRallyCDROMPresent();
 int sub_10045AA0();
 unk000C8 *sub_10045AF0();
 int sub_10045BC0();
@@ -1281,10 +1282,10 @@ int __cdecl s_unk000C8_1004D1F0(unk000C8 *a1); // idb
 int __cdecl s_unk000C8_1004D640(unk000C8 *a1); // idb
 int __cdecl s_unk000C8_1004DB00(unk000C8 *a1); // idb
 int __cdecl s_unk000C8_1004DFC0(unk000C8 *a1); // idb
-int __cdecl sub_1004E810(int a1, _DWORD *a2);
-int __cdecl sub_1004E830(unk000C8 *a1);        // idb
-int __cdecl sub_1004F2B0(unk000C8 *a1);        // idb
-int __cdecl sub_1004F700(unk000C8 *a1);        // idb
+int __cdecl pm_sub_1004E810(int a1, _DWORD *a2);
+int __cdecl s_unk000C8_1004E830(unk000C8 *a1); // idb
+int __cdecl s_unk000C8_1004F2B0(unk000C8 *a1); // idb
+int __cdecl s_unk000C8_1004F700(unk000C8 *a1); // idb
 int __cdecl s_unk000C8_10050060(unk000C8 *a1); // idb
 int __cdecl s_unk000C8_100509F0(unk000C8 *a1); // idb
 int __cdecl s_unk000C8_10051990(unk000C8 *a1); // idb
@@ -1302,10 +1303,10 @@ int __cdecl s_unk000C8_10057C10(unk000C8 *a1); // idb
 int *__cdecl sub_100586A0();
 int __cdecl sub_100586D0(int a1);
 int sub_10058700();
-int __cdecl sub_10058750(unk000C8 *a1);         // idb
-int __cdecl sub_10059760(unk000C8 *a1);         // idb
-int __cdecl sub_10059BB0(int);                  // weak
-int __cdecl sub_1005A6E0(unk000C8 *a1);         // idb
+int __cdecl s_unk000C8_10058750(unk000C8 *a1);  // idb
+int __cdecl s_unk000C8_10059760(unk000C8 *a1);  // idb
+int __cdecl s_unk000C8_10059BB0(unk000C8 *a1);  // idb
+int __cdecl s_unk000C8_1005A6E0(unk000C8 *a1);  // idb
 int __thiscall meth_unk000C8_4(unk000C8 *this); // idb
 int meth_unk000C8_8();
 void __thiscall meth_unk00438_init(unk00438 *this); // idb
@@ -1318,7 +1319,7 @@ DWORD __thiscall meth_unk00438_9(unk00438 *this, float a2, float a3); // idb
 int __thiscall meth_unk00438_4(unk00438 *this);                       // idb
 int __thiscall meth_unk00438_3(unk00438 *this, float a2, int a3);     // idb
 int __thiscall meth_unk00438_11(unk00438 *this);                      // idb
-char __cdecl sub_1005B540(int a1);
+char __cdecl car_1005B540(int a1);
 char __thiscall meth_unk00438_5(unk00438 *this);                                        // idb
 int __thiscall meth_unk00438_6(unk00438 *this, __int16 a2, float a3, float a4, int a5); // idb
 int __thiscall meth_unk00438_8(unk00438 *this, float a2, float a3, int a4);
@@ -1346,12 +1347,12 @@ int __thiscall meth_unk06594_6(unk06594 *this, const char *a2);
 int __thiscall meth_unk06594_1(unk06594 *this, char *lpFileName); // idb
 int __thiscall meth_unk06594_2(unk06594 *, LPCSTR lpFileName);
 int __thiscall meth_unk06594_3(unk06594 *this, char *Str1, int a3); // idb
-int sub_1005D440();
-int sub_1005F4E0();
-IDirectDraw2 *sub_1005F530();
-void __noreturn sub_1005F580();
-int __cdecl sub_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5);
-int DDraw_DoInit();
+int graphics_1005D440();
+int graphics_1005F4E0();
+IDirectDraw2 *graphics_1005F530();
+void __noreturn graphics_1005F580();
+int __cdecl graphics_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5);
+int DDrawDoInit();
 int sub_1005F800();
 int sub_1005F940();
 int __cdecl sub_1005FBC0(int a1);
@@ -1383,27 +1384,27 @@ int sub_10060D90();
 char sub_10060DC0();
 char sub_10060DE0();
 int __cdecl sub_10060E00(int a1);
-__int64 sub_10060E90(void);
-char *__cdecl ConvertBitmapIf24Bit(PBITMAP pBitmap);
-char *__cdecl Convert24BitBitmap(
+__int64 thunk_10060E90(void);
+char *__cdecl graphics_ConvertBitmapIf24Bit(PBITMAP pBitmap);
+char *__cdecl graphics_Convert24BitBitmap(
     char *mem, LPVOID bmBits, LONG bmWidth, LONG bmHeight, LONG bmWidthBytes);
-int __cdecl sub_10060F70(int a1, int a2, int a3);
-int *__cdecl sub_10060FB0(int a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, int *a6);
-int sub_10061000();
-int __cdecl LoadCarPaint(int carIndex, int bSomething); // idb
-char *__cdecl LoadImageWrapper(LPCSTR name);
-unsigned int __cdecl sub_10061210(char *a1,
+int __cdecl car_10060F70(int a1, int a2, int a3);
+int *__cdecl car_10060FB0(int a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, int *a6);
+int car_10061000();
+int __cdecl car_LoadCarPaint(int carIndex, int bSomething); // idb
+char *__cdecl car_LoadImageWrapper(LPCSTR name);
+unsigned int __cdecl car_10061210(char *imageData,
                                   int bmHeight_1,
                                   int bmHeight,
-                                  unsigned __int8 *mem); // idb
-int __cdecl sub_10061290(int a1, int a2, int a3, int a4);
-Car *sub_100613B0();
-char *j_LoadDamageBitmaps(void);
-char *LoadPaintDamageBitmaps();
-int __cdecl sub_10061460(int a1, int a2, int a3);
-int __cdecl sub_10061480(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
+                                  unsigned __int8 *mem);         // idb
+int __cdecl car_10061290(int a1, int a2, int width, int height); // idb
+CarPart *car_100613B0();
+char *thunk_LoadDamageBitmaps(void);
+char *car_LoadPaintDamageBitmaps();
+int __cdecl car_10061460(int a1, int a2, int damgePtrsMaxAddress); // idb
+int __cdecl car_10061480(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
 int __cdecl sub_100615B0(_BYTE *a1, int a2, int a3, int a4, int a5);
-void sub_10061620();
+void car_10061620();
 void __cdecl sub_10061660(int a1);
 int __cdecl sub_100616C0(int *a1);
 int sub_10061700();
@@ -1412,7 +1413,7 @@ void __thiscall meth_10061720(_DWORD *this); // idb
 // float *__usercall sub_10061C60@<eax>(int a1@<ecx>, double a2@<st0>);
 void __thiscall meth_10061F70(_DWORD *this); // idb
 void __thiscall meth_10062C50(_DWORD *this); // idb
-void j_nullsub_2_1();
+void thunk_nullsub_2_1();
 void **sub_100633E0();
 enum MACRO_GAME_MODE __thiscall meth_10063420(_DWORD *this);
 enum MACRO_GAME_MODE __thiscall meth_100634F0(_DWORD *this);
@@ -1427,7 +1428,7 @@ int __thiscall meth_10065710(_DWORD *this); // idb
 int __thiscall meth_10065740(_DWORD *this); // idb
 __int16 __cdecl sub_10065B20(int a1, float a2);
 void __cdecl sub_10065C80(int a1, int a2, float a3, float a4);
-int __cdecl MakeEnemyCarColorPanels0(size_t size); // idb
+int __cdecl car_MakeEnemyCarColorPanels0(size_t size); // idb
 int __cdecl sub_100661B0(int a1, int a2);
 int __thiscall meth_100662A0(_DWORD *this);  // idb
 void __thiscall meth_100664C0(_DWORD *this); // idb
@@ -1454,7 +1455,7 @@ int sub_10067ED0();
 void __cdecl sub_10068180(int a1, int *a2, int a3);
 void __cdecl sub_10068210(int a1, int *a2, int a3);
 size_t __cdecl sub_10068260(int a1, int a2);
-size_t MakeEnemyCarColorPanels();
+size_t car_MakeEnemyCarColorPanels();
 void __thiscall meth_100683C0(_DWORD *this);
 int sub_100683D0();
 int __thiscall meth_10068400(_DWORD *this);  // idb
@@ -1474,7 +1475,7 @@ char *sub_10069800();
 void sub_10069840();
 int sub_10069A50();
 BossRallyConfig *sub_10069A60();
-// void __cdecl unknown_libname_10(); idb
+// void __cdecl debug_10069A80(); idb
 BossRallyConfig *__thiscall meth_BossRallyConfig_10069A90(BossRallyConfig *this);
 int __thiscall meth_BossRallyConfig_10069AA0(BossRallyConfig *this, int nPlayers); // idb
 int __thiscall meth_BossRallyConfig_10069B10(
@@ -1484,7 +1485,7 @@ char __thiscall meth_BossRallyConfig_10069C30(BossRallyConfig *this, int a2, int
 int __thiscall meth_BossRallyConfig_10069C90(BossRallyConfig *this);                  // idb
 BossRallyConfig *__thiscall meth_BossRallyConfig_10069DE0(BossRallyConfig *this,
                                                           BossRallyConfig *otherConfig);      // idb
-int __thiscall meth_BossRally_ReadCfg(BossRallyConfig *this, const char *cfgFilename);        // idb
+int __thiscall meth_BossRallyConfig_ReadCfg(BossRallyConfig *this, const char *cfgFilename);  // idb
 FILE *__thiscall meth_BossRallyConfig_WriteConfigFile(BossRallyConfig *this, char *FileName); // idb
 unsigned int ReadInstallDirectory();
 int sub_1006A980();
@@ -1545,7 +1546,7 @@ char sub_100709A0();
 bool __cdecl sub_10070AF0(char *filename, BOOL b); // idb
 bool __cdecl sub_10070E60(int a1);
 char sub_10070E80();
-Car *sub_10071120();
+CarPart *sub_10071120();
 char __cdecl sub_10071130(enum MACRO_UNK10071130 a1, FILE *Stream);
 DWORD sub_100713A0();
 int sub_100713B0(void); // weak
@@ -1642,14 +1643,14 @@ int __thiscall meth_unk00214_10073F40(unk00214 *this); // idb
 int *__thiscall meth_unk00214_GetField10(unk00214 *this);
 HMODULE LoadBrstringDll();
 LPCSTR __cdecl GetStringWithIndex(unsigned int index);
-void sub_10074050();
-float *__cdecl sub_10074090(float *a1, float *a2, float *a3);
-void __cdecl sub_100741B0(float *a1);
-void __cdecl sub_10074250(float *a1);
-float *__cdecl sub_100742D0(float *a1);
-int __cdecl sub_100743A0(int, int, float); // idb
-void __cdecl sub_10074450(float *a1, float *a2);
-int __cdecl sub_100745F0(int, int, float); // idb
+void ReleaseBRString();
+float *__cdecl math_10074090(float *a1, float *a2, float *a3);
+void __cdecl math_100741B0(float *a1);
+void __cdecl math_10074250(float *a1);
+float *__cdecl math_100742D0(float *a1);
+int __cdecl math_100743A0(int, int, float); // idb
+void __cdecl math_10074450(float *a1, float *a2);
+int __cdecl math_100745F0(int, int, float); // idb
 _DWORD *__cdecl sub_100746E0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
 float *__cdecl sub_10074720(float *a1, float *a2, float *a3);
 float *__cdecl sub_10074770(float *a1, int a2, float *a3);
@@ -1679,8 +1680,8 @@ int sub_100750F0();
 DWORD sub_10075100();
 int sub_10075150();
 DWORD __thiscall meth_10075190(int this);
-int __cdecl sub_10075260(__int16 a1, int a2, int a3, int a4, int a5);
-int __cdecl sub_100752D0(__int16 a1, int a2, int a3, int a4);
+int __cdecl time_10075260(__int16 a1, int a2, int a3, int a4, int a5);
+int __cdecl time_100752D0(__int16 a1, int a2, int a3, int a4);
 // size_t __cdecl strftime(char *Buffer, size_t SizeInBytes, const char *Format, const struct tm *Tm);
 void j_nullsub_2_2();
 void nullsub_2();
@@ -1694,123 +1695,132 @@ int __cdecl sub_100759D0(int, int, int, int, int, float, int, int, int); // idb
 void __thiscall meth_10075F10(int this);
 void __thiscall meth_10076420(float *this, int a2, int a3, int a4);
 void __thiscall meth_100764C0(float *this, float a2);
-void __cdecl sub_100765E0(float *a1, float *a2);
+void __cdecl math_100765E0(float *a1, float *a2);
 void __thiscall meth_10076700(int this, void *a2);
 int __thiscall meth_100767A0(_DWORD *this, int a2, int a3, int a4);
 int __thiscall meth_10076820(_DWORD *this, float a2, float a3, float a4);
 int __thiscall meth_100769A0(_DWORD *this, int a2, int a3, int a4);
 void __thiscall meth_10076A00(int this);
-void __thiscall meth_10076A40(_DWORD *this, int a2);
+void __thiscall meth_10076A40(_DWORD *this, int index); // idb
 void __thiscall meth_10076A70(unsigned __int8 *this, int a2, int a3);
 int __thiscall meth_10076AE0(_DWORD *this, int carIndex); // idb
 int __thiscall meth_10076B20(_DWORD *this);
 _DWORD *__thiscall meth_10076C90(char *this);
-MMRESULT __cdecl sub_10076CE0(LPSTR pszFileName, int a2, int a3, LPMMCKINFO pmmcki);
-MMRESULT __cdecl sub_10076E90(int a1, LPMMCKINFO pmmcki, MMCKINFO *pmmckiParent);
-int __cdecl sub_10076ED0(HMMIO hmmio, int, int, int, int); // idb
-MMRESULT __cdecl sub_10076FA0(LPSTR pszFileName, int a2, int a3, int a4, HMMIO hmmio);
+MMRESULT __cdecl mm_10076CE0(LPSTR pszFileName, int a2, int a3, LPMMCKINFO pmmcki);
+MMRESULT __cdecl mm_10076E90(int a1, LPMMCKINFO pmmcki, MMCKINFO *pmmckiParent);
+int __cdecl mm_10076ED0(HMMIO hmmio, int, int, int, int); // idb
+MMRESULT __cdecl mm_10076FA0(LPSTR pszFileName, int a2, int a3, int a4, HMMIO hmmio);
 void __cdecl sub_10077090(unsigned int a1);
 int sub_100770C0();
-int sub_100770F0();
-HRESULT __cdecl sub_100771B0(void *a1);
-int __cdecl sub_10077200(_DWORD *a1);
-int sub_10077310();
-BOOL sub_100773D0();
-int __cdecl sub_100773F0(int *a1, int *a2);
-char __cdecl sub_10078420(int a1);
-char __cdecl sub_100786E0(int a1);
-LPDIRECTINPUTDEVICEA sub_10078BC0();
+int input_100770F0();
+HRESULT __cdecl input_100771B0(void *a1);
+int __cdecl input_10077200(_DWORD *a1);
+int input_10077310();
+BOOL input_100773D0();
+int __cdecl input_100773F0(int *a1, int *a2);
+char __cdecl input_10078420(int a1);
+char __cdecl input_100786E0(int a1);
+LPDIRECTINPUTDEVICEA input_10078BC0();
 __int64 sub_10078C10();
-int __cdecl DISetProperty2(
+int __cdecl input_DISetProperty2(
     IDirectInputDevice2A *diDevice2A, GUID *guid, int dwObj, int dwHow, int unusedA5, int unusedA6);
-HRESULT __cdecl DISetProperty(
+HRESULT __cdecl input_DISetProperty(
     IDirectInputDevice2A *dev2a, GUID *guid, DWORD dwObj, DWORD dwHow, int unusedA5); // idb
-int sub_10078CD0();
-int sub_10078DB0();
-int __cdecl sub_10078E10(int a1);
-int sub_10078E50();
-int sub_10078E90();
-HRESULT sub_10078ED0();
-int __cdecl sub_10078F20(int a1, int a2, int a3);
-IDirectInputEffect *__cdecl sub_100790B0(int a1);
-HRESULT __stdcall diEnumDevicesCallback(LPDIRECTINPUTDEVICEA deviceInstance, LPVOID userData);
-int sub_100791D0();
-HRESULT __cdecl DICreateEffects(int a1, int unusedA2); // idb
-int sub_10079550();
-int sub_100795D0();
-int sub_10079670();
+int input_10078CD0();
+int input_10078DB0();
+int __cdecl input_10078E10(int a1);
+DWORD input_10078E50();
+DWORD input_10078E90();
+HRESULT input_10078ED0();
+int __cdecl input_10078F20(int a1, int a2, int a3);
+HRESULT __cdecl input_100790B0(int a1);
+HRESULT __stdcall input_diEnumDevicesCallback(LPDIRECTINPUTDEVICEA deviceInstance, LPVOID userData);
+int input_100791D0();
+HRESULT __cdecl input_DICreateEffects(int a1, int unusedA2); // idb
+int input_10079550();
+int input_100795D0();
+int input_10079670();
 // _DWORD *unknown_libname_11();
 // void __cdecl unknown_libname_12(); idb
-HINSTANCE sub_100796B0();
-BOOL UnregisterClass();
-HINSTANCE sub_10079740();
-int __cdecl RallyMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine); // idb
-int sub_100798F0();
-HRESULT __cdecl RallyCreateWindow(DWORD dwExStyle,
-                                  LPCSTR lpClassName,
-                                  LPCSTR lpWindowName,
-                                  DWORD dwStyle,
-                                  int X,
-                                  int Y,
-                                  int nWidth,
-                                  int nHeight,
-                                  HWND hWndParent,
-                                  HMENU hMenu,
-                                  HINSTANCE hInstance,
-                                  LPVOID lpParam,
-                                  int a3,
-                                  int a14,
-                                  HWND *wnd2,
-                                  unk00334 *a16);
-int DestroyWindow_gUnk8C();
-LONG __stdcall windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_ACTIVATE_justReturn(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam);
-int __cdecl DestroyWindowWrapper(HWND hWnd); // idb
-LRESULT __cdecl handle_WM_COMMAND_justReturn(HWND hWnd, WPARAM wParam, LPARAM lParam);
-int returnZero();
-void __noreturn sub_1007A1D0();
-int __cdecl handle_WM_DISPLAYCHANGE_returnZero(HWND hWnd); // idb
-LRESULT __cdecl handle_WM_ERASEBKGND(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_ENTERMENULOOP(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_EXITMENULOOP(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_GETMINMAXINFO(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_MOVE(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_NCPAINT(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_SETCURSOR(HWND hWnd, WPARAM wParam, LPARAM lParam);
-int __cdecl handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam); // idb
-LRESULT __cdecl handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam);
-LRESULT __cdecl handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lParam);
-int __cdecl sub_1007A6A0(HWND hWnd, intptr_t dwNewLong);                                     // idb
-int __cdecl resetWindowLong_USERDATA(HWND hWnd);                                             // idb
+HINSTANCE main_100796B0();
+BOOL main_UnregisterClass();
+int __cdecl main_10079740(int argc, const char **argv, const char **envp);
+int __cdecl main_RallyMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine); // idb
+int main_100798F0();
+HRESULT __cdecl main_RallyCreateWindow(DWORD dwExStyle,
+                                       LPCSTR lpClassName,
+                                       LPCSTR lpWindowName,
+                                       DWORD dwStyle,
+                                       int X,
+                                       int Y,
+                                       int nWidth,
+                                       int nHeight,
+                                       HWND hWndParent,
+                                       HMENU hMenu,
+                                       HINSTANCE hInstance,
+                                       LPVOID lpParam,
+                                       int a3,
+                                       int a14,
+                                       HWND *wnd2,
+                                       unk00334 *a16);
+int main_DestroyWindow_gUnk8C();
+LONG __stdcall main_windowProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_ACTIVATE(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_ACTIVATEAPP(HWND hWnd, WPARAM wParam, LPARAM lParam);
+int __cdecl main_DestroyWindowWrapper(HWND hWnd); // idb
+LRESULT __cdecl events_handle_WM_COMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam);
+int ReturnZero();
+void __noreturn noreturn_1007A1D0();
+int __cdecl events_handle_WM_DISPLAYCHANGE(HWND hWnd); // idb
+LRESULT __cdecl events_handle_WM_ERASEBKGND(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_ENTERMENULOOP(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_EXITMENULOOP(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_GETMINMAXINFO(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_MOVE(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_NCPAINT(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_SETCURSOR(HWND hWnd, WPARAM wParam, LPARAM lParam);
+int __cdecl events_handle_WM_SIZE(HWND hWnd, WPARAM wParam, LPARAM lParam); // idb
+LRESULT __cdecl events_handle_WM_SYSCOMMAND(HWND hWnd, WPARAM wParam, LPARAM lParam);
+LRESULT __cdecl events_handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPARAM lParam);
+int __cdecl main_1007A6A0(HWND hWnd, intptr_t dwNewLong);                                    // idb
+int __cdecl main_ResetWindowLong_USERDATA(HWND hWnd);                                        // idb
 int __cdecl s_unk00334_QSortCompareFn(unk00334 *u334aOrBitDepth, unk00334 **u334OrBitDepth); // idb
 unk00334 *__cdecl s_CLSID_1007A7D0(CLSID *a1);                                               // idb
-int __stdcall sub_1007A840();
-int sub_1007A940();
-int sub_1007AC00();
-BOOL __cdecl sub_1007AC20(int width, int height, int bitDepth, unk00334 *a5); // idb
+int __stdcall graphics_1007A840();
+int graphics_1007A940();
+int graphics_1007AC00();
+BOOL __cdecl graphics_1007AC20(int width, int height, int bitDepth, unk00334 *a5); // idb
 // HRESULT __stdcall DirectPlayLobbyCreateA(LPGUID, LPDIRECTPLAYLOBBYA *, IUnknown *, LPVOID, DWORD);
 // int __stdcall DirectInputCreateA(HINSTANCE hInst, DWORD version, IDirectInputA **a3, IUnknown *a4);
 // HRESULT __stdcall DirectDrawCreate(GUID *lpGUID, LPDIRECTDRAW *lplpDD, IUnknown *pUnkOuter);
 // HRESULT __stdcall DirectDrawEnumerateA(LPDDENUMCALLBACKA lpCallback, LPVOID lpContext);
 // MMRESULT __stdcall acmMetrics(HACMOBJ hao, UINT uMetric, LPVOID pMetric);
+// int _fpmath();
+// int (__cdecl *_cfltcvt_init_0())(int, void *Src, int, int, int);
 // int sprintf(char *const Buffer, const char *const Format, ...);
 // void __cdecl srand(unsigned int Seed);
 // int __cdecl rand();
 // int __cdecl fseek(FILE *Stream, int Offset, int Origin);
 // int __cdecl ftell(FILE *Stream);
-// int _cinit(void); weak
+// void _cinit();
 // void __cdecl __noreturn exit(int Code);
 // void __cdecl _cexit();
+// void __cdecl _initterm(_PVFV *First, _PVFV *Last);
 // int __cdecl fclose(FILE *Stream);
 // int fprintf(FILE *const Stream, const char *const Format, ...);
 // FILE *__cdecl _fsopen(const char *FileName, const char *Mode, int ShFlag);
 // FILE *__cdecl fopen(const char *FileName, const char *Mode);
 // int __cdecl getc(FILE *Stream);
-size_t __cdecl freadLock(void *buffer, size_t elementSize, size_t elementCount, FILE *fp); // idb
+size_t __cdecl filesystem_freadLock(void *buffer,
+                                    size_t elementSize,
+                                    size_t elementCount,
+                                    FILE *fp); // idb
 // size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
 // int __cdecl ungetc(int Character, FILE *Stream);
-size_t __cdecl fwriteLock(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+size_t __cdecl filesystem_fwriteLock(void *Buffer,
+                                     size_t ElementSize,
+                                     size_t ElementCount,
+                                     FILE *Stream);
 // size_t __cdecl fwrite(const void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
 // void __cdecl free(void *Block);
 // void *__cdecl malloc(size_t Size);
@@ -1844,9 +1854,9 @@ size_t __cdecl fwriteLock(void *Buffer, size_t ElementSize, size_t ElementCount,
 // _DWORD __cdecl shortsort(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // _DWORD __cdecl swap(_DWORD, _DWORD, _DWORD); weak
 // int sscanf(const char *const Buffer, const char *const Format, ...);
-_DWORD __cdecl sub_1007E54D(_DWORD);         // weak
-_DWORD __cdecl sub_1007E5FD(_DWORD);         // weak
-_DWORD __cdecl sub_1007E6AD(_DWORD, _DWORD); // weak
+_DWORD __cdecl math_1007E54D(_DWORD);         // weak
+_DWORD __cdecl math_1007E5FD(_DWORD);         // weak
+_DWORD __cdecl math_1007E6AD(_DWORD, _DWORD); // weak
 // double __cdecl asin(double X);
 // _DWORD __cdecl sub_1007E76D(_DWORD, _DWORD); weak
 // int __cdecl atexit(void (__cdecl *)());
@@ -1858,8 +1868,9 @@ _DWORD __cdecl sub_1007E6AD(_DWORD, _DWORD); // weak
 // int __cdecl _getdrive();
 // int __cdecl _chdrive(int Drive);
 // char *__cdecl _strupr(char *String);
-int __cdecl sub_1007F3C0(int a1, int a2);
-// int __cdecl _getdcwd_lk(CHAR RootPathName, int, int); idb
+char *__cdecl getcwd(char *buffer, int maxlen); // idb
+// char *__cdecl _getdcwd_lk(int RootPathName, char *a2, int a3); idb
+// int __cdecl _validdrive(CHAR RootPathName); idb
 // void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *)); idb
 // void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *)); idb
 // void __stdcall `eh vector constructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *), void (__thiscall *)(void *)); idb
@@ -1870,9 +1881,16 @@ int __cdecl sub_1007F3C0(int a1, int a2);
 // _DWORD __cdecl sub_1007FA52(_DWORD, _DWORD, __int16, _DWORD, __int16); weak
 // int __usercall sub_1007FC25@<eax>(double@<st0>); weak
 // int __cdecl _finite(double X);
-// int __stdcall _CRT_INIT(int a1, int a2, int a3);
+// int __stdcall _CRT_INIT(HINSTANCE a1, int a2, int a3); idb
 // BOOL __stdcall DllEntryPoint(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved);
 // void __cdecl __noreturn _amsg_exit(int a1);
+// int _setdefaultprecision(void); weak
+// int _ms_p5_mp_test_fdiv(void); weak
+// int __cdecl _forcdecpt(int); weak
+// int _cropzeros(); weak
+// int __cdecl _positive(int); weak
+// int __cdecl _fassign(int a1, int *a2, int a3);
+// int __cdecl _cfltcvt(int, void *Src, int, int, int); idb
 // int __cdecl _flsbuf(int Ch, FILE *File);
 // int __cdecl _output(FILE *File, int, int); idb
 // int __cdecl write_char(int, FILE *File, int); idb
@@ -1912,7 +1930,7 @@ int __cdecl sub_1007F3C0(int a1, int a2);
 // void __cdecl _DestructExceptionObject(struct EHExceptionRecord *, char); idb
 // char *__cdecl AdjustPointer(void *a1, const struct PMD *a2);
 // void __cdecl __noreturn terminate(); idb
-void __noreturn sub_10083B50();
+void __noreturn noreturn_10083B50();
 // ULONG_PTR __cdecl _raise_exc(ULONG_PTR Arguments, int a2, char a3, int a4, int a5, int a6);
 // BOOL __cdecl _handle_exc(char a1, double *a2, __int16 a3);
 // int __cdecl _decomp(double, int); idb
@@ -1966,7 +1984,7 @@ int __cdecl sub_100875C0(int a1, int a2);
 // int __cdecl storeTimeFmt(void *Block, int); idb
 // int __tzset(void); weak
 // BOOL __cdecl _isindst(_DWORD *a1);
-BOOL __cdecl sub_10089B40(_DWORD *a1);
+BOOL __cdecl time_10089B40(_DWORD *a1);
 // _DWORD __cdecl cvtdate(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // double __cdecl unknown_libname_13(_TBYTE a1, _TBYTE a2);
 // int __usercall unknown_libname_15@<eax>(double a1@<st1>, double a2@<st0>);
@@ -2058,6 +2076,8 @@ BOOL __cdecl sub_10089B40(_DWORD *a1);
 // void __stdcall GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer);
 // BOOL __stdcall ReleaseMutex(HANDLE hMutex);
 // void __stdcall OutputDebugStringA(LPCSTR lpOutputString);
+// DWORD __stdcall GetFullPathNameA(LPCSTR lpFileName, DWORD nBufferLength, LPSTR lpBuffer, LPSTR *lpFilePart);
+// DWORD __stdcall GetCurrentDirectoryA(DWORD nBufferLength, LPSTR lpBuffer);
 // DWORD __stdcall GetLastError();
 // LPVOID __stdcall HeapAlloc(HANDLE hHeap, DWORD dwFlags, SIZE_T dwBytes);
 // void __stdcall RtlUnwind(PVOID TargetFrame, PVOID TargetIp, PEXCEPTION_RECORD ExceptionRecord, PVOID ReturnValue);
@@ -2216,6 +2236,8 @@ GUID CLSID_IDirect3DTexture2 = {
     2468877570u, 36088u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
 GUID CLSID_GUID_SysMouse = {
     1864182624u, 54688u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_GUID_SysKeyboard = {
+    1864182625u, 54688u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
 const IID IID_IDirectPlay3A = {
     322895425u, 13020u, 4560u, {156u, 251u, 0u, 160u, 201u, 10u, 67u, 203u}}; // idb
 IID IID_IDirectPlay4A = {
@@ -2314,7 +2336,6 @@ int dword_100A6150[] = {0};                                                // we
 int dword_100A61C0[] = {0};                                                // weak
 int dword_100A6230 = 2;                                                    // weak
 intptr_t gD3DEnumTextureFormatsContextStart = 0;
-_UNKNOWN unk_100A6238;                                    // weak
 int gD3DWaitCanFlip = 1;                                  // weak
 int gD3DWaitFlipDone = 1;                                 // weak
 CHAR gMessageBoxText[] = "This game requires DirectX 6."; // idb
@@ -2346,86 +2367,79 @@ char byte_100A64B8[16] = {'\x03',
                           '\0',
                           '\0',
                           '\0',
-                          '\0'};                    // idb
-void *off_100A64C8 = &unk_10850001;                 // weak
-_UNKNOWN unk_100A64E8;                              // weak
-_UNKNOWN unk_100A64F0;                              // weak
-char byte_100A64F8[] = {'\0'};                      // weak
-char byte_100A64F9[] = {'\0'};                      // weak
-char byte_100A64FA[] = {'\0'};                      // weak
-int dword_100A65D8[4] = {2, 1, 3, 0};               // idb
-char aBadVtxDl[11] = "BAD VTX DL";                  // weak
-int dword_100A66E8 = 1;                             // weak
-int gInterpolate = 1;                               // weak
-_UNKNOWN unk_100A66F0;                              // weak
-char (*off_100A66FC)[8] = &String2;                 // weak
-float flt_100A6CF0 = 30.0;                          // weak
-float flt_100A6CF4 = 30.0;                          // weak
-int dword_100A6CF8 = 2;                             // weak
-void *dword_100A6CFC = (void *)0xFFFFFFFF;          // idb
-char aRy_0[4] = "%ry";                              // weak
-char aY1[4] = "%y1";                                // weak
-int dword_100A73A8[] = {-1};                        // weak
-char aWw[4] = "%ww";                                // weak
-char asc_100A73D4[2] = "L";                         // weak
-char aRyD[] = "%%ry%d.";                            // idb
-char aY1D[8] = "%%y1%d.";                           // weak
-int dword_100A74A8 = 255;                           // weak
-int dword_100A74AC = 255;                           // weak
-int dword_100A74B0 = 255;                           // weak
-_UNKNOWN unk_100A74B8;                              // weak
-_UNKNOWN unk_100A75F8;                              // weak
-_UNKNOWN unk_100A7738;                              // weak
-_UNKNOWN unk_100A7878;                              // weak
-float flt_100A79C8 = 0.5;                           // weak
-int dword_100A79CC = -1;                            // weak
-char aUnknown_0[8] = "UNKNOWN";                     // weak
-int gD3DInvSrcAlpha = 2;                            // weak
-int dword_100A79DC = 1;                             // weak
-float flt_100A79E0 = 0.46000001;                    // weak
-float flt_100A79E4 = 0.46000001;                    // weak
-int dword_100A79E8 = 1065353216;                    // weak
-int(__cdecl *off_100A79EC)(_DWORD) = &sub_1001BC90; // weak
+                          '\0'};                         // idb
+void *off_100A64C8 = &unk_10850001;                      // weak
+char byte_100A64F8[] = {'\0'};                           // weak
+char byte_100A64F9[] = {'\0'};                           // weak
+char byte_100A64FA[] = {'\0'};                           // weak
+int dword_100A65D8[4] = {2, 1, 3, 0};                    // idb
+char aBadVtxDl[11] = "BAD VTX DL";                       // weak
+int dword_100A66E8 = 1;                                  // weak
+int gInterpolate = 1;                                    // weak
+char (*off_100A66FC)[8] = &String2;                      // weak
+float flt_100A6CF0 = 30.0;                               // weak
+float flt_100A6CF4 = 30.0;                               // weak
+int dword_100A6CF8 = 2;                                  // weak
+void *dword_100A6CFC = (void *)0xFFFFFFFF;               // idb
+char aRy_0[4] = "%ry";                                   // weak
+char aY1[4] = "%y1";                                     // weak
+int dword_100A73A8[] = {-1};                             // weak
+char aWw[4] = "%ww";                                     // weak
+char asc_100A73D4[2] = "L";                              // weak
+char aRyD[] = "%%ry%d.";                                 // idb
+char aY1D[8] = "%%y1%d.";                                // weak
+int dword_100A74A8 = 255;                                // weak
+int dword_100A74AC = 255;                                // weak
+int dword_100A74B0 = 255;                                // weak
+float flt_100A79C8 = 0.5;                                // weak
+int dword_100A79CC = -1;                                 // weak
+char aUnknown_0[8] = "UNKNOWN";                          // weak
+int gD3DInvSrcAlpha = 2;                                 // weak
+int dword_100A79DC = 1;                                  // weak
+float flt_100A79E0 = 0.46000001;                         // weak
+float flt_100A79E4 = 0.46000001;                         // weak
+int dword_100A79E8 = 1065353216;                         // weak
+int(__cdecl *off_100A79EC)(_DWORD) = &graphics_1001BC90; // weak
 int(__cdecl *funcs_10024A9E[4])(int) = {
     &sub_100243D0, &sub_10020DC0, &sub_100243D0, &sub_10024150}; // weak
 int(__cdecl *off_100A7A00[180])(int) = {
-    &sub_10021BD0, &sub_100243D0, &sub_10020D60, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001E170, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001E790, &sub_10020F20}; // weak
-int(__cdecl *off_100A7CB4[7])(int) = {&sub_1001E170,
+    &sub_10021BD0, &sub_100243D0, &sub_10020D60, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &graphics_1001E170, &sub_100243D0,
+    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001E790,      &sub_10020F20}; // weak
+int(__cdecl *off_100A7CB4[7])(int) = {&graphics_1001E170,
                                       &sub_100243D0,
                                       &sub_100243D0,
                                       &sub_100243D0,
@@ -2433,71 +2447,77 @@ int(__cdecl *off_100A7CB4[7])(int) = {&sub_1001E170,
                                       &sub_1001E790,
                                       &sub_10020F20}; // weak
 int(__cdecl *off_100A7CEC[65])(int) = {
-    &sub_1001CFF0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001BD70,
-    &sub_1001BE10, &sub_1001CD60, &sub_1001CD80, &sub_100243D0, &sub_1001C7A0, &sub_1001CE70,
-    &sub_10021B80, &sub_10021510, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001CDA0, &sub_100243D0,
-    &sub_100243D0, &sub_100243D0, &sub_100243D0, &sub_1001CF30, &sub_100243D0, &sub_100243D0,
-    &sub_100243D0, &sub_1001BE30, &sub_1001CC00, &sub_1001CC70, &sub_100243D0, &sub_1001CCA0,
-    &sub_1001CB40, &sub_1001C7F0, &sub_100243D0, &sub_100243D0, &sub_100243D0}; // weak
-void *off_100A7DF0 = &unk_104C59A8;                                             // weak
-int dword_100A7DF4 = 32;                                                        // idb
-int dword_100A7DF8 = 32;                                                        // idb
-int dword_100A7DFC = 64;                                                        // weak
-int dword_100A7E00 = 64;                                                        // weak
-int dword_100A7E04 = 32;                                                        // weak
-int dword_100A7E08 = 32;                                                        // weak
-char aAppendtextureA[20] = "AppendTexture: atdb";                               // weak
-char aTidfromtexture[] = "TIDFromTextureAppend: amid";                          // idb
-CHAR aEarInteractive[] = "EAR Interactive Around-Sound";                        // idb
-CHAR aEarDllUpdateea[] = "_EAR_DLL_UpdateEar@0";                                // idb
-CHAR aEarDllShutdown_6[] = "_EAR_DLL_ShutDownTimer@0";                          // idb
-CHAR aEarDllStarttim[] = "_EAR_DLL_StartTimer@0";                               // idb
-CHAR aEarDllStarteve[] = "_EAR_DLL_StartEvent@4";                               // idb
-CHAR aEarDllShutdown_5[] = "_EAR_DLL_ShutDownPreset@4";                         // idb
-CHAR aEarDllShutdown_4[] = "_EAR_DLL_ShutDownMatrix@4";                         // idb
-CHAR aEarDllShutdown_3[] = "_EAR_DLL_ShutDownEvent@8";                          // idb
-CHAR aEarDllShutdown_2[] = "_EAR_DLL_ShutDownEnvironment@4";                    // idb
-CHAR aEarDllShutdown_1[] = "_EAR_DLL_ShutDownEar@0";                            // idb
-CHAR aEarDllShutdown_0[] = "_EAR_DLL_ShutDownChannel@4";                        // idb
-CHAR aEarDllShutdown[] = "_EAR_DLL_ShutDownBank@4";                             // idb
-CHAR aEarDllShowlast[] = "_EAR_DLL_ShowLastError@0";                            // idb
-CHAR aEarDllSetuserd[] = "_EAR_DLL_SetUserDistanceUnit@8";                      // idb
-CHAR aEarDllSetatten[] = "_EAR_DLL_SetAttenuationLevel@8";                      // idb
-CHAR aEarDllResetear[] = "_EAR_DLL_ResetEar@0";                                 // idb
-CHAR aEarDllRegister_3[] = "_EAR_DLL_RegisterPreset@8";                         // idb
-CHAR aEarDllRegister_2[] = "_EAR_DLL_RegisterMatrix@4";                         // idb
-CHAR aEarDllRegister_1[] = "_EAR_DLL_RegisterEnvironment@4";                    // idb
-CHAR aEarDllRegister_0[] = "_EAR_DLL_RegisterChannel@16";                       // idb
-CHAR aEarDllRegister[] = "_EAR_DLL_RegisterBank@8";                             // idb
-CHAR aEarDllMoveeven[] = "_EAR_DLL_MoveEvent@4";                                // idb
-CHAR aEarDllMixevent[] = "_EAR_DLL_MixEvent@4";                                 // idb
-CHAR aEarDllInitiali[] = "_EAR_DLL_InitializeEar@4";                            // idb
-CHAR aEarDllGetversi[] = "_EAR_DLL_GetVersion@0";                               // idb
-CHAR aEarDllGetlaste[] = "_EAR_DLL_GetLastError@0";                             // idb
-CHAR aEarDllGetevent[] = "_EAR_DLL_GetEventStatus@8";                           // idb
-CHAR aEarDllEarinact[] = "_EAR_DLL_EarInactive@0";                              // idb
-CHAR aEarDllClearcha[] = "_EAR_DLL_ClearChannel@8";                             // idb
-CHAR aEarDllChangech[] = "_EAR_DLL_ChangeChannelControl@8";                     // idb
-CHAR aEarDllAssignhw[] = "_EAR_DLL_AssignHwnd@4";                               // idb
-CHAR ProcName[] = "_EAR_DLL_AAA_Validate@4";                                    // idb
-char aEariasDll[11] = "earias.dll";                                             // weak
-CHAR aEarpdsDll[] = "earpds.dll";                                               // idb
-int dword_100A81A8 = 1;                                                         // weak
-int dword_100A81AC = 1065353216;                                                // weak
-float flt_100A81B0 = 1.0;                                                       // weak
-int dword_100A81B4 = 1065353216;                                                // weak
-float flt_100A81B8 = 1.0;                                                       // weak
-int dword_100A81BC = 2;                                                         // weak
-int gWidth = 640;                                                               // weak
-int gHeight = 480;                                                              // weak
-void *off_100A81C8 = &unk_10575540;                                             // weak
-int dword_100AA008 = 5;                                                         // weak
-int dword_100AA00C = -1;                                                        // weak
+    &graphics_1001CFF0, &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &graphics_1001BD70, &sub_1001BE10,      &sub_1001CD60,
+    &sub_1001CD80,      &sub_100243D0,      &graphics_1001C7A0, &graphics_1001CE70,
+    &sub_10021B80,      &sub_10021510,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &graphics_1001CDA0, &sub_100243D0,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &sub_1001CF30,
+    &sub_100243D0,      &sub_100243D0,      &sub_100243D0,      &graphics_1001BE30,
+    &sub_1001CC00,      &graphics_1001CC70, &sub_100243D0,      &sub_1001CCA0,
+    &sub_1001CB40,      &graphics_1001C7F0, &sub_100243D0,      &sub_100243D0,
+    &sub_100243D0};                                          // weak
+void *off_100A7DF0 = &unk_104C59A8;                          // weak
+int dword_100A7DF4 = 32;                                     // idb
+int dword_100A7DF8 = 32;                                     // idb
+int dword_100A7DFC = 64;                                     // weak
+int dword_100A7E00 = 64;                                     // weak
+int dword_100A7E04 = 32;                                     // weak
+int dword_100A7E08 = 32;                                     // weak
+char aAppendtextureA[20] = "AppendTexture: atdb";            // weak
+char aTidfromtexture[] = "TIDFromTextureAppend: amid";       // idb
+CHAR aEarInteractive[] = "EAR Interactive Around-Sound";     // idb
+CHAR aEarDllUpdateea[] = "_EAR_DLL_UpdateEar@0";             // idb
+CHAR aEarDllShutdown_6[] = "_EAR_DLL_ShutDownTimer@0";       // idb
+CHAR aEarDllStarttim[] = "_EAR_DLL_StartTimer@0";            // idb
+CHAR aEarDllStarteve[] = "_EAR_DLL_StartEvent@4";            // idb
+CHAR aEarDllShutdown_5[] = "_EAR_DLL_ShutDownPreset@4";      // idb
+CHAR aEarDllShutdown_4[] = "_EAR_DLL_ShutDownMatrix@4";      // idb
+CHAR aEarDllShutdown_3[] = "_EAR_DLL_ShutDownEvent@8";       // idb
+CHAR aEarDllShutdown_2[] = "_EAR_DLL_ShutDownEnvironment@4"; // idb
+CHAR aEarDllShutdown_1[] = "_EAR_DLL_ShutDownEar@0";         // idb
+CHAR aEarDllShutdown_0[] = "_EAR_DLL_ShutDownChannel@4";     // idb
+CHAR aEarDllShutdown[] = "_EAR_DLL_ShutDownBank@4";          // idb
+CHAR aEarDllShowlast[] = "_EAR_DLL_ShowLastError@0";         // idb
+CHAR aEarDllSetuserd[] = "_EAR_DLL_SetUserDistanceUnit@8";   // idb
+CHAR aEarDllSetatten[] = "_EAR_DLL_SetAttenuationLevel@8";   // idb
+CHAR aEarDllResetear[] = "_EAR_DLL_ResetEar@0";              // idb
+CHAR aEarDllRegister_3[] = "_EAR_DLL_RegisterPreset@8";      // idb
+CHAR aEarDllRegister_2[] = "_EAR_DLL_RegisterMatrix@4";      // idb
+CHAR aEarDllRegister_1[] = "_EAR_DLL_RegisterEnvironment@4"; // idb
+CHAR aEarDllRegister_0[] = "_EAR_DLL_RegisterChannel@16";    // idb
+CHAR aEarDllRegister[] = "_EAR_DLL_RegisterBank@8";          // idb
+CHAR aEarDllMoveeven[] = "_EAR_DLL_MoveEvent@4";             // idb
+CHAR aEarDllMixevent[] = "_EAR_DLL_MixEvent@4";              // idb
+CHAR aEarDllInitiali[] = "_EAR_DLL_InitializeEar@4";         // idb
+CHAR aEarDllGetversi[] = "_EAR_DLL_GetVersion@0";            // idb
+CHAR aEarDllGetlaste[] = "_EAR_DLL_GetLastError@0";          // idb
+CHAR aEarDllGetevent[] = "_EAR_DLL_GetEventStatus@8";        // idb
+CHAR aEarDllEarinact[] = "_EAR_DLL_EarInactive@0";           // idb
+CHAR aEarDllClearcha[] = "_EAR_DLL_ClearChannel@8";          // idb
+CHAR aEarDllChangech[] = "_EAR_DLL_ChangeChannelControl@8";  // idb
+CHAR aEarDllAssignhw[] = "_EAR_DLL_AssignHwnd@4";            // idb
+CHAR ProcName[] = "_EAR_DLL_AAA_Validate@4";                 // idb
+char aEariasDll[11] = "earias.dll";                          // weak
+CHAR aEarpdsDll[] = "earpds.dll";                            // idb
+int dword_100A81A8 = 1;                                      // weak
+int dword_100A81AC = 1065353216;                             // weak
+float flt_100A81B0 = 1.0;                                    // weak
+int dword_100A81B4 = 1065353216;                             // weak
+float flt_100A81B8 = 1.0;                                    // weak
+int dword_100A81BC = 2;                                      // weak
+int gWidth = 640;                                            // weak
+int gHeight = 480;                                           // weak
+void *off_100A81C8 = &unk_10575540;                          // weak
+int dword_100AA008 = 5;                                      // weak
+int dword_100AA00C = -1;                                     // weak
 enum MACRO_GAME_MODE gGameMode = GAME_MODE_1;
 char (*off_100AA018)[8] = &String2;                                  // weak
 float flt_100AA01C[] = {4.0};                                        // weak
@@ -2531,11 +2551,6 @@ CHAR g_DINPUT_DLL[] = "DINPUT.DLL";                                   // idb
 int gD3dalphacompar = 1;                                              // weak
 int dword_100AA728 = -2143612928;                                     // weak
 int dword_100AA72C = -2143518720;                                     // weak
-_UNKNOWN unk_100AA730;                                                // weak
-_UNKNOWN unk_100AA770;                                                // weak
-_UNKNOWN unk_100AA838;                                                // weak
-_UNKNOWN unk_100AA860;                                                // weak
-_UNKNOWN unk_100AA868;                                                // weak
 int dword_100AA87C = 1;                                               // weak
 int dword_100AA880 = 1;                                               // weak
 int dword_100AA884 = 1;                                               // weak
@@ -2624,9 +2639,8 @@ char aDperrGeneric[14] = "DPERR_GENERIC";                                       
 char aDperrNointerfa[18] = "DPERR_NOINTERFACE";                                             // weak
 char aDperrUnsupport[18] = "DPERR_UNSUPPORTED";                                             // weak
 char aDperrPending[14] = "DPERR_PENDING";                                                   // weak
-char aE_0[2] = "\xca";                                                                         // weak
+char aE_0[2] = "\xca";                                                                      // weak
 int dword_100AB334[] = {0};                                                                 // weak
-_UNKNOWN unk_100AB338;                                                                      // weak
 int dword_100AB3D8 = 1;                                                                     // weak
 __int16 word_100AB3DC = 1;                                                                  // weak
 int dword_100AB3E0 = -1;                                                                    // weak
@@ -2654,17 +2668,13 @@ _UNKNOWN unk_100AB468;                                                          
 _UNKNOWN unk_100AB478;                                                                      // weak
 _UNKNOWN unk_100AB488;                                                                      // weak
 _UNKNOWN unk_100AB498;                                                                      // weak
-_UNKNOWN unk_100AB4A8;                                                                      // weak
 _UNKNOWN unk_100AB4B8;                                                                      // weak
-_UNKNOWN unk_100AB4C8;                                                                      // weak
 int dword_100AB4D8[4] = {188, 130, 300, 225};                                               // idb
 int dword_100AB4E8[4] = {188, 130, 300, 197};                                               // idb
-_UNKNOWN unk_100AB4F8;                                                                      // weak
 _UNKNOWN unk_100AB508;                                                                      // weak
 int dword_100AB528[4] = {128, 76, 384, 209};                                                // idb
 int dword_100AB538[4] = {188, 130, 300, 206};                                               // idb
 int dword_100AB548[4] = {162, 130, 318, 206};                                               // idb
-_UNKNOWN unk_100AB558;                                                                      // weak
 __int16 word_100AB568[] = {0};                                                              // weak
 int dword_100AB56C[4] = {0, 0, 640, 480};                                                   // idb
 int dword_100AB57C[30] = {0, 1,   0,   0, 28, 30, 1, 2,   0,   0, 128, 144, 1, 3,   0,
@@ -2940,286 +2950,486 @@ int dword_100ADF60 = 1;                                                         
 char byte_100ADF68[] = {'\0'};                                                   // weak
 char byte_100ADF90[] = {'\0'};                                                   // weak
 int dword_100ADFC8 = 1;                                                          // weak
-Car gCarsArray[4] = {{NULL,
-                      0,
-                      0,
-                      0,
-                      -1,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      "",
-                      {0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 56,   54, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 44,   54, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 0,  0, 0, 0, 64,  0, 0, 0, 28,   54, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 12,   54, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 4,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 0,    54, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 3,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, -12,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 5,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, -24,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 7,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, -36,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 1,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, -48,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 6,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, -64,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 2,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, -80,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -96,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 0,  0, 0, 0, 64,  0, 0, 0, 28,   54, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 0,  0, 0, 0, 64,  0, 0, 0, -112, 53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 0,  0, 0, 0, 64,  0, 0, 0, 128,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 0,  0, 0, 0, 64,  0, 0, 0, 112,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0},
-                      0},
-                     {NULL,
-                      0,
-                      0,
-                      0,
-                      -1,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      "",
-                      {0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 100,  53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 88,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 96,  0,
-                       0, 0, 24, 0, 0, 0, 64,  0, 0, 0, 72,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 64,  0,
-                       0, 0, 32, 0, 0, 0, 64,  0, 0, 0, 56,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 2,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, 40,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 6,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, 24,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 4,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 12,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 5,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 0,    53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 3,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, -12,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 7,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, -24,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 1,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, -36,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -52,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 64,  0,
-                       0, 0, 32, 0, 0, 0, 64,  0, 0, 0, 56,   53, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 64,  0,
-                       0, 0, 32, 0, 0, 0, 64,  0, 0, 0, -68,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 64,  0,
-                       0, 0, 32, 0, 0, 0, 64,  0, 0, 0, -84,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 64,  0,
-                       0, 0, 32, 0, 0, 0, 64,  0, 0, 0, -100, 52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0},
-                      0},
-                     {NULL,
-                      0,
-                      0,
-                      0,
-                      -1,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      "",
-                      {0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -112, 52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -124, 52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 4,  0, 0, 0, 64,  0, 0, 0, 116,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 100,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 84,   52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 7,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, 72,   52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 1,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 48, 0, 0, 0, 128, 0, 0, 0, 60,   52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 3,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 48,   52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 5,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 36,   52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 4,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 24,   52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 6,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, 8,    52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 2,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, -8,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 4,  0, 0, 0, 64,  0, 0, 0, 116,  52, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 4,  0, 0, 0, 64,  0, 0, 0, -24,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 4,  0, 0, 0, 64,  0, 0, 0, -40,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 112, 0,
-                       0, 0, 4,  0, 0, 0, 64,  0, 0, 0, -56,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0},
-                      0},
-                     {NULL,
-                      0,
-                      0,
-                      0,
-                      -1,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      "",
-                      {0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -68,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -80,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -96,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 96,  0,
-                       0, 0, 8,  0, 0, 0, 32,  0, 0, 0, -112, 51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 128,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 1,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, 116,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 7,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, 104,  51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 3,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 92,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 4,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 80,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 5,    0,  0,  0,  0, 0, 0, 0, 128, 0,
-                       0, 0, 28, 0, 0, 0, 128, 0, 0, 0, 68,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 2,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, 52,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 6,    0,  0,  0,  0, 0, 0, 0, -96, 0,
-                       0, 0, 52, 0, 0, 0, 128, 0, 0, 0, 36,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 96,  0,
-                       0, 0, 8,  0, 0, 0, 32,  0, 0, 0, -112, 51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 96,  0,
-                       0, 0, 8,  0, 0, 0, 32,  0, 0, 0, 20,   51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 96,  0,
-                       0, 0, 8,  0, 0, 0, 32,  0, 0, 0, 4,    51, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 96,  0,
-                       0, 0, 8,  0, 0, 0, 32,  0, 0, 0, -12,  50, 11, 16, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, 0,    0,  0,  0,  0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0, -1,   -1, -1, -1, 0, 0, 0, 0, 0,   0,
-                       0, 0, 0,  0, 0, 0, 0,   0, 0, 0},
-                      0}};
+CarPart gCarPartArray[480] = {{NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ce-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ce-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 0, 64, "ce-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ce-headl.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "ce-back.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "ce-lr.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "ce-rr.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 48, 128, "ce-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 48, 128, "ce-lf.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "ce-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "ce-lside.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "ce-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 112, 0, 64, "ce-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 0, 64, "ce-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 0, 64, "ce-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 0, 64, "ce-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "es-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "es-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 24, 64, "es-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "es-tail0.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 48, 128, "es-lside.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 48, 128, "es-rside.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "es-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "es-rr.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "es-lr.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 48, 128, "es-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 48, 128, "es-lf.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "es-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "es-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "es-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "es-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "es-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ns-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ns-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 4, 64, "ns-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ns-headl.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "ns-front.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 48, 128, "ns-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 48, 128, "ns-lf.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "ns-lr.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "ns-rr.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "ns-back.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "ns-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "ns-lside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 112, 4, 64, "ns-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 4, 64, "ns-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 4, 64, "ns-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 4, 64, "ns-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "rs-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "rs-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "rs-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 8, 32, "rs-tail0.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "rs-front.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "rs-lf.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "rs-rf.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "rs-lr.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "rs-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "rs-rr.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "rs-lside.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "rs-rside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 96, 8, 32, "rs-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 8, 32, "rs-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 8, 32, "rs-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 8, 32, "rs-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "sp-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "sp-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 112, 20, 64, "sp-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 28, 64, "sp-tail0.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "sp-front.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "sp-back.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "sp-lr.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "sp-rr.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "sp-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "sp-lf.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "sp-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "sp-lside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 128, 28, 64, "sp-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 28, 64, "sp-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 28, 64, "sp-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 28, 64, "sp-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "ps-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ps-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ps-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 28, 20, 64, "ps-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 12, 32, "ps-tail0.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "ps-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "ps-lside.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 48, 128, "ps-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 48, 128, "ps-lf.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "ps-lr.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "ps-rr.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "ps-back.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 64, 12, 32, "ps-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 12, 32, "ps-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 12, 32, "ps-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 12, 32, "ps-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "m3-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "m3-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 100, 16, 64, "m3-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 28, 64, "m3-headl.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "m3-front.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "m3-lr.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "m3-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "m3-rr.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "m3-lf.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "m3-rf.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "m3-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "m3-lside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 100, 16, 64, "m3-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 100, 16, 64, "m3-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 100, 16, 64, "m3-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 100, 16, 64, "m3-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 16, 64, "ip-headl.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "ip-front.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "ip-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "ip-lf.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "ip-lr.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "ip-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "ip-rr.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "ip-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "ip-lside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ip-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ld-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "ld-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 20, 64, "ld-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "ld-tail0.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 48, 128, "ld-lside.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 48, 128, "ld-rside.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "ld-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "ld-rr.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "ld-lr.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 48, 128, "ld-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 48, 128, "ld-lf.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "ld-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "ld-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "ld-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "ld-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "ld-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 128, 24, 128, "hm-sidet.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "hm-step.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "hm-sideb.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "hm-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 12, 64, "hm-grill.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 0, 0, 0, "hm-back.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 48, 12, 32, "hm-tail0.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 128, 24, 64, "hm-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 48, 12, 32, "hm-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 48, 12, 32, "hm-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 48, 12, 32, "hm-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 48, 12, 32, "hm-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "mt-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "mt-rr.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "mt-lr.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "mt-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "mt-roof.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "mt-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "mt-lf.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 128, 28, 64, "mt-bumpr.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "mt-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "mt-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "mt-tail0.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 48, 128, "mt-lside.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 48, 128, "mt-rside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "mt-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "mt-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "mt-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "mt-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 96, 24, 64, "pj-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-tail0.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "pj-lside.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "pj-rside.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "pj-back.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "pj-lr-rr.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "pj-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "pj-lf.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "pj-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "pj-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "tr-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "tr-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "tr-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "tr-headl.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "tr-front.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "tr-lr.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "tr-rr.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "tr-back.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "tr-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "tr-lf.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 52, 128, "tr-rside.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 52, 128, "tr-lside.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "tr-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "tr-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "tr-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 64, 32, 64, "tr-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "mn-hood.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, "mn-roof.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 100, 20, 64, "mn-headl.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 32, 88, 128, "mn-tail0.bmp"},
+                              {NULL, 0, 0, 0, 2, 0, 160, 48, 128, "mn-lside.bmp"},
+                              {NULL, 0, 0, 0, 6, 0, 160, 48, 128, "mn-rside.bmp"},
+                              {NULL, 0, 0, 0, 4, 0, 128, 28, 128, "mn-back.bmp"},
+                              {NULL, 0, 0, 0, 5, 0, 128, 28, 128, "mn-rr.bmp"},
+                              {NULL, 0, 0, 0, 3, 0, 128, 28, 128, "mn-lr.bmp"},
+                              {NULL, 0, 0, 0, 7, 0, 128, 52, 128, "mn-rf.bmp"},
+                              {NULL, 0, 0, 0, 1, 0, 128, 52, 128, "mn-lf.bmp"},
+                              {NULL, 0, 0, 0, 0, 0, 0, 0, 0, "mn-front.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 32, 88, 128, "mn-tail0.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 32, 88, 128, "mn-tail1.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 32, 88, 128, "mn-tail2.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 32, 88, 128, "mn-tail3.bmp"},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL},
+                              {NULL, 0, 0, 0, -1, 0, 0, 0, 0, NULL}};
 int dword_100B2AD0 = -1;            // weak
 int gSpeedSensitive = 1;            // weak
 int dword_100B3668 = 1096810496;    // weak
@@ -3231,28 +3441,28 @@ void *off_100B3700 = &unk_10AF9B48; // weak
 char byte_100B37D0[] = {'\0'};      // weak
 char byte_100B37D1[] = {'\x7F'};    // weak
 char byte_100B37D2[58] = {
-    '\0',   '\xFF', '\xaf',    '\0',   '\0',   '\0',   '\xaf',  '\xc8',  '\0', '\0', '\xa0', '\0',
-    '\x8c',    '\xFF', '\xFF', '\xFF', '\0',   '0',    '\0', '\0', '\0', '\0', '\xf0', 'x',
-    '\0',   '`',    '0',    '\x10', '\x80',    '\xFF', '\x8c',  '\x80',  '\x80',  '\x80',  '\x80', '\xb8',
-    '\xFF', 'X',    '\0',   'H',    '\xd0',    '\xc8',    '\x80',  '\x80',  '\x80',  '\x80',  '\xc8', '\0',
-    'd',    '\0',   '\xbe',    '\xa0',    '\xFF', '\x94',    '\xa0',  '\0', '\0', '@'}; // idb
-int gChosenTrack = 2;                                                       // weak
-unsigned int dword_100B3810 = 223u;                                         // idb
-int dword_100B3814[] = {2};                                                 // weak
-int dword_100B3818[] = {10};                                                // weak
-char byte_100B381C[2] = {'\x01', '\b'};                                     // idb
-__int16 word_100B381E[] = {129};                                            // weak
-char byte_100B3820[] = {'\x02'};                                            // weak
+    '\0',   '\xFF', '\xaf', '\0',   '\0',   '\0',   '\xaf', '\xc8', '\0',   '\0',   '\xa0', '\0',
+    '\x8c', '\xFF', '\xFF', '\xFF', '\0',   '0',    '\0',   '\0',   '\0',   '\0',   '\xf0', 'x',
+    '\0',   '`',    '0',    '\x10', '\x80', '\xFF', '\x8c', '\x80', '\x80', '\x80', '\x80', '\xb8',
+    '\xFF', 'X',    '\0',   'H',    '\xd0', '\xc8', '\x80', '\x80', '\x80', '\x80', '\xc8', '\0',
+    'd',    '\0',   '\xbe', '\xa0', '\xFF', '\x94', '\xa0', '\0',   '\0',   '@'}; // idb
+int gChosenTrack = 2;                                                             // weak
+unsigned int dword_100B3810 = 223u;                                               // idb
+int dword_100B3814[] = {2};                                                       // weak
+int dword_100B3818[] = {10};                                                      // weak
+char byte_100B381C[2] = {'\x01', '\b'};                                           // idb
+__int16 word_100B381E[] = {129};                                                  // weak
+char byte_100B3820[] = {'\x02'};                                                  // weak
 char byte_100B3821[107] = {
-    '\0',   '\x04', '\0',   '\0',   '\0',   '\0',   '\0',   '\xe0',    '\0',   '\0', '\0', '\x03',
+    '\0',   '\x04', '\0',   '\0',   '\0',   '\0',   '\0',   '\xe0', '\0',   '\0', '\0', '\x03',
     '\0',   '\0',   '\0',   '\x0F', '\0',   '\0',   '\0',   '\0',   '\a',   'P',  '\0', '\0',
-    '\0',   '\x02', '\0',   '\x04', '\x02', '\0',   '\0',   '\xe1',    '\0',   '\0', '\0', '\x04',
+    '\0',   '\x02', '\0',   '\x04', '\x02', '\0',   '\0',   '\xe1', '\0',   '\0', '\0', '\x04',
     '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x04', '\x06', '\f', '\0', '\x04',
-    '\x01', '\0',   '\x01', '\x02', '\x02', '\x01', '\0',   '\xe2',    '\0',   '\0', '\0', '\x04',
+    '\x01', '\0',   '\x01', '\x02', '\x02', '\x01', '\0',   '\xe2', '\0',   '\0', '\0', '\x04',
     '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x03', '\x02', ' ',  '\0', '\x04',
-    '\x03', '\x01', '\x01', '\x02', '\x04', '\0',   '\x02', '\xe3',    '\0',   '\0', '\0', '\x04',
+    '\x03', '\x01', '\x01', '\x02', '\x04', '\0',   '\x02', '\xe3', '\0',   '\0', '\0', '\x04',
     '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x02', '\x05', ' ',  '\0', '\x02',
-    '\x03', '\0',   '\x04', '\n',   '\x03', '\x01', '\x02', '\xe4',    '\0',   '\0', '\0'}; // idb
+    '\x03', '\0',   '\x04', '\n',   '\x03', '\x01', '\x02', '\xe4', '\0',   '\0', '\0'}; // idb
 int dword_100B388C = 4;                                                                  // weak
 float dword_100B38A0[48] = {
     0.99550003, 0.99800003, 0.99550003, 0.99800003, 0.99550003, 0.99800003, 0.99550003,
@@ -3264,7 +3474,7 @@ float dword_100B38A0[48] = {
     0.99440002, 0.9982,     0.99379998, 0.99680001, 0.99360001, 0.9964}; // idb
 unsigned int dword_100B3960[20] = {269u, 270u, 271u, 272u, 273u, 274u, 275u, 276u, 277u, 278u, 279u,
                                    280u, 281u, 282u, 283u, 284u, 285u, 286u, 287u, 288u}; // idb
-int (*off_100B39B0)[81] = &dword_10ACDEA8;                                                // weak
+int (*off_100B39B0)[81] = &stru_10ACDEA8;                                                 // weak
 int *off_100B3A68 = &dword_10A9BFD0;                                                      // weak
 size_t SizeInBytes = 0u;                                                                  // idb
 char *Format = NULL;                                                                      // idb
@@ -3277,136 +3487,136 @@ char aMakeenemycarco_0[] = "MakeEnemyCarColorPanels: penm->aptex[i]";           
 char aMakeenemycarco[] = "MakeEnemyCarColorPanels: penm->aptex";                          // idb
 char aRy[] = "%%ry";                                                                      // idb
 int dword_100B4050 = 1;                                                                   // weak
-char aE[2] = "\xcb";                                                                         // weak
+char aE[2] = "\xcb";                                                                      // weak
 char gJoystick1Data[504] = {
-    '\0',   '\x80',    'K',  '\0', '\xcb',    '\0', '\0',   '\x81', 'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x82',    'H',  '\0', '\xc8',    '\0', '\0',   '\x83',    '\x9D', '\0', '\x1D', '\0',
-    '\x03', '\x01', 'P',  '\0', '\xd0',    '\0', '\0',   '\x01', '\x1E', '\0', '\x1E', '\0',
-    '\x01', '\x01', ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\0',   '\x01', 'H',  '\0', '\xc8',    '\0', '\x01', '\x01', 'P',    '\0', '\xd0',    '\0',
-    '\0',   '\x82',    '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\0',   '\x80',    'K',  '\0', '\xcb',    '\0', '\0',   '\x81', 'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x01', 'H',  '\0', '\xc8',    '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
-    '\x02', '\x01', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\0',   '\x82',    'H',  '\0', '\xc8',    '\0', '\0',   '\x83',    'P',    '\0', '\xd0',    '\0',
-    '\0',   '\x01', '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\0',   '\x86',    'K',  '\0', '\xcb',    '\0', '\0',   '\x87',    'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x03', 'H',  '\0', '\xc8',    '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
-    '\x01', '\x03', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\xc8',    '\0',   'H',  '\0', '\xc8',    '\0', '\xd0',    '\0',   'P',    '\0', '\xd0',    '\0',
-    '\x1C', '\0',   '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0'};
+    '\0',   '\x80', 'K',    '\0', '\xcb', '\0', '\0',   '\x81', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x82', 'H',    '\0', '\xc8', '\0', '\0',   '\x83', '\x9D', '\0', '\x1D', '\0',
+    '\x03', '\x01', 'P',    '\0', '\xd0', '\0', '\0',   '\x01', '\x1E', '\0', '\x1E', '\0',
+    '\x01', '\x01', ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\0',   '\x01', 'H',    '\0', '\xc8', '\0', '\x01', '\x01', 'P',    '\0', '\xd0', '\0',
+    '\0',   '\x82', '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\0',   '\x80', 'K',    '\0', '\xcb', '\0', '\0',   '\x81', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x01', 'H',    '\0', '\xc8', '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
+    '\x02', '\x01', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\0',   '\x82', 'H',    '\0', '\xc8', '\0', '\0',   '\x83', 'P',    '\0', '\xd0', '\0',
+    '\0',   '\x01', '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\0',   '\x86', 'K',    '\0', '\xcb', '\0', '\0',   '\x87', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x03', 'H',    '\0', '\xc8', '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
+    '\x01', '\x03', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\xc8', '\0',   'H',    '\0', '\xc8', '\0', '\xd0', '\0',   'P',    '\0', '\xd0', '\0',
+    '\x1C', '\0',   '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0'};
 char gJoystick2Data[504] = {
-    '\0',   '\x80',    'K',  '\0', '\xcb',    '\0', '\0',   '\x81', 'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x01', 'H',  '\0', '\xc8',    '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
-    '\x02', '\x01', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\0',   '\x82',    'H',  '\0', '\xc8',    '\0', '\0',   '\x83',    'P',    '\0', '\xd0',    '\0',
-    '\0',   '\x01', '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\0',   '\x86',    'K',  '\0', '\xcb',    '\0', '\0',   '\x87',    'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x03', 'H',  '\0', '\xc8',    '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
-    '\x01', '\x03', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\xc8',    '\0',   'H',  '\0', '\xc8',    '\0', '\xd0',    '\0',   'P',    '\0', '\xd0',    '\0',
-    '\x1C', '\0',   '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\x01', '\0',   '\0', '\0', 'E',    'S',  'C',    'A',    'P',    'E',  '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x02', '\0',   '\0', '\0', '1',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x03', '\0',   '\0', '\0', '2',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x04', '\0',   '\0', '\0', '3',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x05', '\0',   '\0', '\0', '4',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0'};
+    '\0',   '\x80', 'K',    '\0', '\xcb', '\0', '\0',   '\x81', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x01', 'H',    '\0', '\xc8', '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
+    '\x02', '\x01', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\0',   '\x82', 'H',    '\0', '\xc8', '\0', '\0',   '\x83', 'P',    '\0', '\xd0', '\0',
+    '\0',   '\x01', '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\0',   '\x86', 'K',    '\0', '\xcb', '\0', '\0',   '\x87', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x03', 'H',    '\0', '\xc8', '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
+    '\x01', '\x03', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\xc8', '\0',   'H',    '\0', '\xc8', '\0', '\xd0', '\0',   'P',    '\0', '\xd0', '\0',
+    '\x1C', '\0',   '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\x01', '\0',   '\0',   '\0', 'E',    'S',  'C',    'A',    'P',    'E',  '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x02', '\0',   '\0',   '\0', '1',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x03', '\0',   '\0',   '\0', '2',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x04', '\0',   '\0',   '\0', '3',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x05', '\0',   '\0',   '\0', '4',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0'};
 char gJoystick3Data[504] = {
-    '\0',   '\x86',    'K',  '\0', '\xcb',    '\0', '\0',   '\x87',  'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x03', 'H',  '\0', '\xc8',    '\0', '\x9D', '\0', '\x9D', '\0', '\x1D', '\0',
-    '\x01', '\x03', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0', '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0', '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0', 'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0', 'R',    '\0', '\xd2',    '\0',
-    '\xc8',    '\0',   'H',  '\0', '\xc8',    '\0', '\xd0',    '\0', 'P',    '\0', '\xd0',    '\0',
-    '\x1C', '\0',   '\x9c',  '\0', '\x1C', '\0', '\x01', '\0', '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0', ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0', '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0', '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0', '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0', '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0', '\f',   '\0', 'J',    '\0',
-    '\x01', '\0',   '\0', '\0', 'E',    'S',  'C',    'A',  'P',    'E',  '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x02', '\0',   '\0', '\0', '1',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x03', '\0',   '\0', '\0', '2',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x04', '\0',   '\0', '\0', '3',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x05', '\0',   '\0', '\0', '4',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x06', '\0',   '\0', '\0', '5',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\a',   '\0',   '\0', '\0', '6',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\b',   '\0',   '\0', '\0', '7',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\t',   '\0',   '\0', '\0', '8',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\n',   '\0',   '\0', '\0', '9',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0'};
+    '\0',   '\x86', 'K',    '\0', '\xcb', '\0', '\0',   '\x87', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x03', 'H',    '\0', '\xc8', '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
+    '\x01', '\x03', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\xc8', '\0',   'H',    '\0', '\xc8', '\0', '\xd0', '\0',   'P',    '\0', '\xd0', '\0',
+    '\x1C', '\0',   '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\x01', '\0',   '\0',   '\0', 'E',    'S',  'C',    'A',    'P',    'E',  '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x02', '\0',   '\0',   '\0', '1',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x03', '\0',   '\0',   '\0', '2',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x04', '\0',   '\0',   '\0', '3',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x05', '\0',   '\0',   '\0', '4',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x06', '\0',   '\0',   '\0', '5',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\a',   '\0',   '\0',   '\0', '6',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\b',   '\0',   '\0',   '\0', '7',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\t',   '\0',   '\0',   '\0', '8',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\n',   '\0',   '\0',   '\0', '9',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0'};
 char aEscape[7] = "ESCAPE";                                                // weak
 char aRcfg[] = "RCfg";                                                     // idb
 int dword_100B5420 = 5;                                                    // weak
@@ -3446,6 +3656,7 @@ int dword_100B5E34[415] = {1086687360, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                            1087735936, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                            1087735936};                                 // idb
 int dword_100B64B0[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // idb
+_UNKNOWN unk_100B64EC;                                                  // weak
 int dword_100B64F8[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // idb
 int dword_100B6540[432] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360,
                            0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
@@ -3515,6 +3726,8 @@ char *gCarNames[16] = {"ce",
                        "mn"}; // weak
 char *gSfxDir = "mn";         // weak
 char kSfxSlash[5] = "sfx/";   // weak
+_UNKNOWN unk_100B8938;        // weak
+_UNKNOWN unk_100B89A0;        // weak
 char *off_100B89C8[12] = {"Fear and Loathing",
                           "Alice",
                           "Tre",
@@ -3530,10 +3743,9 @@ char *off_100B89C8[12] = {"Fear and Loathing",
 char aFancyCar[10] = "Fancy Car";          // weak
 int dword_100B8C90 = 1;                    // weak
 int (*off_100B8C94)(void) = &sub_1002A640; // weak
-_UNKNOWN unk_100BAAC8;                     // weak
 int dword_100BBAC8[3] = {33, 33, 34};      // idb
 int needToCheckSupportHRPC = 1;            // weak
-char byte_100BBAD8 = '\xbf';                  // weak
+char byte_100BBAD8 = '\xbf';               // weak
 char byte_100BBADC = '\xFF';               // weak
 char byte_100BBAE0 = '\xFF';               // weak
 char byte_100BBAE4 = '\xFF';               // weak
@@ -3575,7 +3787,6 @@ CHAR aErrorIdirectin[] = "Error: IDirectInputDevice::SetProperty(DIPH_RANGE) FAI
 CHAR OutputString[] = "Error: Failed to change device property.\n";                      // idb
 LPCSTR lpClassName = "BossRally";                                                        // idb
 LPCSTR lpWindowName = "Boss Rally";                                                      // idb
-char aBossrallyCfg[14] = "BossRally.cfg";                                                // weak
 char aSplashImg[11] = "splash.img";                                                      // weak
 CHAR aUnableToInitia[] = "Unable to initialize Direct3D accelerated video card.";        // idb
 FILE Stream = {NULL, 0, NULL, 2, 2, 0, 0, NULL};                                         // idb
@@ -3589,8 +3800,7 @@ int dword_100C0CE8 = -1;                                                        
 int dword_100C0CEC = 0;                                                                  // weak
 int dword_100C0CF0 = 0;                                                                  // weak
 int dword_100C129C = 0;                                                                  // weak
-_UNKNOWN unk_100C12A0;                                                                   // weak
-char byte_100C1385[1349651] = {
+char byte_100C12A0[89992] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
@@ -3598,9 +3808,23 @@ char byte_100C1385[1349651] = {
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
     '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
-    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
+    '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0',
 
-};                      // idb
+};                      // weak
 _UNKNOWN unk_1020AB98;  // weak
 int gGameMode1;         // weak
 int dword_10220B24;     // weak
@@ -3612,8 +3836,6 @@ int dword_10220B38;     // weak
 char byte_10220B3C;     // weak
 __int16 word_10220B40;  // weak
 int dword_10220B44;     // weak
-_UNKNOWN unk_10220B48;  // weak
-_UNKNOWN unk_10220B7C;  // weak
 int playParmsPlayTo;    // weak
 int dword_10220C3C;     // weak
 MCIDEVICEID mciId;      // idb
@@ -3717,7 +3939,6 @@ int dword_10221C9C[9091]; // idb
 HANDLE gMutexesEnd;
 int dword_1022AAB0[];        // weak
 int dword_1022AAB4[15];      // idb
-_UNKNOWN unk_1022AAF0;       // weak
 int dword_1022AAF4;          // weak
 char byte_1022AAF8[1024];    // idb
 int dword_1022AEF8;          // weak
@@ -3740,11 +3961,9 @@ int dword_1022AF38;          // weak
 int dword_1022AF3C;          // weak
 int dword_1022AF40;          // weak
 char gBossRallyIniPath[208]; // idb
-_UNKNOWN unk_1022B018;       // weak
 int gTotalPhys;              // weak
 int gChosenCar;              // weak
 int gChosenWeather0;         // weak
-_UNKNOWN unk_1022B358;       // weak
 int dword_10277358;          // weak
 FILE *dword_1027735C;        // idb
 IDirect3DDevice2 *g_D3DDevice2;
@@ -3791,8 +4010,6 @@ int dword_10277B68[16];                       // idb
 int dword_10277BA8;                           // weak
 float flt_10277BAC;                           // weak
 float flt_10277BB0;                           // weak
-_UNKNOWN unk_10277BB8;                        // weak
-_UNKNOWN unk_10277BC0;                        // weak
 char byte_10277BC8[];                         // weak
 char byte_10277BC9[];                         // weak
 char byte_10277BCA[366];                      // idb
@@ -3819,7 +4036,6 @@ float flt_102E54A8[3];                        // idb
 int dword_102E54B4;                           // weak
 int dword_102E54B8;                           // weak
 int dword_102E54C0[630];                      // idb
-_UNKNOWN unk_102E5E98;                        // weak
 int dword_102E5EC0;                           // weak
 int dword_102E5EC4;                           // weak
 int dword_102E5EC8;                           // weak
@@ -3830,7 +4046,6 @@ int dword_102E5ED8;                           // weak
 int dword_102E5EE0[];                         // weak
 int dword_102E5EE4[16];                       // idb
 int dword_102E5F24;                           // weak
-_UNKNOWN unk_102E5F28;                        // weak
 __int16 word_10362F28[2048];                  // idb
 float flt_10363F28[];                         // weak
 float dword_10363F2C[15];                     // idb
@@ -3841,7 +4056,6 @@ int dword_10363FF0;                           // weak
 int dword_10363FF4;                           // weak
 int dword_10363FF8;                           // weak
 int dword_10364000[];                         // weak
-_UNKNOWN unk_10364301;                        // weak
 int dword_10364304;                           // weak
 int dword_10364308[32];                       // idb
 int dword_10364388;                           // weak
@@ -3858,9 +4072,7 @@ float flt_103643B0;                           // weak
 int dword_103643B4;                           // weak
 int dword_103643B8;                           // weak
 int dword_103643BC;                           // weak
-_UNKNOWN unk_103643C0;                        // weak
 char byte_1038B4C0[2048];                     // idb
-_UNKNOWN unk_1038BCC0;                        // weak
 int dword_1039B6C0;                           // weak
 int dword_1039B6C4;                           // weak
 int gD3dDrawCarShadow;                        // weak
@@ -3880,7 +4092,6 @@ float flt_1039B73C;                           // weak
 char Buffer[28];                              // idb
 int dword_1039B75C;                           // weak
 int dword_1039B760[];                         // weak
-_UNKNOWN unk_1039B764;                        // weak
 _UNKNOWN unk_1039B7C4;                        // weak
 float flt_1039C168[];                         // weak
 float flt_1039C16C;                           // weak
@@ -3911,17 +4122,13 @@ int dword_1039E8A0;                           // weak
 float flt_1039E8A4;                           // weak
 float flt_1039E8A8;                           // weak
 float flt_1039E8AC;                           // weak
-_UNKNOWN unk_1039E8B4;                        // weak
 float flt_1039E8C4;                           // weak
 float flt_1039E8C8;                           // weak
 float flt_1039E8CC;                           // weak
-_UNKNOWN unk_1039E8D4;                        // weak
 float flt_1039E8E4;                           // weak
 float flt_1039E8E8;                           // weak
 float flt_1039E8EC;                           // weak
 float flt_1039E8F0;                           // weak
-_UNKNOWN unk_1039E8F8;                        // weak
-_UNKNOWN unk_1039E908;                        // weak
 float flt_1039E918;                           // weak
 float flt_1039E91C;                           // weak
 float flt_1039E920;                           // weak
@@ -3929,11 +4136,9 @@ float flt_1039E928;                           // weak
 float flt_1039E92C;                           // weak
 float flt_1039E930;                           // weak
 float flt_1039E934;                           // weak
-_UNKNOWN unk_1039E93C;                        // weak
 float flt_1039E94C;                           // weak
 float flt_1039E950;                           // weak
 float flt_1039E954;                           // weak
-_UNKNOWN unk_1039E95C;                        // weak
 float flt_1039E96C;                           // weak
 float flt_1039E970;                           // weak
 float flt_1039E974;                           // weak
@@ -3952,13 +4157,7 @@ _UNKNOWN unk_1039E9F8;                        // weak
 _UNKNOWN unk_103C77E8;                        // weak
 int dword_103C7840[];                         // weak
 _WORD word_103C7844[381414];                  // idb
-_UNKNOWN unk_10481C10;                        // weak
-_UNKNOWN unk_10481C74;                        // weak
-_UNKNOWN unk_10482618;                        // weak
-_UNKNOWN unk_10484D6C;                        // weak
-_UNKNOWN unk_104ADC98;                        // weak
 int dword_104ADCF0;                           // weak
-_UNKNOWN unk_104ADCF4;                        // weak
 int dword_104AFD00;                           // weak
 int dword_104AFD04;                           // weak
 int dword_104AFD08;                           // weak
@@ -4028,7 +4227,8 @@ float flt_104BBF08;      // weak
 int dword_104BC190;      // weak
 char byte_104BC194;      // weak
 float flt_104BC198;      // weak
-int dword_104C01A0;      // weak
+_UNKNOWN gVertices;      // weak
+int gHeight2;            // weak
 int dword_104C01A4;      // weak
 int dword_104C01A8[3];   // idb
 float flt_104C0BA8;      // weak
@@ -4089,7 +4289,7 @@ float flt_104C5154;                                                      // weak
 int dword_104C5158;                                                      // weak
 int dword_104C515C;                                                      // weak
 float flt_104C5160;                                                      // weak
-int dword_104C5164;                                                      // weak
+int gWidth2;                                                             // weak
 int gD3DClearZBuffer;                                                    // weak
 int minX;                                                                // weak
 int dword_104C5170;                                                      // weak
@@ -4098,8 +4298,8 @@ int dword_104C5178;                                                      // weak
 int dword_104C517C;                                                      // weak
 int dword_104C5180;                                                      // weak
 int dword_104C5184;                                                      // weak
-int g_vertexCount;                                                       // weak
-int g_indexedPrimitiveIndexCount;                                        // weak
+int gVertexCount;                                                        // weak
+int gIndexedPrimitiveIndexCount;                                         // weak
 int dword_104C5190;                                                      // weak
 int dword_104C5194;                                                      // weak
 int dword_104C5198;                                                      // weak
@@ -4111,6 +4311,7 @@ char byte_104D51B0;                                                      // weak
 int dword_104D51B4;                                                      // weak
 int dword_104D51B8;                                                      // weak
 int dword_104D51BC;                                                      // weak
+_UNKNOWN unk_104D51D0;                                                   // weak
 char byte_105551D0;                                                      // weak
 char byte_105551D4;                                                      // weak
 int dword_105551D8[];                                                    // weak
@@ -4305,7 +4506,6 @@ int dword_10690A1C;          // weak
 int (*dword_10690A20)(void); // weak
 int (*dword_10690A24)(void); // weak
 int (*dword_10690A28)(void); // weak
-_UNKNOWN unk_10690A34;       // weak
 char byte_10690BE8;          // weak
 int dword_10690BEC;          // weak
 char byte_10690BF0;          // weak
@@ -4314,7 +4514,6 @@ char byte_10690FF9;          // weak
 char byte_10690FFA;          // weak
 char byte_10690FFB;          // weak
 unk06594 stru_10691000;      // idb
-_UNKNOWN unk_106C01FC;       // weak
 char byte_106C0200;          // weak
 int dword_106C0208;          // weak
 int dword_106C020C;          // weak
@@ -4481,7 +4680,6 @@ CHAR byte_10A9BFE0[16];           // idb
 int dword_10A9C0C8[];             // weak
 int dword_10A9C0CC[];             // weak
 CHAR String1[220];                // idb
-_UNKNOWN unk_10A9CECC;            // weak
 CHAR byte_10A9CEF8[260];          // idb
 int dword_10A9CFFC;               // weak
 int dword_10A9D000;               // weak
@@ -4493,24 +4691,12 @@ int dword_10A9D068;               // weak
 int dword_10A9D06C;               // weak
 IDirectDraw2 *gDDraw2;
 char byte_10A9D078[264];  // idb
-_UNKNOWN unk_10A9D180;    // weak
-_UNKNOWN unk_10A9D184;    // weak
 int dword_10A9D5C0[];     // weak
-_UNKNOWN unk_10A9D5C4;    // weak
 char byte_10A9D618[36];   // idb
-_UNKNOWN unk_10A9D63C;    // weak
-_UNKNOWN unk_10A9D778;    // weak
-_UNKNOWN unk_10A9D77C;    // weak
-_UNKNOWN unk_10A9D780;    // weak
-_UNKNOWN unk_10A9DA50;    // weak
-_UNKNOWN unk_10A9DA54;    // weak
-_UNKNOWN unk_10A9DB44;    // weak
 int dword_10A9DBD0;       // weak
-_UNKNOWN unk_10A9DBD8;    // weak
 char byte_10A9DBDC;       // weak
 char byte_10A9DD28[1064]; // idb
 int dword_10A9E150[32];   // idb
-_UNKNOWN unk_10A9E1D0;    // weak
 IDirectDrawSurface *gDDSurface;
 char *gImagesWork1aBmFilepath;
 int g_aImagesCursorBmFilepath; // weak
@@ -4661,11 +4847,8 @@ char byte_10AA2518[32];    // idb
 int dword_10AA2538[];      // weak
 int dword_10AA253C[];      // weak
 int dword_10AA2540[17];    // idb
-_UNKNOWN unk_10AA2584;     // weak
 int dword_10AA2598;        // weak
-_UNKNOWN unk_10AA259C;     // weak
 float flt_10AA25A0[12];    // idb
-_UNKNOWN unk_10AA25D0;     // weak
 char byte_10AA25D4;        // weak
 int dword_10AA25D8;        // weak
 int dword_10AA25DC;        // weak
@@ -4832,41 +5015,41 @@ int dword_10AA2DAC; // weak
 int dword_10AA2DB4; // weak
 unk00054 *gUnk54Ptr;
 char *dword_10AA2E88[256];
-char byte_10AA3288[256];
-char byte_10AA3350;        // weak
-char byte_10AA3353;        // weak
-char byte_10AA3355;        // weak
-char byte_10AA3358;        // weak
-int dword_10AA3388[];      // weak
-int dword_10AA3398;        // weak
-int dword_10AA339C;        // weak
-int dword_10AA33A0;        // weak
-int dword_10AA33A4;        // weak
-int dword_10AA33A8;        // weak
-int dword_10AA33AC;        // weak
-int dword_10AA33B0;        // weak
-int dword_10AA33B4;        // weak
-int dword_10AA33B8;        // weak
-int dword_10AA33C0[];      // weak
-int dword_10AA33C4;        // weak
-int dword_10AA33C8;        // weak
-int dword_10AA33CC;        // weak
-int dword_10AA33D0[];      // weak
-int dword_10AA33D4;        // weak
-int dword_10AA33D8;        // weak
-int dword_10AA33DC;        // weak
-int dword_10AA33E0;        // weak
-int dword_10AA33E4;        // weak
-int g_TickCount;           // weak
-int dword_10AA3440;        // weak
-int gCarIndex;             // weak
-int dword_10AA3448;        // weak
-int dword_10AA344C[];      // weak
-_UNKNOWN unk_10AA3450;     // weak
-int dword_10AA345C;        // weak
+_UNKNOWN byte_10AA3288;
+char byte_10AA3350;   // weak
+char byte_10AA3353;   // weak
+char byte_10AA3355;   // weak
+char byte_10AA3358;   // weak
+int dword_10AA3388[]; // weak
+int dword_10AA3398;   // weak
+int dword_10AA339C;   // weak
+int dword_10AA33A0;   // weak
+int dword_10AA33A4;   // weak
+int dword_10AA33A8;   // weak
+int dword_10AA33AC;   // weak
+int dword_10AA33B0;   // weak
+int dword_10AA33B4;   // weak
+int dword_10AA33B8;   // weak
+int dword_10AA33C0[]; // weak
+int dword_10AA33C4;   // weak
+int dword_10AA33C8;   // weak
+int dword_10AA33CC;   // weak
+int dword_10AA33D0[]; // weak
+int dword_10AA33D4;   // weak
+int dword_10AA33D8;   // weak
+int dword_10AA33DC;   // weak
+int dword_10AA33E0;   // weak
+int dword_10AA33E4;   // weak
+int g_TickCount;      // weak
+int dword_10AA3440;   // weak
+int gCarIndex;        // weak
+int dword_10AA3448;   // weak
+int dword_10AA344C[]; // weak
+char *gDamageBitmapPtrs[3];
+int gDamagePtrsMaxAddress; // weak
 int dword_10AA3460;        // weak
-int g_bmWidth;             // weak
-int g_bmHeight;            // weak
+int gBmWidth;              // weak
+int gBmHeight;             // weak
 __int16 word_10AA346C;     // weak
 int dword_10AA3470;        // weak
 int dword_10AA3474;        // weak
@@ -4880,14 +5063,14 @@ char byte_10ACD500[2456];  // idb
 int dword_10ACDE98;        // weak
 int dword_10ACDE9C;        // weak
 int dword_10ACDEA0;        // weak
-_DWORD dword_10ACDEA8[81]; // idb
-int dword_10ACDFEC[];      // weak
-char byte_10ACDFF0[32];    // idb
-int dword_10ACE010;        // weak
-int dword_10ACE014;        // weak
-char byte_10ACE215;        // weak
-int dword_10ACED0C;        // weak
-int dword_10ACED30;        // weak
+unk00144 stru_10ACDEA8;
+int dword_10ACDFEC[];   // weak
+char byte_10ACDFF0[32]; // idb
+int dword_10ACE010;     // weak
+int dword_10ACE014;     // weak
+char byte_10ACE215;     // weak
+int dword_10ACED0C;     // weak
+int dword_10ACED30;     // weak
 # 505 * dword_10ACED34;
 int dword_10ACED38;         // weak
 int dword_10ACED3C[];       // weak
@@ -4939,7 +5122,6 @@ int dword_10AD18A4;         // weak
 int dword_10AD18A8;         // weak
 int dword_10AD18AC;         // weak
 float flt_10AD1A04;         // weak
-_UNKNOWN unk_10AD1A08;      // weak
 int dword_10AD33C4;         // weak
 int dword_10AD33D0;         // weak
 char byte_10AD34F8[128];
@@ -4954,7 +5136,6 @@ int dword_10AF96B8;     // weak
 int dword_10AF96BC;     // weak
 int dword_10AF96C0;     // weak
 _UNKNOWN unk_10AF96C8;  // weak
-_UNKNOWN unk_10AF96D4;  // weak
 _UNKNOWN unk_10AF971C;  // weak
 int dword_10AF9728[];   // weak
 float flt_10AF9740[15]; // idb
@@ -5195,21 +5376,21 @@ HANDLE dword_118AA0A0;                                // idb
 int(__cdecl *dword_118AA0A4)(_DWORD, _DWORD);         // weak
 int(__cdecl *dword_118AA0A8)(
     _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // weak
-int(__cdecl *tex_sub_dword_118AA0AC)(_DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD,
-                                     _DWORD); // weak
+int(__cdecl *graphics_dword_118AA0AC)(_DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD,
+                                      _DWORD); // weak
 int(__cdecl *dword_118AA0B0)(_DWORD,
                              _DWORD,
                              _DWORD,
@@ -5310,7 +5491,7 @@ unk00334 *gUnk334;
 HINSTANCE hInstance; // idb
 HACCEL hAccTable;    // idb
 HCURSOR hCursor;     // idb
-int dword_118ABE2C;  // weak
+int gExitCode;       // weak
 int dword_118AC230;  // weak
 int dword_118AC234;  // weak
 unk00334 *gUnk00334Ptr1;
@@ -5338,4 +5519,3 @@ int dword_118AC788;                                // weak
 int dword_118AC78C;                                // weak
 int dword_118AC794;                                // weak
 _UNKNOWN unk_118AC898;                             // weak
-

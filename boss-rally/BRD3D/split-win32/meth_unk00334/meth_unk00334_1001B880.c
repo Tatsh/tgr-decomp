@@ -25,7 +25,7 @@ unk00334 *__thiscall meth_unk00334_1001B880(unk00334 *this,
         *a7 = u334a;
     if (u334a) {
         while (1) {
-            u334b = u334a->field_70;
+            u334b = u334a->? ;
             if (meth_unk00334_MatchesWidthHeightBitDepth(u334a, width, height, bitDepth)) {
                 if (meth_unk00334_1001ACF0(u334a, a2))
                     return u334a;

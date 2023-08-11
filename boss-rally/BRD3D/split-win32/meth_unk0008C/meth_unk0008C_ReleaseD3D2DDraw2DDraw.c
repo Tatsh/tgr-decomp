@@ -5,22 +5,22 @@ int __thiscall meth_unk0008C_ReleaseD3D2DDraw2DDraw(unk0008C *this) {
     IDirectDraw2 *ddraw2; // eax
     IDirectDraw *ddraw;   // eax
 
-    d3d2 = this->lpDirect3D2;
-    this->field_1C &= 0xFFFFFFFE;
+    d3d2 = this->? ;
+    this->       ? &= 0xFFFFFFFE;
     if (d3d2) {
         d3d2->lpVtbl->Release(d3d2);
-        this->lpDirect3D2 = 0;
+        this->? = 0;
         g_pD3D2 = 0;
     }
-    ddraw2 = this->lpDirectDraw2;
+    ddraw2 = this->? ;
     if (ddraw2) {
-        ddraw2->lpVtbl->Release(this->lpDirectDraw2);
-        this->lpDirectDraw2 = 0;
+    ddraw2->lpVtbl->Release(this->?);
+    this->? = 0;
     }
-    ddraw = this->lpDirectDraw;
+    ddraw = this->? ;
     if (ddraw) {
-        ddraw->lpVtbl->Release(this->lpDirectDraw);
-        this->lpDirectDraw = 0;
+    ddraw->lpVtbl->Release(this->?);
+    this->? = 0;
     }
     return 0;
 }

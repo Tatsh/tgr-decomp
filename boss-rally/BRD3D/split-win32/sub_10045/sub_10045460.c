@@ -21,7 +21,7 @@ int sub_10045460() {
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;
     LABEL_8:
-        sub_1007AC00();
+        graphics_1007AC00();
         result = 1;
     }
     return result;

@@ -167,9 +167,9 @@ LABEL_12:
             v48 = 0;
         }
     }
-    pow2ExponentToAdd(&outExponent, a2, a3[0]);
+    math_pow2ExponentToAdd(&outExponent, a2, a3[0]);
     v17 = sub_10028200(&v46, a2, a3[0]) == 0;
-    pow2ExponentToAdd(
+    math_pow2ExponentToAdd(
         &v44, a2 >> (dword_10575430 - dword_1057544C), a3[0] >> (dword_10575430 - dword_1057544C));
     if (dword_100B8C90 > 1) {
         v44 = outExponent;
@@ -214,7 +214,7 @@ LABEL_12:
         v37 = a3[0];
         if (v39 && dword_100B8C90 > 1) {
             v38 = a2 / 2;
-            pow2ExponentToAdd(&outExponent, a2 / 2, a3[0]);
+            math_pow2ExponentToAdd(&outExponent, a2 / 2, a3[0]);
             v24 = sub_10028200(&v46, v38, v37);
             v20 = a3[0];
             v19 = a2;
@@ -226,7 +226,7 @@ LABEL_12:
         }
         if (v60 && dword_100B8C90 > 1) {
             v37 = v23 / 2;
-            pow2ExponentToAdd(&outExponent, v22, v23 / 2);
+            math_pow2ExponentToAdd(&outExponent, v22, v23 / 2);
             v25 = sub_10028200(&v46, v38, v37);
             v20 = a3[0];
             v19 = a2;
@@ -246,7 +246,7 @@ LABEL_12:
         } else if (v19 > 1) {
             v19 /= 2;
         LABEL_60:
-            pow2ExponentToAdd(&outExponent, v19, v20);
+            math_pow2ExponentToAdd(&outExponent, v19, v20);
             sub_10028200(&v46, v19, v20);
             v44 = dword_10575430 + outExponent - dword_1057544C;
             goto LABEL_61;
@@ -259,7 +259,7 @@ LABEL_12:
     LABEL_62:
         if (v21 && v22 > v21) {
             v38 = v21;
-            pow2ExponentToAdd(&outExponent, v21, v23);
+            math_pow2ExponentToAdd(&outExponent, v21, v23);
             sub_10028200(&v46, v38, v37);
             v22 = v38;
             v23 = v37;
@@ -267,7 +267,7 @@ LABEL_12:
         }
         if (g_HWCaps.dwMaxTextureHeight && v23 > g_HWCaps.dwMaxTextureHeight) {
             v37 = g_HWCaps.dwMaxTextureHeight;
-            pow2ExponentToAdd(&outExponent, v22, g_HWCaps.dwMaxTextureHeight);
+            math_pow2ExponentToAdd(&outExponent, v22, g_HWCaps.dwMaxTextureHeight);
             sub_10028200(&v46, v38, v37);
             v23 = v37;
             v44 = dword_10575430 + outExponent - dword_1057544C;
@@ -275,7 +275,7 @@ LABEL_12:
         }
         if (v22 > dword_100A7DF4) {
             v38 = dword_100A7DF4;
-            pow2ExponentToAdd(&outExponent, dword_100A7DF4, v23);
+            math_pow2ExponentToAdd(&outExponent, dword_100A7DF4, v23);
             sub_10028200(&v46, v38, v37);
             v22 = v38;
             v44 = dword_10575430 + outExponent - dword_1057544C;
@@ -283,7 +283,7 @@ LABEL_12:
         }
         if (v23 > dword_100A7DF8) {
             v37 = dword_100A7DF8;
-            pow2ExponentToAdd(&outExponent, v22, dword_100A7DF8);
+            math_pow2ExponentToAdd(&outExponent, v22, dword_100A7DF8);
             sub_10028200(&v46, v38, v37);
             v22 = v38;
             v23 = v37;
@@ -312,7 +312,7 @@ LABEL_12:
                     v38 = dword_100A7DF4;
                 }
             }
-            pow2ExponentToAdd(&outExponent, v22, v23);
+            math_pow2ExponentToAdd(&outExponent, v22, v23);
             sub_10028200(&v46, v38, v37);
             v23 = v37;
             v44 = dword_10575430 + outExponent - dword_1057544C;
@@ -324,7 +324,7 @@ LABEL_12:
     if (!dword_10575414 || (v53 = 1, gD3dalphacompar))
         v53 = 0;
     if (dword_100B8C90 > 1 && sub_10037930(v57, &a2, a3)) {
-        pow2ExponentToAdd(&outExponent, a2, a3[0]);
+        math_pow2ExponentToAdd(&outExponent, a2, a3[0]);
         sub_10028200(&v46, a2, a3[0]);
         v44 = dword_10575430 + outExponent - dword_1057544C;
     }
@@ -336,9 +336,9 @@ LABEL_12:
         v64 = v26;
     }
     v27 = sub_10028860((#506 *)&a1);
-    v28 = TIDFromTextureAppend(&a1, (int)v27);
+    v28 = graphics_TIDFromTextureAppend(&a1, (int)v27);
     if (*((_DWORD *)dword_1057543C + 174 * v28 + 156)) {
-        v29 = sub_10061000();
+        v29 = car_10061000();
         if (v29 >= 0 && v29 < 8)
             dword_11829850[v29] = v28;
     }

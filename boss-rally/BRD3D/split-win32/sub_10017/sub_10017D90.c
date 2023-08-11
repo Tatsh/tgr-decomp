@@ -33,7 +33,7 @@ _DWORD *__cdecl sub_10017D90(int a1) {
     if (!dword_1022AF1C && dword_100BD3F4) {
         v3 = gWidth - 46;
         v4 = *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 12) + result[1] - 4 -
-             byte_100C1385[89992 * result[4]];
+             MEMORY[0x100C1385][89992 * result[4]];
         sub_100192F0(20);
         v5 = v4 - 3;
         if (dword_100ADF60)

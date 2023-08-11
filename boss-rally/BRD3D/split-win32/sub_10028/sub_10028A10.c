@@ -11,12 +11,12 @@ int __cdecl sub_10028A10(int a1, int *a2) {
 
     v2 = a1;
     v3 = a2;
-    sub_10025350((int)&unk_104D51D0,
-                 *(_DWORD *)(a1 + 676),
-                 *(_DWORD *)(a1 + 680),
-                 COERCE_FLOAT(&a2[*(_DWORD *)(a1 + 680) * *(_DWORD *)(a1 + 676)]),
-                 *(_DWORD *)(a1 + 676) / 2,
-                 *(_DWORD *)(a1 + 680) / 2);
+    math_10025350((int)&unk_104D51D0,
+                  *(_DWORD *)(a1 + 676),
+                  *(_DWORD *)(a1 + 680),
+                  COERCE_FLOAT(&a2[*(_DWORD *)(a1 + 680) * *(_DWORD *)(a1 + 676)]),
+                  *(_DWORD *)(a1 + 676) / 2,
+                  *(_DWORD *)(a1 + 680) / 2);
     result = *(_DWORD *)(a1 + 680);
     v8 = &unk_104D51D0;
     v6 = 0;

@@ -3,8 +3,8 @@
 int __thiscall meth_unk0008C_RestoreDisplayMode(unk0008C *this) {
     IDirectDraw2 *ddraw2; // ecx
 
-    this->field_1C &= 0xFFFFFFFD;
-    ddraw2 = this->lpDirectDraw2;
+    this->         ? &= 0xFFFFFFFD;
+    ddraw2 = this->? ;
     if (ddraw2)
         ddraw2->lpVtbl->RestoreDisplayMode(ddraw2);
     return 0;

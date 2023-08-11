@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (1001B090) --------------------------------------------------------
 HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *Source, char *a4) {
-    unk0008C *v5;                     // eax
+    DWORD v5;                         // eax
     char *src;                        // ebp
     size_t lll;                       // kr04_4
     size_t llll;                      // edi
@@ -12,9 +12,9 @@ HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *So
     void *v14;                        // eax
     HRESULT hr;                       // edi
     IDirectDraw2Vtbl *ppvDDraw2_vtbl; // edi
-    unk0008C *v17;                    // edx
-    unk0008C *v18;                    // edi
-    unk0008C *v19;                    // eax
+    DWORD v17;                        // edx
+    DWORD v18;                        // edi
+    DWORD v19;                        // eax
     IDirectDraw2 *ppvDDraw2_a;        // [esp+Ch] [ebp-28h]
     IDirectDraw2 *ppvDDraw2_b;        // [esp+14h] [ebp-20h]
     IDirect3D2 *d3d2_a;               // [esp+14h] [ebp-20h]
@@ -24,15 +24,15 @@ HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *So
 
     lpDD = 0;
     ppvDDraw2 = 0;
-    v5 = this->u8c;
+    v5 = this->ddCapsFlags;
     ppvD3D2 = 0;
-    if (((unsigned __int8)v5 & 1) != 0)
+    if ((v5 & 1) != 0)
         return 0;
     if (lpGUID) {
         *(GUID *)&this->lpGUID = *lpGUID;
     } else {
-        LOBYTE(v5) = (unsigned __int8)v5 | 2;
-        this->u8c = v5;
+        LOBYTE(v5) = v5 | 2;
+        this->ddCapsFlags = v5;
     }
     src = Source;
     if (!Source)
@@ -65,32 +65,31 @@ HRESULT __thiscall meth_unk00334_1001B090(unk00334 *this, GUID *lpGUID, char *So
                 g_pD3D2 = ppvD3D2;
                 ppvDDraw2_vtbl = ppvDDraw2->lpVtbl;
                 ppvDDraw2_a = ppvDDraw2;
-                this->field_1C = 380;
+                this->ddCaps1.dwSize = 380;
                 this->ddCaps0.dwSize = 380;
-                hr = ppvDDraw2_vtbl->GetCaps(
-                    ppvDDraw2_a, (LPDDCAPS) & this->field_1C, &this->ddCaps0);
+                hr = ppvDDraw2_vtbl->GetCaps(ppvDDraw2_a, &this->ddCaps1, &this->ddCaps0);
                 if (hr >= 0) {
-                    if (this->bitDepth) {
-                        v17 = (unk0008C *)((int)this->u8c & 0xFFFFFFF7);
+                    if (this->ddCaps1.dwZBufferBitDepths) {
+                        v17 = this->ddCapsFlags & 0xFFFFFFF7;
                         ppvDDraw2_b = ppvDDraw2;
                         this->field_314 = 0;
-                        this->u8c = v17;
+                        this->ddCapsFlags = v17;
                         hr = meth_unk00334_1001B320(this, ppvDDraw2_b);
                         if (hr >= 0) {
-                            v18 = (unk0008C *)((int)this->u8c & 0xFFFFFFEF);
+                            v18 = this->ddCapsFlags & 0xFFFFFFEF;
                             d3d2_a = ppvD3D2;
                             this->field_320 = 0;
-                            this->u8c = v18;
+                            this->ddCapsFlags = v18;
                             hr = meth_unk00334_1001B510(this, d3d2_a);
                             if (hr >= 0) {
-                                v19 = this->u8c;
-                                LOBYTE(v19) = (int)this->u8c | 1;
+                                v19 = this->ddCapsFlags;
+                                LOBYTE(v19) = this->ddCapsFlags | 1;
                                 hr = 0;
-                                this->u8c = v19;
+                                this->ddCapsFlags = v19;
                             }
                         }
                     } else {
-                        hr = -2005532502;
+                        hr = DDERR_NO3D;
                     }
                 }
             }

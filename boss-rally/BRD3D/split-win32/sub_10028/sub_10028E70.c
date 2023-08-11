@@ -17,12 +17,12 @@ unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
     v2 = (char *)dword_1057543C + 696 * a1 + 4;
     if (*((_DWORD *)dword_1057543C + 174 * a1 + 156)) {
         v3 = byte_11829870;
-        v4 = sub_10060F70(*((_DWORD *)dword_1057543C + 174 * a1 + 157),
+        v4 = car_10060F70(*((_DWORD *)dword_1057543C + 174 * a1 + 157),
                           *((_DWORD *)dword_1057543C + 174 * a1 + 158),
                           *((_DWORD *)dword_1057543C + 174 * a1 + 159));
         if (!v4)
             goto LABEL_17;
-        sub_10060FB0(v2[156], v2[157], &v13, &a1, &v12, &v11);
+        car_10060FB0(v2[156], v2[157], &v13, &a1, &v12, &v11);
         v5 = v13;
         v6 = a1;
         if (!v13 && !a1 && !v12 && !v11) {
@@ -34,11 +34,11 @@ unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
             v12 = 0;
             v11 = v7;
         }
-        if (sub_10061480(v4, v5, v6, v12, v11, (int)byte_11829870, 2 * v2[169], 2 * v2[170])) {
+        if (car_10061480(v4, v5, v6, v12, v11, (int)byte_11829870, 2 * v2[169], 2 * v2[170])) {
             v8 = v2[2];
             v9 = 2 * v2[169];
             if (v9 != v8 || 2 * v2[170] != v2[3]) {
-                sub_10025350(
+                math_10025350(
                     (int)&unk_104D51D0, v8, v2[3], COERCE_FLOAT(byte_11829870), v9, 2 * v2[170]);
                 v3 = (unsigned __int8 *)&unk_104D51D0;
             }

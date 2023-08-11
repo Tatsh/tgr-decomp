@@ -53,8 +53,8 @@ int __cdecl sub_10024550(int a1) {
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)4, 1);
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)18, 2);
         g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)17, 2);
-        g_indexedPrimitiveIndexCount = 0;
-        g_vertexCount = 0;
+        gIndexedPrimitiveIndexCount = 0;
+        gVertexCount = 0;
         dword_104C5190 = 0;
         dword_104C01A4 = 0;
         sub_10074FC0();
@@ -67,14 +67,14 @@ int __cdecl sub_10024550(int a1) {
         *v3 = -1207959552;
         v3[1] = 0;
         sub_10024A90((int)v12);
-        if (g_indexedPrimitiveIndexCount) {
+        if (gIndexedPrimitiveIndexCount) {
             g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(g_D3DDevice2,
                                                        D3DPT_TRIANGLELIST,
                                                        D3DVT_TLVERTEX,
-                                                       &g_vertices,
-                                                       g_vertexCount,
+                                                       &gVertices,
+                                                       gVertexCount,
                                                        &g_indexedPrimitiveIndices,
-                                                       g_indexedPrimitiveIndexCount,
+                                                       gIndexedPrimitiveIndexCount,
                                                        12);
             v4 = 0;
             if (dword_104C5190 > 0) {
@@ -86,8 +86,8 @@ int __cdecl sub_10024550(int a1) {
                     *(_DWORD *)(v6 + 104) = -1;
                 } while (v4 < dword_104C5190);
             }
-            g_indexedPrimitiveIndexCount = 0;
-            g_vertexCount = 0;
+            gIndexedPrimitiveIndexCount = 0;
+            gVertexCount = 0;
             dword_104C5190 = 0;
         }
         result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2);

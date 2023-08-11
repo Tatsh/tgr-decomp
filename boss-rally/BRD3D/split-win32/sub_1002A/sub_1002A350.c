@@ -13,12 +13,12 @@ int __cdecl sub_1002A350(int a1, unsigned __int8 *a2, int a3) {
         v5[16] /= 4;
         v5[2] /= 2;
         v5[3] /= 2;
-        pow2ExponentToAdd((DWORD *)&v5[7], v5[2], v5[3]);
+        math_pow2ExponentToAdd((DWORD *)&v5[7], v5[2], v5[3]);
         v5[6] = v5[7];
         v5[155] = 0;
     }
     v3 = sub_10028860((#506 *)v5);
-    result = TIDFromTextureAppend(v5, (int)v3);
+    result = graphics_TIDFromTextureAppend(v5, (int)v3);
     dword_118AA09C = 0;
     return result;
 }

@@ -3,24 +3,24 @@
 HANDLE sub_1002A640() {
     dword_118AA0A4 = (int(__cdecl *)(_DWORD, _DWORD))sub_10024AB0;
     dword_118AA0A8 = (int(__cdecl *)(
-        _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))sub_10025830;
-    tex_sub_dword_118AA0AC = (int(__cdecl *)(_DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD,
-                                             _DWORD))tex_sub_10027C60;
-    dword_118AA0B0 = sub_10028BF0;
-    dword_118AA0B4 = (int(__cdecl *)(_DWORD))sub_10028CA0;
+        _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))graphics_10025830;
+    graphics_dword_118AA0AC = (int(__cdecl *)(_DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD,
+                                              _DWORD))tex_sub_10027C60;
+    dword_118AA0B0 = graphics_10028BF0;
+    dword_118AA0B4 = (int(__cdecl *)(_DWORD))graphics_10028CA0;
     dword_118AA0B8 = (int(__cdecl *)(_DWORD, _DWORD))sub_10028E00;
     dword_118AA0BC = (int(__cdecl *)(_DWORD, _DWORD))sub_10028E70;
     dword_118AA0C0 = sub_10029060;

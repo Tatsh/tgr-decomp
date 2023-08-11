@@ -76,7 +76,7 @@ int sub_10033838() {
             dword_106C198C = 0;
         }
         meth_DebugPrint(v6);
-        dword_106C020C = sub_10060E90();
+        dword_106C020C = thunk_10060E90();
         dword_106C1620 = dword_106C020C - dword_106C0208;
         if (*(_DWORD *)&gUnk06594.gap1C8[12440]) {
             v7 = (void *)--*(_DWORD *)&gUnk06594.gap1C8[12440];
@@ -94,8 +94,8 @@ int sub_10033838() {
         if (*(_DWORD *)&gUnk06594.gap1C8[12464])
             --*(_DWORD *)&gUnk06594.gap1C8[12464];
         meth_1002C210(v11);
-        dword_106C0208 = sub_10060E90();
-        dword_106C020C = sub_10060E90() - dword_106C020C;
+        dword_106C0208 = thunk_10060E90();
+        dword_106C020C = thunk_10060E90() - dword_106C020C;
     } else {
         v12 = (void *)++*(_DWORD *)&gUnk06594.gap1C8[12572];
     }

@@ -18,7 +18,7 @@ int sub_10044D00() {
         gUnkC8Ptr32 = result;
         gUnkC8Ptr1 = (void *)result;
         if (result) {
-            *(_DWORD *)(result + 4) = sub_10059BB0;
+            *(_DWORD *)(result + 4) = s_unk000C8_10059BB0;
             (*(void(__cdecl **)(int))(gUnkC8Ptr32 + 4))(gUnkC8Ptr32);
             *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
             result = 1;

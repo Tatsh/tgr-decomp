@@ -55,14 +55,14 @@ _DWORD *__cdecl sub_10022480(_DWORD *a1) {
         }
         dword_104C5180 = 1;
     }
-    if (g_indexedPrimitiveIndexCount) {
+    if (gIndexedPrimitiveIndexCount) {
         g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(g_D3DDevice2,
                                                    D3DPT_TRIANGLELIST,
                                                    D3DVT_TLVERTEX,
-                                                   &g_vertices,
-                                                   g_vertexCount,
+                                                   &gVertices,
+                                                   gVertexCount,
                                                    &g_indexedPrimitiveIndices,
-                                                   g_indexedPrimitiveIndexCount,
+                                                   gIndexedPrimitiveIndexCount,
                                                    12);
         v5 = 0;
         if (dword_104C5190 > 0) {
@@ -74,8 +74,8 @@ _DWORD *__cdecl sub_10022480(_DWORD *a1) {
                 *(_DWORD *)(v7 + 104) = -1;
             } while (v5 < dword_104C5190);
         }
-        g_indexedPrimitiveIndexCount = 0;
-        g_vertexCount = 0;
+        gIndexedPrimitiveIndexCount = 0;
+        gVertexCount = 0;
         dword_104C5190 = 0;
     }
     v8 = a1;

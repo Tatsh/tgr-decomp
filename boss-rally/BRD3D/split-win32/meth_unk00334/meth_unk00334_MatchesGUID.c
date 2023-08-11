@@ -3,7 +3,7 @@
 BOOL __thiscall meth_unk00334_MatchesGUID(unk00334 *this, CLSID *a2) {
     unk0008C *v3; // ecx
 
-    v3 = this->u8c;
+    v3 = this->ddCapsFlags;
     if (((unsigned __int8)v3 & 1) != 0) {
         if (a2) {
             if (!memcmp(a2, &this->lpGUID, 0x10u))

@@ -32,7 +32,7 @@ unk000C8 *__thiscall meth_unk000C8_100446D0(unk000C8 *this) {
     gUnkC8Ptr27 = result;
     gUnkC8Ptr1 = result;
     if (result) {
-        result->lpFn0 = sub_10058750;
+        result->lpFn0 = s_unk000C8_10058750;
         gUnkC8Ptr27->lpFn0(gUnkC8Ptr27);
         gUnkC8Ptr1->field_C = 1;
         gUnkC8Ptr1->field_68 = 1;

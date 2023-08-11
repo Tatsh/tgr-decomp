@@ -46,8 +46,8 @@ char __cdecl sub_10016B40(int a1) {
     if (dword_100BD3F4 && !dword_1022AF1C) {
         v32 = (float)g_Height1;
         v31 = (float)g_Width1;
-        v2 = (char *)&unk_100C12A0 +
-             89992 * *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 16);
+        v2 = &byte_100C12A0[0x15F88 *
+                            *(_DWORD *)(a1 + 88 * *(_DWORD *)&gUnk06594.gap1C8[8640] + 16)];
         sub_1003407D(v31, v32);
         v3 = *(_DWORD *)&gUnk06594.gap1C8[8640];
         v4 = gWidth - v2[228] - 16;

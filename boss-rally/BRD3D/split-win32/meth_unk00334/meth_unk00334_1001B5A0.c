@@ -28,11 +28,11 @@ int __thiscall meth_unk00334_1001B5A0(unk00334 *this) {
             v2 = v4;
         } while (v4);
     }
-    v5 = this->u8c;
+    v5 = this->ddCapsFlags;
     this->field_320 = 0;
     LOBYTE(v5) = (unsigned __int8)v5 & 0xEF;
     this->field_324 = 0;
     this->field_328 = 0;
-    this->u8c = v5;
+    this->ddCapsFlags = v5;
     return 0;
 }

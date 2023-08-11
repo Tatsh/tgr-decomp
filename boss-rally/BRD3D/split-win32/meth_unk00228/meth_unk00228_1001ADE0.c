@@ -1,11 +1,11 @@
 #include "types-win32.h"
 //----- (1001ADE0) --------------------------------------------------------
-int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
-                                      GUID *guid,
-                                      char *source,
-                                      char *source2,
-                                      D3DDEVICEDESC *deviceDesc0,
-                                      D3DDEVICEDESC *deviceDesc1) {
+MACRO_DDERR __thiscall meth_unk00228_1001ADE0(unk00228 *this,
+                                              GUID *guid,
+                                              char *source,
+                                              char *source2,
+                                              D3DDEVICEDESC *deviceDesc0,
+                                              D3DDEVICEDESC *deviceDesc1) {
     char *v8;        // ebp
     size_t v9;       // kr04_4
     size_t v10;      // esi
@@ -14,10 +14,10 @@ int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
     size_t v13;      // kr08_4
     size_t v14;      // esi
     char *v15;       // eax
-    unk00228 *v16;   // edx
+    DWORD v16;       // edx
 
     if (!guid)
-        return -2147024809;
+        return DDERR_INVALIDPARAMS;
     this->guid = *guid;
     v8 = source;
     if (!source)
@@ -45,7 +45,7 @@ int __thiscall meth_unk00228_1001ADE0(unk00228 *this,
         qmemcpy(&this->deviceDesc0, deviceDesc0, 0xFCu);
     if (deviceDesc1)
         qmemcpy(&this->deviceDesc1, deviceDesc1, 0xFCu);
-    v16 = (unk00228 *)((int)this->field_0 & 0xFFFFFFFD | 1);
+    v16 = this->field_0 & 0xFFFFFFFD | 1;
     this->field_214 = 0;
     this->field_0 = v16;
     return 0;

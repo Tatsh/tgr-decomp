@@ -8,7 +8,7 @@ HRESULT __thiscall meth_unk0008C_1000ADF0(unk0008C *this) {
     int hr_2;                              // ebx
     int v7;                                // eax
 
-    d3d2 = this->lpDirect3D2;
+    d3d2 = this->? ;
     if (!d3d2 || !this->lpDirect3DDevice)
         return -2005522669;
     direct3DViewport2 = (IDirect3DViewport2 *)&this->lpDirect3DViewport2;
@@ -38,8 +38,8 @@ HRESULT __thiscall meth_unk0008C_1000ADF0(unk0008C *this) {
         direct3DViewport2->lpVtbl = 0;
         return hr_1;
     }
-    v7 = this->field_1C;
+    v7 = this->? ;
     LOBYTE(v7) = v7 | 0x10;
-    this->field_1C = v7;
+    this->? = v7;
     return 0;
 }

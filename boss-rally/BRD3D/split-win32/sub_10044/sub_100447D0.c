@@ -45,7 +45,7 @@ int sub_100447D0() {
         gUnkC8Ptr1 = (void *)result;
         if (!result)
             return result;
-        *(_DWORD *)(result + 4) = sub_10058750;
+        *(_DWORD *)(result + 4) = s_unk000C8_10058750;
         (*(void(__cdecl **)(int))(gUnkC8Ptr27 + 4))(gUnkC8Ptr27);
         *((_DWORD *)gUnkC8Ptr1 + 3) = 1;
         *((_DWORD *)gUnkC8Ptr1 + 26) = 1;

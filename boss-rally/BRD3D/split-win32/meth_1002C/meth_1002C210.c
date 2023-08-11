@@ -9,7 +9,7 @@ _DWORD *__thiscall meth_1002C210(void *this) {
     for (i = 0; i < 3; ++i)
         meth_DebugPrint(this);
     dword_1067D570 ^= 1u;
-    dword_1067D578 = sub_10060E90();
+    dword_1067D578 = thunk_10060E90();
     dword_1067D57C = 0;
     result = (_DWORD *)((char *)&unk_1067D584 + 6144 * dword_1067D570);
     v3 = (_DWORD *)((char *)&unk_1067D558 + 12 * dword_1067D570);

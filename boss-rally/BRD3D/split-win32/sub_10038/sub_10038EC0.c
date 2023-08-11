@@ -10,9 +10,9 @@ int sub_10038EC0() {
     meth_Pod_SetPodFilename(&gPod, kBossRallyPod);
     meth_Pod_ReadPodFile(&gPod);
     sub_1006AA20(1);
-    j_LoadDamageBitmaps();
-    sub_10078CD0();
-    sub_100770F0();
+    thunk_LoadDamageBitmaps();
+    input_10078CD0();
+    input_100770F0();
     if (gPlayMusic) {
         pm_sub_100025C0(gHwnd);
         sub_10060D90();

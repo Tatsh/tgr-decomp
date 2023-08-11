@@ -7,13 +7,13 @@ int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex) {
     char carFilepath[1024]; // [esp+114h] [ebp-400h] BYREF
 
     gCarIndex = carIndex;
-    if (outBuffer == (char *)&unk_100C12A0) {
-        LoadCarPaint(carIndex, 1);
+    if (outBuffer == byte_100C12A0) {
+        car_LoadCarPaint(carIndex, 1);
     } else {
         v3 = dword_100B8C90;
         if (!dword_100B8C90)
             dword_100B8C90 = 1;
-        LoadCarPaint(carIndex, 0);
+        car_LoadCarPaint(carIndex, 0);
     }
     dword_10AA3460 = 0;
     strcpy(carFilepath, kCarsSlash);
@@ -25,7 +25,7 @@ int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex) {
         s_noreturn_10008CF0(buffer);
     }
     result = sub_100370D0(outBuffer);
-    if (outBuffer != (char *)&unk_100C12A0)
+    if (outBuffer != byte_100C12A0)
         dword_100B8C90 = v3;
     return result;
 }

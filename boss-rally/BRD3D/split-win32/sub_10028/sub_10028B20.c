@@ -26,7 +26,7 @@ int __cdecl sub_10028B20(int a1, float a2, int a3) {
     v14 = dword_1057544C;
     if (dword_1057544C < v8) {
         do {
-            sub_10025350(a1, v7, v15, a2, v5, v6);
+            math_10025350(a1, v7, v15, a2, v5, v6);
             v9 = v13 * v7 * v15;
             v12 += v9;
             a1 += v9;

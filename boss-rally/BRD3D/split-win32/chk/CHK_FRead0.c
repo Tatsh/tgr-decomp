@@ -5,7 +5,7 @@ size_t __cdecl CHK_FRead0(void *buffer, size_t elementSize, size_t elementCount,
     CHAR debugMessage[1024]; // [esp+Ch] [ebp-400h] BYREF
 
     if (elementSize * elementCount) {
-        result = freadLock(buffer, elementSize, elementCount, fp->pfil);
+        result = filesystem_freadLock(buffer, elementSize, elementCount, fp->pfil);
         if (!result)
             return result;
         if (result != elementCount) {

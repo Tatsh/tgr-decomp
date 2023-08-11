@@ -28,7 +28,7 @@ HRESULT __cdecl sub_1001A790(int a1,
     if (!a10)
         return -2005522670;
     if ((gHasCalledDDrawEnum & 1) == 0) {
-        result = sub_1001B970();
+        result = graphics_1001B970();
         if (result < 0)
             return result;
     }
@@ -43,9 +43,9 @@ HRESULT __cdecl sub_1001A790(int a1,
     }
     v15 = a8;
     v16 = a9;
-    gsu1->u8c = (unk0008C *)v14;
-    v11->u8c = (unk0008C *)v15;
-    v12->u8c = (unk0008C *)v16;
+    gsu1->ddCapsFlags = (DWORD)v14;
+    v11->ddCapsFlags = (DWORD)v15;
+    v12->ddCapsFlags = (DWORD)v16;
     return 0;
 }
 // 104BBE18: using guessed type int gHasCalledDDrawEnum;

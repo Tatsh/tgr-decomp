@@ -5,9 +5,8 @@ HRESULT __thiscall meth_unk0008C_1000B150(unk0008C *this) {
     IDirectDrawPalette *v2; // ecx
     HRESULT result;         // eax
 
-    v1 = this->lpDirectDrawSurface0;
-    if (!v1 || (v2 = this->lpDirectDrawPalette) == 0 ||
-        (result = v1->lpVtbl->SetPalette(v1, v2), result >= 0))
-        result = 0;
-    return result;
+    v1 = this->? ;
+  if ( !v1 || (v2 = this->?) == 0 || (result = v1->lpVtbl->SetPalette(v1, v2), result >= 0) )
+      result = 0;
+  return result;
 }

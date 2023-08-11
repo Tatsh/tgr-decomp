@@ -13,10 +13,10 @@ char __thiscall meth_unk00334_1001B280(unk00334 *this) {
         free(this->field_14);
         this->field_14 = 0;
     }
-    v2 = this->u8c;
+    v2 = this->ddCapsFlags;
     this->field_32C = 0;
     LOBYTE(v2) = (unsigned __int8)v2 & 0xFE;
     this->last = 0;
-    this->u8c = v2;
+    this->ddCapsFlags = v2;
     return (char)v2;
 }

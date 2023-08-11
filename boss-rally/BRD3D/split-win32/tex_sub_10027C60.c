@@ -68,7 +68,7 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
     v29 = a4;
     v36 = v15;
     v37 = v16;
-    pow2ExponentToAdd(&v32, v15, v16);
+    math_pow2ExponentToAdd(&v32, v15, v16);
     v33 = v32;
     v42 = 0;
     v44[3] = 0;
@@ -126,38 +126,38 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
         v21 = v28;
         if (a8) {
             v21 = v28 / 2;
-            pow2ExponentToAdd(&v33, v28 / 2, v29);
+            math_pow2ExponentToAdd(&v33, v28 / 2, v29);
             sub_10028200(v34, v28 / 2, v29);
             v32 = dword_10575430 + v33;
         }
         if (v41) {
             v20 = v29 / 2;
-            pow2ExponentToAdd(&v33, v21, v29 / 2);
+            math_pow2ExponentToAdd(&v33, v21, v29 / 2);
             sub_10028200(v34, v21, v29 / 2);
             v32 = dword_10575430 + v33;
         }
         if (g_HWCaps.dwMaxTextureWidth && v21 > g_HWCaps.dwMaxTextureWidth) {
             v21 = g_HWCaps.dwMaxTextureWidth;
-            pow2ExponentToAdd(&v33, g_HWCaps.dwMaxTextureWidth, v20);
+            math_pow2ExponentToAdd(&v33, g_HWCaps.dwMaxTextureWidth, v20);
             sub_10028200(v34, v21, v20);
             v32 = dword_10575430 + v33;
         }
         if (g_HWCaps.dwMaxTextureHeight && v20 > g_HWCaps.dwMaxTextureHeight) {
             v20 = g_HWCaps.dwMaxTextureHeight;
-            pow2ExponentToAdd(&v33, v21, g_HWCaps.dwMaxTextureHeight);
+            math_pow2ExponentToAdd(&v33, v21, g_HWCaps.dwMaxTextureHeight);
             sub_10028200(v34, v21, v20);
             v32 = dword_10575430 + v33;
         }
         if (a14) {
             if (v21 > dword_100A7DF4) {
                 v21 = dword_100A7DF4;
-                pow2ExponentToAdd(&v33, dword_100A7DF4, v20);
+                math_pow2ExponentToAdd(&v33, dword_100A7DF4, v20);
                 sub_10028200(v34, v21, v20);
                 v32 = dword_10575430 + v33;
             }
             if (v20 > dword_100A7DF8) {
                 v20 = dword_100A7DF8;
-                pow2ExponentToAdd(&v33, v21, dword_100A7DF8);
+                math_pow2ExponentToAdd(&v33, v21, dword_100A7DF8);
                 sub_10028200(v34, v21, v20);
                 v32 = dword_10575430 + v33;
             }
@@ -180,7 +180,7 @@ int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
             v21 = 1 << sub_10027C00(v21);
             v20 = v21;
         LABEL_46:
-            pow2ExponentToAdd(&v33, v21, v20);
+            math_pow2ExponentToAdd(&v33, v21, v20);
             sub_10028200(v34, v21, v20);
             v32 = dword_10575430 + v33;
         label_HWAlwaysSquareTextures:
@@ -202,7 +202,7 @@ LABEL_48:
     v44[128] = dword_118AA088;
     v54 = v35;
     v22 = sub_10028860((#506 *)&v26);
-    return TIDFromTextureAppend(&v26, (int)v22);
+    return graphics_TIDFromTextureAppend(&v26, (int)v22);
 }
 // 100280A2: conditional instruction was optimized away because of '%arg_34.4!=0'
 // 100A7DFC: using guessed type int dword_100A7DFC;

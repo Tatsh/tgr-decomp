@@ -148,21 +148,21 @@ LABEL_61:
     *((float *)this + 8) = v20;
     if (v22 | v23) {
         if (*((float *)this + 6) < -1.0)
-            this[6] = -1082130432;
+            this[6] = 0xBF800000;
     } else {
-        this[6] = 1065353216;
+        this[6] = 0x3F800000;
     }
     if (*((float *)this + 7) <= 1.0) {
         if (*((float *)this + 7) < -1.0)
-            this[7] = -1082130432;
+            this[7] = 0xBF800000;
     } else {
-        this[7] = 1065353216;
+        this[7] = 0x3F800000;
     }
     if (v20 <= 1.0) {
         if (v20 < -1.0)
-            this[8] = -1082130432;
+            this[8] = 0xBF800000;
     } else {
-        this[8] = 1065353216;
+        this[8] = 0x3F800000;
     }
 }
 // 10035F1B: variable 'v22' is possibly undefined

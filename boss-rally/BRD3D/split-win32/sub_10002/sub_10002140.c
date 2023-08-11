@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10002140) --------------------------------------------------------
-Car *sub_10002140() {
+CarPart *sub_10002140() {
     enum MACRO_GAME_MODE v0; // eax
 # 505 * v1;                  // ebp
     char *v2;                // eax

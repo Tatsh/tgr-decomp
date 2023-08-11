@@ -24,70 +24,68 @@ int __thiscall meth_unk0008C_1000A5D0(unk0008C *this) {
     DWORD refreshRate; // [esp+3Ch] [ebp-4h] BYREF
 
     flags = 0;
-    u0 = this->u334b;
-    if (!u0 || !this->lpDirectDraw2)
-        return -2005522669;
-    meth_unk00334_1001AC80(u0, (int *)&width, (int *)&height, &bitDepth, (int *)&refreshRate);
-    if (width == 320 && height == 200 && bitDepth == 8)
-        flags = 1;
-    hr = this->lpDirectDraw2->lpVtbl->SetDisplayMode(
-        this->lpDirectDraw2, width, height, bitDepth, refreshRate, flags);
-    if (hr < 0 && (width == 640 && height == 480 ||
-                   (iid = this->u334,
-                    height = 480,
-                    v17 = this->u334a,
-                    width = 640,
-                    v10 = meth_unk00334_1001A570(v17, 640, 480, bitDepth, 0, (unk00228 *)iid),
-                    (this->u334b = v10) == 0) ||
-                   (hr = this->lpDirectDraw2->lpVtbl->SetDisplayMode(
-                        this->lpDirectDraw2, width, height, bitDepth, 0, 0),
-                    hr < 0))) {
-        if (bitDepth == 16 ||
-            (iid0 = this->u334,
-             v11 = this->u334a,
-             bitDepth = 16,
-             u0_1 = meth_unk00334_1001A570(v11, width, height, 16, 0, (unk00228 *)iid0),
-             (this->u334b = u0_1) == 0) ||
-            (hr = this->lpDirectDraw2->lpVtbl->SetDisplayMode(
-                 this->lpDirectDraw2, width, height, bitDepth, 0, 0),
-             hr < 0)) {
-            result = hr;
-        } else {
-            v13 = width;
-            v14 = height;
-            v15 = bitDepth;
-            this->field_78 = 0;
-            this->field_7C = 0;
-            this->field_80 = v13;
-            this->field_84 = v14;
-            gWidth = v13;
-            g_Width1 = v13;
-            gHeight = v14;
-            g_Height1 = v14;
-            g_BitDepth = v15;
-            v16 = this->field_1C;
-            LOBYTE(v16) = v16 | 2;
-            this->field_1C = v16;
-            result = hr;
-        }
+    u0 = this->? ;
+  if ( !u0 || !this->? )
+      return -2005522669;
+  meth_unk00334_1001AC80(u0, (int *)&width, (int *)&height, &bitDepth, (int *)&refreshRate);
+  if (width == 320 && height == 200 && bitDepth == 8)
+      flags = 1;
+  hr = this->?->lpVtbl->SetDisplayMode(this->?, width, height, bitDepth, refreshRate, flags);
+  if ( hr < 0
+    && (width == 640 && height == 480
+     || (iid = this->?,
+         height = 480,
+         v17 = this->?,
+         width = 640,
+         v10 = meth_unk00334_1001A570(v17, 640, 480, bitDepth, 0, (unk00228 *)iid),
+         (this->? = v10) == 0)
+     || (hr = this->?->lpVtbl->SetDisplayMode(this->?, width, height, bitDepth, 0, 0), hr < 0)) )
+  {
+    if ( bitDepth == 16
+      || (iid0 = this->?,
+          v11 = this->?,
+          bitDepth = 16,
+          u0_1 = meth_unk00334_1001A570(v11, width, height, 16, 0, (unk00228 *)iid0),
+          (this->? = u0_1) == 0)
+      || (hr = this->?->lpVtbl->SetDisplayMode(this->?, width, height, bitDepth, 0, 0), hr < 0) )
+    {
+        result = hr;
     } else {
-        v5 = width;
-        v6 = height;
+        v13 = width;
+        v14 = height;
+        v15 = bitDepth;
         this->field_78 = 0;
         this->field_7C = 0;
-        this->field_80 = v5;
-        this->field_84 = v6;
-        gWidth = v5;
-        g_Width1 = v5;
-        gHeight = v6;
-        g_Height1 = v6;
-        g_BitDepth = bitDepth;
-        v7 = this->field_1C;
-        LOBYTE(v7) = v7 | 2;
-        this->field_1C = v7;
+        this->field_80 = v13;
+        this->field_84 = v14;
+        gWidth = v13;
+        g_Width1 = v13;
+        gHeight = v14;
+        g_Height1 = v14;
+        g_BitDepth = v15;
+        v16 = this->? ;
+        LOBYTE(v16) = v16 | 2;
+        this->? = v16;
         result = hr;
     }
-    return result;
+  } else {
+    v5 = width;
+    v6 = height;
+    this->field_78 = 0;
+    this->field_7C = 0;
+    this->field_80 = v5;
+    this->field_84 = v6;
+    gWidth = v5;
+    g_Width1 = v5;
+    gHeight = v6;
+    g_Height1 = v6;
+    g_BitDepth = bitDepth;
+    v7 = this->? ;
+    LOBYTE(v7) = v7 | 2;
+    this->? = v7;
+    result = hr;
+  }
+  return result;
 }
 // 100A81C0: using guessed type int gWidth;
 // 100A81C4: using guessed type int gHeight;

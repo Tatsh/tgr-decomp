@@ -4,9 +4,9 @@ int __thiscall meth_unk00334_1000B350(unk00334 *this, _DWORD *a2) {
     int result; // eax
     int *v3;    // ecx
 
-    if ((this->field_1C & 0x1F) != 31)
+    if ((this->ddCaps1 & 0x1F) != 31)
         return -2005522669;
-    v3 = &this->field_78;
+    v3 = &this->? ;
     *a2 = *v3;
     a2[1] = v3[1];
     a2[2] = v3[2];

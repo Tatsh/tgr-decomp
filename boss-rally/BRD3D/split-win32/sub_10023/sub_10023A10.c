@@ -17,14 +17,14 @@ _DWORD *__cdecl sub_10023A10(_DWORD *a1) {
     double v14; // st6
     float v16;  // [esp+20h] [ebp-4h]
 
-    if (g_indexedPrimitiveIndexCount) {
+    if (gIndexedPrimitiveIndexCount) {
         g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(g_D3DDevice2,
                                                    D3DPT_TRIANGLELIST,
                                                    D3DVT_TLVERTEX,
-                                                   &g_vertices,
-                                                   g_vertexCount,
+                                                   &gVertices,
+                                                   gVertexCount,
                                                    &g_indexedPrimitiveIndices,
-                                                   g_indexedPrimitiveIndexCount,
+                                                   gIndexedPrimitiveIndexCount,
                                                    12);
         v1 = 0;
         if (dword_104C5190 > 0) {
@@ -36,8 +36,8 @@ _DWORD *__cdecl sub_10023A10(_DWORD *a1) {
                 *(_DWORD *)(v3 + 104) = -1;
             } while (v1 < dword_104C5190);
         }
-        g_indexedPrimitiveIndexCount = 0;
-        g_vertexCount = 0;
+        gIndexedPrimitiveIndexCount = 0;
+        gVertexCount = 0;
         dword_104C5190 = 0;
     }
     v4 = a1;

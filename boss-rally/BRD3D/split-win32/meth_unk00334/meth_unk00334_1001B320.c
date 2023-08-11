@@ -3,25 +3,24 @@
 HRESULT __thiscall meth_unk00334_1001B320(unk00334 *this, IDirectDraw2 *ddraw) {
     HRESULT result;              // eax
     IDirectDraw2Vtbl *ddrawVtbl; // ecx
-    unk0008C *v5;                // eax
-    int v6;                      // [esp+14h] [ebp-Ch] BYREF
-    int v7;                      // [esp+18h] [ebp-8h]
-    unk00334 *this_1;            // [esp+1Ch] [ebp-4h]
+    DWORD v5;                    // eax
+    int context[3];              // [esp+14h] [ebp-Ch] BYREF
 
-    if (((int)this->u8c & 8) != 0)
+    if ((this->ddCapsFlags & DDCAPS_ALIGNBOUNDARYSRC) != 0)
         return 0;
     if (!ddraw)
         return -2005522670;
     ddrawVtbl = ddraw->lpVtbl;
-    v6 = 1;
-    this_1 = this;
-    v7 = 0;
-    result = ddrawVtbl->EnumDisplayModes(ddraw, 0, 0, &v6, enumModesCallback);
+    context[0] = 1;
+    context[2] = (int)this;
+    context[1] = 0;
+    result = ddrawVtbl->EnumDisplayModes(
+        ddraw, 0, 0, context, (LPDDENUMMODESCALLBACK)graphics_enumModesCallback);
     if (result >= 0) {
-        if (v6 && v7 && this->field_314 == v7) {
-            v5 = this->u8c;
-            LOBYTE(v5) = (int)this->u8c | 8;
-            this->u8c = v5;
+        if (context[0] && context[1] && this->field_314 == context[1]) {
+            v5 = this->ddCapsFlags;
+            LOBYTE(v5) = this->ddCapsFlags | DDCAPS_ALIGNBOUNDARYSRC;
+            this->ddCapsFlags = v5;
             result = 0;
         } else {
             result = -2005522671;

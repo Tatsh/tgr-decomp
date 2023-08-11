@@ -9,7 +9,7 @@ int __thiscall meth_unk0008C_ReleaseDDrawSurface(unk0008C *this) {
         returnZeroWrapper();
     meth_unk0008C_1000AEA0(this);
     dev = (IDirect3DDevice *)this->lpDirect3DDevice;
-    this->field_1C &= 0xFFFFFFF7;
+    this->? &= 0xFFFFFFF7;
     if (dev) {
         dev->lpVtbl->Release(dev);
         this->lpDirect3DDevice = 0;

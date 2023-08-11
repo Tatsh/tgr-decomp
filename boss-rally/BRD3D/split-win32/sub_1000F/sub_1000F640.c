@@ -370,7 +370,7 @@ int __cdecl sub_1000F640(int a1, int a2, int a3, int a4, int a5) {
                                 if (v61) {
                                     v63 = v62 + 1;
                                     do {
-                                        qmemcpy_32bytes(v55, v97);
+                                        qmemcpy32(v55, v97);
                                         v64 = v55[1];
                                         v79 = v55[2];
                                         v78 = v84 * v79 + v83 * *v55 + v85 * v64 + v89;

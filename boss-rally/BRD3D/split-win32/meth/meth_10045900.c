@@ -6,7 +6,7 @@ int __thiscall meth_10045900(void *this) {
     int result;     // eax
     const CHAR *v4; // eax
 
-    if (sub_10045A00()) {
+    if (IsBossRallyCDROMPresent()) {
         sub_100419D0(asc_100AD300);
         if (gUnkC8Ptr5) {
             gUnkC8Ptr1 = gUnkC8Ptr5;
@@ -20,7 +20,7 @@ int __thiscall meth_10045900(void *this) {
         gUnkC8Ptr5 = v2;
         gUnkC8Ptr1 = v2;
         if (v2) {
-            v2->lpFn0 = sub_1004F2B0;
+            v2->lpFn0 = s_unk000C8_1004F2B0;
             gUnkC8Ptr5->lpFn0(gUnkC8Ptr5);
             gUnkC8Ptr1->field_C = 1;
             result = 1;

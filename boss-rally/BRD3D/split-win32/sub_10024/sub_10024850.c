@@ -8,14 +8,14 @@ int sub_10024850() {
 
     result = dword_10277370;
     if (dword_10277370) {
-        if (g_indexedPrimitiveIndexCount) {
+        if (gIndexedPrimitiveIndexCount) {
             g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(g_D3DDevice2,
                                                        D3DPT_TRIANGLELIST,
                                                        D3DVT_TLVERTEX,
-                                                       &g_vertices,
-                                                       g_vertexCount,
+                                                       &gVertices,
+                                                       gVertexCount,
                                                        &g_indexedPrimitiveIndices,
-                                                       g_indexedPrimitiveIndexCount,
+                                                       gIndexedPrimitiveIndexCount,
                                                        12);
             v1 = 0;
             if (dword_104C5190 > 0) {
@@ -27,8 +27,8 @@ int sub_10024850() {
                     *(_DWORD *)(v3 + 104) = -1;
                 } while (v1 < dword_104C5190);
             }
-            g_indexedPrimitiveIndexCount = 0;
-            g_vertexCount = 0;
+            gIndexedPrimitiveIndexCount = 0;
+            gVertexCount = 0;
             dword_104C5190 = 0;
         }
         if ((dword_10277370 & 1) != 0) {

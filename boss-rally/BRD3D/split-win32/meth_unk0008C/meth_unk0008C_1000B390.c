@@ -26,7 +26,7 @@ HRESULT __thiscall meth_unk0008C_1000B390(unk0008C *this,
     if (a3) {
         v7 = &a3->lpGUID;
     } else {
-        u334 = this->u334;
+        u334 = this->? ;
         if (u334)
             v7 = &u334->lpGUID;
         else
@@ -42,27 +42,27 @@ HRESULT __thiscall meth_unk0008C_1000B390(unk0008C *this,
     }
     if (!s_unk00334_1001A6E0(v5, (int)v7, a2, a3a, a4a, (int)guidOrRefreshRate, &a7, &a8))
         return -2005522671;
-    v9 = this->u334a;
-    v10 = this->u334b;
-    a3 = this->u334;
+    v9 = this-> ? ;
+    v10 = this->? ;
+    a3 = this-> ? ;
     meth_unk0008C_ReleaseDDrawD3D(this);
     v11 = a7;
     v12 = a8;
-    this->u334a = v5;
-    this->u334b = v11;
-    this->u334 = v12;
+    this->? = v5;
+    this->? = v11;
+    this->? = v12;
     v13 = meth_unk0008C_1000A2C0(this);
     if (v13 >= 0) {
-        SendMessageA(this->hwnd, 0xBD2u, 0, 0);
-        result = 0;
+    SendMessageA(this->?, 0xBD2u, 0, 0);
+    result = 0;
     } else {
-        meth_unk0008C_ReleaseDDrawD3D(this);
-        v14 = a3;
-        this->u334a = v9;
-        this->u334 = v14;
-        this->u334b = v10;
-        meth_unk0008C_1000A2C0(this);
-        result = v13;
+    meth_unk0008C_ReleaseDDrawD3D(this);
+    v14 = a3;
+    this->? = v9;
+    this->? = v14;
+    this->? = v10;
+    meth_unk0008C_1000A2C0(this);
+    result = v13;
     }
     return result;
 }

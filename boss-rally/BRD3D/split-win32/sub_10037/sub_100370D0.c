@@ -67,7 +67,7 @@ int __cdecl sub_100370D0(char *outBuffer) {
 
     sub_1002B9A0(-2143518720, (int)(outBuffer + 0x8000));
     sub_1002B9D0(0);
-    MEMORY[0x106C7C3C] = (int)outBuffer;
+    *(_DWORD *)&gUnk06594.gap1C8[18164] = outBuffer;
     *((_DWORD *)outBuffer + 31) = 0;
     LOBYTE(v2) = outBuffer[32769];
     HIBYTE(v2) = outBuffer[0x8000];
@@ -109,7 +109,7 @@ int __cdecl sub_100370D0(char *outBuffer) {
         v11 = v10 + 24;
         v12 = 4;
         do {
-            if (MEMORY[0x106C661C] || MEMORY[0x106C6624])
+            if (*(_DWORD *)&gUnk06594.gap1C8[12500] || *(_DWORD *)&gUnk06594.gap1C8[12508])
                 *(_WORD *)v11 &= 0xFEFFu;
             else
                 *(_BYTE *)(v11 + 1) |= 1u;
@@ -242,7 +242,7 @@ int __cdecl sub_100370D0(char *outBuffer) {
         v50 = *v49;
         dword_118AA0C8(v49, 1);
         *((_DWORD *)outBuffer + 32) = *v49;
-        if (MEMORY[0x106C661C] || MEMORY[0x106C6624]) {
+        if (*(_DWORD *)&gUnk06594.gap1C8[12500] || *(_DWORD *)&gUnk06594.gap1C8[12508]) {
             v48[15] = 112;
             v48[10] = -32112;
         } else {
@@ -310,9 +310,6 @@ int __cdecl sub_100370D0(char *outBuffer) {
     return sub_1002B970((int *)outBuffer + 8263);
 }
 // 100AC300: using guessed type int dword_100AC300;
-// 106C661C: using guessed type int dword_106C661C;
-// 106C6624: using guessed type int dword_106C6624;
-// 106C7C3C: using guessed type int dword_106C7C3C;
 // 118AA084: using guessed type int (__cdecl *dword_118AA084)(_DWORD, _DWORD, _DWORD);
 // 118AA0C4: using guessed type int (__cdecl *dword_118AA0C4)(_DWORD);
 // 118AA0C8: using guessed type int (__cdecl *dword_118AA0C8)(_DWORD, _DWORD);

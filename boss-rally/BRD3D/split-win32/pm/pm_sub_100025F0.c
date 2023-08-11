@@ -12,7 +12,7 @@ int __cdecl pm_sub_100025F0(HWND hWnd) {
     dword_10220CD4 = 2;
     dword_10220C44 = 0;
     playParmsPlayTo = 0;
-    setupEAR(hWnd);
+    pm_setupEAR(hWnd);
     dword_10220C3C = 0;
     dword_10220C48 = 0;
     return pm_sub_10002260();

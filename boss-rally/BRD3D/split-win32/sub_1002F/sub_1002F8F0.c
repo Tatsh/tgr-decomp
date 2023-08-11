@@ -36,7 +36,7 @@ int sub_1002F8F0() {
         }
         if (!gUnkC8Ptr1 && dword_100AC300) {
             pm_sub_10073320(0);
-            sub_1005D440();
+            graphics_1005D440();
             ticks = getTicks();
             v1 = gUnkC8Ptr1;
             g_TickCount = ticks;
@@ -60,7 +60,7 @@ int sub_1002F8F0() {
         if (v1->field_C) {
             v1->lpVtbl->meth3(v1);
         } else {
-            v3 = (unk00334 *)gUnk8C->u334b;
+            v3 = (unk00334 *)gUnk8C->? ;
             if (v3) {
                 meth_unk00334_1001AC80(v3, &width, &height, &bitDepth, &dword_10690A04);
                 v1 = gUnkC8Ptr1;

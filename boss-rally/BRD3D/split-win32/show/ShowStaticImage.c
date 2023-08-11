@@ -2,7 +2,7 @@
 //----- (10008E30) --------------------------------------------------------
 HRESULT __stdcall ShowStaticImage(unk0008C *u8C, char *filename, int checksum) {
     unk0008C *u8C_1;                                                                    // esi
-    IDirect3D2 *d3d2;                                                                   // ecx
+    D3DVALUE d3d2;                                                                      // ecx
     IDirect3DViewport2 *viewport;                                                       // eax
     IDirect3DDevice2 *dev;                                                              // ebx
     unsigned __int8 *v7;                                                                // eax
@@ -16,7 +16,7 @@ HRESULT __stdcall ShowStaticImage(unk0008C *u8C, char *filename, int checksum) {
     HRESULT(__stdcall * drawPrimitive)
     (IDirect3DDevice2 *, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD); // eax
     HRESULT(__stdcall * endScene)(IDirect3DDevice2 *);                           // ebp
-    HRESULT v17;                                                                 // ebp
+    int v17;                                                                     // ebp
     D3DVALUE v18;                                            // [esp+ECh] [ebp-15Ch]
     float v19;                                               // [esp+F0h] [ebp-158h]
     float v20;                                               // [esp+F4h] [ebp-154h]
@@ -47,13 +47,13 @@ HRESULT __stdcall ShowStaticImage(unk0008C *u8C, char *filename, int checksum) {
     u8C_1 = u8C;
     if (!u8C)
         return -2147467259;
-    if ((u8C->field_1C & 0x1F) != 31)
+    if ((LOBYTE(u8C->field_8.ambient.r) & 0x1F) != 31)
         return -2147467259;
-    d3d2 = u8C->lpDirect3D2;
+    d3d2 = u8C->field_8.emissive.g;
     viewport = u8C->lpDirect3DViewport2;
     dev = u8C->lpDirect3DDevice;
     d3dviewport2 = viewport;
-    if (!d3d2 || !dev || !viewport)
+    if (d3d2 == 0.0 || !dev || !viewport)
         return -2147467259;
     meth_unk0008C_FlipSurfaces(u8C);
     v7 = sub_10009AD0(filename, checksum, &outFilename, &outBuf);
@@ -172,10 +172,12 @@ HRESULT __stdcall ShowStaticImage(unk0008C *u8C, char *filename, int checksum) {
             if (result)
                 return result;
         }
-        v17 = u8C_1->lpDirectDrawSurface0->lpVtbl->Flip(
-            u8C_1->lpDirectDrawSurface0, u8C_1->lpDirectDrawSurface1, DDFLIP_WAIT);
-        while (u8C_1->lpDirectDrawSurface0->lpVtbl->GetFlipStatus(u8C_1->lpDirectDrawSurface0,
-                                                                  DDFLIP_EVEN))
+        v17 = (*(int(__stdcall **)(_DWORD, IDirectDrawSurface *, MACRO_DDFLIP))(
+            *(_DWORD *)LODWORD(u8C_1->field_8.emissive.b) + 44))(
+            LODWORD(u8C_1->field_8.emissive.b), u8C_1->lpDirectDrawSurface1, DDFLIP_WAIT);
+        while ((*(int(__stdcall **)(_DWORD, MACRO_DDFLIP))(
+            *(_DWORD *)LODWORD(u8C_1->field_8.emissive.b) + 72))(LODWORD(u8C_1->field_8.emissive.b),
+                                                                 DDFLIP_EVEN))
             ;
         if (++v22 >= 2) {
             meth_1000A0B0(&stru_10277680);

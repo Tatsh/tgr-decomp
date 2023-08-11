@@ -936,7 +936,7 @@ LABEL_119:
                 v127[1] = dword_10364304;
                 v219 = 4;
                 do {
-                    qmemcpy_32bytes((void *)dword_10364304, v129);
+                    qmemcpy32((void *)dword_10364304, v129);
                     v129 += 32;
                     *(float *)(dword_10364304 + 8) = *(float *)(dword_10364304 + 8) - -0.03125;
                     v130 = v219 == 1;

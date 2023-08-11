@@ -40,11 +40,11 @@ HANDLE __thiscall meth_CreateMutexWrapper(void *this) {
         byte_106C06A0[i] = 0;
         if ((((int)(unsigned __int8)v15[24] >> i) & 1) != 0 && (byte_106C092B[4 * i] & 8) == 0 &&
             (word_106C0928[2 * i] & 4) != 0 && (byte_106C092A[4 * i] & 1) != 0) {
-            v14 = returnZero();
+            v14 = ReturnZero();
             if (v14) {
-                if (v14 > 9 && v14 <= 11 && !returnZero()) {
+                if (v14 > 9 && v14 <= 11 && !ReturnZero()) {
                     byte_106C06A0[i] = 1;
-                    returnZero();
+                    ReturnZero();
                 }
             }
         }

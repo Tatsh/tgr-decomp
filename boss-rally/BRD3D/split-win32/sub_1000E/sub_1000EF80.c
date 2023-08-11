@@ -97,7 +97,7 @@ __int16 __fastcall sub_1000EF80(int a1, int a2, float *a3, int a4) {
         v7 = 1;
     }
     v8 = 4 * a4;
-    sub_10061460(*(unsigned __int8 *)(v5 + 10668),
+    car_10061460(*(unsigned __int8 *)(v5 + 10668),
                  *(unsigned __int8 *)(v5 + 10669),
                  *(unsigned __int8 *)(v5 + 10670));
     sub_10074E40(v7, v5 + 10864, v5 + 10896);

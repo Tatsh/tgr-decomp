@@ -11,9 +11,9 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
     sub_10016990();
     if (dword_10B501CC)
         dword_10B501CC();
-    sub_10079550();
-    sub_10078BC0();
-    sub_10078DB0();
+    input_10079550();
+    input_10078BC0();
+    input_10078DB0();
     ReleaseDirectSound();
     if (gNetworkPlay)
         np_sub_10005BE0();
@@ -26,10 +26,10 @@ void __cdecl __noreturn cleanUpAndExitWithCode(int Code) {
         dword_118AA0D0();
     if (dword_10690A28)
         dword_10690A28();
-    sub_10061620();
+    car_10061620();
     meth_Pod_CleanUpPod(&gPod);
     sub_1002AEA0();
-    sub_10074050();
+    ReleaseBRString();
     CoUninitialize();
     exit(Code);
 }

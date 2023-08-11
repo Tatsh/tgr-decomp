@@ -4,7 +4,7 @@ int __thiscall meth_unk0008C_1000AEA0(unk0008C *this) {
     unk0008C *v2; // edi
 
     v2 = this->field_8;
-    this->field_1C |= 0x10u;
+    this->? |= 0x10u;
     if (v2) {
         meth_unk0008C_SafeReleaseDirect3DMaterial2(v2);
         free(v2);

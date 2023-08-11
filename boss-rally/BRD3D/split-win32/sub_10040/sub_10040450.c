@@ -29,7 +29,7 @@ int sub_10040450() {
             return 1;
         case 1:
             if (v0 == -1)
-                v0 = sub_10077200(&v5);
+                v0 = input_10077200(&v5);
             else
                 v5 = 0;
             if (v0 >= 0) {
@@ -42,7 +42,7 @@ int sub_10040450() {
             return 1;
         case 2:
             if (v0 == -1)
-                v0 = sub_10077200(&v5);
+                v0 = input_10077200(&v5);
             else
                 v5 = 0;
             if (v0 >= 0) {
@@ -55,7 +55,7 @@ int sub_10040450() {
             return 1;
         case 3:
             if (v0 == -1) {
-                v0 = sub_10077310();
+                v0 = input_10077310();
                 v2 = 768;
             } else {
                 v2 = 0;
@@ -70,7 +70,7 @@ int sub_10040450() {
             dword_10AA2850 = sub_10040330(3);
             if (!dword_10AA2A3C)
                 return 1;
-            sub_10077310();
+            input_10077310();
             v3 = dword_10AA33C0;
             break;
         default:

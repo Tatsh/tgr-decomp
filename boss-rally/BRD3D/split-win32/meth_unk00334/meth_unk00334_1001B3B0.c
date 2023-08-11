@@ -9,31 +9,31 @@ int __thiscall meth_unk00334_1001B3B0(unk00334 *this) {
     v2 = this->field_318;
     if (v2) {
         do {
-            v3 = *(_DWORD *)&v2->gap64[8];
-            v4 = v2->field_70;
+            v3 = *(_DWORD *)&v2->? [8];
+            v4 = v2->            ? ;
             if (v3)
                 *(_DWORD *)(v3 + 112) = v4;
             else
                 this->field_318 = v4;
             if (v4)
-                *(_DWORD *)&v4->gap64[8] = v3;
+                *(_DWORD *)&v4->? [8] = v3;
             else
                 this->field_31C = v3;
-            v2->field_70 = 0;
-            *(_DWORD *)&v2->gap64[8] = 0;
+            v2->            ? = 0;
+            *(_DWORD *)&v2->? [8] = 0;
             if (v2) {
-                *(_DWORD *)&v2->gap64[8] = 0;
-                v2->field_70 = 0;
+                *(_DWORD *)&v2->? [8] = 0;
+                v2->            ? = 0;
                 free(v2);
             }
             v2 = v4;
         } while (v4);
     }
-    v5 = this->u8c;
+    v5 = this->ddCapsFlags;
     this->field_314 = 0;
     LOBYTE(v5) = (unsigned __int8)v5 & 0xF7;
     this->field_318 = 0;
     this->field_31C = 0;
-    this->u8c = v5;
+    this->ddCapsFlags = v5;
     return 0;
 }

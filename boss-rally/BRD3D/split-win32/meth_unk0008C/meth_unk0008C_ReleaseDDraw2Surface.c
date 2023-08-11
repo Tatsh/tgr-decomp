@@ -3,12 +3,12 @@
 int __thiscall meth_unk0008C_ReleaseDDraw2Surface(unk0008C *this) {
     LPDIRECTDRAWSURFACE ddrawSurface; // eax
 
-    this->field_1C &= 0xFFFFFFFB;
+    this->? &= 0xFFFFFFFB;
     meth_unk0008C_ResetPalette(this);
-    ddrawSurface = this->lpDirectDrawSurface0;
+    ddrawSurface = this->? ;
     if (ddrawSurface) {
-        ddrawSurface->lpVtbl->Release(this->lpDirectDrawSurface0);
-        this->lpDirectDrawSurface0 = 0;
+    ddrawSurface->lpVtbl->Release(this->?);
+    this->? = 0;
     }
     return 0;
 }

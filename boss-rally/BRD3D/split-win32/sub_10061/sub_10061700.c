@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10061700) --------------------------------------------------------
 int sub_10061700() {
-  sub_10061660(gUnk06594.field_4938);
-  return sub_100616C0((int *)gUnk06594.field_4938);
+    sub_10061660(gUnk06594.field_4938);
+    return sub_100616C0((int *)gUnk06594.field_4938);
 }
