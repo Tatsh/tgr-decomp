@@ -162,7 +162,6 @@ struct IDirect3DMaterial2Vtbl;
 struct _D3DMATERIAL;
 struct IDirect3D2;
 struct IDirect3D2Vtbl;
-struct _D3DDeviceDesc;
 struct IDirect3DLight;
 struct IDirect3DLightVtbl;
 struct IDirect3D;
@@ -212,10 +211,11 @@ struct unk1A5E0Vtbl;
 struct unk00348Vtbl;
 
 /* 1 */
-struct _SCOPETABLE_ENTRY {
-    int EnclosingLevel;
-    void *FilterFunc;
-    void *HandlerFunc;
+struct _SCOPETABLE_ENTRY
+{
+  int EnclosingLevel;
+  void *FilterFunc;
+  void *HandlerFunc;
 };
 
 /* 2 */
@@ -228,11 +228,12 @@ typedef void *PVOID;
 typedef unsigned int DWORD;
 
 /* 3 */
-struct _EH3_EXCEPTION_REGISTRATION {
-    struct _EH3_EXCEPTION_REGISTRATION *Next;
-    PVOID ExceptionHandler;
-    PSCOPETABLE_ENTRY ScopeTable;
-    DWORD TryLevel;
+struct _EH3_EXCEPTION_REGISTRATION
+{
+  struct _EH3_EXCEPTION_REGISTRATION *Next;
+  PVOID ExceptionHandler;
+  PSCOPETABLE_ENTRY ScopeTable;
+  DWORD TryLevel;
 };
 
 /* 4 */
@@ -242,10 +243,11 @@ typedef struct _EH3_EXCEPTION_REGISTRATION EH3_EXCEPTION_REGISTRATION;
 typedef struct _EH3_EXCEPTION_REGISTRATION *PEH3_EXCEPTION_REGISTRATION;
 
 /* 6 */
-struct CPPEH_RECORD {
-    DWORD old_esp;
-    EXCEPTION_POINTERS *exc_ptr;
-    struct _EH3_EXCEPTION_REGISTRATION registration;
+struct CPPEH_RECORD
+{
+  DWORD old_esp;
+  EXCEPTION_POINTERS *exc_ptr;
+  struct _EH3_EXCEPTION_REGISTRATION registration;
 };
 
 /* 10 */
@@ -255,15 +257,16 @@ typedef unsigned int ULONG_PTR;
 typedef ULONG_PTR SIZE_T;
 
 /* 7 */
-struct _MEMORYSTATUS {
-    DWORD dwLength;
-    DWORD dwMemoryLoad;
-    SIZE_T dwTotalPhys;
-    SIZE_T dwAvailPhys;
-    SIZE_T dwTotalPageFile;
-    SIZE_T dwAvailPageFile;
-    SIZE_T dwTotalVirtual;
-    SIZE_T dwAvailVirtual;
+struct _MEMORYSTATUS
+{
+  DWORD dwLength;
+  DWORD dwMemoryLoad;
+  SIZE_T dwTotalPhys;
+  SIZE_T dwAvailPhys;
+  SIZE_T dwTotalPageFile;
+  SIZE_T dwAvailPageFile;
+  SIZE_T dwTotalVirtual;
+  SIZE_T dwAvailVirtual;
 };
 
 /* 12 */
@@ -277,13 +280,14 @@ typedef void *HANDLE;
 
 /* 11 */
 #pragma pack(push, 8)
-struct _RTL_CRITICAL_SECTION {
-    PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
-    LONG LockCount;
-    LONG RecursionCount;
-    HANDLE OwningThread;
-    HANDLE LockSemaphore;
-    ULONG_PTR SpinCount;
+struct _RTL_CRITICAL_SECTION
+{
+  PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
+  LONG LockCount;
+  LONG RecursionCount;
+  HANDLE OwningThread;
+  HANDLE LockSemaphore;
+  ULONG_PTR SpinCount;
 };
 #pragma pack(pop)
 
@@ -291,38 +295,41 @@ struct _RTL_CRITICAL_SECTION {
 typedef unsigned __int16 WORD;
 
 /* 16 */
-struct _LIST_ENTRY {
-    _LIST_ENTRY *Flink;
-    _LIST_ENTRY *Blink;
+struct _LIST_ENTRY
+{
+  _LIST_ENTRY *Flink;
+  _LIST_ENTRY *Blink;
 };
 
 /* 15 */
 typedef _LIST_ENTRY LIST_ENTRY;
 
 /* 13 */
-struct _RTL_CRITICAL_SECTION_DEBUG {
-    WORD Type;
-    WORD CreatorBackTraceIndex;
-    _RTL_CRITICAL_SECTION *CriticalSection;
-    LIST_ENTRY ProcessLocksList;
-    DWORD EntryCount;
-    DWORD ContentionCount;
-    DWORD Flags;
-    WORD CreatorBackTraceIndexHigh;
-    WORD SpareWORD;
+struct _RTL_CRITICAL_SECTION_DEBUG
+{
+  WORD Type;
+  WORD CreatorBackTraceIndex;
+  _RTL_CRITICAL_SECTION *CriticalSection;
+  LIST_ENTRY ProcessLocksList;
+  DWORD EntryCount;
+  DWORD ContentionCount;
+  DWORD Flags;
+  WORD CreatorBackTraceIndexHigh;
+  WORD SpareWORD;
 };
 
 /* 20 */
 typedef char CHAR;
 
 /* 19 */
-struct _OSVERSIONINFOA {
-    DWORD dwOSVersionInfoSize;
-    DWORD dwMajorVersion;
-    DWORD dwMinorVersion;
-    DWORD dwBuildNumber;
-    DWORD dwPlatformId;
-    CHAR szCSDVersion[128];
+struct _OSVERSIONINFOA
+{
+  DWORD dwOSVersionInfoSize;
+  DWORD dwMajorVersion;
+  DWORD dwMinorVersion;
+  DWORD dwBuildNumber;
+  DWORD dwPlatformId;
+  CHAR szCSDVersion[128];
 };
 
 /* 22 */
@@ -332,33 +339,37 @@ typedef _GUID GUID;
 typedef GUID IID;
 
 /* 23 */
-struct _GUID {
-    unsigned int Data1;
-    unsigned __int16 Data2;
-    unsigned __int16 Data3;
-    unsigned __int8 Data4[8];
+struct _GUID
+{
+  unsigned int Data1;
+  unsigned __int16 Data2;
+  unsigned __int16 Data3;
+  unsigned __int8 Data4[8];
 };
 
 /* 24 */
 typedef _LARGE_INTEGER LARGE_INTEGER;
 
 /* 26 */
-struct _LARGE_INTEGER::$837407842DC9087486FDFA5FEB63B74E {
-    DWORD LowPart;
-    LONG HighPart;
+struct _LARGE_INTEGER::$837407842DC9087486FDFA5FEB63B74E
+{
+  DWORD LowPart;
+  LONG HighPart;
 };
 
 /* 27 */
 typedef __int64 LONGLONG;
 
 /* 25 */
-union _LARGE_INTEGER {
-    struct {
-        DWORD LowPart;
-        LONG HighPart;
-    };
-    _LARGE_INTEGER::$837407842DC9087486FDFA5FEB63B74E u;
-    LONGLONG QuadPart;
+union _LARGE_INTEGER
+{
+  struct
+  {
+    DWORD LowPart;
+    LONG HighPart;
+  };
+  _LARGE_INTEGER::$837407842DC9087486FDFA5FEB63B74E u;
+  LONGLONG QuadPart;
 };
 
 /* 29 */
@@ -366,12 +377,13 @@ typedef DWORD FOURCC;
 
 /* 28 */
 #pragma pack(push, 1)
-struct _MMCKINFO {
-    FOURCC ckid;
-    DWORD cksize;
-    FOURCC fccType;
-    DWORD dwDataOffset;
-    DWORD dwFlags;
+struct _MMCKINFO
+{
+  FOURCC ckid;
+  DWORD cksize;
+  FOURCC fccType;
+  DWORD dwDataOffset;
+  DWORD dwFlags;
 };
 #pragma pack(pop)
 
@@ -407,35 +419,38 @@ typedef HMMIO__ *HMMIO;
 
 /* 30 */
 #pragma pack(push, 1)
-struct _MMIOINFO {
-    DWORD dwFlags;
-    FOURCC fccIOProc;
-    LPMMIOPROC pIOProc;
-    UINT wErrorRet;
-    HTASK htask;
-    LONG cchBuffer;
-    HPSTR pchBuffer;
-    HPSTR pchNext;
-    HPSTR pchEndRead;
-    HPSTR pchEndWrite;
-    LONG lBufOffset;
-    LONG lDiskOffset;
-    DWORD adwInfo[3];
-    DWORD dwReserved1;
-    DWORD dwReserved2;
-    HMMIO hmmio;
+struct _MMIOINFO
+{
+  DWORD dwFlags;
+  FOURCC fccIOProc;
+  LPMMIOPROC pIOProc;
+  UINT wErrorRet;
+  HTASK htask;
+  LONG cchBuffer;
+  HPSTR pchBuffer;
+  HPSTR pchNext;
+  HPSTR pchEndRead;
+  HPSTR pchEndWrite;
+  LONG lBufOffset;
+  LONG lDiskOffset;
+  DWORD adwInfo[3];
+  DWORD dwReserved1;
+  DWORD dwReserved2;
+  HMMIO hmmio;
 };
 #pragma pack(pop)
 
 /* 39 */
-struct HTASK__ {
-    int unused;
+struct HTASK__
+{
+  int unused;
 };
 
 /* 42 */
 #pragma pack(push, 1)
-struct HMMIO__ {
-    int unused;
+struct HMMIO__
+{
+  int unused;
 };
 #pragma pack(pop)
 
@@ -449,34 +464,37 @@ typedef unsigned int UINT_PTR;
 typedef UINT_PTR WPARAM;
 
 /* 49 */
-struct tagPOINT {
-    LONG x;
-    LONG y;
+struct tagPOINT
+{
+  LONG x;
+  LONG y;
 };
 
 /* 48 */
 typedef tagPOINT POINT;
 
 /* 43 */
-struct tagMSG {
-    HWND hwnd;
-    UINT message;
-    WPARAM wParam;
-    LPARAM lParam;
-    DWORD time;
-    POINT pt;
+struct tagMSG
+{
+  HWND hwnd;
+  UINT message;
+  WPARAM wParam;
+  LPARAM lParam;
+  DWORD time;
+  POINT pt;
 };
 
 /* 45 */
-struct HWND__ {
-    int unused;
+struct HWND__
+{
+  int unused;
 };
 
 /* 50 */
 typedef tagWNDCLASSA WNDCLASSA;
 
 /* 52 */
-typedef LRESULT(__stdcall *WNDPROC)(HWND, UINT, WPARAM, LPARAM);
+typedef LRESULT (__stdcall *WNDPROC)(HWND, UINT, WPARAM, LPARAM);
 
 /* 53 */
 typedef HINSTANCE__ *HINSTANCE;
@@ -494,40 +512,45 @@ typedef HBRUSH__ *HBRUSH;
 typedef const CHAR *LPCSTR;
 
 /* 51 */
-struct tagWNDCLASSA {
-    UINT style;
-    WNDPROC lpfnWndProc;
-    int cbClsExtra;
-    int cbWndExtra;
-    HINSTANCE hInstance;
-    HICON hIcon;
-    HCURSOR hCursor;
-    HBRUSH hbrBackground;
-    LPCSTR lpszMenuName;
-    LPCSTR lpszClassName;
+struct tagWNDCLASSA
+{
+  UINT style;
+  WNDPROC lpfnWndProc;
+  int cbClsExtra;
+  int cbWndExtra;
+  HINSTANCE hInstance;
+  HICON hIcon;
+  HCURSOR hCursor;
+  HBRUSH hbrBackground;
+  LPCSTR lpszMenuName;
+  LPCSTR lpszClassName;
 };
 
 /* 54 */
-struct HINSTANCE__ {
-    int unused;
+struct HINSTANCE__
+{
+  int unused;
 };
 
 /* 56 */
-struct HICON__ {
-    int unused;
+struct HICON__
+{
+  int unused;
 };
 
 /* 59 */
-struct HBRUSH__ {
-    int unused;
+struct HBRUSH__
+{
+  int unused;
 };
 
 /* 61 */
-struct tagRECT {
-    LONG left;
-    LONG top;
-    LONG right;
-    LONG bottom;
+struct tagRECT
+{
+  LONG left;
+  LONG top;
+  LONG right;
+  LONG bottom;
 };
 
 /* 64 */
@@ -537,32 +560,34 @@ typedef unsigned __int8 BYTE;
 typedef BYTE *LPBYTE;
 
 /* 62 */
-struct _STARTUPINFOA {
-    DWORD cb;
-    LPSTR lpReserved;
-    LPSTR lpDesktop;
-    LPSTR lpTitle;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwXSize;
-    DWORD dwYSize;
-    DWORD dwXCountChars;
-    DWORD dwYCountChars;
-    DWORD dwFillAttribute;
-    DWORD dwFlags;
-    WORD wShowWindow;
-    WORD cbReserved2;
-    LPBYTE lpReserved2;
-    HANDLE hStdInput;
-    HANDLE hStdOutput;
-    HANDLE hStdError;
+struct _STARTUPINFOA
+{
+  DWORD cb;
+  LPSTR lpReserved;
+  LPSTR lpDesktop;
+  LPSTR lpTitle;
+  DWORD dwX;
+  DWORD dwY;
+  DWORD dwXSize;
+  DWORD dwYSize;
+  DWORD dwXCountChars;
+  DWORD dwYCountChars;
+  DWORD dwFillAttribute;
+  DWORD dwFlags;
+  WORD wShowWindow;
+  WORD cbReserved2;
+  LPBYTE lpReserved2;
+  HANDLE hStdInput;
+  HANDLE hStdOutput;
+  HANDLE hStdError;
 };
 
 /* 65 */
-struct _cpinfo {
-    UINT MaxCharSize;
-    BYTE DefaultChar[2];
-    BYTE LeadByte[12];
+struct _cpinfo
+{
+  UINT MaxCharSize;
+  BYTE DefaultChar[2];
+  BYTE LeadByte[12];
 };
 
 /* 67 */
@@ -572,45 +597,49 @@ typedef void *LPVOID;
 typedef int BOOL;
 
 /* 66 */
-struct _SECURITY_ATTRIBUTES {
-    DWORD nLength;
-    LPVOID lpSecurityDescriptor;
-    BOOL bInheritHandle;
+struct _SECURITY_ATTRIBUTES
+{
+  DWORD nLength;
+  LPVOID lpSecurityDescriptor;
+  BOOL bInheritHandle;
 };
 
 /* 71 */
-struct _FILETIME {
-    DWORD dwLowDateTime;
-    DWORD dwHighDateTime;
+struct _FILETIME
+{
+  DWORD dwLowDateTime;
+  DWORD dwHighDateTime;
 };
 
 /* 70 */
 typedef _FILETIME FILETIME;
 
 /* 69 */
-struct _WIN32_FIND_DATAA {
-    DWORD dwFileAttributes;
-    FILETIME ftCreationTime;
-    FILETIME ftLastAccessTime;
-    FILETIME ftLastWriteTime;
-    DWORD nFileSizeHigh;
-    DWORD nFileSizeLow;
-    DWORD dwReserved0;
-    DWORD dwReserved1;
-    CHAR cFileName[260];
-    CHAR cAlternateFileName[14];
+struct _WIN32_FIND_DATAA
+{
+  DWORD dwFileAttributes;
+  FILETIME ftCreationTime;
+  FILETIME ftLastAccessTime;
+  FILETIME ftLastWriteTime;
+  DWORD nFileSizeHigh;
+  DWORD nFileSizeLow;
+  DWORD dwReserved0;
+  DWORD dwReserved1;
+  CHAR cFileName[260];
+  CHAR cAlternateFileName[14];
 };
 
 /* 72 */
-struct _SYSTEMTIME {
-    WORD wYear;
-    WORD wMonth;
-    WORD wDayOfWeek;
-    WORD wDay;
-    WORD wHour;
-    WORD wMinute;
-    WORD wSecond;
-    WORD wMilliseconds;
+struct _SYSTEMTIME
+{
+  WORD wYear;
+  WORD wMonth;
+  WORD wDayOfWeek;
+  WORD wDay;
+  WORD wHour;
+  WORD wMinute;
+  WORD wSecond;
+  WORD wMilliseconds;
 };
 
 /* 75 */
@@ -623,46 +652,50 @@ typedef wchar_t WCHAR;
 typedef _SYSTEMTIME SYSTEMTIME;
 
 /* 73 */
-struct _TIME_ZONE_INFORMATION {
-    LONG Bias;
-    WCHAR StandardName[32];
-    SYSTEMTIME StandardDate;
-    LONG StandardBias;
-    WCHAR DaylightName[32];
-    SYSTEMTIME DaylightDate;
-    LONG DaylightBias;
+struct _TIME_ZONE_INFORMATION
+{
+  LONG Bias;
+  WCHAR StandardName[32];
+  SYSTEMTIME StandardDate;
+  LONG StandardBias;
+  WCHAR DaylightName[32];
+  SYSTEMTIME DaylightDate;
+  LONG DaylightBias;
 };
 
 /* 77 */
 typedef _iobuf FILE;
 
 /* 78 */
-struct _iobuf {
-    char *_ptr;
-    int _cnt;
-    char *_base;
-    int _flag;
-    int _file;
-    int _charbuf;
-    int _bufsiz;
-    char *_tmpfname;
+struct _iobuf
+{
+  char *_ptr;
+  int _cnt;
+  char *_base;
+  int _flag;
+  int _file;
+  int _charbuf;
+  int _bufsiz;
+  char *_tmpfname;
 };
 
 /* 79 */
-struct FuncInfoV1 {
-    int magicNumber;
-    int maxState;
-    void *pUnwindMap;
-    int nTryBlocks;
-    void *pTryBlockMap;
-    int nIPMapEntries;
-    void *pIPtoStateMap;
+struct FuncInfoV1
+{
+  int magicNumber;
+  int maxState;
+  void *pUnwindMap;
+  int nTryBlocks;
+  void *pTryBlockMap;
+  int nIPMapEntries;
+  void *pIPtoStateMap;
 };
 
 /* 80 */
-struct UnwindMapEntry {
-    int toState;
-    void *action;
+struct UnwindMapEntry
+{
+  int toState;
+  void *action;
 };
 
 /* 81 */
@@ -676,10 +709,11 @@ typedef ULONG_PTR DWORD_PTR;
 
 /* 83 */
 #pragma pack(push, 1)
-struct tagMCI_PLAY_PARMS {
-    DWORD_PTR dwCallback;
-    DWORD dwFrom;
-    DWORD dwTo;
+struct tagMCI_PLAY_PARMS
+{
+  DWORD_PTR dwCallback;
+  DWORD dwFrom;
+  DWORD dwTo;
 };
 #pragma pack(pop)
 
@@ -712,43 +746,31 @@ typedef tagEXCEPINFO EXCEPINFO;
 
 /* 85 */
 #pragma pack(push, 8)
-struct IDispatchVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDispatch *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(IDispatch *This);
-    ULONG(__stdcall *Release)(IDispatch *This);
-    HRESULT(__stdcall *GetTypeInfoCount)(IDispatch *This, UINT *pctinfo);
-    HRESULT(__stdcall *GetTypeInfo)(IDispatch *This, UINT iTInfo, LCID lcid, ITypeInfo **ppTInfo);
-    HRESULT(__stdcall *GetIDsOfNames)
-    (IDispatch *This,
-     const IID *const riid,
-     LPOLESTR *rgszNames,
-     UINT cNames,
-     LCID lcid,
-     DISPID *rgDispId);
-    HRESULT(__stdcall *Invoke)
-    (IDispatch *This,
-     DISPID dispIdMember,
-     const IID *const riid,
-     LCID lcid,
-     WORD wFlags,
-     DISPPARAMS *pDispParams,
-     VARIANT *pVarResult,
-     EXCEPINFO *pExcepInfo,
-     UINT *puArgErr);
+struct IDispatchVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDispatch *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(IDispatch *This);
+  ULONG (__stdcall *Release)(IDispatch *This);
+  HRESULT (__stdcall *GetTypeInfoCount)(IDispatch *This, UINT *pctinfo);
+  HRESULT (__stdcall *GetTypeInfo)(IDispatch *This, UINT iTInfo, LCID lcid, ITypeInfo **ppTInfo);
+  HRESULT (__stdcall *GetIDsOfNames)(IDispatch *This, const IID *const riid, LPOLESTR *rgszNames, UINT cNames, LCID lcid, DISPID *rgDispId);
+  HRESULT (__stdcall *Invoke)(IDispatch *This, DISPID dispIdMember, const IID *const riid, LCID lcid, WORD wFlags, DISPPARAMS *pDispParams, VARIANT *pVarResult, EXCEPINFO *pExcepInfo, UINT *puArgErr);
 };
 #pragma pack(pop)
 
 /* 86 */
 #pragma pack(push, 8)
-struct IDispatch {
-    IDispatchVtbl *lpVtbl;
+struct IDispatch
+{
+  IDispatchVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 90 */
 #pragma pack(push, 8)
-struct ITypeInfo {
-    ITypeInfoVtbl *lpVtbl;
+struct ITypeInfo
+{
+  ITypeInfoVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
@@ -757,11 +779,12 @@ typedef VARIANT VARIANTARG;
 
 /* 171 */
 #pragma pack(push, 8)
-struct tagDISPPARAMS {
-    VARIANTARG *rgvarg;
-    DISPID *rgdispidNamedArgs;
-    UINT cArgs;
-    UINT cNamedArgs;
+struct tagDISPPARAMS
+{
+  VARIANTARG *rgvarg;
+  DISPID *rgdispidNamedArgs;
+  UINT cArgs;
+  UINT cNamedArgs;
 };
 #pragma pack(pop)
 
@@ -784,18 +807,21 @@ typedef __int16 VARIANT_BOOL;
 typedef LONG SCODE;
 
 /* 139 */
-struct tagCY::$3EA7BC8C29B528C7CA1203FC489E132F {
-    ULONG Lo;
-    LONG Hi;
+struct tagCY::$3EA7BC8C29B528C7CA1203FC489E132F
+{
+  ULONG Lo;
+  LONG Hi;
 };
 
 /* 138 */
-union tagCY {
-    struct {
-        ULONG Lo;
-        LONG Hi;
-    };
-    LONGLONG int64;
+union tagCY
+{
+  struct
+  {
+    ULONG Lo;
+    LONG Hi;
+  };
+  LONGLONG int64;
 };
 
 /* 137 */
@@ -824,15 +850,81 @@ typedef tagDEC DECIMAL;
 
 /* 155 */
 #pragma pack(push, 8)
-struct tagVARIANT::$::$::$E09503A454170B491AC1C4312CE36FE6::$0FDBD249F1AECD6A49409B6B82281578 {
-    PVOID pvRecord;
-    IRecordInfo *pRecInfo;
+struct tagVARIANT::$::$::$E09503A454170B491AC1C4312CE36FE6::$0FDBD249F1AECD6A49409B6B82281578
+{
+  PVOID pvRecord;
+  IRecordInfo *pRecInfo;
 };
 #pragma pack(pop)
 
 /* 132 */
 #pragma pack(push, 8)
-union tagVARIANT::$::$65D68C826D16CA47CF95571D7BFCD657::$E09503A454170B491AC1C4312CE36FE6 {
+union tagVARIANT::$::$65D68C826D16CA47CF95571D7BFCD657::$E09503A454170B491AC1C4312CE36FE6
+{
+  LONGLONG llVal;
+  LONG lVal;
+  BYTE bVal;
+  SHORT iVal;
+  FLOAT fltVal;
+  DOUBLE dblVal;
+  VARIANT_BOOL boolVal;
+  SCODE scode;
+  CY cyVal;
+  DATE date;
+  BSTR bstrVal;
+  IUnknown *punkVal;
+  IDispatch *pdispVal;
+  SAFEARRAY *parray;
+  BYTE *pbVal;
+  SHORT *piVal;
+  LONG *plVal;
+  LONGLONG *pllVal;
+  FLOAT *pfltVal;
+  DOUBLE *pdblVal;
+  VARIANT_BOOL *pboolVal;
+  SCODE *pscode;
+  CY *pcyVal;
+  DATE *pdate;
+  BSTR *pbstrVal;
+  IUnknown **ppunkVal;
+  IDispatch **ppdispVal;
+  SAFEARRAY **pparray;
+  VARIANT *pvarVal;
+  PVOID byref;
+  CHAR cVal;
+  USHORT uiVal;
+  ULONG ulVal;
+  ULONGLONG ullVal;
+  INT intVal;
+  UINT uintVal;
+  DECIMAL *pdecVal;
+  CHAR *pcVal;
+  USHORT *puiVal;
+  ULONG *pulVal;
+  ULONGLONG *pullVal;
+  INT *pintVal;
+  UINT *puintVal;
+  #pragma pack(push, 8)
+  struct
+  {
+    PVOID pvRecord;
+    IRecordInfo *pRecInfo;
+  };
+  #pragma pack(pop)
+};
+#pragma pack(pop)
+
+/* 131 */
+#pragma pack(push, 8)
+struct tagVARIANT::$E93DC971A089CC95F6C875332324C1E7::$65D68C826D16CA47CF95571D7BFCD657
+{
+  VARTYPE vt;
+  WORD wReserved1;
+  WORD wReserved2;
+  WORD wReserved3;
+  #pragma pack(push, 8)
+  union
+  {
     LONGLONG llVal;
     LONG lVal;
     BYTE bVal;
@@ -876,24 +968,168 @@ union tagVARIANT::$::$65D68C826D16CA47CF95571D7BFCD657::$E09503A454170B491AC1C43
     ULONGLONG *pullVal;
     INT *pintVal;
     UINT *puintVal;
-#pragma pack(push, 8)
-    struct {
-        PVOID pvRecord;
-        IRecordInfo *pRecInfo;
+    #pragma pack(push, 8)
+    struct
+    {
+      PVOID pvRecord;
+      IRecordInfo *pRecInfo;
     };
-#pragma pack(pop)
+    #pragma pack(pop)
+  };
+  #pragma pack(pop)
 };
 #pragma pack(pop)
 
-/* 131 */
+/* 152 */
+struct tagDEC::$64EC678C49E7BE49873AFBFB7A849D34::$7F8459940C2B08BD5D82B0F27239141B
+{
+  BYTE scale;
+  BYTE sign;
+};
+
+/* 151 */
+union tagDEC::$64EC678C49E7BE49873AFBFB7A849D34
+{
+  struct
+  {
+    BYTE scale;
+    BYTE sign;
+  };
+  USHORT signscale;
+};
+
+/* 154 */
+struct tagDEC::$D28E26DEC3EC762C06C2AA9D0F7AC301::$674876891A86A76F12C10005982BCA56
+{
+  ULONG Lo32;
+  ULONG Mid32;
+};
+
+/* 153 */
+union tagDEC::$D28E26DEC3EC762C06C2AA9D0F7AC301
+{
+  struct
+  {
+    ULONG Lo32;
+    ULONG Mid32;
+  };
+  ULONGLONG Lo64;
+};
+
+/* 150 */
+struct tagDEC
+{
+  USHORT wReserved;
+  union
+  {
+    struct
+    {
+      BYTE scale;
+      BYTE sign;
+    };
+    USHORT signscale;
+  };
+  ULONG Hi32;
+  union
+  {
+    struct
+    {
+      ULONG Lo32;
+      ULONG Mid32;
+    };
+    ULONGLONG Lo64;
+  };
+};
+
+/* 130 */
 #pragma pack(push, 8)
-struct tagVARIANT::$E93DC971A089CC95F6C875332324C1E7::$65D68C826D16CA47CF95571D7BFCD657 {
+union tagVARIANT::$E93DC971A089CC95F6C875332324C1E7
+{
+  #pragma pack(push, 8)
+  struct
+  {
     VARTYPE vt;
     WORD wReserved1;
     WORD wReserved2;
     WORD wReserved3;
+    #pragma pack(push, 8)
+    union
+    {
+      LONGLONG llVal;
+      LONG lVal;
+      BYTE bVal;
+      SHORT iVal;
+      FLOAT fltVal;
+      DOUBLE dblVal;
+      VARIANT_BOOL boolVal;
+      SCODE scode;
+      CY cyVal;
+      DATE date;
+      BSTR bstrVal;
+      IUnknown *punkVal;
+      IDispatch *pdispVal;
+      SAFEARRAY *parray;
+      BYTE *pbVal;
+      SHORT *piVal;
+      LONG *plVal;
+      LONGLONG *pllVal;
+      FLOAT *pfltVal;
+      DOUBLE *pdblVal;
+      VARIANT_BOOL *pboolVal;
+      SCODE *pscode;
+      CY *pcyVal;
+      DATE *pdate;
+      BSTR *pbstrVal;
+      IUnknown **ppunkVal;
+      IDispatch **ppdispVal;
+      SAFEARRAY **pparray;
+      VARIANT *pvarVal;
+      PVOID byref;
+      CHAR cVal;
+      USHORT uiVal;
+      ULONG ulVal;
+      ULONGLONG ullVal;
+      INT intVal;
+      UINT uintVal;
+      DECIMAL *pdecVal;
+      CHAR *pcVal;
+      USHORT *puiVal;
+      ULONG *pulVal;
+      ULONGLONG *pullVal;
+      INT *pintVal;
+      UINT *puintVal;
+      #pragma pack(push, 8)
+      struct
+      {
+        PVOID pvRecord;
+        IRecordInfo *pRecInfo;
+      };
+      #pragma pack(pop)
+    };
+    #pragma pack(pop)
+  };
+  #pragma pack(pop)
+  DECIMAL decVal;
+};
+#pragma pack(pop)
+
+/* 129 */
 #pragma pack(push, 8)
-    union {
+struct tagVARIANT
+{
+  #pragma pack(push, 8)
+  union
+  {
+    #pragma pack(push, 8)
+    struct
+    {
+      VARTYPE vt;
+      WORD wReserved1;
+      WORD wReserved2;
+      WORD wReserved3;
+      #pragma pack(push, 8)
+      union
+      {
         LONGLONG llVal;
         LONG lVal;
         BYTE bVal;
@@ -937,219 +1173,36 @@ struct tagVARIANT::$E93DC971A089CC95F6C875332324C1E7::$65D68C826D16CA47CF95571D7
         ULONGLONG *pullVal;
         INT *pintVal;
         UINT *puintVal;
-#pragma pack(push, 8)
-        struct {
-            PVOID pvRecord;
-            IRecordInfo *pRecInfo;
+        #pragma pack(push, 8)
+        struct
+        {
+          PVOID pvRecord;
+          IRecordInfo *pRecInfo;
         };
-#pragma pack(pop)
+        #pragma pack(pop)
+      };
+      #pragma pack(pop)
     };
-#pragma pack(pop)
-};
-#pragma pack(pop)
-
-/* 152 */
-struct tagDEC::$64EC678C49E7BE49873AFBFB7A849D34::$7F8459940C2B08BD5D82B0F27239141B {
-    BYTE scale;
-    BYTE sign;
-};
-
-/* 151 */
-union tagDEC::$64EC678C49E7BE49873AFBFB7A849D34 {
-    struct {
-        BYTE scale;
-        BYTE sign;
-    };
-    USHORT signscale;
-};
-
-/* 154 */
-struct tagDEC::$D28E26DEC3EC762C06C2AA9D0F7AC301::$674876891A86A76F12C10005982BCA56 {
-    ULONG Lo32;
-    ULONG Mid32;
-};
-
-/* 153 */
-union tagDEC::$D28E26DEC3EC762C06C2AA9D0F7AC301 {
-    struct {
-        ULONG Lo32;
-        ULONG Mid32;
-    };
-    ULONGLONG Lo64;
-};
-
-/* 150 */
-struct tagDEC {
-    USHORT wReserved;
-    union {
-        struct {
-            BYTE scale;
-            BYTE sign;
-        };
-        USHORT signscale;
-    };
-    ULONG Hi32;
-    union {
-        struct {
-            ULONG Lo32;
-            ULONG Mid32;
-        };
-        ULONGLONG Lo64;
-    };
-};
-
-/* 130 */
-#pragma pack(push, 8)
-union tagVARIANT::$E93DC971A089CC95F6C875332324C1E7 {
-#pragma pack(push, 8)
-    struct {
-        VARTYPE vt;
-        WORD wReserved1;
-        WORD wReserved2;
-        WORD wReserved3;
-#pragma pack(push, 8)
-        union {
-            LONGLONG llVal;
-            LONG lVal;
-            BYTE bVal;
-            SHORT iVal;
-            FLOAT fltVal;
-            DOUBLE dblVal;
-            VARIANT_BOOL boolVal;
-            SCODE scode;
-            CY cyVal;
-            DATE date;
-            BSTR bstrVal;
-            IUnknown *punkVal;
-            IDispatch *pdispVal;
-            SAFEARRAY *parray;
-            BYTE *pbVal;
-            SHORT *piVal;
-            LONG *plVal;
-            LONGLONG *pllVal;
-            FLOAT *pfltVal;
-            DOUBLE *pdblVal;
-            VARIANT_BOOL *pboolVal;
-            SCODE *pscode;
-            CY *pcyVal;
-            DATE *pdate;
-            BSTR *pbstrVal;
-            IUnknown **ppunkVal;
-            IDispatch **ppdispVal;
-            SAFEARRAY **pparray;
-            VARIANT *pvarVal;
-            PVOID byref;
-            CHAR cVal;
-            USHORT uiVal;
-            ULONG ulVal;
-            ULONGLONG ullVal;
-            INT intVal;
-            UINT uintVal;
-            DECIMAL *pdecVal;
-            CHAR *pcVal;
-            USHORT *puiVal;
-            ULONG *pulVal;
-            ULONGLONG *pullVal;
-            INT *pintVal;
-            UINT *puintVal;
-#pragma pack(push, 8)
-            struct {
-                PVOID pvRecord;
-                IRecordInfo *pRecInfo;
-            };
-#pragma pack(pop)
-        };
-#pragma pack(pop)
-    };
-#pragma pack(pop)
+    #pragma pack(pop)
     DECIMAL decVal;
-};
-#pragma pack(pop)
-
-/* 129 */
-#pragma pack(push, 8)
-struct tagVARIANT {
-#pragma pack(push, 8)
-    union {
-#pragma pack(push, 8)
-        struct {
-            VARTYPE vt;
-            WORD wReserved1;
-            WORD wReserved2;
-            WORD wReserved3;
-#pragma pack(push, 8)
-            union {
-                LONGLONG llVal;
-                LONG lVal;
-                BYTE bVal;
-                SHORT iVal;
-                FLOAT fltVal;
-                DOUBLE dblVal;
-                VARIANT_BOOL boolVal;
-                SCODE scode;
-                CY cyVal;
-                DATE date;
-                BSTR bstrVal;
-                IUnknown *punkVal;
-                IDispatch *pdispVal;
-                SAFEARRAY *parray;
-                BYTE *pbVal;
-                SHORT *piVal;
-                LONG *plVal;
-                LONGLONG *pllVal;
-                FLOAT *pfltVal;
-                DOUBLE *pdblVal;
-                VARIANT_BOOL *pboolVal;
-                SCODE *pscode;
-                CY *pcyVal;
-                DATE *pdate;
-                BSTR *pbstrVal;
-                IUnknown **ppunkVal;
-                IDispatch **ppdispVal;
-                SAFEARRAY **pparray;
-                VARIANT *pvarVal;
-                PVOID byref;
-                CHAR cVal;
-                USHORT uiVal;
-                ULONG ulVal;
-                ULONGLONG ullVal;
-                INT intVal;
-                UINT uintVal;
-                DECIMAL *pdecVal;
-                CHAR *pcVal;
-                USHORT *puiVal;
-                ULONG *pulVal;
-                ULONGLONG *pullVal;
-                INT *pintVal;
-                UINT *puintVal;
-#pragma pack(push, 8)
-                struct {
-                    PVOID pvRecord;
-                    IRecordInfo *pRecInfo;
-                };
-#pragma pack(pop)
-            };
-#pragma pack(pop)
-        };
-#pragma pack(pop)
-        DECIMAL decVal;
-    };
-#pragma pack(pop)
+  };
+  #pragma pack(pop)
 };
 #pragma pack(pop)
 
 /* 173 */
 #pragma pack(push, 8)
-struct tagEXCEPINFO {
-    WORD wCode;
-    WORD wReserved;
-    BSTR bstrSource;
-    BSTR bstrDescription;
-    BSTR bstrHelpFile;
-    DWORD dwHelpContext;
-    PVOID pvReserved;
-    HRESULT(__stdcall *pfnDeferredFillIn)(tagEXCEPINFO *);
-    SCODE scode;
+struct tagEXCEPINFO
+{
+  WORD wCode;
+  WORD wReserved;
+  BSTR bstrSource;
+  BSTR bstrDescription;
+  BSTR bstrHelpFile;
+  DWORD dwHelpContext;
+  PVOID pvReserved;
+  HRESULT (__stdcall *pfnDeferredFillIn)(tagEXCEPINFO *);
+  SCODE scode;
 };
 #pragma pack(pop)
 
@@ -1169,11 +1222,12 @@ typedef DISPID MEMBERID;
 typedef DWORD HREFTYPE;
 
 /* 162 */
-enum tagINVOKEKIND {
-    INVOKE_FUNC = 0x1,
-    INVOKE_PROPERTYGET = 0x2,
-    INVOKE_PROPERTYPUT = 0x4,
-    INVOKE_PROPERTYPUTREF = 0x8,
+enum tagINVOKEKIND
+{
+  INVOKE_FUNC = 0x1,
+  INVOKE_PROPERTYGET = 0x2,
+  INVOKE_PROPERTYPUT = 0x4,
+  INVOKE_PROPERTYPUTREF = 0x8,
 };
 
 /* 161 */
@@ -1181,68 +1235,47 @@ typedef tagINVOKEKIND INVOKEKIND;
 
 /* 91 */
 #pragma pack(push, 8)
-struct ITypeInfoVtbl {
-    HRESULT(__stdcall *QueryInterface)(ITypeInfo *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(ITypeInfo *This);
-    ULONG(__stdcall *Release)(ITypeInfo *This);
-    HRESULT(__stdcall *GetTypeAttr)(ITypeInfo *This, TYPEATTR **ppTypeAttr);
-    HRESULT(__stdcall *GetTypeComp)(ITypeInfo *This, ITypeComp **ppTComp);
-    HRESULT(__stdcall *GetFuncDesc)(ITypeInfo *This, UINT index, FUNCDESC **ppFuncDesc);
-    HRESULT(__stdcall *GetVarDesc)(ITypeInfo *This, UINT index, VARDESC **ppVarDesc);
-    HRESULT(__stdcall *GetNames)
-    (ITypeInfo *This, MEMBERID memid, BSTR *rgBstrNames, UINT cMaxNames, UINT *pcNames);
-    HRESULT(__stdcall *GetRefTypeOfImplType)(ITypeInfo *This, UINT index, HREFTYPE *pRefType);
-    HRESULT(__stdcall *GetImplTypeFlags)(ITypeInfo *This, UINT index, INT *pImplTypeFlags);
-    HRESULT(__stdcall *GetIDsOfNames)
-    (ITypeInfo *This, LPOLESTR *rgszNames, UINT cNames, MEMBERID *pMemId);
-    HRESULT(__stdcall *Invoke)
-    (ITypeInfo *This,
-     PVOID pvInstance,
-     MEMBERID memid,
-     WORD wFlags,
-     DISPPARAMS *pDispParams,
-     VARIANT *pVarResult,
-     EXCEPINFO *pExcepInfo,
-     UINT *puArgErr);
-    HRESULT(__stdcall *GetDocumentation)
-    (ITypeInfo *This,
-     MEMBERID memid,
-     BSTR *pBstrName,
-     BSTR *pBstrDocString,
-     DWORD *pdwHelpContext,
-     BSTR *pBstrHelpFile);
-    HRESULT(__stdcall *GetDllEntry)
-    (ITypeInfo *This,
-     MEMBERID memid,
-     INVOKEKIND invKind,
-     BSTR *pBstrDllName,
-     BSTR *pBstrName,
-     WORD *pwOrdinal);
-    HRESULT(__stdcall *GetRefTypeInfo)(ITypeInfo *This, HREFTYPE hRefType, ITypeInfo **ppTInfo);
-    HRESULT(__stdcall *AddressOfMember)
-    (ITypeInfo *This, MEMBERID memid, INVOKEKIND invKind, PVOID *ppv);
-    HRESULT(__stdcall *CreateInstance)
-    (ITypeInfo *This, IUnknown *pUnkOuter, const IID *const riid, PVOID *ppvObj);
-    HRESULT(__stdcall *GetMops)(ITypeInfo *This, MEMBERID memid, BSTR *pBstrMops);
-    HRESULT(__stdcall *GetContainingTypeLib)(ITypeInfo *This, ITypeLib **ppTLib, UINT *pIndex);
-    void(__stdcall *ReleaseTypeAttr)(ITypeInfo *This, TYPEATTR *pTypeAttr);
-    void(__stdcall *ReleaseFuncDesc)(ITypeInfo *This, FUNCDESC *pFuncDesc);
-    void(__stdcall *ReleaseVarDesc)(ITypeInfo *This, VARDESC *pVarDesc);
+struct ITypeInfoVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(ITypeInfo *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(ITypeInfo *This);
+  ULONG (__stdcall *Release)(ITypeInfo *This);
+  HRESULT (__stdcall *GetTypeAttr)(ITypeInfo *This, TYPEATTR **ppTypeAttr);
+  HRESULT (__stdcall *GetTypeComp)(ITypeInfo *This, ITypeComp **ppTComp);
+  HRESULT (__stdcall *GetFuncDesc)(ITypeInfo *This, UINT index, FUNCDESC **ppFuncDesc);
+  HRESULT (__stdcall *GetVarDesc)(ITypeInfo *This, UINT index, VARDESC **ppVarDesc);
+  HRESULT (__stdcall *GetNames)(ITypeInfo *This, MEMBERID memid, BSTR *rgBstrNames, UINT cMaxNames, UINT *pcNames);
+  HRESULT (__stdcall *GetRefTypeOfImplType)(ITypeInfo *This, UINT index, HREFTYPE *pRefType);
+  HRESULT (__stdcall *GetImplTypeFlags)(ITypeInfo *This, UINT index, INT *pImplTypeFlags);
+  HRESULT (__stdcall *GetIDsOfNames)(ITypeInfo *This, LPOLESTR *rgszNames, UINT cNames, MEMBERID *pMemId);
+  HRESULT (__stdcall *Invoke)(ITypeInfo *This, PVOID pvInstance, MEMBERID memid, WORD wFlags, DISPPARAMS *pDispParams, VARIANT *pVarResult, EXCEPINFO *pExcepInfo, UINT *puArgErr);
+  HRESULT (__stdcall *GetDocumentation)(ITypeInfo *This, MEMBERID memid, BSTR *pBstrName, BSTR *pBstrDocString, DWORD *pdwHelpContext, BSTR *pBstrHelpFile);
+  HRESULT (__stdcall *GetDllEntry)(ITypeInfo *This, MEMBERID memid, INVOKEKIND invKind, BSTR *pBstrDllName, BSTR *pBstrName, WORD *pwOrdinal);
+  HRESULT (__stdcall *GetRefTypeInfo)(ITypeInfo *This, HREFTYPE hRefType, ITypeInfo **ppTInfo);
+  HRESULT (__stdcall *AddressOfMember)(ITypeInfo *This, MEMBERID memid, INVOKEKIND invKind, PVOID *ppv);
+  HRESULT (__stdcall *CreateInstance)(ITypeInfo *This, IUnknown *pUnkOuter, const IID *const riid, PVOID *ppvObj);
+  HRESULT (__stdcall *GetMops)(ITypeInfo *This, MEMBERID memid, BSTR *pBstrMops);
+  HRESULT (__stdcall *GetContainingTypeLib)(ITypeInfo *This, ITypeLib **ppTLib, UINT *pIndex);
+  void (__stdcall *ReleaseTypeAttr)(ITypeInfo *This, TYPEATTR *pTypeAttr);
+  void (__stdcall *ReleaseFuncDesc)(ITypeInfo *This, FUNCDESC *pFuncDesc);
+  void (__stdcall *ReleaseVarDesc)(ITypeInfo *This, VARDESC *pVarDesc);
 };
 #pragma pack(pop)
 
 /* 142 */
 #pragma pack(push, 8)
-struct IUnknown {
-    IUnknownVtbl *lpVtbl;
+struct IUnknown
+{
+  IUnknownVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 106 */
 #pragma pack(push, 8)
-struct tagSAFEARRAYBOUND {
-    ULONG cElements;
-    LONG lLbound;
+struct tagSAFEARRAYBOUND
+{
+  ULONG cElements;
+  LONG lLbound;
 };
 #pragma pack(pop)
 
@@ -1251,34 +1284,37 @@ typedef tagSAFEARRAYBOUND SAFEARRAYBOUND;
 
 /* 145 */
 #pragma pack(push, 8)
-struct tagSAFEARRAY {
-    USHORT cDims;
-    USHORT fFeatures;
-    ULONG cbElements;
-    ULONG cLocks;
-    PVOID pvData;
-    SAFEARRAYBOUND rgsabound[1];
+struct tagSAFEARRAY
+{
+  USHORT cDims;
+  USHORT fFeatures;
+  ULONG cbElements;
+  ULONG cLocks;
+  PVOID pvData;
+  SAFEARRAYBOUND rgsabound[1];
 };
 #pragma pack(pop)
 
 /* 156 */
 #pragma pack(push, 8)
-struct IRecordInfo {
-    IRecordInfoVtbl *lpVtbl;
+struct IRecordInfo
+{
+  IRecordInfoVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 99 */
-enum tagTYPEKIND {
-    TKIND_ENUM = 0x0,
-    TKIND_RECORD = 0x1,
-    TKIND_MODULE = 0x2,
-    TKIND_INTERFACE = 0x3,
-    TKIND_DISPATCH = 0x4,
-    TKIND_COCLASS = 0x5,
-    TKIND_ALIAS = 0x6,
-    TKIND_UNION = 0x7,
-    TKIND_MAX = 0x8,
+enum tagTYPEKIND
+{
+  TKIND_ENUM = 0x0,
+  TKIND_RECORD = 0x1,
+  TKIND_MODULE = 0x2,
+  TKIND_INTERFACE = 0x3,
+  TKIND_DISPATCH = 0x4,
+  TKIND_COCLASS = 0x5,
+  TKIND_ALIAS = 0x6,
+  TKIND_UNION = 0x7,
+  TKIND_MAX = 0x8,
 };
 
 /* 98 */
@@ -1286,24 +1322,27 @@ typedef tagTYPEKIND TYPEKIND;
 
 /* 102 */
 #pragma pack(push, 8)
-union tagTYPEDESC::$AC700B6542D8071E244CADABF8A32897 {
-    tagTYPEDESC *lptdesc;
-    tagARRAYDESC *lpadesc;
-    HREFTYPE hreftype;
+union tagTYPEDESC::$AC700B6542D8071E244CADABF8A32897
+{
+  tagTYPEDESC *lptdesc;
+  tagARRAYDESC *lpadesc;
+  HREFTYPE hreftype;
 };
 #pragma pack(pop)
 
 /* 101 */
 #pragma pack(push, 8)
-struct tagTYPEDESC {
-#pragma pack(push, 8)
-    union {
-        tagTYPEDESC *lptdesc;
-        tagARRAYDESC *lpadesc;
-        HREFTYPE hreftype;
-    };
-#pragma pack(pop)
-    VARTYPE vt;
+struct tagTYPEDESC
+{
+  #pragma pack(push, 8)
+  union
+  {
+    tagTYPEDESC *lptdesc;
+    tagARRAYDESC *lpadesc;
+    HREFTYPE hreftype;
+  };
+  #pragma pack(pop)
+  VARTYPE vt;
 };
 #pragma pack(pop)
 
@@ -1312,9 +1351,10 @@ typedef tagTYPEDESC TYPEDESC;
 
 /* 110 */
 #pragma pack(push, 8)
-struct tagIDLDESC {
-    ULONG_PTR dwReserved;
-    USHORT wIDLFlags;
+struct tagIDLDESC
+{
+  ULONG_PTR dwReserved;
+  USHORT wIDLFlags;
 };
 #pragma pack(pop)
 
@@ -1323,32 +1363,34 @@ typedef tagIDLDESC IDLDESC;
 
 /* 93 */
 #pragma pack(push, 8)
-struct tagTYPEATTR {
-    GUID guid;
-    LCID lcid;
-    DWORD dwReserved;
-    MEMBERID memidConstructor;
-    MEMBERID memidDestructor;
-    LPOLESTR lpstrSchema;
-    ULONG cbSizeInstance;
-    TYPEKIND typekind;
-    WORD cFuncs;
-    WORD cVars;
-    WORD cImplTypes;
-    WORD cbSizeVft;
-    WORD cbAlignment;
-    WORD wTypeFlags;
-    WORD wMajorVerNum;
-    WORD wMinorVerNum;
-    TYPEDESC tdescAlias;
-    IDLDESC idldescType;
+struct tagTYPEATTR
+{
+  GUID guid;
+  LCID lcid;
+  DWORD dwReserved;
+  MEMBERID memidConstructor;
+  MEMBERID memidDestructor;
+  LPOLESTR lpstrSchema;
+  ULONG cbSizeInstance;
+  TYPEKIND typekind;
+  WORD cFuncs;
+  WORD cVars;
+  WORD cImplTypes;
+  WORD cbSizeVft;
+  WORD cbAlignment;
+  WORD wTypeFlags;
+  WORD wMajorVerNum;
+  WORD wMinorVerNum;
+  TYPEDESC tdescAlias;
+  IDLDESC idldescType;
 };
 #pragma pack(pop)
 
 /* 111 */
 #pragma pack(push, 8)
-struct ITypeComp {
-    ITypeCompVtbl *lpVtbl;
+struct ITypeComp
+{
+  ITypeCompVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
@@ -1356,30 +1398,32 @@ struct ITypeComp {
 typedef tagELEMDESC ELEMDESC;
 
 /* 160 */
-enum tagFUNCKIND {
-    FUNC_VIRTUAL = 0x0,
-    FUNC_PUREVIRTUAL = 0x1,
-    FUNC_NONVIRTUAL = 0x2,
-    FUNC_STATIC = 0x3,
-    FUNC_DISPATCH = 0x4,
+enum tagFUNCKIND
+{
+  FUNC_VIRTUAL = 0x0,
+  FUNC_PUREVIRTUAL = 0x1,
+  FUNC_NONVIRTUAL = 0x2,
+  FUNC_STATIC = 0x3,
+  FUNC_DISPATCH = 0x4,
 };
 
 /* 159 */
 typedef tagFUNCKIND FUNCKIND;
 
 /* 164 */
-enum tagCALLCONV {
-    CC_FASTCALL = 0x0,
-    CC_CDECL = 0x1,
-    CC_MSCPASCAL = 0x2,
-    CC_PASCAL = 0x2,
-    CC_MACPASCAL = 0x3,
-    CC_STDCALL = 0x4,
-    CC_FPFASTCALL = 0x5,
-    CC_SYSCALL = 0x6,
-    CC_MPWCDECL = 0x7,
-    CC_MPWPASCAL = 0x8,
-    CC_MAX = 0x9,
+enum tagCALLCONV
+{
+  CC_FASTCALL = 0x0,
+  CC_CDECL = 0x1,
+  CC_MSCPASCAL = 0x2,
+  CC_PASCAL = 0x2,
+  CC_MACPASCAL = 0x3,
+  CC_STDCALL = 0x4,
+  CC_FPFASTCALL = 0x5,
+  CC_SYSCALL = 0x6,
+  CC_MPWCDECL = 0x7,
+  CC_MPWPASCAL = 0x8,
+  CC_MAX = 0x9,
 };
 
 /* 163 */
@@ -1390,9 +1434,10 @@ typedef tagPARAMDESCEX *LPPARAMDESCEX;
 
 /* 124 */
 #pragma pack(push, 8)
-struct tagPARAMDESC {
-    LPPARAMDESCEX pparamdescex;
-    USHORT wParamFlags;
+struct tagPARAMDESC
+{
+  LPPARAMDESCEX pparamdescex;
+  USHORT wParamFlags;
 };
 #pragma pack(pop)
 
@@ -1401,57 +1446,63 @@ typedef tagPARAMDESC PARAMDESC;
 
 /* 122 */
 #pragma pack(push, 8)
-union tagELEMDESC::$7C8F4CED1424251743D09680A1A0B07D {
-    IDLDESC idldesc;
-    PARAMDESC paramdesc;
+union tagELEMDESC::$7C8F4CED1424251743D09680A1A0B07D
+{
+  IDLDESC idldesc;
+  PARAMDESC paramdesc;
 };
 #pragma pack(pop)
 
 /* 121 */
 #pragma pack(push, 8)
-struct tagELEMDESC {
-    TYPEDESC tdesc;
-#pragma pack(push, 8)
-    union {
-        IDLDESC idldesc;
-        PARAMDESC paramdesc;
-    };
-#pragma pack(pop)
+struct tagELEMDESC
+{
+  TYPEDESC tdesc;
+  #pragma pack(push, 8)
+  union
+  {
+    IDLDESC idldesc;
+    PARAMDESC paramdesc;
+  };
+  #pragma pack(pop)
 };
 #pragma pack(pop)
 
 /* 118 */
 #pragma pack(push, 8)
-struct tagFUNCDESC {
-    MEMBERID memid;
-    SCODE *lprgscode;
-    ELEMDESC *lprgelemdescParam;
-    FUNCKIND funckind;
-    INVOKEKIND invkind;
-    CALLCONV callconv;
-    SHORT cParams;
-    SHORT cParamsOpt;
-    SHORT oVft;
-    SHORT cScodes;
-    ELEMDESC elemdescFunc;
-    WORD wFuncFlags;
+struct tagFUNCDESC
+{
+  MEMBERID memid;
+  SCODE *lprgscode;
+  ELEMDESC *lprgelemdescParam;
+  FUNCKIND funckind;
+  INVOKEKIND invkind;
+  CALLCONV callconv;
+  SHORT cParams;
+  SHORT cParamsOpt;
+  SHORT oVft;
+  SHORT cScodes;
+  ELEMDESC elemdescFunc;
+  WORD wFuncFlags;
 };
 #pragma pack(pop)
 
 /* 167 */
 #pragma pack(push, 8)
-union tagVARDESC::$E6274BD6A7149C9CC2413444FF769F0B {
-    ULONG oInst;
-    VARIANT *lpvarValue;
+union tagVARDESC::$E6274BD6A7149C9CC2413444FF769F0B
+{
+  ULONG oInst;
+  VARIANT *lpvarValue;
 };
 #pragma pack(pop)
 
 /* 169 */
-enum tagVARKIND {
-    VAR_PERINSTANCE = 0x0,
-    VAR_STATIC = 0x1,
-    VAR_CONST = 0x2,
-    VAR_DISPATCH = 0x3,
+enum tagVARKIND
+{
+  VAR_PERINSTANCE = 0x0,
+  VAR_STATIC = 0x1,
+  VAR_CONST = 0x2,
+  VAR_DISPATCH = 0x3,
 };
 
 /* 168 */
@@ -1459,34 +1510,38 @@ typedef tagVARKIND VARKIND;
 
 /* 166 */
 #pragma pack(push, 8)
-struct tagVARDESC {
-    MEMBERID memid;
-    LPOLESTR lpstrSchema;
-#pragma pack(push, 8)
-    union {
-        ULONG oInst;
-        VARIANT *lpvarValue;
-    };
-#pragma pack(pop)
-    ELEMDESC elemdescVar;
-    WORD wVarFlags;
-    VARKIND varkind;
+struct tagVARDESC
+{
+  MEMBERID memid;
+  LPOLESTR lpstrSchema;
+  #pragma pack(push, 8)
+  union
+  {
+    ULONG oInst;
+    VARIANT *lpvarValue;
+  };
+  #pragma pack(pop)
+  ELEMDESC elemdescVar;
+  WORD wVarFlags;
+  VARKIND varkind;
 };
 #pragma pack(pop)
 
 /* 174 */
 #pragma pack(push, 8)
-struct ITypeLib {
-    ITypeLibVtbl *lpVtbl;
+struct ITypeLib
+{
+  ITypeLibVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 143 */
 #pragma pack(push, 8)
-struct IUnknownVtbl {
-    HRESULT(__stdcall *QueryInterface)(IUnknown *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(IUnknown *This);
-    ULONG(__stdcall *Release)(IUnknown *This);
+struct IUnknownVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IUnknown *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(IUnknown *This);
+  ULONG (__stdcall *Release)(IUnknown *This);
 };
 #pragma pack(pop)
 
@@ -1495,54 +1550,49 @@ typedef const OLECHAR *LPCOLESTR;
 
 /* 157 */
 #pragma pack(push, 8)
-struct IRecordInfoVtbl {
-    HRESULT(__stdcall *QueryInterface)(IRecordInfo *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(IRecordInfo *This);
-    ULONG(__stdcall *Release)(IRecordInfo *This);
-    HRESULT(__stdcall *RecordInit)(IRecordInfo *This, PVOID pvNew);
-    HRESULT(__stdcall *RecordClear)(IRecordInfo *This, PVOID pvExisting);
-    HRESULT(__stdcall *RecordCopy)(IRecordInfo *This, PVOID pvExisting, PVOID pvNew);
-    HRESULT(__stdcall *GetGuid)(IRecordInfo *This, GUID *pguid);
-    HRESULT(__stdcall *GetName)(IRecordInfo *This, BSTR *pbstrName);
-    HRESULT(__stdcall *GetSize)(IRecordInfo *This, ULONG *pcbSize);
-    HRESULT(__stdcall *GetTypeInfo)(IRecordInfo *This, ITypeInfo **ppTypeInfo);
-    HRESULT(__stdcall *GetField)
-    (IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
-    HRESULT(__stdcall *GetFieldNoCopy)
-    (IRecordInfo *This,
-     PVOID pvData,
-     LPCOLESTR szFieldName,
-     VARIANT *pvarField,
-     PVOID *ppvDataCArray);
-    HRESULT(__stdcall *PutField)
-    (IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
-    HRESULT(__stdcall *PutFieldNoCopy)
-    (IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
-    HRESULT(__stdcall *GetFieldNames)(IRecordInfo *This, ULONG *pcNames, BSTR *rgBstrNames);
-    BOOL(__stdcall *IsMatchingType)(IRecordInfo *This, IRecordInfo *pRecordInfo);
-    PVOID(__stdcall *RecordCreate)(IRecordInfo *This);
-    HRESULT(__stdcall *RecordCreateCopy)(IRecordInfo *This, PVOID pvSource, PVOID *ppvDest);
-    HRESULT(__stdcall *RecordDestroy)(IRecordInfo *This, PVOID pvRecord);
+struct IRecordInfoVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IRecordInfo *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(IRecordInfo *This);
+  ULONG (__stdcall *Release)(IRecordInfo *This);
+  HRESULT (__stdcall *RecordInit)(IRecordInfo *This, PVOID pvNew);
+  HRESULT (__stdcall *RecordClear)(IRecordInfo *This, PVOID pvExisting);
+  HRESULT (__stdcall *RecordCopy)(IRecordInfo *This, PVOID pvExisting, PVOID pvNew);
+  HRESULT (__stdcall *GetGuid)(IRecordInfo *This, GUID *pguid);
+  HRESULT (__stdcall *GetName)(IRecordInfo *This, BSTR *pbstrName);
+  HRESULT (__stdcall *GetSize)(IRecordInfo *This, ULONG *pcbSize);
+  HRESULT (__stdcall *GetTypeInfo)(IRecordInfo *This, ITypeInfo **ppTypeInfo);
+  HRESULT (__stdcall *GetField)(IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
+  HRESULT (__stdcall *GetFieldNoCopy)(IRecordInfo *This, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField, PVOID *ppvDataCArray);
+  HRESULT (__stdcall *PutField)(IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
+  HRESULT (__stdcall *PutFieldNoCopy)(IRecordInfo *This, ULONG wFlags, PVOID pvData, LPCOLESTR szFieldName, VARIANT *pvarField);
+  HRESULT (__stdcall *GetFieldNames)(IRecordInfo *This, ULONG *pcNames, BSTR *rgBstrNames);
+  BOOL (__stdcall *IsMatchingType)(IRecordInfo *This, IRecordInfo *pRecordInfo);
+  PVOID (__stdcall *RecordCreate)(IRecordInfo *This);
+  HRESULT (__stdcall *RecordCreateCopy)(IRecordInfo *This, PVOID pvSource, PVOID *ppvDest);
+  HRESULT (__stdcall *RecordDestroy)(IRecordInfo *This, PVOID pvRecord);
 };
 #pragma pack(pop)
 
 /* 103 */
 #pragma pack(push, 8)
-struct tagARRAYDESC {
-    TYPEDESC tdescElem;
-    USHORT cDims;
-    SAFEARRAYBOUND rgbounds[1];
+struct tagARRAYDESC
+{
+  TYPEDESC tdescElem;
+  USHORT cDims;
+  SAFEARRAYBOUND rgbounds[1];
 };
 #pragma pack(pop)
 
 /* 114 */
-enum tagDESCKIND {
-    DESCKIND_NONE = 0x0,
-    DESCKIND_FUNCDESC = 0x1,
-    DESCKIND_VARDESC = 0x2,
-    DESCKIND_TYPECOMP = 0x3,
-    DESCKIND_IMPLICITAPPOBJ = 0x4,
-    DESCKIND_MAX = 0x5,
+enum tagDESCKIND
+{
+  DESCKIND_NONE = 0x0,
+  DESCKIND_FUNCDESC = 0x1,
+  DESCKIND_VARDESC = 0x2,
+  DESCKIND_TYPECOMP = 0x3,
+  DESCKIND_IMPLICITAPPOBJ = 0x4,
+  DESCKIND_MAX = 0x5,
 };
 
 /* 113 */
@@ -1553,28 +1603,22 @@ typedef tagBINDPTR BINDPTR;
 
 /* 112 */
 #pragma pack(push, 8)
-struct ITypeCompVtbl {
-    HRESULT(__stdcall *QueryInterface)(ITypeComp *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(ITypeComp *This);
-    ULONG(__stdcall *Release)(ITypeComp *This);
-    HRESULT(__stdcall *Bind)
-    (ITypeComp *This,
-     LPOLESTR szName,
-     ULONG lHashVal,
-     WORD wFlags,
-     ITypeInfo **ppTInfo,
-     DESCKIND *pDescKind,
-     BINDPTR *pBindPtr);
-    HRESULT(__stdcall *BindType)
-    (ITypeComp *This, LPOLESTR szName, ULONG lHashVal, ITypeInfo **ppTInfo, ITypeComp **ppTComp);
+struct ITypeCompVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(ITypeComp *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(ITypeComp *This);
+  ULONG (__stdcall *Release)(ITypeComp *This);
+  HRESULT (__stdcall *Bind)(ITypeComp *This, LPOLESTR szName, ULONG lHashVal, WORD wFlags, ITypeInfo **ppTInfo, DESCKIND *pDescKind, BINDPTR *pBindPtr);
+  HRESULT (__stdcall *BindType)(ITypeComp *This, LPOLESTR szName, ULONG lHashVal, ITypeInfo **ppTInfo, ITypeComp **ppTComp);
 };
 #pragma pack(pop)
 
 /* 126 */
 #pragma pack(push, 8)
-struct tagPARAMDESCEX {
-    ULONG cBytes;
-    VARIANTARG varDefaultValue;
+struct tagPARAMDESCEX
+{
+  ULONG cBytes;
+  VARIANTARG varDefaultValue;
 };
 #pragma pack(pop)
 
@@ -1583,51 +1627,41 @@ typedef tagTLIBATTR TLIBATTR;
 
 /* 175 */
 #pragma pack(push, 8)
-struct ITypeLibVtbl {
-    HRESULT(__stdcall *QueryInterface)(ITypeLib *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(ITypeLib *This);
-    ULONG(__stdcall *Release)(ITypeLib *This);
-    UINT(__stdcall *GetTypeInfoCount)(ITypeLib *This);
-    HRESULT(__stdcall *GetTypeInfo)(ITypeLib *This, UINT index, ITypeInfo **ppTInfo);
-    HRESULT(__stdcall *GetTypeInfoType)(ITypeLib *This, UINT index, TYPEKIND *pTKind);
-    HRESULT(__stdcall *GetTypeInfoOfGuid)
-    (ITypeLib *This, const GUID *const guid, ITypeInfo **ppTinfo);
-    HRESULT(__stdcall *GetLibAttr)(ITypeLib *This, TLIBATTR **ppTLibAttr);
-    HRESULT(__stdcall *GetTypeComp)(ITypeLib *This, ITypeComp **ppTComp);
-    HRESULT(__stdcall *GetDocumentation)
-    (ITypeLib *This,
-     INT index,
-     BSTR *pBstrName,
-     BSTR *pBstrDocString,
-     DWORD *pdwHelpContext,
-     BSTR *pBstrHelpFile);
-    HRESULT(__stdcall *IsName)(ITypeLib *This, LPOLESTR szNameBuf, ULONG lHashVal, BOOL *pfName);
-    HRESULT(__stdcall *FindName)
-    (ITypeLib *This,
-     LPOLESTR szNameBuf,
-     ULONG lHashVal,
-     ITypeInfo **ppTInfo,
-     MEMBERID *rgMemId,
-     USHORT *pcFound);
-    void(__stdcall *ReleaseTLibAttr)(ITypeLib *This, TLIBATTR *pTLibAttr);
+struct ITypeLibVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(ITypeLib *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(ITypeLib *This);
+  ULONG (__stdcall *Release)(ITypeLib *This);
+  UINT (__stdcall *GetTypeInfoCount)(ITypeLib *This);
+  HRESULT (__stdcall *GetTypeInfo)(ITypeLib *This, UINT index, ITypeInfo **ppTInfo);
+  HRESULT (__stdcall *GetTypeInfoType)(ITypeLib *This, UINT index, TYPEKIND *pTKind);
+  HRESULT (__stdcall *GetTypeInfoOfGuid)(ITypeLib *This, const GUID *const guid, ITypeInfo **ppTinfo);
+  HRESULT (__stdcall *GetLibAttr)(ITypeLib *This, TLIBATTR **ppTLibAttr);
+  HRESULT (__stdcall *GetTypeComp)(ITypeLib *This, ITypeComp **ppTComp);
+  HRESULT (__stdcall *GetDocumentation)(ITypeLib *This, INT index, BSTR *pBstrName, BSTR *pBstrDocString, DWORD *pdwHelpContext, BSTR *pBstrHelpFile);
+  HRESULT (__stdcall *IsName)(ITypeLib *This, LPOLESTR szNameBuf, ULONG lHashVal, BOOL *pfName);
+  HRESULT (__stdcall *FindName)(ITypeLib *This, LPOLESTR szNameBuf, ULONG lHashVal, ITypeInfo **ppTInfo, MEMBERID *rgMemId, USHORT *pcFound);
+  void (__stdcall *ReleaseTLibAttr)(ITypeLib *This, TLIBATTR *pTLibAttr);
 };
 #pragma pack(pop)
 
 /* 116 */
 #pragma pack(push, 8)
-union tagBINDPTR {
-    FUNCDESC *lpfuncdesc;
-    VARDESC *lpvardesc;
-    ITypeComp *lptcomp;
+union tagBINDPTR
+{
+  FUNCDESC *lpfuncdesc;
+  VARDESC *lpvardesc;
+  ITypeComp *lptcomp;
 };
 #pragma pack(pop)
 
 /* 179 */
-enum tagSYSKIND {
-    SYS_WIN16 = 0x0,
-    SYS_WIN32 = 0x1,
-    SYS_MAC = 0x2,
-    SYS_WIN64 = 0x3,
+enum tagSYSKIND
+{
+  SYS_WIN16 = 0x0,
+  SYS_WIN32 = 0x1,
+  SYS_MAC = 0x2,
+  SYS_WIN64 = 0x3,
 };
 
 /* 178 */
@@ -1635,13 +1669,14 @@ typedef tagSYSKIND SYSKIND;
 
 /* 177 */
 #pragma pack(push, 8)
-struct tagTLIBATTR {
-    GUID guid;
-    LCID lcid;
-    SYSKIND syskind;
-    WORD wMajorVerNum;
-    WORD wMinorVerNum;
-    WORD wLibFlags;
+struct tagTLIBATTR
+{
+  GUID guid;
+  LCID lcid;
+  SYSKIND syskind;
+  WORD wMajorVerNum;
+  WORD wMinorVerNum;
+  WORD wLibFlags;
 };
 #pragma pack(pop)
 
@@ -1661,10 +1696,10 @@ typedef _DDSURFACEDESC *LPDDSURFACEDESC;
 typedef IDirectDrawSurface *LPDIRECTDRAWSURFACE;
 
 /* 240 */
-typedef HRESULT(__stdcall *LPDDENUMMODESCALLBACK)(LPDDSURFACEDESC, LPVOID);
+typedef HRESULT (__stdcall *LPDDENUMMODESCALLBACK)(LPDDSURFACEDESC, LPVOID);
 
 /* 228 */
-typedef HRESULT(__stdcall *LPDDENUMSURFACESCALLBACK)(LPDIRECTDRAWSURFACE, LPDDSURFACEDESC, LPVOID);
+typedef HRESULT (__stdcall *LPDDENUMSURFACESCALLBACK)(LPDIRECTDRAWSURFACE, LPDDSURFACEDESC, LPVOID);
 
 /* 243 */
 typedef _DDCAPS_DX7 DDCAPS_DX7;
@@ -1682,84 +1717,152 @@ typedef DWORD *LPDWORD;
 typedef BOOL *LPBOOL;
 
 /* 180 */
-struct IDirectDrawVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectDraw *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDraw *This);
-    ULONG(__stdcall *Release)(IDirectDraw *This);
-    HRESULT(__stdcall *Compact)(IDirectDraw *This);
-    HRESULT(__stdcall *CreateClipper)(IDirectDraw *This, DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *);
-    HRESULT(__stdcall *CreatePalette)
-    (IDirectDraw *This, DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *);
-    HRESULT(__stdcall *CreateSurface)
-    (IDirectDraw *This, LPDDSURFACEDESC, LPDIRECTDRAWSURFACE *, IUnknown *);
-    HRESULT(__stdcall *DuplicateSurface)
-    (IDirectDraw *This, LPDIRECTDRAWSURFACE, LPDIRECTDRAWSURFACE *);
-    HRESULT(__stdcall *EnumDisplayModes)
-    (IDirectDraw *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMMODESCALLBACK);
-    HRESULT(__stdcall *EnumSurfaces)
-    (IDirectDraw *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *FlipToGDISurface)(IDirectDraw *This);
-    HRESULT(__stdcall *GetCaps)(IDirectDraw *This, LPDDCAPS, LPDDCAPS);
-    HRESULT(__stdcall *GetDisplayMode)(IDirectDraw *This, LPDDSURFACEDESC);
-    HRESULT(__stdcall *GetFourCCCodes)(IDirectDraw *This, LPDWORD, LPDWORD);
-    HRESULT(__stdcall *GetGDISurface)(IDirectDraw *This, LPDIRECTDRAWSURFACE *);
-    HRESULT(__stdcall *GetMonitorFrequency)(IDirectDraw *This, LPDWORD);
-    HRESULT(__stdcall *GetScanLine)(IDirectDraw *This, LPDWORD);
-    HRESULT(__stdcall *GetVerticalBlankStatus)(IDirectDraw *This, LPBOOL);
-    HRESULT(__stdcall *Initialize)(IDirectDraw *This, GUID *);
-    HRESULT(__stdcall *RestoreDisplayMode)(IDirectDraw *This);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectDraw *This, HWND, DWORD);
-    HRESULT(__stdcall *SetDisplayMode)(IDirectDraw *This, DWORD, DWORD, DWORD);
-    HRESULT(__stdcall *WaitForVerticalBlank)(IDirectDraw *This, DWORD, HANDLE);
+struct IDirectDrawVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDraw *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDraw *This);
+  ULONG (__stdcall *Release)(IDirectDraw *This);
+  HRESULT (__stdcall *Compact)(IDirectDraw *This);
+  HRESULT (__stdcall *CreateClipper)(IDirectDraw *This, DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *);
+  HRESULT (__stdcall *CreatePalette)(IDirectDraw *This, DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *);
+  HRESULT (__stdcall *CreateSurface)(IDirectDraw *This, LPDDSURFACEDESC, LPDIRECTDRAWSURFACE *, IUnknown *);
+  HRESULT (__stdcall *DuplicateSurface)(IDirectDraw *This, LPDIRECTDRAWSURFACE, LPDIRECTDRAWSURFACE *);
+  HRESULT (__stdcall *EnumDisplayModes)(IDirectDraw *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMMODESCALLBACK);
+  HRESULT (__stdcall *EnumSurfaces)(IDirectDraw *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *FlipToGDISurface)(IDirectDraw *This);
+  HRESULT (__stdcall *GetCaps)(IDirectDraw *This, LPDDCAPS, LPDDCAPS);
+  HRESULT (__stdcall *GetDisplayMode)(IDirectDraw *This, LPDDSURFACEDESC);
+  HRESULT (__stdcall *GetFourCCCodes)(IDirectDraw *This, LPDWORD, LPDWORD);
+  HRESULT (__stdcall *GetGDISurface)(IDirectDraw *This, LPDIRECTDRAWSURFACE *);
+  HRESULT (__stdcall *GetMonitorFrequency)(IDirectDraw *This, LPDWORD);
+  HRESULT (__stdcall *GetScanLine)(IDirectDraw *This, LPDWORD);
+  HRESULT (__stdcall *GetVerticalBlankStatus)(IDirectDraw *This, LPBOOL);
+  HRESULT (__stdcall *Initialize)(IDirectDraw *This, GUID *);
+  HRESULT (__stdcall *RestoreDisplayMode)(IDirectDraw *This);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectDraw *This, HWND, DWORD);
+  HRESULT (__stdcall *SetDisplayMode)(IDirectDraw *This, DWORD, DWORD, DWORD);
+  HRESULT (__stdcall *WaitForVerticalBlank)(IDirectDraw *This, DWORD, HANDLE);
 };
 
 /* 181 */
-struct IDirectDraw {
-    IDirectDrawVtbl *lpVtbl;
+struct IDirectDraw
+{
+  IDirectDrawVtbl *lpVtbl;
 };
 
 /* 183 */
-struct IDirectDrawClipper {
-    IDirectDrawClipperVtbl *lpVtbl;
+struct IDirectDrawClipper
+{
+  IDirectDrawClipperVtbl *lpVtbl;
 };
 
 /* 194 */
-struct tagPALETTEENTRY {
-    BYTE peRed;
-    BYTE peGreen;
-    BYTE peBlue;
-    BYTE peFlags;
+struct tagPALETTEENTRY
+{
+  BYTE peRed;
+  BYTE peGreen;
+  BYTE peBlue;
+  BYTE peFlags;
 };
 
 /* 196 */
-struct IDirectDrawPalette {
-    IDirectDrawPaletteVtbl *lpVtbl;
+struct IDirectDrawPalette
+{
+  IDirectDrawPaletteVtbl *lpVtbl;
 };
 
 /* 200 */
-union _DDSURFACEDESC::$091DBF7D405BE25E65B16620C008128B {
-    LONG lPitch;
-    DWORD dwLinearSize;
+union _DDSURFACEDESC::$091DBF7D405BE25E65B16620C008128B
+{
+  LONG lPitch;
+  DWORD dwLinearSize;
 };
 
 /* 201 */
-union _DDSURFACEDESC::$9AB659F8D6A45F8C7834A76B9C40973B {
-    DWORD dwMipMapCount;
-    DWORD dwZBufferBitDepth;
-    DWORD dwRefreshRate;
+union _DDSURFACEDESC::$9AB659F8D6A45F8C7834A76B9C40973B
+{
+  DWORD dwMipMapCount;
+  DWORD dwZBufferBitDepth;
+  DWORD dwRefreshRate;
 };
 
 /* 203 */
-struct _DDCOLORKEY {
-    DWORD dwColorSpaceLowValue;
-    DWORD dwColorSpaceHighValue;
+struct _DDCOLORKEY
+{
+  DWORD dwColorSpaceLowValue;
+  DWORD dwColorSpaceHighValue;
 };
 
 /* 202 */
 typedef _DDCOLORKEY DDCOLORKEY;
 
 /* 206 */
-union _DDPIXELFORMAT::$F1D3FB4D78950D0942225445130999CB {
+union _DDPIXELFORMAT::$F1D3FB4D78950D0942225445130999CB
+{
+  DWORD dwRGBBitCount;
+  DWORD dwYUVBitCount;
+  DWORD dwZBufferBitDepth;
+  DWORD dwAlphaBitDepth;
+  DWORD dwLuminanceBitCount;
+  DWORD dwBumpBitCount;
+  DWORD dwPrivateFormatBitCount;
+};
+
+/* 207 */
+union _DDPIXELFORMAT::$6A86D2BA2D533C5D3D5AB1F1491969D5
+{
+  DWORD dwRBitMask;
+  DWORD dwYBitMask;
+  DWORD dwStencilBitDepth;
+  DWORD dwLuminanceBitMask;
+  DWORD dwBumpDuBitMask;
+  DWORD dwOperations;
+};
+
+/* 209 */
+struct _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360::$A78036EB239B85FA27F661E6E98FFEA9
+{
+  WORD wFlipMSTypes;
+  WORD wBltMSTypes;
+};
+
+/* 208 */
+union _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360
+{
+  DWORD dwGBitMask;
+  DWORD dwUBitMask;
+  DWORD dwZBitMask;
+  DWORD dwBumpDvBitMask;
+  _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360::$A78036EB239B85FA27F661E6E98FFEA9 MultiSampleCaps;
+};
+
+/* 210 */
+union _DDPIXELFORMAT::$4C86B66084EB9B6F3AE81991D3FADB38
+{
+  DWORD dwBBitMask;
+  DWORD dwVBitMask;
+  DWORD dwStencilBitMask;
+  DWORD dwBumpLuminanceBitMask;
+};
+
+/* 211 */
+union _DDPIXELFORMAT::$23DF69239FC04D9BE22118E1AD8451FB
+{
+  DWORD dwRGBAlphaBitMask;
+  DWORD dwYUVAlphaBitMask;
+  DWORD dwLuminanceAlphaBitMask;
+  DWORD dwRGBZBitMask;
+  DWORD dwYUVZBitMask;
+};
+
+/* 205 */
+struct _DDPIXELFORMAT
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwFourCC;
+  union
+  {
     DWORD dwRGBBitCount;
     DWORD dwYUVBitCount;
     DWORD dwZBufferBitDepth;
@@ -1767,218 +1870,172 @@ union _DDPIXELFORMAT::$F1D3FB4D78950D0942225445130999CB {
     DWORD dwLuminanceBitCount;
     DWORD dwBumpBitCount;
     DWORD dwPrivateFormatBitCount;
-};
-
-/* 207 */
-union _DDPIXELFORMAT::$6A86D2BA2D533C5D3D5AB1F1491969D5 {
+  };
+  union
+  {
     DWORD dwRBitMask;
     DWORD dwYBitMask;
     DWORD dwStencilBitDepth;
     DWORD dwLuminanceBitMask;
     DWORD dwBumpDuBitMask;
     DWORD dwOperations;
-};
-
-/* 209 */
-struct _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360::$A78036EB239B85FA27F661E6E98FFEA9 {
-    WORD wFlipMSTypes;
-    WORD wBltMSTypes;
-};
-
-/* 208 */
-union _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360 {
+  };
+  union
+  {
     DWORD dwGBitMask;
     DWORD dwUBitMask;
     DWORD dwZBitMask;
     DWORD dwBumpDvBitMask;
-    _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360::$A78036EB239B85FA27F661E6E98FFEA9
-        MultiSampleCaps;
-};
-
-/* 210 */
-union _DDPIXELFORMAT::$4C86B66084EB9B6F3AE81991D3FADB38 {
+    _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360::$A78036EB239B85FA27F661E6E98FFEA9 MultiSampleCaps;
+  };
+  union
+  {
     DWORD dwBBitMask;
     DWORD dwVBitMask;
     DWORD dwStencilBitMask;
     DWORD dwBumpLuminanceBitMask;
-};
-
-/* 211 */
-union _DDPIXELFORMAT::$23DF69239FC04D9BE22118E1AD8451FB {
+  };
+  union
+  {
     DWORD dwRGBAlphaBitMask;
     DWORD dwYUVAlphaBitMask;
     DWORD dwLuminanceAlphaBitMask;
     DWORD dwRGBZBitMask;
     DWORD dwYUVZBitMask;
-};
-
-/* 205 */
-struct _DDPIXELFORMAT {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwFourCC;
-    union {
-        DWORD dwRGBBitCount;
-        DWORD dwYUVBitCount;
-        DWORD dwZBufferBitDepth;
-        DWORD dwAlphaBitDepth;
-        DWORD dwLuminanceBitCount;
-        DWORD dwBumpBitCount;
-        DWORD dwPrivateFormatBitCount;
-    };
-    union {
-        DWORD dwRBitMask;
-        DWORD dwYBitMask;
-        DWORD dwStencilBitDepth;
-        DWORD dwLuminanceBitMask;
-        DWORD dwBumpDuBitMask;
-        DWORD dwOperations;
-    };
-    union {
-        DWORD dwGBitMask;
-        DWORD dwUBitMask;
-        DWORD dwZBitMask;
-        DWORD dwBumpDvBitMask;
-        _DDPIXELFORMAT::$4689F3D0B997E93FAF3E67A693E85360::$A78036EB239B85FA27F661E6E98FFEA9
-            MultiSampleCaps;
-    };
-    union {
-        DWORD dwBBitMask;
-        DWORD dwVBitMask;
-        DWORD dwStencilBitMask;
-        DWORD dwBumpLuminanceBitMask;
-    };
-    union {
-        DWORD dwRGBAlphaBitMask;
-        DWORD dwYUVAlphaBitMask;
-        DWORD dwLuminanceAlphaBitMask;
-        DWORD dwRGBZBitMask;
-        DWORD dwYUVZBitMask;
-    };
+  };
 };
 
 /* 204 */
 typedef _DDPIXELFORMAT DDPIXELFORMAT;
 
 /* 213 */
-struct _DDSCAPS {
-    DWORD dwCaps;
+struct _DDSCAPS
+{
+  DWORD dwCaps;
 };
 
 /* 212 */
 typedef _DDSCAPS DDSCAPS;
 
 /* 199 */
-struct _DDSURFACEDESC {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwHeight;
-    DWORD dwWidth;
-    union {
-        LONG lPitch;
-        DWORD dwLinearSize;
-    };
-    DWORD dwBackBufferCount;
-    union {
-        DWORD dwMipMapCount;
-        DWORD dwZBufferBitDepth;
-        DWORD dwRefreshRate;
-    };
-    DWORD dwAlphaBitDepth;
-    DWORD dwReserved;
-    LPVOID lpSurface;
-    DDCOLORKEY ddckCKDestOverlay;
-    DDCOLORKEY ddckCKDestBlt;
-    DDCOLORKEY ddckCKSrcOverlay;
-    DDCOLORKEY ddckCKSrcBlt;
-    DDPIXELFORMAT ddpfPixelFormat;
-    DDSCAPS ddsCaps;
+struct _DDSURFACEDESC
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwHeight;
+  DWORD dwWidth;
+  union
+  {
+    LONG lPitch;
+    DWORD dwLinearSize;
+  };
+  DWORD dwBackBufferCount;
+  union
+  {
+    DWORD dwMipMapCount;
+    DWORD dwZBufferBitDepth;
+    DWORD dwRefreshRate;
+  };
+  DWORD dwAlphaBitDepth;
+  DWORD dwReserved;
+  LPVOID lpSurface;
+  DDCOLORKEY ddckCKDestOverlay;
+  DDCOLORKEY ddckCKDestBlt;
+  DDCOLORKEY ddckCKSrcOverlay;
+  DDCOLORKEY ddckCKSrcBlt;
+  DDPIXELFORMAT ddpfPixelFormat;
+  DDSCAPS ddsCaps;
 };
 
 /* 215 */
-struct IDirectDrawSurface {
-    IDirectDrawSurfaceVtbl *lpVtbl;
+struct IDirectDrawSurface
+{
+  IDirectDrawSurfaceVtbl *lpVtbl;
 };
 
 /* 247 */
-union _DDSCAPS2::$19AC68468C4510B3DC631A4E89752068 {
-    DWORD dwCaps4;
-    DWORD dwVolumeDepth;
+union _DDSCAPS2::$19AC68468C4510B3DC631A4E89752068
+{
+  DWORD dwCaps4;
+  DWORD dwVolumeDepth;
 };
 
 /* 246 */
-struct _DDSCAPS2 {
-    DWORD dwCaps;
-    DWORD dwCaps2;
-    DWORD dwCaps3;
-    union {
-        DWORD dwCaps4;
-        DWORD dwVolumeDepth;
-    };
+struct _DDSCAPS2
+{
+  DWORD dwCaps;
+  DWORD dwCaps2;
+  DWORD dwCaps3;
+  union
+  {
+    DWORD dwCaps4;
+    DWORD dwVolumeDepth;
+  };
 };
 
 /* 245 */
 typedef _DDSCAPS2 DDSCAPS2;
 
 /* 244 */
-struct _DDCAPS_DX7 {
-    DWORD dwSize;
-    DWORD dwCaps;
-    DWORD dwCaps2;
-    DWORD dwCKeyCaps;
-    DWORD dwFXCaps;
-    DWORD dwFXAlphaCaps;
-    DWORD dwPalCaps;
-    DWORD dwSVCaps;
-    DWORD dwAlphaBltConstBitDepths;
-    DWORD dwAlphaBltPixelBitDepths;
-    DWORD dwAlphaBltSurfaceBitDepths;
-    DWORD dwAlphaOverlayConstBitDepths;
-    DWORD dwAlphaOverlayPixelBitDepths;
-    DWORD dwAlphaOverlaySurfaceBitDepths;
-    DWORD dwZBufferBitDepths;
-    DWORD dwVidMemTotal;
-    DWORD dwVidMemFree;
-    DWORD dwMaxVisibleOverlays;
-    DWORD dwCurrVisibleOverlays;
-    DWORD dwNumFourCCCodes;
-    DWORD dwAlignBoundarySrc;
-    DWORD dwAlignSizeSrc;
-    DWORD dwAlignBoundaryDest;
-    DWORD dwAlignSizeDest;
-    DWORD dwAlignStrideAlign;
-    DWORD dwRops[8];
-    DDSCAPS ddsOldCaps;
-    DWORD dwMinOverlayStretch;
-    DWORD dwMaxOverlayStretch;
-    DWORD dwMinLiveVideoStretch;
-    DWORD dwMaxLiveVideoStretch;
-    DWORD dwMinHwCodecStretch;
-    DWORD dwMaxHwCodecStretch;
-    DWORD dwReserved1;
-    DWORD dwReserved2;
-    DWORD dwReserved3;
-    DWORD dwSVBCaps;
-    DWORD dwSVBCKeyCaps;
-    DWORD dwSVBFXCaps;
-    DWORD dwSVBRops[8];
-    DWORD dwVSBCaps;
-    DWORD dwVSBCKeyCaps;
-    DWORD dwVSBFXCaps;
-    DWORD dwVSBRops[8];
-    DWORD dwSSBCaps;
-    DWORD dwSSBCKeyCaps;
-    DWORD dwSSBFXCaps;
-    DWORD dwSSBRops[8];
-    DWORD dwMaxVideoPorts;
-    DWORD dwCurrVideoPorts;
-    DWORD dwSVBCaps2;
-    DWORD dwNLVBCaps;
-    DWORD dwNLVBCaps2;
-    DWORD dwNLVBCKeyCaps;
-    DWORD dwNLVBFXCaps;
-    DWORD dwNLVBRops[8];
-    DDSCAPS2 ddsCaps;
+struct _DDCAPS_DX7
+{
+  DWORD dwSize;
+  DWORD dwCaps;
+  DWORD dwCaps2;
+  DWORD dwCKeyCaps;
+  DWORD dwFXCaps;
+  DWORD dwFXAlphaCaps;
+  DWORD dwPalCaps;
+  DWORD dwSVCaps;
+  DWORD dwAlphaBltConstBitDepths;
+  DWORD dwAlphaBltPixelBitDepths;
+  DWORD dwAlphaBltSurfaceBitDepths;
+  DWORD dwAlphaOverlayConstBitDepths;
+  DWORD dwAlphaOverlayPixelBitDepths;
+  DWORD dwAlphaOverlaySurfaceBitDepths;
+  DWORD dwZBufferBitDepths;
+  DWORD dwVidMemTotal;
+  DWORD dwVidMemFree;
+  DWORD dwMaxVisibleOverlays;
+  DWORD dwCurrVisibleOverlays;
+  DWORD dwNumFourCCCodes;
+  DWORD dwAlignBoundarySrc;
+  DWORD dwAlignSizeSrc;
+  DWORD dwAlignBoundaryDest;
+  DWORD dwAlignSizeDest;
+  DWORD dwAlignStrideAlign;
+  DWORD dwRops[8];
+  DDSCAPS ddsOldCaps;
+  DWORD dwMinOverlayStretch;
+  DWORD dwMaxOverlayStretch;
+  DWORD dwMinLiveVideoStretch;
+  DWORD dwMaxLiveVideoStretch;
+  DWORD dwMinHwCodecStretch;
+  DWORD dwMaxHwCodecStretch;
+  DWORD dwReserved1;
+  DWORD dwReserved2;
+  DWORD dwReserved3;
+  DWORD dwSVBCaps;
+  DWORD dwSVBCKeyCaps;
+  DWORD dwSVBFXCaps;
+  DWORD dwSVBRops[8];
+  DWORD dwVSBCaps;
+  DWORD dwVSBCKeyCaps;
+  DWORD dwVSBFXCaps;
+  DWORD dwVSBRops[8];
+  DWORD dwSSBCaps;
+  DWORD dwSSBCKeyCaps;
+  DWORD dwSSBFXCaps;
+  DWORD dwSSBRops[8];
+  DWORD dwMaxVideoPorts;
+  DWORD dwCurrVideoPorts;
+  DWORD dwSVBCaps2;
+  DWORD dwNLVBCaps;
+  DWORD dwNLVBCaps2;
+  DWORD dwNLVBCKeyCaps;
+  DWORD dwNLVBFXCaps;
+  DWORD dwNLVBRops[8];
+  DDSCAPS2 ddsCaps;
 };
 
 /* 185 */
@@ -1991,29 +2048,29 @@ typedef _RGNDATA *LPRGNDATA;
 typedef IDirectDraw *LPDIRECTDRAW;
 
 /* 184 */
-struct IDirectDrawClipperVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawClipper *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawClipper *This);
-    ULONG(__stdcall *Release)(IDirectDrawClipper *This);
-    HRESULT(__stdcall *GetClipList)(IDirectDrawClipper *This, LPRECT, LPRGNDATA, LPDWORD);
-    HRESULT(__stdcall *GetHWnd)(IDirectDrawClipper *This, HWND *);
-    HRESULT(__stdcall *Initialize)(IDirectDrawClipper *This, LPDIRECTDRAW, DWORD);
-    HRESULT(__stdcall *IsClipListChanged)(IDirectDrawClipper *This, BOOL *);
-    HRESULT(__stdcall *SetClipList)(IDirectDrawClipper *This, LPRGNDATA, DWORD);
-    HRESULT(__stdcall *SetHWnd)(IDirectDrawClipper *This, DWORD, HWND);
+struct IDirectDrawClipperVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawClipper *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawClipper *This);
+  ULONG (__stdcall *Release)(IDirectDrawClipper *This);
+  HRESULT (__stdcall *GetClipList)(IDirectDrawClipper *This, LPRECT, LPRGNDATA, LPDWORD);
+  HRESULT (__stdcall *GetHWnd)(IDirectDrawClipper *This, HWND *);
+  HRESULT (__stdcall *Initialize)(IDirectDrawClipper *This, LPDIRECTDRAW, DWORD);
+  HRESULT (__stdcall *IsClipListChanged)(IDirectDrawClipper *This, BOOL *);
+  HRESULT (__stdcall *SetClipList)(IDirectDrawClipper *This, LPRGNDATA, DWORD);
+  HRESULT (__stdcall *SetHWnd)(IDirectDrawClipper *This, DWORD, HWND);
 };
 
 /* 197 */
-struct IDirectDrawPaletteVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawPalette *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawPalette *This);
-    ULONG(__stdcall *Release)(IDirectDrawPalette *This);
-    HRESULT(__stdcall *GetCaps)(IDirectDrawPalette *This, LPDWORD);
-    HRESULT(__stdcall *GetEntries)(IDirectDrawPalette *This, DWORD, DWORD, DWORD, LPPALETTEENTRY);
-    HRESULT(__stdcall *Initialize)(IDirectDrawPalette *This, LPDIRECTDRAW, DWORD, LPPALETTEENTRY);
-    HRESULT(__stdcall *SetEntries)(IDirectDrawPalette *This, DWORD, DWORD, DWORD, LPPALETTEENTRY);
+struct IDirectDrawPaletteVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawPalette *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawPalette *This);
+  ULONG (__stdcall *Release)(IDirectDrawPalette *This);
+  HRESULT (__stdcall *GetCaps)(IDirectDrawPalette *This, LPDWORD);
+  HRESULT (__stdcall *GetEntries)(IDirectDrawPalette *This, DWORD, DWORD, DWORD, LPPALETTEENTRY);
+  HRESULT (__stdcall *Initialize)(IDirectDrawPalette *This, LPDIRECTDRAW, DWORD, LPPALETTEENTRY);
+  HRESULT (__stdcall *SetEntries)(IDirectDrawPalette *This, DWORD, DWORD, DWORD, LPPALETTEENTRY);
 };
 
 /* 218 */
@@ -2050,233 +2107,244 @@ typedef _DDOVERLAYFX DDOVERLAYFX;
 typedef DDOVERLAYFX *LPDDOVERLAYFX;
 
 /* 216 */
-struct IDirectDrawSurfaceVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawSurface *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawSurface *This);
-    ULONG(__stdcall *Release)(IDirectDrawSurface *This);
-    HRESULT(__stdcall *AddAttachedSurface)(IDirectDrawSurface *This, LPDIRECTDRAWSURFACE);
-    HRESULT(__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface *This, LPRECT);
-    HRESULT(__stdcall *Blt)
-    (IDirectDrawSurface *This, LPRECT, LPDIRECTDRAWSURFACE, LPRECT, DWORD, LPDDBLTFX);
-    HRESULT(__stdcall *BltBatch)(IDirectDrawSurface *This, LPDDBLTBATCH, DWORD, DWORD);
-    HRESULT(__stdcall *BltFast)
-    (IDirectDrawSurface *This, DWORD, DWORD, LPDIRECTDRAWSURFACE, LPRECT, DWORD);
-    HRESULT(__stdcall *DeleteAttachedSurface)(IDirectDrawSurface *This, DWORD, LPDIRECTDRAWSURFACE);
-    HRESULT(__stdcall *EnumAttachedSurfaces)
-    (IDirectDrawSurface *This, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *EnumOverlayZOrders)
-    (IDirectDrawSurface *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *Flip)(IDirectDrawSurface *This, LPDIRECTDRAWSURFACE, DWORD);
-    HRESULT(__stdcall *GetAttachedSurface)
-    (IDirectDrawSurface *This, LPDDSCAPS, LPDIRECTDRAWSURFACE *);
-    HRESULT(__stdcall *GetBltStatus)(IDirectDrawSurface *This, DWORD);
-    HRESULT(__stdcall *GetCaps)(IDirectDrawSurface *This, LPDDSCAPS);
-    HRESULT(__stdcall *GetClipper)(IDirectDrawSurface *This, LPDIRECTDRAWCLIPPER *);
-    HRESULT(__stdcall *GetColorKey)(IDirectDrawSurface *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *GetDC)(IDirectDrawSurface *This, HDC *);
-    HRESULT(__stdcall *GetFlipStatus)(IDirectDrawSurface *This, DWORD);
-    HRESULT(__stdcall *GetOverlayPosition)(IDirectDrawSurface *This, LPLONG, LPLONG);
-    HRESULT(__stdcall *GetPalette)(IDirectDrawSurface *This, LPDIRECTDRAWPALETTE *);
-    HRESULT(__stdcall *GetPixelFormat)(IDirectDrawSurface *This, LPDDPIXELFORMAT);
-    HRESULT(__stdcall *GetSurfaceDesc)(IDirectDrawSurface *This, LPDDSURFACEDESC);
-    HRESULT(__stdcall *Initialize)(IDirectDrawSurface *This, LPDIRECTDRAW, LPDDSURFACEDESC);
-    HRESULT(__stdcall *IsLost)(IDirectDrawSurface *This);
-    HRESULT(__stdcall *Lock)(IDirectDrawSurface *This, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE);
-    HRESULT(__stdcall *ReleaseDC)(IDirectDrawSurface *This, HDC);
-    HRESULT(__stdcall *Restore)(IDirectDrawSurface *This);
-    HRESULT(__stdcall *SetClipper)(IDirectDrawSurface *This, LPDIRECTDRAWCLIPPER);
-    HRESULT(__stdcall *SetColorKey)(IDirectDrawSurface *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *SetOverlayPosition)(IDirectDrawSurface *This, LONG, LONG);
-    HRESULT(__stdcall *SetPalette)(IDirectDrawSurface *This, LPDIRECTDRAWPALETTE);
-    HRESULT(__stdcall *Unlock)(IDirectDrawSurface *This, LPVOID);
-    HRESULT(__stdcall *UpdateOverlay)
-    (IDirectDrawSurface *This, LPRECT, LPDIRECTDRAWSURFACE, LPRECT, DWORD, LPDDOVERLAYFX);
-    HRESULT(__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface *This, DWORD);
-    HRESULT(__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface *This, DWORD, LPDIRECTDRAWSURFACE);
+struct IDirectDrawSurfaceVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawSurface *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawSurface *This);
+  ULONG (__stdcall *Release)(IDirectDrawSurface *This);
+  HRESULT (__stdcall *AddAttachedSurface)(IDirectDrawSurface *This, LPDIRECTDRAWSURFACE);
+  HRESULT (__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface *This, LPRECT);
+  HRESULT (__stdcall *Blt)(IDirectDrawSurface *This, LPRECT, LPDIRECTDRAWSURFACE, LPRECT, DWORD, LPDDBLTFX);
+  HRESULT (__stdcall *BltBatch)(IDirectDrawSurface *This, LPDDBLTBATCH, DWORD, DWORD);
+  HRESULT (__stdcall *BltFast)(IDirectDrawSurface *This, DWORD, DWORD, LPDIRECTDRAWSURFACE, LPRECT, DWORD);
+  HRESULT (__stdcall *DeleteAttachedSurface)(IDirectDrawSurface *This, DWORD, LPDIRECTDRAWSURFACE);
+  HRESULT (__stdcall *EnumAttachedSurfaces)(IDirectDrawSurface *This, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *EnumOverlayZOrders)(IDirectDrawSurface *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *Flip)(IDirectDrawSurface *This, LPDIRECTDRAWSURFACE, DWORD);
+  HRESULT (__stdcall *GetAttachedSurface)(IDirectDrawSurface *This, LPDDSCAPS, LPDIRECTDRAWSURFACE *);
+  HRESULT (__stdcall *GetBltStatus)(IDirectDrawSurface *This, DWORD);
+  HRESULT (__stdcall *GetCaps)(IDirectDrawSurface *This, LPDDSCAPS);
+  HRESULT (__stdcall *GetClipper)(IDirectDrawSurface *This, LPDIRECTDRAWCLIPPER *);
+  HRESULT (__stdcall *GetColorKey)(IDirectDrawSurface *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *GetDC)(IDirectDrawSurface *This, HDC *);
+  HRESULT (__stdcall *GetFlipStatus)(IDirectDrawSurface *This, DWORD);
+  HRESULT (__stdcall *GetOverlayPosition)(IDirectDrawSurface *This, LPLONG, LPLONG);
+  HRESULT (__stdcall *GetPalette)(IDirectDrawSurface *This, LPDIRECTDRAWPALETTE *);
+  HRESULT (__stdcall *GetPixelFormat)(IDirectDrawSurface *This, LPDDPIXELFORMAT);
+  HRESULT (__stdcall *GetSurfaceDesc)(IDirectDrawSurface *This, LPDDSURFACEDESC);
+  HRESULT (__stdcall *Initialize)(IDirectDrawSurface *This, LPDIRECTDRAW, LPDDSURFACEDESC);
+  HRESULT (__stdcall *IsLost)(IDirectDrawSurface *This);
+  HRESULT (__stdcall *Lock)(IDirectDrawSurface *This, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE);
+  HRESULT (__stdcall *ReleaseDC)(IDirectDrawSurface *This, HDC);
+  HRESULT (__stdcall *Restore)(IDirectDrawSurface *This);
+  HRESULT (__stdcall *SetClipper)(IDirectDrawSurface *This, LPDIRECTDRAWCLIPPER);
+  HRESULT (__stdcall *SetColorKey)(IDirectDrawSurface *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *SetOverlayPosition)(IDirectDrawSurface *This, LONG, LONG);
+  HRESULT (__stdcall *SetPalette)(IDirectDrawSurface *This, LPDIRECTDRAWPALETTE);
+  HRESULT (__stdcall *Unlock)(IDirectDrawSurface *This, LPVOID);
+  HRESULT (__stdcall *UpdateOverlay)(IDirectDrawSurface *This, LPRECT, LPDIRECTDRAWSURFACE, LPRECT, DWORD, LPDDOVERLAYFX);
+  HRESULT (__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface *This, DWORD);
+  HRESULT (__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface *This, DWORD, LPDIRECTDRAWSURFACE);
 };
 
 /* 190 */
 typedef tagRECT RECT;
 
 /* 189 */
-struct _RGNDATAHEADER {
-    DWORD dwSize;
-    DWORD iType;
-    DWORD nCount;
-    DWORD nRgnSize;
-    RECT rcBound;
+struct _RGNDATAHEADER
+{
+  DWORD dwSize;
+  DWORD iType;
+  DWORD nCount;
+  DWORD nRgnSize;
+  RECT rcBound;
 };
 
 /* 188 */
 typedef _RGNDATAHEADER RGNDATAHEADER;
 
 /* 187 */
-struct _RGNDATA {
-    RGNDATAHEADER rdh;
-    char Buffer[1];
+struct _RGNDATA
+{
+  RGNDATAHEADER rdh;
+  char Buffer[1];
 };
 
 /* 220 */
-union _DDBLTFX::$EA6EC20695B0AA8ECF92A441DE55A935 {
-    DWORD dwZDestConst;
-    LPDIRECTDRAWSURFACE lpDDSZBufferDest;
+union _DDBLTFX::$EA6EC20695B0AA8ECF92A441DE55A935
+{
+  DWORD dwZDestConst;
+  LPDIRECTDRAWSURFACE lpDDSZBufferDest;
 };
 
 /* 221 */
-union _DDBLTFX::$702C52B3655764E63C007A6B73D01C19 {
-    DWORD dwZSrcConst;
-    LPDIRECTDRAWSURFACE lpDDSZBufferSrc;
+union _DDBLTFX::$702C52B3655764E63C007A6B73D01C19
+{
+  DWORD dwZSrcConst;
+  LPDIRECTDRAWSURFACE lpDDSZBufferSrc;
 };
 
 /* 222 */
-union _DDBLTFX::$3639C047B3E88B857708792B1F3FEC83 {
-    DWORD dwAlphaDestConst;
-    LPDIRECTDRAWSURFACE lpDDSAlphaDest;
+union _DDBLTFX::$3639C047B3E88B857708792B1F3FEC83
+{
+  DWORD dwAlphaDestConst;
+  LPDIRECTDRAWSURFACE lpDDSAlphaDest;
 };
 
 /* 223 */
-union _DDBLTFX::$C0828DA952883A43DEF8D462ACC90C87 {
-    DWORD dwAlphaSrcConst;
-    LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
+union _DDBLTFX::$C0828DA952883A43DEF8D462ACC90C87
+{
+  DWORD dwAlphaSrcConst;
+  LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
 };
 
 /* 224 */
-union _DDBLTFX::$4C109671A06E28B8127C40041AB5795C {
+union _DDBLTFX::$4C109671A06E28B8127C40041AB5795C
+{
+  DWORD dwFillColor;
+  DWORD dwFillDepth;
+  DWORD dwFillPixel;
+  LPDIRECTDRAWSURFACE lpDDSPattern;
+};
+
+/* 219 */
+struct _DDBLTFX
+{
+  DWORD dwSize;
+  DWORD dwDDFX;
+  DWORD dwROP;
+  DWORD dwDDROP;
+  DWORD dwRotationAngle;
+  DWORD dwZBufferOpCode;
+  DWORD dwZBufferLow;
+  DWORD dwZBufferHigh;
+  DWORD dwZBufferBaseDest;
+  DWORD dwZDestConstBitDepth;
+  union
+  {
+    DWORD dwZDestConst;
+    LPDIRECTDRAWSURFACE lpDDSZBufferDest;
+  };
+  DWORD dwZSrcConstBitDepth;
+  union
+  {
+    DWORD dwZSrcConst;
+    LPDIRECTDRAWSURFACE lpDDSZBufferSrc;
+  };
+  DWORD dwAlphaEdgeBlendBitDepth;
+  DWORD dwAlphaEdgeBlend;
+  DWORD dwReserved;
+  DWORD dwAlphaDestConstBitDepth;
+  union
+  {
+    DWORD dwAlphaDestConst;
+    LPDIRECTDRAWSURFACE lpDDSAlphaDest;
+  };
+  DWORD dwAlphaSrcConstBitDepth;
+  union
+  {
+    DWORD dwAlphaSrcConst;
+    LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
+  };
+  union
+  {
     DWORD dwFillColor;
     DWORD dwFillDepth;
     DWORD dwFillPixel;
     LPDIRECTDRAWSURFACE lpDDSPattern;
-};
-
-/* 219 */
-struct _DDBLTFX {
-    DWORD dwSize;
-    DWORD dwDDFX;
-    DWORD dwROP;
-    DWORD dwDDROP;
-    DWORD dwRotationAngle;
-    DWORD dwZBufferOpCode;
-    DWORD dwZBufferLow;
-    DWORD dwZBufferHigh;
-    DWORD dwZBufferBaseDest;
-    DWORD dwZDestConstBitDepth;
-    union {
-        DWORD dwZDestConst;
-        LPDIRECTDRAWSURFACE lpDDSZBufferDest;
-    };
-    DWORD dwZSrcConstBitDepth;
-    union {
-        DWORD dwZSrcConst;
-        LPDIRECTDRAWSURFACE lpDDSZBufferSrc;
-    };
-    DWORD dwAlphaEdgeBlendBitDepth;
-    DWORD dwAlphaEdgeBlend;
-    DWORD dwReserved;
-    DWORD dwAlphaDestConstBitDepth;
-    union {
-        DWORD dwAlphaDestConst;
-        LPDIRECTDRAWSURFACE lpDDSAlphaDest;
-    };
-    DWORD dwAlphaSrcConstBitDepth;
-    union {
-        DWORD dwAlphaSrcConst;
-        LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
-    };
-    union {
-        DWORD dwFillColor;
-        DWORD dwFillDepth;
-        DWORD dwFillPixel;
-        LPDIRECTDRAWSURFACE lpDDSPattern;
-    };
-    DDCOLORKEY ddckDestColorkey;
-    DDCOLORKEY ddckSrcColorkey;
+  };
+  DDCOLORKEY ddckDestColorkey;
+  DDCOLORKEY ddckSrcColorkey;
 };
 
 /* 227 */
-struct _DDBLTBATCH {
-    LPRECT lprDest;
-    LPDIRECTDRAWSURFACE lpDDSSrc;
-    LPRECT lprSrc;
-    DWORD dwFlags;
-    LPDDBLTFX lpDDBltFx;
+struct _DDBLTBATCH
+{
+  LPRECT lprDest;
+  LPDIRECTDRAWSURFACE lpDDSSrc;
+  LPRECT lprSrc;
+  DWORD dwFlags;
+  LPDDBLTFX lpDDBltFx;
 };
 
 /* 232 */
-struct HDC__ {
-    int unused;
+struct HDC__
+{
+  int unused;
 };
 
 /* 238 */
-union _DDOVERLAYFX::$3639C047B3E88B857708792B1F3FEC83 {
-    DWORD dwAlphaDestConst;
-    LPDIRECTDRAWSURFACE lpDDSAlphaDest;
+union _DDOVERLAYFX::$3639C047B3E88B857708792B1F3FEC83
+{
+  DWORD dwAlphaDestConst;
+  LPDIRECTDRAWSURFACE lpDDSAlphaDest;
 };
 
 /* 239 */
-union _DDOVERLAYFX::$C0828DA952883A43DEF8D462ACC90C87 {
-    DWORD dwAlphaSrcConst;
-    LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
+union _DDOVERLAYFX::$C0828DA952883A43DEF8D462ACC90C87
+{
+  DWORD dwAlphaSrcConst;
+  LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
 };
 
 /* 237 */
-struct _DDOVERLAYFX {
-    DWORD dwSize;
-    DWORD dwAlphaEdgeBlendBitDepth;
-    DWORD dwAlphaEdgeBlend;
-    DWORD dwReserved;
-    DWORD dwAlphaDestConstBitDepth;
-    union {
-        DWORD dwAlphaDestConst;
-        LPDIRECTDRAWSURFACE lpDDSAlphaDest;
-    };
-    DWORD dwAlphaSrcConstBitDepth;
-    union {
-        DWORD dwAlphaSrcConst;
-        LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
-    };
-    DDCOLORKEY dckDestColorkey;
-    DDCOLORKEY dckSrcColorkey;
-    DWORD dwDDFX;
-    DWORD dwFlags;
+struct _DDOVERLAYFX
+{
+  DWORD dwSize;
+  DWORD dwAlphaEdgeBlendBitDepth;
+  DWORD dwAlphaEdgeBlend;
+  DWORD dwReserved;
+  DWORD dwAlphaDestConstBitDepth;
+  union
+  {
+    DWORD dwAlphaDestConst;
+    LPDIRECTDRAWSURFACE lpDDSAlphaDest;
+  };
+  DWORD dwAlphaSrcConstBitDepth;
+  union
+  {
+    DWORD dwAlphaSrcConst;
+    LPDIRECTDRAWSURFACE lpDDSAlphaSrc;
+  };
+  DDCOLORKEY dckDestColorkey;
+  DDCOLORKEY dckSrcColorkey;
+  DWORD dwDDFX;
+  DWORD dwFlags;
 };
 
 /* 249 */
-struct IDirectDraw2Vtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectDraw2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDraw2 *This);
-    ULONG(__stdcall *Release)(IDirectDraw2 *This);
-    HRESULT(__stdcall *Compact)(IDirectDraw2 *This);
-    HRESULT(__stdcall *CreateClipper)(IDirectDraw2 *This, DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *);
-    HRESULT(__stdcall *CreatePalette)
-    (IDirectDraw2 *This, DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *);
-    HRESULT(__stdcall *CreateSurface)
-    (IDirectDraw2 *This, LPDDSURFACEDESC, LPDIRECTDRAWSURFACE *, IUnknown *);
-    HRESULT(__stdcall *DuplicateSurface)
-    (IDirectDraw2 *This, LPDIRECTDRAWSURFACE, LPDIRECTDRAWSURFACE *);
-    HRESULT(__stdcall *EnumDisplayModes)
-    (IDirectDraw2 *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMMODESCALLBACK);
-    HRESULT(__stdcall *EnumSurfaces)
-    (IDirectDraw2 *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *FlipToGDISurface)(IDirectDraw2 *This);
-    HRESULT(__stdcall *GetCaps)(IDirectDraw2 *This, LPDDCAPS, LPDDCAPS);
-    HRESULT(__stdcall *GetDisplayMode)(IDirectDraw2 *This, LPDDSURFACEDESC);
-    HRESULT(__stdcall *GetFourCCCodes)(IDirectDraw2 *This, LPDWORD, LPDWORD);
-    HRESULT(__stdcall *GetGDISurface)(IDirectDraw2 *This, LPDIRECTDRAWSURFACE *);
-    HRESULT(__stdcall *GetMonitorFrequency)(IDirectDraw2 *This, LPDWORD);
-    HRESULT(__stdcall *GetScanLine)(IDirectDraw2 *This, LPDWORD);
-    HRESULT(__stdcall *GetVerticalBlankStatus)(IDirectDraw2 *This, LPBOOL);
-    HRESULT(__stdcall *Initialize)(IDirectDraw2 *This, GUID *);
-    HRESULT(__stdcall *RestoreDisplayMode)(IDirectDraw2 *This);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectDraw2 *This, HWND, DWORD);
-    HRESULT(__stdcall *SetDisplayMode)(IDirectDraw2 *This, DWORD, DWORD, DWORD, DWORD, DWORD);
-    HRESULT(__stdcall *WaitForVerticalBlank)(IDirectDraw2 *This, DWORD, HANDLE);
-    HRESULT(__stdcall *GetAvailableVidMem)(IDirectDraw2 *This, LPDDSCAPS, LPDWORD, LPDWORD);
+struct IDirectDraw2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDraw2 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDraw2 *This);
+  ULONG (__stdcall *Release)(IDirectDraw2 *This);
+  HRESULT (__stdcall *Compact)(IDirectDraw2 *This);
+  HRESULT (__stdcall *CreateClipper)(IDirectDraw2 *This, DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *);
+  HRESULT (__stdcall *CreatePalette)(IDirectDraw2 *This, DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *);
+  HRESULT (__stdcall *CreateSurface)(IDirectDraw2 *This, LPDDSURFACEDESC, LPDIRECTDRAWSURFACE *, IUnknown *);
+  HRESULT (__stdcall *DuplicateSurface)(IDirectDraw2 *This, LPDIRECTDRAWSURFACE, LPDIRECTDRAWSURFACE *);
+  HRESULT (__stdcall *EnumDisplayModes)(IDirectDraw2 *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMMODESCALLBACK);
+  HRESULT (__stdcall *EnumSurfaces)(IDirectDraw2 *This, DWORD, LPDDSURFACEDESC, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *FlipToGDISurface)(IDirectDraw2 *This);
+  HRESULT (__stdcall *GetCaps)(IDirectDraw2 *This, LPDDCAPS, LPDDCAPS);
+  HRESULT (__stdcall *GetDisplayMode)(IDirectDraw2 *This, LPDDSURFACEDESC);
+  HRESULT (__stdcall *GetFourCCCodes)(IDirectDraw2 *This, LPDWORD, LPDWORD);
+  HRESULT (__stdcall *GetGDISurface)(IDirectDraw2 *This, LPDIRECTDRAWSURFACE *);
+  HRESULT (__stdcall *GetMonitorFrequency)(IDirectDraw2 *This, LPDWORD);
+  HRESULT (__stdcall *GetScanLine)(IDirectDraw2 *This, LPDWORD);
+  HRESULT (__stdcall *GetVerticalBlankStatus)(IDirectDraw2 *This, LPBOOL);
+  HRESULT (__stdcall *Initialize)(IDirectDraw2 *This, GUID *);
+  HRESULT (__stdcall *RestoreDisplayMode)(IDirectDraw2 *This);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectDraw2 *This, HWND, DWORD);
+  HRESULT (__stdcall *SetDisplayMode)(IDirectDraw2 *This, DWORD, DWORD, DWORD, DWORD, DWORD);
+  HRESULT (__stdcall *WaitForVerticalBlank)(IDirectDraw2 *This, DWORD, HANDLE);
+  HRESULT (__stdcall *GetAvailableVidMem)(IDirectDraw2 *This, LPDDSCAPS, LPDWORD, LPDWORD);
 };
 
 /* 250 */
-struct IDirectDraw2 {
-    IDirectDraw2Vtbl *lpVtbl;
+struct IDirectDraw2
+{
+  IDirectDraw2Vtbl *lpVtbl;
 };
 
 /* 253 */
@@ -2286,12 +2354,10 @@ typedef _DDSURFACEDESC2 *LPDDSURFACEDESC2;
 typedef IDirectDrawSurface4 *LPDIRECTDRAWSURFACE4;
 
 /* 265 */
-typedef HRESULT(__stdcall *LPDDENUMMODESCALLBACK2)(LPDDSURFACEDESC2, LPVOID);
+typedef HRESULT (__stdcall *LPDDENUMMODESCALLBACK2)(LPDDSURFACEDESC2, LPVOID);
 
 /* 263 */
-typedef HRESULT(__stdcall *LPDDENUMSURFACESCALLBACK2)(LPDIRECTDRAWSURFACE4,
-                                                      LPDDSURFACEDESC2,
-                                                      LPVOID);
+typedef HRESULT (__stdcall *LPDDENUMSURFACESCALLBACK2)(LPDIRECTDRAWSURFACE4, LPDDSURFACEDESC2, LPVOID);
 
 /* 264 */
 typedef DDSCAPS2 *LPDDSCAPS2;
@@ -2300,340 +2366,331 @@ typedef DDSCAPS2 *LPDDSCAPS2;
 typedef tagDDDEVICEIDENTIFIER *LPDDDEVICEIDENTIFIER;
 
 /* 251 */
-struct IDirectDraw4Vtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectDraw4 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDraw4 *This);
-    ULONG(__stdcall *Release)(IDirectDraw4 *This);
-    HRESULT(__stdcall *Compact)(IDirectDraw4 *This);
-    HRESULT(__stdcall *CreateClipper)(IDirectDraw4 *This, DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *);
-    HRESULT(__stdcall *CreatePalette)
-    (IDirectDraw4 *This, DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *);
-    HRESULT(__stdcall *CreateSurface)
-    (IDirectDraw4 *This, LPDDSURFACEDESC2, LPDIRECTDRAWSURFACE4 *, IUnknown *);
-    HRESULT(__stdcall *DuplicateSurface)
-    (IDirectDraw4 *This, LPDIRECTDRAWSURFACE4, LPDIRECTDRAWSURFACE4 *);
-    HRESULT(__stdcall *EnumDisplayModes)
-    (IDirectDraw4 *This, DWORD, LPDDSURFACEDESC2, LPVOID, LPDDENUMMODESCALLBACK2);
-    HRESULT(__stdcall *EnumSurfaces)
-    (IDirectDraw4 *This, DWORD, LPDDSURFACEDESC2, LPVOID, LPDDENUMSURFACESCALLBACK2);
-    HRESULT(__stdcall *FlipToGDISurface)(IDirectDraw4 *This);
-    HRESULT(__stdcall *GetCaps)(IDirectDraw4 *This, LPDDCAPS, LPDDCAPS);
-    HRESULT(__stdcall *GetDisplayMode)(IDirectDraw4 *This, LPDDSURFACEDESC2);
-    HRESULT(__stdcall *GetFourCCCodes)(IDirectDraw4 *This, LPDWORD, LPDWORD);
-    HRESULT(__stdcall *GetGDISurface)(IDirectDraw4 *This, LPDIRECTDRAWSURFACE4 *);
-    HRESULT(__stdcall *GetMonitorFrequency)(IDirectDraw4 *This, LPDWORD);
-    HRESULT(__stdcall *GetScanLine)(IDirectDraw4 *This, LPDWORD);
-    HRESULT(__stdcall *GetVerticalBlankStatus)(IDirectDraw4 *This, LPBOOL);
-    HRESULT(__stdcall *Initialize)(IDirectDraw4 *This, GUID *);
-    HRESULT(__stdcall *RestoreDisplayMode)(IDirectDraw4 *This);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectDraw4 *This, HWND, DWORD);
-    HRESULT(__stdcall *SetDisplayMode)(IDirectDraw4 *This, DWORD, DWORD, DWORD, DWORD, DWORD);
-    HRESULT(__stdcall *WaitForVerticalBlank)(IDirectDraw4 *This, DWORD, HANDLE);
-    HRESULT(__stdcall *GetAvailableVidMem)(IDirectDraw4 *This, LPDDSCAPS2, LPDWORD, LPDWORD);
-    HRESULT(__stdcall *GetSurfaceFromDC)(IDirectDraw4 *This, HDC, LPDIRECTDRAWSURFACE4 *);
-    HRESULT(__stdcall *RestoreAllSurfaces)(IDirectDraw4 *This);
-    HRESULT(__stdcall *TestCooperativeLevel)(IDirectDraw4 *This);
-    HRESULT(__stdcall *GetDeviceIdentifier)(IDirectDraw4 *This, LPDDDEVICEIDENTIFIER, DWORD);
+struct IDirectDraw4Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDraw4 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDraw4 *This);
+  ULONG (__stdcall *Release)(IDirectDraw4 *This);
+  HRESULT (__stdcall *Compact)(IDirectDraw4 *This);
+  HRESULT (__stdcall *CreateClipper)(IDirectDraw4 *This, DWORD, LPDIRECTDRAWCLIPPER *, IUnknown *);
+  HRESULT (__stdcall *CreatePalette)(IDirectDraw4 *This, DWORD, LPPALETTEENTRY, LPDIRECTDRAWPALETTE *, IUnknown *);
+  HRESULT (__stdcall *CreateSurface)(IDirectDraw4 *This, LPDDSURFACEDESC2, LPDIRECTDRAWSURFACE4 *, IUnknown *);
+  HRESULT (__stdcall *DuplicateSurface)(IDirectDraw4 *This, LPDIRECTDRAWSURFACE4, LPDIRECTDRAWSURFACE4 *);
+  HRESULT (__stdcall *EnumDisplayModes)(IDirectDraw4 *This, DWORD, LPDDSURFACEDESC2, LPVOID, LPDDENUMMODESCALLBACK2);
+  HRESULT (__stdcall *EnumSurfaces)(IDirectDraw4 *This, DWORD, LPDDSURFACEDESC2, LPVOID, LPDDENUMSURFACESCALLBACK2);
+  HRESULT (__stdcall *FlipToGDISurface)(IDirectDraw4 *This);
+  HRESULT (__stdcall *GetCaps)(IDirectDraw4 *This, LPDDCAPS, LPDDCAPS);
+  HRESULT (__stdcall *GetDisplayMode)(IDirectDraw4 *This, LPDDSURFACEDESC2);
+  HRESULT (__stdcall *GetFourCCCodes)(IDirectDraw4 *This, LPDWORD, LPDWORD);
+  HRESULT (__stdcall *GetGDISurface)(IDirectDraw4 *This, LPDIRECTDRAWSURFACE4 *);
+  HRESULT (__stdcall *GetMonitorFrequency)(IDirectDraw4 *This, LPDWORD);
+  HRESULT (__stdcall *GetScanLine)(IDirectDraw4 *This, LPDWORD);
+  HRESULT (__stdcall *GetVerticalBlankStatus)(IDirectDraw4 *This, LPBOOL);
+  HRESULT (__stdcall *Initialize)(IDirectDraw4 *This, GUID *);
+  HRESULT (__stdcall *RestoreDisplayMode)(IDirectDraw4 *This);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectDraw4 *This, HWND, DWORD);
+  HRESULT (__stdcall *SetDisplayMode)(IDirectDraw4 *This, DWORD, DWORD, DWORD, DWORD, DWORD);
+  HRESULT (__stdcall *WaitForVerticalBlank)(IDirectDraw4 *This, DWORD, HANDLE);
+  HRESULT (__stdcall *GetAvailableVidMem)(IDirectDraw4 *This, LPDDSCAPS2, LPDWORD, LPDWORD);
+  HRESULT (__stdcall *GetSurfaceFromDC)(IDirectDraw4 *This, HDC, LPDIRECTDRAWSURFACE4 *);
+  HRESULT (__stdcall *RestoreAllSurfaces)(IDirectDraw4 *This);
+  HRESULT (__stdcall *TestCooperativeLevel)(IDirectDraw4 *This);
+  HRESULT (__stdcall *GetDeviceIdentifier)(IDirectDraw4 *This, LPDDDEVICEIDENTIFIER, DWORD);
 };
 
 /* 252 */
-struct IDirectDraw4 {
-    IDirectDraw4Vtbl *lpVtbl;
+struct IDirectDraw4
+{
+  IDirectDraw4Vtbl *lpVtbl;
 };
 
 /* 255 */
-union _DDSURFACEDESC2::$091DBF7D405BE25E65B16620C008128B {
-    LONG lPitch;
-    DWORD dwLinearSize;
+union _DDSURFACEDESC2::$091DBF7D405BE25E65B16620C008128B
+{
+  LONG lPitch;
+  DWORD dwLinearSize;
 };
 
 /* 256 */
-union _DDSURFACEDESC2::$E56E877DD0D4D3B03846BC7047D947ED {
-    DWORD dwBackBufferCount;
-    DWORD dwDepth;
+union _DDSURFACEDESC2::$E56E877DD0D4D3B03846BC7047D947ED
+{
+  DWORD dwBackBufferCount;
+  DWORD dwDepth;
 };
 
 /* 257 */
-union _DDSURFACEDESC2::$F25F5019EA70F6B9B11866A0D418A260 {
-    DWORD dwMipMapCount;
-    DWORD dwRefreshRate;
-    DWORD dwSrcVBHandle;
+union _DDSURFACEDESC2::$F25F5019EA70F6B9B11866A0D418A260
+{
+  DWORD dwMipMapCount;
+  DWORD dwRefreshRate;
+  DWORD dwSrcVBHandle;
 };
 
 /* 258 */
-union _DDSURFACEDESC2::$5B12F1D1A21F9ED7C15CB39448B5A42D {
-    DDCOLORKEY ddckCKDestOverlay;
-    DWORD dwEmptyFaceColor;
+union _DDSURFACEDESC2::$5B12F1D1A21F9ED7C15CB39448B5A42D
+{
+  DDCOLORKEY ddckCKDestOverlay;
+  DWORD dwEmptyFaceColor;
 };
 
 /* 259 */
-union _DDSURFACEDESC2::$640C42AFF919FFD3058B9E962436B842 {
-    DDPIXELFORMAT ddpfPixelFormat;
-    DWORD dwFVF;
+union _DDSURFACEDESC2::$640C42AFF919FFD3058B9E962436B842
+{
+  DDPIXELFORMAT ddpfPixelFormat;
+  DWORD dwFVF;
 };
 
 /* 254 */
-struct _DDSURFACEDESC2 {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwHeight;
-    DWORD dwWidth;
-    union {
-        LONG lPitch;
-        DWORD dwLinearSize;
-    };
-    union {
-        DWORD dwBackBufferCount;
-        DWORD dwDepth;
-    };
-    union {
-        DWORD dwMipMapCount;
-        DWORD dwRefreshRate;
-        DWORD dwSrcVBHandle;
-    };
-    DWORD dwAlphaBitDepth;
-    DWORD dwReserved;
-    LPVOID lpSurface;
-    union {
-        DDCOLORKEY ddckCKDestOverlay;
-        DWORD dwEmptyFaceColor;
-    };
-    DDCOLORKEY ddckCKDestBlt;
-    DDCOLORKEY ddckCKSrcOverlay;
-    DDCOLORKEY ddckCKSrcBlt;
-    union {
-        DDPIXELFORMAT ddpfPixelFormat;
-        DWORD dwFVF;
-    };
-    DDSCAPS2 ddsCaps;
-    DWORD dwTextureStage;
+struct _DDSURFACEDESC2
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwHeight;
+  DWORD dwWidth;
+  union
+  {
+    LONG lPitch;
+    DWORD dwLinearSize;
+  };
+  union
+  {
+    DWORD dwBackBufferCount;
+    DWORD dwDepth;
+  };
+  union
+  {
+    DWORD dwMipMapCount;
+    DWORD dwRefreshRate;
+    DWORD dwSrcVBHandle;
+  };
+  DWORD dwAlphaBitDepth;
+  DWORD dwReserved;
+  LPVOID lpSurface;
+  union
+  {
+    DDCOLORKEY ddckCKDestOverlay;
+    DWORD dwEmptyFaceColor;
+  };
+  DDCOLORKEY ddckCKDestBlt;
+  DDCOLORKEY ddckCKSrcOverlay;
+  DDCOLORKEY ddckCKSrcBlt;
+  union
+  {
+    DDPIXELFORMAT ddpfPixelFormat;
+    DWORD dwFVF;
+  };
+  DDSCAPS2 ddsCaps;
+  DWORD dwTextureStage;
 };
 
 /* 261 */
-struct IDirectDrawSurface4 {
-    IDirectDrawSurface4Vtbl *lpVtbl;
+struct IDirectDrawSurface4
+{
+  IDirectDrawSurface4Vtbl *lpVtbl;
 };
 
 /* 267 */
-struct tagDDDEVICEIDENTIFIER {
-    char szDriver[512];
-    char szDescription[512];
-    LARGE_INTEGER liDriverVersion;
-    DWORD dwVendorId;
-    DWORD dwDeviceId;
-    DWORD dwSubSysId;
-    DWORD dwRevision;
-    GUID guidDeviceIdentifier;
+struct tagDDDEVICEIDENTIFIER
+{
+  char szDriver[512];
+  char szDescription[512];
+  LARGE_INTEGER liDriverVersion;
+  DWORD dwVendorId;
+  DWORD dwDeviceId;
+  DWORD dwSubSysId;
+  DWORD dwRevision;
+  GUID guidDeviceIdentifier;
 };
 
 /* 262 */
-struct IDirectDrawSurface4Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawSurface4 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawSurface4 *This);
-    ULONG(__stdcall *Release)(IDirectDrawSurface4 *This);
-    HRESULT(__stdcall *AddAttachedSurface)(IDirectDrawSurface4 *This, LPDIRECTDRAWSURFACE4);
-    HRESULT(__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface4 *This, LPRECT);
-    HRESULT(__stdcall *Blt)
-    (IDirectDrawSurface4 *This, LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDBLTFX);
-    HRESULT(__stdcall *BltBatch)(IDirectDrawSurface4 *This, LPDDBLTBATCH, DWORD, DWORD);
-    HRESULT(__stdcall *BltFast)
-    (IDirectDrawSurface4 *This, DWORD, DWORD, LPDIRECTDRAWSURFACE4, LPRECT, DWORD);
-    HRESULT(__stdcall *DeleteAttachedSurface)
-    (IDirectDrawSurface4 *This, DWORD, LPDIRECTDRAWSURFACE4);
-    HRESULT(__stdcall *EnumAttachedSurfaces)
-    (IDirectDrawSurface4 *This, LPVOID, LPDDENUMSURFACESCALLBACK2);
-    HRESULT(__stdcall *EnumOverlayZOrders)
-    (IDirectDrawSurface4 *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK2);
-    HRESULT(__stdcall *Flip)(IDirectDrawSurface4 *This, LPDIRECTDRAWSURFACE4, DWORD);
-    HRESULT(__stdcall *GetAttachedSurface)
-    (IDirectDrawSurface4 *This, LPDDSCAPS2, LPDIRECTDRAWSURFACE4 *);
-    HRESULT(__stdcall *GetBltStatus)(IDirectDrawSurface4 *This, DWORD);
-    HRESULT(__stdcall *GetCaps)(IDirectDrawSurface4 *This, LPDDSCAPS2);
-    HRESULT(__stdcall *GetClipper)(IDirectDrawSurface4 *This, LPDIRECTDRAWCLIPPER *);
-    HRESULT(__stdcall *GetColorKey)(IDirectDrawSurface4 *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *GetDC)(IDirectDrawSurface4 *This, HDC *);
-    HRESULT(__stdcall *GetFlipStatus)(IDirectDrawSurface4 *This, DWORD);
-    HRESULT(__stdcall *GetOverlayPosition)(IDirectDrawSurface4 *This, LPLONG, LPLONG);
-    HRESULT(__stdcall *GetPalette)(IDirectDrawSurface4 *This, LPDIRECTDRAWPALETTE *);
-    HRESULT(__stdcall *GetPixelFormat)(IDirectDrawSurface4 *This, LPDDPIXELFORMAT);
-    HRESULT(__stdcall *GetSurfaceDesc)(IDirectDrawSurface4 *This, LPDDSURFACEDESC2);
-    HRESULT(__stdcall *Initialize)(IDirectDrawSurface4 *This, LPDIRECTDRAW, LPDDSURFACEDESC2);
-    HRESULT(__stdcall *IsLost)(IDirectDrawSurface4 *This);
-    HRESULT(__stdcall *Lock)(IDirectDrawSurface4 *This, LPRECT, LPDDSURFACEDESC2, DWORD, HANDLE);
-    HRESULT(__stdcall *ReleaseDC)(IDirectDrawSurface4 *This, HDC);
-    HRESULT(__stdcall *Restore)(IDirectDrawSurface4 *This);
-    HRESULT(__stdcall *SetClipper)(IDirectDrawSurface4 *This, LPDIRECTDRAWCLIPPER);
-    HRESULT(__stdcall *SetColorKey)(IDirectDrawSurface4 *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *SetOverlayPosition)(IDirectDrawSurface4 *This, LONG, LONG);
-    HRESULT(__stdcall *SetPalette)(IDirectDrawSurface4 *This, LPDIRECTDRAWPALETTE);
-    HRESULT(__stdcall *Unlock)(IDirectDrawSurface4 *This, LPRECT);
-    HRESULT(__stdcall *UpdateOverlay)
-    (IDirectDrawSurface4 *This, LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDOVERLAYFX);
-    HRESULT(__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface4 *This, DWORD);
-    HRESULT(__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface4 *This, DWORD, LPDIRECTDRAWSURFACE4);
-    HRESULT(__stdcall *GetDDInterface)(IDirectDrawSurface4 *This, LPVOID *);
-    HRESULT(__stdcall *PageLock)(IDirectDrawSurface4 *This, DWORD);
-    HRESULT(__stdcall *PageUnlock)(IDirectDrawSurface4 *This, DWORD);
-    HRESULT(__stdcall *SetSurfaceDesc)(IDirectDrawSurface4 *This, LPDDSURFACEDESC2, DWORD);
-    HRESULT(__stdcall *SetPrivateData)
-    (IDirectDrawSurface4 *This, const GUID *const, LPVOID, DWORD, DWORD);
-    HRESULT(__stdcall *GetPrivateData)
-    (IDirectDrawSurface4 *This, const GUID *const, LPVOID, LPDWORD);
-    HRESULT(__stdcall *FreePrivateData)(IDirectDrawSurface4 *This, const GUID *const);
-    HRESULT(__stdcall *GetUniquenessValue)(IDirectDrawSurface4 *This, LPDWORD);
-    HRESULT(__stdcall *ChangeUniquenessValue)(IDirectDrawSurface4 *This);
+struct IDirectDrawSurface4Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawSurface4 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawSurface4 *This);
+  ULONG (__stdcall *Release)(IDirectDrawSurface4 *This);
+  HRESULT (__stdcall *AddAttachedSurface)(IDirectDrawSurface4 *This, LPDIRECTDRAWSURFACE4);
+  HRESULT (__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface4 *This, LPRECT);
+  HRESULT (__stdcall *Blt)(IDirectDrawSurface4 *This, LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDBLTFX);
+  HRESULT (__stdcall *BltBatch)(IDirectDrawSurface4 *This, LPDDBLTBATCH, DWORD, DWORD);
+  HRESULT (__stdcall *BltFast)(IDirectDrawSurface4 *This, DWORD, DWORD, LPDIRECTDRAWSURFACE4, LPRECT, DWORD);
+  HRESULT (__stdcall *DeleteAttachedSurface)(IDirectDrawSurface4 *This, DWORD, LPDIRECTDRAWSURFACE4);
+  HRESULT (__stdcall *EnumAttachedSurfaces)(IDirectDrawSurface4 *This, LPVOID, LPDDENUMSURFACESCALLBACK2);
+  HRESULT (__stdcall *EnumOverlayZOrders)(IDirectDrawSurface4 *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK2);
+  HRESULT (__stdcall *Flip)(IDirectDrawSurface4 *This, LPDIRECTDRAWSURFACE4, DWORD);
+  HRESULT (__stdcall *GetAttachedSurface)(IDirectDrawSurface4 *This, LPDDSCAPS2, LPDIRECTDRAWSURFACE4 *);
+  HRESULT (__stdcall *GetBltStatus)(IDirectDrawSurface4 *This, DWORD);
+  HRESULT (__stdcall *GetCaps)(IDirectDrawSurface4 *This, LPDDSCAPS2);
+  HRESULT (__stdcall *GetClipper)(IDirectDrawSurface4 *This, LPDIRECTDRAWCLIPPER *);
+  HRESULT (__stdcall *GetColorKey)(IDirectDrawSurface4 *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *GetDC)(IDirectDrawSurface4 *This, HDC *);
+  HRESULT (__stdcall *GetFlipStatus)(IDirectDrawSurface4 *This, DWORD);
+  HRESULT (__stdcall *GetOverlayPosition)(IDirectDrawSurface4 *This, LPLONG, LPLONG);
+  HRESULT (__stdcall *GetPalette)(IDirectDrawSurface4 *This, LPDIRECTDRAWPALETTE *);
+  HRESULT (__stdcall *GetPixelFormat)(IDirectDrawSurface4 *This, LPDDPIXELFORMAT);
+  HRESULT (__stdcall *GetSurfaceDesc)(IDirectDrawSurface4 *This, LPDDSURFACEDESC2);
+  HRESULT (__stdcall *Initialize)(IDirectDrawSurface4 *This, LPDIRECTDRAW, LPDDSURFACEDESC2);
+  HRESULT (__stdcall *IsLost)(IDirectDrawSurface4 *This);
+  HRESULT (__stdcall *Lock)(IDirectDrawSurface4 *This, LPRECT, LPDDSURFACEDESC2, DWORD, HANDLE);
+  HRESULT (__stdcall *ReleaseDC)(IDirectDrawSurface4 *This, HDC);
+  HRESULT (__stdcall *Restore)(IDirectDrawSurface4 *This);
+  HRESULT (__stdcall *SetClipper)(IDirectDrawSurface4 *This, LPDIRECTDRAWCLIPPER);
+  HRESULT (__stdcall *SetColorKey)(IDirectDrawSurface4 *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *SetOverlayPosition)(IDirectDrawSurface4 *This, LONG, LONG);
+  HRESULT (__stdcall *SetPalette)(IDirectDrawSurface4 *This, LPDIRECTDRAWPALETTE);
+  HRESULT (__stdcall *Unlock)(IDirectDrawSurface4 *This, LPRECT);
+  HRESULT (__stdcall *UpdateOverlay)(IDirectDrawSurface4 *This, LPRECT, LPDIRECTDRAWSURFACE4, LPRECT, DWORD, LPDDOVERLAYFX);
+  HRESULT (__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface4 *This, DWORD);
+  HRESULT (__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface4 *This, DWORD, LPDIRECTDRAWSURFACE4);
+  HRESULT (__stdcall *GetDDInterface)(IDirectDrawSurface4 *This, LPVOID *);
+  HRESULT (__stdcall *PageLock)(IDirectDrawSurface4 *This, DWORD);
+  HRESULT (__stdcall *PageUnlock)(IDirectDrawSurface4 *This, DWORD);
+  HRESULT (__stdcall *SetSurfaceDesc)(IDirectDrawSurface4 *This, LPDDSURFACEDESC2, DWORD);
+  HRESULT (__stdcall *SetPrivateData)(IDirectDrawSurface4 *This, const GUID *const, LPVOID, DWORD, DWORD);
+  HRESULT (__stdcall *GetPrivateData)(IDirectDrawSurface4 *This, const GUID *const, LPVOID, LPDWORD);
+  HRESULT (__stdcall *FreePrivateData)(IDirectDrawSurface4 *This, const GUID *const);
+  HRESULT (__stdcall *GetUniquenessValue)(IDirectDrawSurface4 *This, LPDWORD);
+  HRESULT (__stdcall *ChangeUniquenessValue)(IDirectDrawSurface4 *This);
 };
 
 /* 270 */
 typedef IDirectDrawSurface2 *LPDIRECTDRAWSURFACE2;
 
 /* 268 */
-struct IDirectDrawSurface2Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawSurface2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawSurface2 *This);
-    ULONG(__stdcall *Release)(IDirectDrawSurface2 *This);
-    HRESULT(__stdcall *AddAttachedSurface)(IDirectDrawSurface2 *This, LPDIRECTDRAWSURFACE2);
-    HRESULT(__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface2 *This, LPRECT);
-    HRESULT(__stdcall *Blt)
-    (IDirectDrawSurface2 *This, LPRECT, LPDIRECTDRAWSURFACE2, LPRECT, DWORD, LPDDBLTFX);
-    HRESULT(__stdcall *BltBatch)(IDirectDrawSurface2 *This, LPDDBLTBATCH, DWORD, DWORD);
-    HRESULT(__stdcall *BltFast)
-    (IDirectDrawSurface2 *This, DWORD, DWORD, LPDIRECTDRAWSURFACE2, LPRECT, DWORD);
-    HRESULT(__stdcall *DeleteAttachedSurface)
-    (IDirectDrawSurface2 *This, DWORD, LPDIRECTDRAWSURFACE2);
-    HRESULT(__stdcall *EnumAttachedSurfaces)
-    (IDirectDrawSurface2 *This, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *EnumOverlayZOrders)
-    (IDirectDrawSurface2 *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *Flip)(IDirectDrawSurface2 *This, LPDIRECTDRAWSURFACE2, DWORD);
-    HRESULT(__stdcall *GetAttachedSurface)
-    (IDirectDrawSurface2 *This, LPDDSCAPS, LPDIRECTDRAWSURFACE2 *);
-    HRESULT(__stdcall *GetBltStatus)(IDirectDrawSurface2 *This, DWORD);
-    HRESULT(__stdcall *GetCaps)(IDirectDrawSurface2 *This, LPDDSCAPS);
-    HRESULT(__stdcall *GetClipper)(IDirectDrawSurface2 *This, LPDIRECTDRAWCLIPPER *);
-    HRESULT(__stdcall *GetColorKey)(IDirectDrawSurface2 *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *GetDC)(IDirectDrawSurface2 *This, HDC *);
-    HRESULT(__stdcall *GetFlipStatus)(IDirectDrawSurface2 *This, DWORD);
-    HRESULT(__stdcall *GetOverlayPosition)(IDirectDrawSurface2 *This, LPLONG, LPLONG);
-    HRESULT(__stdcall *GetPalette)(IDirectDrawSurface2 *This, LPDIRECTDRAWPALETTE *);
-    HRESULT(__stdcall *GetPixelFormat)(IDirectDrawSurface2 *This, LPDDPIXELFORMAT);
-    HRESULT(__stdcall *GetSurfaceDesc)(IDirectDrawSurface2 *This, LPDDSURFACEDESC);
-    HRESULT(__stdcall *Initialize)(IDirectDrawSurface2 *This, LPDIRECTDRAW, LPDDSURFACEDESC);
-    HRESULT(__stdcall *IsLost)(IDirectDrawSurface2 *This);
-    HRESULT(__stdcall *Lock)(IDirectDrawSurface2 *This, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE);
-    HRESULT(__stdcall *ReleaseDC)(IDirectDrawSurface2 *This, HDC);
-    HRESULT(__stdcall *Restore)(IDirectDrawSurface2 *This);
-    HRESULT(__stdcall *SetClipper)(IDirectDrawSurface2 *This, LPDIRECTDRAWCLIPPER);
-    HRESULT(__stdcall *SetColorKey)(IDirectDrawSurface2 *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *SetOverlayPosition)(IDirectDrawSurface2 *This, LONG, LONG);
-    HRESULT(__stdcall *SetPalette)(IDirectDrawSurface2 *This, LPDIRECTDRAWPALETTE);
-    HRESULT(__stdcall *Unlock)(IDirectDrawSurface2 *This, LPVOID);
-    HRESULT(__stdcall *UpdateOverlay)
-    (IDirectDrawSurface2 *This, LPRECT, LPDIRECTDRAWSURFACE2, LPRECT, DWORD, LPDDOVERLAYFX);
-    HRESULT(__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface2 *This, DWORD);
-    HRESULT(__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface2 *This, DWORD, LPDIRECTDRAWSURFACE2);
-    HRESULT(__stdcall *GetDDInterface)(IDirectDrawSurface2 *This, LPVOID *);
-    HRESULT(__stdcall *PageLock)(IDirectDrawSurface2 *This, DWORD);
-    HRESULT(__stdcall *PageUnlock)(IDirectDrawSurface2 *This, DWORD);
+struct IDirectDrawSurface2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawSurface2 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawSurface2 *This);
+  ULONG (__stdcall *Release)(IDirectDrawSurface2 *This);
+  HRESULT (__stdcall *AddAttachedSurface)(IDirectDrawSurface2 *This, LPDIRECTDRAWSURFACE2);
+  HRESULT (__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface2 *This, LPRECT);
+  HRESULT (__stdcall *Blt)(IDirectDrawSurface2 *This, LPRECT, LPDIRECTDRAWSURFACE2, LPRECT, DWORD, LPDDBLTFX);
+  HRESULT (__stdcall *BltBatch)(IDirectDrawSurface2 *This, LPDDBLTBATCH, DWORD, DWORD);
+  HRESULT (__stdcall *BltFast)(IDirectDrawSurface2 *This, DWORD, DWORD, LPDIRECTDRAWSURFACE2, LPRECT, DWORD);
+  HRESULT (__stdcall *DeleteAttachedSurface)(IDirectDrawSurface2 *This, DWORD, LPDIRECTDRAWSURFACE2);
+  HRESULT (__stdcall *EnumAttachedSurfaces)(IDirectDrawSurface2 *This, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *EnumOverlayZOrders)(IDirectDrawSurface2 *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *Flip)(IDirectDrawSurface2 *This, LPDIRECTDRAWSURFACE2, DWORD);
+  HRESULT (__stdcall *GetAttachedSurface)(IDirectDrawSurface2 *This, LPDDSCAPS, LPDIRECTDRAWSURFACE2 *);
+  HRESULT (__stdcall *GetBltStatus)(IDirectDrawSurface2 *This, DWORD);
+  HRESULT (__stdcall *GetCaps)(IDirectDrawSurface2 *This, LPDDSCAPS);
+  HRESULT (__stdcall *GetClipper)(IDirectDrawSurface2 *This, LPDIRECTDRAWCLIPPER *);
+  HRESULT (__stdcall *GetColorKey)(IDirectDrawSurface2 *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *GetDC)(IDirectDrawSurface2 *This, HDC *);
+  HRESULT (__stdcall *GetFlipStatus)(IDirectDrawSurface2 *This, DWORD);
+  HRESULT (__stdcall *GetOverlayPosition)(IDirectDrawSurface2 *This, LPLONG, LPLONG);
+  HRESULT (__stdcall *GetPalette)(IDirectDrawSurface2 *This, LPDIRECTDRAWPALETTE *);
+  HRESULT (__stdcall *GetPixelFormat)(IDirectDrawSurface2 *This, LPDDPIXELFORMAT);
+  HRESULT (__stdcall *GetSurfaceDesc)(IDirectDrawSurface2 *This, LPDDSURFACEDESC);
+  HRESULT (__stdcall *Initialize)(IDirectDrawSurface2 *This, LPDIRECTDRAW, LPDDSURFACEDESC);
+  HRESULT (__stdcall *IsLost)(IDirectDrawSurface2 *This);
+  HRESULT (__stdcall *Lock)(IDirectDrawSurface2 *This, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE);
+  HRESULT (__stdcall *ReleaseDC)(IDirectDrawSurface2 *This, HDC);
+  HRESULT (__stdcall *Restore)(IDirectDrawSurface2 *This);
+  HRESULT (__stdcall *SetClipper)(IDirectDrawSurface2 *This, LPDIRECTDRAWCLIPPER);
+  HRESULT (__stdcall *SetColorKey)(IDirectDrawSurface2 *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *SetOverlayPosition)(IDirectDrawSurface2 *This, LONG, LONG);
+  HRESULT (__stdcall *SetPalette)(IDirectDrawSurface2 *This, LPDIRECTDRAWPALETTE);
+  HRESULT (__stdcall *Unlock)(IDirectDrawSurface2 *This, LPVOID);
+  HRESULT (__stdcall *UpdateOverlay)(IDirectDrawSurface2 *This, LPRECT, LPDIRECTDRAWSURFACE2, LPRECT, DWORD, LPDDOVERLAYFX);
+  HRESULT (__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface2 *This, DWORD);
+  HRESULT (__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface2 *This, DWORD, LPDIRECTDRAWSURFACE2);
+  HRESULT (__stdcall *GetDDInterface)(IDirectDrawSurface2 *This, LPVOID *);
+  HRESULT (__stdcall *PageLock)(IDirectDrawSurface2 *This, DWORD);
+  HRESULT (__stdcall *PageUnlock)(IDirectDrawSurface2 *This, DWORD);
 };
 
 /* 269 */
-struct IDirectDrawSurface2 {
-    IDirectDrawSurface2Vtbl *lpVtbl;
+struct IDirectDrawSurface2
+{
+  IDirectDrawSurface2Vtbl *lpVtbl;
 };
 
 /* 273 */
 typedef IDirectDrawSurface3 *LPDIRECTDRAWSURFACE3;
 
 /* 271 */
-struct IDirectDrawSurface3Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawSurface3 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawSurface3 *This);
-    ULONG(__stdcall *Release)(IDirectDrawSurface3 *This);
-    HRESULT(__stdcall *AddAttachedSurface)(IDirectDrawSurface3 *This, LPDIRECTDRAWSURFACE3);
-    HRESULT(__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface3 *This, LPRECT);
-    HRESULT(__stdcall *Blt)
-    (IDirectDrawSurface3 *This, LPRECT, LPDIRECTDRAWSURFACE3, LPRECT, DWORD, LPDDBLTFX);
-    HRESULT(__stdcall *BltBatch)(IDirectDrawSurface3 *This, LPDDBLTBATCH, DWORD, DWORD);
-    HRESULT(__stdcall *BltFast)
-    (IDirectDrawSurface3 *This, DWORD, DWORD, LPDIRECTDRAWSURFACE3, LPRECT, DWORD);
-    HRESULT(__stdcall *DeleteAttachedSurface)
-    (IDirectDrawSurface3 *This, DWORD, LPDIRECTDRAWSURFACE3);
-    HRESULT(__stdcall *EnumAttachedSurfaces)
-    (IDirectDrawSurface3 *This, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *EnumOverlayZOrders)
-    (IDirectDrawSurface3 *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK);
-    HRESULT(__stdcall *Flip)(IDirectDrawSurface3 *This, LPDIRECTDRAWSURFACE3, DWORD);
-    HRESULT(__stdcall *GetAttachedSurface)
-    (IDirectDrawSurface3 *This, LPDDSCAPS, LPDIRECTDRAWSURFACE3 *);
-    HRESULT(__stdcall *GetBltStatus)(IDirectDrawSurface3 *This, DWORD);
-    HRESULT(__stdcall *GetCaps)(IDirectDrawSurface3 *This, LPDDSCAPS);
-    HRESULT(__stdcall *GetClipper)(IDirectDrawSurface3 *This, LPDIRECTDRAWCLIPPER *);
-    HRESULT(__stdcall *GetColorKey)(IDirectDrawSurface3 *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *GetDC)(IDirectDrawSurface3 *This, HDC *);
-    HRESULT(__stdcall *GetFlipStatus)(IDirectDrawSurface3 *This, DWORD);
-    HRESULT(__stdcall *GetOverlayPosition)(IDirectDrawSurface3 *This, LPLONG, LPLONG);
-    HRESULT(__stdcall *GetPalette)(IDirectDrawSurface3 *This, LPDIRECTDRAWPALETTE *);
-    HRESULT(__stdcall *GetPixelFormat)(IDirectDrawSurface3 *This, LPDDPIXELFORMAT);
-    HRESULT(__stdcall *GetSurfaceDesc)(IDirectDrawSurface3 *This, LPDDSURFACEDESC);
-    HRESULT(__stdcall *Initialize)(IDirectDrawSurface3 *This, LPDIRECTDRAW, LPDDSURFACEDESC);
-    HRESULT(__stdcall *IsLost)(IDirectDrawSurface3 *This);
-    HRESULT(__stdcall *Lock)(IDirectDrawSurface3 *This, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE);
-    HRESULT(__stdcall *ReleaseDC)(IDirectDrawSurface3 *This, HDC);
-    HRESULT(__stdcall *Restore)(IDirectDrawSurface3 *This);
-    HRESULT(__stdcall *SetClipper)(IDirectDrawSurface3 *This, LPDIRECTDRAWCLIPPER);
-    HRESULT(__stdcall *SetColorKey)(IDirectDrawSurface3 *This, DWORD, LPDDCOLORKEY);
-    HRESULT(__stdcall *SetOverlayPosition)(IDirectDrawSurface3 *This, LONG, LONG);
-    HRESULT(__stdcall *SetPalette)(IDirectDrawSurface3 *This, LPDIRECTDRAWPALETTE);
-    HRESULT(__stdcall *Unlock)(IDirectDrawSurface3 *This, LPVOID);
-    HRESULT(__stdcall *UpdateOverlay)
-    (IDirectDrawSurface3 *This, LPRECT, LPDIRECTDRAWSURFACE3, LPRECT, DWORD, LPDDOVERLAYFX);
-    HRESULT(__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface3 *This, DWORD);
-    HRESULT(__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface3 *This, DWORD, LPDIRECTDRAWSURFACE3);
-    HRESULT(__stdcall *GetDDInterface)(IDirectDrawSurface3 *This, LPVOID *);
-    HRESULT(__stdcall *PageLock)(IDirectDrawSurface3 *This, DWORD);
-    HRESULT(__stdcall *PageUnlock)(IDirectDrawSurface3 *This, DWORD);
-    HRESULT(__stdcall *SetSurfaceDesc)(IDirectDrawSurface3 *This, LPDDSURFACEDESC, DWORD);
+struct IDirectDrawSurface3Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawSurface3 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawSurface3 *This);
+  ULONG (__stdcall *Release)(IDirectDrawSurface3 *This);
+  HRESULT (__stdcall *AddAttachedSurface)(IDirectDrawSurface3 *This, LPDIRECTDRAWSURFACE3);
+  HRESULT (__stdcall *AddOverlayDirtyRect)(IDirectDrawSurface3 *This, LPRECT);
+  HRESULT (__stdcall *Blt)(IDirectDrawSurface3 *This, LPRECT, LPDIRECTDRAWSURFACE3, LPRECT, DWORD, LPDDBLTFX);
+  HRESULT (__stdcall *BltBatch)(IDirectDrawSurface3 *This, LPDDBLTBATCH, DWORD, DWORD);
+  HRESULT (__stdcall *BltFast)(IDirectDrawSurface3 *This, DWORD, DWORD, LPDIRECTDRAWSURFACE3, LPRECT, DWORD);
+  HRESULT (__stdcall *DeleteAttachedSurface)(IDirectDrawSurface3 *This, DWORD, LPDIRECTDRAWSURFACE3);
+  HRESULT (__stdcall *EnumAttachedSurfaces)(IDirectDrawSurface3 *This, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *EnumOverlayZOrders)(IDirectDrawSurface3 *This, DWORD, LPVOID, LPDDENUMSURFACESCALLBACK);
+  HRESULT (__stdcall *Flip)(IDirectDrawSurface3 *This, LPDIRECTDRAWSURFACE3, DWORD);
+  HRESULT (__stdcall *GetAttachedSurface)(IDirectDrawSurface3 *This, LPDDSCAPS, LPDIRECTDRAWSURFACE3 *);
+  HRESULT (__stdcall *GetBltStatus)(IDirectDrawSurface3 *This, DWORD);
+  HRESULT (__stdcall *GetCaps)(IDirectDrawSurface3 *This, LPDDSCAPS);
+  HRESULT (__stdcall *GetClipper)(IDirectDrawSurface3 *This, LPDIRECTDRAWCLIPPER *);
+  HRESULT (__stdcall *GetColorKey)(IDirectDrawSurface3 *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *GetDC)(IDirectDrawSurface3 *This, HDC *);
+  HRESULT (__stdcall *GetFlipStatus)(IDirectDrawSurface3 *This, DWORD);
+  HRESULT (__stdcall *GetOverlayPosition)(IDirectDrawSurface3 *This, LPLONG, LPLONG);
+  HRESULT (__stdcall *GetPalette)(IDirectDrawSurface3 *This, LPDIRECTDRAWPALETTE *);
+  HRESULT (__stdcall *GetPixelFormat)(IDirectDrawSurface3 *This, LPDDPIXELFORMAT);
+  HRESULT (__stdcall *GetSurfaceDesc)(IDirectDrawSurface3 *This, LPDDSURFACEDESC);
+  HRESULT (__stdcall *Initialize)(IDirectDrawSurface3 *This, LPDIRECTDRAW, LPDDSURFACEDESC);
+  HRESULT (__stdcall *IsLost)(IDirectDrawSurface3 *This);
+  HRESULT (__stdcall *Lock)(IDirectDrawSurface3 *This, LPRECT, LPDDSURFACEDESC, DWORD, HANDLE);
+  HRESULT (__stdcall *ReleaseDC)(IDirectDrawSurface3 *This, HDC);
+  HRESULT (__stdcall *Restore)(IDirectDrawSurface3 *This);
+  HRESULT (__stdcall *SetClipper)(IDirectDrawSurface3 *This, LPDIRECTDRAWCLIPPER);
+  HRESULT (__stdcall *SetColorKey)(IDirectDrawSurface3 *This, DWORD, LPDDCOLORKEY);
+  HRESULT (__stdcall *SetOverlayPosition)(IDirectDrawSurface3 *This, LONG, LONG);
+  HRESULT (__stdcall *SetPalette)(IDirectDrawSurface3 *This, LPDIRECTDRAWPALETTE);
+  HRESULT (__stdcall *Unlock)(IDirectDrawSurface3 *This, LPVOID);
+  HRESULT (__stdcall *UpdateOverlay)(IDirectDrawSurface3 *This, LPRECT, LPDIRECTDRAWSURFACE3, LPRECT, DWORD, LPDDOVERLAYFX);
+  HRESULT (__stdcall *UpdateOverlayDisplay)(IDirectDrawSurface3 *This, DWORD);
+  HRESULT (__stdcall *UpdateOverlayZOrder)(IDirectDrawSurface3 *This, DWORD, LPDIRECTDRAWSURFACE3);
+  HRESULT (__stdcall *GetDDInterface)(IDirectDrawSurface3 *This, LPVOID *);
+  HRESULT (__stdcall *PageLock)(IDirectDrawSurface3 *This, DWORD);
+  HRESULT (__stdcall *PageUnlock)(IDirectDrawSurface3 *This, DWORD);
+  HRESULT (__stdcall *SetSurfaceDesc)(IDirectDrawSurface3 *This, LPDDSURFACEDESC, DWORD);
 };
 
 /* 272 */
-struct IDirectDrawSurface3 {
-    IDirectDrawSurface3Vtbl *lpVtbl;
+struct IDirectDrawSurface3
+{
+  IDirectDrawSurface3Vtbl *lpVtbl;
 };
 
 /* 276 */
 typedef _DDCOLORCONTROL *LPDDCOLORCONTROL;
 
 /* 274 */
-struct IDirectDrawColorControlVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawColorControl *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawColorControl *This);
-    ULONG(__stdcall *Release)(IDirectDrawColorControl *This);
-    HRESULT(__stdcall *GetColorControls)(IDirectDrawColorControl *This, LPDDCOLORCONTROL);
-    HRESULT(__stdcall *SetColorControls)(IDirectDrawColorControl *This, LPDDCOLORCONTROL);
+struct IDirectDrawColorControlVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawColorControl *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawColorControl *This);
+  ULONG (__stdcall *Release)(IDirectDrawColorControl *This);
+  HRESULT (__stdcall *GetColorControls)(IDirectDrawColorControl *This, LPDDCOLORCONTROL);
+  HRESULT (__stdcall *SetColorControls)(IDirectDrawColorControl *This, LPDDCOLORCONTROL);
 };
 
 /* 275 */
-struct IDirectDrawColorControl {
-    IDirectDrawColorControlVtbl *lpVtbl;
+struct IDirectDrawColorControl
+{
+  IDirectDrawColorControlVtbl *lpVtbl;
 };
 
 /* 277 */
-struct _DDCOLORCONTROL {
-    DWORD dwSize;
-    DWORD dwFlags;
-    LONG lBrightness;
-    LONG lContrast;
-    LONG lHue;
-    LONG lSaturation;
-    LONG lSharpness;
-    LONG lGamma;
-    LONG lColorEnable;
-    DWORD dwReserved1;
+struct _DDCOLORCONTROL
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  LONG lBrightness;
+  LONG lContrast;
+  LONG lHue;
+  LONG lSaturation;
+  LONG lSharpness;
+  LONG lGamma;
+  LONG lColorEnable;
+  DWORD dwReserved1;
 };
 
 /* 281 */
@@ -2643,25 +2700,27 @@ typedef _DDGAMMARAMP DDGAMMARAMP;
 typedef DDGAMMARAMP *LPDDGAMMARAMP;
 
 /* 278 */
-struct IDirectDrawGammaControlVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawGammaControl *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawGammaControl *This);
-    ULONG(__stdcall *Release)(IDirectDrawGammaControl *This);
-    HRESULT(__stdcall *GetGammaRamp)(IDirectDrawGammaControl *This, DWORD, LPDDGAMMARAMP);
-    HRESULT(__stdcall *SetGammaRamp)(IDirectDrawGammaControl *This, DWORD, LPDDGAMMARAMP);
+struct IDirectDrawGammaControlVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawGammaControl *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawGammaControl *This);
+  ULONG (__stdcall *Release)(IDirectDrawGammaControl *This);
+  HRESULT (__stdcall *GetGammaRamp)(IDirectDrawGammaControl *This, DWORD, LPDDGAMMARAMP);
+  HRESULT (__stdcall *SetGammaRamp)(IDirectDrawGammaControl *This, DWORD, LPDDGAMMARAMP);
 };
 
 /* 279 */
-struct IDirectDrawGammaControl {
-    IDirectDrawGammaControlVtbl *lpVtbl;
+struct IDirectDrawGammaControl
+{
+  IDirectDrawGammaControlVtbl *lpVtbl;
 };
 
 /* 282 */
-struct _DDGAMMARAMP {
-    WORD red[256];
-    WORD green[256];
-    WORD blue[256];
+struct _DDGAMMARAMP
+{
+  WORD red[256];
+  WORD green[256];
+  WORD blue[256];
 };
 
 /* 285 */
@@ -2674,7 +2733,7 @@ typedef IDirectDrawVideoPort *LPDIRECTDRAWVIDEOPORT;
 typedef _DDVIDEOPORTCAPS *LPDDVIDEOPORTCAPS;
 
 /* 298 */
-typedef HRESULT(__stdcall *LPDDENUMVIDEOCALLBACK)(LPDDVIDEOPORTCAPS, LPVOID);
+typedef HRESULT (__stdcall *LPDDENUMVIDEOCALLBACK)(LPDDVIDEOPORTCAPS, LPVOID);
 
 /* 299 */
 typedef _DDVIDEOPORTCONNECT *LPDDVIDEOPORTCONNECT;
@@ -2683,90 +2742,92 @@ typedef _DDVIDEOPORTCONNECT *LPDDVIDEOPORTCONNECT;
 typedef _DDVIDEOPORTSTATUS *LPDDVIDEOPORTSTATUS;
 
 /* 283 */
-struct IDDVideoPortContainerVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDDVideoPortContainer *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDDVideoPortContainer *This);
-    ULONG(__stdcall *Release)(IDDVideoPortContainer *This);
-    HRESULT(__stdcall *CreateVideoPort)
-    (IDDVideoPortContainer *This, DWORD, LPDDVIDEOPORTDESC, LPDIRECTDRAWVIDEOPORT *, IUnknown *);
-    HRESULT(__stdcall *EnumVideoPorts)
-    (IDDVideoPortContainer *This, DWORD, LPDDVIDEOPORTCAPS, LPVOID, LPDDENUMVIDEOCALLBACK);
-    HRESULT(__stdcall *GetVideoPortConnectInfo)
-    (IDDVideoPortContainer *This, DWORD, LPDWORD pcInfo, LPDDVIDEOPORTCONNECT);
-    HRESULT(__stdcall *QueryVideoPortStatus)
-    (IDDVideoPortContainer *This, DWORD, LPDDVIDEOPORTSTATUS);
+struct IDDVideoPortContainerVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDDVideoPortContainer *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDDVideoPortContainer *This);
+  ULONG (__stdcall *Release)(IDDVideoPortContainer *This);
+  HRESULT (__stdcall *CreateVideoPort)(IDDVideoPortContainer *This, DWORD, LPDDVIDEOPORTDESC, LPDIRECTDRAWVIDEOPORT *, IUnknown *);
+  HRESULT (__stdcall *EnumVideoPorts)(IDDVideoPortContainer *This, DWORD, LPDDVIDEOPORTCAPS, LPVOID, LPDDENUMVIDEOCALLBACK);
+  HRESULT (__stdcall *GetVideoPortConnectInfo)(IDDVideoPortContainer *This, DWORD, LPDWORD pcInfo, LPDDVIDEOPORTCONNECT);
+  HRESULT (__stdcall *QueryVideoPortStatus)(IDDVideoPortContainer *This, DWORD, LPDDVIDEOPORTSTATUS);
 };
 
 /* 284 */
-struct IDDVideoPortContainer {
-    IDDVideoPortContainerVtbl *lpVtbl;
+struct IDDVideoPortContainer
+{
+  IDDVideoPortContainerVtbl *lpVtbl;
 };
 
 /* 288 */
-struct _DDVIDEOPORTCONNECT {
-    DWORD dwSize;
-    DWORD dwPortWidth;
-    GUID guidTypeID;
-    DWORD dwFlags;
-    ULONG_PTR dwReserved1;
+struct _DDVIDEOPORTCONNECT
+{
+  DWORD dwSize;
+  DWORD dwPortWidth;
+  GUID guidTypeID;
+  DWORD dwFlags;
+  ULONG_PTR dwReserved1;
 };
 
 /* 287 */
 typedef _DDVIDEOPORTCONNECT DDVIDEOPORTCONNECT;
 
 /* 286 */
-struct _DDVIDEOPORTDESC {
-    DWORD dwSize;
-    DWORD dwFieldWidth;
-    DWORD dwVBIWidth;
-    DWORD dwFieldHeight;
-    DWORD dwMicrosecondsPerField;
-    DWORD dwMaxPixelsPerSecond;
-    DWORD dwVideoPortID;
-    DWORD dwReserved1;
-    DDVIDEOPORTCONNECT VideoPortType;
-    ULONG_PTR dwReserved2;
-    ULONG_PTR dwReserved3;
+struct _DDVIDEOPORTDESC
+{
+  DWORD dwSize;
+  DWORD dwFieldWidth;
+  DWORD dwVBIWidth;
+  DWORD dwFieldHeight;
+  DWORD dwMicrosecondsPerField;
+  DWORD dwMaxPixelsPerSecond;
+  DWORD dwVideoPortID;
+  DWORD dwReserved1;
+  DDVIDEOPORTCONNECT VideoPortType;
+  ULONG_PTR dwReserved2;
+  ULONG_PTR dwReserved3;
 };
 
 /* 290 */
-struct IDirectDrawVideoPort {
-    IDirectDrawVideoPortVtbl *lpVtbl;
+struct IDirectDrawVideoPort
+{
+  IDirectDrawVideoPortVtbl *lpVtbl;
 };
 
 /* 297 */
-struct _DDVIDEOPORTCAPS {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwMaxWidth;
-    DWORD dwMaxVBIWidth;
-    DWORD dwMaxHeight;
-    DWORD dwVideoPortID;
-    DWORD dwCaps;
-    DWORD dwFX;
-    DWORD dwNumAutoFlipSurfaces;
-    DWORD dwAlignVideoPortBoundary;
-    DWORD dwAlignVideoPortPrescaleWidth;
-    DWORD dwAlignVideoPortCropBoundary;
-    DWORD dwAlignVideoPortCropWidth;
-    DWORD dwPreshrinkXStep;
-    DWORD dwPreshrinkYStep;
-    DWORD dwNumVBIAutoFlipSurfaces;
-    DWORD dwNumPreferredAutoflip;
-    WORD wNumFilterTapsX;
-    WORD wNumFilterTapsY;
+struct _DDVIDEOPORTCAPS
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwMaxWidth;
+  DWORD dwMaxVBIWidth;
+  DWORD dwMaxHeight;
+  DWORD dwVideoPortID;
+  DWORD dwCaps;
+  DWORD dwFX;
+  DWORD dwNumAutoFlipSurfaces;
+  DWORD dwAlignVideoPortBoundary;
+  DWORD dwAlignVideoPortPrescaleWidth;
+  DWORD dwAlignVideoPortCropBoundary;
+  DWORD dwAlignVideoPortCropWidth;
+  DWORD dwPreshrinkXStep;
+  DWORD dwPreshrinkYStep;
+  DWORD dwNumVBIAutoFlipSurfaces;
+  DWORD dwNumPreferredAutoflip;
+  WORD wNumFilterTapsX;
+  WORD wNumFilterTapsY;
 };
 
 /* 301 */
-struct _DDVIDEOPORTSTATUS {
-    DWORD dwSize;
-    BOOL bInUse;
-    DWORD dwFlags;
-    DWORD dwReserved1;
-    DDVIDEOPORTCONNECT VideoPortType;
-    ULONG_PTR dwReserved2;
-    ULONG_PTR dwReserved3;
+struct _DDVIDEOPORTSTATUS
+{
+  DWORD dwSize;
+  BOOL bInUse;
+  DWORD dwFlags;
+  DWORD dwReserved1;
+  DDVIDEOPORTCONNECT VideoPortType;
+  ULONG_PTR dwReserved2;
+  ULONG_PTR dwReserved3;
 };
 
 /* 292 */
@@ -2776,57 +2837,56 @@ typedef _DDVIDEOPORTBANDWIDTH *LPDDVIDEOPORTBANDWIDTH;
 typedef _DDVIDEOPORTINFO *LPDDVIDEOPORTINFO;
 
 /* 291 */
-struct IDirectDrawVideoPortVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawVideoPort *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawVideoPort *This);
-    ULONG(__stdcall *Release)(IDirectDrawVideoPort *This);
-    HRESULT(__stdcall *Flip)(IDirectDrawVideoPort *This, LPDIRECTDRAWSURFACE, DWORD);
-    HRESULT(__stdcall *GetBandwidthInfo)
-    (IDirectDrawVideoPort *This, LPDDPIXELFORMAT, DWORD, DWORD, DWORD, LPDDVIDEOPORTBANDWIDTH);
-    HRESULT(__stdcall *GetColorControls)(IDirectDrawVideoPort *This, LPDDCOLORCONTROL);
-    HRESULT(__stdcall *GetInputFormats)
-    (IDirectDrawVideoPort *This, LPDWORD lpNumFormats, LPDDPIXELFORMAT, DWORD);
-    HRESULT(__stdcall *GetOutputFormats)
-    (IDirectDrawVideoPort *This, LPDDPIXELFORMAT, LPDWORD lpNumFormats, LPDDPIXELFORMAT, DWORD);
-    HRESULT(__stdcall *GetFieldPolarity)(IDirectDrawVideoPort *This, LPBOOL);
-    HRESULT(__stdcall *GetVideoLine)(IDirectDrawVideoPort *This, LPDWORD);
-    HRESULT(__stdcall *GetVideoSignalStatus)(IDirectDrawVideoPort *This, LPDWORD);
-    HRESULT(__stdcall *SetColorControls)(IDirectDrawVideoPort *This, LPDDCOLORCONTROL);
-    HRESULT(__stdcall *SetTargetSurface)(IDirectDrawVideoPort *This, LPDIRECTDRAWSURFACE, DWORD);
-    HRESULT(__stdcall *StartVideo)(IDirectDrawVideoPort *This, LPDDVIDEOPORTINFO);
-    HRESULT(__stdcall *StopVideo)(IDirectDrawVideoPort *This);
-    HRESULT(__stdcall *UpdateVideo)(IDirectDrawVideoPort *This, LPDDVIDEOPORTINFO);
-    HRESULT(__stdcall *WaitForSync)(IDirectDrawVideoPort *This, DWORD, DWORD, DWORD);
+struct IDirectDrawVideoPortVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawVideoPort *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawVideoPort *This);
+  ULONG (__stdcall *Release)(IDirectDrawVideoPort *This);
+  HRESULT (__stdcall *Flip)(IDirectDrawVideoPort *This, LPDIRECTDRAWSURFACE, DWORD);
+  HRESULT (__stdcall *GetBandwidthInfo)(IDirectDrawVideoPort *This, LPDDPIXELFORMAT, DWORD, DWORD, DWORD, LPDDVIDEOPORTBANDWIDTH);
+  HRESULT (__stdcall *GetColorControls)(IDirectDrawVideoPort *This, LPDDCOLORCONTROL);
+  HRESULT (__stdcall *GetInputFormats)(IDirectDrawVideoPort *This, LPDWORD lpNumFormats, LPDDPIXELFORMAT, DWORD);
+  HRESULT (__stdcall *GetOutputFormats)(IDirectDrawVideoPort *This, LPDDPIXELFORMAT, LPDWORD lpNumFormats, LPDDPIXELFORMAT, DWORD);
+  HRESULT (__stdcall *GetFieldPolarity)(IDirectDrawVideoPort *This, LPBOOL);
+  HRESULT (__stdcall *GetVideoLine)(IDirectDrawVideoPort *This, LPDWORD);
+  HRESULT (__stdcall *GetVideoSignalStatus)(IDirectDrawVideoPort *This, LPDWORD);
+  HRESULT (__stdcall *SetColorControls)(IDirectDrawVideoPort *This, LPDDCOLORCONTROL);
+  HRESULT (__stdcall *SetTargetSurface)(IDirectDrawVideoPort *This, LPDIRECTDRAWSURFACE, DWORD);
+  HRESULT (__stdcall *StartVideo)(IDirectDrawVideoPort *This, LPDDVIDEOPORTINFO);
+  HRESULT (__stdcall *StopVideo)(IDirectDrawVideoPort *This);
+  HRESULT (__stdcall *UpdateVideo)(IDirectDrawVideoPort *This, LPDDVIDEOPORTINFO);
+  HRESULT (__stdcall *WaitForSync)(IDirectDrawVideoPort *This, DWORD, DWORD, DWORD);
 };
 
 /* 293 */
-struct _DDVIDEOPORTBANDWIDTH {
-    DWORD dwSize;
-    DWORD dwCaps;
-    DWORD dwOverlay;
-    DWORD dwColorkey;
-    DWORD dwYInterpolate;
-    DWORD dwYInterpAndColorkey;
-    ULONG_PTR dwReserved1;
-    ULONG_PTR dwReserved2;
+struct _DDVIDEOPORTBANDWIDTH
+{
+  DWORD dwSize;
+  DWORD dwCaps;
+  DWORD dwOverlay;
+  DWORD dwColorkey;
+  DWORD dwYInterpolate;
+  DWORD dwYInterpAndColorkey;
+  ULONG_PTR dwReserved1;
+  ULONG_PTR dwReserved2;
 };
 
 /* 295 */
-struct _DDVIDEOPORTINFO {
-    DWORD dwSize;
-    DWORD dwOriginX;
-    DWORD dwOriginY;
-    DWORD dwVPFlags;
-    RECT rCrop;
-    DWORD dwPrescaleWidth;
-    DWORD dwPrescaleHeight;
-    LPDDPIXELFORMAT lpddpfInputFormat;
-    LPDDPIXELFORMAT lpddpfVBIInputFormat;
-    LPDDPIXELFORMAT lpddpfVBIOutputFormat;
-    DWORD dwVBIHeight;
-    ULONG_PTR dwReserved1;
-    ULONG_PTR dwReserved2;
+struct _DDVIDEOPORTINFO
+{
+  DWORD dwSize;
+  DWORD dwOriginX;
+  DWORD dwOriginY;
+  DWORD dwVPFlags;
+  RECT rCrop;
+  DWORD dwPrescaleWidth;
+  DWORD dwPrescaleHeight;
+  LPDDPIXELFORMAT lpddpfInputFormat;
+  LPDDPIXELFORMAT lpddpfVBIInputFormat;
+  LPDDPIXELFORMAT lpddpfVBIOutputFormat;
+  DWORD dwVBIHeight;
+  ULONG_PTR dwReserved1;
+  ULONG_PTR dwReserved2;
 };
 
 /* 304 */
@@ -2836,41 +2896,44 @@ typedef _DDKERNELCAPS *LPDDKERNELCAPS;
 typedef unsigned int *PULONG_PTR;
 
 /* 302 */
-struct IDirectDrawKernelVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawKernel *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawKernel *This);
-    ULONG(__stdcall *Release)(IDirectDrawKernel *This);
-    HRESULT(__stdcall *GetCaps)(IDirectDrawKernel *This, LPDDKERNELCAPS);
-    HRESULT(__stdcall *GetKernelHandle)(IDirectDrawKernel *This, PULONG_PTR);
-    HRESULT(__stdcall *ReleaseKernelHandle)(IDirectDrawKernel *This);
+struct IDirectDrawKernelVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawKernel *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawKernel *This);
+  ULONG (__stdcall *Release)(IDirectDrawKernel *This);
+  HRESULT (__stdcall *GetCaps)(IDirectDrawKernel *This, LPDDKERNELCAPS);
+  HRESULT (__stdcall *GetKernelHandle)(IDirectDrawKernel *This, PULONG_PTR);
+  HRESULT (__stdcall *ReleaseKernelHandle)(IDirectDrawKernel *This);
 };
 
 /* 303 */
-struct IDirectDrawKernel {
-    IDirectDrawKernelVtbl *lpVtbl;
+struct IDirectDrawKernel
+{
+  IDirectDrawKernelVtbl *lpVtbl;
 };
 
 /* 305 */
-struct _DDKERNELCAPS {
-    DWORD dwSize;
-    DWORD dwCaps;
-    DWORD dwIRQCaps;
+struct _DDKERNELCAPS
+{
+  DWORD dwSize;
+  DWORD dwCaps;
+  DWORD dwIRQCaps;
 };
 
 /* 307 */
-struct IDirectDrawSurfaceKernelVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectDrawSurfaceKernel *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectDrawSurfaceKernel *This);
-    ULONG(__stdcall *Release)(IDirectDrawSurfaceKernel *This);
-    HRESULT(__stdcall *GetKernelHandle)(IDirectDrawSurfaceKernel *This, PULONG_PTR);
-    HRESULT(__stdcall *ReleaseKernelHandle)(IDirectDrawSurfaceKernel *This);
+struct IDirectDrawSurfaceKernelVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectDrawSurfaceKernel *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectDrawSurfaceKernel *This);
+  ULONG (__stdcall *Release)(IDirectDrawSurfaceKernel *This);
+  HRESULT (__stdcall *GetKernelHandle)(IDirectDrawSurfaceKernel *This, PULONG_PTR);
+  HRESULT (__stdcall *ReleaseKernelHandle)(IDirectDrawSurfaceKernel *This);
 };
 
 /* 308 */
-struct IDirectDrawSurfaceKernel {
-    IDirectDrawSurfaceKernelVtbl *lpVtbl;
+struct IDirectDrawSurfaceKernel
+{
+  IDirectDrawSurfaceKernelVtbl *lpVtbl;
 };
 
 /* 311 */
@@ -2883,43 +2946,45 @@ typedef IUnknown *LPUNKNOWN;
 typedef const DIDEVICEINSTANCEA *LPCDIDEVICEINSTANCEA;
 
 /* 333 */
-typedef BOOL(__stdcall *LPDIENUMDEVICESCALLBACKA)(LPCDIDEVICEINSTANCEA, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMDEVICESCALLBACKA)(LPCDIDEVICEINSTANCEA, LPVOID);
 
 /* 309 */
-struct IDirectInputAVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectInputA *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputA *This);
-    ULONG(__stdcall *Release)(IDirectInputA *This);
-    HRESULT(__stdcall *CreateDevice)
-    (IDirectInputA *This, const GUID *const, LPDIRECTINPUTDEVICEA *, LPUNKNOWN);
-    HRESULT(__stdcall *EnumDevices)
-    (IDirectInputA *This, DWORD, LPDIENUMDEVICESCALLBACKA, LPVOID, DWORD);
-    HRESULT(__stdcall *GetDeviceStatus)(IDirectInputA *This, const GUID *const);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInputA *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInputA *This, HINSTANCE, DWORD);
+struct IDirectInputAVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputA *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputA *This);
+  ULONG (__stdcall *Release)(IDirectInputA *This);
+  HRESULT (__stdcall *CreateDevice)(IDirectInputA *This, const GUID *const, LPDIRECTINPUTDEVICEA *, LPUNKNOWN);
+  HRESULT (__stdcall *EnumDevices)(IDirectInputA *This, DWORD, LPDIENUMDEVICESCALLBACKA, LPVOID, DWORD);
+  HRESULT (__stdcall *GetDeviceStatus)(IDirectInputA *This, const GUID *const);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInputA *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInputA *This, HINSTANCE, DWORD);
 };
 
 /* 310 */
-struct IDirectInputA {
-    IDirectInputAVtbl *lpVtbl;
+struct IDirectInputA
+{
+  IDirectInputAVtbl *lpVtbl;
 };
 
 /* 312 */
-struct IDirectInputDeviceA {
-    IDirectInputDeviceAVtbl *lpVtbl;
+struct IDirectInputDeviceA
+{
+  IDirectInputDeviceAVtbl *lpVtbl;
 };
 
 /* 331 */
-struct DIDEVICEINSTANCEA {
-    DWORD dwSize;
-    GUID guidInstance;
-    GUID guidProduct;
-    DWORD dwDevType;
-    CHAR tszInstanceName[260];
-    CHAR tszProductName[260];
-    GUID guidFFDriver;
-    WORD wUsagePage;
-    WORD wUsage;
+struct DIDEVICEINSTANCEA
+{
+  DWORD dwSize;
+  GUID guidInstance;
+  GUID guidProduct;
+  DWORD dwDevType;
+  CHAR tszInstanceName[260];
+  CHAR tszProductName[260];
+  GUID guidFFDriver;
+  WORD wUsagePage;
+  WORD wUsage;
 };
 
 /* 314 */
@@ -2929,7 +2994,7 @@ typedef DIDEVCAPS *LPDIDEVCAPS;
 typedef const DIDEVICEOBJECTINSTANCEA *LPCDIDEVICEOBJECTINSTANCEA;
 
 /* 316 */
-typedef BOOL(__stdcall *LPDIENUMDEVICEOBJECTSCALLBACKA)(LPCDIDEVICEOBJECTINSTANCEA, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMDEVICEOBJECTSCALLBACKA)(LPCDIDEVICEOBJECTINSTANCEA, LPVOID);
 
 /* 319 */
 typedef DIPROPHEADER *LPDIPROPHEADER;
@@ -2953,101 +3018,104 @@ typedef DIDEVICEOBJECTINSTANCEA *LPDIDEVICEOBJECTINSTANCEA;
 typedef DIDEVICEINSTANCEA *LPDIDEVICEINSTANCEA;
 
 /* 313 */
-struct IDirectInputDeviceAVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectInputDeviceA *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputDeviceA *This);
-    ULONG(__stdcall *Release)(IDirectInputDeviceA *This);
-    HRESULT(__stdcall *GetCapabilities)(IDirectInputDeviceA *This, LPDIDEVCAPS);
-    HRESULT(__stdcall *EnumObjects)
-    (IDirectInputDeviceA *This, LPDIENUMDEVICEOBJECTSCALLBACKA, LPVOID, DWORD);
-    HRESULT(__stdcall *GetProperty)(IDirectInputDeviceA *This, const GUID *const, LPDIPROPHEADER);
-    HRESULT(__stdcall *SetProperty)(IDirectInputDeviceA *This, const GUID *const, LPCDIPROPHEADER);
-    HRESULT(__stdcall *Acquire)(IDirectInputDeviceA *This);
-    HRESULT(__stdcall *Unacquire)(IDirectInputDeviceA *This);
-    HRESULT(__stdcall *GetDeviceState)(IDirectInputDeviceA *This, DWORD, LPVOID);
-    HRESULT(__stdcall *GetDeviceData)
-    (IDirectInputDeviceA *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
-    HRESULT(__stdcall *SetDataFormat)(IDirectInputDeviceA *This, LPCDIDATAFORMAT);
-    HRESULT(__stdcall *SetEventNotification)(IDirectInputDeviceA *This, HANDLE);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectInputDeviceA *This, HWND, DWORD);
-    HRESULT(__stdcall *GetObjectInfo)
-    (IDirectInputDeviceA *This, LPDIDEVICEOBJECTINSTANCEA, DWORD, DWORD);
-    HRESULT(__stdcall *GetDeviceInfo)(IDirectInputDeviceA *This, LPDIDEVICEINSTANCEA);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInputDeviceA *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInputDeviceA *This, HINSTANCE, DWORD, const GUID *const);
+struct IDirectInputDeviceAVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputDeviceA *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputDeviceA *This);
+  ULONG (__stdcall *Release)(IDirectInputDeviceA *This);
+  HRESULT (__stdcall *GetCapabilities)(IDirectInputDeviceA *This, LPDIDEVCAPS);
+  HRESULT (__stdcall *EnumObjects)(IDirectInputDeviceA *This, LPDIENUMDEVICEOBJECTSCALLBACKA, LPVOID, DWORD);
+  HRESULT (__stdcall *GetProperty)(IDirectInputDeviceA *This, const GUID *const, LPDIPROPHEADER);
+  HRESULT (__stdcall *SetProperty)(IDirectInputDeviceA *This, const GUID *const, LPCDIPROPHEADER);
+  HRESULT (__stdcall *Acquire)(IDirectInputDeviceA *This);
+  HRESULT (__stdcall *Unacquire)(IDirectInputDeviceA *This);
+  HRESULT (__stdcall *GetDeviceState)(IDirectInputDeviceA *This, DWORD, LPVOID);
+  HRESULT (__stdcall *GetDeviceData)(IDirectInputDeviceA *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
+  HRESULT (__stdcall *SetDataFormat)(IDirectInputDeviceA *This, LPCDIDATAFORMAT);
+  HRESULT (__stdcall *SetEventNotification)(IDirectInputDeviceA *This, HANDLE);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectInputDeviceA *This, HWND, DWORD);
+  HRESULT (__stdcall *GetObjectInfo)(IDirectInputDeviceA *This, LPDIDEVICEOBJECTINSTANCEA, DWORD, DWORD);
+  HRESULT (__stdcall *GetDeviceInfo)(IDirectInputDeviceA *This, LPDIDEVICEINSTANCEA);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInputDeviceA *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInputDeviceA *This, HINSTANCE, DWORD, const GUID *const);
 };
 
 /* 315 */
-struct DIDEVCAPS {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwDevType;
-    DWORD dwAxes;
-    DWORD dwButtons;
-    DWORD dwPOVs;
-    DWORD dwFFSamplePeriod;
-    DWORD dwFFMinTimeResolution;
-    DWORD dwFirmwareRevision;
-    DWORD dwHardwareRevision;
-    DWORD dwFFDriverVersion;
+struct DIDEVCAPS
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwDevType;
+  DWORD dwAxes;
+  DWORD dwButtons;
+  DWORD dwPOVs;
+  DWORD dwFFSamplePeriod;
+  DWORD dwFFMinTimeResolution;
+  DWORD dwFirmwareRevision;
+  DWORD dwHardwareRevision;
+  DWORD dwFFDriverVersion;
 };
 
 /* 318 */
-struct DIDEVICEOBJECTINSTANCEA {
-    DWORD dwSize;
-    GUID guidType;
-    DWORD dwOfs;
-    DWORD dwType;
-    DWORD dwFlags;
-    CHAR tszName[260];
-    DWORD dwFFMaxForce;
-    DWORD dwFFForceResolution;
-    WORD wCollectionNumber;
-    WORD wDesignatorIndex;
-    WORD wUsagePage;
-    WORD wUsage;
-    DWORD dwDimension;
-    WORD wExponent;
-    WORD wReportId;
+struct DIDEVICEOBJECTINSTANCEA
+{
+  DWORD dwSize;
+  GUID guidType;
+  DWORD dwOfs;
+  DWORD dwType;
+  DWORD dwFlags;
+  CHAR tszName[260];
+  DWORD dwFFMaxForce;
+  DWORD dwFFForceResolution;
+  WORD wCollectionNumber;
+  WORD wDesignatorIndex;
+  WORD wUsagePage;
+  WORD wUsage;
+  DWORD dwDimension;
+  WORD wExponent;
+  WORD wReportId;
 };
 
 /* 320 */
-struct DIPROPHEADER {
-    DWORD dwSize;
-    DWORD dwHeaderSize;
-    DWORD dwObj;
-    DWORD dwHow;
+struct DIPROPHEADER
+{
+  DWORD dwSize;
+  DWORD dwHeaderSize;
+  DWORD dwObj;
+  DWORD dwHow;
 };
 
 /* 323 */
-struct DIDEVICEOBJECTDATA {
-    DWORD dwOfs;
-    DWORD dwData;
-    DWORD dwTimeStamp;
-    DWORD dwSequence;
-    UINT_PTR uAppData;
+struct DIDEVICEOBJECTDATA
+{
+  DWORD dwOfs;
+  DWORD dwData;
+  DWORD dwTimeStamp;
+  DWORD dwSequence;
+  UINT_PTR uAppData;
 };
 
 /* 327 */
 typedef _DIOBJECTDATAFORMAT *LPDIOBJECTDATAFORMAT;
 
 /* 326 */
-struct _DIDATAFORMAT {
-    DWORD dwSize;
-    DWORD dwObjSize;
-    DWORD dwFlags;
-    DWORD dwDataSize;
-    DWORD dwNumObjs;
-    LPDIOBJECTDATAFORMAT rgodf;
+struct _DIDATAFORMAT
+{
+  DWORD dwSize;
+  DWORD dwObjSize;
+  DWORD dwFlags;
+  DWORD dwDataSize;
+  DWORD dwNumObjs;
+  LPDIOBJECTDATAFORMAT rgodf;
 };
 
 /* 328 */
-struct _DIOBJECTDATAFORMAT {
-    const GUID *pguid;
-    DWORD dwOfs;
-    DWORD dwType;
-    DWORD dwFlags;
+struct _DIOBJECTDATAFORMAT
+{
+  const GUID *pguid;
+  DWORD dwOfs;
+  DWORD dwType;
+  DWORD dwFlags;
 };
 
 /* 337 */
@@ -3057,50 +3125,52 @@ typedef IDirectInputDeviceW *LPDIRECTINPUTDEVICEW;
 typedef const DIDEVICEINSTANCEW *LPCDIDEVICEINSTANCEW;
 
 /* 346 */
-typedef BOOL(__stdcall *LPDIENUMDEVICESCALLBACKW)(LPCDIDEVICEINSTANCEW, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMDEVICESCALLBACKW)(LPCDIDEVICEINSTANCEW, LPVOID);
 
 /* 335 */
-struct IDirectInputWVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectInputW *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputW *This);
-    ULONG(__stdcall *Release)(IDirectInputW *This);
-    HRESULT(__stdcall *CreateDevice)
-    (IDirectInputW *This, const GUID *const, LPDIRECTINPUTDEVICEW *, LPUNKNOWN);
-    HRESULT(__stdcall *EnumDevices)
-    (IDirectInputW *This, DWORD, LPDIENUMDEVICESCALLBACKW, LPVOID, DWORD);
-    HRESULT(__stdcall *GetDeviceStatus)(IDirectInputW *This, const GUID *const);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInputW *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInputW *This, HINSTANCE, DWORD);
+struct IDirectInputWVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputW *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputW *This);
+  ULONG (__stdcall *Release)(IDirectInputW *This);
+  HRESULT (__stdcall *CreateDevice)(IDirectInputW *This, const GUID *const, LPDIRECTINPUTDEVICEW *, LPUNKNOWN);
+  HRESULT (__stdcall *EnumDevices)(IDirectInputW *This, DWORD, LPDIENUMDEVICESCALLBACKW, LPVOID, DWORD);
+  HRESULT (__stdcall *GetDeviceStatus)(IDirectInputW *This, const GUID *const);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInputW *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInputW *This, HINSTANCE, DWORD);
 };
 
 /* 336 */
-struct IDirectInputW {
-    IDirectInputWVtbl *lpVtbl;
+struct IDirectInputW
+{
+  IDirectInputWVtbl *lpVtbl;
 };
 
 /* 338 */
-struct IDirectInputDeviceW {
-    IDirectInputDeviceWVtbl *lpVtbl;
+struct IDirectInputDeviceW
+{
+  IDirectInputDeviceWVtbl *lpVtbl;
 };
 
 /* 345 */
-struct DIDEVICEINSTANCEW {
-    DWORD dwSize;
-    GUID guidInstance;
-    GUID guidProduct;
-    DWORD dwDevType;
-    WCHAR tszInstanceName[260];
-    WCHAR tszProductName[260];
-    GUID guidFFDriver;
-    WORD wUsagePage;
-    WORD wUsage;
+struct DIDEVICEINSTANCEW
+{
+  DWORD dwSize;
+  GUID guidInstance;
+  GUID guidProduct;
+  DWORD dwDevType;
+  WCHAR tszInstanceName[260];
+  WCHAR tszProductName[260];
+  GUID guidFFDriver;
+  WORD wUsagePage;
+  WORD wUsage;
 };
 
 /* 341 */
 typedef const DIDEVICEOBJECTINSTANCEW *LPCDIDEVICEOBJECTINSTANCEW;
 
 /* 340 */
-typedef BOOL(__stdcall *LPDIENUMDEVICEOBJECTSCALLBACKW)(LPCDIDEVICEOBJECTINSTANCEW, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMDEVICEOBJECTSCALLBACKW)(LPCDIDEVICEOBJECTINSTANCEW, LPVOID);
 
 /* 343 */
 typedef DIDEVICEOBJECTINSTANCEW *LPDIDEVICEOBJECTINSTANCEW;
@@ -3109,94 +3179,92 @@ typedef DIDEVICEOBJECTINSTANCEW *LPDIDEVICEOBJECTINSTANCEW;
 typedef DIDEVICEINSTANCEW *LPDIDEVICEINSTANCEW;
 
 /* 339 */
-struct IDirectInputDeviceWVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectInputDeviceW *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputDeviceW *This);
-    ULONG(__stdcall *Release)(IDirectInputDeviceW *This);
-    HRESULT(__stdcall *GetCapabilities)(IDirectInputDeviceW *This, LPDIDEVCAPS);
-    HRESULT(__stdcall *EnumObjects)
-    (IDirectInputDeviceW *This, LPDIENUMDEVICEOBJECTSCALLBACKW, LPVOID, DWORD);
-    HRESULT(__stdcall *GetProperty)(IDirectInputDeviceW *This, const GUID *const, LPDIPROPHEADER);
-    HRESULT(__stdcall *SetProperty)(IDirectInputDeviceW *This, const GUID *const, LPCDIPROPHEADER);
-    HRESULT(__stdcall *Acquire)(IDirectInputDeviceW *This);
-    HRESULT(__stdcall *Unacquire)(IDirectInputDeviceW *This);
-    HRESULT(__stdcall *GetDeviceState)(IDirectInputDeviceW *This, DWORD, LPVOID);
-    HRESULT(__stdcall *GetDeviceData)
-    (IDirectInputDeviceW *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
-    HRESULT(__stdcall *SetDataFormat)(IDirectInputDeviceW *This, LPCDIDATAFORMAT);
-    HRESULT(__stdcall *SetEventNotification)(IDirectInputDeviceW *This, HANDLE);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectInputDeviceW *This, HWND, DWORD);
-    HRESULT(__stdcall *GetObjectInfo)
-    (IDirectInputDeviceW *This, LPDIDEVICEOBJECTINSTANCEW, DWORD, DWORD);
-    HRESULT(__stdcall *GetDeviceInfo)(IDirectInputDeviceW *This, LPDIDEVICEINSTANCEW);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInputDeviceW *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInputDeviceW *This, HINSTANCE, DWORD, const GUID *const);
+struct IDirectInputDeviceWVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputDeviceW *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputDeviceW *This);
+  ULONG (__stdcall *Release)(IDirectInputDeviceW *This);
+  HRESULT (__stdcall *GetCapabilities)(IDirectInputDeviceW *This, LPDIDEVCAPS);
+  HRESULT (__stdcall *EnumObjects)(IDirectInputDeviceW *This, LPDIENUMDEVICEOBJECTSCALLBACKW, LPVOID, DWORD);
+  HRESULT (__stdcall *GetProperty)(IDirectInputDeviceW *This, const GUID *const, LPDIPROPHEADER);
+  HRESULT (__stdcall *SetProperty)(IDirectInputDeviceW *This, const GUID *const, LPCDIPROPHEADER);
+  HRESULT (__stdcall *Acquire)(IDirectInputDeviceW *This);
+  HRESULT (__stdcall *Unacquire)(IDirectInputDeviceW *This);
+  HRESULT (__stdcall *GetDeviceState)(IDirectInputDeviceW *This, DWORD, LPVOID);
+  HRESULT (__stdcall *GetDeviceData)(IDirectInputDeviceW *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
+  HRESULT (__stdcall *SetDataFormat)(IDirectInputDeviceW *This, LPCDIDATAFORMAT);
+  HRESULT (__stdcall *SetEventNotification)(IDirectInputDeviceW *This, HANDLE);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectInputDeviceW *This, HWND, DWORD);
+  HRESULT (__stdcall *GetObjectInfo)(IDirectInputDeviceW *This, LPDIDEVICEOBJECTINSTANCEW, DWORD, DWORD);
+  HRESULT (__stdcall *GetDeviceInfo)(IDirectInputDeviceW *This, LPDIDEVICEINSTANCEW);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInputDeviceW *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInputDeviceW *This, HINSTANCE, DWORD, const GUID *const);
 };
 
 /* 342 */
-struct DIDEVICEOBJECTINSTANCEW {
-    DWORD dwSize;
-    GUID guidType;
-    DWORD dwOfs;
-    DWORD dwType;
-    DWORD dwFlags;
-    WCHAR tszName[260];
-    DWORD dwFFMaxForce;
-    DWORD dwFFForceResolution;
-    WORD wCollectionNumber;
-    WORD wDesignatorIndex;
-    WORD wUsagePage;
-    WORD wUsage;
-    DWORD dwDimension;
-    WORD wExponent;
-    WORD wReportId;
+struct DIDEVICEOBJECTINSTANCEW
+{
+  DWORD dwSize;
+  GUID guidType;
+  DWORD dwOfs;
+  DWORD dwType;
+  DWORD dwFlags;
+  WCHAR tszName[260];
+  DWORD dwFFMaxForce;
+  DWORD dwFFForceResolution;
+  WORD wCollectionNumber;
+  WORD wDesignatorIndex;
+  WORD wUsagePage;
+  WORD wUsage;
+  DWORD dwDimension;
+  WORD wExponent;
+  WORD wReportId;
 };
 
 /* 350 */
 typedef GUID *LPGUID;
 
 /* 348 */
-struct IDirectInput2AVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectInput2A *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInput2A *This);
-    ULONG(__stdcall *Release)(IDirectInput2A *This);
-    HRESULT(__stdcall *CreateDevice)
-    (IDirectInput2A *This, const GUID *const, LPDIRECTINPUTDEVICEA *, LPUNKNOWN);
-    HRESULT(__stdcall *EnumDevices)
-    (IDirectInput2A *This, DWORD, LPDIENUMDEVICESCALLBACKA, LPVOID, DWORD);
-    HRESULT(__stdcall *GetDeviceStatus)(IDirectInput2A *This, const GUID *const);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInput2A *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInput2A *This, HINSTANCE, DWORD);
-    HRESULT(__stdcall *FindDevice)(IDirectInput2A *This, const GUID *const, LPCSTR, LPGUID);
+struct IDirectInput2AVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInput2A *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInput2A *This);
+  ULONG (__stdcall *Release)(IDirectInput2A *This);
+  HRESULT (__stdcall *CreateDevice)(IDirectInput2A *This, const GUID *const, LPDIRECTINPUTDEVICEA *, LPUNKNOWN);
+  HRESULT (__stdcall *EnumDevices)(IDirectInput2A *This, DWORD, LPDIENUMDEVICESCALLBACKA, LPVOID, DWORD);
+  HRESULT (__stdcall *GetDeviceStatus)(IDirectInput2A *This, const GUID *const);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInput2A *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInput2A *This, HINSTANCE, DWORD);
+  HRESULT (__stdcall *FindDevice)(IDirectInput2A *This, const GUID *const, LPCSTR, LPGUID);
 };
 
 /* 349 */
-struct IDirectInput2A {
-    IDirectInput2AVtbl *lpVtbl;
+struct IDirectInput2A
+{
+  IDirectInput2AVtbl *lpVtbl;
 };
 
 /* 353 */
 typedef const WCHAR *LPCWSTR;
 
 /* 351 */
-struct IDirectInput2WVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectInput2W *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInput2W *This);
-    ULONG(__stdcall *Release)(IDirectInput2W *This);
-    HRESULT(__stdcall *CreateDevice)
-    (IDirectInput2W *This, const GUID *const, LPDIRECTINPUTDEVICEW *, LPUNKNOWN);
-    HRESULT(__stdcall *EnumDevices)
-    (IDirectInput2W *This, DWORD, LPDIENUMDEVICESCALLBACKW, LPVOID, DWORD);
-    HRESULT(__stdcall *GetDeviceStatus)(IDirectInput2W *This, const GUID *const);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInput2W *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInput2W *This, HINSTANCE, DWORD);
-    HRESULT(__stdcall *FindDevice)(IDirectInput2W *This, const GUID *const, LPCWSTR, LPGUID);
+struct IDirectInput2WVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInput2W *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInput2W *This);
+  ULONG (__stdcall *Release)(IDirectInput2W *This);
+  HRESULT (__stdcall *CreateDevice)(IDirectInput2W *This, const GUID *const, LPDIRECTINPUTDEVICEW *, LPUNKNOWN);
+  HRESULT (__stdcall *EnumDevices)(IDirectInput2W *This, DWORD, LPDIENUMDEVICESCALLBACKW, LPVOID, DWORD);
+  HRESULT (__stdcall *GetDeviceStatus)(IDirectInput2W *This, const GUID *const);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInput2W *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInput2W *This, HINSTANCE, DWORD);
+  HRESULT (__stdcall *FindDevice)(IDirectInput2W *This, const GUID *const, LPCWSTR, LPGUID);
 };
 
 /* 352 */
-struct IDirectInput2W {
-    IDirectInput2WVtbl *lpVtbl;
+struct IDirectInput2W
+{
+  IDirectInput2WVtbl *lpVtbl;
 };
 
 /* 356 */
@@ -3209,13 +3277,13 @@ typedef IDirectInputEffect *LPDIRECTINPUTEFFECT;
 typedef const DIEFFECTINFOA *LPCDIEFFECTINFOA;
 
 /* 366 */
-typedef BOOL(__stdcall *LPDIENUMEFFECTSCALLBACKA)(LPCDIEFFECTINFOA, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMEFFECTSCALLBACKA)(LPCDIEFFECTINFOA, LPVOID);
 
 /* 369 */
 typedef DIEFFECTINFOA *LPDIEFFECTINFOA;
 
 /* 370 */
-typedef BOOL(__stdcall *LPDIENUMCREATEDEFFECTOBJECTSCALLBACK)(LPDIRECTINPUTEFFECT, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMCREATEDEFFECTOBJECTSCALLBACK)(LPDIRECTINPUTEFFECT, LPVOID);
 
 /* 364 */
 typedef DIEFFESCAPE *LPDIEFFESCAPE;
@@ -3224,188 +3292,180 @@ typedef DIEFFESCAPE *LPDIEFFESCAPE;
 typedef const DIDEVICEOBJECTDATA *LPCDIDEVICEOBJECTDATA;
 
 /* 354 */
-struct IDirectInputDevice2AVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectInputDevice2A *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputDevice2A *This);
-    ULONG(__stdcall *Release)(IDirectInputDevice2A *This);
-    HRESULT(__stdcall *GetCapabilities)(IDirectInputDevice2A *This, LPDIDEVCAPS);
-    HRESULT(__stdcall *EnumObjects)
-    (IDirectInputDevice2A *This, LPDIENUMDEVICEOBJECTSCALLBACKA, LPVOID, DWORD);
-    HRESULT(__stdcall *GetProperty)(IDirectInputDevice2A *This, const GUID *const, LPDIPROPHEADER);
-    HRESULT(__stdcall *SetProperty)(IDirectInputDevice2A *This, const GUID *const, LPCDIPROPHEADER);
-    HRESULT(__stdcall *Acquire)(IDirectInputDevice2A *This);
-    HRESULT(__stdcall *Unacquire)(IDirectInputDevice2A *This);
-    HRESULT(__stdcall *GetDeviceState)(IDirectInputDevice2A *This, DWORD, LPVOID);
-    HRESULT(__stdcall *GetDeviceData)
-    (IDirectInputDevice2A *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
-    HRESULT(__stdcall *SetDataFormat)(IDirectInputDevice2A *This, LPCDIDATAFORMAT);
-    HRESULT(__stdcall *SetEventNotification)(IDirectInputDevice2A *This, HANDLE);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectInputDevice2A *This, HWND, DWORD);
-    HRESULT(__stdcall *GetObjectInfo)
-    (IDirectInputDevice2A *This, LPDIDEVICEOBJECTINSTANCEA, DWORD, DWORD);
-    HRESULT(__stdcall *GetDeviceInfo)(IDirectInputDevice2A *This, LPDIDEVICEINSTANCEA);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInputDevice2A *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInputDevice2A *This, HINSTANCE, DWORD, const GUID *const);
-    HRESULT(__stdcall *CreateEffect)
-    (IDirectInputDevice2A *This, const GUID *const, LPCDIEFFECT, LPDIRECTINPUTEFFECT *, LPUNKNOWN);
-    HRESULT(__stdcall *EnumEffects)
-    (IDirectInputDevice2A *This, LPDIENUMEFFECTSCALLBACKA, LPVOID, DWORD);
-    HRESULT(__stdcall *GetEffectInfo)
-    (IDirectInputDevice2A *This, LPDIEFFECTINFOA, const GUID *const);
-    HRESULT(__stdcall *GetForceFeedbackState)(IDirectInputDevice2A *This, LPDWORD);
-    HRESULT(__stdcall *SendForceFeedbackCommand)(IDirectInputDevice2A *This, DWORD);
-    HRESULT(__stdcall *EnumCreatedEffectObjects)
-    (IDirectInputDevice2A *This, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK, LPVOID, DWORD);
-    HRESULT(__stdcall *Escape)(IDirectInputDevice2A *This, LPDIEFFESCAPE);
-    HRESULT(__stdcall *Poll)(IDirectInputDevice2A *This);
-    HRESULT(__stdcall *SendDeviceData)
-    (IDirectInputDevice2A *This, DWORD, LPCDIDEVICEOBJECTDATA, LPDWORD, DWORD);
+struct IDirectInputDevice2AVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputDevice2A *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputDevice2A *This);
+  ULONG (__stdcall *Release)(IDirectInputDevice2A *This);
+  HRESULT (__stdcall *GetCapabilities)(IDirectInputDevice2A *This, LPDIDEVCAPS);
+  HRESULT (__stdcall *EnumObjects)(IDirectInputDevice2A *This, LPDIENUMDEVICEOBJECTSCALLBACKA, LPVOID, DWORD);
+  HRESULT (__stdcall *GetProperty)(IDirectInputDevice2A *This, const GUID *const, LPDIPROPHEADER);
+  HRESULT (__stdcall *SetProperty)(IDirectInputDevice2A *This, const GUID *const, LPCDIPROPHEADER);
+  HRESULT (__stdcall *Acquire)(IDirectInputDevice2A *This);
+  HRESULT (__stdcall *Unacquire)(IDirectInputDevice2A *This);
+  HRESULT (__stdcall *GetDeviceState)(IDirectInputDevice2A *This, DWORD, LPVOID);
+  HRESULT (__stdcall *GetDeviceData)(IDirectInputDevice2A *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
+  HRESULT (__stdcall *SetDataFormat)(IDirectInputDevice2A *This, LPCDIDATAFORMAT);
+  HRESULT (__stdcall *SetEventNotification)(IDirectInputDevice2A *This, HANDLE);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectInputDevice2A *This, HWND, DWORD);
+  HRESULT (__stdcall *GetObjectInfo)(IDirectInputDevice2A *This, LPDIDEVICEOBJECTINSTANCEA, DWORD, DWORD);
+  HRESULT (__stdcall *GetDeviceInfo)(IDirectInputDevice2A *This, LPDIDEVICEINSTANCEA);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInputDevice2A *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInputDevice2A *This, HINSTANCE, DWORD, const GUID *const);
+  HRESULT (__stdcall *CreateEffect)(IDirectInputDevice2A *This, const GUID *const, LPCDIEFFECT, LPDIRECTINPUTEFFECT *, LPUNKNOWN);
+  HRESULT (__stdcall *EnumEffects)(IDirectInputDevice2A *This, LPDIENUMEFFECTSCALLBACKA, LPVOID, DWORD);
+  HRESULT (__stdcall *GetEffectInfo)(IDirectInputDevice2A *This, LPDIEFFECTINFOA, const GUID *const);
+  HRESULT (__stdcall *GetForceFeedbackState)(IDirectInputDevice2A *This, LPDWORD);
+  HRESULT (__stdcall *SendForceFeedbackCommand)(IDirectInputDevice2A *This, DWORD);
+  HRESULT (__stdcall *EnumCreatedEffectObjects)(IDirectInputDevice2A *This, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK, LPVOID, DWORD);
+  HRESULT (__stdcall *Escape)(IDirectInputDevice2A *This, LPDIEFFESCAPE);
+  HRESULT (__stdcall *Poll)(IDirectInputDevice2A *This);
+  HRESULT (__stdcall *SendDeviceData)(IDirectInputDevice2A *This, DWORD, LPCDIDEVICEOBJECTDATA, LPDWORD, DWORD);
 };
 
 /* 355 */
-struct IDirectInputDevice2A {
-    IDirectInputDevice2AVtbl *lpVtbl;
+struct IDirectInputDevice2A
+{
+  IDirectInputDevice2AVtbl *lpVtbl;
 };
 
 /* 358 */
 typedef DIENVELOPE *LPDIENVELOPE;
 
 /* 357 */
-struct DIEFFECT {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwDuration;
-    DWORD dwSamplePeriod;
-    DWORD dwGain;
-    DWORD dwTriggerButton;
-    DWORD dwTriggerRepeatInterval;
-    DWORD cAxes;
-    LPDWORD rgdwAxes;
-    LPLONG rglDirection;
-    LPDIENVELOPE lpEnvelope;
-    DWORD cbTypeSpecificParams;
-    LPVOID lpvTypeSpecificParams;
-    DWORD dwStartDelay;
+struct DIEFFECT
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwDuration;
+  DWORD dwSamplePeriod;
+  DWORD dwGain;
+  DWORD dwTriggerButton;
+  DWORD dwTriggerRepeatInterval;
+  DWORD cAxes;
+  LPDWORD rgdwAxes;
+  LPLONG rglDirection;
+  LPDIENVELOPE lpEnvelope;
+  DWORD cbTypeSpecificParams;
+  LPVOID lpvTypeSpecificParams;
+  DWORD dwStartDelay;
 };
 
 /* 361 */
-struct IDirectInputEffect {
-    IDirectInputEffectVtbl *lpVtbl;
+struct IDirectInputEffect
+{
+  IDirectInputEffectVtbl *lpVtbl;
 };
 
 /* 368 */
-struct DIEFFECTINFOA {
-    DWORD dwSize;
-    GUID guid;
-    DWORD dwEffType;
-    DWORD dwStaticParams;
-    DWORD dwDynamicParams;
-    CHAR tszName[260];
+struct DIEFFECTINFOA
+{
+  DWORD dwSize;
+  GUID guid;
+  DWORD dwEffType;
+  DWORD dwStaticParams;
+  DWORD dwDynamicParams;
+  CHAR tszName[260];
 };
 
 /* 365 */
-struct DIEFFESCAPE {
-    DWORD dwSize;
-    DWORD dwCommand;
-    LPVOID lpvInBuffer;
-    DWORD cbInBuffer;
-    LPVOID lpvOutBuffer;
-    DWORD cbOutBuffer;
+struct DIEFFESCAPE
+{
+  DWORD dwSize;
+  DWORD dwCommand;
+  LPVOID lpvInBuffer;
+  DWORD cbInBuffer;
+  LPVOID lpvOutBuffer;
+  DWORD cbOutBuffer;
 };
 
 /* 359 */
-struct DIENVELOPE {
-    DWORD dwSize;
-    DWORD dwAttackLevel;
-    DWORD dwAttackTime;
-    DWORD dwFadeLevel;
-    DWORD dwFadeTime;
+struct DIENVELOPE
+{
+  DWORD dwSize;
+  DWORD dwAttackLevel;
+  DWORD dwAttackTime;
+  DWORD dwFadeLevel;
+  DWORD dwFadeTime;
 };
 
 /* 363 */
 typedef DIEFFECT *LPDIEFFECT;
 
 /* 362 */
-struct IDirectInputEffectVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectInputEffect *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputEffect *This);
-    ULONG(__stdcall *Release)(IDirectInputEffect *This);
-    HRESULT(__stdcall *Initialize)(IDirectInputEffect *This, HINSTANCE, DWORD, const GUID *const);
-    HRESULT(__stdcall *GetEffectGuid)(IDirectInputEffect *This, LPGUID);
-    HRESULT(__stdcall *GetParameters)(IDirectInputEffect *This, LPDIEFFECT, DWORD);
-    HRESULT(__stdcall *SetParameters)(IDirectInputEffect *This, LPCDIEFFECT, DWORD);
-    HRESULT(__stdcall *Start)(IDirectInputEffect *This, DWORD, DWORD);
-    HRESULT(__stdcall *Stop)(IDirectInputEffect *This);
-    HRESULT(__stdcall *GetEffectStatus)(IDirectInputEffect *This, LPDWORD);
-    HRESULT(__stdcall *Download)(IDirectInputEffect *This);
-    HRESULT(__stdcall *Unload)(IDirectInputEffect *This);
-    HRESULT(__stdcall *Escape)(IDirectInputEffect *This, LPDIEFFESCAPE);
+struct IDirectInputEffectVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputEffect *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputEffect *This);
+  ULONG (__stdcall *Release)(IDirectInputEffect *This);
+  HRESULT (__stdcall *Initialize)(IDirectInputEffect *This, HINSTANCE, DWORD, const GUID *const);
+  HRESULT (__stdcall *GetEffectGuid)(IDirectInputEffect *This, LPGUID);
+  HRESULT (__stdcall *GetParameters)(IDirectInputEffect *This, LPDIEFFECT, DWORD);
+  HRESULT (__stdcall *SetParameters)(IDirectInputEffect *This, LPCDIEFFECT, DWORD);
+  HRESULT (__stdcall *Start)(IDirectInputEffect *This, DWORD, DWORD);
+  HRESULT (__stdcall *Stop)(IDirectInputEffect *This);
+  HRESULT (__stdcall *GetEffectStatus)(IDirectInputEffect *This, LPDWORD);
+  HRESULT (__stdcall *Download)(IDirectInputEffect *This);
+  HRESULT (__stdcall *Unload)(IDirectInputEffect *This);
+  HRESULT (__stdcall *Escape)(IDirectInputEffect *This, LPDIEFFESCAPE);
 };
 
 /* 375 */
 typedef const DIEFFECTINFOW *LPCDIEFFECTINFOW;
 
 /* 374 */
-typedef BOOL(__stdcall *LPDIENUMEFFECTSCALLBACKW)(LPCDIEFFECTINFOW, LPVOID);
+typedef BOOL (__stdcall *LPDIENUMEFFECTSCALLBACKW)(LPCDIEFFECTINFOW, LPVOID);
 
 /* 377 */
 typedef DIEFFECTINFOW *LPDIEFFECTINFOW;
 
 /* 372 */
-struct IDirectInputDevice2WVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectInputDevice2W *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirectInputDevice2W *This);
-    ULONG(__stdcall *Release)(IDirectInputDevice2W *This);
-    HRESULT(__stdcall *GetCapabilities)(IDirectInputDevice2W *This, LPDIDEVCAPS);
-    HRESULT(__stdcall *EnumObjects)
-    (IDirectInputDevice2W *This, LPDIENUMDEVICEOBJECTSCALLBACKW, LPVOID, DWORD);
-    HRESULT(__stdcall *GetProperty)(IDirectInputDevice2W *This, const GUID *const, LPDIPROPHEADER);
-    HRESULT(__stdcall *SetProperty)(IDirectInputDevice2W *This, const GUID *const, LPCDIPROPHEADER);
-    HRESULT(__stdcall *Acquire)(IDirectInputDevice2W *This);
-    HRESULT(__stdcall *Unacquire)(IDirectInputDevice2W *This);
-    HRESULT(__stdcall *GetDeviceState)(IDirectInputDevice2W *This, DWORD, LPVOID);
-    HRESULT(__stdcall *GetDeviceData)
-    (IDirectInputDevice2W *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
-    HRESULT(__stdcall *SetDataFormat)(IDirectInputDevice2W *This, LPCDIDATAFORMAT);
-    HRESULT(__stdcall *SetEventNotification)(IDirectInputDevice2W *This, HANDLE);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectInputDevice2W *This, HWND, DWORD);
-    HRESULT(__stdcall *GetObjectInfo)
-    (IDirectInputDevice2W *This, LPDIDEVICEOBJECTINSTANCEW, DWORD, DWORD);
-    HRESULT(__stdcall *GetDeviceInfo)(IDirectInputDevice2W *This, LPDIDEVICEINSTANCEW);
-    HRESULT(__stdcall *RunControlPanel)(IDirectInputDevice2W *This, HWND, DWORD);
-    HRESULT(__stdcall *Initialize)(IDirectInputDevice2W *This, HINSTANCE, DWORD, const GUID *const);
-    HRESULT(__stdcall *CreateEffect)
-    (IDirectInputDevice2W *This, const GUID *const, LPCDIEFFECT, LPDIRECTINPUTEFFECT *, LPUNKNOWN);
-    HRESULT(__stdcall *EnumEffects)
-    (IDirectInputDevice2W *This, LPDIENUMEFFECTSCALLBACKW, LPVOID, DWORD);
-    HRESULT(__stdcall *GetEffectInfo)
-    (IDirectInputDevice2W *This, LPDIEFFECTINFOW, const GUID *const);
-    HRESULT(__stdcall *GetForceFeedbackState)(IDirectInputDevice2W *This, LPDWORD);
-    HRESULT(__stdcall *SendForceFeedbackCommand)(IDirectInputDevice2W *This, DWORD);
-    HRESULT(__stdcall *EnumCreatedEffectObjects)
-    (IDirectInputDevice2W *This, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK, LPVOID, DWORD);
-    HRESULT(__stdcall *Escape)(IDirectInputDevice2W *This, LPDIEFFESCAPE);
-    HRESULT(__stdcall *Poll)(IDirectInputDevice2W *This);
-    HRESULT(__stdcall *SendDeviceData)
-    (IDirectInputDevice2W *This, DWORD, LPCDIDEVICEOBJECTDATA, LPDWORD, DWORD);
+struct IDirectInputDevice2WVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectInputDevice2W *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirectInputDevice2W *This);
+  ULONG (__stdcall *Release)(IDirectInputDevice2W *This);
+  HRESULT (__stdcall *GetCapabilities)(IDirectInputDevice2W *This, LPDIDEVCAPS);
+  HRESULT (__stdcall *EnumObjects)(IDirectInputDevice2W *This, LPDIENUMDEVICEOBJECTSCALLBACKW, LPVOID, DWORD);
+  HRESULT (__stdcall *GetProperty)(IDirectInputDevice2W *This, const GUID *const, LPDIPROPHEADER);
+  HRESULT (__stdcall *SetProperty)(IDirectInputDevice2W *This, const GUID *const, LPCDIPROPHEADER);
+  HRESULT (__stdcall *Acquire)(IDirectInputDevice2W *This);
+  HRESULT (__stdcall *Unacquire)(IDirectInputDevice2W *This);
+  HRESULT (__stdcall *GetDeviceState)(IDirectInputDevice2W *This, DWORD, LPVOID);
+  HRESULT (__stdcall *GetDeviceData)(IDirectInputDevice2W *This, DWORD, LPDIDEVICEOBJECTDATA, LPDWORD, DWORD);
+  HRESULT (__stdcall *SetDataFormat)(IDirectInputDevice2W *This, LPCDIDATAFORMAT);
+  HRESULT (__stdcall *SetEventNotification)(IDirectInputDevice2W *This, HANDLE);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectInputDevice2W *This, HWND, DWORD);
+  HRESULT (__stdcall *GetObjectInfo)(IDirectInputDevice2W *This, LPDIDEVICEOBJECTINSTANCEW, DWORD, DWORD);
+  HRESULT (__stdcall *GetDeviceInfo)(IDirectInputDevice2W *This, LPDIDEVICEINSTANCEW);
+  HRESULT (__stdcall *RunControlPanel)(IDirectInputDevice2W *This, HWND, DWORD);
+  HRESULT (__stdcall *Initialize)(IDirectInputDevice2W *This, HINSTANCE, DWORD, const GUID *const);
+  HRESULT (__stdcall *CreateEffect)(IDirectInputDevice2W *This, const GUID *const, LPCDIEFFECT, LPDIRECTINPUTEFFECT *, LPUNKNOWN);
+  HRESULT (__stdcall *EnumEffects)(IDirectInputDevice2W *This, LPDIENUMEFFECTSCALLBACKW, LPVOID, DWORD);
+  HRESULT (__stdcall *GetEffectInfo)(IDirectInputDevice2W *This, LPDIEFFECTINFOW, const GUID *const);
+  HRESULT (__stdcall *GetForceFeedbackState)(IDirectInputDevice2W *This, LPDWORD);
+  HRESULT (__stdcall *SendForceFeedbackCommand)(IDirectInputDevice2W *This, DWORD);
+  HRESULT (__stdcall *EnumCreatedEffectObjects)(IDirectInputDevice2W *This, LPDIENUMCREATEDEFFECTOBJECTSCALLBACK, LPVOID, DWORD);
+  HRESULT (__stdcall *Escape)(IDirectInputDevice2W *This, LPDIEFFESCAPE);
+  HRESULT (__stdcall *Poll)(IDirectInputDevice2W *This);
+  HRESULT (__stdcall *SendDeviceData)(IDirectInputDevice2W *This, DWORD, LPCDIDEVICEOBJECTDATA, LPDWORD, DWORD);
 };
 
 /* 373 */
-struct IDirectInputDevice2W {
-    IDirectInputDevice2WVtbl *lpVtbl;
+struct IDirectInputDevice2W
+{
+  IDirectInputDevice2WVtbl *lpVtbl;
 };
 
 /* 376 */
-struct DIEFFECTINFOW {
-    DWORD dwSize;
-    GUID guid;
-    DWORD dwEffType;
-    DWORD dwStaticParams;
-    DWORD dwDynamicParams;
-    WCHAR tszName[260];
+struct DIEFFECTINFOW
+{
+  DWORD dwSize;
+  GUID guid;
+  DWORD dwEffType;
+  DWORD dwStaticParams;
+  DWORD dwDynamicParams;
+  WCHAR tszName[260];
 };
 
 /* 381 */
@@ -3424,88 +3484,87 @@ typedef _DSCAPS *LPDSCAPS;
 typedef const GUID *LPCGUID;
 
 /* 378 */
-struct IDirectSoundVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSound *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSound *This);
-    ULONG(__stdcall *Release)(IDirectSound *This);
-    HRESULT(__stdcall *CreateSoundBuffer)
-    (IDirectSound *This,
-     LPCDSBUFFERDESC pcDSBufferDesc,
-     LPDIRECTSOUNDBUFFER *ppDSBuffer,
-     LPUNKNOWN pUnkOuter);
-    HRESULT(__stdcall *GetCaps)(IDirectSound *This, LPDSCAPS pDSCaps);
-    HRESULT(__stdcall *DuplicateSoundBuffer)
-    (IDirectSound *This,
-     LPDIRECTSOUNDBUFFER pDSBufferOriginal,
-     LPDIRECTSOUNDBUFFER *ppDSBufferDuplicate);
-    HRESULT(__stdcall *SetCooperativeLevel)(IDirectSound *This, HWND hwnd, DWORD dwLevel);
-    HRESULT(__stdcall *Compact)(IDirectSound *This);
-    HRESULT(__stdcall *GetSpeakerConfig)(IDirectSound *This, LPDWORD pdwSpeakerConfig);
-    HRESULT(__stdcall *SetSpeakerConfig)(IDirectSound *This, DWORD dwSpeakerConfig);
-    HRESULT(__stdcall *Initialize)(IDirectSound *This, LPCGUID pcGuidDevice);
+struct IDirectSoundVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSound *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSound *This);
+  ULONG (__stdcall *Release)(IDirectSound *This);
+  HRESULT (__stdcall *CreateSoundBuffer)(IDirectSound *This, LPCDSBUFFERDESC pcDSBufferDesc, LPDIRECTSOUNDBUFFER *ppDSBuffer, LPUNKNOWN pUnkOuter);
+  HRESULT (__stdcall *GetCaps)(IDirectSound *This, LPDSCAPS pDSCaps);
+  HRESULT (__stdcall *DuplicateSoundBuffer)(IDirectSound *This, LPDIRECTSOUNDBUFFER pDSBufferOriginal, LPDIRECTSOUNDBUFFER *ppDSBufferDuplicate);
+  HRESULT (__stdcall *SetCooperativeLevel)(IDirectSound *This, HWND hwnd, DWORD dwLevel);
+  HRESULT (__stdcall *Compact)(IDirectSound *This);
+  HRESULT (__stdcall *GetSpeakerConfig)(IDirectSound *This, LPDWORD pdwSpeakerConfig);
+  HRESULT (__stdcall *SetSpeakerConfig)(IDirectSound *This, DWORD dwSpeakerConfig);
+  HRESULT (__stdcall *Initialize)(IDirectSound *This, LPCGUID pcGuidDevice);
 };
 
 /* 379 */
-struct IDirectSound {
-    IDirectSoundVtbl *lpVtbl;
+struct IDirectSound
+{
+  IDirectSoundVtbl *lpVtbl;
 };
 
 /* 383 */
 typedef tWAVEFORMATEX *LPWAVEFORMATEX;
 
 /* 382 */
-struct _DSBUFFERDESC {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwBufferBytes;
-    DWORD dwReserved;
-    LPWAVEFORMATEX lpwfxFormat;
-    GUID guid3DAlgorithm;
+struct _DSBUFFERDESC
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwBufferBytes;
+  DWORD dwReserved;
+  LPWAVEFORMATEX lpwfxFormat;
+  GUID guid3DAlgorithm;
 };
 
 /* 386 */
-struct IDirectSoundBuffer {
-    IDirectSoundBufferVtbl *lpVtbl;
+struct IDirectSoundBuffer
+{
+  IDirectSoundBufferVtbl *lpVtbl;
 };
 
 /* 394 */
-struct _DSCAPS {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwMinSecondarySampleRate;
-    DWORD dwMaxSecondarySampleRate;
-    DWORD dwPrimaryBuffers;
-    DWORD dwMaxHwMixingAllBuffers;
-    DWORD dwMaxHwMixingStaticBuffers;
-    DWORD dwMaxHwMixingStreamingBuffers;
-    DWORD dwFreeHwMixingAllBuffers;
-    DWORD dwFreeHwMixingStaticBuffers;
-    DWORD dwFreeHwMixingStreamingBuffers;
-    DWORD dwMaxHw3DAllBuffers;
-    DWORD dwMaxHw3DStaticBuffers;
-    DWORD dwMaxHw3DStreamingBuffers;
-    DWORD dwFreeHw3DAllBuffers;
-    DWORD dwFreeHw3DStaticBuffers;
-    DWORD dwFreeHw3DStreamingBuffers;
-    DWORD dwTotalHwMemBytes;
-    DWORD dwFreeHwMemBytes;
-    DWORD dwMaxContigFreeHwMemBytes;
-    DWORD dwUnlockTransferRateHwBuffers;
-    DWORD dwPlayCpuOverheadSwBuffers;
-    DWORD dwReserved1;
-    DWORD dwReserved2;
+struct _DSCAPS
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwMinSecondarySampleRate;
+  DWORD dwMaxSecondarySampleRate;
+  DWORD dwPrimaryBuffers;
+  DWORD dwMaxHwMixingAllBuffers;
+  DWORD dwMaxHwMixingStaticBuffers;
+  DWORD dwMaxHwMixingStreamingBuffers;
+  DWORD dwFreeHwMixingAllBuffers;
+  DWORD dwFreeHwMixingStaticBuffers;
+  DWORD dwFreeHwMixingStreamingBuffers;
+  DWORD dwMaxHw3DAllBuffers;
+  DWORD dwMaxHw3DStaticBuffers;
+  DWORD dwMaxHw3DStreamingBuffers;
+  DWORD dwFreeHw3DAllBuffers;
+  DWORD dwFreeHw3DStaticBuffers;
+  DWORD dwFreeHw3DStreamingBuffers;
+  DWORD dwTotalHwMemBytes;
+  DWORD dwFreeHwMemBytes;
+  DWORD dwMaxContigFreeHwMemBytes;
+  DWORD dwUnlockTransferRateHwBuffers;
+  DWORD dwPlayCpuOverheadSwBuffers;
+  DWORD dwReserved1;
+  DWORD dwReserved2;
 };
 
 /* 384 */
 #pragma pack(push, 1)
-struct tWAVEFORMATEX {
-    WORD wFormatTag;
-    WORD nChannels;
-    DWORD nSamplesPerSec;
-    DWORD nAvgBytesPerSec;
-    WORD nBlockAlign;
-    WORD wBitsPerSample;
-    WORD cbSize;
+struct tWAVEFORMATEX
+{
+  WORD wFormatTag;
+  WORD nChannels;
+  DWORD nSamplesPerSec;
+  DWORD nAvgBytesPerSec;
+  WORD nBlockAlign;
+  WORD wBitsPerSample;
+  WORD cbSize;
 };
 #pragma pack(pop)
 
@@ -3522,57 +3581,39 @@ typedef tWAVEFORMATEX WAVEFORMATEX;
 typedef const WAVEFORMATEX *LPCWAVEFORMATEX;
 
 /* 387 */
-struct IDirectSoundBufferVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSoundBuffer *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSoundBuffer *This);
-    ULONG(__stdcall *Release)(IDirectSoundBuffer *This);
-    HRESULT(__stdcall *GetCaps)(IDirectSoundBuffer *This, LPDSBCAPS pDSBufferCaps);
-    HRESULT(__stdcall *GetCurrentPosition)
-    (IDirectSoundBuffer *This, LPDWORD pdwCurrentPlayCursor, LPDWORD pdwCurrentWriteCursor);
-    HRESULT(__stdcall *GetFormat)
-    (IDirectSoundBuffer *This,
-     LPWAVEFORMATEX pwfxFormat,
-     DWORD dwSizeAllocated,
-     LPDWORD pdwSizeWritten);
-    HRESULT(__stdcall *GetVolume)(IDirectSoundBuffer *This, LPLONG plVolume);
-    HRESULT(__stdcall *GetPan)(IDirectSoundBuffer *This, LPLONG plPan);
-    HRESULT(__stdcall *GetFrequency)(IDirectSoundBuffer *This, LPDWORD pdwFrequency);
-    HRESULT(__stdcall *GetStatus)(IDirectSoundBuffer *This, LPDWORD pdwStatus);
-    HRESULT(__stdcall *Initialize)
-    (IDirectSoundBuffer *This, LPDIRECTSOUND pDirectSound, LPCDSBUFFERDESC pcDSBufferDesc);
-    HRESULT(__stdcall *Lock)
-    (IDirectSoundBuffer *This,
-     DWORD dwOffset,
-     DWORD dwBytes,
-     LPVOID *ppvAudioPtr1,
-     LPDWORD pdwAudioBytes1,
-     LPVOID *ppvAudioPtr2,
-     LPDWORD pdwAudioBytes2,
-     DWORD dwFlags);
-    HRESULT(__stdcall *Play)
-    (IDirectSoundBuffer *This, DWORD dwReserved1, DWORD dwPriority, DWORD dwFlags);
-    HRESULT(__stdcall *SetCurrentPosition)(IDirectSoundBuffer *This, DWORD dwNewPosition);
-    HRESULT(__stdcall *SetFormat)(IDirectSoundBuffer *This, LPCWAVEFORMATEX pcfxFormat);
-    HRESULT(__stdcall *SetVolume)(IDirectSoundBuffer *This, LONG lVolume);
-    HRESULT(__stdcall *SetPan)(IDirectSoundBuffer *This, LONG lPan);
-    HRESULT(__stdcall *SetFrequency)(IDirectSoundBuffer *This, DWORD dwFrequency);
-    HRESULT(__stdcall *Stop)(IDirectSoundBuffer *This);
-    HRESULT(__stdcall *Unlock)
-    (IDirectSoundBuffer *This,
-     LPVOID pvAudioPtr1,
-     DWORD dwAudioBytes1,
-     LPVOID pvAudioPtr2,
-     DWORD dwAudioBytes2);
-    HRESULT(__stdcall *Restore)(IDirectSoundBuffer *This);
+struct IDirectSoundBufferVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSoundBuffer *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSoundBuffer *This);
+  ULONG (__stdcall *Release)(IDirectSoundBuffer *This);
+  HRESULT (__stdcall *GetCaps)(IDirectSoundBuffer *This, LPDSBCAPS pDSBufferCaps);
+  HRESULT (__stdcall *GetCurrentPosition)(IDirectSoundBuffer *This, LPDWORD pdwCurrentPlayCursor, LPDWORD pdwCurrentWriteCursor);
+  HRESULT (__stdcall *GetFormat)(IDirectSoundBuffer *This, LPWAVEFORMATEX pwfxFormat, DWORD dwSizeAllocated, LPDWORD pdwSizeWritten);
+  HRESULT (__stdcall *GetVolume)(IDirectSoundBuffer *This, LPLONG plVolume);
+  HRESULT (__stdcall *GetPan)(IDirectSoundBuffer *This, LPLONG plPan);
+  HRESULT (__stdcall *GetFrequency)(IDirectSoundBuffer *This, LPDWORD pdwFrequency);
+  HRESULT (__stdcall *GetStatus)(IDirectSoundBuffer *This, LPDWORD pdwStatus);
+  HRESULT (__stdcall *Initialize)(IDirectSoundBuffer *This, LPDIRECTSOUND pDirectSound, LPCDSBUFFERDESC pcDSBufferDesc);
+  HRESULT (__stdcall *Lock)(IDirectSoundBuffer *This, DWORD dwOffset, DWORD dwBytes, LPVOID *ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID *ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
+  HRESULT (__stdcall *Play)(IDirectSoundBuffer *This, DWORD dwReserved1, DWORD dwPriority, DWORD dwFlags);
+  HRESULT (__stdcall *SetCurrentPosition)(IDirectSoundBuffer *This, DWORD dwNewPosition);
+  HRESULT (__stdcall *SetFormat)(IDirectSoundBuffer *This, LPCWAVEFORMATEX pcfxFormat);
+  HRESULT (__stdcall *SetVolume)(IDirectSoundBuffer *This, LONG lVolume);
+  HRESULT (__stdcall *SetPan)(IDirectSoundBuffer *This, LONG lPan);
+  HRESULT (__stdcall *SetFrequency)(IDirectSoundBuffer *This, DWORD dwFrequency);
+  HRESULT (__stdcall *Stop)(IDirectSoundBuffer *This);
+  HRESULT (__stdcall *Unlock)(IDirectSoundBuffer *This, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
+  HRESULT (__stdcall *Restore)(IDirectSoundBuffer *This);
 };
 
 /* 389 */
-struct _DSBCAPS {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwBufferBytes;
-    DWORD dwUnlockTransferRate;
-    DWORD dwPlayCpuOverhead;
+struct _DSBCAPS
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwBufferBytes;
+  DWORD dwUnlockTransferRate;
+  DWORD dwPlayCpuOverhead;
 };
 
 /* 398 */
@@ -3591,65 +3632,53 @@ typedef _DS3DLISTENER DS3DLISTENER;
 typedef const DS3DLISTENER *LPCDS3DLISTENER;
 
 /* 396 */
-struct IDirectSound3DListenerVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSound3DListener *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSound3DListener *This);
-    ULONG(__stdcall *Release)(IDirectSound3DListener *This);
-    HRESULT(__stdcall *GetAllParameters)(IDirectSound3DListener *This, LPDS3DLISTENER pListener);
-    HRESULT(__stdcall *GetDistanceFactor)
-    (IDirectSound3DListener *This, D3DVALUE *pflDistanceFactor);
-    HRESULT(__stdcall *GetDopplerFactor)(IDirectSound3DListener *This, D3DVALUE *pflDopplerFactor);
-    HRESULT(__stdcall *GetOrientation)
-    (IDirectSound3DListener *This, D3DVECTOR *pvOrientFront, D3DVECTOR *pvOrientTop);
-    HRESULT(__stdcall *GetPosition)(IDirectSound3DListener *This, D3DVECTOR *pvPosition);
-    HRESULT(__stdcall *GetRolloffFactor)(IDirectSound3DListener *This, D3DVALUE *pflRolloffFactor);
-    HRESULT(__stdcall *GetVelocity)(IDirectSound3DListener *This, D3DVECTOR *pvVelocity);
-    HRESULT(__stdcall *SetAllParameters)
-    (IDirectSound3DListener *This, LPCDS3DLISTENER pcListener, DWORD dwApply);
-    HRESULT(__stdcall *SetDistanceFactor)
-    (IDirectSound3DListener *This, D3DVALUE flDistanceFactor, DWORD dwApply);
-    HRESULT(__stdcall *SetDopplerFactor)
-    (IDirectSound3DListener *This, D3DVALUE flDopplerFactor, DWORD dwApply);
-    HRESULT(__stdcall *SetOrientation)
-    (IDirectSound3DListener *This,
-     D3DVALUE xFront,
-     D3DVALUE yFront,
-     D3DVALUE zFront,
-     D3DVALUE xTop,
-     D3DVALUE yTop,
-     D3DVALUE zTop,
-     DWORD dwApply);
-    HRESULT(__stdcall *SetPosition)
-    (IDirectSound3DListener *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
-    HRESULT(__stdcall *SetRolloffFactor)
-    (IDirectSound3DListener *This, D3DVALUE flRolloffFactor, DWORD dwApply);
-    HRESULT(__stdcall *SetVelocity)
-    (IDirectSound3DListener *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
-    HRESULT(__stdcall *CommitDeferredSettings)(IDirectSound3DListener *This);
+struct IDirectSound3DListenerVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSound3DListener *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSound3DListener *This);
+  ULONG (__stdcall *Release)(IDirectSound3DListener *This);
+  HRESULT (__stdcall *GetAllParameters)(IDirectSound3DListener *This, LPDS3DLISTENER pListener);
+  HRESULT (__stdcall *GetDistanceFactor)(IDirectSound3DListener *This, D3DVALUE *pflDistanceFactor);
+  HRESULT (__stdcall *GetDopplerFactor)(IDirectSound3DListener *This, D3DVALUE *pflDopplerFactor);
+  HRESULT (__stdcall *GetOrientation)(IDirectSound3DListener *This, D3DVECTOR *pvOrientFront, D3DVECTOR *pvOrientTop);
+  HRESULT (__stdcall *GetPosition)(IDirectSound3DListener *This, D3DVECTOR *pvPosition);
+  HRESULT (__stdcall *GetRolloffFactor)(IDirectSound3DListener *This, D3DVALUE *pflRolloffFactor);
+  HRESULT (__stdcall *GetVelocity)(IDirectSound3DListener *This, D3DVECTOR *pvVelocity);
+  HRESULT (__stdcall *SetAllParameters)(IDirectSound3DListener *This, LPCDS3DLISTENER pcListener, DWORD dwApply);
+  HRESULT (__stdcall *SetDistanceFactor)(IDirectSound3DListener *This, D3DVALUE flDistanceFactor, DWORD dwApply);
+  HRESULT (__stdcall *SetDopplerFactor)(IDirectSound3DListener *This, D3DVALUE flDopplerFactor, DWORD dwApply);
+  HRESULT (__stdcall *SetOrientation)(IDirectSound3DListener *This, D3DVALUE xFront, D3DVALUE yFront, D3DVALUE zFront, D3DVALUE xTop, D3DVALUE yTop, D3DVALUE zTop, DWORD dwApply);
+  HRESULT (__stdcall *SetPosition)(IDirectSound3DListener *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+  HRESULT (__stdcall *SetRolloffFactor)(IDirectSound3DListener *This, D3DVALUE flRolloffFactor, DWORD dwApply);
+  HRESULT (__stdcall *SetVelocity)(IDirectSound3DListener *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+  HRESULT (__stdcall *CommitDeferredSettings)(IDirectSound3DListener *This);
 };
 
 /* 397 */
-struct IDirectSound3DListener {
-    IDirectSound3DListenerVtbl *lpVtbl;
+struct IDirectSound3DListener
+{
+  IDirectSound3DListenerVtbl *lpVtbl;
 };
 
 /* 401 */
-struct _D3DVECTOR {
-    float x;
-    float y;
-    float z;
+struct _D3DVECTOR
+{
+  float x;
+  float y;
+  float z;
 };
 
 /* 399 */
-struct _DS3DLISTENER {
-    DWORD dwSize;
-    D3DVECTOR vPosition;
-    D3DVECTOR vVelocity;
-    D3DVECTOR vOrientFront;
-    D3DVECTOR vOrientTop;
-    D3DVALUE flDistanceFactor;
-    D3DVALUE flRolloffFactor;
-    D3DVALUE flDopplerFactor;
+struct _DS3DLISTENER
+{
+  DWORD dwSize;
+  D3DVECTOR vPosition;
+  D3DVECTOR vVelocity;
+  D3DVECTOR vOrientFront;
+  D3DVECTOR vOrientTop;
+  D3DVALUE flDistanceFactor;
+  D3DVALUE flRolloffFactor;
+  D3DVALUE flDopplerFactor;
 };
 
 /* 407 */
@@ -3662,57 +3691,50 @@ typedef _DS3DBUFFER DS3DBUFFER;
 typedef const DS3DBUFFER *LPCDS3DBUFFER;
 
 /* 405 */
-struct IDirectSound3DBufferVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSound3DBuffer *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSound3DBuffer *This);
-    ULONG(__stdcall *Release)(IDirectSound3DBuffer *This);
-    HRESULT(__stdcall *GetAllParameters)(IDirectSound3DBuffer *This, LPDS3DBUFFER pDs3dBuffer);
-    HRESULT(__stdcall *GetConeAngles)
-    (IDirectSound3DBuffer *This, LPDWORD pdwInsideConeAngle, LPDWORD pdwOutsideConeAngle);
-    HRESULT(__stdcall *GetConeOrientation)(IDirectSound3DBuffer *This, D3DVECTOR *pvOrientation);
-    HRESULT(__stdcall *GetConeOutsideVolume)
-    (IDirectSound3DBuffer *This, LPLONG plConeOutsideVolume);
-    HRESULT(__stdcall *GetMaxDistance)(IDirectSound3DBuffer *This, D3DVALUE *pflMaxDistance);
-    HRESULT(__stdcall *GetMinDistance)(IDirectSound3DBuffer *This, D3DVALUE *pflMinDistance);
-    HRESULT(__stdcall *GetMode)(IDirectSound3DBuffer *This, LPDWORD pdwMode);
-    HRESULT(__stdcall *GetPosition)(IDirectSound3DBuffer *This, D3DVECTOR *pvPosition);
-    HRESULT(__stdcall *GetVelocity)(IDirectSound3DBuffer *This, D3DVECTOR *pvVelocity);
-    HRESULT(__stdcall *SetAllParameters)
-    (IDirectSound3DBuffer *This, LPCDS3DBUFFER pcDs3dBuffer, DWORD dwApply);
-    HRESULT(__stdcall *SetConeAngles)
-    (IDirectSound3DBuffer *This, DWORD dwInsideConeAngle, DWORD dwOutsideConeAngle, DWORD dwApply);
-    HRESULT(__stdcall *SetConeOrientation)
-    (IDirectSound3DBuffer *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
-    HRESULT(__stdcall *SetConeOutsideVolume)
-    (IDirectSound3DBuffer *This, LONG lConeOutsideVolume, DWORD dwApply);
-    HRESULT(__stdcall *SetMaxDistance)
-    (IDirectSound3DBuffer *This, D3DVALUE flMaxDistance, DWORD dwApply);
-    HRESULT(__stdcall *SetMinDistance)
-    (IDirectSound3DBuffer *This, D3DVALUE flMinDistance, DWORD dwApply);
-    HRESULT(__stdcall *SetMode)(IDirectSound3DBuffer *This, DWORD dwMode, DWORD dwApply);
-    HRESULT(__stdcall *SetPosition)
-    (IDirectSound3DBuffer *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
-    HRESULT(__stdcall *SetVelocity)
-    (IDirectSound3DBuffer *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+struct IDirectSound3DBufferVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSound3DBuffer *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSound3DBuffer *This);
+  ULONG (__stdcall *Release)(IDirectSound3DBuffer *This);
+  HRESULT (__stdcall *GetAllParameters)(IDirectSound3DBuffer *This, LPDS3DBUFFER pDs3dBuffer);
+  HRESULT (__stdcall *GetConeAngles)(IDirectSound3DBuffer *This, LPDWORD pdwInsideConeAngle, LPDWORD pdwOutsideConeAngle);
+  HRESULT (__stdcall *GetConeOrientation)(IDirectSound3DBuffer *This, D3DVECTOR *pvOrientation);
+  HRESULT (__stdcall *GetConeOutsideVolume)(IDirectSound3DBuffer *This, LPLONG plConeOutsideVolume);
+  HRESULT (__stdcall *GetMaxDistance)(IDirectSound3DBuffer *This, D3DVALUE *pflMaxDistance);
+  HRESULT (__stdcall *GetMinDistance)(IDirectSound3DBuffer *This, D3DVALUE *pflMinDistance);
+  HRESULT (__stdcall *GetMode)(IDirectSound3DBuffer *This, LPDWORD pdwMode);
+  HRESULT (__stdcall *GetPosition)(IDirectSound3DBuffer *This, D3DVECTOR *pvPosition);
+  HRESULT (__stdcall *GetVelocity)(IDirectSound3DBuffer *This, D3DVECTOR *pvVelocity);
+  HRESULT (__stdcall *SetAllParameters)(IDirectSound3DBuffer *This, LPCDS3DBUFFER pcDs3dBuffer, DWORD dwApply);
+  HRESULT (__stdcall *SetConeAngles)(IDirectSound3DBuffer *This, DWORD dwInsideConeAngle, DWORD dwOutsideConeAngle, DWORD dwApply);
+  HRESULT (__stdcall *SetConeOrientation)(IDirectSound3DBuffer *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+  HRESULT (__stdcall *SetConeOutsideVolume)(IDirectSound3DBuffer *This, LONG lConeOutsideVolume, DWORD dwApply);
+  HRESULT (__stdcall *SetMaxDistance)(IDirectSound3DBuffer *This, D3DVALUE flMaxDistance, DWORD dwApply);
+  HRESULT (__stdcall *SetMinDistance)(IDirectSound3DBuffer *This, D3DVALUE flMinDistance, DWORD dwApply);
+  HRESULT (__stdcall *SetMode)(IDirectSound3DBuffer *This, DWORD dwMode, DWORD dwApply);
+  HRESULT (__stdcall *SetPosition)(IDirectSound3DBuffer *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+  HRESULT (__stdcall *SetVelocity)(IDirectSound3DBuffer *This, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
 };
 
 /* 406 */
-struct IDirectSound3DBuffer {
-    IDirectSound3DBufferVtbl *lpVtbl;
+struct IDirectSound3DBuffer
+{
+  IDirectSound3DBufferVtbl *lpVtbl;
 };
 
 /* 408 */
-struct _DS3DBUFFER {
-    DWORD dwSize;
-    D3DVECTOR vPosition;
-    D3DVECTOR vVelocity;
-    DWORD dwInsideConeAngle;
-    DWORD dwOutsideConeAngle;
-    D3DVECTOR vConeOrientation;
-    LONG lConeOutsideVolume;
-    D3DVALUE flMinDistance;
-    D3DVALUE flMaxDistance;
-    DWORD dwMode;
+struct _DS3DBUFFER
+{
+  DWORD dwSize;
+  D3DVECTOR vPosition;
+  D3DVECTOR vVelocity;
+  DWORD dwInsideConeAngle;
+  DWORD dwOutsideConeAngle;
+  D3DVECTOR vConeOrientation;
+  LONG lConeOutsideVolume;
+  D3DVALUE flMinDistance;
+  D3DVALUE flMaxDistance;
+  DWORD dwMode;
 };
 
 /* 414 */
@@ -3728,59 +3750,61 @@ typedef IDirectSoundCaptureBuffer *LPDIRECTSOUNDCAPTUREBUFFER;
 typedef _DSCCAPS *LPDSCCAPS;
 
 /* 411 */
-struct IDirectSoundCaptureVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSoundCapture *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSoundCapture *This);
-    ULONG(__stdcall *Release)(IDirectSoundCapture *This);
-    HRESULT(__stdcall *CreateCaptureBuffer)
-    (IDirectSoundCapture *This,
-     LPCDSCBUFFERDESC pcDSCBufferDesc,
-     LPDIRECTSOUNDCAPTUREBUFFER *ppDSCBuffer,
-     LPUNKNOWN pUnkOuter);
-    HRESULT(__stdcall *GetCaps)(IDirectSoundCapture *This, LPDSCCAPS pDSCCaps);
-    HRESULT(__stdcall *Initialize)(IDirectSoundCapture *This, LPCGUID pcGuidDevice);
+struct IDirectSoundCaptureVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSoundCapture *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSoundCapture *This);
+  ULONG (__stdcall *Release)(IDirectSoundCapture *This);
+  HRESULT (__stdcall *CreateCaptureBuffer)(IDirectSoundCapture *This, LPCDSCBUFFERDESC pcDSCBufferDesc, LPDIRECTSOUNDCAPTUREBUFFER *ppDSCBuffer, LPUNKNOWN pUnkOuter);
+  HRESULT (__stdcall *GetCaps)(IDirectSoundCapture *This, LPDSCCAPS pDSCCaps);
+  HRESULT (__stdcall *Initialize)(IDirectSoundCapture *This, LPCGUID pcGuidDevice);
 };
 
 /* 412 */
-struct IDirectSoundCapture {
-    IDirectSoundCaptureVtbl *lpVtbl;
+struct IDirectSoundCapture
+{
+  IDirectSoundCaptureVtbl *lpVtbl;
 };
 
 /* 416 */
 typedef _DSCEFFECTDESC *LPDSCEFFECTDESC;
 
 /* 415 */
-struct _DSCBUFFERDESC {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwBufferBytes;
-    DWORD dwReserved;
-    LPWAVEFORMATEX lpwfxFormat;
-    DWORD dwFXCount;
-    LPDSCEFFECTDESC lpDSCFXDesc;
+struct _DSCBUFFERDESC
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwBufferBytes;
+  DWORD dwReserved;
+  LPWAVEFORMATEX lpwfxFormat;
+  DWORD dwFXCount;
+  LPDSCEFFECTDESC lpDSCFXDesc;
 };
 
 /* 419 */
-struct IDirectSoundCaptureBuffer {
-    IDirectSoundCaptureBufferVtbl *lpVtbl;
+struct IDirectSoundCaptureBuffer
+{
+  IDirectSoundCaptureBufferVtbl *lpVtbl;
 };
 
 /* 425 */
-struct _DSCCAPS {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwFormats;
-    DWORD dwChannels;
+struct _DSCCAPS
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwFormats;
+  DWORD dwChannels;
 };
 
 /* 417 */
-struct _DSCEFFECTDESC {
-    DWORD dwSize;
-    DWORD dwFlags;
-    GUID guidDSCFXClass;
-    GUID guidDSCFXInstance;
-    DWORD dwReserved1;
-    DWORD dwReserved2;
+struct _DSCEFFECTDESC
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  GUID guidDSCFXClass;
+  GUID guidDSCFXInstance;
+  DWORD dwReserved1;
+  DWORD dwReserved2;
 };
 
 /* 421 */
@@ -3790,48 +3814,29 @@ typedef _DSCBCAPS *LPDSCBCAPS;
 typedef IDirectSoundCapture *LPDIRECTSOUNDCAPTURE;
 
 /* 420 */
-struct IDirectSoundCaptureBufferVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSoundCaptureBuffer *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSoundCaptureBuffer *This);
-    ULONG(__stdcall *Release)(IDirectSoundCaptureBuffer *This);
-    HRESULT(__stdcall *GetCaps)(IDirectSoundCaptureBuffer *This, LPDSCBCAPS pDSCBCaps);
-    HRESULT(__stdcall *GetCurrentPosition)
-    (IDirectSoundCaptureBuffer *This, LPDWORD pdwCapturePosition, LPDWORD pdwReadPosition);
-    HRESULT(__stdcall *GetFormat)
-    (IDirectSoundCaptureBuffer *This,
-     LPWAVEFORMATEX pwfxFormat,
-     DWORD dwSizeAllocated,
-     LPDWORD pdwSizeWritten);
-    HRESULT(__stdcall *GetStatus)(IDirectSoundCaptureBuffer *This, LPDWORD pdwStatus);
-    HRESULT(__stdcall *Initialize)
-    (IDirectSoundCaptureBuffer *This,
-     LPDIRECTSOUNDCAPTURE pDirectSoundCapture,
-     LPCDSCBUFFERDESC pcDSCBufferDesc);
-    HRESULT(__stdcall *Lock)
-    (IDirectSoundCaptureBuffer *This,
-     DWORD dwOffset,
-     DWORD dwBytes,
-     LPVOID *ppvAudioPtr1,
-     LPDWORD pdwAudioBytes1,
-     LPVOID *ppvAudioPtr2,
-     LPDWORD pdwAudioBytes2,
-     DWORD dwFlags);
-    HRESULT(__stdcall *Start)(IDirectSoundCaptureBuffer *This, DWORD dwFlags);
-    HRESULT(__stdcall *Stop)(IDirectSoundCaptureBuffer *This);
-    HRESULT(__stdcall *Unlock)
-    (IDirectSoundCaptureBuffer *This,
-     LPVOID pvAudioPtr1,
-     DWORD dwAudioBytes1,
-     LPVOID pvAudioPtr2,
-     DWORD dwAudioBytes2);
+struct IDirectSoundCaptureBufferVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSoundCaptureBuffer *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSoundCaptureBuffer *This);
+  ULONG (__stdcall *Release)(IDirectSoundCaptureBuffer *This);
+  HRESULT (__stdcall *GetCaps)(IDirectSoundCaptureBuffer *This, LPDSCBCAPS pDSCBCaps);
+  HRESULT (__stdcall *GetCurrentPosition)(IDirectSoundCaptureBuffer *This, LPDWORD pdwCapturePosition, LPDWORD pdwReadPosition);
+  HRESULT (__stdcall *GetFormat)(IDirectSoundCaptureBuffer *This, LPWAVEFORMATEX pwfxFormat, DWORD dwSizeAllocated, LPDWORD pdwSizeWritten);
+  HRESULT (__stdcall *GetStatus)(IDirectSoundCaptureBuffer *This, LPDWORD pdwStatus);
+  HRESULT (__stdcall *Initialize)(IDirectSoundCaptureBuffer *This, LPDIRECTSOUNDCAPTURE pDirectSoundCapture, LPCDSCBUFFERDESC pcDSCBufferDesc);
+  HRESULT (__stdcall *Lock)(IDirectSoundCaptureBuffer *This, DWORD dwOffset, DWORD dwBytes, LPVOID *ppvAudioPtr1, LPDWORD pdwAudioBytes1, LPVOID *ppvAudioPtr2, LPDWORD pdwAudioBytes2, DWORD dwFlags);
+  HRESULT (__stdcall *Start)(IDirectSoundCaptureBuffer *This, DWORD dwFlags);
+  HRESULT (__stdcall *Stop)(IDirectSoundCaptureBuffer *This);
+  HRESULT (__stdcall *Unlock)(IDirectSoundCaptureBuffer *This, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
 };
 
 /* 422 */
-struct _DSCBCAPS {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwBufferBytes;
-    DWORD dwReserved;
+struct _DSCBCAPS
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwBufferBytes;
+  DWORD dwReserved;
 };
 
 /* 429 */
@@ -3841,86 +3846,66 @@ typedef _DSBPOSITIONNOTIFY DSBPOSITIONNOTIFY;
 typedef const DSBPOSITIONNOTIFY *LPCDSBPOSITIONNOTIFY;
 
 /* 426 */
-struct IDirectSoundNotifyVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectSoundNotify *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectSoundNotify *This);
-    ULONG(__stdcall *Release)(IDirectSoundNotify *This);
-    HRESULT(__stdcall *SetNotificationPositions)
-    (IDirectSoundNotify *This, DWORD dwPositionNotifies, LPCDSBPOSITIONNOTIFY pcPositionNotifies);
+struct IDirectSoundNotifyVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectSoundNotify *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectSoundNotify *This);
+  ULONG (__stdcall *Release)(IDirectSoundNotify *This);
+  HRESULT (__stdcall *SetNotificationPositions)(IDirectSoundNotify *This, DWORD dwPositionNotifies, LPCDSBPOSITIONNOTIFY pcPositionNotifies);
 };
 
 /* 427 */
-struct IDirectSoundNotify {
-    IDirectSoundNotifyVtbl *lpVtbl;
+struct IDirectSoundNotify
+{
+  IDirectSoundNotifyVtbl *lpVtbl;
 };
 
 /* 430 */
-struct _DSBPOSITIONNOTIFY {
-    DWORD dwOffset;
-    HANDLE hEventNotify;
+struct _DSBPOSITIONNOTIFY
+{
+  DWORD dwOffset;
+  HANDLE hEventNotify;
 };
 
 /* 433 */
 typedef ULONG *PULONG;
 
 /* 431 */
-struct IKsPropertySetVtbl {
-    HRESULT(__stdcall *QueryInterface)(IKsPropertySet *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IKsPropertySet *This);
-    ULONG(__stdcall *Release)(IKsPropertySet *This);
-    HRESULT(__stdcall *Get)
-    (IKsPropertySet *This,
-     const GUID *const rguidPropSet,
-     ULONG ulId,
-     LPVOID pInstanceData,
-     ULONG ulInstanceLength,
-     LPVOID pPropertyData,
-     ULONG ulDataLength,
-     PULONG pulBytesReturned);
-    HRESULT(__stdcall *Set)
-    (IKsPropertySet *This,
-     const GUID *const rguidPropSet,
-     ULONG ulId,
-     LPVOID pInstanceData,
-     ULONG ulInstanceLength,
-     LPVOID pPropertyData,
-     ULONG ulDataLength);
-    HRESULT(__stdcall *QuerySupport)
-    (IKsPropertySet *This, const GUID *const rguidPropSet, ULONG ulId, PULONG pulTypeSupport);
+struct IKsPropertySetVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IKsPropertySet *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IKsPropertySet *This);
+  ULONG (__stdcall *Release)(IKsPropertySet *This);
+  HRESULT (__stdcall *Get)(IKsPropertySet *This, const GUID *const rguidPropSet, ULONG ulId, LPVOID pInstanceData, ULONG ulInstanceLength, LPVOID pPropertyData, ULONG ulDataLength, PULONG pulBytesReturned);
+  HRESULT (__stdcall *Set)(IKsPropertySet *This, const GUID *const rguidPropSet, ULONG ulId, LPVOID pInstanceData, ULONG ulInstanceLength, LPVOID pPropertyData, ULONG ulDataLength);
+  HRESULT (__stdcall *QuerySupport)(IKsPropertySet *This, const GUID *const rguidPropSet, ULONG ulId, PULONG pulTypeSupport);
 };
 
 /* 432 */
-struct IKsPropertySet {
-    IKsPropertySetVtbl *lpVtbl;
+struct IKsPropertySet
+{
+  IKsPropertySetVtbl *lpVtbl;
 };
 
 /* 436 */
 typedef LONGLONG REFERENCE_TIME;
 
 /* 434 */
-struct IReferenceClockVtbl {
-    HRESULT(__stdcall *QueryInterface)(IReferenceClock *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IReferenceClock *This);
-    ULONG(__stdcall *Release)(IReferenceClock *This);
-    HRESULT(__stdcall *GetTime)(IReferenceClock *This, REFERENCE_TIME *pTime);
-    HRESULT(__stdcall *AdviseTime)
-    (IReferenceClock *This,
-     REFERENCE_TIME rtBaseTime,
-     REFERENCE_TIME rtStreamTime,
-     HANDLE hEvent,
-     LPDWORD pdwAdviseCookie);
-    HRESULT(__stdcall *AdvisePeriodic)
-    (IReferenceClock *This,
-     REFERENCE_TIME rtStartTime,
-     REFERENCE_TIME rtPeriodTime,
-     HANDLE hSemaphore,
-     LPDWORD pdwAdviseCookie);
-    HRESULT(__stdcall *Unadvise)(IReferenceClock *This, DWORD dwAdviseCookie);
+struct IReferenceClockVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IReferenceClock *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IReferenceClock *This);
+  ULONG (__stdcall *Release)(IReferenceClock *This);
+  HRESULT (__stdcall *GetTime)(IReferenceClock *This, REFERENCE_TIME *pTime);
+  HRESULT (__stdcall *AdviseTime)(IReferenceClock *This, REFERENCE_TIME rtBaseTime, REFERENCE_TIME rtStreamTime, HANDLE hEvent, LPDWORD pdwAdviseCookie);
+  HRESULT (__stdcall *AdvisePeriodic)(IReferenceClock *This, REFERENCE_TIME rtStartTime, REFERENCE_TIME rtPeriodTime, HANDLE hSemaphore, LPDWORD pdwAdviseCookie);
+  HRESULT (__stdcall *Unadvise)(IReferenceClock *This, DWORD dwAdviseCookie);
 };
 
 /* 435 */
-struct IReferenceClock {
-    IReferenceClockVtbl *lpVtbl;
+struct IReferenceClock
+{
+  IReferenceClockVtbl *lpVtbl;
 };
 
 /* 440 */
@@ -3936,65 +3921,55 @@ typedef KSIDENTIFIER *PKSMETHOD;
 typedef KSIDENTIFIER *PKSEVENT;
 
 /* 437 */
-struct IKsControlVtbl {
-    HRESULT(__stdcall *QueryInterface)(IKsControl *This, const IID *const riid, void **ppvObject);
-    ULONG(__stdcall *AddRef)(IKsControl *This);
-    ULONG(__stdcall *Release)(IKsControl *This);
-    HRESULT(__stdcall *KsProperty)
-    (IKsControl *This,
-     PKSPROPERTY Property,
-     ULONG PropertyLength,
-     void *PropertyData,
-     ULONG DataLength,
-     ULONG *BytesReturned);
-    HRESULT(__stdcall *KsMethod)
-    (IKsControl *This,
-     PKSMETHOD Method,
-     ULONG MethodLength,
-     void *MethodData,
-     ULONG DataLength,
-     ULONG *BytesReturned);
-    HRESULT(__stdcall *KsEvent)
-    (IKsControl *This,
-     PKSEVENT Event,
-     ULONG EventLength,
-     void *EventData,
-     ULONG DataLength,
-     ULONG *BytesReturned);
+struct IKsControlVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IKsControl *This, const IID *const riid, void **ppvObject);
+  ULONG (__stdcall *AddRef)(IKsControl *This);
+  ULONG (__stdcall *Release)(IKsControl *This);
+  HRESULT (__stdcall *KsProperty)(IKsControl *This, PKSPROPERTY Property, ULONG PropertyLength, void *PropertyData, ULONG DataLength, ULONG *BytesReturned);
+  HRESULT (__stdcall *KsMethod)(IKsControl *This, PKSMETHOD Method, ULONG MethodLength, void *MethodData, ULONG DataLength, ULONG *BytesReturned);
+  HRESULT (__stdcall *KsEvent)(IKsControl *This, PKSEVENT Event, ULONG EventLength, void *EventData, ULONG DataLength, ULONG *BytesReturned);
 };
 
 /* 438 */
-struct IKsControl {
-    IKsControlVtbl *lpVtbl;
+struct IKsControl
+{
+  IKsControlVtbl *lpVtbl;
 };
 
 /* 443 */
-struct $::$F044539147C377D1A0F579F3A4EAC6A7::$8DB12206A787E12F5CB68E9C5F8D04FA {
-    GUID Set;
-    ULONG Id;
-    ULONG Flags;
+struct $::$F044539147C377D1A0F579F3A4EAC6A7::$8DB12206A787E12F5CB68E9C5F8D04FA
+{
+  GUID Set;
+  ULONG Id;
+  ULONG Flags;
 };
 
 /* 442 */
-union $117E3A994AEBF040E18388CACE709509::$F044539147C377D1A0F579F3A4EAC6A7 {
-    struct {
-        GUID Set;
-        ULONG Id;
-        ULONG Flags;
-    };
-    LONGLONG Alignment;
+union $117E3A994AEBF040E18388CACE709509::$F044539147C377D1A0F579F3A4EAC6A7
+{
+  struct
+  {
+    GUID Set;
+    ULONG Id;
+    ULONG Flags;
+  };
+  LONGLONG Alignment;
 };
 
 /* 441 */
-struct $117E3A994AEBF040E18388CACE709509 {
-    union {
-        struct {
-            GUID Set;
-            ULONG Id;
-            ULONG Flags;
-        };
-        LONGLONG Alignment;
+struct $117E3A994AEBF040E18388CACE709509
+{
+  union
+  {
+    struct
+    {
+      GUID Set;
+      ULONG Id;
+      ULONG Flags;
     };
+    LONGLONG Alignment;
+  };
 };
 
 /* 448 */
@@ -4002,79 +3977,75 @@ typedef REFERENCE_TIME *LPREFERENCE_TIME;
 
 /* 446 */
 #pragma pack(push, 8)
-struct IDirectMusicBufferVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectMusicBuffer *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectMusicBuffer *This);
-    ULONG(__stdcall *Release)(IDirectMusicBuffer *This);
-    HRESULT(__stdcall *Flush)(IDirectMusicBuffer *This);
-    HRESULT(__stdcall *TotalTime)(IDirectMusicBuffer *This, LPREFERENCE_TIME prtTime);
-    HRESULT(__stdcall *PackStructured)
-    (IDirectMusicBuffer *This, REFERENCE_TIME rt, DWORD dwChannelGroup, DWORD dwChannelMessage);
-    HRESULT(__stdcall *PackUnstructured)
-    (IDirectMusicBuffer *This, REFERENCE_TIME rt, DWORD dwChannelGroup, DWORD cb, LPBYTE lpb);
-    HRESULT(__stdcall *ResetReadPtr)(IDirectMusicBuffer *This);
-    HRESULT(__stdcall *GetNextEvent)
-    (IDirectMusicBuffer *This,
-     LPREFERENCE_TIME prt,
-     LPDWORD pdwChannelGroup,
-     LPDWORD pdwLength,
-     LPBYTE *ppData);
-    HRESULT(__stdcall *GetRawBufferPtr)(IDirectMusicBuffer *This, LPBYTE *ppData);
-    HRESULT(__stdcall *GetStartTime)(IDirectMusicBuffer *This, LPREFERENCE_TIME prt);
-    HRESULT(__stdcall *GetUsedBytes)(IDirectMusicBuffer *This, LPDWORD pcb);
-    HRESULT(__stdcall *GetMaxBytes)(IDirectMusicBuffer *This, LPDWORD pcb);
-    HRESULT(__stdcall *GetBufferFormat)(IDirectMusicBuffer *This, LPGUID pGuidFormat);
-    HRESULT(__stdcall *SetStartTime)(IDirectMusicBuffer *This, REFERENCE_TIME rt);
-    HRESULT(__stdcall *SetUsedBytes)(IDirectMusicBuffer *This, DWORD cb);
+struct IDirectMusicBufferVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectMusicBuffer *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectMusicBuffer *This);
+  ULONG (__stdcall *Release)(IDirectMusicBuffer *This);
+  HRESULT (__stdcall *Flush)(IDirectMusicBuffer *This);
+  HRESULT (__stdcall *TotalTime)(IDirectMusicBuffer *This, LPREFERENCE_TIME prtTime);
+  HRESULT (__stdcall *PackStructured)(IDirectMusicBuffer *This, REFERENCE_TIME rt, DWORD dwChannelGroup, DWORD dwChannelMessage);
+  HRESULT (__stdcall *PackUnstructured)(IDirectMusicBuffer *This, REFERENCE_TIME rt, DWORD dwChannelGroup, DWORD cb, LPBYTE lpb);
+  HRESULT (__stdcall *ResetReadPtr)(IDirectMusicBuffer *This);
+  HRESULT (__stdcall *GetNextEvent)(IDirectMusicBuffer *This, LPREFERENCE_TIME prt, LPDWORD pdwChannelGroup, LPDWORD pdwLength, LPBYTE *ppData);
+  HRESULT (__stdcall *GetRawBufferPtr)(IDirectMusicBuffer *This, LPBYTE *ppData);
+  HRESULT (__stdcall *GetStartTime)(IDirectMusicBuffer *This, LPREFERENCE_TIME prt);
+  HRESULT (__stdcall *GetUsedBytes)(IDirectMusicBuffer *This, LPDWORD pcb);
+  HRESULT (__stdcall *GetMaxBytes)(IDirectMusicBuffer *This, LPDWORD pcb);
+  HRESULT (__stdcall *GetBufferFormat)(IDirectMusicBuffer *This, LPGUID pGuidFormat);
+  HRESULT (__stdcall *SetStartTime)(IDirectMusicBuffer *This, REFERENCE_TIME rt);
+  HRESULT (__stdcall *SetUsedBytes)(IDirectMusicBuffer *This, DWORD cb);
 };
 #pragma pack(pop)
 
 /* 447 */
 #pragma pack(push, 8)
-struct IDirectMusicBuffer {
-    IDirectMusicBufferVtbl *lpVtbl;
+struct IDirectMusicBuffer
+{
+  IDirectMusicBufferVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 449 */
 #pragma pack(push, 8)
-struct IDirectMusicPortDownloadVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectMusicPortDownload *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectMusicPortDownload *This);
-    ULONG(__stdcall *Release)(IDirectMusicPortDownload *This);
-    HRESULT(__stdcall *GetBuffer)
-    (IDirectMusicPortDownload *This, DWORD dwDLId, IDirectMusicDownload **ppIDMDownload);
-    HRESULT(__stdcall *AllocateBuffer)
-    (IDirectMusicPortDownload *This, DWORD dwSize, IDirectMusicDownload **ppIDMDownload);
-    HRESULT(__stdcall *GetDLId)(IDirectMusicPortDownload *This, DWORD *pdwStartDLId, DWORD dwCount);
-    HRESULT(__stdcall *GetAppend)(IDirectMusicPortDownload *This, DWORD *pdwAppend);
-    HRESULT(__stdcall *Download)
-    (IDirectMusicPortDownload *This, IDirectMusicDownload *pIDMDownload);
-    HRESULT(__stdcall *Unload)(IDirectMusicPortDownload *This, IDirectMusicDownload *pIDMDownload);
+struct IDirectMusicPortDownloadVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectMusicPortDownload *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectMusicPortDownload *This);
+  ULONG (__stdcall *Release)(IDirectMusicPortDownload *This);
+  HRESULT (__stdcall *GetBuffer)(IDirectMusicPortDownload *This, DWORD dwDLId, IDirectMusicDownload **ppIDMDownload);
+  HRESULT (__stdcall *AllocateBuffer)(IDirectMusicPortDownload *This, DWORD dwSize, IDirectMusicDownload **ppIDMDownload);
+  HRESULT (__stdcall *GetDLId)(IDirectMusicPortDownload *This, DWORD *pdwStartDLId, DWORD dwCount);
+  HRESULT (__stdcall *GetAppend)(IDirectMusicPortDownload *This, DWORD *pdwAppend);
+  HRESULT (__stdcall *Download)(IDirectMusicPortDownload *This, IDirectMusicDownload *pIDMDownload);
+  HRESULT (__stdcall *Unload)(IDirectMusicPortDownload *This, IDirectMusicDownload *pIDMDownload);
 };
 #pragma pack(pop)
 
 /* 450 */
 #pragma pack(push, 8)
-struct IDirectMusicPortDownload {
-    IDirectMusicPortDownloadVtbl *lpVtbl;
+struct IDirectMusicPortDownload
+{
+  IDirectMusicPortDownloadVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 451 */
 #pragma pack(push, 8)
-struct IDirectMusicDownload {
-    IDirectMusicDownloadVtbl *lpVtbl;
+struct IDirectMusicDownload
+{
+  IDirectMusicDownloadVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 452 */
 #pragma pack(push, 8)
-struct IDirectMusicDownloadVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectMusicDownload *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectMusicDownload *This);
-    ULONG(__stdcall *Release)(IDirectMusicDownload *This);
-    HRESULT(__stdcall *GetBuffer)(IDirectMusicDownload *This, void **ppvBuffer, DWORD *pdwSize);
+struct IDirectMusicDownloadVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectMusicDownload *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectMusicDownload *This);
+  ULONG (__stdcall *Release)(IDirectMusicDownload *This);
+  HRESULT (__stdcall *GetBuffer)(IDirectMusicDownload *This, void **ppvBuffer, DWORD *pdwSize);
 };
 #pragma pack(pop)
 
@@ -4083,60 +4054,59 @@ typedef WCHAR *LPWSTR;
 
 /* 453 */
 #pragma pack(push, 8)
-struct IDirectMusicCollectionVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectMusicCollection *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectMusicCollection *This);
-    ULONG(__stdcall *Release)(IDirectMusicCollection *This);
-    HRESULT(__stdcall *GetInstrument)
-    (IDirectMusicCollection *This, DWORD dwPatch, IDirectMusicInstrument **ppInstrument);
-    HRESULT(__stdcall *EnumInstrument)
-    (IDirectMusicCollection *This,
-     DWORD dwIndex,
-     DWORD *pdwPatch,
-     LPWSTR pwszName,
-     DWORD dwNameLen);
+struct IDirectMusicCollectionVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectMusicCollection *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectMusicCollection *This);
+  ULONG (__stdcall *Release)(IDirectMusicCollection *This);
+  HRESULT (__stdcall *GetInstrument)(IDirectMusicCollection *This, DWORD dwPatch, IDirectMusicInstrument **ppInstrument);
+  HRESULT (__stdcall *EnumInstrument)(IDirectMusicCollection *This, DWORD dwIndex, DWORD *pdwPatch, LPWSTR pwszName, DWORD dwNameLen);
 };
 #pragma pack(pop)
 
 /* 454 */
 #pragma pack(push, 8)
-struct IDirectMusicCollection {
-    IDirectMusicCollectionVtbl *lpVtbl;
+struct IDirectMusicCollection
+{
+  IDirectMusicCollectionVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 455 */
 #pragma pack(push, 8)
-struct IDirectMusicInstrument {
-    IDirectMusicInstrumentVtbl *lpVtbl;
+struct IDirectMusicInstrument
+{
+  IDirectMusicInstrumentVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
 /* 456 */
 #pragma pack(push, 8)
-struct IDirectMusicInstrumentVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectMusicInstrument *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectMusicInstrument *This);
-    ULONG(__stdcall *Release)(IDirectMusicInstrument *This);
-    HRESULT(__stdcall *GetPatch)(IDirectMusicInstrument *This, DWORD *pdwPatch);
-    HRESULT(__stdcall *SetPatch)(IDirectMusicInstrument *This, DWORD dwPatch);
+struct IDirectMusicInstrumentVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectMusicInstrument *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectMusicInstrument *This);
+  ULONG (__stdcall *Release)(IDirectMusicInstrument *This);
+  HRESULT (__stdcall *GetPatch)(IDirectMusicInstrument *This, DWORD *pdwPatch);
+  HRESULT (__stdcall *SetPatch)(IDirectMusicInstrument *This, DWORD dwPatch);
 };
 #pragma pack(pop)
 
 /* 458 */
 #pragma pack(push, 8)
-struct IDirectMusicDownloadedInstrumentVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirectMusicDownloadedInstrument *This, const IID *const, LPVOID *);
-    ULONG(__stdcall *AddRef)(IDirectMusicDownloadedInstrument *This);
-    ULONG(__stdcall *Release)(IDirectMusicDownloadedInstrument *This);
+struct IDirectMusicDownloadedInstrumentVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectMusicDownloadedInstrument *This, const IID *const, LPVOID *);
+  ULONG (__stdcall *AddRef)(IDirectMusicDownloadedInstrument *This);
+  ULONG (__stdcall *Release)(IDirectMusicDownloadedInstrument *This);
 };
 #pragma pack(pop)
 
 /* 459 */
 #pragma pack(push, 8)
-struct IDirectMusicDownloadedInstrument {
-    IDirectMusicDownloadedInstrumentVtbl *lpVtbl;
+struct IDirectMusicDownloadedInstrument
+{
+  IDirectMusicDownloadedInstrumentVtbl *lpVtbl;
 };
 #pragma pack(pop)
 
@@ -4151,9 +4121,10 @@ typedef _D3DTRANSFORMCAPS D3DTRANSFORMCAPS;
 
 /* 473 */
 #pragma pack(push, 4)
-struct _D3DTRANSFORMCAPS {
-    DWORD dwSize;
-    DWORD dwCaps;
+struct _D3DTRANSFORMCAPS
+{
+  DWORD dwSize;
+  DWORD dwCaps;
 };
 #pragma pack(pop)
 
@@ -4162,11 +4133,12 @@ typedef _D3DLIGHTINGCAPS D3DLIGHTINGCAPS;
 
 /* 475 */
 #pragma pack(push, 4)
-struct _D3DLIGHTINGCAPS {
-    DWORD dwSize;
-    DWORD dwCaps;
-    DWORD dwLightingModel;
-    DWORD dwNumLights;
+struct _D3DLIGHTINGCAPS
+{
+  DWORD dwSize;
+  DWORD dwCaps;
+  DWORD dwLightingModel;
+  DWORD dwNumLights;
 };
 #pragma pack(pop)
 
@@ -4175,175 +4147,193 @@ typedef _D3DPrimCaps D3DPRIMCAPS;
 
 /* 477 */
 #pragma pack(push, 4)
-struct _D3DPrimCaps {
-    DWORD dwSize;
-    DWORD dwMiscCaps;
-    DWORD dwRasterCaps;
-    DWORD dwZCmpCaps;
-    DWORD dwSrcBlendCaps;
-    DWORD dwDestBlendCaps;
-    DWORD dwAlphaCmpCaps;
-    DWORD dwShadeCaps;
-    DWORD dwTextureCaps;
-    DWORD dwTextureFilterCaps;
-    DWORD dwTextureBlendCaps;
-    DWORD dwTextureAddressCaps;
-    DWORD dwStippleWidth;
-    DWORD dwStippleHeight;
+struct _D3DPrimCaps
+{
+  DWORD dwSize;
+  DWORD dwMiscCaps;
+  DWORD dwRasterCaps;
+  DWORD dwZCmpCaps;
+  DWORD dwSrcBlendCaps;
+  DWORD dwDestBlendCaps;
+  DWORD dwAlphaCmpCaps;
+  DWORD dwShadeCaps;
+  DWORD dwTextureCaps;
+  DWORD dwTextureFilterCaps;
+  DWORD dwTextureBlendCaps;
+  DWORD dwTextureAddressCaps;
+  DWORD dwStippleWidth;
+  DWORD dwStippleHeight;
 };
 #pragma pack(pop)
 
-/* 488 */
-typedef GUID CLSID;
-
 /* 484 */
-struct unk00334 {
-    unk0008C *u8c;
-    CLSID *lpGUID;
-    int height;
-    int width;
-    _BYTE gap10[4];
-    void *field_14;
-    void *field_19;
-    int field_1C;
-    HWND hwnd;
-    int field_24;
-    int field_28;
-    int field_2C;
-    int field_30_;
-    unk00334 *field_34;
-    _BYTE gap38[4];
-    IDirectDraw2 *lpDDraw2;
-    IDirect3D2 *lpD3D2;
-    IDirectDrawSurface *lpDDSurface1;
-    int field_48;
-    _BYTE gap4C[8];
-    int bitDepth;
-    IDirectDrawSurface *lpDDSurface0;
-    IDirectDrawSurface *field_5C;
-    IDirect3DDevice2 *lpD3DDevice2;
-    _BYTE gap64[12];
-    unk00334 *field_70;
-    _BYTE gap74[4];
-    int field_78;
-    _BYTE gap7C[12];
-    unk00334 *field_88;
-    _BYTE gap8C[44];
-    int field_B8;
-    _BYTE gapBC[92];
-    int field_118;
-    _BYTE gap11C[124];
-    DDCAPS ddCaps0;
-    int field_314;
-    unk00334 *field_318;
-    int field_31C;
-    int field_320;
-    unk00228 *field_324;
-    unk00228 *field_328;
-    int field_32C;
-    int last;
+struct unk00334
+{
+  unk0008C *u8c;
+  GUID *lpGUID;
+  int height;
+  int width;
+  _BYTE gap10[4];
+  char *field_14;
+  void *field_19;
+  int field_1C;
+  HWND hwnd;
+  int field_24;
+  int field_28;
+  int field_2C;
+  int field_30_;
+  unk00334 *field_34;
+  _BYTE gap38[4];
+  IDirectDraw2 *lpDDraw2;
+  IDirect3D2 *lpD3D2;
+  IDirectDrawSurface *lpDDSurface1;
+  int field_48;
+  _BYTE gap4C[8];
+  int bitDepth;
+  IDirectDrawSurface *lpDDSurface0;
+  IDirectDrawSurface *field_5C;
+  IDirect3DDevice2 *lpD3DDevice2;
+  _BYTE gap64[12];
+  unk00334 *field_70;
+  _BYTE gap74[4];
+  int field_78;
+  _BYTE gap7C[12];
+  unk00334 *field_88;
+  _BYTE gap8C[44];
+  int field_B8;
+  _BYTE gapBC[92];
+  int field_118;
+  _BYTE gap11C[124];
+  DDCAPS ddCaps0;
+  int field_314;
+  unk00334 *field_318;
+  int field_31C;
+  int field_320;
+  unk00228 *field_324;
+  unk00228 *field_328;
+  int field_32C;
+  unk00334 *last;
 };
 
 /* 646 */
 typedef IDirect3DViewport2 *LPDIRECT3DVIEWPORT2;
 
 /* 693 */
-struct unk0008C {
-    int field_0;
-    _BYTE gap4[4];
-    unk0008C *field_8;
-    _BYTE gapC[4];
-    int field_10;
-    int field_14;
-    _BYTE gap18[4];
-    int field_1C;
-    HWND hwnd;
-    _BYTE gap24[8];
-    unk00334 *field_2C;
-    void *field_30;
-    unk00334 *u334;
-    IDirectDraw *lpDirectDraw;
-    IDirectDraw2 *lpDirectDraw2;
-    IDirect3D2 *lpDirect3D2;
-    LPDIRECTDRAWSURFACE lpDirectDrawSurface0;
-    IDirectDrawPalette *lpDirectDrawPalette;
-    int field_4C;
-    int field_50;
-    IDirect3DMaterial2 *lpDirect3DMaterial2;
-    IDirectDrawSurface *lpDirectDrawSurface1;
-    LPDIRECTDRAWSURFACE lpDirectDrawSurface2;
-    IDirect3DDevice2 *lpDirect3DDevice;
-    LPDIRECT3DVIEWPORT2 lpDirect3DViewport2;
-    int field_68;
-    int field_6C;
-    _BYTE gap70[8];
-    int field_78;
-    int field_7C;
-    int field_80;
-    int field_84;
-    unk00334 *last;
+struct unk0008C
+{
+  int field_0;
+  _BYTE gap4[4];
+  unk0008C *field_8;
+  _BYTE gapC[4];
+  int field_10;
+  int field_14;
+  _BYTE gap18[4];
+  int field_1C;
+  HWND hwnd;
+  _BYTE gap24[8];
+  unk00334 *u334a;
+  unk00334 *u334b;
+  unk00334 *u334;
+  IDirectDraw *lpDirectDraw;
+  IDirectDraw2 *lpDirectDraw2;
+  IDirect3D2 *lpDirect3D2;
+  LPDIRECTDRAWSURFACE lpDirectDrawSurface0;
+  IDirectDrawPalette *lpDirectDrawPalette;
+  int field_4C;
+  int field_50;
+  IDirect3DMaterial2 *lpDirect3DMaterial2;
+  IDirectDrawSurface *lpDirectDrawSurface1;
+  LPDIRECTDRAWSURFACE lpDirectDrawSurface2;
+  IDirect3DDevice2 *lpDirect3DDevice;
+  LPDIRECT3DVIEWPORT2 lpDirect3DViewport2;
+  int field_68;
+  int field_6C;
+  _BYTE gap70[8];
+  int field_78;
+  int field_7C;
+  int field_80;
+  int field_84;
+  unk00334 *last;
 };
 
 /* 567 */
-struct IDirect3D2 {
-    IDirect3D2Vtbl *lpVtbl;
+struct IDirect3D2
+{
+  IDirect3D2Vtbl *lpVtbl;
 };
 
 /* 651 */
-struct IDirect3DDevice2 {
-    IDirect3DDevice2Vtbl *lpVtbl;
+struct IDirect3DDevice2
+{
+  IDirect3DDevice2Vtbl *lpVtbl;
 };
+
+/* 571 */
+#pragma pack(push, 4)
+struct _D3DDeviceDesc
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  D3DCOLORMODEL dcmColorModel;
+  DWORD dwDevCaps;
+  D3DTRANSFORMCAPS dtcTransformCaps;
+  BOOL bClipping;
+  D3DLIGHTINGCAPS dlcLightingCaps;
+  D3DPRIMCAPS dpcLineCaps;
+  D3DPRIMCAPS dpcTriCaps;
+  DWORD dwDeviceRenderBitDepth;
+  DWORD dwDeviceZBufferBitDepth;
+  DWORD dwMaxBufferSize;
+  DWORD dwMaxVertexCount;
+  DWORD dwMinTextureWidth;
+  DWORD dwMinTextureHeight;
+  DWORD dwMaxTextureWidth;
+  DWORD dwMaxTextureHeight;
+  DWORD dwMinStippleWidth;
+  DWORD dwMaxStippleWidth;
+  DWORD dwMinStippleHeight;
+  DWORD dwMaxStippleHeight;
+};
+#pragma pack(pop)
 
 /* 640 */
 typedef _D3DDeviceDesc D3DDEVICEDESC;
 
 /* 689 */
-struct unk00228 {
-    unk00228 *field_0;
-    GUID guid;
-    char *sourceString0;
-    char *sourceString1;
-    D3DDEVICEDESC *deviceDesc0;
-    _BYTE gap20[4];
-    void *field_24;
-    int field_28;
-    int field_2C;
-    int field_30;
-    _BYTE gap34[8];
-    char field_3C;
-    _BYTE gap3D[123];
-    int field_B8;
-    _BYTE gapBC[92];
-    D3DDEVICEDESC *deviceDesc1;
-    _BYTE gap11C[152];
-    int field_1B4;
-    _BYTE gap1B8[92];
-    int field_214;
-    _BYTE gap218[8];
-    void *field_220;
-    unk00228 *last;
+struct unk00228
+{
+  unk00228 *field_0;
+  GUID guid;
+  char *sourceString0;
+  char *sourceString1;
+  D3DDEVICEDESC deviceDesc0;
+  _BYTE gapE8[48];
+  D3DDEVICEDESC deviceDesc1;
+  _BYTE gap1E4[48];
+  int field_214;
+  int field_218;
+  int field_21C;
+  void *field_220;
+  unk00228 *last;
 };
 
 /* 550 */
-struct IDirect3DMaterial2 {
-    IDirect3DMaterial2Vtbl *lpVtbl;
+struct IDirect3DMaterial2
+{
+  IDirect3DMaterial2Vtbl *lpVtbl;
 };
 
 /* 670 */
-struct IDirect3DViewport2 {
-    IDirect3DViewport2Vtbl *lpVtbl;
+struct IDirect3DViewport2
+{
+  IDirect3DViewport2Vtbl *lpVtbl;
 };
 
 /* 570 */
 typedef _D3DDeviceDesc *LPD3DDEVICEDESC;
 
 /* 569 */
-typedef HRESULT(__stdcall *LPD3DENUMDEVICESCALLBACK)(LPGUID lpGuid,
-                                                     LPSTR lpDeviceDescription,
-                                                     LPSTR lpDeviceName,
-                                                     LPD3DDEVICEDESC,
-                                                     LPD3DDEVICEDESC,
-                                                     LPVOID);
+typedef HRESULT (__stdcall *LPD3DENUMDEVICESCALLBACK)(LPGUID lpGuid, LPSTR lpDeviceDescription, LPSTR lpDeviceName, LPD3DDEVICEDESC, LPD3DDEVICEDESC, LPVOID);
 
 /* 572 */
 typedef IDirect3DLight *LPDIRECT3DLIGHT;
@@ -4357,21 +4347,24 @@ typedef _D3DFINDDEVICESEARCH *LPD3DFINDDEVICESEARCH;
 /* 638 */
 typedef _D3DFINDDEVICERESULT *LPD3DFINDDEVICERESULT;
 
+/* 488 */
+typedef GUID CLSID;
+
 /* 487 */
 typedef struct IDirect3DDevice2 *LPDIRECT3DDEVICE2;
 
 /* 568 */
-struct IDirect3D2Vtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3D2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3D2 *This);
-    ULONG(__stdcall *Release)(IDirect3D2 *This);
-    HRESULT(__stdcall *EnumDevices)(IDirect3D2 *This, LPD3DENUMDEVICESCALLBACK, LPVOID);
-    HRESULT(__stdcall *CreateLight)(IDirect3D2 *This, LPDIRECT3DLIGHT *, IUnknown *);
-    HRESULT(__stdcall *CreateMaterial)(IDirect3D2 *This, LPDIRECT3DMATERIAL2 *, IUnknown *);
-    HRESULT(__stdcall *CreateViewport)(IDirect3D2 *This, LPDIRECT3DVIEWPORT2 *, IUnknown *);
-    HRESULT(__stdcall *FindDevice)(IDirect3D2 *This, LPD3DFINDDEVICESEARCH, LPD3DFINDDEVICERESULT);
-    HRESULT(__stdcall *CreateDevice)
-    (IDirect3D2 *This, const CLSID *const, LPDIRECTDRAWSURFACE, LPDIRECT3DDEVICE2 *);
+struct IDirect3D2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3D2 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3D2 *This);
+  ULONG (__stdcall *Release)(IDirect3D2 *This);
+  HRESULT (__stdcall *EnumDevices)(IDirect3D2 *This, LPD3DENUMDEVICESCALLBACK, LPVOID);
+  HRESULT (__stdcall *CreateLight)(IDirect3D2 *This, LPDIRECT3DLIGHT *, IUnknown *);
+  HRESULT (__stdcall *CreateMaterial)(IDirect3D2 *This, LPDIRECT3DMATERIAL2 *, IUnknown *);
+  HRESULT (__stdcall *CreateViewport)(IDirect3D2 *This, LPDIRECT3DVIEWPORT2 *, IUnknown *);
+  HRESULT (__stdcall *FindDevice)(IDirect3D2 *This, LPD3DFINDDEVICESEARCH, LPD3DFINDDEVICERESULT);
+  HRESULT (__stdcall *CreateDevice)(IDirect3D2 *This, const CLSID *const, LPDIRECTDRAWSURFACE, LPDIRECT3DDEVICE2 *);
 };
 
 /* 653 */
@@ -4381,169 +4374,173 @@ typedef IDirect3DTexture2 *LPDIRECT3DTEXTURE2;
 typedef _D3DSTATS *LPD3DSTATS;
 
 /* 631 */
-typedef HRESULT(__stdcall *LPD3DENUMTEXTUREFORMATSCALLBACK)(LPDDSURFACEDESC lpDdsd,
-                                                            LPVOID lpContext);
+typedef HRESULT (__stdcall *LPD3DENUMTEXTUREFORMATSCALLBACK)(LPDDSURFACEDESC lpDdsd, LPVOID lpContext);
 
 /* 654 */
 typedef IDirect3D2 *LPDIRECT3D2;
 
 /* 656 */
-enum _D3DPRIMITIVETYPE {
-    D3DPT_POINTLIST = 0x1,
-    D3DPT_LINELIST = 0x2,
-    D3DPT_LINESTRIP = 0x3,
-    D3DPT_TRIANGLELIST = 0x4,
-    D3DPT_TRIANGLESTRIP = 0x5,
-    D3DPT_TRIANGLEFAN = 0x6,
-    D3DPT_FORCE_DWORD = 0x7FFFFFFF,
+enum _D3DPRIMITIVETYPE
+{
+  D3DPT_POINTLIST = 0x1,
+  D3DPT_LINELIST = 0x2,
+  D3DPT_LINESTRIP = 0x3,
+  D3DPT_TRIANGLELIST = 0x4,
+  D3DPT_TRIANGLESTRIP = 0x5,
+  D3DPT_TRIANGLEFAN = 0x6,
+  D3DPT_FORCE_DWORD = 0x7FFFFFFF,
 };
 
 /* 655 */
 typedef _D3DPRIMITIVETYPE D3DPRIMITIVETYPE;
 
 /* 658 */
-enum _D3DVERTEXTYPE {
-    D3DVT_VERTEX = 0x1,
-    D3DVT_LVERTEX = 0x2,
-    D3DVT_TLVERTEX = 0x3,
-    D3DVT_FORCE_DWORD = 0x7FFFFFFF,
+enum _D3DVERTEXTYPE
+{
+  D3DVT_VERTEX = 0x1,
+  D3DVT_LVERTEX = 0x2,
+  D3DVT_TLVERTEX = 0x3,
+  D3DVT_FORCE_DWORD = 0x7FFFFFFF,
 };
 
 /* 657 */
 typedef _D3DVERTEXTYPE D3DVERTEXTYPE;
 
 /* 537 */
-enum _D3DRENDERSTATETYPE {
-    D3DRS_ZENABLE = 0x7,
-    D3DRS_FILLMODE = 0x8,
-    D3DRS_SHADEMODE = 0x9,
-    D3DRS_ZWRITEENABLE = 0xE,
-    D3DRS_ALPHATESTENABLE = 0xF,
-    D3DRS_LASTPIXEL = 0x10,
-    D3DRS_SRCBLEND = 0x13,
-    D3DRS_DESTBLEND = 0x14,
-    D3DRS_CULLMODE = 0x16,
-    D3DRS_ZFUNC = 0x17,
-    D3DRS_ALPHAREF = 0x18,
-    D3DRS_ALPHAFUNC = 0x19,
-    D3DRS_DITHERENABLE = 0x1A,
-    D3DRS_ALPHABLENDENABLE = 0x1B,
-    D3DRS_FOGENABLE = 0x1C,
-    D3DRS_SPECULARENABLE = 0x1D,
-    D3DRS_FOGCOLOR = 0x22,
-    D3DRS_FOGTABLEMODE = 0x23,
-    D3DRS_FOGSTART = 0x24,
-    D3DRS_FOGEND = 0x25,
-    D3DRS_FOGDENSITY = 0x26,
-    D3DRS_RANGEFOGENABLE = 0x30,
-    D3DRS_STENCILENABLE = 0x34,
-    D3DRS_STENCILFAIL = 0x35,
-    D3DRS_STENCILZFAIL = 0x36,
-    D3DRS_STENCILPASS = 0x37,
-    D3DRS_STENCILFUNC = 0x38,
-    D3DRS_STENCILREF = 0x39,
-    D3DRS_STENCILMASK = 0x3A,
-    D3DRS_STENCILWRITEMASK = 0x3B,
-    D3DRS_TEXTUREFACTOR = 0x3C,
-    D3DRS_WRAP0 = 0x80,
-    D3DRS_WRAP1 = 0x81,
-    D3DRS_WRAP2 = 0x82,
-    D3DRS_WRAP3 = 0x83,
-    D3DRS_WRAP4 = 0x84,
-    D3DRS_WRAP5 = 0x85,
-    D3DRS_WRAP6 = 0x86,
-    D3DRS_WRAP7 = 0x87,
-    D3DRS_CLIPPING = 0x88,
-    D3DRS_LIGHTING = 0x89,
-    D3DRS_AMBIENT = 0x8B,
-    D3DRS_FOGVERTEXMODE = 0x8C,
-    D3DRS_COLORVERTEX = 0x8D,
-    D3DRS_LOCALVIEWER = 0x8E,
-    D3DRS_NORMALIZENORMALS = 0x8F,
-    D3DRS_DIFFUSEMATERIALSOURCE = 0x91,
-    D3DRS_SPECULARMATERIALSOURCE = 0x92,
-    D3DRS_AMBIENTMATERIALSOURCE = 0x93,
-    D3DRS_EMISSIVEMATERIALSOURCE = 0x94,
-    D3DRS_VERTEXBLEND = 0x97,
-    D3DRS_CLIPPLANEENABLE = 0x98,
-    D3DRS_POINTSIZE = 0x9A,
-    D3DRS_POINTSIZE_MIN = 0x9B,
-    D3DRS_POINTSPRITEENABLE = 0x9C,
-    D3DRS_POINTSCALEENABLE = 0x9D,
-    D3DRS_POINTSCALE_A = 0x9E,
-    D3DRS_POINTSCALE_B = 0x9F,
-    D3DRS_POINTSCALE_C = 0xA0,
-    D3DRS_MULTISAMPLEANTIALIAS = 0xA1,
-    D3DRS_MULTISAMPLEMASK = 0xA2,
-    D3DRS_PATCHEDGESTYLE = 0xA3,
-    D3DRS_DEBUGMONITORTOKEN = 0xA5,
-    D3DRS_POINTSIZE_MAX = 0xA6,
-    D3DRS_INDEXEDVERTEXBLENDENABLE = 0xA7,
-    D3DRS_COLORWRITEENABLE = 0xA8,
-    D3DRS_TWEENFACTOR = 0xAA,
-    D3DRS_BLENDOP = 0xAB,
-    D3DRS_POSITIONDEGREE = 0xAC,
-    D3DRS_NORMALDEGREE = 0xAD,
-    D3DRS_SCISSORTESTENABLE = 0xAE,
-    D3DRS_SLOPESCALEDEPTHBIAS = 0xAF,
-    D3DRS_ANTIALIASEDLINEENABLE = 0xB0,
-    D3DRS_MINTESSELLATIONLEVEL = 0xB2,
-    D3DRS_MAXTESSELLATIONLEVEL = 0xB3,
-    D3DRS_ADAPTIVETESS_X = 0xB4,
-    D3DRS_ADAPTIVETESS_Y = 0xB5,
-    D3DRS_ADAPTIVETESS_Z = 0xB6,
-    D3DRS_ADAPTIVETESS_W = 0xB7,
-    D3DRS_ENABLEADAPTIVETESSELLATION = 0xB8,
-    D3DRS_TWOSIDEDSTENCILMODE = 0xB9,
-    D3DRS_CCW_STENCILFAIL = 0xBA,
-    D3DRS_CCW_STENCILZFAIL = 0xBB,
-    D3DRS_CCW_STENCILPASS = 0xBC,
-    D3DRS_CCW_STENCILFUNC = 0xBD,
-    D3DRS_COLORWRITEENABLE1 = 0xBE,
-    D3DRS_COLORWRITEENABLE2 = 0xBF,
-    D3DRS_COLORWRITEENABLE3 = 0xC0,
-    D3DRS_BLENDFACTOR = 0xC1,
-    D3DRS_SRGBWRITEENABLE = 0xC2,
-    D3DRS_DEPTHBIAS = 0xC3,
-    D3DRS_WRAP8 = 0xC6,
-    D3DRS_WRAP9 = 0xC7,
-    D3DRS_WRAP10 = 0xC8,
-    D3DRS_WRAP11 = 0xC9,
-    D3DRS_WRAP12 = 0xCA,
-    D3DRS_WRAP13 = 0xCB,
-    D3DRS_WRAP14 = 0xCC,
-    D3DRS_WRAP15 = 0xCD,
-    D3DRS_SEPARATEALPHABLENDENABLE = 0xCE,
-    D3DRS_SRCBLENDALPHA = 0xCF,
-    D3DRS_DESTBLENDALPHA = 0xD0,
-    D3DRS_BLENDOPALPHA = 0xD1,
-    D3DRS_FORCE_DWORD = 0x7FFFFFFF,
+enum _D3DRENDERSTATETYPE
+{
+  D3DRS_ZENABLE = 0x7,
+  D3DRS_FILLMODE = 0x8,
+  D3DRS_SHADEMODE = 0x9,
+  D3DRS_ZWRITEENABLE = 0xE,
+  D3DRS_ALPHATESTENABLE = 0xF,
+  D3DRS_LASTPIXEL = 0x10,
+  D3DRS_SRCBLEND = 0x13,
+  D3DRS_DESTBLEND = 0x14,
+  D3DRS_CULLMODE = 0x16,
+  D3DRS_ZFUNC = 0x17,
+  D3DRS_ALPHAREF = 0x18,
+  D3DRS_ALPHAFUNC = 0x19,
+  D3DRS_DITHERENABLE = 0x1A,
+  D3DRS_ALPHABLENDENABLE = 0x1B,
+  D3DRS_FOGENABLE = 0x1C,
+  D3DRS_SPECULARENABLE = 0x1D,
+  D3DRS_FOGCOLOR = 0x22,
+  D3DRS_FOGTABLEMODE = 0x23,
+  D3DRS_FOGSTART = 0x24,
+  D3DRS_FOGEND = 0x25,
+  D3DRS_FOGDENSITY = 0x26,
+  D3DRS_RANGEFOGENABLE = 0x30,
+  D3DRS_STENCILENABLE = 0x34,
+  D3DRS_STENCILFAIL = 0x35,
+  D3DRS_STENCILZFAIL = 0x36,
+  D3DRS_STENCILPASS = 0x37,
+  D3DRS_STENCILFUNC = 0x38,
+  D3DRS_STENCILREF = 0x39,
+  D3DRS_STENCILMASK = 0x3A,
+  D3DRS_STENCILWRITEMASK = 0x3B,
+  D3DRS_TEXTUREFACTOR = 0x3C,
+  D3DRS_WRAP0 = 0x80,
+  D3DRS_WRAP1 = 0x81,
+  D3DRS_WRAP2 = 0x82,
+  D3DRS_WRAP3 = 0x83,
+  D3DRS_WRAP4 = 0x84,
+  D3DRS_WRAP5 = 0x85,
+  D3DRS_WRAP6 = 0x86,
+  D3DRS_WRAP7 = 0x87,
+  D3DRS_CLIPPING = 0x88,
+  D3DRS_LIGHTING = 0x89,
+  D3DRS_AMBIENT = 0x8B,
+  D3DRS_FOGVERTEXMODE = 0x8C,
+  D3DRS_COLORVERTEX = 0x8D,
+  D3DRS_LOCALVIEWER = 0x8E,
+  D3DRS_NORMALIZENORMALS = 0x8F,
+  D3DRS_DIFFUSEMATERIALSOURCE = 0x91,
+  D3DRS_SPECULARMATERIALSOURCE = 0x92,
+  D3DRS_AMBIENTMATERIALSOURCE = 0x93,
+  D3DRS_EMISSIVEMATERIALSOURCE = 0x94,
+  D3DRS_VERTEXBLEND = 0x97,
+  D3DRS_CLIPPLANEENABLE = 0x98,
+  D3DRS_POINTSIZE = 0x9A,
+  D3DRS_POINTSIZE_MIN = 0x9B,
+  D3DRS_POINTSPRITEENABLE = 0x9C,
+  D3DRS_POINTSCALEENABLE = 0x9D,
+  D3DRS_POINTSCALE_A = 0x9E,
+  D3DRS_POINTSCALE_B = 0x9F,
+  D3DRS_POINTSCALE_C = 0xA0,
+  D3DRS_MULTISAMPLEANTIALIAS = 0xA1,
+  D3DRS_MULTISAMPLEMASK = 0xA2,
+  D3DRS_PATCHEDGESTYLE = 0xA3,
+  D3DRS_DEBUGMONITORTOKEN = 0xA5,
+  D3DRS_POINTSIZE_MAX = 0xA6,
+  D3DRS_INDEXEDVERTEXBLENDENABLE = 0xA7,
+  D3DRS_COLORWRITEENABLE = 0xA8,
+  D3DRS_TWEENFACTOR = 0xAA,
+  D3DRS_BLENDOP = 0xAB,
+  D3DRS_POSITIONDEGREE = 0xAC,
+  D3DRS_NORMALDEGREE = 0xAD,
+  D3DRS_SCISSORTESTENABLE = 0xAE,
+  D3DRS_SLOPESCALEDEPTHBIAS = 0xAF,
+  D3DRS_ANTIALIASEDLINEENABLE = 0xB0,
+  D3DRS_MINTESSELLATIONLEVEL = 0xB2,
+  D3DRS_MAXTESSELLATIONLEVEL = 0xB3,
+  D3DRS_ADAPTIVETESS_X = 0xB4,
+  D3DRS_ADAPTIVETESS_Y = 0xB5,
+  D3DRS_ADAPTIVETESS_Z = 0xB6,
+  D3DRS_ADAPTIVETESS_W = 0xB7,
+  D3DRS_ENABLEADAPTIVETESSELLATION = 0xB8,
+  D3DRS_TWOSIDEDSTENCILMODE = 0xB9,
+  D3DRS_CCW_STENCILFAIL = 0xBA,
+  D3DRS_CCW_STENCILZFAIL = 0xBB,
+  D3DRS_CCW_STENCILPASS = 0xBC,
+  D3DRS_CCW_STENCILFUNC = 0xBD,
+  D3DRS_COLORWRITEENABLE1 = 0xBE,
+  D3DRS_COLORWRITEENABLE2 = 0xBF,
+  D3DRS_COLORWRITEENABLE3 = 0xC0,
+  D3DRS_BLENDFACTOR = 0xC1,
+  D3DRS_SRGBWRITEENABLE = 0xC2,
+  D3DRS_DEPTHBIAS = 0xC3,
+  D3DRS_WRAP8 = 0xC6,
+  D3DRS_WRAP9 = 0xC7,
+  D3DRS_WRAP10 = 0xC8,
+  D3DRS_WRAP11 = 0xC9,
+  D3DRS_WRAP12 = 0xCA,
+  D3DRS_WRAP13 = 0xCB,
+  D3DRS_WRAP14 = 0xCC,
+  D3DRS_WRAP15 = 0xCD,
+  D3DRS_SEPARATEALPHABLENDENABLE = 0xCE,
+  D3DRS_SRCBLENDALPHA = 0xCF,
+  D3DRS_DESTBLENDALPHA = 0xD0,
+  D3DRS_BLENDOPALPHA = 0xD1,
+  D3DRS_FORCE_DWORD = 0x7FFFFFFF,
 };
 
 /* 659 */
 typedef _D3DRENDERSTATETYPE D3DRENDERSTATETYPE;
 
 /* 661 */
-enum _D3DLIGHTSTATETYPE {
-    D3DLIGHTSTATE_MATERIAL = 0x1,
-    D3DLIGHTSTATE_AMBIENT = 0x2,
-    D3DLIGHTSTATE_COLORMODEL = 0x3,
-    D3DLIGHTSTATE_FOGMODE = 0x4,
-    D3DLIGHTSTATE_FOGSTART = 0x5,
-    D3DLIGHTSTATE_FOGEND = 0x6,
-    D3DLIGHTSTATE_FOGDENSITY = 0x7,
-    D3DLIGHTSTATE_FORCE_DWORD = 0x7FFFFFFF,
+enum _D3DLIGHTSTATETYPE
+{
+  D3DLIGHTSTATE_MATERIAL = 0x1,
+  D3DLIGHTSTATE_AMBIENT = 0x2,
+  D3DLIGHTSTATE_COLORMODEL = 0x3,
+  D3DLIGHTSTATE_FOGMODE = 0x4,
+  D3DLIGHTSTATE_FOGSTART = 0x5,
+  D3DLIGHTSTATE_FOGEND = 0x6,
+  D3DLIGHTSTATE_FOGDENSITY = 0x7,
+  D3DLIGHTSTATE_FORCE_DWORD = 0x7FFFFFFF,
 };
 
 /* 660 */
 typedef _D3DLIGHTSTATETYPE D3DLIGHTSTATETYPE;
 
 /* 663 */
-enum _D3DTRANSFORMSTATETYPE {
-    D3DTRANSFORMSTATE_WORLD = 0x1,
-    D3DTRANSFORMSTATE_VIEW = 0x2,
-    D3DTRANSFORMSTATE_PROJECTION = 0x3,
-    D3DTRANSFORMSTATE_FORCE_DWORD = 0x7FFFFFFF,
+enum _D3DTRANSFORMSTATETYPE
+{
+  D3DTRANSFORMSTATE_WORLD = 0x1,
+  D3DTRANSFORMSTATE_VIEW = 0x2,
+  D3DTRANSFORMSTATE_PROJECTION = 0x3,
+  D3DTRANSFORMSTATE_FORCE_DWORD = 0x7FFFFFFF,
 };
 
 /* 662 */
@@ -4559,76 +4556,42 @@ typedef WORD *LPWORD;
 typedef _D3DCLIPSTATUS *LPD3DCLIPSTATUS;
 
 /* 652 */
-struct IDirect3DDevice2Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DDevice2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DDevice2 *This);
-    ULONG(__stdcall *Release)(IDirect3DDevice2 *This);
-    HRESULT(__stdcall *GetCaps)(IDirect3DDevice2 *This, LPD3DDEVICEDESC, LPD3DDEVICEDESC);
-    HRESULT(__stdcall *SwapTextureHandles)
-    (IDirect3DDevice2 *This, LPDIRECT3DTEXTURE2, LPDIRECT3DTEXTURE2);
-    HRESULT(__stdcall *GetStats)(IDirect3DDevice2 *This, LPD3DSTATS);
-    HRESULT(__stdcall *AddViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2);
-    HRESULT(__stdcall *DeleteViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2);
-    HRESULT(__stdcall *NextViewport)
-    (IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2, LPDIRECT3DVIEWPORT2 *, DWORD);
-    HRESULT(__stdcall *EnumTextureFormats)
-    (IDirect3DDevice2 *This, LPD3DENUMTEXTUREFORMATSCALLBACK, LPVOID);
-    HRESULT(__stdcall *BeginScene)(IDirect3DDevice2 *This);
-    HRESULT(__stdcall *EndScene)(IDirect3DDevice2 *This);
-    HRESULT(__stdcall *GetDirect3D)(IDirect3DDevice2 *This, LPDIRECT3D2 *);
-    HRESULT(__stdcall *SetCurrentViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2);
-    HRESULT(__stdcall *GetCurrentViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2 *);
-    HRESULT(__stdcall *SetRenderTarget)(IDirect3DDevice2 *This, LPDIRECTDRAWSURFACE, DWORD);
-    HRESULT(__stdcall *GetRenderTarget)(IDirect3DDevice2 *This, LPDIRECTDRAWSURFACE *);
-    HRESULT(__stdcall *Begin)(IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, DWORD);
-    HRESULT(__stdcall *BeginIndexed)
-    (IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD);
-    HRESULT(__stdcall *Vertex)(IDirect3DDevice2 *This, LPVOID);
-    HRESULT(__stdcall *Index)(IDirect3DDevice2 *This, WORD);
-    HRESULT(__stdcall *End)(IDirect3DDevice2 *This, DWORD);
-    HRESULT(__stdcall *GetRenderState)(IDirect3DDevice2 *This, D3DRENDERSTATETYPE, LPDWORD);
-    HRESULT(__stdcall *SetRenderState)(IDirect3DDevice2 *This, D3DRENDERSTATETYPE, DWORD);
-    HRESULT(__stdcall *GetLightState)(IDirect3DDevice2 *This, D3DLIGHTSTATETYPE, LPDWORD);
-    HRESULT(__stdcall *SetLightState)(IDirect3DDevice2 *This, D3DLIGHTSTATETYPE, DWORD);
-    HRESULT(__stdcall *SetTransform)(IDirect3DDevice2 *This, D3DTRANSFORMSTATETYPE, LPD3DMATRIX);
-    HRESULT(__stdcall *GetTransform)(IDirect3DDevice2 *This, D3DTRANSFORMSTATETYPE, LPD3DMATRIX);
-    HRESULT(__stdcall *MultiplyTransform)
-    (IDirect3DDevice2 *This, D3DTRANSFORMSTATETYPE, LPD3DMATRIX);
-    HRESULT(__stdcall *DrawPrimitive)
-    (IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD);
-    HRESULT(__stdcall *DrawIndexedPrimitive)
-    (IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, LPWORD, DWORD, DWORD);
-    HRESULT(__stdcall *SetClipStatus)(IDirect3DDevice2 *This, LPD3DCLIPSTATUS);
-    HRESULT(__stdcall *GetClipStatus)(IDirect3DDevice2 *This, LPD3DCLIPSTATUS);
+struct IDirect3DDevice2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DDevice2 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DDevice2 *This);
+  ULONG (__stdcall *Release)(IDirect3DDevice2 *This);
+  HRESULT (__stdcall *GetCaps)(IDirect3DDevice2 *This, LPD3DDEVICEDESC, LPD3DDEVICEDESC);
+  HRESULT (__stdcall *SwapTextureHandles)(IDirect3DDevice2 *This, LPDIRECT3DTEXTURE2, LPDIRECT3DTEXTURE2);
+  HRESULT (__stdcall *GetStats)(IDirect3DDevice2 *This, LPD3DSTATS);
+  HRESULT (__stdcall *AddViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2);
+  HRESULT (__stdcall *DeleteViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2);
+  HRESULT (__stdcall *NextViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2, LPDIRECT3DVIEWPORT2 *, DWORD);
+  HRESULT (__stdcall *EnumTextureFormats)(IDirect3DDevice2 *This, LPD3DENUMTEXTUREFORMATSCALLBACK, LPVOID);
+  HRESULT (__stdcall *BeginScene)(IDirect3DDevice2 *This);
+  HRESULT (__stdcall *EndScene)(IDirect3DDevice2 *This);
+  HRESULT (__stdcall *GetDirect3D)(IDirect3DDevice2 *This, LPDIRECT3D2 *);
+  HRESULT (__stdcall *SetCurrentViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2);
+  HRESULT (__stdcall *GetCurrentViewport)(IDirect3DDevice2 *This, LPDIRECT3DVIEWPORT2 *);
+  HRESULT (__stdcall *SetRenderTarget)(IDirect3DDevice2 *This, LPDIRECTDRAWSURFACE, DWORD);
+  HRESULT (__stdcall *GetRenderTarget)(IDirect3DDevice2 *This, LPDIRECTDRAWSURFACE *);
+  HRESULT (__stdcall *Begin)(IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, DWORD);
+  HRESULT (__stdcall *BeginIndexed)(IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD);
+  HRESULT (__stdcall *Vertex)(IDirect3DDevice2 *This, LPVOID);
+  HRESULT (__stdcall *Index)(IDirect3DDevice2 *This, WORD);
+  HRESULT (__stdcall *End)(IDirect3DDevice2 *This, DWORD);
+  HRESULT (__stdcall *GetRenderState)(IDirect3DDevice2 *This, D3DRENDERSTATETYPE, LPDWORD);
+  HRESULT (__stdcall *SetRenderState)(IDirect3DDevice2 *This, D3DRENDERSTATETYPE, DWORD);
+  HRESULT (__stdcall *GetLightState)(IDirect3DDevice2 *This, D3DLIGHTSTATETYPE, LPDWORD);
+  HRESULT (__stdcall *SetLightState)(IDirect3DDevice2 *This, D3DLIGHTSTATETYPE, DWORD);
+  HRESULT (__stdcall *SetTransform)(IDirect3DDevice2 *This, D3DTRANSFORMSTATETYPE, LPD3DMATRIX);
+  HRESULT (__stdcall *GetTransform)(IDirect3DDevice2 *This, D3DTRANSFORMSTATETYPE, LPD3DMATRIX);
+  HRESULT (__stdcall *MultiplyTransform)(IDirect3DDevice2 *This, D3DTRANSFORMSTATETYPE, LPD3DMATRIX);
+  HRESULT (__stdcall *DrawPrimitive)(IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, DWORD);
+  HRESULT (__stdcall *DrawIndexedPrimitive)(IDirect3DDevice2 *This, D3DPRIMITIVETYPE, D3DVERTEXTYPE, LPVOID, DWORD, LPWORD, DWORD, DWORD);
+  HRESULT (__stdcall *SetClipStatus)(IDirect3DDevice2 *This, LPD3DCLIPSTATUS);
+  HRESULT (__stdcall *GetClipStatus)(IDirect3DDevice2 *This, LPD3DCLIPSTATUS);
 };
-
-/* 571 */
-#pragma pack(push, 4)
-struct _D3DDeviceDesc {
-    DWORD dwSize;
-    DWORD dwFlags;
-    D3DCOLORMODEL dcmColorModel;
-    DWORD dwDevCaps;
-    D3DTRANSFORMCAPS dtcTransformCaps;
-    BOOL bClipping;
-    D3DLIGHTINGCAPS dlcLightingCaps;
-    D3DPRIMCAPS dpcLineCaps;
-    D3DPRIMCAPS dpcTriCaps;
-    DWORD dwDeviceRenderBitDepth;
-    DWORD dwDeviceZBufferBitDepth;
-    DWORD dwMaxBufferSize;
-    DWORD dwMaxVertexCount;
-    DWORD dwMinTextureWidth;
-    DWORD dwMinTextureHeight;
-    DWORD dwMaxTextureWidth;
-    DWORD dwMaxTextureHeight;
-    DWORD dwMinStippleWidth;
-    DWORD dwMaxStippleWidth;
-    DWORD dwMinStippleHeight;
-    DWORD dwMaxStippleHeight;
-};
-#pragma pack(pop)
 
 /* 552 */
 typedef _D3DMATERIAL *LPD3DMATERIAL;
@@ -4637,14 +4600,14 @@ typedef _D3DMATERIAL *LPD3DMATERIAL;
 typedef DWORD *LPD3DMATERIALHANDLE;
 
 /* 551 */
-struct IDirect3DMaterial2Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DMaterial2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DMaterial2 *This);
-    ULONG(__stdcall *Release)(IDirect3DMaterial2 *This);
-    HRESULT(__stdcall *SetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
-    HRESULT(__stdcall *GetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
-    HRESULT(__stdcall *GetHandle)(IDirect3DMaterial2 *This, LPDIRECT3DDEVICE2, LPD3DMATERIALHANDLE);
+struct IDirect3DMaterial2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DMaterial2 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DMaterial2 *This);
+  ULONG (__stdcall *Release)(IDirect3DMaterial2 *This);
+  HRESULT (__stdcall *SetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
+  HRESULT (__stdcall *GetMaterial)(IDirect3DMaterial2 *This, LPD3DMATERIAL);
+  HRESULT (__stdcall *GetHandle)(IDirect3DMaterial2 *This, LPDIRECT3DDEVICE2, LPD3DMATERIALHANDLE);
 };
 
 /* 575 */
@@ -4672,170 +4635,184 @@ typedef _D3DVIEWPORT2 D3DVIEWPORT2;
 typedef D3DVIEWPORT2 *LPD3DVIEWPORT2;
 
 /* 671 */
-struct IDirect3DViewport2Vtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DViewport2 *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DViewport2 *This);
-    ULONG(__stdcall *Release)(IDirect3DViewport2 *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DViewport2 *This, LPDIRECT3D);
-    HRESULT(__stdcall *GetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
-    HRESULT(__stdcall *SetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
-    HRESULT(__stdcall *TransformVertices)
-    (IDirect3DViewport2 *This, DWORD, LPD3DTRANSFORMDATA, DWORD, LPDWORD);
-    HRESULT(__stdcall *LightElements)(IDirect3DViewport2 *This, DWORD, LPD3DLIGHTDATA);
-    HRESULT(__stdcall *SetBackground)(IDirect3DViewport2 *This, D3DMATERIALHANDLE);
-    HRESULT(__stdcall *GetBackground)(IDirect3DViewport2 *This, LPD3DMATERIALHANDLE, LPBOOL);
-    HRESULT(__stdcall *SetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE);
-    HRESULT(__stdcall *GetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE *, LPBOOL);
-    HRESULT(__stdcall *Clear)(IDirect3DViewport2 *This, DWORD, LPD3DRECT, DWORD);
-    HRESULT(__stdcall *AddLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
-    HRESULT(__stdcall *DeleteLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
-    HRESULT(__stdcall *NextLight)
-    (IDirect3DViewport2 *This, LPDIRECT3DLIGHT, LPDIRECT3DLIGHT *, DWORD);
-    HRESULT(__stdcall *GetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
-    HRESULT(__stdcall *SetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
+struct IDirect3DViewport2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DViewport2 *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DViewport2 *This);
+  ULONG (__stdcall *Release)(IDirect3DViewport2 *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DViewport2 *This, LPDIRECT3D);
+  HRESULT (__stdcall *GetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
+  HRESULT (__stdcall *SetViewport)(IDirect3DViewport2 *This, LPD3DVIEWPORT);
+  HRESULT (__stdcall *TransformVertices)(IDirect3DViewport2 *This, DWORD, LPD3DTRANSFORMDATA, DWORD, LPDWORD);
+  HRESULT (__stdcall *LightElements)(IDirect3DViewport2 *This, DWORD, LPD3DLIGHTDATA);
+  HRESULT (__stdcall *SetBackground)(IDirect3DViewport2 *This, D3DMATERIALHANDLE);
+  HRESULT (__stdcall *GetBackground)(IDirect3DViewport2 *This, LPD3DMATERIALHANDLE, LPBOOL);
+  HRESULT (__stdcall *SetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE);
+  HRESULT (__stdcall *GetBackgroundDepth)(IDirect3DViewport2 *This, LPDIRECTDRAWSURFACE *, LPBOOL);
+  HRESULT (__stdcall *Clear)(IDirect3DViewport2 *This, DWORD, LPD3DRECT, DWORD);
+  HRESULT (__stdcall *AddLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
+  HRESULT (__stdcall *DeleteLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT);
+  HRESULT (__stdcall *NextLight)(IDirect3DViewport2 *This, LPDIRECT3DLIGHT, LPDIRECT3DLIGHT *, DWORD);
+  HRESULT (__stdcall *GetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
+  HRESULT (__stdcall *SetViewport2)(IDirect3DViewport2 *This, LPD3DVIEWPORT2);
 };
 
 /* 573 */
-struct IDirect3DLight {
-    IDirect3DLightVtbl *lpVtbl;
+struct IDirect3DLight
+{
+  IDirect3DLightVtbl *lpVtbl;
 };
 
 /* 637 */
 #pragma pack(push, 4)
-struct _D3DFINDDEVICESEARCH {
-    DWORD dwSize;
-    DWORD dwFlags;
-    BOOL bHardware;
-    D3DCOLORMODEL dcmColorModel;
-    GUID guid;
-    DWORD dwCaps;
-    D3DPRIMCAPS dpcPrimCaps;
+struct _D3DFINDDEVICESEARCH
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  BOOL bHardware;
+  D3DCOLORMODEL dcmColorModel;
+  GUID guid;
+  DWORD dwCaps;
+  D3DPRIMCAPS dpcPrimCaps;
 };
 #pragma pack(pop)
 
 /* 639 */
 #pragma pack(push, 4)
-struct _D3DFINDDEVICERESULT {
-    DWORD dwSize;
-    GUID guid;
-    D3DDEVICEDESC ddHwDesc;
-    D3DDEVICEDESC ddSwDesc;
+struct _D3DFINDDEVICERESULT
+{
+  DWORD dwSize;
+  GUID guid;
+  D3DDEVICEDESC ddHwDesc;
+  D3DDEVICEDESC ddSwDesc;
 };
 #pragma pack(pop)
 
 /* 509 */
-struct IDirect3DTexture2 {
-    IDirect3DTexture2Vtbl *lpVtbl;
+struct IDirect3DTexture2
+{
+  IDirect3DTexture2Vtbl *lpVtbl;
 };
 
 /* 599 */
 #pragma pack(push, 4)
-struct _D3DSTATS {
-    DWORD dwSize;
-    DWORD dwTrianglesDrawn;
-    DWORD dwLinesDrawn;
-    DWORD dwPointsDrawn;
-    DWORD dwSpansDrawn;
-    DWORD dwVerticesProcessed;
+struct _D3DSTATS
+{
+  DWORD dwSize;
+  DWORD dwTrianglesDrawn;
+  DWORD dwLinesDrawn;
+  DWORD dwPointsDrawn;
+  DWORD dwSpansDrawn;
+  DWORD dwVerticesProcessed;
 };
 #pragma pack(pop)
 
 /* 635 */
 #pragma pack(push, 4)
-struct _D3DMATRIX {
-    D3DVALUE _11;
-    D3DVALUE _12;
-    D3DVALUE _13;
-    D3DVALUE _14;
-    D3DVALUE _21;
-    D3DVALUE _22;
-    D3DVALUE _23;
-    D3DVALUE _24;
-    D3DVALUE _31;
-    D3DVALUE _32;
-    D3DVALUE _33;
-    D3DVALUE _34;
-    D3DVALUE _41;
-    D3DVALUE _42;
-    D3DVALUE _43;
-    D3DVALUE _44;
+struct _D3DMATRIX
+{
+  D3DVALUE _11;
+  D3DVALUE _12;
+  D3DVALUE _13;
+  D3DVALUE _14;
+  D3DVALUE _21;
+  D3DVALUE _22;
+  D3DVALUE _23;
+  D3DVALUE _24;
+  D3DVALUE _31;
+  D3DVALUE _32;
+  D3DVALUE _33;
+  D3DVALUE _34;
+  D3DVALUE _41;
+  D3DVALUE _42;
+  D3DVALUE _43;
+  D3DVALUE _44;
 };
 #pragma pack(pop)
 
 /* 513 */
 #pragma pack(push, 4)
-struct _D3DCLIPSTATUS {
-    DWORD dwFlags;
-    DWORD dwStatus;
-    float minx;
-    float maxx;
-    float miny;
-    float maxy;
-    float minz;
-    float maxz;
+struct _D3DCLIPSTATUS
+{
+  DWORD dwFlags;
+  DWORD dwStatus;
+  float minx;
+  float maxx;
+  float miny;
+  float maxy;
+  float minz;
+  float maxz;
 };
 #pragma pack(pop)
 
 /* 557 */
 #pragma pack(push, 4)
-union _D3DCOLORVALUE::$79F58B462609A8478E0156545A48EE38 {
-    D3DVALUE r;
-    D3DVALUE dvR;
+union _D3DCOLORVALUE::$79F58B462609A8478E0156545A48EE38
+{
+  D3DVALUE r;
+  D3DVALUE dvR;
 };
 #pragma pack(pop)
 
 /* 558 */
 #pragma pack(push, 4)
-union _D3DCOLORVALUE::$1870E08CD1297AF1183F2104CF0E68BB {
-    D3DVALUE g;
-    D3DVALUE dvG;
+union _D3DCOLORVALUE::$1870E08CD1297AF1183F2104CF0E68BB
+{
+  D3DVALUE g;
+  D3DVALUE dvG;
 };
 #pragma pack(pop)
 
 /* 559 */
 #pragma pack(push, 4)
-union _D3DCOLORVALUE::$89D0C02BD3EDF7E42F4E64602AB90C16 {
-    D3DVALUE b;
-    D3DVALUE dvB;
+union _D3DCOLORVALUE::$89D0C02BD3EDF7E42F4E64602AB90C16
+{
+  D3DVALUE b;
+  D3DVALUE dvB;
 };
 #pragma pack(pop)
 
 /* 560 */
 #pragma pack(push, 4)
-union _D3DCOLORVALUE::$5FBE30F4B5EDEA02F5A8FF631684CD5C {
-    D3DVALUE a;
-    D3DVALUE dvA;
+union _D3DCOLORVALUE::$5FBE30F4B5EDEA02F5A8FF631684CD5C
+{
+  D3DVALUE a;
+  D3DVALUE dvA;
 };
 #pragma pack(pop)
 
 /* 556 */
 #pragma pack(push, 4)
-struct _D3DCOLORVALUE {
-#pragma pack(push, 4)
-    union {
-        D3DVALUE r;
-        D3DVALUE dvR;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE g;
-        D3DVALUE dvG;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE b;
-        D3DVALUE dvB;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE a;
-        D3DVALUE dvA;
-    };
-#pragma pack(pop)
+struct _D3DCOLORVALUE
+{
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE r;
+    D3DVALUE dvR;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE g;
+    D3DVALUE dvG;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE b;
+    D3DVALUE dvB;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE a;
+    D3DVALUE dvA;
+  };
+  #pragma pack(pop)
 };
 #pragma pack(pop)
 
@@ -4844,41 +4821,46 @@ typedef _D3DCOLORVALUE D3DCOLORVALUE;
 
 /* 554 */
 #pragma pack(push, 4)
-union _D3DMATERIAL::$F37024B6A2A7DA8F8161E452127F778F {
-    D3DCOLORVALUE diffuse;
-    D3DCOLORVALUE dcvDiffuse;
+union _D3DMATERIAL::$F37024B6A2A7DA8F8161E452127F778F
+{
+  D3DCOLORVALUE diffuse;
+  D3DCOLORVALUE dcvDiffuse;
 };
 #pragma pack(pop)
 
 /* 561 */
 #pragma pack(push, 4)
-union _D3DMATERIAL::$B545799AB1B094EA7448ADA6B118C0D5 {
-    D3DCOLORVALUE ambient;
-    D3DCOLORVALUE dcvAmbient;
+union _D3DMATERIAL::$B545799AB1B094EA7448ADA6B118C0D5
+{
+  D3DCOLORVALUE ambient;
+  D3DCOLORVALUE dcvAmbient;
 };
 #pragma pack(pop)
 
 /* 562 */
 #pragma pack(push, 4)
-union _D3DMATERIAL::$48A7D73869B8DD97079A7DB0052C867A {
-    D3DCOLORVALUE specular;
-    D3DCOLORVALUE dcvSpecular;
+union _D3DMATERIAL::$48A7D73869B8DD97079A7DB0052C867A
+{
+  D3DCOLORVALUE specular;
+  D3DCOLORVALUE dcvSpecular;
 };
 #pragma pack(pop)
 
 /* 563 */
 #pragma pack(push, 4)
-union _D3DMATERIAL::$4E89CE7B3871A99DAB3B73BC63770FCE {
-    D3DCOLORVALUE emissive;
-    D3DCOLORVALUE dcvEmissive;
+union _D3DMATERIAL::$4E89CE7B3871A99DAB3B73BC63770FCE
+{
+  D3DCOLORVALUE emissive;
+  D3DCOLORVALUE dcvEmissive;
 };
 #pragma pack(pop)
 
 /* 564 */
 #pragma pack(push, 4)
-union _D3DMATERIAL::$0E29CCD1ABCFA56B0343B217BB93547E {
-    D3DVALUE power;
-    D3DVALUE dvPower;
+union _D3DMATERIAL::$0E29CCD1ABCFA56B0343B217BB93547E
+{
+  D3DVALUE power;
+  D3DVALUE dvPower;
 };
 #pragma pack(pop)
 
@@ -4887,62 +4869,70 @@ typedef DWORD D3DTEXTUREHANDLE;
 
 /* 553 */
 #pragma pack(push, 4)
-struct _D3DMATERIAL {
-    DWORD dwSize;
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE diffuse;
-        D3DCOLORVALUE dcvDiffuse;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE ambient;
-        D3DCOLORVALUE dcvAmbient;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE specular;
-        D3DCOLORVALUE dcvSpecular;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLORVALUE emissive;
-        D3DCOLORVALUE dcvEmissive;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE power;
-        D3DVALUE dvPower;
-    };
-#pragma pack(pop)
-    D3DTEXTUREHANDLE hTexture;
-    DWORD dwRampSize;
+struct _D3DMATERIAL
+{
+  DWORD dwSize;
+  #pragma pack(push, 4)
+  union
+  {
+    D3DCOLORVALUE diffuse;
+    D3DCOLORVALUE dcvDiffuse;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DCOLORVALUE ambient;
+    D3DCOLORVALUE dcvAmbient;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DCOLORVALUE specular;
+    D3DCOLORVALUE dcvSpecular;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DCOLORVALUE emissive;
+    D3DCOLORVALUE dcvEmissive;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE power;
+    D3DVALUE dvPower;
+  };
+  #pragma pack(pop)
+  D3DTEXTUREHANDLE hTexture;
+  DWORD dwRampSize;
 };
 #pragma pack(pop)
 
 /* 576 */
-struct IDirect3D {
-    IDirect3DVtbl *lpVtbl;
+struct IDirect3D
+{
+  IDirect3DVtbl *lpVtbl;
 };
 
 /* 604 */
 #pragma pack(push, 4)
-struct _D3DVIEWPORT {
-    DWORD dwSize;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwWidth;
-    DWORD dwHeight;
-    D3DVALUE dvScaleX;
-    D3DVALUE dvScaleY;
-    D3DVALUE dvMaxX;
-    D3DVALUE dvMaxY;
-    D3DVALUE dvMinZ;
-    D3DVALUE dvMaxZ;
+struct _D3DVIEWPORT
+{
+  DWORD dwSize;
+  DWORD dwX;
+  DWORD dwY;
+  DWORD dwWidth;
+  DWORD dwHeight;
+  D3DVALUE dvScaleX;
+  D3DVALUE dvScaleY;
+  D3DVALUE dvMaxX;
+  D3DVALUE dvMaxY;
+  D3DVALUE dvMinZ;
+  D3DVALUE dvMaxZ;
 };
 #pragma pack(pop)
 
@@ -4951,11 +4941,12 @@ typedef _D3DHVERTEX *LPD3DHVERTEX;
 
 /* 494 */
 #pragma pack(push, 4)
-struct _D3DRECT {
-    LONG x1;
-    LONG y1;
-    LONG x2;
-    LONG y2;
+struct _D3DRECT
+{
+  LONG x1;
+  LONG y1;
+  LONG x2;
+  LONG y2;
 };
 #pragma pack(pop)
 
@@ -4964,17 +4955,18 @@ typedef _D3DRECT D3DRECT;
 
 /* 606 */
 #pragma pack(push, 4)
-struct _D3DTRANSFORMDATA {
-    DWORD dwSize;
-    LPVOID lpIn;
-    DWORD dwInSize;
-    LPVOID lpOut;
-    DWORD dwOutSize;
-    LPD3DHVERTEX lpHOut;
-    DWORD dwClip;
-    DWORD dwClipIntersection;
-    DWORD dwClipUnion;
-    D3DRECT drExtent;
+struct _D3DTRANSFORMDATA
+{
+  DWORD dwSize;
+  LPVOID lpIn;
+  DWORD dwInSize;
+  LPVOID lpOut;
+  DWORD dwOutSize;
+  LPD3DHVERTEX lpHOut;
+  DWORD dwClip;
+  DWORD dwClipIntersection;
+  DWORD dwClipUnion;
+  D3DRECT drExtent;
 };
 #pragma pack(pop)
 
@@ -4986,29 +4978,31 @@ typedef _D3DTLVERTEX *LPD3DTLVERTEX;
 
 /* 613 */
 #pragma pack(push, 4)
-struct _D3DLIGHTDATA {
-    DWORD dwSize;
-    LPD3DLIGHTINGELEMENT lpIn;
-    DWORD dwInSize;
-    LPD3DTLVERTEX lpOut;
-    DWORD dwOutSize;
+struct _D3DLIGHTDATA
+{
+  DWORD dwSize;
+  LPD3DLIGHTINGELEMENT lpIn;
+  DWORD dwInSize;
+  LPD3DTLVERTEX lpOut;
+  DWORD dwOutSize;
 };
 #pragma pack(pop)
 
 /* 669 */
 #pragma pack(push, 4)
-struct _D3DVIEWPORT2 {
-    DWORD dwSize;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwWidth;
-    DWORD dwHeight;
-    D3DVALUE dvClipX;
-    D3DVALUE dvClipY;
-    D3DVALUE dvClipWidth;
-    D3DVALUE dvClipHeight;
-    D3DVALUE dvMinZ;
-    D3DVALUE dvMaxZ;
+struct _D3DVIEWPORT2
+{
+  DWORD dwSize;
+  DWORD dwX;
+  DWORD dwY;
+  DWORD dwWidth;
+  DWORD dwHeight;
+  D3DVALUE dvClipX;
+  D3DVALUE dvClipY;
+  D3DVALUE dvClipWidth;
+  D3DVALUE dvClipHeight;
+  D3DVALUE dvMinZ;
+  D3DVALUE dvMaxZ;
 };
 #pragma pack(pop)
 
@@ -5016,23 +5010,25 @@ struct _D3DVIEWPORT2 {
 typedef _D3DLIGHT *LPD3DLIGHT;
 
 /* 574 */
-struct IDirect3DLightVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3DLight *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DLight *This);
-    ULONG(__stdcall *Release)(IDirect3DLight *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DLight *This, LPDIRECT3D);
-    HRESULT(__stdcall *SetLight)(IDirect3DLight *This, LPD3DLIGHT);
-    HRESULT(__stdcall *GetLight)(IDirect3DLight *This, LPD3DLIGHT);
+struct IDirect3DLightVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DLight *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DLight *This);
+  ULONG (__stdcall *Release)(IDirect3DLight *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DLight *This, LPDIRECT3D);
+  HRESULT (__stdcall *SetLight)(IDirect3DLight *This, LPD3DLIGHT);
+  HRESULT (__stdcall *GetLight)(IDirect3DLight *This, LPD3DLIGHT);
 };
 
 /* 510 */
-struct IDirect3DTexture2Vtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3DTexture2 *, GUID *, LPVOID *);
-    HRESULT(__stdcall *AddRef)(IDirect3DTexture2 *);
-    HRESULT(__stdcall *Release)(IDirect3DTexture2 *);
-    HRESULT(__stdcall *GetHandle)(IDirect3DTexture2 *, #486 *, D3DTEXTUREHANDLE *);
-    HRESULT(__stdcall *PaletteChanged)(IDirect3DTexture2 *, DWORD, DWORD);
-    HRESULT(__stdcall *Load)(IDirect3DTexture2 *, IDirect3DTexture2 *);
+struct IDirect3DTexture2Vtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DTexture2 *, GUID *, LPVOID *);
+  HRESULT (__stdcall *AddRef)(IDirect3DTexture2 *);
+  HRESULT (__stdcall *Release)(IDirect3DTexture2 *);
+  HRESULT (__stdcall *GetHandle)(IDirect3DTexture2 *, #486 *, D3DTEXTUREHANDLE *);
+  HRESULT (__stdcall *PaletteChanged)(IDirect3DTexture2 *, DWORD, DWORD);
+  HRESULT (__stdcall *Load)(IDirect3DTexture2 *, IDirect3DTexture2 *);
 };
 
 /* 578 */
@@ -5042,104 +5038,117 @@ typedef IDirect3DMaterial *LPDIRECT3DMATERIAL;
 typedef IDirect3DViewport *LPDIRECT3DVIEWPORT;
 
 /* 577 */
-struct IDirect3DVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirect3D *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3D *This);
-    ULONG(__stdcall *Release)(IDirect3D *This);
-    HRESULT(__stdcall *Initialize)(IDirect3D *This, const IID *const);
-    HRESULT(__stdcall *EnumDevices)(IDirect3D *This, LPD3DENUMDEVICESCALLBACK, LPVOID);
-    HRESULT(__stdcall *CreateLight)(IDirect3D *This, LPDIRECT3DLIGHT *, IUnknown *);
-    HRESULT(__stdcall *CreateMaterial)(IDirect3D *This, LPDIRECT3DMATERIAL *, IUnknown *);
-    HRESULT(__stdcall *CreateViewport)(IDirect3D *This, LPDIRECT3DVIEWPORT *, IUnknown *);
-    HRESULT(__stdcall *FindDevice)(IDirect3D *This, LPD3DFINDDEVICESEARCH, LPD3DFINDDEVICERESULT);
+struct IDirect3DVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3D *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3D *This);
+  ULONG (__stdcall *Release)(IDirect3D *This);
+  HRESULT (__stdcall *Initialize)(IDirect3D *This, const IID *const);
+  HRESULT (__stdcall *EnumDevices)(IDirect3D *This, LPD3DENUMDEVICESCALLBACK, LPVOID);
+  HRESULT (__stdcall *CreateLight)(IDirect3D *This, LPDIRECT3DLIGHT *, IUnknown *);
+  HRESULT (__stdcall *CreateMaterial)(IDirect3D *This, LPDIRECT3DMATERIAL *, IUnknown *);
+  HRESULT (__stdcall *CreateViewport)(IDirect3D *This, LPDIRECT3DVIEWPORT *, IUnknown *);
+  HRESULT (__stdcall *FindDevice)(IDirect3D *This, LPD3DFINDDEVICESEARCH, LPD3DFINDDEVICERESULT);
 };
 
 /* 609 */
 #pragma pack(push, 4)
-union _D3DHVERTEX::$81DEDA9DF6ACB3C44C422FDD657F648D {
-    D3DVALUE hx;
-    D3DVALUE dvHX;
+union _D3DHVERTEX::$81DEDA9DF6ACB3C44C422FDD657F648D
+{
+  D3DVALUE hx;
+  D3DVALUE dvHX;
 };
 #pragma pack(pop)
 
 /* 610 */
 #pragma pack(push, 4)
-union _D3DHVERTEX::$D02C4950DEF26FBAA94C7BFFD90117CD {
-    D3DVALUE hy;
-    D3DVALUE dvHY;
+union _D3DHVERTEX::$D02C4950DEF26FBAA94C7BFFD90117CD
+{
+  D3DVALUE hy;
+  D3DVALUE dvHY;
 };
 #pragma pack(pop)
 
 /* 611 */
 #pragma pack(push, 4)
-union _D3DHVERTEX::$422DE5A9C9FEBBB756750EDCDEE4D165 {
-    D3DVALUE hz;
-    D3DVALUE dvHZ;
+union _D3DHVERTEX::$422DE5A9C9FEBBB756750EDCDEE4D165
+{
+  D3DVALUE hz;
+  D3DVALUE dvHZ;
 };
 #pragma pack(pop)
 
 /* 608 */
 #pragma pack(push, 4)
-struct _D3DHVERTEX {
-    DWORD dwFlags;
-#pragma pack(push, 4)
-    union {
-        D3DVALUE hx;
-        D3DVALUE dvHX;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE hy;
-        D3DVALUE dvHY;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE hz;
-        D3DVALUE dvHZ;
-    };
-#pragma pack(pop)
+struct _D3DHVERTEX
+{
+  DWORD dwFlags;
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE hx;
+    D3DVALUE dvHX;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE hy;
+    D3DVALUE dvHY;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE hz;
+    D3DVALUE dvHZ;
+  };
+  #pragma pack(pop)
 };
 #pragma pack(pop)
 
 /* 615 */
 #pragma pack(push, 4)
-struct _D3DLIGHTINGELEMENT {
-    D3DVECTOR dvPosition;
-    D3DVECTOR dvNormal;
+struct _D3DLIGHTINGELEMENT
+{
+  D3DVECTOR dvPosition;
+  D3DVECTOR dvNormal;
 };
 #pragma pack(pop)
 
 /* 618 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$0F2CDCA047003D8EC75118693930E691 {
-    D3DVALUE sx;
-    D3DVALUE dvSX;
+union _D3DTLVERTEX::$0F2CDCA047003D8EC75118693930E691
+{
+  D3DVALUE sx;
+  D3DVALUE dvSX;
 };
 #pragma pack(pop)
 
 /* 619 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$6CA934479C1F92723C45B62B9DC7F703 {
-    D3DVALUE sy;
-    D3DVALUE dvSY;
+union _D3DTLVERTEX::$6CA934479C1F92723C45B62B9DC7F703
+{
+  D3DVALUE sy;
+  D3DVALUE dvSY;
 };
 #pragma pack(pop)
 
 /* 620 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$BDFC1E337EC7BF58E4386644A37C7111 {
-    D3DVALUE sz;
-    D3DVALUE dvSZ;
+union _D3DTLVERTEX::$BDFC1E337EC7BF58E4386644A37C7111
+{
+  D3DVALUE sz;
+  D3DVALUE dvSZ;
 };
 #pragma pack(pop)
 
 /* 621 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$ED3D3C9797719C595EAD57A73B2054F3 {
-    D3DVALUE rhw;
-    D3DVALUE dvRHW;
+union _D3DTLVERTEX::$ED3D3C9797719C595EAD57A73B2054F3
+{
+  D3DVALUE rhw;
+  D3DVALUE dvRHW;
 };
 #pragma pack(pop)
 
@@ -5148,97 +5157,111 @@ typedef DWORD D3DCOLOR;
 
 /* 622 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$34D6BCDD47B44126D7A203197E7A8282 {
-    D3DCOLOR color;
-    D3DCOLOR dcColor;
+union _D3DTLVERTEX::$34D6BCDD47B44126D7A203197E7A8282
+{
+  D3DCOLOR color;
+  D3DCOLOR dcColor;
 };
 #pragma pack(pop)
 
 /* 624 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$30594A6BB70EFF251680D22A869004B0 {
-    D3DCOLOR specular;
-    D3DCOLOR dcSpecular;
+union _D3DTLVERTEX::$30594A6BB70EFF251680D22A869004B0
+{
+  D3DCOLOR specular;
+  D3DCOLOR dcSpecular;
 };
 #pragma pack(pop)
 
 /* 625 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$F5EA273054A07BEACA92D8100BBF37A6 {
-    D3DVALUE tu;
-    D3DVALUE dvTU;
+union _D3DTLVERTEX::$F5EA273054A07BEACA92D8100BBF37A6
+{
+  D3DVALUE tu;
+  D3DVALUE dvTU;
 };
 #pragma pack(pop)
 
 /* 626 */
 #pragma pack(push, 4)
-union _D3DTLVERTEX::$7013070F7992C3CB148910863AB1E659 {
-    D3DVALUE tv;
-    D3DVALUE dvTV;
+union _D3DTLVERTEX::$7013070F7992C3CB148910863AB1E659
+{
+  D3DVALUE tv;
+  D3DVALUE dvTV;
 };
 #pragma pack(pop)
 
 /* 617 */
 #pragma pack(push, 4)
-struct _D3DTLVERTEX {
-#pragma pack(push, 4)
-    union {
-        D3DVALUE sx;
-        D3DVALUE dvSX;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE sy;
-        D3DVALUE dvSY;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE sz;
-        D3DVALUE dvSZ;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE rhw;
-        D3DVALUE dvRHW;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLOR color;
-        D3DCOLOR dcColor;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DCOLOR specular;
-        D3DCOLOR dcSpecular;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE tu;
-        D3DVALUE dvTU;
-    };
-#pragma pack(pop)
-#pragma pack(push, 4)
-    union {
-        D3DVALUE tv;
-        D3DVALUE dvTV;
-    };
-#pragma pack(pop)
+struct _D3DTLVERTEX
+{
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE sx;
+    D3DVALUE dvSX;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE sy;
+    D3DVALUE dvSY;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE sz;
+    D3DVALUE dvSZ;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE rhw;
+    D3DVALUE dvRHW;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DCOLOR color;
+    D3DCOLOR dcColor;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DCOLOR specular;
+    D3DCOLOR dcSpecular;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE tu;
+    D3DVALUE dvTU;
+  };
+  #pragma pack(pop)
+  #pragma pack(push, 4)
+  union
+  {
+    D3DVALUE tv;
+    D3DVALUE dvTV;
+  };
+  #pragma pack(pop)
 };
 #pragma pack(pop)
 
 /* 644 */
-enum _D3DLIGHTTYPE {
-    D3DLIGHT_POINT = 0x1,
-    D3DLIGHT_SPOT = 0x2,
-    D3DLIGHT_DIRECTIONAL = 0x3,
-    D3DLIGHT_PARALLELPOINT = 0x4,
-    D3DLIGHT_FORCE_DWORD = 0x7FFFFFFF,
+enum _D3DLIGHTTYPE
+{
+  D3DLIGHT_POINT = 0x1,
+  D3DLIGHT_SPOT = 0x2,
+  D3DLIGHT_DIRECTIONAL = 0x3,
+  D3DLIGHT_PARALLELPOINT = 0x4,
+  D3DLIGHT_FORCE_DWORD = 0x7FFFFFFF,
 };
 
 /* 643 */
@@ -5246,75 +5269,77 @@ typedef _D3DLIGHTTYPE D3DLIGHTTYPE;
 
 /* 642 */
 #pragma pack(push, 4)
-struct _D3DLIGHT {
-    DWORD dwSize;
-    D3DLIGHTTYPE dltType;
-    D3DCOLORVALUE dcvColor;
-    D3DVECTOR dvPosition;
-    D3DVECTOR dvDirection;
-    D3DVALUE dvRange;
-    D3DVALUE dvFalloff;
-    D3DVALUE dvAttenuation0;
-    D3DVALUE dvAttenuation1;
-    D3DVALUE dvAttenuation2;
-    D3DVALUE dvTheta;
-    D3DVALUE dvPhi;
+struct _D3DLIGHT
+{
+  DWORD dwSize;
+  D3DLIGHTTYPE dltType;
+  D3DCOLORVALUE dcvColor;
+  D3DVECTOR dvPosition;
+  D3DVECTOR dvDirection;
+  D3DVALUE dvRange;
+  D3DVALUE dvFalloff;
+  D3DVALUE dvAttenuation0;
+  D3DVALUE dvAttenuation1;
+  D3DVALUE dvAttenuation2;
+  D3DVALUE dvTheta;
+  D3DVALUE dvPhi;
 };
 #pragma pack(pop)
 
 /* 579 */
-struct IDirect3DMaterial {
-    IDirect3DMaterialVtbl *lpVtbl;
+struct IDirect3DMaterial
+{
+  IDirect3DMaterialVtbl *lpVtbl;
 };
 
 /* 601 */
-struct IDirect3DViewport {
-    IDirect3DViewportVtbl *lpVtbl;
+struct IDirect3DViewport
+{
+  IDirect3DViewportVtbl *lpVtbl;
 };
 
 /* 581 */
 typedef IDirect3DDevice *LPDIRECT3DDEVICE;
 
 /* 580 */
-struct IDirect3DMaterialVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DMaterial *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DMaterial *This);
-    ULONG(__stdcall *Release)(IDirect3DMaterial *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DMaterial *This, LPDIRECT3D);
-    HRESULT(__stdcall *SetMaterial)(IDirect3DMaterial *This, LPD3DMATERIAL);
-    HRESULT(__stdcall *GetMaterial)(IDirect3DMaterial *This, LPD3DMATERIAL);
-    HRESULT(__stdcall *GetHandle)(IDirect3DMaterial *This, LPDIRECT3DDEVICE, LPD3DMATERIALHANDLE);
-    HRESULT(__stdcall *Reserve)(IDirect3DMaterial *This);
-    HRESULT(__stdcall *Unreserve)(IDirect3DMaterial *This);
+struct IDirect3DMaterialVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DMaterial *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DMaterial *This);
+  ULONG (__stdcall *Release)(IDirect3DMaterial *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DMaterial *This, LPDIRECT3D);
+  HRESULT (__stdcall *SetMaterial)(IDirect3DMaterial *This, LPD3DMATERIAL);
+  HRESULT (__stdcall *GetMaterial)(IDirect3DMaterial *This, LPD3DMATERIAL);
+  HRESULT (__stdcall *GetHandle)(IDirect3DMaterial *This, LPDIRECT3DDEVICE, LPD3DMATERIALHANDLE);
+  HRESULT (__stdcall *Reserve)(IDirect3DMaterial *This);
+  HRESULT (__stdcall *Unreserve)(IDirect3DMaterial *This);
 };
 
 /* 602 */
-struct IDirect3DViewportVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DViewport *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DViewport *This);
-    ULONG(__stdcall *Release)(IDirect3DViewport *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DViewport *This, LPDIRECT3D);
-    HRESULT(__stdcall *GetViewport)(IDirect3DViewport *This, LPD3DVIEWPORT);
-    HRESULT(__stdcall *SetViewport)(IDirect3DViewport *This, LPD3DVIEWPORT);
-    HRESULT(__stdcall *TransformVertices)
-    (IDirect3DViewport *This, DWORD, LPD3DTRANSFORMDATA, DWORD, LPDWORD);
-    HRESULT(__stdcall *LightElements)(IDirect3DViewport *This, DWORD, LPD3DLIGHTDATA);
-    HRESULT(__stdcall *SetBackground)(IDirect3DViewport *This, D3DMATERIALHANDLE);
-    HRESULT(__stdcall *GetBackground)(IDirect3DViewport *This, LPD3DMATERIALHANDLE, LPBOOL);
-    HRESULT(__stdcall *SetBackgroundDepth)(IDirect3DViewport *This, LPDIRECTDRAWSURFACE);
-    HRESULT(__stdcall *GetBackgroundDepth)(IDirect3DViewport *This, LPDIRECTDRAWSURFACE *, LPBOOL);
-    HRESULT(__stdcall *Clear)(IDirect3DViewport *This, DWORD, LPD3DRECT, DWORD);
-    HRESULT(__stdcall *AddLight)(IDirect3DViewport *This, LPDIRECT3DLIGHT);
-    HRESULT(__stdcall *DeleteLight)(IDirect3DViewport *This, LPDIRECT3DLIGHT);
-    HRESULT(__stdcall *NextLight)
-    (IDirect3DViewport *This, LPDIRECT3DLIGHT, LPDIRECT3DLIGHT *, DWORD);
+struct IDirect3DViewportVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DViewport *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DViewport *This);
+  ULONG (__stdcall *Release)(IDirect3DViewport *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DViewport *This, LPDIRECT3D);
+  HRESULT (__stdcall *GetViewport)(IDirect3DViewport *This, LPD3DVIEWPORT);
+  HRESULT (__stdcall *SetViewport)(IDirect3DViewport *This, LPD3DVIEWPORT);
+  HRESULT (__stdcall *TransformVertices)(IDirect3DViewport *This, DWORD, LPD3DTRANSFORMDATA, DWORD, LPDWORD);
+  HRESULT (__stdcall *LightElements)(IDirect3DViewport *This, DWORD, LPD3DLIGHTDATA);
+  HRESULT (__stdcall *SetBackground)(IDirect3DViewport *This, D3DMATERIALHANDLE);
+  HRESULT (__stdcall *GetBackground)(IDirect3DViewport *This, LPD3DMATERIALHANDLE, LPBOOL);
+  HRESULT (__stdcall *SetBackgroundDepth)(IDirect3DViewport *This, LPDIRECTDRAWSURFACE);
+  HRESULT (__stdcall *GetBackgroundDepth)(IDirect3DViewport *This, LPDIRECTDRAWSURFACE *, LPBOOL);
+  HRESULT (__stdcall *Clear)(IDirect3DViewport *This, DWORD, LPD3DRECT, DWORD);
+  HRESULT (__stdcall *AddLight)(IDirect3DViewport *This, LPDIRECT3DLIGHT);
+  HRESULT (__stdcall *DeleteLight)(IDirect3DViewport *This, LPDIRECT3DLIGHT);
+  HRESULT (__stdcall *NextLight)(IDirect3DViewport *This, LPDIRECT3DLIGHT, LPDIRECT3DLIGHT *, DWORD);
 };
 
 /* 582 */
-struct IDirect3DDevice {
-    IDirect3DDeviceVtbl *lpVtbl;
+struct IDirect3DDevice
+{
+  IDirect3DDeviceVtbl *lpVtbl;
 };
 
 /* 584 */
@@ -5336,66 +5361,64 @@ typedef DWORD *LPD3DMATRIXHANDLE;
 typedef DWORD D3DMATRIXHANDLE;
 
 /* 583 */
-struct IDirect3DDeviceVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DDevice *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DDevice *This);
-    ULONG(__stdcall *Release)(IDirect3DDevice *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DDevice *This, LPDIRECT3D, LPGUID, LPD3DDEVICEDESC);
-    HRESULT(__stdcall *GetCaps)(IDirect3DDevice *This, LPD3DDEVICEDESC, LPD3DDEVICEDESC);
-    HRESULT(__stdcall *SwapTextureHandles)
-    (IDirect3DDevice *This, LPDIRECT3DTEXTURE, LPDIRECT3DTEXTURE);
-    HRESULT(__stdcall *CreateExecuteBuffer)
-    (IDirect3DDevice *This, LPD3DEXECUTEBUFFERDESC, LPDIRECT3DEXECUTEBUFFER *, IUnknown *);
-    HRESULT(__stdcall *GetStats)(IDirect3DDevice *This, LPD3DSTATS);
-    HRESULT(__stdcall *Execute)
-    (IDirect3DDevice *This, LPDIRECT3DEXECUTEBUFFER, LPDIRECT3DVIEWPORT, DWORD);
-    HRESULT(__stdcall *AddViewport)(IDirect3DDevice *This, LPDIRECT3DVIEWPORT);
-    HRESULT(__stdcall *DeleteViewport)(IDirect3DDevice *This, LPDIRECT3DVIEWPORT);
-    HRESULT(__stdcall *NextViewport)
-    (IDirect3DDevice *This, LPDIRECT3DVIEWPORT, LPDIRECT3DVIEWPORT *, DWORD);
-    HRESULT(__stdcall *Pick)
-    (IDirect3DDevice *This, LPDIRECT3DEXECUTEBUFFER, LPDIRECT3DVIEWPORT, DWORD, LPD3DRECT);
-    HRESULT(__stdcall *GetPickRecords)(IDirect3DDevice *This, LPDWORD, LPD3DPICKRECORD);
-    HRESULT(__stdcall *EnumTextureFormats)
-    (IDirect3DDevice *This, LPD3DENUMTEXTUREFORMATSCALLBACK, LPVOID);
-    HRESULT(__stdcall *CreateMatrix)(IDirect3DDevice *This, LPD3DMATRIXHANDLE);
-    HRESULT(__stdcall *SetMatrix)(IDirect3DDevice *This, D3DMATRIXHANDLE, const LPD3DMATRIX);
-    HRESULT(__stdcall *GetMatrix)(IDirect3DDevice *This, D3DMATRIXHANDLE, LPD3DMATRIX);
-    HRESULT(__stdcall *DeleteMatrix)(IDirect3DDevice *This, D3DMATRIXHANDLE);
-    HRESULT(__stdcall *BeginScene)(IDirect3DDevice *This);
-    HRESULT(__stdcall *EndScene)(IDirect3DDevice *This);
-    HRESULT(__stdcall *GetDirect3D)(IDirect3DDevice *This, LPDIRECT3D *);
+struct IDirect3DDeviceVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DDevice *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DDevice *This);
+  ULONG (__stdcall *Release)(IDirect3DDevice *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DDevice *This, LPDIRECT3D, LPGUID, LPD3DDEVICEDESC);
+  HRESULT (__stdcall *GetCaps)(IDirect3DDevice *This, LPD3DDEVICEDESC, LPD3DDEVICEDESC);
+  HRESULT (__stdcall *SwapTextureHandles)(IDirect3DDevice *This, LPDIRECT3DTEXTURE, LPDIRECT3DTEXTURE);
+  HRESULT (__stdcall *CreateExecuteBuffer)(IDirect3DDevice *This, LPD3DEXECUTEBUFFERDESC, LPDIRECT3DEXECUTEBUFFER *, IUnknown *);
+  HRESULT (__stdcall *GetStats)(IDirect3DDevice *This, LPD3DSTATS);
+  HRESULT (__stdcall *Execute)(IDirect3DDevice *This, LPDIRECT3DEXECUTEBUFFER, LPDIRECT3DVIEWPORT, DWORD);
+  HRESULT (__stdcall *AddViewport)(IDirect3DDevice *This, LPDIRECT3DVIEWPORT);
+  HRESULT (__stdcall *DeleteViewport)(IDirect3DDevice *This, LPDIRECT3DVIEWPORT);
+  HRESULT (__stdcall *NextViewport)(IDirect3DDevice *This, LPDIRECT3DVIEWPORT, LPDIRECT3DVIEWPORT *, DWORD);
+  HRESULT (__stdcall *Pick)(IDirect3DDevice *This, LPDIRECT3DEXECUTEBUFFER, LPDIRECT3DVIEWPORT, DWORD, LPD3DRECT);
+  HRESULT (__stdcall *GetPickRecords)(IDirect3DDevice *This, LPDWORD, LPD3DPICKRECORD);
+  HRESULT (__stdcall *EnumTextureFormats)(IDirect3DDevice *This, LPD3DENUMTEXTUREFORMATSCALLBACK, LPVOID);
+  HRESULT (__stdcall *CreateMatrix)(IDirect3DDevice *This, LPD3DMATRIXHANDLE);
+  HRESULT (__stdcall *SetMatrix)(IDirect3DDevice *This, D3DMATRIXHANDLE, const LPD3DMATRIX);
+  HRESULT (__stdcall *GetMatrix)(IDirect3DDevice *This, D3DMATRIXHANDLE, LPD3DMATRIX);
+  HRESULT (__stdcall *DeleteMatrix)(IDirect3DDevice *This, D3DMATRIXHANDLE);
+  HRESULT (__stdcall *BeginScene)(IDirect3DDevice *This);
+  HRESULT (__stdcall *EndScene)(IDirect3DDevice *This);
+  HRESULT (__stdcall *GetDirect3D)(IDirect3DDevice *This, LPDIRECT3D *);
 };
 
 /* 585 */
-struct IDirect3DTexture {
-    IDirect3DTextureVtbl *lpVtbl;
+struct IDirect3DTexture
+{
+  IDirect3DTextureVtbl *lpVtbl;
 };
 
 /* 589 */
 #pragma pack(push, 4)
-struct _D3DExecuteBufferDesc {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwCaps;
-    DWORD dwBufferSize;
-    LPVOID lpData;
+struct _D3DExecuteBufferDesc
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwCaps;
+  DWORD dwBufferSize;
+  LPVOID lpData;
 };
 #pragma pack(pop)
 
 /* 591 */
-struct IDirect3DExecuteBuffer {
-    IDirect3DExecuteBufferVtbl *lpVtbl;
+struct IDirect3DExecuteBuffer
+{
+  IDirect3DExecuteBufferVtbl *lpVtbl;
 };
 
 /* 630 */
 #pragma pack(push, 4)
-struct _D3DPICKRECORD {
-    BYTE bOpcode;
-    BYTE bPad;
-    DWORD dwOffset;
-    D3DVALUE dvZ;
+struct _D3DPICKRECORD
+{
+  BYTE bOpcode;
+  BYTE bPad;
+  DWORD dwOffset;
+  D3DVALUE dvZ;
 };
 #pragma pack(pop)
 
@@ -5403,47 +5426,46 @@ struct _D3DPICKRECORD {
 typedef DWORD *LPD3DTEXTUREHANDLE;
 
 /* 586 */
-struct IDirect3DTextureVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DTexture *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DTexture *This);
-    ULONG(__stdcall *Release)(IDirect3DTexture *This);
-    HRESULT(__stdcall *Initialize)(IDirect3DTexture *This, LPDIRECT3DDEVICE, LPDIRECTDRAWSURFACE);
-    HRESULT(__stdcall *GetHandle)(IDirect3DTexture *This, LPDIRECT3DDEVICE, LPD3DTEXTUREHANDLE);
-    HRESULT(__stdcall *PaletteChanged)(IDirect3DTexture *This, DWORD, DWORD);
-    HRESULT(__stdcall *Load)(IDirect3DTexture *This, LPDIRECT3DTEXTURE);
-    HRESULT(__stdcall *Unload)(IDirect3DTexture *This);
+struct IDirect3DTextureVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DTexture *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DTexture *This);
+  ULONG (__stdcall *Release)(IDirect3DTexture *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DTexture *This, LPDIRECT3DDEVICE, LPDIRECTDRAWSURFACE);
+  HRESULT (__stdcall *GetHandle)(IDirect3DTexture *This, LPDIRECT3DDEVICE, LPD3DTEXTUREHANDLE);
+  HRESULT (__stdcall *PaletteChanged)(IDirect3DTexture *This, DWORD, DWORD);
+  HRESULT (__stdcall *Load)(IDirect3DTexture *This, LPDIRECT3DTEXTURE);
+  HRESULT (__stdcall *Unload)(IDirect3DTexture *This);
 };
 
 /* 593 */
 typedef _D3DEXECUTEDATA *LPD3DEXECUTEDATA;
 
 /* 597 */
-typedef HRESULT(__stdcall *LPD3DVALIDATECALLBACK)(LPVOID lpUserArg, DWORD dwOffset);
+typedef HRESULT (__stdcall *LPD3DVALIDATECALLBACK)(LPVOID lpUserArg, DWORD dwOffset);
 
 /* 592 */
-struct IDirect3DExecuteBufferVtbl {
-    HRESULT(__stdcall *QueryInterface)
-    (IDirect3DExecuteBuffer *This, const IID *const riid, LPVOID *ppvObj);
-    ULONG(__stdcall *AddRef)(IDirect3DExecuteBuffer *This);
-    ULONG(__stdcall *Release)(IDirect3DExecuteBuffer *This);
-    HRESULT(__stdcall *Initialize)
-    (IDirect3DExecuteBuffer *This, LPDIRECT3DDEVICE, LPD3DEXECUTEBUFFERDESC);
-    HRESULT(__stdcall *Lock)(IDirect3DExecuteBuffer *This, LPD3DEXECUTEBUFFERDESC);
-    HRESULT(__stdcall *Unlock)(IDirect3DExecuteBuffer *This);
-    HRESULT(__stdcall *SetExecuteData)(IDirect3DExecuteBuffer *This, LPD3DEXECUTEDATA);
-    HRESULT(__stdcall *GetExecuteData)(IDirect3DExecuteBuffer *This, LPD3DEXECUTEDATA);
-    HRESULT(__stdcall *Validate)
-    (IDirect3DExecuteBuffer *This, LPDWORD, LPD3DVALIDATECALLBACK, LPVOID, DWORD);
-    HRESULT(__stdcall *Optimize)(IDirect3DExecuteBuffer *This, DWORD);
+struct IDirect3DExecuteBufferVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirect3DExecuteBuffer *This, const IID *const riid, LPVOID *ppvObj);
+  ULONG (__stdcall *AddRef)(IDirect3DExecuteBuffer *This);
+  ULONG (__stdcall *Release)(IDirect3DExecuteBuffer *This);
+  HRESULT (__stdcall *Initialize)(IDirect3DExecuteBuffer *This, LPDIRECT3DDEVICE, LPD3DEXECUTEBUFFERDESC);
+  HRESULT (__stdcall *Lock)(IDirect3DExecuteBuffer *This, LPD3DEXECUTEBUFFERDESC);
+  HRESULT (__stdcall *Unlock)(IDirect3DExecuteBuffer *This);
+  HRESULT (__stdcall *SetExecuteData)(IDirect3DExecuteBuffer *This, LPD3DEXECUTEDATA);
+  HRESULT (__stdcall *GetExecuteData)(IDirect3DExecuteBuffer *This, LPD3DEXECUTEDATA);
+  HRESULT (__stdcall *Validate)(IDirect3DExecuteBuffer *This, LPDWORD, LPD3DVALIDATECALLBACK, LPVOID, DWORD);
+  HRESULT (__stdcall *Optimize)(IDirect3DExecuteBuffer *This, DWORD);
 };
 
 /* 596 */
 #pragma pack(push, 4)
-struct _D3DSTATUS {
-    DWORD dwFlags;
-    DWORD dwStatus;
-    D3DRECT drExtent;
+struct _D3DSTATUS
+{
+  DWORD dwFlags;
+  DWORD dwStatus;
+  D3DRECT drExtent;
 };
 #pragma pack(pop)
 
@@ -5452,151 +5474,159 @@ typedef _D3DSTATUS D3DSTATUS;
 
 /* 594 */
 #pragma pack(push, 4)
-struct _D3DEXECUTEDATA {
-    DWORD dwSize;
-    DWORD dwVertexOffset;
-    DWORD dwVertexCount;
-    DWORD dwInstructionOffset;
-    DWORD dwInstructionLength;
-    DWORD dwHVertexOffset;
-    D3DSTATUS dsStatus;
+struct _D3DEXECUTEDATA
+{
+  DWORD dwSize;
+  DWORD dwVertexOffset;
+  DWORD dwVertexCount;
+  DWORD dwInstructionOffset;
+  DWORD dwInstructionLength;
+  DWORD dwHVertexOffset;
+  D3DSTATUS dsStatus;
 };
 #pragma pack(pop)
 
 /* 495 */
-struct __declspec(align(4)) CHK_File {
-    FILE *pfil;
-    const char *szName;
+struct __declspec(align(4)) CHK_File
+{
+  FILE *pfil;
+  const char *szName;
 };
 
 /* 496 */
 typedef _RTL_CRITICAL_SECTION RTL_CRITICAL_SECTION;
 
 /* 497 */
-struct IDirectPlayLobby3A {
-    IDirectPlayLobby3AVtbl *lpVtbl;
+struct IDirectPlayLobby3A
+{
+  IDirectPlayLobby3AVtbl *lpVtbl;
 };
 
 /* 498 */
-struct IDirectPlayLobby3AVtbl {
-    int QueryInterface;
-    int AddRef;
-    int(__stdcall *Release)(IDirectPlayLobby3A *);
-    int Connect;
-    int CreateAddress;
-    int EnumAddress;
-    int EnumAddressTypes;
-    int EnumLocalApplications;
-    int(__stdcall *GetConnectionSettings)(IDirectPlayLobby3A *, DWORD, LPVOID, LPDWORD);
-    int ReceiveLobbyMessage;
-    int RunApplication;
-    int SendLobbyMessage;
-    int(__stdcall *SetConnectionSettings)(IDirectPlayLobby3A *, DWORD, DWORD, DPLCONNECTION *);
-    int SetLobbyMessageEvent;
-    int CreateCompoundAddress;
-    int(__stdcall *ConnectEx)(IDirectPlayLobby3A *, DWORD, IID *, LPVOID *, IUnknown *);
-    int RegisterApplication;
-    int UnregisterApplication;
-    int WaitForConnectionSettings;
+struct IDirectPlayLobby3AVtbl
+{
+  int QueryInterface;
+  int AddRef;
+  int (__stdcall *Release)(IDirectPlayLobby3A *);
+  int Connect;
+  int CreateAddress;
+  int EnumAddress;
+  int EnumAddressTypes;
+  int EnumLocalApplications;
+  int (__stdcall *GetConnectionSettings)(IDirectPlayLobby3A *, DWORD, LPVOID, LPDWORD);
+  int ReceiveLobbyMessage;
+  int RunApplication;
+  int SendLobbyMessage;
+  int (__stdcall *SetConnectionSettings)(IDirectPlayLobby3A *, DWORD, DWORD, DPLCONNECTION *);
+  int SetLobbyMessageEvent;
+  int CreateCompoundAddress;
+  int (__stdcall *ConnectEx)(IDirectPlayLobby3A *, DWORD, IID *, LPVOID *, IUnknown *);
+  int RegisterApplication;
+  int UnregisterApplication;
+  int WaitForConnectionSettings;
 };
 
 /* 499 */
-struct DPLCONNECTION {
-    DWORD dwSize;
-    DWORD dwFlags;
-    tagDPSESSIONDESC2 *lpSessionDesc;
-    tagDPNAME *lpPlayerName;
-    GUID *guidSP;
-    LPVOID lpAddress;
-    DWORD dwAddressSize;
+struct DPLCONNECTION
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  tagDPSESSIONDESC2 *lpSessionDesc;
+  tagDPNAME *lpPlayerName;
+  GUID *guidSP;
+  LPVOID lpAddress;
+  DWORD dwAddressSize;
 };
 
 /* 500 */
-struct tagDPSESSIONDESC2 {
-    DWORD dwSize;
-    DWORD dwFlags;
-    GUID *guidInstance;
-    GUID *guidApplication;
-    DWORD dwMaxPlayers;
-    DWORD dwCurrentPlayers;
-    LPSTR lpszSessionName;
-    LPSTR lpszPassword;
-    DWORD dwReserved1;
-    int dwReserved2;
-    int dwUser1;
-    int dwUser2;
-    int dwUser3;
-    int dwUser4;
+struct tagDPSESSIONDESC2
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  GUID *guidInstance;
+  GUID *guidApplication;
+  DWORD dwMaxPlayers;
+  DWORD dwCurrentPlayers;
+  LPSTR lpszSessionName;
+  LPSTR lpszPassword;
+  DWORD dwReserved1;
+  int dwReserved2;
+  int dwUser1;
+  int dwUser2;
+  int dwUser3;
+  int dwUser4;
 };
 
 /* 504 */
-struct tagDPNAME {
-    int dwSize;
-    int dwFlags;
-    LPSTR lpszShortName;
-    LPSTR lpszLongName;
+struct tagDPNAME
+{
+  int dwSize;
+  int dwFlags;
+  LPSTR lpszShortName;
+  LPSTR lpszLongName;
 };
 
 /* 501 */
-struct IDirectPlay4AVtbl {
-    HRESULT(__stdcall *QueryInterface)(IDirectPlay4AVtbl *, IID *, void **);
-    int(__stdcall *AddRef)(IDirectPlay4AVtbl *);
-    int(__stdcall *Release)(IDirectPlay4A *);
-    int(__stdcall *AddPlayerToGroup)(IDirectPlay4AVtbl *, DWORD, DWORD);
-    int(__stdcall *Close)(IDirectPlay4AVtbl *, DWORD, DWORD);
-    int(__stdcall *CreateGroup)(IDirectPlay4AVtbl *, DWORD, void *, LPVOID, DWORD, DWORD);
-    int(__stdcall *CreatePlayer)(
-        IDirectPlay4AVtbl *, LPDWORD, void *, HANDLE, LPVOID, DWORD, DWORD);
-    int DeletePlayerFromGroup;
-    int DestroyGroup;
-    int DestroyPlayer;
-    int EnumGroupPlayers;
-    int EnumGroups;
-    int EnumPlayers;
-    int EnumSessions;
-    int GetCaps;
-    int GetGroupData;
-    int GetGroupName;
-    int GetMessageCount;
-    int GetPlayerAddress;
-    int GetPlayerCaps;
-    int GetPlayerData;
-    int GetPlayerName;
-    int GetSessionDesc;
-    int Initialize;
-    int Open;
-    int Receive;
-    int SetGroupData;
-    int SetGroupName;
-    int SetPlayerData;
-    int SetPlayerName;
-    int SetSessionDesc;
-    int AddGroupToGroup;
-    int CreateGroupInGroup;
-    int DeleteGroupFromGroup;
-    int EnumConnections;
-    int EnumGroupsInGroup;
-    int GetGroupConnectionSettings;
-    int InitializeConnection;
-    int SecureOpen;
-    int SendChatMessage;
-    int SetGroupConnectionSettings;
-    int StartSession;
-    int GetGroupFlags;
-    int GetGroupParent;
-    int GetPlayerAccount;
-    int GetPlayerFlags;
-    int GetGroupOwner;
-    int SetGroupOwner;
-    int SendEx;
-    int GetMessageQueue;
-    int CancelMessage;
-    int CancelPriority;
+struct IDirectPlay4AVtbl
+{
+  HRESULT (__stdcall *QueryInterface)(IDirectPlay4AVtbl *, IID *, void **);
+  int (__stdcall *AddRef)(IDirectPlay4AVtbl *);
+  int (__stdcall *Release)(IDirectPlay4A *);
+  int (__stdcall *AddPlayerToGroup)(IDirectPlay4AVtbl *, DWORD, DWORD);
+  int (__stdcall *Close)(IDirectPlay4AVtbl *, DWORD, DWORD);
+  int (__stdcall *CreateGroup)(IDirectPlay4AVtbl *, DWORD, void *, LPVOID, DWORD, DWORD);
+  int (__stdcall *CreatePlayer)(IDirectPlay4AVtbl *, LPDWORD, void *, HANDLE, LPVOID, DWORD, DWORD);
+  int DeletePlayerFromGroup;
+  int DestroyGroup;
+  int DestroyPlayer;
+  int EnumGroupPlayers;
+  int EnumGroups;
+  int EnumPlayers;
+  int EnumSessions;
+  int GetCaps;
+  int GetGroupData;
+  int GetGroupName;
+  int GetMessageCount;
+  int GetPlayerAddress;
+  int GetPlayerCaps;
+  int GetPlayerData;
+  int GetPlayerName;
+  int GetSessionDesc;
+  int Initialize;
+  int Open;
+  int Receive;
+  int SetGroupData;
+  int SetGroupName;
+  int SetPlayerData;
+  int SetPlayerName;
+  int SetSessionDesc;
+  int AddGroupToGroup;
+  int CreateGroupInGroup;
+  int DeleteGroupFromGroup;
+  int EnumConnections;
+  int EnumGroupsInGroup;
+  int GetGroupConnectionSettings;
+  int InitializeConnection;
+  int SecureOpen;
+  int SendChatMessage;
+  int SetGroupConnectionSettings;
+  int StartSession;
+  int GetGroupFlags;
+  int GetGroupParent;
+  int GetPlayerAccount;
+  int GetPlayerFlags;
+  int GetGroupOwner;
+  int SetGroupOwner;
+  int SendEx;
+  int GetMessageQueue;
+  int CancelMessage;
+  int CancelPriority;
 };
 
 /* 502 */
-struct IDirectPlay4A {
-    IDirectPlay4AVtbl *lpVtbl;
+struct IDirectPlay4A
+{
+  IDirectPlay4AVtbl *lpVtbl;
 };
 
 /* 512 */
@@ -5606,2392 +5636,2459 @@ typedef _D3DCLIPSTATUS D3DCLIPSTATUS;
 typedef tagBITMAP BITMAP;
 
 /* 516 */
-struct tagBITMAP {
-    LONG bmType;
-    LONG bmWidth;
-    LONG bmHeight;
-    LONG bmWidthBytes;
-    WORD bmPlanes;
-    WORD bmBitsPixel;
-    LPVOID bmBits;
+struct tagBITMAP
+{
+  LONG bmType;
+  LONG bmWidth;
+  LONG bmHeight;
+  LONG bmWidthBytes;
+  WORD bmPlanes;
+  WORD bmBitsPixel;
+  LPVOID bmBits;
 };
 
 /* 517 */
-enum MACRO_SRCCOPY {
-    SRCCOPY = 0xCC0020,
+enum MACRO_SRCCOPY
+{
+  SRCCOPY = 0xCC0020,
 };
 
 /* 518 */
-enum MACRO_DLL {
-    DLL_PROCESS_ATTACH = 1,
-    DLL_THREAD_ATTACH = 2,
-    DLL_THREAD_DETACH = 3,
-    DLL_PROCESS_DETACH = 0,
+enum MACRO_DLL
+{
+  DLL_PROCESS_ATTACH = 1,
+  DLL_THREAD_ATTACH = 2,
+  DLL_THREAD_DETACH = 3,
+  DLL_PROCESS_DETACH = 0,
 };
 
 /* 521 */
-enum MACRO_LR {
-    LR_DEFAULTCOLOR = 0x0,
-    LR_MONOCHROME = 0x1,
-    LR_COLOR = 0x2,
-    LR_COPYRETURNORG = 0x4,
-    LR_COPYDELETEORG = 0x8,
-    LR_LOADFROMFILE = 0x10,
-    LR_LOADTRANSPARENT = 0x20,
-    LR_DEFAULTSIZE = 0x40,
-    LR_VGACOLOR = 0x80,
-    LR_LOADMAP3DCOLORS = 0x1000,
-    LR_CREATEDIBSECTION = 0x2000,
-    LR_COPYFROMRESOURCE = 0x4000,
-    LR_SHARED = 0x8000,
+enum MACRO_LR
+{
+  LR_DEFAULTCOLOR = 0x0,
+  LR_MONOCHROME = 0x1,
+  LR_COLOR = 0x2,
+  LR_COPYRETURNORG = 0x4,
+  LR_COPYDELETEORG = 0x8,
+  LR_LOADFROMFILE = 0x10,
+  LR_LOADTRANSPARENT = 0x20,
+  LR_DEFAULTSIZE = 0x40,
+  LR_VGACOLOR = 0x80,
+  LR_LOADMAP3DCOLORS = 0x1000,
+  LR_CREATEDIBSECTION = 0x2000,
+  LR_COPYFROMRESOURCE = 0x4000,
+  LR_SHARED = 0x8000,
 };
 
 /* 522 */
-enum MACRO_SEEK {
-    SEEK_SET = 0,
-    SEEK_CUR = 1,
-    SEEK_END = 2,
+enum MACRO_SEEK
+{
+  SEEK_SET = 0,
+  SEEK_CUR = 1,
+  SEEK_END = 2,
 };
 
 /* 523 */
-enum MACRO_SIZEPALETTE {
-    SIZEPALETTE = 104,
+enum MACRO_SIZEPALETTE
+{
+  SIZEPALETTE = 104,
 };
 
 /* 524 */
-enum MACRO_DDPF {
-    DDPF_ALPHAPIXELS = 0x1,
-    DDPF_ALPHA = 0x2,
-    DDPF_FOURCC = 0x4,
-    DDPF_PALETTEINDEXED4 = 0x8,
-    DDPF_PALETTEINDEXEDTO8 = 0x10,
-    DDPF_PALETTEINDEXED8 = 0x20,
-    DDPF_RGB = 0x40,
-    DDPF_COMPRESSED = 0x80,
-    DDPF_RGBTOYUV = 0x100,
-    DDPF_YUV = 0x200,
-    DDPF_ZBUFFER = 0x400,
-    DDPF_PALETTEINDEXED1 = 0x800,
-    DDPF_PALETTEINDEXED2 = 0x1000,
-    DDPF_ZPIXELS = 0x2000,
-    DDPF_STENCILBUFFER = 0x4000,
-    DDPF_ALPHAPREMULT = 0x8000,
-    DDPF_LUMINANCE = 0x20000,
-    DDPF_BUMPLUMINANCE = 0x40000,
-    DDPF_BUMPDUDV = 0x80000,
+enum MACRO_DDPF
+{
+  DDPF_ALPHAPIXELS = 0x1,
+  DDPF_ALPHA = 0x2,
+  DDPF_FOURCC = 0x4,
+  DDPF_PALETTEINDEXED4 = 0x8,
+  DDPF_PALETTEINDEXEDTO8 = 0x10,
+  DDPF_PALETTEINDEXED8 = 0x20,
+  DDPF_RGB = 0x40,
+  DDPF_COMPRESSED = 0x80,
+  DDPF_RGBTOYUV = 0x100,
+  DDPF_YUV = 0x200,
+  DDPF_ZBUFFER = 0x400,
+  DDPF_PALETTEINDEXED1 = 0x800,
+  DDPF_PALETTEINDEXED2 = 0x1000,
+  DDPF_ZPIXELS = 0x2000,
+  DDPF_STENCILBUFFER = 0x4000,
+  DDPF_ALPHAPREMULT = 0x8000,
+  DDPF_LUMINANCE = 0x20000,
+  DDPF_BUMPLUMINANCE = 0x40000,
+  DDPF_BUMPDUDV = 0x80000,
 };
 
 /* 525 */
-enum MACRO_PC_NONE {
-    PC_NONE = 0,
-    PC_POLYGON = 1,
-    PC_RECTANGLE = 2,
-    PC_WINDPOLYGON = 4,
-    PC_TRAPEZOID = 4,
-    PC_SCANLINE = 8,
-    PC_WIDE = 16,
-    PC_STYLED = 32,
-    PC_WIDESTYLED = 64,
-    PC_INTERIORS = 128,
-    PC_POLYPOLYGON = 256,
-    PC_PATHS = 512,
+enum MACRO_PC_NONE
+{
+  PC_NONE = 0,
+  PC_POLYGON = 1,
+  PC_RECTANGLE = 2,
+  PC_WINDPOLYGON = 4,
+  PC_TRAPEZOID = 4,
+  PC_SCANLINE = 8,
+  PC_WIDE = 16,
+  PC_STYLED = 32,
+  PC_WIDESTYLED = 64,
+  PC_INTERIORS = 128,
+  PC_POLYPOLYGON = 256,
+  PC_PATHS = 512,
 };
 
 /* 526 */
-enum MACRO_DISCL {
-    DISCL_EXCLUSIVE = 0x1,
-    DISCL_NONEXCLUSIVE = 0x2,
-    DISCL_FOREGROUND = 0x4,
-    DISCL_BACKGROUND = 0x8,
-    DISCL_NOWINKEY = 0x10,
+enum MACRO_DISCL
+{
+  DISCL_EXCLUSIVE = 0x1,
+  DISCL_NONEXCLUSIVE = 0x2,
+  DISCL_FOREGROUND = 0x4,
+  DISCL_BACKGROUND = 0x8,
+  DISCL_NOWINKEY = 0x10,
 };
 
 /* 527 */
-enum MACRO_DPLCONNECTION {
-    DPLCONNECTION_JOINSESSION = 0x1,
-    DPLCONNECTION_CREATESESSION = 0x2,
+enum MACRO_DPLCONNECTION
+{
+  DPLCONNECTION_JOINSESSION = 0x1,
+  DPLCONNECTION_CREATESESSION = 0x2,
 };
 
 /* 529 */
-enum MACRO_GHND {
-    GHND = 66,
+enum MACRO_GHND
+{
+  GHND = 66,
 };
 
 /* 530 */
-enum MACRO_DPSESSION {
-    DPSESSION_NEWPLAYERSDISABLED = 0x1,
-    DPSESSION_MIGRATEHOST = 0x4,
-    DPSESSION_KEEPALIVE = 0x40,
+enum MACRO_DPSESSION
+{
+  DPSESSION_NEWPLAYERSDISABLED = 0x1,
+  DPSESSION_MIGRATEHOST = 0x4,
+  DPSESSION_KEEPALIVE = 0x40,
 };
 
 /* 531 */
-enum MACRO_DPENUMPLAYERS {
-    DPENUMPLAYERS_SERVERPLAYER = 0x100,
+enum MACRO_DPENUMPLAYERS
+{
+  DPENUMPLAYERS_SERVERPLAYER = 0x100,
 };
 
 /* 532 */
-enum MACRO_MB {
-    MB_OK = 0x0,
-    MB_OKCANCEL = 0x1,
-    MB_ABORTRETRYIGNORE = 0x2,
-    MB_YESNOCANCEL = 0x3,
-    MB_YESNO = 0x4,
-    MB_RETRYCANCEL = 0x5,
-    MB_CANCELTRYCONTINUE = 0x6,
-    MB_ICONHAND = 0x10,
-    MB_ICONQUESTION = 0x20,
-    MB_ICONEXCLAMATION = 0x30,
-    MB_ICONASTERISK = 0x40,
-    MB_USERICON = 0x80,
-    MB_ICONWARNING = 0x30,
-    MB_ICONERROR = 0x10,
-    MB_ICONINFORMATION = 0x40,
-    MB_ICONSTOP = 0x10,
-    MB_DEFBUTTON1 = 0x0,
-    MB_DEFBUTTON2 = 0x100,
-    MB_DEFBUTTON3 = 0x200,
-    MB_DEFBUTTON4 = 0x300,
-    MB_APPLMODAL = 0x0,
-    MB_SYSTEMMODAL = 0x1000,
-    MB_TASKMODAL = 0x2000,
-    MB_HELP = 0x4000,
-    MB_NOFOCUS = 0x8000,
-    MB_SETFOREGROUND = 0x10000,
-    MB_DEFAULT_DESKTOP_ONLY = 0x20000,
-    MB_TOPMOST = 0x40000,
-    MB_RIGHT = 0x80000,
-    MB_RTLREADING = 0x100000,
-    MB_SERVICE_NOTIFICATION = 0x200000,
-    MB_SERVICE_NOTIFICATION_NT3X = 0x40000,
-    MB_TYPEMASK = 0xF,
-    MB_ICONMASK = 0xF0,
-    MB_DEFMASK = 0xF00,
-    MB_MODEMASK = 0x3000,
-    MB_MISCMASK = 0xC000,
+enum MACRO_MB
+{
+  MB_OK = 0x0,
+  MB_OKCANCEL = 0x1,
+  MB_ABORTRETRYIGNORE = 0x2,
+  MB_YESNOCANCEL = 0x3,
+  MB_YESNO = 0x4,
+  MB_RETRYCANCEL = 0x5,
+  MB_CANCELTRYCONTINUE = 0x6,
+  MB_ICONHAND = 0x10,
+  MB_ICONQUESTION = 0x20,
+  MB_ICONEXCLAMATION = 0x30,
+  MB_ICONASTERISK = 0x40,
+  MB_USERICON = 0x80,
+  MB_ICONWARNING = 0x30,
+  MB_ICONERROR = 0x10,
+  MB_ICONINFORMATION = 0x40,
+  MB_ICONSTOP = 0x10,
+  MB_DEFBUTTON1 = 0x0,
+  MB_DEFBUTTON2 = 0x100,
+  MB_DEFBUTTON3 = 0x200,
+  MB_DEFBUTTON4 = 0x300,
+  MB_APPLMODAL = 0x0,
+  MB_SYSTEMMODAL = 0x1000,
+  MB_TASKMODAL = 0x2000,
+  MB_HELP = 0x4000,
+  MB_NOFOCUS = 0x8000,
+  MB_SETFOREGROUND = 0x10000,
+  MB_DEFAULT_DESKTOP_ONLY = 0x20000,
+  MB_TOPMOST = 0x40000,
+  MB_RIGHT = 0x80000,
+  MB_RTLREADING = 0x100000,
+  MB_SERVICE_NOTIFICATION = 0x200000,
+  MB_SERVICE_NOTIFICATION_NT3X = 0x40000,
+  MB_TYPEMASK = 0xF,
+  MB_ICONMASK = 0xF0,
+  MB_DEFMASK = 0xF00,
+  MB_MODEMASK = 0x3000,
+  MB_MISCMASK = 0xC000,
 };
 
 /* 533 */
-enum MACRO_SW {
-    SW_HIDE = 0,
-    SW_SHOWNORMAL = 1,
-    SW_NORMAL = 1,
-    SW_SHOWMINIMIZED = 2,
-    SW_SHOWMAXIMIZED = 3,
-    SW_MAXIMIZE = 3,
-    SW_SHOWNOACTIVATE = 4,
-    SW_SHOW = 5,
-    SW_MINIMIZE = 6,
-    SW_SHOWMINNOACTIVE = 7,
-    SW_SHOWNA = 8,
-    SW_RESTORE = 9,
-    SW_SHOWDEFAULT = 10,
-    SW_FORCEMINIMIZE = 11,
-    SW_MAX = 11,
+enum MACRO_SW
+{
+  SW_HIDE = 0,
+  SW_SHOWNORMAL = 1,
+  SW_NORMAL = 1,
+  SW_SHOWMINIMIZED = 2,
+  SW_SHOWMAXIMIZED = 3,
+  SW_MAXIMIZE = 3,
+  SW_SHOWNOACTIVATE = 4,
+  SW_SHOW = 5,
+  SW_MINIMIZE = 6,
+  SW_SHOWMINNOACTIVE = 7,
+  SW_SHOWNA = 8,
+  SW_RESTORE = 9,
+  SW_SHOWDEFAULT = 10,
+  SW_FORCEMINIMIZE = 11,
+  SW_MAX = 11,
 };
 
 /* 534 */
-enum MACRO_CS_VREDRAW {
-    CS_VREDRAW = 0x1,
-    CS_HREDRAW = 0x2,
-    CS_DBLCLKS = 0x8,
-    CS_OWNDC = 0x20,
-    CS_CLASSDC = 0x40,
-    CS_PARENTDC = 0x80,
-    CS_NOCLOSE = 0x200,
-    CS_SAVEBITS = 0x800,
-    CS_BYTEALIGNCLIENT = 0x1000,
-    CS_BYTEALIGNWINDOW = 0x2000,
-    CS_GLOBALCLASS = 0x4000,
-    CS_IME = 0x10000,
-    CS_DROPSHADOW = 0x20000,
+enum MACRO_CS_VREDRAW
+{
+  CS_VREDRAW = 0x1,
+  CS_HREDRAW = 0x2,
+  CS_DBLCLKS = 0x8,
+  CS_OWNDC = 0x20,
+  CS_CLASSDC = 0x40,
+  CS_PARENTDC = 0x80,
+  CS_NOCLOSE = 0x200,
+  CS_SAVEBITS = 0x800,
+  CS_BYTEALIGNCLIENT = 0x1000,
+  CS_BYTEALIGNWINDOW = 0x2000,
+  CS_GLOBALCLASS = 0x4000,
+  CS_IME = 0x10000,
+  CS_DROPSHADOW = 0x20000,
 };
 
 /* 535 */
-enum MACRO_WS {
-    WS_OVERLAPPED = 0x0,
-    WS_EX_DLGMODALFRAME = 0x1,
-    WS_EX_NOPARENTNOTIFY = 0x4,
-    WS_EX_TOPMOST = 0x8,
-    WS_EX_ACCEPTFILES = 0x10,
-    WS_EX_TRANSPARENT = 0x20,
-    WS_EX_MDICHILD = 0x40,
-    WS_EX_TOOLWINDOW = 0x80,
-    WS_EX_WINDOWEDGE = 0x100,
-    WS_EX_PALETTEWINDOW = 0x188,
-    WS_EX_CLIENTEDGE = 0x200,
-    WS_EX_OVERLAPPEDWINDOW = 0x300,
-    WS_EX_CONTEXTHELP = 0x400,
-    WS_EX_RIGHT = 0x1000,
-    WS_EX_RTLREADING = 0x2000,
-    WS_EX_LEFTSCROLLBAR = 0x4000,
-    WS_TABSTOP = 0x10000,
-    WS_MINIMIZEBOX = 0x20000,
-    WS_EX_APPWINDOW = 0x40000,
-    WS_SYSMENU = 0x80000,
-    WS_HSCROLL = 0x100000,
-    WS_VSCROLL = 0x200000,
-    WS_DLGFRAME = 0x400000,
-    WS_BORDER = 0x800000,
-    WS_CAPTION = 0xC00000,
-    WS_OVERLAPPEDWINDOW = 0xCF0000,
-    WS_MAXIMIZE = 0x1000000,
-    WS_CLIPCHILDREN = 0x2000000,
-    WS_CLIPSIBLINGS = 0x4000000,
-    WS_DISABLED = 0x8000000,
-    WS_VISIBLE = 0x10000000,
-    WS_MINIMIZE = 0x20000000,
-    WS_ICONIC = 0x20000000,
-    WS_CHILD = 0x40000000,
-    WS_POPUP = 0x80000000,
-    WS_POPUPWINDOW = 0x80880000,
+enum MACRO_WS
+{
+  WS_OVERLAPPED = 0x0,
+  WS_EX_DLGMODALFRAME = 0x1,
+  WS_EX_NOPARENTNOTIFY = 0x4,
+  WS_EX_TOPMOST = 0x8,
+  WS_EX_ACCEPTFILES = 0x10,
+  WS_EX_TRANSPARENT = 0x20,
+  WS_EX_MDICHILD = 0x40,
+  WS_EX_TOOLWINDOW = 0x80,
+  WS_EX_WINDOWEDGE = 0x100,
+  WS_EX_PALETTEWINDOW = 0x188,
+  WS_EX_CLIENTEDGE = 0x200,
+  WS_EX_OVERLAPPEDWINDOW = 0x300,
+  WS_EX_CONTEXTHELP = 0x400,
+  WS_EX_RIGHT = 0x1000,
+  WS_EX_RTLREADING = 0x2000,
+  WS_EX_LEFTSCROLLBAR = 0x4000,
+  WS_TABSTOP = 0x10000,
+  WS_MINIMIZEBOX = 0x20000,
+  WS_EX_APPWINDOW = 0x40000,
+  WS_SYSMENU = 0x80000,
+  WS_HSCROLL = 0x100000,
+  WS_VSCROLL = 0x200000,
+  WS_DLGFRAME = 0x400000,
+  WS_BORDER = 0x800000,
+  WS_CAPTION = 0xC00000,
+  WS_OVERLAPPEDWINDOW = 0xCF0000,
+  WS_MAXIMIZE = 0x1000000,
+  WS_CLIPCHILDREN = 0x2000000,
+  WS_CLIPSIBLINGS = 0x4000000,
+  WS_DISABLED = 0x8000000,
+  WS_VISIBLE = 0x10000000,
+  WS_MINIMIZE = 0x20000000,
+  WS_ICONIC = 0x20000000,
+  WS_CHILD = 0x40000000,
+  WS_POPUP = 0x80000000,
+  WS_POPUPWINDOW = 0x80880000,
 };
 
 /* 536 */
-enum MACRO_PLAYMUSIC {
-    PLAYMUSIC_OFF = 0x0,
-    PLAYMUSIC_EAR = 0x2,
+enum MACRO_PLAYMUSIC
+{
+  PLAYMUSIC_OFF = 0x0,
+  PLAYMUSIC_EAR = 0x2,
 };
 
 /* 538 */
-enum MACRO_D3DCLEAR {
-    D3DCLEAR_TARGET = 0x1,
-    D3DCLEAR_ZBUFFER = 0x2,
-    D3DCLEAR_STENCIL = 0x4,
+enum MACRO_D3DCLEAR
+{
+  D3DCLEAR_TARGET = 0x1,
+  D3DCLEAR_ZBUFFER = 0x2,
+  D3DCLEAR_STENCIL = 0x4,
 };
 
 /* 539 */
-enum MACRO_D3DRENDERSTATE_EVICTMANAGEDTEXTURES {
-    D3DRENDERSTATE_TEXTUREHANDLE = 1,
-    D3DRENDERSTATE_TEXTUREPERSPECTIVE = 4,
-    D3DRENDERSTATE_WRAPU = 5,
-    D3DRENDERSTATE_WRAPV = 6,
-    D3DRENDERSTATE_EVICTMANAGEDTEXTURES = 61,
-    D3DRENDERSTATE_SCENECAPTURE = 62,
+enum MACRO_D3DRENDERSTATE_EVICTMANAGEDTEXTURES
+{
+  D3DRENDERSTATE_TEXTUREHANDLE = 1,
+  D3DRENDERSTATE_TEXTUREPERSPECTIVE = 4,
+  D3DRENDERSTATE_WRAPU = 5,
+  D3DRENDERSTATE_WRAPV = 6,
+  D3DRENDERSTATE_EVICTMANAGEDTEXTURES = 61,
+  D3DRENDERSTATE_SCENECAPTURE = 62,
 };
 
 /* 541 */
-struct unk3Vtbl {};
+struct unk3Vtbl
+{
+};
 
 /* 543 */
-enum MACRO_KEY {
-    KEY_QUERY_VALUE = 0x1,
-    KEY_SET_VALUE = 0x2,
-    KEY_CREATE_SUB_KEY = 0x4,
-    KEY_ENUMERATE_SUB_KEYS = 0x8,
-    KEY_NOTIFY = 0x10,
-    KEY_CREATE_LINK = 0x20,
-    KEY_WOW64_32KEY = 0x200,
-    KEY_WOW64_64KEY = 0x100,
-    KEY_WOW64_RES = 0x300,
-    KEY_READ = 0x20019,
-    KEY_WRITE = 0x20006,
-    KEY_EXECUTE = 0x20019,
-    KEY_ALL_ACCESS = 0xF003F,
+enum MACRO_KEY
+{
+  KEY_QUERY_VALUE = 0x1,
+  KEY_SET_VALUE = 0x2,
+  KEY_CREATE_SUB_KEY = 0x4,
+  KEY_ENUMERATE_SUB_KEYS = 0x8,
+  KEY_NOTIFY = 0x10,
+  KEY_CREATE_LINK = 0x20,
+  KEY_WOW64_32KEY = 0x200,
+  KEY_WOW64_64KEY = 0x100,
+  KEY_WOW64_RES = 0x300,
+  KEY_READ = 0x20019,
+  KEY_WRITE = 0x20006,
+  KEY_EXECUTE = 0x20019,
+  KEY_ALL_ACCESS = 0xF003F,
 };
 
 /* 544 */
-enum MACRO_GWL {
-    GWL_WNDPROC = -4,
-    GWL_HINSTANCE = -6,
-    GWL_HWNDPARENT = -8,
-    GWL_STYLE = -16,
-    GWL_EXSTYLE = -20,
-    GWL_USERDATA = -21,
-    GWL_ID = -12,
+enum MACRO_GWL
+{
+  GWL_WNDPROC = -4,
+  GWL_HINSTANCE = -6,
+  GWL_HWNDPARENT = -8,
+  GWL_STYLE = -16,
+  GWL_EXSTYLE = -20,
+  GWL_USERDATA = -21,
+  GWL_ID = -12,
 };
 
 /* 545 */
-enum MACRO_IGNORE {
-    IGNORE = 0,
-    INFINITE = -1,
+enum MACRO_IGNORE
+{
+  IGNORE = 0,
+  INFINITE = -1,
 };
 
 /* 546 */
-enum MACRO_BOOL {
-    FALSE = 0,
-    TRUE = 1,
+enum MACRO_BOOL
+{
+  FALSE = 0,
+  TRUE = 1,
 };
 
 /* 547 */
-enum MACRO_DDFLIP {
-    DDFLIP_WAIT = 0x1,
-    DDFLIP_EVEN = 0x2,
-    DDFLIP_ODD = 0x4,
-    DDFLIP_NOVSYNC = 0x8,
-    DDFLIP_STEREO = 0x10,
-    DDFLIP_DONOTWAIT = 0x20,
-    DDFLIP_INTERVAL2 = 0x2000000,
-    DDFLIP_INTERVAL3 = 0x3000000,
-    DDFLIP_INTERVAL4 = 0x4000000,
+enum MACRO_DDFLIP
+{
+  DDFLIP_WAIT = 0x1,
+  DDFLIP_EVEN = 0x2,
+  DDFLIP_ODD = 0x4,
+  DDFLIP_NOVSYNC = 0x8,
+  DDFLIP_STEREO = 0x10,
+  DDFLIP_DONOTWAIT = 0x20,
+  DDFLIP_INTERVAL2 = 0x2000000,
+  DDFLIP_INTERVAL3 = 0x3000000,
+  DDFLIP_INTERVAL4 = 0x4000000,
 };
 
 /* 548 */
-enum MACRO_DDGFS {
-    DDGFS_CANFLIP = 0x1,
-    DDGFS_ISFLIPDONE = 0x2,
+enum MACRO_DDGFS
+{
+  DDGFS_CANFLIP = 0x1,
+  DDGFS_ISFLIPDONE = 0x2,
 };
 
 /* 666 */
 typedef _D3DMATERIAL D3DMATERIAL;
 
 /* 549 */
-struct unk0005C {
-    D3DMATERIAL d3dMaterial;
-    D3DMATERIALHANDLE lpD3DMaterialHandle;
-    LPDIRECT3DMATERIAL2 lpDirect3DMaterial2;
-    int field_58;
+struct unk0005C
+{
+  D3DMATERIAL d3dMaterial;
+  D3DMATERIALHANDLE lpD3DMaterialHandle;
+  LPDIRECT3DMATERIAL2 lpDirect3DMaterial2;
+  int field_58;
 };
 
 /* 672 */
-enum MACRO_WM {
-    WM_NULL = 0x0,
-    WM_CREATE = 0x1,
-    WM_DESTROY = 0x2,
-    WM_MOVE = 0x3,
-    WM_SIZEWAIT = 0x4,
-    WM_SIZE = 0x5,
-    WM_ACTIVATE = 0x6,
-    WM_SETFOCUS = 0x7,
-    WM_KILLFOCUS = 0x8,
-    WM_SETVISIBLE = 0x9,
-    WM_ENABLE = 0xA,
-    WM_SETREDRAW = 0xB,
-    WM_SETTEXT = 0xC,
-    WM_GETTEXT = 0xD,
-    WM_GETTEXTLENGTH = 0xE,
-    WM_PAINT = 0xF,
-    WM_CLOSE = 0x10,
-    WM_QUERYENDSESSION = 0x11,
-    WM_QUIT = 0x12,
-    WM_QUERYOPEN = 0x13,
-    WM_ERASEBKGND = 0x14,
-    WM_SYSCOLORCHANGE = 0x15,
-    WM_ENDSESSION = 0x16,
-    WM_SYSTEMERROR = 0x17,
-    WM_SHOWWINDOW = 0x18,
-    WM_CTLCOLOR = 0x19,
-    WM_SETTINGCHANGE = 0x1A,
-    WM_WININICHANGE = 0x1A,
-    WM_DEVMODECHANGE = 0x1B,
-    WM_ACTIVATEAPP = 0x1C,
-    WM_FONTCHANGE = 0x1D,
-    WM_TIMECHANGE = 0x1E,
-    WM_CANCELMODE = 0x1F,
-    WM_SETCURSOR = 0x20,
-    WM_MOUSEACTIVATE = 0x21,
-    WM_CHILDACTIVATE = 0x22,
-    WM_QUEUESYNC = 0x23,
-    WM_GETMINMAXINFO = 0x24,
-    WM_LOGOFF = 0x25,
-    WM_PAINTICON = 0x26,
-    WM_ICONERASEBKGND = 0x27,
-    WM_NEXTDLGCTL = 0x28,
-    WM_ALTTABACTIVE = 0x29,
-    WM_SPOOLERSTATUS = 0x2A,
-    WM_DRAWITEM = 0x2B,
-    WM_MEASUREITEM = 0x2C,
-    WM_DELETEITEM = 0x2D,
-    WM_VKEYTOITEM = 0x2E,
-    WM_CHARTOITEM = 0x2F,
-    WM_SETFONT = 0x30,
-    WM_GETFONT = 0x31,
-    WM_SETHOTKEY = 0x32,
-    WM_GETHOTKEY = 0x33,
-    WM_FILESYSCHANGE = 0x34,
-    WM_ISACTIVEICON = 0x35,
-    WM_QUERYPARKICON = 0x36,
-    WM_QUERYDRAGICON = 0x37,
-    WM_WINHELP = 0x38,
-    WM_COMPAREITEM = 0x39,
-    WM_FULLSCREEN = 0x3A,
-    WM_CLIENTSHUTDOWN = 0x3B,
-    WM_DDEMLEVENT = 0x3C,
-    WM_GETOBJECT = 0x3D,
-    MM_CALCSCROLL = 0x3F,
-    WM_TESTING = 0x40,
-    WM_COMPACTING = 0x41,
-    WM_OTHERWINDOWCREATED = 0x42,
-    WM_OTHERWINDOWDESTROYED = 0x43,
-    WM_COMMNOTIFY = 0x44,
-    WM_MEDIASTATUSCHANGE = 0x45,
-    WM_WINDOWPOSCHANGING = 0x46,
-    WM_WINDOWPOSCHANGED = 0x47,
-    WM_POWER = 0x48,
-    WM_COPYGLOBALDATA = 0x49,
-    WM_COPYDATA = 0x4A,
-    WM_CANCELJOURNAL = 0x4B,
-    WM_LOGONNOTIFY = 0x4C,
-    WM_KEYF1 = 0x4D,
-    WM_NOTIFY = 0x4E,
-    WM_ACCESS_WINDOW = 0x4F,
-    WM_INPUTLANGCHANGEREQUEST = 0x50,
-    WM_INPUTLANGCHANGE = 0x51,
-    WM_TCARD = 0x52,
-    WM_HELP = 0x53,
-    WM_USERCHANGED = 0x54,
-    WM_NOTIFYFORMAT = 0x55,
-    WM_QM_ACTIVATE = 0x60,
-    WM_HOOK_DO_CALLBACK = 0x61,
-    WM_SYSCOPYDATA = 0x62,
-    WM_FINALDESTROY = 0x70,
-    WM_MEASUREITEM_CLIENTDATA = 0x71,
-    WM_CONTEXTMENU = 0x7B,
-    WM_STYLECHANGING = 0x7C,
-    WM_STYLECHANGED = 0x7D,
-    WM_DISPLAYCHANGE = 0x7E,
-    WM_GETICON = 0x7F,
-    WM_SETICON = 0x80,
-    WM_NCCREATE = 0x81,
-    WM_NCDESTROY = 0x82,
-    WM_NCCALCSIZE = 0x83,
-    WM_NCHITTEST = 0x84,
-    WM_NCPAINT = 0x85,
-    WM_NCACTIVATE = 0x86,
-    WM_GETDLGCODE = 0x87,
-    WM_SYNCPAINT = 0x88,
-    WM_SYNCTASK = 0x89,
-    WM_NCMOUSEMOVE = 0xA0,
-    WM_NCLBUTTONDOWN = 0xA1,
-    WM_NCLBUTTONUP = 0xA2,
-    WM_NCLBUTTONDBLCLK = 0xA3,
-    WM_NCRBUTTONDOWN = 0xA4,
-    WM_NCRBUTTONUP = 0xA5,
-    WM_NCRBUTTONDBLCLK = 0xA6,
-    WM_NCMBUTTONDOWN = 0xA7,
-    WM_NCMBUTTONUP = 0xA8,
-    WM_NCMBUTTONDBLCLK = 0xA9,
-    WM_NCXBUTTONDOWN = 0xAB,
-    WM_NCXBUTTONUP = 0xAC,
-    WM_NCXBUTTONDBLCLK = 0xAD,
-    EM_GETSEL = 0xB0,
-    EM_SETSEL = 0xB1,
-    EM_GETRECT = 0xB2,
-    EM_SETRECT = 0xB3,
-    EM_SETRECTNP = 0xB4,
-    EM_SCROLL = 0xB5,
-    EM_LINESCROLL = 0xB6,
-    EM_SCROLLCARET = 0xB7,
-    EM_GETMODIFY = 0xB8,
-    EM_SETMODIFY = 0xB9,
-    EM_GETLINECOUNT = 0xBA,
-    EM_LINEINDEX = 0xBB,
-    EM_SETHANDLE = 0xBC,
-    EM_GETHANDLE = 0xBD,
-    EM_GETTHUMB = 0xBE,
-    EM_LINELENGTH = 0xC1,
-    EM_REPLACESEL = 0xC2,
-    EM_SETFONT = 0xC3,
-    EM_GETLINE = 0xC4,
-    EM_LIMITTEXT = 0xC5,
-    EM_SETLIMITTEXT = 0xC5,
-    EM_CANUNDO = 0xC6,
-    EM_UNDO = 0xC7,
-    EM_FMTLINES = 0xC8,
-    EM_LINEFROMCHAR = 0xC9,
-    EM_SETWORDBREAK = 0xCA,
-    EM_SETTABSTOPS = 0xCB,
-    EM_SETPASSWORDCHAR = 0xCC,
-    EM_EMPTYUNDOBUFFER = 0xCD,
-    EM_GETFIRSTVISIBLELINE = 0xCE,
-    EM_SETREADONLY = 0xCF,
-    EM_SETWORDBREAKPROC = 0xD0,
-    EM_GETWORDBREAKPROC = 0xD1,
-    EM_GETPASSWORDCHAR = 0xD2,
-    EM_SETMARGINS = 0xD3,
-    EM_GETMARGINS = 0xD4,
-    EM_GETLIMITTEXT = 0xD5,
-    EM_POSFROMCHAR = 0xD6,
-    EM_CHARFROMPOS = 0xD7,
-    EM_SETIMESTATUS = 0xD8,
-    EM_GETIMESTATUS = 0xD9,
-    SBM_SETPOS = 0xE0,
-    SBM_GETPOS = 0xE1,
-    SBM_SETRANGE = 0xE2,
-    SBM_GETRANGE = 0xE3,
-    SBM_ENABLE_ARROWS = 0xE4,
-    SBM_SETRANGEREDRAW = 0xE6,
-    SBM_SETSCROLLINFO = 0xE9,
-    SBM_GETSCROLLINFO = 0xEA,
-    SBM_GETSCROLLBARINFO = 0xEB,
-    BM_GETCHECK = 0xF0,
-    BM_SETCHECK = 0xF1,
-    BM_GETSTATE = 0xF2,
-    BM_SETSTATE = 0xF3,
-    BM_SETSTYLE = 0xF4,
-    BM_CLICK = 0xF5,
-    BM_GETIMAGE = 0xF6,
-    BM_SETIMAGE = 0xF7,
-    BM_SETDONTCLICK = 0xF8,
-    WM_INPUT = 0xFF,
-    WM_KEYDOWN = 0x100,
-    WM_KEYFIRST = 0x100,
-    WM_KEYUP = 0x101,
-    WM_CHAR = 0x102,
-    WM_DEADCHAR = 0x103,
-    WM_SYSKEYDOWN = 0x104,
-    WM_SYSKEYUP = 0x105,
-    WM_SYSCHAR = 0x106,
-    WM_SYSDEADCHAR = 0x107,
-    WM_KEYLAST = 0x108,
-    WM_YOMICHAR = 0x108,
-    WM_UNICHAR = 0x109,
-    WM_WNT_CONVERTREQUESTEX = 0x109,
-    WM_CONVERTREQUEST = 0x10A,
-    WM_CONVERTRESULT = 0x10B,
-    WM_INTERIM = 0x10C,
-    WM_IM_INFO = 0x10C,
-    WM_IME_STARTCOMPOSITION = 0x10D,
-    WM_IME_ENDCOMPOSITION = 0x10E,
-    WM_IME_COMPOSITION = 0x10F,
-    WM_IME_KEYLAST = 0x10F,
-    WM_INITDIALOG = 0x110,
-    WM_COMMAND = 0x111,
-    WM_SYSCOMMAND = 0x112,
-    WM_TIMER = 0x113,
-    WM_HSCROLL = 0x114,
-    WM_VSCROLL = 0x115,
-    WM_INITMENU = 0x116,
-    WM_INITMENUPOPUP = 0x117,
-    WM_SYSTIMER = 0x118,
-    WM_MENUSELECT = 0x11F,
-    WM_MENUCHAR = 0x120,
-    WM_ENTERIDLE = 0x121,
-    WM_MENURBUTTONUP = 0x122,
-    WM_MENUDRAG = 0x123,
-    WM_MENUGETOBJECT = 0x124,
-    WM_UNINITMENUPOPUP = 0x125,
-    WM_MENUCOMMAND = 0x126,
-    WM_CHANGEUISTATE = 0x127,
-    WM_UPDATEUISTATE = 0x128,
-    WM_QUERYUISTATE = 0x129,
-    WM_LBTRACKPOINT = 0x131,
-    WM_CTLCOLORMSGBOX = 0x132,
-    WM_CTLCOLOREDIT = 0x133,
-    WM_CTLCOLORLISTBOX = 0x134,
-    WM_CTLCOLORBTN = 0x135,
-    WM_CTLCOLORDLG = 0x136,
-    WM_CTLCOLORSCROLLBAR = 0x137,
-    WM_CTLCOLORSTATIC = 0x138,
-    CB_GETEDITSEL = 0x140,
-    CB_LIMITTEXT = 0x141,
-    CB_SETEDITSEL = 0x142,
-    CB_ADDSTRING = 0x143,
-    CB_DELETESTRING = 0x144,
-    CB_DIR = 0x145,
-    CB_GETCOUNT = 0x146,
-    CB_GETCURSEL = 0x147,
-    CB_GETLBTEXT = 0x148,
-    CB_GETLBTEXTLEN = 0x149,
-    CB_INSERTSTRING = 0x14A,
-    CB_RESETCONTENT = 0x14B,
-    CB_FINDSTRING = 0x14C,
-    CB_SELECTSTRING = 0x14D,
-    CB_SETCURSEL = 0x14E,
-    CB_SHOWDROPDOWN = 0x14F,
-    CB_GETITEMDATA = 0x150,
-    CB_SETITEMDATA = 0x151,
-    CB_GETDROPPEDCONTROLRECT = 0x152,
-    CB_SETITEMHEIGHT = 0x153,
-    CB_GETITEMHEIGHT = 0x154,
-    CB_SETEXTENDEDUI = 0x155,
-    CB_GETEXTENDEDUI = 0x156,
-    CB_GETDROPPEDSTATE = 0x157,
-    CB_FINDSTRINGEXACT = 0x158,
-    CB_SETLOCALE = 0x159,
-    CB_GETLOCALE = 0x15A,
-    CB_GETTOPINDEX = 0x15B,
-    CB_SETTOPINDEX = 0x15C,
-    CB_GETHORIZONTALEXTENT = 0x15D,
-    CB_SETHORIZONTALEXTENT = 0x15E,
-    CB_GETDROPPEDWIDTH = 0x15F,
-    CB_SETDROPPEDWIDTH = 0x160,
-    CB_INITSTORAGE = 0x161,
-    CB_MULTIPLEADDSTRING = 0x163,
-    CB_GETCOMBOBOXINFO = 0x164,
-    CB_SETMINVISIBLE = 0x1701,
-    CB_GETMINVISIBLE = 0x1702,
-    CB_SETCUEBANNER = 0x1703,
-    CB_GETCUEBANNER = 0x1704,
-    STM_SETICON = 0x170,
-    STM_GETICON = 0x171,
-    STM_SETIMAGE = 0x172,
-    STM_GETIMAGE = 0x173,
-    LB_ADDSTRING = 0x180,
-    LB_INSERTSTRING = 0x181,
-    LB_DELETESTRING = 0x182,
-    LB_SELITEMRANGEEX = 0x183,
-    LB_RESETCONTENT = 0x184,
-    LB_SETSEL = 0x185,
-    LB_SETCURSEL = 0x186,
-    LB_GETSEL = 0x187,
-    LB_GETCURSEL = 0x188,
-    LB_GETTEXT = 0x189,
-    LB_GETTEXTLEN = 0x18A,
-    LB_GETCOUNT = 0x18B,
-    LB_SELECTSTRING = 0x18C,
-    LB_DIR = 0x18D,
-    LB_GETTOPINDEX = 0x18E,
-    LB_FINDSTRING = 0x18F,
-    LB_GETSELCOUNT = 0x190,
-    LB_GETSELITEMS = 0x191,
-    LB_SETTABSTOPS = 0x192,
-    LB_GETHORIZONTALEXTENT = 0x193,
-    LB_SETHORIZONTALEXTENT = 0x194,
-    LB_SETCOLUMNWIDTH = 0x195,
-    LB_ADDFILE = 0x196,
-    LB_SETTOPINDEX = 0x197,
-    LB_GETITEMRECT = 0x198,
-    LB_GETITEMDATA = 0x199,
-    LB_SETITEMDATA = 0x19A,
-    LB_SELITEMRANGE = 0x19B,
-    LB_SETANCHORINDEX = 0x19C,
-    LB_GETANCHORINDEX = 0x19D,
-    LB_SETCARETINDEX = 0x19E,
-    LB_GETCARETINDEX = 0x19F,
-    LB_SETITEMHEIGHT = 0x1A0,
-    LB_GETITEMHEIGHT = 0x1A1,
-    LB_FINDSTRINGEXACT = 0x1A2,
-    LBCB_CARETON = 0x1A3,
-    LBCB_CARETOFF = 0x1A4,
-    LB_SETLOCALE = 0x1A5,
-    LB_GETLOCALE = 0x1A6,
-    LB_SETCOUNT = 0x1A7,
-    LB_INITSTORAGE = 0x1A8,
-    LB_ITEMFROMPOINT = 0x1A9,
-    LB_INSERTSTRINGUPPER = 0x1AA,
-    LB_INSERTSTRINGLOWER = 0x1AB,
-    LB_ADDSTRINGUPPER = 0x1AC,
-    LB_ADDSTRINGLOWER = 0x1AD,
-    LB_MULTIPLEADDSTRING = 0x1B1,
-    LB_GETLISTBOXINFO = 0x1B2,
-    MN_SETHMENU = 0x1E0,
-    MN_GETHMENU = 0x1E1,
-    MN_SIZEWINDOW = 0x1E2,
-    MN_OPENHIERARCHY = 0x1E3,
-    MN_CLOSEHIERARCHY = 0x1E4,
-    MN_SELECTITEM = 0x1E5,
-    MN_CANCELMENUS = 0x1E6,
-    MN_SELECTFIRSTVALIDITEM = 0x1E7,
-    MN_GETPPOPUPMENU = 0x1EA,
-    MN_FINDMENUWINDOWFROMPOINT = 0x1EB,
-    MN_SHOWPOPUPWINDOW = 0x1EC,
-    MN_BUTTONDOWN = 0x1ED,
-    MN_MOUSEMOVE = 0x1EE,
-    MN_BUTTONUP = 0x1EF,
-    MN_SETTIMERTOOPENHIERARCHY = 0x1F0,
-    MN_DBLCLK = 0x1F1,
-    WM_MOUSEFIRST = 0x200,
-    WM_MOUSEMOVE = 0x200,
-    WM_LBUTTONDOWN = 0x201,
-    WM_LBUTTONUP = 0x202,
-    WM_LBUTTONDBLCLK = 0x203,
-    WM_RBUTTONDOWN = 0x204,
-    WM_RBUTTONUP = 0x205,
-    WM_RBUTTONDBLCLK = 0x206,
-    WM_MBUTTONDOWN = 0x207,
-    WM_MBUTTONUP = 0x208,
-    WM_MBUTTONDBLCLK = 0x209,
-    WM_MOUSELAST = 0x20A,
-    WM_MOUSEWHEEL = 0x20A,
-    WM_XBUTTONDOWN = 0x20B,
-    WM_XBUTTONUP = 0x20C,
-    WM_XBUTTONDBLCLK = 0x20D,
-    WM_PARENTNOTIFY = 0x210,
-    WM_ENTERMENULOOP = 0x211,
-    WM_EXITMENULOOP = 0x212,
-    WM_NEXTMENU = 0x213,
-    WM_SIZING = 0x214,
-    WM_CAPTURECHANGED = 0x215,
-    WM_MOVING = 0x216,
-    WM_POWERBROADCAST = 0x218,
-    WM_DEVICECHANGE = 0x219,
-    WM_MDICREATE = 0x220,
-    WM_MDIDESTROY = 0x221,
-    WM_MDIACTIVATE = 0x222,
-    WM_MDIRESTORE = 0x223,
-    WM_MDINEXT = 0x224,
-    WM_MDIMAXIMIZE = 0x225,
-    WM_MDITILE = 0x226,
-    WM_MDICASCADE = 0x227,
-    WM_MDIICONARRANGE = 0x228,
-    WM_MDIGETACTIVE = 0x229,
-    WM_DROPOBJECT = 0x22A,
-    WM_QUERYDROPOBJECT = 0x22B,
-    WM_BEGINDRAG = 0x22C,
-    WM_DRAGLOOP = 0x22D,
-    WM_DRAGSELECT = 0x22E,
-    WM_DRAGMOVE = 0x22F,
-    WM_MDISETMENU = 0x230,
-    WM_ENTERSIZEMOVE = 0x231,
-    WM_EXITSIZEMOVE = 0x232,
-    WM_DROPFILES = 0x233,
-    WM_MDIREFRESHMENU = 0x234,
-    WM_IME_REPORT = 0x280,
-    WM_HANGEULFIRST = 0x280,
-    WM_KANJIFIRST = 0x280,
-    WM_IME_SETCONTEXT = 0x281,
-    WM_IME_NOTIFY = 0x282,
-    WM_IME_CONTROL = 0x283,
-    WM_IME_COMPOSITIONFULL = 0x284,
-    WM_IME_SELECT = 0x285,
-    WM_IME_CHAR = 0x286,
-    WM_IME_SYSTEM = 0x287,
-    WM_IME_REQUEST = 0x288,
-    WM_IMEKEYDOWN = 0x290,
-    WM_IME_KEYDOWN = 0x290,
-    WM_IMEKEYUP = 0x291,
-    WM_IME_KEYUP = 0x291,
-    WM_HANGEULLAST = 0x29F,
-    WM_KANJILAST = 0x29F,
-    WM_NCMOUSEHOVER = 0x2A0,
-    WM_MOUSEHOVER = 0x2A1,
-    WM_NCMOUSELEAVE = 0x2A2,
-    WM_MOUSELEAVE = 0x2A3,
-    WM_TRACKMOUSEEVENT_LAST = 0x2AF,
-    WM_WTSSESSION_CHANGE = 0x2B1,
-    WM_TABLET_FIRST = 0x2C0,
-    WM_TABLET_LAST = 0x2DF,
-    WM_CUT = 0x300,
-    WM_COPY = 0x301,
-    WM_PASTE = 0x302,
-    WM_CLEAR = 0x303,
-    WM_UNDO = 0x304,
-    WM_RENDERFORMAT = 0x305,
-    WM_RENDERALLFORMATS = 0x306,
-    WM_DESTROYCLIPBOARD = 0x307,
-    WM_DRAWCLIPBOARD = 0x308,
-    WM_PAINTCLIPBOARD = 0x309,
-    WM_VSCROLLCLIPBOARD = 0x30A,
-    WM_SIZECLIPBOARD = 0x30B,
-    WM_ASKCBFORMATNAME = 0x30C,
-    WM_CHANGECBCHAIN = 0x30D,
-    WM_HSCROLLCLIPBOARD = 0x30E,
-    WM_QUERYNEWPALETTE = 0x30F,
-    WM_PALETTEISCHANGING = 0x310,
-    WM_PALETTECHANGED = 0x311,
-    WM_HOTKEY = 0x312,
-    WM_SYSMENU = 0x313,
-    WM_HOOKMSG = 0x314,
-    WM_EXITPROCESS = 0x315,
-    WM_WAKETHREAD = 0x316,
-    WM_PRINT = 0x317,
-    WM_PRINTCLIENT = 0x318,
-    WM_APPCOMMAND = 0x319,
-    WM_THEMECHANGED = 0x31A,
-    WM_HANDHELDFIRST = 0x358,
-    WM_HANDHELDLAST = 0x35F,
-    WM_AFXFIRST = 0x360,
-    WM_AFXLAST = 0x37F,
-    WM_PENWINFIRST = 0x380,
-    WM_RCRESULT = 0x381,
-    WM_HOOKRCRESULT = 0x382,
-    WM_GLOBALRCCHANGE = 0x383,
-    WM_PENMISCINFO = 0x383,
-    WM_SKB = 0x384,
-    WM_HEDITCTL = 0x385,
-    WM_PENCTL = 0x385,
-    WM_PENMISC = 0x386,
-    WM_CTLINIT = 0x387,
-    WM_PENEVENT = 0x388,
-    WM_PENWINLAST = 0x38F,
-    WM_INTERNAL_COALESCE_FIRST = 0x390,
-    WM_COALESCE_FIRST = 0x390,
-    WM_COALESCE_LAST = 0x39F,
-    WM_MM_RESERVED_FIRST = 0x3A0,
-    WM_INTERNAL_COALESCE_LAST = 0x3B0,
-    WM_MM_RESERVED_LAST = 0x3DF,
-    WM_DDE_INITIATE = 0x3E0,
-    WM_DDE_TERMINATE = 0x3E1,
-    WM_DDE_ADVISE = 0x3E2,
-    WM_DDE_UNADVISE = 0x3E3,
-    WM_DDE_ACK = 0x3E4,
-    WM_DDE_DATA = 0x3E5,
-    WM_DDE_REQUEST = 0x3E6,
-    WM_DDE_POKE = 0x3E7,
-    WM_DDE_EXECUTE = 0x3E8,
-    WM_DBNOTIFICATION = 0x3FD,
-    WM_NETCONNECT = 0x3FE,
-    WM_HIBERNATE = 0x3FF,
-    WM_USER = 0x400,
-    DDM_SETFMT = 0x400,
-    DDM_DRAW = 0x401,
-    DDM_CLOSE = 0x402,
-    DDM_BEGIN = 0x403,
-    DDM_END = 0x404,
-    DM_GETDEFID = 0x400,
-    DM_SETDEFID = 0x401,
-    DM_REPOSITION = 0x402,
-    NIN_SELECT = 0x400,
-    NIN_KEYSELECT = 0x401,
-    NIN_BALLOONSHOW = 0x402,
-    NIN_BALLOONHIDE = 0x403,
-    NIN_BALLOONTIMEOUT = 0x404,
-    NIN_BALLOONUSERCLICK = 0x405,
-    NIN_POPUPOPEN = 0x406,
-    NIN_POPUPCLOSE = 0x407,
-    TBM_GETPOS = 0x400,
-    TBM_GETRANGEMIN = 0x401,
-    TBM_GETRANGEMAX = 0x402,
-    TBM_GETTIC = 0x403,
-    TBM_SETTIC = 0x404,
-    TBM_SETPOS = 0x405,
-    TBM_SETRANGE = 0x406,
-    TBM_SETRANGEMIN = 0x407,
-    TBM_SETRANGEMAX = 0x408,
-    TBM_CLEARTICS = 0x409,
-    TBM_SETSEL = 0x40A,
-    TBM_SETSELSTART = 0x40B,
-    TBM_SETSELEND = 0x40C,
-    TBM_GETPTICS = 0x40E,
-    TBM_GETTICPOS = 0x40F,
-    TBM_GETNUMTICS = 0x410,
-    TBM_GETSELSTART = 0x411,
-    TBM_GETSELEND = 0x412,
-    TBM_CLEARSEL = 0x413,
-    TBM_SETTICFREQ = 0x414,
-    TBM_SETPAGESIZE = 0x415,
-    TBM_GETPAGESIZE = 0x416,
-    TBM_SETLINESIZE = 0x417,
-    TBM_GETLINESIZE = 0x418,
-    TBM_GETTHUMBRECT = 0x419,
-    TBM_GETCHANNELRECT = 0x41A,
-    TBM_SETTHUMBLENGTH = 0x41B,
-    TBM_GETTHUMBLENGTH = 0x41C,
-    TBM_SETTOOLTIPS = 0x41D,
-    TBM_GETTOOLTIPS = 0x41E,
-    TBM_SETTIPSIDE = 0x41F,
-    TBM_SETBUDDY = 0x420,
-    TBM_GETBUDDY = 0x421,
-    TBM_SETPOSNOTIFY = 0x422,
-    WM_PSD_PAGESETUPDLG = 0x400,
-    WM_PSD_FULLPAGERECT = 0x401,
-    WM_PSD_MINMARGINRECT = 0x402,
-    WM_PSD_MARGINRECT = 0x403,
-    WM_PSD_GREEKTEXTRECT = 0x404,
-    WM_PSD_ENVSTAMPRECT = 0x405,
-    WM_PSD_YAFULLPAGERECT = 0x406,
-    WM_CHOOSEFONT_GETLOGFONT = 0x401,
-    WM_CHOOSEFONT_SETLOGFONT = 0x465,
-    WM_CHOOSEFONT_SETFLAGS = 0x466,
-    HKM_SETHOTKEY = 0x401,
-    HKM_GETHOTKEY = 0x402,
-    HKM_SETRULES = 0x403,
-    PBM_SETRANGE = 0x401,
-    PBM_SETPOS = 0x402,
-    PBM_DELTAPOS = 0x403,
-    PBM_SETSTEP = 0x404,
-    PBM_STEPIT = 0x405,
-    PBM_SETRANGE32 = 0x406,
-    PBM_GETRANGE = 0x407,
-    PBM_GETPOS = 0x408,
-    PBM_SETBARCOLOR = 0x409,
-    PBM_SETMARQUEE = 0x40A,
-    PBM_GETSTEP = 0x40D,
-    PBM_GETBKCOLOR = 0x40E,
-    PBM_GETBARCOLOR = 0x40F,
-    PBM_SETSTATE = 0x410,
-    PBM_GETSTATE = 0x411,
-    RB_INSERTBANDA = 0x401,
-    RB_DELETEBAND = 0x402,
-    RB_GETBARINFO = 0x403,
-    RB_SETBARINFO = 0x404,
-    RB_SETBANDINFOA = 0x406,
-    RB_SETPARENT = 0x407,
-    RB_HITTEST = 0x408,
-    RB_GETRECT = 0x409,
-    RB_INSERTBANDW = 0x40A,
-    RB_SETBANDINFOW = 0x40B,
-    RB_GETBANDCOUNT = 0x40C,
-    RB_GETROWCOUNT = 0x40D,
-    RB_GETROWHEIGHT = 0x40E,
-    RB_IDTOINDEX = 0x410,
-    RB_GETTOOLTIPS = 0x411,
-    RB_SETTOOLTIPS = 0x412,
-    RB_SETBKCOLOR = 0x413,
-    RB_GETBKCOLOR = 0x414,
-    RB_SETTEXTCOLOR = 0x415,
-    RB_GETTEXTCOLOR = 0x416,
-    RB_SIZETORECT = 0x417,
-    RB_BEGINDRAG = 0x418,
-    RB_ENDDRAG = 0x419,
-    RB_DRAGMOVE = 0x41A,
-    RB_GETBARHEIGHT = 0x41B,
-    RB_GETBANDINFOW = 0x41C,
-    RB_GETBANDINFOA = 0x41D,
-    RB_MINIMIZEBAND = 0x41E,
-    RB_MAXIMIZEBAND = 0x41F,
-    RB_GETBANDBORDERS = 0x422,
-    RB_SHOWBAND = 0x423,
-    RB_SETPALETTE = 0x425,
-    RB_GETPALETTE = 0x426,
-    RB_MOVEBAND = 0x427,
-    RB_PUSHCHEVRON = 0x42B,
-    RB_GETBANDMARGINS = 0x428,
-    RB_SETEXTENDEDSTYLE = 0x429,
-    RB_GETEXTENDEDSTYLE = 0x42A,
-    RB_SETBANDWIDTH = 0x42C,
-    RB_SETWINDOWTHEME = 0x200B,
-    CBEM_INSERTITEMA = 0x401,
-    CBEM_SETIMAGELIST = 0x402,
-    CBEM_GETIMAGELIST = 0x403,
-    CBEM_GETITEMA = 0x404,
-    CBEM_SETITEMA = 0x405,
-    CBEM_GETCOMBOCONTROL = 0x406,
-    CBEM_GETEDITCONTROL = 0x407,
-    CBEM_SETEXSTYLE = 0x408,
-    CBEM_GETEXSTYLE = 0x409,
-    CBEM_GETEXTENDEDSTYLE = 0x409,
-    CBEM_HASEDITCHANGED = 0x40A,
-    CBEM_INSERTITEMW = 0x40B,
-    CBEM_SETITEMW = 0x40C,
-    CBEM_GETITEMW = 0x40D,
-    CBEM_SETEXTENDEDSTYLE = 0x40E,
-    SB_SETTEXTA = 0x401,
-    SB_GETTEXTA = 0x402,
-    SB_GETTEXTLENGTHA = 0x403,
-    SB_SETPARTS = 0x404,
-    SB_GETPARTS = 0x406,
-    SB_GETBORDERS = 0x407,
-    SB_SETMINHEIGHT = 0x408,
-    SB_SIMPLE = 0x409,
-    SB_GETRECT = 0x40A,
-    SB_SETTEXTW = 0x40B,
-    SB_GETTEXTLENGTHW = 0x40C,
-    SB_GETTEXTW = 0x40D,
-    SB_ISSIMPLE = 0x40E,
-    SB_SETICON = 0x40F,
-    SB_SETTIPTEXTA = 0x410,
-    SB_SETTIPTEXTW = 0x411,
-    SB_GETTIPTEXTA = 0x412,
-    SB_GETTIPTEXTW = 0x413,
-    SB_GETICON = 0x414,
-    TTM_ACTIVATE = 0x401,
-    TTM_SETDELAYTIME = 0x403,
-    TTM_ADDTOOLA = 0x404,
-    TTM_DELTOOLA = 0x405,
-    TTM_NEWTOOLRECTA = 0x406,
-    TTM_RELAYEVENT = 0x407,
-    TTM_GETTOOLINFOA = 0x408,
-    TTM_SETTOOLINFOA = 0x409,
-    TTM_HITTESTA = 0x40A,
-    TTM_GETTEXTA = 0x40B,
-    TTM_UPDATETIPTEXTA = 0x40C,
-    TTM_GETTOOLCOUNT = 0x40D,
-    TTM_ENUMTOOLSA = 0x40E,
-    TTM_GETCURRENTTOOLA = 0x40F,
-    TTM_WINDOWFROMPOINT = 0x410,
-    TTM_TRACKACTIVATE = 0x411,
-    TTM_TRACKPOSITION = 0x412,
-    TTM_SETTIPBKCOLOR = 0x413,
-    TTM_SETTIPTEXTCOLOR = 0x414,
-    TTM_GETDELAYTIME = 0x415,
-    TTM_GETTIPBKCOLOR = 0x416,
-    TTM_GETTIPTEXTCOLOR = 0x417,
-    TTM_SETMAXTIPWIDTH = 0x418,
-    TTM_GETMAXTIPWIDTH = 0x419,
-    TTM_SETMARGIN = 0x41A,
-    TTM_GETMARGIN = 0x41B,
-    TTM_POP = 0x41C,
-    TTM_UPDATE = 0x41D,
-    TTM_GETBUBBLESIZE = 0x41E,
-    TTM_ADJUSTRECT = 0x41F,
-    TTM_SETTITLEA = 0x420,
-    TTM_SETTITLEW = 0x421,
-    TTM_ADDTOOLW = 0x432,
-    TTM_DELTOOLW = 0x433,
-    TTM_NEWTOOLRECTW = 0x434,
-    TTM_GETTOOLINFOW = 0x435,
-    TTM_SETTOOLINFOW = 0x436,
-    TTM_HITTESTW = 0x437,
-    TTM_GETTEXTW = 0x438,
-    TTM_UPDATETIPTEXTW = 0x439,
-    TTM_ENUMTOOLSW = 0x43A,
-    TTM_GETCURRENTTOOLW = 0x43B,
-    WIZ_QUERYNUMPAGES = 0x40A,
-    WIZ_NEXT = 0x40B,
-    WIZ_PREV = 0x40C,
-    MSG_FTS_JUMP_VA = 0x421,
-    MSG_FTS_JUMP_QWORD = 0x423,
-    MSG_REINDEX_REQUEST = 0x424,
-    MSG_FTS_WHERE_IS_IT = 0x425,
-    MSG_GET_DEFFONT = 0x42D,
-    TB_ENABLEBUTTON = 0x401,
-    TB_CHECKBUTTON = 0x402,
-    TB_PRESSBUTTON = 0x403,
-    TB_HIDEBUTTON = 0x404,
-    TB_INDETERMINATE = 0x405,
-    TB_MARKBUTTON = 0x406,
-    TB_ISBUTTONENABLED = 0x409,
-    TB_ISBUTTONCHECKED = 0x40A,
-    TB_ISBUTTONPRESSED = 0x40B,
-    TB_ISBUTTONHIDDEN = 0x40C,
-    TB_ISBUTTONINDETERMINATE = 0x40D,
-    TB_ISBUTTONHIGHLIGHTED = 0x40E,
-    TB_SETSTATE = 0x411,
-    TB_GETSTATE = 0x412,
-    TB_ADDBITMAP = 0x413,
-    TB_ADDBUTTONSA = 0x414,
-    TB_INSERTBUTTONA = 0x415,
-    TB_DELETEBUTTON = 0x416,
-    TB_GETBUTTON = 0x417,
-    TB_BUTTONCOUNT = 0x418,
-    TB_COMMANDTOINDEX = 0x419,
-    TB_SAVERESTOREA = 0x41A,
-    TB_CUSTOMIZE = 0x41B,
-    TB_ADDSTRINGA = 0x41C,
-    TB_GETITEMRECT = 0x41D,
-    TB_BUTTONSTRUCTSIZE = 0x41E,
-    TB_SETBUTTONSIZE = 0x41F,
-    TB_SETBITMAPSIZE = 0x420,
-    TB_AUTOSIZE = 0x421,
-    TB_GETTOOLTIPS = 0x423,
-    TB_SETTOOLTIPS = 0x424,
-    TB_SETPARENT = 0x425,
-    TB_SETROWS = 0x427,
-    TB_GETROWS = 0x428,
-    TB_GETBITMAPFLAGS = 0x429,
-    TB_SETCMDID = 0x42A,
-    TB_CHANGEBITMAP = 0x42B,
-    TB_GETBITMAP = 0x42C,
-    TB_GETBUTTONTEXTA = 0x42D,
-    TB_REPLACEBITMAP = 0x42E,
-    TB_SETINDENT = 0x42F,
-    TB_SETIMAGELIST = 0x430,
-    TB_GETIMAGELIST = 0x431,
-    TB_LOADIMAGES = 0x432,
-    TB_GETRECT = 0x433,
-    TB_SETHOTIMAGELIST = 0x434,
-    TB_GETHOTIMAGELIST = 0x435,
-    TB_SETDISABLEDIMAGELIST = 0x436,
-    TB_GETDISABLEDIMAGELIST = 0x437,
-    TB_SETSTYLE = 0x438,
-    TB_GETSTYLE = 0x439,
-    TB_GETBUTTONSIZE = 0x43A,
-    TB_SETBUTTONWIDTH = 0x43B,
-    TB_SETMAXTEXTROWS = 0x43C,
-    TB_GETTEXTROWS = 0x43D,
-    TB_GETOBJECT = 0x43E,
-    TB_GETBUTTONINFOW = 0x43F,
-    TB_SETBUTTONINFOW = 0x440,
-    TB_GETBUTTONINFOA = 0x441,
-    TB_SETBUTTONINFOA = 0x442,
-    TB_INSERTBUTTONW = 0x443,
-    TB_ADDBUTTONSW = 0x444,
-    TB_HITTEST = 0x445,
-    TB_SETDRAWTEXTFLAGS = 0x446,
-    TB_GETHOTITEM = 0x447,
-    TB_SETHOTITEM = 0x448,
-    TB_SETANCHORHIGHLIGHT = 0x449,
-    TB_GETANCHORHIGHLIGHT = 0x44A,
-    TB_GETBUTTONTEXTW = 0x44B,
-    TB_SAVERESTOREW = 0x44C,
-    TB_ADDSTRINGW = 0x44D,
-    TB_MAPACCELERATORA = 0x44E,
-    TB_GETINSERTMARK = 0x44F,
-    TB_SETINSERTMARK = 0x450,
-    TB_INSERTMARKHITTEST = 0x451,
-    TB_MOVEBUTTON = 0x452,
-    TB_GETMAXSIZE = 0x453,
-    TB_SETEXTENDEDSTYLE = 0x454,
-    TB_GETEXTENDEDSTYLE = 0x455,
-    TB_GETPADDING = 0x456,
-    TB_SETPADDING = 0x457,
-    TB_SETINSERTMARKCOLOR = 0x458,
-    TB_GETINSERTMARKCOLOR = 0x459,
-    TB_MAPACCELERATORW = 0x45A,
-    TB_GETSTRINGW = 0x45B,
-    TB_GETSTRINGA = 0x45C,
-    TB_SETBOUNDINGSIZE = 0x45D,
-    TB_SETHOTITEM2 = 0x45E,
-    TB_HASACCELERATOR = 0x45F,
-    TB_SETLISTGAP = 0x460,
-    TB_GETIMAGELISTCOUNT = 0x462,
-    TB_GETIDEALSIZE = 0x463,
-    TB_GETMETRICS = 0x465,
-    TB_SETMETRICS = 0x466,
-    TB_GETITEMDROPDOWNRECT = 0x467,
-    TB_SETPRESSEDIMAGELIST = 0x468,
-    TB_GETPRESSEDIMAGELIST = 0x469,
-    TB_SETWINDOWTHEME = 0x200B,
-    EM_CANPASTE = 0x432,
-    EM_DISPLAYBAND = 0x433,
-    EM_EXGETSEL = 0x434,
-    EM_EXLIMITTEXT = 0x435,
-    EM_EXLINEFROMCHAR = 0x436,
-    EM_EXSETSEL = 0x437,
-    EM_FINDTEXT = 0x438,
-    EM_FORMATRANGE = 0x439,
-    EM_GETCHARFORMAT = 0x43A,
-    EM_GETEVENTMASK = 0x43B,
-    EM_GETOLEINTERFACE = 0x43C,
-    EM_GETPARAFORMAT = 0x43D,
-    EM_GETSELTEXT = 0x43E,
-    EM_HIDESELECTION = 0x43F,
-    EM_PASTESPECIAL = 0x440,
-    EM_REQUESTRESIZE = 0x441,
-    EM_SELECTIONTYPE = 0x442,
-    EM_SETBKGNDCOLOR = 0x443,
-    EM_SETCHARFORMAT = 0x444,
-    EM_SETEVENTMASK = 0x445,
-    EM_SETOLECALLBACK = 0x446,
-    EM_SETPARAFORMAT = 0x447,
-    EM_SETTARGETDEVICE = 0x448,
-    EM_STREAMIN = 0x449,
-    EM_STREAMOUT = 0x44A,
-    EM_GETTEXTRANGE = 0x44B,
-    EM_FINDWORDBREAK = 0x44C,
-    EM_SETOPTIONS = 0x44D,
-    EM_GETOPTIONS = 0x44E,
-    EM_FINDTEXTEX = 0x44F,
-    EM_GETWORDBREAKPROCEX = 0x450,
-    EM_SETWORDBREAKPROCEX = 0x451,
-    EM_SETUNDOLIMIT = 0x452,
-    EM_REDO = 0x454,
-    EM_CANREDO = 0x455,
-    EM_GETUNDONAME = 0x456,
-    EM_GETREDONAME = 0x457,
-    EM_STOPGROUPTYPING = 0x458,
-    EM_SETTEXTMODE = 0x459,
-    EM_GETTEXTMODE = 0x45A,
-    EM_AUTOURLDETECT = 0x45B,
-    EM_GETAUTOURLDETECT = 0x45C,
-    EM_SETPALETTE = 0x45D,
-    EM_GETTEXTEX = 0x45E,
-    EM_GETTEXTLENGTHEX = 0x45F,
-    EM_SHOWSCROLLBAR = 0x460,
-    EM_SETTEXTEX = 0x461,
-    EM_SETPUNCTUATION = 0x464,
-    EM_GETPUNCTUATION = 0x465,
-    EM_SETWORDWRAPMODE = 0x466,
-    EM_GETWORDWRAPMODE = 0x467,
-    EM_SETIMECOLOR = 0x468,
-    EM_GETIMECOLOR = 0x469,
-    EM_SETIMEOPTIONS = 0x46A,
-    EM_GETIMEOPTIONS = 0x46B,
-    EM_CONVPOSITION = 0x46C,
-    EM_SETLANGOPTIONS = 0x478,
-    EM_GETLANGOPTIONS = 0x479,
-    EM_GETIMECOMPMODE = 0x47A,
-    EM_FINDTEXTW = 0x47B,
-    EM_FINDTEXTEXW = 0x47C,
-    EM_RECONVERSION = 0x47D,
-    EM_SETIMEMODEBIAS = 0x47E,
-    EM_GETIMEMODEBIAS = 0x47F,
-    EM_SETBIDIOPTIONS = 0x4C8,
-    EM_GETBIDIOPTIONS = 0x4C9,
-    EM_SETTYPOGRAPHYOPTIONS = 0x4CA,
-    EM_GETTYPOGRAPHYOPTIONS = 0x4CB,
-    EM_SETEDITSTYLE = 0x4CC,
-    EM_GETEDITSTYLE = 0x4CD,
-    EM_OUTLINE = 0x4DC,
-    EM_GETSCROLLPOS = 0x4DD,
-    EM_SETSCROLLPOS = 0x4DE,
-    EM_SETFONTSIZE = 0x4DF,
-    EM_GETZOOM = 0x4E0,
-    EM_SETZOOM = 0x4E1,
-    EM_GETVIEWKIND = 0x4E2,
-    EM_SETVIEWKIND = 0x4E3,
-    EM_GETPAGE = 0x4E4,
-    EM_SETPAGE = 0x4E5,
-    EM_GETHYPHENATEINFO = 0x4E6,
-    EM_SETHYPHENATEINFO = 0x4E7,
-    EM_INSERTTABLE = 0x4E8,
-    EM_GETAUTOCORRECTPROC = 0x4E9,
-    EM_SETAUTOCORRECTPROC = 0x4EA,
-    EM_GETPAGEROTATE = 0x4EB,
-    EM_SETPAGEROTATE = 0x4EC,
-    EM_GETCTFMODEBIAS = 0x4ED,
-    EM_SETCTFMODEBIAS = 0x4EE,
-    EM_GETCTFOPENSTATUS = 0x4F0,
-    EM_SETCTFOPENSTATUS = 0x4F1,
-    EM_GETIMECOMPTEXT = 0x4F2,
-    EM_ISIME = 0x4F3,
-    EM_GETIMEPROPERTY = 0x4F4,
-    EM_CALLAUTOCORRECTPROC = 0x4FF,
-    EM_GETTABLEPARMS = 0x509,
-    EM_GETQUERYRTFOBJ = 0x50D,
-    EM_SETQUERYRTFOBJ = 0x50E,
-    EM_SETEDITSTYLEEX = 0x513,
-    EM_GETEDITSTYLEEX = 0x514,
-    EM_GETSTORYTYPE = 0x522,
-    EM_SETSTORYTYPE = 0x523,
-    EM_GETELLIPSISMODE = 0x531,
-    EM_SETELLIPSISMODE = 0x532,
-    EM_SETTABLEPARMS = 0x533,
-    EM_GETTOUCHOPTIONS = 0x536,
-    EM_SETTOUCHOPTIONS = 0x537,
-    EM_INSERTIMAGE = 0x53A,
-    EM_SETUIANAME = 0x540,
-    EM_GETELLIPSISSTATE = 0x542,
-    TAPI_REPLY = 0x463,
-    IPM_CLEARADDRESS = 0x464,
-    IPM_SETADDRESS = 0x465,
-    IPM_GETADDRESS = 0x466,
-    IPM_SETRANGE = 0x467,
-    IPM_SETFOCUS = 0x468,
-    IPM_ISBLANK = 0x469,
-    CDM_FIRST = 0x464,
-    CDM_GETSPEC = 0x464,
-    CDM_GETFILEPATH = 0x465,
-    CDM_GETFOLDERPATH = 0x466,
-    CDM_GETFOLDERIDLIST = 0x467,
-    CDM_SETCONTROLTEXT = 0x468,
-    CDM_HIDECONTROL = 0x469,
-    CDM_SETDEFEXT = 0x46A,
-    CDM_LAST = 0x4C8,
-    BFFM_SETSTATUSTEXTA = 0x464,
-    BFFM_ENABLEOK = 0x465,
-    BFFM_SETSELECTIONA = 0x466,
-    BFFM_SETSELECTIONW = 0x467,
-    BFFM_SETSTATUSTEXTW = 0x468,
-    BFFM_SETOKTEXT = 0x469,
-    BFFM_SETEXPANDED = 0x46A,
-    ACM_OPENA = 0x464,
-    ACM_PLAY = 0x465,
-    ACM_STOP = 0x466,
-    ACM_OPENW = 0x467,
-    ACM_ISPLAYING = 0x468,
-    WM_CAP_UNICODE_START = 0x464,
-    WM_CAP_SET_CALLBACK_ERRORW = 0x466,
-    WM_CAP_SET_CALLBACK_STATUSW = 0x467,
-    WM_CAP_DRIVER_GET_NAMEW = 0x470,
-    WM_CAP_DRIVER_GET_VERSIONW = 0x471,
-    WM_CAP_FILE_SET_CAPTURE_FILEW = 0x478,
-    WM_CAP_FILE_GET_CAPTURE_FILEW = 0x479,
-    WM_CAP_FILE_SAVEASW = 0x47B,
-    WM_CAP_FILE_SAVEDIBW = 0x47D,
-    WM_CAP_SET_MCI_DEVICEW = 0x4A6,
-    WM_CAP_GET_MCI_DEVICEW = 0x4A7,
-    WM_CAP_PAL_OPENW = 0x4B4,
-    WM_CAP_PAL_SAVEW = 0x4B5,
-    PSM_SETCURSEL = 0x465,
-    PSM_REMOVEPAGE = 0x466,
-    PSM_ADDPAGE = 0x467,
-    PSM_CHANGED = 0x468,
-    PSM_RESTARTWINDOWS = 0x469,
-    PSM_REBOOTSYSTEM = 0x46A,
-    PSM_CANCELTOCLOSE = 0x46B,
-    PSM_QUERYSIBLINGS = 0x46C,
-    PSM_UNCHANGED = 0x46D,
-    PSM_APPLY = 0x46E,
-    PSM_SETTITLEA = 0x46F,
-    PSM_SETWIZBUTTONS = 0x470,
-    PSM_PRESSBUTTON = 0x471,
-    PSM_SETCURSELID = 0x472,
-    PSM_SETFINISHTEXTA = 0x473,
-    PSM_GETTABCONTROL = 0x474,
-    PSM_ISDIALOGMESSAGE = 0x475,
-    PSM_GETCURRENTPAGEHWND = 0x476,
-    PSM_INSERTPAGE = 0x477,
-    PSM_SETTITLEW = 0x478,
-    PSM_SETFINISHTEXTW = 0x479,
-    PSM_SETHEADERTITLEA = 0x47D,
-    PSM_SETHEADERTITLEW = 0x47E,
-    PSM_SETHEADERSUBTITLEA = 0x47F,
-    PSM_SETHEADERSUBTITLEW = 0x480,
-    PSM_HWNDTOINDEX = 0x481,
-    PSM_INDEXTOHWND = 0x482,
-    PSM_PAGETOINDEX = 0x483,
-    PSM_INDEXTOPAGE = 0x484,
-    PSM_IDTOINDEX = 0x485,
-    PSM_INDEXTOID = 0x486,
-    PSM_GETRESULT = 0x487,
-    PSM_RECALCPAGESIZES = 0x488,
-    PSM_SETNEXTTEXTW = 0x489,
-    PSM_SHOWWIZBUTTONS = 0x48A,
-    PSM_ENABLEWIZBUTTONS = 0x48B,
-    PSM_SETBUTTONTEXTW = 0x48C,
-    UDM_SETRANGE = 0x465,
-    UDM_GETRANGE = 0x466,
-    UDM_SETPOS = 0x467,
-    UDM_GETPOS = 0x468,
-    UDM_SETBUDDY = 0x469,
-    UDM_GETBUDDY = 0x46A,
-    UDM_SETACCEL = 0x46B,
-    UDM_GETACCEL = 0x46C,
-    UDM_SETBASE = 0x46D,
-    UDM_GETBASE = 0x46E,
-    UDM_SETRANGE32 = 0x46F,
-    UDM_GETRANGE32 = 0x470,
-    UDM_SETPOS32 = 0x471,
-    UDM_GETPOS32 = 0x472,
-    MCIWNDM_GETZOOM = 0x46D,
-    MCIWNDM_REALIZE = 0x476,
-    MCIWNDM_SETTIMEFORMATA = 0x477,
-    MCIWNDM_GETTIMEFORMATA = 0x478,
-    MCIWNDM_VALIDATEMEDIA = 0x479,
-    MCIWNDM_PLAYTO = 0x47B,
-    MCIWNDM_GETFILENAMEA = 0x47C,
-    MCIWNDM_GETDEVICEA = 0x47D,
-    MCIWNDM_GETPALETTE = 0x47E,
-    MCIWNDM_SETPALETTE = 0x47F,
-    MCIWNDM_GETERRORA = 0x480,
-    MCIWNDM_SETINACTIVETIMER = 0x483,
-    MCIWNDM_GETINACTIVETIMER = 0x485,
-    MCIWNDM_GET_SOURCE = 0x48C,
-    MCIWNDM_PUT_SOURCE = 0x48D,
-    MCIWNDM_GET_DEST = 0x48E,
-    MCIWNDM_PUT_DEST = 0x48F,
-    MCIWNDM_CAN_PLAY = 0x490,
-    MCIWNDM_CAN_WINDOW = 0x491,
-    MCIWNDM_CAN_RECORD = 0x492,
-    MCIWNDM_CAN_SAVE = 0x493,
-    MCIWNDM_CAN_EJECT = 0x494,
-    MCIWNDM_CAN_CONFIG = 0x495,
-    MCIWNDM_PALETTEKICK = 0x496,
-    MCIWNDM_NOTIFYMODE = 0x4C8,
-    MCIWNDM_NOTIFYMEDIA = 0x4CB,
-    MCIWNDM_NOTIFYERROR = 0x4CD,
-    MCIWNDM_SETTIMEFORMATW = 0x4DB,
-    MCIWNDM_GETTIMEFORMATW = 0x4DC,
-    MCIWNDM_GETFILENAMEW = 0x4E0,
-    MCIWNDM_GETDEVICEW = 0x4E1,
-    MCIWNDM_GETERRORW = 0x4E4,
-    DL_BEGINDRAG = 0x485,
-    DL_DRAGGING = 0x486,
-    DL_DROPPED = 0x487,
-    DL_CANCELDRAG = 0x488,
-    IE_GETINK = 0x496,
-    IE_MSGFIRST = 0x496,
-    IE_SETINK = 0x497,
-    IE_GETPENTIP = 0x498,
-    IE_SETPENTIP = 0x499,
-    IE_GETERASERTIP = 0x49A,
-    IE_SETERASERTIP = 0x49B,
-    IE_GETBKGND = 0x49C,
-    IE_SETBKGND = 0x49D,
-    IE_GETGRIDORIGIN = 0x49E,
-    IE_SETGRIDORIGIN = 0x49F,
-    IE_GETGRIDPEN = 0x4A0,
-    IE_SETGRIDPEN = 0x4A1,
-    IE_GETGRIDSIZE = 0x4A2,
-    IE_SETGRIDSIZE = 0x4A3,
-    IE_GETMODE = 0x4A4,
-    IE_SETMODE = 0x4A5,
-    IE_GETINKRECT = 0x4A6,
-    IE_GETAPPDATA = 0x4B8,
-    IE_SETAPPDATA = 0x4B9,
-    IE_GETDRAWOPTS = 0x4BA,
-    IE_SETDRAWOPTS = 0x4BB,
-    IE_GETFORMAT = 0x4BC,
-    IE_SETFORMAT = 0x4BD,
-    IE_GETINKINPUT = 0x4BE,
-    IE_SETINKINPUT = 0x4BF,
-    IE_GETNOTIFY = 0x4C0,
-    IE_SETNOTIFY = 0x4C1,
-    IE_GETRECOG = 0x4C2,
-    IE_SETRECOG = 0x4C3,
-    IE_GETSECURITY = 0x4C4,
-    IE_SETSECURITY = 0x4C5,
-    IE_GETSEL = 0x4C6,
-    IE_SETSEL = 0x4C7,
-    IE_DOCOMMAND = 0x4C8,
-    IE_GETCOMMAND = 0x4C9,
-    IE_GETCOUNT = 0x4CA,
-    IE_GETGESTURE = 0x4CB,
-    IE_GETMENU = 0x4CC,
-    IE_GETPAINTDC = 0x4CD,
-    IE_GETPDEVENT = 0x4CE,
-    IE_GETSELCOUNT = 0x4CF,
-    IE_GETSELITEMS = 0x4D0,
-    IE_GETSTYLE = 0x4D1,
-    FM_GETFOCUS = 0x600,
-    FM_GETDRIVEINFOA = 0x601,
-    FM_GETSELCOUNT = 0x602,
-    FM_GETSELCOUNTLFN = 0x603,
-    FM_GETFILESELA = 0x604,
-    FM_GETFILESELLFNA = 0x605,
-    FM_REFRESH_WINDOWS = 0x606,
-    FM_RELOAD_EXTENSIONS = 0x607,
-    FM_GETDRIVEINFOW = 0x611,
-    FM_GETFILESELW = 0x614,
-    FM_GETFILESELLFNW = 0x615,
-    WLX_WM_SAS = 0x659,
-    SM_GETSELCOUNT = 0x7E8,
-    SM_GETSERVERSELA = 0x7E9,
-    SM_GETSERVERSELW = 0x7EA,
-    SM_GETCURFOCUSA = 0x7EB,
-    SM_GETCURFOCUSW = 0x7EC,
-    SM_GETOPTIONS = 0x7ED,
-    WM_CPL_LAUNCH = 0x7E8,
-    WM_CPL_LAUNCHED = 0x7E9,
-    UM_GETSELCOUNT = 0x7E8,
-    UM_GETUSERSELA = 0x7E9,
-    UM_GETUSERSELW = 0x7EA,
-    UM_GETGROUPSELA = 0x7EB,
-    UM_GETGROUPSELW = 0x7EC,
-    UM_GETCURFOCUSA = 0x7ED,
-    UM_GETCURFOCUSW = 0x7EE,
-    UM_GETOPTIONS = 0x7EF,
-    UM_GETOPTIONS2 = 0x7F0,
-    LVM_FIRST = 0x1000,
-    LVM_GETBKCOLOR = 0x1000,
-    LVM_SETBKCOLOR = 0x1001,
-    LVM_GETIMAGELIST = 0x1002,
-    LVM_SETIMAGELIST = 0x1003,
-    LVM_GETITEMCOUNT = 0x1004,
-    LVM_GETITEMA = 0x1005,
-    LVM_SETITEMA = 0x1006,
-    LVM_INSERTITEMA = 0x1007,
-    LVM_DELETEITEM = 0x1008,
-    LVM_DELETEALLITEMS = 0x1009,
-    LVM_GETCALLBACKMASK = 0x100A,
-    LVM_SETCALLBACKMASK = 0x100B,
-    LVM_GETNEXTITEM = 0x100C,
-    LVM_FINDITEMA = 0x100D,
-    LVM_GETITEMRECT = 0x100E,
-    LVM_SETITEMPOSITION = 0x100F,
-    LVM_GETITEMPOSITION = 0x1010,
-    LVM_GETSTRINGWIDTHA = 0x1011,
-    LVM_HITTEST = 0x1012,
-    LVM_ENSUREVISIBLE = 0x1013,
-    LVM_SCROLL = 0x1014,
-    LVM_REDRAWITEMS = 0x1015,
-    LVM_ARRANGE = 0x1016,
-    LVM_EDITLABELA = 0x1017,
-    LVM_GETEDITCONTROL = 0x1018,
-    LVM_GETCOLUMNA = 0x1019,
-    LVM_SETCOLUMNA = 0x101A,
-    LVM_INSERTCOLUMNA = 0x101B,
-    LVM_DELETECOLUMN = 0x101C,
-    LVM_GETCOLUMNWIDTH = 0x101D,
-    LVM_SETCOLUMNWIDTH = 0x101E,
-    LVM_GETHEADER = 0x101F,
-    LVM_CREATEDRAGIMAGE = 0x1021,
-    LVM_GETVIEWRECT = 0x1022,
-    LVM_GETTEXTCOLOR = 0x1023,
-    LVM_SETTEXTCOLOR = 0x1024,
-    LVM_GETTEXTBKCOLOR = 0x1025,
-    LVM_SETTEXTBKCOLOR = 0x1026,
-    LVM_GETTOPINDEX = 0x1027,
-    LVM_GETCOUNTPERPAGE = 0x1028,
-    LVM_GETORIGIN = 0x1029,
-    LVM_UPDATE = 0x102A,
-    LVM_SETITEMSTATE = 0x102B,
-    LVM_GETITEMSTATE = 0x102C,
-    LVM_GETITEMTEXTA = 0x102D,
-    LVM_SETITEMTEXTA = 0x102E,
-    LVM_SETITEMCOUNT = 0x102F,
-    LVM_SORTITEMS = 0x1030,
-    LVM_SETITEMPOSITION32 = 0x1031,
-    LVM_GETSELECTEDCOUNT = 0x1032,
-    LVM_GETITEMSPACING = 0x1033,
-    LVM_GETISEARCHSTRINGA = 0x1034,
-    LVM_SETICONSPACING = 0x1035,
-    LVM_SETEXTENDEDLISTVIEWSTYLE = 0x1036,
-    LVM_GETEXTENDEDLISTVIEWSTYLE = 0x1037,
-    LVM_GETSUBITEMRECT = 0x1038,
-    LVM_SUBITEMHITTEST = 0x1039,
-    LVM_SETCOLUMNORDERARRAY = 0x103A,
-    LVM_GETCOLUMNORDERARRAY = 0x103B,
-    LVM_SETHOTITEM = 0x103C,
-    LVM_GETHOTITEM = 0x103D,
-    LVM_SETHOTCURSOR = 0x103E,
-    LVM_GETHOTCURSOR = 0x103F,
-    LVM_APPROXIMATEVIEWRECT = 0x1040,
-    LVM_SETWORKAREAS = 0x1041,
-    LVM_GETSELECTIONMARK = 0x1042,
-    LVM_SETSELECTIONMARK = 0x1043,
-    LVM_SETBKIMAGEA = 0x1044,
-    LVM_GETBKIMAGEA = 0x1045,
-    LVM_GETWORKAREAS = 0x1046,
-    LVM_SETHOVERTIME = 0x1047,
-    LVM_GETHOVERTIME = 0x1048,
-    LVM_GETNUMBEROFWORKAREAS = 0x1049,
-    LVM_SETTOOLTIPS = 0x104A,
-    LVM_GETITEMW = 0x104B,
-    LVM_SETITEMW = 0x104C,
-    LVM_INSERTITEMW = 0x104D,
-    LVM_GETTOOLTIPS = 0x104E,
-    LVM_SORTITEMSEX = 0x1051,
-    LVM_FINDITEMW = 0x1053,
-    LVM_GETSTRINGWIDTHW = 0x1057,
-    LVM_GETGROUPSTATE = 0x105C,
-    LVM_GETFOCUSEDGROUP = 0x105D,
-    LVM_GETCOLUMNW = 0x105F,
-    LVM_SETCOLUMNW = 0x1060,
-    LVM_INSERTCOLUMNW = 0x1061,
-    LVM_GETGROUPRECT = 0x1062,
-    LVM_GETITEMTEXTW = 0x1073,
-    LVM_SETITEMTEXTW = 0x1074,
-    LVM_GETISEARCHSTRINGW = 0x1075,
-    LVM_EDITLABELW = 0x1076,
-    LVM_GETBKIMAGEW = 0x108B,
-    LVM_SETSELECTEDCOLUMN = 0x108C,
-    LVM_SETTILEWIDTH = 0x108D,
-    LVM_SETVIEW = 0x108E,
-    LVM_GETVIEW = 0x108F,
-    LVM_INSERTGROUP = 0x1091,
-    LVM_SETGROUPINFO = 0x1093,
-    LVM_GETGROUPINFO = 0x1095,
-    LVM_REMOVEGROUP = 0x1096,
-    LVM_MOVEGROUP = 0x1097,
-    LVM_GETGROUPCOUNT = 0x1098,
-    LVM_GETGROUPINFOBYINDEX = 0x1099,
-    LVM_MOVEITEMTOGROUP = 0x109A,
-    LVM_SETGROUPMETRICS = 0x109B,
-    LVM_GETGROUPMETRICS = 0x109C,
-    LVM_ENABLEGROUPVIEW = 0x109D,
-    LVM_SORTGROUPS = 0x109E,
-    LVM_INSERTGROUPSORTED = 0x109F,
-    LVM_REMOVEALLGROUPS = 0x10A0,
-    LVM_HASGROUP = 0x10A1,
-    LVM_SETTILEVIEWINFO = 0x10A2,
-    LVM_GETTILEVIEWINFO = 0x10A3,
-    LVM_SETTILEINFO = 0x10A4,
-    LVM_GETTILEINFO = 0x10A5,
-    LVM_SETINSERTMARK = 0x10A6,
-    LVM_GETINSERTMARK = 0x10A7,
-    LVM_INSERTMARKHITTEST = 0x10A8,
-    LVM_GETINSERTMARKRECT = 0x10A9,
-    LVM_SETINSERTMARKCOLOR = 0x10AA,
-    LVM_GETINSERTMARKCOLOR = 0x10AB,
-    LVM_SETINFOTIP = 0x10AD,
-    LVM_GETSELECTEDCOLUMN = 0x10AE,
-    LVM_ISGROUPVIEWENABLED = 0x10AF,
-    LVM_GETOUTLINECOLOR = 0x10B0,
-    LVM_SETOUTLINECOLOR = 0x10B1,
-    LVM_CANCELEDITLABEL = 0x10B3,
-    LVM_MAPINDEXTOID = 0x10B4,
-    LVM_MAPIDTOINDEX = 0x10B5,
-    LVM_ISITEMVISIBLE = 0x10B6,
-    LVM_GETEMPTYTEXT = 0x10CC,
-    LVM_GETFOOTERRECT = 0x10CD,
-    LVM_GETFOOTERINFO = 0x10CE,
-    LVM_GETFOOTERITEMRECT = 0x10CF,
-    LVM_GETFOOTERITEM = 0x10D0,
-    LVM_GETITEMINDEXRECT = 0x10D1,
-    LVM_SETITEMINDEXSTATE = 0x10D2,
-    LVM_GETNEXTITEMINDEX = 0x10D3,
-    LVM_SETUNICODEFORMAT = 0x2005,
-    LVM_GETUNICODEFORMAT = 0x2006,
-    OCM__BASE = 0x2000,
-    OCM_CTLCOLOR = 0x2019,
-    OCM_DRAWITEM = 0x202B,
-    OCM_MEASUREITEM = 0x202C,
-    OCM_DELETEITEM = 0x202D,
-    OCM_VKEYTOITEM = 0x202E,
-    OCM_CHARTOITEM = 0x202F,
-    OCM_COMPAREITEM = 0x2039,
-    OCM_NOTIFY = 0x204E,
-    OCM_COMMAND = 0x2111,
-    OCM_HSCROLL = 0x2114,
-    OCM_VSCROLL = 0x2115,
-    OCM_CTLCOLORMSGBOX = 0x2132,
-    OCM_CTLCOLOREDIT = 0x2133,
-    OCM_CTLCOLORLISTBOX = 0x2134,
-    OCM_CTLCOLORBTN = 0x2135,
-    OCM_CTLCOLORDLG = 0x2136,
-    OCM_CTLCOLORSCROLLBAR = 0x2137,
-    OCM_CTLCOLORSTATIC = 0x2138,
-    OCM_PARENTNOTIFY = 0x2210,
-    WM_APP = 0x8000,
-    WM_RASDIALEVENT = 0xCCCD,
-    CBEM_DELETEITEM = 0x144,
-    CBEM_SETUNICODEFORMAT = 0x2005,
-    CBEM_GETUNICODEFORMAT = 0x2006,
-    IE_GETMODIFY = 0xB8,
-    IE_SETMODIFY = 0xB9,
-    IE_CANUNDO = 0xC6,
-    IE_UNDO = 0xC7,
-    IE_EMPTYUNDOBUFFER = 0xCD,
-    LVM_SETBKIMAGEW = 0x108A,
-    MCIWNDM_GETDEVICEID = 0x464,
-    MCIWNDM_GETSTART = 0x467,
-    MCIWNDM_GETLENGTH = 0x468,
-    MCIWNDM_GETEND = 0x469,
-    MCIWNDM_EJECT = 0x46B,
-    MCIWNDM_SETZOOM = 0x46C,
-    MCIWNDM_SETVOLUME = 0x46E,
-    MCIWNDM_GETVOLUME = 0x46F,
-    MCIWNDM_SETSPEED = 0x470,
-    MCIWNDM_GETSPEED = 0x471,
-    MCIWNDM_SETREPEAT = 0x472,
-    MCIWNDM_GETREPEAT = 0x473,
-    MCIWNDM_PLAYFROM = 0x47A,
-    MCIWNDM_SETTIMERS = 0x481,
-    MCIWNDM_SETACTIVETIMER = 0x482,
-    MCIWNDM_GETACTIVETIMER = 0x484,
-    MCIWNDM_CHANGESTYLES = 0x487,
-    MCIWNDM_GETSTYLES = 0x488,
-    MCIWNDM_GETALIAS = 0x489,
-    MCIWNDM_PLAYREVERSE = 0x48B,
-    MCIWNDM_OPENINTERFACE = 0x497,
-    MCIWNDM_SETOWNER = 0x498,
-    MCIWNDM_SENDSTRINGA = 0x465,
-    MCIWNDM_GETPOSITIONA = 0x466,
-    MCIWNDM_GETMODEA = 0x46A,
-    MCIWNDM_NEWA = 0x486,
-    MCIWNDM_RETURNSTRINGA = 0x48A,
-    MCIWNDM_OPENA = 0x499,
-    MCIWNDM_SENDSTRINGW = 0x4C9,
-    MCIWNDM_GETPOSITIONW = 0x4CA,
-    MCIWNDM_GETMODEW = 0x4CE,
-    MCIWNDM_NEWW = 0x4EA,
-    MCIWNDM_RETURNSTRINGW = 0x4EE,
-    MCIWNDM_OPENW = 0x4FC,
-    MCIWNDM_NOTIFYPOS = 0x4C9,
-    MCIWNDM_NOTIFYSIZE = 0x4CA,
-    MSG_FTS_JUMP_HASH = 0x420,
-    MSG_FTS_GET_TITLE = 0x422,
-    PBM_SETBKCOLOR = 0x2001,
-    RB_SETCOLORSCHEME = 0x2002,
-    RB_GETCOLORSCHEME = 0x2003,
-    RB_GETDROPTARGET = 0x2004,
-    RB_SETUNICODEFORMAT = 0x2005,
-    RB_GETUNICODEFORMAT = 0x2006,
-    SB_SETUNICODEFORMAT = 0x2005,
-    SB_GETUNICODEFORMAT = 0x2006,
-    SB_SETBKCOLOR = 0x2001,
-    STM_MSGMAX = 0x174,
-    TBM_SETUNICODEFORMAT = 0x2005,
-    TBM_GETUNICODEFORMAT = 0x2006,
-    TB_SETCOLORSCHEME = 0x2002,
-    TB_GETCOLORSCHEME = 0x2003,
-    TB_SETUNICODEFORMAT = 0x2005,
-    TB_GETUNICODEFORMAT = 0x2006,
-    UDM_SETUNICODEFORMAT = 0x2005,
-    UDM_GETUNICODEFORMAT = 0x2006,
-    WM_CAP_START = 0x400,
-    WM_CAP_GET_CAPSTREAMPTR = 0x401,
-    WM_CAP_SET_CALLBACK_ERRORA = 0x402,
-    WM_CAP_SET_CALLBACK_STATUSA = 0x403,
-    WM_CAP_SET_CALLBACK_YIELD = 0x404,
-    WM_CAP_SET_CALLBACK_FRAME = 0x405,
-    WM_CAP_SET_CALLBACK_VIDEOSTREAM = 0x406,
-    WM_CAP_SET_CALLBACK_WAVESTREAM = 0x407,
-    WM_CAP_GET_USER_DATA = 0x408,
-    WM_CAP_SET_USER_DATA = 0x409,
-    WM_CAP_DRIVER_CONNECT = 0x40A,
-    WM_CAP_DRIVER_DISCONNECT = 0x40B,
-    WM_CAP_DRIVER_GET_NAMEA = 0x40C,
-    WM_CAP_DRIVER_GET_VERSIONA = 0x40D,
-    WM_CAP_DRIVER_GET_CAPS = 0x40E,
-    WM_CAP_FILE_SET_CAPTURE_FILEA = 0x414,
-    WM_CAP_FILE_GET_CAPTURE_FILEA = 0x415,
-    WM_CAP_FILE_SAVEASA = 0x417,
-    WM_CAP_FILE_SAVEDIBA = 0x419,
-    WM_CAP_FILE_ALLOCATE = 0x416,
-    WM_CAP_FILE_SET_INFOCHUNK = 0x418,
-    WM_CAP_EDIT_COPY = 0x41E,
-    WM_CAP_SET_AUDIOFORMAT = 0x423,
-    WM_CAP_GET_AUDIOFORMAT = 0x424,
-    WM_CAP_DLG_VIDEOFORMAT = 0x429,
-    WM_CAP_DLG_VIDEOSOURCE = 0x42A,
-    WM_CAP_DLG_VIDEODISPLAY = 0x42B,
-    WM_CAP_GET_VIDEOFORMAT = 0x42C,
-    WM_CAP_SET_VIDEOFORMAT = 0x42D,
-    WM_CAP_DLG_VIDEOCOMPRESSION = 0x42E,
-    WM_CAP_SET_PREVIEW = 0x432,
-    WM_CAP_SET_OVERLAY = 0x433,
-    WM_CAP_SET_PREVIEWRATE = 0x434,
-    WM_CAP_SET_SCALE = 0x435,
-    WM_CAP_GET_STATUS = 0x436,
-    WM_CAP_SET_SCROLL = 0x437,
-    WM_CAP_GRAB_FRAME = 0x43C,
-    WM_CAP_GRAB_FRAME_NOSTOP = 0x43D,
-    WM_CAP_SEQUENCE = 0x43E,
-    WM_CAP_SEQUENCE_NOFILE = 0x43F,
-    WM_CAP_SET_SEQUENCE_SETUP = 0x440,
-    WM_CAP_GET_SEQUENCE_SETUP = 0x441,
-    WM_CAP_SET_MCI_DEVICEA = 0x442,
-    WM_CAP_GET_MCI_DEVICEA = 0x443,
-    WM_CAP_STOP = 0x444,
-    WM_CAP_ABORT = 0x445,
-    WM_CAP_SINGLE_FRAME_OPEN = 0x446,
-    WM_CAP_SINGLE_FRAME_CLOSE = 0x447,
-    WM_CAP_SINGLE_FRAME = 0x448,
-    WM_CAP_PAL_OPENA = 0x450,
-    WM_CAP_PAL_SAVEA = 0x451,
-    WM_CAP_PAL_PASTE = 0x452,
-    WM_CAP_PAL_AUTOCREATE = 0x453,
-    WM_CAP_PAL_MANUALCREATE = 0x454,
-    WM_CAP_SET_CALLBACK_CAPCONTROL = 0x455,
-    WM_CAP_UNICODE_END = 0x4B5,
-    WM_CAP_END = 0x4B5,
-    WM_DDE_FIRST = 0x3E0,
-    WM_DDE_LAST = 0x3E8,
-    WM_DLGBORDER = 0x11EF,
-    WM_DLGSUBCLASS = 0x11F0,
-    WM_ADSPROP_NOTIFY_PAGEINIT = 0x84D,
-    WM_ADSPROP_NOTIFY_PAGEHWND = 0x84E,
-    WM_ADSPROP_NOTIFY_CHANGE = 0x84F,
-    WM_ADSPROP_NOTIFY_APPLY = 0x850,
-    WM_ADSPROP_NOTIFY_SETFOCUS = 0x851,
-    WM_ADSPROP_NOTIFY_FOREGROUND = 0x852,
-    WM_ADSPROP_NOTIFY_EXIT = 0x853,
-    WM_ADSPROP_NOTIFY_ERROR = 0x856,
-    WM_TOUCH = 0x240,
-    WM_TOUCHHITTESTING = 0x24D,
-    WM_DPICHANGED = 0x2E0,
-    WM_DPICHANGED_BEFOREPARENT = 0x2E2,
-    WM_DPICHANGED_AFTERPARENT = 0x2E3,
-    WM_CLIPBOARDUPDATE = 0x31D,
-    WM_DWMCOMPOSITIONCHANGED = 0x31E,
-    WM_DWMNCRENDERINGCHANGED = 0x31F,
-    WM_DWMCOLORIZATIONCOLORCHANGED = 0x320,
-    WM_DWMWINDOWMAXIMIZEDCHANGE = 0x321,
-    WM_DWMSENDICONICTHUMBNAIL = 0x323,
-    WM_DWMSENDICONICLIVEPREVIEWBITMAP = 0x326,
-    WM_INPUT_DEVICE_CHANGE = 0xFE,
-    WM_GESTURE = 0x119,
-    WM_GESTURENOTIFY = 0x11A,
-    WM_MOUSEHWHEEL = 0x20E,
-    WM_POINTERDEVICECHANGE = 0x238,
-    WM_POINTERDEVICEINRANGE = 0x239,
-    WM_POINTERDEVICEOUTOFRANGE = 0x23A,
-    WM_NCPOINTERUPDATE = 0x241,
-    WM_NCPOINTERDOWN = 0x242,
-    WM_NCPOINTERUP = 0x243,
-    WM_POINTERUPDATE = 0x245,
-    WM_POINTERDOWN = 0x246,
-    WM_POINTERUP = 0x247,
-    WM_POINTERENTER = 0x249,
-    WM_POINTERLEAVE = 0x24A,
-    WM_POINTERACTIVATE = 0x24B,
-    WM_POINTERCAPTURECHANGED = 0x24C,
-    WM_POINTERWHEEL = 0x24E,
-    WM_POINTERHWHEEL = 0x24F,
-    WM_POINTERROUTEDTO = 0x251,
-    WM_POINTERROUTEDAWAY = 0x252,
-    WM_POINTERROUTEDRELEASED = 0x253,
-    WM_TABLET_ADDED = 0x2C8,
-    WM_TABLET_DELETED = 0x2C9,
-    WM_TABLET_FLICK = 0x2CB,
-    WM_TABLET_QUERYSYSTEMGESTURESTATUS = 0x2CC,
-    WM_GETDPISCALEDSIZE = 0x2E4,
-    WM_GETTITLEBARINFOEX = 0x33F,
+enum MACRO_WM
+{
+  WM_NULL = 0x0,
+  WM_CREATE = 0x1,
+  WM_DESTROY = 0x2,
+  WM_MOVE = 0x3,
+  WM_SIZEWAIT = 0x4,
+  WM_SIZE = 0x5,
+  WM_ACTIVATE = 0x6,
+  WM_SETFOCUS = 0x7,
+  WM_KILLFOCUS = 0x8,
+  WM_SETVISIBLE = 0x9,
+  WM_ENABLE = 0xA,
+  WM_SETREDRAW = 0xB,
+  WM_SETTEXT = 0xC,
+  WM_GETTEXT = 0xD,
+  WM_GETTEXTLENGTH = 0xE,
+  WM_PAINT = 0xF,
+  WM_CLOSE = 0x10,
+  WM_QUERYENDSESSION = 0x11,
+  WM_QUIT = 0x12,
+  WM_QUERYOPEN = 0x13,
+  WM_ERASEBKGND = 0x14,
+  WM_SYSCOLORCHANGE = 0x15,
+  WM_ENDSESSION = 0x16,
+  WM_SYSTEMERROR = 0x17,
+  WM_SHOWWINDOW = 0x18,
+  WM_CTLCOLOR = 0x19,
+  WM_SETTINGCHANGE = 0x1A,
+  WM_WININICHANGE = 0x1A,
+  WM_DEVMODECHANGE = 0x1B,
+  WM_ACTIVATEAPP = 0x1C,
+  WM_FONTCHANGE = 0x1D,
+  WM_TIMECHANGE = 0x1E,
+  WM_CANCELMODE = 0x1F,
+  WM_SETCURSOR = 0x20,
+  WM_MOUSEACTIVATE = 0x21,
+  WM_CHILDACTIVATE = 0x22,
+  WM_QUEUESYNC = 0x23,
+  WM_GETMINMAXINFO = 0x24,
+  WM_LOGOFF = 0x25,
+  WM_PAINTICON = 0x26,
+  WM_ICONERASEBKGND = 0x27,
+  WM_NEXTDLGCTL = 0x28,
+  WM_ALTTABACTIVE = 0x29,
+  WM_SPOOLERSTATUS = 0x2A,
+  WM_DRAWITEM = 0x2B,
+  WM_MEASUREITEM = 0x2C,
+  WM_DELETEITEM = 0x2D,
+  WM_VKEYTOITEM = 0x2E,
+  WM_CHARTOITEM = 0x2F,
+  WM_SETFONT = 0x30,
+  WM_GETFONT = 0x31,
+  WM_SETHOTKEY = 0x32,
+  WM_GETHOTKEY = 0x33,
+  WM_FILESYSCHANGE = 0x34,
+  WM_ISACTIVEICON = 0x35,
+  WM_QUERYPARKICON = 0x36,
+  WM_QUERYDRAGICON = 0x37,
+  WM_WINHELP = 0x38,
+  WM_COMPAREITEM = 0x39,
+  WM_FULLSCREEN = 0x3A,
+  WM_CLIENTSHUTDOWN = 0x3B,
+  WM_DDEMLEVENT = 0x3C,
+  WM_GETOBJECT = 0x3D,
+  MM_CALCSCROLL = 0x3F,
+  WM_TESTING = 0x40,
+  WM_COMPACTING = 0x41,
+  WM_OTHERWINDOWCREATED = 0x42,
+  WM_OTHERWINDOWDESTROYED = 0x43,
+  WM_COMMNOTIFY = 0x44,
+  WM_MEDIASTATUSCHANGE = 0x45,
+  WM_WINDOWPOSCHANGING = 0x46,
+  WM_WINDOWPOSCHANGED = 0x47,
+  WM_POWER = 0x48,
+  WM_COPYGLOBALDATA = 0x49,
+  WM_COPYDATA = 0x4A,
+  WM_CANCELJOURNAL = 0x4B,
+  WM_LOGONNOTIFY = 0x4C,
+  WM_KEYF1 = 0x4D,
+  WM_NOTIFY = 0x4E,
+  WM_ACCESS_WINDOW = 0x4F,
+  WM_INPUTLANGCHANGEREQUEST = 0x50,
+  WM_INPUTLANGCHANGE = 0x51,
+  WM_TCARD = 0x52,
+  WM_HELP = 0x53,
+  WM_USERCHANGED = 0x54,
+  WM_NOTIFYFORMAT = 0x55,
+  WM_QM_ACTIVATE = 0x60,
+  WM_HOOK_DO_CALLBACK = 0x61,
+  WM_SYSCOPYDATA = 0x62,
+  WM_FINALDESTROY = 0x70,
+  WM_MEASUREITEM_CLIENTDATA = 0x71,
+  WM_CONTEXTMENU = 0x7B,
+  WM_STYLECHANGING = 0x7C,
+  WM_STYLECHANGED = 0x7D,
+  WM_DISPLAYCHANGE = 0x7E,
+  WM_GETICON = 0x7F,
+  WM_SETICON = 0x80,
+  WM_NCCREATE = 0x81,
+  WM_NCDESTROY = 0x82,
+  WM_NCCALCSIZE = 0x83,
+  WM_NCHITTEST = 0x84,
+  WM_NCPAINT = 0x85,
+  WM_NCACTIVATE = 0x86,
+  WM_GETDLGCODE = 0x87,
+  WM_SYNCPAINT = 0x88,
+  WM_SYNCTASK = 0x89,
+  WM_NCMOUSEMOVE = 0xA0,
+  WM_NCLBUTTONDOWN = 0xA1,
+  WM_NCLBUTTONUP = 0xA2,
+  WM_NCLBUTTONDBLCLK = 0xA3,
+  WM_NCRBUTTONDOWN = 0xA4,
+  WM_NCRBUTTONUP = 0xA5,
+  WM_NCRBUTTONDBLCLK = 0xA6,
+  WM_NCMBUTTONDOWN = 0xA7,
+  WM_NCMBUTTONUP = 0xA8,
+  WM_NCMBUTTONDBLCLK = 0xA9,
+  WM_NCXBUTTONDOWN = 0xAB,
+  WM_NCXBUTTONUP = 0xAC,
+  WM_NCXBUTTONDBLCLK = 0xAD,
+  EM_GETSEL = 0xB0,
+  EM_SETSEL = 0xB1,
+  EM_GETRECT = 0xB2,
+  EM_SETRECT = 0xB3,
+  EM_SETRECTNP = 0xB4,
+  EM_SCROLL = 0xB5,
+  EM_LINESCROLL = 0xB6,
+  EM_SCROLLCARET = 0xB7,
+  EM_GETMODIFY = 0xB8,
+  EM_SETMODIFY = 0xB9,
+  EM_GETLINECOUNT = 0xBA,
+  EM_LINEINDEX = 0xBB,
+  EM_SETHANDLE = 0xBC,
+  EM_GETHANDLE = 0xBD,
+  EM_GETTHUMB = 0xBE,
+  EM_LINELENGTH = 0xC1,
+  EM_REPLACESEL = 0xC2,
+  EM_SETFONT = 0xC3,
+  EM_GETLINE = 0xC4,
+  EM_LIMITTEXT = 0xC5,
+  EM_SETLIMITTEXT = 0xC5,
+  EM_CANUNDO = 0xC6,
+  EM_UNDO = 0xC7,
+  EM_FMTLINES = 0xC8,
+  EM_LINEFROMCHAR = 0xC9,
+  EM_SETWORDBREAK = 0xCA,
+  EM_SETTABSTOPS = 0xCB,
+  EM_SETPASSWORDCHAR = 0xCC,
+  EM_EMPTYUNDOBUFFER = 0xCD,
+  EM_GETFIRSTVISIBLELINE = 0xCE,
+  EM_SETREADONLY = 0xCF,
+  EM_SETWORDBREAKPROC = 0xD0,
+  EM_GETWORDBREAKPROC = 0xD1,
+  EM_GETPASSWORDCHAR = 0xD2,
+  EM_SETMARGINS = 0xD3,
+  EM_GETMARGINS = 0xD4,
+  EM_GETLIMITTEXT = 0xD5,
+  EM_POSFROMCHAR = 0xD6,
+  EM_CHARFROMPOS = 0xD7,
+  EM_SETIMESTATUS = 0xD8,
+  EM_GETIMESTATUS = 0xD9,
+  SBM_SETPOS = 0xE0,
+  SBM_GETPOS = 0xE1,
+  SBM_SETRANGE = 0xE2,
+  SBM_GETRANGE = 0xE3,
+  SBM_ENABLE_ARROWS = 0xE4,
+  SBM_SETRANGEREDRAW = 0xE6,
+  SBM_SETSCROLLINFO = 0xE9,
+  SBM_GETSCROLLINFO = 0xEA,
+  SBM_GETSCROLLBARINFO = 0xEB,
+  BM_GETCHECK = 0xF0,
+  BM_SETCHECK = 0xF1,
+  BM_GETSTATE = 0xF2,
+  BM_SETSTATE = 0xF3,
+  BM_SETSTYLE = 0xF4,
+  BM_CLICK = 0xF5,
+  BM_GETIMAGE = 0xF6,
+  BM_SETIMAGE = 0xF7,
+  BM_SETDONTCLICK = 0xF8,
+  WM_INPUT = 0xFF,
+  WM_KEYDOWN = 0x100,
+  WM_KEYFIRST = 0x100,
+  WM_KEYUP = 0x101,
+  WM_CHAR = 0x102,
+  WM_DEADCHAR = 0x103,
+  WM_SYSKEYDOWN = 0x104,
+  WM_SYSKEYUP = 0x105,
+  WM_SYSCHAR = 0x106,
+  WM_SYSDEADCHAR = 0x107,
+  WM_KEYLAST = 0x108,
+  WM_YOMICHAR = 0x108,
+  WM_UNICHAR = 0x109,
+  WM_WNT_CONVERTREQUESTEX = 0x109,
+  WM_CONVERTREQUEST = 0x10A,
+  WM_CONVERTRESULT = 0x10B,
+  WM_INTERIM = 0x10C,
+  WM_IM_INFO = 0x10C,
+  WM_IME_STARTCOMPOSITION = 0x10D,
+  WM_IME_ENDCOMPOSITION = 0x10E,
+  WM_IME_COMPOSITION = 0x10F,
+  WM_IME_KEYLAST = 0x10F,
+  WM_INITDIALOG = 0x110,
+  WM_COMMAND = 0x111,
+  WM_SYSCOMMAND = 0x112,
+  WM_TIMER = 0x113,
+  WM_HSCROLL = 0x114,
+  WM_VSCROLL = 0x115,
+  WM_INITMENU = 0x116,
+  WM_INITMENUPOPUP = 0x117,
+  WM_SYSTIMER = 0x118,
+  WM_MENUSELECT = 0x11F,
+  WM_MENUCHAR = 0x120,
+  WM_ENTERIDLE = 0x121,
+  WM_MENURBUTTONUP = 0x122,
+  WM_MENUDRAG = 0x123,
+  WM_MENUGETOBJECT = 0x124,
+  WM_UNINITMENUPOPUP = 0x125,
+  WM_MENUCOMMAND = 0x126,
+  WM_CHANGEUISTATE = 0x127,
+  WM_UPDATEUISTATE = 0x128,
+  WM_QUERYUISTATE = 0x129,
+  WM_LBTRACKPOINT = 0x131,
+  WM_CTLCOLORMSGBOX = 0x132,
+  WM_CTLCOLOREDIT = 0x133,
+  WM_CTLCOLORLISTBOX = 0x134,
+  WM_CTLCOLORBTN = 0x135,
+  WM_CTLCOLORDLG = 0x136,
+  WM_CTLCOLORSCROLLBAR = 0x137,
+  WM_CTLCOLORSTATIC = 0x138,
+  CB_GETEDITSEL = 0x140,
+  CB_LIMITTEXT = 0x141,
+  CB_SETEDITSEL = 0x142,
+  CB_ADDSTRING = 0x143,
+  CB_DELETESTRING = 0x144,
+  CB_DIR = 0x145,
+  CB_GETCOUNT = 0x146,
+  CB_GETCURSEL = 0x147,
+  CB_GETLBTEXT = 0x148,
+  CB_GETLBTEXTLEN = 0x149,
+  CB_INSERTSTRING = 0x14A,
+  CB_RESETCONTENT = 0x14B,
+  CB_FINDSTRING = 0x14C,
+  CB_SELECTSTRING = 0x14D,
+  CB_SETCURSEL = 0x14E,
+  CB_SHOWDROPDOWN = 0x14F,
+  CB_GETITEMDATA = 0x150,
+  CB_SETITEMDATA = 0x151,
+  CB_GETDROPPEDCONTROLRECT = 0x152,
+  CB_SETITEMHEIGHT = 0x153,
+  CB_GETITEMHEIGHT = 0x154,
+  CB_SETEXTENDEDUI = 0x155,
+  CB_GETEXTENDEDUI = 0x156,
+  CB_GETDROPPEDSTATE = 0x157,
+  CB_FINDSTRINGEXACT = 0x158,
+  CB_SETLOCALE = 0x159,
+  CB_GETLOCALE = 0x15A,
+  CB_GETTOPINDEX = 0x15B,
+  CB_SETTOPINDEX = 0x15C,
+  CB_GETHORIZONTALEXTENT = 0x15D,
+  CB_SETHORIZONTALEXTENT = 0x15E,
+  CB_GETDROPPEDWIDTH = 0x15F,
+  CB_SETDROPPEDWIDTH = 0x160,
+  CB_INITSTORAGE = 0x161,
+  CB_MULTIPLEADDSTRING = 0x163,
+  CB_GETCOMBOBOXINFO = 0x164,
+  CB_SETMINVISIBLE = 0x1701,
+  CB_GETMINVISIBLE = 0x1702,
+  CB_SETCUEBANNER = 0x1703,
+  CB_GETCUEBANNER = 0x1704,
+  STM_SETICON = 0x170,
+  STM_GETICON = 0x171,
+  STM_SETIMAGE = 0x172,
+  STM_GETIMAGE = 0x173,
+  LB_ADDSTRING = 0x180,
+  LB_INSERTSTRING = 0x181,
+  LB_DELETESTRING = 0x182,
+  LB_SELITEMRANGEEX = 0x183,
+  LB_RESETCONTENT = 0x184,
+  LB_SETSEL = 0x185,
+  LB_SETCURSEL = 0x186,
+  LB_GETSEL = 0x187,
+  LB_GETCURSEL = 0x188,
+  LB_GETTEXT = 0x189,
+  LB_GETTEXTLEN = 0x18A,
+  LB_GETCOUNT = 0x18B,
+  LB_SELECTSTRING = 0x18C,
+  LB_DIR = 0x18D,
+  LB_GETTOPINDEX = 0x18E,
+  LB_FINDSTRING = 0x18F,
+  LB_GETSELCOUNT = 0x190,
+  LB_GETSELITEMS = 0x191,
+  LB_SETTABSTOPS = 0x192,
+  LB_GETHORIZONTALEXTENT = 0x193,
+  LB_SETHORIZONTALEXTENT = 0x194,
+  LB_SETCOLUMNWIDTH = 0x195,
+  LB_ADDFILE = 0x196,
+  LB_SETTOPINDEX = 0x197,
+  LB_GETITEMRECT = 0x198,
+  LB_GETITEMDATA = 0x199,
+  LB_SETITEMDATA = 0x19A,
+  LB_SELITEMRANGE = 0x19B,
+  LB_SETANCHORINDEX = 0x19C,
+  LB_GETANCHORINDEX = 0x19D,
+  LB_SETCARETINDEX = 0x19E,
+  LB_GETCARETINDEX = 0x19F,
+  LB_SETITEMHEIGHT = 0x1A0,
+  LB_GETITEMHEIGHT = 0x1A1,
+  LB_FINDSTRINGEXACT = 0x1A2,
+  LBCB_CARETON = 0x1A3,
+  LBCB_CARETOFF = 0x1A4,
+  LB_SETLOCALE = 0x1A5,
+  LB_GETLOCALE = 0x1A6,
+  LB_SETCOUNT = 0x1A7,
+  LB_INITSTORAGE = 0x1A8,
+  LB_ITEMFROMPOINT = 0x1A9,
+  LB_INSERTSTRINGUPPER = 0x1AA,
+  LB_INSERTSTRINGLOWER = 0x1AB,
+  LB_ADDSTRINGUPPER = 0x1AC,
+  LB_ADDSTRINGLOWER = 0x1AD,
+  LB_MULTIPLEADDSTRING = 0x1B1,
+  LB_GETLISTBOXINFO = 0x1B2,
+  MN_SETHMENU = 0x1E0,
+  MN_GETHMENU = 0x1E1,
+  MN_SIZEWINDOW = 0x1E2,
+  MN_OPENHIERARCHY = 0x1E3,
+  MN_CLOSEHIERARCHY = 0x1E4,
+  MN_SELECTITEM = 0x1E5,
+  MN_CANCELMENUS = 0x1E6,
+  MN_SELECTFIRSTVALIDITEM = 0x1E7,
+  MN_GETPPOPUPMENU = 0x1EA,
+  MN_FINDMENUWINDOWFROMPOINT = 0x1EB,
+  MN_SHOWPOPUPWINDOW = 0x1EC,
+  MN_BUTTONDOWN = 0x1ED,
+  MN_MOUSEMOVE = 0x1EE,
+  MN_BUTTONUP = 0x1EF,
+  MN_SETTIMERTOOPENHIERARCHY = 0x1F0,
+  MN_DBLCLK = 0x1F1,
+  WM_MOUSEFIRST = 0x200,
+  WM_MOUSEMOVE = 0x200,
+  WM_LBUTTONDOWN = 0x201,
+  WM_LBUTTONUP = 0x202,
+  WM_LBUTTONDBLCLK = 0x203,
+  WM_RBUTTONDOWN = 0x204,
+  WM_RBUTTONUP = 0x205,
+  WM_RBUTTONDBLCLK = 0x206,
+  WM_MBUTTONDOWN = 0x207,
+  WM_MBUTTONUP = 0x208,
+  WM_MBUTTONDBLCLK = 0x209,
+  WM_MOUSELAST = 0x20A,
+  WM_MOUSEWHEEL = 0x20A,
+  WM_XBUTTONDOWN = 0x20B,
+  WM_XBUTTONUP = 0x20C,
+  WM_XBUTTONDBLCLK = 0x20D,
+  WM_PARENTNOTIFY = 0x210,
+  WM_ENTERMENULOOP = 0x211,
+  WM_EXITMENULOOP = 0x212,
+  WM_NEXTMENU = 0x213,
+  WM_SIZING = 0x214,
+  WM_CAPTURECHANGED = 0x215,
+  WM_MOVING = 0x216,
+  WM_POWERBROADCAST = 0x218,
+  WM_DEVICECHANGE = 0x219,
+  WM_MDICREATE = 0x220,
+  WM_MDIDESTROY = 0x221,
+  WM_MDIACTIVATE = 0x222,
+  WM_MDIRESTORE = 0x223,
+  WM_MDINEXT = 0x224,
+  WM_MDIMAXIMIZE = 0x225,
+  WM_MDITILE = 0x226,
+  WM_MDICASCADE = 0x227,
+  WM_MDIICONARRANGE = 0x228,
+  WM_MDIGETACTIVE = 0x229,
+  WM_DROPOBJECT = 0x22A,
+  WM_QUERYDROPOBJECT = 0x22B,
+  WM_BEGINDRAG = 0x22C,
+  WM_DRAGLOOP = 0x22D,
+  WM_DRAGSELECT = 0x22E,
+  WM_DRAGMOVE = 0x22F,
+  WM_MDISETMENU = 0x230,
+  WM_ENTERSIZEMOVE = 0x231,
+  WM_EXITSIZEMOVE = 0x232,
+  WM_DROPFILES = 0x233,
+  WM_MDIREFRESHMENU = 0x234,
+  WM_IME_REPORT = 0x280,
+  WM_HANGEULFIRST = 0x280,
+  WM_KANJIFIRST = 0x280,
+  WM_IME_SETCONTEXT = 0x281,
+  WM_IME_NOTIFY = 0x282,
+  WM_IME_CONTROL = 0x283,
+  WM_IME_COMPOSITIONFULL = 0x284,
+  WM_IME_SELECT = 0x285,
+  WM_IME_CHAR = 0x286,
+  WM_IME_SYSTEM = 0x287,
+  WM_IME_REQUEST = 0x288,
+  WM_IMEKEYDOWN = 0x290,
+  WM_IME_KEYDOWN = 0x290,
+  WM_IMEKEYUP = 0x291,
+  WM_IME_KEYUP = 0x291,
+  WM_HANGEULLAST = 0x29F,
+  WM_KANJILAST = 0x29F,
+  WM_NCMOUSEHOVER = 0x2A0,
+  WM_MOUSEHOVER = 0x2A1,
+  WM_NCMOUSELEAVE = 0x2A2,
+  WM_MOUSELEAVE = 0x2A3,
+  WM_TRACKMOUSEEVENT_LAST = 0x2AF,
+  WM_WTSSESSION_CHANGE = 0x2B1,
+  WM_TABLET_FIRST = 0x2C0,
+  WM_TABLET_LAST = 0x2DF,
+  WM_CUT = 0x300,
+  WM_COPY = 0x301,
+  WM_PASTE = 0x302,
+  WM_CLEAR = 0x303,
+  WM_UNDO = 0x304,
+  WM_RENDERFORMAT = 0x305,
+  WM_RENDERALLFORMATS = 0x306,
+  WM_DESTROYCLIPBOARD = 0x307,
+  WM_DRAWCLIPBOARD = 0x308,
+  WM_PAINTCLIPBOARD = 0x309,
+  WM_VSCROLLCLIPBOARD = 0x30A,
+  WM_SIZECLIPBOARD = 0x30B,
+  WM_ASKCBFORMATNAME = 0x30C,
+  WM_CHANGECBCHAIN = 0x30D,
+  WM_HSCROLLCLIPBOARD = 0x30E,
+  WM_QUERYNEWPALETTE = 0x30F,
+  WM_PALETTEISCHANGING = 0x310,
+  WM_PALETTECHANGED = 0x311,
+  WM_HOTKEY = 0x312,
+  WM_SYSMENU = 0x313,
+  WM_HOOKMSG = 0x314,
+  WM_EXITPROCESS = 0x315,
+  WM_WAKETHREAD = 0x316,
+  WM_PRINT = 0x317,
+  WM_PRINTCLIENT = 0x318,
+  WM_APPCOMMAND = 0x319,
+  WM_THEMECHANGED = 0x31A,
+  WM_HANDHELDFIRST = 0x358,
+  WM_HANDHELDLAST = 0x35F,
+  WM_AFXFIRST = 0x360,
+  WM_AFXLAST = 0x37F,
+  WM_PENWINFIRST = 0x380,
+  WM_RCRESULT = 0x381,
+  WM_HOOKRCRESULT = 0x382,
+  WM_GLOBALRCCHANGE = 0x383,
+  WM_PENMISCINFO = 0x383,
+  WM_SKB = 0x384,
+  WM_HEDITCTL = 0x385,
+  WM_PENCTL = 0x385,
+  WM_PENMISC = 0x386,
+  WM_CTLINIT = 0x387,
+  WM_PENEVENT = 0x388,
+  WM_PENWINLAST = 0x38F,
+  WM_INTERNAL_COALESCE_FIRST = 0x390,
+  WM_COALESCE_FIRST = 0x390,
+  WM_COALESCE_LAST = 0x39F,
+  WM_MM_RESERVED_FIRST = 0x3A0,
+  WM_INTERNAL_COALESCE_LAST = 0x3B0,
+  WM_MM_RESERVED_LAST = 0x3DF,
+  WM_DDE_INITIATE = 0x3E0,
+  WM_DDE_TERMINATE = 0x3E1,
+  WM_DDE_ADVISE = 0x3E2,
+  WM_DDE_UNADVISE = 0x3E3,
+  WM_DDE_ACK = 0x3E4,
+  WM_DDE_DATA = 0x3E5,
+  WM_DDE_REQUEST = 0x3E6,
+  WM_DDE_POKE = 0x3E7,
+  WM_DDE_EXECUTE = 0x3E8,
+  WM_DBNOTIFICATION = 0x3FD,
+  WM_NETCONNECT = 0x3FE,
+  WM_HIBERNATE = 0x3FF,
+  WM_USER = 0x400,
+  DDM_SETFMT = 0x400,
+  DDM_DRAW = 0x401,
+  DDM_CLOSE = 0x402,
+  DDM_BEGIN = 0x403,
+  DDM_END = 0x404,
+  DM_GETDEFID = 0x400,
+  DM_SETDEFID = 0x401,
+  DM_REPOSITION = 0x402,
+  NIN_SELECT = 0x400,
+  NIN_KEYSELECT = 0x401,
+  NIN_BALLOONSHOW = 0x402,
+  NIN_BALLOONHIDE = 0x403,
+  NIN_BALLOONTIMEOUT = 0x404,
+  NIN_BALLOONUSERCLICK = 0x405,
+  NIN_POPUPOPEN = 0x406,
+  NIN_POPUPCLOSE = 0x407,
+  TBM_GETPOS = 0x400,
+  TBM_GETRANGEMIN = 0x401,
+  TBM_GETRANGEMAX = 0x402,
+  TBM_GETTIC = 0x403,
+  TBM_SETTIC = 0x404,
+  TBM_SETPOS = 0x405,
+  TBM_SETRANGE = 0x406,
+  TBM_SETRANGEMIN = 0x407,
+  TBM_SETRANGEMAX = 0x408,
+  TBM_CLEARTICS = 0x409,
+  TBM_SETSEL = 0x40A,
+  TBM_SETSELSTART = 0x40B,
+  TBM_SETSELEND = 0x40C,
+  TBM_GETPTICS = 0x40E,
+  TBM_GETTICPOS = 0x40F,
+  TBM_GETNUMTICS = 0x410,
+  TBM_GETSELSTART = 0x411,
+  TBM_GETSELEND = 0x412,
+  TBM_CLEARSEL = 0x413,
+  TBM_SETTICFREQ = 0x414,
+  TBM_SETPAGESIZE = 0x415,
+  TBM_GETPAGESIZE = 0x416,
+  TBM_SETLINESIZE = 0x417,
+  TBM_GETLINESIZE = 0x418,
+  TBM_GETTHUMBRECT = 0x419,
+  TBM_GETCHANNELRECT = 0x41A,
+  TBM_SETTHUMBLENGTH = 0x41B,
+  TBM_GETTHUMBLENGTH = 0x41C,
+  TBM_SETTOOLTIPS = 0x41D,
+  TBM_GETTOOLTIPS = 0x41E,
+  TBM_SETTIPSIDE = 0x41F,
+  TBM_SETBUDDY = 0x420,
+  TBM_GETBUDDY = 0x421,
+  TBM_SETPOSNOTIFY = 0x422,
+  WM_PSD_PAGESETUPDLG = 0x400,
+  WM_PSD_FULLPAGERECT = 0x401,
+  WM_PSD_MINMARGINRECT = 0x402,
+  WM_PSD_MARGINRECT = 0x403,
+  WM_PSD_GREEKTEXTRECT = 0x404,
+  WM_PSD_ENVSTAMPRECT = 0x405,
+  WM_PSD_YAFULLPAGERECT = 0x406,
+  WM_CHOOSEFONT_GETLOGFONT = 0x401,
+  WM_CHOOSEFONT_SETLOGFONT = 0x465,
+  WM_CHOOSEFONT_SETFLAGS = 0x466,
+  HKM_SETHOTKEY = 0x401,
+  HKM_GETHOTKEY = 0x402,
+  HKM_SETRULES = 0x403,
+  PBM_SETRANGE = 0x401,
+  PBM_SETPOS = 0x402,
+  PBM_DELTAPOS = 0x403,
+  PBM_SETSTEP = 0x404,
+  PBM_STEPIT = 0x405,
+  PBM_SETRANGE32 = 0x406,
+  PBM_GETRANGE = 0x407,
+  PBM_GETPOS = 0x408,
+  PBM_SETBARCOLOR = 0x409,
+  PBM_SETMARQUEE = 0x40A,
+  PBM_GETSTEP = 0x40D,
+  PBM_GETBKCOLOR = 0x40E,
+  PBM_GETBARCOLOR = 0x40F,
+  PBM_SETSTATE = 0x410,
+  PBM_GETSTATE = 0x411,
+  RB_INSERTBANDA = 0x401,
+  RB_DELETEBAND = 0x402,
+  RB_GETBARINFO = 0x403,
+  RB_SETBARINFO = 0x404,
+  RB_SETBANDINFOA = 0x406,
+  RB_SETPARENT = 0x407,
+  RB_HITTEST = 0x408,
+  RB_GETRECT = 0x409,
+  RB_INSERTBANDW = 0x40A,
+  RB_SETBANDINFOW = 0x40B,
+  RB_GETBANDCOUNT = 0x40C,
+  RB_GETROWCOUNT = 0x40D,
+  RB_GETROWHEIGHT = 0x40E,
+  RB_IDTOINDEX = 0x410,
+  RB_GETTOOLTIPS = 0x411,
+  RB_SETTOOLTIPS = 0x412,
+  RB_SETBKCOLOR = 0x413,
+  RB_GETBKCOLOR = 0x414,
+  RB_SETTEXTCOLOR = 0x415,
+  RB_GETTEXTCOLOR = 0x416,
+  RB_SIZETORECT = 0x417,
+  RB_BEGINDRAG = 0x418,
+  RB_ENDDRAG = 0x419,
+  RB_DRAGMOVE = 0x41A,
+  RB_GETBARHEIGHT = 0x41B,
+  RB_GETBANDINFOW = 0x41C,
+  RB_GETBANDINFOA = 0x41D,
+  RB_MINIMIZEBAND = 0x41E,
+  RB_MAXIMIZEBAND = 0x41F,
+  RB_GETBANDBORDERS = 0x422,
+  RB_SHOWBAND = 0x423,
+  RB_SETPALETTE = 0x425,
+  RB_GETPALETTE = 0x426,
+  RB_MOVEBAND = 0x427,
+  RB_PUSHCHEVRON = 0x42B,
+  RB_GETBANDMARGINS = 0x428,
+  RB_SETEXTENDEDSTYLE = 0x429,
+  RB_GETEXTENDEDSTYLE = 0x42A,
+  RB_SETBANDWIDTH = 0x42C,
+  RB_SETWINDOWTHEME = 0x200B,
+  CBEM_INSERTITEMA = 0x401,
+  CBEM_SETIMAGELIST = 0x402,
+  CBEM_GETIMAGELIST = 0x403,
+  CBEM_GETITEMA = 0x404,
+  CBEM_SETITEMA = 0x405,
+  CBEM_GETCOMBOCONTROL = 0x406,
+  CBEM_GETEDITCONTROL = 0x407,
+  CBEM_SETEXSTYLE = 0x408,
+  CBEM_GETEXSTYLE = 0x409,
+  CBEM_GETEXTENDEDSTYLE = 0x409,
+  CBEM_HASEDITCHANGED = 0x40A,
+  CBEM_INSERTITEMW = 0x40B,
+  CBEM_SETITEMW = 0x40C,
+  CBEM_GETITEMW = 0x40D,
+  CBEM_SETEXTENDEDSTYLE = 0x40E,
+  SB_SETTEXTA = 0x401,
+  SB_GETTEXTA = 0x402,
+  SB_GETTEXTLENGTHA = 0x403,
+  SB_SETPARTS = 0x404,
+  SB_GETPARTS = 0x406,
+  SB_GETBORDERS = 0x407,
+  SB_SETMINHEIGHT = 0x408,
+  SB_SIMPLE = 0x409,
+  SB_GETRECT = 0x40A,
+  SB_SETTEXTW = 0x40B,
+  SB_GETTEXTLENGTHW = 0x40C,
+  SB_GETTEXTW = 0x40D,
+  SB_ISSIMPLE = 0x40E,
+  SB_SETICON = 0x40F,
+  SB_SETTIPTEXTA = 0x410,
+  SB_SETTIPTEXTW = 0x411,
+  SB_GETTIPTEXTA = 0x412,
+  SB_GETTIPTEXTW = 0x413,
+  SB_GETICON = 0x414,
+  TTM_ACTIVATE = 0x401,
+  TTM_SETDELAYTIME = 0x403,
+  TTM_ADDTOOLA = 0x404,
+  TTM_DELTOOLA = 0x405,
+  TTM_NEWTOOLRECTA = 0x406,
+  TTM_RELAYEVENT = 0x407,
+  TTM_GETTOOLINFOA = 0x408,
+  TTM_SETTOOLINFOA = 0x409,
+  TTM_HITTESTA = 0x40A,
+  TTM_GETTEXTA = 0x40B,
+  TTM_UPDATETIPTEXTA = 0x40C,
+  TTM_GETTOOLCOUNT = 0x40D,
+  TTM_ENUMTOOLSA = 0x40E,
+  TTM_GETCURRENTTOOLA = 0x40F,
+  TTM_WINDOWFROMPOINT = 0x410,
+  TTM_TRACKACTIVATE = 0x411,
+  TTM_TRACKPOSITION = 0x412,
+  TTM_SETTIPBKCOLOR = 0x413,
+  TTM_SETTIPTEXTCOLOR = 0x414,
+  TTM_GETDELAYTIME = 0x415,
+  TTM_GETTIPBKCOLOR = 0x416,
+  TTM_GETTIPTEXTCOLOR = 0x417,
+  TTM_SETMAXTIPWIDTH = 0x418,
+  TTM_GETMAXTIPWIDTH = 0x419,
+  TTM_SETMARGIN = 0x41A,
+  TTM_GETMARGIN = 0x41B,
+  TTM_POP = 0x41C,
+  TTM_UPDATE = 0x41D,
+  TTM_GETBUBBLESIZE = 0x41E,
+  TTM_ADJUSTRECT = 0x41F,
+  TTM_SETTITLEA = 0x420,
+  TTM_SETTITLEW = 0x421,
+  TTM_ADDTOOLW = 0x432,
+  TTM_DELTOOLW = 0x433,
+  TTM_NEWTOOLRECTW = 0x434,
+  TTM_GETTOOLINFOW = 0x435,
+  TTM_SETTOOLINFOW = 0x436,
+  TTM_HITTESTW = 0x437,
+  TTM_GETTEXTW = 0x438,
+  TTM_UPDATETIPTEXTW = 0x439,
+  TTM_ENUMTOOLSW = 0x43A,
+  TTM_GETCURRENTTOOLW = 0x43B,
+  WIZ_QUERYNUMPAGES = 0x40A,
+  WIZ_NEXT = 0x40B,
+  WIZ_PREV = 0x40C,
+  MSG_FTS_JUMP_VA = 0x421,
+  MSG_FTS_JUMP_QWORD = 0x423,
+  MSG_REINDEX_REQUEST = 0x424,
+  MSG_FTS_WHERE_IS_IT = 0x425,
+  MSG_GET_DEFFONT = 0x42D,
+  TB_ENABLEBUTTON = 0x401,
+  TB_CHECKBUTTON = 0x402,
+  TB_PRESSBUTTON = 0x403,
+  TB_HIDEBUTTON = 0x404,
+  TB_INDETERMINATE = 0x405,
+  TB_MARKBUTTON = 0x406,
+  TB_ISBUTTONENABLED = 0x409,
+  TB_ISBUTTONCHECKED = 0x40A,
+  TB_ISBUTTONPRESSED = 0x40B,
+  TB_ISBUTTONHIDDEN = 0x40C,
+  TB_ISBUTTONINDETERMINATE = 0x40D,
+  TB_ISBUTTONHIGHLIGHTED = 0x40E,
+  TB_SETSTATE = 0x411,
+  TB_GETSTATE = 0x412,
+  TB_ADDBITMAP = 0x413,
+  TB_ADDBUTTONSA = 0x414,
+  TB_INSERTBUTTONA = 0x415,
+  TB_DELETEBUTTON = 0x416,
+  TB_GETBUTTON = 0x417,
+  TB_BUTTONCOUNT = 0x418,
+  TB_COMMANDTOINDEX = 0x419,
+  TB_SAVERESTOREA = 0x41A,
+  TB_CUSTOMIZE = 0x41B,
+  TB_ADDSTRINGA = 0x41C,
+  TB_GETITEMRECT = 0x41D,
+  TB_BUTTONSTRUCTSIZE = 0x41E,
+  TB_SETBUTTONSIZE = 0x41F,
+  TB_SETBITMAPSIZE = 0x420,
+  TB_AUTOSIZE = 0x421,
+  TB_GETTOOLTIPS = 0x423,
+  TB_SETTOOLTIPS = 0x424,
+  TB_SETPARENT = 0x425,
+  TB_SETROWS = 0x427,
+  TB_GETROWS = 0x428,
+  TB_GETBITMAPFLAGS = 0x429,
+  TB_SETCMDID = 0x42A,
+  TB_CHANGEBITMAP = 0x42B,
+  TB_GETBITMAP = 0x42C,
+  TB_GETBUTTONTEXTA = 0x42D,
+  TB_REPLACEBITMAP = 0x42E,
+  TB_SETINDENT = 0x42F,
+  TB_SETIMAGELIST = 0x430,
+  TB_GETIMAGELIST = 0x431,
+  TB_LOADIMAGES = 0x432,
+  TB_GETRECT = 0x433,
+  TB_SETHOTIMAGELIST = 0x434,
+  TB_GETHOTIMAGELIST = 0x435,
+  TB_SETDISABLEDIMAGELIST = 0x436,
+  TB_GETDISABLEDIMAGELIST = 0x437,
+  TB_SETSTYLE = 0x438,
+  TB_GETSTYLE = 0x439,
+  TB_GETBUTTONSIZE = 0x43A,
+  TB_SETBUTTONWIDTH = 0x43B,
+  TB_SETMAXTEXTROWS = 0x43C,
+  TB_GETTEXTROWS = 0x43D,
+  TB_GETOBJECT = 0x43E,
+  TB_GETBUTTONINFOW = 0x43F,
+  TB_SETBUTTONINFOW = 0x440,
+  TB_GETBUTTONINFOA = 0x441,
+  TB_SETBUTTONINFOA = 0x442,
+  TB_INSERTBUTTONW = 0x443,
+  TB_ADDBUTTONSW = 0x444,
+  TB_HITTEST = 0x445,
+  TB_SETDRAWTEXTFLAGS = 0x446,
+  TB_GETHOTITEM = 0x447,
+  TB_SETHOTITEM = 0x448,
+  TB_SETANCHORHIGHLIGHT = 0x449,
+  TB_GETANCHORHIGHLIGHT = 0x44A,
+  TB_GETBUTTONTEXTW = 0x44B,
+  TB_SAVERESTOREW = 0x44C,
+  TB_ADDSTRINGW = 0x44D,
+  TB_MAPACCELERATORA = 0x44E,
+  TB_GETINSERTMARK = 0x44F,
+  TB_SETINSERTMARK = 0x450,
+  TB_INSERTMARKHITTEST = 0x451,
+  TB_MOVEBUTTON = 0x452,
+  TB_GETMAXSIZE = 0x453,
+  TB_SETEXTENDEDSTYLE = 0x454,
+  TB_GETEXTENDEDSTYLE = 0x455,
+  TB_GETPADDING = 0x456,
+  TB_SETPADDING = 0x457,
+  TB_SETINSERTMARKCOLOR = 0x458,
+  TB_GETINSERTMARKCOLOR = 0x459,
+  TB_MAPACCELERATORW = 0x45A,
+  TB_GETSTRINGW = 0x45B,
+  TB_GETSTRINGA = 0x45C,
+  TB_SETBOUNDINGSIZE = 0x45D,
+  TB_SETHOTITEM2 = 0x45E,
+  TB_HASACCELERATOR = 0x45F,
+  TB_SETLISTGAP = 0x460,
+  TB_GETIMAGELISTCOUNT = 0x462,
+  TB_GETIDEALSIZE = 0x463,
+  TB_GETMETRICS = 0x465,
+  TB_SETMETRICS = 0x466,
+  TB_GETITEMDROPDOWNRECT = 0x467,
+  TB_SETPRESSEDIMAGELIST = 0x468,
+  TB_GETPRESSEDIMAGELIST = 0x469,
+  TB_SETWINDOWTHEME = 0x200B,
+  EM_CANPASTE = 0x432,
+  EM_DISPLAYBAND = 0x433,
+  EM_EXGETSEL = 0x434,
+  EM_EXLIMITTEXT = 0x435,
+  EM_EXLINEFROMCHAR = 0x436,
+  EM_EXSETSEL = 0x437,
+  EM_FINDTEXT = 0x438,
+  EM_FORMATRANGE = 0x439,
+  EM_GETCHARFORMAT = 0x43A,
+  EM_GETEVENTMASK = 0x43B,
+  EM_GETOLEINTERFACE = 0x43C,
+  EM_GETPARAFORMAT = 0x43D,
+  EM_GETSELTEXT = 0x43E,
+  EM_HIDESELECTION = 0x43F,
+  EM_PASTESPECIAL = 0x440,
+  EM_REQUESTRESIZE = 0x441,
+  EM_SELECTIONTYPE = 0x442,
+  EM_SETBKGNDCOLOR = 0x443,
+  EM_SETCHARFORMAT = 0x444,
+  EM_SETEVENTMASK = 0x445,
+  EM_SETOLECALLBACK = 0x446,
+  EM_SETPARAFORMAT = 0x447,
+  EM_SETTARGETDEVICE = 0x448,
+  EM_STREAMIN = 0x449,
+  EM_STREAMOUT = 0x44A,
+  EM_GETTEXTRANGE = 0x44B,
+  EM_FINDWORDBREAK = 0x44C,
+  EM_SETOPTIONS = 0x44D,
+  EM_GETOPTIONS = 0x44E,
+  EM_FINDTEXTEX = 0x44F,
+  EM_GETWORDBREAKPROCEX = 0x450,
+  EM_SETWORDBREAKPROCEX = 0x451,
+  EM_SETUNDOLIMIT = 0x452,
+  EM_REDO = 0x454,
+  EM_CANREDO = 0x455,
+  EM_GETUNDONAME = 0x456,
+  EM_GETREDONAME = 0x457,
+  EM_STOPGROUPTYPING = 0x458,
+  EM_SETTEXTMODE = 0x459,
+  EM_GETTEXTMODE = 0x45A,
+  EM_AUTOURLDETECT = 0x45B,
+  EM_GETAUTOURLDETECT = 0x45C,
+  EM_SETPALETTE = 0x45D,
+  EM_GETTEXTEX = 0x45E,
+  EM_GETTEXTLENGTHEX = 0x45F,
+  EM_SHOWSCROLLBAR = 0x460,
+  EM_SETTEXTEX = 0x461,
+  EM_SETPUNCTUATION = 0x464,
+  EM_GETPUNCTUATION = 0x465,
+  EM_SETWORDWRAPMODE = 0x466,
+  EM_GETWORDWRAPMODE = 0x467,
+  EM_SETIMECOLOR = 0x468,
+  EM_GETIMECOLOR = 0x469,
+  EM_SETIMEOPTIONS = 0x46A,
+  EM_GETIMEOPTIONS = 0x46B,
+  EM_CONVPOSITION = 0x46C,
+  EM_SETLANGOPTIONS = 0x478,
+  EM_GETLANGOPTIONS = 0x479,
+  EM_GETIMECOMPMODE = 0x47A,
+  EM_FINDTEXTW = 0x47B,
+  EM_FINDTEXTEXW = 0x47C,
+  EM_RECONVERSION = 0x47D,
+  EM_SETIMEMODEBIAS = 0x47E,
+  EM_GETIMEMODEBIAS = 0x47F,
+  EM_SETBIDIOPTIONS = 0x4C8,
+  EM_GETBIDIOPTIONS = 0x4C9,
+  EM_SETTYPOGRAPHYOPTIONS = 0x4CA,
+  EM_GETTYPOGRAPHYOPTIONS = 0x4CB,
+  EM_SETEDITSTYLE = 0x4CC,
+  EM_GETEDITSTYLE = 0x4CD,
+  EM_OUTLINE = 0x4DC,
+  EM_GETSCROLLPOS = 0x4DD,
+  EM_SETSCROLLPOS = 0x4DE,
+  EM_SETFONTSIZE = 0x4DF,
+  EM_GETZOOM = 0x4E0,
+  EM_SETZOOM = 0x4E1,
+  EM_GETVIEWKIND = 0x4E2,
+  EM_SETVIEWKIND = 0x4E3,
+  EM_GETPAGE = 0x4E4,
+  EM_SETPAGE = 0x4E5,
+  EM_GETHYPHENATEINFO = 0x4E6,
+  EM_SETHYPHENATEINFO = 0x4E7,
+  EM_INSERTTABLE = 0x4E8,
+  EM_GETAUTOCORRECTPROC = 0x4E9,
+  EM_SETAUTOCORRECTPROC = 0x4EA,
+  EM_GETPAGEROTATE = 0x4EB,
+  EM_SETPAGEROTATE = 0x4EC,
+  EM_GETCTFMODEBIAS = 0x4ED,
+  EM_SETCTFMODEBIAS = 0x4EE,
+  EM_GETCTFOPENSTATUS = 0x4F0,
+  EM_SETCTFOPENSTATUS = 0x4F1,
+  EM_GETIMECOMPTEXT = 0x4F2,
+  EM_ISIME = 0x4F3,
+  EM_GETIMEPROPERTY = 0x4F4,
+  EM_CALLAUTOCORRECTPROC = 0x4FF,
+  EM_GETTABLEPARMS = 0x509,
+  EM_GETQUERYRTFOBJ = 0x50D,
+  EM_SETQUERYRTFOBJ = 0x50E,
+  EM_SETEDITSTYLEEX = 0x513,
+  EM_GETEDITSTYLEEX = 0x514,
+  EM_GETSTORYTYPE = 0x522,
+  EM_SETSTORYTYPE = 0x523,
+  EM_GETELLIPSISMODE = 0x531,
+  EM_SETELLIPSISMODE = 0x532,
+  EM_SETTABLEPARMS = 0x533,
+  EM_GETTOUCHOPTIONS = 0x536,
+  EM_SETTOUCHOPTIONS = 0x537,
+  EM_INSERTIMAGE = 0x53A,
+  EM_SETUIANAME = 0x540,
+  EM_GETELLIPSISSTATE = 0x542,
+  TAPI_REPLY = 0x463,
+  IPM_CLEARADDRESS = 0x464,
+  IPM_SETADDRESS = 0x465,
+  IPM_GETADDRESS = 0x466,
+  IPM_SETRANGE = 0x467,
+  IPM_SETFOCUS = 0x468,
+  IPM_ISBLANK = 0x469,
+  CDM_FIRST = 0x464,
+  CDM_GETSPEC = 0x464,
+  CDM_GETFILEPATH = 0x465,
+  CDM_GETFOLDERPATH = 0x466,
+  CDM_GETFOLDERIDLIST = 0x467,
+  CDM_SETCONTROLTEXT = 0x468,
+  CDM_HIDECONTROL = 0x469,
+  CDM_SETDEFEXT = 0x46A,
+  CDM_LAST = 0x4C8,
+  BFFM_SETSTATUSTEXTA = 0x464,
+  BFFM_ENABLEOK = 0x465,
+  BFFM_SETSELECTIONA = 0x466,
+  BFFM_SETSELECTIONW = 0x467,
+  BFFM_SETSTATUSTEXTW = 0x468,
+  BFFM_SETOKTEXT = 0x469,
+  BFFM_SETEXPANDED = 0x46A,
+  ACM_OPENA = 0x464,
+  ACM_PLAY = 0x465,
+  ACM_STOP = 0x466,
+  ACM_OPENW = 0x467,
+  ACM_ISPLAYING = 0x468,
+  WM_CAP_UNICODE_START = 0x464,
+  WM_CAP_SET_CALLBACK_ERRORW = 0x466,
+  WM_CAP_SET_CALLBACK_STATUSW = 0x467,
+  WM_CAP_DRIVER_GET_NAMEW = 0x470,
+  WM_CAP_DRIVER_GET_VERSIONW = 0x471,
+  WM_CAP_FILE_SET_CAPTURE_FILEW = 0x478,
+  WM_CAP_FILE_GET_CAPTURE_FILEW = 0x479,
+  WM_CAP_FILE_SAVEASW = 0x47B,
+  WM_CAP_FILE_SAVEDIBW = 0x47D,
+  WM_CAP_SET_MCI_DEVICEW = 0x4A6,
+  WM_CAP_GET_MCI_DEVICEW = 0x4A7,
+  WM_CAP_PAL_OPENW = 0x4B4,
+  WM_CAP_PAL_SAVEW = 0x4B5,
+  PSM_SETCURSEL = 0x465,
+  PSM_REMOVEPAGE = 0x466,
+  PSM_ADDPAGE = 0x467,
+  PSM_CHANGED = 0x468,
+  PSM_RESTARTWINDOWS = 0x469,
+  PSM_REBOOTSYSTEM = 0x46A,
+  PSM_CANCELTOCLOSE = 0x46B,
+  PSM_QUERYSIBLINGS = 0x46C,
+  PSM_UNCHANGED = 0x46D,
+  PSM_APPLY = 0x46E,
+  PSM_SETTITLEA = 0x46F,
+  PSM_SETWIZBUTTONS = 0x470,
+  PSM_PRESSBUTTON = 0x471,
+  PSM_SETCURSELID = 0x472,
+  PSM_SETFINISHTEXTA = 0x473,
+  PSM_GETTABCONTROL = 0x474,
+  PSM_ISDIALOGMESSAGE = 0x475,
+  PSM_GETCURRENTPAGEHWND = 0x476,
+  PSM_INSERTPAGE = 0x477,
+  PSM_SETTITLEW = 0x478,
+  PSM_SETFINISHTEXTW = 0x479,
+  PSM_SETHEADERTITLEA = 0x47D,
+  PSM_SETHEADERTITLEW = 0x47E,
+  PSM_SETHEADERSUBTITLEA = 0x47F,
+  PSM_SETHEADERSUBTITLEW = 0x480,
+  PSM_HWNDTOINDEX = 0x481,
+  PSM_INDEXTOHWND = 0x482,
+  PSM_PAGETOINDEX = 0x483,
+  PSM_INDEXTOPAGE = 0x484,
+  PSM_IDTOINDEX = 0x485,
+  PSM_INDEXTOID = 0x486,
+  PSM_GETRESULT = 0x487,
+  PSM_RECALCPAGESIZES = 0x488,
+  PSM_SETNEXTTEXTW = 0x489,
+  PSM_SHOWWIZBUTTONS = 0x48A,
+  PSM_ENABLEWIZBUTTONS = 0x48B,
+  PSM_SETBUTTONTEXTW = 0x48C,
+  UDM_SETRANGE = 0x465,
+  UDM_GETRANGE = 0x466,
+  UDM_SETPOS = 0x467,
+  UDM_GETPOS = 0x468,
+  UDM_SETBUDDY = 0x469,
+  UDM_GETBUDDY = 0x46A,
+  UDM_SETACCEL = 0x46B,
+  UDM_GETACCEL = 0x46C,
+  UDM_SETBASE = 0x46D,
+  UDM_GETBASE = 0x46E,
+  UDM_SETRANGE32 = 0x46F,
+  UDM_GETRANGE32 = 0x470,
+  UDM_SETPOS32 = 0x471,
+  UDM_GETPOS32 = 0x472,
+  MCIWNDM_GETZOOM = 0x46D,
+  MCIWNDM_REALIZE = 0x476,
+  MCIWNDM_SETTIMEFORMATA = 0x477,
+  MCIWNDM_GETTIMEFORMATA = 0x478,
+  MCIWNDM_VALIDATEMEDIA = 0x479,
+  MCIWNDM_PLAYTO = 0x47B,
+  MCIWNDM_GETFILENAMEA = 0x47C,
+  MCIWNDM_GETDEVICEA = 0x47D,
+  MCIWNDM_GETPALETTE = 0x47E,
+  MCIWNDM_SETPALETTE = 0x47F,
+  MCIWNDM_GETERRORA = 0x480,
+  MCIWNDM_SETINACTIVETIMER = 0x483,
+  MCIWNDM_GETINACTIVETIMER = 0x485,
+  MCIWNDM_GET_SOURCE = 0x48C,
+  MCIWNDM_PUT_SOURCE = 0x48D,
+  MCIWNDM_GET_DEST = 0x48E,
+  MCIWNDM_PUT_DEST = 0x48F,
+  MCIWNDM_CAN_PLAY = 0x490,
+  MCIWNDM_CAN_WINDOW = 0x491,
+  MCIWNDM_CAN_RECORD = 0x492,
+  MCIWNDM_CAN_SAVE = 0x493,
+  MCIWNDM_CAN_EJECT = 0x494,
+  MCIWNDM_CAN_CONFIG = 0x495,
+  MCIWNDM_PALETTEKICK = 0x496,
+  MCIWNDM_NOTIFYMODE = 0x4C8,
+  MCIWNDM_NOTIFYMEDIA = 0x4CB,
+  MCIWNDM_NOTIFYERROR = 0x4CD,
+  MCIWNDM_SETTIMEFORMATW = 0x4DB,
+  MCIWNDM_GETTIMEFORMATW = 0x4DC,
+  MCIWNDM_GETFILENAMEW = 0x4E0,
+  MCIWNDM_GETDEVICEW = 0x4E1,
+  MCIWNDM_GETERRORW = 0x4E4,
+  DL_BEGINDRAG = 0x485,
+  DL_DRAGGING = 0x486,
+  DL_DROPPED = 0x487,
+  DL_CANCELDRAG = 0x488,
+  IE_GETINK = 0x496,
+  IE_MSGFIRST = 0x496,
+  IE_SETINK = 0x497,
+  IE_GETPENTIP = 0x498,
+  IE_SETPENTIP = 0x499,
+  IE_GETERASERTIP = 0x49A,
+  IE_SETERASERTIP = 0x49B,
+  IE_GETBKGND = 0x49C,
+  IE_SETBKGND = 0x49D,
+  IE_GETGRIDORIGIN = 0x49E,
+  IE_SETGRIDORIGIN = 0x49F,
+  IE_GETGRIDPEN = 0x4A0,
+  IE_SETGRIDPEN = 0x4A1,
+  IE_GETGRIDSIZE = 0x4A2,
+  IE_SETGRIDSIZE = 0x4A3,
+  IE_GETMODE = 0x4A4,
+  IE_SETMODE = 0x4A5,
+  IE_GETINKRECT = 0x4A6,
+  IE_GETAPPDATA = 0x4B8,
+  IE_SETAPPDATA = 0x4B9,
+  IE_GETDRAWOPTS = 0x4BA,
+  IE_SETDRAWOPTS = 0x4BB,
+  IE_GETFORMAT = 0x4BC,
+  IE_SETFORMAT = 0x4BD,
+  IE_GETINKINPUT = 0x4BE,
+  IE_SETINKINPUT = 0x4BF,
+  IE_GETNOTIFY = 0x4C0,
+  IE_SETNOTIFY = 0x4C1,
+  IE_GETRECOG = 0x4C2,
+  IE_SETRECOG = 0x4C3,
+  IE_GETSECURITY = 0x4C4,
+  IE_SETSECURITY = 0x4C5,
+  IE_GETSEL = 0x4C6,
+  IE_SETSEL = 0x4C7,
+  IE_DOCOMMAND = 0x4C8,
+  IE_GETCOMMAND = 0x4C9,
+  IE_GETCOUNT = 0x4CA,
+  IE_GETGESTURE = 0x4CB,
+  IE_GETMENU = 0x4CC,
+  IE_GETPAINTDC = 0x4CD,
+  IE_GETPDEVENT = 0x4CE,
+  IE_GETSELCOUNT = 0x4CF,
+  IE_GETSELITEMS = 0x4D0,
+  IE_GETSTYLE = 0x4D1,
+  FM_GETFOCUS = 0x600,
+  FM_GETDRIVEINFOA = 0x601,
+  FM_GETSELCOUNT = 0x602,
+  FM_GETSELCOUNTLFN = 0x603,
+  FM_GETFILESELA = 0x604,
+  FM_GETFILESELLFNA = 0x605,
+  FM_REFRESH_WINDOWS = 0x606,
+  FM_RELOAD_EXTENSIONS = 0x607,
+  FM_GETDRIVEINFOW = 0x611,
+  FM_GETFILESELW = 0x614,
+  FM_GETFILESELLFNW = 0x615,
+  WLX_WM_SAS = 0x659,
+  SM_GETSELCOUNT = 0x7E8,
+  SM_GETSERVERSELA = 0x7E9,
+  SM_GETSERVERSELW = 0x7EA,
+  SM_GETCURFOCUSA = 0x7EB,
+  SM_GETCURFOCUSW = 0x7EC,
+  SM_GETOPTIONS = 0x7ED,
+  WM_CPL_LAUNCH = 0x7E8,
+  WM_CPL_LAUNCHED = 0x7E9,
+  UM_GETSELCOUNT = 0x7E8,
+  UM_GETUSERSELA = 0x7E9,
+  UM_GETUSERSELW = 0x7EA,
+  UM_GETGROUPSELA = 0x7EB,
+  UM_GETGROUPSELW = 0x7EC,
+  UM_GETCURFOCUSA = 0x7ED,
+  UM_GETCURFOCUSW = 0x7EE,
+  UM_GETOPTIONS = 0x7EF,
+  UM_GETOPTIONS2 = 0x7F0,
+  LVM_FIRST = 0x1000,
+  LVM_GETBKCOLOR = 0x1000,
+  LVM_SETBKCOLOR = 0x1001,
+  LVM_GETIMAGELIST = 0x1002,
+  LVM_SETIMAGELIST = 0x1003,
+  LVM_GETITEMCOUNT = 0x1004,
+  LVM_GETITEMA = 0x1005,
+  LVM_SETITEMA = 0x1006,
+  LVM_INSERTITEMA = 0x1007,
+  LVM_DELETEITEM = 0x1008,
+  LVM_DELETEALLITEMS = 0x1009,
+  LVM_GETCALLBACKMASK = 0x100A,
+  LVM_SETCALLBACKMASK = 0x100B,
+  LVM_GETNEXTITEM = 0x100C,
+  LVM_FINDITEMA = 0x100D,
+  LVM_GETITEMRECT = 0x100E,
+  LVM_SETITEMPOSITION = 0x100F,
+  LVM_GETITEMPOSITION = 0x1010,
+  LVM_GETSTRINGWIDTHA = 0x1011,
+  LVM_HITTEST = 0x1012,
+  LVM_ENSUREVISIBLE = 0x1013,
+  LVM_SCROLL = 0x1014,
+  LVM_REDRAWITEMS = 0x1015,
+  LVM_ARRANGE = 0x1016,
+  LVM_EDITLABELA = 0x1017,
+  LVM_GETEDITCONTROL = 0x1018,
+  LVM_GETCOLUMNA = 0x1019,
+  LVM_SETCOLUMNA = 0x101A,
+  LVM_INSERTCOLUMNA = 0x101B,
+  LVM_DELETECOLUMN = 0x101C,
+  LVM_GETCOLUMNWIDTH = 0x101D,
+  LVM_SETCOLUMNWIDTH = 0x101E,
+  LVM_GETHEADER = 0x101F,
+  LVM_CREATEDRAGIMAGE = 0x1021,
+  LVM_GETVIEWRECT = 0x1022,
+  LVM_GETTEXTCOLOR = 0x1023,
+  LVM_SETTEXTCOLOR = 0x1024,
+  LVM_GETTEXTBKCOLOR = 0x1025,
+  LVM_SETTEXTBKCOLOR = 0x1026,
+  LVM_GETTOPINDEX = 0x1027,
+  LVM_GETCOUNTPERPAGE = 0x1028,
+  LVM_GETORIGIN = 0x1029,
+  LVM_UPDATE = 0x102A,
+  LVM_SETITEMSTATE = 0x102B,
+  LVM_GETITEMSTATE = 0x102C,
+  LVM_GETITEMTEXTA = 0x102D,
+  LVM_SETITEMTEXTA = 0x102E,
+  LVM_SETITEMCOUNT = 0x102F,
+  LVM_SORTITEMS = 0x1030,
+  LVM_SETITEMPOSITION32 = 0x1031,
+  LVM_GETSELECTEDCOUNT = 0x1032,
+  LVM_GETITEMSPACING = 0x1033,
+  LVM_GETISEARCHSTRINGA = 0x1034,
+  LVM_SETICONSPACING = 0x1035,
+  LVM_SETEXTENDEDLISTVIEWSTYLE = 0x1036,
+  LVM_GETEXTENDEDLISTVIEWSTYLE = 0x1037,
+  LVM_GETSUBITEMRECT = 0x1038,
+  LVM_SUBITEMHITTEST = 0x1039,
+  LVM_SETCOLUMNORDERARRAY = 0x103A,
+  LVM_GETCOLUMNORDERARRAY = 0x103B,
+  LVM_SETHOTITEM = 0x103C,
+  LVM_GETHOTITEM = 0x103D,
+  LVM_SETHOTCURSOR = 0x103E,
+  LVM_GETHOTCURSOR = 0x103F,
+  LVM_APPROXIMATEVIEWRECT = 0x1040,
+  LVM_SETWORKAREAS = 0x1041,
+  LVM_GETSELECTIONMARK = 0x1042,
+  LVM_SETSELECTIONMARK = 0x1043,
+  LVM_SETBKIMAGEA = 0x1044,
+  LVM_GETBKIMAGEA = 0x1045,
+  LVM_GETWORKAREAS = 0x1046,
+  LVM_SETHOVERTIME = 0x1047,
+  LVM_GETHOVERTIME = 0x1048,
+  LVM_GETNUMBEROFWORKAREAS = 0x1049,
+  LVM_SETTOOLTIPS = 0x104A,
+  LVM_GETITEMW = 0x104B,
+  LVM_SETITEMW = 0x104C,
+  LVM_INSERTITEMW = 0x104D,
+  LVM_GETTOOLTIPS = 0x104E,
+  LVM_SORTITEMSEX = 0x1051,
+  LVM_FINDITEMW = 0x1053,
+  LVM_GETSTRINGWIDTHW = 0x1057,
+  LVM_GETGROUPSTATE = 0x105C,
+  LVM_GETFOCUSEDGROUP = 0x105D,
+  LVM_GETCOLUMNW = 0x105F,
+  LVM_SETCOLUMNW = 0x1060,
+  LVM_INSERTCOLUMNW = 0x1061,
+  LVM_GETGROUPRECT = 0x1062,
+  LVM_GETITEMTEXTW = 0x1073,
+  LVM_SETITEMTEXTW = 0x1074,
+  LVM_GETISEARCHSTRINGW = 0x1075,
+  LVM_EDITLABELW = 0x1076,
+  LVM_GETBKIMAGEW = 0x108B,
+  LVM_SETSELECTEDCOLUMN = 0x108C,
+  LVM_SETTILEWIDTH = 0x108D,
+  LVM_SETVIEW = 0x108E,
+  LVM_GETVIEW = 0x108F,
+  LVM_INSERTGROUP = 0x1091,
+  LVM_SETGROUPINFO = 0x1093,
+  LVM_GETGROUPINFO = 0x1095,
+  LVM_REMOVEGROUP = 0x1096,
+  LVM_MOVEGROUP = 0x1097,
+  LVM_GETGROUPCOUNT = 0x1098,
+  LVM_GETGROUPINFOBYINDEX = 0x1099,
+  LVM_MOVEITEMTOGROUP = 0x109A,
+  LVM_SETGROUPMETRICS = 0x109B,
+  LVM_GETGROUPMETRICS = 0x109C,
+  LVM_ENABLEGROUPVIEW = 0x109D,
+  LVM_SORTGROUPS = 0x109E,
+  LVM_INSERTGROUPSORTED = 0x109F,
+  LVM_REMOVEALLGROUPS = 0x10A0,
+  LVM_HASGROUP = 0x10A1,
+  LVM_SETTILEVIEWINFO = 0x10A2,
+  LVM_GETTILEVIEWINFO = 0x10A3,
+  LVM_SETTILEINFO = 0x10A4,
+  LVM_GETTILEINFO = 0x10A5,
+  LVM_SETINSERTMARK = 0x10A6,
+  LVM_GETINSERTMARK = 0x10A7,
+  LVM_INSERTMARKHITTEST = 0x10A8,
+  LVM_GETINSERTMARKRECT = 0x10A9,
+  LVM_SETINSERTMARKCOLOR = 0x10AA,
+  LVM_GETINSERTMARKCOLOR = 0x10AB,
+  LVM_SETINFOTIP = 0x10AD,
+  LVM_GETSELECTEDCOLUMN = 0x10AE,
+  LVM_ISGROUPVIEWENABLED = 0x10AF,
+  LVM_GETOUTLINECOLOR = 0x10B0,
+  LVM_SETOUTLINECOLOR = 0x10B1,
+  LVM_CANCELEDITLABEL = 0x10B3,
+  LVM_MAPINDEXTOID = 0x10B4,
+  LVM_MAPIDTOINDEX = 0x10B5,
+  LVM_ISITEMVISIBLE = 0x10B6,
+  LVM_GETEMPTYTEXT = 0x10CC,
+  LVM_GETFOOTERRECT = 0x10CD,
+  LVM_GETFOOTERINFO = 0x10CE,
+  LVM_GETFOOTERITEMRECT = 0x10CF,
+  LVM_GETFOOTERITEM = 0x10D0,
+  LVM_GETITEMINDEXRECT = 0x10D1,
+  LVM_SETITEMINDEXSTATE = 0x10D2,
+  LVM_GETNEXTITEMINDEX = 0x10D3,
+  LVM_SETUNICODEFORMAT = 0x2005,
+  LVM_GETUNICODEFORMAT = 0x2006,
+  OCM__BASE = 0x2000,
+  OCM_CTLCOLOR = 0x2019,
+  OCM_DRAWITEM = 0x202B,
+  OCM_MEASUREITEM = 0x202C,
+  OCM_DELETEITEM = 0x202D,
+  OCM_VKEYTOITEM = 0x202E,
+  OCM_CHARTOITEM = 0x202F,
+  OCM_COMPAREITEM = 0x2039,
+  OCM_NOTIFY = 0x204E,
+  OCM_COMMAND = 0x2111,
+  OCM_HSCROLL = 0x2114,
+  OCM_VSCROLL = 0x2115,
+  OCM_CTLCOLORMSGBOX = 0x2132,
+  OCM_CTLCOLOREDIT = 0x2133,
+  OCM_CTLCOLORLISTBOX = 0x2134,
+  OCM_CTLCOLORBTN = 0x2135,
+  OCM_CTLCOLORDLG = 0x2136,
+  OCM_CTLCOLORSCROLLBAR = 0x2137,
+  OCM_CTLCOLORSTATIC = 0x2138,
+  OCM_PARENTNOTIFY = 0x2210,
+  WM_APP = 0x8000,
+  WM_RASDIALEVENT = 0xCCCD,
+  CBEM_DELETEITEM = 0x144,
+  CBEM_SETUNICODEFORMAT = 0x2005,
+  CBEM_GETUNICODEFORMAT = 0x2006,
+  IE_GETMODIFY = 0xB8,
+  IE_SETMODIFY = 0xB9,
+  IE_CANUNDO = 0xC6,
+  IE_UNDO = 0xC7,
+  IE_EMPTYUNDOBUFFER = 0xCD,
+  LVM_SETBKIMAGEW = 0x108A,
+  MCIWNDM_GETDEVICEID = 0x464,
+  MCIWNDM_GETSTART = 0x467,
+  MCIWNDM_GETLENGTH = 0x468,
+  MCIWNDM_GETEND = 0x469,
+  MCIWNDM_EJECT = 0x46B,
+  MCIWNDM_SETZOOM = 0x46C,
+  MCIWNDM_SETVOLUME = 0x46E,
+  MCIWNDM_GETVOLUME = 0x46F,
+  MCIWNDM_SETSPEED = 0x470,
+  MCIWNDM_GETSPEED = 0x471,
+  MCIWNDM_SETREPEAT = 0x472,
+  MCIWNDM_GETREPEAT = 0x473,
+  MCIWNDM_PLAYFROM = 0x47A,
+  MCIWNDM_SETTIMERS = 0x481,
+  MCIWNDM_SETACTIVETIMER = 0x482,
+  MCIWNDM_GETACTIVETIMER = 0x484,
+  MCIWNDM_CHANGESTYLES = 0x487,
+  MCIWNDM_GETSTYLES = 0x488,
+  MCIWNDM_GETALIAS = 0x489,
+  MCIWNDM_PLAYREVERSE = 0x48B,
+  MCIWNDM_OPENINTERFACE = 0x497,
+  MCIWNDM_SETOWNER = 0x498,
+  MCIWNDM_SENDSTRINGA = 0x465,
+  MCIWNDM_GETPOSITIONA = 0x466,
+  MCIWNDM_GETMODEA = 0x46A,
+  MCIWNDM_NEWA = 0x486,
+  MCIWNDM_RETURNSTRINGA = 0x48A,
+  MCIWNDM_OPENA = 0x499,
+  MCIWNDM_SENDSTRINGW = 0x4C9,
+  MCIWNDM_GETPOSITIONW = 0x4CA,
+  MCIWNDM_GETMODEW = 0x4CE,
+  MCIWNDM_NEWW = 0x4EA,
+  MCIWNDM_RETURNSTRINGW = 0x4EE,
+  MCIWNDM_OPENW = 0x4FC,
+  MCIWNDM_NOTIFYPOS = 0x4C9,
+  MCIWNDM_NOTIFYSIZE = 0x4CA,
+  MSG_FTS_JUMP_HASH = 0x420,
+  MSG_FTS_GET_TITLE = 0x422,
+  PBM_SETBKCOLOR = 0x2001,
+  RB_SETCOLORSCHEME = 0x2002,
+  RB_GETCOLORSCHEME = 0x2003,
+  RB_GETDROPTARGET = 0x2004,
+  RB_SETUNICODEFORMAT = 0x2005,
+  RB_GETUNICODEFORMAT = 0x2006,
+  SB_SETUNICODEFORMAT = 0x2005,
+  SB_GETUNICODEFORMAT = 0x2006,
+  SB_SETBKCOLOR = 0x2001,
+  STM_MSGMAX = 0x174,
+  TBM_SETUNICODEFORMAT = 0x2005,
+  TBM_GETUNICODEFORMAT = 0x2006,
+  TB_SETCOLORSCHEME = 0x2002,
+  TB_GETCOLORSCHEME = 0x2003,
+  TB_SETUNICODEFORMAT = 0x2005,
+  TB_GETUNICODEFORMAT = 0x2006,
+  UDM_SETUNICODEFORMAT = 0x2005,
+  UDM_GETUNICODEFORMAT = 0x2006,
+  WM_CAP_START = 0x400,
+  WM_CAP_GET_CAPSTREAMPTR = 0x401,
+  WM_CAP_SET_CALLBACK_ERRORA = 0x402,
+  WM_CAP_SET_CALLBACK_STATUSA = 0x403,
+  WM_CAP_SET_CALLBACK_YIELD = 0x404,
+  WM_CAP_SET_CALLBACK_FRAME = 0x405,
+  WM_CAP_SET_CALLBACK_VIDEOSTREAM = 0x406,
+  WM_CAP_SET_CALLBACK_WAVESTREAM = 0x407,
+  WM_CAP_GET_USER_DATA = 0x408,
+  WM_CAP_SET_USER_DATA = 0x409,
+  WM_CAP_DRIVER_CONNECT = 0x40A,
+  WM_CAP_DRIVER_DISCONNECT = 0x40B,
+  WM_CAP_DRIVER_GET_NAMEA = 0x40C,
+  WM_CAP_DRIVER_GET_VERSIONA = 0x40D,
+  WM_CAP_DRIVER_GET_CAPS = 0x40E,
+  WM_CAP_FILE_SET_CAPTURE_FILEA = 0x414,
+  WM_CAP_FILE_GET_CAPTURE_FILEA = 0x415,
+  WM_CAP_FILE_SAVEASA = 0x417,
+  WM_CAP_FILE_SAVEDIBA = 0x419,
+  WM_CAP_FILE_ALLOCATE = 0x416,
+  WM_CAP_FILE_SET_INFOCHUNK = 0x418,
+  WM_CAP_EDIT_COPY = 0x41E,
+  WM_CAP_SET_AUDIOFORMAT = 0x423,
+  WM_CAP_GET_AUDIOFORMAT = 0x424,
+  WM_CAP_DLG_VIDEOFORMAT = 0x429,
+  WM_CAP_DLG_VIDEOSOURCE = 0x42A,
+  WM_CAP_DLG_VIDEODISPLAY = 0x42B,
+  WM_CAP_GET_VIDEOFORMAT = 0x42C,
+  WM_CAP_SET_VIDEOFORMAT = 0x42D,
+  WM_CAP_DLG_VIDEOCOMPRESSION = 0x42E,
+  WM_CAP_SET_PREVIEW = 0x432,
+  WM_CAP_SET_OVERLAY = 0x433,
+  WM_CAP_SET_PREVIEWRATE = 0x434,
+  WM_CAP_SET_SCALE = 0x435,
+  WM_CAP_GET_STATUS = 0x436,
+  WM_CAP_SET_SCROLL = 0x437,
+  WM_CAP_GRAB_FRAME = 0x43C,
+  WM_CAP_GRAB_FRAME_NOSTOP = 0x43D,
+  WM_CAP_SEQUENCE = 0x43E,
+  WM_CAP_SEQUENCE_NOFILE = 0x43F,
+  WM_CAP_SET_SEQUENCE_SETUP = 0x440,
+  WM_CAP_GET_SEQUENCE_SETUP = 0x441,
+  WM_CAP_SET_MCI_DEVICEA = 0x442,
+  WM_CAP_GET_MCI_DEVICEA = 0x443,
+  WM_CAP_STOP = 0x444,
+  WM_CAP_ABORT = 0x445,
+  WM_CAP_SINGLE_FRAME_OPEN = 0x446,
+  WM_CAP_SINGLE_FRAME_CLOSE = 0x447,
+  WM_CAP_SINGLE_FRAME = 0x448,
+  WM_CAP_PAL_OPENA = 0x450,
+  WM_CAP_PAL_SAVEA = 0x451,
+  WM_CAP_PAL_PASTE = 0x452,
+  WM_CAP_PAL_AUTOCREATE = 0x453,
+  WM_CAP_PAL_MANUALCREATE = 0x454,
+  WM_CAP_SET_CALLBACK_CAPCONTROL = 0x455,
+  WM_CAP_UNICODE_END = 0x4B5,
+  WM_CAP_END = 0x4B5,
+  WM_DDE_FIRST = 0x3E0,
+  WM_DDE_LAST = 0x3E8,
+  WM_DLGBORDER = 0x11EF,
+  WM_DLGSUBCLASS = 0x11F0,
+  WM_ADSPROP_NOTIFY_PAGEINIT = 0x84D,
+  WM_ADSPROP_NOTIFY_PAGEHWND = 0x84E,
+  WM_ADSPROP_NOTIFY_CHANGE = 0x84F,
+  WM_ADSPROP_NOTIFY_APPLY = 0x850,
+  WM_ADSPROP_NOTIFY_SETFOCUS = 0x851,
+  WM_ADSPROP_NOTIFY_FOREGROUND = 0x852,
+  WM_ADSPROP_NOTIFY_EXIT = 0x853,
+  WM_ADSPROP_NOTIFY_ERROR = 0x856,
+  WM_TOUCH = 0x240,
+  WM_TOUCHHITTESTING = 0x24D,
+  WM_DPICHANGED = 0x2E0,
+  WM_DPICHANGED_BEFOREPARENT = 0x2E2,
+  WM_DPICHANGED_AFTERPARENT = 0x2E3,
+  WM_CLIPBOARDUPDATE = 0x31D,
+  WM_DWMCOMPOSITIONCHANGED = 0x31E,
+  WM_DWMNCRENDERINGCHANGED = 0x31F,
+  WM_DWMCOLORIZATIONCOLORCHANGED = 0x320,
+  WM_DWMWINDOWMAXIMIZEDCHANGE = 0x321,
+  WM_DWMSENDICONICTHUMBNAIL = 0x323,
+  WM_DWMSENDICONICLIVEPREVIEWBITMAP = 0x326,
+  WM_INPUT_DEVICE_CHANGE = 0xFE,
+  WM_GESTURE = 0x119,
+  WM_GESTURENOTIFY = 0x11A,
+  WM_MOUSEHWHEEL = 0x20E,
+  WM_POINTERDEVICECHANGE = 0x238,
+  WM_POINTERDEVICEINRANGE = 0x239,
+  WM_POINTERDEVICEOUTOFRANGE = 0x23A,
+  WM_NCPOINTERUPDATE = 0x241,
+  WM_NCPOINTERDOWN = 0x242,
+  WM_NCPOINTERUP = 0x243,
+  WM_POINTERUPDATE = 0x245,
+  WM_POINTERDOWN = 0x246,
+  WM_POINTERUP = 0x247,
+  WM_POINTERENTER = 0x249,
+  WM_POINTERLEAVE = 0x24A,
+  WM_POINTERACTIVATE = 0x24B,
+  WM_POINTERCAPTURECHANGED = 0x24C,
+  WM_POINTERWHEEL = 0x24E,
+  WM_POINTERHWHEEL = 0x24F,
+  WM_POINTERROUTEDTO = 0x251,
+  WM_POINTERROUTEDAWAY = 0x252,
+  WM_POINTERROUTEDRELEASED = 0x253,
+  WM_TABLET_ADDED = 0x2C8,
+  WM_TABLET_DELETED = 0x2C9,
+  WM_TABLET_FLICK = 0x2CB,
+  WM_TABLET_QUERYSYSTEMGESTURESTATUS = 0x2CC,
+  WM_GETDPISCALEDSIZE = 0x2E4,
+  WM_GETTITLEBARINFOEX = 0x33F,
 };
 
 /* 673 */
-enum MACRO_DBT_NO {
-    DBT_NO_DISK_SPACE = 0x47,
-    DBT_LOW_DISK_SPACE = 0x48,
-    DBT_CONFIGMGPRIVATE = 0x7FFF,
-    DBT_DEVICEARRIVAL = 0x8000,
-    DBT_DEVICEQUERYREMOVE = 0x8001,
-    DBT_DEVICEQUERYREMOVEFAILED = 0x8002,
-    DBT_DEVICEREMOVEPENDING = 0x8003,
-    DBT_DEVICEREMOVECOMPLETE = 0x8004,
-    DBT_DEVICETYPESPECIFIC = 0x8005,
-    DBT_CUSTOMEVENT = 0x8006,
-    DBT_DEVTYP_OEM = 0x0,
-    DBT_DEVTYP_DEVNODE = 0x1,
-    DBT_DEVTYP_VOLUME = 0x2,
-    DBT_DEVTYP_PORT = 0x3,
-    DBT_DEVTYP_NET = 0x4,
-    DBT_DEVTYP_DEVICEINTERFACE = 0x5,
-    DBT_DEVTYP_HANDLE = 0x6,
+enum MACRO_DBT_NO
+{
+  DBT_NO_DISK_SPACE = 0x47,
+  DBT_LOW_DISK_SPACE = 0x48,
+  DBT_CONFIGMGPRIVATE = 0x7FFF,
+  DBT_DEVICEARRIVAL = 0x8000,
+  DBT_DEVICEQUERYREMOVE = 0x8001,
+  DBT_DEVICEQUERYREMOVEFAILED = 0x8002,
+  DBT_DEVICEREMOVEPENDING = 0x8003,
+  DBT_DEVICEREMOVECOMPLETE = 0x8004,
+  DBT_DEVICETYPESPECIFIC = 0x8005,
+  DBT_CUSTOMEVENT = 0x8006,
+  DBT_DEVTYP_OEM = 0x0,
+  DBT_DEVTYP_DEVNODE = 0x1,
+  DBT_DEVTYP_VOLUME = 0x2,
+  DBT_DEVTYP_PORT = 0x3,
+  DBT_DEVTYP_NET = 0x4,
+  DBT_DEVTYP_DEVICEINTERFACE = 0x5,
+  DBT_DEVTYP_HANDLE = 0x6,
 };
 
 /* 704 */
-struct BossRallyConfigJoystick {
-    int field_0;
-    _BYTE gap4[3];
-    char field_7;
-    _BYTE gap8[156];
-    int last;
+struct BossRallyConfigJoystick
+{
+  int field_0;
+  _BYTE gap4[3];
+  char field_7;
+  _BYTE gap8[156];
+  int last;
 };
 
 /* 676 */
-struct BossRallyConfig {
-    BossRallyConfigJoystick joystick0;
-    BossRallyConfigJoystick joystick1;
-    BossRallyConfigJoystick joystick2;
-    BossRallyConfigJoystick joystick3;
-    int field_2A0;
-    int field_2A4;
-    int field_2A8;
-    int field_2AC;
-    int field_2B0;
-    char field_2B4[260];
-    char field_3B8[1024];
-    int field_7B8;
-    int field_7BC;
-    int field_7C0;
-    int field_7C4;
-    char field_7C8[16];
-    int field_7D8;
-    int field_7DC;
-    int field_7E0;
-    int field_7E4;
-    int field_7E8;
-    int field_7EC;
-    int field_7F0;
-    int field_7F4;
-    int field_7F8;
-    int field_7FC;
-    int field_800;
-    int field_804;
-    int field_808;
-    int field_80C;
-    char field_810[32];
-    char field_830[64];
-    int field_870;
+struct BossRallyConfig
+{
+  BossRallyConfigJoystick joystick0;
+  BossRallyConfigJoystick joystick1;
+  BossRallyConfigJoystick joystick2;
+  BossRallyConfigJoystick joystick3;
+  int field_2A0;
+  int field_2A4;
+  int field_2A8;
+  int field_2AC;
+  int field_2B0;
+  char field_2B4[260];
+  char field_3B8[1024];
+  int field_7B8;
+  int field_7BC;
+  int field_7C0;
+  int field_7C4;
+  char field_7C8[16];
+  int field_7D8;
+  int field_7DC;
+  int field_7E0;
+  int field_7E4;
+  int field_7E8;
+  int field_7EC;
+  int field_7F0;
+  int field_7F4;
+  int field_7F8;
+  int field_7FC;
+  int field_800;
+  int field_804;
+  int field_808;
+  int field_80C;
+  char field_810[32];
+  char field_830[64];
+  int field_870;
 };
 
 /* 677 */
-struct Car {
-    char *imageData0;
-    int field_4;
-    int field_8;
-    int field_C;
-    int field_10;
-    int field_14;
-    __int16 field_18;
-    __unaligned __declspec(align(1)) int field_1A;
-    __unaligned __declspec(align(1)) int field_1E;
-    __int16 field_22;
-    char paintFilename[10];
-    _BYTE gap2E[1150];
-    int last;
+struct Car
+{
+  char *imageData0;
+  int field_4;
+  int field_8;
+  int field_C;
+  int field_10;
+  int field_14;
+  __int16 field_18;
+  __unaligned __declspec(align(1)) int field_1A;
+  __unaligned __declspec(align(1)) int field_1E;
+  __int16 field_22;
+  char paintFilename[10];
+  _BYTE gap2E[1150];
+  int last;
 };
 
 /* 678 */
-enum MACRO_GMEM {
-    GMEM_FIXED = 0x0,
-    GMEM_MOVEABLE = 0x2,
-    GMEM_NOCOMPACT = 0x10,
-    GMEM_NODISCARD = 0x20,
-    GMEM_ZEROINIT = 0x40,
-    GMEM_MODIFY = 0x80,
-    GMEM_DISCARDABLE = 0x100,
-    GMEM_NOT_BANKED = 0x1000,
-    GMEM_SHARE = 0x2000,
-    GMEM_DDESHARE = 0x2000,
-    GMEM_NOTIFY = 0x4000,
-    GMEM_LOWER = 0x1000,
-    GMEM_VALID_FLAGS = 0x7F72,
-    GMEM_INVALID_HANDLE = 0x8000,
+enum MACRO_GMEM
+{
+  GMEM_FIXED = 0x0,
+  GMEM_MOVEABLE = 0x2,
+  GMEM_NOCOMPACT = 0x10,
+  GMEM_NODISCARD = 0x20,
+  GMEM_ZEROINIT = 0x40,
+  GMEM_MODIFY = 0x80,
+  GMEM_DISCARDABLE = 0x100,
+  GMEM_NOT_BANKED = 0x1000,
+  GMEM_SHARE = 0x2000,
+  GMEM_DDESHARE = 0x2000,
+  GMEM_NOTIFY = 0x4000,
+  GMEM_LOWER = 0x1000,
+  GMEM_VALID_FLAGS = 0x7F72,
+  GMEM_INVALID_HANDLE = 0x8000,
 };
 
 /* 679 */
 typedef _DSBUFFERDESC1 DSBUFFERDESC1;
 
 /* 680 */
-struct _DSBUFFERDESC1 {
-    DWORD dwSize;
-    DWORD dwFlags;
-    DWORD dwBufferBytes;
-    DWORD dwReserved;
-    LPWAVEFORMATEX lpwfxFormat;
+struct _DSBUFFERDESC1
+{
+  DWORD dwSize;
+  DWORD dwFlags;
+  DWORD dwBufferBytes;
+  DWORD dwReserved;
+  LPWAVEFORMATEX lpwfxFormat;
 };
 
 /* 682 */
-struct PodHeader {
-    char magic[4];
-    int field_4;
-    int m_cNumPods;
-    int last;
+struct PodHeader
+{
+  char magic[4];
+  int field_4;
+  int m_cNumPods;
+  int last;
 };
 
 /* 681 */
-struct Pod {
-    PodVtbl *lpVtbl;
-    Iostream_init *field_4;
-    PodHeader header;
-    void *unkInstance;
-    FILE *fp;
-    void *filename;
-    _BYTE gap24[7];
-    __unaligned __declspec(align(1)) int field_2B;
-    _BYTE gap2F[1009];
-    int elementCount;
-    _BYTE gap424[32];
-    int last;
+struct Pod
+{
+  PodVtbl *lpVtbl;
+  Iostream_init *field_4;
+  PodHeader header;
+  void *unkInstance;
+  FILE *fp;
+  void *filename;
+  _BYTE gap24[7];
+  __unaligned __declspec(align(1)) int field_2B;
+  _BYTE gap2F[1009];
+  int elementCount;
+  _BYTE gap424[32];
+  int last;
 };
 
 /* 683 */
-struct PodVtbl {
-    char(__thiscall *CleanupName)(Pod *, char *, char *);
-    void(__thiscall *meth1)(Pod *, int, int *);
-    int(__thiscall *GetNumForName)(Pod *, char *);
-    int(__thiscall *meth4)(Pod *, int, int);
-    int(__thiscall *meth5)(Pod *, unsigned int);
-    int(__thiscall *meth6)(Pod *, unsigned int, int);
-    Pod *(__thiscall *meth7)(Pod *, char);
-    int(__thiscall *meth8)(Pod *, int);
-    int(__thiscall *meth9)(Pod *, char *);
-    int(__thiscall *meth10)(Pod *, char *);
-    int(__thiscall *meth11)(Pod *, char *);
-    int(__thiscall *meth12)(Pod *, char *);
-    int(__thiscall *meth13)(Pod *, char *);
-    int(__thiscall *meth14)(Pod *this);
-    int(__thiscall *meth15)(Pod *, int);
+struct PodVtbl
+{
+  char (__thiscall *CleanupName)(Pod *, char *, char *);
+  void (__thiscall *meth1)(Pod *, int, int *);
+  int (__thiscall *GetNumForName)(Pod *, char *);
+  int (__thiscall *meth4)(Pod *, int, int);
+  int (__thiscall *meth5)(Pod *, unsigned int);
+  int (__thiscall *meth6)(Pod *, unsigned int, int);
+  Pod *(__thiscall *meth7)(Pod *, char);
+  int (__thiscall *meth8)(Pod *, int);
+  int (__thiscall *meth9)(Pod *, char *);
+  int (__thiscall *meth10)(Pod *, char *);
+  int (__thiscall *meth11)(Pod *, char *);
+  int (__thiscall *meth12)(Pod *, char *);
+  int (__thiscall *meth13)(Pod *, char *);
+  int (__thiscall *meth14)(Pod *this);
+  int (__thiscall *meth15)(Pod *, int);
 };
 
 /* 684 */
 typedef _D3DTLVERTEX D3DTLVERTEX;
 
 /* 685 */
-enum MACRO_DIRECTINPUT {
-    DIRECTINPUT_VERSION = 0x500,
+enum MACRO_DIRECTINPUT
+{
+  DIRECTINPUT_VERSION = 0x500,
 };
 
 /* 686 */
 typedef _DDCAPS_DX6 DDCAPS_DX6;
 
 /* 687 */
-struct _DDCAPS_DX6 {
-    DWORD dwSize;
-    DWORD dwCaps;
-    DWORD dwCaps2;
-    DWORD dwCKeyCaps;
-    DWORD dwFXCaps;
-    DWORD dwFXAlphaCaps;
-    DWORD dwPalCaps;
-    DWORD dwSVCaps;
-    DWORD dwAlphaBltConstBitDepths;
-    DWORD dwAlphaBltPixelBitDepths;
-    DWORD dwAlphaBltSurfaceBitDepths;
-    DWORD dwAlphaOverlayConstBitDepths;
-    DWORD dwAlphaOverlayPixelBitDepths;
-    DWORD dwAlphaOverlaySurfaceBitDepths;
-    DWORD dwZBufferBitDepths;
-    DWORD dwVidMemTotal;
-    DWORD dwVidMemFree;
-    DWORD dwMaxVisibleOverlays;
-    DWORD dwCurrVisibleOverlays;
-    DWORD dwNumFourCCCodes;
-    DWORD dwAlignBoundarySrc;
-    DWORD dwAlignSizeSrc;
-    DWORD dwAlignBoundaryDest;
-    DWORD dwAlignSizeDest;
-    DWORD dwAlignStrideAlign;
-    DWORD dwRops[8];
-    DDSCAPS ddsOldCaps;
-    DWORD dwMinOverlayStretch;
-    DWORD dwMaxOverlayStretch;
-    DWORD dwMinLiveVideoStretch;
-    DWORD dwMaxLiveVideoStretch;
-    DWORD dwMinHwCodecStretch;
-    DWORD dwMaxHwCodecStretch;
-    DWORD dwReserved1;
-    DWORD dwReserved2;
-    DWORD dwReserved3;
-    DWORD dwSVBCaps;
-    DWORD dwSVBCKeyCaps;
-    DWORD dwSVBFXCaps;
-    DWORD dwSVBRops[8];
-    DWORD dwVSBCaps;
-    DWORD dwVSBCKeyCaps;
-    DWORD dwVSBFXCaps;
-    DWORD dwVSBRops[8];
-    DWORD dwSSBCaps;
-    DWORD dwSSBCKeyCaps;
-    DWORD dwSSBFXCaps;
-    DWORD dwSSBRops[8];
-    DWORD dwMaxVideoPorts;
-    DWORD dwCurrVideoPorts;
-    DWORD dwSVBCaps2;
-    DWORD dwNLVBCaps;
-    DWORD dwNLVBCaps2;
-    DWORD dwNLVBCKeyCaps;
-    DWORD dwNLVBFXCaps;
-    DWORD dwNLVBRops[8];
-    DDSCAPS2 ddsCaps;
+struct _DDCAPS_DX6
+{
+  DWORD dwSize;
+  DWORD dwCaps;
+  DWORD dwCaps2;
+  DWORD dwCKeyCaps;
+  DWORD dwFXCaps;
+  DWORD dwFXAlphaCaps;
+  DWORD dwPalCaps;
+  DWORD dwSVCaps;
+  DWORD dwAlphaBltConstBitDepths;
+  DWORD dwAlphaBltPixelBitDepths;
+  DWORD dwAlphaBltSurfaceBitDepths;
+  DWORD dwAlphaOverlayConstBitDepths;
+  DWORD dwAlphaOverlayPixelBitDepths;
+  DWORD dwAlphaOverlaySurfaceBitDepths;
+  DWORD dwZBufferBitDepths;
+  DWORD dwVidMemTotal;
+  DWORD dwVidMemFree;
+  DWORD dwMaxVisibleOverlays;
+  DWORD dwCurrVisibleOverlays;
+  DWORD dwNumFourCCCodes;
+  DWORD dwAlignBoundarySrc;
+  DWORD dwAlignSizeSrc;
+  DWORD dwAlignBoundaryDest;
+  DWORD dwAlignSizeDest;
+  DWORD dwAlignStrideAlign;
+  DWORD dwRops[8];
+  DDSCAPS ddsOldCaps;
+  DWORD dwMinOverlayStretch;
+  DWORD dwMaxOverlayStretch;
+  DWORD dwMinLiveVideoStretch;
+  DWORD dwMaxLiveVideoStretch;
+  DWORD dwMinHwCodecStretch;
+  DWORD dwMaxHwCodecStretch;
+  DWORD dwReserved1;
+  DWORD dwReserved2;
+  DWORD dwReserved3;
+  DWORD dwSVBCaps;
+  DWORD dwSVBCKeyCaps;
+  DWORD dwSVBFXCaps;
+  DWORD dwSVBRops[8];
+  DWORD dwVSBCaps;
+  DWORD dwVSBCKeyCaps;
+  DWORD dwVSBFXCaps;
+  DWORD dwVSBRops[8];
+  DWORD dwSSBCaps;
+  DWORD dwSSBCKeyCaps;
+  DWORD dwSSBFXCaps;
+  DWORD dwSSBRops[8];
+  DWORD dwMaxVideoPorts;
+  DWORD dwCurrVideoPorts;
+  DWORD dwSVBCaps2;
+  DWORD dwNLVBCaps;
+  DWORD dwNLVBCaps2;
+  DWORD dwNLVBCKeyCaps;
+  DWORD dwNLVBFXCaps;
+  DWORD dwNLVBRops[8];
+  DDSCAPS2 ddsCaps;
 };
 
 /* 688 */
-struct unk00074 {
-    DDSURFACEDESC field_0;
-    int field_6C;
-    int last;
+struct unk00074
+{
+  DDSURFACEDESC field_0;
+  int field_6C;
+  int last;
 };
 
 /* 690 */
-struct unk00020 {
-    int field_0;
-    int field_4;
-    int field_8;
-    int field_C;
-    int field_10;
-    int field_14;
-    int field_18;
-    int last;
+struct unk00020
+{
+  int field_0;
+  int field_4;
+  int field_8;
+  int field_C;
+  int field_10;
+  int field_14;
+  int field_18;
+  int last;
 };
 
 /* 691 */
-struct unk000C8 {
-    unk000C8Vtbl *lpVtbl;
-    int(__cdecl *lpFn0)(unk000C8 *);
-    void *field_8;
-    int field_C;
-    WORD field_10;
-    unk00348 *field_14[2];
-    int field_1C;
-    _BYTE gap20[68];
-    int field_64;
-    int field_68;
-    int field_6C;
-    int field_70;
-    _BYTE gap74[72];
-    WORD field_BC;
-    unk06594 *field_C0;
-    unk06594 *last;
+struct unk000C8
+{
+  unk000C8Vtbl *lpVtbl;
+  int (__cdecl *lpFn0)(unk000C8 *);
+  void *field_8;
+  int field_C;
+  WORD field_10;
+  unk00348 *field_14[2];
+  int field_1C;
+  _BYTE gap20[68];
+  int field_64;
+  int field_68;
+  int field_6C;
+  int field_70;
+  _BYTE gap74[72];
+  WORD field_BC;
+  unk06594 *field_C0;
+  unk06594 *last;
 };
 
 /* 700 */
-struct unk000C8Vtbl {
-    void(__thiscall *meth0)(unk000C8 *, int);
-    int(__thiscall *meth1)(unk000C8 *this);
-    int(__thiscall *meth2)(unk000C8 *);
-    void(__thiscall *meth3)(unk000C8 *this);
-    int(__thiscall *meth4)(unk000C8 *);
-    HRESULT(__thiscall *meth5)(unk000C8 *);
-    void(__thiscall *meth6)(unk000C8 *this, int);
-    void(__thiscall *meth7)(unk000C8 *);
-    void(__thiscall *meth8)(unk000C8 *);
+struct unk000C8Vtbl
+{
+  void (__thiscall *meth0)(unk000C8 *, int);
+  int (__thiscall *meth1)(unk000C8 *this);
+  int (__thiscall *meth2)(unk000C8 *);
+  void (__thiscall *meth3)(unk000C8 *this);
+  int (__thiscall *meth4)(unk000C8 *);
+  HRESULT (__thiscall *meth5)(unk000C8 *);
+  void (__thiscall *meth6)(unk000C8 *this, int);
+  void (__thiscall *meth7)(unk000C8 *);
+  void (__thiscall *meth8)(unk000C8 *);
 };
 
 /* 696 */
-struct unk00348 {
-    unk00348Vtbl *lpVtbl;
-    int(__stdcall *field_4)();
-    int(__stdcall *field_8)();
-    __declspec(align(8)) int field_10;
-    WORD field_14;
-    unk1E214 *field_18[2];
-    _BYTE gap20[792];
-    int flags_338;
-    float field_33C;
-    unk000C8 *field_340;
-    int last;
+struct unk00348
+{
+  unk00348Vtbl *lpVtbl;
+  int (__stdcall *field_4)();
+  int (__stdcall *field_8)();
+  __declspec(align(8)) int field_10;
+  WORD field_14;
+  unk1E214 *field_18[2];
+  _BYTE gap20[792];
+  int flags_338;
+  float field_33C;
+  unk000C8 *field_340;
+  int last;
 };
 
 /* 692 */
-struct unk06594 {
-    unk06594Vtbl *lpVtbl;
-    char *field_4;
-    int field_8;
-    _BYTE gapC[440];
-    int field_1C4;
-    _BYTE gap1C8[18208];
-    int field_48E8;
-    int field_48EC;
-    _BYTE gap48F0[16];
-    float field_4900;
-    _BYTE gap4904[4];
-    int field_4908;
-    int field_490C;
-    int field_4910;
-    int field_4914;
-    _BYTE gap4918[24];
-    int field_4930;
-    int field_4934;
-    int field_4938;
-    _BYTE gap493C[32];
-    int field_495C;
-    _BYTE gap4960[4];
-    int field_4964;
-    _BYTE gap4968[192];
-    int field_4A28;
-    _BYTE gap4A2C[7012];
-    unk06594 *last;
+struct unk06594
+{
+  unk06594Vtbl *lpVtbl;
+  char *field_4;
+  int field_8;
+  _BYTE gapC[440];
+  int field_1C4;
+  _BYTE gap1C8[18208];
+  int field_48E8;
+  int field_48EC;
+  _BYTE gap48F0[16];
+  float field_4900;
+  _BYTE gap4904[4];
+  int field_4908;
+  int field_490C;
+  int field_4910;
+  int field_4914;
+  _BYTE gap4918[24];
+  int field_4930;
+  int field_4934;
+  int field_4938;
+  _BYTE gap493C[32];
+  int field_495C;
+  _BYTE gap4960[4];
+  int field_4964;
+  _BYTE gap4968[192];
+  int field_4A28;
+  _BYTE gap4A2C[7012];
+  unk06594 *last;
 };
 
 /* 712 */
-struct unk00348Vtbl {
-    unk00348 *(__thiscall *meth0)(unk00348 *Block, char a2);
-    int(__thiscall *meth1)(unk00348 *Block);
+struct unk00348Vtbl
+{
+  unk00348 *(__thiscall *meth0)(unk00348 *Block, char a2);
+  int (__thiscall *meth1)(unk00348 *Block);
 };
 
 /* 707 */
-struct unk00438 {
-    unk00438Vtbl *lpVtbl;
-    int field_4;
-    char field_8;
-    char field_9[1024];
-    char field_409;
-    __int16 field_40A;
-    __int16 field_40C;
-    __int16 field_40E;
-    int field_410;
-    int field_414;
-    int field_418;
-    __int16 field_41C;
-    char field_41E;
-    char field_41F;
-    int field_420;
-    int field_424;
-    int field_428;
-    int field_42C;
-    int field_430;
-    int last;
+struct unk00438
+{
+  unk00438Vtbl *lpVtbl;
+  int field_4;
+  char field_8;
+  char field_9[1024];
+  char field_409;
+  __int16 field_40A;
+  __int16 field_40C;
+  __int16 field_40E;
+  int field_410;
+  int field_414;
+  int field_418;
+  __int16 field_41C;
+  char field_41E;
+  char field_41F;
+  int field_420;
+  int field_424;
+  int field_428;
+  int field_42C;
+  int field_430;
+  int last;
 };
 
 /* 709 */
-struct unk1A5E0 {
-    unk1A5E0Vtbl *lpVtbl;
-    DWORD field_4[5];
-    int field_18;
-    int field_1C;
-    int field_20;
-    _BYTE gap24[8];
-    unk00438 vectorUnk438[100];
-    _BYTE gap1A60C[800];
-    __int16 field_1A92C[6];
-    __int16 field_1A938;
-    _BYTE gap1A93A[98];
-    WORD field_1A99C[30];
+struct unk1A5E0
+{
+  unk1A5E0Vtbl *lpVtbl;
+  DWORD field_4[5];
+  int field_18;
+  int field_1C;
+  int field_20;
+  _BYTE gap24[8];
+  unk00438 vectorUnk438[100];
+  _BYTE gap1A60C[800];
+  __int16 field_1A92C[6];
+  __int16 field_1A938;
+  _BYTE gap1A93A[98];
+  WORD field_1A99C[30];
 };
 
 /* 697 */
-struct unk1E214 {
-    unk1E214Vtbl *lpVtbl;
-    int(__cdecl *field_4)(int);
-    int(__cdecl *field_8)();
-    int(__cdecl *field_C)(int);
-    int field_10;
-    int field_14;
-    int field_18;
-    int field_1C;
-    int field_20;
-    int field_24;
-    int field_28;
-    char field_2C;
-    int field_30;
-    int field_34;
-    int field_38;
-    int field_3C;
-    int field_40;
-    int field_44;
-    __int16 field_48;
-    __int16 field_4A;
-    int field_4C;
-    int field_50;
-    _BYTE gap54[4];
-    int field_58;
-    _BYTE gap5C[4];
-    char field_60[200];
-    __int16 field_128;
-    char field_12A[10000];
-    __declspec(align(4)) char field_283C[200];
-    char field_2904[100];
-    int field_2968;
-    int field_296C;
-    int field_2970;
-    int field_2974;
-    char field_2978[200];
-    char field_2A40[100];
-    int field_2AA4;
-    int field_2AA8;
-    __int16 field_2AAC;
-    _BYTE gap2AAE[6];
-    WORD field_2AB4[25];
-    __int16 field_2AE6;
-    unk000C8 *field_2AE8;
-    int field_2AEC;
-    char field_2AF0[100];
-    int field_2B54;
-    int field_2B58;
-    char vectorUnk[3240];
-    int field_3804;
-    int field_3808;
-    __int16 field_380C;
-    int field_3810;
-    int field_3814;
-    int field_3818;
-    int field_381C;
-    int field_3820;
-    int field_3824;
-    int field_3828;
-    int field_382C;
-    int field_3830;
-    __int16 field_3834;
-    __int16 field_3836;
-    unk1A5E0 field_3838;
-    int last;
+struct unk1E214
+{
+  unk1E214Vtbl *lpVtbl;
+  int (__cdecl *field_4)(int);
+  int (__cdecl *field_8)();
+  int (__cdecl *field_C)(int);
+  int field_10;
+  int field_14;
+  int field_18;
+  int field_1C;
+  int field_20;
+  int field_24;
+  int field_28;
+  char field_2C;
+  int field_30;
+  int field_34;
+  int field_38;
+  int field_3C;
+  int field_40;
+  int field_44;
+  __int16 field_48;
+  __int16 field_4A;
+  int field_4C;
+  int field_50;
+  _BYTE gap54[4];
+  int field_58;
+  _BYTE gap5C[4];
+  char field_60[200];
+  __int16 field_128;
+  char field_12A[10000];
+  __declspec(align(4)) char field_283C[200];
+  char field_2904[100];
+  int field_2968;
+  int field_296C;
+  int field_2970;
+  int field_2974;
+  char field_2978[200];
+  char field_2A40[100];
+  int field_2AA4;
+  int field_2AA8;
+  __int16 field_2AAC;
+  _BYTE gap2AAE[6];
+  WORD field_2AB4[25];
+  __int16 field_2AE6;
+  unk000C8 *field_2AE8;
+  int field_2AEC;
+  char field_2AF0[100];
+  int field_2B54;
+  int field_2B58;
+  char vectorUnk[3240];
+  int field_3804;
+  int field_3808;
+  __int16 field_380C;
+  int field_3810;
+  int field_3814;
+  int field_3818;
+  int field_381C;
+  int field_3820;
+  int field_3824;
+  int field_3828;
+  int field_382C;
+  int field_3830;
+  __int16 field_3834;
+  __int16 field_3836;
+  unk1A5E0 field_3838;
+  int last;
 };
 
 /* 698 */
-struct unk06594Vtbl {
-    unk06594 *(__thiscall *meth0)(unk06594 *Block, char a2);
-    void(__thiscall *meth1)(unk06594 *, char *);
-    int(__thiscall *meth2)(unk06594 *this, LPCSTR lpFileName);
-    int(__thiscall *meth3)(unk06594 *this, char *Str1, int a3);
-    int(__thiscall *meth4)(unk06594 *this);
-    int(__thiscall *meth5)(unk06594 *this, __int16 a1);
-    void(__thiscall *meth6)(unk06594 *, char *, char *);
+struct unk06594Vtbl
+{
+  unk06594 *(__thiscall *meth0)(unk06594 *Block, char a2);
+  void (__thiscall *meth1)(unk06594 *, char *);
+  int (__thiscall *meth2)(unk06594 *this, LPCSTR lpFileName);
+  int (__thiscall *meth3)(unk06594 *this, char *Str1, int a3);
+  int (__thiscall *meth4)(unk06594 *this);
+  int (__thiscall *meth5)(unk06594 *this, __int16 a1);
+  void (__thiscall *meth6)(unk06594 *, char *, char *);
 };
 
 /* 699 */
-struct unk1E214Vtbl {
-    unk1E214 *(__thiscall *meth0)(unk1E214 *this, char a2);
-    int(__thiscall *meth1)(unk1E214 *this);
-    int(__thiscall *meth2)(unk1E214 *this);
-    int(__thiscall *meth3)(unk1E214 *this);
-    int(__thiscall *meth4)(unk1E214 *this);
-    int(__thiscall *meth5)(unk1E214 *this, int a2, int a3);
-    int(__thiscall *meth6)(unk1E214 *this, int *a2);
-    int(__thiscall *meth7)(unk1E214 *this);
-    int(__thiscall *meth8)(unk1E214 *this);
-    int(__thiscall *meth9)(unk1E214 *this, int a2);
-    double(__thiscall *meth10)(unk1E214 *this, int a2);
-    int(__thiscall *meth11)(unk1E214 *this);
-    int(__thiscall *meth12)(unk1E214 *this);
-    void(__thiscall *meth13)(unk1E214 *, LPCSTR, int, int, void *);
-    void(__thiscall *meth14)(unk1E214 *, unk000C8 *, _DWORD, float, int, int, int, int, int);
-    int(__thiscall *meth15)(unk1E214 *this);
+struct unk1E214Vtbl
+{
+  unk1E214 *(__thiscall *meth0)(unk1E214 *this, char a2);
+  int (__thiscall *meth1)(unk1E214 *this);
+  int (__thiscall *meth2)(unk1E214 *this);
+  int (__thiscall *meth3)(unk1E214 *this);
+  int (__thiscall *meth4)(unk1E214 *this);
+  int (__thiscall *meth5)(unk1E214 *this, int a2, int a3);
+  int (__thiscall *meth6)(unk1E214 *this, int *a2);
+  int (__thiscall *meth7)(unk1E214 *this);
+  int (__thiscall *meth8)(unk1E214 *this);
+  int (__thiscall *meth9)(unk1E214 *this, int a2);
+  double (__thiscall *meth10)(unk1E214 *this, int a2);
+  int (__thiscall *meth11)(unk1E214 *this);
+  int (__thiscall *meth12)(unk1E214 *this);
+  void (__thiscall *meth13)(unk1E214 *, LPCSTR, int, int, void *);
+  void (__thiscall *meth14)(unk1E214 *, unk000C8 *, _DWORD, float, int, int, int, int, int);
+  int (__thiscall *meth15)(unk1E214 *this);
 };
 
 /* 710 */
-struct unk1A5E0Vtbl {
-    unk1A5E0 *(__thiscall *meth0)(unk1A5E0 *this, char a2);
-    unk1A5E0 *(__thiscall *meth1)(unk1A5E0 *this, float, float);
-    int(__thiscall *meth2)(unk1A5E0 *this, int index);
-    int(__thiscall *meth3)(unk06594 *this);
-    int(__thiscall *meth4)(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);
-    int(__thiscall *meth5)(unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);
-    int(__thiscall *meth6)(unk1A5E0 *this, _DWORD *a2);
-    int(__thiscall *meth7)(unk1A5E0 *this, int *a2);
-    int(__thiscall *meth8)(unk1A5E0 *this, int a2);
-    int(__thiscall *meth9)(unk1A5E0 *this, int a2);
-    void(__thiscall *meth10)(unk1A5E0 *, _DWORD, int, int);
-    int(__thiscall *meth11)(unk1A5E0 *this, int a2);
+struct unk1A5E0Vtbl
+{
+  unk1A5E0 *(__thiscall *meth0)(unk1A5E0 *this, char a2);
+  unk1A5E0 *(__thiscall *meth1)(unk1A5E0 *this, float, float);
+  int (__thiscall *meth2)(unk1A5E0 *this, int index);
+  int (__thiscall *meth3)(unk06594 *this);
+  int (__thiscall *meth4)(unk1A5E0 *this, char *Source, int a3, int a4, int a5, int a6);
+  int (__thiscall *meth5)(unk1A5E0 *this, int a2, int *a3, __int16 a4, __int16 a5, __int16 a6);
+  int (__thiscall *meth6)(unk1A5E0 *this, _DWORD *a2);
+  int (__thiscall *meth7)(unk1A5E0 *this, int *a2);
+  int (__thiscall *meth8)(unk1A5E0 *this, int a2);
+  int (__thiscall *meth9)(unk1A5E0 *this, int a2);
+  void (__thiscall *meth10)(unk1A5E0 *, _DWORD, int, int);
+  int (__thiscall *meth11)(unk1A5E0 *this, int a2);
 };
 
 /* 708 */
-struct unk00438Vtbl {
-    unk00438 *(__thiscall *meth0)(unk00438 *Block, char a2);
-    void(__thiscall *meth1)(unk00438 *this, int a2);
-    void(__thiscall *meth2)(unk00438 *this, int a2);
-    int(__thiscall *meth3)(unk00438 *this, float a2, int a3);
-    int(__thiscall *meth4)(unk00438 *);
-    char(__thiscall *meth5)(unk00438 *);
-    int(__thiscall *meth6)(unk00438 *this, __int16 a2, float a3, float a4, int a5);
-    int(__thiscall *meth7)(unk00438 *this, int a2, int a3);
-    int(__thiscall *meth8)(unk00438 *this, float a2, float a3, int a4);
-    DWORD(__thiscall *meth9)(unk00438 *this, float a2, float a3);
-    double(__thiscall *meth10)(unk00438 *);
-    int(__thiscall *meth11)(unk00438 *);
+struct unk00438Vtbl
+{
+  unk00438 *(__thiscall *meth0)(unk00438 *Block, char a2);
+  void (__thiscall *meth1)(unk00438 *this, int a2);
+  void (__thiscall *meth2)(unk00438 *this, int a2);
+  int (__thiscall *meth3)(unk00438 *this, float a2, int a3);
+  int (__thiscall *meth4)(unk00438 *);
+  char (__thiscall *meth5)(unk00438 *);
+  int (__thiscall *meth6)(unk00438 *this, __int16 a2, float a3, float a4, int a5);
+  int (__thiscall *meth7)(unk00438 *this, int a2, int a3);
+  int (__thiscall *meth8)(unk00438 *this, float a2, float a3, int a4);
+  DWORD (__thiscall *meth9)(unk00438 *this, float a2, float a3);
+  double (__thiscall *meth10)(unk00438 *);
+  int (__thiscall *meth11)(unk00438 *);
 };
 
 /* 694 */
-enum MACRO_NULL {
-    NULL = 0,
-    _IOREAD = 1,
-    _IOWRT = 2,
+enum MACRO_NULL
+{
+  NULL = 0,
+  _IOREAD = 1,
+  _IOWRT = 2,
 };
 
 /* 695 */
-struct unk00054 {
-    int field_0;
-    _BYTE gap4[40];
-    int field_2C;
-    int field_30;
-    int field_34;
-    int field_38;
-    _BYTE gap3C[20];
-    LPDIRECTINPUTDEVICEA lpDIDeviceA;
+struct unk00054
+{
+  int field_0;
+  _BYTE gap4[40];
+  int field_2C;
+  int field_30;
+  int field_34;
+  int field_38;
+  _BYTE gap3C[20];
+  LPDIRECTINPUTDEVICEA lpDIDeviceA;
 };
 
 /* 701 */
-enum MACRO_UNK10071130 {
-    UNK10071130_0 = 0x0,
-    UNK10071130_1 = 0x1,
-    UNK10071130_2 = 0x2,
-    UNK10071130_3 = 0x3,
-    UNK10071130_4 = 0x4,
+enum MACRO_UNK10071130
+{
+  UNK10071130_0 = 0x0,
+  UNK10071130_1 = 0x1,
+  UNK10071130_2 = 0x2,
+  UNK10071130_3 = 0x3,
+  UNK10071130_4 = 0x4,
 };
 
 /* 702 */
-struct unk00144 {
-    _BYTE gap0[320];
-    int last;
+struct unk00144
+{
+  _BYTE gap0[320];
+  int last;
 };
 
 /* 703 */
-enum MACRO_GAME_MODE {
-    GAME_MODE_0 = 0x0,
-    GAME_MODE_1 = 0x1,
-    GAME_MODE_2 = 0x2,
-    GAME_MODE_3 = 0x3,
-    GAME_MODE_4 = 0x4,
-    GAME_MODE_5 = 0x5,
-    GAME_MODE_6 = 0x6,
+enum MACRO_GAME_MODE
+{
+  GAME_MODE_0 = 0x0,
+  GAME_MODE_1 = 0x1,
+  GAME_MODE_2 = 0x2,
+  GAME_MODE_3 = 0x3,
+  GAME_MODE_4 = 0x4,
+  GAME_MODE_5 = 0x5,
+  GAME_MODE_6 = 0x6,
 };
 
 /* 705 */
-struct unk00104 {
-    char *filepath;
-    _BYTE gap4[252];
-    int last;
+struct unk00104
+{
+  char *filepath;
+  _BYTE gap4[252];
+  int last;
 };
 
 /* 706 */
-enum MACRO_DDCAPS_3D {
-    DDCAPS_3D = 0x1,
-    DDCAPS_ALIGNBOUNDARYDEST = 0x2,
-    DDCAPS_ALIGNSIZEDEST = 0x4,
-    DDCAPS_ALIGNBOUNDARYSRC = 0x8,
-    DDCAPS_ALIGNSIZESRC = 0x10,
-    DDCAPS_ALIGNSTRIDE = 0x20,
-    DDCAPS_BLT = 0x40,
-    DDCAPS_BLTQUEUE = 0x80,
-    DDCAPS_BLTFOURCC = 0x100,
-    DDCAPS_BLTSTRETCH = 0x200,
-    DDCAPS_GDI = 0x400,
-    DDCAPS_OVERLAY = 0x800,
-    DDCAPS_OVERLAYCANTCLIP = 0x1000,
-    DDCAPS_OVERLAYFOURCC = 0x2000,
-    DDCAPS_OVERLAYSTRETCH = 0x4000,
-    DDCAPS_PALETTE = 0x8000,
-    DDCAPS_PALETTEVSYNC = 0x10000,
-    DDCAPS_READSCANLINE = 0x20000,
-    DDCAPS_RESERVED1 = 0x40000,
-    DDCAPS_VBI = 0x80000,
-    DDCAPS_ZBLTS = 0x100000,
-    DDCAPS_ZOVERLAYS = 0x200000,
-    DDCAPS_COLORKEY = 0x400000,
-    DDCAPS_ALPHA = 0x800000,
-    DDCAPS_COLORKEYHWASSIST = 0x1000000,
-    DDCAPS_NOHARDWARE = 0x2000000,
-    DDCAPS_BLTCOLORFILL = 0x4000000,
-    DDCAPS_BANKSWITCHED = 0x8000000,
-    DDCAPS_BLTDEPTHFILL = 0x10000000,
-    DDCAPS_CANCLIP = 0x20000000,
-    DDCAPS_CANCLIPSTRETCHED = 0x40000000,
-    DDCAPS_CANBLTSYSMEM = 0x80000000,
+enum MACRO_DDCAPS_3D
+{
+  DDCAPS_3D = 0x1,
+  DDCAPS_ALIGNBOUNDARYDEST = 0x2,
+  DDCAPS_ALIGNSIZEDEST = 0x4,
+  DDCAPS_ALIGNBOUNDARYSRC = 0x8,
+  DDCAPS_ALIGNSIZESRC = 0x10,
+  DDCAPS_ALIGNSTRIDE = 0x20,
+  DDCAPS_BLT = 0x40,
+  DDCAPS_BLTQUEUE = 0x80,
+  DDCAPS_BLTFOURCC = 0x100,
+  DDCAPS_BLTSTRETCH = 0x200,
+  DDCAPS_GDI = 0x400,
+  DDCAPS_OVERLAY = 0x800,
+  DDCAPS_OVERLAYCANTCLIP = 0x1000,
+  DDCAPS_OVERLAYFOURCC = 0x2000,
+  DDCAPS_OVERLAYSTRETCH = 0x4000,
+  DDCAPS_PALETTE = 0x8000,
+  DDCAPS_PALETTEVSYNC = 0x10000,
+  DDCAPS_READSCANLINE = 0x20000,
+  DDCAPS_RESERVED1 = 0x40000,
+  DDCAPS_VBI = 0x80000,
+  DDCAPS_ZBLTS = 0x100000,
+  DDCAPS_ZOVERLAYS = 0x200000,
+  DDCAPS_COLORKEY = 0x400000,
+  DDCAPS_ALPHA = 0x800000,
+  DDCAPS_COLORKEYHWASSIST = 0x1000000,
+  DDCAPS_NOHARDWARE = 0x2000000,
+  DDCAPS_BLTCOLORFILL = 0x4000000,
+  DDCAPS_BANKSWITCHED = 0x8000000,
+  DDCAPS_BLTDEPTHFILL = 0x10000000,
+  DDCAPS_CANCLIP = 0x20000000,
+  DDCAPS_CANCLIPSTRETCHED = 0x40000000,
+  DDCAPS_CANBLTSYSMEM = 0x80000000,
 };
 
 /* 711 */
-struct unk00214 {
-    int field_0;
-    int field_4;
-    int field_8;
-    int field_C;
-    int *field_10;
-    int field_14;
-    _BYTE gap18[504];
-    int last;
+struct unk00214
+{
+  int field_0;
+  int field_4;
+  int field_8;
+  int field_C;
+  int *field_10;
+  int field_14;
+  _BYTE gap18[504];
+  int last;
 };
 
 /* 713 */
-struct TrackData {
-    char *name;
-    int field_4;
-    int field_8;
-    void *field_C;
-    void *field_10;
-    void *field_14;
-    void *field_18;
-    char *skytexLut4Name;
-    char *field_20;
-    char *skytexnLut4Name;
-    void *field_28;
-    char last[336];
+struct TrackData
+{
+  char *name;
+  int field_4;
+  int field_8;
+  void *field_C;
+  void *field_10;
+  void *field_14;
+  void *field_18;
+  char *skytexLut4Name;
+  char *field_20;
+  char *skytexnLut4Name;
+  void *field_28;
+  char last[336];
 };
 
 /* 714 */
-enum MACRO_MAX_PATH {
-    MAX_PATH = 260,
+enum MACRO_MAX_PATH
+{
+  MAX_PATH = 260,
 };
 
 /* 715 */
-struct __unaligned __declspec(align(2)) unk0025E {
-    int field_0;
-    char field_4;
-    _BYTE gap5[597];
-    int last;
+struct __unaligned __declspec(align(2)) unk0025E
+{
+  int field_0;
+  char field_4;
+  _BYTE gap5[597];
+  int last;
 };
+
