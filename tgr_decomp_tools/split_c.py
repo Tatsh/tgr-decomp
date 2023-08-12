@@ -26,7 +26,7 @@ def get_function_name(lines_str: str) -> tuple[str | None, str | None]:
         return None, None
     if '_' not in func_name:
         prefix = split_camel(func_name)[0].lower()
-    elif func_name.startswith('s_unk') or func_name.startswith('meth_unk'):
+    elif re.search(r'^(s|meth)_(unk|Pod|BossRallyConfig|graphics)', func_name):
         prefix = '_'.join(func_name.split('_')[0:2])
     else:
         prefix = (func_name.split('_')[0].lower() if '_' in func_name else func_name[0:2].lower())
