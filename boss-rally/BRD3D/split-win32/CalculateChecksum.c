@@ -1,6 +1,8 @@
 #include "types-win32.h"
 //----- (10001000) --------------------------------------------------------
-int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned int elementSize) {
+unsigned int __cdecl CalculateChecksum(unsigned int seed,
+                                       unsigned __int8 *buf,
+                                       unsigned int elementSize) {
     unsigned __int8 *buf_1; // esi
     unsigned int sum2;      // ecx
     unsigned int sum1;      // edi

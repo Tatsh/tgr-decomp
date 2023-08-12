@@ -14,12 +14,12 @@ int __cdecl graphics_10028BF0(int a1,
                               int a12,
                               int a13,
                               int a14) {
-  int v14; // ebx
-  int v15; // eax
+    int v14; // ebx
+    int v15; // eax
 
-  v14 = 1 << sub_10027C00(a3);
-  v15 = sub_10028C70(a5);
-  return graphics_dword_118AA0AC(
-      a1, a2, a3, a4, 8 * (v14 / v15), a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    v14 = 1 << sub_10027C00(a3);
+    v15 = sub_10028C70(a5);
+    return graphics_dword_118AA0AC(
+        a1, a2, a3, a4, 8 * (v14 / v15), a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
 }
 // 118AA0AC: using guessed type int (__cdecl *graphics_dword_118AA0AC)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);

@@ -1,18 +1,16 @@
 #include "types-win32.h"
 //----- (10037030) --------------------------------------------------------
 int __cdecl sub_10037030(int a1) {
-  int result; // eax
+    int result; // eax
 
-  result = *(_DWORD *)(MEMORY[0x106C7C3C] + 124);
-  if (result >= 30) {
-    ++MEMORY[0x106C7C40];
-    result = *(_DWORD *)(MEMORY[0x106C7C3C] + 124) + 1;
-    *(_DWORD *)(MEMORY[0x106C7C3C] + 124) = result;
-  } else {
-    *(_DWORD *)(MEMORY[0x106C7C3C] + 4 * result + 4) = a1;
-    ++*(_DWORD *)(MEMORY[0x106C7C3C] + 124);
-  }
-  return result;
+    result = *(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18164] + 124);
+    if (result >= 30) {
+        ++*(_DWORD *)&gUnk06594.gap1C8[18168];
+        result = *(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18164] + 124) + 1;
+        *(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18164] + 124) = result;
+    } else {
+        *(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18164] + 4 * result + 4) = a1;
+        ++*(_DWORD *)(*(_DWORD *)&gUnk06594.gap1C8[18164] + 124);
+    }
+    return result;
 }
-// 106C7C3C: using guessed type int dword_106C7C3C;
-// 106C7C40: using guessed type int dword_106C7C40;

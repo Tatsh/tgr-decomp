@@ -4,10 +4,10 @@ size_t __cdecl filesystem_fwriteLock(void *Buffer,
                                      size_t ElementSize,
                                      size_t ElementCount,
                                      FILE *Stream) {
-  size_t v4; // edi
+    size_t v4; // edi
 
-  _lock_file(Stream);
-  v4 = fwrite(Buffer, ElementSize, ElementCount, Stream);
-  _unlock_file(Stream);
-  return v4;
+    _lock_file(Stream);
+    v4 = fwrite(Buffer, ElementSize, ElementCount, Stream);
+    _unlock_file(Stream);
+    return v4;
 }

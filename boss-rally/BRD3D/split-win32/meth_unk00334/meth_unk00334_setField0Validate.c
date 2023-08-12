@@ -3,6 +3,6 @@
 int __thiscall meth_unk00334_setField0Validate(unk00334 *this, unk0008C *a2) {
     if (!a2)
         return -2005522670;
-    this->ddCapsFlags = a2;
+    this->ddCapsFlags = (DWORD)a2;
     return 0;
 }

@@ -8,12 +8,16 @@
 #include <math.h>
 #include <windows.h>
 
+#include <stdarg.h>
+
 //-------------------------------------------------------------------------
 // Function declarations
 
 #define __thiscall __cdecl // Test compile in C mode
 
-int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned int elementSize);
+unsigned int __cdecl CalculateChecksum(unsigned int seed,
+                                       unsigned __int8 *buf,
+                                       unsigned int elementSize);
 // _DWORD *__thiscall unknown_libname_1(_DWORD *this);
 int __thiscall meth_unk00334_setField0Validate(unk00334 *this, unk0008C *a2); // idb
 int __thiscall meth_unk000334_10001160(unk00334 *this);                       // idb
@@ -31,10 +35,10 @@ int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds); // i
 CarPart *sub_10002140();
 long double __cdecl sin_(float a1);
 long double __cdecl sqrt_(float a1);
-int pm_sub_10002260();
+int pm_10002260();
 int pm_sub_10002440();
 int getWPARAM();
-BOOL pm_sub_10002510();
+BOOL pm_10002510();
 MCIERROR __cdecl pm_mciPlayOrClose(DWORD_PTR callback, unsigned __int8 positionToPlayFrom); // idb
 int __cdecl pm_sub_100025C0(HWND hWnd);                                                     // idb
 int __cdecl pm_sub_100025F0(HWND hWnd);                                                     // idb
@@ -49,7 +53,7 @@ int pm_sub_10002970();
 int pm_sub_100029B0();
 int __cdecl pm_sub_100029F0(int a1);
 int __cdecl pm_sub_10002A20(unsigned __int8 a1);
-int __cdecl sub_10002A80(char a1);
+int __cdecl pm_10002A80(char a1);
 int pm_sub_10002AE0();
 int pm_sub_10002B40();
 int pm_sub_10002B70();
@@ -378,7 +382,7 @@ int __stdcall graphics_Direct3D2EnumDevicesCallback(GUID *a2,
                                                     LPD3DDEVICEDESC desc,
                                                     LPD3DDEVICEDESC a6,
                                                     LPVOID userArg); // idb
-int __thiscall meth_unk00334_GetBitDepth(unk00334 *this);
+DWORD __thiscall meth_unk00334_GetBitDepth(unk00334 *this);
 int __thiscall meth_unk00334_1001AC80(
     unk00334 *this, int *width, int *height, int *bitDepth, int *a5);
 BOOL __thiscall meth_unk00334_1001ACF0(unk00334 *this, unk00228 *u228); // idb
@@ -571,21 +575,21 @@ char __cdecl sub_10025AB0(_DWORD *a1,
 unsigned int __cdecl sub_10027B10(unsigned __int16 a1);
 int __cdecl sub_10027B90(int a1, int a2, int a3);
 int __cdecl sub_10027C00(int a1);
-int __cdecl tex_sub_10027C60(unsigned __int8 *a1,
-                             int a2,
-                             int a3,
-                             int a4,
-                             int a5,
-                             int a6,
-                             int a7,
-                             int a8,
-                             int a9,
-                             int a10,
-                             int a11,
-                             int a12,
-                             int a13,
-                             int a14,
-                             int a15);
+int __cdecl graphics_10027C60(unsigned __int8 *a1,
+                              int a2,
+                              int a3,
+                              int a4,
+                              int a5,
+                              int a6,
+                              int a7,
+                              int a8,
+                              int a9,
+                              int a10,
+                              int a11,
+                              int a12,
+                              int a13,
+                              int a14,
+                              int a15);
 int __cdecl sub_10028200(_DWORD *a1, int a2, int a3);
 int __cdecl graphics_TIDFromTextureAppend(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
@@ -665,8 +669,8 @@ void __cdecl sub_1002B9E0(_BYTE *a1, int a2);
 _BYTE *__cdecl sub_1002BA00(_BYTE *a1, int a2);
 _BYTE *__cdecl sub_1002BA20(_BYTE *a1);
 _BYTE *__cdecl sub_1002BA60(_BYTE *a1, int a2);
-int __cdecl sub_1002BA80(int a1, int a2);
-int __cdecl sub_1002BAA0(int a1);
+void __cdecl sub_1002BA80(int a1, int a2);
+void __cdecl sub_1002BAA0(int a1);
 void __cdecl sub_1002BC90(_BYTE *a1);
 void __cdecl sub_1002BD50(__int16 **a1, int a2);
 void __cdecl sub_1002BDD0(_BYTE *a1, int a2);
@@ -687,16 +691,16 @@ void __thiscall meth_1002C320(void *this);
 int sub_1002C390();
 char (*sub_1002C3C0())[8];
 char (*sub_1002C410())[8];
-void __cdecl sub_1002C430(int a1);
+void __cdecl math_1002C430(int a1);
 int sub_1002C4A0();
-unsigned int sub_1002C4D0();
-// int __usercall sub_1002C500@<eax>(double a1@<st0>);
+DWORD sub_1002C4D0();
+int sub_1002C500();
 int __cdecl sub_1002F130(int a1);
 int __cdecl sub_1002F230(int a1);
 int sub_1002F2A0();
 int sub_1002F320();
 int sub_1002F460();
-int sub_1002F4C0();
+enum MACRO_GAME_MODE sub_1002F4C0();
 void sub_1002F690();
 int sub_1002F8F0();
 int __cdecl sub_1002F900(unsigned int *a1,
@@ -853,9 +857,9 @@ HRESULT __cdecl SetupDirectPlayPlayer(#503 * u1); // idb
 int sub_10038E80();
 // Pod *unknown_libname_7();
 // void __cdecl unknown_libname_8(); idb
-int sub_10038EC0();
+int sound_10038EC0();
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code); // idb
-int sub_10039000();                                       // weak
+CarPart *sub_10039000();
 void __thiscall meth_10039020(int this);
 int __thiscall meth_10039200(int this);
 int sub_100397C0();
@@ -888,11 +892,11 @@ int __cdecl sub_1003AFE0(int, int, int, float); // idb
 int __cdecl sub_1003B020(int, int, float);      // idb
 float *__cdecl sub_1003B050(float *a1, float *a2, float *a3);
 _DWORD *__cdecl sub_1003B090(_DWORD *a1);
-double __cdecl sub_1003B0A0(float *a1, float *a2);
-double __cdecl sub_1003B0E0(float *a1, float *a2);
+long double __cdecl sub_1003B0A0(float *a1, float *a2);
+long double __cdecl sub_1003B0E0(float *a1, float *a2);
 double __cdecl sub_1003B130(float *a1, float *a2);
-double __cdecl sub_1003B170(float *a1);
-double __cdecl sub_1003B1C0(float *a1);
+long double __cdecl sub_1003B170(float *a1);
+long double __cdecl sub_1003B1C0(float *a1);
 float *__cdecl sub_1003B1F0(float *a1, float *a2, float *a3);
 float *__cdecl sub_1003B2A0(float *a1, float *a2, float *a3);
 float *__cdecl sub_1003B340(float *a1, float *a2, float *a3);
@@ -938,7 +942,7 @@ int __cdecl sub_1003D180(SIZE_T dwBytes, int, int); // idb
 int __cdecl sub_1003D210(HWND hWnd, int, int);      // idb
 SIZE_T __cdecl sub_1003D3A0(SIZE_T dwBytes, int a2, LPCSTR lpString, int a4, int a5);
 int __cdecl sub_1003D480(_DWORD *a1, SIZE_T *a2);
-int __cdecl sub_1003D7B0(_DWORD *a1);
+HRESULT __cdecl sub_1003D7B0(_DWORD *a1);
 int __stdcall sub_1003D850(int, int, LPCSTR lpString, int); // idb
 int __cdecl sub_1003D8A0(int a1, int a2);
 int __cdecl sub_1003D950(int *a1, int a2);
@@ -1123,12 +1127,12 @@ int __cdecl sub_100440B0(int a1);
 int sub_100440D0();
 int __thiscall meth_100441A0(void *this);
 int sub_10044280();
-int sub_100443E0();
+unk000C8 *sub_100443E0();
 int __cdecl sub_100444C0(int a1);
 int sub_10044540();
 int sub_10044600();
 unk000C8 *__thiscall meth_unk000C8_100446D0(unk000C8 *this); // idb
-int sub_100447D0();
+unk000C8 *sub_100447D0();
 int __cdecl sub_10044970(int); // weak
 int __cdecl sub_10044A30(int); // weak
 int __cdecl sub_10044AE0(int a1);
@@ -1149,8 +1153,8 @@ int sub_10045110();
 int __stdcall sub_100451E0();
 int __stdcall sub_100452C0();
 int __stdcall sub_10045390();
-int sub_10045460();
-int sub_10045520();
+unk000C8 *sub_10045460();
+unk000C8 *sub_10045520();
 int sub_100455E0();
 int sub_100456B0();
 int sub_10045780();
@@ -1352,7 +1356,7 @@ int graphics_1005F4E0();
 IDirectDraw2 *graphics_1005F530();
 void __noreturn graphics_1005F580();
 int __cdecl graphics_1005F5A0(int a1, int a2, unsigned __int16 a3, int *a4, int a5);
-int DDrawDoInit();
+int graphics_DDrawDoInit();
 int sub_1005F800();
 int sub_1005F940();
 int __cdecl sub_1005FBC0(int a1);
@@ -1363,7 +1367,7 @@ int sub_1005FF60();
 HRESULT sub_1005FFB0();
 int sub_1005FFD0();
 int sub_1005FFF0();
-int __cdecl ShowMessageBoxAA(HWND hWnd, HRESULT hr, LPCSTR lpText); // idb
+int __cdecl windows_ShowMessageBoxAA(HWND hWnd, HRESULT hr, LPCSTR lpText); // idb
 LRESULT __stdcall s_IostreamInit_10060060(
     Iostream_init *iostreamInit, HWND hWnd, int a3, WPARAM wParam, LPARAM lParam); // idb
 int __stdcall sub_10060210(HWND a1);                                               // idb
@@ -1377,7 +1381,7 @@ LPDIRECTINPUTDEVICEA __thiscall meth_unk00054_10060750(unk00054 *this, int a2); 
 int __cdecl sub_100607B0(int a1, int a2);
 int __cdecl sub_100609E0(int a1);
 float *__cdecl sub_10060A10(int a1, int a2);
-// int __usercall sub_10060CC0@<eax>(double st7_0@<st0>, int a1, int a2);
+int __cdecl sub_10060CC0(int a1, int a2);
 char sub_10060D50();
 char sub_10060D70();
 int sub_10060D90();
@@ -1403,14 +1407,14 @@ char *thunk_LoadDamageBitmaps(void);
 char *car_LoadPaintDamageBitmaps();
 int __cdecl car_10061460(int a1, int a2, int damgePtrsMaxAddress); // idb
 int __cdecl car_10061480(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
-int __cdecl sub_100615B0(_BYTE *a1, int a2, int a3, int a4, int a5);
+int __cdecl car_100615B0(_BYTE *a1, int a2, int a3, int a4, int a5);
 void car_10061620();
 void __cdecl sub_10061660(int a1);
 int __cdecl sub_100616C0(int *a1);
-int sub_10061700();
+int track_10061700();
 void __thiscall meth_10061720(_DWORD *this); // idb
-// void __usercall sub_10061BE0(double a1@<st0>, _DWORD *a2);
-// float *__usercall sub_10061C60@<eax>(int a1@<ecx>, double a2@<st0>);
+void __cdecl sub_10061BE0(_DWORD *a2);
+float *__thiscall sub_10061C60(int a1);
 void __thiscall meth_10061F70(_DWORD *this); // idb
 void __thiscall meth_10062C50(_DWORD *this); // idb
 void thunk_nullsub_2_1();
@@ -1460,7 +1464,7 @@ void __thiscall meth_100683C0(_DWORD *this);
 int sub_100683D0();
 int __thiscall meth_10068400(_DWORD *this);  // idb
 void __thiscall meth_10068EF0(_DWORD *this); // idb
-// int __usercall sub_10069330@<eax>(int a1@<ecx>, double a2@<st0>);
+int __thiscall sub_10069330(int a1);
 int __thiscall meth_10069370(_DWORD *this); // idb
 char *sub_10069490();
 char *sub_100694E0();
@@ -1472,9 +1476,9 @@ int __cdecl sub_10069740(int a1);
 int __cdecl sub_100697C0(int a1);
 int __cdecl sub_100697E0(int a1);
 char *sub_10069800();
-void sub_10069840();
-int sub_10069A50();
-BossRallyConfig *sub_10069A60();
+void filesystem_10069840();
+int config_10069A50();
+BossRallyConfig *config_10069A60();
 // void __cdecl debug_10069A80(); idb
 BossRallyConfig *__thiscall meth_BossRallyConfig_10069A90(BossRallyConfig *this);
 int __thiscall meth_BossRallyConfig_10069AA0(BossRallyConfig *this, int nPlayers); // idb
@@ -1497,7 +1501,7 @@ int sub_1006AA50();
 int sub_1006AAA0();
 char __cdecl sub_1006AAB0(int a1);
 int *sub_1006AB20();
-void *sub_1006AB90();
+int *sub_1006AB90();
 int sub_1006ABA0();
 int sub_1006ABB0();
 int __cdecl sub_1006ABD0(int a1, int a2);
@@ -1519,7 +1523,7 @@ __int16 __cdecl sub_1006C740(int a1, int a2);
 double __cdecl sub_1006C9A0(int a1, float a2, int a3);
 int __cdecl sub_1006C9D0(int a1, float *a2, int a3, int a4);
 int __cdecl sub_1006CCD0(int, int, int, int, float); // idb
-_DWORD *__cdecl sub_1006D280(int a1);
+int *__cdecl sub_1006D280(int a1);
 int __cdecl sub_1006D2B0(int a1);
 int __cdecl sub_1006D540(float *a1, char a2);
 int __cdecl sub_1006D660(int a1, float *a2, int a3);
@@ -1534,7 +1538,7 @@ int __cdecl sub_1006EC80(int a1, int a2);
 void __cdecl sub_1006EF80(int a1, float *a2);
 double __cdecl sub_1006F0C0(int a2, int a3);
 double __cdecl sub_1006F310(float *a2);
-// void __usercall sub_1006F4A0(double a1@<st0>, _DWORD *a2);
+void __cdecl sub_1006F4A0(_DWORD *a2);
 int __cdecl sub_1006F540(int a1);
 void __cdecl sub_1006F650(int a1);
 __int16 __cdecl sub_1006F720(float a1, float a2);
@@ -1574,8 +1578,8 @@ int __cdecl sub_10072080(_DWORD *a1, char a2);
 int __cdecl sub_10072110(_DWORD *a1, char a2);
 int __cdecl sub_10072170(_DWORD *a1);
 int sub_10072270();
-int __cdecl sub_100722D0(int *a1);
-int __cdecl sub_10072450(int a1, int a2);
+int __cdecl sound_100722D0(int *a1);
+int __cdecl sound_10072450(int a1, int a2);
 int __cdecl sub_10072490(int a1);
 int __cdecl sub_100724B0(int a1);
 int __cdecl sub_100724D0(int a1);
@@ -1602,25 +1606,25 @@ BOOL __cdecl sub_10072B80(int a1, int a2, unsigned int a3);
 BOOL __cdecl sub_10072BA0(int a1, int a2);
 int __cdecl sub_10072BF0(int a1);
 int __cdecl sub_10072C20(int a1);
-HMMIO __cdecl sub_10072CA0(LPSTR pszFileName);
-int sub_10072E00();
+HMMIO __cdecl sound_10072CA0(LPSTR pszFileName);
+int sound_10072E00();
 int sub_10072E60();
-BOOL __cdecl pm_sub_10072FE0(int a1);
-BOOL __cdecl sub_10073020(int a1);
+BOOL __cdecl pm_10072FE0(int a1);
+BOOL __cdecl pm_10073020(int a1);
 int *sub_10073060();
-int __cdecl sub_10073080(int a1, int a2);
-int __cdecl sub_100730A0(int a1);
-int __cdecl pm_sub_10073320(int a1);
-int sub_100734F0();
+int __cdecl sound_10073080(int a1, int a2);
+int __cdecl sound_100730A0(int a1);
+int __cdecl pm_10073320(int a1);
+int pm_100734F0();
 int ReleaseDirectSound();
 int sub_100737E0();
 int sub_10073820();
 int sub_10073950();
 int sub_10073980();
 int sub_100739B0();
-int sub_100739E0();
-void *sub_10073AC0();
-void *sub_10073B00();
+int graphics_100739E0();
+void *graphics_10073AC0();
+void *graphics_10073B00();
 void __thiscall meth_unk00214_10073B40_init(unk00214 *this); // idb
 _DWORD *__thiscall meth_10073B60(_DWORD *this, int a2, int a3);
 int __thiscall meth_unk00214_10073B80(unk00214 *this); // idb
@@ -1641,9 +1645,9 @@ int __thiscall meth_unk00214_10073E70(_DWORD *this, int a2, int a3);
 int __thiscall meth_unk00214_10073F20(unk00214 *this); // idb
 int __thiscall meth_unk00214_10073F40(unk00214 *this); // idb
 int *__thiscall meth_unk00214_GetField10(unk00214 *this);
-HMODULE LoadBrstringDll();
-LPCSTR __cdecl GetStringWithIndex(unsigned int index);
-void ReleaseBRString();
+HMODULE text_LoadBRstringDLL();
+LPCSTR __cdecl text_GetStringWithIndex(unsigned int index);
+void text_ReleaseBRString();
 float *__cdecl math_10074090(float *a1, float *a2, float *a3);
 void __cdecl math_100741B0(float *a1);
 void __cdecl math_10074250(float *a1);
@@ -1652,30 +1656,30 @@ int __cdecl math_100743A0(int, int, float); // idb
 void __cdecl math_10074450(float *a1, float *a2);
 int __cdecl math_100745F0(int, int, float); // idb
 _DWORD *__cdecl sub_100746E0(_DWORD *a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
-float *__cdecl sub_10074720(float *a1, float *a2, float *a3);
-float *__cdecl sub_10074770(float *a1, int a2, float *a3);
-float *__cdecl sub_100747C0(float *a1, float *a2, float *a3);
-float *__cdecl sub_10074830(float *a1, float *a2, float *a3);
-void __cdecl sub_10074870(int a1);
-int __cdecl sub_100749D0(int a1, int a2);
+float *__cdecl math_10074720(float *a1, float *a2, float *a3);
+float *__cdecl math_10074770(float *a1, int a2, float *a3);
+float *__cdecl math_100747C0(float *a1, float *a2, float *a3);
+float *__cdecl math_10074830(float *a1, float *a2, float *a3);
+void __cdecl math_10074870(int a1);
+int __cdecl math_100749D0(int a1, int a2);
 int __cdecl sub_10074A10(float *a1, int a2, float *a3);
 int *__cdecl sub_10074A50(_DWORD *a1, int *a2);
 _DWORD *__cdecl sub_10074A90(_DWORD *a1, int *a2);
-float *__cdecl sub_10074AC0(int a1, int a2, int a3);
-float *__cdecl sub_10074B20(int a1, int a2, float *a3);
-float *__cdecl sub_10074B70(float *a1, int a2, int a3);
-float *__cdecl sub_10074C10(float *a1, float *a2, float *a3);
+float *__cdecl math_10074AC0(int a1, int a2, int a3);
+float *__cdecl math_10074B20(int a1, int a2, float *a3);
+float *__cdecl math_10074B70(float *a1, int a2, int a3);
+float *__cdecl math_10074C10(float *a1, float *a2, float *a3);
 int __cdecl sub_10074DC0(int a1);
-int sub_10074DD0();
+int graphics_10074DD0();
 int sub_10074E00();
 _DWORD *__cdecl sub_10074E20(_DWORD *a1);
 int __cdecl sub_10074E40(int a1, int a2, int a3);
 int __cdecl sub_10074ED0(int a1, int a2, int a3);
 HANDLE sub_10074F20();
 BOOL sub_10074F40();
-BOOL __cdecl sub_10074F70(int a1, int a2);
-BOOL sub_10074FC0();
-DWORD getTicks();
+BOOL __cdecl atomic_sub_10074F70(int a1, int a2);
+BOOL atomic_sub_10074FC0();
+DWORD GetTicks();
 int sub_100750F0();
 DWORD sub_10075100();
 int sub_10075150();
@@ -1683,7 +1687,7 @@ DWORD __thiscall meth_10075190(int this);
 int __cdecl time_10075260(__int16 a1, int a2, int a3, int a4, int a5);
 int __cdecl time_100752D0(__int16 a1, int a2, int a3, int a4);
 // size_t __cdecl strftime(char *Buffer, size_t SizeInBytes, const char *Format, const struct tm *Tm);
-void j_nullsub_2_2();
+void thunk_j_nullsub_2_2();
 void nullsub_2();
 int __thiscall meth_10075340(_DWORD *this);
 int __thiscall meth_10075360(int this);
@@ -1710,8 +1714,8 @@ MMRESULT __cdecl mm_10076CE0(LPSTR pszFileName, int a2, int a3, LPMMCKINFO pmmck
 MMRESULT __cdecl mm_10076E90(int a1, LPMMCKINFO pmmcki, MMCKINFO *pmmckiParent);
 int __cdecl mm_10076ED0(HMMIO hmmio, int, int, int, int); // idb
 MMRESULT __cdecl mm_10076FA0(LPSTR pszFileName, int a2, int a3, int a4, HMMIO hmmio);
-void __cdecl sub_10077090(unsigned int a1);
-int sub_100770C0();
+void __cdecl windows_10077090(WPARAM wParam); // idb
+int input_100770C0();
 int input_100770F0();
 HRESULT __cdecl input_100771B0(void *a1);
 int __cdecl input_10077200(_DWORD *a1);
@@ -1785,7 +1789,7 @@ LRESULT __cdecl events_handle_WM_WINDOWPOSCHANGING(HWND hWnd, WPARAM wParam, LPA
 int __cdecl main_1007A6A0(HWND hWnd, intptr_t dwNewLong);                                    // idb
 int __cdecl main_ResetWindowLong_USERDATA(HWND hWnd);                                        // idb
 int __cdecl s_unk00334_QSortCompareFn(unk00334 *u334aOrBitDepth, unk00334 **u334OrBitDepth); // idb
-unk00334 *__cdecl s_CLSID_1007A7D0(CLSID *a1);                                               // idb
+unk00334 *__cdecl graphics_1007A7D0(CLSID *a1);                                              // idb
 int __stdcall graphics_1007A840();
 int graphics_1007A940();
 int graphics_1007AC00();
@@ -1868,20 +1872,20 @@ _DWORD __cdecl math_1007E6AD(_DWORD, _DWORD); // weak
 // int __cdecl _getdrive();
 // int __cdecl _chdrive(int Drive);
 // char *__cdecl _strupr(char *String);
-char *__cdecl getcwd(char *buffer, int maxlen); // idb
+char *__cdecl filesystem_getcwd(char *buffer, int maxlen); // idb
 // char *__cdecl _getdcwd_lk(int RootPathName, char *a2, int a3); idb
 // int __cdecl _validdrive(CHAR RootPathName); idb
 // void __stdcall `eh vector destructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *)); idb
 // void __stdcall __ArrayUnwind(void *, unsigned int, int, void (__thiscall *)(void *)); idb
 // void __stdcall `eh vector constructor iterator'(void *, unsigned int, int, void (__thiscall *)(void *), void (__thiscall *)(void *)); idb
-// int __cdecl _findfirst(LPCSTR lpFileName, int); idb
+// int __cdecl _findfirst(char *filespec, _finddata_t *a2); idb
 // int __cdecl _findnext(HANDLE hFindFile, int); idb
 // int __cdecl _findclose(intptr_t FindHandle);
-// int __cdecl __timet_from_ft(FILETIME *lpFileTime); idb
+// time_t __cdecl __timet_from_ft(FILETIME *lpFileTime);
 // _DWORD __cdecl sub_1007FA52(_DWORD, _DWORD, __int16, _DWORD, __int16); weak
 // int __usercall sub_1007FC25@<eax>(double@<st0>); weak
 // int __cdecl _finite(double X);
-// int __stdcall _CRT_INIT(HINSTANCE a1, int a2, int a3); idb
+// int __stdcall _CRT_INIT(HINSTANCE a1, DWORD fdwReason, LPVOID a3); idb
 // BOOL __stdcall DllEntryPoint(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved);
 // void __cdecl __noreturn _amsg_exit(int a1);
 // int _setdefaultprecision(void); weak
@@ -1890,6 +1894,9 @@ char *__cdecl getcwd(char *buffer, int maxlen); // idb
 // int _cropzeros(); weak
 // int __cdecl _positive(int); weak
 // int __cdecl _fassign(int a1, int *a2, int a3);
+// _DWORD __cdecl _cftoe(_DWORD, _DWORD, _DWORD, _DWORD); weak
+// int __cdecl _cftof(int, void *Src, int); idb
+// int __cdecl _cftog(int, void *Src, int, int); idb
 // int __cdecl _cfltcvt(int, void *Src, int, int, int); idb
 // int __cdecl _flsbuf(int Ch, FILE *File);
 // int __cdecl _output(FILE *File, int, int); idb
@@ -1950,7 +1957,7 @@ void __noreturn noreturn_10083B50();
 // double __cdecl _startTwoArgErrorHandling(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // double __cdecl _startOneArgErrorHandling(__int16, _DWORD, _DWORD, _DWORD); weak
 // size_t __cdecl _msize(void *Block);
-// int __cdecl __loctotime_t(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+// time_t __cdecl __loctotime_t(int year, int month, int day, int hours, int minute, int second, int dst);
 // void __usercall fFYTOX(char a1@<ch>, int a2@<ebp>, long double a3@<st1>, long double a4@<st0>);
 // void zerotoxdone();
 // void expbigret();
@@ -1967,16 +1974,20 @@ void __noreturn noreturn_10083B50();
 // int setSBCS(void); weak
 // int __initmbctable(void); weak
 // CHAR *__crtGetEnvironmentStringsA();
-int __cdecl sub_10086B80(int a1);
+int __cdecl crt_SetCompatMode(int a1);
 // BOOL __stdcall DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved);
-// int _FF_MSGBANNER(void); weak
+// int *_FF_MSGBANNER();
 // int *__cdecl _NMSG_WRITE(int a1);
+// _DWORD __cdecl _RoundMan(_DWORD, _DWORD); weak
 // _DWORD *__cdecl _CopyMan(int a1, _DWORD *a2);
-// _DWORD __cdecl _ld12cvt(_DWORD, _DWORD, _DWORD); weak
-int __cdecl sub_10087540(int a1, int a2);
-int __cdecl ld12cvt_(int a1, int a2);
-int __cdecl sub_10087580(int a1, int a2);
-int __cdecl sub_100875C0(int a1, int a2);
+// _DWORD __cdecl _FillZeroMan(_DWORD); weak
+// _DWORD __cdecl _IsZeroMan(_DWORD); weak
+// _DWORD __cdecl _ShrMan(_DWORD, _DWORD); weak
+// INTRNCVT_STATUS __cdecl _ld12cvt(_LDBL12 *a1, void *d, FpFormatDescriptor *a3);
+INTRNCVT_STATUS __cdecl math_10087540(_LDBL12 *a1, void *a2); // idb
+INTRNCVT_STATUS __cdecl math_ld12cvt(_LDBL12 *a1, void *a2);  // idb
+INTRNCVT_STATUS __cdecl math_10087580(void *a1, char *a2);    // idb
+INTRNCVT_STATUS __cdecl math_100875C0(int a1, char *a2);
 // int __cdecl _ValidateRead(const void *lp, UINT_PTR ucb); idb
 // int __cdecl _ValidateWrite(void *lp, UINT_PTR ucb); idb
 // int __cdecl _ValidateExecute(FARPROC lpfn); idb
@@ -1985,7 +1996,7 @@ int __cdecl sub_100875C0(int a1, int a2);
 // int __tzset(void); weak
 // BOOL __cdecl _isindst(_DWORD *a1);
 BOOL __cdecl time_10089B40(_DWORD *a1);
-// _DWORD __cdecl cvtdate(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
+// int __cdecl cvtdate(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
 // double __cdecl unknown_libname_13(_TBYTE a1, _TBYTE a2);
 // int __usercall unknown_libname_15@<eax>(double a1@<st1>, double a2@<st0>);
 // int __usercall unknown_libname_16@<eax>(double a1@<st1>, double a2@<st0>);
@@ -2000,7 +2011,7 @@ BOOL __cdecl time_10089B40(_DWORD *a1);
 // _DWORD __cdecl __shl_12(_DWORD); weak
 // _DWORD __cdecl __shr_12(_DWORD); weak
 // _DWORD __cdecl __mtold12(_DWORD, _DWORD, _DWORD); weak
-// int __cdecl __strgtold12(int a1, char **a2, char *a3, int a4, int a5, int a6, int a7);
+// int __cdecl __strgtold12(_LDBL12 *a1, char **a2, char *a3, int a4, int a5, int a6, int a7); idb
 // int __cdecl _I10_OUTPUT(unsigned int a1, __int64 a2, int a3, char a4, int a5);
 // int __cdecl __getlocaleinfo(UINT CodePage, LCID Locale, LCTYPE LCType, int); idb
 // char *__cdecl _itoa(int Value, char *Buffer, int Radix);
@@ -2069,6 +2080,7 @@ BOOL __cdecl time_10089B40(_DWORD *a1);
 // LPSTR __stdcall GetCommandLineA();
 // BOOL __stdcall FileTimeToLocalFileTime(const FILETIME *lpFileTime, LPFILETIME lpLocalFileTime);
 // BOOL __stdcall FileTimeToSystemTime(const FILETIME *lpFileTime, LPSYSTEMTIME lpSystemTime);
+// HANDLE __stdcall FindFirstFileA(LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData);
 // BOOL __stdcall CloseHandle(HANDLE hObject);
 // HANDLE __stdcall CreateMutexA(LPSECURITY_ATTRIBUTES lpMutexAttributes, BOOL bInitialOwner, LPCSTR lpName);
 // DWORD __stdcall WaitForMultipleObjects(DWORD nCount, const HANDLE *lpHandles, BOOL bWaitAll, DWORD dwMilliseconds);
@@ -2222,10 +2234,15 @@ unk06594Vtbl gUnk06594Vtbl = {&meth_unk06594_0,
                               &meth_unk06594_5,
                               &meth_unk06594_6};
 _UNKNOWN unk_1008FA64; // weak
+_UNKNOWN unk_1008FC1C; // weak
 GUID CLSID_IDirectDraw2 = {
     3014063072u, 11075u, 4559u, {162u, 222u, 0u, 170u, 0u, 185u, 51u, 86u}}; // idb
 GUID CLSID_IDirectDrawSurface2 = {
     1468029061u, 28396u, 4559u, {148u, 65u, 168u, 35u, 3u, 193u, 14u, 39u}}; // idb
+GUID CLSID_IDirectDrawSurface3 = {
+    3657715200u, 27058u, 4560u, {161u, 213u, 0u, 170u, 0u, 184u, 223u, 187u}}; // idb
+GUID CLSID_IDirectDrawSurface4 = {
+    187401776u, 44341u, 4560u, {142u, 166u, 0u, 96u, 151u, 151u, 234u, 91u}}; // idb
 GUID CLSID_IDirect3D2 = {
     1789796033u, 26154u, 4560u, {136u, 157u, 0u, 170u, 0u, 187u, 183u, 106u}}; // idb
 GUID CLSID_IDirect3DRGBDevice = {
@@ -2234,10 +2251,16 @@ GUID CLSID_IDirect3DMMXDevice = {
     2283358625u, 55027u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
 GUID CLSID_IDirect3DTexture2 = {
     2468877570u, 36088u, 4560u, {137u, 171u, 0u, 160u, 201u, 5u, 65u, 41u}}; // idb
+GUID CLSID_IDirectInputDevice2A = {
+    1497687682u, 51502u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
 GUID CLSID_GUID_SysMouse = {
     1864182624u, 54688u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
 GUID CLSID_GUID_SysKeyboard = {
     1864182625u, 54688u, 4559u, {191u, 199u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_GUID_Square = {
+    324279330u, 36403u, 4560u, {154u, 208u, 0u, 160u, 201u, 160u, 110u, 53u}}; // idb
+GUID CLSID_GUID_Spring = {
+    324279335u, 36403u, 4560u, {154u, 208u, 0u, 160u, 201u, 160u, 110u, 53u}}; // idb
 const IID IID_IDirectPlay3A = {
     322895425u, 13020u, 4560u, {156u, 251u, 0u, 160u, 201u, 10u, 67u, 203u}}; // idb
 IID IID_IDirectPlay4A = {
@@ -2259,6 +2282,10 @@ const IID IID_IDirectPlayLobby3A = {
 const IID CLSID_DirectPlayLobby = {
     803797008u, 45733u, 4560u, {167u, 135u, 0u, 0u, 248u, 3u, 171u, 252u}}; // idb
 int dword_100909E0 = -153304576;                                            // weak
+GUID CLSID_CLSID_DirectSound = {
+    1205131590u, 25320u, 4559u, {147u, 188u, 68u, 69u, 83u, 84u, 0u, 0u}}; // idb
+GUID CLSID_IDirectSound = {
+    664468099u, 18817u, 4558u, {165u, 33u, 0u, 32u, 175u, 11u, 229u, 96u}}; // idb
 int gPlayMusic = 2;                                                         // weak
 _DWORD dword_100940A8 = 100;                                                // idb
 char aCdaudio[8] = "cdaudio";                                               // weak
@@ -2318,6 +2345,10 @@ char aPod[] = "POD";                                                 // idb
 char aAddNameIsTooLo[] = "Add: Name is too long to be a pod name.";  // idb
 char kFileModeWriteBinary[] = "wb";                                  // idb
 char aFileReadFailur[] = "File read failure";                        // idb
+_UNKNOWN unk_100946C8;                                               // weak
+_UNKNOWN unk_1009B4C8;                                               // weak
+_UNKNOWN unk_100A22D0;                                               // weak
+_UNKNOWN unk_100A4170;                                               // weak
 char byte_100A5FEF[129] = {
     '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',
     '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',   '\0',
@@ -2336,6 +2367,7 @@ int dword_100A6150[] = {0};                                                // we
 int dword_100A61C0[] = {0};                                                // weak
 int dword_100A6230 = 2;                                                    // weak
 intptr_t gD3DEnumTextureFormatsContextStart = 0;
+_UNKNOWN unk_100A6238;                                    // weak
 int gD3DWaitCanFlip = 1;                                  // weak
 int gD3DWaitFlipDone = 1;                                 // weak
 CHAR gMessageBoxText[] = "This game requires DirectX 6."; // idb
@@ -2369,6 +2401,8 @@ char byte_100A64B8[16] = {'\x03',
                           '\0',
                           '\0'};                         // idb
 void *off_100A64C8 = &unk_10850001;                      // weak
+_UNKNOWN unk_100A64E8;                                   // weak
+_UNKNOWN unk_100A64F0;                                   // weak
 char byte_100A64F8[] = {'\0'};                           // weak
 char byte_100A64F9[] = {'\0'};                           // weak
 char byte_100A64FA[] = {'\0'};                           // weak
@@ -2376,6 +2410,8 @@ int dword_100A65D8[4] = {2, 1, 3, 0};                    // idb
 char aBadVtxDl[11] = "BAD VTX DL";                       // weak
 int dword_100A66E8 = 1;                                  // weak
 int gInterpolate = 1;                                    // weak
+_UNKNOWN unk_100A66F0;                                   // weak
+_UNKNOWN unk_100A66F4;                                   // weak
 char (*off_100A66FC)[8] = &String2;                      // weak
 float flt_100A6CF0 = 30.0;                               // weak
 float flt_100A6CF4 = 30.0;                               // weak
@@ -2391,6 +2427,10 @@ char aY1D[8] = "%%y1%d.";                                // weak
 int dword_100A74A8 = 255;                                // weak
 int dword_100A74AC = 255;                                // weak
 int dword_100A74B0 = 255;                                // weak
+_UNKNOWN unk_100A74B8;                                   // weak
+_UNKNOWN unk_100A75F8;                                   // weak
+_UNKNOWN unk_100A7738;                                   // weak
+_UNKNOWN unk_100A7878;                                   // weak
 float flt_100A79C8 = 0.5;                                // weak
 int dword_100A79CC = -1;                                 // weak
 char aUnknown_0[8] = "UNKNOWN";                          // weak
@@ -2551,6 +2591,11 @@ CHAR g_DINPUT_DLL[] = "DINPUT.DLL";                                   // idb
 int gD3dalphacompar = 1;                                              // weak
 int dword_100AA728 = -2143612928;                                     // weak
 int dword_100AA72C = -2143518720;                                     // weak
+_UNKNOWN unk_100AA730;                                                // weak
+_UNKNOWN unk_100AA770;                                                // weak
+_UNKNOWN unk_100AA838;                                                // weak
+_UNKNOWN unk_100AA860;                                                // weak
+_UNKNOWN unk_100AA868;                                                // weak
 int dword_100AA87C = 1;                                               // weak
 int dword_100AA880 = 1;                                               // weak
 int dword_100AA884 = 1;                                               // weak
@@ -2569,6 +2614,9 @@ int dword_100AA8C0[] = {-64577532};                                   // weak
 int dword_100AA8C4[] = {536646648};                                   // weak
 int dword_100AA8C8[] = {-50356220};                                   // weak
 int dword_100AA8CC[3] = {-158728, -61800956, 1073607672};             // idb
+_UNKNOWN unk_100AA8D8;                                                // weak
+_UNKNOWN unk_100AA998;                                                // weak
+_UNKNOWN unk_100AAA58;                                                // weak
 int dword_100AAB18 = 14;                                              // weak
 char aHugeGlistError[17] = "HUGE GLIST ERROR";                        // weak
 char aLoadcar[10] = "LoadCar()";                                      // weak
@@ -2639,8 +2687,10 @@ char aDperrGeneric[14] = "DPERR_GENERIC";                                       
 char aDperrNointerfa[18] = "DPERR_NOINTERFACE";                                             // weak
 char aDperrUnsupport[18] = "DPERR_UNSUPPORTED";                                             // weak
 char aDperrPending[14] = "DPERR_PENDING";                                                   // weak
-char aE_0[2] = "\xca";                                                                         // weak
+char aE_0[2] = "\xca";                                                                      // weak
 int dword_100AB334[] = {0};                                                                 // weak
+_UNKNOWN unk_100AB338;                                                                      // weak
+_UNKNOWN unk_100AB394;                                                                      // weak
 int dword_100AB3D8 = 1;                                                                     // weak
 __int16 word_100AB3DC = 1;                                                                  // weak
 int dword_100AB3E0 = -1;                                                                    // weak
@@ -2668,13 +2718,17 @@ _UNKNOWN unk_100AB468;                                                          
 _UNKNOWN unk_100AB478;                                                                      // weak
 _UNKNOWN unk_100AB488;                                                                      // weak
 _UNKNOWN unk_100AB498;                                                                      // weak
+_UNKNOWN unk_100AB4A8;                                                                      // weak
 _UNKNOWN unk_100AB4B8;                                                                      // weak
+_UNKNOWN unk_100AB4C8;                                                                      // weak
 int dword_100AB4D8[4] = {188, 130, 300, 225};                                               // idb
 int dword_100AB4E8[4] = {188, 130, 300, 197};                                               // idb
+_UNKNOWN unk_100AB4F8;                                                                      // weak
 _UNKNOWN unk_100AB508;                                                                      // weak
 int dword_100AB528[4] = {128, 76, 384, 209};                                                // idb
 int dword_100AB538[4] = {188, 130, 300, 206};                                               // idb
 int dword_100AB548[4] = {162, 130, 318, 206};                                               // idb
+_UNKNOWN unk_100AB558;                                                                      // weak
 __int16 word_100AB568[] = {0};                                                              // weak
 int dword_100AB56C[4] = {0, 0, 640, 480};                                                   // idb
 int dword_100AB57C[30] = {0, 1,   0,   0, 28, 30, 1, 2,   0,   0, 128, 144, 1, 3,   0,
@@ -3441,28 +3495,28 @@ void *off_100B3700 = &unk_10AF9B48; // weak
 char byte_100B37D0[] = {'\0'};      // weak
 char byte_100B37D1[] = {'\x7F'};    // weak
 char byte_100B37D2[58] = {
-    '\0',   '\xFF', '\xaf',    '\0',   '\0',   '\0',   '\xaf',  '\xc8',  '\0', '\0', '\xa0', '\0',
-    '\x8c',    '\xFF', '\xFF', '\xFF', '\0',   '0',    '\0', '\0', '\0', '\0', '\xf0', 'x',
-    '\0',   '`',    '0',    '\x10', '\x80',    '\xFF', '\x8c',  '\x80',  '\x80',  '\x80',  '\x80', '\xb8',
-    '\xFF', 'X',    '\0',   'H',    '\xd0',    '\xc8',    '\x80',  '\x80',  '\x80',  '\x80',  '\xc8', '\0',
-    'd',    '\0',   '\xbe',    '\xa0',    '\xFF', '\x94',    '\xa0',  '\0', '\0', '@'}; // idb
-int gChosenTrack = 2;                                                       // weak
-unsigned int dword_100B3810 = 223u;                                         // idb
-int dword_100B3814[] = {2};                                                 // weak
-int dword_100B3818[] = {10};                                                // weak
-char byte_100B381C[2] = {'\x01', '\b'};                                     // idb
-__int16 word_100B381E[] = {129};                                            // weak
-char byte_100B3820[] = {'\x02'};                                            // weak
+    '\0',   '\xFF', '\xaf', '\0',   '\0',   '\0',   '\xaf', '\xc8', '\0',   '\0',   '\xa0', '\0',
+    '\x8c', '\xFF', '\xFF', '\xFF', '\0',   '0',    '\0',   '\0',   '\0',   '\0',   '\xf0', 'x',
+    '\0',   '`',    '0',    '\x10', '\x80', '\xFF', '\x8c', '\x80', '\x80', '\x80', '\x80', '\xb8',
+    '\xFF', 'X',    '\0',   'H',    '\xd0', '\xc8', '\x80', '\x80', '\x80', '\x80', '\xc8', '\0',
+    'd',    '\0',   '\xbe', '\xa0', '\xFF', '\x94', '\xa0', '\0',   '\0',   '@'}; // idb
+int gChosenTrack = 2;                                                             // weak
+unsigned int dword_100B3810 = 223u;                                               // idb
+int dword_100B3814[] = {2};                                                       // weak
+int dword_100B3818[] = {10};                                                      // weak
+char byte_100B381C[2] = {'\x01', '\b'};                                           // idb
+__int16 word_100B381E[] = {129};                                                  // weak
+char byte_100B3820[] = {'\x02'};                                                  // weak
 char byte_100B3821[107] = {
-    '\0',   '\x04', '\0',   '\0',   '\0',   '\0',   '\0',   '\xe0',    '\0',   '\0', '\0', '\x03',
+    '\0',   '\x04', '\0',   '\0',   '\0',   '\0',   '\0',   '\xe0', '\0',   '\0', '\0', '\x03',
     '\0',   '\0',   '\0',   '\x0F', '\0',   '\0',   '\0',   '\0',   '\a',   'P',  '\0', '\0',
-    '\0',   '\x02', '\0',   '\x04', '\x02', '\0',   '\0',   '\xe1',    '\0',   '\0', '\0', '\x04',
+    '\0',   '\x02', '\0',   '\x04', '\x02', '\0',   '\0',   '\xe1', '\0',   '\0', '\0', '\x04',
     '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x04', '\x06', '\f', '\0', '\x04',
-    '\x01', '\0',   '\x01', '\x02', '\x02', '\x01', '\0',   '\xe2',    '\0',   '\0', '\0', '\x04',
+    '\x01', '\0',   '\x01', '\x02', '\x02', '\x01', '\0',   '\xe2', '\0',   '\0', '\0', '\x04',
     '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x03', '\x02', ' ',  '\0', '\x04',
-    '\x03', '\x01', '\x01', '\x02', '\x04', '\0',   '\x02', '\xe3',    '\0',   '\0', '\0', '\x04',
+    '\x03', '\x01', '\x01', '\x02', '\x04', '\0',   '\x02', '\xe3', '\0',   '\0', '\0', '\x04',
     '\0',   '\0',   '\0',   '\x14', '\0',   '\0',   '\0',   '\x02', '\x05', ' ',  '\0', '\x02',
-    '\x03', '\0',   '\x04', '\n',   '\x03', '\x01', '\x02', '\xe4',    '\0',   '\0', '\0'}; // idb
+    '\x03', '\0',   '\x04', '\n',   '\x03', '\x01', '\x02', '\xe4', '\0',   '\0', '\0'}; // idb
 int dword_100B388C = 4;                                                                  // weak
 float dword_100B38A0[48] = {
     0.99550003, 0.99800003, 0.99550003, 0.99800003, 0.99550003, 0.99800003, 0.99550003,
@@ -3487,140 +3541,147 @@ char aMakeenemycarco_0[] = "MakeEnemyCarColorPanels: penm->aptex[i]";           
 char aMakeenemycarco[] = "MakeEnemyCarColorPanels: penm->aptex";                          // idb
 char aRy[] = "%%ry";                                                                      // idb
 int dword_100B4050 = 1;                                                                   // weak
-char aE[2] = "\xcb";                                                                         // weak
+char aE[2] = "\xcb";                                                                      // weak
 char gJoystick1Data[504] = {
-    '\0',   '\x80',    'K',  '\0', '\xcb',    '\0', '\0',   '\x81', 'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x82',    'H',  '\0', '\xc8',    '\0', '\0',   '\x83',    '\x9D', '\0', '\x1D', '\0',
-    '\x03', '\x01', 'P',  '\0', '\xd0',    '\0', '\0',   '\x01', '\x1E', '\0', '\x1E', '\0',
-    '\x01', '\x01', ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\0',   '\x01', 'H',  '\0', '\xc8',    '\0', '\x01', '\x01', 'P',    '\0', '\xd0',    '\0',
-    '\0',   '\x82',    '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\0',   '\x80',    'K',  '\0', '\xcb',    '\0', '\0',   '\x81', 'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x01', 'H',  '\0', '\xc8',    '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
-    '\x02', '\x01', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\0',   '\x82',    'H',  '\0', '\xc8',    '\0', '\0',   '\x83',    'P',    '\0', '\xd0',    '\0',
-    '\0',   '\x01', '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\0',   '\x86',    'K',  '\0', '\xcb',    '\0', '\0',   '\x87',    'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x03', 'H',  '\0', '\xc8',    '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
-    '\x01', '\x03', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\xc8',    '\0',   'H',  '\0', '\xc8',    '\0', '\xd0',    '\0',   'P',    '\0', '\xd0',    '\0',
-    '\x1C', '\0',   '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0'};
+    '\0',   '\x80', 'K',    '\0', '\xcb', '\0', '\0',   '\x81', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x82', 'H',    '\0', '\xc8', '\0', '\0',   '\x83', '\x9D', '\0', '\x1D', '\0',
+    '\x03', '\x01', 'P',    '\0', '\xd0', '\0', '\0',   '\x01', '\x1E', '\0', '\x1E', '\0',
+    '\x01', '\x01', ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\0',   '\x01', 'H',    '\0', '\xc8', '\0', '\x01', '\x01', 'P',    '\0', '\xd0', '\0',
+    '\0',   '\x82', '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\0',   '\x80', 'K',    '\0', '\xcb', '\0', '\0',   '\x81', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x01', 'H',    '\0', '\xc8', '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
+    '\x02', '\x01', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\0',   '\x82', 'H',    '\0', '\xc8', '\0', '\0',   '\x83', 'P',    '\0', '\xd0', '\0',
+    '\0',   '\x01', '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\0',   '\x86', 'K',    '\0', '\xcb', '\0', '\0',   '\x87', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x03', 'H',    '\0', '\xc8', '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
+    '\x01', '\x03', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\xc8', '\0',   'H',    '\0', '\xc8', '\0', '\xd0', '\0',   'P',    '\0', '\xd0', '\0',
+    '\x1C', '\0',   '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0'};
 char gJoystick2Data[504] = {
-    '\0',   '\x80',    'K',  '\0', '\xcb',    '\0', '\0',   '\x81', 'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x01', 'H',  '\0', '\xc8',    '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
-    '\x02', '\x01', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\0',   '\x82',    'H',  '\0', '\xc8',    '\0', '\0',   '\x83',    'P',    '\0', '\xd0',    '\0',
-    '\0',   '\x01', '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\0',   '\x86',    'K',  '\0', '\xcb',    '\0', '\0',   '\x87',    'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x03', 'H',  '\0', '\xc8',    '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
-    '\x01', '\x03', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0',   'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0',   'R',    '\0', '\xd2',    '\0',
-    '\xc8',    '\0',   'H',  '\0', '\xc8',    '\0', '\xd0',    '\0',   'P',    '\0', '\xd0',    '\0',
-    '\x1C', '\0',   '\x9c',  '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0',   '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0',   '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
-    '\x01', '\0',   '\0', '\0', 'E',    'S',  'C',    'A',    'P',    'E',  '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x02', '\0',   '\0', '\0', '1',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x03', '\0',   '\0', '\0', '2',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x04', '\0',   '\0', '\0', '3',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\x05', '\0',   '\0', '\0', '4',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0'};
+    '\0',   '\x80', 'K',    '\0', '\xcb', '\0', '\0',   '\x81', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x01', 'H',    '\0', '\xc8', '\0', '\x01', '\x01', '\x9D', '\0', '\x1D', '\0',
+    '\x02', '\x01', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\0',   '\x82', 'H',    '\0', '\xc8', '\0', '\0',   '\x83', 'P',    '\0', '\xd0', '\0',
+    '\0',   '\x01', '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\0',   '\x86', 'K',    '\0', '\xcb', '\0', '\0',   '\x87', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x03', 'H',    '\0', '\xc8', '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
+    '\x01', '\x03', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\xc8', '\0',   'H',    '\0', '\xc8', '\0', '\xd0', '\0',   'P',    '\0', '\xd0', '\0',
+    '\x1C', '\0',   '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\x01', '\0',   '\0',   '\0', 'E',    'S',  'C',    'A',    'P',    'E',  '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x02', '\0',   '\0',   '\0', '1',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x03', '\0',   '\0',   '\0', '2',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x04', '\0',   '\0',   '\0', '3',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x05', '\0',   '\0',   '\0', '4',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0'};
 char gJoystick3Data[504] = {
-    '\0',   '\x86',    'K',  '\0', '\xcb',    '\0', '\0',   '\x87',  'M',    '\0', '\xcd',    '\0',
-    '\0',   '\x03', 'H',  '\0', '\xc8',    '\0', '\x9D', '\0', '\x9D', '\0', '\x1D', '\0',
-    '\x01', '\x03', 'P',  '\0', '\xd0',    '\0', '\x1E', '\0', '\x1E', '\0', '\x1E', '\0',
-    ',',    '\0',   ',',  '\0', ',',    '\0', '6',    '\0', '6',    '\0', '*',    '\0',
-    '\xd3',    '\0',   'S',  '\0', '\xd3',    '\0', '\xcf',    '\0', 'O',    '\0', '\xcf',    '\0',
-    '\xd1',    '\0',   'Q',  '\0', '\xd1',    '\0', '\xd2',    '\0', 'R',    '\0', '\xd2',    '\0',
-    '\xc8',    '\0',   'H',  '\0', '\xc8',    '\0', '\xd0',    '\0', 'P',    '\0', '\xd0',    '\0',
-    '\x1C', '\0',   '\x9c',  '\0', '\x1C', '\0', '\x01', '\0', '\x01', '\0', '\x01', '\0',
-    '9',    '\0',   '9',  '\0', '9',    '\0', ';',    '\0', ';',    '\0', ';',    '\0',
-    '<',    '\0',   '<',  '\0', '<',    '\0', '=',    '\0', '=',    '\0', '=',    '\0',
-    '>',    '\0',   '>',  '\0', '>',    '\0', '\0',   '\0', '9',    '\0', 'L',    '\0',
-    '\0',   '\0',   '\xcd',  '\0', 'M',    '\0', '\0',   '\0', '\xcb',    '\0', 'K',    '\0',
-    '\0',   '\0',   '\xc9',  '\0', 'I',    '\0', '\0',   '\0', '\xc7',    '\0', 'G',    '\0',
-    '\0',   '\0',   '\r', '\0', 'N',    '\0', '\0',   '\0', '\f',   '\0', 'J',    '\0',
-    '\x01', '\0',   '\0', '\0', 'E',    'S',  'C',    'A',  'P',    'E',  '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x02', '\0',   '\0', '\0', '1',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x03', '\0',   '\0', '\0', '2',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x04', '\0',   '\0', '\0', '3',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x05', '\0',   '\0', '\0', '4',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\x06', '\0',   '\0', '\0', '5',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\a',   '\0',   '\0', '\0', '6',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\b',   '\0',   '\0', '\0', '7',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\t',   '\0',   '\0', '\0', '8',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\0',   '\0',   '\0', '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0',
-    '\n',   '\0',   '\0', '\0', '9',    '\0', '\0',   '\0', '\0',   '\0', '\0',   '\0'};
+    '\0',   '\x86', 'K',    '\0', '\xcb', '\0', '\0',   '\x87', 'M',    '\0', '\xcd', '\0',
+    '\0',   '\x03', 'H',    '\0', '\xc8', '\0', '\x9D', '\0',   '\x9D', '\0', '\x1D', '\0',
+    '\x01', '\x03', 'P',    '\0', '\xd0', '\0', '\x1E', '\0',   '\x1E', '\0', '\x1E', '\0',
+    ',',    '\0',   ',',    '\0', ',',    '\0', '6',    '\0',   '6',    '\0', '*',    '\0',
+    '\xd3', '\0',   'S',    '\0', '\xd3', '\0', '\xcf', '\0',   'O',    '\0', '\xcf', '\0',
+    '\xd1', '\0',   'Q',    '\0', '\xd1', '\0', '\xd2', '\0',   'R',    '\0', '\xd2', '\0',
+    '\xc8', '\0',   'H',    '\0', '\xc8', '\0', '\xd0', '\0',   'P',    '\0', '\xd0', '\0',
+    '\x1C', '\0',   '\x9c', '\0', '\x1C', '\0', '\x01', '\0',   '\x01', '\0', '\x01', '\0',
+    '9',    '\0',   '9',    '\0', '9',    '\0', ';',    '\0',   ';',    '\0', ';',    '\0',
+    '<',    '\0',   '<',    '\0', '<',    '\0', '=',    '\0',   '=',    '\0', '=',    '\0',
+    '>',    '\0',   '>',    '\0', '>',    '\0', '\0',   '\0',   '9',    '\0', 'L',    '\0',
+    '\0',   '\0',   '\xcd', '\0', 'M',    '\0', '\0',   '\0',   '\xcb', '\0', 'K',    '\0',
+    '\0',   '\0',   '\xc9', '\0', 'I',    '\0', '\0',   '\0',   '\xc7', '\0', 'G',    '\0',
+    '\0',   '\0',   '\r',   '\0', 'N',    '\0', '\0',   '\0',   '\f',   '\0', 'J',    '\0',
+    '\x01', '\0',   '\0',   '\0', 'E',    'S',  'C',    'A',    'P',    'E',  '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x02', '\0',   '\0',   '\0', '1',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x03', '\0',   '\0',   '\0', '2',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x04', '\0',   '\0',   '\0', '3',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x05', '\0',   '\0',   '\0', '4',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\x06', '\0',   '\0',   '\0', '5',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\a',   '\0',   '\0',   '\0', '6',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\b',   '\0',   '\0',   '\0', '7',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\t',   '\0',   '\0',   '\0', '8',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\0',   '\0',   '\0',   '\0', '\0',   '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0',
+    '\n',   '\0',   '\0',   '\0', '9',    '\0', '\0',   '\0',   '\0',   '\0', '\0',   '\0'};
+_UNKNOWN unk_100B4338;                                                     // weak
 char aEscape[7] = "ESCAPE";                                                // weak
 char aRcfg[] = "RCfg";                                                     // idb
 int dword_100B5420 = 5;                                                    // weak
 int dword_100B5424 = -1;                                                   // weak
+_UNKNOWN unk_100B5428;                                                     // weak
+_UNKNOWN unk_100B5548;                                                     // weak
+_UNKNOWN unk_100B5668;                                                     // weak
+_UNKNOWN unk_100B56C8;                                                     // weak
+_UNKNOWN unk_100B5728;                                                     // weak
+_UNKNOWN unk_100B5848;                                                     // weak
 int dword_100B5968 = 1065353216;                                           // weak
 int dword_100B5970[] = {1161527296};                                       // weak
 char aMiscModellight[22] = "misc\\modelLights.blob";                       // weak
@@ -3658,6 +3719,7 @@ int dword_100B5E34[415] = {1086687360, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 int dword_100B64B0[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // idb
 _UNKNOWN unk_100B64EC;                                                  // weak
 int dword_100B64F8[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // idb
+_UNKNOWN unk_100B6534;                                                  // weak
 int dword_100B6540[432] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360,
                            0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
                            0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
@@ -3683,13 +3745,270 @@ int dword_100B6540[432] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10
                            0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936,
                            0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1087735936}; // idb
 int dword_100B6C00[15] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};                    // idb
+_UNKNOWN unk_100B6C3C;                                                                     // weak
 int dword_100B6C48[18] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1086687360};  // idb
 char aRWav[6] = "r.wav";                                                                   // weak
 char aHWav[6] = "h.wav";                                                                   // weak
 char aWav[5] = ".wav";                                                                     // weak
-CHAR kBrStringDll[] = "BRString.dll";                                                      // idb
-char gTrackDir[] = {'\0'};                                                                 // weak
-char kTracksSlash[8] = "tracks/";                                                          // weak
+int dword_100B6CA8[1024] = {0,           0,           33620225,    16843266,
+                            0,           0,           0,           0,
+                            0,           0,           16777216,    33686017,
+                            65794,       0,           0,           0,
+                            0,           16777216,    84148994,    50595078,
+                            258,         0,           0,           0,
+                            0,           0,           50397184,    134743556,
+                            16974854,    1,           0,           0,
+                            0,           67240192,    252512775,   151850768,
+                            131846,      0,           0,           0,
+                            0,           0,           134480384,   353702413,
+                            67636499,    259,         0,           0,
+                            0,           184812033,   589240594,   387916581,
+                            33818896,    0,           0,           0,
+                            0,           16777216,    319357954,   791620128,
+                            219685676,   66311,       0,           0,
+                            16777216,    369820930,   1043672352,  758594111,
+                            67834911,    1,           16777216,    16843009,
+                            16843009,    16843009,    622070019,   1330596154,
+                            472727116,   16975631,    0,           0,
+                            16777216,    638978820,   1532184117,  1146313307,
+                            135537204,   260,         33620224,    134743812,
+                            67503879,    67305988,    1126437383,  2054976092,
+                            877552499,   50794272,    1,           0,
+                            50331648,    891425287,   1936350278,  1432842100,
+                            236793155,   16843270,    151257601,   471603217,
+                            253040666,   151521547,   1463230480,  -1684105606,
+                            1298825107,  84810289,    2,           0,
+                            67174400,    1194072331,  -2021559461, 1719108233,
+                            337984597,   50529546,    403441156,   1061041958,
+                            724973885,   387259170,   2001613085,  -1094601060,
+                            1787534772,  169290058,   260,         0,
+                            84017152,    1379278862,  -1819574422, 1837075603,
+                            472795232,   101124881,   756617225,   1633441345,
+                            1314479709,  707475011,   -1855371469, -757675345,
+                            2124395720,  236861533,   518,         0,
+                            117571584,   1530602512,  -1752070798, 1954778775,
+                            641158241,   235803163,   1026038546,  2054318422,
+                            2038399104,  1314021745,  -1366988718, -505028666,
+                            -1901018154, 338314606,   66570,       0,
+                            134348800,   1497244945,  -1752071570, 1887537297,
+                            775768669,   404167716,   1245128734,  -2005308067,
+                            -1717723757, 1903723667,  -1180858762, -471276078,
+                            -1783249446, 473321588,   16909838,    0,
+                            100794368,   1396253199,  -1970898329, 1668578181,
+                            826098517,   555819562,   1362964519,  -1887605410,
+                            -1246449505, -1768052043, -1028743784, -504962092,
+                            -1766406698, 641816443,   16975892,    0,
+                            67239936,    1278352652,  2071490398,  1449619576,
+                            876297803,   690432815,   1413691437,  -1870958496,
+                            -943802976,  -1414085945, -1061966933, -622994738,
+                            -1732918574, 709189247,   17042457,    0,
+                            67174400,    1026037513,  1633770317,  1146182241,
+                            808793404,   740961328,   1396980016,  -1854181282,
+                            -842877536,  -1195127344, -1229999695, -825308224,
+                            -1783776569, 776495488,   33951260,    1,
+                            50397184,    840962824,   1330595903,  960776527,
+                            774909491,   774646830,   1329609008,  -1854050726,
+                            -876564066,  -1195127859, -1381323853, -1010450251,
+                            -1851346500, 827023740,   34016797,    1,
+                            33554432,    622399238,   960181295,   775108409,
+                            774777388,   808332846,   1329609009,  -1870827942,
+                            -1095391079, -1245921086, -1566399317, -1128615000,
+                            -1901941834, 793403001,   34017054,    1,
+                            33554432,    504630533,   774908710,   673852462,
+                            808332330,   774778926,   1363294512,  -1938068132,
+                            -1348034413, -1347045709, -1650614616, -1162433630,
+                            -1935496266, 776297334,   33951261,    1,
+                            16777216,    437389828,   640033569,   673588772,
+                            926101804,   825308469,   1430666291,  -2055705248,
+                            -1684696180, -1532582752, -1718249571, -1061639266,
+                            -1867861058, 725703032,   50662682,    1,
+                            16777216,    504564227,   640033569,   740960294,
+                            1010382641,  960052027,   1447772217,  2138467937,
+                            -1869968763, -1717856879, -1752067947, -909987424,
+                            -1749827895, 675305339,   50728217,    1,
+                            16777216,    571804163,   741092137,   925970478,
+                            1229473342,  1145325129,  1582648132,  2105046121,
+                            -2122350723, -1903393149, -1651471220, -606944597,
+                            -1631399717, 658528639,   50794008,    1,
+                            33554432,    672730372,   858993712,   1144797493,
+                            1448497995,  1263227221,  1734104397,  2139060592,
+                            2037938555,  -2038202501, -1533965176, -354429766,
+                            -1563697172, 692082559,   84480026,    258,
+                            50331648,    857805062,   1111638847,  1447774276,
+                            1852729694,  1549821291,  1986749278,  -2037742209,
+                            1920235647,  -2122614410, -1281781626, -660787,
+                            -1428753665, 776297350,   118362912,   259,
+                            67174400,    1076763147,  1364282954,  1666863951,
+                            -2088666258, 1802664319,  -2055638421, -1936682870,
+                            1886813062,  -2122614412, -1063087226, -2086,
+                            -1378092033, 894330252,   185800741,   66053,
+                            117506048,   1396516369,  1667457118,  2037212513,
+                            -1600219258, -2054384739, -1752398463, -1684103011,
+                            2021623441,  -2004910213, -827351410,  -26,
+                            -1159135233, 1046048919,  253305134,   66311,
+                            184746240,   1665872408,  1886549102,  -1971620240,
+                            -1246516327, -1751078737, -1533308016, -1498698326,
+                            -2088070755, -1870231931, -692541289,  -22,
+                            -940310529,  1164015778,  337587257,   132108,
+                            235143424,   1951939613,  -2088401535, -1601271677,
+                            -842284883,  -1380532537, -1196447578, -1195458884,
+                            -1717655889, -1600546921, -574114136,  -18,
+                            -687996929,  1416792243,  438974279,   16910096,
+                            251920640,   2120368675,  -1903127667, -1415736434,
+                            -623457352,  -1195193900, -977226061,  -976631867,
+                            -1431324992, -1347704664, -472857931,  -14,
+                            -570425345,  1702992834,  539967829,   16976148,
+                            268763392,   2137146404,  -1717986416, -1196711783,
+                            -421408061,  -1009919773, -758266430,  -757804336,
+                            -1010447922, -876100926,  -354297136,  -1550,
+                            -503578625,  1921951947,  607668834,   17042198,
+                            268697856,   1968783137,  -1650747766, -1095653218,
+                            -320612665,  -908926998,  -724513849,  -656746284,
+                            -724249900,  -505686830,  -219091738,  -395790,
+                            -537526273,  2039720907,  658264168,   16976406,
+                            201588992,   1632121115,  -1701869450, -1061835872,
+                            -354167097,  -824778264,  -724513075,  -606348584,
+                            -505554216,  -101521181,  -100663299,  -387388686,
+                            -841096214,  2039588030,  658264168,   16976150,
+                            151126272,   1244865299,  -1887473059, -1095652451,
+                            -471870265,  -791094303,  -724644403,  -656746794,
+                            -471999784,  -265498,     -67108865,   -757407248,
+                            -1245525552, 1988925354,  607735139,   16975892,
+                            67174400,    790565643,   2103989312,  -1230331249,
+                            -657142848,  -791357736,  -842282547,  -825307698,
+                            -539569458,  -2586,       -134217729,  -1228417300,
+                            -1818385233, 1719239052,  506676054,   16910096,
+                            33554432,    454101508,   1800551977,  -1348431746,
+                            -791953227,  -841821998,  -976762933,  -1010580541,
+                            -691288637,  -134945,     -251658241,  -1531261210,
+                            2072218265,  1432710520,  405354826,   66573,
+                            0,           218498049,   1463625494,  -1601077142,
+                            -1028083290, -1010317369, -1229275454, -1313754187,
+                            -944064845,  -858670,     -386269185,  -1851014181,
+                            1667854977,  1145985120,  287255353,   66312,
+                            0,           84017408,    1227692556,  -1819969440,
+                            -1247041893, -1195589956, -1414549066, -1499027800,
+                            -1163023448, -169289531,  -420087301,  -2002469676,
+                            1449158521,  960843091,   185999663,   517,
+                            0,           33619968,    991956998,   -2089391278,
+                            -1566993528, -1414680662, -1633507670, -1650615395,
+                            -1381850979, -421869130,  -605361430,  -2120503865,
+                            1263951986,  825901640,   118429733,   259,
+                            0,           16777216,    874187780,   2037275721,
+                            -1785821571, -1499028835, -1717722458, -1684301415,
+                            -1465868901, -539836243,  -790502943,  -2120899396,
+                            1213554802,  758529090,   84677667,    2,
+                            0,           16777216,    706219012,   1801278272,
+                            -2089060754, -1651010678, -1751540322, -1684301415,
+                            -1465868643, -724977494,  -1093741870, 2072811437,
+                            1146182766,  691156798,   67768862,    1,
+                            0,           16777216,    739838980,   1633111870,
+                            2020502885,  -1785820545, -1650746473, -1600086370,
+                            -1415142240, -842680147,  -1312766517, 1954779300,
+                            1112496233,  690959420,   50860317,    1,
+                            0,           16842752,    790368005,   1448168769,
+                            1700814426,  -1937540242, -1533109871, -1381127514,
+                            -1246514257, -1027425098, -1649691714, 1769505683,
+                            1112364385,  674182204,   50860317,    1,
+                            0,           50397184,    908203017,   1364151878,
+                            1515542099,  -2038861213, -1432315504, -1095059793,
+                            -1061240642, -1128087360, -1902270283, 1634629765,
+                            1145918300,  691091518,   50925853,    1,
+                            0,           117571840,   1144069649,  1229935955,
+                            1330203465,  2104386389,  -1348430456, -791951944,
+                            -875638062,  -1312898103, 2072679846,  1516464498,
+                            1179471701,  741686338,   67703584,    1,
+                            0,           252052225,   1447309340,  1179868767,
+                            1262895682,  1986353229,  -1315008385, -573256258,
+                            -790962207,  -1430469685, 1920829083,  1431986279,
+                            1212894545,  775503684,   67835428,    1,
+                            16777216,    521144067,   1868581428,  1331719539,
+                            1145192518,  1801211718,  -1349023628, -421867844,
+                            -656020756,  -1716535090, 1617654920,  1297043798,
+                            1296911693,  910313291,   84744746,    2,
+                            50331648,    924782599,   -2122946738, 1617983871,
+                            1077953617,  1666599748,  -1466924691, -438777419,
+                            -622268690,  -2002601776, 1365141369,  1229473353,
+                            1397837129,  1028280145,  101653549,   2,
+                            83951616,    1395924493,  -1768847763, 1837075093,
+                            1111771998,  1548831558,  -1719306651, -607273818,
+                            -723261211,  1955637447,  1095521639,  1111374651,
+                            1515539782,  1213553244,  135405621,   259,
+                            134348800,   1665346068,  -1432119940, 1854116772,
+                            1212896099,  1481591625,  -1870827424, -792678503,
+                            -942089256,  1686149302,  943605589,   1043739186,
+                            1582648644,  1314611553,  135537978,   259,
+                            151126016,   1732914967,  -1381656447, 2073075885,
+                            1398432112,  1448169297,  2104650076,  -1196910203,
+                            -1329412670, 1399620255,  724579396,   892217384,
+                            1616202301,  1382050151,  152512318,   259,
+                            134348800,   1598171924,  -1550415243, -1935824211,
+                            1516596605,  1515541333,  1885954910,  -1533835914,
+                            -1649625939, 1146909066,  556082996,   774119967,
+                            1565410872,  1365207657,  152380989,   259,
+                            83951616,    1261575950,  -1887538850, -1784633955,
+                            1702001032,  1482184798,  1616534104,  -2021953435,
+                            2140050320,  809785455,   336992291,   605754900,
+                            1447443502,  1297966434,  118563385,   258,
+                            50397184,    841028617,   2070436163,  -1886088311,
+                            1752399753,  1364481888,  1448169811,  2003658076,
+                            1718647161,  540098387,   168562454,   420548106,
+                            1312633382,  1129668185,  67968305,    2,
+                            16777216,    454101252,   1497905447,  -2105510040,
+                            1567455618,  1246317909,  1296779850,  1566200912,
+                            1045189977,  286991667,   67438347,    252184068,
+                            1009722135,  910511433,   50861092,    1,
+                            0,           235340802,   1009458965,  1885822540,
+                            1230399600,  1027094847,  1195919172,  1195788103,
+                            590100032,   135074587,   33686277,    117703426,
+                            723523085,   640956982,   33819415,    0,
+                            0,           84082944,    504630537,   1363556908,
+                            775703378,   791225126,   1061371963,  775240511,
+                            236198694,   50595593,    258,         50462976,
+                            437390086,   337584930,   16909580,    0,
+                            0,           33619968,    235406595,   824647702,
+                            388181301,   555159827,   943273006,   489107253,
+                            67636244,    16908803,    0,           16777216,
+                            218694915,   168825616,   66053,       0,
+                            0,           0,           67305729,    386993415,
+                            135140631,   319424006,   740959516,   253239080,
+                            16909320,    1,           0,           0,
+                            84083201,    67503878,    258,         0,
+                            0,           0,           16842752,    151389186,
+                            33818377,    134480386,   471471630,   101454104,
+                            65795,       0,           0,           0,
+                            33620224,    16909058,    1,           0,
+                            0,           0,           0,           33685760,
+                            16843266,    50397441,    202115333,   33818378,
+                            1,           0,           0,           0,
+                            0,           65793,       0,           0,
+                            0,           0,           0,           0,
+                            0,           16777216,    50594562,    66051,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           16843008,    1,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0,
+                            0,           0,           0,           0}; // weak
+CHAR kBrStringDll[] = "BRString.dll";                                  // idb
+char gTrackDir[] = {'\0'};                                             // weak
+char kTracksSlash[8] = "tracks/";                                      // weak
 char *gTrackFilenames[15] = {"desert.trk",
                              "mountain.trk",
                              "coast.trk",
@@ -3743,12 +4062,40 @@ char *off_100B89C8[12] = {"Fear and Loathing",
 char aFancyCar[10] = "Fancy Car";          // weak
 int dword_100B8C90 = 1;                    // weak
 int (*off_100B8C94)(void) = &sub_1002A640; // weak
+_UNKNOWN unk_100B8CA0;                     // weak
+_UNKNOWN unk_100B94A8;                     // weak
+_UNKNOWN unk_100B9CB0;                     // weak
+_UNKNOWN unk_100BAAC8;                     // weak
 int dword_100BBAC8[3] = {33, 33, 34};      // idb
 int needToCheckSupportHRPC = 1;            // weak
-char byte_100BBAD8 = '\xbf';                  // weak
+char byte_100BBAD8 = '\xbf';               // weak
 char byte_100BBADC = '\xFF';               // weak
 char byte_100BBAE0 = '\xFF';               // weak
 char byte_100BBAE4 = '\xFF';               // weak
+TrackData gTrackDataDesert = {
+    "Desert",
+    0,
+    0,
+    &unk_117824F0,
+    &unk_117824F4,
+    &unk_11782540,
+    &unk_11782544,
+    "cargfx/skytexdesert.lut4",
+    &unk_11782570,
+    "cargfx/skytexdesertn.lut4",
+    &unk_11782584,
+    "\x00\x00dB\x00\x00\xb0A\x00\x00\xb0A\x00\x00\xb0A\x00\x00\xb0A\x00\x00\xb0A\x00\x00pB\x00"
+    "\x00dB\x00\x00\xc0A\x00\x00\xb0A\x00\x00\xb0A\x00\x00\xb0A\x00\x00\xb0A\x00\x00pB\x00\x00dB"
+    "\x00\x00\xc8A\x00\x00\xb8A\x00\x00\xb8A\x00\x00\xb8A\x00\x00\xb8A\x00\x00pB\x00\x00dB\x00\x00"
+    "\xb0A\x00\x00\xa8A\x00\x00\xb0A\x00\x00\xa8A\x00\x00\x80A\x00\x00pB\x00\x00dB\x00\x00\xc0A\x00"
+    "\x00\xa8A\x00\x00\xb0A\x00\x00\xa8A\x00\x00\x80A\x00\x00pB\x00\x00dB\x00\x00\xc8A\x00\x00\xb0A"
+    "\x00\x00\xb8A\x00\x00\xb0A\x00\x00\x88A\x00\x00pB\x00\x00\x04B\x00\x00\xd8A\x00\x00\xb0A\x00"
+    "\x00\xb0A\x00\x00\x98A\x00\x00\x90A\x00\x00 "
+    "B\x00\x00\x04B\x00\x00\xd8A\x00\x00\xc0A\x00\x00\xc0A\x00\x00\xa0A\x00\x00\x90A\x00\x00 "
+    "B\x00\x00\x04B\x00\x00\xf0A\x00\x00\xd8A\x00\x00\xd8A\x00\x00\xb0A\x00\x00\x98A\x00\x00 "
+    "B\x00\x00\x04B\x00\x00\xd8A\x00\x00\xb0A\x00\x00\xa8A\x00\x00\x98A\x00\x00\x90A\x00\x00 "
+    "B\x00\x00\x04B\x00\x00\xd8A\x00\x00\xc0A\x00\x00\xa8A\x00\x00\x98A\x00\x00\x90A\x00\x00 "
+    "B\x00\x00\x04B\x00\x00\xf0A\x00\x00\xd8A\x00\x00\xc0A\x00\x00\xb0A\x00\x00\xa8A\x00\x00 B"};
 TrackData *gTrackData[16] = {&gTrackDataDesert,
                              &gTrackDataMountain,
                              &gTrackDataCoastline,
@@ -3791,7 +4138,8 @@ char aSplashImg[11] = "splash.img";                                             
 CHAR aUnableToInitia[] = "Unable to initialize Direct3D accelerated video card.";        // idb
 FILE Stream = {NULL, 0, NULL, 2, 2, 0, 0, NULL};                                         // idb
 int (*off_100BFC00)(void) = &terminate;                                                  // weak
-int dword_100C0378[6] = {1024, -1023, 53, 11, 64, 1023};                                 // idb
+FpFormatDescriptor gFpFormatDescriptor0 = {1024, -1023, 53, 11, 64, 1023};               // idb
+FpFormatDescriptor gFpFormatDescriptor1 = {128, -127, 24, 8, 32, 127};                   // idb
 int dword_100C0C44 = 1;                                                                  // weak
 int dword_100C0CD8 = -1;                                                                 // weak
 int dword_100C0CDC = 0;                                                                  // weak
@@ -3836,6 +4184,8 @@ int dword_10220B38;     // weak
 char byte_10220B3C;     // weak
 __int16 word_10220B40;  // weak
 int dword_10220B44;     // weak
+_UNKNOWN unk_10220B48;  // weak
+_UNKNOWN unk_10220B7C;  // weak
 int playParmsPlayTo;    // weak
 int dword_10220C3C;     // weak
 MCIDEVICEID mciId;      // idb
@@ -3939,6 +4289,7 @@ int dword_10221C9C[9091]; // idb
 HANDLE gMutexesEnd;
 int dword_1022AAB0[];        // weak
 int dword_1022AAB4[15];      // idb
+_UNKNOWN unk_1022AAF0;       // weak
 int dword_1022AAF4;          // weak
 char byte_1022AAF8[1024];    // idb
 int dword_1022AEF8;          // weak
@@ -3961,9 +4312,11 @@ int dword_1022AF38;          // weak
 int dword_1022AF3C;          // weak
 int dword_1022AF40;          // weak
 char gBossRallyIniPath[208]; // idb
+_UNKNOWN unk_1022B018;       // weak
 int gTotalPhys;              // weak
 int gChosenCar;              // weak
 int gChosenWeather0;         // weak
+_UNKNOWN unk_1022B358;       // weak
 int dword_10277358;          // weak
 FILE *dword_1027735C;        // idb
 IDirect3DDevice2 *g_D3DDevice2;
@@ -3992,8 +4345,8 @@ int dword_10277418; // weak
 int dword_1027741C; // weak
 int dword_10277420; // weak
 IDirect3D2 *g_pD3D2;
-_D3DDeviceDesc g_HWCaps;
-_D3DDeviceDesc g_HELCaps;
+_D3DDeviceDesc gHWCaps;
+_D3DDeviceDesc gHELCaps;
 DWORD stru_10277680;
 int dword_10277B1C;                           // weak
 int dword_10277B20;                           // weak
@@ -4010,6 +4363,8 @@ int dword_10277B68[16];                       // idb
 int dword_10277BA8;                           // weak
 float flt_10277BAC;                           // weak
 float flt_10277BB0;                           // weak
+_UNKNOWN unk_10277BB8;                        // weak
+_UNKNOWN unk_10277BC0;                        // weak
 char byte_10277BC8[];                         // weak
 char byte_10277BC9[];                         // weak
 char byte_10277BCA[366];                      // idb
@@ -4036,6 +4391,7 @@ float flt_102E54A8[3];                        // idb
 int dword_102E54B4;                           // weak
 int dword_102E54B8;                           // weak
 int dword_102E54C0[630];                      // idb
+_UNKNOWN unk_102E5E98;                        // weak
 int dword_102E5EC0;                           // weak
 int dword_102E5EC4;                           // weak
 int dword_102E5EC8;                           // weak
@@ -4046,6 +4402,7 @@ int dword_102E5ED8;                           // weak
 int dword_102E5EE0[];                         // weak
 int dword_102E5EE4[16];                       // idb
 int dword_102E5F24;                           // weak
+_UNKNOWN unk_102E5F28;                        // weak
 __int16 word_10362F28[2048];                  // idb
 float flt_10363F28[];                         // weak
 float dword_10363F2C[15];                     // idb
@@ -4056,6 +4413,7 @@ int dword_10363FF0;                           // weak
 int dword_10363FF4;                           // weak
 int dword_10363FF8;                           // weak
 int dword_10364000[];                         // weak
+_UNKNOWN unk_10364301;                        // weak
 int dword_10364304;                           // weak
 int dword_10364308[32];                       // idb
 int dword_10364388;                           // weak
@@ -4072,7 +4430,9 @@ float flt_103643B0;                           // weak
 int dword_103643B4;                           // weak
 int dword_103643B8;                           // weak
 int dword_103643BC;                           // weak
+_UNKNOWN unk_103643C0;                        // weak
 char byte_1038B4C0[2048];                     // idb
+_UNKNOWN unk_1038BCC0;                        // weak
 int dword_1039B6C0;                           // weak
 int dword_1039B6C4;                           // weak
 int gD3dDrawCarShadow;                        // weak
@@ -4092,6 +4452,7 @@ float flt_1039B73C;                           // weak
 char Buffer[28];                              // idb
 int dword_1039B75C;                           // weak
 int dword_1039B760[];                         // weak
+_UNKNOWN unk_1039B764;                        // weak
 _UNKNOWN unk_1039B7C4;                        // weak
 float flt_1039C168[];                         // weak
 float flt_1039C16C;                           // weak
@@ -4122,13 +4483,17 @@ int dword_1039E8A0;                           // weak
 float flt_1039E8A4;                           // weak
 float flt_1039E8A8;                           // weak
 float flt_1039E8AC;                           // weak
+_UNKNOWN unk_1039E8B4;                        // weak
 float flt_1039E8C4;                           // weak
 float flt_1039E8C8;                           // weak
 float flt_1039E8CC;                           // weak
+_UNKNOWN unk_1039E8D4;                        // weak
 float flt_1039E8E4;                           // weak
 float flt_1039E8E8;                           // weak
 float flt_1039E8EC;                           // weak
 float flt_1039E8F0;                           // weak
+_UNKNOWN unk_1039E8F8;                        // weak
+_UNKNOWN unk_1039E908;                        // weak
 float flt_1039E918;                           // weak
 float flt_1039E91C;                           // weak
 float flt_1039E920;                           // weak
@@ -4136,9 +4501,11 @@ float flt_1039E928;                           // weak
 float flt_1039E92C;                           // weak
 float flt_1039E930;                           // weak
 float flt_1039E934;                           // weak
+_UNKNOWN unk_1039E93C;                        // weak
 float flt_1039E94C;                           // weak
 float flt_1039E950;                           // weak
 float flt_1039E954;                           // weak
+_UNKNOWN unk_1039E95C;                        // weak
 float flt_1039E96C;                           // weak
 float flt_1039E970;                           // weak
 float flt_1039E974;                           // weak
@@ -4157,7 +4524,13 @@ _UNKNOWN unk_1039E9F8;                        // weak
 _UNKNOWN unk_103C77E8;                        // weak
 int dword_103C7840[];                         // weak
 _WORD word_103C7844[381414];                  // idb
+_UNKNOWN unk_10481C10;                        // weak
+_UNKNOWN unk_10481C74;                        // weak
+_UNKNOWN unk_10482618;                        // weak
+_UNKNOWN unk_10484D6C;                        // weak
+_UNKNOWN unk_104ADC98;                        // weak
 int dword_104ADCF0;                           // weak
+_UNKNOWN unk_104ADCF4;                        // weak
 int dword_104AFD00;                           // weak
 int dword_104AFD04;                           // weak
 int dword_104AFD08;                           // weak
@@ -4198,7 +4571,14 @@ float flt_104B255C;                           // weak
 float flt_104B2560;                           // weak
 float flt_104B2564;                           // weak
 int dword_104B2568;                           // weak
+_UNKNOWN unk_104B2570;                        // weak
+_UNKNOWN unk_104B2572;                        // weak
+_UNKNOWN unk_104B2574;                        // weak
+_UNKNOWN unk_104B3DE8;                        // weak
+_UNKNOWN unk_104B3DEC;                        // weak
+_UNKNOWN unk_104B7DE8;                        // weak
 float flt_104BBDE8;                           // weak
+_UNKNOWN unk_104BBDF0;                        // weak
 float flt_104BBDF4;                           // weak
 float flt_104BBDF8;                           // weak
 int gChosenWeather1;                          // weak
@@ -4221,6 +4601,7 @@ char byte_104BBE42;      // weak
 int dword_104BBE48;      // weak
 float flt_104BBEB8;      // weak
 float flt_104BBEC0[4];   // idb
+_UNKNOWN unk_104BBED0;   // weak
 char byte_104BBF00;      // weak
 float flt_104BBF04;      // weak
 float flt_104BBF08;      // weak
@@ -4228,9 +4609,12 @@ int dword_104BC190;      // weak
 char byte_104BC194;      // weak
 float flt_104BC198;      // weak
 _UNKNOWN gVertices;      // weak
+_UNKNOWN unk_104BC1B4;   // weak
 int gHeight2;            // weak
 int dword_104C01A4;      // weak
 int dword_104C01A8[3];   // idb
+_UNKNOWN unk_104C01B4;   // weak
+_UNKNOWN unk_104C0B80;   // weak
 float flt_104C0BA8;      // weak
 float flt_104C0BAC;      // weak
 float flt_104C0BB0;      // weak
@@ -4261,11 +4645,13 @@ int dword_104C16DC[];    // weak
 int dword_104C16E0[];    // weak
 int dword_104C16E4[];    // weak
 int dword_104C170C[];    // weak
+_UNKNOWN unk_104C1710;   // weak
 float flt_104C1720[];    // weak
 float flt_104C1724[];    // weak
 int dword_104C172C[];    // weak
 int dword_104C1730[];    // weak
 int dword_104C1734[];    // weak
+_UNKNOWN unk_104C1738;   // weak
 float flt_104C4CD0[16];  // idb
 float flt_104C4D10;      // weak
 float flt_104C4D14;      // weak
@@ -4305,13 +4691,17 @@ int dword_104C5194;                                                      // weak
 int dword_104C5198;                                                      // weak
 char byte_104C51A0;                                                      // weak
 int dword_104C51A4;                                                      // weak
+_UNKNOWN unk_104C51A8;                                                   // weak
 char byte_104D51A8;                                                      // weak
 int dword_104D51AC;                                                      // weak
 char byte_104D51B0;                                                      // weak
 int dword_104D51B4;                                                      // weak
 int dword_104D51B8;                                                      // weak
 int dword_104D51BC;                                                      // weak
+_UNKNOWN unk_104D51C0;                                                   // weak
+_UNKNOWN unk_104D51C1;                                                   // weak
 _UNKNOWN unk_104D51D0;                                                   // weak
+_UNKNOWN unk_104D51D1;                                                   // weak
 char byte_105551D0;                                                      // weak
 char byte_105551D4;                                                      // weak
 int dword_105551D8[];                                                    // weak
@@ -4411,6 +4801,7 @@ int dword_1057552C;                                                      // weak
 int dword_10575530;                                                      // weak
 int dword_10575538;                                                      // weak
 int dword_1057553C;                                                      // weak
+_UNKNOWN unk_10575540;                                                   // weak
 int dword_10675540;                                                      // weak
 int dword_10675548[];                                                    // weak
 int dword_1067554C[];                                                    // weak
@@ -4419,13 +4810,15 @@ int dword_1067B548;                                                      // weak
 int dword_1067B54C;                                                      // weak
 int dword_1067B550[2048];                                                // idb
 int dword_1067D550;                                                      // weak
+_UNKNOWN unk_1067D558;                                                   // weak
 int dword_1067D570;                                                      // weak
 int dword_1067D578;                                                      // weak
 int dword_1067D57C;                                                      // weak
+_UNKNOWN unk_1067D584;                                                   // weak
 HWND gHwnd;                                                              // idb
-int dword_10680598;                                                      // weak
-int dword_1068059C;                                                      // weak
-int dword_106805A0;                                                      // weak
+int gWPARAM0;                                                            // weak
+int gWPARAMLO;                                                           // weak
+int gWPARAMHI;                                                           // weak
 int dword_106805A8;                                                      // weak
 int dword_106805B0[];                                                    // weak
 int dword_106805B8;                                                      // weak
@@ -4478,10 +4871,12 @@ int dword_10680940;          // weak
 unsigned int C;              // idb
 int dword_10680948;          // weak
 _UNKNOWN unk_10680950;       // weak
+_UNKNOWN unk_10690950;       // weak
 int dword_106909B0;          // weak
 int dword_106909B4;          // weak
 int dword_106909B8;          // weak
 int dword_106909BC;          // weak
+_UNKNOWN unk_106909C0;       // weak
 int dword_106909C8;          // weak
 int dword_106909CC;          // weak
 int dword_106909D0;          // weak
@@ -4506,6 +4901,7 @@ int dword_10690A1C;          // weak
 int (*dword_10690A20)(void); // weak
 int (*dword_10690A24)(void); // weak
 int (*dword_10690A28)(void); // weak
+_UNKNOWN unk_10690A34;       // weak
 char byte_10690BE8;          // weak
 int dword_10690BEC;          // weak
 char byte_10690BF0;          // weak
@@ -4514,6 +4910,7 @@ char byte_10690FF9;          // weak
 char byte_10690FFA;          // weak
 char byte_10690FFB;          // weak
 unk06594 stru_10691000;      // idb
+_UNKNOWN unk_106C01FC;       // weak
 char byte_106C0200;          // weak
 int dword_106C0208;          // weak
 int dword_106C020C;          // weak
@@ -4579,6 +4976,7 @@ int dword_106C1170;          // weak
 int dword_106C1174;          // weak
 int dword_106C1178;          // weak
 char byte_106C1580;          // weak
+_UNKNOWN unk_106C1588;       // weak
 int dword_106C1608;          // weak
 int dword_106C1610;          // weak
 char byte_106C1614;          // weak
@@ -4619,10 +5017,12 @@ float flt_106C29DC;          // weak
 float flt_106C29E0;          // weak
 float flt_106C29E4;          // weak
 int dword_106C29E8;          // weak
+_UNKNOWN unk_106C29F0;       // weak
 int dword_106C2CF0;          // weak
 int dword_106C2CF4;          // weak
 int dword_106C2CF8;          // weak
 int dword_106C2CFC;          // weak
+_UNKNOWN unk_106C2D0F;       // weak
 int dword_106C32CC;          // weak
 int dword_106C32D0;          // weak
 int dword_106C3308;          // weak
@@ -4663,6 +5063,7 @@ float flt_10A99BD0[];             // weak
 __int16 word_10A99BD4[];          // weak
 char byte_10A99BD6[];             // weak
 char byte_10A99BD7[29];           // idb
+_UNKNOWN unk_10A99BF4;            // weak
 __int16 word_10A9BBB4;            // weak
 int dword_10A9BBB8;               // weak
 int dword_10A9BBC0;               // weak
@@ -4670,6 +5071,7 @@ int dword_10A9BBC4;               // weak
 int dword_10A9BBC8;               // weak
 int dword_10A9BBCC;               // weak
 int dword_10A9BBD0[];             // weak
+_UNKNOWN unk_10A9BBD4;            // weak
 int dword_10A9BCD0[64];           // idb
 int dword_10A9BDD0[64];           // idb
 int dword_10A9BED0[64];           // idb
@@ -4677,9 +5079,12 @@ int dword_10A9BFD0;               // weak
 int dword_10A9BFD8;               // weak
 UINT_PTR uIDEvent;                // idb
 CHAR byte_10A9BFE0[16];           // idb
+_UNKNOWN unk_10A9BFF0;            // weak
+_UNKNOWN unk_10A9C0B8;            // weak
 int dword_10A9C0C8[];             // weak
 int dword_10A9C0CC[];             // weak
 CHAR String1[220];                // idb
+_UNKNOWN unk_10A9CECC;            // weak
 CHAR byte_10A9CEF8[260];          // idb
 int dword_10A9CFFC;               // weak
 int dword_10A9D000;               // weak
@@ -4691,12 +5096,24 @@ int dword_10A9D068;               // weak
 int dword_10A9D06C;               // weak
 IDirectDraw2 *gDDraw2;
 char byte_10A9D078[264];  // idb
+_UNKNOWN unk_10A9D180;    // weak
+_UNKNOWN unk_10A9D184;    // weak
 int dword_10A9D5C0[];     // weak
+_UNKNOWN unk_10A9D5C4;    // weak
 char byte_10A9D618[36];   // idb
+_UNKNOWN unk_10A9D63C;    // weak
+_UNKNOWN unk_10A9D778;    // weak
+_UNKNOWN unk_10A9D77C;    // weak
+_UNKNOWN unk_10A9D780;    // weak
+_UNKNOWN unk_10A9DA50;    // weak
+_UNKNOWN unk_10A9DA54;    // weak
+_UNKNOWN unk_10A9DB44;    // weak
 int dword_10A9DBD0;       // weak
+_UNKNOWN unk_10A9DBD8;    // weak
 char byte_10A9DBDC;       // weak
 char byte_10A9DD28[1064]; // idb
 int dword_10A9E150[32];   // idb
+_UNKNOWN unk_10A9E1D0;    // weak
 IDirectDrawSurface *gDDSurface;
 char *gImagesWork1aBmFilepath;
 int g_aImagesCursorBmFilepath; // weak
@@ -4847,8 +5264,11 @@ char byte_10AA2518[32];    // idb
 int dword_10AA2538[];      // weak
 int dword_10AA253C[];      // weak
 int dword_10AA2540[17];    // idb
+_UNKNOWN unk_10AA2584;     // weak
 int dword_10AA2598;        // weak
+_UNKNOWN unk_10AA259C;     // weak
 float flt_10AA25A0[12];    // idb
+_UNKNOWN unk_10AA25D0;     // weak
 char byte_10AA25D4;        // weak
 int dword_10AA25D8;        // weak
 int dword_10AA25DC;        // weak
@@ -5015,7 +5435,7 @@ int dword_10AA2DAC; // weak
 int dword_10AA2DB4; // weak
 unk00054 *gUnk54Ptr;
 char *dword_10AA2E88[256];
-_UNKNOWN byte_10AA3288;
+char byte_10AA3288[256];
 char byte_10AA3350;   // weak
 char byte_10AA3353;   // weak
 char byte_10AA3355;   // weak
@@ -5090,6 +5510,7 @@ int dword_10ACEEAC;         // weak
 int dword_10ACEEB0;         // weak
 char byte_10ACEEB4[24];     // idb
 _UNKNOWN unk_10ACEECC;      // weak
+_UNKNOWN unk_10ACEF04;      // weak
 int dword_10AD05DC[];       // weak
 int dword_10AD05E0[];       // weak
 _UNKNOWN unk_10AD05E4;      // weak
@@ -5122,6 +5543,7 @@ int dword_10AD18A4;         // weak
 int dword_10AD18A8;         // weak
 int dword_10AD18AC;         // weak
 float flt_10AD1A04;         // weak
+_UNKNOWN unk_10AD1A08;      // weak
 int dword_10AD33C4;         // weak
 int dword_10AD33D0;         // weak
 char byte_10AD34F8[128];
@@ -5136,6 +5558,7 @@ int dword_10AF96B8;     // weak
 int dword_10AF96BC;     // weak
 int dword_10AF96C0;     // weak
 _UNKNOWN unk_10AF96C8;  // weak
+_UNKNOWN unk_10AF96D4;  // weak
 _UNKNOWN unk_10AF971C;  // weak
 int dword_10AF9728[];   // weak
 float flt_10AF9740[15]; // idb
@@ -5149,6 +5572,7 @@ char byte_10AF9848[64]; // idb
 int dword_10AF9888;     // weak
 int dword_10AF988C;     // weak
 _UNKNOWN unk_10AF9890;  // weak
+_UNKNOWN unk_10AF99DC;  // weak
 int dword_10AF9B28;     // weak
 int dword_10AF9B2C;     // weak
 int dword_10AF9B30;     // weak
@@ -5226,9 +5650,14 @@ int dword_10B4E73C;                   // weak
 CHAR byte_10B4E740[32];               // idb
 CHAR byte_10B4E760[64];               // idb
 int dword_10B4E7A0;                   // weak
+_UNKNOWN unk_10B4E7A8;                // weak
 char byte_10B4E7AC[144];              // idb
+_UNKNOWN unk_10B4E83C;                // weak
+_UNKNOWN unk_10B4E910;                // weak
 char byte_10B4E914[4608];             // idb
+_UNKNOWN unk_10B4FB14;                // weak
 char gBossRallyCfgPath[4];            // idb
+_UNKNOWN unk_10B4FBEC;                // weak
 int dword_10B4FFE8[120];              // idb
 int (*dword_10B501C8)(void);          // weak
 int (*dword_10B501CC)(void);          // weak
@@ -5240,16 +5669,24 @@ char gInstallPath[260];
 int dword_10B502E4;                     // weak
 int dword_10B502E8[];                   // weak
 int dword_10B502EC;                     // weak
+int dword_10B50308[393216];             // idb
+_UNKNOWN unk_10CD0308;                  // weak
+_UNKNOWN unk_1114B097;                  // weak
+_UNKNOWN unk_11321608;                  // weak
 int dword_11750308;                     // weak
 int dword_11750310[];                   // weak
 int dword_11750314;                     // weak
+_UNKNOWN unk_11750318;                  // weak
 int dword_11750330;                     // weak
 _UNKNOWN unk_11750338;                  // weak
+_UNKNOWN unk_1175033C;                  // weak
 int dword_11754E38;                     // weak
 int dword_11754E3C;                     // idb
 int dword_11754E40;                     // weak
 int dword_11754E44;                     // weak
 int dword_11754E48;                     // weak
+_UNKNOWN unk_11754E50;                  // weak
+_UNKNOWN unk_11754E54;                  // weak
 int dword_11755490;                     // weak
 int dword_11755494;                     // weak
 int dword_11755498;                     // weak
@@ -5291,29 +5728,42 @@ char byte_1178685C[];                   // weak
 char byte_1178685D[];                   // weak
 char byte_1178685E[];                   // weak
 int dword_11786860[];                   // weak
+_UNKNOWN unk_11786880;                  // weak
 float flt_117868F8[290];                // idb
 int dword_11786D80[];                   // weak
+_UNKNOWN unk_11786D84;                  // weak
 int dword_11787184[];                   // weak
 int dword_11787188[];                   // weak
 int dword_1178718C[];                   // weak
 int dword_11787190[];                   // weak
+_UNKNOWN unk_11787194;                  // weak
+_UNKNOWN unk_1178F5A8;                  // weak
+_UNKNOWN unk_1178FEE4;                  // weak
 int dword_1178FEE8;                     // weak
 int dword_1178FEEC;                     // weak
 int dword_1178FEF0;                     // weak
 int dword_1178FEF8[];                   // weak
 int dword_1178FEFC[];                   // weak
 int dword_1178FF00[];                   // weak
+_UNKNOWN unk_1178FF14;                  // weak
+_UNKNOWN unk_1178FF18;                  // weak
 int dword_1178FF24[];                   // weak
 int dword_1178FF28[];                   // weak
 char byte_1178FF2C[];                   // weak
 char byte_1178FF2D[];                   // weak
 char byte_1178FF2E[1318];               // idb
 char byte_11790454[1024];               // idb
+_UNKNOWN unk_11790854;                  // weak
 int dword_11826AF8;                     // weak
 HANDLE dword_11826B00;                  // idb
 DWORD dword_11826B04;                   // idb
 int dword_11826B08[];                   // weak
+_UNKNOWN unk_11826B0C;                  // weak
 int dword_11826B48;                     // weak
+_UNKNOWN unk_11826B4C;                  // weak
+_UNKNOWN unk_11826B50;                  // weak
+_UNKNOWN unk_11826B54;                  // weak
+_UNKNOWN unk_11826BCC;                  // weak
 _DWORD dword_11826BD0[2128];            // idb
 int dword_11828D10;                     // weak
 int dword_11828D14;                     // weak
@@ -5326,11 +5776,12 @@ int dword_11828D34[85];                 // idb
 double dbl_11828E88[];                  // weak
 int dword_11828F00;                     // weak
 int dword_11828F08[15];                 // idb
+_UNKNOWN unk_11828F44;                  // weak
 LPCVOID dword_11828F48;                 // idb
 # 514 * pMem;
-IDirectSoundBuffer *g_dSoundBuffer;
+IDirectSoundBuffer *gDSoundBuffer;
 int dword_118290F4; // weak
-IDirectSound *g_DSound;
+IDirectSound *gDSound;
 int dword_118290FC;     // weak
 int dword_11829100[];   // weak
 int dword_11829104;     // weak
@@ -5346,6 +5797,8 @@ int dword_11829318;     // weak
 int dword_1182931C;     // weak
 int dword_11829324;     // weak
 int dword_11829328;     // weak
+_UNKNOWN unk_11829330;  // weak
+_UNKNOWN unk_11829331;  // weak
 LPCSTR dword_11829370[303];
 char gBrStrings[1208];
 char *gBrstringModule;
@@ -5391,20 +5844,20 @@ int(__cdecl *graphics_dword_118AA0AC)(_DWORD,
                                       _DWORD,
                                       _DWORD,
                                       _DWORD); // weak
-int(__cdecl *dword_118AA0B0)(_DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD,
-                             _DWORD);         // weak
+int(__cdecl *gGraphics_118AA0B0)(_DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD,
+                                 _DWORD);     // weak
 int(__cdecl *dword_118AA0B4)(_DWORD);         // weak
 int(__cdecl *dword_118AA0B8)(_DWORD, _DWORD); // weak
 int(__cdecl *dword_118AA0BC)(_DWORD, _DWORD); // weak
@@ -5413,6 +5866,10 @@ int(__cdecl *dword_118AA0C4)(_DWORD);         // weak
 int(__cdecl *dword_118AA0C8)(_DWORD, _DWORD); // weak
 int(__cdecl *dword_118AA0CC)(_DWORD, _DWORD); // weak
 int (*dword_118AA0D0)(void);                  // weak
+_UNKNOWN lutBuffer;                           // weak
+_UNKNOWN ciBuffer_0;                          // weak
+_UNKNOWN lutBuffer_0;                         // weak
+_UNKNOWN ciBuffer;                            // weak
 int dword_118AB118;                           // weak
 LARGE_INTEGER Frequency;                      // idb
 int supportsHRPerformanceCounter;             // weak
@@ -5420,7 +5877,10 @@ int dword_118AB12C;                           // weak
 int performanceSomething;                     // weak
 int dword_118AB134;                           // weak
 int dword_118AB144;                           // weak
+_UNKNOWN unk_118AB150;                        // weak
+_UNKNOWN unk_118AB160;                        // weak
 int dword_118AB470;                           // weak
+char byte_118AB478[1032];                     // idb
 DIEFFECT gDIEffectSpring;
 char byte_118AB8B8[];             // weak
 char byte_118AB8F7[];             // weak
@@ -5456,16 +5916,7 @@ int gUnused118ABD28;              // weak
 int gUnused118ABD2C;              // weak
 int gUnused118ABD30;              // weak
 int gUnused118ABD34;              // weak
-int dword_118ABD38[];             // weak
-int dword_118ABD3C[];             // weak
-int dword_118ABD40[];             // weak
-int dword_118ABD44[];             // weak
-int dword_118ABD48[];             // weak
-int dword_118ABD4C[];             // weak
-char byte_118ABD50[];             // weak
-char byte_118ABD51[];             // weak
-char byte_118ABD52[];             // weak
-char byte_118ABD53[29];           // idb
+int dword_118ABD38[14];
 LPDIRECTINPUTA g_DirectInputA;
 int dword_118ABD74; // weak
 int dword_118ABD78; // weak
@@ -5498,7 +5949,7 @@ unk00334 *gUnk00334Ptr1;
 CLSID *dword_118AC23C;
 unk00334 *gUnk00334Ptr0;
 void *Base;                                        // idb
-int dword_118AC2D0;                                // weak
+int gCRTCompatMode;                                // weak
 int dword_118AC608;                                // weak
 struct _TIME_ZONE_INFORMATION TimeZoneInformation; // idb
 _UNKNOWN unk_118AC70C;                             // weak
@@ -5519,4 +5970,3 @@ int dword_118AC788;                                // weak
 int dword_118AC78C;                                // weak
 int dword_118AC794;                                // weak
 _UNKNOWN unk_118AC898;                             // weak
-
