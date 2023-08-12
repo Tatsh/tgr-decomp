@@ -11,7 +11,7 @@ int sub_1005F940() {
     unsigned __int16 v7; // si
     unsigned __int8 v8;  // cl
     int v9;              // eax
-# 505 * v10;             // esi
+    _BYTE *v10;          // esi
     int v11;             // edx
     int result;          // eax
 
@@ -69,7 +69,7 @@ int sub_1005F940() {
             *((_BYTE *)&dword_10AA26F4[v8] + v9 + 2) = 0;
             word_10AA270E[4 * LOBYTE(dword_10AA26F4[0]) + v9] = 0;
             dword_10AA2740[4 * LOBYTE(dword_10AA26F4[0]) + v9] = 0;
-            *((_BYTE *)v10 + 4 * *((unsigned __int8 *)v10 + 4) + v9 + 6) = 0;
+            v10[4 * (unsigned __int8)v10[4] + 6 + v9] = 0;
             *(_BYTE *)(v9 + 4 * *(unsigned __int8 *)(dword_10AD189C + 4) + dword_10AD189C + 6) = 0;
             *((_WORD *)dword_10ACED34 + 4 * *((unsigned __int8 *)dword_10ACED34 + 4) + v9 + 15) = 0;
             *(_WORD *)(dword_10AD189C + 2 * (v9 + 4 * *(unsigned __int8 *)(dword_10AD189C + 4)) +

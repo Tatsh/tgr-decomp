@@ -67,7 +67,7 @@ LABEL_7:
         goto LABEL_10;
     (*lpDDSurface)
         ->lpVtbl->QueryInterface(*lpDDSurface, &CLSID_IDirect3DTexture2, (LPVOID *)&d3dTex2);
-    d3dTex2->lpVtbl->GetHandle(d3dTex2, (#486 *)dev, (D3DTEXTUREHANDLE *)((char *)this + 12));
+    d3dTex2->lpVtbl->GetHandle(d3dTex2, dev, (D3DTEXTUREHANDLE *)((char *)this + 12));
     d3dTex2->lpVtbl->Release(d3dTex2);
     return (IDirectDraw2 *)1;
 }

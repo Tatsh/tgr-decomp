@@ -1,7 +1,7 @@
 #include "types-win32.h"
 //----- (10038EC0) --------------------------------------------------------
-int sound_10038EC0() {
-    int result;                 // eax
+void *sound_10038EC0() {
+    void *result;               // eax
     HGLOBAL v1;                 // eax
     HRESULT hr;                 // esi
     SIZE_T pMetric;             // [esp+10h] [ebp-18h] BYREF
@@ -18,17 +18,17 @@ int sound_10038EC0() {
         sub_10060D90();
         pm_sub_100027C0(2);
     }
-    result = gPlaysfx;
+    result = (void *)gPlaysfx;
     if (gPlaysfx) {
         if (++dword_118290FC != 1)
-            return 1;
+            return (void *)1;
         memset(dword_11828F08, 0, sizeof(dword_11828F08));
         sub_10073060();
         if (acmMetrics(0, 0x32u, &pMetric))
             return 0;
         v1 = GlobalAlloc(GMEM_ZEROINIT, pMetric);
-        result = (int)GlobalLock(v1);
-        pMem = (#514 *)result;
+        result = GlobalLock(v1);
+        pMem = result;
         if (result) {
             *(_WORD *)result = 1;
             *((_WORD *)pMem + 1) = 2;
@@ -40,7 +40,7 @@ int sound_10038EC0() {
             hr = CoCreateInstance(
                 &CLSID_CLSID_DirectSound, NULL, 1u, &CLSID_IDirectSound, (LPVOID *)&gDSound);
             if (hr < 0 || !gDSound)
-                return hr >= 0;
+                return (void *)(hr >= 0);
             hr = gDSound->lpVtbl->Initialize(gDSound, 0);
             if (hr >= 0) {
                 hr = gDSound->lpVtbl->SetCooperativeLevel(gDSound, gHwnd, 2);
@@ -55,7 +55,7 @@ int sound_10038EC0() {
                     if (hr >= 0) {
                         hr = gDSoundBuffer->lpVtbl->Play(gDSoundBuffer, 0, 0, 1);
                         if (hr >= 0)
-                            return hr >= 0;
+                            return (void *)(hr >= 0);
                         gDSoundBuffer->lpVtbl->Release(gDSoundBuffer);
                         gDSoundBuffer = 0;
                     }
@@ -63,7 +63,7 @@ int sound_10038EC0() {
             }
             gDSound->lpVtbl->Release(gDSound);
             gDSound = 0;
-            return hr >= 0;
+            return (void *)(hr >= 0);
         }
     }
     return result;

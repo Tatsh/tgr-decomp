@@ -74,7 +74,7 @@ __int16 __cdecl sub_10036C00(int a1) {
         *(_BYTE *)(a1 + 7) = v5;
         *(_BYTE *)(a1 + 6) = v6;
         *(_BYTE *)(a1 + 5) = v7;
-        sub_1002B970(v4);
+        track_1002B970(v4);
         LOBYTE(v8) = *(_BYTE *)(*v4 + 1);
         HIBYTE(v8) = *(_BYTE *)*v4;
         *(_DWORD *)*v4 =
@@ -93,7 +93,7 @@ __int16 __cdecl sub_10036C00(int a1) {
                 v14 = *(_BYTE *)(v13 + 6);
                 *(_BYTE *)(v13 + 6) = *(_BYTE *)(v13 + 5);
                 *(_BYTE *)(v11 + *v4 + 5) = v14;
-                sub_1002B970((int *)(*v4 + v10));
+                track_1002B970((int *)(*v4 + v10));
                 v15 = *(_BYTE **)(v10 + *v4);
                 LOBYTE(v16) = v15[1];
                 HIBYTE(v16) = *v15;
@@ -107,7 +107,7 @@ __int16 __cdecl sub_10036C00(int a1) {
                 LOBYTE(v16) = *(_BYTE *)(v18 + 6);
                 *(_BYTE *)(v18 + 6) = *(_BYTE *)(v18 + 5);
                 *(_BYTE *)(*(_DWORD *)(v10 + *v4) + 5) = v16;
-                sub_1002B970((int *)(*(_DWORD *)(v10 + *v4) + 4));
+                track_1002B970((int *)(*(_DWORD *)(v10 + *v4) + 4));
                 sub_1002BD50((__int16 **)(*(_DWORD *)(v10 + *v4) + 4), **(_DWORD **)(v10 + *v4));
                 v19 = *(_DWORD *)(v10 + *v4);
                 v20 = *(_BYTE *)(v19 + 11);
@@ -117,7 +117,7 @@ __int16 __cdecl sub_10036C00(int a1) {
                 v22 = *(_BYTE *)(v21 + 10);
                 *(_BYTE *)(v21 + 10) = *(_BYTE *)(v21 + 9);
                 *(_BYTE *)(*(_DWORD *)(v10 + *v4) + 9) = v22;
-                sub_1002B970((int *)(*(_DWORD *)(v10 + *v4) + 8));
+                track_1002B970((int *)(*(_DWORD *)(v10 + *v4) + 8));
                 v57 = 0;
                 v23 = *(_BYTE **)(v10 + *v4);
                 LOBYTE(v24) = v23[13];
@@ -169,7 +169,7 @@ __int16 __cdecl sub_10036C00(int a1) {
                         LOBYTE(v36) = *(_BYTE *)(v36 + v34 + 2);
                         *(_BYTE *)(v38 + 34) = v37;
                         *(_BYTE *)(*(_DWORD *)(v10 + *v4) + v34 + 1) = v36;
-                        sub_1002B970((int *)(v34 + *(_DWORD *)(v10 + *v4)));
+                        track_1002B970((int *)(v34 + *(_DWORD *)(v10 + *v4)));
                         v55 = 0;
                         v39 = *(_BYTE **)(*(_DWORD *)(v10 + *v4) + v34);
                         v40 = v39[3];
@@ -218,7 +218,7 @@ __int16 __cdecl sub_10036C00(int a1) {
                 v51 = *v48;
                 *v48 = *(v48 - 1);
                 *(v48 - 1) = v51;
-                sub_1002B970((int *)(v48 - 2));
+                track_1002B970((int *)(v48 - 2));
                 LOBYTE(v52) = v48[3];
                 HIBYTE(v52) = v48[2];
                 *((_WORD *)v48 + 1) = v52;

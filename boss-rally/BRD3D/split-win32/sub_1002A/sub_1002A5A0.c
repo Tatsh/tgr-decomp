@@ -3,7 +3,7 @@
 int sub_1002A5A0() {
     int result; // eax
 
-    if (dword_11829844 <= (unsigned int)dword_11829848 || gD3DAlwaysSquareTextures) {
+    if (dword_11829844 <= (unsigned int)gFirstLineHNDFile || gD3DAlwaysSquareTextures) {
         dword_100B8C90 = 2;
         dword_100A7DFC = 64;
         dword_100A7E00 = 64;
@@ -33,4 +33,4 @@ int sub_1002A5A0() {
 // 1022B348: using guessed type int gTotalPhys;
 // 10575420: using guessed type int gD3DAlwaysSquareTextures;
 // 11829844: using guessed type int dword_11829844;
-// 11829848: using guessed type int dword_11829848;
+// 11829848: using guessed type int gFirstLineHNDFile;

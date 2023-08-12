@@ -203,7 +203,7 @@ LABEL_48:
     v34[6] = 0;
     v44[128] = dword_118AA088;
     v54 = v35;
-    v22 = sub_10028860((#506 *)&v26);
+    v22 = sub_10028860(&v26);
     return graphics_TIDFromTextureAppend(&v26, (int)v22);
 }
 // 100280A2: conditional instruction was optimized away because of '%arg_34.4!=0'

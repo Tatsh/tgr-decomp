@@ -58,7 +58,7 @@ int __cdecl sub_1002A430(int a1, int a2) {
                                 }
                                 dword_10575444 = 0;
                                 dword_10575440 = 0;
-                                v13 = sub_10028860((#506 *)v18);
+                                v13 = sub_10028860(v18);
                                 *(_DWORD *)(v9 + *v4) =
                                     v17 | graphics_TIDFromTextureAppend(v18, (int)v13);
                                 v9 += 12;

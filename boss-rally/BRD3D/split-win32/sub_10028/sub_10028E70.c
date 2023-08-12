@@ -16,7 +16,7 @@ unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
 
     v2 = (char *)dword_1057543C + 696 * a1 + 4;
     if (*((_DWORD *)dword_1057543C + 174 * a1 + 156)) {
-        v3 = byte_11829870;
+        v3 = out_a2;
         v4 = car_10060F70(*((_DWORD *)dword_1057543C + 174 * a1 + 157),
                           *((_DWORD *)dword_1057543C + 174 * a1 + 158),
                           *((_DWORD *)dword_1057543C + 174 * a1 + 159));
@@ -34,12 +34,11 @@ unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
             v12 = 0;
             v11 = v7;
         }
-        if (car_10061480(v4, v5, v6, v12, v11, (int)byte_11829870, 2 * v2[169], 2 * v2[170])) {
+        if (car_10061480(v4, v5, v6, v12, v11, (int)out_a2, 2 * v2[169], 2 * v2[170])) {
             v8 = v2[2];
             v9 = 2 * v2[169];
             if (v9 != v8 || 2 * v2[170] != v2[3]) {
-                math_10025350(
-                    (int)&unk_104D51D0, v8, v2[3], COERCE_FLOAT(byte_11829870), v9, 2 * v2[170]);
+                math_10025350((int)&unk_104D51D0, v8, v2[3], COERCE_FLOAT(out_a2), v9, 2 * v2[170]);
                 v3 = (unsigned __int8 *)&unk_104D51D0;
             }
             dword_105553F8 = v2[168];
@@ -55,7 +54,7 @@ unsigned __int8 *__cdecl sub_10028E70(int a1, _DWORD *a2) {
             *a2 = dword_105553F8;
         }
     } else {
-        result = sub_10028860((#506 *)((char *)dword_1057543C + 696 * a1 + 4));
+        result = sub_10028860((char *)dword_1057543C + 696 * a1 + 4);
         *a2 = dword_105553F8;
     }
     return result;

@@ -37,7 +37,7 @@ int __cdecl sub_1002BF80(int a1) {
                 v1 += 8;
                 continue;
             case 249:
-                sub_1002B970((int *)(v1 + 4));
+                track_1002B970((int *)(v1 + 4));
                 goto LABEL_8;
             default:
             LABEL_8:

@@ -26,7 +26,7 @@ unsigned __int16 __cdecl sub_100382A0(char *a1) {
     a1[3] = v1;
     a1[2] = v2;
     a1[1] = v3;
-    sub_1002B970((int *)a1);
+    track_1002B970((int *)a1);
     v4 = a1[7];
     a1[7] = a1[4];
     v5 = a1[5];
@@ -34,7 +34,7 @@ unsigned __int16 __cdecl sub_100382A0(char *a1) {
     v6 = a1[6];
     a1[6] = v5;
     a1[5] = v6;
-    sub_1002B970((int *)a1 + 1);
+    track_1002B970((int *)a1 + 1);
     v7 = a1[11];
     a1[11] = a1[8];
     v8 = a1[9];
@@ -42,7 +42,7 @@ unsigned __int16 __cdecl sub_100382A0(char *a1) {
     v9 = a1[10];
     a1[10] = v8;
     a1[9] = v9;
-    sub_1002B970((int *)a1 + 2);
+    track_1002B970((int *)a1 + 2);
     v10 = a1[15];
     a1[15] = a1[12];
     v11 = a1[13];
@@ -50,7 +50,7 @@ unsigned __int16 __cdecl sub_100382A0(char *a1) {
     v12 = a1[14];
     a1[14] = v11;
     a1[13] = v12;
-    sub_1002B970((int *)a1 + 3);
+    track_1002B970((int *)a1 + 3);
     LOBYTE(v13) = a1[21];
     LOBYTE(v14) = a1[23];
     HIBYTE(v13) = a1[20];

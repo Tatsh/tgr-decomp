@@ -156,7 +156,7 @@ LABEL_47:
         meth_10035FA0(v24, 0x1000000);
     }
     if ((**(_DWORD **)(a1 + 10688) & 0x2000000) != 0) {
-        meth_10001970((#481 *)a1);
+        meth_10001970((void *)a1);
         v25 = *(int **)(a1 + 10688);
         *(_DWORD *)(a1 + 3960) = 1;
         meth_10035FA0(v25, 0x2000000);
@@ -261,7 +261,7 @@ LABEL_47:
         *(_BYTE *)(a1 + 873) = 0x80;
     if ((dword_118ABAD0 & 0x80u) != 0)
         *(_BYTE *)(a1 + 874) = 0x80;
-    meth_10075F10(a1);
+    meth_10075F10((void *)a1);
     if (!*(_DWORD *)(a1 + 3964)) {
         sub_1003AF40((float *)&v55, (float *)(a1 + 48), (float *)a1);
         sub_1003AF70((float *)&v55, (float *)(a1 + 16));

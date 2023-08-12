@@ -23,7 +23,7 @@ int sub_1003BD80() {
     v1 = GetModuleHandleA(0);
     if (sub_1000C5D0((int)v1, &unk) < 0)
         return 0;
-    v3 = SetupDirectPlayPlayer((#503 *)&unk);
+    v3 = np_SetupDirectPlayPlayer(&unk);
     if (v3 == -2005466066) {
         unk = 0;
         v4 = sub_1003C520((LPVOID *)&unk);

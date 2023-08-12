@@ -158,7 +158,7 @@ int __cdecl sub_10038010(_BYTE *a1) {
     a1[71] = v38;
     a1[70] = v39;
     a1[69] = v40;
-    sub_1002B970((int *)a1 + 17);
+    track_1002B970((int *)a1 + 17);
     LOBYTE(v41) = a1[73];
     LOBYTE(v42) = a1[75];
     HIBYTE(v41) = a1[72];

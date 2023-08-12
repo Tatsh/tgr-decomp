@@ -1,15 +1,15 @@
 #include "types-win32.h"
 //----- (100709A0) --------------------------------------------------------
 char sub_100709A0() {
-    unsigned int v0;     // eax
-    FILE *v1;            // eax
-    FILE *v2;            // esi
-    char result;         // al
-    size_t v4;           // eax
-    size_t v5;           // eax
-    size_t v6;           // eax
-    FILE *v7;            // [esp-4h] [ebp-Ch]
-    unsigned int Buffer; // [esp+4h] [ebp-4h] BYREF
+    int v0;      // eax
+    FILE *v1;    // eax
+    FILE *v2;    // esi
+    char result; // al
+    size_t v4;   // eax
+    size_t v5;   // eax
+    size_t v6;   // eax
+    FILE *v7;    // [esp-4h] [ebp-Ch]
+    int Buffer;  // [esp+4h] [ebp-4h] BYREF
 
     v0 = CalculateChecksum(0, 0, 0);
     Buffer = CalculateChecksum(v0, (unsigned __int8 *)dword_10ACED34, 0x200u);

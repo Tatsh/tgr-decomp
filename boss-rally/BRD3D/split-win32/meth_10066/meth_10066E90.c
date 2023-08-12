@@ -12,7 +12,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
     int v10;         // edx
     void *v11;       // ecx
     int v12;         // edx
-# 505 * v13;         // ecx
+    void *v13;       // ecx
     int v14;         // edx
     LPCSTR v15;      // eax
     double v16;      // st7
@@ -30,7 +30,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
     double v28;      // st6
     int v29;         // ebx
     __int16 v30;     // cx
-# 505 * v31;         // ecx
+    void *v31;       // ecx
     int v32;         // eax
     int v33;         // eax
     LPCSTR v34;      // eax
@@ -122,7 +122,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
             meth_DebugPrint(v11);
             if (v7)
                 goto LABEL_52;
-            v13 = (#505 *)this[16];
+            v13 = (void *)this[16];
             if ((int)v13 >= dword_100BD3E0) {
             LABEL_41:
                 if (this[16] == dword_100BD3E0) {
@@ -310,7 +310,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
             }
             return;
         }
-        v31 = (#505 *)this[16];
+        v31 = (void *)this[16];
         v32 = this[17] + 1;
         this[17] = v32;
         if (v32 <= (int)v31) {
@@ -355,7 +355,7 @@ void __thiscall meth_10066E90(_DWORD *this) {
     LABEL_102:
         if (v3) {
             meth_DebugPrint(v31);
-            v31 = (#505 *)this[16];
+            v31 = (void *)this[16];
             *(float *)(v3 + 4 * (_DWORD)v31 + 4020) = v45;
         }
         v35 = *((float *)this + 12) - v45;

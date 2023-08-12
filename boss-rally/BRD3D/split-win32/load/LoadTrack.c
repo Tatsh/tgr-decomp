@@ -16,13 +16,13 @@ int __cdecl LoadTrack(int trackIndex) {
 
     ParseHNDFileFromIndex(trackIndex);
     dword_10A9977C = -2147329024 - (_DWORD)&gUnk06594.gap4A2C[4300];
-    sub_1002B9A0(-2147329024, (int)&gUnk06594.gap4A2C[4300]);
+    track_1002B9A0(-2147329024, (int)&gUnk06594.gap4A2C[4300]);
     sub_1002B9D0(1);
     strcpy((char *)&trackFilepath, kTracksSlash);
     strcat((char *)&trackFilepath, gTrackFilenames[trackIndex]);
     cFile = CHK_FReadOpen((const char *)&trackFilepath);
     filesize = CHK_GetFileSize(cFile, _);
-    ParseTrackHeader((int)&gUnk06594.gap1C8[18176], cFile);
+    ParseTrackHeader((unk00230 *)&gUnk06594.gap1C8[18176], cFile);
     if (filesize > 0x3D0900) // ~3.81 MiB
     {
         printf("Track %d is too big (%d vs. %d)\n", trackIndex, filesize, 0x3D0900);
@@ -30,7 +30,7 @@ int __cdecl LoadTrack(int trackIndex) {
     }
     CHK_FReadReportError(&gUnk06594.gap4A2C[4860], 1u, filesize - 560, cFile);
     CHK_FClose(cFile);
-    sub_10038B20(&gUnk06594.gap1C8[18176]);
+    track_10038B20((unk00230 *)&gUnk06594.gap1C8[18176]);
     ReadFilenameToBuffer(&lutBuffer, *(&gTrackDataDesert.skytexLut4Name + 95 * trackIndex), 32);
     ReadFilenameToBuffer(
         &lutBuffer_0,

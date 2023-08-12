@@ -15,21 +15,19 @@
 
 #define __thiscall __cdecl // Test compile in C mode
 
-unsigned int __cdecl CalculateChecksum(unsigned int seed,
-                                       unsigned __int8 *buf,
-                                       unsigned int elementSize);
+int __cdecl CalculateChecksum(unsigned int seed, unsigned __int8 *buf, unsigned int elementSize);
 // _DWORD *__thiscall unknown_libname_1(_DWORD *this);
 int __thiscall meth_unk00334_setField0Validate(unk00334 *this, unk0008C *a2); // idb
 int __thiscall meth_unk000334_10001160(unk00334 *this);                       // idb
 int returnZeroWrapper();
 int sub_10001190();
 void __thiscall meth_100011F0(float *this, float a2, int a3);
-float *__thiscall meth_100015D0(#479 * this, float a2, float a3);
+float *__thiscall meth_100015D0(void *this, float a2, float a3); // idb
 int __thiscall meth_10001760(void *this);
 float *__thiscall meth_10001890(_DWORD *this, float a2);
-float *__thiscall meth_10001970(#481 * this);
-int __thiscall meth_100019D0(#479 * this); // idb
-int __thiscall meth_10001FF0(#482 * this); // idb
+float *__thiscall meth_10001970(void *this); // idb
+int __thiscall meth_100019D0(void *this);    // idb
+int __thiscall meth_10001FF0(void *this);    // idb
 long double __cdecl cos_(float a1);
 int __cdecl CreateMinuteSecondsString(char *outBuffer, float totalSeconds); // idb
 CarPart *sub_10002140();
@@ -213,7 +211,7 @@ BOOL __thiscall meth_graphics_10009ED0(void *this,
                                        char *a2,
                                        LONG rectRight,
                                        LONG rectBottom); // idb
-BOOL __thiscall meth_graphics_1000A020(#511 * this);     // idb
+BOOL __thiscall meth_graphics_1000A020(void *this);      // idb
 int __thiscall meth_1000A0B0(void *this);
 unk0005C *__thiscall meth_unk0005C_1000A100(unk0005C *this,
                                             IDirect3D2 *d3d2,
@@ -595,7 +593,7 @@ int __cdecl graphics_TIDFromTextureAppend(_DWORD *a1, int a2); // idb
 int __cdecl sub_100284A0(_DWORD *a1, int a2);
 int __cdecl sub_10028630(int a1);
 int *__cdecl sub_10028720(int *a1, int *a2, int a3, int a4);
-unsigned __int8 *__cdecl sub_10028860(#506 * a1); // idb
+unsigned __int8 *__cdecl sub_10028860(void *a1); // idb
 int __cdecl sub_10028A10(int a1, int *a2);
 int __cdecl sub_10028B20(int, float, int); // idb
 int __cdecl graphics_10028BF0(int a1,
@@ -620,7 +618,7 @@ int __cdecl sub_10029060(int); // weak
 int *__cdecl sub_100290A0(int *a1, int *a2, int a3);
 void __cdecl sub_100290E0(_DWORD *a1);
 int __cdecl sub_10029410(int a1);
-int sub_10029470();
+int graphics_10029470();
 int __cdecl sub_10029E10(int a1, int a2, int a3);
 int __cdecl sub_10029E60(int a1);
 _DWORD *__cdecl sub_10029E80(_DWORD *a1);
@@ -661,9 +659,9 @@ __int64 sub_1002B670();
 __int64 __cdecl sub_1002B920(float a1);
 void __cdecl qmemcpy32(void *a1, const void *a2);
 void sub_1002B950();
-int __cdecl sub_1002B970(int *a1);
-int __cdecl sub_1002B9A0(int a1, int a2);
-int sub_1002B9C0();
+int __cdecl track_1002B970(int *a1);
+int __cdecl track_1002B9A0(int a1, int a2);
+int track_1002B9C0();
 int __cdecl sub_1002B9D0(int a1);
 void __cdecl sub_1002B9E0(_BYTE *a1, int a2);
 _BYTE *__cdecl sub_1002BA00(_BYTE *a1, int a2);
@@ -834,7 +832,7 @@ int __cdecl sub_10036BD0(int a1, int a2);
 __int16 __cdecl sub_10036C00(int a1);
 int __cdecl sub_10037030(int a1);
 int __cdecl sub_10037070(int a1);
-int __cdecl sub_100370D0(char *outBuffer);                        // idb
+int __cdecl car_100370D0(char *outBuffer);                        // idb
 int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex); // idb
 void __cdecl ReadFilenameToBuffer(void *outBuffer, char *filename, int elementCount);
 int __cdecl sub_10037930(int a1, _DWORD *a2, _DWORD *a3);
@@ -851,13 +849,13 @@ char __cdecl sub_10038380(_BYTE *a1);
 _BYTE *__cdecl sub_100383C0(_BYTE *a1);
 int __cdecl sub_10038410(int a1);
 void __cdecl sub_10038450(int a1, int a2);
-int __cdecl ParseTrackHeader(int outBuffer, CHK_File *fp);
-int __cdecl sub_10038B20(_BYTE *a1);
-HRESULT __cdecl SetupDirectPlayPlayer(#503 * u1); // idb
+int __cdecl ParseTrackHeader(unk00230 *outBuffer, CHK_File *fp); // idb
+int __cdecl track_10038B20(unk00230 *a1);                        // idb
+HRESULT __cdecl np_SetupDirectPlayPlayer(void *u1);              // idb
 int sub_10038E80();
 // Pod *unknown_libname_7();
 // void __cdecl unknown_libname_8(); idb
-int sound_10038EC0();
+void *sound_10038EC0();
 void __cdecl __noreturn cleanUpAndExitWithCode(int Code); // idb
 CarPart *sub_10039000();
 void __thiscall meth_10039020(int this);
@@ -1429,7 +1427,7 @@ void __thiscall meth_10064700(_DWORD *this);                        // idb
 void __cdecl sub_10065620(int a1);
 int __thiscall meth_10065630(_DWORD *this); // idb
 int __thiscall meth_10065710(_DWORD *this); // idb
-int __thiscall meth_10065740(_DWORD *this); // idb
+int __thiscall meth_10065740(void *this);   // idb
 __int16 __cdecl sub_10065B20(int a1, float a2);
 void __cdecl sub_10065C80(int a1, int a2, float a3, float a4);
 int __cdecl car_MakeEnemyCarColorPanels0(size_t size); // idb
@@ -1696,7 +1694,7 @@ void __thiscall meth_10075810(int this);
 void __thiscall meth_100758A0(_DWORD *this);
 int __thiscall meth_10075960(int this);
 int __cdecl sub_100759D0(int, int, int, int, int, float, int, int, int); // idb
-void __thiscall meth_10075F10(int this);
+void __thiscall meth_10075F10(void *this);                               // idb
 void __thiscall meth_10076420(float *this, int a2, int a3, int a4);
 void __thiscall meth_100764C0(float *this, float a2);
 void __cdecl math_100765E0(float *a1, float *a2);
@@ -4799,8 +4797,8 @@ int dword_10575524;                                                      // weak
 int dword_10575528;                                                      // weak
 int dword_1057552C;                                                      // weak
 int dword_10575530;                                                      // weak
-int dword_10575538;                                                      // weak
-int dword_1057553C;                                                      // weak
+int gTrack_10575538;                                                     // weak
+int gTrack_1057553C;                                                     // weak
 _UNKNOWN unk_10575540;                                                   // weak
 int dword_10675540;                                                      // weak
 int dword_10675548[];                                                    // weak
@@ -5491,7 +5489,7 @@ int dword_10ACE014;     // weak
 char byte_10ACE215;     // weak
 int dword_10ACED0C;     // weak
 int dword_10ACED30;     // weak
-# 505 * dword_10ACED34;
+void *dword_10ACED34;
 int dword_10ACED38;         // weak
 int dword_10ACED3C[];       // weak
 int dword_10ACED40;         // weak
@@ -5778,7 +5776,7 @@ int dword_11828F00;                     // weak
 int dword_11828F08[15];                 // idb
 _UNKNOWN unk_11828F44;                  // weak
 LPCVOID dword_11828F48;                 // idb
-# 514 * pMem;
+void *pMem;
 IDirectSoundBuffer *gDSoundBuffer;
 int dword_118290F4; // weak
 IDirectSound *gDSound;
@@ -5808,9 +5806,9 @@ int dword_11829838;                                   // weak
 int dword_1182983C;                                   // weak
 int dword_11829840;                                   // weak
 int dword_11829844;                                   // weak
-int dword_11829848;                                   // weak
+int gFirstLineHNDFile;                                // weak
 int dword_11829850[8];                                // idb
-unsigned __int8 byte_11829870[131072];                // idb
+unsigned __int8 out_a2[131072];                       // idb
 unsigned __int8 buf[393216];                          // idb
 int dword_118A9870;                                   // weak
 int dword_118A9874;                                   // weak

@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100019D0) --------------------------------------------------------
-int __thiscall meth_100019D0(#479 * this) {
+int __thiscall meth_100019D0(void *this) {
     int v2;              // edx
     int v3;              // eax
     long double v4;      // st7
@@ -80,9 +80,9 @@ int __thiscall meth_100019D0(#479 * this) {
     v14 = (char *)this + 10112;
     if (v12 - v13 + *((float *)this + 2622) <= 0.07) {
         v41 = v13 - (*((float *)this + 2622) + v12 - 0.07);
-        meth_100015D0(this, COERCE_FLOAT((#479 *)((char *)this + 10112)), v41);
+        meth_100015D0(this, COERCE_FLOAT((char *)this + 10112), v41);
     } else {
-        meth_100015D0(this, COERCE_FLOAT((#479 *)((char *)this + 10112)), 0.0);
+        meth_100015D0(this, COERCE_FLOAT((char *)this + 10112), 0.0);
     }
     meth_10001760(this);
     *((_DWORD *)this + 2619) = *((_DWORD *)this + 2540);

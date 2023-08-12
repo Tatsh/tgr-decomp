@@ -44,7 +44,7 @@ void __thiscall meth_10063660(_DWORD *this) {
         this[215] = 0;
         *((_BYTE *)this + 10671) = 2;
         this[2668] = 1036831949;
-        meth_100015D0((#479 *)this, COERCE_FLOAT(this + 2528), 1.0);
+        meth_100015D0(this, COERCE_FLOAT(this + 2528), 1.0);
         this[2619] = this[2540];
         this[2620] = this[2541];
         this[2621] = this[2542];

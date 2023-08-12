@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (10001FF0) --------------------------------------------------------
-int __thiscall meth_10001FF0(#482 * this) {
+int __thiscall meth_10001FF0(void *this) {
     char *v2;   // eax
     _DWORD *v3; // edi
     int result; // eax
@@ -10,7 +10,7 @@ int __thiscall meth_10001FF0(#482 * this) {
         v2 = (char *)this + 10044;
     *((_DWORD *)this + 2509) = v2;
     *((_DWORD *)this + 2510) = v2;
-    v3 = (_DWORD *)((char *)this + 10160);
+    v3 = (char *)this + 10160;
     sub_1003AFE0((int)this + 10160, (int)this + 48, (int)this + 32, 4.0);
     if (dword_106909E0)
         sub_1003B020((int)this + 10160, (int)this, 10.0);

@@ -5,11 +5,11 @@ int __cdecl ParseHNDFile(char *hndFilepath) {
     char Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
 
     dword_10A99778 = 0;
-    dword_11829848 = 3145728;
+    gFirstLineHNDFile = 3145728;
     if (CHK_FileExists(hndFilepath)) {
         v1 = CHK_FReadOpen(hndFilepath);
         if (CHK_ReadLine(Buffer, 1024, &v1->pfil)) {
-            sscanf(Buffer, "%u", &dword_11829848);
+            sscanf(Buffer, "%u", &gFirstLineHNDFile);
             if (CHK_ReadLine(Buffer, 1024, &v1->pfil)) {
                 do {
                     sscanf(Buffer,
@@ -27,4 +27,4 @@ int __cdecl ParseHNDFile(char *hndFilepath) {
     return sub_1002A5A0();
 }
 // 10A99778: using guessed type int dword_10A99778;
-// 11829848: using guessed type int dword_11829848;
+// 11829848: using guessed type int gFirstLineHNDFile;

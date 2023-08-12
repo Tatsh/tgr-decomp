@@ -85,7 +85,7 @@ int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     if (v10 == v3[2]) {
         v11 = v3[170];
         if (v11 == v3[3] && dword_100B8C90 <= 0) {
-            if (car_10061480((int)v4, v5, v6, v47, (int)v7, (int)byte_11829870, 2 * v10, 2 * v11)) {
+            if (car_10061480((int)v4, v5, v6, v47, (int)v7, (int)out_a2, 2 * v10, 2 * v11)) {
                 v12 = 2 * v3[3];
                 v45 = 2 * v3[2];
                 v13 = 4 * v3[16];
@@ -108,9 +108,9 @@ int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                 v17 = v3[15];
                 v3[159] = v16;
                 if (v17)
-                    v18 = sub_10009660(byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
+                    v18 = sub_10009660(out_a2, out_a2, v3[16], v3[4], v3 + 15);
                 else
-                    v18 = graphics_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+                    v18 = graphics_100098A0(out_a2, out_a2, v3[16], v3[4]);
                 v3[164] = v18;
                 if (car_10061000() >= 0) {
                     v19 = 3;
@@ -124,20 +124,18 @@ int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
                                              v48,
                                              v47,
                                              (int)a3,
-                                             (int)byte_11829870,
+                                             (int)out_a2,
                                              2 * v3[169],
                                              2 * v3[170])) {
                                 if (v3[15])
-                                    v22 = sub_10009660(
-                                        byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
+                                    v22 = sub_10009660(out_a2, out_a2, v3[16], v3[4], v3 + 15);
                                 else
-                                    v22 = graphics_100098A0(
-                                        byte_11829870, byte_11829870, v3[16], v3[4]);
+                                    v22 = graphics_100098A0(out_a2, out_a2, v3[16], v3[4]);
                                 v3[164] = v22;
                             }
                             v23 = (unsigned __int8 *)malloc(v3[164]);
                             *v20 = v23;
-                            qmemcpy(v23, byte_11829870, v3[164]);
+                            qmemcpy(v23, out_a2, v3[164]);
                             v19 = v50;
                         } else {
                             *v20 = 0;
@@ -173,12 +171,11 @@ int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
     v30 = car_100615B0(v4, v28, v44, v29, v46);
     v31 = v3[170];
     v3[159] = v30;
-    math_10025350(
-        (int)byte_11829870, v3[2], v3[3], COERCE_FLOAT(&unk_104D51D0), 2 * v3[169], 2 * v31);
+    math_10025350((int)out_a2, v3[2], v3[3], COERCE_FLOAT(&unk_104D51D0), 2 * v3[169], 2 * v31);
     if (v3[15])
-        v32 = sub_10009660(byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
+        v32 = sub_10009660(out_a2, out_a2, v3[16], v3[4], v3 + 15);
     else
-        v32 = graphics_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+        v32 = graphics_100098A0(out_a2, out_a2, v3[16], v3[4]);
     v3[164] = v32;
     if (car_10061000() < 0) {
         v38 = v3 + 163;
@@ -191,7 +188,7 @@ int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
         v40 = (unsigned __int8 *)malloc(v3[164]);
         v41 = v3[164];
         v3[160] = v40;
-        qmemcpy(v40, byte_11829870, v41);
+        qmemcpy(v40, out_a2, v41);
         return 1;
     }
     v33 = 3;
@@ -202,21 +199,21 @@ int __cdecl car_10024BF0(_DWORD *a1, _DWORD *a2, _DWORD *a3) {
         if (v35) {
             if (car_10061480(
                     v35, v49, v48, v47, (int)a3, (int)&unk_104D51D0, 2 * v3[169], 2 * v3[170])) {
-                math_10025350((int)byte_11829870,
+                math_10025350((int)out_a2,
                               v3[2],
                               v3[3],
                               COERCE_FLOAT(&unk_104D51D0),
                               2 * v3[169],
                               2 * v3[170]);
                 if (v3[15])
-                    v36 = sub_10009660(byte_11829870, byte_11829870, v3[16], v3[4], v3 + 15);
+                    v36 = sub_10009660(out_a2, out_a2, v3[16], v3[4], v3 + 15);
                 else
-                    v36 = graphics_100098A0(byte_11829870, byte_11829870, v3[16], v3[4]);
+                    v36 = graphics_100098A0(out_a2, out_a2, v3[16], v3[4]);
                 v3[164] = v36;
             }
             v37 = (unsigned __int8 *)malloc(v3[164]);
             *v34 = v37;
-            qmemcpy(v37, byte_11829870, v3[164]);
+            qmemcpy(v37, out_a2, v3[164]);
             v33 = v51;
         } else {
             *v34 = 0;

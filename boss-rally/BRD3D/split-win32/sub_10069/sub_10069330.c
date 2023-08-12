@@ -7,7 +7,7 @@ int __thiscall sub_10069330(int a1) {
     if (result) {
         if (!gNetworkPlay || (result = sub_10060CC0(result, *(_DWORD *)(result + 324))) != 0) {
             sub_10061C60(*(_DWORD *)(a1 + 96));
-            result = meth_100019D0(*(#479 **)(a1 + 96));
+            result = meth_100019D0(*(void **)(a1 + 96));
         }
     }
     return result;

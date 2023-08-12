@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (1000A020) --------------------------------------------------------
-BOOL __thiscall meth_graphics_1000A020(#511 * this) {
+BOOL __thiscall meth_graphics_1000A020(void *this) {
     int lpDDSurface;                  // eax
     int lpDDSurface_1;                // ecx
     HRESULT hr;                       // esi

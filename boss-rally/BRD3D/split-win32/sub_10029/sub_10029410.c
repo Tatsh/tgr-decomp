@@ -8,7 +8,7 @@ int __cdecl sub_10029410(int a1) {
     if (dword_104D51AC) {
         if (!dword_10575438)
             dword_10575438 = a1;
-        result = sub_10029470();
+        result = graphics_10029470();
         if (result != -1) {
             v2 = dword_105553FC;
             result = result & 0xFFFFFF | 0xDC000000;

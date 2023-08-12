@@ -1,28 +1,28 @@
 #include "types-win32.h"
 //----- (10070E80) --------------------------------------------------------
 char sub_10070E80() {
-    unsigned int v0;  // eax
-    unsigned int v1;  // eax
-    unsigned int v2;  // eax
-    int *v3;          // eax
-    FILE *v4;         // eax
-    FILE *v5;         // esi
-    char result;      // al
-    size_t v7;        // eax
-    size_t v8;        // eax
-    size_t v9;        // eax
-    size_t v10;       // eax
-    size_t v11;       // eax
-    size_t v12;       // eax
-    int *v13;         // eax
-    size_t v14;       // edi
-    size_t v15;       // eax
-    int v16;          // [esp-8h] [ebp-18h]
-    int v17;          // [esp-4h] [ebp-14h]
-    FILE *v18;        // [esp-4h] [ebp-14h]
-    FILE *v19;        // [esp-4h] [ebp-14h]
-    unsigned int v20; // [esp+8h] [ebp-8h] BYREF
-    size_t Buffer;    // [esp+Ch] [ebp-4h] BYREF
+    int v0;        // eax
+    int v1;        // eax
+    int v2;        // eax
+    int *v3;       // eax
+    FILE *v4;      // eax
+    FILE *v5;      // esi
+    char result;   // al
+    size_t v7;     // eax
+    size_t v8;     // eax
+    size_t v9;     // eax
+    size_t v10;    // eax
+    size_t v11;    // eax
+    size_t v12;    // eax
+    int *v13;      // eax
+    size_t v14;    // edi
+    size_t v15;    // eax
+    int v16;       // [esp-8h] [ebp-18h]
+    int v17;       // [esp-4h] [ebp-14h]
+    FILE *v18;     // [esp-4h] [ebp-14h]
+    FILE *v19;     // [esp-4h] [ebp-14h]
+    int v20;       // [esp+8h] [ebp-8h] BYREF
+    size_t Buffer; // [esp+Ch] [ebp-4h] BYREF
 
     v0 = CalculateChecksum(0, 0, 0);
     v1 = CalculateChecksum(v0, &dword_10AA28CC, 4u);

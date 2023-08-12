@@ -3,18 +3,18 @@
 enum MACRO_GAME_MODE sub_1002F4C0() {
     enum MACRO_GAME_MODE result; // eax
     int v1;                      // ebp
-# 505 ** v2;                     // esi
+    void **v2;                   // esi
     int v3;                      // edx
     int v4;                      // edi
     unsigned __int16 *v5;        // ecx
     unsigned __int16 v6;         // bx
-# 505 * v7;                      // eax
+    char *v7;                    // eax
     int v8;                      // ecx
     _BYTE *v9;                   // edx
     __int16 v10;                 // cx
-# 505 * v11;                     // eax
+    _BYTE *v11;                  // eax
     int v12;                     // ecx
-# 505 * v13;                     // eax
+    _WORD *v13;                  // eax
     char v14;                    // cl
     int v15;                     // edx
 
@@ -41,7 +41,7 @@ enum MACRO_GAME_MODE sub_1002F4C0() {
                         if (v3 >= dword_100B3818[6 * *((unsigned __int8 *)*v2 + 4)]) {
                             *((_WORD *)*v2 + 120) |=
                                 word_100B381E[12 * (unsigned __int8)(*((_BYTE *)*v2 + 4))++];
-                            v7 = *v2;
+                            v7 = (char *)*v2;
                             if (*((_BYTE *)*v2 + 4) == 6)
                                 break;
                         }
@@ -52,7 +52,7 @@ enum MACRO_GAME_MODE sub_1002F4C0() {
                                         2 * *((unsigned __int8 *)*v2 + 5)];
                     v15 = -((*(_DWORD *)*v2 & 1) != 0);
                     v2 += 2778;
-                    *((_WORD *)v13 + 121) |= 1 << ((v15 & 6) + v14);
+                    v13[121] |= 1 << ((v15 & 6) + v14);
                     *((_WORD *)*(v2 - 2778) + 122) |=
                         1 << byte_100B3821[24 * *((unsigned __int8 *)*(v2 - 2778) + 4) +
                                            2 * *((unsigned __int8 *)*(v2 - 2778) + 5)];
@@ -62,7 +62,7 @@ enum MACRO_GAME_MODE sub_1002F4C0() {
                 }
                 v8 = 0;
                 if (dword_100B388C > 0) {
-                    v9 = (char *)v7 + 26;
+                    v9 = v7 + 26;
                     while (!*v9) {
                         ++v8;
                         ++v9;
@@ -73,7 +73,7 @@ enum MACRO_GAME_MODE sub_1002F4C0() {
                 }
             LABEL_14:
                 v10 = *((_WORD *)v7 + 121);
-                if ((*(_BYTE *)v7 & 1) != 0) {
+                if ((*v7 & 1) != 0) {
                     if ((v10 & 0x200) == 0) {
                         HIBYTE(v10) |= 2u;
                     LABEL_19:
@@ -90,20 +90,20 @@ enum MACRO_GAME_MODE sub_1002F4C0() {
                 if (v12) {
                     switch (v12) {
                     case 1:
-                        *((_BYTE *)v11 + 241) |= 0x22u;
+                        v11[241] |= 0x22u;
                         break;
                     case 2:
-                        *((_BYTE *)v11 + 241) |= 8u;
+                        v11[241] |= 8u;
                         break;
                     case 3:
-                        *((_BYTE *)v11 + 241) |= 0x50u;
+                        v11[241] |= 0x50u;
                         break;
                     case 4:
-                        *((_BYTE *)v11 + 241) |= 0x80u;
+                        v11[241] |= 0x80u;
                         break;
                     }
                 } else {
-                    *((_BYTE *)v11 + 241) |= 4u;
+                    v11[241] |= 4u;
                 }
                 *((_BYTE *)*v2 + 4) = 0;
                 ++*(_DWORD *)*v2;

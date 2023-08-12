@@ -32,7 +32,7 @@ void __cdecl sub_1002BAA0(int a1) {
     v3 = *(_BYTE *)(a1 + 2);
     *(_BYTE *)(a1 + 2) = v2;
     *(_BYTE *)(a1 + 1) = v3;
-    sub_1002B970((int *)a1);
+    track_1002B970((int *)a1);
     v4 = *(_BYTE *)(a1 + 7);
     v5 = *(_BYTE *)(a1 + 5);
     v6 = (void **)(a1 + 4);
@@ -41,7 +41,7 @@ void __cdecl sub_1002BAA0(int a1) {
     v7 = *(_BYTE *)(a1 + 6);
     *(_BYTE *)(a1 + 6) = v5;
     *(_BYTE *)(a1 + 5) = v7;
-    sub_1002B970((int *)(a1 + 4));
+    track_1002B970((int *)(a1 + 4));
     v8 = *(_BYTE *)(a1 + 11);
     v9 = *(_BYTE *)(a1 + 9);
     v10 = (_BYTE **)(a1 + 8);
@@ -75,7 +75,7 @@ void __cdecl sub_1002BAA0(int a1) {
     if (dword_10675540) {
         if ((v15 & 0x100000) != 0) {
             v16 = 0;
-            sub_1002B970((int *)(a1 + 8));
+            track_1002B970((int *)(a1 + 8));
             sub_1002BC90(*v10);
             v17 = (int)*v10;
             if (*(_WORD *)(v17 + 2) == 2 && *(_DWORD *)(v17 + 8) == -1)

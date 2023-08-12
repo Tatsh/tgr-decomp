@@ -2,9 +2,9 @@
 //----- (10002140) --------------------------------------------------------
 CarPart *sub_10002140() {
     enum MACRO_GAME_MODE v0; // eax
-# 505 * v1;                  // ebp
+    void *v1;                // ebp
     char *v2;                // eax
-# 505 ** v3;                 // edx
+    void **v3;               // edx
     void *v4;                // edi
     const void *v5;          // esi
     int v6;                  // ecx

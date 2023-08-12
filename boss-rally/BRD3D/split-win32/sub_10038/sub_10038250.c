@@ -18,7 +18,7 @@ int __cdecl sub_10038250(int a1) {
         *((_BYTE *)v2 + 3) = v4;
         *((_BYTE *)v2 + 2) = v5;
         *((_BYTE *)v2 + 1) = v6;
-        sub_1002B970(v2);
+        track_1002B970(v2);
         sub_100382A0((char *)*v2);
         result = *(_DWORD *)(a1 + 124);
         ++v2;

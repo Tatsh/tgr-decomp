@@ -1,6 +1,6 @@
 #include "types-win32.h"
 //----- (100015D0) --------------------------------------------------------
-float *__thiscall meth_100015D0(#479 * this, float a2, float a3) {
+float *__thiscall meth_100015D0(void *this, float a2, float a3) {
     int v4;         // esi
     float *result;  // eax
     float *v6;      // esi

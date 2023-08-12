@@ -61,7 +61,7 @@ char *__cdecl graphics_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a
     v20 = a3;
     v21 = 0;
     v22 = 0;
-    sub_10025AB0(byte_11829870,
+    sub_10025AB0(out_a2,
                  v12,
                  v25[16 * v23 + 1],
                  a2,
@@ -83,7 +83,7 @@ char *__cdecl graphics_10025830(_WORD *a1, int a2, int a3, int a4, int a5, int a
                  v31,
                  v32,
                  v33);
-    return graphics_100098A0(a1, byte_11829870, v16, v14);
+    return graphics_100098A0(a1, out_a2, v16, v14);
 }
 // 10575440: using guessed type int dword_10575440;
 // 10575444: using guessed type int dword_10575444;

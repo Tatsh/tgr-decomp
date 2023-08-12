@@ -15,6 +15,7 @@ def byte2(w: int) -> int:
 def lobyte(w: int) -> int:
     return w & 0xFF
 
+
 def hibyte(w: int) -> int:
     return (w & 0xFF000000) >> 24
 
@@ -34,7 +35,6 @@ def main() -> int:
         #    f0 = f0 + 0x106C8E78 - 0x80025C00
 
     return 0
-
 
 
 if __name__ == '__main__':

@@ -13,8 +13,8 @@ char __cdecl sub_10070610(enum MACRO_UNK10071130 a1, FILE *Stream) {
     FILE *v12;                 // eax
     int v13;                   // eax
     size_t v14;                // eax
-    unsigned int v15;          // eax
-    unsigned int v16;          // eax
+    int v15;                   // eax
+    int v16;                   // eax
     FILE *v17;                 // [esp-4h] [ebp-2Ch]
     int Buffer[3];             // [esp+10h] [ebp-18h] BYREF
     int v19;                   // [esp+1Ch] [ebp-Ch]

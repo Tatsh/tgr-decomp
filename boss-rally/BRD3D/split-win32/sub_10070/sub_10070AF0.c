@@ -7,11 +7,11 @@ bool __cdecl sub_10070AF0(char *filename, BOOL b) {
     size_t size;          // eax
     void *v6;             // eax
     char *v7;             // eax
-    unsigned int seed0;   // eax
-    unsigned int seed1;   // eax
-    unsigned int seed2;   // esi
+    int seed0;            // eax
+    int seed1;            // eax
+    int seed2;            // esi
     unsigned __int8 *v11; // eax
-    unsigned int v12;     // eax
+    int v12;              // eax
     unsigned int v14;     // eax
     int v15;              // eax
     int v16;              // eax

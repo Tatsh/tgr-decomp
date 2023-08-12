@@ -4581,7 +4581,7 @@ struct IDirect3DTexture2Vtbl {
     HRESULT(__stdcall *QueryInterface)(IDirect3DTexture2 *, GUID *, LPVOID *);
     HRESULT(__stdcall *AddRef)(IDirect3DTexture2 *);
     HRESULT(__stdcall *Release)(IDirect3DTexture2 *);
-    HRESULT(__stdcall *GetHandle)(IDirect3DTexture2 *, #486 *, D3DTEXTUREHANDLE *);
+    HRESULT(__stdcall *GetHandle)(IDirect3DTexture2 *, IDirect3DDevice2 *, D3DTEXTUREHANDLE *);
     HRESULT(__stdcall *PaletteChanged)(IDirect3DTexture2 *, DWORD, DWORD);
     HRESULT(__stdcall *Load)(IDirect3DTexture2 *, IDirect3DTexture2 *);
 };
@@ -8199,4 +8199,51 @@ enum MACRO_DSBCAPS {
     DSBCAPS_GLOBALFOCUS = 0x8000,
     DSBCAPS_GETCURRENTPOSITION2 = 0x10000,
     DSBCAPS_MUTE3DATMAXDISTANCE = 0x20000,
+};
+
+/* 732 */
+struct __unaligned __declspec(align(2)) unk00230 {
+    int field_0;
+    int field_4;
+    int field_8;
+    int field_C;
+    int field_10;
+    int field_14;
+    int field_18;
+    int field_1C;
+    int field_20;
+    int field_24;
+    int field_28;
+    int field_2C;
+    int field_30;
+    int field_34;
+    int field_38;
+    int field_3C;
+    char field_40[16];
+    int field_50;
+    int field_54;
+    int field_58;
+    int field_5C;
+    int field_60;
+    int field_64;
+    int field_68;
+    int field_6C;
+    int field_70;
+    int field_74;
+    int field_78;
+    int field_7C;
+    int field_80;
+    int field_84;
+    int field_88;
+    int field_8C;
+    int field_90;
+    int field_94;
+    char field_98[200];
+    int field_160;
+    _BYTE gap164[5];
+    char field_169[16];
+    _BYTE gap179[171];
+    int field_224;
+    _BYTE gap228[6];
+    int last;
 };

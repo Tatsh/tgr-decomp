@@ -9,5 +9,5 @@ void __cdecl math_1002C430(int a1) {
              *(float *)(a1 + 496) * *(float *)(a1 + 496);
         *(float *)(a1 + 4144) = sqrt_(v1) * 2.24;
     }
-    meth_10075F10(a1);
+    meth_10075F10((void *)a1);
 }

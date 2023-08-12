@@ -24,7 +24,7 @@ int __cdecl ReadCarFileIntoBuffer(char *outBuffer, int carIndex) {
         sprintf(buffer, "not a car file: %s", buffer);
         s_noreturn_10008CF0(buffer);
     }
-    result = sub_100370D0(outBuffer);
+    result = car_100370D0(outBuffer);
     if (outBuffer != byte_100C12A0)
         dword_100B8C90 = v3;
     return result;

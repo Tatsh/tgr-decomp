@@ -96,6 +96,6 @@ BOOL __thiscall meth_graphics_10009ED0(void *this, char *a2, LONG rectRight, LON
                                                                         ddSurfaceDesc.lpSurface))
         result = 0;
     else
-        result = meth_graphics_1000A020((#511 *)this);
+        result = meth_graphics_1000A020(this);
     return result;
 }
