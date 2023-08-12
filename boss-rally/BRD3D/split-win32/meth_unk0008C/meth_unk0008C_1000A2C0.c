@@ -1,8 +1,8 @@
 #include "types-win32.h"
 //----- (1000A2C0) --------------------------------------------------------
 HRESULT __thiscall meth_unk0008C_1000A2C0(unk0008C *this) {
-    HRESULT result; // eax
-    int v3;         // esi
+  HRESULT result; // eax
+  int v3;         // esi
 
   if ( !this->? || !IsWindow(this->?) )
       return -2005522669;

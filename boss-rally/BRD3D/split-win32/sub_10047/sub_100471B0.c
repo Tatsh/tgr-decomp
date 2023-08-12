@@ -1,10 +1,10 @@
 #include "types-win32.h"
 //----- (100471B0) --------------------------------------------------------
 int __cdecl sub_100471B0(unk1E214 *a1) {
-    sub_10045C90();
-    a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
-    if (gUnkC8Ptr8)
-        gUnkC8Ptr8->lpVtbl->meth0(gUnkC8Ptr8, 1);
-    gUnkC8Ptr8 = 0;
-    return 0;
+  sub_10045C90();
+  a1->field_2AE8->lpVtbl->meth7(a1->field_2AE8);
+  if (gUnkC8Ptr8)
+    gUnkC8Ptr8->lpVtbl->meth0(gUnkC8Ptr8, 1);
+  gUnkC8Ptr8 = 0;
+  return 0;
 }

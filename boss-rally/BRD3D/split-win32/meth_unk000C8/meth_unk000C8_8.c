@@ -1,16 +1,16 @@
 #include "types-win32.h"
 //----- (1005AFA0) --------------------------------------------------------
 int meth_unk000C8_8() {
-    LPDIRECT3DVIEWPORT2 v0; // ebx
-    unk0008C *v1;           // eax
-    unk0008C *v2;           // esi
-    LPDIRECT3DVIEWPORT2 v3; // edi
-    IDirect3DMaterial2 *v4; // eax
-    int v6[4];              // [esp+10h] [ebp-10h] BYREF
+  LPDIRECT3DVIEWPORT2 v0; // ebx
+  unk0008C *v1;           // eax
+  unk0008C *v2;           // esi
+  LPDIRECT3DVIEWPORT2 v3; // edi
+  IDirect3DMaterial2 *v4; // eax
+  int v6[4];              // [esp+10h] [ebp-10h] BYREF
 
-    v0 = gUnk334->ddCapsFlags->lpDirect3DViewport2;
+  v0 = gUnk334->ddCapsFlags->lpDirect3DViewport2;
   if ( !gUnk334->ddCapsFlags->? || !gUnk334->ddCapsFlags->lpDirect3DDevice || !v0 )
-      return -2147467259;
+    return -2147467259;
   v6[0] = 0;
   v6[2] = gWidth;
   v6[1] = 0;

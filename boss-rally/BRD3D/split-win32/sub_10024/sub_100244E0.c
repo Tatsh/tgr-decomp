@@ -1,12 +1,12 @@
 #include "types-win32.h"
 //----- (100244E0) --------------------------------------------------------
 HRESULT sub_100244E0() {
-    HRESULT hr;    // eax
-    D3DRECT rects; // [esp+0h] [ebp-10h] BYREF
+  HRESULT hr;    // eax
+  D3DRECT rects; // [esp+0h] [ebp-10h] BYREF
 
-    hr = *(&stru_10277680 + 8);
-    if (!*(&stru_10277680 + 8)) {
-        hr = gD3DClearZBuffer;
+  hr = *(&stru_10277680 + 8);
+  if (!*(&stru_10277680 + 8)) {
+    hr = gD3DClearZBuffer;
     if ( !gD3DClearZBuffer
       || (rects.x1 = 0,
           rects.x2 = gWidth,
@@ -14,10 +14,10 @@ HRESULT sub_100244E0() {
           rects.y2 = gHeight,
           (hr = gUnk8C->?->lpVtbl->Clear(gUnk8C->?, 1, &rects, 3)) == 0) )
     {
-        *(&stru_10277680 + 8) = 1;
+      *(&stru_10277680 + 8) = 1;
     }
-    }
-    return hr;
+  }
+  return hr;
 }
 // 100A81C0: using guessed type int g_Width;
 // 100A81C4: using guessed type int g_Height;

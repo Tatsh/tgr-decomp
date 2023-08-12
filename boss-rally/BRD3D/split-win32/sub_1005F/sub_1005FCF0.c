@@ -1,27 +1,27 @@
 #include "types-win32.h"
 //----- (1005FCF0) --------------------------------------------------------
 int sub_1005FCF0() {
-    int v0;     // eax
-    int v1;     // edx
-    int result; // eax
+  int v0;     // eax
+  int v1;     // edx
+  int result; // eax
 
-    gTransmissionType0 = gTransmissionType;
-    gTireType0 = gTireType;
-    dword_10AA26F0 = dword_10AA28A0;
-    gSuspensionType0 = gSuspensionType;
-    LOBYTE(dword_10AA26F4[0]) = dword_10AA28B8;
-    gConfigJoystickIndex0 = gConfigJoystickIndex;
-    BYTE1(dword_10AA26F4[0]) = dword_10AA28A4;
-    if (gGameMode == GAME_MODE_0) {
-        v0 = 2 * ((unsigned __int8)dword_10AA28A4 + 12 * (unsigned __int8)dword_10AA28B8);
-        v1 = (unsigned __int8)byte_100B3821[v0];
-        gChosenTrack = (unsigned __int8)byte_100B3820[v0];
-        gChosenWeather0 = v1;
-    }
-    dword_10AA2A10 |= (unsigned __int16)dword_10AA27E0;
-    result = HIWORD(dword_10AA27E0) | dword_10AA2A14;
-    dword_10AA2A14 = result;
-    return result;
+  gTransmissionType0 = gTransmissionType;
+  gTireType0 = gTireType;
+  dword_10AA26F0 = dword_10AA28A0;
+  gSuspensionType0 = gSuspensionType;
+  LOBYTE(dword_10AA26F4[0]) = dword_10AA28B8;
+  gConfigJoystickIndex0 = gConfigJoystickIndex;
+  BYTE1(dword_10AA26F4[0]) = dword_10AA28A4;
+  if (gGameMode == GAME_MODE_0) {
+    v0 = 2 * ((unsigned __int8)dword_10AA28A4 + 12 * (unsigned __int8)dword_10AA28B8);
+    v1 = (unsigned __int8)byte_100B3821[v0];
+    gChosenTrack = (unsigned __int8)byte_100B3820[v0];
+    gChosenWeather0 = v1;
+  }
+  dword_10AA2A10 |= (unsigned __int16)dword_10AA27E0;
+  result = HIWORD(dword_10AA27E0) | dword_10AA2A14;
+  dword_10AA2A14 = result;
+  return result;
 }
 // 10094354: using guessed type int gTransmissionType;
 // 10094358: using guessed type int gSuspensionType;

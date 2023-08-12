@@ -1,19 +1,19 @@
 #include "types-win32.h"
 //----- (1000A480) --------------------------------------------------------
 int __thiscall meth_unk0008C_1000A480(unk0008C *this) {
-    unk00334 *v2; // eax
-    int result;   // eax
-    GUID *v4;     // eax
-    HRESULT v5;   // edi
-    int v6;       // edi
-    int v7;       // eax
+  unk00334 *v2; // eax
+  int result;   // eax
+  GUID *v4;     // eax
+  HRESULT v5;   // edi
+  int v6;       // edi
+  int v7;       // eax
 
   if ( !this->? )
   {
       v2 = sub_1001A550(NULL);
       this->? = v2;
       if (!v2)
-          return -2005522669;
+      return -2005522669;
   }
   v4 = meth_unk00334_GetDirectDrawGUID(this->?);
   v5 = DirectDrawCreate(v4, &this->?, 0);

@@ -1,129 +1,129 @@
 #include "types-win32.h"
 //----- (10024550) --------------------------------------------------------
 int __cdecl sub_10024550(int a1) {
-    int result;                             // eax
-    IDirect3DDevice2Vtbl *d3dDevice2LPVtbl; // ecx
-    _DWORD *v3;                             // eax
-    int v4;                                 // eax
-    int *v5;                                // ecx
-    int v6;                                 // edx
-    DWORD v7;                               // eax
-    int v8;                                 // edx
-    int v9;                                 // ecx
-    int v10;                                // ecx
-    int v11;                                // ecx
-    char v12[32768];                        // [esp+8Ch] [ebp-8000h] BYREF
+  int result;                             // eax
+  IDirect3DDevice2Vtbl *d3dDevice2LPVtbl; // ecx
+  _DWORD *v3;                             // eax
+  int v4;                                 // eax
+  int *v5;                                // ecx
+  int v6;                                 // edx
+  DWORD v7;                               // eax
+  int v8;                                 // edx
+  int v9;                                 // ecx
+  int v10;                                // ecx
+  int v11;                                // ecx
+  char v12[32768];                        // [esp+8Ch] [ebp-8000h] BYREF
 
-    sub_100244E0();
-    result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2);
+  sub_100244E0();
+  result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2);
+  if (!result)
+    goto LABEL_6;
+  for (; result == -2005532222; result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2)) {
+    while (meth_unk0008C_1000B2C0(gUnk8C) == -2005532222)
+      ;
+  }
+  if (!result) {
+  LABEL_6:
+    renderState = 0;
+    dword_102773A0 = 0;
+    renderState_0 = 1;
+    dword_10277380 = 2;
+    dword_10277384 = 1;
+    dword_10277388 = 3;
+    dword_104C16A0 = 2;
+    dword_1027738C = 2;
+    dword_10277390 = 8;
+    dword_104BBE28 = 7;
+    dword_10277394 = 7;
+    dword_10277398 = 1;
+    dword_1027739C = 1;
+    dword_10277370 = -1;
+    sub_10024850();
+    d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
+    dword_104C5178 = 8193;
+    d3dDevice2LPVtbl->SetRenderState(g_D3DDevice2, D3DRS_SPECULARENABLE, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZENABLE, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)1, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_DITHERENABLE, 1);
+    if (!gD3dalphacompar)
+      g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE | 0x20, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE, 2);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)5, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)6, 0);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)4, 1);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)18, 2);
+    g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)17, 2);
+    gIndexedPrimitiveIndexCount = 0;
+    gVertexCount = 0;
+    dword_104C5190 = 0;
+    dword_104C01A4 = 0;
+    sub_10074FC0();
+    sub_10024A90(a1);
+    dword_106C0680 = (int)v12;
+    sub_100192F0(20);
+    text_10019300((int)&unk_118AB478, 0, 60);
+    v3 = (_DWORD *)dword_106C0680;
+    dword_106C0680 += 8;
+    *v3 = -1207959552;
+    v3[1] = 0;
+    sub_10024A90((int)v12);
+    if (gIndexedPrimitiveIndexCount) {
+      g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(g_D3DDevice2,
+                                                 D3DPT_TRIANGLELIST,
+                                                 D3DVT_TLVERTEX,
+                                                 &gVertices,
+                                                 gVertexCount,
+                                                 &g_indexedPrimitiveIndices,
+                                                 gIndexedPrimitiveIndexCount,
+                                                 12);
+      v4 = 0;
+      if (dword_104C5190 > 0) {
+        v5 = dword_104C0BC0;
+        do {
+          v6 = *v5;
+          ++v4;
+          ++v5;
+          *(_DWORD *)(v6 + 104) = -1;
+        } while (v4 < dword_104C5190);
+      }
+      gIndexedPrimitiveIndexCount = 0;
+      gVertexCount = 0;
+      dword_104C5190 = 0;
+    }
+    result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2);
     if (!result)
-        goto LABEL_6;
-    for (; result == -2005532222; result = g_D3DDevice2->lpVtbl->BeginScene(g_D3DDevice2)) {
-        while (meth_unk0008C_1000B2C0(gUnk8C) == -2005532222)
-            ;
+      goto LABEL_18;
+    for (; result == -2005532222; result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2)) {
+      while (meth_unk0008C_1000B2C0(gUnk8C) == -2005532222)
+        ;
     }
     if (!result) {
-    LABEL_6:
-        renderState = 0;
-        dword_102773A0 = 0;
-        renderState_0 = 1;
-        dword_10277380 = 2;
-        dword_10277384 = 1;
-        dword_10277388 = 3;
-        dword_104C16A0 = 2;
-        dword_1027738C = 2;
-        dword_10277390 = 8;
-        dword_104BBE28 = 7;
-        dword_10277394 = 7;
-        dword_10277398 = 1;
-        dword_1027739C = 1;
-        dword_10277370 = -1;
-        sub_10024850();
-        d3dDevice2LPVtbl = g_D3DDevice2->lpVtbl;
-        dword_104C5178 = 8193;
-        d3dDevice2LPVtbl->SetRenderState(g_D3DDevice2, D3DRS_SPECULARENABLE, 0);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_ZENABLE, 1);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)1, 0);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_DITHERENABLE, 1);
-        if (!gD3dalphacompar)
-            g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE | 0x20, 1);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, D3DRS_SHADEMODE, 2);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)5, 0);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)6, 0);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)4, 1);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)18, 2);
-        g_D3DDevice2->lpVtbl->SetRenderState(g_D3DDevice2, (D3DRENDERSTATETYPE)17, 2);
-        gIndexedPrimitiveIndexCount = 0;
-        gVertexCount = 0;
-        dword_104C5190 = 0;
-        dword_104C01A4 = 0;
-        sub_10074FC0();
-        sub_10024A90(a1);
-        dword_106C0680 = (int)v12;
-        sub_100192F0(20);
-        text_10019300((int)&unk_118AB478, 0, 60);
-        v3 = (_DWORD *)dword_106C0680;
-        dword_106C0680 += 8;
-        *v3 = -1207959552;
-        v3[1] = 0;
-        sub_10024A90((int)v12);
-        if (gIndexedPrimitiveIndexCount) {
-            g_D3DDevice2->lpVtbl->DrawIndexedPrimitive(g_D3DDevice2,
-                                                       D3DPT_TRIANGLELIST,
-                                                       D3DVT_TLVERTEX,
-                                                       &gVertices,
-                                                       gVertexCount,
-                                                       &g_indexedPrimitiveIndices,
-                                                       gIndexedPrimitiveIndexCount,
-                                                       12);
-            v4 = 0;
-            if (dword_104C5190 > 0) {
-                v5 = dword_104C0BC0;
-                do {
-                    v6 = *v5;
-                    ++v4;
-                    ++v5;
-                    *(_DWORD *)(v6 + 104) = -1;
-                } while (v4 < dword_104C5190);
-            }
-            gIndexedPrimitiveIndexCount = 0;
-            gVertexCount = 0;
-            dword_104C5190 = 0;
+    LABEL_18:
+      dword_10690A24();
+      v7 = getTicks();
+      v8 = dword_100B5420;
+      v9 = v7;
+      result = v7 - dword_104C5194;
+      dword_104C5194 = v9;
+      v10 = dword_100B5424;
+      dword_104C5198 = result;
+      if (dword_100B5424 < 0) {
+        v10 = 0;
+        if (dword_100B5420 > 0) {
+          memset32(dword_10B4FFE8, result, dword_100B5420);
+          v10 = v8;
         }
-        result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2);
-        if (!result)
-            goto LABEL_18;
-        for (; result == -2005532222; result = g_D3DDevice2->lpVtbl->EndScene(g_D3DDevice2)) {
-            while (meth_unk0008C_1000B2C0(gUnk8C) == -2005532222)
-                ;
-        }
-        if (!result) {
-        LABEL_18:
-            dword_10690A24();
-            v7 = getTicks();
-            v8 = dword_100B5420;
-            v9 = v7;
-            result = v7 - dword_104C5194;
-            dword_104C5194 = v9;
-            v10 = dword_100B5424;
-            dword_104C5198 = result;
-            if (dword_100B5424 < 0) {
-                v10 = 0;
-                if (dword_100B5420 > 0) {
-                    memset32(dword_10B4FFE8, result, dword_100B5420);
-                    v10 = v8;
-                }
-            }
-            v11 = v10 + 1;
-            dword_100B5424 = v11;
-            if (v11 >= v8) {
-                v11 = 0;
-                dword_100B5424 = 0;
-            }
-            dword_10B4FFE8[v11] = result;
-        }
+      }
+      v11 = v10 + 1;
+      dword_100B5424 = v11;
+      if (v11 >= v8) {
+        v11 = 0;
+        dword_100B5424 = 0;
+      }
+      dword_10B4FFE8[v11] = result;
     }
-    return result;
+  }
+  return result;
 }
 // 10024550: using guessed type int __cdecl sub_10024550(int);
 // 100AA720: using guessed type int g_D3dalphacompar;

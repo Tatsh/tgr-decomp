@@ -1,13 +1,13 @@
 #include "types-win32.h"
 //----- (1000BA40) --------------------------------------------------------
 HRESULT __cdecl graphics_1000BA40(LPDIRECTDRAWSURFACE surface, COLORREF color) {
-    DWORD colorSpaceValue;               // eax
-    IDirectDrawSurfaceVtbl *surfaceVtbl; // ecx
-    DDCOLORKEY v5;                       // [esp+4h] [ebp-8h] BYREF
+  DWORD colorSpaceValue;               // eax
+  IDirectDrawSurfaceVtbl *surfaceVtbl; // ecx
+  DDCOLORKEY v5;                       // [esp+4h] [ebp-8h] BYREF
 
-    colorSpaceValue = graphics_CalcColorSpaceValue(surface, color);
-    surfaceVtbl = surface->lpVtbl;
-    v5.dwColorSpaceLowValue = colorSpaceValue;
-    v5.dwColorSpaceHighValue = colorSpaceValue;
-    return surfaceVtbl->SetColorKey(surface, 8, &v5);
+  colorSpaceValue = graphics_CalcColorSpaceValue(surface, color);
+  surfaceVtbl = surface->lpVtbl;
+  v5.dwColorSpaceLowValue = colorSpaceValue;
+  v5.dwColorSpaceHighValue = colorSpaceValue;
+  return surfaceVtbl->SetColorKey(surface, 8, &v5);
 }

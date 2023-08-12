@@ -1,12 +1,12 @@
 #include "types-win32.h"
 //----- (10006770) --------------------------------------------------------
 int __cdecl math_ClampFloorNeg128(float a1) {
-    __int64 v1; // rax
+  __int64 v1; // rax
 
-    v1 = (__int64)floor(0.5 - a1 * -128.0);
-    if ((int)v1 < -32768)
-        LODWORD(v1) = -32768;
-    if ((int)v1 > 0x7FFF)
-        LODWORD(v1) = 0x7FFF;
-    return v1;
+  v1 = (__int64)floor(0.5 - a1 * -128.0);
+  if ((int)v1 < -32768)
+      LODWORD(v1) = -32768;
+  if ((int)v1 > 0x7FFF)
+      LODWORD(v1) = 0x7FFF;
+  return v1;
 }
