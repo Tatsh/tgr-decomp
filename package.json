@@ -18,6 +18,16 @@
   "prettier": {
     "endOfLine": "lf",
     "iniSpaceAroundEquals": true,
+    "overrides": [
+      {
+        "files": [
+          "*.toml"
+        ],
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ],
     "printWidth": 100,
     "singleQuote": true
   },
